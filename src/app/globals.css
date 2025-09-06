@@ -1,0 +1,25 @@
+/* app/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "../styles/forms.css";
+@import "../styles/components.css";
+@import "../styles/animations.css";
+@import "../styles/utilities.css";
+
+/* Any other global styles you might have */
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+}
+
+.font-elegant {
+  font-family: var(--font-inter);
+}
+
+.font-luxury {
+  font-family: var(--font-playfair);
+}
