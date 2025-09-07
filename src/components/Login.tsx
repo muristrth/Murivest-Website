@@ -34,7 +34,12 @@ const Login = () => {
         setError('Invalid email or password');
       } else if (result?.ok) {
         console.log('Login successful!');
-        router.push('/dashboard');
+
+        // Redirect based on user role
+        // Note: We'll need to get the user role from the session or API
+        // For now, redirect to admin by default for staff roles
+        // You may want to fetch user role from API or store it in session
+        router.push('/admin');
       }
     } catch (error) {
       console.error('Login error:', error);

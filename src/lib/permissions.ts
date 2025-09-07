@@ -59,11 +59,13 @@ export function hasPermission(userRole: UserRole, permission: keyof RolePermissi
 
 export function canAccessDashboard(userRole: UserRole, dashboardType: string): boolean {
   const dashboardPermissions = {
-    admin: ['ADMIN'],
+    admin: ['ADMIN', 'LANDLORD', 'OPERATIONS_MANAGER', 'ACCOUNTANT', 'SECRETARY'],
     operations: ['ADMIN', 'OPERATIONS_MANAGER'],
     accountant: ['ADMIN', 'ACCOUNTANT'],
+    accounting: ['ADMIN', 'ACCOUNTANT'],
     secretary: ['ADMIN', 'SECRETARY'],
     landlord: ['ADMIN', 'LANDLORD', 'OPERATIONS_MANAGER', 'ACCOUNTANT', 'SECRETARY'],
+    unified: ['ADMIN', 'LANDLORD', 'OPERATIONS_MANAGER', 'ACCOUNTANT', 'SECRETARY']
   };
 
   return dashboardPermissions[dashboardType as keyof typeof dashboardPermissions]?.includes(userRole) || false;
