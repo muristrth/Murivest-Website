@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import AdminDashboard from '../../components/dashboard/AdminDashboard'
 import ProtectedRoute from '../../components/ProtectedRoute'
+import BusinessManagementDashboard from '../../components/dashboard/BusinessManagementDashboard';
 
 export const metadata: Metadata = {
   title: 'Admin Dashboard - Property Management',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function AdminPage() {
   return (
     <ProtectedRoute>
-      <AdminDashboard />
+      <BusinessManagementDashboard />
     </ProtectedRoute>
-  )
+  );
 }

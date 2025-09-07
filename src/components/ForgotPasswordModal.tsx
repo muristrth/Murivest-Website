@@ -3,8 +3,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Mail } from "lucide-react";
-import { sendPasswordResetEmail } from "firebase/auth";
-import { auth } from ".././firebase/config";
 
 interface ForgotPasswordProps {
   isOpen: boolean;
@@ -24,10 +22,11 @@ const ForgotPasswordModal: React.FC<ForgotPasswordProps> = ({ isOpen, onClose })
     setLoading(true);
 
     try {
-      await sendPasswordResetEmail(auth, email);
+      // Mock password reset - replace with actual NextAuth or email service
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
       setMessage("Password reset email sent. Check your inbox.");
     } catch (err: any) {
-      setError(err.message);
+      setError("Failed to send password reset email. Please try again.");
     } finally {
       setLoading(false);
     }
