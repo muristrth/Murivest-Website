@@ -3,30 +3,16 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
-<<<<<<< HEAD
 import { useSession } from 'next-auth/react';
 import { Phone, User, Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-=======
-import { useAuth } from '../contexts/AuthContext';
-import { Phone, User, Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
-import AuthModal from '../ui/AuthModal';
-
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
   const [isInvestDropdownOpen, setIsInvestDropdownOpen] = useState(false);
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname(); // Use the usePathname hook
-<<<<<<< HEAD
   const { data: session } = useSession();
-=======
-  const { currentUser } = useAuth();
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
 
   // The isActive function now uses the pathname from usePathname
   const isActive = (path: string) => pathname === path;
@@ -227,11 +213,7 @@ const Header = () => {
                 +254 115 277 610
               </Link>
             </div>
-<<<<<<< HEAD
             {session?.user ? (
-=======
-            {currentUser ? (
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
               <Link
                 href="/dashboard"
                 className="flex items-center bg-amber-600 hover:bg-amber-700 text-white px-3 py-2 text-xs font-serif font-medium transition-all duration-300 border border-amber-500 hover:shadow-lg hover:shadow-amber-500/25"
@@ -240,7 +222,6 @@ const Header = () => {
                 Client Portal
               </Link>
             ) : (
-<<<<<<< HEAD
               <Link
                 href="/login"
                 className="flex items-center bg-transparent hover:bg-amber-600 text-amber-400 hover:text-white px-3 py-2 text-xs font-serif font-medium transition-all duration-300 border border-amber-400 hover:border-amber-600"
@@ -248,15 +229,6 @@ const Header = () => {
                 <User className="h-3 w-3 mr-1.5" />
                 Client Portal
               </Link>
-=======
-              <button
-                onClick={() => setIsAuthModalOpen(true)}
-                className="flex items-center bg-transparent hover:bg-amber-600 text-amber-400 hover:text-white px-3 py-2 text-xs font-serif font-medium transition-all duration-300 border border-amber-400 hover:border-amber-600"
-              >
-                <User className="h-3 w-3 mr-1.5" />
-                Client Access
-              </button>
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
             )}
           </div>
 
@@ -419,11 +391,7 @@ const Header = () => {
 
             {/* Mobile Auth Button */}
             <div className="mt-4 pt-4 border-t border-gray-700">
-<<<<<<< HEAD
               {session?.user ? (
-=======
-              {currentUser ? (
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
                 <Link
                   href="/dashboard"
                   className="flex items-center bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg font-serif font-medium transition-colors w-full justify-center"
@@ -433,7 +401,6 @@ const Header = () => {
                   My Murivest
                 </Link>
               ) : (
-<<<<<<< HEAD
                 <Link
                   href="/login"
                   className="flex items-center bg-transparent hover:bg-amber-600 text-amber-400 hover:text-white px-3 py-2 text-sm font-serif font-medium transition-all duration-300 border border-amber-400 hover:border-amber-600 w-full justify-center"
@@ -442,31 +409,12 @@ const Header = () => {
                   <User className="h-4 w-4 mr-2" />
                   Client Portal
                 </Link>
-=======
-                <button
-                  onClick={() => {
-                    setIsAuthModalOpen(true);
-                    closeAllDropdowns();
-                  }}
-                  className="flex items-center bg-transparent hover:bg-amber-600 text-amber-400 hover:text-white px-3 py-2 text-sm font-serif font-medium transition-all duration-300 border border-amber-400 hover:border-amber-600 w-full justify-center"
-                >
-                  <User className="h-4 w-4 mr-2" />
-                  Client Access
-                </button>
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
               )}
             </div>
           </div>
         )}
       </div>
 
-<<<<<<< HEAD
-=======
-      <AuthModal
-        isOpen={isAuthModalOpen}
-        onClose={() => setIsAuthModalOpen(false)}
-      />
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
     </header>
   );
 };

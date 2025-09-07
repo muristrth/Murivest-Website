@@ -58,11 +58,7 @@ const GlobalPresence = () => {
     <section className="py-24 bg-slate-900">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <motion.div
-<<<<<<< HEAD
           {...({ className: "text-center mb-16" } as any)}
-=======
-          className="text-center mb-16"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -85,11 +81,7 @@ const GlobalPresence = () => {
           {locations.map((location, index) => (
             <motion.div
               key={index}
-<<<<<<< HEAD
               {...({ className: "bg-slate-800 rounded-2xl overflow-hidden hover:bg-slate-750 transition-colors" } as any)}
-=======
-              className="bg-slate-800 rounded-2xl overflow-hidden hover:bg-slate-750 transition-colors"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -132,11 +124,7 @@ const GlobalPresence = () => {
           {achievements.map((achievement, index) => (
             <motion.div
               key={index}
-<<<<<<< HEAD
               {...({ className: "text-center" } as any)}
-=======
-              className="text-center"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}

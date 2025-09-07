@@ -5,11 +5,6 @@ import { useRouter } from 'next/navigation';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, TrendingUp, Star, Filter, Search, ArrowRight, Shield, Award, Users, Globe, Building2, Crown, ChevronDown, CheckCircle } from 'lucide-react';
-<<<<<<< HEAD
-=======
-
-const router = useRouter();
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
 
 const Properties = () => {
   const router = useRouter();
@@ -192,11 +187,7 @@ const Properties = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-12">
-<<<<<<< HEAD
             <motion.div
-=======
-            <motion.div 
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
               className="text-center"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -212,11 +203,7 @@ const Properties = () => {
               </p>
             </motion.div>
 
-<<<<<<< HEAD
             <motion.div
-=======
-            <motion.div 
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
               className="text-center"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -232,11 +219,7 @@ const Properties = () => {
               </p>
             </motion.div>
 
-<<<<<<< HEAD
             <motion.div
-=======
-            <motion.div 
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
               className="text-center"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -260,11 +243,7 @@ const Properties = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Filters */}
-<<<<<<< HEAD
           <motion.div
-=======
-          <motion.div 
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
             className="mb-12 bg-slate-50 rounded-lg p-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -380,11 +359,7 @@ const Properties = () => {
 
           {/* No Results */}
           {filteredProperties.length === 0 && (
-<<<<<<< HEAD
             <motion.div
-=======
-            <motion.div 
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
               className="text-center py-16"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

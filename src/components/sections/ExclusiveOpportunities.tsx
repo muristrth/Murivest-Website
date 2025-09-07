@@ -48,11 +48,7 @@ const ExclusiveOpportunities = () => {
     <section className="py-24 bg-gradient-to-br from-slate-50 to-stone-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <motion.div
-<<<<<<< HEAD
           {...({ className: "text-center mb-16" } as any)}
-=======
-          className="text-center mb-16"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -78,11 +74,7 @@ const ExclusiveOpportunities = () => {
           {opportunities.map((opportunity, index) => (
             <motion.div
               key={opportunity.id}
-<<<<<<< HEAD
               {...({ className: "bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200/50 hover:shadow-2xl transition-all duration-500" } as any)}
-=======
-              className="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200/50 hover:shadow-2xl transition-all duration-500"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -139,11 +131,7 @@ const ExclusiveOpportunities = () => {
                 </div>
 
                 <motion.button
-<<<<<<< HEAD
                   {...({ className: "w-full bg-slate-900 text-white py-4 rounded-2xl font-medium hover:bg-slate-800 transition-colors flex items-center justify-center" } as any)}
-=======
-                  className="w-full bg-slate-900 text-white py-4 rounded-2xl font-medium hover:bg-slate-800 transition-colors flex items-center justify-center"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -156,11 +144,7 @@ const ExclusiveOpportunities = () => {
         </div>
 
         <motion.div
-<<<<<<< HEAD
           {...({ className: "text-center mt-16" } as any)}
-=======
-          className="text-center mt-16"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -170,11 +154,7 @@ const ExclusiveOpportunities = () => {
             Access to our complete portfolio requires qualification and invitation.
           </p>
           <motion.button
-<<<<<<< HEAD
             {...({ className: "inline-flex items-center px-8 py-4 bg-slate-900 text-white rounded-2xl font-medium hover:bg-slate-800 transition-colors" } as any)}
-=======
-            className="inline-flex items-center px-8 py-4 bg-slate-900 text-white rounded-2xl font-medium hover:bg-slate-800 transition-colors"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
