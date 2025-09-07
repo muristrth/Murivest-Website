@@ -1,7 +1,6 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-<<<<<<< HEAD
 import { useSession } from 'next-auth/react';
 import { useEffect } from 'react';
 
@@ -35,21 +34,6 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
     return null;
   }
 
-=======
-import { useAuth } from './contexts/AuthContext'; // Assuming you have a client-side auth context
-
-const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-  const router = useRouter();
-  const { currentUser } = useAuth(); // or however you get the current user
-
-  if (!currentUser) {
-    // If no user is logged in, redirect to the login page
-    router.push('/login');
-    // It's good practice to return null or a loading state while redirecting
-    return null; 
-  }
-
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
   // If a user is logged in, render the protected content
   return <>{children}</>;
 };

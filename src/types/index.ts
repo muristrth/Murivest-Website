@@ -46,7 +46,6 @@ export interface Review {
   approved: boolean;
   createdAt: any;
   submittedAt: string;
-<<<<<<< HEAD
 }
 
 export type UserRole = 'ADMIN' | 'LANDLORD' | 'OPERATIONS_MANAGER' | 'ACCOUNTANT' | 'SECRETARY';
@@ -60,6 +59,4 @@ export interface RolePermissions {
   canUploadDocuments: boolean;
   canViewReports: boolean;
   canManageLeases: boolean;
-=======
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
 }

@@ -63,21 +63,13 @@ const BlogHero = () => {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
         {/* Hero Header */}
         <motion.div
-<<<<<<< HEAD
           {...({ className: "text-center max-w-4xl mx-auto mb-16" } as any)}
-=======
-          className="text-center max-w-4xl mx-auto mb-16"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <motion.div
-<<<<<<< HEAD
             {...({ className: "inline-flex items-center px-4 py-2 bg-slate-900/5 rounded-full text-slate-700 text-sm font-medium mb-6" } as any)}
-=======
-            className="inline-flex items-center px-4 py-2 bg-slate-900/5 rounded-full text-slate-700 text-sm font-medium mb-6"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -87,11 +79,7 @@ const BlogHero = () => {
           </motion.div>
 
           <motion.h1
-<<<<<<< HEAD
             {...({ className: "text-5xl md:text-6xl lg:text-7xl font-light text-slate-900 mb-6 tracking-tight" } as any)}
-=======
-            className="text-5xl md:text-6xl lg:text-7xl font-light text-slate-900 mb-6 tracking-tight"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -103,11 +91,7 @@ const BlogHero = () => {
           </motion.h1>
 
           <motion.p
-<<<<<<< HEAD
             {...({ className: "text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-light" } as any)}
-=======
-            className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-light"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -118,11 +102,7 @@ const BlogHero = () => {
 
           {/* Trust indicators */}
           <motion.div
-<<<<<<< HEAD
             {...({ className: "flex items-center justify-center space-x-8 mt-8 text-slate-500" } as any)}
-=======
-            className="flex items-center justify-center space-x-8 mt-8 text-slate-500"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -140,11 +120,7 @@ const BlogHero = () => {
 
         {/* Featured Blog Post */}
         <motion.div
-<<<<<<< HEAD
           {...({ className: "mb-16" } as any)}
-=======
-          className="mb-16"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -189,11 +165,7 @@ const BlogHero = () => {
                       <span className="text-sm">{post.readTime}</span>
                     </div>
                     <motion.button
-<<<<<<< HEAD
                       {...({ className: "inline-flex items-center text-slate-900 font-medium hover:text-slate-600 transition-colors" } as any)}
-=======
-                      className="inline-flex items-center text-slate-900 font-medium hover:text-slate-600 transition-colors"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
                       whileHover={{ x: 5 }}
                     >
                       Read Article
@@ -208,11 +180,7 @@ const BlogHero = () => {
 
         {/* Additional Blog Cards */}
         <motion.div
-<<<<<<< HEAD
           {...({ className: "grid md:grid-cols-2 gap-8" } as any)}
-=======
-          className="grid md:grid-cols-2 gap-8"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
@@ -220,11 +188,7 @@ const BlogHero = () => {
           {blogPosts.filter(post => !post.featured).map((post, index) => (
             <motion.div
               key={post.id}
-<<<<<<< HEAD
               {...({ className: "bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200/50 hover:shadow-xl transition-all duration-300" } as any)}
-=======
-              className="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200/50 hover:shadow-xl transition-all duration-300"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
@@ -256,11 +220,7 @@ const BlogHero = () => {
                     <span>{post.readTime}</span>
                   </div>
                   <motion.button
-<<<<<<< HEAD
                     {...({ className: "text-slate-900 hover:text-slate-600 transition-colors" } as any)}
-=======
-                    className="text-slate-900 hover:text-slate-600 transition-colors"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
                     whileHover={{ x: 3 }}
                   >
                     <ArrowRight className="h-4 w-4" />

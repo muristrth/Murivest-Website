@@ -3,37 +3,7 @@
 import { useState, useEffect, FC, FormEvent, ChangeEvent } from 'react';
 import { motion } from 'framer-motion';
 import { Crown, Users, Globe, Building2, Shield, ArrowRight, CheckCircle, Star, MapPin, Phone, Mail, Calendar, DollarSign, Target, Zap, Eye, Heart, Clock, Trophy, ChevronDown, Upload, User, Calculator } from 'lucide-react';
-<<<<<<< HEAD
 // Firebase removed - using database API instead
-=======
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, serverTimestamp, Firestore } from 'firebase/firestore';
-import { Functions, getFunctions, httpsCallable } from 'firebase/functions';
-
-// Firebase configuration - Replace with your config
-const firebaseConfig = {
-  apiKey: "AIzaSyB-ds9gIa7l5Jr70ts7UGiflEL9juogbkE",
-  authDomain: "murivest-realty.firebaseapp.com",
-  projectId: "murivest-realty",
-  storageBucket: "murivest-realty.firebasestorage.app",
-  messagingSenderId: "406809689762",
-  appId: "1:406809689762:web:6b5167770a447fbc62a1fb",
-};
-
-// Initialize Firebase (add a check to prevent re-initialization)
-let app: any;
-let db: Firestore;
-let functions: Functions;
-if (typeof window !== 'undefined' && !app) {
-  try {
-    app = initializeApp(firebaseConfig);
-    db = getFirestore(app);
-    functions = getFunctions(app);
-  } catch (e) {
-    console.error("Error initializing Firebase:", e);
-  }
-}
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
 
 // Define the shape of the form data
 interface FormData {
@@ -208,7 +178,6 @@ const SellProperty: FC = () => {
     setSubmitStatus(null);
 
     try {
-<<<<<<< HEAD
       // Submit to API
       const response = await fetch('/api/property-inquiries', {
         method: 'POST',
@@ -225,27 +194,6 @@ const SellProperty: FC = () => {
       if (!response.ok) {
         throw new Error('Failed to submit inquiry');
       }
-=======
-      if (!db || !functions) {
-        throw new Error("Firebase not initialized. Please check your config.");
-      }
-      
-      // Save to Firestore
-      await addDoc(collection(db, 'property-inquiries'), {
-        ...formData,
-        timestamp: serverTimestamp(),
-        status: 'new',
-        source: 'sell-property-page'
-      });
-
-      // Send email notification using Firebase Functions
-      const sendEmail = httpsCallable(functions, 'sendPropertyInquiryEmail');
-      await sendEmail({
-        to: 'sales@yourcompany.com',
-        subject: 'New Property Sale Inquiry',
-        inquiryData: { ...formData }
-      });
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
 
       // Success
       setSubmitStatus('success');

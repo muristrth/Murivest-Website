@@ -868,13 +868,8 @@ const PropertyDetail = () => {
           <div className="lg:col-span-2">
             
             {/* Hero Section */}
-<<<<<<< HEAD
             <motion.div
               {...({ className: "mb-16" } as any)}
-=======
-            <motion.div 
-              className="mb-16"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -920,13 +915,8 @@ const PropertyDetail = () => {
             </motion.div>
 
             {/* Premium Image Gallery */}
-<<<<<<< HEAD
             <motion.div
               {...({ className: "mb-16" } as any)}
-=======
-            <motion.div 
-              className="mb-16"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
@@ -993,13 +983,8 @@ const PropertyDetail = () => {
             </motion.div>
 
             {/* Investment Story */}
-<<<<<<< HEAD
             <motion.div
               {...({ className: "mb-16" } as any)}
-=======
-            <motion.div 
-              className="mb-16"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -1020,13 +1005,8 @@ const PropertyDetail = () => {
             </motion.div>
 
             {/* Investment Performance Metrics */}
-<<<<<<< HEAD
             <motion.div
               {...({ className: "mb-16" } as any)}
-=======
-            <motion.div 
-              className="mb-16"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -1092,13 +1072,8 @@ const PropertyDetail = () => {
             </motion.div>
 
             {/* Exclusive Features */}
-<<<<<<< HEAD
             <motion.div
               {...({ className: "mb-16" } as any)}
-=======
-            <motion.div 
-              className="mb-16"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -1117,13 +1092,8 @@ const PropertyDetail = () => {
             </motion.div>
 
             {/* Testimonials */}
-<<<<<<< HEAD
             <motion.div
               {...({ className: "mb-16" } as any)}
-=======
-            <motion.div 
-              className="mb-16"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
@@ -1147,13 +1117,8 @@ const PropertyDetail = () => {
             </motion.div>
 
             {/* Investment Calculator */}
-<<<<<<< HEAD
             <motion.div
               {...({ className: "mb-16" } as any)}
-=======
-            <motion.div 
-              className="mb-16"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -1175,13 +1140,8 @@ const PropertyDetail = () => {
               </div>
 
               {investmentAmount > 0 && (
-<<<<<<< HEAD
                 <motion.div
                   {...({ className: "grid grid-cols-1 md:grid-cols-3 gap-8" } as any)}
-=======
-                <motion.div 
-                  className="grid grid-cols-1 md:grid-cols-3 gap-8"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                 >
@@ -1211,13 +1171,8 @@ const PropertyDetail = () => {
           {/* Sidebar - Premium Contact Card */}
           <div className="lg:col-span-1">
             <div className="sticky top-32">
-<<<<<<< HEAD
               <motion.div
                 {...({ className: "bg-white p-10 rounded-lg shadow-2xl border border-neutral-200" } as any)}
-=======
-              <motion.div 
-                className="bg-white p-10 rounded-lg shadow-2xl border border-neutral-200"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
@@ -1339,13 +1294,8 @@ const PropertyDetail = () => {
         </div>
 
         {/* Final Call-to-Action Section */}
-<<<<<<< HEAD
         <motion.div
           {...({ className: "mt-20 bg-neutral-900 text-white p-16 rounded-lg text-center" } as any)}
-=======
-        <motion.div 
-          className="mt-20 bg-neutral-900 text-white p-16 rounded-lg text-center"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
@@ -1393,30 +1343,18 @@ const PropertyDetail = () => {
       <AnimatePresence>
         {isImageModalOpen && (
           <motion.div
-<<<<<<< HEAD
             {...({ className: "fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-6" } as any)}
-=======
-            className="fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-6"
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setIsImageModalOpen(false)}
           >
             <motion.div
-<<<<<<< HEAD
               {...({ className: "relative max-w-5xl max-h-full" } as any)}
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               onClick={(e: any) => e.stopPropagation()}
-=======
-              className="relative max-w-5xl max-h-full"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
->>>>>>> f535e2ffd5593d42bbb99bda6f01022063b79202
             >
               <button
                 onClick={() => setIsImageModalOpen(false)}

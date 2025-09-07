@@ -8,294 +8,482 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(cuid())
-  email     String   @unique
-  password  String
-  name      String
-  role      Role     @default(LANDLORD)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  // Relations
-  properties     Property[]
-  deals          Deal[]
-  agentDeals     Deal[]        @relation("AgentDeals")
-  middlemanDeals Deal[]        @relation("MiddlemanDeals")
-  transactions   Transaction[]
-  documents      Document[]
-  licenses       License[]
-  tenants        Tenant[]
-  rentTransactions RentTransaction[]
-  expenses       Expense[]
-  notifications  Notification[]
+  id                 String            @id @default(cuid())
+  email              String            @unique
+  password           String
+  name               String
+  role               Role              @default(LANDLORD)
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  properties         Property[]
+  deals              Deal[]
+  agentDeals         Deal[]            @relation("AgentDeals")
+  middlemanDeals     Deal[]            @relation("MiddlemanDeals")
+  transactions       Transaction[]
+  documents          Document[]
+  licenses           License[]
+  tenants            Tenant[]
+  rentTransactions   RentTransaction[]
+  expenses           Expense[]
+  notifications      Notification[]
 
   @@map("users")
 }
 
 model Property {
-  id          String   @id @default(cuid())
-  name        String
-  address     String
-  type        String
-  status      PropertyStatus @default(AVAILABLE)
-  price       Float?
-  description String?
-  userId      String
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  // Relations
-  deals            Deal[]
-  documents        Document[]
-  tenants          Tenant[]
-  rentTransactions RentTransaction[]
-  expenses         Expense[]
-  units            Unit[]
-  transactions     Transaction[]
-  invoices         Invoice[]
-  budgets          Budget[]
+  id                 String            @id @default(cuid())
+  name               String
+  address            String
+  type               String
+  status             PropertyStatus    @default(AVAILABLE)
+  price              Float?
+  description        String?
+  userId             String
+  user               User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  deals              Deal[]
+  documents          Document[]
+  tenants            Tenant[]
+  rentTransactions   RentTransaction[]
+  expenses           Expense[]
+  units              Unit[]
+  transactions       Transaction[]
+  invoices           Invoice[]
+  budgets            Budget[]
 
   @@map("properties")
 }
 
 model Deal {
-  id            String   @id @default(cuid())
-  propertyId    String
-  property      Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
-  userId        String
-  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  agentId       String?
-  agent         User?    @relation("AgentDeals", fields: [agentId], references: [id])
-  middlemanId   String?
-  middleman     User?    @relation("MiddlemanDeals", fields: [middlemanId], references: [id])
-  finalPrice    Float
-  commission    Float
-  status        DealStatus @default(PENDING)
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-
-  // Relations
-  transactions Transaction[]
-  documents    Document[]
+  id                 String            @id @default(cuid())
+  propertyId         String
+  property           Property          @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  userId             String
+  user               User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  agentId            String?
+  agent              User?             @relation("AgentDeals", fields: [agentId], references: [id])
+  middlemanId        String?
+  middleman          User?             @relation("MiddlemanDeals", fields: [middlemanId], references: [id])
+  finalPrice         Float
+  commission         Float
+  status             DealStatus        @default(PENDING)
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  transactions       Transaction[]
+  documents          Document[]
 
   @@map("deals")
 }
 
 model Transaction {
-  id              String           @id @default(cuid())
-  date            DateTime
-  amount          Float
-  description     String
-  type            TransactionType
-  status          TransactionStatus @default(PENDING)
-  reference       String?
-  bankAccountId   String?
-  bankAccount     BankAccount?     @relation(fields: [bankAccountId], references: [id])
-  chartOfAccountId String?
-  chartOfAccount  ChartOfAccount?  @relation(fields: [chartOfAccountId], references: [id])
-  propertyId      String?
-  property        Property?        @relation(fields: [propertyId], references: [id])
-  tenantId        String?
-  tenant          Tenant?          @relation(fields: [tenantId], references: [id])
-  reconciledAt    DateTime?
-  reconciledBy    String?
-  createdAt       DateTime         @default(now())
-  updatedAt       DateTime         @updatedAt
-
-  // Relations
-  documents       Document[]
+  id                 String            @id @default(cuid())
+  date               DateTime
+  amount             Float
+  description        String
+  type               TransactionType
+  status             TransactionStatus @default(PENDING)
+  reference          String?
+  bankAccountId      String?
+  bankAccount        BankAccount?      @relation(fields: [bankAccountId], references: [id])
+  chartOfAccountId   String?
+  chartOfAccount     ChartOfAccount?   @relation(fields: [chartOfAccountId], references: [id])
+  propertyId         String?
+  property           Property?         @relation(fields: [propertyId], references: [id])
+  tenantId           String?
+  tenant             Tenant?           @relation(fields: [tenantId], references: [id])
+  dealId             String?
+  deal               Deal?             @relation(fields: [dealId], references: [id])
+  reconciledAt       DateTime?
+  reconciledBy       String?
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  documents          Document[]
+  userId             String?
+  user               User?             @relation(fields: [userId], references: [id])
 
   @@map("transactions")
 }
 
 model Document {
-  id          String   @id @default(cuid())
-  name        String
-  fileUrl     String
-  fileType    String?
-  size        Int?
-  category    String?
-  propertyId  String?
-  property    Property? @relation(fields: [propertyId], references: [id])
-  dealId      String?
-  deal        Deal?     @relation(fields: [dealId], references: [id])
-  tenantId    String?
-  tenant      Tenant?   @relation(fields: [tenantId], references: [id])
-  unitId      String?
-  unit        Unit?     @relation(fields: [unitId], references: [id])
-  leaseId     String?
-  lease       Lease?    @relation(fields: [leaseId], references: [id])
+  id                 String            @id @default(cuid())
+  name               String
+  fileUrl            String
+  fileType           String?
+  size               Int?
+  category           String?
+  propertyId         String?
+  property           Property?         @relation(fields: [propertyId], references: [id])
+  dealId             String?
+  deal               Deal?             @relation(fields: [dealId], references: [id])
+  tenantId           String?
+  tenant             Tenant?           @relation(fields: [tenantId], references: [id])
+  unitId             String?
+  unit               Unit?             @relation(fields: [unitId], references: [id])
+  leaseId            String?
+  lease              Lease?            @relation(fields: [leaseId], references: [id])
   maintenanceRequestId String?
-  maintenanceRequest   MaintenanceRequest? @relation(fields: [maintenanceRequestId], references: [id])
-  transactionId String?
-  transaction Transaction? @relation(fields: [transactionId], references: [id])
-  invoiceId    String?
-  invoice      Invoice?  @relation(fields: [invoiceId], references: [id])
-  billId       String?
-  bill         Bill?     @relation(fields: [billId], references: [id])
-  userId      String
-  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
+  maintenanceRequest MaintenanceRequest? @relation(fields: [maintenanceRequestId], references: [id])
+  transactionId      String?
+  transaction        Transaction?      @relation(fields: [transactionId], references: [id])
+  invoiceId          String?
+  invoice             Invoice?          @relation(fields: [invoiceId], references: [id])
+  billId             String?
+  bill                Bill?             @relation(fields: [billId], references: [id])
+  userId             String
+  user               User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
 
   @@map("documents")
 }
 
 model License {
-  id          String   @id @default(cuid())
-  name        String
-  type        String
-  issueDate   DateTime
-  expiryDate  DateTime
-  status      LicenseStatus @default(VALID)
-  userId      String
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id                 String            @id @default(cuid())
+  name               String
+  type               String
+  issueDate          DateTime
+  expiryDate         DateTime
+  status             LicenseStatus     @default(VALID)
+  userId             String
+  user               User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
 
   @@map("licenses")
 }
 
 model Tenant {
-  id          String   @id @default(cuid())
-  name        String
-  email       String
-  phone       String
-  leaseStart  DateTime?
-  leaseEnd    DateTime?
-  propertyId  String
-  property    Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
-  userId      String
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  // Relations
-  rentTransactions RentTransaction[]
-  documents        Document[]
-  leases           Lease[]
+  id                 String            @id @default(cuid())
+  name               String
+  email              String
+  phone              String
+  leaseStart         DateTime?
+  leaseEnd           DateTime?
+  propertyId         String
+  property           Property          @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  userId             String
+  user               User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  rentTransactions   RentTransaction[]
+  documents          Document[]
+  leases             Lease[]
   maintenanceRequests MaintenanceRequest[]
-  transactions     Transaction[]
-  invoices         Invoice[]
+  transactions       Transaction[]
+  invoices           Invoice[]
 
   @@map("tenants")
 }
 
 model RentTransaction {
-  id          String   @id @default(cuid())
-  amount      Float
-  date        DateTime
-  description String?
-  tenantId    String
-  tenant      Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
-  propertyId  String
-  property    Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
-  userId      String
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id                 String            @id @default(cuid())
+  amount             Float
+  date               DateTime
+  description        String?
+  tenantId           String
+  tenant             Tenant            @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  propertyId         String
+  property           Property          @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  userId             String
+  user               User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
 
   @@map("rent_transactions")
 }
 
 model Expense {
-  id          String   @id @default(cuid())
-  amount      Float
-  category    ExpenseCategory
-  description String?
-  date        DateTime
-  propertyId  String
-  property    Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
-  userId      String
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id                 String            @id @default(cuid())
+  amount             Float
+  category           ExpenseCategory
+  description        String?
+  date               DateTime
+  propertyId         String
+  property           Property          @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  userId             String
+  user               User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
 
   @@map("expenses")
 }
 
 model Notification {
-  id          String   @id @default(cuid())
-  type        NotificationType
-  title       String
-  message     String
-  status      NotificationStatus @default(UNREAD)
-  userId      String
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id                 String            @id @default(cuid())
+  type               NotificationType
+  title              String
+  message            String
+  status             NotificationStatus @default(UNREAD)
+  userId             String
+  user               User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
 
   @@map("notifications")
 }
 
 model Unit {
-  id          String   @id @default(cuid())
-  name        String
-  propertyId  String
-  property    Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
-  leases      Lease[]
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  // Relations
+  id                 String            @id @default(cuid())
+  name               String
+  propertyId         String
+  property           Property          @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  leases             Lease[]
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
   maintenanceRequests MaintenanceRequest[]
-  documents           Document[]
+  documents          Document[]
 
   @@map("units")
 }
 
 model Lease {
-  id           String     @id @default(cuid())
-  unitId       String
-  unit         Unit       @relation(fields: [unitId], references: [id], onDelete: Cascade)
-  tenantId     String
-  tenant       Tenant     @relation(fields: [tenantId], references: [id], onDelete: Cascade)
-  startDate    DateTime
-  endDate      DateTime
-  rentAmount   Float
-  status       LeaseStatus @default(ACTIVE)
-  createdAt    DateTime   @default(now())
-  updatedAt    DateTime   @updatedAt
-
-  // Relations
-  payments     Payment[]
-  documents    Document[]
+  id                 String            @id @default(cuid())
+  unitId             String
+  unit               Unit              @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  tenantId           String
+  tenant             Tenant            @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  startDate          DateTime
+  endDate            DateTime
+  rentAmount         Float
+  status             LeaseStatus       @default(ACTIVE)
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  payments           Payment[]
+  documents          Document[]
 
   @@map("leases")
 }
 
 model Payment {
-  id         String       @id @default(cuid())
-  leaseId    String
-  lease      Lease        @relation(fields: [leaseId], references: [id], onDelete: Cascade)
-  amount     Float
-  status     PaymentStatus @default(PENDING)
-  date       DateTime     @default(now())
-  dueDate    DateTime?
-  createdAt  DateTime     @default(now())
-  updatedAt  DateTime     @updatedAt
+  id                 String            @id @default(cuid())
+  leaseId            String
+  lease              Lease             @relation(fields: [leaseId], references: [id], onDelete: Cascade)
+  invoiceId          String?
+  invoice            Invoice?          @relation(fields: [invoiceId], references: [id])
+  amount             Float
+  status             PaymentStatus     @default(PENDING)
+  date               DateTime          @default(now())
+  dueDate            DateTime?
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
 
   @@map("payments")
 }
 
 model MaintenanceRequest {
-  id          String            @id @default(cuid())
-  unitId      String
-  unit        Unit              @relation(fields: [unitId], references: [id], onDelete: Cascade)
-  tenantId    String?
-  tenant      Tenant?           @relation(fields: [tenantId], references: [id])
-  description String
-  status      RequestStatus     @default(OPEN)
-  priority    String?           @default("MEDIUM")
-  assignedTo  String?
-  createdAt   DateTime          @default(now())
-  updatedAt   DateTime          @updatedAt
-
-  // Relations
-  documents   Document[]
+  id                 String            @id @default(cuid())
+  unitId             String
+  unit               Unit              @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  tenantId           String?
+  tenant             Tenant?           @relation(fields: [tenantId], references: [id])
+  description        String
+  status             RequestStatus     @default(OPEN)
+  priority           String?           @default("MEDIUM")
+  assignedTo         String?
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  documents          Document[]
 
   @@map("maintenance_requests")
+}
+
+model BankAccount {
+  id                 String            @id @default(cuid())
+  name               String
+  accountNumber      String
+  bankName           String
+  balance            Float             @default(0)
+  currency           String            @default("KES")
+  isActive           Boolean           @default(true)
+  lastReconciled     DateTime?
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  transactions       Transaction[]
+
+  @@map("bank_accounts")
+}
+
+model ChartOfAccount {
+  id                 String            @id @default(cuid())
+  code               String            @unique
+  name               String
+  type               AccountType
+  category           AccountCategory
+  description        String?
+  isActive           Boolean           @default(true)
+  parentId           String?
+  parent             ChartOfAccount?   @relation("AccountHierarchy", fields: [parentId], references: [id])
+  children           ChartOfAccount[]  @relation("AccountHierarchy")
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  journalEntries     JournalEntry[]
+  journalEntryLines  JournalEntryLine[]
+  transactions       Transaction[]
+
+  @@map("chart_of_accounts")
+}
+
+model Invoice {
+  id                 String            @id @default(cuid())
+  invoiceNumber      String            @unique
+  date               DateTime
+  dueDate            DateTime
+  amount             Float
+  taxAmount          Float             @default(0)
+  totalAmount        Float
+  status             InvoiceStatus     @default(DRAFT)
+  notes              String?
+  tenantId           String
+  tenant             Tenant            @relation(fields: [tenantId], references: [id])
+  propertyId         String
+  property           Property          @relation(fields: [propertyId], references: [id])
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  payments           Payment[]
+  documents          Document[]
+
+  @@map("invoices")
+}
+
+model Bill {
+  id                 String            @id @default(cuid())
+  billNumber         String            @unique
+  date               DateTime
+  dueDate            DateTime
+  amount             Float
+  taxAmount          Float             @default(0)
+  totalAmount        Float
+  status             BillStatus        @default(DRAFT)
+  vendorName         String
+  vendorEmail        String?
+  description        String?
+  category           String
+  approvedBy         String?
+  approvedAt         DateTime?
+  paidAt             DateTime?
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  documents          Document[]
+
+  @@map("bills")
+}
+
+model JournalEntry {
+  id                 String            @id @default(cuid())
+  date               DateTime
+  description        String
+  reference          String?
+  totalDebit         Float             @default(0)
+  totalCredit        Float             @default(0)
+  isBalanced         Boolean           @default(false)
+  postedBy           String
+  postedAt           DateTime          @default(now())
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  lines              JournalEntryLine[]
+  chartOfAccountId   String
+  chartOfAccount     ChartOfAccount    @relation(fields: [chartOfAccountId], references: [id])
+
+  @@map("journal_entries")
+}
+
+model JournalEntryLine {
+  id                 String            @id @default(cuid())
+  journalEntryId     String
+  journalEntry       JournalEntry      @relation(fields: [journalEntryId], references: [id], onDelete: Cascade)
+  accountId          String
+  account            ChartOfAccount    @relation(fields: [accountId], references: [id])
+  debit              Float             @default(0)
+  credit             Float             @default(0)
+  description        String?
+  createdAt          DateTime          @default(now())
+
+  @@map("journal_entry_lines")
+}
+
+model DocumentTemplate {
+  id                 String            @id @default(cuid())
+  name               String
+  type               String
+  category           String
+  content            String
+  variables          String
+  isActive           Boolean           @default(true)
+  createdBy          String
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+
+  @@map("document_templates")
+}
+
+model AccountingPeriod {
+  id                 String            @id @default(cuid())
+  name               String
+  startDate          DateTime
+  endDate            DateTime
+  isClosed           Boolean           @default(false)
+  closedBy           String?
+  closedAt           DateTime?
+  createdAt          DateTime          @default(now())
+
+  @@map("accounting_periods")
+}
+
+model Budget {
+  id                 String            @id @default(cuid())
+  name               String
+  fiscalYear         Int
+  totalBudget        Float
+  spentAmount        Float             @default(0)
+  category           String
+  propertyId         String?
+  property           Property?         @relation(fields: [propertyId], references: [id])
+  createdBy          String
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  budgetItems        BudgetItem[]
+
+  @@map("budgets")
+}
+
+model BudgetItem {
+  id                 String            @id @default(cuid())
+  budgetId           String
+  budget             Budget            @relation(fields: [budgetId], references: [id], onDelete: Cascade)
+  category           String
+  budgetedAmount     Float
+  spentAmount        Float             @default(0)
+  month              Int
+  year               Int
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+
+  @@map("budget_items")
+}
+
+model BlogPost {
+  id                 String            @id @default(cuid())
+  title              String
+  slug               String            @unique
+  excerpt            String
+  content            String?
+  author             String
+  category           String
+  tags               String?
+  country            String?
+  region             String?
+  featured           Boolean           @default(false)
+  published              Boolean           @default(true)
+  publishedAt            DateTime?
+  readTime               String            @default("5 min read")
+  image                  String?
+  seoTitle               String?
+  seoDescription         String?
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+
+  @@map("blog_posts")
 }
 
 enum Role {
@@ -319,7 +507,6 @@ enum DealStatus {
   CLOSED
   CANCELLED
 }
-
 
 enum LicenseStatus {
   VALID
@@ -427,239 +614,4 @@ enum AccountCategory {
   OTHER_REVENUE
   OPERATING_EXPENSE
   OTHER_EXPENSE
-}
-
-model BankAccount {
-  id            String   @id @default(cuid())
-  name          String
-  accountNumber String
-  bankName      String
-  balance       Float    @default(0)
-  currency      String   @default("KES")
-  isActive      Boolean  @default(true)
-  lastReconciled DateTime?
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
-
-  // Relations
-  transactions Transaction[]
-
-  @@map("bank_accounts")
-}
-
-model ChartOfAccount {
-  id          String          @id @default(cuid())
-  code        String          @unique
-  name        String
-  type        AccountType
-  category    AccountCategory
-  description String?
-  isActive    Boolean         @default(true)
-  parentId    String?
-  parent      ChartOfAccount? @relation("AccountHierarchy", fields: [parentId], references: [id])
-  children    ChartOfAccount[] @relation("AccountHierarchy")
-  createdAt   DateTime        @default(now())
-  updatedAt   DateTime        @updatedAt
-
-  // Relations
-  journalEntries JournalEntry[]
-
-  @@map("chart_of_accounts")
-}
-
-model Transaction {
-  id              String           @id @default(cuid())
-  date            DateTime
-  amount          Float
-  description     String
-  type            TransactionType
-  status          TransactionStatus @default(PENDING)
-  reference       String?
-  bankAccountId   String?
-  bankAccount     BankAccount?     @relation(fields: [bankAccountId], references: [id])
-  chartOfAccountId String?
-  chartOfAccount  ChartOfAccount?  @relation(fields: [chartOfAccountId], references: [id])
-  propertyId      String?
-  property        Property?        @relation(fields: [propertyId], references: [id])
-  tenantId        String?
-  tenant          Tenant?          @relation(fields: [tenantId], references: [id])
-  reconciledAt    DateTime?
-  reconciledBy    String?
-  createdAt       DateTime         @default(now())
-  updatedAt       DateTime         @updatedAt
-
-  // Relations
-  documents       Document[]
-
-  @@map("transactions")
-}
-
-model Invoice {
-  id          String        @id @default(cuid())
-  invoiceNumber String      @unique
-  date        DateTime
-  dueDate     DateTime
-  amount      Float
-  taxAmount   Float         @default(0)
-  totalAmount Float
-  status      InvoiceStatus @default(DRAFT)
-  notes       String?
-  tenantId    String
-  tenant      Tenant        @relation(fields: [tenantId], references: [id])
-  propertyId  String
-  property    Property      @relation(fields: [propertyId], references: [id])
-  createdAt   DateTime      @default(now())
-  updatedAt   DateTime      @updatedAt
-
-  // Relations
-  payments    Payment[]
-  documents   Document[]
-
-  @@map("invoices")
-}
-
-model Bill {
-  id            String     @id @default(cuid())
-  billNumber    String     @unique
-  date          DateTime
-  dueDate       DateTime
-  amount        Float
-  taxAmount     Float      @default(0)
-  totalAmount   Float
-  status        BillStatus @default(DRAFT)
-  vendorName    String
-  vendorEmail   String?
-  description   String?
-  category      String
-  approvedBy    String?
-  approvedAt    DateTime?
-  paidAt        DateTime?
-  createdAt     DateTime   @default(now())
-  updatedAt     DateTime   @updatedAt
-
-  // Relations
-  documents     Document[]
-
-  @@map("bills")
-}
-
-model JournalEntry {
-  id                String   @id @default(cuid())
-  date              DateTime
-  description       String
-  reference         String?
-  totalDebit        Float    @default(0)
-  totalCredit       Float    @default(0)
-  isBalanced        Boolean  @default(false)
-  postedBy          String
-  postedAt          DateTime @default(now())
-  createdAt         DateTime @default(now())
-  updatedAt         DateTime @updatedAt
-
-  // Relations
-  lines             JournalEntryLine[]
-  chartOfAccountId  String
-  chartOfAccount    ChartOfAccount @relation(fields: [chartOfAccountId], references: [id])
-
-  @@map("journal_entries")
-}
-
-model JournalEntryLine {
-  id             String       @id @default(cuid())
-  journalEntryId String
-  journalEntry   JournalEntry @relation(fields: [journalEntryId], references: [id], onDelete: Cascade)
-  accountId      String
-  account        ChartOfAccount @relation(fields: [accountId], references: [id])
-  debit          Float        @default(0)
-  credit         Float        @default(0)
-  description    String?
-  createdAt      DateTime     @default(now())
-
-  @@map("journal_entry_lines")
-}
-
-model DocumentTemplate {
-  id          String   @id @default(cuid())
-  name        String
-  type        String
-  category    String
-  content     String   // JSON or HTML template content
-  variables   String   // JSON array of available variables
-  isActive    Boolean  @default(true)
-  createdBy   String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  @@map("document_templates")
-}
-
-model AccountingPeriod {
-  id        String   @id @default(cuid())
-  name      String
-  startDate DateTime
-  endDate   DateTime
-  isClosed  Boolean  @default(false)
-  closedBy  String?
-  closedAt  DateTime?
-  createdAt DateTime @default(now())
-
-  @@map("accounting_periods")
-}
-
-model Budget {
-  id             String   @id @default(cuid())
-  name           String
-  fiscalYear     Int
-  totalBudget    Float
-  spentAmount    Float    @default(0)
-  category       String
-  propertyId     String?
-  property       Property? @relation(fields: [propertyId], references: [id])
-  createdBy      String
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
-
-  // Relations
-  budgetItems    BudgetItem[]
-
-  @@map("budgets")
-}
-
-model BudgetItem {
-  id          String   @id @default(cuid())
-  budgetId    String
-  budget      Budget   @relation(fields: [budgetId], references: [id], onDelete: Cascade)
-  category    String
-  budgetedAmount Float
-  spentAmount Float    @default(0)
-  month       Int
-  year        Int
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  @@map("budget_items")
-}
-
-model BlogPost {
-  id          String   @id @default(cuid())
-  title       String
-  slug        String   @unique
-  excerpt     String
-  content     String?
-  author      String
-  category    String
-  tags        String?  // JSON array of tags
-  country     String?
-  region      String?
-  featured    Boolean  @default(false)
-  published   Boolean  @default(true)
-  publishedAt DateTime?
-  readTime    String   @default("5 min read")
-  image       String?
-  seoTitle    String?
-  seoDescription String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  @@map("blog_posts")
 }
