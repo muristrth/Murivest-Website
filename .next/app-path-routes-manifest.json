@@ -1,0 +1,19 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/calculator/page": "/calculator",
+  "/blog/page": "/blog",
+  "/blog/[slug]/page": "/blog/[slug]",
+  "/login/page": "/login",
+  "/about/page": "/about",
+  "/foundation/page": "/foundation",
+  "/contact/page": "/contact",
+  "/market/page": "/market",
+  "/process/page": "/process",
+  "/properties/[id]/page": "/properties/[id]",
+  "/leadership/page": "/leadership",
+  "/properties/page": "/properties",
+  "/sell/page": "/sell",
+  "/dashboard/page": "/dashboard",
+  "/page": "/",
+  "/sitemap/page": "/sitemap"
+}

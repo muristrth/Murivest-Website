@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://murivest.co.ke/blog</loc><lastmod>2025-09-07T17:34:39.184Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://murivest.co.ke/market</loc><lastmod>2025-09-07T17:34:39.192Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://murivest.co.ke/sell</loc><lastmod>2025-09-07T17:34:39.192Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://murivest.co.ke/leadership</loc><lastmod>2025-09-07T17:34:39.192Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://murivest.co.ke/foundation</loc><lastmod>2025-09-07T17:34:39.192Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://murivest.co.ke/sitemap</loc><lastmod>2025-09-07T17:34:39.192Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://murivest.co.ke/properties</loc><lastmod>2025-09-07T17:34:39.192Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://murivest.co.ke/calculator</loc><lastmod>2025-09-07T17:34:39.192Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://murivest.co.ke</loc><lastmod>2025-09-07T17:34:39.192Z</lastmod><changefreq>weekly</changefreq><priority>1</priority></url>
-<url><loc>https://murivest.co.ke/process</loc><lastmod>2025-09-07T17:34:39.192Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://murivest.co.ke/about</loc><lastmod>2025-09-07T17:34:39.192Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://murivest.co.ke/contact</loc><lastmod>2025-09-07T17:34:39.192Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://murivest.co.ke/admin</loc><lastmod>2025-09-07T17:34:39.192Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://murivest.co.ke/login</loc><lastmod>2025-09-07T17:34:39.192Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://murivest.co.ke/about</loc><lastmod>2025-09-08T04:13:45.311Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://murivest.co.ke/contact</loc><lastmod>2025-09-08T04:13:45.986Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://murivest.co.ke/properties</loc><lastmod>2025-09-08T04:13:45.986Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://murivest.co.ke/market</loc><lastmod>2025-09-08T04:13:45.986Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://murivest.co.ke/foundation</loc><lastmod>2025-09-08T04:13:45.986Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://murivest.co.ke/sell</loc><lastmod>2025-09-08T04:13:45.986Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://murivest.co.ke/sitemap</loc><lastmod>2025-09-08T04:13:45.986Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://murivest.co.ke/blog</loc><lastmod>2025-09-08T04:13:45.986Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://murivest.co.ke/calculator</loc><lastmod>2025-09-08T04:13:45.986Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://murivest.co.ke</loc><lastmod>2025-09-08T04:13:45.986Z</lastmod><changefreq>weekly</changefreq><priority>1</priority></url>
+<url><loc>https://murivest.co.ke/leadership</loc><lastmod>2025-09-08T04:13:45.986Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://murivest.co.ke/login</loc><lastmod>2025-09-08T04:13:45.986Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://murivest.co.ke/process</loc><lastmod>2025-09-08T04:13:45.986Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>
