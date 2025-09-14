@@ -53,17 +53,6 @@ const NavigationHub = () => {
         { href: "/contact", label: "Contact Us", description: "Schedule a private consultation" }
       ]
     },
-    {
-      title: "Client Resources",
-      description: "Tools and resources for our valued investors",
-      icon: Shield,
-      links: [
-        { href: "/login", label: "Client Portal", description: "Access your private investor dashboard" },
-        { href: "/dashboard", label: "Property Management", description: "Manage your rental properties" },
-        { href: "/operations", label: "Operations Dashboard", description: "Property operations and maintenance" },
-        { href: "/sell", label: "Sell Property", description: "List your property with us" }
-      ]
-    }
   ];
 
   const quickLinks = [
@@ -88,7 +77,7 @@ const NavigationHub = () => {
         </div>
 
         {/* Navigation Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           {navigationSections.map((section, index) => (
             <div key={index} className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
               <div className="flex items-center mb-6">

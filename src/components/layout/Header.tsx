@@ -3,8 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
-import { useSession } from 'next-auth/react';
-import { Phone, User, Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
+import { Phone, Menu, X, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,7 +11,6 @@ const Header = () => {
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname(); // Use the usePathname hook
-  const { data: session } = useSession();
 
   // The isActive function now uses the pathname from usePathname
   const isActive = (path: string) => pathname === path;
@@ -200,10 +198,21 @@ const Header = () => {
             >
               Contact
             </Link>
+
+            {/* Property Management External Link */}
+            <a
+              href="https://murivest.africa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-serif text-sm font-light tracking-wide transition-all duration-300 text-gray-300 hover:text-amber-400 hover:border-b hover:border-amber-400/50 pb-1 flex items-center"
+            >
+              Property Management
+              <ExternalLink className="ml-1 h-3 w-3" />
+            </a>
           </nav>
 
-          {/* Desktop contact + access */}
-          <div className="hidden lg:flex items-center space-x-4">
+          {/* Desktop contact */}
+          <div className="hidden lg:flex items-center">
             <div className="flex items-center text-xs text-gray-300">
               <Phone className="h-3 w-3 mr-1" />
               <Link
@@ -213,23 +222,6 @@ const Header = () => {
                 +254 115 277 610
               </Link>
             </div>
-            {session?.user ? (
-              <Link
-                href="/dashboard"
-                className="flex items-center bg-amber-600 hover:bg-amber-700 text-white px-3 py-2 text-xs font-serif font-medium transition-all duration-300 border border-amber-500 hover:shadow-lg hover:shadow-amber-500/25"
-              >
-                <User className="h-3 w-3 mr-1.5" />
-                Client Portal
-              </Link>
-            ) : (
-              <Link
-                href="/login"
-                className="flex items-center bg-transparent hover:bg-amber-600 text-amber-400 hover:text-white px-3 py-2 text-xs font-serif font-medium transition-all duration-300 border border-amber-400 hover:border-amber-600"
-              >
-                <User className="h-3 w-3 mr-1.5" />
-                Client Portal
-              </Link>
-            )}
           </div>
 
           {/* Mobile menu button */}
@@ -387,30 +379,18 @@ const Header = () => {
               >
                 Contact
               </Link>
+              <a
+                href="https://murivest.africa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-serif text-sm font-light tracking-wide transition-colors text-gray-300 hover:text-amber-400 py-1 flex items-center"
+                onClick={closeAllDropdowns}
+              >
+                Property Management
+                <ExternalLink className="ml-1 h-3 w-3" />
+              </a>
             </nav>
 
-            {/* Mobile Auth Button */}
-            <div className="mt-4 pt-4 border-t border-gray-700">
-              {session?.user ? (
-                <Link
-                  href="/dashboard"
-                  className="flex items-center bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg font-serif font-medium transition-colors w-full justify-center"
-                  onClick={closeAllDropdowns}
-                >
-                  <User className="h-4 w-4 mr-2" />
-                  My Murivest
-                </Link>
-              ) : (
-                <Link
-                  href="/login"
-                  className="flex items-center bg-transparent hover:bg-amber-600 text-amber-400 hover:text-white px-3 py-2 text-sm font-serif font-medium transition-all duration-300 border border-amber-400 hover:border-amber-600 w-full justify-center"
-                  onClick={closeAllDropdowns}
-                >
-                  <User className="h-4 w-4 mr-2" />
-                  Client Portal
-                </Link>
-              )}
-            </div>
           </div>
         )}
       </div>

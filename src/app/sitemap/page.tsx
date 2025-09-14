@@ -42,18 +42,6 @@ const sitemapSections = [
       { href: "/sell", label: "Sell Property", description: "List your property with us" }
     ]
   },
-  {
-    title: "Client Portals",
-    icon: Users,
-    pages: [
-      { href: "/login", label: "Client Login", description: "Access your private dashboard" },
-      { href: "/dashboard", label: "Investor Dashboard", description: "Manage your investments" },
-      { href: "/operations", label: "Operations Dashboard", description: "Property operations management" },
-      { href: "/accountant", label: "Accountant Dashboard", description: "Financial reporting and analysis" },
-      { href: "/secretary", label: "Secretary Dashboard", description: "Administrative tools" },
-      { href: "/admin", label: "Admin Dashboard", description: "System administration" }
-    ]
-  }
 ]
 
 const quickLinks = [

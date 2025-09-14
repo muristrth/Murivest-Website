@@ -144,25 +144,43 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Client Resources */}
+          {/* Property Management Services */}
           <div className="lg:col-span-2">
             <h4 className="text-xl font-light text-amber-400 mb-8 border-b border-amber-600/30 pb-3">
-              Client Resources
+              Property Management
             </h4>
+            <div className="space-y-4 mb-6">
+              <a
+                href="https://murivest.africa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 group"
+              >
+                Landlord Portal
+                <ExternalLink className="ml-2 h-3 w-3 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a
+                href="https://murivest.africa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 bg-slate-700 hover:bg-slate-600 text-stone-200 hover:text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 group border border-amber-600/30"
+              >
+                Tenant Services
+                <ExternalLink className="ml-2 h-3 w-3 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
             <ul className="space-y-4">
               {[
-                { to: "/investor-portal", label: "Private Investor Portal" },
-                { to: "/tax-optimization", label: "Tax Optimization Guide" },
-                { to: "/legal-framework", label: "Legal Framework" },
-                { to: "/immigration-services", label: "Investment Immigration" },
-                { to: "/banking-partners", label: "Banking Partners" },
                 { to: "/property-management", label: "Property Management" },
-                { to: "/concierge-services", label: "Concierge Services" },
-                { to: "/family-office", label: "Family Office Services" }
+                { to: "/tenant-screening", label: "Tenant Screening" },
+                { to: "/lease-administration", label: "Lease Administration" },
+                { to: "/maintenance-services", label: "Maintenance Services" },
+                { to: "/financial-reporting", label: "Financial Reporting" },
+                { to: "/legal-compliance", label: "Legal Compliance" }
               ].map((link, index) => (
                 <li key={index}>
-                  <Link 
-                    href={link.to} 
+                  <Link
+                    href={link.to}
                     className="text-stone-300 hover:text-amber-400 transition-all duration-300 text-sm font-light group flex items-center"
                   >
                     <span className="mr-2 w-1 h-1 bg-amber-600 rounded-full opacity-60 group-hover:opacity-100 transition-opacity"></span>

@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
-import { Providers } from '../components/providers';
 import ScrollToTopButton from '../components/ui/ScrollToTopButton';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
@@ -211,14 +210,12 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <Providers>
-          <div className="min-h-screen">
-            <Header />
-            <main>{children}</main>
-            <Footer />
-            <ScrollToTopButton />
-          </div>
-        </Providers>
+        <div className="min-h-screen">
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <ScrollToTopButton />
+        </div>
       </body>
     </html>
   );
