@@ -221,10 +221,14 @@ const Contact = () => {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent disabled:bg-gray-50 disabled:cursor-not-allowed"
                     >
                       <option value="">Select range</option>
-                      <option value="5-15M">KSh 5M - 15M</option>
-                      <option value="15-30M">KSh 15M - 30M</option>
-                      <option value="30-50M">KSh 30M - 50M</option>
-                      <option value="50M+">KSh 50M+</option>
+                      <option value="50-150M">KSh 50M - 150M</option>
+                      <option value="150-300M">KSh 150M - 300M</option>
+                      <option value="300-500M">KSh 300M - 500M</option>
+                      <option value="500M-1B">KSh 500M - KSh 1B</option>
+                      <option value="1B-3B">KSh 1B - KSh 3B</option>
+                      <option value="3B-5B">KSh 3B - KSh 5B</option>
+                      <option value="5B-10B">KSh 5B - KSh 10B</option>
+
                     </select>
                   </div>
                 </div>
