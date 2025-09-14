@@ -12,8 +12,6 @@ import {
 } from 'lucide-react';
 import { MapPin, TrendingUp, Download, Phone, Mail, MessageCircle, X, ChevronLeft, ChevronRight, Building, DollarSign, Calendar, Users, Star, Calculator, FileText, BarChart3, Shield, Award, Crown, Clock, Globe } from 'lucide-react';
 
-const router = useRouter();
-
 const PropertyDetail = () => {
   const { id } = useParams();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -771,7 +769,7 @@ const PropertyDetail = () => {
     }
   };
 
-  const property = propertyData[id as unknown as keyof typeof propertyData];
+  const property = propertyData[Number(id) as keyof typeof propertyData];
 
   if (!property) {
     return (
