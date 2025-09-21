@@ -199,16 +199,16 @@ const Header = () => {
               Contact
             </Link>
 
-            {/* Property Management External Link */}
-            <a
-              href="https://murivest.africa"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-serif text-sm font-light tracking-wide transition-all duration-300 text-gray-300 hover:text-amber-400 hover:border-b hover:border-amber-400/50 pb-1 flex items-center"
+            <Link
+              href="/it-project-management"
+              className={`font-serif text-sm font-light tracking-wide transition-all duration-300 ${
+                isActive('/it-project-management')
+                  ? 'text-amber-400 border-b border-amber-400'
+                  : 'text-gray-300 hover:text-amber-400 hover:border-b hover:border-amber-400/50'
+              } pb-1`}
             >
-              Property Management
-              <ExternalLink className="ml-1 h-3 w-3" />
-            </a>
+              IT Property Management
+            </Link>
           </nav>
 
           {/* Desktop contact */}
@@ -379,16 +379,17 @@ const Header = () => {
               >
                 Contact
               </Link>
-              <a
-                href="https://murivest.africa"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-serif text-sm font-light tracking-wide transition-colors text-gray-300 hover:text-amber-400 py-1 flex items-center"
+              <Link
+                href="/it-project-management"
+                className={`font-serif text-sm font-light tracking-wide transition-colors ${
+                  isActive('/it-project-management')
+                    ? 'text-amber-400'
+                    : 'text-gray-300 hover:text-amber-400'
+                } py-1`}
                 onClick={closeAllDropdowns}
               >
-                Property Management
-                <ExternalLink className="ml-1 h-3 w-3" />
-              </a>
+                IT Property Management
+              </Link>
             </nav>
 
           </div>

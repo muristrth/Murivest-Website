@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowLeft, Building, Users, Wrench, FileText, Shield, TrendingUp } from 'lucide-react';
+import { ArrowLeft, Building, Users, Wrench, FileText, Shield, TrendingUp, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Property Management Kenya | Professional Property Services | Murivest',
@@ -279,7 +279,7 @@ export default function PropertyManagementPage() {
           <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
             Maximize your property's potential with our comprehensive management services and local market expertise.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <Link
               href="/contact"
               className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
@@ -291,6 +291,16 @@ export default function PropertyManagementPage() {
               className="border border-amber-600 text-amber-400 hover:bg-amber-600 hover:text-white px-8 py-3 rounded-lg font-medium transition-all"
             >
               View Tenant Services
+            </Link>
+          </div>
+          <div className="border-t border-gray-600 pt-6">
+            <p className="text-gray-400 mb-4">Experience the future of property management</p>
+            <Link
+              href="/it-project-management"
+              className="inline-flex items-center bg-white text-slate-900 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium transition-all duration-300 group"
+            >
+              Discover IT Property Management
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>
