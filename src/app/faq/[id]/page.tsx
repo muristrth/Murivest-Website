@@ -122,13 +122,14 @@ const faqData: FAQItem[] = [
 ]
 
 interface PageProps {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const faq = faqData.find(item => item.id === params.id)
+  const resolvedParams = await params
+  const faq = faqData.find(item => item.id === resolvedParams.id)
 
   if (!faq) {
     return {
@@ -162,8 +163,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function FAQDetailPage({ params }: PageProps) {
-  const faq = faqData.find(item => item.id === params.id)
+export default async function FAQDetailPage({ params }: PageProps) {
+  const resolvedParams = await params
+  const faq = faqData.find(item => item.id === resolvedParams.id)
 
   if (!faq) {
     notFound()
