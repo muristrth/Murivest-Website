@@ -65,7 +65,7 @@ const Hero = () => {
       </div>
 
       {/* Main corporate content */}
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-8 lg:py-16 z-30">
+      <div className="relative luxury-container luxury-padding py-12 lg:py-20 z-30">
         <div className="max-w-5xl">
           {/* Prestigious header */}
           <motion.div
@@ -82,7 +82,7 @@ const Hero = () => {
 
           {/* Power headline with social proof */}
           <motion.h1
-            className="text-3xl md:text-5xl font-serif font-light mb-6 leading-tight tracking-tight"
+            className="text-3xl md:text-5xl font-serif font-light mb-8 leading-tight tracking-tight luxury-text-spacing"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
@@ -93,22 +93,22 @@ const Hero = () => {
 
           {/* Authority subheadline */}
           <motion.p
-            className="text-lg md:text-xl mb-5 text-gray-200 leading-relaxed font-serif font-light max-w-4xl"
+            className="text-lg md:text-xl mb-8 text-gray-200 leading-relaxed font-serif font-light max-w-4xl luxury-text-spacing"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Join discerning international investors who have already secured <span className="text-amber-400 font-medium">$50M+</span> in premium Kenyan commercial properties.
+            Join discerning international investors who have secured <span className="text-amber-400 font-medium">$50M+</span> in premium Kenyan properties.
           </motion.p>
 
           {/* Urgency and scarcity */}
           <motion.p
-            className="text-base mb-8 text-amber-200 font-serif italic"
+            className="text-base mb-12 text-amber-200 font-serif italic luxury-text-spacing"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            Exclusive opportunity: Only 12 prime properties remain in our Q4 portfolio.
+            Exclusive opportunity: Limited prime properties available.
           </motion.p>
 
           {/* CTA buttons with hierarchy */}

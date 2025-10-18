@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="absolute bottom-32 left-1/3 w-24 h-px bg-gradient-to-r from-transparent via-amber-600/20 to-transparent"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+      <div className="relative z-10 luxury-container luxury-padding luxury-section-spacing">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
           

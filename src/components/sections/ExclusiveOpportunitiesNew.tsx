@@ -46,30 +46,30 @@ const ExclusiveOpportunities = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-50 to-stone-100">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <section className="luxury-spacing bg-gradient-to-br from-slate-50 to-stone-100">
+      <div className="luxury-container luxury-padding">
         <motion.div
-          className="text-center mb-16"
+          className="text-center luxury-margin-bottom"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center px-4 py-2 bg-slate-900/5 rounded-full text-slate-700 text-sm font-medium mb-6">
+          <div className="inline-flex items-center px-4 py-2 bg-slate-900/5 rounded-full text-slate-700 text-sm font-medium mb-8">
             <TrendingUp className="h-4 w-4 mr-2" />
             Exclusive Access Required
           </div>
-          <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-8 luxury-text-spacing">
             Curated Investment
             <span className="block font-extralight italic text-slate-600">
               Opportunities
             </span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light luxury-text-spacing">
             These exceptional opportunities are reserved for qualified investors
             who appreciate the value of exclusivity and superior returns.
           </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-4">
+          <div className="mt-8 flex flex-wrap justify-center gap-6">
             <Link href="/properties" className="text-amber-600 hover:text-amber-700 font-serif font-medium transition-colors">
               View All Properties →
             </Link>
@@ -82,7 +82,7 @@ const ExclusiveOpportunities = () => {
           </div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 luxury-grid-gap">
           {opportunities.map((opportunity, index) => (
             <motion.div
               key={opportunity.id}

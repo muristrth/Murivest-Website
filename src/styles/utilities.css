@@ -46,3 +46,36 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Luxury Design Utilities */
+.luxury-spacing {
+  @apply py-24 lg:py-32;
+}
+
+.luxury-section-spacing {
+  @apply py-20 lg:py-28;
+}
+
+.luxury-content-spacing {
+  @apply space-y-8 lg:space-y-12;
+}
+
+.luxury-text-spacing {
+  @apply leading-relaxed lg:leading-loose;
+}
+
+.luxury-margin-bottom {
+  @apply mb-12 lg:mb-20;
+}
+
+.luxury-padding {
+  @apply px-6 lg:px-12 xl:px-16;
+}
+
+.luxury-container {
+  @apply max-w-6xl mx-auto;
+}
+
+.luxury-grid-gap {
+  @apply gap-8 lg:gap-12 xl:gap-16;
+}

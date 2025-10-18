@@ -196,16 +196,19 @@ export default function RootLayout({
         <Script
           id="structured-data-agent"
           type="application/ld+json"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData[0]) }}
         />
         <Script
           id="structured-data-website"
           type="application/ld+json"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData[1]) }}
         />
         <Script
           id="structured-data-local-business"
           type="application/ld+json"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData[2]) }}
         />
       </head>

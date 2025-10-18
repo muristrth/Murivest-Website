@@ -66,6 +66,9 @@ const Header = () => {
             >
               Home
             </Link>
+            <nav/>
+            <nav className="hidden md:flex items-center space-x-8">
+            
 
             {/* Invest Dropdown */}
             <div className="relative">
@@ -198,7 +201,16 @@ const Header = () => {
             >
               Contact
             </Link>
-
+            <Link
+              href="/faq"
+              className={`font-serif text-sm font-light tracking-wide transition-all duration-300 ${
+                isActive('/faq')
+                  ? 'text-amber-400 border-b border-amber-400'
+                  : 'text-gray-300 hover:text-amber-400 hover:border-b hover:border-amber-400/50'
+              } pb-1`}
+            >
+              FAQs
+            </Link>
             <Link
               href="/it-project-management"
               className={`font-serif text-sm font-light tracking-wide transition-all duration-300 ${
@@ -223,7 +235,7 @@ const Header = () => {
               </Link>
             </div>
           </div>
-
+          </nav>
           {/* Mobile menu button */}
           <button
             className="md:hidden text-gray-300 hover:text-amber-400 transition-colors"

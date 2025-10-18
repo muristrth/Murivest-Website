@@ -63,21 +63,21 @@ const NavigationHub = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <section className="luxury-section-spacing bg-gradient-to-b from-slate-50 to-white">
+      <div className="luxury-container luxury-padding">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-serif font-light text-gray-900 mb-6">
+        <div className="text-center luxury-margin-bottom">
+          <h2 className="text-4xl font-serif font-light text-gray-900 mb-8 luxury-text-spacing">
             Navigate Your Investment Journey
           </h2>
-          <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto luxury-text-spacing">
             Discover our comprehensive suite of investment services, market insights, and client resources
             designed to maximize your returns in Kenya's premier commercial real estate market.
           </p>
         </div>
 
         {/* Navigation Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 luxury-grid-gap mb-20">
           {navigationSections.map((section, index) => (
             <div key={index} className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
               <div className="flex items-center mb-6">

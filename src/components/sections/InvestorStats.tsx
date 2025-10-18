@@ -33,28 +33,28 @@ const InvestorStats = () => {
   ];
 
   return (
-    <section className="py-20 bg-slate-900">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <section className="luxury-section-spacing bg-slate-900">
+      <div className="luxury-container luxury-padding">
         <motion.div
-          className="text-center mb-16"
+          className="text-center luxury-margin-bottom"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-light text-white mb-8 luxury-text-spacing">
             Trusted by the World's
             <span className="block font-extralight italic text-slate-300">
               Most Discerning Investors
             </span>
           </h2>
-          <p className="text-xl text-slate-400 max-w-3xl mx-auto font-light leading-relaxed">
-            Our track record speaks to those who understand that true wealth 
+          <p className="text-xl text-slate-400 max-w-3xl mx-auto font-light luxury-text-spacing">
+            Our track record speaks to those who understand that true wealth
             is built through strategic patience and exclusive opportunities.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 luxury-grid-gap">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
