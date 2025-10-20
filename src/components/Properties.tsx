@@ -30,6 +30,28 @@ const Properties = () => {
     description: "Landmark hotel property in Nairobi CBD with excellent occupancy rates and comprehensive hospitality amenities",
     roi: "Projected 18% ROI within 24 months"
   },
+  {
+    id: 10,
+    title: "Kenya Comfort Hotel Prime Commercial Building - Nairobi CBD",
+    location: "Nairobi CBD, Kenya",
+    type: "Commercial Building (Sale & Leaseback)",
+    price: "KES 680,000,000",
+    yield: "8%+",
+    image:
+      "https://www.africanparadisesafaris.com/images/kenya-comfort-hotel.jpg",
+    features: [
+      "3,530m² Floor Area",
+      "Located Opposite Jevanjee Gardens",
+      "Ground-Floor Retail Units",
+      "Secure Leaseback at Ksh 4.5M/Month",
+      "Expansion Potential for Additional Floors",
+      "High Foot Traffic Zone",
+    ],
+    status: "Exclusive Offering",
+    description:
+      "Kenya Comfort Hotel for Sale offering steady income and capital appreciation potential.",
+    roi: "Projected 8%+ Yield from Day One",
+  },
 
   {
     id: 2,
