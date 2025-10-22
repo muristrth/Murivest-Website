@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Hero from '../components/sections/Hero'
+import YieldReportSection from '../components/sections/YieldReportSection'
 import InvestorStats from '../components/sections/InvestorStats'
 import ExclusiveOpportunities from '../components/sections/ExclusiveOpportunitiesNew'
 import GlobalPresence from '../components/sections/GlobalPresence'
@@ -28,6 +29,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <YieldReportSection />
       <InvestorStats />
       <ExclusiveOpportunities />
       <NavigationHub />

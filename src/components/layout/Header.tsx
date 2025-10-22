@@ -219,7 +219,7 @@ const Header = () => {
                   : 'text-gray-300 hover:text-amber-400 hover:border-b hover:border-amber-400/50'
               } pb-1`}
             >
-              IT Property Management
+              Property Mgt
             </Link>
           </nav>
 
@@ -400,7 +400,7 @@ const Header = () => {
                 } py-1`}
                 onClick={closeAllDropdowns}
               >
-                IT Property Management
+                Property Mgt
               </Link>
             </nav>
 
