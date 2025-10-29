@@ -18,12 +18,7 @@ export default function FAQContent({ faqData }: FAQContentProps) {
     <section className="luxury-spacing bg-gradient-to-br from-slate-50 to-white min-h-screen">
       <div className="luxury-container luxury-padding">
         {/* Header */}
-        <div
-          className="text-center luxury-margin-bottom"
-          }
-          }
-          }
-        >
+        <div className="text-center luxury-margin-bottom">
           <h1 className="text-5xl md:text-6xl font-serif font-light text-slate-900 mb-6 luxury-text-spacing">
             Commercial Real Estate <span className="text-amber-600">FAQ</span>
           </h1>
@@ -40,9 +35,6 @@ export default function FAQContent({ faqData }: FAQContentProps) {
               <div
                 key={index}
                 className="bg-white rounded-2xl shadow-xl p-8 border border-slate-200/50"
-                }
-                }
-                }
               >
                 <Link
                   href={`/faq/${faq.id}`}
@@ -64,13 +56,7 @@ export default function FAQContent({ faqData }: FAQContentProps) {
         </div>
 
         {/* Call to Action */}
-        <div
-          className="bg-slate-900 rounded-2xl p-8 lg:p-12 text-white text-center mt-16"
-          }
-          }
-          }
-          }
-        >
+        <div className="bg-slate-900 rounded-2xl p-8 lg:p-12 text-white text-center mt-16">
           <h3 className="text-3xl font-serif font-bold mb-4">Ready to Architect Your Wealth?</h3>
           <p className="text-slate-300 font-light mb-8 max-w-2xl mx-auto luxury-text-spacing">
             Join the exclusive circle of sophisticated investors who trust Murivest Realty Group

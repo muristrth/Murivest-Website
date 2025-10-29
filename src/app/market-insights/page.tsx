@@ -93,9 +93,7 @@ export default function MarketInsightsPage() {
       <section className="relative bg-gradient-to-br from-indigo-900 via-indigo-800 to-purple-900 text-white py-24">
         <div className="absolute inset-0 bg-black opacity-30"></div>
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
-          <div
-            className="max-w-4xl"
-          >
+          <div className="max-w-4xl">
             <div className="flex items-center mb-6">
               <BarChart3 className="h-8 w-8 text-indigo-300 mr-3" />
               <span className="text-indigo-300 font-serif text-lg">Expert Market Intelligence</span>
@@ -115,9 +113,6 @@ export default function MarketInsightsPage() {
                 <div
                   key={index}
                   className="text-center bg-white/10 backdrop-blur-md rounded-lg p-4"
-                  }
-                  }
-                  }
                 >
                   <div className="text-2xl font-light text-white mb-1">{metric.value}</div>
                   <div className="text-sm text-indigo-200 mb-1">{metric.label}</div>
@@ -126,18 +121,9 @@ export default function MarketInsightsPage() {
               ))}
             </div>
 
-            <div
-              className="flex flex-col sm:flex-row gap-4"
-              }
-              }
-              }
-            >
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/research">
-                <button
-                  className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 font-medium text-lg transition-all duration-300 flex items-center justify-center group shadow-2xl"
-                  }
-                  }
-                >
+                <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 font-medium text-lg transition-all duration-300 flex items-center justify-center group shadow-2xl">
                   <Download className="mr-3 h-5 w-5" />
                   Download Full Report
                   <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -151,13 +137,7 @@ export default function MarketInsightsPage() {
       {/* Insights Grid */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div
-            className="text-center mb-16"
-            }
-            }
-            }
-            }
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
               Institutional Asset Class Analysis
             </h2>
@@ -172,10 +152,6 @@ export default function MarketInsightsPage() {
               <article
                 key={index}
                 className="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
-                }
-                }
-                }
-                }
               >
                 <div className="md:flex">
                   <div className="md:w-1/3">
@@ -218,12 +194,7 @@ export default function MarketInsightsPage() {
       {/* CTA Section */}
       <section className="py-24 bg-indigo-600 text-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
-          <div
-            }
-            }
-            }
-            }
-          >
+          <div>
             <h2 className="text-3xl md:text-4xl font-light mb-6">
               Access Complete Market Intelligence
             </h2>
@@ -233,21 +204,13 @@ export default function MarketInsightsPage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/research">
-                <button
-                  className="bg-white hover:bg-gray-100 text-indigo-600 px-8 py-4 font-medium text-lg transition-all duration-300"
-                  }
-                  }
-                >
+                <button className="bg-white hover:bg-gray-100 text-indigo-600 px-8 py-4 font-medium text-lg transition-all duration-300">
                   Download Full Report
                 </button>
               </Link>
 
               <Link href="/contact">
-                <button
-                  className="border-2 border-white hover:bg-white hover:text-indigo-600 text-white px-8 py-4 font-medium text-lg transition-all duration-300"
-                  }
-                  }
-                >
+                <button className="border-2 border-white hover:bg-white hover:text-indigo-600 text-white px-8 py-4 font-medium text-lg transition-all duration-300">
                   Schedule Expert Consultation
                 </button>
               </Link>

@@ -79,9 +79,7 @@ export default function AmericasPage() {
       <section className="relative bg-gradient-to-br from-red-900 via-red-800 to-orange-900 text-white py-24">
         <div className="absolute inset-0 bg-black opacity-30"></div>
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
-          <div
-            className="max-w-4xl"
-          >
+          <div className="max-w-4xl">
             <div className="flex items-center mb-6">
               <DollarSign className="h-8 w-8 text-red-300 mr-3" />
               <span className="text-red-300 font-serif text-lg">Americas Investment Network</span>
@@ -109,13 +107,9 @@ export default function AmericasPage() {
               ))}
             </div>
 
-            <div
-              className="flex flex-col sm:flex-row gap-4"
-            >
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
-                <button
-                  className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 font-medium text-lg transition-all duration-300 flex items-center justify-center group shadow-2xl"
-                >
+                <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 font-medium text-lg transition-all duration-300 flex items-center justify-center group shadow-2xl">
                   <Users className="mr-3 h-5 w-5" />
                   Connect with American Investors
                   <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -129,9 +123,7 @@ export default function AmericasPage() {
       {/* Investment Trends */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
               American Investment Strategies
             </h2>
@@ -168,9 +160,7 @@ export default function AmericasPage() {
       {/* Market Opportunities */}
       <section className="py-24 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light mb-6">
               Regional Market Opportunities
             </h2>
@@ -211,8 +201,7 @@ export default function AmericasPage() {
       {/* CTA Section */}
       <section className="py-24 bg-red-600 text-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
-          <div
-          >
+          <div>
             <h2 className="text-3xl md:text-4xl font-light mb-6">
               Partner with American Institutional Capital
             </h2>
@@ -222,17 +211,13 @@ export default function AmericasPage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <button
-                  className="bg-white hover:bg-gray-100 text-red-600 px-8 py-4 font-medium text-lg transition-all duration-300"
-                >
+                <button className="bg-white hover:bg-gray-100 text-red-600 px-8 py-4 font-medium text-lg transition-all duration-300">
                   Schedule American Consultation
                 </button>
               </Link>
 
               <Link href="/research">
-                <button
-                  className="border-2 border-white hover:bg-white hover:text-red-600 text-white px-8 py-4 font-medium text-lg transition-all duration-300"
-                >
+                <button className="border-2 border-white hover:bg-white hover:text-red-600 text-white px-8 py-4 font-medium text-lg transition-all duration-300">
                   Americas Investment Report
                 </button>
               </Link>
@@ -243,134 +228,3 @@ export default function AmericasPage() {
     </div>
   )
 }
-
-      {/* Investment Trends */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div
-            className="text-center mb-16"
-            }
-            }
-            }
-            }
-          >
-            <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
-              American Investment Strategies
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
-          <div
-            className="text-center mb-16"
-          >
-              <div
-                key={index}
-                className="bg-gradient-to-r from-red-50 to-orange-50 rounded-2xl p-8 border border-red-100"
-                }
-                }
-                }
-                }
-              >
-                <div className="flex items-start justify-between mb-6">
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-light text-slate-900 mb-3">{trend.trend}</h3>
-                    <p className="text-slate-600 leading-relaxed mb-4">{trend.description}</p>
-                    <div className="text-red-600 font-medium mb-2">{trend.focus}</div>
-                  </div>
-                  <div className="text-right ml-6">
-              <div
-                key={index}
-                className="bg-gradient-to-r from-red-50 to-orange-50 rounded-2xl p-8 border border-red-100"
-              >
-        </div>
-      </section>
-
-      {/* Market Opportunities */}
-      <section className="py-24 bg-slate-900 text-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div
-            className="text-center mb-16"
-            }
-            }
-            }
-            }
-          >
-            <h2 className="text-4xl md:text-5xl font-light mb-6">
-              Regional Market Opportunities
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto font-light leading-relaxed">
-              Strategic entry points for American institutional capital into African commercial real estate markets.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {marketOpportunities.map((market, index) => (
-              <div
-                key={index}
-                className="bg-slate-800 rounded-2xl p-8 hover:bg-slate-750 transition-colors"
-                }
-                }
-                }
-                }
-              >
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-light text-white mb-2">{market.region}</h3>
-                  <div className="text-red-400 font-medium text-sm">{market.opportunity}</div>
-                </div>
-
-                <p className="text-slate-300 text-sm leading-relaxed mb-6">{market.description}</p>
-
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-slate-400 text-sm">Investment Volume</span>
-                    <span className="text-red-400 font-medium">{market.volume}</span>
-              <div
-                key={index}
-                className="bg-slate-800 rounded-2xl p-8 hover:bg-slate-750 transition-colors"
-              >
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-24 bg-red-600 text-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
-          <div
-            }
-            }
-            }
-            }
-          >
-            <h2 className="text-3xl md:text-4xl font-light mb-6">
-              Partner with American Institutional Capital
-            </h2>
-            <p className="text-xl text-red-100 mb-8 leading-relaxed">
-              Connect with U.S. family offices, Caribbean institutions, and American REITs exploring African commercial real estate opportunities.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
-                <button
-                  className="bg-white hover:bg-gray-100 text-red-600 px-8 py-4 font-medium text-lg transition-all duration-300"
-                  }
-                  }
-                >
-                  Schedule American Consultation
-                </button>
-              </Link>
-          <div>
-                >
-                  Americas Investment Report
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  )
-}
-                <button
-                  className="bg-white hover:bg-gray-100 text-red-600 px-8 py-4 font-medium text-lg transition-all duration-300"
-                >
-                <button
-                  className="border-2 border-white hover:bg-white hover:text-red-600 text-white px-8 py-4 font-medium text-lg transition-all duration-300"
-                >

@@ -79,12 +79,7 @@ export default function MiddleEastPage() {
       <section className="relative bg-gradient-to-br from-amber-900 via-amber-800 to-amber-900 text-white py-24">
         <div className="absolute inset-0 bg-black opacity-40"></div>
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
-          <div
-            className="max-w-4xl"
-            }
-            }
-            }
-          >
+          <div className="max-w-4xl">
             <div className="flex items-center mb-6">
               <Crown className="h-8 w-8 text-amber-300 mr-3" />
               <span className="text-amber-300 font-serif text-lg">Middle East Investment Hub</span>
@@ -104,9 +99,6 @@ export default function MiddleEastPage() {
                 <div
                   key={index}
                   className="text-center bg-white/10 backdrop-blur-md rounded-lg p-4"
-                  }
-                  }
-                  }
                 >
                   <div className="text-2xl font-light text-white mb-1">{metric.value}</div>
                   <div className="text-sm text-amber-200 mb-1">{metric.label}</div>
@@ -115,18 +107,9 @@ export default function MiddleEastPage() {
               ))}
             </div>
 
-            <div
-              className="flex flex-col sm:flex-row gap-4"
-              }
-              }
-              }
-            >
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
-                <button
-                  className="bg-white hover:bg-gray-100 text-amber-900 px-8 py-4 font-medium text-lg transition-all duration-300 flex items-center justify-center group shadow-2xl"
-                  }
-                  }
-                >
+                <button className="bg-white hover:bg-gray-100 text-amber-900 px-8 py-4 font-medium text-lg transition-all duration-300 flex items-center justify-center group shadow-2xl">
                   <DollarSign className="mr-3 h-5 w-5" />
                   Connect with Gulf Investors
                   <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -140,13 +123,7 @@ export default function MiddleEastPage() {
       {/* Investment Trends */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div
-            className="text-center mb-16"
-            }
-            }
-            }
-            }
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
               Capital Diversification Strategies
             </h2>
@@ -161,10 +138,6 @@ export default function MiddleEastPage() {
               <div
                 key={index}
                 className="bg-gradient-to-r from-slate-50 to-amber-50 rounded-2xl p-8 border border-amber-100"
-                }
-                }
-                }
-                }
               >
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex-1">
@@ -194,13 +167,7 @@ export default function MiddleEastPage() {
       {/* Key Cities */}
       <section className="py-24 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div
-            className="text-center mb-16"
-            }
-            }
-            }
-            }
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light mb-6">
               Strategic Investment Hubs
             </h2>
@@ -214,10 +181,6 @@ export default function MiddleEastPage() {
               <div
                 key={index}
                 className="bg-slate-800 rounded-2xl overflow-hidden hover:bg-slate-750 transition-colors"
-                }
-                }
-                }
-                }
               >
                 <div className="relative h-48">
                   <img
@@ -247,12 +210,7 @@ export default function MiddleEastPage() {
       {/* CTA Section */}
       <section className="py-24 bg-amber-600 text-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
-          <div
-            }
-            }
-            }
-            }
-          >
+          <div>
             <h2 className="text-3xl md:text-4xl font-light mb-6">
               Partner with Middle Eastern Institutional Capital
             </h2>
@@ -262,21 +220,13 @@ export default function MiddleEastPage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <button
-                  className="bg-white hover:bg-gray-100 text-amber-600 px-8 py-4 font-medium text-lg transition-all duration-300"
-                  }
-                  }
-                >
+                <button className="bg-white hover:bg-gray-100 text-amber-600 px-8 py-4 font-medium text-lg transition-all duration-300">
                   Schedule Institutional Meeting
                 </button>
               </Link>
 
               <Link href="/research">
-                <button
-                  className="border-2 border-white hover:bg-white hover:text-amber-600 text-white px-8 py-4 font-medium text-lg transition-all duration-300"
-                  }
-                  }
-                >
+                <button className="border-2 border-white hover:bg-white hover:text-amber-600 text-white px-8 py-4 font-medium text-lg transition-all duration-300">
                   Middle East Investment Report
                 </button>
               </Link>

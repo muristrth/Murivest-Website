@@ -178,12 +178,7 @@ export default function CountryFocusPage() {
       <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24">
         <div className="absolute inset-0 bg-black opacity-30"></div>
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
-          <div
-            className="max-w-4xl"
-            }
-            }
-            }
-          >
+          <div className="max-w-4xl">
             <div className="flex items-center mb-6">
               <Globe className="h-8 w-8 text-green-300 mr-3" />
               <span className="text-green-300 font-serif text-lg">African Market Intelligence</span>
@@ -203,9 +198,6 @@ export default function CountryFocusPage() {
                 <div
                   key={index}
                   className="text-center bg-white/10 backdrop-blur-md rounded-lg p-4"
-                  }
-                  }
-                  }
                 >
                   <div className="text-2xl font-light text-white mb-1">{metric.value}</div>
                   <div className="text-sm text-green-200 mb-1">{metric.label}</div>
@@ -214,18 +206,9 @@ export default function CountryFocusPage() {
               ))}
             </div>
 
-            <div
-              className="flex flex-col sm:flex-row gap-4"
-              }
-              }
-              }
-            >
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/research">
-                <button
-                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 font-medium text-lg transition-all duration-300 flex items-center justify-center group shadow-2xl"
-                  }
-                  }
-                >
+                <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 font-medium text-lg transition-all duration-300 flex items-center justify-center group shadow-2xl">
                   <MapPin className="mr-3 h-5 w-5" />
                   Download Country Reports
                   <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -239,13 +222,7 @@ export default function CountryFocusPage() {
       {/* Countries Grid */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div
-            className="text-center mb-16"
-            }
-            }
-            }
-            }
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
               Institutional Market Snapshots
             </h2>
@@ -259,10 +236,6 @@ export default function CountryFocusPage() {
               <div
                 key={index}
                 className="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-green-300 transition-colors"
-                }
-                }
-                }
-                }
               >
                 <div className="flex items-center mb-4">
                   <span className="text-3xl mr-3">{country.flag}</span>
@@ -320,12 +293,7 @@ export default function CountryFocusPage() {
       {/* CTA Section */}
       <section className="py-24 bg-green-600 text-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
-          <div
-            }
-            }
-            }
-            }
-          >
+          <div>
             <h2 className="text-3xl md:text-4xl font-light mb-6">
               Access Detailed Country Analysis
             </h2>
@@ -335,21 +303,13 @@ export default function CountryFocusPage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/research">
-                <button
-                  className="bg-white hover:bg-gray-100 text-green-600 px-8 py-4 font-medium text-lg transition-all duration-300"
-                  }
-                  }
-                >
+                <button className="bg-white hover:bg-gray-100 text-green-600 px-8 py-4 font-medium text-lg transition-all duration-300">
                   Download Country Reports
                 </button>
               </Link>
 
               <Link href="/contact">
-                <button
-                  className="border-2 border-white hover:bg-white hover:text-green-600 text-white px-8 py-4 font-medium text-lg transition-all duration-300"
-                  }
-                  }
-                >
+                <button className="border-2 border-white hover:bg-white hover:text-green-600 text-white px-8 py-4 font-medium text-lg transition-all duration-300">
                   Schedule Country Consultation
                 </button>
               </Link>

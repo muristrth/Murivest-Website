@@ -6,6 +6,10 @@ import { Phone, Mail, MapPin, Globe, Award, Shield, TrendingUp, Users, ArrowUp, 
 
 import { useEffect } from 'react';
 
+// Define the FooterProps type
+interface FooterProps {
+  copyrightYear?: number;
+}
 
   const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
   const scrollToTop = () => {

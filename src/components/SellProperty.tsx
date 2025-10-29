@@ -223,12 +223,7 @@ const SellProperty: FC = () => {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-20"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-          <div
-            className="grid lg:grid-cols-2 gap-12 items-center"
-            }
-            }
-            }
-          >
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="flex items-center mb-6">
                 <Crown className="h-12 w-12 text-amber-400 mr-4" />
@@ -269,12 +264,7 @@ const SellProperty: FC = () => {
           </div>
 
           {/* Form Section */}
-          <div
-            className="lg:col-span-1 mt-12 lg:mt-0"
-            }
-            }
-            }
-          >
+          <div className="lg:col-span-1 mt-12 lg:mt-0">
             <div className="bg-slate-800/80 p-8 md:p-10 rounded-xl shadow-2xl backdrop-blur-sm border border-white/10">
               <h2 className="text-3xl font-serif font-light text-white mb-6 text-center">
                 Request a Free Valuation
@@ -412,10 +402,6 @@ const SellProperty: FC = () => {
               <div
                 key={index}
                 className="text-center group"
-                }
-                }
-                }
-                }
               >
                 <div className="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-amber-200 transition-colors duration-300">
                   <item.icon className="h-10 w-10 text-amber-600" />
@@ -452,10 +438,6 @@ const SellProperty: FC = () => {
               <div
                 key={category.id}
                 className="group bg-white border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-500"
-                }
-                }
-                }
-                }
               >
                 <div className="relative overflow-hidden">
                   <img
@@ -548,10 +530,6 @@ const SellProperty: FC = () => {
               <div
                 key={index}
                 className="text-center group"
-                }
-                }
-                }
-                }
               >
                 <div className="relative mb-8">
                   <div className="w-20 h-20 bg-white border-2 border-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -619,10 +597,6 @@ const SellProperty: FC = () => {
               <div
                 key={index}
                 className="bg-slate-50 overflow-hidden group"
-                }
-                }
-                }
-                }
               >
                 <div className="relative overflow-hidden">
                   <img
@@ -670,12 +644,7 @@ const SellProperty: FC = () => {
       {/* Final CTA */}
       <section className="bg-slate-900 text-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div
-            }
-            }
-            }
-            }
-          >
+          <div>
             <Crown className="h-16 w-16 text-amber-400 mx-auto mb-6" />
             <h2 className="text-4xl lg:text-5xl font-serif font-light mb-6">
               Ready to Maximize

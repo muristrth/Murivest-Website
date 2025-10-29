@@ -4377,12 +4377,7 @@ const Blog = () => {
     <section className="luxury-spacing bg-gradient-to-br from-slate-50 to-white min-h-screen">
       <div className="luxury-container luxury-padding">
         {/* Header */}
-        <div
-          {...({ className: "text-center luxury-margin-bottom" } as any)}
-          }
-          }
-          }
-        >
+        <div className="text-center luxury-margin-bottom">
           <h1 className="text-5xl md:text-6xl font-serif font-light text-slate-900 mb-6 luxury-text-spacing">
             Property <span className="text-amber-600">Insights</span>
           </h1>
@@ -4393,12 +4388,7 @@ const Blog = () => {
         </div>
 
         {/* Filters and Search */}
-        <div
-          {...({ className: "mb-16 bg-white rounded-2xl shadow-xl p-8 border border-slate-200/50" } as any)}
-          }
-          }
-          }
-        >
+        <div className="mb-16 bg-white rounded-2xl shadow-xl p-8 border border-slate-200/50">
           <div className="flex flex-col lg:flex-row gap-6 items-center">
             {/* Search */}
             <div className="relative flex-1 max-w-md">
@@ -4436,12 +4426,7 @@ const Blog = () => {
 
         {/* Featured Article */}
         {filteredPosts.length > 0 && (
-          <div
-            {...({ className: "luxury-margin-bottom" } as any)}
-            }
-            }
-            }
-          >
+          <div className="luxury-margin-bottom">
             <div className="bg-slate-900 rounded-2xl overflow-hidden text-white relative shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-transparent z-10"></div>
               <img
@@ -4503,12 +4488,7 @@ const Blog = () => {
 
         {/* No Results */}
         {filteredPosts.length === 0 && (
-          <div
-            {...({ className: "text-center py-16" } as any)}
-            }
-            }
-            }
-          >
+          <div className="text-center py-16">
             <h3 className="text-2xl font-luxury font-bold text-gray-900 mb-4">No Articles Found</h3>
             <p className="text-gray-600 font-elegant mb-6">
               Try adjusting your search criteria or browse all articles
@@ -4526,13 +4506,7 @@ const Blog = () => {
         )}
 
         {/* Newsletter Signup */}
-        <div
-          {...({ className: "bg-navy-950 rounded-2xl p-8 lg:p-12 text-white text-center" } as any)}
-          }
-          }
-          }
-          }
-        >
+        <div className="bg-navy-950 rounded-2xl p-8 lg:p-12 text-white text-center">
           <h3 className="text-3xl font-luxury font-bold mb-4">Stay Updated</h3>
           <p className="text-slate-300 font-light mb-8 max-w-2xl mx-auto luxury-text-spacing">
             Subscribe to our newsletter for the latest insights, market analysis, and exclusive investment opportunities.

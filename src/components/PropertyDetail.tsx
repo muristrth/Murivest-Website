@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 
 import { 
   ArrowLeft,
@@ -501,12 +502,7 @@ const PropertyDetail = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 py-20">
 
           {/* LEFT COLUMN: Hero Text (5/12 width on large screens) */}
-          <div
-            className="lg:col-span-5"
-            }
-            }
-            }
-          >
+          <div className="lg:col-span-5">
             <div className="max-w-4xl">
               <div className="inline-flex items-center gap-3 mb-8">
                 <div className="w-12 h-px bg-[#c9a961]"></div>
@@ -534,12 +530,7 @@ const PropertyDetail = () => {
           </div>
 
           {/* RIGHT COLUMN: Image Gallery (7/12 width on large screens) */}
-          <div
-            className="lg:col-span-7"
-            }
-            }
-            }
-          >
+          <div className="lg:col-span-7">
             <div className="relative group cursor-pointer" onClick={() => setIsImageModalOpen(true)}>
               {/* Image Aspect Ratio adjusted to 3:2 (paddingBottom: '66.66%') */}
               <div className="relative overflow-hidden bg-gray-100" style={{ paddingBottom: '66.66%' }}>
@@ -818,16 +809,10 @@ const PropertyDetail = () => {
         {isImageModalOpen && (
           <div
             className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-8"
-            }
-            }
-            exit={{ opacity: 0 }}
             onClick={() => setIsImageModalOpen(false)}
           >
             <div
               className="relative max-w-6xl max-h-full"
-              }
-              }
-              exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
             >
               <button
