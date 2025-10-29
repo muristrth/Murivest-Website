@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+
 import Link from 'next/link'
 
 interface FAQItem {
@@ -18,11 +18,11 @@ export default function FAQContent({ faqData }: FAQContentProps) {
     <section className="luxury-spacing bg-gradient-to-br from-slate-50 to-white min-h-screen">
       <div className="luxury-container luxury-padding">
         {/* Header */}
-        <motion.div
+        <div
           className="text-center luxury-margin-bottom"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          }
+          }
+          }
         >
           <h1 className="text-5xl md:text-6xl font-serif font-light text-slate-900 mb-6 luxury-text-spacing">
             Commercial Real Estate <span className="text-amber-600">FAQ</span>
@@ -31,18 +31,18 @@ export default function FAQContent({ faqData }: FAQContentProps) {
             Expert insights and institutional-grade answers to your most pressing commercial real estate questions.
             Discover why Murivest Realty Group is East Africa's premier investment authority.
           </p>
-        </motion.div>
+        </div>
 
         {/* FAQ Content */}
         <div className="max-w-4xl mx-auto">
           <div className="space-y-8">
             {faqData.map((faq, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="bg-white rounded-2xl shadow-xl p-8 border border-slate-200/50"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                }
+                }
+                }
               >
                 <Link
                   href={`/faq/${faq.id}`}
@@ -58,18 +58,18 @@ export default function FAQContent({ faqData }: FAQContentProps) {
                 >
                   Read full answer →
                 </Link>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
 
         {/* Call to Action */}
-        <motion.div
+        <div
           className="bg-slate-900 rounded-2xl p-8 lg:p-12 text-white text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          }
+          }
+          }
+          }
         >
           <h3 className="text-3xl font-serif font-bold mb-4">Ready to Architect Your Wealth?</h3>
           <p className="text-slate-300 font-light mb-8 max-w-2xl mx-auto luxury-text-spacing">
@@ -90,7 +90,7 @@ export default function FAQContent({ faqData }: FAQContentProps) {
               Explore Properties
             </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

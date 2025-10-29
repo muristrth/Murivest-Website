@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { ArrowRight, MapPin, Calendar, TrendingUp } from 'lucide-react';
 
 const ExclusiveOpportunities = () => {
@@ -48,13 +47,7 @@ const ExclusiveOpportunities = () => {
   return (
     <section className="luxury-spacing bg-gradient-to-br from-slate-50 to-stone-100">
       <div className="luxury-container luxury-padding">
-        <motion.div
-          className="text-center luxury-margin-bottom"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        <div className="text-center luxury-margin-bottom">
           <div className="inline-flex items-center px-4 py-2 bg-slate-900/5 rounded-full text-slate-700 text-sm font-medium mb-8">
             <TrendingUp className="h-4 w-4 mr-2" />
             Exclusive Access Required
@@ -80,18 +73,13 @@ const ExclusiveOpportunities = () => {
               ROI Calculator →
             </Link>
           </div>
-        </motion.div>
+        </div>
 
         <div className="grid lg:grid-cols-3 luxury-grid-gap">
           {opportunities.map((opportunity, index) => (
-            <motion.div
+            <div
               key={opportunity.id}
               className="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200/50 hover:shadow-2xl transition-all duration-500"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10 }}
             >
               <div className="relative h-64">
                 <img
@@ -143,41 +131,29 @@ const ExclusiveOpportunities = () => {
                 </div>
 
                 <Link href="/contact">
-                  <motion.button
+                  <button
                     className="w-full bg-slate-900 text-white py-4 rounded-2xl font-medium hover:bg-slate-800 transition-colors flex items-center justify-center"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
                   >
                     Request Private Briefing
                     <ArrowRight className="h-4 w-4 ml-2" />
-                  </motion.button>
+                  </button>
                 </Link>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-        >
+        <div className="text-center mt-16">
           <p className="text-slate-600 mb-6 font-light">
             Access to our complete portfolio requires qualification and invitation.
           </p>
           <Link href="/contact">
-            <motion.button
-              className="inline-flex items-center px-8 py-4 bg-slate-900 text-white rounded-2xl font-medium hover:bg-slate-800 transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <button className="inline-flex items-center px-8 py-4 bg-slate-900 text-white rounded-2xl font-medium hover:bg-slate-800 transition-colors">
               Schedule Private Consultation
               <ArrowRight className="h-4 w-4 ml-2" />
-            </motion.button>
+            </button>
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

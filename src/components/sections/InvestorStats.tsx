@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+
 import { TrendingUp, Users, Globe, Award } from 'lucide-react';
 
 const InvestorStats = () => {
@@ -35,13 +35,7 @@ const InvestorStats = () => {
   return (
     <section className="luxury-section-spacing bg-slate-900">
       <div className="luxury-container luxury-padding">
-        <motion.div
-          className="text-center luxury-margin-bottom"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        <div className="text-center luxury-margin-bottom">
           <h2 className="text-4xl md:text-5xl font-light text-white mb-8 luxury-text-spacing">
             Trusted by the World's
             <span className="block font-extralight italic text-slate-300">
@@ -52,17 +46,13 @@ const InvestorStats = () => {
             Our track record speaks to those who understand that true wealth
             is built through strategic patience and exclusive opportunities.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 luxury-grid-gap">
           {stats.map((stat, index) => (
-            <motion.div
+            <div
               key={index}
               className="text-center group"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
             >
               <div className="inline-flex items-center justify-center w-16 h-16 bg-slate-800 rounded-2xl mb-6 group-hover:bg-slate-700 transition-colors">
                 <stat.icon className="h-8 w-8 text-slate-300" />
@@ -76,7 +66,7 @@ const InvestorStats = () => {
               <div className="text-sm text-slate-500 font-light">
                 {stat.description}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

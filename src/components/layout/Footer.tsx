@@ -4,10 +4,45 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, Mail, MapPin, Globe, Award, Shield, TrendingUp, Users, ArrowUp, ExternalLink } from 'lucide-react';
 
-const Footer = () => {
+import { useEffect } from 'react';
+
+
+  const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  useEffect(() => {
+    // 1. Initialize the global $zoho object to prevent runtime errors
+    // This part is the first <script> block from your original code
+    if (typeof window !== 'undefined') {
+      (window as any).$zoho = (window as any).$zoho || {};
+      (window as any).$zoho.salesiq = (window as any).$zoho.salesiq || {
+        ready: function() {}
+      };
+
+      // 2. Load the main SalesIQ script
+      const scriptId = 'zsiqscript';
+      const scriptSrc = 'https://salesiq.zohopublic.com/widget?wc=siq8d0a379949e0072835c3186d3b3e2f2368fd652bd8160a511e2f63a1bdc4a5e4';
+
+      // Check if the script has already been added to prevent duplicates
+      if (!document.getElementById(scriptId)) {
+        const script = document.createElement('script');
+        script.id = scriptId;
+        script.src = scriptSrc;
+        script.defer = true;
+
+        // Append the script to the <body> element
+        document.body.appendChild(script);
+
+        // Optional: Cleanup function to remove the script when the component unmounts
+        // Usually not necessary for chat widgets, but good practice.
+        return () => {
+          document.body.removeChild(script);
+        };
+      }
+    }
+  }, []);
 
   return (
     <footer className="relative bg-gradient-to-b from-slate-900 to-slate-900 text-stone-100 overflow-hidden" style={{ fontFamily: 'Playfair Display, serif' }}>

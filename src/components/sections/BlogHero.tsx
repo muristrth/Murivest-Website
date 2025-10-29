@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+
 import { ArrowRight, Calendar, User, TrendingUp, Globe, Shield } from 'lucide-react';
 
 interface BlogPost {
@@ -62,50 +62,50 @@ const BlogHero = () => {
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
         {/* Hero Header */}
-        <motion.div
+        <div
           {...({ className: "text-center max-w-4xl mx-auto mb-16" } as any)}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          }
+          }
+          }
         >
-          <motion.div
+          <div
             {...({ className: "inline-flex items-center px-4 py-2 bg-slate-900/5 rounded-full text-slate-700 text-sm font-medium mb-6" } as any)}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            }
+            }
+            }
           >
             <Globe className="h-4 w-4 mr-2" />
             Exclusive Investment Intelligence
-          </motion.div>
+          </div>
 
-          <motion.h1
+          <h1
             {...({ className: "text-5xl md:text-6xl lg:text-7xl font-light text-slate-900 mb-6 tracking-tight" } as any)}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            }
+            }
+            }
           >
             Investment
             <span className="block font-extralight italic text-slate-600">
               Insights
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
+          <p
             {...({ className: "text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-light" } as any)}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            }
+            }
+            }
           >
             Privileged access to market intelligence, investment strategies, and exclusive opportunities 
             reserved for discerning international investors seeking extraordinary returns.
-          </motion.p>
+          </p>
 
           {/* Trust indicators */}
-          <motion.div
+          <div
             {...({ className: "flex items-center justify-center space-x-8 mt-8 text-slate-500" } as any)}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            }
+            }
+            }
           >
             <div className="flex items-center">
               <Shield className="h-5 w-5 mr-2" />
@@ -115,15 +115,15 @@ const BlogHero = () => {
               <TrendingUp className="h-5 w-5 mr-2" />
               <span className="text-sm font-medium">Market Leaders</span>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
         {/* Featured Blog Post */}
-        <motion.div
+        <div
           {...({ className: "mb-16" } as any)}
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          }
+          }
+          }
         >
           {blogPosts.filter(post => post.featured).map((post) => (
             <div key={post.id} className="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200/50">
@@ -164,35 +164,35 @@ const BlogHero = () => {
                       </div>
                       <span className="text-sm">{post.readTime}</span>
                     </div>
-                    <motion.button
+                    <button
                       {...({ className: "inline-flex items-center text-slate-900 font-medium hover:text-slate-600 transition-colors" } as any)}
-                      whileHover={{ x: 5 }}
+                      }
                     >
                       Read Article
                       <ArrowRight className="h-4 w-4 ml-2" />
-                    </motion.button>
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Additional Blog Cards */}
-        <motion.div
+        <div
           {...({ className: "grid md:grid-cols-2 gap-8" } as any)}
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          }
+          }
+          }
         >
           {blogPosts.filter(post => !post.featured).map((post, index) => (
-            <motion.div
+            <div
               key={post.id}
               {...({ className: "bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200/50 hover:shadow-xl transition-all duration-300" } as any)}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
-              whileHover={{ y: -5 }}
+              }
+              }
+              }
+              }
             >
               <div className="relative h-48">
                 <img
@@ -219,17 +219,17 @@ const BlogHero = () => {
                     <span>•</span>
                     <span>{post.readTime}</span>
                   </div>
-                  <motion.button
+                  <button
                     {...({ className: "text-slate-900 hover:text-slate-600 transition-colors" } as any)}
-                    whileHover={{ x: 3 }}
+                    }
                   >
                     <ArrowRight className="h-4 w-4" />
-                  </motion.button>
+                  </button>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

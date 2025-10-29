@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+
 import { ArrowRight, TrendingUp, Shield, Crown, Globe, Award, Building } from 'lucide-react';
 
 const Hero = () => {
@@ -47,157 +47,91 @@ const Hero = () => {
 
       {/* Elegant floating elements */}
       <div className="absolute inset-0 overflow-hidden z-20">
-        <motion.div
-          className="absolute top-32 left-16 w-2 h-2 bg-amber-400 rounded-full opacity-30"
-          animate={{ y: [0, -30, 0], opacity: [0.3, 0.6, 0.3] }}
-          transition={{ duration: 8, repeat: Infinity }}
-        />
-        <motion.div
-          className="absolute top-64 right-32 w-3 h-3 bg-amber-300 rounded-full opacity-25"
-          animate={{ y: [0, 40, 0], opacity: [0.25, 0.5, 0.25] }}
-          transition={{ duration: 10, repeat: Infinity }}
-        />
-        <motion.div
-          className="absolute bottom-48 left-32 w-1.5 h-1.5 bg-amber-500 rounded-full opacity-40"
-          animate={{ y: [0, -25, 0], opacity: [0.4, 0.7, 0.4] }}
-          transition={{ duration: 7, repeat: Infinity }}
-        />
+        <div className="absolute top-32 left-16 w-2 h-2 bg-amber-400 rounded-full opacity-30" />
+        <div className="absolute top-64 right-32 w-3 h-3 bg-amber-300 rounded-full opacity-25" />
+        <div className="absolute bottom-48 left-32 w-1.5 h-1.5 bg-amber-500 rounded-full opacity-40" />
       </div>
 
       {/* Main corporate content */}
       <div className="relative luxury-container luxury-padding py-12 lg:py-20 z-30">
         <div className="max-w-5xl">
           {/* Prestigious header */}
-          <motion.div
-            className="flex items-center mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <div className="flex items-center mb-8">
             <Building className="h-7 w-7 text-amber-500 mr-3" />
             <span className="text-amber-500 font-serif text-sm tracking-widest uppercase">
               Established Investment House • Since 2025
             </span>
-          </motion.div>
+          </div>
 
           {/* Power headline with social proof */}
-          <motion.h1
-            className="text-3xl md:text-5xl font-serif font-light mb-8 leading-tight tracking-tight luxury-text-spacing"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-          >
-            Generational Wealth Through
-            <span className="text-amber-400 block font-medium">East African Real Estate</span>
-          </motion.h1>
+          <h1 className="text-3xl md:text-5xl font-serif font-light mb-8 leading-tight tracking-tight luxury-text-spacing">
+            Murivest Realty Ltd. — Fiduciary Capital Intelligence Across Continents
+          </h1>
 
           {/* Authority subheadline */}
-          <motion.p
-            className="text-lg md:text-xl mb-8 text-gray-200 leading-relaxed font-serif font-light max-w-4xl luxury-text-spacing"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Join discerning international investors who have secured <span className="text-amber-400 font-medium">$50M+</span> in premium Kenyan properties.
-          </motion.p>
+          <p className="text-lg md:text-xl mb-8 text-gray-200 leading-relaxed font-serif font-light max-w-4xl luxury-text-spacing">
+            Connecting institutional-grade investors to premium commercial assets across Africa, the Middle East, and Asia-Pacific. Our philosophy: steady income, capital preservation, and fiduciary intelligence for discerning global investors.
+          </p>
 
           {/* Urgency and scarcity */}
-          <motion.p
-            className="text-base mb-12 text-amber-200 font-serif italic luxury-text-spacing"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-          >
+          <p className="text-base mb-12 text-amber-200 font-serif italic luxury-text-spacing">
             Exclusive opportunity: Limited prime properties available.
-          </motion.p>
+          </p>
 
           {/* CTA buttons with hierarchy */}
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
+          <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <Link href="/properties">
-              <motion.button
-                className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 font-serif font-medium text-base transition-all duration-300 flex items-center justify-center group shadow-2xl hover:shadow-amber-500/25 border border-amber-500"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
+              <button className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 font-serif font-medium text-base transition-all duration-300 flex items-center justify-center group shadow-2xl hover:shadow-amber-500/25 border border-amber-500">
                 View Exclusive Portfolio
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
+              </button>
             </Link>
             
-            <motion.button
+            <button
               className="border-2 border-amber-400 hover:bg-amber-400 hover:text-slate-900 text-amber-400 px-6 py-3 font-serif font-medium text-base transition-all duration-300"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
               onClick={() => handleWhatsAppContact("I am an international investor interested in your exclusive portfolio. Please arrange a private consultation.")}
             >
               Private Consultation
-            </motion.button>
-          </motion.div>
+            </button>
+          </div>
 
           {/* Social proof metrics - more corporate */}
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-4 gap-4"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >
-            <motion.div
-              className="flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-none p-4 hover:bg-white/10 transition-all duration-300"
-              whileHover={{ y: -2 }}
-            >
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-none p-4 hover:bg-white/10 transition-all duration-300">
               <TrendingUp className="h-6 w-6 text-amber-400 mr-3" />
               <div>
                 <div className="text-2xl font-serif font-light text-amber-400">22%</div>
                 <div className="text-gray-300 font-serif text-xs uppercase tracking-wide">Average IRR</div>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              className="flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-none p-4 hover:bg-white/10 transition-all duration-300"
-              whileHover={{ y: -2 }}
-            >
+            <div className="flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-none p-4 hover:bg-white/10 transition-all duration-300">
               <Globe className="h-6 w-6 text-amber-400 mr-3" />
               <div>
                 <div className="text-2xl font-serif font-light text-amber-400">4+</div>
                 <div className="text-gray-300 font-serif text-xs uppercase tracking-wide">Countries</div>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              className="flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-none p-4 hover:bg-white/10 transition-all duration-300"
-              whileHover={{ y: -2 }}
-            >
+            <div className="flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-none p-4 hover:bg-white/10 transition-all duration-300">
               <Shield className="h-6 w-6 text-amber-400 mr-3" />
               <div>
                 <div className="text-2xl font-serif font-light text-amber-400">$50M+</div>
                 <div className="text-gray-300 font-serif text-xs uppercase tracking-wide">Assets Under Management</div>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              className="flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-none p-4 hover:bg-white/10 transition-all duration-300"
-              whileHover={{ y: -2 }}
-            >
+            <div className="flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-none p-4 hover:bg-white/10 transition-all duration-300">
               <Award className="h-6 w-6 text-amber-400 mr-3" />
               <div>
                 <div className="text-2xl font-serif font-light text-amber-400">100%</div>
                 <div className="text-gray-300 font-serif text-xs uppercase tracking-wide">Investor Retention</div>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Trust indicators */}
-          <motion.div
-            className="mt-16 pt-8 border-t border-white/10"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-          >
+          <div className="mt-16 pt-8 border-t border-white/10">
             <p className="text-gray-400 font-serif text-sm uppercase tracking-widest mb-4">
               Trusted By International Investors From
             </p>
@@ -212,7 +146,7 @@ const Hero = () => {
               <span>•</span>
               <span>China</span>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

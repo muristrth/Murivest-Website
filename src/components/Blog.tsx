@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { Search, Filter, TrendingUp, ArrowRight } from 'lucide-react';
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -4378,11 +4377,11 @@ const Blog = () => {
     <section className="luxury-spacing bg-gradient-to-br from-slate-50 to-white min-h-screen">
       <div className="luxury-container luxury-padding">
         {/* Header */}
-        <motion.div
+        <div
           {...({ className: "text-center luxury-margin-bottom" } as any)}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          }
+          }
+          }
         >
           <h1 className="text-5xl md:text-6xl font-serif font-light text-slate-900 mb-6 luxury-text-spacing">
             Property <span className="text-amber-600">Insights</span>
@@ -4391,14 +4390,14 @@ const Blog = () => {
             Stay informed with the latest trends, analysis, and insights from Nairobi's commercial real estate market.
             Expert commentary and data-driven insights to guide your investment decisions.
           </p>
-        </motion.div>
+        </div>
 
         {/* Filters and Search */}
-        <motion.div
+        <div
           {...({ className: "mb-16 bg-white rounded-2xl shadow-xl p-8 border border-slate-200/50" } as any)}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          }
+          }
+          }
         >
           <div className="flex flex-col lg:flex-row gap-6 items-center">
             {/* Search */}
@@ -4433,15 +4432,15 @@ const Blog = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Featured Article */}
         {filteredPosts.length > 0 && (
-          <motion.div
+          <div
             {...({ className: "luxury-margin-bottom" } as any)}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            }
+            }
+            }
           >
             <div className="bg-slate-900 rounded-2xl overflow-hidden text-white relative shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-transparent z-10"></div>
@@ -4472,7 +4471,7 @@ const Blog = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         )}
 
         {/* Blog Grid */}
@@ -4504,11 +4503,11 @@ const Blog = () => {
 
         {/* No Results */}
         {filteredPosts.length === 0 && (
-          <motion.div
+          <div
             {...({ className: "text-center py-16" } as any)}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
+            }
+            }
+            }
           >
             <h3 className="text-2xl font-luxury font-bold text-gray-900 mb-4">No Articles Found</h3>
             <p className="text-gray-600 font-elegant mb-6">
@@ -4523,16 +4522,16 @@ const Blog = () => {
             >
               Clear Filters
             </button>
-          </motion.div>
+          </div>
         )}
 
         {/* Newsletter Signup */}
-        <motion.div
+        <div
           {...({ className: "bg-navy-950 rounded-2xl p-8 lg:p-12 text-white text-center" } as any)}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          }
+          }
+          }
+          }
         >
           <h3 className="text-3xl font-luxury font-bold mb-4">Stay Updated</h3>
           <p className="text-slate-300 font-light mb-8 max-w-2xl mx-auto luxury-text-spacing">
@@ -4548,7 +4547,7 @@ const Blog = () => {
               Subscribe
             </button>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

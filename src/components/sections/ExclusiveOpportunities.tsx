@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+
 import { ArrowRight, MapPin, Calendar, TrendingUp } from 'lucide-react';
 
 const ExclusiveOpportunities = () => {
@@ -47,12 +47,12 @@ const ExclusiveOpportunities = () => {
   return (
     <section className="py-24 bg-gradient-to-br from-slate-50 to-stone-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <motion.div
+        <div
           {...({ className: "text-center mb-16" } as any)}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          }
+          }
+          }
+          }
         >
           <div className="inline-flex items-center px-4 py-2 bg-slate-900/5 rounded-full text-slate-700 text-sm font-medium mb-6">
             <TrendingUp className="h-4 w-4 mr-2" />
@@ -68,18 +68,18 @@ const ExclusiveOpportunities = () => {
             These exceptional opportunities are reserved for qualified investors 
             who appreciate the value of exclusivity and superior returns.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {opportunities.map((opportunity, index) => (
-            <motion.div
+            <div
               key={opportunity.id}
               {...({ className: "bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200/50 hover:shadow-2xl transition-all duration-500" } as any)}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10 }}
+              }
+              }
+              }
+              }
+              }
             >
               <div className="relative h-64">
                 <img
@@ -130,38 +130,38 @@ const ExclusiveOpportunities = () => {
                   </div>
                 </div>
 
-                <motion.button
+                <button
                   {...({ className: "w-full bg-slate-900 text-white py-4 rounded-2xl font-medium hover:bg-slate-800 transition-colors flex items-center justify-center" } as any)}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  }
+                  }
                 >
                   Request Private Briefing
                   <ArrowRight className="h-4 w-4 ml-2" />
-                </motion.button>
+                </button>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <motion.div
+        <div
           {...({ className: "text-center mt-16" } as any)}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
+          }
+          }
+          }
+          }
         >
           <p className="text-slate-600 mb-6 font-light">
             Access to our complete portfolio requires qualification and invitation.
           </p>
-          <motion.button
+          <button
             {...({ className: "inline-flex items-center px-8 py-4 bg-slate-900 text-white rounded-2xl font-medium hover:bg-slate-800 transition-colors" } as any)}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            }
+            }
           >
             Schedule Private Consultation
             <ArrowRight className="h-4 w-4 ml-2" />
-          </motion.button>
-        </motion.div>
+          </button>
+        </div>
       </div>
     </section>
   );

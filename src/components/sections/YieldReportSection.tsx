@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+
 import { Download, TrendingUp } from 'lucide-react';
 
 const YieldReportSection = () => {
@@ -54,12 +54,7 @@ const YieldReportSection = () => {
     <section className="py-20 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
       <div className="max-w-5xl mx-auto px-6">
         {/* Minimal header */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: 'easeOut' }}
-        >
+        <div className="text-center mb-16">
           <div className="inline-block mb-4">
             <div className="h-px w-10 bg-amber-600 mx-auto mb-4"></div>
           </div>
@@ -69,17 +64,12 @@ const YieldReportSection = () => {
           <p className="text-amber-100/60 text-sm font-light tracking-wide max-w-lg mx-auto">
             Institutional insights for discerning capital
           </p>
-        </motion.div>
+        </div>
 
         {/* Reports - Horizontal Layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {reports.map((report, index) => (
-            <motion.div
-              key={report.quarter}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.15, ease: 'easeOut' }}
-            >
+            <div key={report.quarter}>
               <div
                 className={`relative bg-slate-800/40 backdrop-blur-sm border transition-all duration-500 hover:bg-slate-800/60 group ${
                   report.isLatest
@@ -122,7 +112,7 @@ const YieldReportSection = () => {
                   </div>
 
                   {/* Download button */}
-                  <motion.a
+                  <a
                     href={`/${report.filename}`}
                     download
                     className={`block w-full py-3 text-center text-xs tracking-[0.15em] uppercase font-light transition-all duration-300 ${
@@ -130,34 +120,27 @@ const YieldReportSection = () => {
                         ? 'bg-amber-600 text-slate-900 hover:bg-amber-500'
                         : 'bg-slate-700/50 text-amber-100/80 hover:bg-slate-700 hover:text-amber-50'
                     }`}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
                   >
                     <span className="flex items-center justify-center gap-3">
                       Access Report
                       <Download className="h-3 w-3" />
                     </span>
-                  </motion.a>
+                  </a>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Minimal footer */}
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
-        >
+        <div className="text-center">
           <div className="inline-block">
             <div className="h-px w-24 bg-amber-600/30 mx-auto mb-6"></div>
             <p className="text-amber-100/30 text-xs tracking-[0.2em] uppercase font-light">
               Confidential • Institutional Access
             </p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

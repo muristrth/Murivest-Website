@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useEffect } from 'react';
-import { motion } from 'framer-motion';
+
 import { ArrowLeft, Calendar, User, Clock, Share2, Bookmark, ThumbsUp } from 'lucide-react';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
@@ -13026,11 +13026,11 @@ const BlogPost = () => {
 
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Article Header */}
-        <motion.header
+        <header
           {...({ className: "mb-12" } as any)}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          }
+          }
+          }
         >
           <div className="mb-6">
             <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-elegant font-semibold">
@@ -13067,28 +13067,28 @@ const BlogPost = () => {
               </button>
             </div>
           </div>
-        </motion.header>
+        </header>
 
         {/* Featured Image */}
-        <motion.div
+        <div
           {...({ className: "mb-12" } as any)}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          }
+          }
+          }
         >
           <img 
             src={post.image} 
             alt={post.title}
             className="w-full h-96 object-cover rounded-2xl shadow-lg"
           />
-        </motion.div>
+        </div>
 
         {/* Article Content */}
-        <motion.div
+        <div
           {...({ className: "prose prose-lg max-w-none mb-12" } as any)}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          }
+          }
+          }
         >
           <div 
             className="font-elegant text-gray-700 leading-relaxed"
@@ -13098,14 +13098,14 @@ const BlogPost = () => {
               lineHeight: '1.75'
             }}
           />
-        </motion.div>
+        </div>
 
         {/* Tags */}
-        <motion.div
+        <div
           {...({ className: "mb-12" } as any)}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          }
+          }
+          }
         >
           <h3 className="font-luxury font-bold text-navy-900 mb-4">Tags</h3>
           <div className="flex flex-wrap gap-2">
@@ -13118,14 +13118,14 @@ const BlogPost = () => {
               </span>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Author Bio */}
-        <motion.div
+        <div
           {...({ className: "bg-white p-8 rounded-2xl shadow-lg mb-12" } as any)}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          }
+          }
+          }
         >
           <div className="flex items-start">
             <img 
@@ -13142,14 +13142,14 @@ const BlogPost = () => {
               </p>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Related Articles */}
-        <motion.div
+        <div
           {...({ className: "bg-navy-950 rounded-2xl p-8 text-white" } as any)}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1 }}
+          }
+          }
+          }
         >
           <h3 className="text-2xl font-luxury font-bold mb-6">Related Articles</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -13174,7 +13174,7 @@ const BlogPost = () => {
               </div>
             </Link>
           </div>
-        </motion.div>
+        </div>
       </article>
     </div>
   );

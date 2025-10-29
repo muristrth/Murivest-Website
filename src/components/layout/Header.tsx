@@ -45,7 +45,7 @@ const Header = () => {
             <div className="ml-3">
               <Link href="/">
                 <h1 className="text-lg font-serif font-light text-white tracking-tight">
-                  M<span className="text-amber-400 font-medium">RG</span>
+                  M<span className="text-amber-400 font-medium">RL</span>
                 </h1>
                 <p className="text-xs text-white font-serif uppercase tracking-widest">
                   Murivest Int.
@@ -70,58 +70,7 @@ const Header = () => {
             <nav className="hidden md:flex items-center space-x-8">
             
 
-            {/* Invest Dropdown */}
-            <div className="relative">
-              <button
-                className={`font-serif text-sm font-light tracking-wide transition-all duration-300 flex items-center ${
-                  pathname.startsWith('/invest') // Corrected this line
-                    ? 'text-amber-400 border-b border-amber-400'
-                    : 'text-gray-300 hover:text-amber-400'
-                } pb-1`}
-                onClick={() =>
-                  toggleDropdown(isInvestDropdownOpen, setIsInvestDropdownOpen)
-                }
-              >
-                Invest
-                {isInvestDropdownOpen ? (
-                  <ChevronUp className="ml-1 h-3 w-3" />
-                ) : (
-                  <ChevronDown className="ml-1 h-3 w-3" />
-                )}
-              </button>
-              {isInvestDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-slate-800 border border-amber-500/20 shadow-lg py-2 z-10">
-                  <Link
-                    href="/process"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
-                    onClick={closeAllDropdowns}
-                  >
-                    Investment Process
-                  </Link>
-                  <Link
-                    href="/market"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
-                    onClick={closeAllDropdowns}
-                  >
-                    Market Intelligence
-                  </Link>
-                  <Link
-                    href="/leadership"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
-                    onClick={closeAllDropdowns}
-                  >
-                    Executive Leadership
-                  </Link>
-                  <Link
-                    href="/calculator"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
-                    onClick={closeAllDropdowns}
-                  >
-                    Investment Calculator
-                  </Link>
-                </div>
-              )}
-            </div>
+            
 
             <Link
               href="/properties"
@@ -131,20 +80,79 @@ const Header = () => {
                   : 'text-gray-300 hover:text-amber-400 hover:border-b hover:border-amber-400/50'
               } pb-1`}
             >
-              Investment Portfolio
+              Properties
             </Link>
 
             <Link
-              href="/blog"
+              href="/market-insights"
               className={`font-serif text-sm font-light tracking-wide transition-all duration-300 ${
-                isActive('/blog')
+                isActive('/market-insights')
                   ? 'text-amber-400 border-b border-amber-400'
                   : 'text-gray-300 hover:text-amber-400 hover:border-b hover:border-amber-400/50'
               } pb-1`}
             >
-              Insights
+              Market Insights
             </Link>
 
+          {/* Markets Dropdown */}
+            <div className="relative">
+              <button
+                className={`font-serif text-sm font-light tracking-wide transition-all duration-300 flex items-center ${
+                  pathname.startsWith('/africa') || pathname.startsWith('/middle-east') || pathname.startsWith('/asia-pacific') || pathname.startsWith('/europe') || pathname.startsWith('/americas')
+                    ? 'text-amber-400 border-b border-amber-400'
+                    : 'text-gray-300 hover:text-amber-400'
+                } pb-1`}
+                onClick={() =>
+                  toggleDropdown(isInvestDropdownOpen, setIsInvestDropdownOpen)
+                }
+              >
+                Global Markets
+                {isInvestDropdownOpen ? (
+                  <ChevronUp className="ml-1 h-3 w-3" />
+                ) : (
+                  <ChevronDown className="ml-1 h-3 w-3" />
+                )}
+              </button>
+              {isInvestDropdownOpen && (
+                <div className="absolute top-full left-0 mt-2 w-56 bg-slate-800 border border-amber-500/20 shadow-lg py-2 z-10">
+                  <Link
+                    href="/africa"
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
+                    onClick={closeAllDropdowns}
+                  >
+                    Africa Hub
+                  </Link>
+                  <Link
+                    href="/middle-east"
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
+                    onClick={closeAllDropdowns}
+                  >
+                    Middle East
+                  </Link>
+                  <Link
+                    href="/asia-pacific"
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
+                    onClick={closeAllDropdowns}
+                  >
+                    Asia-Pacific
+                  </Link>
+                  <Link
+                    href="/europe"
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
+                    onClick={closeAllDropdowns}
+                  >
+                    Europe
+                  </Link>
+                  <Link
+                    href="/americas"
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
+                    onClick={closeAllDropdowns}
+                  >
+                    Americas
+                  </Link>
+                </div>
+              )}
+            </div>
             {/* About Dropdown */}
             <div className="relative">
               <button
@@ -174,6 +182,27 @@ const Header = () => {
                     About Murivest
                   </Link>
                   <Link
+                    href="/faq"
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
+                    onClick={closeAllDropdowns}
+                  >
+                    FAQs
+                  </Link>
+                  <Link
+                    href="/research"
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
+                    onClick={closeAllDropdowns}
+                  >
+                    Research
+                  </Link>
+                  <Link
+                    href="/videos"
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
+                    onClick={closeAllDropdowns}
+                  >
+                    Videos
+                  </Link>
+                  <Link
                     href="/"
                     className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
                     onClick={closeAllDropdowns}
@@ -187,6 +216,7 @@ const Header = () => {
                   >
                     Murivest Foundation
                   </Link>
+
                 </div>
               )}
             </div>
@@ -201,16 +231,7 @@ const Header = () => {
             >
               Contact
             </Link>
-            <Link
-              href="/faq"
-              className={`font-serif text-sm font-light tracking-wide transition-all duration-300 ${
-                isActive('/faq')
-                  ? 'text-amber-400 border-b border-amber-400'
-                  : 'text-gray-300 hover:text-amber-400 hover:border-b hover:border-amber-400/50'
-              } pb-1`}
-            >
-              FAQs
-            </Link>
+            
             <Link
               href="/it-project-management"
               className={`font-serif text-sm font-light tracking-wide transition-all duration-300 ${
@@ -281,6 +302,13 @@ const Header = () => {
                 {isAboutDropdownOpen && (
                   <div className="flex flex-col pl-4 space-y-2 mt-2">
                     <Link
+                    href="/faq"
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
+                    onClick={closeAllDropdowns}
+                  >
+                    FAQs
+                  </Link>
+                    <Link
                       href="/about"
                       className="text-sm text-gray-400 hover:text-amber-400"
                       onClick={closeAllDropdowns}
@@ -305,11 +333,11 @@ const Header = () => {
                 )}
               </div>
 
-              {/* Invest mobile dropdown */}
+              {/* Markets mobile dropdown */}
               <div className="flex flex-col">
                 <button
                   className={`font-serif text-sm font-light tracking-wide transition-colors flex items-center justify-between ${
-                    pathname.startsWith('/invest') // Corrected this line
+                    pathname.startsWith('/africa') || pathname.startsWith('/middle-east') || pathname.startsWith('/asia-pacific') || pathname.startsWith('/europe') || pathname.startsWith('/americas')
                       ? 'text-amber-400'
                       : 'text-gray-300 hover:text-amber-400'
                   } py-1`}
@@ -317,7 +345,7 @@ const Header = () => {
                     toggleDropdown(isInvestDropdownOpen, setIsInvestDropdownOpen)
                   }
                 >
-                  Invest
+                  Global Markets
                   {isInvestDropdownOpen ? (
                     <ChevronUp className="h-4 w-4" />
                   ) : (
@@ -327,32 +355,39 @@ const Header = () => {
                 {isInvestDropdownOpen && (
                   <div className="flex flex-col pl-4 space-y-2 mt-2">
                     <Link
-                      href="/process"
+                      href="/africa"
                       className="text-sm text-gray-400 hover:text-amber-400"
                       onClick={closeAllDropdowns}
                     >
-                      Investment Process
+                      Africa Hub
                     </Link>
                     <Link
-                      href="/market"
+                      href="/middle-east"
                       className="text-sm text-gray-400 hover:text-amber-400"
                       onClick={closeAllDropdowns}
                     >
-                      Market Intelligence
+                      Middle East
                     </Link>
                     <Link
-                      href="/leadership"
+                      href="/asia-pacific"
                       className="text-sm text-gray-400 hover:text-amber-400"
                       onClick={closeAllDropdowns}
                     >
-                      Executive Leadership
+                      Asia-Pacific
                     </Link>
                     <Link
-                      href="/calculator"
+                      href="/europe"
                       className="text-sm text-gray-400 hover:text-amber-400"
                       onClick={closeAllDropdowns}
                     >
-                      Investment Calculator
+                      Europe
+                    </Link>
+                    <Link
+                      href="/americas"
+                      className="text-sm text-gray-400 hover:text-amber-400"
+                      onClick={closeAllDropdowns}
+                    >
+                      Americas
                     </Link>
                   </div>
                 )}
@@ -367,18 +402,42 @@ const Header = () => {
                 } py-1`}
                 onClick={closeAllDropdowns}
               >
-                Portfolio
+                Properties
               </Link>
               <Link
-                href="/blog"
+                href="/market-insights"
                 className={`font-serif text-sm font-light tracking-wide transition-colors ${
-                  isActive('/blog')
+                  isActive('/market-insights')
                     ? 'text-amber-400'
                     : 'text-gray-300 hover:text-amber-400'
                 } py-1`}
                 onClick={closeAllDropdowns}
               >
-                Insights
+                Market Insights
+              </Link>
+
+              <Link
+                href="/research"
+                className={`font-serif text-sm font-light tracking-wide transition-colors ${
+                  isActive('/research')
+                    ? 'text-amber-400'
+                    : 'text-gray-300 hover:text-amber-400'
+                } py-1`}
+                onClick={closeAllDropdowns}
+              >
+                Research
+              </Link>
+
+              <Link
+                href="/videos"
+                className={`font-serif text-sm font-light tracking-wide transition-colors ${
+                  isActive('/videos')
+                    ? 'text-amber-400'
+                    : 'text-gray-300 hover:text-amber-400'
+                } py-1`}
+                onClick={closeAllDropdowns}
+              >
+                Videos
               </Link>
               <Link
                 href="/contact"

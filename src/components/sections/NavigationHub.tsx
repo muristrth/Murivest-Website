@@ -21,45 +21,46 @@ import {
 const NavigationHub = () => {
   const navigationSections = [
     {
-      title: "Investment Opportunities",
-      description: "Explore our curated portfolio of premium commercial properties",
-      icon: Building,
+      title: "Global Markets",
+      description: "Explore institutional opportunities across continents",
+      icon: Globe,
       links: [
-        { href: "/properties", label: "Commercial Properties", description: "Office buildings, retail spaces, and mixed-use developments" },
-        { href: "/properties", label: "Investment Portfolio", description: "Curated selection of high-yield properties" },
-        { href: "/market", label: "Market Intelligence", description: "Kenya real estate market analysis and trends" },
-        { href: "/calculator", label: "Investment Calculator", description: "Calculate potential returns and ROI" }
+        { href: "/africa", label: "Africa Hub", description: "Institutional-grade opportunities across 12+ African markets" },
+        { href: "/middle-east", label: "Middle East", description: "Gulf capital flows to African and European assets" },
+        { href: "/asia-pacific", label: "Asia-Pacific", description: "Cross-continental investment synergies" },
+        { href: "/europe", label: "Europe", description: "Mature markets and capital diversification" },
+        { href: "/americas", label: "Americas", description: "U.S. and Caribbean family office strategies" }
       ]
     },
     {
-      title: "Investment Insights",
-      description: "Stay informed with market analysis and investment strategies",
+      title: "Market Intelligence",
+      description: "Expert insights and institutional research",
       icon: TrendingUp,
       links: [
-        { href: "/blog", label: "Investment Blog", description: "Latest market insights and investment strategies" },
-        { href: "/market", label: "Market Reports", description: "Quarterly market analysis and economic outlook" },
-        { href: "/leadership", label: "Executive Leadership", description: "Meet our investment team and expertise" },
-        { href: "/process", label: "Investment Process", description: "How we identify and manage investments" }
+        { href: "/market-insights", label: "Market Insights", description: "Emerging asset classes and sector analysis" },
+        { href: "/country-focus", label: "Country Focus", description: "Detailed analysis of 12 African markets" },
+        { href: "/research", label: "Research Library", description: "Institutional reports and market analysis" },
+        { href: "/videos", label: "Fiduciary Conversations", description: "Expert video insights from industry leaders" }
       ]
     },
     {
-      title: "About & Services",
-      description: "Learn about our firm and comprehensive services",
-      icon: Users,
+      title: "Investment Tools",
+      description: "Professional tools for investment decision-making",
+      icon: BarChart3,
       links: [
-        { href: "/about", label: "About Murivest", description: "Our heritage and investment philosophy" },
-        { href: "/foundation", label: "Murivest Foundation", description: "Our commitment to community development" },
-        { href: "/leadership", label: "Leadership Team", description: "Experienced investment professionals" },
-        { href: "/contact", label: "Contact Us", description: "Schedule a private consultation" }
+        { href: "/properties", label: "Property Portfolio", description: "Curated selection of premium assets" },
+        { href: "/calculator", label: "Investment Calculator", description: "Calculate potential returns and ROI" },
+        { href: "/currency-risk-analysis", label: "Currency Analysis", description: "FX risk management and hedging strategies" },
+        { href: "/due-diligence-reports", label: "Due Diligence", description: "Comprehensive property analysis reports" }
       ]
     },
   ];
 
   const quickLinks = [
-    { href: "/properties", label: "View Properties", icon: Building },
-    { href: "/blog", label: "Latest Insights", icon: FileText },
-    { href: "/calculator", label: "ROI Calculator", icon: Calculator },
-    { href: "/contact", label: "Get Started", icon: Phone }
+    { href: "/africa", label: "Africa Markets", icon: Globe },
+    { href: "/market-insights", label: "Market Insights", icon: TrendingUp },
+    { href: "/research", label: "Research Library", icon: FileText },
+    { href: "/contact", label: "Consultation", icon: Phone }
   ];
 
   return (
@@ -68,11 +69,11 @@ const NavigationHub = () => {
         {/* Section Header */}
         <div className="text-center luxury-margin-bottom">
           <h2 className="text-4xl font-serif font-light text-gray-900 mb-8 luxury-text-spacing">
-            Navigate Your Investment Journey
+            Global Real Estate Intelligence Platform
           </h2>
           <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto luxury-text-spacing">
-            Discover our comprehensive suite of investment services, market insights, and client resources
-            designed to maximize your returns in Kenya's premier commercial real estate market.
+            Access institutional-grade market intelligence, cross-border investment opportunities, and expert insights
+            across Africa, the Middle East, Asia-Pacific, Europe, and the Americas.
           </p>
         </div>
 
@@ -160,11 +161,20 @@ const NavigationHub = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <Link href="/market" className="text-center group">
+            <Link href="/country-focus" className="text-center group">
               <div className="p-4 bg-gray-50 rounded-xl hover:bg-amber-50 transition-colors border border-gray-100 hover:border-amber-200">
-                <BarChart3 className="h-6 w-6 text-amber-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                <MapPin className="h-6 w-6 text-amber-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
                 <span className="text-sm font-serif font-medium text-gray-900 group-hover:text-amber-700">
-                  Market Analysis
+                  Country Focus
+                </span>
+              </div>
+            </Link>
+
+            <Link href="/videos" className="text-center group">
+              <div className="p-4 bg-gray-50 rounded-xl hover:bg-amber-50 transition-colors border border-gray-100 hover:border-amber-200">
+                <FileText className="h-6 w-6 text-amber-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                <span className="text-sm font-serif font-medium text-gray-900 group-hover:text-amber-700">
+                  Expert Videos
                 </span>
               </div>
             </Link>
@@ -173,16 +183,7 @@ const NavigationHub = () => {
               <div className="p-4 bg-gray-50 rounded-xl hover:bg-amber-50 transition-colors border border-gray-100 hover:border-amber-200">
                 <Award className="h-6 w-6 text-amber-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
                 <span className="text-sm font-serif font-medium text-gray-900 group-hover:text-amber-700">
-                  Our Team
-                </span>
-              </div>
-            </Link>
-
-            <Link href="/foundation" className="text-center group">
-              <div className="p-4 bg-gray-50 rounded-xl hover:bg-amber-50 transition-colors border border-gray-100 hover:border-amber-200">
-                <Globe className="h-6 w-6 text-amber-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-serif font-medium text-gray-900 group-hover:text-amber-700">
-                  Foundation
+                  Leadership
                 </span>
               </div>
             </Link>

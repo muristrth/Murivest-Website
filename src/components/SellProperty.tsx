@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, FC, FormEvent, ChangeEvent } from 'react';
-import { motion } from 'framer-motion';
+
 import { Crown, Users, Globe, Building2, Shield, ArrowRight, CheckCircle, Star, MapPin, Phone, Mail, Calendar, DollarSign, Target, Zap, Eye, Heart, Clock, Trophy, ChevronDown, Upload, User, Calculator } from 'lucide-react';
 // Firebase removed - using database API instead
 
@@ -223,11 +223,11 @@ const SellProperty: FC = () => {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-20"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-          <motion.div
+          <div
             className="grid lg:grid-cols-2 gap-12 items-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            }
+            }
+            }
           >
             <div>
               <div className="flex items-center mb-6">
@@ -266,14 +266,14 @@ const SellProperty: FC = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Form Section */}
-          <motion.div
+          <div
             className="lg:col-span-1 mt-12 lg:mt-0"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            }
+            }
+            }
           >
             <div className="bg-slate-800/80 p-8 md:p-10 rounded-xl shadow-2xl backdrop-blur-sm border border-white/10">
               <h2 className="text-3xl font-serif font-light text-white mb-6 text-center">
@@ -389,7 +389,7 @@ const SellProperty: FC = () => {
                 Confidential consultation • No obligation • 24-hour response
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -409,13 +409,13 @@ const SellProperty: FC = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyChooseUs.map((item, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="text-center group"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                }
+                }
+                }
+                }
               >
                 <div className="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-amber-200 transition-colors duration-300">
                   <item.icon className="h-10 w-10 text-amber-600" />
@@ -427,7 +427,7 @@ const SellProperty: FC = () => {
                 <div className="text-amber-600 font-medium text-sm">
                   {item.stats}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -449,13 +449,13 @@ const SellProperty: FC = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {propertyCategories.map((category, index) => (
-              <motion.div
+              <div
                 key={category.id}
                 className="group bg-white border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-500"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                }
+                }
+                }
+                }
               >
                 <div className="relative overflow-hidden">
                   <img
@@ -498,7 +498,7 @@ const SellProperty: FC = () => {
                     <ArrowRight className="inline ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -545,13 +545,13 @@ const SellProperty: FC = () => {
                 icon: Shield
               }
             ].map((process, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="text-center group"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                }
+                }
+                }
+                }
               >
                 <div className="relative mb-8">
                   <div className="w-20 h-20 bg-white border-2 border-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -566,7 +566,7 @@ const SellProperty: FC = () => {
                 <p className="text-slate-600 font-light leading-relaxed">
                   {process.description}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -616,13 +616,13 @@ const SellProperty: FC = () => {
                 timeframe: '105 days'
               }
             ].map((story, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="bg-slate-50 overflow-hidden group"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                }
+                }
+                }
+                }
               >
                 <div className="relative overflow-hidden">
                   <img
@@ -661,7 +661,7 @@ const SellProperty: FC = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -670,11 +670,11 @@ const SellProperty: FC = () => {
       {/* Final CTA */}
       <section className="bg-slate-900 text-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <div
+            }
+            }
+            }
+            }
           >
             <Crown className="h-16 w-16 text-amber-400 mx-auto mb-6" />
             <h2 className="text-4xl lg:text-5xl font-serif font-light mb-6">
@@ -699,7 +699,7 @@ const SellProperty: FC = () => {
             <div className="text-slate-400 text-sm">
               Confidential consultation • No commitment required • 24-hour expert response
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>
