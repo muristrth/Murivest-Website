@@ -13026,12 +13026,7 @@ const BlogPost = () => {
 
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Article Header */}
-        <header
-          {...({ className: "mb-12" } as any)}
-          }
-          }
-          }
-        >
+        <header className="mb-12">
           <div className="mb-6">
             <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-elegant font-semibold">
               {post.category}
@@ -13070,12 +13065,7 @@ const BlogPost = () => {
         </header>
 
         {/* Featured Image */}
-        <div
-          {...({ className: "mb-12" } as any)}
-          }
-          }
-          }
-        >
+        <div className="mb-12">
           <img 
             src={post.image} 
             alt={post.title}
@@ -13084,12 +13074,7 @@ const BlogPost = () => {
         </div>
 
         {/* Article Content */}
-        <div
-          {...({ className: "prose prose-lg max-w-none mb-12" } as any)}
-          }
-          }
-          }
-        >
+        <div className="prose prose-lg max-w-none mb-12">
           <div 
             className="font-elegant text-gray-700 leading-relaxed"
             dangerouslySetInnerHTML={{ __html: post.content }}
@@ -13101,12 +13086,7 @@ const BlogPost = () => {
         </div>
 
         {/* Tags */}
-        <div
-          {...({ className: "mb-12" } as any)}
-          }
-          }
-          }
-        >
+        <div className="mb-12">
           <h3 className="font-luxury font-bold text-navy-900 mb-4">Tags</h3>
           <div className="flex flex-wrap gap-2">
             {post.tags.map((tag, index) => (
@@ -13121,12 +13101,7 @@ const BlogPost = () => {
         </div>
 
         {/* Author Bio */}
-        <div
-          {...({ className: "bg-white p-8 rounded-2xl shadow-lg mb-12" } as any)}
-          }
-          }
-          }
-        >
+        <div className="bg-white p-8 rounded-2xl shadow-lg mb-12">
           <div className="flex items-start">
             <img 
               src="https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" 
@@ -13145,12 +13120,7 @@ const BlogPost = () => {
         </div>
 
         {/* Related Articles */}
-        <div
-          {...({ className: "bg-navy-950 rounded-2xl p-8 text-white" } as any)}
-          }
-          }
-          }
-        >
+        <div className="bg-navy-950 rounded-2xl p-8 text-white">
           <h3 className="text-2xl font-luxury font-bold mb-6">Related Articles</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Link href="/blog/2" className="group">

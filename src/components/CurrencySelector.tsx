@@ -102,8 +102,6 @@ const CurrencySelector = () => {
                 ? 'border-amber-500 bg-amber-50 text-amber-700'
                 : 'border-slate-200 hover:border-slate-300 text-slate-600'
             }`}
-            }
-            }
           >
             <span className="text-lg mb-1">{currency.flag}</span>
             <span className="text-xs font-medium">{currency.code}</span>

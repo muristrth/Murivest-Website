@@ -52,187 +52,162 @@ const BlogHero = () => {
   ];
 
   return (
-    <section className="relative py-24 bg-gradient-to-br from-slate-50 to-stone-100 overflow-hidden">
-      {/* Elegant background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
+  <section className="relative py-24 bg-gradient-to-br from-slate-50 to-stone-100 overflow-hidden">
+    {/* Elegant background pattern */}
+    <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+      }} />
+    </div>
+
+    <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
+      {/* Hero Header */}
+      <div
+        className="text-center max-w-4xl mx-auto mb-16"
+      >
+        <div
+          className="inline-flex items-center px-4 py-2 bg-slate-900/5 rounded-full text-slate-700 text-sm font-medium mb-6"
+        >
+          {/* NOTE: Globe, Shield, TrendingUp, User, Calendar, ArrowRight components are assumed to be imported */}
+          <Globe className="h-4 w-4 mr-2" />
+          Exclusive Investment Intelligence
+        </div>
+
+        <h1
+          className="text-5xl md:text-6xl lg:text-7xl font-light text-slate-900 mb-6 tracking-tight"
+        >
+          Investment
+          <span className="block font-extralight italic text-slate-600">
+            Insights
+          </span>
+        </h1>
+
+        <p
+          className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-light"
+        >
+          Privileged access to market intelligence, investment strategies, and exclusive opportunities
+          reserved for discerning international investors seeking extraordinary returns.
+        </p>
+
+        {/* Trust indicators */}
+        <div
+          className="flex items-center justify-center space-x-8 mt-8 text-slate-500"
+        >
+          <div className="flex items-center">
+            <Shield className="h-5 w-5 mr-2" />
+            <span className="text-sm font-medium">Verified Insights</span>
+          </div>
+          <div className="flex items-center">
+            <TrendingUp className="h-5 w-5 mr-2" />
+            <span className="text-sm font-medium">Market Leaders</span>
+          </div>
+        </div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
-        {/* Hero Header */}
-        <div
-          {...({ className: "text-center max-w-4xl mx-auto mb-16" } as any)}
-          }
-          }
-          }
-        >
-          <div
-            {...({ className: "inline-flex items-center px-4 py-2 bg-slate-900/5 rounded-full text-slate-700 text-sm font-medium mb-6" } as any)}
-            }
-            }
-            }
-          >
-            <Globe className="h-4 w-4 mr-2" />
-            Exclusive Investment Intelligence
-          </div>
-
-          <h1
-            {...({ className: "text-5xl md:text-6xl lg:text-7xl font-light text-slate-900 mb-6 tracking-tight" } as any)}
-            }
-            }
-            }
-          >
-            Investment
-            <span className="block font-extralight italic text-slate-600">
-              Insights
-            </span>
-          </h1>
-
-          <p
-            {...({ className: "text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-light" } as any)}
-            }
-            }
-            }
-          >
-            Privileged access to market intelligence, investment strategies, and exclusive opportunities 
-            reserved for discerning international investors seeking extraordinary returns.
-          </p>
-
-          {/* Trust indicators */}
-          <div
-            {...({ className: "flex items-center justify-center space-x-8 mt-8 text-slate-500" } as any)}
-            }
-            }
-            }
-          >
-            <div className="flex items-center">
-              <Shield className="h-5 w-5 mr-2" />
-              <span className="text-sm font-medium">Verified Insights</span>
-            </div>
-            <div className="flex items-center">
-              <TrendingUp className="h-5 w-5 mr-2" />
-              <span className="text-sm font-medium">Market Leaders</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Featured Blog Post */}
-        <div
-          {...({ className: "mb-16" } as any)}
-          }
-          }
-          }
-        >
-          {blogPosts.filter(post => post.featured).map((post) => (
-            <div key={post.id} className="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200/50">
-              <div className="grid lg:grid-cols-2 gap-0">
-                <div className="relative h-80 lg:h-full">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute top-6 left-6">
-                    <span className="bg-slate-900/90 text-white px-4 py-2 rounded-full text-sm font-medium">
-                      Featured
-                    </span>
-                  </div>
-                </div>
-                <div className="p-12 flex flex-col justify-center">
-                  <div className="mb-4">
-                    <span className="text-slate-500 text-sm font-medium uppercase tracking-wider">
-                      {post.category}
-                    </span>
-                  </div>
-                  <h2 className="text-3xl lg:text-4xl font-light text-slate-900 mb-6 leading-tight">
-                    {post.title}
-                  </h2>
-                  <p className="text-slate-600 text-lg leading-relaxed mb-8 font-light">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4 text-slate-500">
-                      <div className="flex items-center">
-                        <User className="h-4 w-4 mr-2" />
-                        <span className="text-sm font-medium">{post.author}</span>
-                      </div>
-                      <div className="flex items-center">
-                        <Calendar className="h-4 w-4 mr-2" />
-                        <span className="text-sm">{post.date}</span>
-                      </div>
-                      <span className="text-sm">{post.readTime}</span>
-                    </div>
-                    <button
-                      {...({ className: "inline-flex items-center text-slate-900 font-medium hover:text-slate-600 transition-colors" } as any)}
-                      }
-                    >
-                      Read Article
-                      <ArrowRight className="h-4 w-4 ml-2" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Additional Blog Cards */}
-        <div
-          {...({ className: "grid md:grid-cols-2 gap-8" } as any)}
-          }
-          }
-          }
-        >
-          {blogPosts.filter(post => !post.featured).map((post, index) => (
-            <div
-              key={post.id}
-              {...({ className: "bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200/50 hover:shadow-xl transition-all duration-300" } as any)}
-              }
-              }
-              }
-              }
-            >
-              <div className="relative h-48">
+      {/* Featured Blog Post */}
+      <div
+        className="mb-16"
+      >
+        {/* NOTE: blogPosts is assumed to be defined in the component scope */}
+        {blogPosts.filter(post => post.featured).map((post) => (
+          <div key={post.id} className="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200/50">
+            <div className="grid lg:grid-cols-2 gap-0">
+              <div className="relative h-80 lg:h-full">
                 <img
                   src={post.image}
                   alt={post.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-white/90 text-slate-700 px-3 py-1 rounded-full text-xs font-medium">
-                    {post.category}
+                <div className="absolute top-6 left-6">
+                  <span className="bg-slate-900/90 text-white px-4 py-2 rounded-full text-sm font-medium">
+                    Featured
                   </span>
                 </div>
               </div>
-              <div className="p-8">
-                <h3 className="text-xl font-light text-slate-900 mb-3 leading-tight">
+              <div className="p-12 flex flex-col justify-center">
+                <div className="mb-4">
+                  <span className="text-slate-500 text-sm font-medium uppercase tracking-wider">
+                    {post.category}
+                  </span>
+                </div>
+                <h2 className="text-3xl lg:text-4xl font-light text-slate-900 mb-6 leading-tight">
                   {post.title}
-                </h3>
-                <p className="text-slate-600 mb-6 font-light leading-relaxed">
+                </h2>
+                <p className="text-slate-600 text-lg leading-relaxed mb-8 font-light">
                   {post.excerpt}
                 </p>
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3 text-slate-500 text-sm">
-                    <span className="font-medium">{post.author}</span>
-                    <span>•</span>
-                    <span>{post.readTime}</span>
+                  <div className="flex items-center space-x-4 text-slate-500">
+                    <div className="flex items-center">
+                      <User className="h-4 w-4 mr-2" />
+                      <span className="text-sm font-medium">{post.author}</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Calendar className="h-4 w-4 mr-2" />
+                      <span className="text-sm">{post.date}</span>
+                    </div>
+                    <span className="text-sm">{post.readTime}</span>
                   </div>
                   <button
-                    {...({ className: "text-slate-900 hover:text-slate-600 transition-colors" } as any)}
-                    }
+                    className="inline-flex items-center text-slate-900 font-medium hover:text-slate-600 transition-colors"
                   >
-                    <ArrowRight className="h-4 w-4" />
+                    Read Article
+                    <ArrowRight className="h-4 w-4 ml-2" />
                   </button>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-    </section>
-  );
-};
+
+      {/* Additional Blog Cards */}
+      <div
+        className="grid md:grid-cols-2 gap-8"
+      >
+        {blogPosts.filter(post => !post.featured).map((post, index) => (
+          <div
+            key={post.id}
+            className="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200/50 hover:shadow-xl transition-all duration-300"
+          >
+            <div className="relative h-48">
+              <img
+                src={post.image}
+                alt={post.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute top-4 left-4">
+                <span className="bg-white/90 text-slate-700 px-3 py-1 rounded-full text-xs font-medium">
+                  {post.category}
+                </span>
+              </div>
+            </div>
+            <div className="p-8">
+              <h3 className="text-xl font-light text-slate-900 mb-3 leading-tight">
+                {post.title}
+              </h3>
+              <p className="text-slate-600 mb-6 font-light leading-relaxed">
+                {post.excerpt}
+              </p>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-3 text-slate-500 text-sm">
+                  <span className="font-medium">{post.author}</span>
+                  <span>•</span>
+                  <span>{post.readTime}</span>
+                </div>
+                <button
+                  className="text-slate-900 hover:text-slate-600 transition-colors"
+                >
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+}
 
 export default BlogHero;
