@@ -8,9 +8,12 @@ import { ArrowRight, TrendingUp, Shield, Crown, Globe, Award, Building } from 'l
 const Hero = () => {
   // Old money inspired images - classic architecture, luxury estates
   const images = [
-    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&h=1080&fit=crop', // Luxury modern building
-    'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&h=1080&fit=crop', // Corporate building
-    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop'  // City skyline
+    '/murivest_secretary.png',
+    'https://i.pinimg.com/736x/bc/43/98/bc43988c5de55507f7817ac3b1647e95.jpg', // Luxury modern building
+    '/kenya-night.png',
+    '/murivest_secretary.png',
+    '/cin_pdf.png',
+    '/murivest_ceo_office.png'
   ];
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -30,9 +33,9 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
+    <section className="relative h-full w-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
       {/* Sophisticated overlay with subtle pattern */}
-      <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+      <div className="absolute inset-0 bg-[#0A1A2F] opacity-60 z-10"></div>
       <div className="absolute inset-0 opacity-5 z-15" style={{
         backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,.02) 2px, rgba(255,255,255,.02) 4px)`
       }}></div>
@@ -75,7 +78,7 @@ const Hero = () => {
 
           {/* Urgency and scarcity */}
           <p className="text-base mb-12 text-amber-200 font-serif italic luxury-text-spacing">
-            Exclusive opportunity: Limited prime properties available.
+            Confidential opportunities available for a limited time. Secure your access to our exclusive portfolio today.
           </p>
 
           {/* CTA buttons with hierarchy */}
@@ -96,7 +99,7 @@ const Hero = () => {
           </div>
 
           {/* Social proof metrics - more corporate */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
             <div className="flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-none p-4 hover:bg-white/10 transition-all duration-300">
               <TrendingUp className="h-6 w-6 text-amber-400 mr-3" />
               <div>
@@ -138,13 +141,13 @@ const Hero = () => {
             <div className="flex flex-wrap gap-8 text-gray-500 font-serif text-sm">
               <span>United Kingdom</span>
               <span>•</span>
-              <span>United States</span>
+              <span>Kenya</span>
               <span>•</span>
               <span>Dubai</span>
               <span>•</span>
               <span>Singapore</span>
               <span>•</span>
-              <span>China</span>
+              <span>South Africa</span>
             </div>
           </div>
         </div>

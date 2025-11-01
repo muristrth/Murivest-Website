@@ -29,9 +29,9 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <YieldReportSection />
       <InvestorStats />
       <ExclusiveOpportunities />
+      <YieldReportSection />
       <NavigationHub />
       <GlobalPresence />
       <InvestmentProcess />

@@ -3,10 +3,11 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
-import { Phone, Menu, X, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
+import { Phone, Menu, X, ChevronDown, ChevronUp, ExternalLink, Search } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDesktopMenuOpen, setIsDesktopMenuOpen] = useState(false);
   const [isInvestDropdownOpen, setIsInvestDropdownOpen] = useState(false);
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const router = useRouter();
@@ -29,246 +30,312 @@ const Header = () => {
     setIsInvestDropdownOpen(false);
     setIsAboutDropdownOpen(false);
     setIsMenuOpen(false);
+    setIsDesktopMenuOpen(false);
   };
 
   return (
-    <header className="bg-slate-900 shadow-2xl sticky top-0 z-50 border-b border-amber-500/20">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <header className="shadow-2xl sticky top-0 z-50 bg-slate-900 bg-opacity-95 relative">
+      {/* Hero background extension */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+        style={{
+          backgroundImage: `url("")`,
+        }}
+      />
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="flex justify-between items-center py-3">
-          {/* Logo */}
-          <div className="flex items-center">
-            <img
-              src="/logo.png"
-              alt="Murivest Realty Group"
-              className="h-8 w-auto"
-            />
-            <div className="ml-3">
-              <Link href="/">
-                <h1 className="text-lg font-serif font-light text-white tracking-tight">
-                  M<span className="text-amber-400 font-medium">RL</span>
-                </h1>
-                <p className="text-xs text-white font-serif uppercase tracking-widest">
-                  Murivest Int.
-                </p>
-              </Link>
-            </div>
-          </div>
-
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link
-              href="/"
-              className={`font-serif text-sm font-light tracking-wide transition-all duration-300 ${
-                isActive('/')
-                  ? 'text-amber-400 border-b border-amber-400'
-                  : 'text-gray-300 hover:text-amber-400 hover:border-b hover:border-amber-400/50'
-              } pb-1`}
-            >
-              Home
-            </Link>
-            <nav/>
-            <nav className="hidden md:flex items-center space-x-8">
-            
-
-            
-
-            <Link
-              href="/properties"
-              className={`font-serif text-sm font-light tracking-wide transition-all duration-300 ${
-                isActive('/properties')
-                  ? 'text-amber-400 border-b border-amber-400'
-                  : 'text-gray-300 hover:text-amber-400 hover:border-b hover:border-amber-400/50'
-              } pb-1`}
-            >
-              Properties
-            </Link>
-
-            <Link
-              href="/market-insights"
-              className={`font-serif text-sm font-light tracking-wide transition-all duration-300 ${
-                isActive('/market-insights')
-                  ? 'text-amber-400 border-b border-amber-400'
-                  : 'text-gray-300 hover:text-amber-400 hover:border-b hover:border-amber-400/50'
-              } pb-1`}
-            >
-              Market Insights
-            </Link>
-
-          {/* Markets Dropdown */}
-            <div className="relative">
-              <button
-                className={`font-serif text-sm font-light tracking-wide transition-all duration-300 flex items-center ${
-                  pathname.startsWith('/africa') || pathname.startsWith('/middle-east') || pathname.startsWith('/asia-pacific') || pathname.startsWith('/europe') || pathname.startsWith('/americas')
-                    ? 'text-amber-400 border-b border-amber-400'
-                    : 'text-gray-300 hover:text-amber-400'
-                } pb-1`}
-                onClick={() =>
-                  toggleDropdown(isInvestDropdownOpen, setIsInvestDropdownOpen)
-                }
-              >
-                Global Markets
-                {isInvestDropdownOpen ? (
-                  <ChevronUp className="ml-1 h-3 w-3" />
-                ) : (
-                  <ChevronDown className="ml-1 h-3 w-3" />
-                )}
-              </button>
-              {isInvestDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-slate-800 border border-amber-500/20 shadow-lg py-2 z-10">
-                  <Link
-                    href="/africa"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
-                    onClick={closeAllDropdowns}
-                  >
-                    Africa Hub
-                  </Link>
-                  <Link
-                    href="/middle-east"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
-                    onClick={closeAllDropdowns}
-                  >
-                    Middle East
-                  </Link>
-                  <Link
-                    href="/asia-pacific"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
-                    onClick={closeAllDropdowns}
-                  >
-                    Asia-Pacific
-                  </Link>
-                  <Link
-                    href="/europe"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
-                    onClick={closeAllDropdowns}
-                  >
-                    Europe
-                  </Link>
-                  <Link
-                    href="/americas"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
-                    onClick={closeAllDropdowns}
-                  >
-                    Americas
-                  </Link>
-                </div>
-              )}
-            </div>
-            {/* About Dropdown */}
-            <div className="relative">
-              <button
-                className={`font-serif text-sm font-light tracking-wide transition-all duration-300 flex items-center ${
-                  pathname.startsWith('/about') // Corrected this line
-                    ? 'text-amber-400 border-b border-amber-400'
-                    : 'text-gray-300 hover:text-amber-400'
-                } pb-1`}
-                onClick={() =>
-                  toggleDropdown(isAboutDropdownOpen, setIsAboutDropdownOpen)
-                }
-              >
-                About
-                {isAboutDropdownOpen ? (
-                  <ChevronUp className="ml-1 h-3 w-3" />
-                ) : (
-                  <ChevronDown className="ml-1 h-3 w-3" />
-                )}
-              </button>
-              {isAboutDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-slate-800 border border-amber-500/20 shadow-lg py-2 z-10">
-                  <Link
-                    href="/about"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
-                    onClick={closeAllDropdowns}
-                  >
-                    About Murivest
-                  </Link>
-                  <Link
-                    href="/faq"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
-                    onClick={closeAllDropdowns}
-                  >
-                    FAQs
-                  </Link>
-                  <Link
-                    href="/research"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
-                    onClick={closeAllDropdowns}
-                  >
-                    Research
-                  </Link>
-                  <Link
-                    href="/videos"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
-                    onClick={closeAllDropdowns}
-                  >
-                    Videos
-                  </Link>
-                  <Link
-                    href="/"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
-                    onClick={closeAllDropdowns}
-                  >
-                    Murivest Realty Group
-                  </Link>
-                  <Link
-                    href="/foundation"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
-                    onClick={closeAllDropdowns}
-                  >
-                    Murivest Foundation
-                  </Link>
-
-                </div>
-              )}
-            </div>
-
-            <Link
-              href="/contact"
-              className={`font-serif text-sm font-light tracking-wide transition-all duration-300 ${
-                isActive('/contact')
-                  ? 'text-amber-400 border-b border-amber-400'
-                  : 'text-gray-300 hover:text-amber-400 hover:border-b hover:border-amber-400/50'
-              } pb-1`}
-            >
-              Contact
-            </Link>
-            
-            <Link
-              href="/it-project-management"
-              className={`font-serif text-sm font-light tracking-wide transition-all duration-300 ${
-                isActive('/it-project-management')
-                  ? 'text-amber-400 border-b border-amber-400'
-                  : 'text-gray-300 hover:text-amber-400 hover:border-b hover:border-amber-400/50'
-              } pb-1`}
-            >
-              Property Mgt
-            </Link>
-          </nav>
-
-          {/* Desktop contact */}
-          <div className="hidden lg:flex items-center">
-            <div className="flex items-center text-xs text-gray-300">
-              <Phone className="h-3 w-3 mr-1" />
-              <Link
-                href="tel:0115277610"
-                className="font-serif hover:text-amber-400 transition-colors"
-              >
-                +254 115 277 610
-              </Link>
-            </div>
-          </div>
-          </nav>
-          {/* Mobile menu button */}
+          {/* Mobile hamburger menu */}
           <button
             className="md:hidden text-gray-300 hover:text-amber-400 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
+
+          {/* Logo centered on desktop */}
+          <div className="flex-1 flex justify-center md:justify-start">
+            <div className="flex items-center">
+              <img
+                src="/logo.png"
+                alt="Murivest Realty Group"
+                className="h-8 w-auto"
+              />
+              <div className="ml-3">
+                <Link href="/">
+                  <h1 className="text-xs font-serif font-light text-white tracking-tight">
+                    MURIVEST<span className="text-amber-400 font-medium"> REALTY LTD.</span>
+                  </h1>
+                  <p className="text-xs text-white font-orpheus tracking-widest">
+                    Concierge of Capital
+                  </p>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop Menu Toggle */}
+          <button
+            className="hidden md:flex items-center text-gray-300 hover:text-amber-400 transition-colors"
+            onClick={() => setIsDesktopMenuOpen(!isDesktopMenuOpen)}
+          >
+            <Menu className="h-5 w-5" />
+            <span className="ml-2 text-sm font-serif">Menu</span>
+          </button>
+
+          {/* Desktop Nav - Side Menu */}
+          {isDesktopMenuOpen && (
+            <>
+              {/* Overlay */}
+              <div
+                className="fixed inset-0 bg-black bg-opacity-50 z-30"
+                onClick={() => setIsDesktopMenuOpen(false)}
+              />
+              {/* Side Menu */}
+              <div className="fixed top-0 right-0 h-full w-60 bg-slate-900 shadow-2xl z-40 transform transition-transform duration-300 ease-in-out">
+                <div className="flex flex-col h-full">
+                  {/* Close button */}
+                  <div className="flex justify-end p-4">
+                    <button
+                      onClick={() => setIsDesktopMenuOpen(false)}
+                      className="text-gray-300 hover:text-amber-400 transition-colors"
+                    >
+                      <X className="h-6 w-6" />
+                    </button>
+                  </div>
+
+                  {/* Menu items */}
+                  <nav className="flex-1 px-3 py-4">
+                    <div className="space-y-2">
+                      <Link
+                        href="/"
+                        className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                          isActive('/')
+                            ? 'text-amber-400'
+                            : 'text-gray-300 hover:text-amber-400'
+                        }`}
+                        onClick={closeAllDropdowns}
+                      >
+                        Home
+                      </Link>
+
+                      <Link
+                        href="/properties"
+                        className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                          isActive('/properties')
+                            ? 'text-amber-400'
+                            : 'text-gray-300 hover:text-amber-400'
+                        }`}
+                        onClick={closeAllDropdowns}
+                      >
+                        Properties
+                      </Link>
+
+                      <Link
+                        href="/market-insights"
+                        className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                          isActive('/market-insights')
+                            ? 'text-amber-400'
+                            : 'text-gray-300 hover:text-amber-400'
+                        }`}
+                        onClick={closeAllDropdowns}
+                      >
+                        Market Insights
+                      </Link>
+
+                      <Link
+                        href="/blog"
+                        className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                          isActive('/blog')
+                            ? 'text-amber-400'
+                            : 'text-gray-300 hover:text-amber-400'
+                        }`}
+                        onClick={closeAllDropdowns}
+                      >
+                        Blogs
+                      </Link>
+
+                      {/* Markets Dropdown */}
+                      <div className="space-y-2">
+                        <button
+                          className={`w-full text-left font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 flex items-center justify-between ${
+                            pathname.startsWith('/africa') || pathname.startsWith('/middle-east') || pathname.startsWith('/asia-pacific') || pathname.startsWith('/europe') || pathname.startsWith('/americas')
+                              ? 'text-amber-400'
+                              : 'text-gray-300 hover:text-amber-400'
+                          }`}
+                          onClick={() =>
+                            toggleDropdown(isInvestDropdownOpen, setIsInvestDropdownOpen)
+                          }
+                        >
+                          Global Markets
+                          {isInvestDropdownOpen ? (
+                            <ChevronUp className="h-4 w-4" />
+                          ) : (
+                            <ChevronDown className="h-4 w-4" />
+                          )}
+                        </button>
+                        {isInvestDropdownOpen && (
+                          <div className="pl-4 space-y-2">
+                            <Link
+                              href="/africa"
+                              className="block text-gray-400 hover:text-amber-400 transition-colors py-2"
+                              onClick={closeAllDropdowns}
+                            >
+                              Africa Hub
+                            </Link>
+                            <Link
+                              href="/middle-east"
+                              className="block text-gray-400 hover:text-amber-400 transition-colors py-2"
+                              onClick={closeAllDropdowns}
+                            >
+                              Middle East
+                            </Link>
+                            <Link
+                              href="/asia-pacific"
+                              className="block text-gray-400 hover:text-amber-400 transition-colors py-2"
+                              onClick={closeAllDropdowns}
+                            >
+                              Asia-Pacific
+                            </Link>
+                            <Link
+                              href="/europe"
+                              className="block text-gray-400 hover:text-amber-400 transition-colors py-2"
+                              onClick={closeAllDropdowns}
+                            >
+                              Europe
+                            </Link>
+                            <Link
+                              href="/americas"
+                              className="block text-gray-400 hover:text-amber-400 transition-colors py-2"
+                              onClick={closeAllDropdowns}
+                            >
+                              Americas
+                            </Link>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* About Dropdown */}
+                      <div className="space-y-2">
+                        <button
+                          className={`w-full text-left font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 flex items-center justify-between ${
+                            pathname.startsWith('/about')
+                              ? 'text-amber-400'
+                              : 'text-gray-300 hover:text-amber-400'
+                          }`}
+                          onClick={() =>
+                            toggleDropdown(isAboutDropdownOpen, setIsAboutDropdownOpen)
+                          }
+                        >
+                          About
+                          {isAboutDropdownOpen ? (
+                            <ChevronUp className="h-4 w-4" />
+                          ) : (
+                            <ChevronDown className="h-4 w-4" />
+                          )}
+                        </button>
+                        {isAboutDropdownOpen && (
+                          <div className="pl-4 space-y-2">
+                            <Link
+                              href="/about"
+                              className="block text-gray-400 hover:text-amber-400 transition-colors py-2"
+                              onClick={closeAllDropdowns}
+                            >
+                              About Murivest
+                            </Link>
+                            <Link
+                              href="/faq"
+                              className="block text-gray-400 hover:text-amber-400 transition-colors py-2"
+                              onClick={closeAllDropdowns}
+                            >
+                              FAQs
+                            </Link>
+                            <Link
+                              href="/research"
+                              className="block text-gray-400 hover:text-amber-400 transition-colors py-2"
+                              onClick={closeAllDropdowns}
+                            >
+                              Research
+                            </Link>
+                            <Link
+                              href="/videos"
+                              className="block text-gray-400 hover:text-amber-400 transition-colors py-2"
+                              onClick={closeAllDropdowns}
+                            >
+                              Videos
+                            </Link>
+                            <Link
+                              href="/"
+                              className="block text-gray-400 hover:text-amber-400 transition-colors py-2"
+                              onClick={closeAllDropdowns}
+                            >
+                              Murivest Realty Group
+                            </Link>
+                            <Link
+                              href="/foundation"
+                              className="block text-gray-400 hover:text-amber-400 transition-colors py-2"
+                              onClick={closeAllDropdowns}
+                            >
+                              Murivest Foundation
+                            </Link>
+                          </div>
+                        )}
+                      </div>
+
+                      <Link
+                        href="/contact"
+                        className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                          isActive('/contact')
+                            ? 'text-amber-400'
+                            : 'text-gray-300 hover:text-amber-400'
+                        }`}
+                        onClick={closeAllDropdowns}
+                      >
+                        Contact
+                      </Link>
+
+                      <Link
+                        href="/it-project-management"
+                        className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                          isActive('/it-project-management')
+                            ? 'text-amber-400'
+                            : 'text-gray-300 hover:text-amber-400'
+                        }`}
+                        onClick={closeAllDropdowns}
+                      >
+                        Property Mgt
+                      </Link>
+
+                      {/* List Property Button */}
+                      <div className="pt-6">
+                        <Link href="/sell">
+                          <button className="w-full bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 font-serif font-medium text-xs transition-all duration-300">
+                            List Property
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+            </>
+          )}
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-700">
+            {/* Mobile Search Bar */}
+            <div className="px-4 mb-4">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Enter location or property name…"
+                  className="w-full pl-4 pr-12 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent text-slate-900 bg-white"
+                />
+                <Search className="absolute right-4 top-1/2 transform -translate-y-1/2 text-slate-400 h-5 w-5" />
+              </div>
+            </div>
+
             <nav className="flex flex-col space-y-3">
               <Link
                 href="/"
@@ -415,7 +482,17 @@ const Header = () => {
               >
                 Market Insights
               </Link>
-
+              <Link
+                href="/blogs"
+                className={`font-serif text-sm font-light tracking-wide transition-colors ${
+                  isActive('/blogs')
+                    ? 'text-amber-400'
+                    : 'text-gray-300 hover:text-amber-400'
+                } py-1`}
+                onClick={closeAllDropdowns}
+              >
+                Blogs
+              </Link>
               <Link
                 href="/research"
                 className={`font-serif text-sm font-light tracking-wide transition-colors ${
@@ -460,6 +537,13 @@ const Header = () => {
                 onClick={closeAllDropdowns}
               >
                 Property Mgt
+              </Link>
+
+              {/* Mobile List Property Button */}
+              <Link href="/sell" className="pt-2">
+                <button className="w-full bg-amber-600 hover:bg-amber-700 text-white px-4 py-3 font-serif font-medium text-sm transition-all duration-300">
+                  List Property
+                </button>
               </Link>
             </nav>
 

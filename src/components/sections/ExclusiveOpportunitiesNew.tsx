@@ -15,7 +15,7 @@ const ExclusiveOpportunities = () => {
       returns: "15.2% IRR",
       timeline: "Q2 2025",
       image: "/p5/facade-exterieure.jpg",
-      status: "Limited Bids",
+      status: "Bid Closing Soon",
       description: "Landmark hotel property in Nairobi CBD with excellent occupancy rates and comprehensive hospitality amenities"
     },
     {
@@ -27,7 +27,7 @@ const ExclusiveOpportunities = () => {
       returns: "11% IRR",
       timeline: "Q3 2025",
       image: "/p6/Buffalo_Mall.png",
-      status: "Limited Bids",
+      status: "Under Offer",
       description: "Premier shopping destination in Naivasha with significant development potential on adjoining land."
     },
     {
@@ -115,18 +115,10 @@ const ExclusiveOpportunities = () => {
                   <span className="text-sm font-medium">{opportunity.location}</span>
                 </div>
 
-                <p className="text-slate-600 mb-6 font-light leading-relaxed">
-                  {opportunity.description}
-                </p>
-
                 <div className="space-y-3 mb-8">
                   <div className="flex justify-between items-center">
                     <span className="text-slate-500 text-sm">Investment Range</span>
                     <span className="text-slate-900 font-medium">{opportunity.investment}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-slate-500 text-sm">Expected Timeline</span>
-                    <span className="text-slate-900 font-medium">{opportunity.timeline}</span>
                   </div>
                 </div>
 

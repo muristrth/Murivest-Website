@@ -77,8 +77,7 @@ const propertyData: PropertyData = {
     images: [
       'https://content.knightfrank.com/property/hub2547666/images/a531920b-a627-43ed-905e-eacd1b941068-0.jpg?cio=true&w=1200',
       'https://content.knightfrank.com/property/hub2547666/images/82c7a8ae-a715-41ff-a906-e892f78acc0a-0.jpg?cio=true&w=1200',
-      'https://content.knightfrank.com/property/hub2547666/images/8a0ac1f8-1e08-4827-ac66-409773bed6b1-0.jpg?cio=true&w=1200',
-      'https://content.knightfrank.com/property/hub2547666/images/c59d11e2-6a4b-4700-97e4-6149f4473726-0.jpg?cio=true&w=1200'
+      'https://content.knightfrank.com/property/hub2547666/images/8a0ac1f8-1e08-4827-ac66-409773bed6b1-0.jpg?cio=true&w=1200'
     ],
     features: ["119 Premium Suites", "3.5 Star Rating", "Executive Conference", "Basement Parking", "Fine Dining", "Spa & Wellness"],
     occupancyRate: "95%",
@@ -100,39 +99,6 @@ const propertyData: PropertyData = {
       totalROI: 27.2
     }
   },
-  10: {
-    title: "Kenya Comfort Hotel Building",
-    subtitle: "Prime Nairobi CBD Sale & Leaseback",
-    location: "Monrovia St & Muindi Mbingu St",
-    type: "Commercial / Hospitality",
-    price: "$5,000,000",
-    priceKsh: "KSh 680M",
-    yield: "8.2%",
-    images: [
-      "https://www.africanparadisesafaris.com/images/kenya-comfort-hotel.jpg",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/9c/3c/1a/kch-day-view.jpg?w=900&h=500&s=1",
-      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/593180116.jpg?k=54fb09ca6a5c9b6e676c7ebbc54424857c0634e009bf445365db3a41ba689d65&o=&hp=1"
-    ],
-    features: ["3,530m² Total Area", "Prime CBD Location", "Sale & Leaseback", "100% Occupied", "Mixed Use", "Expansion Ready"],
-    occupancyRate: "100%",
-    description: "Secure sale and leaseback opportunity in Nairobi's commercial heart. Immediate income with strategic expansion potential.",
-    details: {
-      area: "3,530m²",
-      floors: "5 + Rooftop",
-      lease: "KSh 4.5M/month",
-      term: "5 Years Renewable",
-      occupancy: "100%",
-      appreciation: "10% p.a."
-    },
-    investment: {
-      totalInvestment: 680000000,
-      monthlyIncome: 4500000,
-      annualIncome: 54000000,
-      netYield: 8.2,
-      appreciationRate: 10,
-      totalROI: 18.2
-    }
-  },
   2: {
     title: "Buffalo Mall & Development Land",
     subtitle: "Naivasha Tourism Gateway",
@@ -143,8 +109,7 @@ const propertyData: PropertyData = {
     yield: "11.0%",
     images: [
       'https://content.knightfrank.com/property/hub2429185/images/79bb901f-3dba-41b8-9601-d462f09fa400-0.jpg?cio=true&w=1200',
-      'https://content.knightfrank.com/property/hub2429185/images/d52cc1be-f7b5-44af-9899-4993fbef9d32-0.jpg?cio=true&w=1200',
-      'https://content.knightfrank.com/property/hub2429185/images/1dab0404-50f6-4502-83f3-bcd333726e64-0.jpg?cio=true&w=1200'
+      'https://content.knightfrank.com/property/hub2429185/images/d52cc1be-f7b5-44af-9899-4993fbef9d32-0.jpg?cio=true&w=1200'
     ],
     features: ["58,965 sqft Retail", "33 Units", "9 Acres Land", "70% Occupied", "Highway Access", "Tourist Hub"],
     occupancyRate: "70%",
@@ -175,9 +140,8 @@ const propertyData: PropertyData = {
     priceKsh: "KSh 1.0B",
     yield: "14.8%",
     images: [
-      "/p/IMG-20250813-WA0001.jpg",
-      "/p/IMG-20250813-WA0004.jpg",
-      "/p/IMG-20250813-WA0005.jpg"
+      "https://ext.same-assets.com/2267512097/2415429296.jpeg",
+      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80"
     ],
     features: ["3 Acres", "99,300 sqft", "4-Storey Office", "Showroom", "Warehouses", "Workshops"],
     occupancyRate: "85%",
@@ -209,7 +173,7 @@ const propertyData: PropertyData = {
     yield: "16.5%",
     images: [
       'https://content.knightfrank.com/property/hub2448515/images/89393bfa-52be-4c67-8bbf-aee9cf35b19d-0.jpg?cio=true&w=1200',
-      'https://content.knightfrank.com/property/hub2448515/images/3d3d3b2e-cabe-4a33-8e96-511294b670a0-0.jpg?cio=true&w=1200'
+      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80'
     ],
     features: ["18,988 sqft", "4-Storey", "100% Occupied", "Multiple Tenants", "CBD Core", "High Traffic"],
     occupancyRate: "100%",
@@ -240,9 +204,8 @@ const propertyData: PropertyData = {
     priceKsh: "KSh 2.0B",
     yield: "13.8%",
     images: [
-      "/p7/Screenshot 2025-08-27 234422.png",
-      "/p7/Screenshot 2025-08-27 234459.png",
-      "/p7/Screenshot 2025-08-27 234514.png"
+      "https://ext.same-assets.com/2267512097/3285424901.jpeg",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80"
     ],
     features: ["161,019 sqft", "6-Storey", "221 Parking", "Glass Facade", "Courtyard", "International Design"],
     occupancyRate: "92%",
@@ -273,8 +236,8 @@ const propertyData: PropertyData = {
     priceKsh: "KSh 570M",
     yield: "12.2%",
     images: [
-      "/p1/IMG-20250813-WA0009.jpg",
-      "/p1/IMG-20250813-WA0010.jpg"
+      "https://ext.same-assets.com/2267512097/1411722178.jpeg",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80"
     ],
     features: ["4,491 sqm", "5-Storey + Basement", "Prime CBD", "Established", "Excellent Visibility", "Landmark"],
     occupancyRate: "88%",
@@ -305,8 +268,8 @@ const propertyData: PropertyData = {
     priceKsh: "KSh 3.2B",
     yield: "18.5%",
     images: [
-      "/p8/Screenshot 2025-08-18 224428.png",
-      "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
+      "https://ext.same-assets.com/2267512097/3134620964.jpeg",
+      "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?w=1200&q=80"
     ],
     features: ["136 Luxury Suites", "5-Star Rating", "2.5 Acres", "12 Meeting Rooms", "4 Restaurants", "350 Parking"],
     occupancyRate: "88%",
@@ -337,9 +300,8 @@ const propertyData: PropertyData = {
     priceKsh: "KSh 2.1B",
     yield: "9.0%",
     images: [
-      "/p3/ABSA_Towers.png",
-      "/p3/Screenshot 2025-08-14 212635.png",
-      "/p3/Screenshot 2025-08-14 212644.png"
+      "https://ext.same-assets.com/2267512097/2522671175.jpeg",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80"
     ],
     features: ["17-Storey Tower", "24,768 sqm", "160 Parking", "99.8% Occupied", "Blue-Chip Tenants", "Financial District"],
     occupancyRate: "99.8%",
@@ -370,8 +332,8 @@ const propertyData: PropertyData = {
     priceKsh: "KSh 385M",
     yield: "10.9%",
     images: [
-      "https://images.pexels.com/photos/1647416/pexels-photo-1647416.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
-      "https://images.pexels.com/photos/279810/pexels-photo-279810.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
+      "https://images.pexels.com/photos/1647416/pexels-photo-1647416.jpeg?w=1200&q=80",
+      "https://images.pexels.com/photos/279810/pexels-photo-279810.jpeg?w=1200&q=80"
     ],
     features: ["30,174 Sq.Ft.", "Historic Building", "Ground Retail", "7 Office Floors", "100% Occupied", "Moi Avenue"],
     occupancyRate: "100%",
@@ -391,6 +353,611 @@ const propertyData: PropertyData = {
       netYield: 10.9,
       appreciationRate: 6,
       totalROI: 16.9
+    }
+  },
+  10: {
+    title: "Kenya Comfort Hotel Building",
+    subtitle: "Prime Nairobi CBD Sale & Leaseback",
+    location: "Monrovia St & Muindi Mbingu St",
+    type: "Commercial / Hospitality",
+    price: "$5,000,000",
+    priceKsh: "KSh 680M",
+    yield: "8.2%",
+    images: [
+      "https://www.africanparadisesafaris.com/images/kenya-comfort-hotel.jpg",
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1200&q=80"
+    ],
+    features: ["3,530m² Total Area", "Prime CBD Location", "Sale & Leaseback", "100% Occupied", "Mixed Use", "Expansion Ready"],
+    occupancyRate: "100%",
+    description: "Secure sale and leaseback opportunity in Nairobi's commercial heart. Immediate income with strategic expansion potential.",
+    details: {
+      area: "3,530m²",
+      floors: "5 + Rooftop",
+      lease: "KSh 4.5M/month",
+      term: "5 Years Renewable",
+      occupancy: "100%",
+      appreciation: "10% p.a."
+    },
+    investment: {
+      totalInvestment: 680000000,
+      monthlyIncome: 4500000,
+      annualIncome: 54000000,
+      netYield: 8.2,
+      appreciationRate: 10,
+      totalROI: 18.2
+    }
+  },
+  11: {
+    title: "70 Chancery Lane",
+    subtitle: "London Legal District",
+    location: "London, WC2A",
+    type: "Prime Office",
+    price: "£75,000,000",
+    priceKsh: "KSh 13.5B",
+    yield: "5.5%",
+    images: [
+      "https://ext.same-assets.com/2541468600/712425661.jpeg",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80"
+    ],
+    features: ["77,812 sqft", "4 Car Parking", "Air Conditioning", "Raised Floors", "Net Initial Yield 5.5%", "Grade A"],
+    occupancyRate: "100%",
+    description: "Premium office building in London's legal district with institutional tenants and excellent transport links.",
+    details: {
+      area: "77,812 sqft",
+      parking: "4 Spaces",
+      grade: "Grade A",
+      occupancy: "100%",
+      yield: "5.5%",
+      appreciation: "4% p.a."
+    },
+    investment: {
+      totalInvestment: 13500000000,
+      monthlyIncome: 61875000,
+      annualIncome: 742500000,
+      netYield: 5.5,
+      appreciationRate: 4,
+      totalROI: 9.5
+    }
+  },
+  12: {
+    title: "22-23 Princes Street",
+    subtitle: "London West End",
+    location: "London, W1B",
+    type: "Mixed Use",
+    price: "£32,500,000",
+    priceKsh: "KSh 5.9B",
+    yield: "3.75%",
+    images: [
+      "https://ext.same-assets.com/2541468600/2302614904.jpeg",
+      "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=1200&q=80"
+    ],
+    features: ["11,016 sqft", "West End", "Retail Ground Floor", "Net Initial Yield 3.75%", "Prime Location", "Modern Offices"],
+    occupancyRate: "100%",
+    description: "Exceptional mixed-use building in London's prestigious West End with prime retail and office space.",
+    details: {
+      area: "11,016 sqft",
+      location: "West End",
+      retail: "Ground Floor",
+      occupancy: "100%",
+      yield: "3.75%",
+      appreciation: "5% p.a."
+    },
+    investment: {
+      totalInvestment: 5850000000,
+      monthlyIncome: 18281250,
+      annualIncome: 219375000,
+      netYield: 3.75,
+      appreciationRate: 5,
+      totalROI: 8.75
+    }
+  },
+  13: {
+    title: "Estuary House",
+    subtitle: "Liverpool Business Park",
+    location: "Leeward Drive, Speke, Liverpool",
+    type: "Office",
+    price: "£5,200,000",
+    priceKsh: "KSh 936M",
+    yield: "15%",
+    images: [
+      "https://ext.same-assets.com/2541468600/3801818977.jpeg",
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=80"
+    ],
+    features: ["75,623 sqft", "Business Park", "Air Conditioning", "Net Initial Yield 15%", "Transport Links", "Parking"],
+    occupancyRate: "95%",
+    description: "Large office complex in established business park with excellent yield and regional connectivity.",
+    details: {
+      area: "75,623 sqft",
+      type: "Business Park",
+      occupancy: "95%",
+      yield: "15%",
+      appreciation: "3% p.a."
+    },
+    investment: {
+      totalInvestment: 936000000,
+      monthlyIncome: 11700000,
+      annualIncome: 140400000,
+      netYield: 15,
+      appreciationRate: 3,
+      totalROI: 18
+    }
+  },
+  14: {
+    title: "307 Euston Road",
+    subtitle: "King's Cross Development Zone",
+    location: "London, NW1",
+    type: "Modern Office",
+    price: "£14,000,000",
+    priceKsh: "KSh 2.52B",
+    yield: "6.34%",
+    images: [
+      "https://ext.same-assets.com/2541468600/1105006406.jpeg",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80"
+    ],
+    features: ["18,102 sqft", "Air Conditioning", "Raised Floors", "Shower Facilities", "Net Initial Yield 6.34%", "King's Cross"],
+    occupancyRate: "100%",
+    description: "Modern office building near King's Cross with excellent connectivity and strong rental growth prospects.",
+    details: {
+      area: "18,102 sqft",
+      location: "King's Cross",
+      occupancy: "100%",
+      yield: "6.34%",
+      appreciation: "6% p.a."
+    },
+    investment: {
+      totalInvestment: 2520000000,
+      monthlyIncome: 13300000,
+      annualIncome: 159760000,
+      netYield: 6.34,
+      appreciationRate: 6,
+      totalROI: 12.34
+    }
+  },
+  15: {
+    title: "Vintners Place",
+    subtitle: "City of London Financial District",
+    location: "68 Upper Thames Street, EC4V",
+    type: "Office Tower",
+    price: "£140,000,000",
+    priceKsh: "KSh 25.2B",
+    yield: "9.78%",
+    images: [
+      "https://ext.same-assets.com/2541468600/3522491577.jpeg",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80"
+    ],
+    features: ["274,175 sqft", "City Location", "Grade A", "River Views", "Net Initial Yield 9.78%", "Landmark"],
+    occupancyRate: "100%",
+    description: "Landmark office tower in the City of London financial district with exceptional income and capital growth.",
+    details: {
+      area: "274,175 sqft",
+      location: "City of London",
+      grade: "Grade A",
+      occupancy: "100%",
+      yield: "9.78%",
+      appreciation: "4% p.a."
+    },
+    investment: {
+      totalInvestment: 25200000000,
+      monthlyIncome: 205380000,
+      annualIncome: 2464560000,
+      netYield: 9.78,
+      appreciationRate: 4,
+      totalROI: 13.78
+    }
+  },
+  16: {
+    title: "The Great Eastern Wharf Estate",
+    subtitle: "Battersea Riverside",
+    location: "London, SW11",
+    type: "Office Estate",
+    price: "£46,000,000",
+    priceKsh: "KSh 8.28B",
+    yield: "5.25%",
+    images: [
+      "https://ext.same-assets.com/2541468600/4022238478.jpeg",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80"
+    ],
+    features: ["52,407 sqft", "Riverside", "Modern Design", "Parking", "Net Initial Yield 5.25%", "Thames Frontage"],
+    occupancyRate: "100%",
+    description: "Contemporary office estate in vibrant Battersea with Thames frontage and excellent capital growth potential.",
+    details: {
+      area: "52,407 sqft",
+      location: "Battersea",
+      riverside: "Thames Frontage",
+      occupancy: "100%",
+      yield: "5.25%",
+      appreciation: "7% p.a."
+    },
+    investment: {
+      totalInvestment: 8280000000,
+      monthlyIncome: 36225000,
+      annualIncome: 434700000,
+      netYield: 5.25,
+      appreciationRate: 7,
+      totalROI: 12.25
+    }
+  },
+  17: {
+    title: "Former Wilko & Car Park",
+    subtitle: "Mansfield Town Centre",
+    location: "32-38 Clumber Street, Mansfield",
+    type: "Retail",
+    price: "£900,000",
+    priceKsh: "KSh 162M",
+    yield: "Details on Application",
+    images: [
+      "https://ext.same-assets.com/2541468600/580233546.jpeg",
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80"
+    ],
+    features: ["City Centre", "Car Park", "Redevelopment Potential", "High Footfall", "Prime Retail", "Planning Opportunities"],
+    occupancyRate: "0%",
+    description: "Prime retail opportunity in Mansfield town centre with significant development and repositioning potential.",
+    details: {
+      location: "Town Centre",
+      carpark: "Included",
+      potential: "Redevelopment",
+      yield: "TBA",
+      appreciation: "10% p.a."
+    },
+    investment: {
+      totalInvestment: 162000000,
+      monthlyIncome: 0,
+      annualIncome: 0,
+      netYield: 0,
+      appreciationRate: 10,
+      totalROI: 10
+    }
+  },
+  18: {
+    title: "4-8 East Street & 1-5 Cambridge Place, Farnham, GU9",
+    subtitle: "Farnham Mixed Use",
+    location: "Farnham, GU9",
+    type: "Retail",
+    price: "£2,375,000",
+    priceKsh: "KSh 427.5M",
+    yield: "9%",
+    images: [
+      "https://ext.same-assets.com/2541468600/1958743568.jpeg",
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80"
+    ],
+    features: ["12,794 sqft", "Town Centre", "Multiple Units", "Net Initial Yield 9%", "Established", "Residential Upper"],
+    occupancyRate: "100%",
+    description: "Prominent position in central Farnham, adjacent to 40,336 sq ft Sainsbury’s supermarket and in close proximity to key regeneration sites, Brightwells Yard and The Woolmead. Freehold, multi-let parade comprising nine retail units, one office suite and a gym. Potential for residential conversion, subject to the necessary planning permission. We are instructed to seek offers in excess of £2,375,000 (Two Million, Three Hundred and Seventy Five Thousand Pounds), subject to contract and exclusive of VAT. This reflects an attractive Net Initial Yield of 9.00%",
+    details: {
+      area: "12,794 sqft",
+      location: "Town Centre",
+      units: "Multiple",
+      occupancy: "100%", 
+      yield: "9%",
+      appreciation: "4% p.a."
+    },
+    investment: {
+      totalInvestment: 427500000,
+      monthlyIncome: 3206250,
+      annualIncome: 38475000,
+      netYield: 9,
+      appreciationRate: 4,
+      totalROI: 13
+    }
+  },
+  19: {
+    title: "The Royal Arcade",
+    subtitle: "Mayfair Luxury Retail",
+    location: "28 Old Bond Street, W1S",
+    type: "Retail",
+    price: "£13,150,000",
+    priceKsh: "KSh 2.37B",
+    yield: "2.5%",
+    images: [
+      "https://ext.same-assets.com/2541468600/3592092843.jpeg",
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80"
+    ],
+    features: ["9,458 sqft", "Mayfair", "Historic Arcade", "Net Initial Yield 2.5%", "Prime Retail", "Luxury District"],
+    occupancyRate: "100%",
+    description: "Prestigious retail arcade in the heart of London's luxury shopping district with ultra-prime positioning.",
+    details: {
+      area: "9,458 sqft",
+      location: "Mayfair",
+      type: "Historic Arcade",
+      occupancy: "100%",
+      yield: "2.5%",
+      appreciation: "8% p.a."
+    },
+    investment: {
+      totalInvestment: 2367000000,
+      monthlyIncome: 4930625,
+      annualIncome: 59167500,
+      netYield: 2.5,
+      appreciationRate: 8,
+      totalROI: 10.5
+    }
+  },
+  20: {
+    title: "Co-working Spaces Lavington",
+    subtitle: "Nairobi Premium Suburb",
+    location: "Lavington, Nairobi",
+    type: "Commercial",
+    price: "$70,833",
+    priceKsh: "KSh 8.5M",
+    yield: "12%",
+    images: [
+      "https://ext.same-assets.com/2267512097/3165367225.jpeg",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80"
+    ],
+    features: ["9 Workstations", "Modern Facilities", "High-Speed Internet", "Meeting Rooms", "Turnkey Operation", "Affluent Area"],
+    occupancyRate: "100%",
+    description: "Turnkey co-working space in affluent Lavington neighborhood with growing demand for flexible workspaces.",
+    details: {
+      workstations: "9",
+      facilities: "Complete",
+      internet: "High-Speed",
+      occupancy: "100%",
+      yield: "12%",
+      appreciation: "8% p.a."
+    },
+    investment: {
+      totalInvestment: 8500000,
+      monthlyIncome: 85000,
+      annualIncome: 1020000,
+      netYield: 12,
+      appreciationRate: 8,
+      totalROI: 20
+    }
+  },
+  21: {
+    title: "Entertainment Club/Lounge",
+    subtitle: "Umoja II Nairobi",
+    location: "Umoja II, Nairobi",
+    type: "Leisure",
+    price: "$35,000",
+    priceKsh: "KSh 4.2M",
+    yield: "18%",
+    images: [
+      "https://ext.same-assets.com/2267512097/1722438595.jpeg",
+      "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1200&q=80"
+    ],
+    features: ["Fully Equipped", "Established Clientele", "Prime Location", "Liquor License", "Sound System", "Operational"],
+    occupancyRate: "100%",
+    description: "Operational entertainment venue with strong customer base and excellent returns in vibrant neighborhood.",
+    details: {
+      status: "Operational",
+      license: "Full Liquor",
+      equipment: "Complete",
+      occupancy: "100%",
+      yield: "18%",
+      appreciation: "6% p.a."
+    },
+    investment: {
+      totalInvestment: 4200000,
+      monthlyIncome: 63000,
+      annualIncome: 756000,
+      netYield: 18,
+      appreciationRate: 6,
+      totalROI: 24
+    }
+  },
+  22: {
+    title: "Warehouse Godown Mlolongo",
+    subtitle: "SGR Logistics Hub",
+    location: "Mlolongo",
+    type: "Industrial",
+    price: "$750,000",
+    priceKsh: "KSh 90M",
+    yield: "11%",
+    images: [
+      "https://ext.same-assets.com/2267512097/2415429296.jpeg",
+      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80"
+    ],
+    features: ["1/2 Acre", "Newly Built", "Strategic Location", "SGR Access", "Modern Construction", "High Ceilings"],
+    occupancyRate: "100%",
+    description: "Modern warehouse facility near SGR terminus with excellent logistics access and growing industrial demand.",
+    details: {
+      land: "1/2 Acre",
+      construction: "New Build",
+      location: "SGR Zone",
+      occupancy: "100%",
+      yield: "11%",
+      appreciation: "12% p.a."
+    },
+    investment: {
+      totalInvestment: 90000000,
+      monthlyIncome: 825000,
+      annualIncome: 9900000,
+      netYield: 11,
+      appreciationRate: 12,
+      totalROI: 23
+    }
+  },
+  23: {
+    title: "Petrol Station Sagana",
+    subtitle: "Nairobi-Nyeri Highway",
+    location: "Sagana, Kerugoya",
+    type: "Retail",
+    price: "$208,333",
+    priceKsh: "KSh 25M",
+    yield: "20%+",
+    images: [
+      "https://ext.same-assets.com/2267512097/3069981277.jpeg",
+      "https://images.unsplash.com/photo-1545262810-77515befe149?w=1200&q=80"
+    ],
+    features: ["Fully Operational", "Highway Location", "Convenience Store", "High Traffic", "Fuel Pumps", "Established Business"],
+    occupancyRate: "100%",
+    description: "Profitable petrol station on busy Nairobi-Nyeri highway with consistent fuel demand and additional retail income.",
+    details: {
+      status: "Operational",
+      location: "Highway",
+      store: "Convenience",
+      occupancy: "100%",
+      yield: "20%",
+      appreciation: "5% p.a."
+    },
+    investment: {
+      totalInvestment: 25000000,
+      monthlyIncome: 416667,
+      annualIncome: 5000000,
+      netYield: 20,
+      appreciationRate: 5,
+      totalROI: 25
+    }
+  },
+  24: {
+    title: "Fine Dine Restaurant Lavington",
+    subtitle: "Premium Dining Establishment",
+    location: "Lavington, Nairobi",
+    type: "Leisure",
+    price: "$91,667",
+    priceKsh: "KSh 11M",
+    yield: "16%",
+    images: [
+      "https://ext.same-assets.com/2267512097/52631664.jpeg",
+      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80"
+    ],
+    features: ["Complete Equipment", "Aesthetic Design", "Established Menu", "Parking Available", "Licensed", "Turnkey"],
+    occupancyRate: "100%",
+    description: "Turnkey restaurant with modern equipment and loyal customer base in affluent Lavington area.",
+    details: {
+      equipment: "Complete",
+      design: "High-End",
+      menu: "Established",
+      occupancy: "100%",
+      yield: "16%",
+      appreciation: "7% p.a."
+    },
+    investment: {
+      totalInvestment: 11000000,
+      monthlyIncome: 146667,
+      annualIncome: 1760000,
+      netYield: 16,
+      appreciationRate: 7,
+      totalROI: 23
+    }
+  },
+  25: {
+    title: "Physiotherapy Clinic",
+    subtitle: "Parklands Healthcare Facility",
+    location: "Parklands/Highridge, Nairobi",
+    type: "Healthcare",
+    price: "$137,500",
+    priceKsh: "KSh 16.5M",
+    yield: "14%",
+    images: [
+      "https://ext.same-assets.com/2267512097/2522671175.jpeg",
+      "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80"
+    ],
+    features: ["11 Treatment Rooms", "Modern Equipment", "Established Practice", "Prime Location", "Licensed", "Patient Database"],
+    occupancyRate: "100%",
+    description: "Fully equipped physiotherapy clinic with established patient base and growing healthcare demand.",
+    details: {
+      rooms: "11 Treatment",
+      equipment: "Modern",
+      practice: "Established",
+      occupancy: "100%",
+      yield: "14%",
+      appreciation: "9% p.a."
+    },
+    investment: {
+      totalInvestment: 16500000,
+      monthlyIncome: 192500,
+      annualIncome: 2310000,
+      netYield: 14,
+      appreciationRate: 9,
+      totalROI: 23
+    }
+  },
+  26: {
+    title: "Supermarket Nakuru",
+    subtitle: "Town Centre Retail",
+    location: "Nakuru Town East",
+    type: "Retail",
+    price: "$1,541,667",
+    priceKsh: "KSh 185M",
+    yield: "13%",
+    images: [
+      "https://ext.same-assets.com/2267512097/1324109704.jpeg",
+      "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80"
+    ],
+    features: ["Operational Business", "Large Floor Area", "Prime Location", "Established Supply Chain", "Customer Base", "Parking"],
+    occupancyRate: "100%",
+    description: "Profitable supermarket in Nakuru's busiest commercial district with strong brand and customer loyalty.",
+    details: {
+      status: "Operational",
+      area: "Large Format",
+      location: "Town Centre",
+      occupancy: "100%",
+      yield: "13%",
+      appreciation: "8% p.a."
+    },
+    investment: {
+      totalInvestment: 185000000,
+      monthlyIncome: 2004167,
+      annualIncome: 24050000,
+      netYield: 13,
+      appreciationRate: 8,
+      totalROI: 21
+    }
+  },
+  27: {
+    title: "Cross House Newcastle",
+    subtitle: "City Centre Period Building",
+    location: "Westgate Road, Newcastle",
+    type: "Office",
+    price: "£2,000,000",
+    priceKsh: "KSh 360M",
+    yield: "Details on Application",
+    images: [
+      "https://ext.same-assets.com/2541468600/3437953458.jpeg",
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=80"
+    ],
+    features: ["City Centre", "Period Building", "Refurbishment Potential", "Transport Links", "Character Property", "Development Scope"],
+    occupancyRate: "80%",
+    description: "Character office building in Newcastle city centre with refurbishment and repositioning potential.",
+    details: {
+      location: "City Centre",
+      type: "Period",
+      potential: "Refurbishment",
+      occupancy: "80%",
+      yield: "8%",
+      appreciation: "5% p.a."
+    },
+    investment: {
+      totalInvestment: 360000000,
+      monthlyIncome: 2400000,
+      annualIncome: 28800000,
+      netYield: 8,
+      appreciationRate: 5,
+      totalROI: 13
+    }
+  },
+  28: {
+    title: "14 Coates Crescent",
+    subtitle: "Edinburgh West End",
+    location: "Edinburgh, EH3 7AF",
+    type: "Office",
+    price: "£1,750,000",
+    priceKsh: "KSh 315M",
+    yield: "7%",
+    images: [
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80"
+    ],
+    features: ["4,514 sqft", "West End", "Period Property", "High Specification", "Prestigious Address", "Parking"],
+    occupancyRate: "100%",
+    description: "Elegant office space in Edinburgh's prestigious West End with period features and modern specification.",
+    details: {
+      area: "4,514 sqft",
+      location: "West End",
+      type: "Period",
+      occupancy: "100%",
+      yield: "7%",
+      appreciation: "4% p.a."
+    },
+    investment: {
+      totalInvestment: 315000000,
+      monthlyIncome: 1837500,
+      annualIncome: 22050000,
+      netYield: 7,
+      appreciationRate: 4,
+      totalROI: 11
     }
   }
 };
@@ -523,9 +1090,7 @@ const PropertyDetail = () => {
                 <div className="text-base text-gray-400">({property.priceKsh})</div>
               </div>
 
-              <p className="text-base text-gray-600 leading-relaxed max-w-3xl font-luxury">
-                {property.description}
-              </p>
+              
             </div>
           </div>
 
@@ -594,15 +1159,17 @@ const PropertyDetail = () => {
             )}
           </div>
         </div>
-        {/* --- END MODIFIED SECTION --- */}
-
+        <h3 className="text-s tracking-[0.3em] text-black mb-6 uppercase">Investment Summary</h3>
+              <p className="text-base text-gray-600 leading-relaxed max-w-3xl font-luxury">
+                {property.description}
+              </p>
         {/* Details Grid - Clean & Organized */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 py-20 border-t border-gray-100">
           
           {/* Left Column - Specifications */}
           <div className="space-y-12">
             <div>
-              <h3 className="text-xs tracking-[0.3em] text-gray-400 mb-6 uppercase">Property Details</h3>
+              <h3 className="text-xs tracking-[0.3em] text-black mb-6 uppercase">Property Details</h3>
               <div className="space-y-4">
                 {Object.entries(property.details).map(([key, value]) => (
                   <div key={key} className="flex justify-between items-baseline border-b border-gray-50 pb-3">
@@ -629,7 +1196,7 @@ const PropertyDetail = () => {
           {/* Center Column - Investment Metrics */}
           <div className="space-y-12">
             <div>
-              <h3 className="text-xs tracking-[0.3em] text-gray-400 mb-6 uppercase">Investment Returns</h3>
+              <h3 className="text-xs tracking-[0.3em] text-black mb-6 uppercase">Investment Returns</h3>
               <div className="space-y-6">
                 <div className="relative pl-6 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b before:from-[#c9a961] before:to-transparent">
                   <div className="text-xs text-gray-500 mb-1 tracking-wide uppercase">Annual Yield</div>
@@ -686,12 +1253,12 @@ const PropertyDetail = () => {
 
           {/* Right Column - Contact */}
           <div className="lg:sticky lg:top-32 h-fit">
-            <div className="border border-gray-200 p-8 bg-gradient-to-br from-white to-gray-50">
+            <div className="border border-gray-400 p-8 bg-gradient-to-br from-white to-gray-50">
               <div className="text-center mb-8">
                 <div className="w-10 h-10 border border-[#c9a961] mx-auto mb-5 flex items-center justify-center">
                   <Crown className="h-5 w-5 text-[#c9a961]" />
                 </div>
-                <h3 className="text-xs tracking-[0.3em] text-gray-400 mb-3 uppercase">Private Consultation</h3>
+                <h3 className="text-xs tracking-[0.3em] text-black mb-3 uppercase">Private Consultation</h3>
                 <p className="text-gray-600 font-light text-xs leading-relaxed">
                   Arrange a confidential discussion with our investment advisors
                 </p>
