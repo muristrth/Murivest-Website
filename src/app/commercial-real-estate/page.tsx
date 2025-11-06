@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { ArrowLeft, Building2, TrendingUp, Shield, Award, Users } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Commercial Real Estate Investment Kenya | Murivest Realty Group',
-  description: 'Premier commercial real estate investment opportunities in Nairobi, Kenya. Office buildings, retail spaces, and industrial properties with guaranteed returns. Expert property management and wealth-building strategies.',
-  keywords: 'commercial real estate Kenya, office investment Nairobi, retail property Kenya, industrial real estate investment, commercial property returns Kenya, Murivest Realty Group',
+  title: 'Institutional Real Estate Kenya | Commercial Investment Properties Nairobi | Grade A Office Towers',
+  description: 'Leading institutional commercial real estate investment in Nairobi, Kenya. Grade A office towers, high-yield properties, and African commercial real estate funds. Expert investment advisory for UK and Kenyan executives seeking capital preservation and legacy wealth building.',
+  keywords: 'institutional real estate Kenya, commercial investment properties Nairobi, grade A office towers Nairobi CBD, high yield commercial properties Africa, private real estate investment firms Kenya, property investment opportunities Kenya 2025, institutional asset managers Nairobi, African commercial real estate funds, emerging markets real estate opportunities Africa, investing in Nairobi commercial assets from UK, real estate co-ownership Africa, best performing office markets Africa 2025, discreet real estate investment advisory, family office investment opportunities Africa, legacy real estate investments, capital preservation real estate strategies, old money real estate investments, Africa private wealth real estate deal, commercial real estate Kenya, office investment Nairobi, retail property Kenya, industrial real estate investment, commercial property returns Kenya, Murivest Realty Group',
 };
 
 export default function CommercialRealEstatePage() {

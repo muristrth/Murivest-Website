@@ -90,6 +90,118 @@ const Properties = () => {
       roi: "Trophy asset in premium location"
     },
     {
+      id: 15,
+      title: "Vintners Place",
+      location: "68 Upper Thames Street, London, EC4V, UK",
+      continent: "Europe",
+      type: "Office",
+      price: "£140,000,000",
+      yield: "9.78%",
+      image: "https://ext.same-assets.com/2541468600/3522491577.jpeg",
+      features: ["274,175 sqft", "City of London", "Grade A Offices", "River Views"],
+      status: "Available",
+      description: "Landmark office tower in the City of London financial district",
+      roi: "Institutional grade investment"
+    },
+    {
+      id: 16,
+      title: "The Great Eastern Wharf Estate",
+      location: "London, SW11, UK",
+      continent: "Europe",
+      type: "Office",
+      price: "£46,000,000",
+      yield: "5.25%",
+      image: "https://ext.same-assets.com/2541468600/4022238478.jpeg",
+      features: ["52,407 sqft", "Riverside Location", "Modern Design", "Parking"],
+      status: "Available",
+      description: "Contemporary office estate in vibrant Battersea with Thames frontage",
+      roi: "Capital growth opportunity"
+    },
+    {
+      id: 17,
+      title: "Former Wilko & Car Park",
+      location: "32-38 Clumber Street, Mansfield, UK",
+      continent: "Europe",
+      type: "Retail",
+      price: "£900,000",
+      yield: "Details on Application",
+      image: "https://ext.same-assets.com/2541468600/580233546.jpeg",
+      features: ["City Centre Location", "Car Park Included", "Redevelopment Potential", "High Footfall Area"],
+      status: "Available",
+      description: "Prime retail opportunity in Mansfield town centre with development potential",
+      roi: "Value-add opportunity"
+    },
+    {
+      id: 18,
+      title: "4-8 East Street & 1-5 Cambridge Place",
+      location: "Farnham, GU9, UK",
+      continent: "Europe",
+      type: "Retail",
+      price: "£2,375,000",
+      yield: "9%",
+      image: "https://ext.same-assets.com/2541468600/1958743568.jpeg",
+      features: ["12,794 sqft", "Town Centre", "Multiple Units", "Established Location"],
+      status: "Under Offer",
+      description: "Mixed retail and residential property in historic market town",
+      roi: "Strong town centre investment"
+    },
+    {
+      id: 19,
+      title: "The Royal Arcade",
+      location: "28 Old Bond Street, Mayfair, London, W1S, UK",
+      continent: "Europe",
+      type: "Retail",
+      price: "£13,150,000",
+      yield: "2.5%",
+      image: "https://ext.same-assets.com/2541468600/3592092843.jpeg",
+      features: ["9,458 sqft", "Mayfair Location", "Historic Arcade", "Prime Retail"],
+      status: "Under Offer",
+      description: "Prestigious retail arcade in the heart of London's luxury shopping district",
+      roi: "Ultra-prime Mayfair asset"
+    },
+    {
+      id: 20,
+      title: "Co-working Spaces",
+      location: "Lavington, Nairobi, Kenya",
+      continent: "Africa",
+      type: "Commercial",
+      price: "KES 8,500,000",
+      yield: "12%",
+      image: "https://ext.same-assets.com/2267512097/3165367225.jpeg",
+      features: ["9 Workstations", "Modern Facilities", "High-Speed Internet", "Meeting Rooms"],
+      status: "Available",
+      description: "Turnkey co-working space in affluent Lavington neighborhood",
+      roi: "Growing demand for flexible workspaces"
+    },
+    {
+      id: 22,
+      title: "1/2acre Warehouse-Godown in Mlolongo",
+      location: "Mlolongo, Kenya",
+      continent: "Africa",
+      type: "Industrial",
+      price: "KES 90,000,000",
+      yield: "11%",
+      image: "/p2/mlolongo-godown.png",
+      features: ["1/2 Acre", "Newly Built", "Strategic Location", "SGR Access"],
+      status: "Available",
+      description: "Modern warehouse facility near SGR terminus with excellent logistics access",
+      roi: "Logistics hub expansion"
+    },
+    {
+      id: 24,
+      title: "Fine Dine Restaurant Lavington",
+      location: "Lavington, Nairobi, Kenya",
+      continent: "Africa",
+      type: "Leisure",
+      price: "KES 11,000,000",
+      yield: "16%",
+      image: "https://ext.same-assets.com/2267512097/52631664.jpeg",
+      features: ["Complete Equipment", "Aesthetic Design", "Established Menu", "Parking Available"],
+      status: "Available",
+      description: "Turnkey restaurant with modern equipment and loyal customer base",
+      roi: "Premium dining market"
+    },
+    {
       id: 6,
       title: "Uchumi House Commercial Building",
       location: "Aga khan Walk, Nairobi CBD, Kenya",
@@ -215,146 +327,7 @@ const Properties = () => {
       description: "Modern office building near King's Cross with excellent connectivity",
       roi: "Strong rental growth area"
     },
-    {
-      id: 15,
-      title: "Vintners Place",
-      location: "68 Upper Thames Street, London, EC4V, UK",
-      continent: "Europe",
-      type: "Office",
-      price: "£140,000,000",
-      yield: "9.78%",
-      image: "https://ext.same-assets.com/2541468600/3522491577.jpeg",
-      features: ["274,175 sqft", "City of London", "Grade A Offices", "River Views"],
-      status: "Available",
-      description: "Landmark office tower in the City of London financial district",
-      roi: "Institutional grade investment"
-    },
-    {
-      id: 16,
-      title: "The Great Eastern Wharf Estate",
-      location: "London, SW11, UK",
-      continent: "Europe",
-      type: "Office",
-      price: "£46,000,000",
-      yield: "5.25%",
-      image: "https://ext.same-assets.com/2541468600/4022238478.jpeg",
-      features: ["52,407 sqft", "Riverside Location", "Modern Design", "Parking"],
-      status: "Available",
-      description: "Contemporary office estate in vibrant Battersea with Thames frontage",
-      roi: "Capital growth opportunity"
-    },
-    {
-      id: 17,
-      title: "Former Wilko & Car Park",
-      location: "32-38 Clumber Street, Mansfield, UK",
-      continent: "Europe",
-      type: "Retail",
-      price: "£900,000",
-      yield: "Details on Application",
-      image: "https://ext.same-assets.com/2541468600/580233546.jpeg",
-      features: ["City Centre Location", "Car Park Included", "Redevelopment Potential", "High Footfall Area"],
-      status: "Available",
-      description: "Prime retail opportunity in Mansfield town centre with development potential",
-      roi: "Value-add opportunity"
-    },
-    {
-      id: 18,
-      title: "4-8 East Street & 1-5 Cambridge Place",
-      location: "Farnham, GU9, UK",
-      continent: "Europe",
-      type: "Retail",
-      price: "£2,375,000",
-      yield: "9%",
-      image: "https://ext.same-assets.com/2541468600/1958743568.jpeg",
-      features: ["12,794 sqft", "Town Centre", "Multiple Units", "Established Location"],
-      status: "Under Offer",
-      description: "Mixed retail and residential property in historic market town",
-      roi: "Strong town centre investment"
-    },
-    {
-      id: 19,
-      title: "The Royal Arcade",
-      location: "28 Old Bond Street, Mayfair, London, W1S, UK",
-      continent: "Europe",
-      type: "Retail",
-      price: "£13,150,000",
-      yield: "2.5%",
-      image: "https://ext.same-assets.com/2541468600/3592092843.jpeg",
-      features: ["9,458 sqft", "Mayfair Location", "Historic Arcade", "Prime Retail"],
-      status: "Under Offer",
-      description: "Prestigious retail arcade in the heart of London's luxury shopping district",
-      roi: "Ultra-prime Mayfair asset"
-    },
-    {
-      id: 20,
-      title: "Co-working Spaces",
-      location: "Lavington, Nairobi, Kenya",
-      continent: "Africa",
-      type: "Commercial",
-      price: "KES 8,500,000",
-      yield: "12%",
-      image: "https://ext.same-assets.com/2267512097/3165367225.jpeg",
-      features: ["9 Workstations", "Modern Facilities", "High-Speed Internet", "Meeting Rooms"],
-      status: "Available",
-      description: "Turnkey co-working space in affluent Lavington neighborhood",
-      roi: "Growing demand for flexible workspaces"
-    },
-    {
-      id: 21,
-      title: "Entertainment Club/Lounge",
-      location: "Umoja II, Nairobi, Kenya",
-      continent: "Africa",
-      type: "Leisure",
-      price: "KES 4,200,000",
-      yield: "18%",
-      image: "https://ext.same-assets.com/2267512097/1722438595.jpeg",
-      features: ["Fully Equipped", "Established Clientele", "Prime Location", "Liquor License"],
-      status: "Available",
-      description: "Operational entertainment venue with strong customer base",
-      roi: "Immediate revenue generation"
-    },
-    {
-      id: 22,
-      title: "Warehouse Godown Mlolongo",
-      location: "Mlolongo, Kenya",
-      continent: "Africa",
-      type: "Industrial",
-      price: "KES 90,000,000",
-      yield: "11%",
-      image: "https://ext.same-assets.com/2267512097/2415429296.jpeg",
-      features: ["1/2 Acre", "Newly Built", "Strategic Location", "SGR Access"],
-      status: "Available",
-      description: "Modern warehouse facility near SGR terminus with excellent logistics access",
-      roi: "Logistics hub expansion"
-    },
-    {
-      id: 23,
-      title: "Petrol Station Sagana",
-      location: "Sagana, Kerugoya, Kenya",
-      continent: "Africa",
-      type: "Retail",
-      price: "KES 25,000,000",
-      yield: "20%+",
-      image: "https://ext.same-assets.com/2267512097/3069981277.jpeg",
-      features: ["Fully Operational", "Highway Location", "Convenience Store", "High Traffic"],
-      status: "Available",
-      description: "Profitable petrol station on busy Nairobi-Nyeri highway",
-      roi: "Consistent fuel demand"
-    },
-    {
-      id: 24,
-      title: "Fine Dine Restaurant Lavington",
-      location: "Lavington, Nairobi, Kenya",
-      continent: "Africa",
-      type: "Leisure",
-      price: "KES 11,000,000",
-      yield: "16%",
-      image: "https://ext.same-assets.com/2267512097/52631664.jpeg",
-      features: ["Complete Equipment", "Aesthetic Design", "Established Menu", "Parking Available"],
-      status: "Available",
-      description: "Turnkey restaurant with modern equipment and loyal customer base",
-      roi: "Premium dining market"
-    },
+    
     {
       id: 25,
       title: "Physiotherapy Clinic",
@@ -410,12 +383,235 @@ const Properties = () => {
       status: "Available",
       description: "Elegant office space in Edinburgh's prestigious West End",
       roi: "Scotland's capital investment"
-    }
+    },
+    {
+    id: 29,
+    title: "Grand Plaza Serviced Apartments",
+    location: "42 Princes Square, London, W2",
+    continent: "Europe",
+    type: "Hotel",
+    price: "£100M",
+    yield: "7.5%",
+    image: "https://ext.same-assets.com/2541468600/3581754212.jpeg",
+    features: ["105,355 sqft", "198 Bedrooms", "Prime London", "Serviced Apartments"],
+    status: "Available",
+    description: "Prestigious serviced apartments in prime London location with excellent investment potential",
+    roi: "Prime London appreciation of 8% p.a."
+  },
+  {
+    id: 30,
+    title: "Velvet Hotel Manchester",
+    location: "2 Canal Street, Manchester, M1",
+    continent: "Europe",
+    type: "Hotel",
+    price: "£11M",
+    yield: "8.2%",
+    image: "https://ext.same-assets.com/2541468600/3798123555.jpeg",
+    features: ["36 Bedrooms", "City Centre", "Modern Boutique", "Full Service"],
+    status: "Available",
+    description: "Contemporary boutique hotel in Manchester's vibrant Canal Street district",
+    roi: "Manchester market growth of 6.5% p.a."
+  },
+  {
+    id: 31,
+    title: "29 Albany Street Townhouse Hotel",
+    location: "Edinburgh, EH1",
+    continent: "Europe",
+    type: "Hotel",
+    price: "£7.5M",
+    yield: "9.1%",
+    image: "https://ext.same-assets.com/2541468600/3516624965.jpeg",
+    features: ["7,100 sqft", "17 Bedrooms", "Historic Building", "Premium Location"],
+    status: "Available",
+    description: "Elegant townhouse hotel in Edinburgh's prestigious Albany Street",
+    roi: "Edinburgh hospitality sector growth of 7% p.a."
+  },
+  {
+    id: 32,
+    title: "The Royal Arcade Mayfair",
+    location: "28 Old Bond Street, London, W1S",
+    continent: "Europe",
+    type: "Retail",
+    price: "£13.15M",
+    yield: "2.5%",
+    image: "https://ext.same-assets.com/2541468600/2084512286.jpeg",
+    features: ["9,458 sqft", "Prime Mayfair", "Historic Arcade", "Luxury Retail"],
+    status: "Under Offer",
+    description: "Prestigious retail space in Mayfair's iconic Royal Arcade on Old Bond Street",
+    roi: "Mayfair retail capital appreciation of 5% p.a."
+  },
+  {
+    id: 33,
+    title: "London City Island Retail",
+    location: "London, E14",
+    continent: "Europe",
+    type: "Retail",
+    price: "£7.15M",
+    yield: "8.0%",
+    image: "https://ext.same-assets.com/2541468600/327513321.jpeg",
+    features: ["23,645 sqft", "Waterfront Location", "Modern Development", "High Footfall"],
+    status: "Under Offer",
+    description: "Contemporary retail space in vibrant waterfront development with strong tenant demand",
+    roi: "East London regeneration growth of 9% p.a."
+  },
+  {
+    id: 34,
+    title: "Cary Arms & Spa",
+    location: "Babbacombe Bay, Devon TQ1 3LX",
+    continent: "Europe",
+    type: "Hotel",
+    price: "£4.5M",
+    yield: "10.5%",
+    image: "https://ext.same-assets.com/2541468600/1667188204.jpeg",
+    features: ["Coastal Location", "Spa Facilities", "Boutique Hotel", "Premium Amenities"],
+    status: "Available",
+    description: "Stunning coastal hotel and spa with breathtaking sea views in Devon",
+    roi: "Coastal hospitality premium of 8.5% p.a."
+  },
+  {
+    id: 35,
+    title: "Former Land Rover Showroom",
+    location: "Wheatley Hall Road, Doncaster, DN2",
+    continent: "Europe",
+    type: "Retail",
+    price: "£2.8M",
+    yield: "9.5%",
+    image: "https://ext.same-assets.com/2541468600/1724353550.jpeg",
+    features: ["17,573 sqft", "Automotive", "Excellent Visibility", "Development Potential"],
+    status: "Available",
+    description: "Large-format retail/automotive space with redevelopment opportunities",
+    roi: "Regional retail sector growth of 6% p.a."
+  },
+  {
+    id: 36,
+    title: "Hampton by Hilton Liverpool Airport",
+    location: "Speke Hall Avenue, Liverpool, L24 1YD",
+    continent: "Europe",
+    type: "Hotel",
+    price: "£12.5M",
+    yield: "8.8%",
+    image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1200&q=80",
+    features: ["160 Bedrooms", "Airport Location", "Branded Hotel", "Strong Covenant"],
+    status: "Under Offer",
+    description: "Established Hampton by Hilton at Liverpool John Lennon Airport with reliable income",
+    roi: "Airport hotel sector stability with 7.5% p.a. growth"
+  },
+  {
+    id: 37,
+    title: "Project Forth Townhouse",
+    location: "3 Rothesay Terrace, Edinburgh, EH3",
+    continent: "Europe",
+    type: "Hotel",
+    price: "£5M",
+    yield: "8.9%",
+    image: "https://ext.same-assets.com/2541468600/1872935202.jpeg",
+    features: ["27 Bedrooms", "West End Location", "Georgian Building", "Boutique"],
+    status: "Available",
+    description: "Premier bed and breakfast in Edinburgh's desirable West End district",
+    roi: "Edinburgh tourism growth of 7.2% p.a."
+  },
+  {
+    id: 38,
+    title: "Churchill House Hotel",
+    location: "Mosley Street, Newcastle upon Tyne, NE1",
+    continent: "Europe",
+    type: "Hotel",
+    price: "£5M",
+    yield: "9.3%",
+    image: "https://ext.same-assets.com/2541468600/2741718123.jpeg",
+    features: ["City Centre", "Modern Facilities", "Strong Trading", "Prime Location"],
+    status: "Available",
+    description: "Well-established hotel in Newcastle city centre with consistent performance",
+    roi: "Newcastle commercial growth of 6.8% p.a."
+  },
+  {
+    id: 39,
+    title: "Former Wilko Retail Unit",
+    location: "32-38 Clumber Street, Mansfield, NG18 1NU",
+    continent: "Europe",
+    type: "Retail",
+    price: "£900K",
+    yield: "11.2%",
+    image: "https://ext.same-assets.com/2541468600/1968892523.jpeg",
+    features: ["Town Centre", "Large Format", "Car Park Included", "High Street"],
+    status: "Available",
+    description: "Former Wilko store with car park in Mansfield town centre location",
+    roi: "Regional retail redevelopment potential of 5% p.a."
+  },
+  {
+    id: 40,
+    title: "Embassy Gardens Retail Unit",
+    location: "Nine Elms, London, SW11",
+    continent: "Europe",
+    type: "Retail",
+    price: "£890K",
+    yield: "7.0%",
+    image: "https://ext.same-assets.com/2541468600/1155013741.jpeg",
+    features: ["1,732 sqft", "New Development", "Nine Elms", "High Specification"],
+    status: "Under Offer",
+    description: "Modern retail unit in Embassy Gardens, one of London's premier new developments",
+    roi: "Nine Elms regeneration premium of 10% p.a."
+  },
+  {
+    id: 41,
+    title: "Merchants Manor Hotel",
+    location: "Westen Terrace, Falmouth, Cornwall, TR11",
+    continent: "Europe",
+    type: "Hotel",
+    price: "£3.2M",
+    yield: "10.8%",
+    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1200&q=80",
+    features: ["39 Bedrooms", "Wet Spa", "Coastal Town", "Waterfront"],
+    status: "Available",
+    description: "Characterful hotel with spa facilities in the picturesque coastal town of Falmouth",
+    roi: "Cornwall tourism growth of 8.2% p.a."
+  },
+  {
+    id: 42,
+    title: "Volvo Welwyn Garden City",
+    location: "57 Great North Road, Hertfordshire, AL8",
+    continent: "Europe",
+    type: "Retail",
+    price: "£2M",
+    yield: "9.8%",
+    image: "https://ext.same-assets.com/2541468600/415265675.jpeg",
+    features: ["Automotive", "Main Road", "Large Site", "Strategic Location"],
+    status: "Available",
+    description: "Substantial automotive retail premises on Great North Road",
+    roi: "Hertfordshire commercial growth of 6.5% p.a."
+  },
+  {
+    id: 43,
+    title: "Farnham Town Centre Retail",
+    location: "4-8 East Street, Farnham, GU9",
+    continent: "Europe",
+    type: "Retail",
+    price: "£2.375M",
+    yield: "9.0%",
+    image: "https://ext.same-assets.com/2541468600/3038036623.jpeg",
+    features: ["12,794 sqft", "Prime Pitch", "Town Centre", "Multi-unit"],
+    status: "Under Offer",
+    description: "Prime town centre retail investment in historic Farnham with strong covenant tenants",
+    roi: "Surrey market town stability of 5.5% p.a."
+  },
+  {
+    id: 44,
+    title: "VW Wirral Dealership",
+    location: "1 Pool Lane, Bromborough, Wirral, CH62",
+    continent: "Europe",
+    type: "Retail",
+    price: "£2.5M",
+    yield: "9.6%",
+    image: "https://ext.same-assets.com/2541468600/2287617688.jpeg",
+    features: ["Automotive", "Established Site", "Strong Brand", "Parking"],
+    status: "Under Offer",
+    description: "Volkswagen dealership in established Wirral location with strong trading history",
+    roi: "Automotive sector stability of 6% p.a."
+  }
   ];
 
   const propertyTypes = ['All', 'Commercial', 'Hotel', 'Retail', 'Industrial', 'Office Development', 'Office', 'Leisure', 'Healthcare'];
   const continents = ['All', 'Africa', 'Europe', 'Asia-Pacific', 'Americas', 'Middle East'];
-  const categories = ['For Sale', 'For Lease', 'Co-Ownership', 'Investments', 'Auctions', 'Advisory'];
   const propertyTypeIcons = [
     { name: 'Office', icon: '🏢' },
     { name: 'Retail', icon: '🛍️' },
@@ -472,25 +668,6 @@ const Properties = () => {
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Premium investment opportunities across Africa and Europe
             </p>
-          </div>
-
-          {/* Category Tabs */}
-          <div className="mb-8">
-            <div className="flex flex-wrap justify-center gap-2">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-6 py-2 text-sm font-medium transition-all duration-300 ${
-                    selectedCategory === category
-                      ? 'bg-[#C5A44D] text-white'
-                      : 'bg-white text-slate-700 hover:bg-[#C5A44D] hover:text-white'
-                  } border border-slate-300 hover:border-[#C5A44D]`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
           </div>
 
           {/* Property Type Icons */}

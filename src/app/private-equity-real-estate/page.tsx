@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { ArrowLeft, TrendingUp, Target, Users, BarChart3, Shield } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Private Equity Real Estate Kenya | Direct Property Investment | Murivest',
-  description: 'Private equity real estate investments in Kenya. Direct ownership in premium properties with active management and value creation strategies.',
-  keywords: 'private equity real estate Kenya, direct property investment Nairobi, private equity property funds, real estate private equity Kenya',
+  title: 'Private Real Estate Investment Firms Kenya | Institutional Asset Managers Nairobi | Murivest Realty Group',
+  description: 'Leading private real estate investment firms in Kenya. Institutional asset management in Nairobi with direct property ownership, active management, and value creation strategies for UK and Kenyan executives and family offices.',
+  keywords: 'private real estate investment firms Kenya, institutional asset managers Nairobi, private equity real estate Kenya, direct property investment Nairobi, private equity property funds, real estate private equity Kenya, discreet real estate investment advisory, family office investment opportunities Africa, legacy real estate investments, capital preservation real estate strategies, old money real estate investments, Africa private wealth real estate deal',
 };
 
 export default function PrivateEquityRealEstatePage() {

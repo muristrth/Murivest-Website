@@ -5,6 +5,7 @@ import './globals.css';
 import ScrollToTopButton from '../components/ui/ScrollToTopButton';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
+import ChatWidget from '../components/ui/ChatWidget';
 
 // Define the fonts here
 const inter = Inter({
@@ -217,6 +218,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <ChatWidget />
         </div>
       </body>
     </html>

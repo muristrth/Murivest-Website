@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { ArrowLeft, Building, MapPin, Calendar, DollarSign } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Office Developments Kenya | Premium Office Investment Nairobi | Murivest',
-  description: 'Invest in premium office developments in Nairobi, Kenya. Grade A office buildings with guaranteed returns and professional property management services.',
-  keywords: 'office developments Kenya, office investment Nairobi, grade A offices Kenya, commercial office buildings, office property investment Kenya',
+  title: 'Grade A Office Towers Nairobi CBD | Institutional Office Investment Kenya | Best Performing Office Markets Africa 2025',
+  description: 'Invest in Grade A office towers in Nairobi CBD through institutional channels. Best performing office markets in Africa 2025. Expert investment advisory for UK and Kenyan executives seeking capital preservation and legacy wealth building.',
+  keywords: 'grade A office towers Nairobi CBD, institutional office investment Kenya, best performing office markets Africa 2025, office developments Kenya, office investment Nairobi, grade A offices Kenya, commercial office buildings, office property investment Kenya, discreet real estate investment advisory, family office investment opportunities Africa, legacy real estate investments, capital preservation real estate strategies, old money real estate investments, Africa private wealth real estate deal',
 };
 
 export default function OfficeDevelopmentsPage() {

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import { DollarSign, Euro, PoundSterling, Coins } from 'lucide-react';
 
 import { 
   ArrowLeft,
@@ -20,7 +21,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Building,
-  DollarSign,
   Calendar,
   Users,
   Star,
@@ -43,6 +43,9 @@ interface Property {
   type: string;
   price: string;
   priceKsh: string;
+  priceGbp: string;
+  priceUsd: string;
+  priceEur: string;
   yield: string;
   images: string[];
   features: string[];
@@ -68,10 +71,13 @@ interface PropertyData {
 const propertyData: PropertyData = {
   1: {
     title: "Best Western Meridian Hotel",
-    subtitle: "Nairobi Central Business District",
-    location: "Nairobi CBD",
+    subtitle: "A Prime Landmark Hotel For Sale In The Nairobi CBD",
+    location: "Nairobi CBD, Kenya",
     type: "Hospitality",
     price: "$10,000,000",
+    priceUsd: "$10,000,000",
+    priceGbp: "£8,200,000",
+    priceEur: "€9,200,000",
     priceKsh: "KSh 1.2B",
     yield: "15.2%",
     images: [
@@ -79,14 +85,14 @@ const propertyData: PropertyData = {
       'https://content.knightfrank.com/property/hub2547666/images/82c7a8ae-a715-41ff-a906-e892f78acc0a-0.jpg?cio=true&w=1200',
       'https://content.knightfrank.com/property/hub2547666/images/8a0ac1f8-1e08-4827-ac66-409773bed6b1-0.jpg?cio=true&w=1200'
     ],
-    features: ["119 Premium Suites", "3.5 Star Rating", "Executive Conference", "Basement Parking", "Fine Dining", "Spa & Wellness"],
+    features: ["119 Premium Suites", "3.5 Star Rating", "Executive Conference", "Basement Parking", "Fine Dining", "Spa & Wellness", "44yrs remaining on the lease"],
     occupancyRate: "95%",
     description: "An exceptional hospitality investment in East Africa's financial capital. This established property delivers consistent institutional-grade returns.",
     details: {
       suites: "119",
       floors: "6 + Basement",
-      year: "Established",
-      occupancy: "95%",
+      year: "Established 1971",
+      occupancy: "60%",
       yield: "15.2%",
       appreciation: "12% p.a."
     },
@@ -101,19 +107,22 @@ const propertyData: PropertyData = {
   },
   2: {
     title: "Buffalo Mall & Development Land",
-    subtitle: "Naivasha Tourism Gateway",
-    location: "Naivasha",
+    subtitle: "Excellent retail investment with significant asset management potential in Naivasha.",
+    location: "Naivasha, Kenya",
     type: "Retail & Development",
-    price: "$5,000,000",
+    price: "KSh 750M",
     priceKsh: "KSh 750M",
+    priceUsd: "$6,200,000",
+    priceGbp: "£5,100,000",
+    priceEur: "€5,700,000",
     yield: "11.0%",
     images: [
       'https://content.knightfrank.com/property/hub2429185/images/79bb901f-3dba-41b8-9601-d462f09fa400-0.jpg?cio=true&w=1200',
       'https://content.knightfrank.com/property/hub2429185/images/d52cc1be-f7b5-44af-9899-4993fbef9d32-0.jpg?cio=true&w=1200'
     ],
-    features: ["58,965 sqft Retail", "33 Units", "9 Acres Land", "70% Occupied", "Highway Access", "Tourist Hub"],
+    features: ["58,965 sqft Retail", "33 Units", "77yrs remaining on the lease", "70% Occupied", "Highway Access", "Tourist Hub"],
     occupancyRate: "70%",
-    description: "Strategic retail investment with substantial development land in Kenya's rapidly growing tourism corridor.",
+    description: "A unique investment opportunity strategically located on the northwest edge of Naivasha Central Business District, approximately 95 km and a 90-minute drive from Nairobi. The property is situated immediately off Moi South Lake Road and benefits from direct access from the Nairobi-Nakuru highway. Its location makes it conveniently accessible to both transit and local traffic. The mall is positioned to serve the growing population of Naivasha and the increasing number of tourists visiting the area, making it a prime retail and development asset.",
     details: {
       retail: "58,965 sqft",
       land: "9 Acres",
@@ -124,43 +133,50 @@ const propertyData: PropertyData = {
     },
     investment: {
       totalInvestment: 550000000,
-      monthlyIncome: 5041667,
-      annualIncome: 60500000,
+      monthlyIncome: 3759166.67,
+      annualIncome: 45110000,
       netYield: 11.0,
       appreciationRate: 8,
       totalROI: 19.0
     }
   },
   3: {
-    title: "ICD Industrial Complex",
-    subtitle: "Mombasa Road Logistics Hub",
+    title: "ICD Industrial Complex Mombasa Road Logistics Hub",
+    subtitle: "A 3 Acre Industrial Complex For Sale In An Excellent Location",
     location: "Mombasa Road",
-    type: "Industrial & Logistics",
-    price: "$8,500,000",
+    type: "Industrial",
+    price: "KSh 1.0B",
+    priceUsd: "$8,500,000",
+    priceGbp: "£6,900,000",
+    priceEur: "€7,800,000",
     priceKsh: "KSh 1.0B",
     yield: "14.8%",
     images: [
-      "https://ext.same-assets.com/2267512097/2415429296.jpeg",
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80"
+      "/p/IMG-20250813-WA0001.jpg",
+      "/p/IMG-20250813-WA0004.jpg",
+      "/p/IMG-20250813-WA0005.jpg",
+      "/p/IMG-20250813-WA0006.jpg",
+      "/p/IMG-20250813-WA0007.jpg",
+      "/p/IMG-20250813-WA0008.jpg",
     ],
     features: ["3 Acres", "99,300 sqft", "4-Storey Office", "Showroom", "Warehouses", "Workshops"],
     occupancyRate: "85%",
-    description: "Premier industrial complex at the convergence of JKIA, ICD, and SGR terminus. Strategic infrastructure investment.",
+    description: "The property presents a unique opportunity to acquire a prime site, comprehensively developed with a four storey office block, motor showroom and offices, separate warehouses and motor vehicle workshops with a total gross lettable area of approximately 99,300 square feet. Premier industrial complex at the convergence of JKIA, ICD, and SGR terminus. Strategic infrastructure investment.",
     details: {
       land: "3 Acres",
       area: "99,300 sqft",
       offices: "4-Storey Block",
-      occupancy: "85%",
-      yield: "14.8%",
+      occupancy: "100%",
+      yield: "20%",
       appreciation: "10% p.a."
     },
     investment: {
       totalInvestment: 1000000000,
-      monthlyIncome: 12333333,
-      annualIncome: 148000000,
-      netYield: 14.8,
+      monthlyIncome: 0,
+      annualIncome: 0,
+      netYield: 18,
       appreciationRate: 10,
-      totalROI: 24.8
+      totalROI: 30
     }
   },
   4: {
@@ -170,6 +186,9 @@ const propertyData: PropertyData = {
     type: "Commercial",
     price: "$1,450,000",
     priceKsh: "KSh 190M",
+    priceUsd: "$1,450,000",
+    priceGbp: "£1,200,000",
+    priceEur: "€1,350,000",
     yield: "16.5%",
     images: [
       'https://content.knightfrank.com/property/hub2448515/images/89393bfa-52be-4c67-8bbf-aee9cf35b19d-0.jpg?cio=true&w=1200',
@@ -196,12 +215,15 @@ const propertyData: PropertyData = {
     }
   },
   5: {
-    title: "The Atrium",
-    subtitle: "Chaka Road, Kilimani",
-    location: "Kilimani",
+    title: "The Atrium, Chaka Road, Kilimani",
+    subtitle: "An excellently designed office development with exceptional rental income and high technological specifications for sale in Kilimani.",
+    location: "Chaka Road, Kilimani, Kenya",
     type: "Grade A Office",
     price: "$13,500,000",
     priceKsh: "KSh 2.0B",
+    priceUsd: "$13,500,000",
+    priceGbp: "£11,200,000",
+    priceEur: "€12,600,000",
     yield: "13.8%",
     images: [
       "https://ext.same-assets.com/2267512097/3285424901.jpeg",
@@ -234,6 +256,9 @@ const propertyData: PropertyData = {
     type: "Commercial",
     price: "$4,400,000",
     priceKsh: "KSh 570M",
+    priceUsd: "$4,400,000",
+    priceGbp: "£3,650,000",
+    priceEur: "€4,100,000",
     yield: "12.2%",
     images: [
       "https://ext.same-assets.com/2267512097/1411722178.jpeg",
@@ -266,6 +291,9 @@ const propertyData: PropertyData = {
     type: "5-Star Hospitality",
     price: "$25,000,000",
     priceKsh: "KSh 3.2B",
+    priceUsd: "$25,000,000",
+    priceGbp: "£20,800,000",
+    priceEur: "€23,100,000",
     yield: "18.5%",
     images: [
       "https://ext.same-assets.com/2267512097/3134620964.jpeg",
@@ -298,6 +326,9 @@ const propertyData: PropertyData = {
     type: "Grade A Office Tower",
     price: "$16,200,000",
     priceKsh: "KSh 2.1B",
+    priceUsd: "$16,200,000",
+    priceGbp: "£13,500,000",
+    priceEur: "€15,000,000",
     yield: "9.0%",
     images: [
       "https://ext.same-assets.com/2267512097/2522671175.jpeg",
@@ -330,6 +361,9 @@ const propertyData: PropertyData = {
     type: "Heritage Commercial",
     price: "$3,000,000",
     priceKsh: "KSh 385M",
+    priceUsd: "$3,000,000",
+    priceGbp: "£2,500,000",
+    priceEur: "€2,800,000",
     yield: "10.9%",
     images: [
       "https://images.pexels.com/photos/1647416/pexels-photo-1647416.jpeg?w=1200&q=80",
@@ -362,6 +396,9 @@ const propertyData: PropertyData = {
     type: "Commercial / Hospitality",
     price: "$5,000,000",
     priceKsh: "KSh 680M",
+    priceUsd: "$5,000,000",
+    priceGbp: "£4,100,000",
+    priceEur: "€4,600,000",
     yield: "8.2%",
     images: [
       "https://www.africanparadisesafaris.com/images/kenya-comfort-hotel.jpg",
@@ -394,6 +431,9 @@ const propertyData: PropertyData = {
     type: "Prime Office",
     price: "£75,000,000",
     priceKsh: "KSh 13.5B",
+    priceUsd: "$91,500,000",
+    priceEur: "€85,000,000",
+    priceGbp: "£75,000,000",
     yield: "5.5%",
     images: [
       "https://ext.same-assets.com/2541468600/712425661.jpeg",
@@ -426,6 +466,9 @@ const propertyData: PropertyData = {
     type: "Mixed Use",
     price: "£32,500,000",
     priceKsh: "KSh 5.9B",
+    priceUsd: "$39,650,000",
+    priceEur: "€36,900,000",
+    priceGbp: "£32,500,000",
     yield: "3.75%",
     images: [
       "https://ext.same-assets.com/2541468600/2302614904.jpeg",
@@ -458,6 +501,9 @@ const propertyData: PropertyData = {
     type: "Office",
     price: "£5,200,000",
     priceKsh: "KSh 936M",
+    priceUsd: "$6,336,000",
+    priceEur: "€5,904,000",
+    priceGbp: "£5,200,000",
     yield: "15%",
     images: [
       "https://ext.same-assets.com/2541468600/3801818977.jpeg",
@@ -489,6 +535,9 @@ const propertyData: PropertyData = {
     type: "Modern Office",
     price: "£14,000,000",
     priceKsh: "KSh 2.52B",
+    priceUsd: "$17,040,000",
+    priceEur: "€15,888,000",
+    priceGbp: "£14,000,000",
     yield: "6.34%",
     images: [
       "https://ext.same-assets.com/2541468600/1105006406.jpeg",
@@ -520,6 +569,9 @@ const propertyData: PropertyData = {
     type: "Office Tower",
     price: "£140,000,000",
     priceKsh: "KSh 25.2B",
+    priceUsd: "$170,400,000",
+    priceEur: "€158,880,000",
+    priceGbp: "£140,000,000",
     yield: "9.78%",
     images: [
       "https://ext.same-assets.com/2541468600/3522491577.jpeg",
@@ -552,6 +604,9 @@ const propertyData: PropertyData = {
     type: "Office Estate",
     price: "£46,000,000",
     priceKsh: "KSh 8.28B",
+    priceUsd: "$56,040,000",
+    priceEur: "€52,080,000",
+    priceGbp: "£46,000,000",
     yield: "5.25%",
     images: [
       "https://ext.same-assets.com/2541468600/4022238478.jpeg",
@@ -584,6 +639,9 @@ const propertyData: PropertyData = {
     type: "Retail",
     price: "£900,000",
     priceKsh: "KSh 162M",
+    priceUsd: "$1,200,000",
+    priceEur: "€1,350,000",
+    priceGbp: "£900,000",
     yield: "Details on Application",
     images: [
       "https://ext.same-assets.com/2541468600/580233546.jpeg",
@@ -615,6 +673,9 @@ const propertyData: PropertyData = {
     type: "Retail",
     price: "£2,375,000",
     priceKsh: "KSh 427.5M",
+    priceUsd: "$2,850,000",
+    priceEur: "€2,625,000",
+    priceGbp: "£2,375,000",
     yield: "9%",
     images: [
       "https://ext.same-assets.com/2541468600/1958743568.jpeg",
@@ -647,6 +708,9 @@ const propertyData: PropertyData = {
     type: "Retail",
     price: "£13,150,000",
     priceKsh: "KSh 2.37B",
+    priceUsd: "$15,780,000",
+    priceEur: "€14,525,000",
+    priceGbp: "£13,150,000",
     yield: "2.5%",
     images: [
       "https://ext.same-assets.com/2541468600/3592092843.jpeg",
@@ -679,6 +743,9 @@ const propertyData: PropertyData = {
     type: "Commercial",
     price: "$70,833",
     priceKsh: "KSh 8.5M",
+    priceUsd: "$70,833",
+    priceGbp: "£58,333",
+    priceEur: "€66,667",
     yield: "12%",
     images: [
       "https://ext.same-assets.com/2267512097/3165367225.jpeg",
@@ -704,53 +771,30 @@ const propertyData: PropertyData = {
       totalROI: 20
     }
   },
-  21: {
-    title: "Entertainment Club/Lounge",
-    subtitle: "Umoja II Nairobi",
-    location: "Umoja II, Nairobi",
-    type: "Leisure",
-    price: "$35,000",
-    priceKsh: "KSh 4.2M",
-    yield: "18%",
-    images: [
-      "https://ext.same-assets.com/2267512097/1722438595.jpeg",
-      "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1200&q=80"
-    ],
-    features: ["Fully Equipped", "Established Clientele", "Prime Location", "Liquor License", "Sound System", "Operational"],
-    occupancyRate: "100%",
-    description: "Operational entertainment venue with strong customer base and excellent returns in vibrant neighborhood.",
-    details: {
-      status: "Operational",
-      license: "Full Liquor",
-      equipment: "Complete",
-      occupancy: "100%",
-      yield: "18%",
-      appreciation: "6% p.a."
-    },
-    investment: {
-      totalInvestment: 4200000,
-      monthlyIncome: 63000,
-      annualIncome: 756000,
-      netYield: 18,
-      appreciationRate: 6,
-      totalROI: 24
-    }
-  },
+
   22: {
     title: "Warehouse Godown Mlolongo",
-    subtitle: "SGR Logistics Hub",
+    subtitle: "Unlock excellent investment potential with this spacious warehouse situated on a prime 0.5-acre plot. Priced at KSh 95 million plus VAT, this property offers a robust foundation for your commercial endeavors.",
     location: "Mlolongo",
     type: "Industrial",
     price: "$750,000",
     priceKsh: "KSh 90M",
+    priceUsd: "$750,000",
+    priceGbp: "£625,000",
+    priceEur: "€700,000",
     yield: "11%",
     images: [
-      "https://ext.same-assets.com/2267512097/2415429296.jpeg",
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80"
+      "/p2/mlolongo-godown.png",
+      "/p2/IMG-20250515-WA0008.jpg",
+      "/p2/IMG-20250515-WA0006.jpg",
+      "/p2/IMG-20250515-WA0009.jpg",
+      "/p2/IMG-20250515-WA0011.jpg",
+      "/p2/IMG-20250515-WA0013.jpg",
+      "/p2/IMG-20250813-WA0003.jpg"
     ],
     features: ["1/2 Acre", "Newly Built", "Strategic Location", "SGR Access", "Modern Construction", "High Ceilings"],
     occupancyRate: "100%",
-    description: "Modern warehouse facility near SGR terminus with excellent logistics access and growing industrial demand.",
+    description: "Modern warehouse facility near SGR terminus with excellent logistics access and growing industrial demand.  Mlolongo Business Park, Quarry Road, Behind Rhombus Quarry Masters, Mlolongo, Nairobi. Large Storage Space: The warehouse spans 11,600 sq ft, providing ample room for operations, logistics, or manufacturing activities. Expandable Infrastructure: The site still has capacity to develop an additional 6,000sq ft warehouse, offering room for future growth or diversification. Built-In Amenities: The property includes three office areas, facilitating administrative and operational functions. Sanitary Facilities: Two common washrooms and one private washroom ensure convenience for staff and visitors. Storage & Utilities: Two sizable storage rooms accommodate inventory or equipment, complemented by a kitchen area. Power & Security: Equipped with a reliable generator and three-phase power supply, supported by CCTV cameras for enhanced security. Water Supply: Water is sourced from a borehole, with a storage capacity of 2,000 liters, which can be expanded to meet increasing water demands.",
     details: {
       land: "1/2 Acre",
       construction: "New Build",
@@ -761,45 +805,14 @@ const propertyData: PropertyData = {
     },
     investment: {
       totalInvestment: 90000000,
-      monthlyIncome: 825000,
-      annualIncome: 9900000,
+      monthlyIncome: 0,
+      annualIncome: 0,
       netYield: 11,
-      appreciationRate: 12,
-      totalROI: 23
+      appreciationRate: 15,
+      totalROI: 26
     }
   },
-  23: {
-    title: "Petrol Station Sagana",
-    subtitle: "Nairobi-Nyeri Highway",
-    location: "Sagana, Kerugoya",
-    type: "Retail",
-    price: "$208,333",
-    priceKsh: "KSh 25M",
-    yield: "20%+",
-    images: [
-      "https://ext.same-assets.com/2267512097/3069981277.jpeg",
-      "https://images.unsplash.com/photo-1545262810-77515befe149?w=1200&q=80"
-    ],
-    features: ["Fully Operational", "Highway Location", "Convenience Store", "High Traffic", "Fuel Pumps", "Established Business"],
-    occupancyRate: "100%",
-    description: "Profitable petrol station on busy Nairobi-Nyeri highway with consistent fuel demand and additional retail income.",
-    details: {
-      status: "Operational",
-      location: "Highway",
-      store: "Convenience",
-      occupancy: "100%",
-      yield: "20%",
-      appreciation: "5% p.a."
-    },
-    investment: {
-      totalInvestment: 25000000,
-      monthlyIncome: 416667,
-      annualIncome: 5000000,
-      netYield: 20,
-      appreciationRate: 5,
-      totalROI: 25
-    }
-  },
+
   24: {
     title: "Fine Dine Restaurant Lavington",
     subtitle: "Premium Dining Establishment",
@@ -807,6 +820,9 @@ const propertyData: PropertyData = {
     type: "Leisure",
     price: "$91,667",
     priceKsh: "KSh 11M",
+    priceUsd: "$91,667",
+    priceGbp: "£76,389",
+    priceEur: "€85,417",
     yield: "16%",
     images: [
       "https://ext.same-assets.com/2267512097/52631664.jpeg",
@@ -839,6 +855,9 @@ const propertyData: PropertyData = {
     type: "Healthcare",
     price: "$137,500",
     priceKsh: "KSh 16.5M",
+    priceUsd: "$137,500",
+    priceGbp: "£114,583",
+    priceEur: "€128,125",
     yield: "14%",
     images: [
       "https://ext.same-assets.com/2267512097/2522671175.jpeg",
@@ -871,6 +890,9 @@ const propertyData: PropertyData = {
     type: "Retail",
     price: "$1,541,667",
     priceKsh: "KSh 185M",
+    priceUsd: "$1,541,667",
+    priceGbp: "£1,284,722",
+    priceEur: "€1,437,500",
     yield: "13%",
     images: [
       "https://ext.same-assets.com/2267512097/1324109704.jpeg",
@@ -897,33 +919,41 @@ const propertyData: PropertyData = {
     }
   },
   27: {
-    title: "Cross House Newcastle",
-    subtitle: "City Centre Period Building",
-    location: "Westgate Road, Newcastle",
+    title: "Cross House, Westgate Road, Newcastle upon Tyne, Tyne and Wear, NE1",
+    subtitle: "For Sale - Landmark building in Newcastle City Centre, United Kingdom",
+    location: "Westgate Road, Newcastle, UK",
     type: "Office",
     price: "£2,000,000",
     priceKsh: "KSh 360M",
+    priceUsd: "$2,400,000",
+    priceEur: "€2,200,000",
+    priceGbp: "£2,000,000",
     yield: "Details on Application",
     images: [
-      "https://ext.same-assets.com/2541468600/3437953458.jpeg",
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=80"
+      "https://content.knightfrank.com/property/ncc012339456/images/2b8d4be6-7a79-44fd-929c-c9f282d11a3f-0.jpg?cio=true&w=900&f=webp",
+      "https://content.knightfrank.com/property/ncc012339456/images/4d2d6da6-8bb0-4dfa-947f-57475a2ee2fa-0.jpg?cio=true&w=480&f=webp",
+      "https://content.knightfrank.com/property/ncc012339456/images/0ea13c8e-e508-460f-8df9-eaa4a7482e61-0.jpg?cio=true&w=480&f=webp",
+      "https://content.knightfrank.com/property/ncc012339456/images/bdf3183e-3f19-412c-9f5d-3f30cb103b2c-0.jpg?cio=true&w=900&f=webp",
+      "https://content.knightfrank.com/property/ncc012339456/images/113e36ee-7289-4b07-af8d-bd4c853a1957-0.jpg?cio=true&w=1200",
+      "https://content.knightfrank.com/property/ncc012339456/images/42a4aa9f-9de1-4079-93f4-8e59e1f7bbb5-0.jpg?cio=true&w=1200",
+      "https://content.knightfrank.com/property/ncc012339456/images/60852c6e-bce6-46ec-a819-8aa07a258dcc-0.jpg?cio=true&w=1200"
     ],
-    features: ["City Centre", "Period Building", "Refurbishment Potential", "Transport Links", "Character Property", "Development Scope"],
+    features: ["Freehold with Vacant Possession", "Highly prominent 5 storey office building", "Centrally situated within a 2-minute walk from Central Station", "Potential for comprehensive office refurbishment", "Ideal for an office headquarters or an office investment opportunity", "Potential redevelopment to residential, hotel and other uses, subject to planning","Income producing roof level telecoms equipment"],
     occupancyRate: "80%",
-    description: "Character office building in Newcastle city centre with refurbishment and repositioning potential.",
+    description: "Cross House offers a unique opportunity to purchase a distinctive office building in Newcastle City Centre, which is suitable for a range of uses (subject to planning). Character office building in Newcastle city centre with refurbishment and repositioning potential.",
     details: {
       location: "City Centre",
       type: "Period",
       potential: "Refurbishment",
-      occupancy: "80%",
-      yield: "8%",
+      occupancy: "0%",
+      yield: "0%",
       appreciation: "5% p.a."
     },
     investment: {
       totalInvestment: 360000000,
-      monthlyIncome: 2400000,
-      annualIncome: 28800000,
-      netYield: 8,
+      monthlyIncome: 0,
+      annualIncome: 0,
+      netYield: 0,
       appreciationRate: 5,
       totalROI: 13
     }
@@ -935,6 +965,9 @@ const propertyData: PropertyData = {
     type: "Office",
     price: "£1,750,000",
     priceKsh: "KSh 315M",
+    priceUsd: "$2,100,000",
+    priceEur: "€1,925,000",
+    priceGbp: "£1,750,000",
     yield: "7%",
     images: [
       "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
@@ -959,6 +992,279 @@ const propertyData: PropertyData = {
       appreciationRate: 4,
       totalROI: 11
     }
+  },
+  29: {
+    title: "Grand Plaza Serviced Apartments",
+    subtitle: "42 Princes Square, London W2",
+    location: "Bayswater, London",
+    type: "Hotel",
+    price: "£100,000,000",
+    priceKsh: "KSh 18B",
+    priceUsd: "$12,000,000",
+    priceEur: "€11,000,000",
+    priceGbp: "£10,000,000",
+    yield: "7.5%",
+    images: [
+      "https://ext.same-assets.com/2541468600/3581754212.jpeg",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80"
+    ],
+    features: ["105,355 sqft", "198 Bedrooms", "Serviced Apartments", "Prime Location", "Full Service", "City Centre"],
+    occupancyRate: "92%",
+    description: "Premier serviced apartment hotel in the heart of Bayswater. Exceptional location near Hyde Park with consistent high occupancy and strong corporate demand.",
+    details: {
+      area: "105,355 sqft",
+      bedrooms: "198",
+      occupancy: "92%",
+      location: "42 Princes Square, W2",
+      yield: "7.5%",
+      appreciation: "8% p.a."
+    },
+    investment: {
+      totalInvestment: 100000000,
+      monthlyIncome: 625000,
+      annualIncome: 7500000,
+      netYield: 7.5,
+      appreciationRate: 8,
+      totalROI: 15.5
+    }
+  },
+  30: {
+    title: "Velvet Hotel",
+    subtitle: "2 Canal Street, Manchester M1",
+    location: "Manchester City Centre",
+    type: "Hotel",
+    price: "£11,000,000",
+    priceKsh: "KSh 1.98B",
+    priceUsd: "$13,200,000",
+    priceEur: "€12,100,000",
+    priceGbp: "£11,000,000",
+    yield: "8.2%",
+    images: [
+      "https://ext.same-assets.com/2541468600/3798123555.jpeg",
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&q=80"
+    ],
+    features: ["36 Bedrooms", "Boutique Hotel", "Canal Street", "Modern Design", "Bar & Restaurant", "City Centre"],
+    occupancyRate: "85%",
+    description: "Contemporary boutique hotel in Manchester's iconic Canal Street. Perfect blend of style and location with strong leisure and business trade.",
+    details: {
+      bedrooms: "36",
+      occupancy: "85%",
+      location: "2 Canal Street, M1",
+      yield: "8.2%",
+      appreciation: "6.5% p.a."
+    },
+    investment: {
+      totalInvestment: 11000000,
+      monthlyIncome: 75167,
+      annualIncome: 902000,
+      netYield: 8.2,
+      appreciationRate: 6.5,
+      totalROI: 14.7
+    }
+  },
+  31: {
+    title: "29 Albany Street",
+    subtitle: "Townhouse Hotel, Edinburgh EH1",
+    location: "Edinburgh City Centre",
+    type: "Hotel",
+    price: "£7,500,000",
+    priceKsh: "KSh 1.35B",
+    priceUsd: "$9,000,000",
+    priceEur: "€8,250,000",
+    priceGbp: "£7,500,000",
+    yield: "9.1%",
+    images: [
+      "https://ext.same-assets.com/2541468600/3516624965.jpeg",
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1200&q=80"
+    ],
+    features: ["7,100 sqft", "17 Bedrooms", "Georgian Building", "Premium Finish", "Central Location", "Historic"],
+    occupancyRate: "88%",
+    description: "Beautifully restored Georgian townhouse hotel on prestigious Albany Street. High-end accommodation in Edinburgh's most desirable location.",
+    details: {
+      area: "7,100 sqft",
+      bedrooms: "17",
+      occupancy: "88%",
+      location: "29 Albany Street, EH1",
+      yield: "9.1%",
+      appreciation: "7% p.a."
+    },
+    investment: {
+      totalInvestment: 7500000,
+      monthlyIncome: 56875,
+      annualIncome: 682500,
+      netYield: 9.1,
+      appreciationRate: 7,
+      totalROI: 16.1
+    }
+  },
+  32: {
+    title: "The Royal Arcade",
+    subtitle: "28 Old Bond Street, Mayfair, London W1S",
+    location: "Mayfair, London",
+    type: "Retail",
+    price: "£13,150,000",
+    priceKsh: "KSh 2.37B",
+    priceUsd: "$15,780,000",
+    priceEur: "€14,525,000",
+    priceGbp: "£13,150,000",
+    yield: "2.5%",
+    images: [
+      "https://ext.same-assets.com/2541468600/2084512286.jpeg",
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80"
+    ],
+    features: ["9,458 sqft", "Old Bond Street", "Historic Arcade", "Prime Mayfair", "Luxury Retail", "Heritage Building"],
+    occupancyRate: "95%",
+    description: "Iconic retail space within The Royal Arcade on Old Bond Street. Exceptional location in the heart of Mayfair's luxury retail district.",
+    details: {
+      area: "9,458 sqft",
+      occupancy: "95%",
+      location: "28 Old Bond Street, W1S",
+      yield: "2.5%",
+      appreciation: "5% p.a."
+    },
+    investment: {
+      totalInvestment: 13150000,
+      monthlyIncome: 27396,
+      annualIncome: 328750,
+      netYield: 2.5,
+      appreciationRate: 5,
+      totalROI: 7.5
+    }
+  },
+  33: {
+    title: "London City Island",
+    subtitle: "Retail Development, London E14",
+    location: "Canary Wharf, London",
+    type: "Retail",
+    price: "£7,150,000",
+    priceKsh: "KSh 1.29B",
+    priceUsd: "$8,580,000",
+    priceEur: "€7,925,000",
+    priceGbp: "£7,150,000",
+    yield: "8.0%",
+    images: [
+      "https://ext.same-assets.com/2541468600/327513321.jpeg",
+      "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=1200&q=80"
+    ],
+    features: ["23,645 sqft", "Waterfront", "Modern Development", "High Footfall", "Mixed Use", "Transport Links"],
+    occupancyRate: "90%",
+    description: "Contemporary retail space in London City Island's vibrant waterfront development. Strong catchment area and excellent transport connectivity.",
+    details: {
+      area: "23,645 sqft",
+      occupancy: "90%",
+      location: "London City Island, E14",
+      yield: "8.0%",
+      appreciation: "9% p.a."
+    },
+    investment: {
+      totalInvestment: 7150000,
+      monthlyIncome: 47667,
+      annualIncome: 572000,
+      netYield: 8.0,
+      appreciationRate: 9,
+      totalROI: 17.0
+    }
+  },
+  34: {
+    title: "Cary Arms & Spa",
+    subtitle: "Babbacombe Bay, Devon TQ1 3LX",
+    location: "Devon Coast",
+    type: "Hotel",
+    price: "£4,500,000",
+    priceKsh: "KSh 810M",
+    priceUsd: "$5,400,000",
+    priceEur: "€4,950,000",
+    priceGbp: "£4,500,000",
+    yield: "10.5%",
+    images: [
+      "https://ext.same-assets.com/2541468600/1667188204.jpeg",
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=80"
+    ],
+    features: ["Coastal Location", "Spa Facilities", "Sea Views", "Boutique Hotel", "Premium Amenities", "Restaurant"],
+    occupancyRate: "82%",
+    description: "An exceptional opportunity to acquire a renowned freehold beachfront hotel in the South West, occupying an elevated position with uninterrupted sea views. Extensively refurbished in 2018, the property features eight sea-facing inn rooms, two luxury cottage suites, six premium beach huts, and two beach suites, complemented by a fully restored 4-bedroom beach cottage. The hotel boasts an award-winning restaurant with indoor and outdoor dining for over 180 guests, and a luxury spa with hydrotherapy pool, sauna, steam room, and treatment rooms. Set within 1.5 acres of prime coastal land with parking for 30 vehicles, the property generated annual net sales of £2.26 million (FY2024) with strong growth prospects for 2025. Located just 2.4 miles from Torquay’s Torre Train Station, the asset presents significant development potential, subject to planning, and represents a rare chance to acquire a profitable, family-held hospitality asset in one of the UK’s most desirable coastal locations.",
+    details: {
+      occupancy: "82%",
+      location: "Babbacombe Bay, TQ1 3LX",
+      yield: "10.5%",
+      appreciation: "8.5% p.a."
+    },
+    investment: {
+      totalInvestment: 4500000,
+      monthlyIncome: 39375,
+      annualIncome: 472500,
+      netYield: 10.5,
+      appreciationRate: 8.5,
+      totalROI: 19.0
+    }
+  },
+  35: {
+    title: "Former Land Rover Showroom",
+    subtitle: "Wheatley Hall Road, Doncaster DN2",
+    location: "Doncaster, South Yorkshire",
+    type: "Retail",
+    price: "£2,800,000",
+    priceKsh: "KSh 504M",
+    priceUsd: "$3,360,000",
+    priceEur: "€2,940,000",
+    priceGbp: "£2,800,000",
+    yield: "9.5%",
+    images: [
+      "https://ext.same-assets.com/2541468600/1724353550.jpeg",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80"
+    ],
+    features: ["17,573 sqft", "Former Dealership", "High Visibility", "Large Format", "Development Potential", "Strategic Location"],
+    occupancyRate: "0%",
+    description: "Substantial automotive retail premises with significant redevelopment potential. Prime roadside location with excellent visibility and accessibility.",
+    details: {
+      area: "17,573 sqft",
+      occupancy: "0%",
+      location: "Wheatley Hall Road, DN2",
+      yield: "9.5%",
+      appreciation: "6% p.a."
+    },
+    investment: {
+      totalInvestment: 2800000,
+      monthlyIncome: 22167,
+      annualIncome: 266000,
+      netYield: 9.5,
+      appreciationRate: 6,
+      totalROI: 15.5
+    }
+  },
+  36: {
+    title: "Hampton by Hilton",
+    subtitle: "Liverpool John Lennon Airport, L24 1YD",
+    location: "Liverpool Airport",
+    type: "Hotel",
+    price: "£12,500,000",
+    priceKsh: "KSh 2.25B",
+    priceUsd: "$15,000,000",
+    priceEur: "€13,750,000",
+    priceGbp: "£12,500,000",
+    yield: "8.8%",
+    images: [
+      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1200&q=80",
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1200&q=80"
+    ],
+    features: ["160 Bedrooms", "Airport Location", "Branded Hotel", "Corporate Demand", "Parking", "Hilton Franchise"],
+    occupancyRate: "87%",
+    description: "Established Hampton by Hilton hotel at Liverpool John Lennon Airport. Strong brand, reliable income stream, and excellent corporate demand.",
+    details: {
+      bedrooms: "160",
+      occupancy: "87%",
+      location: "Speke Hall Avenue, L24",
+      yield: "8.8%",
+      appreciation: "7.5% p.a."
+    },
+    investment: {
+      totalInvestment: 12500000,
+      monthlyIncome: 91667,
+      annualIncome: 1100000,
+      netYield: 8.8,
+      appreciationRate: 7.5,
+      totalROI: 16.3
+    }
   }
 };
 
@@ -967,11 +1273,25 @@ const PropertyDetail = () => {
   // useParams returns an object with string or string[] values. We must explicitly get the ID.
   const params = useParams();
   const id = params.id as string | undefined; // id will be a string or undefined
-  
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
+  const [selectedCurrency, setSelectedCurrency] = useState('KES');
   // Removed unused states: investmentAmount, activeTab
+
+  const currencies = [
+    { code: 'KES', name: 'Kenyan Shilling', symbol: 'KSh', rate: 1, flag: '🇰🇪', icon: <Coins className="h-4 w-4" /> },
+    { code: 'USD', name: 'US Dollar', symbol: '$', rate: 0.0075, flag: '🇺🇸', icon: <DollarSign className="h-4 w-4" /> },
+    { code: 'EUR', name: 'Euro', symbol: '€', rate: 0.0068, flag: '🇪🇺', icon: <Euro className="h-4 w-4" /> },
+    { code: 'GBP', name: 'British Pound', symbol: '£', rate: 0.0058, flag: '🇬🇧', icon: <PoundSterling className="h-4 w-4" /> }
+  ];
+
+  const convertAmount = (amount: number, fromCurrency: string, toCurrency: string) => {
+    const fromRate = currencies.find(c => c.code === fromCurrency)?.rate || 1;
+    const toRate = currencies.find(c => c.code === toCurrency)?.rate || 1;
+    return amount * (toRate / fromRate);
+  };
   
   // Use a string key for type-safe access
   const property: Property | undefined = id ? propertyData[id] : undefined;
@@ -993,7 +1313,7 @@ const PropertyDetail = () => {
 
   const handleWhatsAppContact = (message: string) => {
     if (!property) return; // Guard clause
-    const phoneNumber = "254115277610";
+    const phoneNumber = "+254729170156";
     const encodedMessage = encodeURIComponent(
       `Regarding ${property.title} - ${property.location}. ${message}`
     );
@@ -1004,7 +1324,7 @@ const PropertyDetail = () => {
     if (!property) return; // Guard clause
     const link = document.createElement('a');
     link.href = `/brochures/${property.title.replace(/\s+/g, '-').toLowerCase()}.pdf`;
-    link.download = `${property.title.replace(/\s+/g, '-').toLowerCase()}-prospectus.pdf`;
+    link.download = `${property.title.replace(/\s+/g, '-').toLowerCase()}.pdf`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -1045,7 +1365,7 @@ const PropertyDetail = () => {
               className="flex items-center text-gray-600 hover:text-[#1e3a5f] transition-colors group"
             >
               <ArrowLeft className="h-4 w-4 mr-3 group-hover:-translate-x-1 transition-transform" />
-              <span className="text-sm tracking-wider">BACK TO COLLECTION</span>
+              <span className="text-sm tracking-wider">BACK TO COMMERCIAL PROPERTIES</span>
             </Link>
             
             <div className="flex items-center gap-6">
@@ -1085,9 +1405,37 @@ const PropertyDetail = () => {
                 <span className="text-base tracking-wide">{property.subtitle}</span>
               </div>
               
-              <div className="flex items-baseline gap-4 mb-10">
-                <div className="text-3xl text-[#1e3a5f] font-luxury">{property.price}</div>
-                <div className="text-base text-gray-400">({property.priceKsh})</div>
+              <div className="mb-10">
+                <div className="flex items-baseline gap-4 mb-4">
+                  <div className="text-3xl text-[#1e3a5f] font-luxury">
+                    {selectedCurrency === 'KES' ? property.priceKsh :
+                     selectedCurrency === 'USD' ? property.priceUsd :
+                     selectedCurrency === 'EUR' ? property.priceEur :
+                     selectedCurrency === 'GBP' ? property.priceGbp :
+                     property.price}
+                  </div>
+                  <div className="text-base text-gray-400">
+                    ({selectedCurrency === 'KES' ? property.price : property.priceUsd})
+                  </div>
+                </div>
+
+                {/* Currency Selector */}
+                <div className="flex gap-2">
+                  {currencies.map((currency) => (
+                    <button
+                      key={currency.code}
+                      onClick={() => setSelectedCurrency(currency.code)}
+                      className={`flex items-center gap-2 px-3 py-2 rounded-lg border transition-all ${
+                        selectedCurrency === currency.code
+                          ? 'border-[#c9a961] bg-[#c9a961]/10 text-[#1e3a5f]'
+                          : 'border-gray-200 hover:border-gray-300 text-gray-600'
+                      }`}
+                    >
+                      <span className="text-sm">{currency.flag}</span>
+                      <span className="text-xs font-medium">{currency.code}</span>
+                    </button>
+                  ))}
+                </div>
               </div>
 
               
@@ -1159,10 +1507,21 @@ const PropertyDetail = () => {
             )}
           </div>
         </div>
+        
         <h3 className="text-s tracking-[0.3em] text-black mb-6 uppercase">Investment Summary</h3>
               <p className="text-base text-gray-600 leading-relaxed max-w-3xl font-luxury">
                 {property.description}
               </p>
+
+        <button>
+          <span 
+            onClick={handleDownloadBrochure} 
+            className="justify-center bg-[#1e3a5f] hover:bg-[#152942] text-white py-3.5 transition-colors text-xs tracking-[0.2em] uppercase px-6 mt-10 inline-block"
+          >
+            <Download className="h-5 w-5 text-gray-400 mr-2 inline-block" />
+            Download Brochure
+          </span>
+        </button>
         {/* Details Grid - Clean & Organized */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 py-20 border-t border-gray-100">
           
@@ -1179,7 +1538,7 @@ const PropertyDetail = () => {
                 ))}
               </div>
             </div>
-
+                
             <div>
               <h3 className="text-xs tracking-[0.3em] text-gray-400 mb-6 uppercase">Key Features</h3>
               <div className="space-y-3">
@@ -1206,14 +1565,16 @@ const PropertyDetail = () => {
                 <div className="relative pl-6 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b before:from-gray-200 before:to-transparent">
                   <div className="text-xs text-gray-500 mb-1 tracking-wide uppercase">Monthly Income</div>
                   <div className="text-xl text-gray-700 font-light">
-                    KSh {(property.investment.monthlyIncome / 1000000).toFixed(1)}M
+                    {currencies.find(c => c.code === selectedCurrency)?.symbol}
+                    {(convertAmount(property.investment.monthlyIncome, 'KES', selectedCurrency) / 1000000).toFixed(3)}M
                   </div>
                 </div>
-                
+
                 <div className="relative pl-6 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b before:from-gray-200 before:to-transparent">
                   <div className="text-xs text-gray-500 mb-1 tracking-wide uppercase">Annual Income</div>
                   <div className="text-xl text-gray-700 font-light">
-                    KSh {(property.investment.annualIncome / 1000000).toFixed(0)}M
+                    {currencies.find(c => c.code === selectedCurrency)?.symbol}
+                    {(convertAmount(property.investment.annualIncome, 'KES', selectedCurrency) / 1000000).toFixed(3)}M
                   </div>
                 </div>
 

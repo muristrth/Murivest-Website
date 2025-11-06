@@ -127,7 +127,7 @@ const Header = () => {
                         }`}
                         onClick={closeAllDropdowns}
                       >
-                        Properties
+                        Commercial Properties
                       </Link>
 
                       <Link
@@ -177,35 +177,35 @@ const Header = () => {
                           <div className="pl-4 space-y-2">
                             <Link
                               href="/africa"
-                              className="block text-gray-400 hover:text-amber-400 transition-colors py-2"
+                              className="block text-gray-400 text-xs hover:text-amber-400 transition-colors py-2"
                               onClick={closeAllDropdowns}
                             >
                               Africa Hub
                             </Link>
                             <Link
                               href="/middle-east"
-                              className="block text-gray-400 hover:text-amber-400 transition-colors py-2"
+                              className="block text-gray-400 text-xs hover:text-amber-400 transition-colors py-2"
                               onClick={closeAllDropdowns}
                             >
                               Middle East
                             </Link>
                             <Link
                               href="/asia-pacific"
-                              className="block text-gray-400 hover:text-amber-400 transition-colors py-2"
+                              className="block text-gray-400 text-xs hover:text-amber-400 transition-colors py-2"
                               onClick={closeAllDropdowns}
                             >
                               Asia-Pacific
                             </Link>
                             <Link
                               href="/europe"
-                              className="block text-gray-400 hover:text-amber-400 transition-colors py-2"
+                              className="block text-gray-400 text-xs hover:text-amber-400 transition-colors py-2"
                               onClick={closeAllDropdowns}
                             >
                               Europe
                             </Link>
                             <Link
                               href="/americas"
-                              className="block text-gray-400 hover:text-amber-400 transition-colors py-2"
+                              className="block text-gray-400 text-xs hover:text-amber-400 transition-colors py-2"
                               onClick={closeAllDropdowns}
                             >
                               Americas
@@ -237,42 +237,42 @@ const Header = () => {
                           <div className="pl-4 space-y-2">
                             <Link
                               href="/about"
-                              className="block text-gray-400 hover:text-amber-400 transition-colors py-2"
+                              className="block text-gray-400 text-xs hover:text-amber-400 transition-colors py-2"
                               onClick={closeAllDropdowns}
                             >
                               About Murivest
                             </Link>
                             <Link
                               href="/faq"
-                              className="block text-gray-400 hover:text-amber-400 transition-colors py-2"
+                              className="block text-gray-400 text-xs hover:text-amber-400 transition-colors py-2"
                               onClick={closeAllDropdowns}
                             >
                               FAQs
                             </Link>
                             <Link
                               href="/research"
-                              className="block text-gray-400 hover:text-amber-400 transition-colors py-2"
+                              className="block text-gray-400 text-xs hover:text-amber-400 transition-colors py-2"
                               onClick={closeAllDropdowns}
                             >
                               Research
                             </Link>
                             <Link
                               href="/videos"
-                              className="block text-gray-400 hover:text-amber-400 transition-colors py-2"
+                              className="block text-gray-400 text-xs hover:text-amber-400 transition-colors py-2"
                               onClick={closeAllDropdowns}
                             >
-                              Videos
+                              Media
                             </Link>
                             <Link
                               href="/"
-                              className="block text-gray-400 hover:text-amber-400 transition-colors py-2"
+                              className="block text-gray-400 text-xs hover:text-amber-400 transition-colors py-2"
                               onClick={closeAllDropdowns}
                             >
                               Murivest Realty Group
                             </Link>
                             <Link
                               href="/foundation"
-                              className="block text-gray-400 hover:text-amber-400 transition-colors py-2"
+                              className="block text-gray-400 text-xs hover:text-amber-400 transition-colors py-2"
                               onClick={closeAllDropdowns}
                             >
                               Murivest Foundation
@@ -305,8 +305,17 @@ const Header = () => {
                         Property Mgt
                       </Link>
 
+                      {/* Murivest AI Button */}
+                      <div className="pt-4">
+                        <Link href="/murivest-ai">
+                          <button className="w-full bg-[#D4AF37] hover:bg-[#c9a030] text-[#0A0A0A] px-6 py-3 font-serif font-medium text-xs transition-all duration-300">
+                            Launch Intelligence Console
+                          </button>
+                        </Link>
+                      </div>
+
                       {/* List Property Button */}
-                      <div className="pt-6">
+                      <div className="pt-2">
                         <Link href="/sell">
                           <button className="w-full bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 font-serif font-medium text-xs transition-all duration-300">
                             List Property
@@ -345,8 +354,19 @@ const Header = () => {
                 onClick={closeAllDropdowns}
               >
                 Home
+              </Link>           
+              <Link
+                href="/properties"
+                className={`font-serif text-sm font-light tracking-wide transition-colors ${
+                  isActive('/properties')
+                    ? 'text-amber-400'
+                    : 'text-gray-300 hover:text-amber-400'
+                } py-1`}
+                onClick={closeAllDropdowns}
+              >
+                Commercial Properties
               </Link>
-
+  
               {/* About mobile dropdown */}
               <div className="flex flex-col">
                 <button
@@ -460,17 +480,7 @@ const Header = () => {
                 )}
               </div>
 
-              <Link
-                href="/properties"
-                className={`font-serif text-sm font-light tracking-wide transition-colors ${
-                  isActive('/properties')
-                    ? 'text-amber-400'
-                    : 'text-gray-300 hover:text-amber-400'
-                } py-1`}
-                onClick={closeAllDropdowns}
-              >
-                Properties
-              </Link>
+              
               <Link
                 href="/market-insights"
                 className={`font-serif text-sm font-light tracking-wide transition-colors ${
@@ -483,7 +493,7 @@ const Header = () => {
                 Market Insights
               </Link>
               <Link
-                href="/blogs"
+                href="/blog"
                 className={`font-serif text-sm font-light tracking-wide transition-colors ${
                   isActive('/blogs')
                     ? 'text-amber-400'
@@ -514,7 +524,7 @@ const Header = () => {
                 } py-1`}
                 onClick={closeAllDropdowns}
               >
-                Videos
+                Media
               </Link>
               <Link
                 href="/contact"
@@ -537,6 +547,13 @@ const Header = () => {
                 onClick={closeAllDropdowns}
               >
                 Property Mgt
+              </Link>
+
+              {/* Mobile Murivest AI Button */}
+              <Link href="/murivest-ai" className="pt-2">
+                <button className="w-full bg-[#D4AF37] hover:bg-[#c9a030] text-[#0A0A0A] px-4 py-3 font-serif font-medium text-sm transition-all duration-300">
+                  Launch Intelligence Console
+                </button>
               </Link>
 
               {/* Mobile List Property Button */}

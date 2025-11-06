@@ -17,6 +17,779 @@ const BlogPost = () => {
 
   // Mock blog post data - in a real app, this would come from Firebase
   const blogData = {
+    'what-is-a-cap-rate': {
+    title: "What Is a Cap Rate? Calculating This Critical CRE Investment Metric",
+    author: "LoopNet Team",
+    date: "September 18, 2025",
+    readTime: "10 min read",
+    category: "Investing",
+    image: "https://www.loopnet.com/s/images/what-is-a-cap-rate/cap-rate-range-chart.webp",
+    content: `
+      <div class="executive-summary" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 2rem; border-radius: 1rem; margin: 2rem 0; border-left: 4px solid #2563eb;">
+        <h3 style="color: #1e293b; margin-bottom: 1rem; font-size: 1.25rem; font-weight: bold;">Key Takeaways</h3>
+        <ul style="color: #475569; line-height: 1.8; margin: 0; padding-left: 1.5rem;">
+          <li>A cap rate expresses an anticipated annual return on an investment property</li>
+          <li>Cap rates between 4% and 10% are considered standard in commercial real estate</li>
+          <li>Lower cap rates indicate lower risk properties, typically in prime locations</li>
+          <li>Higher cap rates suggest higher risk but potentially higher returns</li>
+        </ul>
+      </div>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">What Is a Capitalization (Cap) Rate?</h2>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #374151; margin-bottom: 1.5rem;">
+        A cap rate, or capitalization rate, is a critical metric used in commercial real estate to evaluate the potential return on investment for an income-producing property. It is expressed as a percentage and represents the ratio between the property's net operating income (NOI) and its current market value or purchase price.
+      </p>
+
+      <div style="background: #dbeafe; padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0; border-left: 4px solid #2563eb;">
+        <p style="color: #1e40af; font-size: 1.125rem; margin: 0; font-weight: 500;">
+          "A cap rate expresses an anticipated annual return on an investment property," explains Jonathan Squires, managing director at Cushman & Wakefield.
+        </p>
+      </div>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">What Is a "Good" Cap Rate?</h2>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #374151; margin-bottom: 1.5rem;">
+        Defining what constitutes a "good" cap rate can significantly vary based on several factors, mainly: the investor's objectives, risk tolerance, the property's location, and the broader market conditions.
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+        <div style="background: #dbeafe; padding: 1.5rem; border-radius: 0.75rem; text-align: center;">
+          <div style="font-size: 2rem; font-weight: bold; color: #1e40af; margin-bottom: 0.5rem;">4-6%</div>
+          <div style="color: #1e293b; font-weight: 600; margin-bottom: 0.5rem;">Premium Properties</div>
+          <div style="color: #64748b; font-size: 0.875rem;">Prime location, lower risk, stable returns</div>
+        </div>
+        <div style="background: #dcfce7; padding: 1.5rem; border-radius: 0.75rem; text-align: center;">
+          <div style="font-size: 2rem; font-weight: bold; color: #15803d; margin-bottom: 0.5rem;">6-8%</div>
+          <div style="color: #1e293b; font-weight: 600; margin-bottom: 0.5rem;">Core Assets</div>
+          <div style="color: #64748b; font-size: 0.875rem;">Moderate risk, solid returns</div>
+        </div>
+        <div style="background: #fef3c7; padding: 1.5rem; border-radius: 0.75rem; text-align: center;">
+          <div style="font-size: 2rem; font-weight: bold; color: #a16207; margin-bottom: 0.5rem;">8-10%+</div>
+          <div style="color: #1e293b; font-weight: 600; margin-bottom: 0.5rem;">Value-Add/Opportunistic</div>
+          <div style="color: #64748b; font-size: 0.875rem;">Higher risk, higher potential returns</div>
+        </div>
+      </div>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">Typical Cap Rate Ranges by Property Type</h2>
+      
+      <div style="background: white; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 2rem 0;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="background: #1e293b; color: white;">
+              <th style="padding: 1rem; text-align: left;">Property Type</th>
+              <th style="padding: 1rem; text-align: left;">Primary Markets</th>
+              <th style="padding: 1rem; text-align: left;">Secondary Markets</th>
+              <th style="padding: 1rem; text-align: left;">Tertiary Markets</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 1rem; font-weight: 500;">Multifamily</td>
+              <td style="padding: 1rem;">3.5% - 5.0%</td>
+              <td style="padding: 1rem;">4.5% - 6.0%</td>
+              <td style="padding: 1rem;">5.5% - 8.0%</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 1rem; font-weight: 500;">Office</td>
+              <td style="padding: 1rem;">4.0% - 6.0%</td>
+              <td style="padding: 1rem;">5.5% - 7.5%</td>
+              <td style="padding: 1rem;">7.0% - 9.5%</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 1rem; font-weight: 500;">Retail</td>
+              <td style="padding: 1rem;">4.5% - 6.5%</td>
+              <td style="padding: 1rem;">6.0% - 8.0%</td>
+              <td style="padding: 1rem;">7.5% - 10.0%</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 1rem; font-weight: 500;">Industrial</td>
+              <td style="padding: 1rem;">4.0% - 5.5%</td>
+              <td style="padding: 1rem;">5.0% - 7.0%</td>
+              <td style="padding: 1rem;">6.0% - 8.5%</td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem; font-weight: 500;">Hotel</td>
+              <td style="padding: 1rem;">5.5% - 7.5%</td>
+              <td style="padding: 1rem;">7.0% - 9.0%</td>
+              <td style="padding: 1rem;">8.5% - 11.0%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">How to Calculate Cap Rate</h2>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #374151; margin-bottom: 1.5rem;">
+        To calculate a cap rate, an investor needs to be in possession of at least two data points: the property's purchase price or market value, and the property's net operating income (NOI).
+      </p>
+
+      <div style="background: #f8fafc; padding: 2rem; border-radius: 1rem; margin: 2rem 0; border: 1px solid #e2e8f0; text-align: center;">
+        <h3 style="color: #1e293b; margin-bottom: 1rem;">Cap Rate Formula</h3>
+        <div style="font-size: 1.5rem; color: #2563eb; font-weight: bold; font-family: monospace; margin: 1rem 0;">
+          Cap Rate = NOI ÷ Purchase Price
+        </div>
+      </div>
+
+      <h3 style="color: #1e293b; font-size: 1.5rem; font-weight: bold; margin: 2rem 0 1rem 0;">Cap Rate Calculation Example</h3>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #374151; margin-bottom: 1.5rem;">
+        If an investor was considering purchasing an industrial property for $2 million, and the property had an NOI of $100,000, you would divide $100,000 by $2 million, which results in .05, or a cap rate of 5%.
+      </p>
+
+      <div style="background: #dbeafe; padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0;">
+        <div style="text-align: center; margin-bottom: 1rem;">
+          <div style="font-size: 1.25rem; color: #1e293b; font-weight: 600;">Example Calculation</div>
+        </div>
+        <div style="font-size: 1.25rem; color: #1e40af; font-family: monospace; text-align: center;">
+          $100,000 ÷ $2,000,000 = 0.05 = 5%
+        </div>
+      </div>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">Factors Influencing Cap Rates</h2>
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+        <div>
+          <h4 style="color: #dc2626; margin-bottom: 1rem;">⬆️ Higher Cap Rates</h4>
+          <ul style="color: #374151; font-size: 0.875rem; line-height: 1.8;">
+            <li>Rising interest rates</li>
+            <li>Less desirable location</li>
+            <li>Tenant instability</li>
+            <li>Economic uncertainty</li>
+            <li>Older building condition</li>
+            <li>Market oversupply</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: #15803d; margin-bottom: 1rem;">⬇️ Lower Cap Rates</h4>
+          <ul style="color: #374151; font-size: 0.875rem; line-height: 1.8;">
+            <li>Strong rental growth</li>
+            <li>Prime location</li>
+            <li>High-quality tenants</li>
+            <li>Long-term leases</li>
+            <li>Modern infrastructure</li>
+            <li>Limited supply</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">Why Do Investors Use Cap Rates?</h2>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #374151; margin-bottom: 1.5rem;">
+        Cap rates became dominant in real estate as the sector was increasingly institutionalized. "As real estate has become more of an institutional investment, we've seen the cap rate become the first question that anyone has when looking at a property," notes Squires.
+      </p>
+
+      <div style="background: #dcfce7; padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0; border-left: 4px solid #15803d;">
+        <h4 style="color: #15803d; margin-bottom: 1rem;">✅ Benefits of Using Cap Rates</h4>
+        <ul style="color: #374151; line-height: 1.8; margin: 0;">
+          <li>Simple to calculate and understand</li>
+          <li>Enables easy comparison across properties and asset classes</li>
+          <li>Helps assess perceived investment risk</li>
+          <li>Provides quick initial screening of opportunities</li>
+          <li>Industry-standard metric for communication</li>
+        </ul>
+      </div>
+
+      <div style="background: linear-gradient(135deg, #1e1b4b 0%, #3730a3 100%); padding: 2rem; border-radius: 1rem; margin: 3rem 0; color: white;">
+        <h3 style="color: #fbbf24; margin-bottom: 1rem; font-size: 1.5rem;">Ready to Start Investing in Commercial Real Estate?</h3>
+        <p style="margin-bottom: 1.5rem; font-size: 1.125rem;">
+          Understanding cap rates is just the beginning. Explore our comprehensive guides on property evaluation, financing options, and investment strategies to build your commercial real estate portfolio.
+        </p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="/properties" style="background: #fbbf24; color: #1e1b4b; padding: 0.75rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: bold; display: inline-block;">Search Properties</a>
+          <a href="/resources" style="border: 2px solid #fbbf24; color: #fbbf24; padding: 0.75rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: bold; display: inline-block;">Investment Resources</a>
+        </div>
+      </div>
+    `,
+    tags: ["Cap Rate", "Investment Metrics", "Property Valuation", "NOI", "Commercial Real Estate Analysis"]
+  },
+
+  'how-to-buy-commercial-property': {
+    title: "How to Buy Commercial Property: A Strategic Investment Process",
+    author: "LoopNet Team",
+    date: "October 27, 2025",
+    readTime: "12 min read",
+    category: "Investing",
+    image: "https://www.loopnet.com/s/images/how-to-buy-commercial-property/interior-office-new-york.webp",
+    content: `
+      <div class="executive-summary" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 2rem; border-radius: 1rem; margin: 2rem 0; border-left: 4px solid #2563eb;">
+        <h3 style="color: #1e293b; margin-bottom: 1rem; font-size: 1.25rem; font-weight: bold;">Key Takeaways</h3>
+        <ul style="color: #475569; line-height: 1.8; margin: 0; padding-left: 1.5rem;">
+          <li>Buying commercial property follows a clear process: define goals, secure financing, build your team, find and evaluate properties, then conduct due diligence before closing</li>
+          <li>Expect down payments of 20-30% and additional costs for due diligence and closing</li>
+          <li>Work with experienced professionals—broker, attorney, and inspector—to reduce risk and ensure compliance</li>
+          <li>Strong market analysis and thorough lease review are critical for accurate valuation and long-term returns</li>
+        </ul>
+      </div>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">1. Define the Goals for Your Investment</h2>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #374151; margin-bottom: 1.5rem;">
+        A successful commercial property purchase starts with a clear investment strategy. Without defined goals, it's easy to chase the wrong opportunities and tie up capital in poor-performing assets. A focused strategy guides your property selection, financing decisions, and risk management from the start.
+      </p>
+
+      <div style="background: #f8fafc; padding: 2rem; border-radius: 1rem; margin: 2rem 0; border: 1px solid #e2e8f0;">
+        <h3 style="color: #1e293b; margin-bottom: 1.5rem;">Defining Investment Criteria</h3>
+        <p style="color: #374151; margin-bottom: 1rem;">Your investment criteria should match your goals and resources. Consider whether you want to focus on:</p>
+        <ul style="color: #374151; line-height: 1.8;">
+          <li><strong>Property Types:</strong> Apartment buildings for steady income or shopping centers for appreciation potential</li>
+          <li><strong>Market Focus:</strong> Primary, secondary, or tertiary markets based on risk tolerance</li>
+          <li><strong>Investment Horizon:</strong> Short-term value-add or long-term hold strategies</li>
+          <li><strong>Return Expectations:</strong> Target cap rates and cash-on-cash returns</li>
+        </ul>
+      </div>
+
+      <h3 style="color: #1e293b; font-size: 1.5rem; font-weight: bold; margin: 2rem 0 1rem 0;">Market Analysis Framework</h3>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #374151; margin-bottom: 1.5rem;">
+        Effective market analysis examines three key areas:
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+        <div style="background: #dbeafe; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #93c5fd;">
+          <h4 style="color: #1e40af; margin-bottom: 1rem;">📊 Demographic Indicators</h4>
+          <ul style="color: #374151; font-size: 0.875rem; margin: 0; padding-left: 1rem;">
+            <li>Population growth trends</li>
+            <li>Income levels and employment</li>
+            <li>Age distribution</li>
+            <li>Education levels</li>
+          </ul>
+        </div>
+        
+        <div style="background: #dcfce7; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #86efac;">
+          <h4 style="color: #15803d; margin-bottom: 1rem;">💰 Economic Metrics</h4>
+          <ul style="color: #374151; font-size: 0.875rem; margin: 0; padding-left: 1rem;">
+            <li>Market stability indicators</li>
+            <li>Growth potential analysis</li>
+            <li>Industry diversification</li>
+            <li>Major employer presence</li>
+          </ul>
+        </div>
+        
+        <div style="background: #fef3c7; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #fde68a;">
+          <h4 style="color: #a16207; margin-bottom: 1rem;">🏢 Supply-Demand Analysis</h4>
+          <ul style="color: #374151; font-size: 0.875rem; margin: 0; padding-left: 1rem;">
+            <li>Current inventory levels</li>
+            <li>Vacancy rates</li>
+            <li>New construction pipeline</li>
+            <li>Absorption rates</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">2. Secure Financing for Your Purchase</h2>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #374151; margin-bottom: 1.5rem;">
+        Financing can make or break a commercial property deal. The right loan structure strengthens your cash flow and buying power; the wrong one can erode returns before you even close.
+      </p>
+
+      <div style="background: #dcfce7; padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0; border-left: 4px solid #15803d;">
+        <h4 style="color: #15803d; margin-bottom: 1rem;">Key Financing Steps</h4>
+        <ol style="color: #374151; line-height: 1.8; margin: 0;">
+          <li><strong>Assess Borrowing Capacity:</strong> Calculate how much you can borrow and evaluate down payment requirements (typically 20-30% of purchase price)</li>
+          <li><strong>Understand Lending Metrics:</strong> Meet key metrics like DSCR of 1.25 or higher and LTV ratios of 65-75%</li>
+          <li><strong>Explore Loan Options:</strong> Compare rates and terms from conventional banks, SBA programs, and CMBS lenders</li>
+          <li><strong>Submit Complete Application:</strong> Include financial statements, tax returns, rent rolls, and property condition reports</li>
+        </ol>
+      </div>
+
+      <h3 style="color: #1e293b; font-size: 1.5rem; font-weight: bold; margin: 2rem 0 1rem 0;">Popular Loan Types</h3>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+        <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 2px solid #e2e8f0;">
+          <h4 style="color: #2563eb; margin-bottom: 1rem;">💼 Conventional Loans</h4>
+          <p style="color: #374151; font-size: 0.875rem; margin-bottom: 0.5rem;">Best for stable properties like medical offices</p>
+          <p style="color: #64748b; font-size: 0.875rem;">Requires 20-25% down payment</p>
+        </div>
+        
+        <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 2px solid #e2e8f0;">
+          <h4 style="color: #2563eb; margin-bottom: 1rem;">🏛️ SBA Loans</h4>
+          <p style="color: #374151; font-size: 0.875rem; margin-bottom: 0.5rem;">Ideal for owner-occupied properties</p>
+          <p style="color: #64748b; font-size: 0.875rem;">Lower down payments available</p>
+        </div>
+        
+        <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 2px solid #e2e8f0;">
+          <h4 style="color: #2563eb; margin-bottom: 1rem;">🏨 CMBS Loans</h4>
+          <p style="color: #374151; font-size: 0.875rem; margin-bottom: 0.5rem;">Suitable for cash flow-heavy assets</p>
+          <p style="color: #64748b; font-size: 0.875rem;">Like hospitality properties</p>
+        </div>
+      </div>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">3. Build Your Investment Team</h2>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #374151; margin-bottom: 1.5rem;">
+        Buying commercial property isn't a solo effort—it's a team sport. The right professionals help you spot red flags early, negotiate better terms, and protect your investment from costly oversights.
+      </p>
+
+      <div style="background: #f8fafc; padding: 2rem; border-radius: 1rem; margin: 2rem 0; border: 1px solid #e2e8f0;">
+        <h3 style="color: #1e293b; margin-bottom: 1.5rem;">Your Core Team Should Include:</h3>
+        <div style="display: grid; gap: 1rem;">
+          <div style="display: flex; gap: 1rem; align-items: start;">
+            <span style="font-size: 1.5rem;">🏢</span>
+            <div>
+              <strong style="color: #1e293b;">Commercial Real Estate Broker</strong>
+              <p style="color: #64748b; font-size: 0.875rem; margin: 0.25rem 0 0 0;">For property sourcing and negotiation</p>
+            </div>
+          </div>
+          <div style="display: flex; gap: 1rem; align-items: start;">
+            <span style="font-size: 1.5rem;">⚖️</span>
+            <div>
+              <strong style="color: #1e293b;">Real Estate Attorney</strong>
+              <p style="color: #64748b; font-size: 0.875rem; margin: 0.25rem 0 0 0;">For contract review and closing</p>
+            </div>
+          </div>
+          <div style="display: flex; gap: 1rem; align-items: start;">
+            <span style="font-size: 1.5rem;">🔍</span>
+            <div>
+              <strong style="color: #1e293b;">Commercial Property Inspector</strong>
+              <p style="color: #64748b; font-size: 0.875rem; margin: 0.25rem 0 0 0;">For comprehensive property evaluation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">4. Find and Analyze Properties</h2>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #374151; margin-bottom: 1.5rem;">
+        Finding the right commercial property requires a systematic approach to property searching and evaluation. A clear search strategy helps you identify properties that match your investment criteria and financial goals.
+      </p>
+
+      <div style="background: #dbeafe; padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0;">
+        <h4 style="color: #1e40af; margin-bottom: 1rem;">Property Evaluation Criteria</h4>
+        <div style="display: grid; gap: 1rem;">
+          <div>
+            <strong style="color: #1e293b;">📍 Location Fundamentals</strong>
+            <p style="color: #374151; font-size: 0.875rem; margin: 0.25rem 0 0 0;">Analyze access routes, traffic patterns, parking, and surrounding development</p>
+          </div>
+          <div>
+            <strong style="color: #1e293b;">🏗️ Physical Infrastructure</strong>
+            <p style="color: #374151; font-size: 0.875rem; margin: 0.25rem 0 0 0;">Assess HVAC, electrical, roofing condition and deferred maintenance</p>
+          </div>
+          <div>
+            <strong style="color: #1e293b;">💵 Financial Performance</strong>
+            <p style="color: #374151; font-size: 0.875rem; margin: 0.25rem 0 0 0;">Calculate current returns and value-add potential</p>
+          </div>
+          <div>
+            <strong style="color: #1e293b;">👥 Tenant Quality</strong>
+            <p style="color: #374151; font-size: 0.875rem; margin: 0.25rem 0 0 0;">Examine rent roll stability and tenant financials</p>
+          </div>
+          <div>
+            <strong style="color: #1e293b;">📈 Future Growth</strong>
+            <p style="color: #374151; font-size: 0.875rem; margin: 0.25rem 0 0 0;">Research development plans and renovation possibilities</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">5. Conduct Due Diligence Before You Commit</h2>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #374151; margin-bottom: 1.5rem;">
+        Due diligence is your opportunity to verify every claim, inspect every system, and uncover any hidden issues before you commit to the purchase. This phase protects your investment and ensures you're making an informed decision.
+      </p>
+
+      <div style="background: #fef3c7; padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0; border-left: 4px solid #a16207;">
+        <h4 style="color: #a16207; margin-bottom: 1rem;">⚠️ Critical Due Diligence Items</h4>
+        <ul style="color: #374151; line-height: 1.8; margin: 0;">
+          <li>Property inspection and environmental assessments</li>
+          <li>Title search and survey review</li>
+          <li>Lease audit and tenant financial review</li>
+          <li>Operating expense verification</li>
+          <li>Zoning and compliance confirmation</li>
+          <li>Insurance and liability assessment</li>
+        </ul>
+      </div>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">6. Negotiate and Close Your Purchase</h2>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #374151; margin-bottom: 1.5rem;">
+        Once due diligence is complete and you're satisfied with the property, it's time to finalize negotiations and close the transaction. This stage involves finalizing the purchase agreement, coordinating with your lender, and preparing for the closing.
+      </p>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">7. Manage Your Investment After Closing</h2>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #374151; margin-bottom: 1.5rem;">
+        The work doesn't stop at closing. Effective property management is essential to maximize returns and maintain property value. Whether you self-manage or hire a property management company, establish clear systems for tenant relations, maintenance, and financial tracking.
+      </p>
+
+      <div style="background: linear-gradient(135deg, #1e1b4b 0%, #3730a3 100%); padding: 2rem; border-radius: 1rem; margin: 3rem 0; color: white;">
+        <h3 style="color: #fbbf24; margin-bottom: 1rem; font-size: 1.5rem;">Start Your Commercial Real Estate Journey Today</h3>
+        <p style="margin-bottom: 1.5rem; font-size: 1.125rem;">
+          Ready to buy your first commercial property? Browse thousands of listings and connect with experienced brokers who can guide you through the process.
+        </p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="/properties" style="background: #fbbf24; color: #1e1b4b; padding: 0.75rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: bold; display: inline-block;">Browse Properties</a>
+          <a href="/brokers" style="border: 2px solid #fbbf24; color: #fbbf24; padding: 0.75rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: bold; display: inline-block;">Find a Broker</a>
+        </div>
+      </div>
+    `,
+    tags: ["Commercial Property Purchase", "Real Estate Investment", "Property Financing", "Due Diligence", "Investment Strategy"]
+  },
+
+  'special-warranty-deed': {
+    title: "Special Warranty Deed: What It Covers, When to Use It, and Investor Risks",
+    author: "LoopNet Team",
+    date: "October 15, 2025",
+    readTime: "7 min read",
+    category: "Commercial Real Estate",
+    image: "https://www.loopnet.com/s/images/special-warranty-deed/special-warranty-deed.webp",
+    content: `
+      <div class="executive-summary" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 2rem; border-radius: 1rem; margin: 2rem 0; border-left: 4px solid #2563eb;">
+        <h3 style="color: #1e293b; margin-bottom: 1rem; font-size: 1.25rem; font-weight: bold;">Key Takeaways</h3>
+        <ul style="color: #475569; line-height: 1.8; margin: 0; padding-left: 1.5rem;">
+          [cite_start]<li>A special warranty deed guarantees the title is clear only for the period the seller owned the property[cite: 1285].</li>
+          [cite_start]<li>It shifts more risk to the buyer compared to a general warranty deed, as it does not cover defects from prior owners[cite: 1287, 1301].</li>
+          [cite_start]<li>This deed type is frequently seen in **commercial transactions** and **foreclosure sales** where the seller wants to limit liability[cite: 1303, 1309].</li>
+          [cite_start]<li>To manage risk, buyers must secure strong title insurance with **extended coverage**[cite: 1344].</li>
+        </ul>
+      </div>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">What is a Special Warranty Deed?</h2>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #374151; margin-bottom: 1.5rem;">
+        [cite_start]A **special warranty deed** is a legal document that transfers property ownership and guarantees the title is clear *only* for the period the seller owned it[cite: 1285]. [cite_start]This type of deed offers **limited protection** compared to a general warranty deed[cite: 1286].
+      </p>
+
+      <div style="background: #dbeafe; padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0; border-left: 4px solid #2563eb;">
+        <p style="color: #1e40af; font-size: 1.125rem; margin: 0; font-weight: 500;">
+          [cite_start]The seller, or grantor, promises there were no title issues like liens or claims during their ownership[cite: 1286]. [cite_start]However, they do not cover anything that happened before they took possession, which makes the buyer responsible for any older title defects[cite: 1287]. [cite_start]The term "special" can be misleading, as it indicates a slice of the full history, not extra protection[cite: 1289, 1290].
+        </p>
+      </div>
+
+      <h3 style="color: #1e293b; font-size: 1.5rem; font-weight: bold; margin: 2rem 0 1rem 0;">Where Are Special Warranty Deeds Used?</h3>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #374151; margin-bottom: 1.5rem;">
+        [cite_start]Special warranty deeds are commonly used in commercial real estate deals, especially when the seller has limited knowledge of the property's full title history[cite: 1309].
+      </p>
+      <ul style="color: #475569; line-height: 1.8; margin: 0; padding-left: 1.5rem; font-size: 1.125rem;">
+        [cite_start]<li>**Commercial Transactions:** This deed limits the seller's liability to only the time they owned the property, which is preferred by corporate entities and in deals where properties change hands frequently[cite: 1312, 1313].</li>
+        [cite_start]<li>**Foreclosures and Bank Sales:** Banks and lenders often use them when selling foreclosed properties to quickly offload assets while limiting exposure to title issues they didn't cause[cite: 1315, 1316].</li>
+      </ul>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">Special Warranty Deed Comparison</h2>
+      <div style="background: white; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 2rem 0;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="background: #1e293b; color: white;">
+              <th style="padding: 1rem; text-align: left;">Timeframe</th>
+              <th style="padding: 1rem; text-align: center;">General Warranty Deed</th>
+              <th style="padding: 1rem; text-align: center;">Special Warranty Deed</th>
+              <th style="padding: 1rem; text-align: center;">Quitclaim Deed</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 1rem; font-weight: 500;">Before Seller Owned the Property</td>
+              [cite_start]<td style="padding: 1rem; text-align: center;">Covered by the seller [cite: 1304]</td>
+              [cite_start]<td style="padding: 1rem; text-align: center;">❌ Not covered [cite: 1304]</td>
+              [cite_start]<td style="padding: 1rem; text-align: center;">❌ Not covered [cite: 1304]</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 1rem; font-weight: 500;">During Seller's Ownership</td>
+              [cite_start]<td style="padding: 1rem; text-align: center;">✅ Covered by the seller [cite: 1304]</td>
+              [cite_start]<td style="padding: 1rem; text-align: center;">✅ Covered by the seller [cite: 1304]</td>
+              [cite_start]<td style="padding: 1rem; text-align: center;">❌ Not covered [cite: 1304]</td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem; font-weight: 500;">After Buyer Takes Ownership</td>
+              [cite_start]<td style="padding: 1rem; text-align: center;">Buyer is responsible [cite: 1304]</td>
+              [cite_start]<td style="padding: 1rem; text-align: center;">Buyer is responsible [cite: 1304]</td>
+              [cite_start]<td style="padding: 1rem; text-align: center;">Buyer is responsible [cite: 1304]</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">Managing Investor Risks</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+        <div style="background: #dcfce7; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #bbf7d0;">
+          <h4 style="color: #15803d; margin-bottom: 1rem;">✅ When to Accept the Deed</h4>
+          <ul style="color: #374151; font-size: 0.875rem; margin: 0; padding-left: 1rem;">
+            [cite_start]<li>If the property has had a **clean recent ownership record**[cite: 1343].</li>
+            [cite_start]<li>If the buyer plans to purchase **strong title insurance** with extended coverage[cite: 1344, 1367].</li>
+            [cite_start]<li>If the purchase price is negotiated to reflect the added risk[cite: 1345].</li>
+            [cite_start]<li>When buying distressed property, where the deed type is often non-negotiable[cite: 1346].</li>
+          </ul>
+        </div>
+        <div style="background: #fee2e2; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #fecaca;">
+          <h4 style="color: #991b1b; margin-bottom: 1rem;">⚠️ Primary Risks for Buyers</h4>
+          <ul style="color: #374151; font-size: 0.875rem; margin: 0; padding-left: 1rem;">
+            [cite_start]<li>**Title Defects from Prior Owners:** The buyer assumes all responsibility for any liens or disputes that occurred before the seller's ownership[cite: 1396, 1287].</li>
+            [cite_start]<li>**Need for Deeper Due Diligence:** Investors must budget for more extensive title research and potential legal costs if claims arise[cite: 1347].</li>
+            [cite_start]<li>**Less Protection:** It offers less protection than the standard general warranty deed used in most residential sales[cite: 1396].</li>
+          </ul>
+        </div>
+      </div>
+    `,
+    tags: ["Special Warranty Deed", "General Warranty Deed", "Quitclaim Deed", "Commercial Real Estate", "Title Insurance", "Investor Risks"]
+  },
+
+  'duplex-triplex-fourplex': {
+    title: "Duplex vs. Triplex vs. Fourplex for Investors",
+    author: "LoopNet Team",
+    date: "October 21, 2025",
+    readTime: "8 min read",
+    category: "Residential Investing",
+    image: "https://www.loopnet.com/s/images/multifamily-investing/duplex-triplex-fourplex.webp",
+    content: `
+      <div class="executive-summary" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 2rem; border-radius: 1rem; margin: 2rem 0; border-left: 4px solid #2563eb;">
+        <h3 style="color: #1e293b; margin-bottom: 1rem; font-size: 1.25rem; font-weight: bold;">Key Takeaways</h3>
+        <ul style="color: #475569; line-height: 1.8; margin: 0; padding-left: 1.5rem;">
+          [cite_start]<li>**Duplexes, triplexes, and fourplexes** are 2- to 4-unit residential multifamily properties[cite: 1945].</li>
+          [cite_start]<li>These properties qualify for **easier residential financing** with lower down payments than 5-plus-unit commercial buildings[cite: 1945, 1966].</li>
+          [cite_start]<li>More units reduce **vacancy risk** (e.g., a fourplex loses only 25% of income per vacancy) and increase income potential[cite: 1946].</li>
+          [cite_start]<li>**Owner-occupants** can leverage FHA, VA, or conventional loans to "house hack" and build equity faster[cite: 1948].</li>
+        </ul>
+      </div>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">Residential Financing vs. Commercial Property</h2>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #374151; margin-bottom: 1.5rem;">
+        The primary difference between these properties and larger apartment buildings is the **unit count**. [cite_start]Duplexes (2 units), triplexes (3 units), and fourplexes (4 units) are classified as **residential real estate** for lending and zoning purposes[cite: 1955, 1956, 1965]. [cite_start]This allows investors to secure a conventional mortgage with typically lower down payments[cite: 1966].
+      </p>
+
+      <div style="background: #f0f9ff; padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0; border-left: 4px solid #0369a1;">
+        <h4 style="color: #0369a1; margin-bottom: 0.75rem;">Financing for Owner-Occupants ("House Hacking")</h4>
+        <p style="color: #374151; font-size: 1.125rem; margin-bottom: 1.5rem;">
+          [cite_start]"House hacking" is when you live in one unit while renting the others, cutting your housing costs while building wealth and property management experience[cite: 1783]. [cite_start]FHA, VA, and conventional loans offer significantly lower down payments for owner-occupants[cite: 1784].
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+          <div style="background: #e0f2fe; padding: 1rem; border-radius: 0.5rem;">
+            <h5 style="color: #0369a1; margin-bottom: 0.5rem; font-size: 1rem;">FHA Loan</h5>
+            [cite_start]<p style="margin: 0; font-size: 0.875rem;">**3.5% Down Payment**[cite: 1782]. [cite_start]Best for first-time buyers and house-hacking[cite: 1782].</p>
+          </div>
+          <div style="background: #e0f2fe; padding: 1rem; border-radius: 0.5rem;">
+            <h5 style="color: #0369a1; margin-bottom: 0.5rem; font-size: 1rem;">Conventional Loan</h5>
+            [cite_start]<p style="margin: 0; font-size: 0.875rem;">Owner-occupants as low as **3% Down**[cite: 1782]. [cite_start]Non-owner investors need 20-25% down[cite: 1782].</p>
+          </div>
+          <div style="background: #e0f2fe; padding: 1rem; border-radius: 0.5rem;">
+            <h5 style="color: #0369a1; margin-bottom: 0.5rem; font-size: 1rem;">VA Loan</h5>
+            [cite_start]<p style="margin: 0; font-size: 0.875rem;">**0% Down Payment**[cite: 1782]. [cite_start]Available to veterans and qualified borrowers[cite: 1782].</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">Pros and Cons Comparison</h2>
+
+      <div style="background: white; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 2rem 0;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="background: #1e293b; color: white;">
+              <th style="padding: 1rem; text-align: left;">Property Type</th>
+              <th style="padding: 1rem; text-align: left;">Pros</th>
+              <th style="padding: 1rem; text-align: left;">Cons</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 1rem; font-weight: 500; color: #2563eb;">Duplex</td>
+              [cite_start]<td style="padding: 1rem; font-size: 0.875rem;">Lower entry cost and simpler financing; ideal for first-time investors[cite: 1978].</td>
+              [cite_start]<td style="padding: 1rem; font-size: 0.875rem;">**Higher vacancy risk** (lose 50% income if one unit is empty); limited total income[cite: 1978].</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 1rem; font-weight: 500; color: #a16207;">Triplex</td>
+              [cite_start]<td style="padding: 1rem; font-size: 0.875rem;">Better cash flow and risk diversification (only ~33% income loss per vacancy) [cite: 1978][cite_start]; still manageable without hiring a property manager[cite: 1978].</td>
+              [cite_start]<td style="padding: 1rem; font-size: 0.875rem;">Fewer sales comparables in some markets; more complex tenant coordination and turnover management[cite: 1978].</td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem; font-weight: 500; color: #15803d;">Fourplex</td>
+              <td style="padding: 1rem; font-size: 0.875rem;">Highest income potential; [cite_start]**best vacancy protection** (only 25% income loss) [cite: 1978][cite_start]; single address means easier oversight than multiple duplexes[cite: 1978].</td>
+              [cite_start]<td style="padding: 1rem; font-size: 0.875rem;">Higher upfront cost and larger reserves needed; stricter building codes (e.g., fire/sprinklers) in some areas[cite: 1978].</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="color: #1e293b; font-size: 1.5rem; font-weight: bold; margin: 2rem 0 1rem 0;">Income vs. Management Complexity</h3>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #374151; margin-bottom: 1.5rem;">
+        [cite_start]While doubling the unit count from a duplex to a fourplex can double gross rent, it doesn't double net income, as insurance, taxes, and maintenance consume a larger percentage of the rental income[cite: 1736, 1737].
+      </p>
+      <ul style="color: #475569; line-height: 1.8; margin: 0; padding-left: 1.5rem; font-size: 1.125rem;">
+        [cite_start]<li>**Scaling Efficiency:** Management time increases with unit count, but not linearly[cite: 1867]. [cite_start]A fourplex might require only 60% more management time than a duplex, thanks to efficiencies from a single location and shared systems (like one roof or boiler)[cite: 1868].</li>
+        [cite_start]<li>**Reserves:** Plan to set aside three to six months of operating expenses for duplexes, and at least six months for triplexes and fourplexes, with higher reserves for older buildings[cite: 1896].</li>
+      </ul>
+    `,
+    tags: ["Multifamily Investing", "House Hacking", "Duplex", "Triplex", "Fourplex", "Residential Financing", "Vacancy Risk"]
+  },
+
+  'real-estate-investment-trusts-reits': {
+    title: "Real Estate Investment Trusts (REITs): Understanding the Basics and Benefits",
+    author: "LoopNet Team",
+    date: "August 25, 2025",
+    readTime: "9 min read",
+    category: "Investing",
+    image: "https://www.loopnet.com/s/images/real-estate-investment-trusts-reits/real-estate-investment-trusts-reits.webp",
+    content: `
+      <div class="executive-summary" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 2rem; border-radius: 1rem; margin: 2rem 0; border-left: 4px solid #2563eb;">
+        <h3 style="color: #1e293b; margin-bottom: 1rem; font-size: 1.25rem; font-weight: bold;">Key Takeaways</h3>
+        <ul style="color: #475569; line-height: 1.8; margin: 0; padding-left: 1.5rem;">
+          <li>A REIT allows individual investors to buy shares in a company that owns and manages income-producing real estate</li>
+          <li>REITs must pay out at least 90% of their income in dividends</li>
+          <li>Collectively, REITs hold more than $4 trillion in gross assets</li>
+          <li>Three main types: Equity REITs, Mortgage REITs, and Hybrid REITs</li>
+        </ul>
+      </div>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">What are Real Estate Investment Trusts?</h2>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #374151; margin-bottom: 1.5rem;">
+        A REIT is a company that makes money by investing in, owning, or operating real estate. Investors can buy shares in that company and receive dividends from its investments without having to own or manage property themselves.
+      </p>
+
+      <div style="background: #dbeafe; padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0; border-left: 4px solid #2563eb;">
+        <p style="color: #1e40af; font-size: 1.125rem; margin: 0; font-weight: 500;">
+          REITs can invest in a range of property types, such as office buildings, apartment complexes, warehouses, and storage facilities. They typically focus on long-term investments by holding or financing assets.
+        </p>
+      </div>
+
+      <h3 style="color: #1e293b; font-size: 1.5rem; font-weight: bold; margin: 2rem 0 1rem 0;">Market Size and Scope</h3>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #374151; margin-bottom: 1.5rem;">
+        Collectively, REITs of all types hold more than $4 trillion in gross assets. REITs specifically own or had interests in about 580,000 properties around the country, including institutional-quality real estate like data centers, office buildings, and industrial facilities.
+      </p>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">How do REITs Work?</h2>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #374151; margin-bottom: 1.5rem;">
+        Because real estate investment trusts have a special tax status, they operate differently than other investment vehicles. To qualify as a REIT, a company must:
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+        <div style="background: #f0f9ff; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e0f2fe;">
+          <h4 style="color: #0369a1; margin-bottom: 1rem;">💰 Dividend Requirement</h4>
+          <p style="color: #374151; font-size: 0.875rem;">Pay out a minimum of 90% of its income in dividends</p>
+        </div>
+        
+        <div style="background: #f0fdf4; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #dcfce7;">
+          <h4 style="color: #166534; margin-bottom: 1rem;">👥 Shareholder Rules</h4>
+          <p style="color: #374151; font-size: 0.875rem;">Have at least 100 shareholders, with no more than five owning more than 50% of shares</p>
+        </div>
+        
+        <div style="background: #fef3c7; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #fde68a;">
+          <h4 style="color: #a16207; margin-bottom: 1rem;">🏢 Asset Requirements</h4>
+          <p style="color: #374151; font-size: 0.875rem;">Keep at least 75% of total assets in real estate or cash</p>
+        </div>
+        
+        <div style="background: #fce7f3; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #fbcfe8;">
+          <h4 style="color: #9f1239; margin-bottom: 1rem;">📊 Income Requirements</h4>
+          <p style="color: #374151; font-size: 0.875rem;">Derive at least 75% of annual gross income from real estate sources</p>
+        </div>
+      </div>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">Types of REITs</h2>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #374151; margin-bottom: 1.5rem;">
+        Real estate investment trusts can be broken down according to multiple variables: business model, listing status, and property sector.
+      </p>
+
+      <h3 style="color: #1e293b; font-size: 1.5rem; font-weight: bold; margin: 2rem 0 1rem 0;">REITs by Business Model</h3>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+        <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 2px solid #dbeafe;">
+          <h4 style="color: #2563eb; margin-bottom: 1rem;">🏢 Equity REITs</h4>
+          <p style="color: #374151; margin-bottom: 0.5rem;">The most common type. They own and manage income-producing properties.</p>
+          <p style="color: #64748b; font-size: 0.875rem; margin: 0;"><strong>Revenue:</strong> Primarily from leasing space and collecting rent</p>
+        </div>
+        
+        <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 2px solid #dcfce7;">
+          <h4 style="color: #15803d; margin-bottom: 1rem;">💵 Mortgage REITs (mREITs)</h4>
+          <p style="color: #374151; margin-bottom: 0.5rem;">Finance mortgages or mortgage-backed securities rather than owning property.</p>
+          <p style="color: #64748b; font-size: 0.875rem; margin: 0;"><strong>Revenue:</strong> Interest earned on financial assets</p>
+        </div>
+        
+        <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 2px solid #fef3c7;">
+          <h4 style="color: #a16207; margin-bottom: 1rem;">🔀 Hybrid REITs</h4>
+          <p style="color: #374151; margin-bottom: 0.5rem;">Combine strategies of both equity and mortgage REITs.</p>
+          <p style="color: #64748b; font-size: 0.875rem; margin: 0;"><strong>Revenue:</strong> Both rental income and interest payments</p>
+        </div>
+      </div>
+
+      <h3 style="color: #1e293b; font-size: 1.5rem; font-weight: bold; margin: 2rem 0 1rem 0;">REITs by Listing Status</h3>
+      
+      <div style="background: white; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 2rem 0;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="background: #1e293b; color: white;">
+              <th style="padding: 1rem; text-align: left;">Type of REIT</th>
+              <th style="padding: 1rem; text-align: center;">Registered with SEC</th>
+              <th style="padding: 1rem; text-align: center;">Listed on Exchanges</th>
+              <th style="padding: 1rem; text-align: left;">Key Features</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 1rem; font-weight: 500;">Public</td>
+              <td style="padding: 1rem; text-align: center;">✅</td>
+              <td style="padding: 1rem; text-align: center;">✅</td>
+              <td style="padding: 1rem; font-size: 0.875rem;">Most accessible, subject to market volatility</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 1rem; font-weight: 500;">Public Non-Listed</td>
+              <td style="padding: 1rem; text-align: center;">✅</td>
+              <td style="padding: 1rem; text-align: center;">❌</td>
+              <td style="padding: 1rem; font-size: 0.875rem;">Less liquid, not subject to market volatility</td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem; font-weight: 500;">Private</td>
+              <td style="padding: 1rem; text-align: center;">❌</td>
+              <td style="padding: 1rem; text-align: center;">❌</td>
+              <td style="padding: 1rem; font-size: 0.875rem;">Institutional/accredited investors only</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">How do REITs Make Money?</h2>
+      
+      <div style="background: #f8fafc; padding: 2rem; border-radius: 1rem; margin: 2rem 0; border: 1px solid #e2e8f0;">
+        <h3 style="color: #1e293b; margin-bottom: 1.5rem;">Revenue Models by REIT Type</h3>
+        <div style="display: grid; gap: 1.5rem;">
+          <div>
+            <h4 style="color: #2563eb; margin-bottom: 0.5rem;">Equity REITs</h4>
+            <ul style="color: #374151; font-size: 0.875rem; margin: 0; padding-left: 1.5rem;">
+              <li>Lease agreements with tenants (individuals to large corporations)</li>
+              <li>Rent collection on regular basis</li>
+              <li>Property appreciation over time</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="color: #15803d; margin-bottom: 0.5rem;">Mortgage REITs (mREITs)</h4>
+            <ul style="color: #374151; font-size: 0.875rem; margin: 0; padding-left: 1.5rem;">
+              <li>Interest on mortgages held (residential or commercial)</li>
+              <li>Spread income between interest earned and funding costs</li>
+              <li>More sensitive to interest rate changes</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="color: #a16207; margin-bottom: 0.5rem;">Hybrid REITs</h4>
+            <ul style="color: #374151; font-size: 0.875rem; margin: 0; padding-left: 1.5rem;">
+              <li>Combination of rental income from properties</li>
+              <li>Interest income from mortgage investments</li>
+              <li>Diversified revenue streams</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="color: #1e293b; font-size: 1.75rem; font-weight: bold; margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #2563eb;">Benefits and Risks of REITs</h2>
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+        <div style="background: #dcfce7; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #bbf7d0;">
+          <h4 style="color: #15803d; margin-bottom: 1rem;">✅ Benefits</h4>
+          <ul style="color: #374151; font-size: 0.875rem; margin: 0; padding-left: 1rem;">
+            <li>Accessible real estate investment without property ownership</li>
+            <li>Liquidity (for publicly traded REITs)</li>
+            <li>Diversification across properties and markets</li>
+            <li>Regular dividend income (90% minimum payout)</li>
+            <li>Professional management</li>
+            <li>Potential tax advantages</li>
+          </ul>
+        </div>
+        <div style="background: #fee2e2; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #fecaca;">
+          <h4 style="color: #991b1b; margin-bottom: 1rem;">⚠️ Risks</h4>
+          <ul style="color: #374151; font-size: 0.875rem; margin: 0; padding-left: 1rem;">
+            <li>Market volatility (for public REITs)</li>
+            <li>Interest rate sensitivity</li>
+            <li>Limited control over investment decisions</li>
+            <li>Dependence on property market conditions</li>
+            <li>Management fees and expenses</li>
+            <li>Tax implications on dividends</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="background: linear-gradient(135deg, #1e1b4b 0%, #3730a3 100%); padding: 2rem; border-radius: 1rem; margin: 3rem 0; color: white;">
+        <h3 style="color: #fbbf24; margin-bottom: 1rem; font-size: 1.5rem;">Ready to Explore REIT Investment Opportunities?</h3>
+        <p style="margin-bottom: 1.5rem; font-size: 1.125rem;">
+          REITs provide access to institutional-quality real estate with lower barriers to entry. Whether you're looking for steady dividend income or portfolio diversification, REITs offer a range of options to suit your investment goals.
+        </p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="/reits" style="background: #fbbf24; color: #1e1b4b; padding: 0.75rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: bold; display: inline-block;">Explore REITs</a>
+          <a href="/resources" style="border: 2px solid #fbbf24; color: #fbbf24; padding: 0.75rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: bold; display: inline-block;">Investment Guides</a>
+        </div>
+      </div>
+    `,
+    tags: ["REITs", "Real Estate Investment Trusts", "Equity REITs", "Mortgage REITs", "Passive Income", "Dividend Investment"]
+  },
+
     18: {
       title: "Affordable Housing Investment: Government Initiatives and Opportunities",
       author: "Margaret Wanjiku",
@@ -268,6 +1041,7 @@ const BlogPost = () => {
       `,
       tags: ["Affordable Housing", "Government Initiatives", "Social Impact Investment", "Housing Deficit", "Public-Private Partnership"]
     },
+
     19: {
       title: "REIT Dividend Strategies: Maximizing Income from Real Estate Trusts",
       author: "Patricia Wanjiku",
