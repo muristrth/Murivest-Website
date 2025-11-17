@@ -3,13 +3,14 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
-import { Phone, Menu, X, ChevronDown, ChevronUp, ExternalLink, Search } from 'lucide-react';
+import { Phone, Menu, X, ChevronDown, ChevronUp, ExternalLink, Search, Languages } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDesktopMenuOpen, setIsDesktopMenuOpen] = useState(false);
   const [isInvestDropdownOpen, setIsInvestDropdownOpen] = useState(false);
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
+  const [isSwahili, setIsSwahili] = useState(false);
   const router = useRouter();
   const pathname = usePathname(); // Use the usePathname hook
 
@@ -73,14 +74,23 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Desktop Menu Toggle */}
-          <button
-            className="hidden md:flex items-center text-gray-300 hover:text-amber-400 transition-colors"
-            onClick={() => setIsDesktopMenuOpen(!isDesktopMenuOpen)}
-          >
-            <Menu className="h-5 w-5" />
-            <span className="ml-2 text-sm font-serif">Menu</span>
-          </button>
+          {/* Language Toggle & Desktop Menu Toggle */}
+          <div className="hidden md:flex items-center space-x-4">
+            <button
+              className="flex items-center text-gray-300 hover:text-amber-400 transition-colors"
+              onClick={() => setIsSwahili(!isSwahili)}
+            >
+              <Languages className="h-5 w-5" />
+              <span className="ml-2 text-sm font-serif">{isSwahili ? 'SW' : 'EN'}</span>
+            </button>
+            <button
+              className="flex items-center text-gray-300 hover:text-amber-400 transition-colors"
+              onClick={() => setIsDesktopMenuOpen(!isDesktopMenuOpen)}
+            >
+              <Menu className="h-5 w-5" />
+              <span className="ml-2 text-sm font-serif">Menu</span>
+            </button>
+          </div>
 
           {/* Desktop Nav - Side Menu */}
           {isDesktopMenuOpen && (
@@ -346,6 +356,15 @@ const Header = () => {
             </div>
 
             <nav className="flex flex-col space-y-3">
+              {/* Language Toggle Mobile */}
+              <button
+                className="flex items-center font-serif text-sm font-light tracking-wide transition-colors text-gray-300 hover:text-amber-400 py-1"
+                onClick={() => setIsSwahili(!isSwahili)}
+              >
+                <Languages className="h-4 w-4 mr-2" />
+                {isSwahili ? 'Lugha: Kiswahili' : 'Language: English'}
+              </button>
+
               <Link
                 href="/"
                 className={`font-serif text-sm font-light tracking-wide transition-colors ${
@@ -354,7 +373,7 @@ const Header = () => {
                 onClick={closeAllDropdowns}
               >
                 Home
-              </Link>           
+              </Link>
               <Link
                 href="/properties"
                 className={`font-serif text-sm font-light tracking-wide transition-colors ${

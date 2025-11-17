@@ -68,7 +68,7 @@ const Hero = () => {
 
           {/* Power headline with social proof */}
           <h1 className="text-3xl md:text-5xl font-serif font-light mb-8 leading-tight tracking-tight luxury-text-spacing">
-            Murivest Realty Ltd. — Fiduciary Capital Intelligence Across Continents
+            Nairobi CRE: Offices, Retail, Industrial. Net Yields 8-10%. Quarterly Income. KRA-Compliant.
           </h1>
 
           {/* Authority subheadline */}
@@ -104,7 +104,7 @@ const Hero = () => {
               <TrendingUp className="h-6 w-6 text-amber-400 mr-3" />
               <div>
                 <div className="text-2xl font-serif font-light text-amber-400">22%</div>
-                <div className="text-gray-300 font-serif text-xs uppercase tracking-wide">Average IRR</div>
+                <div className="text-gray-300 font-serif text-xs uppercase tracking-wide">Target IRR*</div>
               </div>
             </div>
 
@@ -119,8 +119,8 @@ const Hero = () => {
             <div className="flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-none p-4 hover:bg-white/10 transition-all duration-300">
               <Shield className="h-6 w-6 text-amber-400 mr-3" />
               <div>
-                <div className="text-2xl font-serif font-light text-amber-400">$50M+</div>
-                <div className="text-gray-300 font-serif text-xs uppercase tracking-wide">Assets Under Management</div>
+                <div className="text-2xl font-serif font-light text-amber-400">KES 1B</div>
+                <div className="text-gray-300 font-serif text-xs uppercase tracking-wide">Target Raise by Q4 2025</div>
               </div>
             </div>
 
@@ -149,6 +149,13 @@ const Hero = () => {
               <span>•</span>
               <span>South Africa</span>
             </div>
+          </div>
+
+          {/* Legal Disclaimer */}
+          <div className="mt-8 p-4 bg-black/20 border border-amber-400/20 rounded-none">
+            <p className="text-xs text-gray-300 font-light leading-relaxed">
+              * <strong>Investment Disclaimer:</strong> Past performance does not guarantee future results. All investments involve risk including loss of principal. The target IRR is historical and not indicative of future performance. Real estate investments are illiquid. Please consult qualified advisors.
+            </p>
           </div>
         </div>
       </div>

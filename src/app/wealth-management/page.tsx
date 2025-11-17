@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { ArrowLeft, TrendingUp, Shield, Users, PieChart, Target } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Wealth Management Kenya | Luxury Gifts & Real Estate Investment Advisory | Murivest',
-  description: 'Comprehensive wealth management services in Kenya with personalized luxury gifts worth over $500,000. Real estate investment advisory, portfolio management, rare antiques, fine jewelry, and wealth preservation strategies for UHNW clients.',
-  keywords: 'wealth management Kenya, investment advisory Nairobi, portfolio management Kenya, wealth preservation, real estate wealth management, luxury gifts Kenya, personalized gifts Nairobi, rare antiques Kenya, fine jewelry Kenya, George Daniels watch, luxury client gifts, UHNW wealth management',
+  title: 'Wealth Management Kenya | Investment Advisory & Portfolio Management | Murivest Realty Group',
+  description: 'Professional wealth management services in Kenya including investment advisory, portfolio management, risk assessment, estate planning, and tax optimization for high-net-worth individuals and families.',
+  keywords: 'wealth management Kenya, investment advisory Nairobi, portfolio management Kenya, wealth preservation, real estate wealth management, estate planning Kenya, tax optimization, family office services, UHNW wealth management',
 };
 
 export default function WealthManagementPage() {
@@ -112,221 +112,118 @@ export default function WealthManagementPage() {
           </div>
         </div>
 
-        {/* Personalized Luxury Gifts */}
+        {/* Portfolio Management Approach */}
         <div className="mb-16">
           <h2 className="text-3xl font-light text-slate-900 text-center mb-12" style={{ fontFamily: 'Playfair Display, serif' }}>
-            Personalized Luxury Gifts
+            Portfolio Management Approach
           </h2>
-          <p className="text-xl text-slate-600 max-w-4xl mx-auto text-center mb-12">
-            At Murivest, we serve quite luxury clients who demand the extraordinary. We go beyond investment management to celebrate our ultra-high-net-worth clients' special moments with personalized gifts worth over $500,000, including rare antiques, fine jewelry, bespoke luxury items, and exceptional collectibles that reflect their discerning taste and strengthen our partnership.
-          </p>
-
-          {/* Luxury Items Showcase */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {/* George Daniels Watch */}
-            <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-              <div className="relative h-48">
-                <img
-                  src="https://assets.phillips.com/t_Website_LotDetailZoomImage/auctions/NY080322/173423_001.jpg"
-                  alt="George Daniels Anniversary Watch"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-4">
-                <h4 className="text-lg font-medium text-slate-900 mb-1">George Daniels</h4>
-                <p className="text-slate-600 text-sm mb-2">Anniversary Watch</p>
-                <div className="text-amber-600 font-medium text-sm">$816,500</div>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+              <h3 className="text-2xl font-light text-slate-900 mb-4">Core Investment Strategy</h3>
+              <p className="text-gray-600 mb-6">Our core investment strategy focuses on long-term capital preservation and growth through diversified portfolios emphasizing real estate, private equity, and alternative investments.</p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>• Real estate investment trusts (REITs) and direct property investments</li>
+                <li>• Private equity and venture capital opportunities</li>
+                <li>• Alternative investments including infrastructure and commodities</li>
+                <li>• Traditional fixed income and equity securities</li>
+              </ul>
             </div>
-
-            {/* Hermès */}
-            <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-              <div className="relative h-48 bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center">
-                <div className="text-center text-slate-500">
-                  <div className="w-12 h-12 bg-amber-200 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-amber-800 font-bold text-sm">H</span>
-                  </div>
-                  <p className="text-xs">Hermès</p>
-                </div>
-              </div>
-              <div className="p-4">
-                <h4 className="text-lg font-medium text-slate-900 mb-1">Hermès</h4>
-                <p className="text-slate-600 text-sm mb-2">Rare Leather Goods</p>
-                <div className="text-amber-600 font-medium text-sm">Upon Request</div>
-              </div>
-            </div>
-
-            {/* Ferrari 250 GT Lusso */}
-            <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-              <div className="relative h-48 bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center">
-                <div className="text-center text-slate-500">
-                  <div className="w-12 h-12 bg-red-200 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-red-800 font-bold text-sm">F</span>
-                  </div>
-                  <p className="text-xs">Ferrari</p>
-                </div>
-              </div>
-              <div className="p-4">
-                <h4 className="text-lg font-medium text-slate-900 mb-1">Ferrari 250 GT Lusso</h4>
-                <p className="text-slate-600 text-sm mb-2">1960s Sports Car</p>
-                <div className="text-amber-600 font-medium text-sm">Upon Request</div>
-              </div>
-            </div>
-
-            {/* Patek Philippe */}
-            <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-              <div className="relative h-48 bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
-                <div className="text-center text-slate-500">
-                  <div className="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-slate-800 font-bold text-sm">PP</span>
-                  </div>
-                  <p className="text-xs">Patek Philippe</p>
-                </div>
-              </div>
-              <div className="p-4">
-                <h4 className="text-lg font-medium text-slate-900 mb-1">Patek Philippe</h4>
-                <p className="text-slate-600 text-sm mb-2">Calatrava Series</p>
-                <div className="text-amber-600 font-medium text-sm">Upon Request</div>
-              </div>
-            </div>
-
-            {/* Rolls-Royce Phantom */}
-            <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-              <div className="relative h-48 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
-                <div className="text-center text-slate-500">
-                  <div className="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-blue-800 font-bold text-sm">RR</span>
-                  </div>
-                  <p className="text-xs">Rolls-Royce</p>
-                </div>
-              </div>
-              <div className="p-4">
-                <h4 className="text-lg font-medium text-slate-900 mb-1">Rolls-Royce Phantom</h4>
-                <p className="text-slate-600 text-sm mb-2">Ultimate Luxury</p>
-                <div className="text-amber-600 font-medium text-sm">Upon Request</div>
-              </div>
-            </div>
-
-            {/* Rémy Martin Louis XIII */}
-            <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-              <div className="relative h-48 bg-gradient-to-br from-amber-50 to-yellow-100 flex items-center justify-center">
-                <div className="text-center text-slate-500">
-                  <div className="w-12 h-12 bg-amber-200 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-amber-800 font-bold text-sm">RM</span>
-                  </div>
-                  <p className="text-xs">Rémy Martin</p>
-                </div>
-              </div>
-              <div className="p-4">
-                <h4 className="text-lg font-medium text-slate-900 mb-1">Rémy Martin Louis XIII</h4>
-                <p className="text-slate-600 text-sm mb-2">Rare Cask Cognac</p>
-                <div className="text-amber-600 font-medium text-sm">Upon Request</div>
-              </div>
-            </div>
-
-            {/* Land Rover Defender */}
-            <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-              <div className="relative h-48 bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center">
-                <div className="text-center text-slate-500">
-                  <div className="w-12 h-12 bg-green-200 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-green-800 font-bold text-sm">LR</span>
-                  </div>
-                  <p className="text-xs">Land Rover</p>
-                </div>
-              </div>
-              <div className="p-4">
-                <h4 className="text-lg font-medium text-slate-900 mb-1">Land Rover Defender</h4>
-                <p className="text-slate-600 text-sm mb-2">Customized by Himalaya</p>
-                <div className="text-amber-600 font-medium text-sm">Upon Request</div>
-              </div>
-            </div>
-
-            {/* Bentley Mulsanne */}
-            <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-              <div className="relative h-48 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
-                <div className="text-center text-slate-500">
-                  <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-gray-800 font-bold text-sm">B</span>
-                  </div>
-                  <p className="text-xs">Bentley</p>
-                </div>
-              </div>
-              <div className="p-4">
-                <h4 className="text-lg font-medium text-slate-900 mb-1">Bentley Mulsanne</h4>
-                <p className="text-slate-600 text-sm mb-2">Final Edition</p>
-                <div className="text-amber-600 font-medium text-sm">Upon Request</div>
-              </div>
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+              <h3 className="text-2xl font-light text-slate-900 mb-4">Active Portfolio Management</h3>
+              <p className="text-gray-600 mb-6">We actively monitor and rebalance portfolios to optimize risk-adjusted returns, taking advantage of market opportunities while maintaining alignment with client objectives.</p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>• Regular portfolio reviews and rebalancing</li>
+                <li>• Tax-loss harvesting and optimization</li>
+                <li>• Dynamic asset allocation based on market conditions</li>
+                <li>• Performance attribution and risk analysis</li>
+              </ul>
             </div>
           </div>
+        </div>
 
-          {/* Detailed George Daniels Example */}
-          <div className="bg-white rounded-lg shadow-sm border border-gray-100 max-w-5xl mx-auto overflow-hidden">
-            <div className="p-8">
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-light text-slate-900 mb-4">Featured: George Daniels Anniversary Watch</h3>
-                <div className="flex justify-center space-x-8 text-lg">
-                  <div>
-                    <span className="text-slate-500">Estimate:</span>
-                    <span className="text-slate-900 font-medium ml-2">$400,000 - 1,000,000</span>
+        {/* Fee Structure */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-light text-slate-900 text-center mb-12" style={{ fontFamily: 'Playfair Display, serif' }}>
+            Fee Structure
+          </h2>
+          <div className="bg-gradient-to-r from-slate-50 to-amber-50 p-8 rounded-lg">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-white p-6 rounded-lg border border-gray-100 text-center">
+                <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="h-8 w-8 text-amber-600" />
+                </div>
+                <h3 className="text-xl font-medium text-slate-900 mb-3">Management Fees</h3>
+                <p className="text-gray-600 mb-4">Annual management fees based on assets under management</p>
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between">
+                    <span>$1M - $5M:</span>
+                    <span className="font-medium">1.25% annually</span>
                   </div>
-                  <div>
-                    <span className="text-slate-500">Sold For:</span>
-                    <span className="text-slate-900 font-medium ml-2">$816,500</span>
+                  <div className="flex justify-between">
+                    <span>$5M - $10M:</span>
+                    <span className="font-medium">1.00% annually</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>$10M+:</span>
+                    <span className="font-medium">0.75% annually</span>
                   </div>
                 </div>
               </div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="text-xl font-medium text-slate-900 mb-4">Lot Details</h4>
-                  <div className="space-y-2 text-gray-700">
-                    <p><strong>Manufacturer:</strong> George Daniels</p>
-                    <p><strong>Year:</strong> Circa 2014</p>
-                    <p><strong>Movement No:</strong> No. 09</p>
-                    <p><strong>Model Name:</strong> Anniversary</p>
-                    <p><strong>Material:</strong> 18K yellow gold</p>
-                    <p><strong>Calibre:</strong> Manual, Co-axial escapement</p>
-                    <p><strong>Bracelet/Strap:</strong> Crocodile</p>
-                    <p><strong>Clasp/Buckle:</strong> 18K yellow gold George Daniels deployant clasp</p>
-                    <p><strong>Dimensions:</strong> 40mm diameter</p>
-                    <p><strong>Signed:</strong> Case, dial, movement and clasp signed</p>
-                    <p><strong>Accessories:</strong> Accompanied by George Daniels presentation manual, setting pin, cloth, key and fitted presentation box.</p>
+              <div className="bg-white p-6 rounded-lg border border-gray-100 text-center">
+                <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Target className="h-8 w-8 text-amber-600" />
+                </div>
+                <h3 className="text-xl font-medium text-slate-900 mb-3">Performance Fees</h3>
+                <p className="text-gray-600 mb-4">Performance-based fees on realized gains above benchmark</p>
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between">
+                    <span>Hurdle Rate:</span>
+                    <span className="font-medium">8% annually</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Performance Fee:</span>
+                    <span className="font-medium">20% of excess returns</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>High Water Mark:</span>
+                    <span className="font-medium">Yes</span>
                   </div>
                 </div>
-
-                <div>
-                  <h4 className="text-xl font-medium text-slate-900 mb-4">Catalogue Essay</h4>
-                  <div className="text-gray-700 space-y-4">
-                    <p>Widely considered the greatest watchmaker of the 20th century and a visionary icon of British watchmaking, Dr. George Daniels truly lived up to the definitions of determination, innovation and dedication. Born in 1926, Dr. Daniels stumbled upon his first watch at the age of 5 and discovered the interlocking wheels of the movement, "the centre of the universe" he says. A truly self-taught genius, Daniels never completed an apprenticeship, obtaining his knowledge from books and self-motivated restoration of various Abraham Louis Breguet timepieces after the war in 1947.</p>
-
-                    <p>George Daniels' first horological exercise for himself was a Marine Chronometer which he made in 1953, followed by a series of 37 pocket and wrist watches, including the Four-Minute Tourbillon and his masterpiece, The Space Traveller pocket watch. He became a renowned expert on Breguet's work and wrote the definitive book on the subject, The Art of Breguet.</p>
-
-                    <p>Relentless in pushing the boundaries as an individual and in the world of horology, Daniels challenged the quartz crisis in the late 1960s with his impeccable mastery of the 34 trades requisite in creating a watch entirely by hand. During this new dawn of quartz watches, Daniels' innovation of his ground breaking, Co-axial escapement changed the landscape of horology as none other since Thomas Mudge's invention of the lever escapement in 1755 - a time gap of 250 years.</p>
-
-                    <div className="mt-4">
-                      <Link
-                        href="/contact"
-                        className="text-amber-600 hover:text-amber-700 font-medium transition-colors"
-                      >
-                        See More About This Extraordinary Timepiece →
-                      </Link>
-                    </div>
+              </div>
+              <div className="bg-white p-6 rounded-lg border border-gray-100 text-center">
+                <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="h-8 w-8 text-amber-600" />
+                </div>
+                <h3 className="text-xl font-medium text-slate-900 mb-3">Additional Services</h3>
+                <p className="text-gray-600 mb-4">Fees for specialized advisory services</p>
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between">
+                    <span>Estate Planning:</span>
+                    <span className="font-medium">$5,000 - $15,000</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Tax Advisory:</span>
+                    <span className="font-medium">$2,500 - $7,500</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Family Office Setup:</span>
+                    <span className="font-medium">$25,000+</span>
                   </div>
                 </div>
+              </div>
+   
+              {/* Legal Disclaimer */}
+              <div className="mt-8 p-6 bg-slate-50 border border-amber-200 rounded-lg">
+                <p className="text-sm text-slate-600 font-light leading-relaxed">
+                  * <strong>Performance Disclaimer:</strong> Past performance does not guarantee future results. The historical 5-year average return is not indicative of future performance. All investments carry risk of loss of principal. Real estate investments are subject to market volatility and illiquidity. Please consult with qualified financial professionals before making investment decisions.
+                </p>
               </div>
             </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <p className="text-slate-600 mb-6">
-              We search for and acquire these extraordinary pieces to honor our clients' milestones, creating lasting memories that reflect our deep appreciation and commitment to their success.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center px-8 py-4 bg-amber-600 text-white rounded-lg font-medium hover:bg-amber-700 transition-colors"
-            >
-              Discuss Personalized Gifts
-            </Link>
+            <div className="mt-8 text-center">
+              <p className="text-slate-600 text-sm">
+                All fees are negotiable based on account size and complexity. Minimum investment requirements apply.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -411,7 +308,7 @@ export default function WealthManagementPage() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="text-4xl font-light text-amber-600 mb-2">12.8%</div>
-                <div className="text-gray-600">5-Year Average Return</div>
+                <div className="text-gray-600">Historical 5-Year Return*</div>
                 <div className="text-sm text-gray-500 mt-2">Annualized</div>
               </div>
               <div className="text-center">

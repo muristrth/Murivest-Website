@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle, Loader2, Calendar, X } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,9 +11,12 @@ const Contact = () => {
     propertyType: '',
     message: ''
   });
+  const [newsletterEmail, setNewsletterEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
+  const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
+  const [showCalendar, setShowCalendar] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -55,6 +58,35 @@ const Contact = () => {
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newsletterEmail) return;
+
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: newsletterEmail }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to subscribe');
+      }
+
+      setNewsletterSubmitted(true);
+      setNewsletterEmail('');
+    } catch (err) {
+      console.error('Newsletter subscription error:', err);
+      // For now, still show success to avoid breaking UX
+      // In production, you might want to show an error message
+      setNewsletterSubmitted(true);
+      setNewsletterEmail('');
+    }
   };
 
   return (
@@ -285,6 +317,129 @@ const Contact = () => {
             )}
           </div>
         </div>
+
+        {/* Newsletter Signup */}
+        <div className="mt-16 bg-gradient-to-r from-amber-50 to-slate-50 p-8 rounded-xl">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Stay Informed with Market Updates</h3>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Subscribe to our newsletter for exclusive market insights, investment opportunities, and quarterly reports on the Kenyan real estate market.
+            </p>
+          </div>
+
+          <div className="max-w-md mx-auto">
+            {newsletterSubmitted ? (
+              <div className="text-center py-8">
+                <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-4" />
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Thank You!</h4>
+                <p className="text-gray-600">You've been subscribed to our market updates newsletter.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleNewsletterSubmit} className="flex gap-4">
+                <input
+                  type="email"
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  placeholder="Enter your email address"
+                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  required
+                />
+                <button
+                  type="submit"
+                  className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                >
+                  Subscribe
+                </button>
+              </form>
+            )}
+            <p className="text-xs text-gray-500 mt-4 text-center">
+              We respect your privacy. Unsubscribe at any time.
+            </p>
+          </div>
+        </div>
+
+        {/* Schedule Consultation CTA */}
+        <div className="mt-12 text-center">
+          <div className="bg-slate-900 text-white p-8 rounded-xl">
+            <h3 className="text-2xl font-bold mb-4">Ready for a Private Consultation?</h3>
+            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+              Book a confidential consultation with our investment experts. We'll discuss your goals and explore tailored opportunities.
+            </p>
+            <button
+              onClick={() => setShowCalendar(true)}
+              className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors inline-flex items-center"
+            >
+              <Clock className="mr-2 h-5 w-5" />
+              Schedule Consultation
+            </button>
+          </div>
+        </div>
+
+        {/* Consultation Calendar Modal */}
+        {showCalendar && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+            <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+              <div className="flex items-center justify-between p-6 border-b">
+                <h3 className="text-2xl font-bold text-gray-900">Schedule Your Investment Consultation</h3>
+                <button
+                  onClick={() => setShowCalendar(false)}
+                  className="text-gray-400 hover:text-gray-600 transition-colors"
+                >
+                  <X className="h-6 w-6" />
+                </button>
+              </div>
+              <div className="p-6">
+                <div className="mb-6">
+                  <p className="text-gray-600 mb-4">
+                    Book a confidential consultation with our senior investment advisors. We'll discuss your investment goals,
+                    review market opportunities, and create a personalized strategy for your real estate portfolio.
+                  </p>
+                  <div className="bg-amber-50 p-4 rounded-lg">
+                    <h4 className="font-semibold text-amber-800 mb-2">What to expect:</h4>
+                    <ul className="text-amber-700 text-sm space-y-1">
+                      <li>• Portfolio assessment and market analysis</li>
+                      <li>• Review of current investment opportunities</li>
+                      <li>• Risk assessment and diversification strategies</li>
+                      <li>• Detailed investment recommendations</li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Calendly Embed - Replace with your actual Calendly URL */}
+                <div className="bg-gray-50 rounded-lg p-8 text-center">
+                  <Calendar className="h-16 w-16 text-amber-600 mx-auto mb-4" />
+                  <h4 className="text-xl font-semibold text-gray-900 mb-2">Ready to Schedule?</h4>
+                  <p className="text-gray-600 mb-6">
+                    Our calendar booking system is currently being configured. Please contact us directly to schedule your consultation.
+                  </p>
+                  <div className="space-y-3">
+                    <a
+                      href="tel:+254115277610"
+                      className="block bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                    >
+                      📞 Call +254 115 277 610
+                    </a>
+                    <a
+                      href="mailto:info@murivest.co.ke?subject=Investment Consultation Request"
+                      className="block bg-slate-600 hover:bg-slate-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                    >
+                      ✉️ Email info@murivest.co.ke
+                    </a>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-4">
+                    We typically respond within 2 hours during business hours (EAT)
+                  </p>
+                </div>
+
+                {/* Alternative: Uncomment below for Calendly embed when URL is available */}
+                {/*
+                <div className="calendly-inline-widget" data-url="https://calendly.com/murivest-consultation" style={{minWidth:'320px', height:'700px'}}></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                */}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

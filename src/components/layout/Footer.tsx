@@ -105,7 +105,7 @@ interface FooterProps {
               </div>
               <div className="flex items-center text-stone-300 text-sm">
                 <TrendingUp className="h-4 w-4 mr-3 text-amber-600" />
-                <span>$50M+ Assets Under Management</span>
+                <span>KSh 10B+ Assets Under Management</span>
               </div>
               <div className="flex items-center text-stone-300 text-sm">
                 <Users className="h-4 w-4 mr-3 text-amber-600" />
@@ -267,7 +267,7 @@ interface FooterProps {
                   <div>
                     <div className="text-stone-300 text-sm font-light">Nairobi Office</div>
                     <div className="text-stone-200 text-sm">
-                      Murivest Tower<br />
+                      Lion Plaza<br />
                       Westlands Business District<br />
                       Nairobi, Kenya
                     </div>

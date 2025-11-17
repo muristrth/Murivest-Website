@@ -24,7 +24,8 @@ const faqData = [
   {
     id: "which-is-an-example-of-a-commercial-property",
     question: "Which is an example of a commercial property?",
-    answer: "The ultimate example of a high-value commercial property is a trophy tower like Absa Towers in Nairobi CBD. This is not just an office building; it's an institutional-grade asset that houses blue-chip tenants, delivers superior returns, and anchors a financial district. Murivest Realty Group exclusively curates these irreplaceable assets for our sophisticated international clientele. Ready to secure your trophy asset? Contact our investment specialists at murivest.co.ke/contact."
+    answer: "The ultimate example of a high-value commercial property is a trophy tower like Absa Towers in Nairobi CBD. This is not just an office building; it's an institutional-grade asset that houses blue-chip tenants, delivers superior returns, and anchors a financial district. Murivest Realty Group exclusively curates these irreplaceable assets for our sophisticated international clientele. Ready to secure your trophy asset? Contact our investment specialists at murivest.co.ke/contact.",
+    category: "Property Types"
   },
   {
     id: "what-is-an-example-of-a-commercial-property",

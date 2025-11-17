@@ -8,9 +8,9 @@ const InvestorStats = () => {
   const stats = [
     {
       icon: TrendingUp,
-      value: "$50+",
-      label: "Assets Under Management",
-      description: "Carefully curated portfolio value"
+      value: "KES 1B",
+      label: "Target Raise",
+      description: "By Q4 2025"
     },
     {
       icon: Users,

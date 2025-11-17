@@ -8,7 +8,7 @@ const ExecutiveLeadership = () => {
 
   const testimonials = [
     {
-      quote: "Exceptional returns with institutional-grade security. Our family office has achieved consistent 28% annual growth through their exclusive opportunities.",
+      quote: "Exceptional returns with institutional-grade security. Our family office has achieved consistent 28% annual growth through their exclusive opportunities.*",
       author: "The Honourable Charles Worthington III",
       title: "Worthington Family Office, London",
       flag: "🇬🇧"
@@ -36,7 +36,7 @@ const ExecutiveLeadership = () => {
           <div className="flex flex-wrap justify-center items-center gap-12 text-white text-sm font-light tracking-wide">
             <div className="flex items-center">
               <Shield className="w-4 h-4 mr-2 text-yellow-400" />
-              <span>Est. 1987 • Lloyd's of London Underwritten</span>
+              <span>Est. 2025 • Lloyd's of London Underwritten</span>
             </div>
             <div className="flex items-center">
               <Crown className="w-4 h-4 mr-2 text-yellow-400" />
@@ -81,7 +81,7 @@ const ExecutiveLeadership = () => {
               </h2>
               <div className="w-24 h-px bg-yellow-400 mx-auto mb-8"></div>
               <p className="text-xl font-light leading-relaxed mb-12 max-w-4xl mx-auto text-slate-700">
-                For over three decades, our distinguished leadership has preserved and multiplied generational wealth through carefully curated East African real estate investments. 
+                Since our founding in 2025, our distinguished leadership has preserved and multiplied generational wealth through carefully curated East African real estate investments.
                 <strong className="text-slate-900 font-medium"> We don't merely manage capital—we cultivate legacies.</strong>
               </p>
             </div>
@@ -94,11 +94,11 @@ const ExecutiveLeadership = () => {
                   sublabel: "Across Prime East African Properties",
                   icon: Building2 
                 },
-                { 
-                  number: "3", 
-                  label: "Years of Unbroken Excellence", 
-                  sublabel: "Zero Principal Losses Since 1987",
-                  icon: Shield 
+                {
+                  number: "2025",
+                  label: "Founded",
+                  sublabel: "Zero Principal Losses Since Inception",
+                  icon: Shield
                 },
                 { 
                   number: "5", 
@@ -139,8 +139,8 @@ const ExecutiveLeadership = () => {
               <div className="flex justify-center items-center space-x-16">
                 <div className="text-center">
                   <div className="text-4xl font-light text-yellow-400 mb-2">22%</div>
-                  <div className="text-sm text-slate-400 font-light">Minimum Annual ROI</div>
-                  <div className="text-xs text-yellow-500 mt-1">Contractually Guaranteed</div>
+                  <div className="text-sm text-slate-400 font-light">Target Annual ROI*</div>
+                  <div className="text-xs text-yellow-500 mt-1">Historical Performance</div>
                 </div>
                 <div className="text-center">
                   <div className="text-4xl font-light text-yellow-400 mb-2">115%</div>
@@ -195,7 +195,7 @@ const ExecutiveLeadership = () => {
                 title: "Portfolio Manager",
                 honors: "PhD Finance • Member of ICIFA (Institute of Certified Investment & Financial Analysts Kenya)",
                 credentials: "University of Nairobi, PhD Finance • Strathmore University, MBA",
-                image: "https://static.vecteezy.com/system/resources/previews/042/332/098/non_2x/default-avatar-profile-icon-grey-photo-placeholder-female-no-photo-images-for-unfilled-user-profile-greyscale-illustration-for-socail-media-web-vector.jpg",
+                image: "/murivest_secretary.png",
                 bio: "Dr. Grace Wanjiku is a seasoned investment professional with over 15 years of experience in asset management, corporate finance, and private equity across East Africa. She has led multi-billion shilling portfolios in both listed and alternative assets, consistently delivering above-market returns for institutional investors. At Murivest, she spearheads investment strategy, risk management, and fund structuring to ensure clients achieve sustainable long-term value.",
                 experience: [
                   "Chief Investment Officer, ICEA Lion Asset Management (2016-2023)",
@@ -211,7 +211,7 @@ const ExecutiveLeadership = () => {
                 title: "Senior Project Manager",
                 honors: "PE • Member, Institution of Engineers of Kenya (IEK)",
                 credentials: "University of Nairobi, BSc Civil Engineering • Harvard Business School, Executive MBA",
-                image: "https://cdn.vectorstock.com/i/500p/29/53/gray-silhouette-avatar-for-male-profile-picture-vector-56412953.jpg",
+                image: "/p/WhatsApp Image 2025-08-13 at 00.21.48_0c7a40eb.jpg",
                 bio: "Eng. Daniel Mwangi is a real estate development and infrastructure expert with over 20 years of experience leading large-scale construction, housing, and mixed-use projects across East Africa. Before joining Murivest, he served as a senior executive at a Nairobi-listed property developer, where he oversaw projects worth over KSh 50 billion. His expertise lies in project delivery, operational efficiency, and compliance with both local and international real estate standards.",
                 experience: [
                   "Chief Operating Officer, Centum Real Estate (2018-2024)",
@@ -328,7 +328,14 @@ const ExecutiveLeadership = () => {
             ))}
           </div>
 
-          {/* Institutional Recognition */}
+        {/* Legal Disclaimer */}
+        <div className="mt-12 p-6 bg-slate-800 border border-yellow-400/20 rounded-none">
+          <p className="text-xs text-slate-300 font-light leading-relaxed">
+            * <strong>Important Disclaimer:</strong> Past performance does not guarantee future results. All investments carry risk of loss of principal. The 28% annual growth mentioned is historical and not indicative of future performance. Real estate investments are illiquid and subject to market volatility. Please consult with qualified financial advisors before making investment decisions. This is not an offer to sell or solicitation to buy securities.
+          </p>
+        </div>
+
+        {/* Institutional Recognition */}
           <div className="text-center">
             <p className="text-slate-600 mb-12 font-light tracking-wide">TRUSTED BY LEADING INSTITUTIONS WORLDWIDE</p>
             <div className="grid grid-cols-2 md:grid-cols-6 gap-8 items-center opacity-60">
@@ -392,7 +399,13 @@ const ExecutiveLeadership = () => {
             }
             ].map((advisor, index) => (
               <div key={index} className="text-center p-8 bg-slate-800 border-t-4 border-yellow-400 hover:bg-slate-700 transition-colors">
-                <div className="w-20 h-20 bg-slate-600 rounded-full mx-auto mb-6" />
+                <div className="w-20 h-20 bg-slate-600 rounded-full mx-auto mb-6 overflow-hidden">
+                  <img
+                    src={index === 0 ? "/p/IMG-20250813-WA0001.jpg" : index === 1 ? "/p/IMG-20250813-WA0004.jpg" : index === 2 ? "/p/IMG-20250813-WA0005.jpg" : "/p/IMG-20250813-WA0006.jpg"}
+                    alt={advisor.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <h3 className="text-lg font-medium text-white mb-2">
                   {advisor.name}
                 </h3>
@@ -420,7 +433,7 @@ const ExecutiveLeadership = () => {
             </h2>
             <div className="w-24 h-px bg-yellow-400 mx-auto mb-12"></div>
             <p className="text-xl text-slate-700 font-light mb-20 max-w-4xl mx-auto leading-relaxed">
-              For over three decades, these principles have guided every investment decision, 
+              Since our founding in 2025, these principles have guided every investment decision,
               preserving and multiplying generational wealth with unwavering consistency.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16">
@@ -433,7 +446,7 @@ const ExecutiveLeadership = () => {
                 {
                   title: "Generational Perspective",
                   description: "Our investment philosophy transcends market cycles, focusing on assets that build lasting wealth across generations.",
-                  benefit: "Sustainable 22%+ annual returns"
+                  benefit: "Target 22%+ annual returns*"
                 },
                 {
                   title: "Exclusive Access",

@@ -53,12 +53,12 @@ interface Property {
   description: string;
   details: Record<string, string>;
   investment: {
-    totalInvestment: number;
-    monthlyIncome: number;
-    annualIncome: number;
-    netYield: number;
-    appreciationRate: number;
-    totalROI: number;
+    totalInvestment: string;
+    monthlyIncome: string;
+    annualIncome: string;
+    netYield: string;
+    appreciationRate: string;
+    totalROI: string;
   };
 }
 
@@ -97,12 +97,12 @@ const propertyData: PropertyData = {
       appreciation: "12% p.a."
     },
     investment: {
-      totalInvestment: 1200000000,
-      monthlyIncome: 17000000,
-      annualIncome: 200000000,
-      netYield: 15.2,
-      appreciationRate: 12,
-      totalROI: 27.2
+      totalInvestment: "1,200,000,000",
+      monthlyIncome: "17,000,000",
+      annualIncome: "200,000,000",
+      netYield: "15.2%",
+      appreciationRate: "12%",
+      totalROI: "27.2%"
     }
   },
   2: {
@@ -132,12 +132,12 @@ const propertyData: PropertyData = {
       appreciation: "8% p.a."
     },
     investment: {
-      totalInvestment: 550000000,
-      monthlyIncome: 3759166.67,
-      annualIncome: 45110000,
-      netYield: 11.0,
-      appreciationRate: 8,
-      totalROI: 19.0
+      totalInvestment: "550,000,000",
+      monthlyIncome: "3,759,167",
+      annualIncome: "45,110,000",
+      netYield: "11.0%",
+      appreciationRate: "8%",
+      totalROI: "19.0%"
     }
   },
   3: {
@@ -171,12 +171,12 @@ const propertyData: PropertyData = {
       appreciation: "10% p.a."
     },
     investment: {
-      totalInvestment: 1000000000,
-      monthlyIncome: 0,
-      annualIncome: 0,
-      netYield: 18,
-      appreciationRate: 10,
-      totalROI: 30
+      totalInvestment: "1,000,000,000",
+      monthlyIncome: "0",
+      annualIncome: "0",
+      netYield: "18%",
+      appreciationRate: "10%",
+      totalROI: "30%"
     }
   },
   4: {
@@ -206,12 +206,12 @@ const propertyData: PropertyData = {
       appreciation: "8% p.a."
     },
     investment: {
-      totalInvestment: 190000000,
-      monthlyIncome: 2604167,
-      annualIncome: 31350000,
-      netYield: 16.5,
-      appreciationRate: 8,
-      totalROI: 24.5
+      totalInvestment: "190,000,000",
+      monthlyIncome: "2,604,167",
+      annualIncome: "31,350,000",
+      netYield: "16.5%",
+      appreciationRate: "8%",
+      totalROI: "24.5%"
     }
   },
   5: {
@@ -241,12 +241,12 @@ const propertyData: PropertyData = {
       appreciation: "9% p.a."
     },
     investment: {
-      totalInvestment: 1485000000,
-      monthlyIncome: 17081250,
-      annualIncome: 204975000,
-      netYield: 13.8,
-      appreciationRate: 9,
-      totalROI: 22.8
+      totalInvestment: "1,485,000,000",
+      monthlyIncome: "17,081,250",
+      annualIncome: "204,975,000",
+      netYield: "13.8%",
+      appreciationRate: "9%",
+      totalROI: "22.8%"
     }
   },
   6: {
@@ -261,8 +261,8 @@ const propertyData: PropertyData = {
     priceEur: "€4,100,000",
     yield: "12.2%",
     images: [
-      "https://ext.same-assets.com/2267512097/1411722178.jpeg",
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80"
+      "/p1/IMG-20250813-WA0009.jpg",
+      "/p1/IMG-20250813-WA0010.jpg"
     ],
     features: ["4,491 sqm", "5-Storey + Basement", "Prime CBD", "Established", "Excellent Visibility", "Landmark"],
     occupancyRate: "88%",
@@ -276,12 +276,12 @@ const propertyData: PropertyData = {
       appreciation: "7% p.a."
     },
     investment: {
-      totalInvestment: 562500000,
-      monthlyIncome: 5729167,
-      annualIncome: 68750000,
-      netYield: 12.2,
-      appreciationRate: 7,
-      totalROI: 19.2
+      totalInvestment: "562,500,000",
+      monthlyIncome: "5,729,167",
+      annualIncome: "68,750,000",
+      netYield: "12.2%",
+      appreciationRate: "7%",
+      totalROI: "19.2%"
     }
   },
   7: {
@@ -311,12 +311,12 @@ const propertyData: PropertyData = {
       appreciation: "15% p.a."
     },
     investment: {
-      totalInvestment: 3500000000,
-      monthlyIncome: 53958333,
-      annualIncome: 647500000,
-      netYield: 18.5,
-      appreciationRate: 15,
-      totalROI: 33.5
+      totalInvestment: "3,500,000,000",
+      monthlyIncome: "53,958,333",
+      annualIncome: "647,500,000",
+      netYield: "18.5%",
+      appreciationRate: "15%",
+      totalROI: "33.5%"
     }
   },
   8: {
@@ -346,12 +346,12 @@ const propertyData: PropertyData = {
       appreciation: "12% p.a."
     },
     investment: {
-      totalInvestment: 2035000000,
-      monthlyIncome: 15500000,
-      annualIncome: 185000000,
-      netYield: 9.0,
-      appreciationRate: 12.0,
-      totalROI: 21.0
+      totalInvestment: "2,035,000,000",
+      monthlyIncome: "15,500,000",
+      annualIncome: "185,000,000",
+      netYield: "9.0%",
+      appreciationRate: "12.0%",
+      totalROI: "21.0%"
     }
   },
   9: {
@@ -381,12 +381,12 @@ const propertyData: PropertyData = {
       appreciation: "6% p.a."
     },
     investment: {
-      totalInvestment: 385000000,
-      monthlyIncome: 3500000,
-      annualIncome: 42000000,
-      netYield: 10.9,
-      appreciationRate: 6,
-      totalROI: 16.9
+      totalInvestment: "385,000,000",
+      monthlyIncome: "3,500,000",
+      annualIncome: "42,000,000",
+      netYield: "10.9%",
+      appreciationRate: "6%",
+      totalROI: "16.9%"
     }
   },
   10: {
@@ -416,12 +416,12 @@ const propertyData: PropertyData = {
       appreciation: "10% p.a."
     },
     investment: {
-      totalInvestment: 680000000,
-      monthlyIncome: 4500000,
-      annualIncome: 54000000,
-      netYield: 8.2,
-      appreciationRate: 10,
-      totalROI: 18.2
+      totalInvestment: "680,000,000",
+      monthlyIncome: "4,500,000",
+      annualIncome: "54,000,000",
+      netYield: "8.2%",
+      appreciationRate: "10%",
+      totalROI: "18.2%"
     }
   },
   11: {
@@ -451,12 +451,12 @@ const propertyData: PropertyData = {
       appreciation: "4% p.a."
     },
     investment: {
-      totalInvestment: 13500000000,
-      monthlyIncome: 61875000,
-      annualIncome: 742500000,
-      netYield: 5.5,
-      appreciationRate: 4,
-      totalROI: 9.5
+      totalInvestment: "13,500,000,000",
+      monthlyIncome: "61,875,000",
+      annualIncome: "742,500,000",
+      netYield: "5.5%",
+      appreciationRate: "4%",
+      totalROI: "9.5%"
     }
   },
   12: {
@@ -486,12 +486,12 @@ const propertyData: PropertyData = {
       appreciation: "5% p.a."
     },
     investment: {
-      totalInvestment: 5850000000,
-      monthlyIncome: 18281250,
-      annualIncome: 219375000,
-      netYield: 3.75,
-      appreciationRate: 5,
-      totalROI: 8.75
+      totalInvestment: "5,850,000,000",
+      monthlyIncome: "18,281,250",
+      annualIncome: "219,375,000",
+      netYield: "3.75%",
+      appreciationRate: "5%",
+      totalROI: "8.75%"
     }
   },
   13: {
@@ -520,12 +520,12 @@ const propertyData: PropertyData = {
       appreciation: "3% p.a."
     },
     investment: {
-      totalInvestment: 936000000,
-      monthlyIncome: 11700000,
-      annualIncome: 140400000,
-      netYield: 15,
-      appreciationRate: 3,
-      totalROI: 18
+      totalInvestment: "936,000,000",
+      monthlyIncome: "11,700,000",
+      annualIncome: "140,400,000",
+      netYield: "15%",
+      appreciationRate: "3%",
+      totalROI: "18%"
     }
   },
   14: {
@@ -554,12 +554,12 @@ const propertyData: PropertyData = {
       appreciation: "6% p.a."
     },
     investment: {
-      totalInvestment: 2520000000,
-      monthlyIncome: 13300000,
-      annualIncome: 159760000,
-      netYield: 6.34,
-      appreciationRate: 6,
-      totalROI: 12.34
+      totalInvestment: "2,520,000,000",
+      monthlyIncome: "13,300,000",
+      annualIncome: "159,760,000",
+      netYield: "6.34%",
+      appreciationRate: "6%",
+      totalROI: "12.34%"
     }
   },
   15: {
@@ -589,12 +589,12 @@ const propertyData: PropertyData = {
       appreciation: "4% p.a."
     },
     investment: {
-      totalInvestment: 25200000000,
-      monthlyIncome: 205380000,
-      annualIncome: 2464560000,
-      netYield: 9.78,
-      appreciationRate: 4,
-      totalROI: 13.78
+      totalInvestment: "25,200,000,000",
+      monthlyIncome: "205,380,000",
+      annualIncome: "2,464,560,000",
+      netYield: "9.78%",
+      appreciationRate: "4%",
+      totalROI: "13.78%"
     }
   },
   16: {
@@ -624,12 +624,12 @@ const propertyData: PropertyData = {
       appreciation: "7% p.a."
     },
     investment: {
-      totalInvestment: 8280000000,
-      monthlyIncome: 36225000,
-      annualIncome: 434700000,
-      netYield: 5.25,
-      appreciationRate: 7,
-      totalROI: 12.25
+      totalInvestment: "8,280,000,000",
+      monthlyIncome: "36,225,000",
+      annualIncome: "434,700,000",
+      netYield: "5.25%",
+      appreciationRate: "7%",
+      totalROI: "12.25%"
     }
   },
   17: {
@@ -658,12 +658,12 @@ const propertyData: PropertyData = {
       appreciation: "10% p.a."
     },
     investment: {
-      totalInvestment: 162000000,
-      monthlyIncome: 0,
-      annualIncome: 0,
-      netYield: 0,
-      appreciationRate: 10,
-      totalROI: 10
+      totalInvestment: "162,000,000",
+      monthlyIncome: "0",
+      annualIncome: "0",
+      netYield: "0%",
+      appreciationRate: "10%",
+      totalROI: "10%"
     }
   },
   18: {
@@ -693,12 +693,12 @@ const propertyData: PropertyData = {
       appreciation: "4% p.a."
     },
     investment: {
-      totalInvestment: 427500000,
-      monthlyIncome: 3206250,
-      annualIncome: 38475000,
-      netYield: 9,
-      appreciationRate: 4,
-      totalROI: 13
+      totalInvestment: "427,500,000",
+      monthlyIncome: "3,206,250",
+      annualIncome: "38,475,000",
+      netYield: "9%",
+      appreciationRate: "4%",
+      totalROI: "13%"
     }
   },
   19: {
@@ -728,12 +728,12 @@ const propertyData: PropertyData = {
       appreciation: "8% p.a."
     },
     investment: {
-      totalInvestment: 2367000000,
-      monthlyIncome: 4930625,
-      annualIncome: 59167500,
-      netYield: 2.5,
-      appreciationRate: 8,
-      totalROI: 10.5
+      totalInvestment: "2,367,000,000",
+      monthlyIncome: "4,930,625",
+      annualIncome: "59,167,500",
+      netYield: "2.5%",
+      appreciationRate: "8%",
+      totalROI: "10.5%"
     }
   },
   20: {
@@ -763,12 +763,12 @@ const propertyData: PropertyData = {
       appreciation: "8% p.a."
     },
     investment: {
-      totalInvestment: 8500000,
-      monthlyIncome: 85000,
-      annualIncome: 1020000,
-      netYield: 12,
-      appreciationRate: 8,
-      totalROI: 20
+      totalInvestment: "8,500,000",
+      monthlyIncome: "85,000",
+      annualIncome: "1,020,000",
+      netYield: "12%",
+      appreciationRate: "8%",
+      totalROI: "20%"
     }
   },
 
@@ -804,12 +804,12 @@ const propertyData: PropertyData = {
       appreciation: "12% p.a."
     },
     investment: {
-      totalInvestment: 90000000,
-      monthlyIncome: 0,
-      annualIncome: 0,
-      netYield: 11,
-      appreciationRate: 15,
-      totalROI: 26
+      totalInvestment: "90,000,000",
+      monthlyIncome: "0",
+      annualIncome: "0",
+      netYield: "11%",
+      appreciationRate: "15%",
+      totalROI: "26%"
     }
   },
 
@@ -840,12 +840,12 @@ const propertyData: PropertyData = {
       appreciation: "7% p.a."
     },
     investment: {
-      totalInvestment: 11000000,
-      monthlyIncome: 146667,
-      annualIncome: 1760000,
-      netYield: 16,
-      appreciationRate: 7,
-      totalROI: 23
+      totalInvestment: "11,000,000",
+      monthlyIncome: "146,667",
+      annualIncome: "1,760,000",
+      netYield: "16%",
+      appreciationRate: "7%",
+      totalROI: "23%"
     }
   },
   25: {
@@ -875,12 +875,12 @@ const propertyData: PropertyData = {
       appreciation: "9% p.a."
     },
     investment: {
-      totalInvestment: 16500000,
-      monthlyIncome: 192500,
-      annualIncome: 2310000,
-      netYield: 14,
-      appreciationRate: 9,
-      totalROI: 23
+      totalInvestment: "16,500,000",
+      monthlyIncome: "192,500",
+      annualIncome: "2,310,000",
+      netYield: "14%",
+      appreciationRate: "9%",
+      totalROI: "23%"
     }
   },
   26: {
@@ -910,12 +910,12 @@ const propertyData: PropertyData = {
       appreciation: "8% p.a."
     },
     investment: {
-      totalInvestment: 185000000,
-      monthlyIncome: 2004167,
-      annualIncome: 24050000,
-      netYield: 13,
-      appreciationRate: 8,
-      totalROI: 21
+      totalInvestment: "185,000,000",
+      monthlyIncome: "2,004,167",
+      annualIncome: "24,050,000",
+      netYield: "13%",
+      appreciationRate: "8%",
+      totalROI: "21%"
     }
   },
   27: {
@@ -950,12 +950,12 @@ const propertyData: PropertyData = {
       appreciation: "5% p.a."
     },
     investment: {
-      totalInvestment: 360000000,
-      monthlyIncome: 0,
-      annualIncome: 0,
-      netYield: 0,
-      appreciationRate: 5,
-      totalROI: 13
+      totalInvestment: "360,000,000",
+      monthlyIncome: "0",
+      annualIncome: "0",
+      netYield: "0%",
+      appreciationRate: "5%",
+      totalROI: "13%"
     }
   },
   28: {
@@ -985,32 +985,46 @@ const propertyData: PropertyData = {
       appreciation: "4% p.a."
     },
     investment: {
-      totalInvestment: 315000000,
-      monthlyIncome: 1837500,
-      annualIncome: 22050000,
-      netYield: 7,
-      appreciationRate: 4,
-      totalROI: 11
+      totalInvestment: "315,000,000",
+      monthlyIncome: "1,837,500",
+      annualIncome: "22,050,000",
+      netYield: "7%",
+      appreciationRate: "4%",
+      totalROI: "11%"
     }
   },
   29: {
-    title: "Grand Plaza Serviced Apartments",
-    subtitle: "42 Princes Square, London W2",
+    title: "Grand Plaza Serviced Apartments, 42 Princes Square, London, W2",
+    subtitle: "An exceptional opportunity to acquire the freehold of a profitable aparthotel in central London that has significant scale and value-add potential.",
     location: "Bayswater, London",
     type: "Hotel",
     price: "£100,000,000",
+    priceUsd: "$131,037,500",
     priceKsh: "KSh 18B",
-    priceUsd: "$12,000,000",
-    priceEur: "€11,000,000",
-    priceGbp: "£10,000,000",
+    priceEur: "€113,600,000",
+    priceGbp: "£100,000,000",
     yield: "7.5%",
     images: [
-      "https://ext.same-assets.com/2541468600/3581754212.jpeg",
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80"
+      "https://content.knightfrank.com/property/htv012466201/images/56d93359-a3b8-480a-8a20-fd8ead365481-0.jpg?cio=true&w=1200",
+      "https://content.knightfrank.com/property/htv012466201/images/096867e5-e28d-46c0-befd-6f29f453d614-0.jpg?cio=true&w=1200",
+      "https://content.knightfrank.com/property/htv012466201/images/6032e1e2-74ff-47c7-957c-22fdffd3773d-0.jpg?cio=true&w=1200",
+      "https://content.knightfrank.com/property/htv012466201/images/5c8c1821-27b6-4ddc-be12-bc4f839e4dc1-0.jpg?cio=true&w=1200",
+      "https://content.knightfrank.com/property/htv012466201/images/6dc6bcb8-fdaf-454a-b578-425a33859c42-0.jpg?cio=true&w=1200",
+      "https://content.knightfrank.com/property/htv012466201/images/cbfc1f26-b47a-4529-8a7a-61a6ccffb4d1-0.jpg?cio=true&w=1200",
+      "https://content.knightfrank.com/property/htv012466201/images/6a835b0d-1550-4b5e-b296-64df6925c420-0.jpg?cio=true&w=1200",
+      "https://content.knightfrank.com/property/htv012466201/images/a6ea8365-21b7-4809-9017-2dd79040197a-0.jpg?cio=true&w=1200",
+      "https://content.knightfrank.com/property/htv012466201/images/872b37e2-bd0e-4fde-9583-d4732ab1e318-0.jpg?cio=true&w=1200",
+      "https://content.knightfrank.com/property/htv012466201/images/088cfbf3-eaf5-4ba0-b82e-81d6dd5f7c56-0.jpg?cio=true&w=1200",
+      "https://content.knightfrank.com/property/htv012466201/images/dcbd411e-7117-4ec5-8649-818a11e25e49-0.jpg?cio=true&w=1200",
+      "https://content.knightfrank.com/property/htv012466201/images/5f2430a7-cb84-4ef3-82fb-d7e1ddf92b19-0.jpg?cio=true&w=1200",
+      "https://content.knightfrank.com/property/htv012466201/images/2e8f84ae-1801-4ef9-b7a0-3cb7986ead47-0.jpg?cio=true&w=1200",
+      "https://content.knightfrank.com/property/htv012466201/images/7658c6ab-7b4e-4d55-aeca-228df0a72e6f-0.jpg?cio=true&w=1200",
+      "https://content.knightfrank.com/property/htv012466201/images/b4ff5897-cd6e-46a5-9b4f-002c8a82d40a-0.jpg?cio=true&w=1200",
+      "https://content.knightfrank.com/property/htv012466201/images/3ed50d76-bd46-4cca-b097-494d061faa2f-0.jpg?cio=true&w=1200"
     ],
-    features: ["105,355 sqft", "198 Bedrooms", "Serviced Apartments", "Prime Location", "Full Service", "City Centre"],
+    features: ["Freehold Vacant Possession", "198 self-contained serviced apartments", "A rare freehold opportunity in central London", "Business turnover in excess of £12.5m net of VAT", "Highly profitable business model with consistent NOI margin of between 50%-53% achieved over the last three years", "Potential to increase ADR from £196 to £280+ net of VAT subject to repositioning and a capital improvement plan", "To be sold with vacant possession free from branding and management", "Conveniently positioned between Notting Hill and Marylebone", "Prominently located on Prince’s Square, with excellent transport links including Bayswater (0.2 miles), Queensway (0.4 miles) and Paddington station (0.6 miles)", "Combination of studios and two and three bedroom apartments, which all include a kitchenette", "Average apartment size of 28 sq m", "Restaurant with 85 covers", "Total gross internal area of approximately 105,355 sq ft", "Grade II listed" ],
     occupancyRate: "92%",
-    description: "Premier serviced apartment hotel in the heart of Bayswater. Exceptional location near Hyde Park with consistent high occupancy and strong corporate demand.",
+    description: "Grand Plaza is located in the heart of Bayswater, in London's West End, within the City of Westminster. The building occupies a prominent position between the gardens of Prince's Square and Kensington Gardens Square. The Bayswater area is bordered by Notting Hill to the west, Marylebone to the east and Paddington and Hyde Park to the south. Premier serviced apartment hotel in the heart of Bayswater. Exceptional location near Hyde Park with consistent high occupancy and strong corporate demand.",
     details: {
       area: "105,355 sqft",
       bedrooms: "198",
@@ -1020,12 +1034,12 @@ const propertyData: PropertyData = {
       appreciation: "8% p.a."
     },
     investment: {
-      totalInvestment: 100000000,
-      monthlyIncome: 625000,
-      annualIncome: 7500000,
-      netYield: 7.5,
-      appreciationRate: 8,
-      totalROI: 15.5
+      totalInvestment: "100,000,000",
+      monthlyIncome: "177,083,330",
+      annualIncome: "2,125,000,000",
+      netYield: "13.5%",
+      appreciationRate: "8%",
+      totalROI: "15.5%"
     }
   },
   30: {
@@ -1054,12 +1068,12 @@ const propertyData: PropertyData = {
       appreciation: "6.5% p.a."
     },
     investment: {
-      totalInvestment: 11000000,
-      monthlyIncome: 75167,
-      annualIncome: 902000,
-      netYield: 8.2,
-      appreciationRate: 6.5,
-      totalROI: 14.7
+      totalInvestment: "11,000,000",
+      monthlyIncome: "75,167",
+      annualIncome: "902,000",
+      netYield: "8.2%",
+      appreciationRate: "6.5%",
+      totalROI: "14.7%"
     }
   },
   31: {
@@ -1089,12 +1103,12 @@ const propertyData: PropertyData = {
       appreciation: "7% p.a."
     },
     investment: {
-      totalInvestment: 7500000,
-      monthlyIncome: 56875,
-      annualIncome: 682500,
-      netYield: 9.1,
-      appreciationRate: 7,
-      totalROI: 16.1
+      totalInvestment: "7,500,000",
+      monthlyIncome: "56,875",
+      annualIncome: "682,500",
+      netYield: "9.1%",
+      appreciationRate: "7%",
+      totalROI: "16.1%"
     }
   },
   32: {
@@ -1123,12 +1137,12 @@ const propertyData: PropertyData = {
       appreciation: "5% p.a."
     },
     investment: {
-      totalInvestment: 13150000,
-      monthlyIncome: 27396,
-      annualIncome: 328750,
-      netYield: 2.5,
-      appreciationRate: 5,
-      totalROI: 7.5
+      totalInvestment: "13,150,000",
+      monthlyIncome: "27,396",
+      annualIncome: "328,750",
+      netYield: "2.5%",
+      appreciationRate: "5%",
+      totalROI: "7.5%"
     }
   },
   33: {
@@ -1157,12 +1171,12 @@ const propertyData: PropertyData = {
       appreciation: "9% p.a."
     },
     investment: {
-      totalInvestment: 7150000,
-      monthlyIncome: 47667,
-      annualIncome: 572000,
-      netYield: 8.0,
-      appreciationRate: 9,
-      totalROI: 17.0
+      totalInvestment: "7,150,000",
+      monthlyIncome: "47,667",
+      annualIncome: "572,000",
+      netYield: "8.0%",
+      appreciationRate: "9%",
+      totalROI: "17.0%"
     }
   },
   34: {
@@ -1190,12 +1204,12 @@ const propertyData: PropertyData = {
       appreciation: "8.5% p.a."
     },
     investment: {
-      totalInvestment: 4500000,
-      monthlyIncome: 39375,
-      annualIncome: 472500,
-      netYield: 10.5,
-      appreciationRate: 8.5,
-      totalROI: 19.0
+      totalInvestment: "4,500,000",
+      monthlyIncome: "39,375",
+      annualIncome: "472,500",
+      netYield: "10.5%",
+      appreciationRate: "8.5%",
+      totalROI: "19.0%"
     }
   },
   35: {
@@ -1224,12 +1238,12 @@ const propertyData: PropertyData = {
       appreciation: "6% p.a."
     },
     investment: {
-      totalInvestment: 2800000,
-      monthlyIncome: 22167,
-      annualIncome: 266000,
-      netYield: 9.5,
-      appreciationRate: 6,
-      totalROI: 15.5
+      totalInvestment: "2,800,000",
+      monthlyIncome: "22,167",
+      annualIncome: "266,000",
+      netYield: "9.5%",
+      appreciationRate: "6%",
+      totalROI: "15.5%"
     }
   },
   36: {
@@ -1258,12 +1272,12 @@ const propertyData: PropertyData = {
       appreciation: "7.5% p.a."
     },
     investment: {
-      totalInvestment: 12500000,
-      monthlyIncome: 91667,
-      annualIncome: 1100000,
-      netYield: 8.8,
-      appreciationRate: 7.5,
-      totalROI: 16.3
+      totalInvestment: "12,500,000",
+      monthlyIncome: "91,667",
+      annualIncome: "1,100,000",
+      netYield: "8.8%",
+      appreciationRate: "7.5%",
+      totalROI: "16.3%"
     }
   }
 };
@@ -1283,8 +1297,8 @@ const PropertyDetail = () => {
   const currencies = [
     { code: 'KES', name: 'Kenyan Shilling', symbol: 'KSh', rate: 1, flag: '🇰🇪', icon: <Coins className="h-4 w-4" /> },
     { code: 'USD', name: 'US Dollar', symbol: '$', rate: 0.0075, flag: '🇺🇸', icon: <DollarSign className="h-4 w-4" /> },
-    { code: 'EUR', name: 'Euro', symbol: '€', rate: 0.0068, flag: '🇪🇺', icon: <Euro className="h-4 w-4" /> },
-    { code: 'GBP', name: 'British Pound', symbol: '£', rate: 0.0058, flag: '🇬🇧', icon: <PoundSterling className="h-4 w-4" /> }
+    { code: 'EUR', name: 'Euro', symbol: '€', rate: 0.0067, flag: '🇪🇺', icon: <Euro className="h-4 w-4" /> },
+    { code: 'GBP', name: 'British Pound', symbol: '£', rate: 0.0059, flag: '🇬🇧', icon: <PoundSterling className="h-4 w-4" /> }
   ];
 
   const convertAmount = (amount: number, fromCurrency: string, toCurrency: string) => {
@@ -1566,7 +1580,7 @@ const PropertyDetail = () => {
                   <div className="text-xs text-gray-500 mb-1 tracking-wide uppercase">Monthly Income</div>
                   <div className="text-xl text-gray-700 font-light">
                     {currencies.find(c => c.code === selectedCurrency)?.symbol}
-                    {(convertAmount(property.investment.monthlyIncome, 'KES', selectedCurrency) / 1000000).toFixed(3)}M
+                    {(convertAmount(property.investment.monthlyIncome, 'KES', selectedCurrency) / 1000000).toFixed(1)}M
                   </div>
                 </div>
 

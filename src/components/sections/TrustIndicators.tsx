@@ -45,8 +45,8 @@ const TrustIndicators = () => {
   const testimonialHighlights = [
     {
       quote: "Murivest's attention to detail and market insight has been exceptional.",
-      author: "Lord Pemberton",
-      title: "Private Investor, London"
+      author: "John Kamau",
+      title: "Businessman, Nairobi"
     },
     {
       quote: "The most professional real estate investment experience I've encountered in Africa.",
@@ -55,8 +55,8 @@ const TrustIndicators = () => {
     },
     {
       quote: "Their exclusive opportunities have consistently outperformed our expectations.",
-      author: "Marcus Rothschild",
-      title: "Investment Committee, Zurich"
+      author: "Peter Oduya",
+      title: "Family Office Director, Kenya"
     }
   ];
 
