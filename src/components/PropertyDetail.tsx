@@ -1580,7 +1580,7 @@ const PropertyDetail = () => {
                   <div className="text-xs text-gray-500 mb-1 tracking-wide uppercase">Monthly Income</div>
                   <div className="text-xl text-gray-700 font-light">
                     {currencies.find(c => c.code === selectedCurrency)?.symbol}
-                    {(convertAmount(property.investment.monthlyIncome, 'KES', selectedCurrency) / 1000000).toFixed(1)}M
+                    {(convertAmount(Number(property.investment.monthlyIncome.replace(/,/g, '')), 'KES', selectedCurrency) / 1000000).toFixed(1)}M
                   </div>
                 </div>
 
@@ -1588,7 +1588,7 @@ const PropertyDetail = () => {
                   <div className="text-xs text-gray-500 mb-1 tracking-wide uppercase">Annual Income</div>
                   <div className="text-xl text-gray-700 font-light">
                     {currencies.find(c => c.code === selectedCurrency)?.symbol}
-                    {(convertAmount(property.investment.annualIncome, 'KES', selectedCurrency) / 1000000).toFixed(3)}M
+                    {(convertAmount(Number(property.investment.annualIncome.replace(/,/g, '')), 'KES', selectedCurrency) / 1000000).toFixed(3)}M
                   </div>
                 </div>
 

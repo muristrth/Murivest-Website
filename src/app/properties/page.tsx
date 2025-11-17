@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Properties from '../../components/Properties'
 
-export const config = { amp: true }
 
 export const metadata: Metadata = {
   title: 'Global Investment Properties - Commercial Real Estate Portfolio',

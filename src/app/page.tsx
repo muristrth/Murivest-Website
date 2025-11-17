@@ -12,7 +12,6 @@ import InvestmentProcess from '../components/sections/InvestmentProcess'
 import TrustIndicators from '../components/sections/TrustIndicators'
 import NavigationHub from '../components/sections/NavigationHub'
 
-export const config = { amp: true }
 
 export const metadata: Metadata = {
   title: 'Commercial Real Estate Kenya | Commercial Investment Properties Nairobi | Murivest Realty Group',
