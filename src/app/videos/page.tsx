@@ -31,6 +31,7 @@ export default function VideosPage() {
       publishDate: "October 15, 2024"
     },
     {
+      id: 2,
       title: "Middle East Capital Flows to Africa",
       guest: "Ahmed Al-Rashid",
       role: "Managing Director, Gulf Real Estate Partners",
@@ -41,6 +42,7 @@ export default function VideosPage() {
       publishDate: "October 8, 2024"
     },
     {
+      id: 3,
       title: "Data Centers: Africa's Digital Infrastructure Boom",
       guest: "Prof. James Chen",
       role: "Director, African Technology Institute",
@@ -51,6 +53,7 @@ export default function VideosPage() {
       publishDate: "September 28, 2024"
     },
     {
+      id: 4,
       title: "Cold Storage Revolution in East Africa",
       guest: "Maria Rodriguez",
       role: "VP Global Logistics, FreshChain International",
@@ -61,6 +64,7 @@ export default function VideosPage() {
       publishDate: "September 20, 2024"
     },
     {
+      id: 5,
       title: "European Pension Funds in African Markets",
       guest: "Lord Richard Harrington",
       role: "Chairman, European Real Estate Investment Council",
@@ -71,6 +75,7 @@ export default function VideosPage() {
       publishDate: "September 12, 2024"
     },
     {
+      id: 6,
       title: "Family Office Real Estate Strategies",
       guest: "Isabella Vanderbilt",
       role: "Principal, Atlantic Family Office Alliance",

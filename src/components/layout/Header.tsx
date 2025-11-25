@@ -70,19 +70,83 @@ const Header = () => {
                     Concierge of Capital
                   </p>
                 </Link>
+                
               </div>
+            </div>
+          </div>
+          <div className="flex-1 flex justify-center md:justify-start">
+            <div className="flex items-center space-x-4">
+              <Link
+                href="/asset-care-resources"
+                className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                  isActive('/')
+                    ? 'text-amber-400'
+                    : 'text-gray-300 hover:text-amber-400'
+                }`}
+                onClick={closeAllDropdowns}
+              >
+                AssetCare Mgt
+              </Link>
+              <Link
+                href="/"
+                className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                  isActive('/')
+                    ? 'text-amber-400'
+                    : 'text-gray-300 hover:text-amber-400'
+                }`}
+                onClick={closeAllDropdowns}
+              >
+                How it Works
+              </Link>
+              <Link
+                href="/pricing"
+                className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                  isActive('/')
+                    ? 'text-amber-400'
+                    : 'text-gray-300 hover:text-amber-400'
+                }`}
+                onClick={closeAllDropdowns}
+              >
+                Pricing
+              </Link>
+              <Link
+                href="/properties"
+                className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                  isActive('/')
+                    ? 'text-amber-400'
+                    : 'text-gray-300 hover:text-amber-400'
+                }`}
+                onClick={closeAllDropdowns}
+              >
+                Our Portfolio
+              </Link>
+              <Link
+                href="/how-assetcare-works"
+                className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                  isActive('/')
+                    ? 'text-amber-400'
+                    : 'text-gray-300 hover:text-amber-400'
+                }`}
+                onClick={closeAllDropdowns}
+              >
+                AssetCare+
+              </Link>
+              <Link
+                href="/how-cre-works"
+                className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                  isActive('/')
+                    ? 'text-amber-400'
+                    : 'text-gray-300 hover:text-amber-400'
+                }`}
+                onClick={closeAllDropdowns}
+              >
+                How CRE Works
+              </Link>
             </div>
           </div>
 
           {/* Language Toggle & Desktop Menu Toggle */}
           <div className="hidden md:flex items-center space-x-4">
-            <button
-              className="flex items-center text-gray-300 hover:text-amber-400 transition-colors"
-              onClick={() => setIsSwahili(!isSwahili)}
-            >
-              <Languages className="h-5 w-5" />
-              <span className="ml-2 text-sm font-serif">{isSwahili ? 'SW' : 'EN'}</span>
-            </button>
             <button
               className="flex items-center text-gray-300 hover:text-amber-400 transition-colors"
               onClick={() => setIsDesktopMenuOpen(!isDesktopMenuOpen)}
@@ -315,14 +379,6 @@ const Header = () => {
                         Property Mgt
                       </Link>
 
-                      {/* Murivest AI Button */}
-                      <div className="pt-4">
-                        <Link href="/murivest-ai">
-                          <button className="w-full bg-[#D4AF37] hover:bg-[#c9a030] text-[#0A0A0A] px-6 py-3 font-serif font-medium text-xs transition-all duration-300">
-                            Launch Intelligence Console
-                          </button>
-                        </Link>
-                      </div>
 
                       {/* List Property Button */}
                       <div className="pt-2">
@@ -568,12 +624,6 @@ const Header = () => {
                 Property Mgt
               </Link>
 
-              {/* Mobile Murivest AI Button */}
-              <Link href="/murivest-ai" className="pt-2">
-                <button className="w-full bg-[#D4AF37] hover:bg-[#c9a030] text-[#0A0A0A] px-4 py-3 font-serif font-medium text-sm transition-all duration-300">
-                  Launch Intelligence Console
-                </button>
-              </Link>
 
               {/* Mobile List Property Button */}
               <Link href="/sell" className="pt-2">

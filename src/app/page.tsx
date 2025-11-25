@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import Hero from '../components/sections/Hero'
+import LegacyPlanningSection from '../components/sections/LegacyPlanningSection'
+import TaxIntelligenceSection from '../components/sections/TaxIntelligenceSection'
+import IndustrialLandBankingSection from '../components/sections/IndustrialLandBankingSection'
 import YieldMapLeadMagnet from '../components/sections/YieldMapLeadMagnet'
-import LiveDeals from '../components/sections/LiveDeals'
 import SmartBuildingService from '../components/sections/SmartBuildingService'
 import YieldReportSection from '../components/sections/YieldReportSection'
 import InvestorStats from '../components/sections/InvestorStats'
@@ -34,10 +36,12 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <YieldMapLeadMagnet />
-      <LiveDeals />
-      <SmartBuildingService />
+      <LegacyPlanningSection />
+      <TaxIntelligenceSection />
+      <IndustrialLandBankingSection />
       <InvestorStats />
+      <YieldMapLeadMagnet />
+      <SmartBuildingService />
       <ExclusiveOpportunities />
       <ExecutiveTargetedSection />
       <YieldReportSection />

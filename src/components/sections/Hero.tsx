@@ -68,7 +68,7 @@ const Hero = () => {
 
           {/* Power headline with social proof */}
           <h1 className="text-3xl md:text-5xl font-serif font-light mb-8 leading-tight tracking-tight luxury-text-spacing">
-            Nairobi CRE: Offices, Retail, Industrial. Net Yields 8-10%. Quarterly Income. KRA-Compliant.
+            Nairobi CRE: Offices, Retail, Industrial. Net Yields 8-10%. 
           </h1>
 
           {/* Authority subheadline */}

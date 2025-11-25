@@ -63,6 +63,32 @@ export default function StrategicLandBankingPage() {
           </div>
         </div>
 
+        {/* Large Tract Focus */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-light text-slate-900 text-center mb-12" style={{ fontFamily: 'Playfair Display, serif' }}>
+            Large Tract Opportunities
+          </h2>
+          <div className="bg-gradient-to-r from-amber-50 to-slate-50 p-8 rounded-lg">
+            <p className="text-center text-gray-700 mb-8">
+              We specialize in acquiring substantial land parcels (50-200 acres) near upcoming infrastructure projects, managed for 5-10 year growth. Prime Land Banking Opportunities Kenya.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="text-center">
+                <div className="text-3xl font-light text-amber-600 mb-2">50-200 acres</div>
+                <div className="text-gray-600 text-sm">Typical Parcel Size</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-light text-amber-600 mb-2">5-10 years</div>
+                <div className="text-gray-600 text-sm">Growth Horizon</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-light text-amber-600 mb-2">25-40%</div>
+                <div className="text-gray-600 text-sm">Expected Appreciation</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Land Portfolio */}
         <div className="mb-16">
           <h2 className="text-3xl font-light text-slate-900 text-center mb-12" style={{ fontFamily: 'Playfair Display, serif' }}>

@@ -5,7 +5,7 @@ import './globals.css';
 import ScrollToTopButton from '../components/ui/ScrollToTopButton';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
-import ChatWidget from '../components/ui/ChatWidget';
+import WhatsAppButton from '../components/ui/WhatsAppButton';
 
 // Define the fonts here
 const inter = Inter({
@@ -218,7 +218,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
-          <ChatWidget />
+          <WhatsAppButton />
         </div>
       </body>
     </html>

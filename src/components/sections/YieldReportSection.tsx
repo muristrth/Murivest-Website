@@ -69,7 +69,7 @@ const YieldReportSection = () => {
         {/* Reports - Horizontal Layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {reports.map((report, index) => (
-            <div key={report.quarter}>
+            <div key={`${report.quarter}-${report.year}`}>
               <div
                 className={`relative bg-slate-800/40 backdrop-blur-sm border transition-all duration-500 hover:bg-slate-800/60 group ${
                   report.isLatest

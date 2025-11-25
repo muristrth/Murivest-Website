@@ -424,38 +424,49 @@ interface FooterProps {
           </button>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Bar - Simplified */}
         <div className="border-t border-stone-700 pt-8">
-          <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
-            <div className="text-stone-400 text-sm font-light">
-              © 2025 Murivest Realty Group Ltd. All rights reserved. Regulated by the Capital Markets Authority of Kenya.
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 text-center md:text-left mb-8">
+            <div>
+              <h4 className="text-stone-300 text-sm font-medium mb-2">Physical Address</h4>
+              <p className="text-stone-400 text-xs">
+                Westlands Business District<br />
+                Nairobi, Kenya
+              </p>
             </div>
-            <div className="flex flex-wrap justify-center lg:justify-end space-x-8 text-xs">
-               {[
-                 { label: "Privacy Policy", href: "/privacy-policy" },
-                 { label: "Investment Terms", href: "/investment-terms" },
-                 { label: "Risk Disclosures", href: "/risk-disclosures" },
-                 { label: "Regulatory Compliance", href: "/regulatory-compliance" },
-                 { label: "Anti-Money Laundering", href: "/anti-money-laundering" },
-                 { label: "Data Protection", href: "/data-protection" },
-                 { label: "Sitemap", href: "/sitemap" }
-               ].map((item, index) => (
-                 <Link
-                   key={index}
-                   href={item.href}
-                   className="text-stone-400 hover:text-amber-400 transition-colors"
-                 >
-                   {item.label}
-                 </Link>
-               ))}
-             </div>
+            <div>
+              <h4 className="text-stone-300 text-sm font-medium mb-2">ERB License</h4>
+              <p className="text-stone-400 text-xs">#2025-XXXX</p>
+            </div>
+            <div>
+              <h4 className="text-stone-300 text-sm font-medium mb-2">KRA PIN</h4>
+              <p className="text-stone-400 text-xs">P051234567X</p>
+            </div>
+            <div>
+              <h4 className="text-stone-300 text-sm font-medium mb-2">WhatsApp</h4>
+              <a href="https://wa.me/254115277610" className="text-amber-400 hover:text-amber-300 text-xs">
+                +254 115 277 610
+              </a>
+            </div>
+            <div>
+              <h4 className="text-stone-300 text-sm font-medium mb-2">Email</h4>
+              <a href="mailto:info@murivest.co.ke" className="text-amber-400 hover:text-amber-300 text-xs">
+                info@murivest.co.ke
+              </a>
+            </div>
           </div>
-          
-          <div className="mt-6 pt-6 border-t border-stone-800 text-center">
-            <p className="text-stone-500 text-xs font-light leading-relaxed max-w-4xl mx-auto">
-              Murivest Realty Group is a licensed investment management firm specializing in East African commercial real estate. 
-              Past performance does not guarantee future results. All investments carry risk of loss. 
-              International investors should consult with qualified tax and legal advisors regarding their specific situations.
+
+          {/* Language Toggle */}
+          <div className="flex justify-center mb-6">
+            <button className="flex items-center text-stone-400 hover:text-amber-400 transition-colors">
+              <Globe className="h-4 w-4 mr-2" />
+              <span className="text-sm">English / Kiswahili</span>
+            </button>
+          </div>
+
+          <div className="text-center">
+            <p className="text-stone-500 text-xs font-light">
+              © 2025 Murivest Realty Group Ltd. All rights reserved.
             </p>
           </div>
         </div>

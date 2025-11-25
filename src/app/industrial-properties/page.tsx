@@ -63,6 +63,36 @@ export default function IndustrialPropertiesPage() {
           </div>
         </div>
 
+        {/* Market Intelligence */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-light text-slate-900 text-center mb-12" style={{ fontFamily: 'Playfair Display, serif' }}>
+            Industrial Real Estate Market Intelligence
+          </h2>
+          <div className="bg-gradient-to-r from-amber-50 to-slate-50 p-8 rounded-lg">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="text-3xl font-light text-amber-600 mb-2">2.3%</div>
+                <div className="text-gray-600 text-sm">Vacancy Rate near Mombasa Road</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-light text-amber-600 mb-2">7.5 years</div>
+                <div className="text-gray-600 text-sm">Average Logistics Lease Length</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-light text-amber-600 mb-2">8.5-10.5%</div>
+                <div className="text-gray-600 text-sm">Cold Storage Yields</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-light text-amber-600 mb-2">25%</div>
+                <div className="text-gray-600 text-sm">Annual Cold Storage Growth</div>
+              </div>
+            </div>
+            <p className="text-center text-gray-600 mt-6 text-sm">
+              Industrial Real Estate Yields Nairobi - Data as of Q4 2024
+            </p>
+          </div>
+        </div>
+
         {/* Property Portfolio */}
         <div className="mb-16">
           <h2 className="text-3xl font-light text-slate-900 text-center mb-12" style={{ fontFamily: 'Playfair Display, serif' }}>
