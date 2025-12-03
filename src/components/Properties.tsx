@@ -808,6 +808,11 @@ const Properties = () => {
                         </button>
                       </Link>
                     </div>
+                    <Link href="/contact?subject=Private%20Consultation%20Request" className="block">
+                      <button className="w-full bg-navy-950 hover:bg-navy-900 text-gold-400 hover:text-gold-300 py-2 px-4 text-sm font-medium rounded-xl shadow-lg transition-all duration-300 border-2 border-gold-400">
+                        Request Private Consultation
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -960,3 +965,4 @@ const Properties = () => {
 };
 
 export default Properties;
+

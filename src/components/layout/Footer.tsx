@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, Mail, MapPin, Globe, Award, Shield, TrendingUp, Users, ArrowUp, ExternalLink } from 'lucide-react';
+import { ObfuscatedEmail } from '../../lib/email-obfuscation';
 
 import { useEffect } from 'react';
 

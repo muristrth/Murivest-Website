@@ -82,7 +82,7 @@ const GlobalPresence = () => {
   ];
 
   return (
-    <section className="py-24 bg-slate-900">
+    <section className="py-24 bg-navy-950">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
@@ -98,7 +98,7 @@ const GlobalPresence = () => {
           {expansionPhases.map((phase, index) => (
             <div
               key={index}
-              className="bg-slate-800 rounded-2xl overflow-hidden hover:bg-slate-750 transition-colors cursor-pointer"
+              className="bg-navy-900 rounded-2xl overflow-hidden hover:bg-navy-800 transition-colors cursor-pointer"
               onClick={() => window.location.href = phase.link}
             >
               <div className="relative h-40">
@@ -107,9 +107,9 @@ const GlobalPresence = () => {
                   alt={phase.region}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-slate-900/60" />
+                <div className="absolute inset-0 bg-navy-950/60" />
                 <div className="absolute top-4 left-4">
-                  <div className="text-amber-400 text-sm font-medium">{phase.phase}</div>
+                  <div className="text-gold-400 text-sm font-medium">{phase.phase}</div>
                 </div>
                 <div className="absolute bottom-4 left-4">
                   <div className="flex items-center text-white">
@@ -144,25 +144,25 @@ const GlobalPresence = () => {
 
         {/* Priority Global Gateways */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="text-center bg-slate-800 p-6 rounded-2xl">
+          <div className="text-center bg-navy-900 p-6 rounded-2xl">
             <div className="text-3xl mb-3">🇰🇪</div>
             <h4 className="text-white font-medium mb-2">Nairobi</h4>
             <p className="text-slate-400 text-sm">Regional HQ, stability, strong CRE demand</p>
           </div>
 
-          <div className="text-center bg-slate-800 p-6 rounded-2xl">
+          <div className="text-center bg-navy-900 p-6 rounded-2xl">
             <div className="text-3xl mb-3">🇦🇪</div>
             <h4 className="text-white font-medium mb-2">Dubai</h4>
             <p className="text-slate-400 text-sm">Gulf private wealth + Africa investment flows</p>
           </div>
 
-          <div className="text-center bg-slate-800 p-6 rounded-2xl">
+          <div className="text-center bg-navy-900 p-6 rounded-2xl">
             <div className="text-3xl mb-3">🇬🇧</div>
             <h4 className="text-white font-medium mb-2">London</h4>
             <p className="text-slate-400 text-sm">Global investors, old-money networks</p>
           </div>
 
-          <div className="text-center bg-slate-800 p-6 rounded-2xl">
+          <div className="text-center bg-navy-900 p-6 rounded-2xl">
             <div className="text-3xl mb-3">🇸🇬</div>
             <h4 className="text-white font-medium mb-2">Singapore</h4>
             <p className="text-slate-400 text-sm">Asia-Africa trade & institutional funds</p>

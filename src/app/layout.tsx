@@ -213,7 +213,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData[2]) }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${playfair.variable} font-elegant text-navy-900 bg-white`}>
         <div className="min-h-screen">
           <Header />
           <main>{children}</main>

@@ -52,19 +52,19 @@ export default function AfricaPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-24">
+      <section className="relative bg-gradient-to-br from-navy-950 via-navy-900 to-navy-950 text-white luxury-section-spacing">
         <div className="absolute inset-0 bg-black opacity-30"></div>
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
           <div
             className="max-w-4xl"
           >
-            <h1 className="text-4xl md:text-6xl font-light mb-6">
+            <h1 className="luxury-heading text-4xl md:text-6xl mb-6">
               Africa's Commercial Real Estate
-              <span className="block font-medium text-amber-400">Growth Frontier</span>
+              <span className="block luxury-gold-accent font-medium">Growth Frontier</span>
             </h1>
-            <p className="text-xl text-slate-300 mb-8 leading-relaxed">
+            <p className="luxury-body text-xl text-white/80 mb-8 leading-relaxed">
               Phase 1: Build continental authority through institutional-grade assets. Publish Africa Yield Reports & co-investment notes.
               Partner with local law firms, property valuers, and pension funds across Kenya, Rwanda, Uganda, Tanzania, Nigeria, and South Africa.
             </p>
@@ -75,7 +75,7 @@ export default function AfricaPage() {
                   key={index}
                   className="text-center"
                 >
-                  <div className="text-2xl font-light text-amber-400 mb-1">{metric.value}</div>
+                  <div className="text-2xl font-light text-gold-400 mb-1">{metric.value}</div>
                   <div className="text-sm text-slate-400 mb-1">{metric.label}</div>
                   <div className="text-xs text-green-400">{metric.trend}</div>
                 </div>
@@ -87,7 +87,7 @@ export default function AfricaPage() {
             >
               <Link href="/research">
                 <button
-                  className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 font-medium text-lg transition-all duration-300 flex items-center justify-center group shadow-2xl"
+                  className="bg-gold-600 hover:bg-gold-700 text-white px-8 py-4 font-medium text-lg transition-all duration-300 flex items-center justify-center group shadow-2xl"
                 >
                   <Download className="mr-3 h-5 w-5" />
                   Download Africa Report 2024–25
@@ -100,46 +100,46 @@ export default function AfricaPage() {
       </section>
 
       {/* Market Insights */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="luxury-section-spacing bg-white">
+        <div className="luxury-container luxury-padding">
           <div
-            className="text-center mb-16"
+            className="text-center luxury-margin-bottom"
           >
-            <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
+            <h2 className="luxury-heading text-4xl md:text-5xl mb-6">
               Institutional Trends & Opportunities
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
+            <p className="luxury-subheading text-xl max-w-3xl mx-auto">
               Data-driven insights into Africa's commercial real estate sectors, highlighting institutional-grade opportunities
               for pension funds, sovereign wealth funds, and family offices.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 luxury-grid-gap">
             {marketInsights.map((insight, index) => (
               <div
                 key={index}
-                className="bg-slate-50 rounded-2xl p-8 hover:bg-slate-100 transition-colors"
+                className="luxury-card"
               >
                 <div className="flex items-start mb-4">
-                  <Building className="h-8 w-8 text-amber-600 mr-4 mt-1" />
+                  <Building className="h-8 w-8 text-gold-600 mr-4 mt-1" />
                   <div>
-                    <h3 className="text-2xl font-light text-slate-900 mb-2">{insight.sector}</h3>
-                    <div className="flex items-center text-amber-600 mb-3">
+                    <h3 className="luxury-heading text-2xl mb-2">{insight.sector}</h3>
+                    <div className="flex items-center luxury-gold-accent mb-3">
                       <MapPin className="h-4 w-4 mr-2" />
-                      <span className="font-medium">{insight.cities}</span>
+                      <span className="font-luxury font-medium">{insight.cities}</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-medium text-slate-900 mb-2">Market Trends</h4>
-                    <p className="text-slate-600 leading-relaxed">{insight.trends}</p>
+                    <h4 className="luxury-subheading font-medium mb-2">Market Trends</h4>
+                    <p className="luxury-body">{insight.trends}</p>
                   </div>
 
                   <div>
-                    <h4 className="font-medium text-slate-900 mb-2">Investment Opportunities</h4>
-                    <p className="text-slate-600 leading-relaxed">{insight.opportunities}</p>
+                    <h4 className="luxury-subheading font-medium mb-2">Investment Opportunities</h4>
+                    <p className="luxury-body">{insight.opportunities}</p>
                   </div>
                 </div>
               </div>
@@ -149,30 +149,26 @@ export default function AfricaPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-slate-900 text-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <section className="luxury-section-spacing luxury-navy-bg text-white">
+        <div className="luxury-container luxury-padding text-center">
           <div
           >
-            <h2 className="text-3xl md:text-4xl font-light mb-6">
+            <h2 className="luxury-heading text-3xl md:text-4xl mb-6">
               Ready to Explore Africa's Investment Landscape?
             </h2>
-            <p className="text-xl text-slate-300 mb-8 leading-relaxed">
+            <p className="luxury-body text-xl text-white/80 mb-8 leading-relaxed">
               Access our comprehensive Africa Institutional Real Estate Report and connect with our team of regional experts.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <button
-                  className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 font-medium text-lg transition-all duration-300"
-                >
+                <button className="luxury-button-primary">
                   Schedule Consultation
                 </button>
               </Link>
 
               <Link href="/research">
-                <button
-                  className="border-2 border-amber-400 hover:bg-amber-400 hover:text-slate-900 text-amber-400 px-8 py-4 font-medium text-lg transition-all duration-300"
-                >
+                <button className="luxury-button-secondary">
                   View All Reports
                 </button>
               </Link>

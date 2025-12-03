@@ -35,19 +35,19 @@ const Header = () => {
   };
 
   return (
-    <header className="shadow-2xl sticky top-0 z-50 bg-slate-900 bg-opacity-95 relative">
+    <header className="shadow-2xl sticky top-0 z-50 bg-navy-950 bg-opacity-95 relative">
       {/* Hero background extension */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
         style={{
-          backgroundImage: `url("")`,
+          backgroundImage: `url("/kenya-night.png")`,
         }}
       />
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="flex justify-between items-center py-3">
           {/* Mobile hamburger menu */}
           <button
-            className="md:hidden text-gray-300 hover:text-amber-400 transition-colors"
+            className="md:hidden text-gray-300 hover:text-gold-400 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -63,8 +63,8 @@ const Header = () => {
               />
               <div className="ml-3">
                 <Link href="/">
-                  <h1 className="text-xs font-serif font-light text-white tracking-tight">
-                    MURIVEST<span className="text-amber-400 font-medium"> REALTY LTD.</span>
+                  <h1 className="text-xs font-luxury font-light text-white tracking-tight">
+                    MURIVEST<span className="text-gold-400 font-medium"> REALTY LTD.</span>
                   </h1>
                   <p className="text-xs text-white font-orpheus tracking-widest">
                     Concierge of Capital
@@ -74,14 +74,14 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <div className="flex-1 flex justify-center md:justify-start">
+          <div className="hidden md:flex flex-1 justify-start">
             <div className="flex items-center space-x-4">
               <Link
                 href="/asset-care-resources"
-                className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                className={`block font-luxury text-xs font-light tracking-wide transition-all duration-300 py-3 ${
                   isActive('/')
-                    ? 'text-amber-400'
-                    : 'text-gray-300 hover:text-amber-400'
+                    ? 'text-gold-400'
+                    : 'text-gray-300 hover:text-gold-400'
                 }`}
                 onClick={closeAllDropdowns}
               >
@@ -89,10 +89,10 @@ const Header = () => {
               </Link>
               <Link
                 href="/"
-                className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                className={`block font-luxury text-xs font-light tracking-wide transition-all duration-300 py-3 ${
                   isActive('/')
-                    ? 'text-amber-400'
-                    : 'text-gray-300 hover:text-amber-400'
+                    ? 'text-gold-400'
+                    : 'text-gray-300 hover:text-gold-400'
                 }`}
                 onClick={closeAllDropdowns}
               >
@@ -100,10 +100,10 @@ const Header = () => {
               </Link>
               <Link
                 href="/pricing"
-                className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                className={`block font-luxury text-xs font-light tracking-wide transition-all duration-300 py-3 ${
                   isActive('/')
-                    ? 'text-amber-400'
-                    : 'text-gray-300 hover:text-amber-400'
+                    ? 'text-gold-400'
+                    : 'text-gray-300 hover:text-gold-400'
                 }`}
                 onClick={closeAllDropdowns}
               >
@@ -111,10 +111,10 @@ const Header = () => {
               </Link>
               <Link
                 href="/properties"
-                className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                className={`block font-luxury text-xs font-light tracking-wide transition-all duration-300 py-3 ${
                   isActive('/')
-                    ? 'text-amber-400'
-                    : 'text-gray-300 hover:text-amber-400'
+                    ? 'text-gold-400'
+                    : 'text-gray-300 hover:text-gold-400'
                 }`}
                 onClick={closeAllDropdowns}
               >
@@ -122,10 +122,10 @@ const Header = () => {
               </Link>
               <Link
                 href="/how-assetcare-works"
-                className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                className={`block font-luxury text-xs font-light tracking-wide transition-all duration-300 py-3 ${
                   isActive('/')
-                    ? 'text-amber-400'
-                    : 'text-gray-300 hover:text-amber-400'
+                    ? 'text-gold-400'
+                    : 'text-gray-300 hover:text-gold-400'
                 }`}
                 onClick={closeAllDropdowns}
               >
@@ -133,10 +133,10 @@ const Header = () => {
               </Link>
               <Link
                 href="/how-cre-works"
-                className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                className={`block font-luxury text-xs font-light tracking-wide transition-all duration-300 py-3 ${
                   isActive('/')
-                    ? 'text-amber-400'
-                    : 'text-gray-300 hover:text-amber-400'
+                    ? 'text-gold-400'
+                    : 'text-gray-300 hover:text-gold-400'
                 }`}
                 onClick={closeAllDropdowns}
               >
@@ -148,11 +148,11 @@ const Header = () => {
           {/* Language Toggle & Desktop Menu Toggle */}
           <div className="hidden md:flex items-center space-x-4">
             <button
-              className="flex items-center text-gray-300 hover:text-amber-400 transition-colors"
+              className="flex items-center text-gray-300 hover:text-gold-400 transition-colors"
               onClick={() => setIsDesktopMenuOpen(!isDesktopMenuOpen)}
             >
               <Menu className="h-5 w-5" />
-              <span className="ml-2 text-sm font-serif">Menu</span>
+              <span className="ml-2 text-sm font-luxury">Menu</span>
             </button>
           </div>
 
@@ -165,13 +165,13 @@ const Header = () => {
                 onClick={() => setIsDesktopMenuOpen(false)}
               />
               {/* Side Menu */}
-              <div className="fixed top-0 right-0 h-full w-60 bg-slate-900 shadow-2xl z-40 transform transition-transform duration-300 ease-in-out">
+              <div className="fixed top-0 right-0 h-full w-60 bg-navy-950 shadow-2xl z-40 transform transition-transform duration-300 ease-in-out">
                 <div className="flex flex-col h-full">
                   {/* Close button */}
                   <div className="flex justify-end p-4">
                     <button
                       onClick={() => setIsDesktopMenuOpen(false)}
-                      className="text-gray-300 hover:text-amber-400 transition-colors"
+                      className="text-gray-300 hover:text-gold-400 transition-colors"
                     >
                       <X className="h-6 w-6" />
                     </button>
@@ -182,10 +182,10 @@ const Header = () => {
                     <div className="space-y-2">
                       <Link
                         href="/"
-                        className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                        className={`block font-luxury text-xs font-light tracking-wide transition-all duration-300 py-3 ${
                           isActive('/')
-                            ? 'text-amber-400'
-                            : 'text-gray-300 hover:text-amber-400'
+                            ? 'text-gold-400'
+                            : 'text-gray-300 hover:text-gold-400'
                         }`}
                         onClick={closeAllDropdowns}
                       >
@@ -194,10 +194,10 @@ const Header = () => {
 
                       <Link
                         href="/properties"
-                        className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                        className={`block font-luxury text-xs font-light tracking-wide transition-all duration-300 py-3 ${
                           isActive('/properties')
-                            ? 'text-amber-400'
-                            : 'text-gray-300 hover:text-amber-400'
+                            ? 'text-gold-400'
+                            : 'text-gray-300 hover:text-gold-400'
                         }`}
                         onClick={closeAllDropdowns}
                       >
@@ -205,11 +205,23 @@ const Header = () => {
                       </Link>
 
                       <Link
+                        href="/global-markets"
+                        className={`block font-luxury text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                          isActive('/global-markets')
+                            ? 'text-gold-400'
+                            : 'text-gray-300 hover:text-gold-400'
+                        }`}
+                        onClick={closeAllDropdowns}
+                      >
+                        Global Markets
+                      </Link>
+
+                      <Link
                         href="/market-insights"
-                        className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                        className={`block font-luxury text-xs font-light tracking-wide transition-all duration-300 py-3 ${
                           isActive('/market-insights')
-                            ? 'text-amber-400'
-                            : 'text-gray-300 hover:text-amber-400'
+                            ? 'text-gold-400'
+                            : 'text-gray-300 hover:text-gold-400'
                         }`}
                         onClick={closeAllDropdowns}
                       >
@@ -218,10 +230,10 @@ const Header = () => {
 
                       <Link
                         href="/blog"
-                        className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                        className={`block font-luxury text-xs font-light tracking-wide transition-all duration-300 py-3 ${
                           isActive('/blog')
-                            ? 'text-amber-400'
-                            : 'text-gray-300 hover:text-amber-400'
+                            ? 'text-gold-400'
+                            : 'text-gray-300 hover:text-gold-400'
                         }`}
                         onClick={closeAllDropdowns}
                       >
@@ -231,10 +243,10 @@ const Header = () => {
                       {/* Markets Dropdown */}
                       <div className="space-y-2">
                         <button
-                          className={`w-full text-left font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 flex items-center justify-between ${
+                          className={`w-full text-left font-luxury text-xs font-light tracking-wide transition-all duration-300 py-3 flex items-center justify-between ${
                             pathname.startsWith('/africa') || pathname.startsWith('/middle-east') || pathname.startsWith('/asia-pacific') || pathname.startsWith('/europe') || pathname.startsWith('/americas')
-                              ? 'text-amber-400'
-                              : 'text-gray-300 hover:text-amber-400'
+                              ? 'text-gold-400'
+                              : 'text-gray-300 hover:text-gold-400'
                           }`}
                           onClick={() =>
                             toggleDropdown(isInvestDropdownOpen, setIsInvestDropdownOpen)
@@ -251,35 +263,35 @@ const Header = () => {
                           <div className="pl-4 space-y-2">
                             <Link
                               href="/africa"
-                              className="block text-gray-400 text-xs hover:text-amber-400 transition-colors py-2"
+                              className="block text-gray-400 text-xs hover:text-gold-400 transition-colors py-2"
                               onClick={closeAllDropdowns}
                             >
                               Africa Hub
                             </Link>
                             <Link
                               href="/middle-east"
-                              className="block text-gray-400 text-xs hover:text-amber-400 transition-colors py-2"
+                              className="block text-gray-400 text-xs hover:text-gold-400 transition-colors py-2"
                               onClick={closeAllDropdowns}
                             >
                               Middle East
                             </Link>
                             <Link
                               href="/asia-pacific"
-                              className="block text-gray-400 text-xs hover:text-amber-400 transition-colors py-2"
+                              className="block text-gray-400 text-xs hover:text-gold-400 transition-colors py-2"
                               onClick={closeAllDropdowns}
                             >
                               Asia-Pacific
                             </Link>
                             <Link
                               href="/europe"
-                              className="block text-gray-400 text-xs hover:text-amber-400 transition-colors py-2"
+                              className="block text-gray-400 text-xs hover:text-gold-400 transition-colors py-2"
                               onClick={closeAllDropdowns}
                             >
                               Europe
                             </Link>
                             <Link
                               href="/americas"
-                              className="block text-gray-400 text-xs hover:text-amber-400 transition-colors py-2"
+                              className="block text-gray-400 text-xs hover:text-gold-400 transition-colors py-2"
                               onClick={closeAllDropdowns}
                             >
                               Americas
@@ -291,10 +303,10 @@ const Header = () => {
                       {/* About Dropdown */}
                       <div className="space-y-2">
                         <button
-                          className={`w-full text-left font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 flex items-center justify-between ${
+                          className={`w-full text-left font-luxury text-xs font-light tracking-wide transition-all duration-300 py-3 flex items-center justify-between ${
                             pathname.startsWith('/about')
-                              ? 'text-amber-400'
-                              : 'text-gray-300 hover:text-amber-400'
+                              ? 'text-gold-400'
+                              : 'text-gray-300 hover:text-gold-400'
                           }`}
                           onClick={() =>
                             toggleDropdown(isAboutDropdownOpen, setIsAboutDropdownOpen)
@@ -311,42 +323,42 @@ const Header = () => {
                           <div className="pl-4 space-y-2">
                             <Link
                               href="/about"
-                              className="block text-gray-400 text-xs hover:text-amber-400 transition-colors py-2"
+                              className="block text-gray-400 text-xs hover:text-gold-400 transition-colors py-2"
                               onClick={closeAllDropdowns}
                             >
                               About Murivest
                             </Link>
                             <Link
                               href="/faq"
-                              className="block text-gray-400 text-xs hover:text-amber-400 transition-colors py-2"
+                              className="block text-gray-400 text-xs hover:text-gold-400 transition-colors py-2"
                               onClick={closeAllDropdowns}
                             >
                               FAQs
                             </Link>
                             <Link
                               href="/research"
-                              className="block text-gray-400 text-xs hover:text-amber-400 transition-colors py-2"
+                              className="block text-gray-400 text-xs hover:text-gold-400 transition-colors py-2"
                               onClick={closeAllDropdowns}
                             >
                               Research
                             </Link>
                             <Link
                               href="/videos"
-                              className="block text-gray-400 text-xs hover:text-amber-400 transition-colors py-2"
+                              className="block text-gray-400 text-xs hover:text-gold-400 transition-colors py-2"
                               onClick={closeAllDropdowns}
                             >
                               Media
                             </Link>
                             <Link
                               href="/"
-                              className="block text-gray-400 text-xs hover:text-amber-400 transition-colors py-2"
+                              className="block text-gray-400 text-xs hover:text-gold-400 transition-colors py-2"
                               onClick={closeAllDropdowns}
                             >
                               Murivest Realty Group
                             </Link>
                             <Link
                               href="/foundation"
-                              className="block text-gray-400 text-xs hover:text-amber-400 transition-colors py-2"
+                              className="block text-gray-400 text-xs hover:text-gold-400 transition-colors py-2"
                               onClick={closeAllDropdowns}
                             >
                               Murivest Foundation
@@ -357,10 +369,10 @@ const Header = () => {
 
                       <Link
                         href="/contact"
-                        className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                        className={`block font-luxury text-xs font-light tracking-wide transition-all duration-300 py-3 ${
                           isActive('/contact')
-                            ? 'text-amber-400'
-                            : 'text-gray-300 hover:text-amber-400'
+                            ? 'text-gold-400'
+                            : 'text-gray-300 hover:text-gold-400'
                         }`}
                         onClick={closeAllDropdowns}
                       >
@@ -369,10 +381,10 @@ const Header = () => {
 
                       <Link
                         href="/it-project-management"
-                        className={`block font-serif text-xs font-light tracking-wide transition-all duration-300 py-3 ${
+                        className={`block font-luxury text-xs font-light tracking-wide transition-all duration-300 py-3 ${
                           isActive('/it-project-management')
-                            ? 'text-amber-400'
-                            : 'text-gray-300 hover:text-amber-400'
+                            ? 'text-gold-400'
+                            : 'text-gray-300 hover:text-gold-400'
                         }`}
                         onClick={closeAllDropdowns}
                       >
@@ -383,7 +395,7 @@ const Header = () => {
                       {/* List Property Button */}
                       <div className="pt-2">
                         <Link href="/sell">
-                          <button className="w-full bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 font-serif font-medium text-xs transition-all duration-300">
+                          <button className="w-full bg-gold-600 hover:bg-gold-700 text-white px-6 py-3 font-luxury font-medium text-xs transition-all duration-300">
                             List Property
                           </button>
                         </Link>
@@ -398,14 +410,14 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-700">
+          <div className="md:hidden py-4 border-t border-navy-700">
             {/* Mobile Search Bar */}
             <div className="px-4 mb-4">
               <div className="relative">
                 <input
                   type="text"
                   placeholder="Enter location or property name…"
-                  className="w-full pl-4 pr-12 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent text-slate-900 bg-white"
+                  className="w-full pl-4 pr-12 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent text-navy-950 bg-white"
                 />
                 <Search className="absolute right-4 top-1/2 transform -translate-y-1/2 text-slate-400 h-5 w-5" />
               </div>
@@ -414,7 +426,7 @@ const Header = () => {
             <nav className="flex flex-col space-y-3">
               {/* Language Toggle Mobile */}
               <button
-                className="flex items-center font-serif text-sm font-light tracking-wide transition-colors text-gray-300 hover:text-amber-400 py-1"
+                className="flex items-center font-luxury text-sm font-light tracking-wide transition-colors text-gray-300 hover:text-gold-400 py-1"
                 onClick={() => setIsSwahili(!isSwahili)}
               >
                 <Languages className="h-4 w-4 mr-2" />
@@ -423,8 +435,8 @@ const Header = () => {
 
               <Link
                 href="/"
-                className={`font-serif text-sm font-light tracking-wide transition-colors ${
-                  isActive('/') ? 'text-amber-400' : 'text-gray-300 hover:text-amber-400'
+                className={`font-luxury text-sm font-light tracking-wide transition-colors ${
+                  isActive('/') ? 'text-gold-400' : 'text-gray-300 hover:text-gold-400'
                 } py-1`}
                 onClick={closeAllDropdowns}
               >
@@ -432,10 +444,10 @@ const Header = () => {
               </Link>
               <Link
                 href="/properties"
-                className={`font-serif text-sm font-light tracking-wide transition-colors ${
+                className={`font-luxury text-sm font-light tracking-wide transition-colors ${
                   isActive('/properties')
-                    ? 'text-amber-400'
-                    : 'text-gray-300 hover:text-amber-400'
+                    ? 'text-gold-400'
+                    : 'text-gray-300 hover:text-gold-400'
                 } py-1`}
                 onClick={closeAllDropdowns}
               >
@@ -445,10 +457,10 @@ const Header = () => {
               {/* About mobile dropdown */}
               <div className="flex flex-col">
                 <button
-                  className={`font-serif text-sm font-light tracking-wide transition-colors flex items-center justify-between ${
+                  className={`font-luxury text-sm font-light tracking-wide transition-colors flex items-center justify-between ${
                     pathname.startsWith('/about') // Corrected this line
-                      ? 'text-amber-400'
-                      : 'text-gray-300 hover:text-amber-400'
+                      ? 'text-gold-400'
+                      : 'text-gray-300 hover:text-gold-400'
                   } py-1`}
                   onClick={() =>
                     toggleDropdown(isAboutDropdownOpen, setIsAboutDropdownOpen)
@@ -465,28 +477,28 @@ const Header = () => {
                   <div className="flex flex-col pl-4 space-y-2 mt-2">
                     <Link
                     href="/faq"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-amber-400"
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-navy-800 hover:text-gold-400"
                     onClick={closeAllDropdowns}
                   >
                     FAQs
                   </Link>
                     <Link
                       href="/about"
-                      className="text-sm text-gray-400 hover:text-amber-400"
+                      className="text-sm text-gray-400 hover:text-gold-400"
                       onClick={closeAllDropdowns}
                     >
                       About Murivest
                     </Link>
                     <Link
                       href="/"
-                      className="text-sm text-gray-400 hover:text-amber-400"
+                      className="text-sm text-gray-400 hover:text-gold-400"
                       onClick={closeAllDropdowns}
                     >
                       Murivest Realty
                     </Link>
                     <Link
                       href="/foundation"
-                      className="text-sm text-gray-400 hover:text-amber-400"
+                      className="text-sm text-gray-400 hover:text-gold-400"
                       onClick={closeAllDropdowns}
                     >
                       Murivest Foundation
@@ -498,10 +510,10 @@ const Header = () => {
               {/* Markets mobile dropdown */}
               <div className="flex flex-col">
                 <button
-                  className={`font-serif text-sm font-light tracking-wide transition-colors flex items-center justify-between ${
+                  className={`font-luxury text-sm font-light tracking-wide transition-colors flex items-center justify-between ${
                     pathname.startsWith('/africa') || pathname.startsWith('/middle-east') || pathname.startsWith('/asia-pacific') || pathname.startsWith('/europe') || pathname.startsWith('/americas')
-                      ? 'text-amber-400'
-                      : 'text-gray-300 hover:text-amber-400'
+                      ? 'text-gold-400'
+                      : 'text-gray-300 hover:text-gold-400'
                   } py-1`}
                   onClick={() =>
                     toggleDropdown(isInvestDropdownOpen, setIsInvestDropdownOpen)
@@ -518,35 +530,35 @@ const Header = () => {
                   <div className="flex flex-col pl-4 space-y-2 mt-2">
                     <Link
                       href="/africa"
-                      className="text-sm text-gray-400 hover:text-amber-400"
+                      className="text-sm text-gray-400 hover:text-gold-400"
                       onClick={closeAllDropdowns}
                     >
                       Africa Hub
                     </Link>
                     <Link
                       href="/middle-east"
-                      className="text-sm text-gray-400 hover:text-amber-400"
+                      className="text-sm text-gray-400 hover:text-gold-400"
                       onClick={closeAllDropdowns}
                     >
                       Middle East
                     </Link>
                     <Link
                       href="/asia-pacific"
-                      className="text-sm text-gray-400 hover:text-amber-400"
+                      className="text-sm text-gray-400 hover:text-gold-400"
                       onClick={closeAllDropdowns}
                     >
                       Asia-Pacific
                     </Link>
                     <Link
                       href="/europe"
-                      className="text-sm text-gray-400 hover:text-amber-400"
+                      className="text-sm text-gray-400 hover:text-gold-400"
                       onClick={closeAllDropdowns}
                     >
                       Europe
                     </Link>
                     <Link
                       href="/americas"
-                      className="text-sm text-gray-400 hover:text-amber-400"
+                      className="text-sm text-gray-400 hover:text-gold-400"
                       onClick={closeAllDropdowns}
                     >
                       Americas
@@ -557,11 +569,22 @@ const Header = () => {
 
               
               <Link
+                href="/global-markets"
+                className={`font-luxury text-sm font-light tracking-wide transition-colors ${
+                  isActive('/global-markets')
+                    ? 'text-gold-400'
+                    : 'text-gray-300 hover:text-gold-400'
+                } py-1`}
+                onClick={closeAllDropdowns}
+              >
+                Global Markets
+              </Link>
+              <Link
                 href="/market-insights"
-                className={`font-serif text-sm font-light tracking-wide transition-colors ${
+                className={`font-luxury text-sm font-light tracking-wide transition-colors ${
                   isActive('/market-insights')
-                    ? 'text-amber-400'
-                    : 'text-gray-300 hover:text-amber-400'
+                    ? 'text-gold-400'
+                    : 'text-gray-300 hover:text-gold-400'
                 } py-1`}
                 onClick={closeAllDropdowns}
               >
@@ -569,10 +592,10 @@ const Header = () => {
               </Link>
               <Link
                 href="/blog"
-                className={`font-serif text-sm font-light tracking-wide transition-colors ${
+                className={`font-luxury text-sm font-light tracking-wide transition-colors ${
                   isActive('/blogs')
-                    ? 'text-amber-400'
-                    : 'text-gray-300 hover:text-amber-400'
+                    ? 'text-gold-400'
+                    : 'text-gray-300 hover:text-gold-400'
                 } py-1`}
                 onClick={closeAllDropdowns}
               >
@@ -580,10 +603,10 @@ const Header = () => {
               </Link>
               <Link
                 href="/research"
-                className={`font-serif text-sm font-light tracking-wide transition-colors ${
+                className={`font-luxury text-sm font-light tracking-wide transition-colors ${
                   isActive('/research')
-                    ? 'text-amber-400'
-                    : 'text-gray-300 hover:text-amber-400'
+                    ? 'text-gold-400'
+                    : 'text-gray-300 hover:text-gold-400'
                 } py-1`}
                 onClick={closeAllDropdowns}
               >
@@ -592,10 +615,10 @@ const Header = () => {
 
               <Link
                 href="/videos"
-                className={`font-serif text-sm font-light tracking-wide transition-colors ${
+                className={`font-luxury text-sm font-light tracking-wide transition-colors ${
                   isActive('/videos')
-                    ? 'text-amber-400'
-                    : 'text-gray-300 hover:text-amber-400'
+                    ? 'text-gold-400'
+                    : 'text-gray-300 hover:text-gold-400'
                 } py-1`}
                 onClick={closeAllDropdowns}
               >
@@ -603,10 +626,10 @@ const Header = () => {
               </Link>
               <Link
                 href="/contact"
-                className={`font-serif text-sm font-light tracking-wide transition-colors ${
+                className={`font-luxury text-sm font-light tracking-wide transition-colors ${
                   isActive('/contact')
-                    ? 'text-amber-400'
-                    : 'text-gray-300 hover:text-amber-400'
+                    ? 'text-gold-400'
+                    : 'text-gray-300 hover:text-gold-400'
                 } py-1`}
                 onClick={closeAllDropdowns}
               >
@@ -614,10 +637,10 @@ const Header = () => {
               </Link>
               <Link
                 href="/it-project-management"
-                className={`font-serif text-sm font-light tracking-wide transition-colors ${
+                className={`font-luxury text-sm font-light tracking-wide transition-colors ${
                   isActive('/it-project-management')
-                    ? 'text-amber-400'
-                    : 'text-gray-300 hover:text-amber-400'
+                    ? 'text-gold-400'
+                    : 'text-gray-300 hover:text-gold-400'
                 } py-1`}
                 onClick={closeAllDropdowns}
               >
@@ -627,7 +650,7 @@ const Header = () => {
 
               {/* Mobile List Property Button */}
               <Link href="/sell" className="pt-2">
-                <button className="w-full bg-amber-600 hover:bg-amber-700 text-white px-4 py-3 font-serif font-medium text-sm transition-all duration-300">
+                <button className="w-full bg-gold-600 hover:bg-gold-700 text-white px-4 py-3 font-luxury font-medium text-sm transition-all duration-300">
                   List Property
                 </button>
               </Link>

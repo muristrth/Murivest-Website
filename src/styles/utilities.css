@@ -4,78 +4,117 @@
 @tailwind components;
 @tailwind utilities;
 
-.text-gradient {
-  @apply bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent;
-}
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent;
+  }
 
-.bg-gradient-primary {
-  @apply bg-gradient-to-r from-slate-900 to-slate-800;
-}
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-navy-900 to-navy-800;
+  }
 
-.bg-gradient-secondary {
-  @apply bg-gradient-to-r from-amber-600 to-orange-600;
-}
+  .bg-gradient-secondary {
+    @apply bg-gradient-to-r from-gold-600 to-gold-700;
+  }
 
-.shadow-luxury {
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-}
+  .shadow-luxury {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
 
-.backdrop-blur-luxury {
-  backdrop-filter: blur(20px);
-}
+  .backdrop-blur-luxury {
+    backdrop-filter: blur(20px);
+  }
 
-.line-clamp-2 {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 
-.line-clamp-3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 
-/* Luxury Design Utilities */
-.luxury-spacing {
-  @apply py-24 lg:py-32;
-}
+  /* Luxury Design Utilities */
+  .luxury-spacing {
+    @apply py-24 lg:py-32;
+  }
 
-.luxury-section-spacing {
-  @apply py-20 lg:py-28;
-}
+  .luxury-section-spacing {
+    @apply py-20 lg:py-28;
+  }
 
-.luxury-content-spacing {
-  @apply space-y-8 lg:space-y-12;
-}
+  .luxury-content-spacing {
+    @apply space-y-8 lg:space-y-12;
+  }
 
-.luxury-text-spacing {
-  @apply leading-relaxed lg:leading-loose;
-}
+  .luxury-text-spacing {
+    @apply leading-relaxed lg:leading-loose;
+  }
 
-.luxury-margin-bottom {
-  @apply mb-12 lg:mb-20;
-}
+  .luxury-margin-bottom {
+    @apply mb-12 lg:mb-20;
+  }
 
-.luxury-padding {
-  @apply px-6 lg:px-12 xl:px-16;
-}
+  .luxury-padding {
+    @apply px-6 lg:px-12 xl:px-16;
+  }
 
-.luxury-container {
-  @apply max-w-6xl mx-auto;
-}
+  .luxury-container {
+    @apply max-w-6xl mx-auto;
+  }
 
-.luxury-grid-gap {
-  @apply gap-8 lg:gap-12 xl:gap-16;
+  .luxury-grid-gap {
+    @apply gap-8 lg:gap-12 xl:gap-16;
+  }
+
+  /* Luxury Brand Elements */
+  .luxury-gold-accent {
+    @apply text-gold-500;
+  }
+
+  .luxury-navy-bg {
+    @apply bg-navy-950;
+  }
+
+  .luxury-card {
+    @apply bg-white/5 backdrop-blur-md border border-gold-400/20 rounded-none p-6 hover:bg-white/10 transition-all duration-300;
+  }
+
+  .luxury-button-primary {
+    @apply bg-gold-600 hover:bg-gold-700 text-navy-950 px-8 py-4 font-luxury font-medium text-sm uppercase tracking-widest transition-all duration-300 shadow-luxury hover:shadow-gold-500/25;
+  }
+
+  .luxury-button-secondary {
+    @apply border-2 border-gold-400 hover:bg-gold-400 hover:text-navy-950 text-gold-400 px-8 py-4 font-luxury font-medium text-sm uppercase tracking-widest transition-all duration-300;
+  }
+
+  .luxury-heading {
+    @apply font-luxury font-light text-navy-950 leading-tight tracking-tight;
+  }
+
+  .luxury-subheading {
+    @apply font-luxury font-light text-navy-700 leading-relaxed;
+  }
+
+  .luxury-body {
+    @apply font-elegant text-navy-600 leading-relaxed;
+  }
+
+  .luxury-input {
+    @apply w-full px-4 py-3 border border-navy-300 rounded-none focus:ring-2 focus:ring-gold-500 focus:border-transparent bg-white/50 backdrop-blur-sm text-navy-950 placeholder-navy-400;
+  }
 }
