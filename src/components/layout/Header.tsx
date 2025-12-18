@@ -118,7 +118,7 @@ const Header = () => {
                 }`}
                 onClick={closeAllDropdowns}
               >
-                Our Portfolio
+                UK Properties
               </Link>
               <Link
                 href="/how-assetcare-works"
@@ -267,6 +267,73 @@ const Header = () => {
                               onClick={closeAllDropdowns}
                             >
                               Africa Hub
+                            </Link>
+                            <Link
+                              href="/middle-east"
+                              className="block text-gray-400 text-xs hover:text-gold-400 transition-colors py-2"
+                              onClick={closeAllDropdowns}
+                            >
+                              Middle East
+                            </Link>
+                            <Link
+                              href="/asia-pacific"
+                              className="block text-gray-400 text-xs hover:text-gold-400 transition-colors py-2"
+                              onClick={closeAllDropdowns}
+                            >
+                              Asia-Pacific
+                            </Link>
+                            <Link
+                              href="/europe"
+                              className="block text-gray-400 text-xs hover:text-gold-400 transition-colors py-2"
+                              onClick={closeAllDropdowns}
+                            >
+                              Europe
+                            </Link>
+                            <Link
+                              href="/americas"
+                              className="block text-gray-400 text-xs hover:text-gold-400 transition-colors py-2"
+                              onClick={closeAllDropdowns}
+                            >
+                              Americas
+                            </Link>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Markets Dropdown */}
+                      <div className="space-y-2">
+                        <button
+                          className={`w-full text-left font-luxury text-xs font-light tracking-wide transition-all duration-300 py-3 flex items-center justify-between ${
+                            pathname.startsWith('/africa') || pathname.startsWith('/middle-east') || pathname.startsWith('/asia-pacific') || pathname.startsWith('/europe') || pathname.startsWith('/americas') || pathname.startsWith('/uk-properties')
+                              ? 'text-gold-400'
+                              : 'text-gray-300 hover:text-gold-400'
+                          }`}
+                          onClick={() =>
+                            toggleDropdown(isInvestDropdownOpen, setIsInvestDropdownOpen)
+                          }
+                        >
+                          Global Markets
+                          {isInvestDropdownOpen ? (
+                            <ChevronUp className="h-4 w-4" />
+                          ) : (
+                            <ChevronDown className="h-4 w-4" />
+                          )}
+                        </button>
+                        {isInvestDropdownOpen && (
+                          <div className="pl-4 space-y-2">
+                            <Link
+                              href="/africa"
+                              className="block text-gray-400 text-xs hover:text-gold-400 transition-colors py-2"
+                              onClick={closeAllDropdowns}
+                            >
+                              Africa Hub
+                            </Link>
+                            <Link
+                              href="/uk-properties"
+                              className="block text-gray-400 text-xs hover:text-gold-400 transition-colors py-2"
+                              onClick={closeAllDropdowns}
+                            >
+                              United Kingdom
                             </Link>
                             <Link
                               href="/middle-east"
