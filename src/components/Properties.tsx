@@ -20,7 +20,7 @@ const Properties = () => {
 
   const allProperties = [
     {
-      id: 1,
+      id: "best-western-meridian-hotel",
       title: "Best Western Meridian Hotel",
       location: "Nairobi CBD, Kenya",
       continent: "Africa",
@@ -34,7 +34,7 @@ const Properties = () => {
       roi: "Projected 18% ROI within 24 months"
     },
     {
-      id: 2,
+      id: "buffalo-mall-development-land",
       title: "Buffalo Mall & Development Land",
       location: "Naivasha, Kenya",
       continent: "Africa",
@@ -48,7 +48,7 @@ const Properties = () => {
       roi: "Development upside potential of 300%"
     },
     {
-      id: 3,
+      id: "icd-industrial-complex",
       title: "ICD Industrial Complex",
       location: "Mombasa Road, Nairobi, Kenya",
       continent: "Africa",
@@ -62,7 +62,7 @@ const Properties = () => {
       roi: "Industrial demand growth of 25% annually"
     },
     {
-      id: 4,
+      id: "basl-house",
       title: "BASL House",
       location: "Kumasi Road, Nairobi CBD, Kenya",
       continent: "Africa",
@@ -76,7 +76,7 @@ const Properties = () => {
       roi: "Guaranteed income with blue-chip tenants"
     },
     {
-      id: 5,
+      id: "the-atrium-office-development",
       title: "The Atrium Office Development",
       location: "Chaka Road, Kilimani, Kenya",
       continent: "Africa",
@@ -90,7 +90,7 @@ const Properties = () => {
       roi: "Trophy asset in premium location"
     },
     {
-      id: 15,
+      id: "vintners-place",
       title: "Vintners Place",
       location: "68 Upper Thames Street, London, EC4V, UK",
       continent: "Europe",
@@ -104,7 +104,7 @@ const Properties = () => {
       roi: "Institutional grade investment"
     },
     {
-      id: 16,
+      id: "the-great-eastern-wharf-estate",
       title: "The Great Eastern Wharf Estate",
       location: "London, SW11, UK",
       continent: "Europe",
@@ -118,7 +118,7 @@ const Properties = () => {
       roi: "Capital growth opportunity"
     },
     {
-      id: 17,
+      id: "former-wilko-car-park",
       title: "Former Wilko & Car Park",
       location: "32-38 Clumber Street, Mansfield, UK",
       continent: "Europe",
@@ -132,7 +132,7 @@ const Properties = () => {
       roi: "Value-add opportunity"
     },
     {
-      id: 18,
+      id: "4-8-east-street-cambridge-place",
       title: "4-8 East Street & 1-5 Cambridge Place",
       location: "Farnham, GU9, UK",
       continent: "Europe",
@@ -160,21 +160,7 @@ const Properties = () => {
       roi: "Ultra-prime Mayfair asset"
     },
     {
-      id: 20,
-      title: "Co-working Spaces",
-      location: "Lavington, Nairobi, Kenya",
-      continent: "Africa",
-      type: "Commercial",
-      price: "KES 8,500,000",
-      yield: "12%",
-      image: "https://ext.same-assets.com/2267512097/3165367225.jpeg",
-      features: ["9 Workstations", "Modern Facilities", "High-Speed Internet", "Meeting Rooms"],
-      status: "Available",
-      description: "Turnkey co-working space in affluent Lavington neighborhood",
-      roi: "Growing demand for flexible workspaces"
-    },
-    {
-      id: 22,
+      id: "1-2acre-warehouse-godown-mlolongo",
       title: "1/2acre Warehouse-Godown in Mlolongo",
       location: "Mlolongo, Kenya",
       continent: "Africa",
@@ -188,77 +174,7 @@ const Properties = () => {
       roi: "Logistics hub expansion"
     },
     {
-      id: 24,
-      title: "Fine Dine Restaurant Lavington",
-      location: "Lavington, Nairobi, Kenya",
-      continent: "Africa",
-      type: "Leisure",
-      price: "KES 11,000,000",
-      yield: "16%",
-      image: "https://ext.same-assets.com/2267512097/52631664.jpeg",
-      features: ["Complete Equipment", "Aesthetic Design", "Established Menu", "Parking Available"],
-      status: "Available",
-      description: "Turnkey restaurant with modern equipment and loyal customer base",
-      roi: "Premium dining market"
-    },
-    {
-      id: 6,
-      title: "Uchumi House Commercial Building",
-      location: "Aga khan Walk, Nairobi CBD, Kenya",
-      continent: "Africa",
-      type: "Commercial",
-      price: "$4.4M (KSh 570M)",
-      yield: "12.2%",
-      image: "/p1/IMG-20250813-WA0009.jpg",
-      features: ["4,491 sqm", "5 Storey + Basement", "Prime CBD Location", "Excellent Visibility"],
-      status: "Under Offer",
-      description: "Premier commercial property with excellent visibility and immediate rental income in CBD",
-      roi: "Stable CBD appreciation of 12% p.a."
-    },
-    {
-      id: 7,
-      title: "The Panari Hotel",
-      location: "Mombasa Road, Nairobi West, Kenya",
-      continent: "Africa",
-      type: "Hotel",
-      price: "$25M (KSh 3B)",
-      yield: "18.5%",
-      image: "/p8/Screenshot 2025-08-18 224428.png",
-      features: ["136 Rooms", "5-Star Rating", "2.5 Acres", "12 Meeting Rooms"],
-      status: "Available",
-      description: "Magnificent 5-star hotel with luxury amenities, strategic location and international clientele",
-      roi: "Premium hospitality asset with MICE revenue"
-    },
-    {
-      id: 8,
-      title: "Absa Towers",
-      location: "Loita and Market Street, Nairobi CBD, Kenya",
-      continent: "Africa",
-      type: "Office Development",
-      price: "$16.2M (KSh 2.1B)",
-      yield: "9%",
-      image: "/p3/ABSA_Towers.png",
-      features: ["17 Storey", "143,300 sq.ft NLA", "160 Parking Bays", "99.8% Occupancy"],
-      status: "Exclusive",
-      description: "Prime Office Development in Nairobi CBD with excellent rental income and blue-chip tenants.",
-      roi: "Grade A asset with multinational tenants"
-    },
-    {
-      id: 9,
-      title: "Tembo Coop House",
-      location: "Moi Avenue, Nairobi CBD, Kenya",
-      continent: "Africa",
-      type: "Commercial Building",
-      price: "$3M (KSh 385M)",
-      yield: "10.9%",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
-      features: ["7 Upper Floors", "Ground Floor Shops", "30,174 Sq. Ft. Built Up Area", "Fully Occupied"],
-      status: "Exclusive",
-      description: "A fully occupied commercial building located along Moi Avenue in Nairobi CBD, available for sale.",
-      roi: "Immediate cash flow with upside potential"
-    },
-    {
-      id: 10,
+      id: "kenya-comfort-hotel-prime-commercial-building",
       title: "Kenya Comfort Hotel Prime Commercial Building",
       location: "Nairobi CBD, Kenya",
       continent: "Africa",
@@ -272,7 +188,7 @@ const Properties = () => {
       roi: "Immediate income with strategic expansion potential"
     },
     {
-      id: 11,
+      id: "70-chancery-lane",
       title: "70 Chancery Lane",
       location: "London, WC2A, UK",
       continent: "Europe",
@@ -286,7 +202,7 @@ const Properties = () => {
       roi: "Prime London asset with stable income"
     },
     {
-      id: 12,
+      id: "22-23-princes-street",
       title: "22-23 Princes Street",
       location: "London, W1B, UK",
       continent: "Europe",
@@ -607,7 +523,21 @@ const Properties = () => {
     status: "Under Offer",
     description: "Volkswagen dealership in established Wirral location with strong trading history",
     roi: "Automotive sector stability of 6% p.a."
-  }
+  },
+  {
+    id: 45,
+    title: "Cross House Newcastle Commercial Building",
+    location: "Westgate Road, Newcastle upon Tyne, UK",
+    continent: "Europe",
+    type: "Commercial",
+    price: "£2M",
+    yield: "Details on Application",
+    image: "https://content.knightfrank.com/property/hub2547666/images/a531920b-a627-43ed-905e-eacd1b941068-0.jpg?cio=true&w=1200",
+    features: ["City Centre", "Period Building", "Refurbishment Potential", "Transport Links"],
+    status: "Available",
+    description: "Character office building in Newcastle city centre with development potential",
+    roi: "Northern powerhouse growth"
+  },
   ];
 
   const propertyTypes = ['All', 'Commercial', 'Hotel', 'Retail', 'Industrial', 'Office Development', 'Office', 'Leisure', 'Healthcare'];
@@ -745,7 +675,7 @@ const Properties = () => {
           </div>
 
           {/* Properties Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-8 mb-16">
             {filteredProperties.map((property, index) => (
               <div
                 key={property.id}
@@ -755,64 +685,60 @@ const Properties = () => {
                   <img
                     src={property.image}
                     alt={property.title}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-48 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-                  <div className="absolute top-4 left-4 flex gap-2">
-                    <span className={`px-3 py-1 text-xs font-medium ${getTypeColor(property.type)}`}>
+                  <div className="absolute top-2 sm:top-4 left-2 sm:left-4 flex flex-col sm:flex-row gap-1 sm:gap-2">
+                    <span className={`px-2 sm:px-3 py-1 text-xs font-medium ${getTypeColor(property.type)}`}>
                       {property.type}
                     </span>
-                    <span className={`px-3 py-1 text-xs font-medium ${getStatusColor(property.status)}`}>
+                    <span className={`px-2 sm:px-3 py-1 text-xs font-medium ${getStatusColor(property.status)}`}>
                       {property.status}
                     </span>
                   </div>
 
-                  <div className="absolute top-4 right-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white px-4 py-2 flex items-center rounded-full shadow-lg">
-                    <TrendingUp className="h-4 w-4 mr-2" />
-                    <span className="text-sm font-semibold">{property.yield}</span>
+                  <div className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white px-3 sm:px-4 py-1 sm:py-2 flex items-center rounded-full shadow-lg">
+                    <TrendingUp className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+                    <span className="text-xs sm:text-sm font-semibold">{property.yield}</span>
                   </div>
                 </div>
 
-                <div className="p-8">
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h3 className="text-xl font-serif font-medium text-[#222] mb-2 leading-tight">{property.title}</h3>
+                <div className="p-4 sm:p-8">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 gap-2">
+                    <div className="flex-1">
+                      <h3 className="text-lg sm:text-xl font-serif font-medium text-[#222] mb-2 leading-tight">{property.title}</h3>
                       <div className="flex items-center text-slate-600">
                         <MapPin className="h-4 w-4 mr-1 flex-shrink-0" />
                         <span className="text-sm">{property.location}</span>
                       </div>
                     </div>
-                    <div className="text-right">
-                      <div className="text-lg font-serif font-medium text-amber-600">{property.yield}</div>
+                    <div className="text-left sm:text-right">
+                      <div className="text-base sm:text-lg font-serif font-medium text-amber-600">{property.yield}</div>
                       <div className="text-xs text-slate-500">Annual Yield</div>
                     </div>
                   </div>
 
-                  <div className="text-center mb-6">
-                    <div className="text-2xl font-serif font-light text-[#222]">{property.price}</div>
+                  <div className="text-center mb-4 sm:mb-6">
+                    <div className="text-xl sm:text-2xl font-serif font-light text-[#222]">{property.price}</div>
                   </div>
 
                   <div className="space-y-2">
-                    <div className="flex space-x-3">
-                      <Link href={`/properties/${property.id}`} className="w-1/2">
+                    <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
+                      <Link href={`/properties/${property.id}`} className="w-full sm:w-1/2">
                         <button className="w-full border-2 border-stone-500 bg-amber-600 hover:bg-gray-900 text-white py-2 px-4 text-sm font-medium rounded-xl shadow-lg transition-all duration-300 group">
                           VIEW PROPERTY
                         </button>
                       </Link>
 
-                      <Link href={`tel:0729170156`} className="w-1/2">
+                      <Link href={`tel:0729170156`} className="w-full sm:w-1/2">
                         <button className="w-full border-2 border-stone-500 text-stone-700 hover:bg-gray-900 hover:text-white py-2 px-4 text-sm font-medium rounded-xl transition-all duration-300 group">
                           CALL AGENT
                           <ArrowRight className="inline ml-1 h-3 w-3 group-hover:translate-x-1 transition-transform" />
                         </button>
                       </Link>
                     </div>
-                    <Link href="/contact?subject=Private%20Consultation%20Request" className="block">
-                      <button className="w-full bg-navy-950 hover:bg-navy-900 text-gold-400 hover:text-gold-300 py-2 px-4 text-sm font-medium rounded-xl shadow-lg transition-all duration-300 border-2 border-gold-400">
-                        Request Private Consultation
-                      </button>
-                    </Link>
+
                   </div>
                 </div>
               </div>

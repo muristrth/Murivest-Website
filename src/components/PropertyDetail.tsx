@@ -69,7 +69,7 @@ interface PropertyData {
 
 
 const propertyData: PropertyData = {
-  1: {
+  "best-western-meridian-hotel": {
     title: "Best Western Meridian Hotel",
     subtitle: "A Prime Landmark Hotel For Sale In The Nairobi CBD",
     location: "Nairobi CBD, Kenya",
@@ -105,7 +105,7 @@ const propertyData: PropertyData = {
       totalROI: "27.2%"
     }
   },
-  2: {
+  "buffalo-mall-development-land": {
     title: "Buffalo Mall & Development Land",
     subtitle: "Excellent retail investment with significant asset management potential in Naivasha.",
     location: "Naivasha, Kenya",
@@ -140,7 +140,7 @@ const propertyData: PropertyData = {
       totalROI: "19.0%"
     }
   },
-  3: {
+  "icd-industrial-complex": {
     title: "ICD Industrial Complex Mombasa Road Logistics Hub",
     subtitle: "A 3 Acre Industrial Complex For Sale In An Excellent Location",
     location: "Mombasa Road",
@@ -179,7 +179,7 @@ const propertyData: PropertyData = {
       totalROI: "30%"
     }
   },
-  4: {
+  "basl-house": {
     title: "BASL House",
     subtitle: "Kumasi Road, Nairobi CBD",
     location: "Nairobi CBD",
@@ -214,7 +214,7 @@ const propertyData: PropertyData = {
       totalROI: "24.5%"
     }
   },
-  5: {
+  "the-atrium-office-development": {
     title: "The Atrium, Chaka Road, Kilimani",
     subtitle: "An excellently designed office development with exceptional rental income and high technological specifications for sale in Kilimani.",
     location: "Chaka Road, Kilimani, Kenya",
@@ -284,7 +284,7 @@ const propertyData: PropertyData = {
       totalROI: "19.2%"
     }
   },
-  7: {
+  "the-panari-hotel": {
     title: "The Panari Hotel",
     subtitle: "Mombasa Road, Nairobi West",
     location: "Mombasa Road",
@@ -319,7 +319,7 @@ const propertyData: PropertyData = {
       totalROI: "33.5%"
     }
   },
-  8: {
+  "absa-towers": {
     title: "Absa Towers",
     subtitle: "Loita & Market Street, Nairobi CBD",
     location: "Nairobi CBD",
@@ -354,42 +354,7 @@ const propertyData: PropertyData = {
       totalROI: "21.0%"
     }
   },
-  9: {
-    title: "Tembo Coop House",
-    subtitle: "Moi Avenue, Nairobi CBD",
-    location: "Nairobi CBD",
-    type: "Heritage Commercial",
-    price: "$3,000,000",
-    priceKsh: "KSh 385M",
-    priceUsd: "$3,000,000",
-    priceGbp: "£2,500,000",
-    priceEur: "€2,800,000",
-    yield: "10.9%",
-    images: [
-      "https://images.pexels.com/photos/1647416/pexels-photo-1647416.jpeg?w=1200&q=80",
-      "https://images.pexels.com/photos/279810/pexels-photo-279810.jpeg?w=1200&q=80"
-    ],
-    features: ["30,174 Sq.Ft.", "Historic Building", "Ground Retail", "7 Office Floors", "100% Occupied", "Moi Avenue"],
-    occupancyRate: "100%",
-    description: "Distinguished heritage commercial asset on Nairobi's historic business artery. Legacy investment with modern returns.",
-    details: {
-      area: "30,174 Sq.Ft.",
-      floors: "Ground + 7",
-      occupancy: "100%",
-      location: "Moi Avenue",
-      yield: "10.9%",
-      appreciation: "6% p.a."
-    },
-    investment: {
-      totalInvestment: "385,000,000",
-      monthlyIncome: "3,500,000",
-      annualIncome: "42,000,000",
-      netYield: "10.9%",
-      appreciationRate: "6%",
-      totalROI: "16.9%"
-    }
-  },
-  10: {
+  "kenya-comfort-hotel": {
     title: "Kenya Comfort Hotel Building",
     subtitle: "Prime Nairobi CBD Sale & Leaseback",
     location: "Monrovia St & Muindi Mbingu St",
@@ -424,7 +389,7 @@ const propertyData: PropertyData = {
       totalROI: "18.2%"
     }
   },
-  11: {
+  "70-chancery-lane": {
     title: "70 Chancery Lane",
     subtitle: "London Legal District",
     location: "London, WC2A",
