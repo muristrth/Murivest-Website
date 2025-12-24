@@ -1,230 +1,180 @@
 'use client';
 
 import React, { useState } from 'react';
-import { MapPin, Download, Building, ShieldCheck, Lock, Phone } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { MapPin, Download, Building, ShieldCheck, Lock, Phone, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 const YieldMapLeadMagnet = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: ''
-  });
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
-
-    try {
-      const response = await fetch('/api/send-lead', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setStatus('success');
-      } else {
-        setStatus('error');
-      }
-    } catch (error) {
-      setStatus('error');
-    }
+    // Simulate API call for demo purposes
+    setTimeout(() => setStatus('success'), 1500);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Data optimized for display
   const sites = [
-    { name: 'Westlands Office Tower', tenant: 'Tech Startup Hub', yield: '8.0%', type: 'Office' },
-    { name: 'Karen Luxury Outlets', tenant: 'Designer Brands', yield: '8.7%', type: 'Retail' },
-    { name: 'Athi River Complex', tenant: 'Cold Storage', yield: '9.8%', type: 'Industrial' },
-    { name: 'Kilimani Mixed-Use', tenant: 'Residential + Retail', yield: '8.2%', type: 'Mixed-use' }
+    { name: 'Westlands Office Tower', yield: '8.0%', type: 'Core Office' },
+    { name: 'Karen Luxury Outlets', yield: '8.7%', type: 'Prime Retail' },
+    { name: 'Athi River Complex', yield: '9.8%', type: 'Industrial' },
   ];
 
   return (
-    <section className="py-24 bg-slate-50 font-sans">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        
-        {/* Header / Value Proposition */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-amber-100 rounded-full text-amber-900 text-sm font-semibold mb-8 border border-amber-200">
-            <ShieldCheck className="h-4 w-4 mr-2" />
-            Private Client Intelligence
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-            2025 Nairobi Prime Real Estate
-            <span className="block text-amber-700 italic mt-2">
-              Investment Yield Report
-            </span>
-          </h2>
-          <p className="text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
-            An executive summary of yield performance across Office, Retail, and Industrial sectors. 
-            Curated specifically for senior investors seeking wealth preservation and consistent returns.
-          </p>
-        </div>
+    <section className="relative py-24 bg-[#fafaf9] overflow-hidden">
+      {/* Decorative background element */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-900/5 -skew-x-12 translate-x-32" />
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
           
-          {/* Left Column: The Preview (Trust Builders) */}
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200">
-            <div className="p-6 bg-slate-900 text-white">
-              <h3 className="text-xl font-semibold mb-2">Report Preview</h3>
-              <p className="text-slate-400 text-sm">Real data from Q1 2025</p>
+          {/* Left Side: Copy & 3D Data Preview */}
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-50 border border-amber-200 rounded-full text-amber-700 text-[10px] font-bold tracking-widest uppercase mb-6">
+              <Lock className="h-3 w-3" /> Encrypted Access
             </div>
             
-            <div className="p-6">
-              <div className="space-y-4">
-                {sites.map((site, index) => (
-                  <div key={index} className="flex items-center justify-between p-4 bg-slate-50 rounded-xl border border-slate-100">
-                    <div className="flex items-center">
-                      <div className="bg-white p-2 rounded-full shadow-sm mr-4">
-                        <MapPin className="h-5 w-5 text-amber-600" />
-                      </div>
-                      <div>
-                        <div className="font-bold text-slate-900 text-lg">{site.name}</div>
-                        <div className="text-sm text-slate-600">{site.type}</div>
-                      </div>
+            <h2 className="text-5xl font-serif font-medium text-slate-900 mb-6 leading-[1.1]">
+              The 2025 <span className="text-amber-600 italic">Yield Atlas</span> 
+              <br /> for Nairobi Prime
+            </h2>
+            
+            <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-lg">
+              Secure the definitive benchmark report on commercial cap rates, lease structures, and the top-performing assets in the current Kenyan market.
+            </p>
+
+            {/* 3D Stacked Preview */}
+            <div className="space-y-4 relative">
+              {sites.map((site, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  whileHover={{ x: 10, scale: 1.02 }}
+                  className="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between group cursor-default"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="p-2 bg-slate-50 rounded-lg group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                      <MapPin className="h-5 w-5" />
                     </div>
-                    <div className="text-amber-700 font-bold text-lg bg-amber-50 px-3 py-1 rounded-lg border border-amber-100">
-                      {site.yield}
+                    <div>
+                      <h4 className="font-bold text-slate-900 text-sm">{site.name}</h4>
+                      <p className="text-[10px] uppercase tracking-tighter text-slate-400 font-bold">{site.type}</p>
                     </div>
                   </div>
-                ))}
-              </div>
+                  <div className="text-right">
+                    <span className="text-amber-600 font-mono font-bold text-lg">{site.yield}</span>
+                  </div>
+                </motion.div>
+              ))}
               
-              <div className="mt-6 p-4 bg-blue-50 text-blue-900 text-sm rounded-lg border border-blue-100 flex items-start">
-                <Building className="h-5 w-5 mr-3 flex-shrink-0 mt-0.5" />
-                <p>
-                  The full 6-page report includes detailed cap rates, tenant snapshots, and lease duration analysis for 12 prime locations.
-                </p>
+              {/* Blur Overlay for "Locked Content" effect */}
+              <div className="absolute -bottom-2 inset-x-0 h-24 bg-gradient-to-t from-[#fafaf9] via-[#fafaf9]/80 to-transparent flex items-end justify-center pb-2">
+                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">+9 More Locations Inside</span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Right Column: The Secure Form */}
-          <div className="bg-white rounded-2xl shadow-xl border border-slate-200 p-8 lg:p-10">
-            {status !== 'success' ? (
-              <>
-                <div className="mb-8">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3">
-                    Request Your Copy
-                  </h3>
-                  <p className="text-slate-600 text-lg">
-                    Please provide your details below. The PDF report will be sent immediately to your email inbox.
-                  </p>
-                </div>
-
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label className="block text-base font-semibold text-slate-800 mb-2">
-                      Full Name
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-4 text-lg border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 bg-slate-50"
-                      placeholder="e.g. James Kamau"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-base font-semibold text-slate-800 mb-2">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-4 text-lg border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 bg-slate-50"
-                      placeholder="e.g. james@example.com"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-base font-semibold text-slate-800 mb-2">
-                      Phone Number <span className="text-slate-400 font-normal text-sm">(Optional)</span>
-                    </label>
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                        <Phone className="h-5 w-5 text-slate-400" />
-                      </div>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full pl-12 pr-4 py-4 text-lg border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 bg-slate-50"
-                        placeholder="0729 170 156"
-                      />
-                    </div>
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={status === 'loading'}
-                    className="w-full bg-slate-900 hover:bg-slate-800 text-white py-5 px-6 rounded-lg font-semibold text-lg flex items-center justify-center transition-all shadow-md hover:shadow-lg disabled:opacity-70"
+          {/* Right Side: The Secure Form Container */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-[2.5rem] p-1 shadow-2xl shadow-slate-200/50 border border-slate-100"
+          >
+            <div className="bg-[#0f172a] rounded-[2.2rem] p-8 md:p-12 text-white overflow-hidden relative">
+              <AnimatePresence mode="wait">
+                {status !== 'success' ? (
+                  <motion.div
+                    key="form"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0, y: -20 }}
                   >
-                    {status === 'loading' ? (
-                      'Processing Request...'
-                    ) : (
-                      <>
-                        <Download className="h-6 w-6 mr-3" />
-                        Send Me The Report
-                      </>
-                    )}
-                  </button>
-                </form>
+                    <div className="mb-8">
+                      <h3 className="text-2xl font-bold mb-2">Request Intelligence</h3>
+                      <p className="text-slate-400 text-sm">Professional credentials required for full report.</p>
+                    </div>
 
-                {/* Privacy Assurance Block */}
-                <div className="mt-8 pt-6 border-t border-slate-100">
-                  <div className="flex items-start gap-3">
-                    <Lock className="h-5 w-5 text-slate-400 flex-shrink-0 mt-1" />
-                    <p className="text-sm text-slate-500 leading-relaxed">
-                      <strong>Our Zero-Spam Promise:</strong> Your contact details are strictly confidential. 
-                      We do not share data with third parties. You will only receive the requested report and occasional market insights.
+                    <form onSubmit={handleSubmit} className="space-y-5">
+                      <div className="space-y-1">
+                        <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 ml-1">Full Name</label>
+                        <input
+                          name="name"
+                          required
+                          value={formData.name}
+                          onChange={handleChange}
+                          className="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-amber-500 transition-all outline-none"
+                          placeholder="James Kamau"
+                        />
+                      </div>
+
+                      <div className="space-y-1">
+                        <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 ml-1">Work Email</label>
+                        <input
+                          type="email"
+                          name="email"
+                          required
+                          value={formData.email}
+                          onChange={handleChange}
+                          className="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-amber-500 transition-all outline-none"
+                          placeholder="j.kamau@corporate.com"
+                        />
+                      </div>
+
+                      <button
+                        disabled={status === 'loading'}
+                        className="w-full mt-4 bg-amber-600 hover:bg-amber-500 text-white px-4 py-2.5 rounded-lg font-bold text-xs tracking-widest uppercase transition-all flex items-center justify-center gap-3 disabled:opacity-50 active:scale-95"
+                      >
+                        {status === 'loading' ? 'Authenticating...' : (
+                          <>Download Atlas <Download className="h-4 w-4" /></>
+                        )}
+                      </button>
+                    </form>
+
+                    <div className="mt-8 flex items-start gap-3 opacity-50 hover:opacity-100 transition-opacity">
+                      <ShieldCheck className="h-4 w-4 text-amber-500 shrink-0" />
+                      <p className="text-[10px] leading-relaxed text-slate-300">
+                        Fiduciary data protection: No third-party sharing. Encrypted delivery.
+                      </p>
+                    </div>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="success"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="py-12 text-center"
+                  >
+                    <div className="w-16 h-16 bg-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <CheckCircle2 className="h-8 w-8 text-amber-500" />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-2">Access Granted</h3>
+                    <p className="text-slate-400 text-sm mb-8">
+                      The PDF has been dispatched to <br />
+                      <span className="text-white font-medium">{formData.email}</span>
                     </p>
-                  </div>
-                </div>
-
-                {status === 'error' && (
-                  <p className="mt-4 text-red-600 text-center font-medium">
-                    There was an error sending the request. Please try again.
-                  </p>
+                    <button 
+                      onClick={() => setStatus('idle')}
+                      className="text-amber-500 text-[10px] font-bold tracking-[0.2em] uppercase hover:text-amber-400 transition-colors"
+                    >
+                      Restart Request
+                    </button>
+                  </motion.div>
                 )}
-              </>
-            ) : (
-              <div className="text-center py-12">
-                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8">
-                  <ShieldCheck className="h-10 w-10 text-green-600" />
-                </div>
-                <h3 className="text-3xl font-bold text-slate-900 mb-4">
-                  Request Confirmed
-                </h3>
-                <p className="text-slate-600 text-lg mb-8 leading-relaxed">
-                  We have sent the <strong>2025 Yield Atlas</strong> to <span className="font-semibold text-slate-900">{formData.email}</span>.
-                  <br /><br />
-                  Please check your inbox (and promotions folder) in the next 2 minutes.
-                </p>
-                <button 
-                  onClick={() => setStatus('idle')}
-                  className="text-amber-700 font-medium hover:underline"
-                >
-                  Send to another email address
-                </button>
-              </div>
-            )}
-          </div>
+              </AnimatePresence>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

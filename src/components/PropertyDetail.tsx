@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { DollarSign, Euro, PoundSterling, Coins } from 'lucide-react';
 
 import { 
@@ -10,25 +10,18 @@ import {
   Share2,
   Heart,
   Eye,
-  CheckCircle,
+
   MapPin,
   TrendingUp,
   Download,
   Phone,
   Mail,
-  MessageCircle,
   X,
   ChevronLeft,
   ChevronRight,
   Building,
-  Calendar,
-  Users,
-  Star,
-  Calculator,
   FileText,
-  BarChart3,
   Shield,
-  Award,
   Crown,
   Clock,
   Globe
@@ -67,6 +60,12 @@ interface PropertyData {
     [key: string]: Property;
 }
 
+// Animation variants for 3D feel
+  const fadeInScale = {
+    initial: { opacity: 0, scale: 0.95, y: 20 },
+    animate: { opacity: 1, scale: 1, y: 0 },
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }
+  };
 
 const propertyData: PropertyData = {
   "best-western-meridian-hotel": {
@@ -1257,6 +1256,7 @@ const PropertyDetail = () => {
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
   const [selectedCurrency, setSelectedCurrency] = useState('KES');
+  
   // Removed unused states: investmentAmount, activeTab
 
   const currencies = [
@@ -1333,430 +1333,282 @@ const PropertyDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#fafafa] text-slate-900 selection:bg-amber-200">
       
-      {/* Refined Header */}
-      <div className="bg-white border-b border-gray-100 sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 py-8">
-          <div className="flex items-center justify-between">
-            <Link 
-              href="/properties"
-              className="flex items-center text-gray-600 hover:text-[#1e3a5f] transition-colors group"
-            >
-              <ArrowLeft className="h-4 w-4 mr-3 group-hover:-translate-x-1 transition-transform" />
-              <span className="text-sm tracking-wider">BACK TO COMMERCIAL PROPERTIES</span>
-            </Link>
-            
-            <div className="flex items-center gap-6">
-              <button
-                onClick={() => setIsLiked(!isLiked)}
-                className="p-3 hover:bg-gray-50 rounded-full transition-colors"
-              >
-                <Heart className={`h-5 w-5 ${isLiked ? 'fill-[#1e3a5f] text-[#1e3a5f]' : 'text-gray-400'}`} />
-              </button>
-              <button className="p-3 hover:bg-gray-50 rounded-full transition-colors">
-                <Share2 className="h-5 w-5 text-gray-400" />
-              </button>
+      {/* 1. ULTRA-MODERN FLOATING HEADER */}
+      <nav className="sticky top-6 z-50 px-6 max-w-7xl mx-auto">
+        <div className="bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.05)] rounded-[2rem] px-8 py-4 flex items-center justify-between">
+          <Link 
+            href="/properties"
+            className="flex items-center gap-3 text-slate-500 hover:text-slate-950 transition-all group"
+          >
+            <div className="p-2 bg-slate-100 rounded-full group-hover:bg-slate-200 transition-colors">
+              <ArrowLeft className="h-4 w-4" />
             </div>
+            <span className="text-[10px] font-bold tracking-[0.2em] uppercase">Return to Portfolio</span>
+          </Link>
+          
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setIsLiked(!isLiked)}
+              className="p-3 bg-white border border-slate-100 rounded-full shadow-sm hover:shadow-md transition-all active:scale-90"
+            >
+              <Heart className={`h-5 w-5 ${isLiked ? 'fill-red-500 text-red-500' : 'text-slate-400'}`} />
+            </button>
+            <button className="p-3 bg-white border border-slate-100 rounded-full shadow-sm hover:shadow-md transition-all">
+              <Share2 className="h-5 w-5 text-slate-400" />
+            </button>
           </div>
         </div>
-      </div>
+      </nav>
 
-      <div className="max-w-7xl mx-auto px-8 lg:px-16">
+      <main className="max-w-7xl mx-auto px-6 pt-12">
         
-        {/* --- MODIFIED: Combined Hero Text and Image Gallery into a single, inline grid --- */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 py-20">
+        {/* 2. HERO GRID: 3D TRANSFORM GALLERY & DATA */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 py-12">
 
-          {/* LEFT COLUMN: Hero Text (5/12 width on large screens) */}
-          <div className="lg:col-span-5">
-            <div className="max-w-4xl">
-              <div className="inline-flex items-center gap-3 mb-8">
-                <div className="w-12 h-px bg-[#c9a961]"></div>
-                <span className="text-[#c9a961] text-xs tracking-[0.3em] uppercase">Exclusive Offering</span>
+          {/* LEFT: TEXT CONTENT */}
+          <motion.div 
+            {...fadeInScale}
+            className="lg:col-span-5 flex flex-col justify-center"
+          >
+            <div className="inline-flex items-center gap-3 mb-6">
+              <span className="px-4 py-1.5 bg-amber-500/10 text-amber-600 rounded-full text-[10px] font-black uppercase tracking-widest border border-amber-500/20">
+                {property.type} • Institutional Grade
+              </span>
+            </div>
+            
+            <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-slate-950 mb-6 leading-[1.1]">
+              {property.title}
+            </h1>
+            
+            <div className="flex items-center gap-3 text-slate-400 mb-10">
+              <div className="p-2 bg-slate-100 rounded-lg">
+                <MapPin className="h-4 w-4" />
+              </div>
+              <span className="text-lg font-light tracking-wide">{property.subtitle}</span>
+            </div>
+            
+            <div className="p-8 bg-white rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/50 mb-10">
+              <div className="text-xs text-slate-400 uppercase font-bold tracking-[0.2em] mb-2">Investment Valuation</div>
+              <div className="text-4xl font-bold text-slate-950 tracking-tighter">
+                {property.price}
+              </div>
+            </div>
+
+            <motion.button 
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="flex items-center justify-center gap-3 bg-slate-950 text-white py-6 rounded-[2rem] font-bold text-xs uppercase tracking-[0.2em] shadow-2xl shadow-slate-950/20 hover:bg-slate-800 transition-all"
+            >
+              <Download className="h-4 w-4" />
+              Download Full Prospectus
+            </motion.button>
+          </motion.div>
+
+          {/* RIGHT: 3D GALLERY CARD */}
+          <motion.div 
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="lg:col-span-7"
+          >
+            <div 
+              className="relative group cursor-none overflow-hidden rounded-[3rem] shadow-2xl shadow-slate-900/10 bg-slate-200"
+              onClick={() => setIsImageModalOpen(true)}
+            >
+              {/* Main Image with Parallax-ready styling */}
+              <div className="aspect-[4/3] overflow-hidden">
+                <motion.img 
+                  key={currentImageIndex}
+                  initial={{ scale: 1.1 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 1.5 }}
+                  src={property.images[currentImageIndex]} 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Custom Cursor Overlay */}
+              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                 <div className="bg-white/20 backdrop-blur-md border border-white/30 p-8 rounded-full">
+                    <Eye className="h-8 w-8 text-white" />
+                 </div>
+              </div>
+
+              {/* Image Navigation Dots */}
+              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
+                {property.images.map((_, i) => (
+                  <div key={i} className={`h-1.5 rounded-full transition-all ${i === currentImageIndex ? 'w-8 bg-white' : 'w-2 bg-white/40'}`} />
+                ))}
+              </div>
+            </div>
+            
+            {/* Minimalist Thumbnails */}
+            <div className="flex gap-4 mt-8 overflow-x-auto pb-4 no-scrollbar">
+              {property.images.map((image, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentImageIndex(index)}
+                  className={`relative flex-shrink-0 w-24 h-24 rounded-2xl overflow-hidden transition-all duration-500 ${
+                    index === currentImageIndex ? 'ring-4 ring-amber-500 ring-offset-4 scale-90' : 'opacity-40 hover:opacity-100'
+                  }`}
+                >
+                  <img src={image} className="w-full h-full object-cover" />
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+
+        {/* 3. INTERACTIVE METRICS GRID */}
+        <section className="py-20 border-t border-slate-100">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            
+            {/* Returns - Glass Card */}
+            <div className="bg-white p-10 rounded-[3rem] border border-slate-100 shadow-sm">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="p-3 bg-emerald-50 text-emerald-600 rounded-2xl">
+                  <TrendingUp size={20} />
+                </div>
+                <h3 className="text-xs font-black uppercase tracking-widest text-slate-400">Yield Profile</h3>
               </div>
               
-              <h1 className="text-4xl lg:text-5xl text-[#1e3a5f] mb-5 font-luxury tracking-tight leading-tight">
-                {property.title}
-              </h1>
-              
-              <div className="flex items-center text-gray-500 mb-10">
-                <MapPin className="h-4 w-4 mr-2" />
-                <span className="text-base tracking-wide">{property.subtitle}</span>
-              </div>
-              
-              <div className="mb-10">
-                <div className="flex items-baseline gap-4 mb-4">
-                  <div className="text-3xl text-[#1e3a5f] font-luxury">
-                    {selectedCurrency === 'KES' ? property.priceKsh :
-                     selectedCurrency === 'USD' ? property.priceUsd :
-                     selectedCurrency === 'EUR' ? property.priceEur :
-                     selectedCurrency === 'GBP' ? property.priceGbp :
-                     property.price}
+              <div className="space-y-8">
+                <div>
+                  <div className="text-[10px] text-slate-400 uppercase font-bold tracking-widest mb-1">Target Net Yield</div>
+                  <div className="text-5xl font-bold text-slate-950 tracking-tighter">{property.yield}</div>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="p-4 bg-slate-50 rounded-2xl">
+                    <div className="text-[10px] text-slate-400 font-bold mb-1 uppercase">Monthly</div>
+                    <div className="font-bold text-slate-900">{property.investment.monthlyIncome}</div>
                   </div>
-                  <div className="text-base text-gray-400">
-                    ({selectedCurrency === 'KES' ? property.price : property.priceUsd})
+                  <div className="p-4 bg-slate-50 rounded-2xl">
+                    <div className="text-[10px] text-slate-400 font-bold mb-1 uppercase">Annual</div>
+                    <div className="font-bold text-slate-900">{property.investment.annualIncome}</div>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                {/* Currency Selector */}
-                <div className="flex gap-2">
-                  {currencies.map((currency) => (
-                    <button
-                      key={currency.code}
-                      onClick={() => setSelectedCurrency(currency.code)}
-                      className={`flex items-center gap-2 px-3 py-2 rounded-lg border transition-all ${
-                        selectedCurrency === currency.code
-                          ? 'border-[#c9a961] bg-[#c9a961]/10 text-[#1e3a5f]'
-                          : 'border-gray-200 hover:border-gray-300 text-gray-600'
-                      }`}
-                    >
-                      <span className="text-sm">{currency.flag}</span>
-                      <span className="text-xs font-medium">{currency.code}</span>
-                    </button>
+            {/* Property Specs - Feature List */}
+            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="p-10 bg-slate-950 text-white rounded-[3rem] relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-8 opacity-10">
+                  <Building size={120} />
+                </div>
+                <h3 className="text-xs font-black uppercase tracking-widest text-slate-500 mb-8">Asset Specifications</h3>
+                <div className="space-y-4">
+                  {Object.entries(property.details).map(([key, value]) => (
+                    <div key={key} className="flex justify-between items-center border-b border-white/10 pb-4">
+                      <span className="text-slate-400 text-sm capitalize">{key.replace(/([A-Z])/g, ' $1')}</span>
+                      <span className="font-bold text-sm tracking-wide">{value as string}</span>
+                    </div>
                   ))}
                 </div>
               </div>
 
-              
+              <div className="p-10 bg-amber-50 rounded-[3rem] border border-amber-100">
+                <h3 className="text-xs font-black uppercase tracking-widest text-amber-700/50 mb-8">Core Features</h3>
+                <div className="grid grid-cols-1 gap-4">
+                  {property.features.map((feature, index) => (
+                    <div key={index} className="flex items-center gap-4 group">
+                      <div className="h-2 w-2 bg-amber-500 rounded-full group-hover:scale-150 transition-transform" />
+                      <span className="text-slate-700 font-medium text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
+        </section>
 
-          {/* RIGHT COLUMN: Image Gallery (7/12 width on large screens) */}
+        {/* 4. PRIVATE CONSULTATION - STICKY FLOATING CARD STYLE */}
+        <section className="py-24 grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-7">
-            <div className="relative group cursor-pointer" onClick={() => setIsImageModalOpen(true)}>
-              {/* Image Aspect Ratio adjusted to 3:2 (paddingBottom: '66.66%') */}
-              <div className="relative overflow-hidden bg-gray-100" style={{ paddingBottom: '66.66%' }}>
-                <img 
-                  src={property.images[currentImageIndex]} 
-                  alt={property.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              
-              {property.images.length > 1 && (
-                <>
-                  <button
-                    onClick={(e) => { e.stopPropagation(); prevImage(); }}
-                    className="absolute left-6 top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white p-3 transition-all opacity-0 group-hover:opacity-100 shadow-lg"
-                  >
-                    <ChevronLeft className="h-5 w-5 text-[#1e3a5f]" />
-                  </button>
-                  <button
-                    onClick={(e) => { e.stopPropagation(); nextImage(); }}
-                    className="absolute right-6 top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white p-3 transition-all opacity-0 group-hover:opacity-100 shadow-lg"
-                  >
-                    <ChevronRight className="h-5 w-5 text-[#1e3a5f]" />
-                  </button>
-                </>
-              )}
-              
-              <div className="absolute bottom-6 right-6 bg-[#1e3a5f]/90 text-white px-5 py-2 text-xs tracking-[0.2em]">
-                {currentImageIndex + 1} / {property.images.length}
-              </div>
-
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 flex items-center justify-center">
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <Eye className="h-8 w-8 text-white" />
-                </div>
-              </div>
-            </div>
-
-            {/* Thumbnail Gallery */}
-            {property.images.length > 1 && (
-              <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3 mt-6">
-                {property.images.map((image, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentImageIndex(index)}
-                    className={`relative overflow-hidden transition-all ${
-                      index === currentImageIndex 
-                        ? 'ring-2 ring-[#c9a961] ring-offset-2' 
-                        : 'opacity-60 hover:opacity-100'
-                    }`}
-                    style={{ paddingBottom: '75%' }}
-                  >
-                    <img 
-                      src={image} 
-                      alt={`${property.title} ${index + 1}`}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-        
-        <h3 className="text-s tracking-[0.3em] text-black mb-6 uppercase">Investment Summary</h3>
-              <p className="text-base text-gray-600 leading-relaxed max-w-3xl font-luxury">
-                {property.description}
-              </p>
-
-        <button>
-          <span 
-            onClick={handleDownloadBrochure} 
-            className="justify-center bg-[#1e3a5f] hover:bg-[#152942] text-white py-3.5 transition-colors text-xs tracking-[0.2em] uppercase px-6 mt-10 inline-block"
-          >
-            <Download className="h-5 w-5 text-gray-400 mr-2 inline-block" />
-            Download Brochure
-          </span>
-        </button>
-        {/* Details Grid - Clean & Organized */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 py-20 border-t border-gray-100">
-          
-          {/* Left Column - Specifications */}
-          <div className="space-y-12">
-            <div>
-              <h3 className="text-xs tracking-[0.3em] text-black mb-6 uppercase">Property Details</h3>
-              <div className="space-y-4">
-                {Object.entries(property.details).map(([key, value]) => (
-                  <div key={key} className="flex justify-between items-baseline border-b border-gray-50 pb-3">
-                    <span className="text-gray-500 capitalize text-sm tracking-wide">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
-                    <span className="text-[#1e3a5f] font-light">{value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-                
-            <div>
-              <h3 className="text-xs tracking-[0.3em] text-gray-400 mb-6 uppercase">Key Features</h3>
-              <div className="space-y-3">
-                {property.features.map((feature, index) => (
-                  <div key={index} className="flex items-start group">
-                    <div className="w-1 h-1 bg-[#c9a961] rounded-full mt-2 mr-3 group-hover:scale-150 transition-transform"></div>
-                    <span className="text-gray-600 font-light text-sm leading-relaxed">{feature}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Center Column - Investment Metrics */}
-          <div className="space-y-12">
-            <div>
-              <h3 className="text-xs tracking-[0.3em] text-black mb-6 uppercase">Investment Returns</h3>
-              <div className="space-y-6">
-                <div className="relative pl-6 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b before:from-[#c9a961] before:to-transparent">
-                  <div className="text-xs text-gray-500 mb-1 tracking-wide uppercase">Annual Yield</div>
-                  <div className="text-3xl text-[#1e3a5f] font-light">{property.yield}</div>
-                </div>
-                
-                <div className="relative pl-6 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b before:from-gray-200 before:to-transparent">
-                  <div className="text-xs text-gray-500 mb-1 tracking-wide uppercase">Monthly Income</div>
-                  <div className="text-xl text-gray-700 font-light">
-                    {currencies.find(c => c.code === selectedCurrency)?.symbol}
-                    {(convertAmount(Number(property.investment.monthlyIncome.replace(/,/g, '')), 'KES', selectedCurrency) / 1000000).toFixed(1)}M
-                  </div>
-                </div>
-
-                <div className="relative pl-6 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b before:from-gray-200 before:to-transparent">
-                  <div className="text-xs text-gray-500 mb-1 tracking-wide uppercase">Annual Income</div>
-                  <div className="text-xl text-gray-700 font-light">
-                    {currencies.find(c => c.code === selectedCurrency)?.symbol}
-                    {(convertAmount(Number(property.investment.annualIncome.replace(/,/g, '')), 'KES', selectedCurrency) / 1000000).toFixed(3)}M
-                  </div>
-                </div>
-
-                <div className="relative pl-6 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b before:from-gray-200 before:to-transparent">
-                  <div className="text-xs text-gray-500 mb-1 tracking-wide uppercase">Total ROI</div>
-                  <div className="text-xl text-gray-700 font-light">
-                    {property.investment.totalROI}%
-                  </div>
-                </div>
-
-                <div className="relative pl-6 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b before:from-gray-200 before:to-transparent">
-                  <div className="text-xs text-gray-500 mb-1 tracking-wide uppercase">Capital Appreciation</div>
-                  <div className="text-xl text-gray-700 font-light">
-                    {property.investment.appreciationRate}% p.a.
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-gray-50 to-white p-6 border border-gray-100">
-              <div className="flex items-center gap-3 mb-4">
-                <TrendingUp className="h-5 w-5 text-[#c9a961]" />
-                <h4 className="text-xs tracking-[0.3em] text-gray-600 uppercase">Market Position</h4>
-              </div>
-              <div className="space-y-3">
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-500 font-light">Occupancy</span>
-                  <span className="text-[#1e3a5f] font-medium">{property.occupancyRate}</span>
-                </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-500 font-light">Asset Grade</span>
-                  <span className="text-[#1e3a5f] font-medium">Institutional</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column - Contact */}
-          <div className="lg:sticky lg:top-32 h-fit">
-            <div className="border border-gray-400 p-8 bg-gradient-to-br from-white to-gray-50">
-              <div className="text-center mb-8">
-                <div className="w-10 h-10 border border-[#c9a961] mx-auto mb-5 flex items-center justify-center">
-                  <Crown className="h-5 w-5 text-[#c9a961]" />
-                </div>
-                <h3 className="text-xs tracking-[0.3em] text-black mb-3 uppercase">Private Consultation</h3>
-                <p className="text-gray-600 font-light text-xs leading-relaxed">
-                  Arrange a confidential discussion with our investment advisors
-                </p>
-              </div>
-
-              <div className="space-y-3 mb-8">
-                <button
-                  onClick={() => handleWhatsAppContact("I would like to arrange a private consultation.")}
-                  className="w-full bg-[#1e3a5f] hover:bg-[#152942] text-white py-3.5 transition-colors text-xs tracking-[0.2em] uppercase"
-                >
-                  Request Consultation
-                </button>
-                
-                <button
-                  onClick={handleDownloadBrochure}
-                  className="w-full border border-gray-300 hover:border-[#1e3a5f] hover:bg-white text-gray-700 hover:text-[#1e3a5f] py-3.5 transition-all text-xs tracking-[0.2em] uppercase flex items-center justify-center gap-2"
-                >
-                  <FileText className="h-3.5 w-3.5" />
-                  Prospectus
-                </button>
-              </div>
-
-              <div className="space-y-3 pt-6 border-t border-gray-200">
-                <div className="flex items-center text-xs text-gray-600">
-                  <Phone className="h-3.5 w-3.5 mr-3 text-gray-400" />
-                  <span className="font-light">+254 115 277 610</span>
-                </div>
-                <div className="flex items-center text-xs text-gray-600">
-                  <Mail className="h-3.5 w-3.5 mr-3 text-gray-400" />
-                  <span className="font-light">investments@murivest.co.ke</span>
-                </div>
-                <div className="flex items-start text-xs text-gray-600">
-                  <Globe className="h-3.5 w-3.5 mr-3 text-gray-400 flex-shrink-0 mt-0.5" />
-                  <span className="font-light">Available globally for qualified investors</span>
-                </div>
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-gray-200">
-                <div className="flex items-start gap-2.5">
-                  <Shield className="h-4 w-4 text-[#c9a961] flex-shrink-0 mt-0.5" />
-                  <p className="text-xs text-gray-500 leading-relaxed font-light">
-                    Available exclusively to qualified investors. Subject to regulatory compliance.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-gray-200">
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="text-gray-500 font-light">Property Type</span>
-                    <span className="text-[#1e3a5f]">{property.type}</span>
-                  </div>
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="text-gray-500 font-light">Investment Grade</span>
-                    <span className="text-[#1e3a5f]">Institutional</span>
-                  </div>
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="text-gray-500 font-light">Listing Status</span>
-                    <span className="text-green-600">Available</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Additional Info Card */}
-            <div className="mt-6 border border-gray-100 p-6 bg-white">
-              <div className="flex items-center gap-2 mb-4">
-                <Clock className="h-4 w-4 text-[#c9a961]" />
-                <h4 className="text-xs tracking-[0.3em] text-gray-600 uppercase">Investment Timeline</h4>
-              </div>
-              <p className="text-xs text-gray-600 font-light leading-relaxed">
-                Due diligence and transaction completion typically requires 45-90 days for institutional investors.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Final CTA - Elegant & Understated */}
-        <div className="py-24 border-t border-gray-100 text-center">
-          <div className="max-w-2xl mx-auto">
-            <div className="relative w-12 h-12 border border-[#c9a961] mx-auto mb-8 flex items-center justify-center">
-              <Building className="h-6 w-6 text-[#c9a961]" />
-              <div className="absolute -inset-2 border border-[#c9a961] opacity-20"></div>
-            </div>
-            
-            <h2 className="text-3xl lg:text-4xl text-[#1e3a5f] mb-6 font-light leading-tight">
-              Invest in Legacy
-            </h2>
-            
-            <p className="text-base text-gray-600 mb-10 font-light leading-relaxed">
-              Join a distinguished circle of international investors in Kenya's premier real estate opportunities.
+            <h2 className="text-4xl font-bold text-slate-950 mb-8 tracking-tight">Investment Thesis</h2>
+            <p className="text-xl text-slate-500 leading-relaxed font-light mb-12">
+              {property.description}
             </p>
-            
-            <button
-              onClick={() => handleWhatsAppContact("I am interested in learning more about this investment opportunity.")}
-              className="inline-block border border-[#1e3a5f] hover:bg-[#1e3a5f] text-[#1e3a5f] hover:text-white px-10 py-3.5 transition-all text-xs tracking-[0.2em] uppercase"
-            >
-              Begin Conversation
-            </button>
+            <div className="flex flex-wrap gap-4">
+               <div className="flex items-center gap-3 px-6 py-3 bg-white rounded-full border border-slate-100 text-sm font-bold text-slate-600">
+                  <Shield size={16} className="text-amber-500" /> RICS Regulated Advisory
+               </div>
+               <div className="flex items-center gap-3 px-6 py-3 bg-white rounded-full border border-slate-100 text-sm font-bold text-slate-600">
+                  <Globe size={16} className="text-blue-500" /> Global Capital Access
+               </div>
+            </div>
           </div>
-        </div>
 
-        {/* Legal Disclosure - Subtle */}
-        <div className="py-10 border-t border-gray-100">
-          <p className="text-xs text-gray-400 text-center font-light leading-relaxed max-w-4xl mx-auto">
-            All investment opportunities carry inherent risks. Projected returns are estimates based on current market conditions. 
-            Past performance does not guarantee future results. Available to accredited investors only. 
-            Subject to regulatory compliance and comprehensive due diligence.
-          </p>
-        </div>
-      </div>
+          <div className="lg:col-span-5">
+            <div className="sticky top-32 p-10 bg-white rounded-[3rem] border border-slate-200 shadow-2xl shadow-slate-200/50">
+              <div className="text-center mb-10">
+                <div className="w-16 h-16 bg-slate-950 rounded-3xl flex items-center justify-center mx-auto mb-6 rotate-3">
+                  <Crown className="text-amber-500" size={32} />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-950 mb-2 tracking-tight">Reserve Consultation</h3>
+                <p className="text-slate-400 text-sm">Speak directly with our asset management team.</p>
+              </div>
 
-      {/* Image Modal - Refined */}
+              <div className="space-y-4">
+                <button className="w-full bg-slate-950 text-white py-5 rounded-[2rem] font-bold text-xs uppercase tracking-widest hover:bg-slate-800 transition-all shadow-xl shadow-slate-950/20">
+                  Request Private Viewing
+                </button>
+                <div className="grid grid-cols-2 gap-4">
+                   <button className="flex items-center justify-center gap-2 border border-slate-200 py-4 rounded-[2rem] text-xs font-bold uppercase tracking-widest text-slate-600 hover:bg-slate-50 transition-all">
+                      <Phone size={14} /> Call
+                   </button>
+                   <button className="flex items-center justify-center gap-2 border border-slate-200 py-4 rounded-[2rem] text-xs font-bold uppercase tracking-widest text-slate-600 hover:bg-slate-50 transition-all">
+                      <Mail size={14} /> Email
+                   </button>
+                </div>
+              </div>
+
+              <div className="mt-8 pt-8 border-t border-slate-100 flex items-center gap-4 text-slate-400">
+                <Clock size={16} />
+                <p className="text-[10px] font-bold uppercase tracking-widest">Response time: &lt; 24 Hours</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {/* 5. FULLSCREEN MODAL - BLUR EFFECT */}
       <AnimatePresence>
         {isImageModalOpen && (
-          <div
-            className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-8"
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-slate-950/95 z-[100] flex items-center justify-center p-6 backdrop-blur-xl"
             onClick={() => setIsImageModalOpen(false)}
           >
-            <div
-              className="relative max-w-6xl max-h-full"
+            <button className="absolute top-10 right-10 p-4 bg-white/10 rounded-full text-white hover:bg-white/20 transition-all">
+              <X size={32} />
+            </button>
+            
+            <motion.div
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              className="max-w-6xl w-full"
               onClick={(e) => e.stopPropagation()}
             >
-              <button
-                onClick={() => setIsImageModalOpen(false)}
-                className="absolute -top-16 right-0 text-white/60 hover:text-white transition-colors"
-              >
-                <X className="h-8 w-8" />
-              </button>
-              
               <img 
                 src={property.images[currentImageIndex]} 
-                alt={property.title}
-                className="max-w-full max-h-[85vh] object-contain"
+                className="w-full h-auto max-h-[80vh] object-contain rounded-[2rem] shadow-2xl" 
               />
-              
-              {property.images.length > 1 && (
-                <>
-                  <button
-                    onClick={prevImage}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 p-4 transition-all"
-                  >
-                    <ChevronLeft className="h-8 w-8 text-white" />
-                  </button>
-                  <button
-                    onClick={nextImage}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 p-4 transition-all"
-                  >
-                    <ChevronRight className="h-8 w-8 text-white" />
-                  </button>
-                </>
-              )}
-              
-              <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 text-white/60 text-sm tracking-wider">
-                {currentImageIndex + 1} / {property.images.length}
+              <div className="flex justify-between items-center mt-8 text-white">
+                <div className="flex gap-4">
+                  <button onClick={() => setCurrentImageIndex(prev => (prev > 0 ? prev - 1 : property.images.length - 1))} className="p-4 bg-white/10 rounded-full hover:bg-white/20"><ChevronLeft /></button>
+                  <button onClick={() => setCurrentImageIndex(prev => (prev < property.images.length - 1 ? prev + 1 : 0))} className="p-4 bg-white/10 rounded-full hover:bg-white/20"><ChevronRight /></button>
+                </div>
+                <div className="text-xs font-black tracking-widest uppercase">
+                  {currentImageIndex + 1} / {property.images.length}
+                </div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         )}
       </AnimatePresence>
     </div>

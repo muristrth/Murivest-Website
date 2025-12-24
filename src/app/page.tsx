@@ -6,7 +6,6 @@ import IndustrialLandBankingSection from '../components/sections/IndustrialLandB
 import YieldMapLeadMagnet from '../components/sections/YieldMapLeadMagnet'
 import SmartBuildingService from '../components/sections/SmartBuildingService'
 import YieldReportSection from '../components/sections/YieldReportSection'
-import InvestorStats from '../components/sections/InvestorStats'
 import ExclusiveOpportunities from '../components/sections/ExclusiveOpportunitiesNew'
 import ExecutiveTargetedSection from '../components/sections/ExecutiveTargetedSection'
 import GlobalPresence from '../components/sections/GlobalPresence'
@@ -39,7 +38,6 @@ export default function HomePage() {
       <LegacyPlanningSection />
       <TaxIntelligenceSection />
       <IndustrialLandBankingSection />
-      <InvestorStats />
       <YieldMapLeadMagnet />
       <SmartBuildingService />
       <ExclusiveOpportunities />

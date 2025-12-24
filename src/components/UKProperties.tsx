@@ -1,18 +1,17 @@
 'use client';
 
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import React, { useState, useEffect } from 'react';
-
-import { MapPin, TrendingUp, Star, Filter, Search, ArrowRight, Shield, Award, Users, Globe, Building2, Crown, ChevronDown, CheckCircle } from 'lucide-react';
+import Link from 'next/link';
+import { 
+  MapPin, TrendingUp, Search, ArrowRight, Shield, Award, 
+  Building2, Globe, LayoutGrid, List, Filter, Landmark,
+  ChevronRight, ExternalLink
+} from 'lucide-react';
 
 const UKProperties = () => {
-  const router = useRouter();
   const [selectedType, setSelectedType] = useState('All');
-  const [selectedContinent, setSelectedContinent] = useState('Europe');
   const [searchTerm, setSearchTerm] = useState('');
-  const [showFilters, setShowFilters] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState('For Sale');
+  const [isGridView, setIsGridView] = useState(true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -410,342 +409,191 @@ const UKProperties = () => {
     status: "Available",
     description: "Character office building in Newcastle city centre with development potential",
     roi: "Northern powerhouse growth"
-  }
-  ];
-
-  const propertyTypes = ['All', 'Commercial', 'Hotel', 'Retail', 'Industrial', 'Office Development', 'Office', 'Leisure', 'Healthcare'];
-  const continents = ['All', 'Africa', 'Europe', 'Asia-Pacific', 'Americas', 'Middle East'];
-  const propertyTypeIcons = [
-    { name: 'Office', icon: '🏢' },
-    { name: 'Retail', icon: '🛍️' },
-    { name: 'Industrial', icon: '🏭' },
-    { name: 'Hospitality', icon: '🏨' },
-    { name: 'Mixed-use', icon: '🏙️' },
-    { name: 'Medical', icon: '🏥' },
-    { name: 'Land', icon: '🌄' },
-    { name: 'Residential', icon: '🏠' }
+  },
   ];
 
   const filteredProperties = ukProperties.filter(property => {
     const matchesType = selectedType === 'All' || property.type === selectedType;
-    const matchesContinent = selectedContinent === 'All' || property.continent === selectedContinent;
     const matchesSearch = property.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           property.location.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesType && matchesContinent && matchesSearch;
+    return matchesType && matchesSearch;
   });
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'Available':
-        return 'bg-emerald-50 text-emerald-800 border border-emerald-200';
-      case 'Exclusive':
-      case 'Exclusive Offering':
-        return 'bg-amber-50 text-amber-800 border border-amber-200';
-      case 'Under Offer':
-        return 'bg-orange-50 text-orange-800 border border-orange-200';
-      case 'Sold':
-        return 'bg-slate-50 text-slate-800 border border-slate-200';
-      default:
-        return 'bg-slate-50 text-slate-800 border border-slate-200';
-    }
-  };
-
-  const getTypeColor = (type: string) => {
-    return 'bg-slate-50 text-slate-700 border border-slate-200';
-  };
-
-  const getButtonHoverColor = () => {
-    return 'hover:bg-[#C5A44D] hover:text-white';
-  };
-
   return (
-    <div className="min-h-screen bg-white">
-      {/* Portfolio Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-5xl font-serif font-light text-[#222] mb-4">
-              UK Commercial Properties
-            </h1>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Premium UK property investments across London and regional markets
-            </p>
-          </div>
+    <div className="min-h-screen bg-slate-50">
+      {/* 1. INSTITUTIONAL HERO HEADER */}
+      <section className="relative py-24 bg-[#0A192F] text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/graphy-dark.png')]" />
+        
+        {/* Decorative Union Jack Gradient Element */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-blue-900/20 to-transparent pointer-events-none" />
 
-          {/* Property Type Icons */}
-          <div className="mb-8">
-            <div className="grid grid-cols-4 md:grid-cols-8 gap-4">
-              {propertyTypeIcons.map((type) => (
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-8">
+            <Landmark size={12} /> UK Institutional Desk
+          </div>
+          
+          <div className="flex flex-col lg:flex-row justify-between items-end gap-8">
+            <div className="max-w-3xl">
+              <h1 className="text-5xl lg:text-7xl font-bold tracking-tight mb-6">
+                London & Regional <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-500">Capital Markets</span>
+              </h1>
+              <p className="text-slate-400 text-xl font-light leading-relaxed">
+                Direct access to Tier-1 UK commercial assets. From City of London trophy towers 
+                to high-yielding regional industrial logistics.
+              </p>
+            </div>
+            
+            {/* Quick Stats */}
+            <div className="flex gap-8 pb-2 border-b border-white/10 w-full lg:w-auto">
+                <div>
+                    <div className="text-2xl font-bold text-white">£2.8T</div>
+                    <div className="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Market Size</div>
+                </div>
+                <div>
+                    <div className="text-2xl font-bold text-white">9.2%</div>
+                    <div className="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Avg. Ind. Yield</div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. FILTER & VIEW TOGGLE */}
+      <div className="sticky top-20 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 py-6 shadow-sm">
+        <div className="max-w-7xl mx-auto px-6 flex flex-wrap items-center justify-between gap-6">
+          <div className="flex items-center gap-6 flex-1">
+            <div className="relative flex-1 max-w-md">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+              <input 
+                type="text" 
+                placeholder="Search by Postcode or Asset Name..." 
+                className="w-full pl-12 pr-4 py-3 bg-slate-100 border-none rounded-xl text-sm focus:ring-2 focus:ring-amber-500 transition-all"
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
+            
+            <nav className="hidden md:flex items-center gap-1 bg-slate-100 p-1 rounded-xl">
+              {['All', 'Office', 'Industrial', 'Retail'].map((type) => (
                 <button
-                  key={type.name}
-                  onClick={() => setSelectedType(selectedType === type.name ? 'All' : type.name)}
-                  className={`flex flex-col items-center p-4 border-2 transition-all duration-300 hover:scale-105 ${
-                    selectedType === type.name
-                      ? 'border-[#C5A44D] bg-[#C5A44D]/10 text-[#C5A44D]'
-                      : 'border-slate-200 bg-white text-slate-600 hover:border-[#C5A44D]'
+                  key={type}
+                  onClick={() => setSelectedType(type)}
+                  className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg transition-all ${
+                    selectedType === type ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700'
                   }`}
                 >
-                  <span className="text-2xl mb-2">{type.icon}</span>
-                  <span className="text-xs font-medium">{type.name}</span>
+                  {type}
                 </button>
               ))}
-            </div>
+            </nav>
           </div>
 
-          {/* Filters */}
-          <div className="mb-12 bg-slate-50 rounded-lg p-8">
-            <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
-              {/* Search */}
-              <div className="relative flex-1 max-w-md">
-                <input
-                  type="text"
-                  placeholder="Enter location or property name…"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-4 pr-12 py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#C5A44D] focus:border-transparent text-slate-900 bg-white"
-                />
-                <Search className="absolute right-4 top-1/2 transform -translate-y-1/2 text-slate-400 h-5 w-5" />
-              </div>
-
-              {/* Filters */}
-              <div className="flex items-center gap-4">
-                {/* Continent Filter */}
-                <div className="flex items-center gap-2">
-                  <span className="text-slate-600 font-medium">Continent:</span>
-                  <div className="relative">
-                    <select
-                      value={selectedContinent}
-                      onChange={(e) => setSelectedContinent(e.target.value)}
-                      className="appearance-none bg-white border border-slate-300 rounded-lg px-4 py-2 pr-8 text-slate-900 focus:ring-2 focus:ring-[#C5A44D] focus:border-transparent"
-                    >
-                      {continents.map((continent) => (
-                        <option key={continent} value={continent}>{continent}</option>
-                      ))}
-                    </select>
-                    <ChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2 h-4 w-4 text-slate-400" />
-                  </div>
-                </div>
-
-                {/* Type Filter */}
-                <div className="flex items-center gap-2">
-                  <span className="text-slate-600 font-medium">Asset Class:</span>
-                  <div className="relative">
-                    <select
-                      value={selectedType}
-                      onChange={(e) => setSelectedType(e.target.value)}
-                      className="appearance-none bg-white border border-slate-300 rounded-lg px-4 py-2 pr-8 text-slate-900 focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                    >
-                      {propertyTypes.map((type) => (
-                        <option key={type} value={type}>{type}</option>
-                      ))}
-                    </select>
-                    <ChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2 h-4 w-4 text-slate-400" />
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="flex items-center gap-4">
+             <button className="flex items-center gap-2 px-5 py-3 border border-slate-200 rounded-xl text-sm font-bold hover:bg-slate-50 transition-colors">
+                <Filter size={16} /> Advanced Filters
+             </button>
           </div>
+        </div>
+      </div>
 
-          {/* Properties Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-8 mb-16">
-            {filteredProperties.map((property, index) => (
-              <div
-                key={property.id}
-                className="group bg-white border border-slate-200 overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 rounded-2xl"
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={property.image}
-                    alt={property.title}
-                    className="w-full h-48 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                  <div className="absolute top-2 sm:top-4 left-2 sm:left-4 flex flex-col sm:flex-row gap-1 sm:gap-2">
-                    <span className={`px-2 sm:px-3 py-1 text-xs font-medium ${getTypeColor(property.type)}`}>
-                      {property.type}
-                    </span>
-                    <span className={`px-2 sm:px-3 py-1 text-xs font-medium ${getStatusColor(property.status)}`}>
-                      {property.status}
-                    </span>
-                  </div>
-
-                  <div className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white px-3 sm:px-4 py-1 sm:py-2 flex items-center rounded-full shadow-lg">
-                    <TrendingUp className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
-                    <span className="text-xs sm:text-sm font-semibold">{property.yield}</span>
-                  </div>
+      {/* 3. ASSET GRID */}
+      <section className="py-16 px-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          {filteredProperties.map((asset) => (
+            <div key={asset.id} className="group bg-white rounded-[2rem] border border-slate-200 overflow-hidden flex flex-col md:flex-row h-full transition-all duration-500 hover:shadow-2xl hover:border-amber-500/30">
+              {/* Asset Image */}
+              <div className="relative w-full md:w-2/5 h-64 md:h-auto overflow-hidden">
+                <img src={asset.image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute top-4 left-4">
+                  <span className="px-3 py-1 bg-white/90 backdrop-blur-md text-[#0A192F] text-[10px] font-black uppercase rounded-lg shadow-sm">
+                    {asset.type}
+                  </span>
                 </div>
+              </div>
 
-                <div className="p-4 sm:p-8">
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 gap-2">
-                    <div className="flex-1">
-                      <h3 className="text-lg sm:text-xl font-serif font-medium text-[#222] mb-2 leading-tight">{property.title}</h3>
-                      <div className="flex items-center text-slate-600">
-                        <MapPin className="h-4 w-4 mr-1 flex-shrink-0" />
-                        <span className="text-sm">{property.location}</span>
+              {/* Asset Content */}
+              <div className="flex-1 p-8 flex flex-col justify-between">
+                <div>
+                  <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-2xl font-bold text-slate-900 leading-tight group-hover:text-amber-600 transition-colors">{asset.title}</h3>
+                    <div className="text-right">
+                      <div>
+                        <div className="text-[10px] text-slate-300 uppercase font-bold tracking-[0.2em] mb-1">Asset Value</div>
+                        <div className="text-2xl font-bold tracking-tight">{asset.price}</div>
+                    </div>
+                        <div className="text-2xl font-bold text-slate-900">{asset.yield}</div>
+                        <div className="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">NIY (Net Initial Yield)</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 text-slate-500 text-sm mb-6">
+                    <MapPin size={14} className="text-blue-600" />
+                    {asset.location}
+                  </div>
+
+                  <div className="space-y-2 mb-8">
+                    {asset.features.map((feat, i) => (
+                      <div key={i} className="flex items-center gap-2 text-xs text-slate-600 font-medium">
+                        <div className="h-1 w-1 rounded-full bg-amber-500" />
+                        {feat}
                       </div>
-                    </div>
-                    <div className="text-left sm:text-right">
-                      <div className="text-base sm:text-lg font-serif font-medium text-amber-600">{property.yield}</div>
-                      <div className="text-xs text-slate-500">Annual Yield</div>
-                    </div>
-                  </div>
-
-                  <div className="text-center mb-4 sm:mb-6">
-                    <div className="text-xl sm:text-2xl font-serif font-light text-[#222]">{property.price}</div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
-                      <Link href={`/properties/${property.id}`} className="w-full sm:w-1/2">
-                        <button className="w-full border-2 border-stone-500 bg-amber-600 hover:bg-gray-900 text-white py-2 px-4 text-sm font-medium rounded-xl shadow-lg transition-all duration-300 group">
-                          VIEW PROPERTY
-                        </button>
-                      </Link>
-
-                      <Link href={`tel:0729170156`} className="w-full sm:w-1/2">
-                        <button className="w-full border-2 border-stone-500 text-stone-700 hover:bg-gray-900 hover:text-white py-2 px-4 text-sm font-medium rounded-xl transition-all duration-300 group">
-                          CALL AGENT
-                          <ArrowRight className="inline ml-1 h-3 w-3 group-hover:translate-x-1 transition-transform" />
-                        </button>
-                      </Link>
-                    </div>
-
+                    ))}
                   </div>
                 </div>
+
+                <div className="flex items-center gap-3">
+                    <Link href={`/properties/${asset.id}`} className="flex-1 bg-[#0A192F] text-white text-center py-4 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-slate-800 transition-all flex items-center justify-center gap-2">
+                        View Property <ExternalLink size={14} />
+                    </Link>
+                </div>
               </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 4. REGULATORY TRUST SECTION */}
+      <section className="bg-[#0A192F] py-24 text-white">
+        <div className="max-w-7xl mx-auto px-6">
+            <div className="grid md:grid-cols-3 gap-12">
+                <div className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                    <Shield className="text-amber-500 mb-6" size={40} />
+                    <h4 className="text-xl font-bold mb-4">FCA Compliance</h4>
+                    <p className="text-slate-400 text-sm leading-relaxed">Full adherence to UK Financial Conduct Authority guidelines for offshore and domestic investors.</p>
+                </div>
+                <div className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                    <Landmark className="text-amber-500 mb-6" size={40} />
+                    <h4 className="text-xl font-bold mb-4">SDLT Mitigation</h4>
+                    <p className="text-slate-400 text-sm leading-relaxed">Specialist structural advice on Stamp Duty Land Tax and UK tax-efficient holding vehicles (REITs).</p>
+                </div>
+                <div className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                    <Award className="text-amber-500 mb-6" size={40} />
+                    <h4 className="text-xl font-bold mb-4">RICS Valuations</h4>
+                    <p className="text-slate-400 text-sm leading-relaxed">All assets undergo rigorous Red Book valuations by Royal Institution of Chartered Surveyors.</p>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      {/* 5. DYNAMIC FAQ */}
+      <section className="py-24 max-w-4xl mx-auto px-6">
+        <h2 className="text-4xl font-bold text-slate-900 mb-12 text-center">UK Market <span className="text-amber-600">Intelligence</span></h2>
+        <div className="space-y-4">
+            {[
+                { q: "What is the NIY for prime London offices?", a: "Current Net Initial Yields (NIY) for prime City of London Grade A offices fluctuate between 4.5% and 5.5%, depending on lease length and tenant covenant strength." },
+                { q: "Do you assist with non-resident financing?", a: "Yes. We have established relationships with UK commercial lenders who specialize in non-resident and SPV-based financing structures." }
+            ].map((faq, i) => (
+                <div key={i} className="p-6 bg-white border border-slate-200 rounded-2xl hover:border-amber-500 transition-colors cursor-help">
+                    <h4 className="font-bold text-slate-900 mb-2 flex items-center justify-between">
+                        {faq.q} <ChevronRight size={16} className="text-amber-500" />
+                    </h4>
+                    <p className="text-slate-500 text-sm">{faq.a}</p>
+                </div>
             ))}
-          </div>
-
-          {/* No Results */}
-          {filteredProperties.length === 0 && (
-            <div className="text-center py-16">
-              <h3 className="text-2xl font-serif font-medium text-[#222] mb-4">No Properties Match Your Criteria</h3>
-              <p className="text-slate-600 mb-6">
-                Adjust your search or contact our investment team for personalized recommendations
-              </p>
-              <button
-                onClick={() => {
-                  setSelectedType('All');
-                  setSelectedContinent('Europe');
-                  setSearchTerm('');
-                }}
-                className="bg-[#C5A44D] hover:bg-[#C5A44D]/90 text-white px-6 py-3 font-medium transition-all duration-300"
-              >
-                Clear Filters
-              </button>
-            </div>
-          )}
         </div>
       </section>
-
-      {/* Social Proof & Performance */}
-      <section className="bg-slate-900 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-serif font-light mb-6">
-              Trusted by Global
-              <br />
-              <span className="font-medium">Institutional Investors</span>
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto font-light">
-              Our track record speaks for itself. Join the world's most sophisticated investors who have chosen our portfolio.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            <div className="text-center">
-              <div className="text-4xl font-serif font-light text-amber-400 mb-2">£2.8T</div>
-              <div className="text-slate-300 text-sm uppercase tracking-wider">UK Property Market</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-serif font-light text-amber-400 mb-2">850+</div>
-              <div className="text-slate-300 text-sm uppercase tracking-wider">Properties Sold</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-serif font-light text-amber-400 mb-2">45</div>
-              <div className="text-slate-300 text-sm uppercase tracking-wider">Countries Represented</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-serif font-light text-amber-400 mb-2">99.2%</div>
-              <div className="text-slate-300 text-sm uppercase tracking-wider">Client Retention Rate</div>
-            </div>
-          </div>
-
-          {/* Credentials */}
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="flex items-center justify-center p-6 border border-slate-700">
-              <Award className="h-8 w-8 text-amber-400 mr-3" />
-              <div>
-                <div className="font-medium">RICS Regulated</div>
-                <div className="text-slate-400 text-sm">Royal Institution Standards</div>
-              </div>
-            </div>
-
-            <div className="flex items-center justify-center p-6 border border-slate-700">
-              <Shield className="h-8 w-8 text-amber-400 mr-3" />
-              <div>
-                <div className="font-medium">FCA Authorised</div>
-                <div className="text-slate-400 text-sm">Financial Conduct Authority</div>
-              </div>
-            </div>
-
-            <div className="flex items-center justify-center p-6 border border-slate-700">
-              <Building2 className="h-8 w-8 text-amber-400 mr-3" />
-              <div>
-                <div className="font-medium">UK Property Specialists</div>
-                <div className="text-slate-400 text-sm">London & Regional Markets</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="bg-amber-50 py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div>
-            <Crown className="h-11 w-16 text-amber-600 mx-auto mb-6" />
-            <h2 className="text-4xl lg:text-5xl font-serif font-light text-[#222] mb-6">
-              Invest in the
-              <br />
-              <span className="font-medium">UK Property Market</span>
-              </h2>
-        </div>
-      </div>
-    </section>
-
-        {/* FAQ Section */}
-        <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-200">
-          <h2 className="text-3xl font-serif font-light text-[#222] mb-8">UK Investment Questions?</h2>
-          <h3 className="text-2xl font-serif font-light text-[#222] mb-6">Frequently Asked Questions</h3>
-
-          <div className="space-y-6">
-            <div>
-              <h4 className="text-lg font-medium text-[#222] mb-2">What are the current UK property yields?</h4>
-              <p className="text-slate-600 font-light leading-relaxed">
-                UK property yields vary by sector and location. Prime London offices typically yield 4-6%, regional offices 6-8%, retail properties 5-8%, and hotels 7-10%. Industrial properties often provide the highest yields at 8-12% in secondary locations.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-medium text-[#222] mb-2">How does UK property investment work for international investors?</h4>
-              <p className="text-slate-600 font-light leading-relaxed">
-                International investors can purchase UK property directly or through regulated investment vehicles. We handle all legal, tax, and regulatory requirements. UK property benefits from strong tenant protections, transparent legal system, and established property management infrastructure.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-medium text-[#222] mb-2">What are the tax implications for UK property investment?</h4>
-              <p className="text-slate-600 font-light leading-relaxed">
-                UK property investment offers attractive tax benefits including relief from double taxation treaties, potential for capital gains tax deferral through reinvestment, and access to UK tax-efficient investment structures. Our tax advisors provide comprehensive guidance for your specific circumstances.
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
+    </div>
   );
 };
 
