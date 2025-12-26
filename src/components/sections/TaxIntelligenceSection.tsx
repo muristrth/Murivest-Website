@@ -5,7 +5,15 @@ import Link from 'next/link';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { Landmark, Scale, PieChart, ArrowUpRight, ShieldCheck } from 'lucide-react';
 
-const TaxCard = ({ title, desc, icon: Icon, link, tag }) => {
+interface TaxCardProps {
+  title: string;
+  desc: string;
+  icon: React.ComponentType<any>;
+  link: string;
+  tag: string;
+}
+
+const TaxCard = ({ title, desc, icon: Icon, link, tag }: TaxCardProps) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -13,10 +21,14 @@ const TaxCard = ({ title, desc, icon: Icon, link, tag }) => {
   const rotateX = useTransform(y, [-100, 100], [15, -15]);
   const rotateY = useTransform(x, [-100, 100], [-15, 15]);
 
-  function handleMouse(event) {
-    const rect = event.currentTarget.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
+  interface MouseEventWithCurrentTarget extends React.MouseEvent<HTMLDivElement> {
+    currentTarget: EventTarget & HTMLDivElement;
+  }
+
+  function handleMouse(event: MouseEventWithCurrentTarget) {
+    const rect: DOMRect = event.currentTarget.getBoundingClientRect();
+    const centerX: number = rect.left + rect.width / 2;
+    const centerY: number = rect.top + rect.height / 2;
     x.set(event.clientX - centerX);
     y.set(event.clientY - centerY);
   }
