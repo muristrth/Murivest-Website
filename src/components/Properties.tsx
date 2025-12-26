@@ -2,15 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { 
   MapPin, TrendingUp, Search, ArrowRight, Shield, Award, 
   Building2, Globe, LayoutGrid, List, Filter, Landmark,
-  ExternalLink, Zap
+  ExternalLink, Zap, ChevronRight, BarChart3
 } from 'lucide-react';
 
 const KEProperties = () => {
-  const router = useRouter();
   const [selectedType, setSelectedType] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
   const [isGridView, setIsGridView] = useState(true);
@@ -22,42 +20,36 @@ const KEProperties = () => {
   const allProperties = [
     {
       id: "best-western-meridian-hotel",
-      title: "Best Western Meridian Hotel",
+      title: "Best Western Meridian",
       location: "Nairobi CBD, Kenya",
-      type: "Hotel",
-      price: "US$10M / Ksh 1.2B",
+      type: "Hospitality",
+      price: "US$10.0M",
       yield: "15.2%",
       image: "https://content.knightfrank.com/property/hub2547666/images/a531920b-a627-43ed-905e-eacd1b941068-0.jpg?cio=true&w=1200",
-      features: ["119 Rooms", "3.5 Star Hotel", "Conference Facilities"],
-      status: "Available",
-      description: "Landmark hotel property in Nairobi CBD with excellent occupancy rates.",
-      roi: "18% Projected ROI"
+      features: ["119 Rooms", "Stable Occupancy", "Conference Core"],
+      status: "Prime Yield",
     },
     {
       id: "the-atrium-office-development",
-      title: "The Atrium Office Development",
-      location: "Chaka Road, Kilimani, Kenya",
+      title: "The Atrium Development",
+      location: "Kilimani, Nairobi",
       type: "Commercial",
-      price: "US$13.5M / Ksh 2B",
+      price: "US$13.5M",
       yield: "13.8%",
-      image: "/p7/Screenshot 2025-08-27 234422.png",
-      features: ["161,019 sqft", "6 Storey Modern Office", "221 Parking Bays"],
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80",
+      features: ["161k sqft GLA", "6-Storey A-Grade", "221 Parking"],
       status: "Trophy Asset",
-      description: "Excellently designed office development with international specifications.",
-      roi: "Premium Location"
     },
     {
       id: "icd-industrial-complex",
-      title: "ICD Industrial Complex",
-      location: "Mombasa Road, Nairobi, Kenya",
+      title: "ICD Logistics Hub",
+      location: "Mombasa Road",
       type: "Industrial",
-      price: "KSh 1 Billion",
+      price: "KSh 1.0B",
       yield: "14.8%",
-      image: "/p/IMG-20250813-WA0001.jpg",
-      features: ["3 Acres", "99,300 sqft GLA", "Motor Showroom"],
-      status: "High Demand",
-      description: "Prime industrial site with strategic transport connectivity.",
-      roi: "25% Annual Growth"
+      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80",
+      features: ["3.0 Acres", "99k sqft GLA", "Strategic Access"],
+      status: "Growth Asset",
     }
   ];
 
@@ -69,117 +61,130 @@ const KEProperties = () => {
   });
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      {/* 1. HERO & UK BRIDGE HEADER */}
-      <section className="relative py-24 bg-slate-950 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
-        <div className="relative max-w-7xl mx-auto px-6 flex flex-col lg:flex-row justify-between items-center gap-10">
-          
-          <div className="max-w-2xl text-center lg:text-left">
-            <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
-              Institutional <span className="text-amber-500">Asset</span> Portfolio
-            </h1>
-            <p className="text-gray-400 text-lg lg:text-xl font-light">
-              Access off-market commercial yields and trophy assets across the world's most resilient markets.
-            </p>
-          </div>
+    <div className="min-h-screen bg-[#05070a] text-white font-light">
+      
+      {/* 1. CINEMATIC HERO HEADER */}
+      <section className="relative pt-32 pb-20 overflow-hidden border-b border-white/5">
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
+          <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-amber-500/20 via-transparent to-transparent" />
+          <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-blue-500/10 via-transparent to-transparent" />
+        </div>
 
-          {/* UK PORTFOLIO BRIDGE BUTTON */}
-          <Link href="/uk-properties" className="group relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-amber-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-            <button className="relative flex flex-col items-center bg-slate-900 border border-white/10 p-6 rounded-2xl transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl">
-                <div className="flex items-center gap-3 mb-2">
-                    <Globe className="text-blue-400 h-6 w-6" />
-                    <span className="text-sm font-bold tracking-widest uppercase text-white">UK Resident Buyer?</span>
+        <div className="max-w-7xl mx-auto px-8 relative z-10">
+          <div className="flex flex-col lg:flex-row justify-between items-end gap-12">
+
+            {/* UK CROSS-BORDER BRIDGE */}
+            <Link href="/uk-properties" className="group w-full lg:w-auto">
+              <div className="relative p-8 bg-white/[0.02] border border-white/10 rounded-sm hover:border-amber-500/50 transition-all duration-700">
+                <div className="flex items-center gap-6 mb-4">
+                  <div className="p-3 bg-blue-500/10 rounded-full group-hover:bg-blue-500/20 transition-colors">
+                    <Globe className="text-blue-400 h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold tracking-widest text-slate-500 uppercase">UK Cross-Border</p>
+                    <p className="text-sm font-medium text-white">Resident Buyer Services</p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-4 text-amber-500">
-                    <span className="text-lg font-bold">View UK Properties Only</span>
-                    <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+                <div className="flex items-center justify-between gap-12">
+                   <span className="text-xs text-amber-500 font-bold uppercase tracking-tighter">View UK Portfolio</span>
+                   <ChevronRight className="h-4 w-4 text-amber-500 group-hover:translate-x-2 transition-transform" />
                 </div>
-                <p className="text-[10px] text-gray-500 mt-2 uppercase tracking-tighter italic">Stamp Duty & Buy-to-Let Specialist Advice Included</p>
-            </button>
-          </Link>
+              </div>
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* 2. STICKY FILTER BAR */}
-      <div className="sticky top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-slate-200 py-4 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-4 bg-slate-100 rounded-full px-5 py-2.5 border border-slate-200 flex-1 max-w-md group">
-            <Search className="text-slate-400 h-4 w-4 group-focus-within:text-amber-500 transition-colors" />
-            <input 
+      {/* 2. INSTITUTIONAL CONTROL BAR */}
+      <div className="sticky top-0 z-50 bg-[#05070a]/80 backdrop-blur-2xl border-b border-white/5 py-6">
+        <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex items-center gap-6 w-full md:w-auto border-b md:border-b-0 border-white/10 pb-4 md:pb-0">
+            <div className="flex items-center gap-4 text-slate-400">
+              <Search size={16} className="text-amber-500" />
+              <input 
                 type="text" 
-                placeholder="Search Nairobi, Naivasha, Mombasa..." 
-                className="bg-transparent border-none outline-none text-sm w-full"
+                placeholder="Search mandates..." 
+                className="bg-transparent border-none outline-none text-xs tracking-widest uppercase w-48 placeholder:text-slate-700 focus:text-white transition-all"
                 onChange={(e) => setSearchTerm(e.target.value)}
-            />
+              />
+            </div>
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="flex bg-slate-100 p-1 rounded-xl border border-slate-200">
-                <button onClick={() => setIsGridView(true)} className={`p-2.5 rounded-lg ${isGridView ? 'bg-white shadow-sm text-slate-950' : 'text-slate-400'}`}><LayoutGrid size={18}/></button>
-                <button onClick={() => setIsGridView(false)} className={`p-2.5 rounded-lg ${!isGridView ? 'bg-white shadow-sm text-slate-950' : 'text-slate-400'}`}><List size={18}/></button>
+          <div className="flex items-center gap-8">
+            <div className="hidden lg:flex gap-8">
+              {['All', 'Commercial', 'Hospitality', 'Industrial'].map(type => (
+                <button 
+                  key={type}
+                  onClick={() => setSelectedType(type)}
+                  className={`text-[10px] font-bold tracking-[0.2em] uppercase transition-all ${selectedType === type ? 'text-amber-500' : 'text-slate-500 hover:text-slate-300'}`}
+                >
+                  {type}
+                </button>
+              ))}
             </div>
-            <button className="flex items-center gap-2 px-5 py-2.5 bg-slate-950 text-white rounded-xl text-sm font-bold uppercase tracking-wider hover:bg-slate-800 transition-all">
-                <Filter size={16} /> Filters
+            <div className="h-4 w-px bg-white/10 mx-2" />
+            <button className="flex items-center gap-3 px-6 py-2 bg-white/5 border border-white/10 hover:border-amber-500/50 text-[10px] font-bold uppercase tracking-widest transition-all">
+              <Filter size={12} /> Refine Access
             </button>
           </div>
         </div>
       </div>
 
-      {/* 3. PROPERTY GRID */}
-      <section className="py-20 px-6 max-w-7xl mx-auto">
-        <div className={isGridView ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" : "flex flex-col gap-8"}>
+      {/* 3. THE MANDATE GRID */}
+      <section className="py-24 px-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1px bg-white/5 border border-white/5">
           {filteredProperties.map((property) => (
-            <div key={property.id} className="group relative bg-white rounded-[2rem] border border-slate-200 overflow-hidden hover:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.12)] transition-all duration-500 hover:-translate-y-2">
+            <div key={property.id} className="group relative bg-[#05070a] p-8 hover:bg-white/[0.02] transition-all duration-700 overflow-hidden">
               
-              <div className="relative h-72 overflow-hidden">
-                <img src={property.image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
+              {/* Image Area */}
+              <div className="relative aspect-[4/5] mb-8 overflow-hidden bg-slate-900">
+                <img 
+                  src={property.image} 
+                  className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#05070a] via-transparent to-transparent" />
                 
-                <div className="absolute top-6 left-6 flex gap-2">
-                    <span className="px-4 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-black uppercase rounded-full tracking-widest">
-                        {property.type}
-                    </span>
-                    <span className="px-4 py-1.5 bg-emerald-500 text-white text-[10px] font-black uppercase rounded-full tracking-widest">
-                        {property.status}
-                    </span>
-                </div>
-
-                <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end text-white">
-                    <div>
-                        <div className="text-[10px] text-slate-300 uppercase font-bold tracking-[0.2em] mb-1">Asset Value</div>
-                        <div className="text-2xl font-bold tracking-tight">{property.price}</div>
-                    </div>
-                    <div className="text-right">
-                        <div className="text-[10px] text-amber-400 uppercase font-bold tracking-[0.2em] mb-1">Net Yield</div>
-                        <div className="text-2xl font-bold">{property.yield}</div>
-                    </div>
+                <div className="absolute top-4 left-4">
+                  <span className="px-3 py-1 bg-black/60 backdrop-blur-md text-[9px] font-bold uppercase tracking-[0.2em] text-amber-500 border border-amber-500/20">
+                    {property.status}
+                  </span>
                 </div>
               </div>
 
-              <div className="p-8">
-                <h3 className="text-2xl font-bold text-slate-900 mb-2 leading-tight group-hover:text-amber-600 transition-colors">
+              {/* Data Area */}
+              <div className="relative z-10">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-xl font-serif italic text-white group-hover:text-amber-500 transition-colors">
                     {property.title}
-                </h3>
-                <div className="flex items-center gap-1.5 text-slate-500 text-sm mb-6">
-                    <MapPin size={16} className="text-amber-500" />
-                    {property.location}
+                  </h3>
+                  <div className="text-right">
+                    <p className="text-[9px] uppercase tracking-widest text-slate-500 mb-1">Target Yield</p>
+                    <p className="text-lg font-bold text-amber-500">{property.yield}</p>
+                  </div>
                 </div>
 
-                <div className="space-y-3 mb-8">
-                    {property.features.slice(0, 3).map((feat, i) => (
-                        <div key={i} className="flex items-center gap-2 text-xs font-bold text-slate-600 uppercase tracking-tighter">
-                            <Zap size={14} className="text-amber-500" />
-                            {feat}
-                        </div>
-                    ))}
+                <div className="flex items-center gap-2 text-slate-500 text-[10px] uppercase tracking-widest mb-8">
+                  <MapPin size={12} className="text-amber-500" />
+                  {property.location}
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
-                    <Link href={`/properties/${property.id}`} className="flex items-center justify-center bg-slate-950 text-white py-4 rounded-2xl font-bold text-[10px] uppercase tracking-widest hover:bg-slate-800 transition-all">
-                        Property Details
-                    </Link>
+                <div className="grid grid-cols-1 gap-3 mb-10">
+                  {property.features.map((feat, i) => (
+                    <div key={i} className="flex items-center gap-3 text-[10px] text-slate-400 font-light tracking-wide border-b border-white/5 pb-2">
+                      <div className="h-1 w-1 bg-amber-500 rounded-full" />
+                      {feat}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex items-center justify-between pt-4 border-t border-white/5">
+                  <div>
+                    <p className="text-[9px] uppercase tracking-widest text-slate-600">Asset Value</p>
+                    <p className="text-sm font-bold text-slate-200">{property.price}</p>
+                  </div>
+                  <Link href={`/properties/${property.id}`} className="p-4 bg-white/5 hover:bg-amber-500 group/btn transition-all">
+                    <ArrowRight size={16} className="text-white group-hover/btn:text-black group-hover/btn:translate-x-1 transition-all" />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -187,52 +192,58 @@ const KEProperties = () => {
         </div>
       </section>
 
-      {/* 4. PERFORMANCE & COMPLIANCE - SHARED DESIGN LANGUAGE */}
-      <section className="bg-white py-24 border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="group p-10 bg-slate-50 rounded-[2.5rem] border border-slate-100 hover:border-amber-500/30 transition-all">
-                    <div className="h-14 w-14 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-8 group-hover:bg-amber-500 transition-colors">
-                        <Award className="text-amber-600 group-hover:text-white" size={28} />
-                    </div>
-                    <h4 className="text-xl font-bold text-slate-900 mb-3">Market Liquidity</h4>
-                    <p className="text-sm text-slate-500 leading-relaxed font-light">
-                        Strategic focus on Nairobi CBD and primary industrial corridors ensuring high resale liquidity and stable occupancy.
-                    </p>
-                </div>
-
-                <div className="group p-10 bg-slate-50 rounded-[2.5rem] border border-slate-100 hover:border-amber-500/30 transition-all">
-                    <div className="h-14 w-14 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-8 group-hover:bg-amber-500 transition-colors">
-                        <Shield className="text-amber-600 group-hover:text-white" size={28} />
-                    </div>
-                    <h4 className="text-xl font-bold text-slate-900 mb-3">Due Diligence</h4>
-                    <p className="text-sm text-slate-500 leading-relaxed font-light">
-                        Every asset undergoes rigorous title verification and structural audit under RICS-certified Kenyan surveyors.
-                    </p>
-                </div>
-
-                <div className="group p-10 bg-slate-50 rounded-[2.5rem] border border-slate-100 hover:border-amber-500/30 transition-all">
-                    <div className="h-14 w-14 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-8 group-hover:bg-amber-500 transition-colors">
-                        <Landmark className="text-amber-600 group-hover:text-white" size={28} />
-                    </div>
-                    <h4 className="text-xl font-bold text-slate-900 mb-3">Currency Hedging</h4>
-                    <p className="text-sm text-slate-500 leading-relaxed font-light">
-                        Advisory on US Dollar-denominated leases to protect institutional returns against local currency fluctuations.
-                    </p>
-                </div>
+      {/* 4. FIDUCIARY STANDARDS SECTION */}
+      <section className="py-32 px-8 border-t border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+            <div className="space-y-6">
+              <div className="h-10 w-10 border border-amber-500/30 flex items-center justify-center text-amber-500 mb-8">
+                <BarChart3 size={20} />
+              </div>
+              <h4 className="text-xl font-serif italic">Market Liquidity</h4>
+              <p className="text-sm text-slate-500 leading-relaxed font-light">
+                Strategic focus on Nairobi CBD and primary industrial corridors ensuring high resale liquidity 
+                and institutional occupancy mandates.
+              </p>
             </div>
+
+            <div className="space-y-6">
+              <div className="h-10 w-10 border border-amber-500/30 flex items-center justify-center text-amber-500 mb-8">
+                <Shield size={20} />
+              </div>
+              <h4 className="text-xl font-serif italic">Due Diligence</h4>
+              <p className="text-sm text-slate-500 leading-relaxed font-light">
+                Every asset undergoes title verification and structural audit under 
+                RICS-certified surveyors before inclusion in the mandate.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              <div className="h-10 w-10 border border-amber-500/30 flex items-center justify-center text-amber-500 mb-8">
+                <Landmark size={20} />
+              </div>
+              <h4 className="text-xl font-serif italic">Currency Strategy</h4>
+              <p className="text-sm text-slate-500 leading-relaxed font-light">
+                Specialized advisory on USD-denominated leases to protect your internal 
+                rate of return against local currency volatility.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* 5. FOOTER CTA */}
-      <section className="py-24 bg-slate-950 relative overflow-hidden text-center">
-        <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]" />
-        <div className="relative max-w-3xl mx-auto px-6">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Explore Off-Market Kenyan Assets</h2>
-            <p className="text-slate-400 mb-10 text-lg">Direct access to high-yielding mandates currently not on the public market.</p>
-            <button className="px-10 py-5 bg-amber-500 text-slate-950 rounded-2xl font-bold uppercase tracking-[0.2em] text-xs hover:bg-amber-400 transition-all shadow-xl shadow-amber-500/20">
-                Contact Our Investment Desk
-            </button>
+      {/* 5. PORTFOLIO CTA */}
+      <section className="relative py-40 overflow-hidden text-center bg-[#080a0f]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-amber-500/10 via-transparent to-transparent opacity-50" />
+        <div className="relative z-10 max-w-3xl mx-auto px-8">
+          <h2 className="text-4xl lg:text-5xl font-serif italic text-white mb-8">Access Off-Market Mandates</h2>
+          <p className="text-slate-500 mb-12 text-lg font-light leading-relaxed">
+            Direct access to high-yielding Kenyan tranches currently restricted 
+            from the public domain.
+          </p>
+          <button className="px-12 py-5 bg-amber-600 hover:bg-amber-500 text-black font-bold uppercase tracking-[0.3em] text-[10px] transition-all duration-500 shadow-2xl">
+            Request Investment Brief
+          </button>
         </div>
       </section>
     </div>

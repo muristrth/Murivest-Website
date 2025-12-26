@@ -11,7 +11,6 @@ import ExecutiveTargetedSection from '../components/sections/ExecutiveTargetedSe
 import GlobalPresence from '../components/sections/GlobalPresence'
 import InvestmentProcess from '../components/sections/InvestmentProcess'
 import TrustIndicators from '../components/sections/TrustIndicators'
-import NavigationHub from '../components/sections/NavigationHub'
 
 
 export const metadata: Metadata = {
@@ -43,9 +42,7 @@ export default function HomePage() {
       <ExclusiveOpportunities />
       <ExecutiveTargetedSection />
       <YieldReportSection />
-      <NavigationHub />
       <GlobalPresence />
-      <InvestmentProcess />
       <TrustIndicators />
     </>
   )

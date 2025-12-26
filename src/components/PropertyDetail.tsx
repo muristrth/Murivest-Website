@@ -1,34 +1,15 @@
 'use client';
 import Link from 'next/link';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { DollarSign, Euro, PoundSterling, Coins } from 'lucide-react';
-
 import { 
-  ArrowLeft,
-  Share2,
-  Heart,
-  Eye,
-
-  MapPin,
-  TrendingUp,
-  Download,
-  Phone,
-  Mail,
-  X,
-  ChevronLeft,
-  ChevronRight,
-  Building,
-  FileText,
-  Shield,
-  Crown,
-  Clock,
-  Globe
+  ArrowLeft, Share2, Heart, Eye, MapPin, TrendingUp, Download, 
+  Phone, Mail, X, ChevronLeft, ChevronRight, Building, 
+  Shield, Crown, Clock, Globe, BarChart3, Coins, DollarSign, Euro, PoundSterling
 } from 'lucide-react';
 
-// --- Type Definition for Safety and Clarity ---
-
+// --- Interface maintained exactly as requested ---
 interface Property {
   title: string;
   subtitle: string;
@@ -55,17 +36,9 @@ interface Property {
   };
 }
 
-// Define the shape of propertyData with string keys that map to Property objects
 interface PropertyData {
-    [key: string]: Property;
+  [key: string]: Property;
 }
-
-// Animation variants for 3D feel
-  const fadeInScale = {
-    initial: { opacity: 0, scale: 0.95, y: 20 },
-    animate: { opacity: 1, scale: 1, y: 0 },
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }
-  };
 
 const propertyData: PropertyData = {
   "best-western-meridian-hotel": {
@@ -104,7 +77,7 @@ const propertyData: PropertyData = {
       totalROI: "27.2%"
     }
   },
-  "buffalo-mall-development-land": {
+    "buffalo-mall-development-land": {
     title: "Buffalo Mall & Development Land",
     subtitle: "Excellent retail investment with significant asset management potential in Naivasha.",
     location: "Naivasha, Kenya",
@@ -1246,366 +1219,239 @@ const propertyData: PropertyData = {
   }
 };
 
-
 const PropertyDetail = () => {
-  // useParams returns an object with string or string[] values. We must explicitly get the ID.
   const params = useParams();
-  const id = params.id as string | undefined; // id will be a string or undefined
+  const id = params.id as string;
+  const property = propertyData[id];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
-  const [selectedCurrency, setSelectedCurrency] = useState('KES');
-  
-  // Removed unused states: investmentAmount, activeTab
 
-  const currencies = [
-    { code: 'KES', name: 'Kenyan Shilling', symbol: 'KSh', rate: 1, flag: '🇰🇪', icon: <Coins className="h-4 w-4" /> },
-    { code: 'USD', name: 'US Dollar', symbol: '$', rate: 0.0075, flag: '🇺🇸', icon: <DollarSign className="h-4 w-4" /> },
-    { code: 'EUR', name: 'Euro', symbol: '€', rate: 0.0067, flag: '🇪🇺', icon: <Euro className="h-4 w-4" /> },
-    { code: 'GBP', name: 'British Pound', symbol: '£', rate: 0.0059, flag: '🇬🇧', icon: <PoundSterling className="h-4 w-4" /> }
-  ];
+  useEffect(() => { window.scrollTo(0, 0); }, [id]);
 
-  const convertAmount = (amount: number, fromCurrency: string, toCurrency: string) => {
-    const fromRate = currencies.find(c => c.code === fromCurrency)?.rate || 1;
-    const toRate = currencies.find(c => c.code === toCurrency)?.rate || 1;
-    return amount * (toRate / fromRate);
-  };
-  
-  // Use a string key for type-safe access
-  const property: Property | undefined = id ? propertyData[id] : undefined;
-
-  // --- Effects and Handlers ---
-
-  useEffect(() => {
-    window.scrollTo(0, 0); 
-  }, [id]);
-
-  useEffect(() => {
-    if (property && property.images.length > 1) {
-      const interval = setInterval(() => {
-        setCurrentImageIndex((prev) => (prev + 1) % property.images.length);
-      }, 6000);
-      return () => clearInterval(interval);
-    }
-  }, [id, property]); // Added property as a dependency for completeness
-
-  const handleWhatsAppContact = (message: string) => {
-    if (!property) return; // Guard clause
-    const phoneNumber = "+254729170156";
-    const encodedMessage = encodeURIComponent(
-      `Regarding ${property.title} - ${property.location}. ${message}`
-    );
-    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
-  };
-
-  const handleDownloadBrochure = () => {
-    if (!property) return; // Guard clause
-    const link = document.createElement('a');
-    link.href = `/brochures/${property.title.replace(/\s+/g, '-').toLowerCase()}.pdf`;
-    link.download = `${property.title.replace(/\s+/g, '-').toLowerCase()}.pdf`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-  const nextImage = () => {
-    if (!property) return; // Guard clause
-    setCurrentImageIndex((prev) => (prev + 1) % property.images.length);
-  };
-
-  const prevImage = () => {
-    if (!property) return; // Guard clause
-    setCurrentImageIndex((prev) => (prev - 1 + property.images.length) % property.images.length);
-  };
-
-  if (!property) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-white">
-        <div className="text-center">
-          <h2 className="text-2xl text-gray-900 mb-6">Property Not Available</h2>
-          <Link href="/properties" className="text-[#1e3a5f] hover:text-[#c9a961]">
-            Return to Collection
-          </Link>
-        </div>
-      </div>
-    );
-  }
+  if (!property) return (
+    <div className="min-h-screen bg-[#05070a] flex items-center justify-center font-serif italic text-amber-500">
+      Mandate Not Found...
+    </div>
+  );
 
   return (
-    <div className="min-h-screen bg-[#fafafa] text-slate-900 selection:bg-amber-200">
+    <div className="min-h-screen bg-[#05070a] text-white font-light selection:bg-amber-500/30">
       
-      {/* 1. ULTRA-MODERN FLOATING HEADER */}
-      <nav className="sticky top-6 z-50 px-6 max-w-7xl mx-auto">
-        <div className="bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.05)] rounded-[2rem] px-8 py-4 flex items-center justify-between">
-          <Link 
-            href="/properties"
-            className="flex items-center gap-3 text-slate-500 hover:text-slate-950 transition-all group"
-          >
-            <div className="p-2 bg-slate-100 rounded-full group-hover:bg-slate-200 transition-colors">
-              <ArrowLeft className="h-4 w-4" />
+      {/* 1. CINEMATIC NAV */}
+      <nav className="fixed top-0 w-full z-50 px-8 py-6 bg-gradient-to-b from-[#05070a] to-transparent backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <Link href="/properties" className="group flex items-center gap-4">
+            <div className="p-2 border border-white/10 group-hover:border-amber-500/50 transition-all">
+              <ArrowLeft size={16} className="text-slate-400 group-hover:text-amber-500" />
             </div>
-            <span className="text-[10px] font-bold tracking-[0.2em] uppercase">Return to Portfolio</span>
+            <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-slate-500 group-hover:text-white">Exit Portfolio</span>
           </Link>
           
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => setIsLiked(!isLiked)}
-              className="p-3 bg-white border border-slate-100 rounded-full shadow-sm hover:shadow-md transition-all active:scale-90"
-            >
-              <Heart className={`h-5 w-5 ${isLiked ? 'fill-red-500 text-red-500' : 'text-slate-400'}`} />
+          <div className="flex items-center gap-4">
+            <button onClick={() => setIsLiked(!isLiked)} className="p-3 bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
+              <Heart size={18} className={isLiked ? "fill-amber-500 text-amber-500" : "text-white"} />
             </button>
-            <button className="p-3 bg-white border border-slate-100 rounded-full shadow-sm hover:shadow-md transition-all">
-              <Share2 className="h-5 w-5 text-slate-400" />
+            <button className="p-3 bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
+              <Share2 size={18} />
             </button>
           </div>
         </div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-6 pt-12">
+      <main className="pt-32 pb-24 px-8 max-w-7xl mx-auto">
         
-        {/* 2. HERO GRID: 3D TRANSFORM GALLERY & DATA */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 py-12">
-
-          {/* LEFT: TEXT CONTENT */}
-          <motion.div 
-            {...fadeInScale}
-            className="lg:col-span-5 flex flex-col justify-center"
-          >
-            <div className="inline-flex items-center gap-3 mb-6">
-              <span className="px-4 py-1.5 bg-amber-500/10 text-amber-600 rounded-full text-[10px] font-black uppercase tracking-widest border border-amber-500/20">
-                {property.type} • Institutional Grade
+        {/* 2. HEADER & GALLERY SPLIT */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 mb-32">
+          
+          <div className="lg:col-span-5 flex flex-col justify-center">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="h-px w-8 bg-amber-500" />
+              <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-amber-500">
+                {property.type} • Restricted Asset
               </span>
             </div>
             
-            <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-slate-950 mb-6 leading-[1.1]">
+            <h1 className="text-5xl lg:text-7xl font-serif italic mb-8 leading-tight">
               {property.title}
             </h1>
             
-            <div className="flex items-center gap-3 text-slate-400 mb-10">
-              <div className="p-2 bg-slate-100 rounded-lg">
-                <MapPin className="h-4 w-4" />
-              </div>
-              <span className="text-lg font-light tracking-wide">{property.subtitle}</span>
+            <div className="flex items-center gap-3 text-slate-500 mb-12">
+              <MapPin size={16} className="text-amber-500" />
+              <span className="text-sm tracking-widest uppercase">{property.location}</span>
             </div>
-            
-            <div className="p-8 bg-white rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/50 mb-10">
-              <div className="text-xs text-slate-400 uppercase font-bold tracking-[0.2em] mb-2">Investment Valuation</div>
-              <div className="text-4xl font-bold text-slate-950 tracking-tighter">
-                {property.price}
+
+            <div className="grid grid-cols-2 gap-px bg-white/10 border border-white/10 p-px mb-12">
+              <div className="bg-[#05070a] p-8">
+                <p className="text-[9px] uppercase tracking-widest text-slate-500 mb-2">Institutional Value</p>
+                <p className="text-2xl font-bold tracking-tight">{property.price}</p>
+                <p className="text-[10px] text-slate-500 mt-1">{property.priceKsh}</p>
+              </div>
+              <div className="bg-[#05070a] p-8 text-right">
+                <p className="text-[9px] uppercase tracking-widest text-amber-500 mb-2">Net Yield</p>
+                <p className="text-2xl font-bold text-amber-500">{property.yield}</p>
+                <p className="text-[10px] text-amber-500/50 mt-1">{property.occupancyRate} Occupancy</p>
               </div>
             </div>
 
-            <motion.button 
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="flex items-center justify-center gap-3 bg-slate-950 text-white py-6 rounded-[2rem] font-bold text-xs uppercase tracking-[0.2em] shadow-2xl shadow-slate-950/20 hover:bg-slate-800 transition-all"
-            >
-              <Download className="h-4 w-4" />
-              Download Full Prospectus
-            </motion.button>
-          </motion.div>
+            <button className="group flex items-center justify-between w-full bg-amber-600 hover:bg-amber-500 text-black px-10 py-6 font-bold text-[10px] uppercase tracking-[0.3em] transition-all">
+              Request Full Prospectus
+              <Download size={16} className="group-hover:translate-y-1 transition-transform" />
+            </button>
+          </div>
 
-          {/* RIGHT: 3D GALLERY CARD */}
-          <motion.div 
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="lg:col-span-7"
-          >
+          <div className="lg:col-span-7">
             <div 
-              className="relative group cursor-none overflow-hidden rounded-[3rem] shadow-2xl shadow-slate-900/10 bg-slate-200"
+              className="relative aspect-[4/5] overflow-hidden border border-white/10 cursor-none group"
               onClick={() => setIsImageModalOpen(true)}
             >
-              {/* Main Image with Parallax-ready styling */}
-              <div className="aspect-[4/3] overflow-hidden">
-                <motion.img 
-                  key={currentImageIndex}
-                  initial={{ scale: 1.1 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 1.5 }}
-                  src={property.images[currentImageIndex]} 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Custom Cursor Overlay */}
-              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                 <div className="bg-white/20 backdrop-blur-md border border-white/30 p-8 rounded-full">
-                    <Eye className="h-8 w-8 text-white" />
+              <motion.img 
+                key={currentImageIndex}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                src={property.images[currentImageIndex]} 
+                className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#05070a] via-transparent to-transparent" />
+              
+              <div className="absolute bottom-10 left-10 flex gap-4 items-center">
+                 <div className="text-[10px] font-bold tracking-[0.5em] uppercase text-white/50">
+                    {currentImageIndex + 1} / {property.images.length}
+                 </div>
+                 <div className="flex gap-2">
+                    {property.images.map((_, i) => (
+                      <div key={i} className={`h-1 transition-all ${i === currentImageIndex ? 'w-8 bg-amber-500' : 'w-2 bg-white/20'}`} />
+                    ))}
                  </div>
               </div>
 
-              {/* Image Navigation Dots */}
-              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
-                {property.images.map((_, i) => (
-                  <div key={i} className={`h-1.5 rounded-full transition-all ${i === currentImageIndex ? 'w-8 bg-white' : 'w-2 bg-white/40'}`} />
-                ))}
-              </div>
-            </div>
-            
-            {/* Minimalist Thumbnails */}
-            <div className="flex gap-4 mt-8 overflow-x-auto pb-4 no-scrollbar">
-              {property.images.map((image, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentImageIndex(index)}
-                  className={`relative flex-shrink-0 w-24 h-24 rounded-2xl overflow-hidden transition-all duration-500 ${
-                    index === currentImageIndex ? 'ring-4 ring-amber-500 ring-offset-4 scale-90' : 'opacity-40 hover:opacity-100'
-                  }`}
-                >
-                  <img src={image} className="w-full h-full object-cover" />
-                </button>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-
-        {/* 3. INTERACTIVE METRICS GRID */}
-        <section className="py-20 border-t border-slate-100">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            
-            {/* Returns - Glass Card */}
-            <div className="bg-white p-10 rounded-[3rem] border border-slate-100 shadow-sm">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="p-3 bg-emerald-50 text-emerald-600 rounded-2xl">
-                  <TrendingUp size={20} />
-                </div>
-                <h3 className="text-xs font-black uppercase tracking-widest text-slate-400">Yield Profile</h3>
-              </div>
-              
-              <div className="space-y-8">
-                <div>
-                  <div className="text-[10px] text-slate-400 uppercase font-bold tracking-widest mb-1">Target Net Yield</div>
-                  <div className="text-5xl font-bold text-slate-950 tracking-tighter">{property.yield}</div>
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="p-4 bg-slate-50 rounded-2xl">
-                    <div className="text-[10px] text-slate-400 font-bold mb-1 uppercase">Monthly</div>
-                    <div className="font-bold text-slate-900">{property.investment.monthlyIncome}</div>
-                  </div>
-                  <div className="p-4 bg-slate-50 rounded-2xl">
-                    <div className="text-[10px] text-slate-400 font-bold mb-1 uppercase">Annual</div>
-                    <div className="font-bold text-slate-900">{property.investment.annualIncome}</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Property Specs - Feature List */}
-            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="p-10 bg-slate-950 text-white rounded-[3rem] relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-8 opacity-10">
-                  <Building size={120} />
-                </div>
-                <h3 className="text-xs font-black uppercase tracking-widest text-slate-500 mb-8">Asset Specifications</h3>
-                <div className="space-y-4">
-                  {Object.entries(property.details).map(([key, value]) => (
-                    <div key={key} className="flex justify-between items-center border-b border-white/10 pb-4">
-                      <span className="text-slate-400 text-sm capitalize">{key.replace(/([A-Z])/g, ' $1')}</span>
-                      <span className="font-bold text-sm tracking-wide">{value as string}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="p-10 bg-amber-50 rounded-[3rem] border border-amber-100">
-                <h3 className="text-xs font-black uppercase tracking-widest text-amber-700/50 mb-8">Core Features</h3>
-                <div className="grid grid-cols-1 gap-4">
-                  {property.features.map((feature, index) => (
-                    <div key={index} className="flex items-center gap-4 group">
-                      <div className="h-2 w-2 bg-amber-500 rounded-full group-hover:scale-150 transition-transform" />
-                      <span className="text-slate-700 font-medium text-sm">{feature}</span>
-                    </div>
-                  ))}
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="p-8 border border-white/20 bg-black/40 backdrop-blur-md rounded-full text-white">
+                  <Eye size={32} />
                 </div>
               </div>
             </div>
           </div>
+        </div>
+
+        {/* 3. METRIC DATA STRIP */}
+        <section className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 mb-32">
+          <div className="bg-[#05070a] p-12 hover:bg-white/[0.02] transition-colors">
+            <TrendingUp className="text-amber-500 mb-8" size={24} />
+            <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-slate-500 mb-8">Yield Metrics</h3>
+            <div className="space-y-6">
+              <div className="flex justify-between border-b border-white/5 pb-4">
+                <span className="text-[10px] uppercase text-slate-500 tracking-tighter">Monthly Tranche</span>
+                <span className="text-sm font-bold">KSh {property.investment.monthlyIncome}</span>
+              </div>
+              <div className="flex justify-between border-b border-white/5 pb-4">
+                <span className="text-[10px] uppercase text-slate-500 tracking-tighter">Annualized</span>
+                <span className="text-sm font-bold">KSh {property.investment.annualIncome}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-[10px] uppercase text-amber-500 tracking-tighter">Capital Appreciation</span>
+                <span className="text-sm font-bold text-amber-500">{property.investment.appreciationRate}</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-[#05070a] p-12 hover:bg-white/[0.02] transition-colors">
+            <Building className="text-amber-500 mb-8" size={24} />
+            <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-slate-500 mb-8">Specifications</h3>
+            <div className="space-y-6">
+              {Object.entries(property.details).map(([key, value]) => (
+                <div key={key} className="flex justify-between border-b border-white/5 pb-4">
+                  <span className="text-[10px] uppercase text-slate-500 tracking-tighter">{key}</span>
+                  <span className="text-sm font-bold">{value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-[#05070a] p-12 hover:bg-white/[0.02] transition-colors">
+            <Shield className="text-amber-500 mb-8" size={24} />
+            <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-slate-500 mb-8">Asset Portfolio</h3>
+            <ul className="space-y-4">
+              {property.features.map((feat, i) => (
+                <li key={i} className="flex items-center gap-4 text-[10px] uppercase tracking-widest text-slate-400">
+                  <div className="h-1 w-1 bg-amber-500 rounded-full" />
+                  {feat}
+                </li>
+              ))}
+            </ul>
+          </div>
         </section>
 
-        {/* 4. PRIVATE CONSULTATION - STICKY FLOATING CARD STYLE */}
-        <section className="py-24 grid grid-cols-1 lg:grid-cols-12 gap-16">
+        {/* 4. INVESTMENT THESIS & CONCIERGE */}
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-20">
           <div className="lg:col-span-7">
-            <h2 className="text-4xl font-bold text-slate-950 mb-8 tracking-tight">Investment Thesis</h2>
-            <p className="text-xl text-slate-500 leading-relaxed font-light mb-12">
+            <h2 className="text-3xl font-serif italic mb-10">Investment Thesis</h2>
+            <p className="text-lg text-slate-400 leading-relaxed font-light mb-12">
               {property.description}
             </p>
-            <div className="flex flex-wrap gap-4">
-               <div className="flex items-center gap-3 px-6 py-3 bg-white rounded-full border border-slate-100 text-sm font-bold text-slate-600">
-                  <Shield size={16} className="text-amber-500" /> RICS Regulated Advisory
-               </div>
-               <div className="flex items-center gap-3 px-6 py-3 bg-white rounded-full border border-slate-100 text-sm font-bold text-slate-600">
-                  <Globe size={16} className="text-blue-500" /> Global Capital Access
-               </div>
+            <div className="flex flex-wrap gap-6">
+              <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-slate-500 border border-white/10 px-6 py-3">
+                <Shield size={14} className="text-amber-500" /> Regulated Advisory
+              </div>
+              <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-slate-500 border border-white/10 px-6 py-3">
+                <Globe size={14} className="text-blue-500" /> Foreign Exchange Hedges
+              </div>
             </div>
           </div>
 
           <div className="lg:col-span-5">
-            <div className="sticky top-32 p-10 bg-white rounded-[3rem] border border-slate-200 shadow-2xl shadow-slate-200/50">
-              <div className="text-center mb-10">
-                <div className="w-16 h-16 bg-slate-950 rounded-3xl flex items-center justify-center mx-auto mb-6 rotate-3">
-                  <Crown className="text-amber-500" size={32} />
+            <div className="p-12 bg-white/[0.03] border border-white/10">
+              <div className="text-center">
+                <div className="w-16 h-16 border border-amber-500/30 flex items-center justify-center mx-auto mb-8">
+                  <Crown className="text-amber-500" size={24} />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-950 mb-2 tracking-tight">Reserve Consultation</h3>
-                <p className="text-slate-400 text-sm">Speak directly with our asset management team.</p>
-              </div>
-
-              <div className="space-y-4">
-                <button className="w-full bg-slate-950 text-white py-5 rounded-[2rem] font-bold text-xs uppercase tracking-widest hover:bg-slate-800 transition-all shadow-xl shadow-slate-950/20">
-                  Request Private Viewing
-                </button>
-                <div className="grid grid-cols-2 gap-4">
-                   <button className="flex items-center justify-center gap-2 border border-slate-200 py-4 rounded-[2rem] text-xs font-bold uppercase tracking-widest text-slate-600 hover:bg-slate-50 transition-all">
-                      <Phone size={14} /> Call
-                   </button>
-                   <button className="flex items-center justify-center gap-2 border border-slate-200 py-4 rounded-[2rem] text-xs font-bold uppercase tracking-widest text-slate-600 hover:bg-slate-50 transition-all">
+                <h3 className="text-xl font-serif italic mb-2">Investment Desk</h3>
+                <p className="text-[9px] text-slate-500 uppercase tracking-[0.3em] mb-10">Private Consultation</p>
+                
+                <div className="space-y-4">
+                  <button className="w-full bg-white text-black py-5 font-bold text-[10px] uppercase tracking-[0.3em] hover:bg-amber-500 transition-colors">
+                    Request Site Inspection
+                  </button>
+                  <div className="grid grid-cols-2 gap-4">
+                    <button className="flex items-center justify-center gap-3 border border-white/10 py-4 text-[9px] font-bold uppercase tracking-widest hover:bg-white/5 transition-all">
+                      <Phone size={14} /> Voice
+                    </button>
+                    <button className="flex items-center justify-center gap-3 border border-white/10 py-4 text-[9px] font-bold uppercase tracking-widest hover:bg-white/5 transition-all">
                       <Mail size={14} /> Email
-                   </button>
+                    </button>
+                  </div>
                 </div>
-              </div>
-
-              <div className="mt-8 pt-8 border-t border-slate-100 flex items-center gap-4 text-slate-400">
-                <Clock size={16} />
-                <p className="text-[10px] font-bold uppercase tracking-widest">Response time: &lt; 24 Hours</p>
               </div>
             </div>
           </div>
         </section>
       </main>
 
-      {/* 5. FULLSCREEN MODAL - BLUR EFFECT */}
+      {/* 5. MODAL MAINTAINED */}
       <AnimatePresence>
         {isImageModalOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-slate-950/95 z-[100] flex items-center justify-center p-6 backdrop-blur-xl"
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-[#05070a]/98 z-[100] flex items-center justify-center p-12 backdrop-blur-3xl"
             onClick={() => setIsImageModalOpen(false)}
           >
-            <button className="absolute top-10 right-10 p-4 bg-white/10 rounded-full text-white hover:bg-white/20 transition-all">
+            <button className="absolute top-10 right-10 text-white">
               <X size={32} />
             </button>
-            
             <motion.div
-              initial={{ scale: 0.9, y: 20 }}
-              animate={{ scale: 1, y: 0 }}
-              className="max-w-6xl w-full"
+              initial={{ scale: 0.95 }} animate={{ scale: 1 }} className="max-w-6xl w-full"
               onClick={(e) => e.stopPropagation()}
             >
-              <img 
-                src={property.images[currentImageIndex]} 
-                className="w-full h-auto max-h-[80vh] object-contain rounded-[2rem] shadow-2xl" 
-              />
-              <div className="flex justify-between items-center mt-8 text-white">
-                <div className="flex gap-4">
-                  <button onClick={() => setCurrentImageIndex(prev => (prev > 0 ? prev - 1 : property.images.length - 1))} className="p-4 bg-white/10 rounded-full hover:bg-white/20"><ChevronLeft /></button>
-                  <button onClick={() => setCurrentImageIndex(prev => (prev < property.images.length - 1 ? prev + 1 : 0))} className="p-4 bg-white/10 rounded-full hover:bg-white/20"><ChevronRight /></button>
-                </div>
-                <div className="text-xs font-black tracking-widest uppercase">
-                  {currentImageIndex + 1} / {property.images.length}
-                </div>
+              <img src={property.images[currentImageIndex]} className="w-full h-auto max-h-[75vh] object-contain" />
+              <div className="flex justify-between mt-12">
+                 <button onClick={() => setCurrentImageIndex(prev => (prev > 0 ? prev - 1 : property.images.length - 1))} className="p-4 border border-white/10 hover:bg-white/5">
+                   <ChevronLeft size={24} />
+                 </button>
+                 <button onClick={() => setCurrentImageIndex(prev => (prev < property.images.length - 1 ? prev + 1 : 0))} className="p-4 border border-white/10 hover:bg-white/5">
+                   <ChevronRight size={24} />
+                 </button>
               </div>
             </motion.div>
           </motion.div>

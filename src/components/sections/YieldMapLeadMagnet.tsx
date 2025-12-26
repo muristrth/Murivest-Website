@@ -2,173 +2,168 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Download, Building, ShieldCheck, Lock, Phone, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { MapPin, Download, Lock, ShieldCheck, CheckCircle2, ChevronRight } from 'lucide-react';
 
 const YieldMapLeadMagnet = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
-    // Simulate API call for demo purposes
     setTimeout(() => setStatus('success'), 1500);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const sites = [
-    { name: 'Westlands Office Tower', yield: '8.0%', type: 'Core Office' },
-    { name: 'Karen Luxury Outlets', yield: '8.7%', type: 'Prime Retail' },
-    { name: 'Athi River Complex', yield: '9.8%', type: 'Industrial' },
+  const benchmarks = [
+    { name: 'Westlands Commercial', yield: '8.2%', delta: '+0.4%' },
+    { name: 'Industrial Logistics', yield: '9.6%', delta: '+1.1%' },
+    { name: 'Retail / Mixed Use', yield: '8.8%', delta: '-0.2%' },
   ];
 
   return (
-    <section className="relative py-24 bg-[#fafaf9] overflow-hidden">
-      {/* Decorative background element */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-900/5 -skew-x-12 translate-x-32" />
+    <section className="relative py-32 bg-white overflow-hidden border-t border-slate-100">
+      {/* Structural accent: A thin vertical line that guides the eye down */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-24 bg-gradient-to-b from-slate-200 to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+      <div className="max-w-7xl mx-auto px-8 lg:px-12 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-24 items-start">
           
-          {/* Left Side: Copy & 3D Data Preview */}
+          {/* Left: The Intelligence Preview */}
           <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="pt-12"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-50 border border-amber-200 rounded-full text-amber-700 text-[10px] font-bold tracking-widest uppercase mb-6">
-              <Lock className="h-3 w-3" /> Encrypted Access
+            <div className="flex items-center gap-3 mb-8">
+              <div className="h-[1px] w-8 bg-amber-600" />
+              <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-slate-400">Restricted Data</span>
             </div>
             
-            <h2 className="text-5xl font-serif font-medium text-slate-900 mb-6 leading-[1.1]">
-              The 2025 <span className="text-amber-600 italic">Yield Atlas</span> 
-              <br /> for Nairobi Prime
+            <h2 className="text-4xl md:text-5xl font-serif text-slate-950 mb-8 leading-[1.15]">
+              The 2025 <span className="italic">Yield Atlas</span> <br />
+              for Private Capital.
             </h2>
             
-            <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-lg">
-              Secure the definitive benchmark report on commercial cap rates, lease structures, and the top-performing assets in the current Kenyan market.
+            <p className="text-slate-500 text-lg font-light leading-relaxed mb-12 max-w-lg">
+              A comprehensive audit of Nairobi’s prime asset performance. Access proprietary data on capitalization rates, occupancy forecasting, and tax-adjusted IRR benchmarks.
             </p>
 
-            {/* 3D Stacked Preview */}
-            <div className="space-y-4 relative">
-              {sites.map((site, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  whileHover={{ x: 10, scale: 1.02 }}
-                  className="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between group cursor-default"
-                >
+            {/* Locked Data Ledger */}
+            <div className="border border-slate-100 bg-slate-50/30 p-1 divide-y divide-slate-100 relative">
+              {benchmarks.map((item, i) => (
+                <div key={i} className="flex justify-between items-center p-6 bg-white/50 backdrop-blur-sm">
                   <div className="flex items-center gap-4">
-                    <div className="p-2 bg-slate-50 rounded-lg group-hover:bg-amber-500 group-hover:text-white transition-colors">
-                      <MapPin className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900 text-sm">{site.name}</h4>
-                      <p className="text-[10px] uppercase tracking-tighter text-slate-400 font-bold">{site.type}</p>
-                    </div>
+                    <MapPin size={14} className="text-amber-600/50" />
+                    <span className="text-[11px] tracking-[0.1em] uppercase font-medium text-slate-700">{item.name}</span>
                   </div>
-                  <div className="text-right">
-                    <span className="text-amber-600 font-mono font-bold text-lg">{site.yield}</span>
+                  <div className="flex items-baseline gap-4">
+                    <span className="text-slate-300 text-[10px] font-mono">{item.delta}</span>
+                    <span className="text-xl font-serif text-slate-900">{item.yield}</span>
                   </div>
-                </motion.div>
+                </div>
               ))}
               
-              {/* Blur Overlay for "Locked Content" effect */}
-              <div className="absolute -bottom-2 inset-x-0 h-24 bg-gradient-to-t from-[#fafaf9] via-[#fafaf9]/80 to-transparent flex items-end justify-center pb-2">
-                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">+9 More Locations Inside</span>
+              {/* The "Gated" Blur Overlay */}
+              <div className="absolute inset-0 top-[60%] bg-gradient-to-t from-white via-white/90 to-transparent flex flex-col items-center justify-end pb-8">
+                <div className="flex items-center gap-2 mb-2 text-slate-400">
+                  <Lock size={12} strokeWidth={1.5} />
+                  <span className="text-[9px] font-bold tracking-[0.3em] uppercase">Confidential Analysis Hidden</span>
+                </div>
+                <div className="h-[1px] w-12 bg-slate-200" />
               </div>
             </div>
           </motion.div>
 
-          {/* Right Side: The Secure Form Container */}
+          {/* Right: The Request Portal */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-[2.5rem] p-1 shadow-2xl shadow-slate-200/50 border border-slate-100"
+            className="lg:mt-12"
           >
-            <div className="bg-[#0f172a] rounded-[2.2rem] p-8 md:p-12 text-white overflow-hidden relative">
+            <div className="bg-slate-950 p-12 lg:p-16 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.2)] relative overflow-hidden">
+              {/* Subtle background motif */}
+              <div className="absolute top-0 right-0 p-8 opacity-10">
+                 <ShieldCheck size={120} strokeWidth={0.5} className="text-white" />
+              </div>
+
               <AnimatePresence mode="wait">
                 {status !== 'success' ? (
                   <motion.div
                     key="form"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    exit={{ opacity: 0, y: -20 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
                   >
-                    <div className="mb-8">
-                      <h3 className="text-2xl font-bold mb-2">Request Intelligence</h3>
-                      <p className="text-slate-400 text-sm">Professional credentials required for full report.</p>
+                    <div className="relative z-10 mb-10">
+                      <h3 className="text-white text-2xl font-serif mb-3">Request Briefing</h3>
+                      <p className="text-slate-500 text-xs font-light tracking-wide">
+                        Please provide professional credentials to receive the encrypted 2025 Atlas.
+                      </p>
                     </div>
 
-                    <form onSubmit={handleSubmit} className="space-y-5">
-                      <div className="space-y-1">
-                        <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 ml-1">Full Name</label>
+                    <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
+                      <div className="space-y-2">
+                        <label className="text-[9px] font-bold uppercase tracking-[0.3em] text-slate-500">Full Name</label>
                         <input
-                          name="name"
+                          type="text"
                           required
-                          value={formData.name}
-                          onChange={handleChange}
-                          className="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-amber-500 transition-all outline-none"
-                          placeholder="James Kamau"
+                          className="w-full bg-transparent border-b border-slate-800 py-3 text-white focus:border-amber-500 outline-none transition-all font-light"
+                          placeholder="Hon. James Kamau"
                         />
                       </div>
-
-                      <div className="space-y-1">
-                        <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 ml-1">Work Email</label>
+                      
+                      <div className="space-y-2">
+                        <label className="text-[9px] font-bold uppercase tracking-[0.3em] text-slate-500">Professional Email</label>
                         <input
                           type="email"
-                          name="email"
                           required
-                          value={formData.email}
-                          onChange={handleChange}
-                          className="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-amber-500 transition-all outline-none"
-                          placeholder="j.kamau@corporate.com"
+                          className="w-full bg-transparent border-b border-slate-800 py-3 text-white focus:border-amber-500 outline-none transition-all font-light"
+                          placeholder="principal@familyoffice.com"
                         />
                       </div>
 
                       <button
                         disabled={status === 'loading'}
-                        className="w-full mt-4 bg-amber-600 hover:bg-amber-500 text-white px-4 py-2.5 rounded-lg font-bold text-xs tracking-widest uppercase transition-all flex items-center justify-center gap-3 disabled:opacity-50 active:scale-95"
+                        className="w-full group relative flex items-center justify-between bg-amber-600 hover:bg-amber-500 text-slate-950 px-8 py-5 mt-10 transition-all active:scale-[0.98]"
                       >
-                        {status === 'loading' ? 'Authenticating...' : (
-                          <>Download Atlas <Download className="h-4 w-4" /></>
-                        )}
+                        <span className="text-[11px] font-bold tracking-[0.3em] uppercase">
+                          {status === 'loading' ? 'Verifying...' : 'Request Intelligence'}
+                        </span>
+                        <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
                       </button>
                     </form>
 
-                    <div className="mt-8 flex items-start gap-3 opacity-50 hover:opacity-100 transition-opacity">
-                      <ShieldCheck className="h-4 w-4 text-amber-500 shrink-0" />
-                      <p className="text-[10px] leading-relaxed text-slate-300">
-                        Fiduciary data protection: No third-party sharing. Encrypted delivery.
+                    <div className="mt-10 pt-10 border-t border-white/5 flex items-center gap-4">
+                      <div className="p-2 rounded-full border border-white/10">
+                        <ShieldCheck size={14} className="text-amber-500" />
+                      </div>
+                      <p className="text-[10px] text-slate-500 font-light leading-relaxed">
+                        Data security compliant. Delivery via encrypted PDF link to authorized personnel only.
                       </p>
                     </div>
                   </motion.div>
                 ) : (
                   <motion.div
                     key="success"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="py-12 text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="py-16 text-center relative z-10"
                   >
-                    <div className="w-16 h-16 bg-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <CheckCircle2 className="h-8 w-8 text-amber-500" />
+                    <div className="w-20 h-20 bg-amber-500/10 rounded-full flex items-center justify-center mx-auto mb-8 border border-amber-500/20">
+                      <CheckCircle2 size={32} className="text-amber-500" strokeWidth={1} />
                     </div>
-                    <h3 className="text-2xl font-bold mb-2">Access Granted</h3>
-                    <p className="text-slate-400 text-sm mb-8">
-                      The PDF has been dispatched to <br />
-                      <span className="text-white font-medium">{formData.email}</span>
+                    <h3 className="text-white text-3xl font-serif mb-4">Request Received</h3>
+                    <p className="text-slate-400 text-sm font-light leading-relaxed mb-12">
+                      Our fiduciary team is verifying your credentials. <br /> 
+                      The 2025 Atlas will be dispatched shortly.
                     </p>
                     <button 
                       onClick={() => setStatus('idle')}
-                      className="text-amber-500 text-[10px] font-bold tracking-[0.2em] uppercase hover:text-amber-400 transition-colors"
+                      className="text-amber-500 text-[9px] font-bold tracking-[0.4em] uppercase border-b border-amber-500/20 pb-1"
                     >
-                      Restart Request
+                      Return to Briefing
                     </button>
                   </motion.div>
                 )}

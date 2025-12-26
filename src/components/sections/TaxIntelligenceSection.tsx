@@ -1,129 +1,111 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
-import { motion, useMotionValue, useTransform } from 'framer-motion';
-import { Landmark, Scale, PieChart, ArrowUpRight, ShieldCheck } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Landmark, Scale, PieChart, ArrowRight, ShieldCheck } from 'lucide-react';
 
 interface TaxCardProps {
   title: string;
   desc: string;
   icon: React.ComponentType<any>;
-  link: string;
   tag: string;
 }
 
-const TaxCard = ({ title, desc, icon: Icon, link, tag }: TaxCardProps) => {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  // Creates the 3D tilt effect
-  const rotateX = useTransform(y, [-100, 100], [15, -15]);
-  const rotateY = useTransform(x, [-100, 100], [-15, 15]);
-
-  interface MouseEventWithCurrentTarget extends React.MouseEvent<HTMLDivElement> {
-    currentTarget: EventTarget & HTMLDivElement;
-  }
-
-  function handleMouse(event: MouseEventWithCurrentTarget) {
-    const rect: DOMRect = event.currentTarget.getBoundingClientRect();
-    const centerX: number = rect.left + rect.width / 2;
-    const centerY: number = rect.top + rect.height / 2;
-    x.set(event.clientX - centerX);
-    y.set(event.clientY - centerY);
-  }
-
+const TaxCard = ({ title, desc, icon: Icon, tag }: TaxCardProps) => {
   return (
     <motion.div
-      style={{ perspective: 1000 }}
-      onMouseMove={handleMouse}
-      onMouseLeave={() => { x.set(0); y.set(0); }}
-      className="relative group"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="relative group bg-white border border-slate-200 p-10 transition-all duration-500 hover:border-amber-500/30 hover:shadow-[0_20px_40px_rgba(0,0,0,0.03)]"
     >
-      <motion.div
-        style={{ rotateX, rotateY }}
-        transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        className="h-full bg-white border border-gray-100 p-8 rounded-[2rem] shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-shadow duration-500 relative overflow-hidden"
-      >
-        {/* Decorative Background Blur */}
-        <div className="absolute -right-4 -top-4 w-24 h-24 bg-amber-500/5 rounded-full blur-2xl group-hover:bg-amber-500/10 transition-colors" />
-        
-        <div className="relative z-10 flex flex-col h-full">
-          <div className="flex justify-between items-start mb-8">
-            <div className="p-3 bg-gray-50 rounded-2xl group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
-              <Icon className="h-6 w-6" />
-            </div>
-            <span className="text-[10px] font-black tracking-widest uppercase text-amber-600 bg-amber-50 py-1 px-3 rounded-full">
-              {tag}
-            </span>
-          </div>
-
-          <h3 className="text-xl font-bold text-gray-900 mb-4 leading-snug">
-            {title}
-          </h3>
-          <p className="text-gray-500 text-sm leading-relaxed mb-8 flex-grow">
-            {desc}
-          </p>
-
-          <Link href={link} className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-900 hover:text-amber-600 transition-colors">
-            Analyze Strategy <ArrowUpRight className="h-4 w-4" />
-          </Link>
+      <div className="flex flex-col h-full">
+        <div className="flex justify-between items-start mb-10">
+          <Icon className="h-7 w-7 text-slate-800 stroke-[1px] group-hover:text-amber-600 transition-colors duration-500" />
+          <span className="text-[9px] font-bold tracking-[0.3em] uppercase text-amber-600/60">
+            {tag}
+          </span>
         </div>
-      </motion.div>
+
+        <h3 className="text-xl font-serif text-slate-900 mb-5 leading-tight">
+          {title}
+        </h3>
+        <p className="text-slate-500 text-sm leading-relaxed mb-10 font-light italic">
+          "{desc}"
+        </p>
+
+        <div className="mt-auto">
+          <button className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900 group-hover:gap-5 transition-all duration-500">
+            Request Briefing <ArrowRight className="h-3 w-3 text-amber-600" />
+          </button>
+        </div>
+      </div>
     </motion.div>
   );
 };
 
 const TaxIntelligenceSection = () => {
   return (
-    <section className="py-24 bg-gray-50/50">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+    <section className="py-32 bg-[#F9FAFB] border-t border-slate-100">
+      <div className="max-w-7xl mx-auto px-8 lg:px-12">
+        
+        {/* Section Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-24 gap-12">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="h-1 w-8 bg-amber-500" />
-              <span className="text-xs font-bold tracking-widest uppercase text-gray-500">Regulatory Excellence</span>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-[1px] w-10 bg-amber-500" />
+              <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-slate-400">Governance</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-serif font-medium text-gray-900">
-              Tax & Regulatory <span className="italic">Intelligence</span>
+            <h2 className="text-4xl md:text-5xl font-serif text-slate-950 leading-tight">
+              Regulatory Intelligence <br />
+              <span className="italic text-slate-500 font-light">& Risk Mitigation.</span>
             </h2>
           </div>
-          <p className="text-gray-600 max-w-sm text-sm leading-relaxed">
-            Navigating KRA frameworks to protect and optimize the post-tax performance of your East African real estate portfolio.
-          </p>
+          <div className="lg:max-w-sm pb-2">
+            <p className="text-slate-500 text-sm leading-relaxed font-light border-l border-amber-500/20 pl-6">
+              Sophisticated navigation of the KRA landscape to ensure capital preservation and post-tax yield optimization for private family offices.
+            </p>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* The Cards Grid */}
+        <div className="grid md:grid-cols-3 gap-0 border-collapse">
+          {/* Card 1 */}
           <TaxCard 
-            tag="Optimization"
+            tag="Yield Protection"
             icon={Landmark}
-            title="Capital Gains Strategy"
-            desc="Advanced legal frameworks for minimizing CGT liabilities on prime land disposition and industrial asset sales."
-            link="/tax-optimization-land"
+            title="Capital Gains Mitigation"
+            desc="Strategic legal frameworks designed to minimize CGT liabilities on high-value land disposition and asset liquidation."
           />
+          {/* Card 2 */}
           <TaxCard 
-            tag="Structuring"
+            tag="Wealth Transition"
             icon={Scale}
-            title="Family Trust Vehicles"
-            desc="Transitioning individual ownership into tax-efficient private family trusts for seamless multi-generational wealth transfer."
-            link="/trust-structures"
+            title="Family Trust Governance"
+            desc="The restructuring of individual property holdings into private trusts for seamless, tax-efficient generational transfer."
           />
+          {/* Card 3 */}
           <TaxCard 
-            tag="Yield Analysis"
+            tag="Market Arbitrage"
             icon={PieChart}
-            title="Post-Tax Yield vs. T-Bills"
-            desc="A quantitative comparison of commercial lease income versus traditional financial instruments in the current KRA regime."
-            link="/income-comparison"
+            title="Post-Tax Yield Analysis"
+            desc="A definitive comparison of commercial real estate performance versus traditional government securities in the 2025 regime."
           />
         </div>
 
-        {/* Floating Trust Badge */}
-        <div className="mt-20 flex justify-center">
-          <div className="inline-flex items-center gap-4 px-6 py-3 bg-white border border-gray-100 rounded-full shadow-sm">
-            <ShieldCheck className="h-5 w-5 text-green-600" />
-            <span className="text-xs font-medium text-gray-700">
-              KRA Compliant Frameworks • ISO 27001 Data Security • Fiduciary Duty
-            </span>
+        {/* Fiduciary Credentials */}
+        <div className="mt-24 flex flex-col md:flex-row items-center justify-between gap-8 border-t border-slate-200 pt-12">
+          <div className="flex items-center gap-6">
+            <div className="flex -space-x-2">
+               {/* Placeholders for logos if you have them, otherwise icons */}
+               <ShieldCheck className="h-10 w-10 text-slate-300 stroke-[1px]" />
+            </div>
+            <p className="text-[11px] tracking-widest uppercase text-slate-400 font-medium">
+              KRA Compliant • Fiduciary Standard • RICS Regulated
+            </p>
+          </div>
+          <div className="hidden lg:block text-[10px] tracking-[0.2em] text-slate-300 uppercase italic">
+            Confidentiality Guaranteed
           </div>
         </div>
       </div>

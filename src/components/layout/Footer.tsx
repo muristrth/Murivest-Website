@@ -1,479 +1,276 @@
 'use client';
 
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, Globe, Award, Shield, TrendingUp, Users, ArrowUp, ExternalLink } from 'lucide-react';
-import { ObfuscatedEmail } from '../../lib/email-obfuscation';
+import { 
+  Phone, Mail, MapPin, Globe, Award, Shield, 
+  TrendingUp, Users, ArrowUp, ExternalLink, 
+  ChevronRight, Landmark, Scale 
+} from 'lucide-react';
 
-import { useEffect } from 'react';
-
-// Define the FooterProps type
 interface FooterProps {
   copyrightYear?: number;
 }
 
-  const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
+const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   useEffect(() => {
-    // 1. Initialize the global $zoho object to prevent runtime errors
-    // This part is the first <script> block from your original code
     if (typeof window !== 'undefined') {
       (window as any).$zoho = (window as any).$zoho || {};
-      (window as any).$zoho.salesiq = (window as any).$zoho.salesiq || {
-        ready: function() {}
-      };
+      (window as any).$zoho.salesiq = (window as any).$zoho.salesiq || { ready: function() {} };
 
-      // 2. Load the main SalesIQ script
       const scriptId = 'zsiqscript';
       const scriptSrc = 'https://salesiq.zohopublic.com/widget?wc=siq8d0a379949e0072835c3186d3b3e2f2368fd652bd8160a511e2f63a1bdc4a5e4';
 
-      // Check if the script has already been added to prevent duplicates
       if (!document.getElementById(scriptId)) {
         const script = document.createElement('script');
         script.id = scriptId;
         script.src = scriptSrc;
         script.defer = true;
-
-        // Append the script to the <body> element
         document.body.appendChild(script);
-
-        // Optional: Cleanup function to remove the script when the component unmounts
-        // Usually not necessary for chat widgets, but good practice.
-        return () => {
-          document.body.removeChild(script);
-        };
       }
     }
   }, []);
 
   return (
-    <footer className="relative bg-gradient-to-b from-slate-900 to-slate-900 text-stone-100 overflow-hidden" style={{ fontFamily: 'Playfair Display, serif' }}>
-      {/* Elegant Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.03]">
+    <footer className="relative bg-[#05070a] text-white pt-32 pb-12 overflow-hidden border-t border-white/5">
+      {/* Background Ambience */}
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1926&q=80')`
-          }}
+          className="absolute inset-0 bg-cover bg-center grayscale"
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=1926&q=80')` }}
         />
       </div>
-      
-      {/* Subtle Accent Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-32 left-20 w-1 h-32 bg-gradient-to-b from-amber-600/20 to-transparent"></div>
-        <div className="absolute top-20 right-32 w-px h-48 bg-gradient-to-b from-amber-600/10 to-transparent"></div>
-        <div className="absolute bottom-32 left-1/3 w-24 h-px bg-gradient-to-r from-transparent via-amber-600/20 to-transparent"></div>
-      </div>
 
-      <div className="relative z-10 luxury-container luxury-padding luxury-section-spacing">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+      <div className="max-w-7xl mx-auto px-8 lg:px-12 relative z-10">
+        
+        {/* Main Navigation Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
           
-          {/* Company Heritage Section */}
+          {/* Brand Pillar */}
           <div className="lg:col-span-4">
-            <div className="mb-8">
-              <Image 
-                src="/image.png" 
-                alt="Murivest Realty Group" 
-                width={200} // Add appropriate width
-                height={64} // Add appropriate height
-                className="h-16 w-auto mb-6 opacity-90"
-              />
-              <div className="w-16 h-px bg-amber-600 mb-6"></div>
-            </div>
-            
-            <h3 className="text-2xl font-light text-stone-100 mb-4">
-              Murivest Realty Group
-            </h3>
-            <p className="text-stone-400 font-light leading-relaxed mb-6 text-sm">
+            <Image 
+              src="/image.png" 
+              alt="Murivest" 
+              width={200} 
+              height={64} 
+              className="mb-8 brightness-0 invert opacity-90 h-16 w-auto"
+            />
+            <h3 className="text-2xl font-serif italic text-slate-200 mb-6">Murivest Realty Group</h3>
+            <p className="text-slate-500 font-light leading-relaxed mb-8 text-sm max-w-sm">
               Established 2025. Four generations of distinguished service to international families, 
-              sovereign wealth funds, and institutional investors seeking superior returns through 
-              Kenya's premier commercial real estate opportunities.
+              sovereign wealth funds, and institutional investors seeking superior returns.
             </p>
             
-            {/* Credentials */}
-            <div className="space-y-3 mb-8">
-              <div className="flex items-center text-stone-300 text-sm">
-                <Award className="h-4 w-4 mr-3 text-amber-600" />
-                <span>Capital Markets Authority Licensed</span>
-              </div>
-              <div className="flex items-center text-stone-300 text-sm">
-                <Shield className="h-4 w-4 mr-3 text-amber-600" />
-                <span>International Arbitration Member</span>
-              </div>
-              <div className="flex items-center text-stone-300 text-sm">
-                <TrendingUp className="h-4 w-4 mr-3 text-amber-600" />
-                <span>KSh 10B+ Assets Under Management</span>
-              </div>
-              <div className="flex items-center text-stone-300 text-sm">
-                <Users className="h-4 w-4 mr-3 text-amber-600" />
-                <span>50+ Distinguished Clients Worldwide</span>
-              </div>
-            </div>
-
-            {/* Global Offices */}
-            <div>
-              <h4 className="text-lg font-medium text-stone-200 mb-4">Global Presence</h4>
-              <div className="space-y-2 text-sm text-stone-400">
-                <div>🇰🇪 Nairobi • Westlands Business District</div>
-                <div>🇬🇧 London • Mayfair</div>
-                <div>🇨🇭 Geneva • Private Banking Quarter</div>
-                <div>🇭🇰 Hong Kong • Central Financial District</div>
-              </div>
+            <div className="space-y-4 border-l border-amber-500/30 pl-6">
+              {[
+                { icon: Award, text: "CMA Licensed" },
+                { icon: Shield, text: "International Arbitration Member" },
+                { icon: TrendingUp, text: "KSh 10B+ AUM" },
+                { icon: Users, text: "50+ Distinguished Clients" }
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-3 text-xs text-slate-400 font-light tracking-wide">
+                  <item.icon size={14} className="text-amber-500" />
+                  {item.text}
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Investment Services */}
-          <div className="lg:col-span-2">
-            <h4 className="text-xl font-light text-amber-400 mb-8 border-b border-amber-600/30 pb-3">
-              Investment Services
-            </h4>
-            <ul className="space-y-4">
-              {[
-                { to: "/properties", label: "Commercial Real Estate" },
-                { to: "/properties", label: "Office Developments" },
-                { to: "/properties", label: "Retail & Mixed-Use" },
-                { to: "/properties", label: "Industrial Properties" },
-                { to: "/properties", label: "Strategic Land Banking" },
-                { to: "/properties", label: "REIT Opportunities" },
-                { to: "/properties", label: "Private Equity Real Estate" },
-                { to: "/properties", label: "Wealth Management" }
-              ].map((link, index) => (
-                <li key={index}>
-                  <Link 
-                    href={link.to} 
-                    className="text-stone-300 hover:text-amber-400 transition-all duration-300 text-sm font-light group flex items-center"
-                  >
-                    <span className="mr-2 w-1 h-1 bg-amber-600 rounded-full opacity-60 group-hover:opacity-100 transition-opacity"></span>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Market Intelligence */}
-          <div className="lg:col-span-2">
-            <h4 className="text-xl font-light text-amber-400 mb-8 border-b border-amber-600/30 pb-3">
-              Market Intelligence
-            </h4>
-            <ul className="space-y-4">
-              {[
-                { to: "/market-reports", label: "Quarterly Market Reports" },
-                { to: "/economic-outlook", label: "Kenya Economic Outlook" },
-                { to: "/investment-analysis", label: "Investment Analysis" },
-                { to: "/regulatory-updates", label: "Regulatory Updates" },
-                { to: "/currency-insights", label: "Currency Risk Analysis" },
-                { to: "/sector-performance", label: "Sector Performance" },
-                { to: "/due-diligence", label: "Due Diligence Reports" },
-                { to: "/exit-strategies", label: "Exit Strategy Planning" }
-              ].map((link, index) => (
-                <li key={index}>
-                  <Link 
-                    href={link.to} 
-                    className="text-stone-300 hover:text-amber-400 transition-all duration-300 text-sm font-light group flex items-center"
-                  >
-                    <span className="mr-2 w-1 h-1 bg-amber-600 rounded-full opacity-60 group-hover:opacity-100 transition-opacity"></span>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Property Management Services */}
-          <div className="lg:col-span-2">
-            <h4 className="text-xl font-light text-amber-400 mb-8 border-b border-amber-600/30 pb-3">
-              Property Management
-            </h4>
-            <div className="space-y-4 mb-6">
-              <a
-                href="https://murivest.africa"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 group"
-              >
-                Landlord Portal
-                <ExternalLink className="ml-2 h-3 w-3 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a
-                href="https://murivest.africa"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 bg-slate-700 hover:bg-slate-600 text-stone-200 hover:text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 group border border-amber-600/30"
-              >
-                Tenant Services
-                <ExternalLink className="ml-2 h-3 w-3 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </div>
-            <ul className="space-y-4">
-              {[
-                { to: "/property-management", label: "Property Management" },
-                { to: "/tenant-screening", label: "Tenant Screening" },
-                { to: "/lease-administration", label: "Lease Administration" },
-                { to: "/maintenance-services", label: "Maintenance Services" },
-                { to: "/financial-reporting", label: "Financial Reporting" },
-                { to: "/legal-compliance", label: "Legal Compliance" }
-              ].map((link, index) => (
-                <li key={index}>
-                  <Link
-                    href={link.to}
-                    className="text-stone-300 hover:text-amber-400 transition-all duration-300 text-sm font-light group flex items-center"
-                  >
-                    <span className="mr-2 w-1 h-1 bg-amber-600 rounded-full opacity-60 group-hover:opacity-100 transition-opacity"></span>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact & Connect */}
-          <div className="lg:col-span-2">
-            <h4 className="text-xl font-light text-amber-400 mb-8 border-b border-amber-600/30 pb-3">
-              Private Contact
-            </h4>
+          {/* Links Columns */}
+          <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-12">
             
-            <div className="space-y-6 mb-8">
-              <div className="group">
-                <div className="flex items-start">
-                  <Phone className="h-4 w-4 mt-1 mr-3 text-amber-600" />
-                  <div>
-                    <div className="text-stone-300 text-sm font-light">Private Line</div>
-                    <a href="tel:+254115277610" className="text-stone-200 text-sm hover:text-amber-400 transition-colors">
-                      +254 115 277 610
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="group">
-                <div className="flex items-start">
-                  <Mail className="h-4 w-4 mt-1 mr-3 text-amber-600" />
-                  <div>
-                    <div className="text-stone-300 text-sm font-light">Investment Desk</div>
-                    <a href="mailto:investments@murivest.co.ke" className="text-stone-200 text-sm hover:text-amber-400 transition-colors">
-                      investments@murivest.co.ke
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="group">
-                <div className="flex items-start">
-                  <MapPin className="h-4 w-4 mt-1 mr-3 text-amber-600" />
-                  <div>
-                    <div className="text-stone-300 text-sm font-light">Nairobi Office</div>
-                    <div className="text-stone-200 text-sm">
-                      Lion Plaza<br />
-                      Westlands Business District<br />
-                      Nairobi, Kenya
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="group">
-                <div className="flex items-start">
-                  <Globe className="h-4 w-4 mt-1 mr-3 text-amber-600" />
-                  <div>
-                    <div className="text-stone-300 text-sm font-light">Investment Hours</div>
-                    <div className="text-stone-200 text-sm">
-                      Mon-Fri: 8:00 - 18:00 EAT<br />
-                      24/7 Client Support
-                    </div>
-                  </div>
-                </div>
-              </div>
+            {/* Column 1: Investment Services */}
+            <div>
+              <h4 className="text-[11px] font-bold tracking-[0.3em] uppercase text-amber-500 mb-8 pb-2 border-b border-white/5">Services</h4>
+              <ul className="space-y-3">
+                {[
+                  "Commercial Real Estate", "Office Developments", "Retail & Mixed-Use", 
+                  "Industrial Properties", "Strategic Land Banking", "REIT Opportunities",
+                  "Private Equity Real Estate", "Wealth Management"
+                ].map((label) => (
+                  <li key={label}>
+                    <Link href="/properties" className="text-slate-400 hover:text-white transition-all text-xs font-light flex items-center group">
+                      <ChevronRight size={10} className="mr-2 opacity-0 group-hover:opacity-100 -ml-4 group-hover:ml-0 transition-all text-amber-500" />
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* Call to Action */}
-            <div className="bg-stone-800/50 p-4 border border-amber-600/20">
-              <div className="text-sm text-stone-300 mb-3">Minimum Investment: $1M+</div>
-              <Link 
-                href="/consultation" 
-                className="inline-flex items-center text-amber-400 text-sm font-medium hover:text-amber-300 transition-colors"
-              >
-                Schedule Private Consultation
-                <ExternalLink className="ml-2 h-3 w-3" />
-              </Link>
+            {/* Column 2: Market Intelligence */}
+            <div>
+              <h4 className="text-[11px] font-bold tracking-[0.3em] uppercase text-amber-500 mb-8 pb-2 border-b border-white/5">Intelligence</h4>
+              <ul className="space-y-3">
+                {[
+                  { to: "/market-reports", label: "Quarterly Market Reports" },
+                  { to: "/economic-outlook", label: "Kenya Economic Outlook" },
+                  { to: "/investment-analysis", label: "Investment Analysis" },
+                  { to: "/regulatory-updates", label: "Regulatory Updates" },
+                  { to: "/currency-insights", label: "Currency Risk Analysis" },
+                  { to: "/sector-performance", label: "Sector Performance" },
+                  { to: "/due-diligence", label: "Due Diligence Reports" },
+                  { to: "/exit-strategies", label: "Exit Strategy Planning" }
+                ].map((link) => (
+                  <li key={link.label}>
+                    <Link href={link.to} className="text-slate-400 hover:text-white transition-all text-xs font-light flex items-center group">
+                      <ChevronRight size={10} className="mr-2 opacity-0 group-hover:opacity-100 -ml-4 group-hover:ml-0 transition-all text-amber-500" />
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Column 3: Management */}
+            <div>
+              <h4 className="text-[11px] font-bold tracking-[0.3em] uppercase text-amber-500 mb-8 pb-2 border-b border-white/5">Management</h4>
+              <div className="flex flex-col gap-3 mb-8">
+                <a href="https://murivest.africa" className="text-[10px] font-bold tracking-widest uppercase border border-white/10 px-4 py-3 hover:bg-white hover:text-black transition-all text-center">
+                  Landlord Portal <ExternalLink size={10} className="inline ml-1" />
+                </a>
+                <a href="https://murivest.africa" className="text-[10px] font-bold tracking-widest uppercase border border-amber-500/20 px-4 py-3 bg-amber-500/5 hover:bg-amber-500 hover:text-black transition-all text-center">
+                  Tenant Services
+                </a>
+              </div>
+              <ul className="space-y-3">
+                {[
+                  { to: "/property-management", label: "Property Management" },
+                  { to: "/tenant-screening", label: "Tenant Screening" },
+                  { to: "/lease-administration", label: "Lease Administration" },
+                  { to: "/maintenance-services", label: "Maintenance Services" },
+                  { to: "/financial-reporting", label: "Financial Reporting" },
+                  { to: "/legal-compliance", label: "Legal Compliance" }
+                ].map((link) => (
+                  <li key={link.label}>
+                    <Link href={link.to} className="text-slate-400 hover:text-white transition-all text-xs font-light flex items-center group">
+                      <ChevronRight size={10} className="mr-2 opacity-0 group-hover:opacity-100 -ml-4 group-hover:ml-0 transition-all text-amber-500" />
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
 
-        {/* SEO Backlink Section */}
-        <div className="border-t border-stone-700 pt-12 mb-12">
-          <div className="text-center mb-8">
-            <h4 className="text-lg font-light text-stone-300 mb-6">Strategic Partners & Market Intelligence</h4>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        {/* Global Access Horizontal Strip */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 border border-white/5 mb-24 overflow-hidden">
+          {[
+            { label: "Private Line", value: "+254 115 277 610", href: "tel:+254115277610" },
+            { label: "Investment Desk", value: "investments@murivest.co.ke", href: "mailto:investments@murivest.co.ke" },
+            { label: "Nairobi HQ", value: "Westlands Business District", href: "#" },
+            { label: "24/7 Client Support", value: "Mon-Fri: 8:00 - 18:00 EAT", href: "#" }
+          ].map((contact, i) => (
+            <div key={i} className="p-8 bg-[#05070a] group hover:bg-white/[0.02] transition-colors">
+              <p className="text-[9px] uppercase tracking-[0.3em] text-slate-600 mb-2 font-bold">{contact.label}</p>
+              <a href={contact.href} className="text-sm font-medium text-slate-300 group-hover:text-amber-500 transition-colors">
+                {contact.value}
+              </a>
+            </div>
+          ))}
+        </div>
+
+        {/* Strategic Partners SEO Cloud */}
+        <div className="border-t border-white/5 pt-16 mb-24">
+          <h5 className="text-[10px] font-bold tracking-[0.5em] uppercase text-slate-600 mb-12 text-center italic">Institutional Connectivity & Partners</h5>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-8 gap-y-10">
             {[
-              { name: "Kenya Association of Real Estate Agents", url: "https://www.karea.co.ke", category: "Industry" },
-              { name: "Capital Markets Authority Kenya", url: "https://www.cma.or.ke", category: "Regulatory" },
-              { name: "Nairobi Securities Exchange", url: "https://www.nse.co.ke", category: "Markets" },
-              { name: "Central Bank of Kenya", url: "https://www.centralbank.go.ke", category: "Banking" },
-              { name: "Kenya National Bureau Statistics", url: "https://www.knbs.or.ke", category: "Data" },
-              { name: "Kenya Investment Authority", url: "https://www.invest.go.ke", category: "Investment" },
-              { name: "World Bank Kenya", url: "https://www.worldbank.org/en/country/kenya", category: "Development" },
-              { name: "IMF Kenya Reports", url: "https://www.imf.org/en/Countries/KEN", category: "Economic" },
-              { name: "Kenya Private Sector Alliance", url: "https://kepsa.or.ke", category: "Business" },
-              { name: "East African Business Council", url: "https://www.eabc.info", category: "Regional" },
-              { name: "Kenya Real Estate Exchange", url: "https://www.kenyanrealestate.com", category: "Property" },
-              { name: "African Development Bank", url: "https://www.afdb.org", category: "Finance" }
-            ].map((partner, index) => (
-              <div key={index} className="text-center">
-                <a 
-                  href={partner.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-stone-400 hover:text-amber-400 transition-colors text-xs font-light"
-                >
-                  <div className="text-stone-500 text-xs mb-1">{partner.category}</div>
-                  {partner.name}
-                </a>
-              </div>
+              { name: "KAREA Industry", url: "https://www.karea.co.ke" },
+              { name: "CMA Regulatory", url: "https://www.cma.or.ke" },
+              { name: "NSE Markets", url: "https://www.nse.co.ke" },
+              { name: "CBK Banking", url: "https://www.centralbank.go.ke" },
+              { name: "KNBS Data", url: "https://www.knbs.or.ke" },
+              { name: "KenInvest", url: "https://www.invest.go.ke" },
+              { name: "World Bank Kenya", url: "https://www.worldbank.org/en/country/kenya" },
+              { name: "IMF Economic", url: "https://www.imf.org/en/Countries/KEN" },
+              { name: "KEPSA Business", url: "https://kepsa.or.ke" },
+              { name: "EABC Regional", url: "https://www.eabc.info" },
+              { name: "KRE Property", url: "https://www.kenyanrealestate.com" },
+              { name: "AfDB Finance", url: "https://www.afdb.org" }
+            ].map((partner) => (
+              <a key={partner.name} href={partner.url} target="_blank" className="text-[10px] uppercase tracking-widest text-slate-600 hover:text-amber-500 transition-colors text-center font-light">
+                {partner.name}
+              </a>
             ))}
           </div>
         </div>
 
-        {/* Additional SEO Links */}
-        <div className="border-t border-stone-700 pt-8 mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            {/* Kenya Investment Topics */}
-            <div>
-              <h5 className="text-sm font-medium text-stone-300 mb-4">Kenya Investment Opportunities</h5>
-              <div className="space-y-2">
-                {[
-                  "Commercial Real Estate Nairobi",
-                  "Kenya REIT Investment Guide",
-                  "Westlands Property Investment",
-                  "Karen Commercial Developments",
-                  "Industrial Area Land Banking",
-                  "Kilimani Mixed-Use Projects"
-                ].map((topic, index) => (
-                  <Link 
-                    key={index}
-                    href={`/${topic.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="block text-stone-400 hover:text-amber-400 transition-colors text-xs"
-                  >
-                    {topic}
-                  </Link>
-                ))}
-              </div>
+        {/* Deep SEO Content Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 border-y border-white/5 py-16 mb-20 text-center md:text-left">
+          {/* Group 1 */}
+          <div>
+            <h5 className="text-[11px] font-bold text-slate-300 tracking-widest uppercase mb-6">Kenya Opportunities</h5>
+            <div className="space-y-2">
+              {["Commercial Real Estate Nairobi", "Kenya REIT Investment Guide", "Westlands Property Investment", "Karen Commercial Developments", "Industrial Area Land Banking", "Kilimani Mixed-Use Projects"].map(topic => (
+                <Link key={topic} href={`/${topic.toLowerCase().replace(/\s+/g, '-')}`} className="block text-[10px] text-slate-500 hover:text-amber-400 transition-colors">
+                  {topic}
+                </Link>
+              ))}
             </div>
-
-            {/* International Investor Resources */}
-            <div>
-              <h5 className="text-sm font-medium text-stone-300 mb-4">International Investor Resources</h5>
-              <div className="space-y-2">
-                {[
-                  "USD to KES Investment Calculator",
-                  "European Investor Tax Guide",
-                  "UK Pension Fund Opportunities",
-                  "Swiss Family Office Services",
-                  "Canadian RRSP Kenya Investments",
-                  "Australian Superannuation Guide"
-                ].map((resource, index) => (
-                  <Link 
-                    key={index}
-                    href={`/${resource.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="block text-stone-400 hover:text-amber-400 transition-colors text-xs"
-                  >
-                    {resource}
-                  </Link>
-                ))}
-              </div>
+          </div>
+          {/* Group 2 */}
+          <div>
+            <h5 className="text-[11px] font-bold text-slate-300 tracking-widest uppercase mb-6">International Investor Resources</h5>
+            <div className="space-y-2">
+              {["USD to KES Investment Calculator", "European Investor Tax Guide", "UK Pension Fund Opportunities", "Swiss Family Office Services", "Canadian RRSP Kenya Investments", "Australian Superannuation Guide"].map(topic => (
+                <Link key={topic} href={`/${topic.toLowerCase().replace(/\s+/g, '-')}`} className="block text-[10px] text-slate-500 hover:text-amber-400 transition-colors">
+                  {topic}
+                </Link>
+              ))}
             </div>
-
-            {/* Market Analysis */}
-            <div>
-              <h5 className="text-sm font-medium text-stone-300 mb-4">Market Analysis & Reports</h5>
-              <div className="space-y-2">
-                {[
-                  "Kenya GDP Growth Impact Analysis",
-                  "East Africa Commercial Property Trends",
-                  "Nairobi Office Space Demand Study",
-                  "Currency Risk Mitigation Strategies",
-                  "Infrastructure Development ROI",
-                  "Sovereign Credit Rating Updates"
-                ].map((analysis, index) => (
-                  <Link 
-                    key={index}
-                    href={`/${analysis.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="block text-stone-400 hover:text-amber-400 transition-colors text-xs"
-                  >
-                    {analysis}
-                  </Link>
-                ))}
-              </div>
+          </div>
+          {/* Group 3 */}
+          <div>
+            <h5 className="text-[11px] font-bold text-slate-300 tracking-widest uppercase mb-6">Market Analysis</h5>
+            <div className="space-y-2">
+              {["Kenya GDP Growth Impact Analysis", "East Africa Commercial Property Trends", "Nairobi Office Space Demand Study", "Currency Risk Mitigation Strategies", "Infrastructure Development ROI", "Sovereign Credit Rating Updates"].map(topic => (
+                <Link key={topic} href={`/${topic.toLowerCase().replace(/\s+/g, '-')}`} className="block text-[10px] text-slate-500 hover:text-amber-400 transition-colors">
+                  {topic}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Scroll to Top */}
-        <div className="flex justify-center mb-8">
-          <button
-            onClick={scrollToTop}
-            className="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 p-3 rounded-full transition-all duration-300 hover:scale-110 group"
-          >
-            <ArrowUp className="h-4 w-4 text-white group-hover:scale-110 transition-transform" />
-          </button>
-        </div>
-
-        {/* Bottom Bar - Simplified */}
-        <div className="border-t border-stone-700 pt-8">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 text-center md:text-left mb-8">
-            <div>
-              <h4 className="text-stone-300 text-sm font-medium mb-2">Physical Address</h4>
-              <p className="text-stone-400 text-xs">
-                Westlands Business District<br />
-                Nairobi, Kenya
-              </p>
-            </div>
-            <div>
-              <h4 className="text-stone-300 text-sm font-medium mb-2">ERB License</h4>
-              <p className="text-stone-400 text-xs">#2025-XXXX</p>
-            </div>
-            <div>
-              <h4 className="text-stone-300 text-sm font-medium mb-2">KRA PIN</h4>
-              <p className="text-stone-400 text-xs">P051234567X</p>
-            </div>
-            <div>
-              <h4 className="text-stone-300 text-sm font-medium mb-2">WhatsApp</h4>
-              <a href="https://wa.me/254115277610" className="text-amber-400 hover:text-amber-300 text-xs">
-                +254 115 277 610
-              </a>
-            </div>
-            <div>
-              <h4 className="text-stone-300 text-sm font-medium mb-2">Email</h4>
-              <a href="mailto:info@murivest.co.ke" className="text-amber-400 hover:text-amber-300 text-xs">
-                info@murivest.co.ke
-              </a>
-            </div>
+        {/* Final Utilities */}
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-12">
+          {/* Presence Nodes */}
+          <div className="flex flex-wrap justify-center gap-8 text-[9px] font-bold tracking-[0.4em] uppercase text-slate-600">
+            <span>🇰🇪 Nairobi</span>
+            <span>🇬🇧 London</span>
+            <span>🇨🇭 Geneva</span>
+            <span>🇭🇰 Hong Kong</span>
           </div>
 
-          {/* Language Toggle */}
-          <div className="flex justify-center mb-6">
-            <button className="flex items-center text-stone-400 hover:text-amber-400 transition-colors">
-              <Globe className="h-4 w-4 mr-2" />
-              <span className="text-sm">English / Kiswahili</span>
+          <div className="flex items-center gap-6">
+            <button className="flex items-center text-[10px] font-bold tracking-widest uppercase text-slate-400 hover:text-amber-500 transition-colors gap-2 border border-white/5 px-4 py-2">
+              <Globe size={12} /> EN / SW
+            </button>
+            <button onClick={scrollToTop} className="bg-amber-600 hover:bg-amber-500 p-3 rounded-full transition-all group shadow-2xl">
+              <ArrowUp size={16} className="text-black group-hover:-translate-y-1 transition-transform" />
             </button>
           </div>
+        </div>
 
-          <div className="text-center">
-            <p className="text-stone-500 text-xs font-light">
-              © 2025 Murivest Realty Group Ltd. All rights reserved.
-            </p>
-          </div>
+        {/* Copyright & Compliance */}
+        <div className="mt-16 pt-8 border-t border-white/5 text-center space-y-4">
+           <div className="flex flex-wrap justify-center gap-6 text-[9px] text-slate-700 uppercase tracking-widest">
+             <span>KRA PIN: P051234567X</span>
+             <span>ERB Licensed #2025</span>
+             <span>Privacy Policy</span>
+             <span>Terms of Engagement</span>
+           </div>
+           <p className="text-[10px] text-slate-600 uppercase tracking-[0.4em] font-light">
+             © 2025 Murivest Realty Group Ltd. All Rights Reserved.
+           </p>
         </div>
       </div>
-      {/* Elegant Border */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-600/50 to-transparent"></div>
     </footer>
   );
 };

@@ -1,118 +1,104 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, ShieldCheck, FileText, Factory, ChevronRight } from 'lucide-react';
+import { Shield, Landmark, PieChart, ChevronRight } from 'lucide-react';
 
 const LegacyPlanningSection: React.FC = () => {
   return (
-    <section className="relative py-24 bg-[#000435] text-white overflow-hidden">
-      {/* 3D Ambient Background Elements */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-600/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-900/10 rounded-full blur-[120px] pointer-events-none" />
+    <section className="relative py-32 bg-slate-950 text-white overflow-hidden border-t border-white/5">
+      {/* Subtle Grain Texture Overlay for a "Paper" feel */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-8 lg:px-12 relative z-10">
+        
+        {/* Header Section */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl mb-20"
+          transition={{ duration: 1 }}
+          className="max-w-3xl mb-24"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-500/30 bg-amber-500/5 text-amber-500 text-[10px] font-bold tracking-[0.2em] uppercase mb-6">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
-            </span>
-            Capital Stewardship
-          </div>
-          <h2 className="text-5xl md:text-6xl font-serif font-medium mb-6 leading-tight tracking-tight">
-            Engineering <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-500 to-amber-200">Generational</span> Stability
+          <p className="text-amber-500/70 text-[10px] tracking-[0.5em] uppercase font-bold mb-6">
+            Institutional Stewardship
+          </p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-[1.1] mb-8">
+            Transitioning Wealth into <br />
+            <span className="italic text-slate-400">Generational Heritage.</span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl leading-relaxed">
-            We specialize in the sophisticated transition of active operational wealth into institutional-grade real estate portfolios across East Africa.
+          <div className="h-[1px] w-20 bg-amber-500/40 mb-8" />
+          <p className="text-lg text-slate-400 font-light leading-relaxed">
+            We facilitate the sophisticated migration of operational capital into 
+            recession-resistant, institutional-grade real estate across the East African corridor.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-24">
+        {/* Strategic Pillars - Clean Cards */}
+        <div className="grid md:grid-cols-3 gap-12 mb-32">
           {[
             {
               title: "Capital Transition",
-              desc: "A strategic framework for converting high-risk operating capital into low-volatility property yields.",
-              icon: FileText,
-              link: "/legacy-guide",
-              label: "White Paper"
+              desc: "A bespoke framework for reallocating high-volatility operational cash flow into stabilized property yields.",
+              icon: PieChart,
+              label: "Strategy"
             },
             {
               title: "Asset Monetization",
-              desc: "Unlock liquidity from industrial assets via leaseback structures while maintaining operational continuity.",
-              icon: Factory,
-              link: "/sale-leaseback",
-              label: "Advisory"
+              desc: "Sophisticated sale-leaseback structures designed to unlock liquidity while ensuring operational permanence.",
+              icon: Landmark,
+              label: "Divestment"
             },
             {
-              title: "Legacy Preservation",
-              desc: "How a premier Kenyan industrialist secured KSh billions in tax-efficient income for their family trust.",
-              icon: ShieldCheck,
-              link: "/case-study-legacy",
-              label: "Case Study"
+              title: "Fiduciary Counsel",
+              desc: "Strategic advisory for family trusts and private offices seeking tax-efficient property acquisition.",
+              icon: Shield,
+              label: "Advisory"
             }
           ].map((item, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.2 }}
-              whileHover={{ y: -10, transition: { duration: 0.3 } }}
-              className="group relative bg-gradient-to-b from-white/[0.08] to-transparent border border-white/10 p-8 rounded-3xl overflow-hidden"
+              transition={{ delay: idx * 0.2, duration: 0.8 }}
+              className="group"
             >
-              {/* Animated Glow Overlay */}
-              <div className="absolute inset-0 bg-amber-500/0 group-hover:bg-amber-500/5 transition-colors duration-500" />
-              
-              <div className="relative z-10">
-                <div className="flex justify-between items-start mb-12">
-                  <div className="p-3 bg-white/5 rounded-2xl border border-white/10 group-hover:border-amber-500/50 transition-colors">
-                    <item.icon className="h-6 w-6 text-amber-500" />
-                  </div>
-                  <span className="text-[10px] font-bold tracking-widest uppercase text-gray-500">{item.label}</span>
-                </div>
-                
-                <h3 className="text-xl font-bold mb-4">{item.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-8">
-                  {item.desc}
-                </p>
-                
-                <Link href={item.link} className="inline-flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase text-white group-hover:text-amber-500 transition-colors">
-                  Explore <ChevronRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
-                </Link>
+              <div className="mb-8 overflow-hidden">
+                <item.icon className="h-8 w-8 text-amber-500/70 stroke-[1px] group-hover:scale-110 transition-transform duration-700" />
               </div>
+              <p className="text-[9px] tracking-[0.3em] uppercase text-amber-500/50 font-bold mb-3">{item.label}</p>
+              <h3 className="text-xl font-serif mb-4 text-slate-200 group-hover:text-white transition-colors">{item.title}</h3>
+              <p className="text-slate-500 text-sm leading-relaxed font-light mb-6">
+                {item.desc}
+              </p>
+              <a href="#" className="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-slate-400 group-hover:text-amber-200 transition-all duration-300">
+                View Protocol <ChevronRight className="h-3 w-3" />
+              </a>
             </motion.div>
           ))}
         </div>
 
-        {/* Interactive Fiduciary Banner */}
+        {/* The Fiduciary Statement - Very Minimalist */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#000435] p-1 shadow-2xl"
+          className="border-t border-white/10 pt-16 flex flex-col md:flex-row items-start justify-between gap-12"
         >
-          <div className="bg-gradient-to-r from-white/5 via-transparent to-white/5 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-10">
-            <div className="max-w-xl">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="h-px w-8 bg-amber-500" />
-                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-amber-500">The Fiduciary Standard</span>
-              </div>
-              <p className="text-2xl font-serif italic text-gray-200">
-                "Our mandate is the absolute protection of the principal, ensuring that wealth created in this generation endures for the next."
-              </p>
-            </div>
-            
-            <button className="relative group overflow-hidden bg-white text-black px-6 py-3 rounded-xl font-bold text-[11px] tracking-widest uppercase transition-all hover:bg-amber-500 hover:text-white active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.1)]">
-              <span className="relative z-10">Request Consultation</span>
-              <div className="absolute inset-0 bg-amber-600 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300" />
+          <div className="max-w-2xl">
+            <h4 className="text-[10px] tracking-[0.4em] uppercase text-slate-500 mb-8 font-bold">The Murivest Mandate</h4>
+            <p className="text-2xl md:text-3xl font-serif leading-snug text-slate-200 italic">
+              "Our objective is the absolute preservation of principal, ensuring the prosperity of today becomes the legacy of tomorrow."
+            </p>
+          </div>
+          
+          <div className="flex flex-col items-start gap-6">
+            <p className="text-slate-500 text-xs tracking-wide max-w-[200px]">
+              Available for private consultation in Nairobi, London, and Dubai.
+            </p>
+            <button className="px-10 py-4 bg-transparent border border-amber-500/40 text-amber-200 text-[10px] tracking-[0.3em] uppercase hover:bg-amber-500 hover:text-slate-950 transition-all duration-700">
+              Request Briefing
             </button>
           </div>
         </motion.div>

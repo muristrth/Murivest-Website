@@ -1,144 +1,126 @@
 'use client';
 
 import React from 'react';
-
-import { Download, TrendingUp } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { FileText, Download, TrendingUp, Lock, ArrowRight } from 'lucide-react';
 
 const YieldReportSection = () => {
   const reports = [
-    {
-      quarter: 'Q3',
-      year: '2024',
-      filename: 'Murivest Realty The Nairobi Yield Report Q4 2025.pdf',
-      yield: '8.5–9.0%',
-      isLatest: false
-    },
-    {
-      quarter: 'Q4',
-      year: '2024',
-      filename: 'Murivest Realty The Nairobi Yield Report Q3 2025.pdf',
-      yield: '7.8–8.5%',
-      isLatest: false
-    },
-    {
-      quarter: 'Q1',
-      year: '2025',
-      filename: 'Murivest Realty The Nairobi Yield Report Q2 2025.pdf',
-      yield: '7.5–8.2%',
-      isLatest: false
-    },
-    {
-      quarter: 'Q2',
-      year: '2025',
-      filename: 'Murivest Realty The Nairobi Yield Report Q4 2025.pdf',
-      yield: '8.5–9.0%',
-      isLatest: false
-    },
-    {
-      quarter: 'Q3',
-      year: '2025',
-      filename: 'Murivest Realty The Nairobi Yield Report Q3 2025.pdf',
-      yield: '7.8–8.5%',
-      isLatest: false
-    },
-    {
-      quarter: 'Q4',
-      year: '2025',
-      filename: 'Murivest Realty The Nairobi Yield Report Q4 2025.pdf',
-      yield: '7.5–8.2%',
-      isLatest: true
-    }
+    { quarter: 'Q4', year: '2025', yield: '8.5–9.0%', status: 'Latest Intelligence', isLatest: true },
+    { quarter: 'Q3', year: '2025', yield: '7.8–8.5%', status: 'Archived', isLatest: false },
+    { quarter: 'Q2', year: '2025', yield: '7.5–8.2%', status: 'Archived', isLatest: false },
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
-      <div className="max-w-5xl mx-auto px-6">
-        {/* Minimal header */}
-        <div className="text-center mb-16">
-          <div className="inline-block mb-4">
-            <div className="h-px w-10 bg-amber-600 mx-auto mb-4"></div>
+    <section className="py-32 bg-[#0a0f1a] text-white overflow-hidden relative border-t border-white/5">
+      {/* Background Decorative Element */}
+      <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,rgba(217,119,6,0.03),transparent)] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-8 lg:px-12 relative z-10">
+        
+        {/* Editorial Header */}
+        <div className="flex flex-col lg:flex-row justify-between items-end mb-24 gap-12">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3 mb-6">
+              <TrendingUp className="h-4 w-4 text-amber-500" strokeWidth={1.5} />
+              <span className="text-[10px] font-bold tracking-[0.5em] uppercase text-slate-500">Macro Intelligence</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-[1.1] mb-8">
+              The Nairobi <span className="italic font-light text-slate-400 underline decoration-amber-500/30 decoration-1 underline-offset-[12px]">Yield Reports.</span>
+            </h2>
+            <p className="text-slate-400 text-lg font-light leading-relaxed max-w-xl italic">
+              "Proprietary quarterly analysis on prime commercial yields, rental escalations, and capital flight patterns across East Africa."
+            </p>
           </div>
-          <h2 className="text-3xl md:text-4xl font-light text-amber-50 mb-4 tracking-tight">
-            Quarterly Market Intelligence for Commercial Real Estate Investors
-          </h2>
-          <p className="text-amber-100/60 text-sm font-light tracking-wide max-w-lg mx-auto">
-            Institutional insights for discerning capital
-          </p>
+          <div className="hidden lg:block pb-4 text-right">
+            <p className="text-slate-500 text-[9px] uppercase tracking-[0.3em] font-bold mb-2">Restricted Access</p>
+            <p className="text-amber-200/50 text-xs font-serif italic">Institutional Grade Data Only</p>
+          </div>
         </div>
 
-        {/* Reports - Horizontal Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {reports.map((report, index) => (
-            <div key={`${report.quarter}-${report.year}`}>
-              <div
-                className={`relative bg-slate-800/40 backdrop-blur-sm border transition-all duration-500 hover:bg-slate-800/60 group ${
-                  report.isLatest
-                    ? 'border-amber-600/50 shadow-2xl shadow-amber-900/20'
-                    : 'border-slate-700/50 hover:border-amber-600/30'
-                }`}
-              >
-                {/* Latest indicator */}
-                {report.isLatest && (
-                  <div className="absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-600 to-transparent"></div>
-                )}
+        {/* Intelligence Grid */}
+        <div className="grid lg:grid-cols-12 gap-12 items-stretch">
+          
+          {/* Featured Latest Report */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="lg:col-span-7 bg-white/[0.03] border border-white/10 p-12 relative group hover:border-amber-500/40 transition-all duration-700"
+          >
+            <div className="flex justify-between items-start mb-20">
+              <div>
+                <span className="bg-amber-600 text-[9px] font-bold tracking-[0.3em] uppercase px-3 py-1 text-slate-900">
+                  New Release
+                </span>
+                <h3 className="text-5xl font-serif mt-6 tracking-tight">Q4 <span className="text-slate-500 font-light">2025</span></h3>
+              </div>
+              <FileText size={48} className="text-white/10 stroke-[1px]" />
+            </div>
 
-                <div className="p-6">
-                  {/* Quarter */}
-                  <div className="flex items-baseline justify-between mb-6">
-                    <div>
-                      <div className="text-4xl font-light text-amber-50 mb-1 tracking-tight">
-                        {report.quarter}
-                      </div>
-                      <div className="text-xs text-amber-100/40 tracking-[0.2em] uppercase font-light">
-                        {report.year}
-                      </div>
-                    </div>
-                    {report.isLatest && (
-                      <div className="flex items-center gap-1.5 text-amber-600">
-                        <TrendingUp className="h-3.5 w-3.5" />
-                        <span className="text-xs tracking-wider uppercase font-light">Current</span>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Yield */}
-                  <div className="mb-6 pb-5 border-b border-slate-700/50">
-                    <div className="text-xs text-amber-100/40 tracking-[0.2em] uppercase mb-2 font-light">
-                      Prime Yield Range
-                    </div>
-                    <div className="text-xl text-amber-50 font-light tracking-tight">
-                      {report.yield}
-                    </div>
-                  </div>
-
-                  {/* Download button */}
-                  <a
-                    href={`/${report.filename}`}
-                    download
-                    className={`block w-full py-3 text-center text-xs tracking-[0.15em] uppercase font-light transition-all duration-300 ${
-                      report.isLatest
-                        ? 'bg-amber-600 text-slate-900 hover:bg-amber-500'
-                        : 'bg-slate-700/50 text-amber-100/80 hover:bg-slate-700 hover:text-amber-50'
-                    }`}
-                  >
-                    <span className="flex items-center justify-center gap-3">
-                      Access Report
-                      <Download className="h-3 w-3" />
-                    </span>
-                  </a>
+            <div className="grid md:grid-cols-2 gap-12 mb-12">
+              <div>
+                <p className="text-slate-500 text-[10px] uppercase tracking-[0.2em] mb-3 font-bold">Prime Asset Yield</p>
+                <div className="text-4xl font-serif text-amber-100 italic">8.5 – 9.0%</div>
+                <div className="mt-4 h-[1px] w-full bg-white/10 relative overflow-hidden">
+                    <motion.div 
+                      initial={{ x: '-100%' }}
+                      whileInView={{ x: '0%' }}
+                      transition={{ duration: 1.5, ease: "easeOut" }}
+                      className="absolute inset-0 bg-amber-500/50" 
+                    />
                 </div>
               </div>
+              <div className="flex flex-col justify-end">
+                <p className="text-slate-400 text-xs font-light leading-relaxed">
+                  Analyzing the impact of the 2025 tax amendments on Grade A commercial absorption rates in Westlands.
+                </p>
+              </div>
             </div>
-          ))}
+
+            <button className="flex items-center gap-6 text-[10px] font-bold tracking-[0.4em] uppercase text-white group-hover:text-amber-500 transition-colors">
+              Access Full Dossier <Download size={14} className="group-hover:translate-y-1 transition-transform" />
+            </button>
+          </motion.div>
+
+          {/* Archive Column */}
+          <div className="lg:col-span-5 flex flex-col gap-6">
+            {reports.filter(r => !r.isLatest).map((report, i) => (
+              <div key={i} className="bg-white/[0.01] border border-white/5 p-8 flex justify-between items-center group hover:bg-white/[0.03] transition-all">
+                <div>
+                  <div className="text-[10px] tracking-[0.2em] text-slate-500 uppercase font-bold mb-1">{report.quarter} {report.year}</div>
+                  <div className="text-xl font-serif text-slate-200 italic">{report.yield} Yield</div>
+                </div>
+                <button className="h-12 w-12 rounded-full border border-white/10 flex items-center justify-center hover:border-amber-500/50 hover:bg-amber-500/10 transition-all">
+                  <Lock size={14} className="text-slate-500 group-hover:text-amber-500" />
+                </button>
+              </div>
+            ))}
+
+            <div className="mt-auto pt-8">
+              <div className="p-8 border border-amber-500/20 bg-amber-500/[0.02]">
+                <h4 className="text-[11px] font-bold tracking-[0.3em] uppercase text-amber-500 mb-4">Custom Analysis</h4>
+                <p className="text-slate-400 text-xs font-light leading-relaxed mb-6">
+                  Require a specific sub-sector audit? Our analysts provide bespoke feasibility studies for private acquisitions.
+                </p>
+                <button className="flex items-center gap-3 text-[10px] font-bold tracking-[0.3em] uppercase text-white hover:gap-5 transition-all">
+                  Request Bespoke Audit <ArrowRight size={12} className="text-amber-500" />
+                </button>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        {/* Minimal footer */}
-        <div className="text-center">
-          <div className="inline-block">
-            <div className="h-px w-24 bg-amber-600/30 mx-auto mb-6"></div>
-            <p className="text-amber-100/30 text-xs tracking-[0.2em] uppercase font-light">
-              Confidential • Institutional Access
-            </p>
+        {/* Compliance Footer */}
+        <div className="mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 opacity-40 grayscale">
+          <p className="text-[9px] tracking-[0.3em] uppercase font-bold text-slate-400">
+            Murivest Advisory • Financial Conduct Authority Standards
+          </p>
+          <div className="flex gap-12 text-[9px] tracking-[0.3em] uppercase font-bold">
+            <span>Confidential</span>
+            <span>Institutional Use Only</span>
+            <span>Nairobi • London • Dubai</span>
           </div>
         </div>
       </div>

@@ -1,117 +1,124 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Factory, Mountain, Map, ArrowRight, BarChart3, Download } from 'lucide-react';
+import { Factory, Mountain, Map, ArrowRight, Download } from 'lucide-react';
 
 const IndustrialLandBankingSection: React.FC = () => {
   const hubs = [
     { name: "Westlands", slug: "westlands", label: "Corporate HQ" },
     { name: "Upper Hill", slug: "upper-hill", label: "Financial District" },
-    { name: "Industrial Area", slug: "industrial-area", label: "Logistics Hub" },
-    { name: "Karen", slug: "karen", label: "Luxury Commercial" },
+    { name: "Mombasa Rd", slug: "industrial-area", label: "Logistics Hub" },
+    { name: "Eldoret/Nakuru", slug: "special-zones", label: "Economic Zones" },
   ];
 
   return (
-    <section className="py-24 bg-[#0f172a] text-white overflow-hidden relative">
-      {/* Background Technical Grid */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/graphy.png')]" />
+    <section className="py-32 bg-slate-950 text-white overflow-hidden relative border-t border-white/5">
+      {/* Background Architectural Grid (Very Faint) */}
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/graphy.png')]" />
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-          <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-6xl font-serif font-medium mb-6">
-              Industrial <span className="text-amber-500">&</span> <br />
-              Strategic Land Banking
+      <div className="max-w-7xl mx-auto px-8 lg:px-12 relative z-10">
+        
+        {/* Header Section */}
+        <div className="flex flex-col lg:flex-row justify-between items-start mb-24 gap-12">
+          <div className="max-w-3xl">
+            <p className="text-amber-500/70 text-[10px] tracking-[0.5em] uppercase font-bold mb-6">
+              Critical Infrastructure
+            </p>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-[1.1] mb-8">
+              Industrial Acquisition <br />
+              <span className="italic text-slate-400 font-light">& Strategic Land Banking.</span>
             </h2>
-            <p className="text-gray-400 text-lg">
-              Deployment of capital into Kenya’s critical infrastructure corridors. Specialized for manufacturers and logistics firms seeking operational security.
+            <p className="text-slate-400 text-lg font-light leading-relaxed max-w-2xl">
+              Deployment of private capital into Kenya’s primary logistical corridors. 
+              We identify high-utilization assets for institutional portfolios and industrialist families.
             </p>
           </div>
-          <div className="hidden md:block p-6 border-l border-white/10 italic text-sm text-gray-500">
-            "Land is the only asset that isn't being manufactured anymore."
+          <div className="hidden lg:block pt-4">
+             <div className="h-20 w-[1px] bg-gradient-to-b from-amber-500/50 to-transparent" />
+             <p className="text-slate-500 text-[11px] uppercase tracking-[0.3em] leading-loose mt-4 [writing-mode:vertical-rl]">
+               Tangible • Permanent • Secured
+             </p>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {/* Industrial Real Estate Analysis */}
-          <motion.div
-            whileHover={{ y: -5 }}
-            className="group bg-white/5 border border-white/10 p-10 rounded-[2rem] hover:bg-white/[0.08] transition-all duration-500"
-          >
-            <div className="flex items-center gap-4 mb-8">
-              <div className="p-3 bg-amber-500/20 rounded-xl text-amber-500">
-                <Factory className="h-7 w-7" />
-              </div>
-              <h3 className="text-2xl font-bold">Industrial Asset Analysis</h3>
+        {/* Technical Analysis Grid */}
+        <div className="grid md:grid-cols-2 gap-0 border border-white/10 mb-20">
+          {/* Column 1: Asset Analysis */}
+          <div className="p-12 border-b md:border-b-0 md:border-r border-white/10 group hover:bg-white/[0.02] transition-colors duration-700">
+            <div className="flex items-center gap-4 mb-10">
+              <Factory className="h-6 w-6 text-amber-500/70 stroke-[1px]" />
+              <h3 className="text-xl font-serif tracking-wide text-slate-200 uppercase">Asset Intelligence</h3>
             </div>
-            <div className="space-y-6 mb-10">
-              <div className="flex justify-between items-end border-b border-white/5 pb-2">
-                <span className="text-gray-400 text-sm">Mombasa Road Vacancy</span>
-                <span className="text-amber-500 font-mono font-bold text-xl">2.3%</span>
+            
+            <div className="space-y-8 mb-12">
+              <div className="flex justify-between items-center group/item">
+                <span className="text-slate-500 text-xs tracking-widest uppercase">Mombasa Road Vacancy</span>
+                <span className="text-amber-200 font-serif text-2xl tracking-tighter italic">2.3%</span>
               </div>
-              <div className="flex justify-between items-end border-b border-white/5 pb-2">
-                <span className="text-gray-400 text-sm">Avg. Logistics Lease</span>
-                <span className="text-amber-500 font-mono font-bold text-xl">7.5 Yrs</span>
+              <div className="flex justify-between items-center group/item">
+                <span className="text-slate-500 text-xs tracking-widest uppercase">Avg. Institutional Lease</span>
+                <span className="text-amber-200 font-serif text-2xl tracking-tighter italic">9.5 Yrs</span>
               </div>
             </div>
-            <Link href="/industrial-properties" className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-white group-hover:text-amber-500 transition-colors">
-              Market Inventory <ArrowRight className="h-4 w-4" />
-            </Link>
-          </motion.div>
 
-          {/* Strategic Land Banking */}
-          <motion.div
-            whileHover={{ y: -5 }}
-            className="group bg-white/5 border border-white/10 p-10 rounded-[2rem] hover:bg-white/[0.08] transition-all duration-500"
-          >
-            <div className="flex items-center gap-4 mb-8">
-              <div className="p-3 bg-amber-500/20 rounded-xl text-amber-500">
-                <Mountain className="h-7 w-7" />
-              </div>
-              <h3 className="text-2xl font-bold">Strategic Land Banking</h3>
+            <button className="flex items-center gap-3 text-[10px] tracking-[0.3em] uppercase text-slate-400 group-hover:text-amber-500 transition-all">
+              Inventory Access <ArrowRight className="h-3 w-3" />
+            </button>
+          </div>
+
+          {/* Column 2: Land Banking */}
+          <div className="p-12 group hover:bg-white/[0.02] transition-colors duration-700">
+            <div className="flex items-center gap-4 mb-10">
+              <Mountain className="h-6 w-6 text-amber-500/70 stroke-[1px]" />
+              <h3 className="text-xl font-serif tracking-wide text-slate-200 uppercase">Strategic Reserves</h3>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed mb-10">
-              Acquisition of large-scale tracts positioned along upcoming SGR corridors and bypass projects for 5–10 year value appreciation.
+            
+            <p className="text-slate-500 text-sm leading-relaxed font-light mb-12 max-w-md">
+              Acquisition of large-scale tracts positioned along SGR logistical nodes and upcoming bypass projects for decade-long capital appreciation.
             </p>
-            <Link href="/strategic-land-banking" className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-white group-hover:text-amber-500 transition-colors">
-              Acquisition Maps <ArrowRight className="h-4 w-4" />
-            </Link>
-          </motion.div>
+
+            <button className="flex items-center gap-3 text-[10px] tracking-[0.3em] uppercase text-slate-400 group-hover:text-amber-500 transition-all">
+              Acquisition Mapping <ArrowRight className="h-3 w-3" />
+            </button>
+          </div>
         </div>
 
-        {/* Local Hubs Navigation */}
-        <div className="bg-white/5 border border-white/10 rounded-3xl p-8 mb-16">
-          <div className="flex items-center gap-3 mb-8">
-            <Map className="h-4 w-4 text-amber-500" />
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-gray-400">Prime Asset Corridors</span>
+        {/* Corridor Navigation */}
+        <div className="border border-white/10 p-10 mb-24 flex flex-col md:flex-row items-center gap-12">
+          <div className="flex items-center gap-3 min-w-fit">
+            <Map className="h-4 w-4 text-amber-500/50" />
+            <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-slate-500">Regional Corridors</span>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 w-full">
             {hubs.map((hub) => (
-              <Link key={hub.slug} href={`/properties?location=${hub.slug}`} className="group">
-                <div className="text-sm font-bold text-white group-hover:text-amber-500 transition-colors">{hub.name}</div>
-                <div className="text-[10px] text-gray-500 uppercase tracking-tighter">{hub.label}</div>
-              </Link>
+              <div key={hub.name} className="group cursor-pointer border-l border-white/5 pl-6">
+                <div className="text-sm font-serif text-slate-300 group-hover:text-amber-200 transition-colors">{hub.name}</div>
+                <div className="text-[9px] text-slate-600 uppercase tracking-widest mt-1">{hub.label}</div>
+              </div>
             ))}
           </div>
         </div>
 
-        {/* High-Value Legacy CTA */}
+        {/* High-Value Legacy CTA - Redone as "The Library" */}
         <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="bg-gradient-to-r from-amber-600 to-amber-700 rounded-3xl p-10 flex flex-col md:flex-row items-center justify-between gap-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative bg-slate-900 border border-amber-500/20 p-12 md:p-16 overflow-hidden"
         >
-          <div className="max-w-xl">
-            <h3 className="text-2xl font-bold mb-2">The 2025 Legacy Investment Brief</h3>
-            <p className="text-amber-100 text-sm opacity-90 leading-relaxed">
-              A discreet framework for family trusts and company owners. Strategies for plant monetization and generational wealth structuring.
-            </p>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 blur-[100px]" />
+          <div className="flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
+            <div className="max-w-xl text-center md:text-left">
+              <h3 className="text-2xl font-serif mb-4">The 2025 Institutional Brief</h3>
+              <p className="text-slate-400 text-sm font-light leading-relaxed">
+                A discreet memorandum for Family Trusts and Principal Investors. Contains proprietary analysis on logistical yields and generational tax structuring.
+              </p>
+            </div>
+            <button className="flex items-center gap-4 px-8 py-4 bg-amber-600 text-slate-950 font-bold text-[10px] tracking-[0.3em] uppercase hover:bg-amber-500 transition-all group">
+              Receive Briefing <Download className="h-4 w-4 group-hover:translate-y-0.5 transition-transform" />
+            </button>
           </div>
-          <button className="bg-[#0f172a] text-white px-4 py-2 rounded-lg font-bold text-xs tracking-widest uppercase hover:bg-slate-800 transition-all flex items-center gap-3 group">
-            Download Brief <Download className="h-4 w-4 group-hover:translate-y-0.5 transition-transform" />
-          </button>
         </motion.div>
       </div>
     </section>

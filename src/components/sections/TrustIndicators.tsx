@@ -1,165 +1,118 @@
 'use client';
 
-
-import { Shield, Award, Users, Globe, CheckCircle, Star, Handshake } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Shield, ShieldCheck, Landmark, Scale, Quote, CheckCircle, ChevronRight } from 'lucide-react';
 
 const TrustIndicators = () => {
-  const certifications = [
-    {
-      title: "KRA Registered",
-      description: "Fully compliant investment advisor"
-    },
-    {
-      title: "ISO 27001 Certified",
-      description: "Information security management"
-    },
-    {
-      title: "RICS Accredited",
-      description: "Royal Institution of Chartered Surveyors"
-    },
-    {
-      title: "CMA Licensed",
-      description: "Capital Markets Authority approved"
-    }
+  const compliance = [
+    { title: "KRA Compliant", detail: "Registered Investment Advisor" },
+    { title: "RICS Standards", detail: "Chartered Valuation Frameworks" },
+    { title: "CMA Licensed", detail: "Capital Markets Oversight" },
+    { title: "ISO 27001", detail: "Tier-1 Data Encryption" }
   ];
 
-  const partnerships = [
-    {
-      name: "Pam Golding Properties Kenya",
-      type: "Strategic Partner"
-    },
-    {
-      name: "Knight Frank International",
-      type: "Property Investments"
-    },
-    {
-      name: "Vineyard Properties",
-      type: "Local Real Estate"
-    },
-    {
-      name: "Michael Mungai",
-      type: "Legal Counsel"
-    }
-  ];
-
-  const testimonialHighlights = [
-    {
-      quote: "Murivest's attention to detail and market insight has been exceptional.",
-      author: "John Kamau",
-      title: "Businessman, Nairobi"
-    },
-    {
-      quote: "The most professional real estate investment experience I've encountered in Africa.",
-      author: "Dr. Sarah Chen",
-      title: "Family Office, Singapore"
-    },
-    {
-      quote: "Their exclusive opportunities have consistently outperformed our expectations.",
-      author: "Peter Oduya",
-      title: "Family Office Director, Kenya"
-    }
+  const partners = [
+    "Pam Golding Properties",
+    "Knight Frank International",
+    "Vineyard Properties",
+    "Mungai & Associates Legal"
   ];
 
   return (
-    <section className="py-24 bg-slate-900">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
-            Trusted by the World's
-            <span className="block font-extralight italic text-slate-300">
-              Financial Elite
-            </span>
+    <section className="py-32 bg-[#080a0f] text-white relative">
+      <div className="max-w-7xl mx-auto px-8 lg:px-12">
+        
+        {/* Editorial Header */}
+        <div className="text-center mb-24">
+          <div className="inline-flex items-center gap-3 px-4 py-2 border border-amber-500/20 bg-amber-500/5 rounded-full mb-8">
+            <ShieldCheck className="h-4 w-4 text-amber-500" />
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-amber-200">Fiduciary Integrity</span>
+          </div>
+          <h2 className="text-4xl md:text-6xl font-serif leading-[1.1] mb-8">
+            The Foundation of <br />
+            <span className="italic font-light text-slate-400 underline decoration-amber-500/20 underline-offset-8">Institutional Trust.</span>
           </h2>
-          <p className="text-xl text-slate-400 max-w-3xl mx-auto font-light leading-relaxed">
-            Our reputation is built on unwavering integrity, regulatory compliance,
-            and partnerships with the world's most respected financial institutions.
+          <p className="text-slate-500 text-lg font-light max-w-2xl mx-auto italic">
+            "Our reputation is our most liquid asset. We operate at the intersection of local expertise and international regulatory rigor."
           </p>
         </div>
 
-        {/* Certifications */}
-        <div className="mb-20">
-          <h3 className="text-2xl font-light text-white text-center mb-12">
-            Regulatory Compliance & Certifications
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {certifications.map((cert, index) => (
-              <div
-                key={index}
-                className="bg-slate-800 rounded-2xl p-6 text-center hover:bg-slate-750 transition-colors"
-              >
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-slate-700 rounded-xl mb-4">
-                  <Shield className="h-6 w-6 text-slate-300" />
-                </div>
-                <h4 className="text-white font-medium mb-2">{cert.title}</h4>
-                <p className="text-slate-400 text-sm font-light">{cert.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Strategic Partnerships */}
-        <div className="mb-20">
-          <h3 className="text-2xl font-light text-white text-center mb-12">
-            Strategic Partnerships
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {partnerships.map((partner, index) => (
-              <div
-                key={index}
-                className="bg-slate-800 rounded-2xl p-6 text-center hover:bg-slate-750 transition-colors"
-              >
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-slate-700 rounded-xl mb-4">
-                  <Handshake className="h-6 w-6 text-slate-300" />
-                </div>
-                <h4 className="text-white font-medium mb-2">{partner.name}</h4>
-                <p className="text-slate-400 text-sm font-light">{partner.type}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Client Testimonials */}
-        <div>
-          <h3 className="text-2xl font-light text-white text-center mb-12">
-            What Our Clients Say
-          </h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonialHighlights.map((testimonial, index) => (
-              <div
-                key={index}
-                className="bg-slate-800 rounded-2xl p-8 hover:bg-slate-750 transition-colors"
-              >
-                <div className="flex items-center mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 text-amber-400 fill-amber-400" />
-                  ))}
-                </div>
-                <blockquote className="text-slate-300 font-light leading-relaxed mb-6">
-                  "{testimonial.quote}"
-                </blockquote>
+        {/* Regulatory & Partner Grid */}
+        <div className="grid lg:grid-cols-12 gap-12 mb-32">
+          
+          {/* Compliance Column */}
+          <div className="lg:col-span-4 space-y-6">
+            <h3 className="text-[11px] font-bold tracking-[0.4em] uppercase text-slate-500 mb-8 px-2">Regulatory Framework</h3>
+            {compliance.map((item, i) => (
+              <div key={i} className="flex items-center justify-between p-6 bg-white/[0.02] border border-white/5 hover:border-amber-500/30 transition-all group">
                 <div>
-                  <div className="text-white font-medium">{testimonial.author}</div>
-                  <div className="text-slate-400 text-sm">{testimonial.title}</div>
+                  <h4 className="text-sm font-bold tracking-tight text-slate-200">{item.title}</h4>
+                  <p className="text-[10px] text-slate-500 uppercase tracking-wider mt-1">{item.detail}</p>
                 </div>
+                <Scale size={16} className="text-slate-700 group-hover:text-amber-500 transition-colors" />
               </div>
             ))}
           </div>
+
+          {/* Partners Column (Visual Logos/Text) */}
+          <div className="lg:col-span-8 bg-white/[0.01] border border-white/5 p-12 relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-8">
+              <Landmark size={80} className="text-white/[0.02] rotate-12" />
+            </div>
+            
+            <h3 className="text-[11px] font-bold tracking-[0.4em] uppercase text-slate-500 mb-12">Strategic Connectivity</h3>
+            <div className="grid md:grid-cols-2 gap-12">
+              {partners.map((partner, i) => (
+                <div key={i} className="flex items-center gap-6 group">
+                  <div className="h-px w-8 bg-amber-500/30 group-hover:w-12 transition-all" />
+                  <span className="text-xl font-serif text-slate-300 group-hover:text-white transition-colors tracking-tight italic">
+                    {partner}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-20 pt-12 border-t border-white/5">
+              <Quote className="text-amber-500/20 mb-6" size={32} />
+              <p className="text-2xl font-serif leading-relaxed text-slate-200 italic mb-8">
+                "The most professional real estate experience I've encountered in Africa. Their ability to bridge local opportunity with global fiduciary standards is unmatched."
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="h-10 w-10 rounded-full bg-gradient-to-tr from-amber-600 to-amber-900 border border-white/10" />
+                <div>
+                  <p className="text-sm font-bold tracking-tight">Dr. Sarah Chen</p>
+                  <p className="text-[10px] text-slate-500 uppercase tracking-[0.2em]">Family Office Principal · Singapore</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Final CTA */}
-        <div className="text-center mt-20">
-          <div className="bg-gradient-to-r from-slate-800 to-slate-700 rounded-3xl p-12 border border-slate-600">
-            <h3 className="text-3xl font-light text-white mb-6">
-              Join the World's Most Exclusive Investment Community
-            </h3>
-            <p className="text-slate-300 mb-8 font-light leading-relaxed max-w-2xl mx-auto">
-              Applications for our Q1 2025 investment opportunities are now being reviewed.
-              Membership is by invitation only and subject to qualification requirements.
-            </p>
-            <button className="inline-flex items-center px-10 py-5 bg-white text-slate-900 rounded-2xl font-medium hover:bg-slate-100 transition-colors">
-              Apply for Membership
-              <CheckCircle className="h-5 w-5 ml-2" />
-            </button>
+        {/* Final Conversion Portal */}
+        <div className="relative group">
+          <div className="absolute -inset-1 bg-gradient-to-r from-amber-600 to-amber-900 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+          <div className="relative bg-slate-950 border border-white/10 rounded-2xl p-16 overflow-hidden">
+            
+            <div className="max-w-3xl">
+              <h3 className="text-3xl md:text-5xl font-serif mb-6 leading-tight">
+                Secure Your Place in the <br />
+                <span className="text-amber-500">Q1 2025 Allocation.</span>
+              </h3>
+              <p className="text-slate-400 text-lg font-light mb-12 leading-relaxed">
+                Membership is strictly by invitation or qualified referral. We are currently accepting mandates for our next prime commercial tranche.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-6">
+                <button className="bg-white text-slate-950 px-10 py-5 text-[11px] font-bold tracking-[0.4em] uppercase hover:bg-amber-500 transition-all flex items-center justify-center gap-4">
+                  Request Membership <ChevronRight size={14} />
+                </button>
+                <div className="flex items-center gap-4 px-6 opacity-60">
+                    <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-400">Applications Live</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -1,101 +1,106 @@
 'use client';
 
 import React, { useEffect, useState, useCallback } from 'react';
-import Link from 'next/link';
-import { ArrowRight, TrendingUp, Shield, Globe, Award, Building2 } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 const Hero = () => {
-  // Your specific image array
   const images = [
-    '/murivest_secretary.png',
+    '/murivest_ceo_office.png', // Start with the most "Institutional" image
     'https://i.pinimg.com/736x/bc/43/98/bc43988c5de55507f7817ac3b1647e95.jpg',
     '/kenya-night.png',
-    '/cin_pdf.png',
-    '/murivest_ceo_office.png'
   ];
 
   const [currentImage, setCurrentImage] = useState(0);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
-  // 3D Mouse Parallax Logic
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
     const { clientX, clientY } = e;
-    const x = (clientX / window.innerWidth - 0.5) * 15; // Movement intensity
-    const y = (clientY / window.innerHeight - 0.5) * 15;
+    const x = (clientX / window.innerWidth - 0.5) * 10;
+    const y = (clientY / window.innerHeight - 0.5) * 10;
     setMousePos({ x, y });
   }, []);
 
-  // Image Slider Logic
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 6000); // 6 seconds per slide
+    }, 8000); // Slower transitions for a calmer feel
     return () => clearInterval(interval);
   }, [images.length]);
-
-  const handleWhatsAppContact = (message: string) => {
-    const phoneNumber = "254115277610";
-    const encodedMessage = encodeURIComponent(`Greetings from a prospective investor. ${message}`);
-    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
-  };
 
   return (
     <section 
       onMouseMove={handleMouseMove}
-      className="relative min-h-[90vh] lg:min-h-screen w-full bg-slate-950 text-white overflow-hidden flex items-center"
+      className="relative min-h-screen w-full bg-slate-950 text-white overflow-hidden flex flex-col justify-center items-center"
     >
-      {/* BACKGROUND LAYER: Image Slider + Parallax */}
+      {/* BACKGROUND LAYER */}
       <div 
-        className="absolute inset-0 z-0 transition-transform duration-1000 ease-out scale-110"
+        className="absolute inset-0 z-0 transition-transform duration-[3000ms] ease-out scale-105"
         style={{
           transform: `translate3d(${mousePos.x}px, ${mousePos.y}px, 0)`,
         }}
       >
         {images.map((img, index) => (
           <div
-            key={img + index}
-            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-[2000ms] ease-in-out ${
-              index === currentImage ? 'opacity-100' : 'opacity-0'
+            key={img}
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-[3000ms] ease-in-out ${
+              index === currentImage ? 'opacity-40' : 'opacity-0'
             }`}
             style={{ backgroundImage: `url("${img}")` }}
           />
         ))}
         
-        {/* Cinematic Overlays */}
-        <div className="absolute inset-0 bg-slate-950/70 z-10" /> {/* Darken for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/40 to-transparent z-10" />
+        {/* Sophisticated Vignette */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-transparent to-slate-950" />
       </div>
 
       {/* CONTENT LAYER */}
-      <div className="relative max-w-2xl mx-auto px-6 lg:px-10 z-30 w-full pt-20 pb-12 text-center">
-        <div className="max-w-4xl">
-          {/* Top Badge */}
-          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8 animate-in fade-in slide-in-from-top-4 duration-1000">
-            <Building2 className="h-4 w-4 text-amber-500" />
-            <span className="text-amber-500 font-medium text-[10px] uppercase tracking-[0.2em]">
-              Established Investment House • Since 2025
-            </span>
-          </div>
+      <div className="relative z-30 w-full max-w-5xl px-6 text-center">
+        <p className="mb-6 text-amber-200/60 uppercase tracking-[0.4em] text-xs font-light animate-pulse">
+          Private Client Group
+        </p>
+        
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif mb-8 leading-tight tracking-tight">
+          Securing Legacies Through <br />
+          <span className="italic">Institutional Heritage.</span>
+        </h1>
 
-          <h2 className="text-lg text-5xl md:text-3xl lg:text-3xl font-bold mb-8">
-            Nairobi CRE: <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-500 to-amber-200">Institutional Yields</span> 8-10%
-          </h2>
+        <div className="h-[1px] w-24 bg-amber-500/50 mx-auto mb-8" />
 
-        </div>
+        <p className="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed mb-12">
+          Strategic commercial acquisition and asset stewardship for 
+          Kenya&apos;s most distinguished portfolios.
+        </p>
 
-        {/* Dynamic Slider Indicators (Bottom Right) */}
-        <div className="absolute right-10 bottom-10 z-40 hidden lg:flex items-center gap-3">
-          {images.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrentImage(i)}
-              className={`h-1.5 transition-all duration-500 rounded-full ${
-                currentImage === i ? 'w-10 bg-amber-500' : 'w-3 bg-white/20 hover:bg-white/40'
-              }`}
-            />
-          ))}
+        {/* Minimalist Contact */}
+        <button 
+          onClick={() => window.open('https://wa.me/254115277610', '_blank')}
+          className="group relative px-12 py-4 bg-transparent border border-white/20 hover:border-amber-500/50 transition-all duration-700"
+        >
+          <span className="relative z-10 text-sm tracking-[0.2em] uppercase group-hover:text-amber-200 transition-colors">
+            Request a Private Briefing
+          </span>
+          <div className="absolute inset-0 bg-white/5 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+        </button>
+      </div>
+
+      {/* SCROLL INDICATOR - The "Settle" factor */}
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-4 opacity-60">
+        <span className="text-[10px] uppercase tracking-[0.3em] font-light">Explore Portfolio</span>
+        <div className="relative h-12 w-[1px] bg-gradient-to-b from-amber-500 to-transparent overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full bg-white animate-scroll-line" />
         </div>
       </div>
+
+      {/* CSS for the scroll animation */}
+      <style jsx>{`
+        @keyframes scroll-line {
+          0% { transform: translateY(-100%); }
+          100% { transform: translateY(100%); }
+        }
+        .animate-scroll-line {
+          animation: scroll-line 2.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+        }
+      `}</style>
     </section>
   );
 };
