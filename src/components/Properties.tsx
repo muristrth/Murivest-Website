@@ -177,7 +177,7 @@ const KEProperties = () => {
 
       {/* 3. THE MANDATE GRID */}
       <section className="py-24 px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-3 gap-1px bg-white/5 border border-white/5">
+        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 gap-1px bg-white/5 border border-white/5">
           {filteredProperties.map((property) => (
             <div key={property.id} className="group relative bg-[#05070a] p-8 hover:bg-white/[0.02] transition-all duration-700 overflow-hidden">
               
