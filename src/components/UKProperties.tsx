@@ -479,7 +479,7 @@ const UKProperties = () => {
 
       {/* 3. PREMIUM ASSET GRID */}
       <section className="py-24 px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 gap-px bg-white/10 border border-white/10">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
           {filteredProperties.map((asset) => (
             <motion.div 
               layout

@@ -77,7 +77,72 @@ const propertyData: PropertyData = {
       totalROI: "27.2%"
     }
   },
-    "buffalo-mall-development-land": {
+"wood-avenue-apartment-block": {
+  title: "Wood Avenue Apartments Kilimani",
+  subtitle: "Income-generating commercial apartment block",
+  location: "Kilimani, Nairobi",
+  type: "Commercial",
+  price: "KSh 1.0B",
+  priceKsh: "KSh 1.0B",
+  priceGbp: "£6,300,000",
+  priceUsd: "$7,800,000",
+  priceEur: "€7,100,000",
+  yield: "8.5%",
+  occupancyRate: "100%",
+  images: [
+    "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzULT2CNLinGqobwI5YlWTtkc7keVQJfhLCulFDmqq6LMlC88_Tj9iuTlqWxi5gruypHpAY2TV03KcSjsNC2HCieG9ARejHMRPOO9KLKMnm0tdF7UGsna-E7Qd-SK5YjmUSbPfIiw=s680-w680-h510-rw"
+  ],
+  features: ["80 Units", "Fully Leased", "Prime Location"],
+  description: "Fully leased apartment block in Kilimani generating stable rental income from residential tenants.",
+  details: {
+    units: "80",
+    occupancy: "100%",
+    annualIncome: "Est. KSh ???",
+    description: "Fully leased apartment block in Kilimani generating stable rental income from residential tenants."
+  },
+  investment: {
+      totalInvestment: "1,000,000,000",
+      monthlyIncome: "7,759,167",
+      annualIncome: "84,110,000",
+      netYield: "8.5%",
+      appreciationRate: "8%",
+      totalROI: "19.0%"
+    }
+},
+  "lynwood-court-westlands": {
+  title: "Prime Commercial Investment - Lynwood Court Office Development",
+  subtitle: "Core commercial office asset",
+  location: "Waiyaki Way, Westlands, Nairobi",
+  type: "Commercial",
+  price: "KSh 400M",
+  priceKsh: "KSh 400M",
+  priceGbp: "£2,500,000",
+  priceUsd: "$3,100,000",
+  priceEur: "€2,900,000",
+  yield: "18%",
+  occupancyRate: "TBD",
+  images: [
+    "https://content.knightfrank.com/property/kecom311/images/e80477fd-d2ca-43da-a099-44a0f81bd29b-0.jpg?cio=true&w=1200"
+  ],
+  features: ["161k sqft GLA", "6-Storey A-Grade", "221 Parking"],
+  description: "A-grade office development along Waiyaki Way with strong lease potential in Westlands.",
+  details: {
+    grossLeasableArea: "161,000 sqft",
+    parkingSpaces: "221",
+    occupancy: "TBD",
+    annualIncome: "TBD",
+    description: "A-grade office development along Waiyaki Way with strong lease potential in Westlands."
+  },
+  investment: {
+      totalInvestment: "400,000,000",
+      monthlyIncome: "3,759,167",
+      annualIncome: "35,110,000",
+      netYield: "11.0%",
+      appreciationRate: "8%",
+      totalROI: "19.0%"
+    }
+},
+"buffalo-mall-development-land": {
     title: "Buffalo Mall & Development Land",
     subtitle: "Excellent retail investment with significant asset management potential in Naivasha.",
     location: "Naivasha, Kenya",
@@ -1216,6 +1281,103 @@ const propertyData: PropertyData = {
       appreciationRate: "7.5%",
       totalROI: "16.3%"
     }
+  },
+  "syokimau-industrial-warehouses": {
+    title: "Syokimau Industrial Asset – 6 Warehouses",
+    subtitle: "High rental industrial investment",
+    location: "Syokimau, Nairobi",
+    type: "Industrial",
+    price: "KSh 400M",
+    priceKsh: "KSh 400M",
+    priceUsd: "$3,200,000",
+    priceGbp: "£2,500,000",
+    priceEur: "€2,900,000",
+    yield: "10.2%",
+    images: [
+      "https://via.placeholder.com/1200?text=Syokimau+Industrial+Warehouses"
+    ],
+    features: ["57,000 sqft Warehousing", "6 Go-downs", "Strong Tenant Profile"],
+    occupancyRate: "100%",
+    description: "Industrial commercial property with multiple warehouse units currently leased, producing strong monthly rental income.",
+    details: {
+      landSize: "2.5 acres",
+      builtUp: "57,000 sqft",
+      monthlyIncome: "Approx. KSh 3.4M",
+      occupancy: "Major tenants in place",
+      description: "Industrial commercial property with multiple warehouse units currently leased, producing strong monthly rental income."
+    },
+    investment: {
+      totalInvestment: "400,000,000",
+      monthlyIncome: "3,400,000",
+      annualIncome: "40,800,000",
+      netYield: "10.2%",
+      appreciationRate: "8%",
+      totalROI: "18.2%"
+    }
+  },
+  "parklands-commercial-block": {
+    title: "Prime Commercial Block – Parklands / Westlands",
+    subtitle: "Income producing office building",
+    location: "Parklands, Nairobi",
+    type: "Commercial Office",
+    price: "KSh 210M",
+    priceKsh: "KSh 210M",
+    priceUsd: "$1,680,000",
+    priceGbp: "£1,310,000",
+    priceEur: "€1,520,000",
+    yield: "TBD",
+    images: [
+      "https://via.placeholder.com/1200?text=Parklands+Commercial+Block"
+    ],
+    features: ["Office & Retail Units", "High Foot Traffic Location", "Parking"],
+    occupancyRate: "TBD",
+    description: "Commercial property in Parklands suited for offices and retail tenants, generating ongoing rental income.",
+    details: {
+      occupancy: "Likely leased / rental income",
+      annualIncome: "TBD",
+      description: "Commercial property in Parklands suited for offices and retail tenants, generating ongoing rental income."
+    },
+    investment: {
+      totalInvestment: "210,000,000",
+      monthlyIncome: "0",
+      annualIncome: "0",
+      netYield: "0%",
+      appreciationRate: "8%",
+      totalROI: "8%"
+    }
+  },
+  "skymall-parklands": {
+    title: "SkyMall – Parklands Commercial Building",
+    subtitle: "Prime mixed-use mall with rental income",
+    location: "4th Avenue, Parklands, Nairobi",
+    type: "Retail & Commercial",
+    price: "KSh 800M",
+    priceKsh: "KSh 800M",
+    priceUsd: "$6,400,000",
+    priceGbp: "£5,000,000",
+    priceEur: "€5,800,000",
+    yield: "8.5%",
+    images: [
+      "https://via.placeholder.com/1200?text=SkyMall+Parklands"
+    ],
+    features: ["85,000 sqft Built-Up Area", "Net Lettable ~65,000 sqft", "Multiple Shops & Offices"],
+    occupancyRate: "Mixed tenants",
+    description: "A prime investment retail and office mall in Parklands, Nairobi — established rental asset with a mix of retail tenants and office uses.",
+    details: {
+      builtUpArea: "85,000 sqft",
+      netLettableArea: "65,000 sqft",
+      occupancy: "Mixed tenants",
+      annualIncome: "Est. KSh tens of millions",
+      description: "A prime investment retail and office mall in Parklands, Nairobi — established rental asset with a mix of retail tenants and office uses."
+    },
+    investment: {
+      totalInvestment: "800,000,000",
+      monthlyIncome: "5,666,667",
+      annualIncome: "68,000,000",
+      netYield: "8.5%",
+      appreciationRate: "8%",
+      totalROI: "16.5%"
+    }
   }
 };
 
@@ -1237,7 +1399,7 @@ const PropertyDetail = () => {
   );
 
   return (
-    <div className="min-h-screen bg-[#05070a] text-white font-light selection:bg-amber-500/30">
+    <div className="min-h-screen bg-slate-950 text-white font-light selection:bg-amber-500/30">
       
       {/* 1. CINEMATIC NAV */}
       <nav className="fixed top-0 w-full z-50 px-8 py-6 bg-gradient-to-b from-[#05070a] to-transparent backdrop-blur-sm">

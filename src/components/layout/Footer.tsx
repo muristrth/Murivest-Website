@@ -37,7 +37,7 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
   }, []);
 
   return (
-    <footer className="relative bg-[#05070a] text-white pt-32 pb-12 overflow-hidden border-t border-white/5">
+    <footer className="relative bg-slate-950 text-white pt-32 pb-12 overflow-hidden border-t border-white/5">
       {/* Background Ambience */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
         <div 
@@ -54,13 +54,13 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
           {/* Brand Pillar */}
           <div className="lg:col-span-4">
             <Image 
-              src="/image.png" 
-              alt="Murivest" 
+              src="/logo.png" 
+              alt="Murivest Realty Group Ltd" 
               width={200} 
               height={64} 
-              className="mb-8 brightness-0 invert opacity-90 h-16 w-auto"
+              className="mb-8 h-16 w-auto"
             />
-            <h3 className="text-2xl font-serif italic text-slate-200 mb-6">Murivest Realty Group</h3>
+            <h3 className="text-2xl font-serif italic text-slate-200 mb-6">Murivest Realty Group Ltd</h3>
             <p className="text-slate-500 font-light leading-relaxed mb-8 text-sm max-w-sm">
               Established 2025. Four generations of distinguished service to international families, 
               sovereign wealth funds, and institutional investors seeking superior returns.

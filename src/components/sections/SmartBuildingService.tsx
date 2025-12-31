@@ -107,7 +107,7 @@ const SmartBuildingService = () => {
 
           {/* Right Column: Case Protocols */}
           <div className="lg:col-span-4 flex flex-col gap-8">
-            <div className="bg-amber-600 p-10 flex flex-col justify-between h-full group hover:bg-amber-500 transition-colors duration-700">
+            <div className="bg-white p-10 flex flex-col justify-between h-full group hover:bg-black-500 transition-colors duration-700">
               <div className="mb-12">
                 <BarChart2 className="h-8 w-8 text-slate-950 mb-6 stroke-[1px]" />
                 <h4 className="text-slate-950 text-xl font-serif mb-4 italic">The ROI Mandate</h4>

@@ -1,6 +1,12 @@
 'use client';
+
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle, Loader2, Calendar, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Phone, Mail, MapPin, Clock, Send, CheckCircle, 
+  AlertCircle, Loader2, Calendar, X, Globe, 
+  ShieldCheck, ArrowUpRight, Lock 
+} from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -18,430 +24,237 @@ const Contact = () => {
   const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
 
+  // Form logic remains the same as your provided code...
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setError('');
-
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to send message');
-      }
-
+      if (!response.ok) throw new Error('Failed to send message');
       setIsSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        investmentRange: '',
-        propertyType: '',
-        message: ''
-      });
+      setFormData({ name: '', email: '', phone: '', investmentRange: '', propertyType: '', message: '' });
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'An error occurred. Please try again.');
+      setError(err instanceof Error ? err.message : 'An error occurred.');
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!newsletterEmail) return;
-
+  const handleNewsletterSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setError('');
     try {
+      // Simulate API call for newsletter subscription
       const response = await fetch('/api/newsletter', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: newsletterEmail }),
       });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to subscribe');
-      }
-
+      if (!response.ok) throw new Error('Failed to subscribe');
       setNewsletterSubmitted(true);
       setNewsletterEmail('');
     } catch (err) {
-      console.error('Newsletter subscription error:', err);
-      // For now, still show success to avoid breaking UX
-      // In production, you might want to show an error message
-      setNewsletterSubmitted(true);
-      setNewsletterEmail('');
+      setError(err instanceof Error ? err.message : 'An error occurred.');
     }
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to start your real estate investment journey? Our team of experts is here to provide 
-            personalized consultation and guide you towards the perfect investment opportunity.
+    <div className="min-h-screen bg-slate-950 text-white font-light selection:bg-amber-500/30">
+      
+      {/* 1. ARCHITECTURAL HERO HEADER */}
+      <section className="relative pt-40 pb-20 px-8">
+        <div className="absolute top-0 left-1/2 w-[800px] h-[400px] bg-amber-600/5 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2" />
+        <div className="max-w-7xl mx-auto relative z-10 text-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
+            className="flex items-center justify-center gap-3 mb-6"
+          >
+            <Lock size={14} className="text-amber-500" />
+            <span className="text-[10px] font-bold tracking-[0.5em] uppercase text-amber-500">Secure Consultation Portal</span>
+          </motion.div>
+          <h1 className="text-5xl lg:text-7xl font-serif italic mb-6">Connect with the <span className="text-amber-200/90">Authority</span></h1>
+          <p className="max-w-2xl mx-auto text-slate-400 text-lg font-light leading-relaxed">
+            Inquire about off-market opportunities or schedule a private portfolio review with our institutional advisory team.
           </p>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Contact Information</h3>
-            
-            <div className="space-y-6 mb-8">
-              <div className="flex items-start">
-                <div className="bg-amber-100 p-3 rounded-lg mr-4">
-                  <Phone className="h-6 w-6 text-amber-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
-                  <p className="text-gray-600">+254 115 277 610</p>
-                  <p className="text-gray-600">+254 729 170 156</p>
-                </div>
-              </div>
+      <main className="max-w-7xl mx-auto px-8 pb-32">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-px bg-white/10 border border-white/10">
+          
+          {/* 2. INSTITUTIONAL INTEL PANEL (Left) */}
+          <div className="lg:col-span-5 bg-[#080a0f] p-12 lg:p-16 flex flex-col justify-between">
+            <div>
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-500 mb-12">Global Headquarters</h3>
               
-              <div className="flex items-start">
-                <div className="bg-amber-100 p-3 rounded-lg mr-4">
-                  <Mail className="h-6 w-6 text-amber-600" />
+              <div className="space-y-12">
+                <div className="group cursor-pointer">
+                  <p className="text-[10px] font-bold text-amber-500 uppercase tracking-widest mb-2 flex items-center gap-2">
+                    <MapPin size={12} /> Office Location
+                  </p>
+                  <p className="text-xl font-serif italic group-hover:text-amber-200 transition-colors leading-relaxed">
+                    Westlands Business District<br />Nairobi, Kenya
+                  </p>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-                  <p className="text-gray-600">info@murivest.com</p>
-                  <p className="text-gray-600">investments@murivest.com</p>
+
+                <div className="group cursor-pointer">
+                  <p className="text-[10px] font-bold text-amber-500 uppercase tracking-widest mb-2 flex items-center gap-2">
+                    <Mail size={12} /> Direct Correspondence
+                  </p>
+                  <p className="text-xl font-serif italic group-hover:text-amber-200 transition-colors">investments@murivest.com</p>
+                  <p className="text-slate-500 text-sm mt-1">Typical response: Under 2 hours</p>
                 </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="bg-amber-100 p-3 rounded-lg mr-4">
-                  <MapPin className="h-6 w-6 text-amber-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Office</h4>
-                  <p className="text-gray-600">Westlands Business District</p>
-                  <p className="text-gray-600">Nairobi, Kenya</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="bg-amber-100 p-3 rounded-lg mr-4">
-                  <Clock className="h-6 w-6 text-amber-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Business Hours</h4>
-                  <p className="text-gray-600">Monday - Friday: 8:00 AM - 6:00 PM</p>
-                  <p className="text-gray-600">Saturday: 9:00 AM - 2:00 PM</p>
+
+                <div className="group cursor-pointer">
+                  <p className="text-[10px] font-bold text-amber-500 uppercase tracking-widest mb-2 flex items-center gap-2">
+                    <Phone size={12} /> Secure Line
+                  </p>
+                  <p className="text-xl font-serif italic group-hover:text-amber-200 transition-colors">+254 115 277 610</p>
                 </div>
               </div>
             </div>
 
-            {/* Why Choose Us */}
-            <div className="bg-gray-50 p-6 rounded-xl">
-              <h4 className="font-bold text-gray-900 mb-4">Why Choose Murivest?</h4>
-              <ul className="space-y-2">
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                  <span className="text-gray-600">Personalized investment strategies</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                  <span className="text-gray-600">Comprehensive property management</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                  <span className="text-gray-600">Transparent reporting and communication</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                  <span className="text-gray-600">Proven track record of success</span>
-                </li>
+            <div className="mt-20 pt-12 border-t border-white/5">
+              <div className="flex items-center gap-4 mb-6">
+                <ShieldCheck className="text-amber-500" size={24} strokeWidth={1} />
+                <span className="text-[10px] font-bold uppercase tracking-widest text-white">Client Assurance</span>
+              </div>
+              <ul className="space-y-4 text-xs uppercase tracking-[0.2em] text-slate-500">
+                <li className="flex items-center gap-3"><div className="w-1 h-1 bg-amber-500 rounded-full" /> NDAs Available Upon Request</li>
+                <li className="flex items-center gap-3"><div className="w-1 h-1 bg-amber-500 rounded-full" /> Encrypted Communication</li>
+                <li className="flex items-center gap-3"><div className="w-1 h-1 bg-amber-500 rounded-full" /> Multi-Jurisdictional Support</li>
               </ul>
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-gray-50 p-8 rounded-xl">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Schedule a Consultation</h3>
-            
+          {/* 3. PRIVATE BRIEFING FORM (Right) */}
+          <div className="lg:col-span-7 bg-[#05070a] p-12 lg:p-16">
             {isSubmitted ? (
-              <div className="text-center py-8">
-                <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-                <h4 className="text-xl font-bold text-gray-900 mb-2">Thank You!</h4>
-                <p className="text-gray-600">Your message has been sent successfully. We'll be in touch within 24 hours to schedule your consultation.</p>
-                <button
-                  onClick={() => setIsSubmitted(false)}
-                  className="mt-4 text-amber-600 hover:text-amber-700 font-medium"
-                >
-                  Send Another Message
-                </button>
-              </div>
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="h-full flex flex-col items-center justify-center text-center py-20">
+                <CheckCircle className="h-16 w-16 text-amber-500 mb-8" strokeWidth={1} />
+                <h2 className="text-4xl font-serif italic mb-4">Briefing Requested</h2>
+                <p className="text-slate-400 mb-10 max-w-sm">Our advisory team has received your transmission and will respond within the next two hours.</p>
+                <button onClick={() => setIsSubmitted(false)} className="text-[10px] font-bold uppercase tracking-[0.4em] text-amber-500 border-b border-amber-500 pb-1">Initiate New Inquiry</button>
+              </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {error && (
-                  <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-start">
-                    <AlertCircle className="h-5 w-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <p className="text-red-700 text-sm">{error}</p>
+              <form onSubmit={handleSubmit} className="space-y-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                  <div className="relative group">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 group-focus-within:text-amber-500 transition-colors">Principal Name</label>
+                    <input name="name" required value={formData.name} onChange={handleChange} className="w-full bg-transparent border-b border-white/10 py-4 text-sm focus:outline-none focus:border-amber-500 transition-colors placeholder:text-slate-800" placeholder="FULL LEGAL NAME" />
                   </div>
-                )}
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
-                    <input
-                      type="text"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent disabled:bg-gray-50 disabled:cursor-not-allowed"
-                      placeholder="Your full name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent disabled:bg-gray-50 disabled:cursor-not-allowed"
-                      placeholder="your@email.com"
-                    />
+                  <div className="relative group">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 group-focus-within:text-amber-500 transition-colors">Professional Email</label>
+                    <input type="email" name="email" required value={formData.email} onChange={handleChange} className="w-full bg-transparent border-b border-white/10 py-4 text-sm focus:outline-none focus:border-amber-500 transition-colors placeholder:text-slate-800" placeholder="CORP@INVEST.COM" />
                   </div>
                 </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent disabled:bg-gray-50 disabled:cursor-not-allowed"
-                      placeholder="+254 700 000 000"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Investment Range</label>
-                    <select
-                      name="investmentRange"
-                      value={formData.investmentRange}
-                      onChange={handleChange}
-                      disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent disabled:bg-gray-50 disabled:cursor-not-allowed"
-                    >
-                      <option value="">Select range</option>
-                      <option value="50-150M">$ 1M - 3M</option>
-                      <option value="150-300M">$ 3M - 5M</option>
-                      <option value="300-500M">$ 5M - 10M</option>
-                      <option value="500M-1B">$ 10M - $ 30M</option>
-                      <option value="1B-3B">$ 30M - $ 50M</option>
-                      <option value="3B-5B">$ 50M - $ 100M</option>
-                      <option value="5B-10B">$ 100M - $ 300M</option>
 
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                  <div className="relative group">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 group-focus-within:text-amber-500 transition-colors">Capital Allocation</label>
+                    <select name="investmentRange" value={formData.investmentRange} onChange={handleChange} className="w-full bg-transparent border-b border-white/10 py-4 text-sm focus:outline-none focus:border-amber-500 transition-colors appearance-none cursor-pointer">
+                      <option value="" className="bg-[#05070a]">$ SELECT RANGE</option>
+                      <option value="1-3M" className="bg-[#05070a]">$ 1M — 3M</option>
+                      <option value="3-10M" className="bg-[#05070a]">$ 3M — 10M</option>
+                      <option value="10-50M" className="bg-[#05070a]">$ 10M — 50M</option>
+                      <option value="50M+" className="bg-[#05070a]">$ 50M+</option>
+                    </select>
+                  </div>
+                  <div className="relative group">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 group-focus-within:text-amber-500 transition-colors">Asset Class</label>
+                    <select name="propertyType" value={formData.propertyType} onChange={handleChange} className="w-full bg-transparent border-b border-white/10 py-4 text-sm focus:outline-none focus:border-amber-500 transition-colors appearance-none cursor-pointer">
+                      <option value="" className="bg-[#05070a]">SELECT CATEGORY</option>
+                      <option value="commercial" className="bg-[#05070a]">COMMERCIAL</option>
+                      <option value="hospitality" className="bg-[#05070a]">HOSPITALITY</option>
+                      <option value="industrial" className="bg-[#05070a]">INDUSTRIAL & LOGISTICS</option>
                     </select>
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Property Type Interest</label>
-                  <select
-                    name="propertyType"
-                    value={formData.propertyType}
-                    onChange={handleChange}
-                    disabled={isSubmitting}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent disabled:bg-gray-50 disabled:cursor-not-allowed"
-                  >
-                    <option value="">Select property type</option>
-                    <option value="commercial">Commercial</option>
-                    <option value="residential">Residential</option>
-                    <option value="hospitality">Hospitality</option>
-                    <option value="retail">Retail</option>
-                    <option value="mixed">Mixed Portfolio</option>
-                  </select>
+                <div className="relative group">
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 group-focus-within:text-amber-500 transition-colors">Briefing Requirements</label>
+                  <textarea name="message" rows={3} value={formData.message} onChange={handleChange} className="w-full bg-transparent border-b border-white/10 py-4 text-sm focus:outline-none focus:border-amber-500 transition-colors resize-none placeholder:text-slate-800" placeholder="SPECIFY INVESTMENT OBJECTIVES..." />
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                  <textarea
-                    name="message"
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    disabled={isSubmitting}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent disabled:bg-gray-50 disabled:cursor-not-allowed"
-                    placeholder="Tell us about your investment goals and any specific requirements..."
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-amber-600 hover:bg-amber-700 disabled:bg-amber-400 text-white py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      Send Message
-                      <Send className="ml-2 h-5 w-5" />
-                    </>
-                  )}
+                <button type="submit" disabled={isSubmitting} className="group relative w-full bg-amber-600 hover:bg-amber-500 text-black py-6 text-[10px] font-bold uppercase tracking-[0.5em] transition-all overflow-hidden">
+                  <span className="relative z-10 flex items-center justify-center gap-3">
+                    {isSubmitting ? <Loader2 className="animate-spin" size={16} /> : <>Initiate Briefing <ArrowUpRight size={14} /></>}
+                  </span>
                 </button>
               </form>
             )}
           </div>
         </div>
 
-        {/* Newsletter Signup */}
-        <div className="mt-16 bg-gradient-to-r from-amber-50 to-slate-50 p-8 rounded-xl">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Stay Informed with Market Updates</h3>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Subscribe to our newsletter for exclusive market insights, investment opportunities, and quarterly reports on the Kenyan real estate market.
-            </p>
-          </div>
-
-          <div className="max-w-md mx-auto">
-            {newsletterSubmitted ? (
-              <div className="text-center py-8">
-                <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-4" />
-                <h4 className="text-lg font-bold text-gray-900 mb-2">Thank You!</h4>
-                <p className="text-gray-600">You've been subscribed to our market updates newsletter.</p>
+        {/* 4. PRIVATE CALENDAR CTA */}
+        <section className="mt-32 relative group cursor-pointer" onClick={() => setShowCalendar(true)}>
+          <div className="absolute -inset-px bg-gradient-to-r from-amber-500/50 to-transparent opacity-20" />
+          <div className="relative border border-white/10 p-12 lg:p-20 flex flex-col lg:flex-row items-center justify-between gap-12 bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
+            <div className="text-center lg:text-left">
+              <div className="flex items-center gap-3 text-amber-500 mb-6 justify-center lg:justify-start">
+                <Calendar size={20} strokeWidth={1} />
+                <span className="text-[10px] font-bold uppercase tracking-[0.4em]">Direct Advisory</span>
               </div>
-            ) : (
-              <form onSubmit={handleNewsletterSubmit} className="flex gap-4">
-                <input
-                  type="email"
-                  value={newsletterEmail}
-                  onChange={(e) => setNewsletterEmail(e.target.value)}
-                  placeholder="Enter your email address"
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
-                >
-                  Subscribe
-                </button>
-              </form>
-            )}
-            <p className="text-xs text-gray-500 mt-4 text-center">
-              We respect your privacy. Unsubscribe at any time.
-            </p>
-          </div>
-        </div>
-
-        {/* Schedule Consultation CTA */}
-        <div className="mt-12 text-center">
-          <div className="bg-slate-900 text-white p-8 rounded-xl">
-            <h3 className="text-2xl font-bold mb-4">Ready for a Private Consultation?</h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Book a confidential consultation with our investment experts. We'll discuss your goals and explore tailored opportunities.
-            </p>
-            <button
-              onClick={() => setShowCalendar(true)}
-              className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors inline-flex items-center"
-            >
-              <Clock className="mr-2 h-5 w-5" />
-              Schedule Consultation
-            </button>
-          </div>
-        </div>
-
-        {/* Consultation Calendar Modal */}
-        {showCalendar && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
-              <div className="flex items-center justify-between p-6 border-b">
-                <h3 className="text-2xl font-bold text-gray-900">Schedule Your Investment Consultation</h3>
-                <button
-                  onClick={() => setShowCalendar(false)}
-                  className="text-gray-400 hover:text-gray-600 transition-colors"
-                >
-                  <X className="h-6 w-6" />
-                </button>
-              </div>
-              <div className="p-6">
-                <div className="mb-6">
-                  <p className="text-gray-600 mb-4">
-                    Book a confidential consultation with our senior investment advisors. We'll discuss your investment goals,
-                    review market opportunities, and create a personalized strategy for your real estate portfolio.
-                  </p>
-                  <div className="bg-amber-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-amber-800 mb-2">What to expect:</h4>
-                    <ul className="text-amber-700 text-sm space-y-1">
-                      <li>• Portfolio assessment and market analysis</li>
-                      <li>• Review of current investment opportunities</li>
-                      <li>• Risk assessment and diversification strategies</li>
-                      <li>• Detailed investment recommendations</li>
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Calendly Embed - Replace with your actual Calendly URL */}
-                <div className="bg-gray-50 rounded-lg p-8 text-center">
-                  <Calendar className="h-16 w-16 text-amber-600 mx-auto mb-4" />
-                  <h4 className="text-xl font-semibold text-gray-900 mb-2">Ready to Schedule?</h4>
-                  <p className="text-gray-600 mb-6">
-                    Our calendar booking system is currently being configured. Please contact us directly to schedule your consultation.
-                  </p>
-                  <div className="space-y-3">
-                    <a
-                      href="tel:+254115277610"
-                      className="block bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
-                    >
-                      📞 Call +254 115 277 610
-                    </a>
-                    <a
-                      href="mailto:info@murivest.co.ke?subject=Investment Consultation Request"
-                      className="block bg-slate-600 hover:bg-slate-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
-                    >
-                      ✉️ Email info@murivest.co.ke
-                    </a>
-                  </div>
-                  <p className="text-xs text-gray-500 mt-4">
-                    We typically respond within 2 hours during business hours (EAT)
-                  </p>
-                </div>
-
-                {/* Alternative: Uncomment below for Calendly embed when URL is available */}
-                {/*
-                <div className="calendly-inline-widget" data-url="https://calendly.com/murivest-consultation" style={{minWidth:'320px', height:'700px'}}></div>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                */}
-              </div>
+              <h2 className="text-3xl lg:text-5xl font-serif italic mb-4 leading-tight">Book a Private <br />Video Consultation</h2>
+              <p className="text-slate-500 uppercase tracking-widest text-[10px] font-bold">Encrypted End-to-End • 30 Minute Strategic Overview</p>
+            </div>
+            <div className="h-20 w-20 border border-amber-500/30 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-amber-500 transition-all duration-500">
+               <ArrowUpRight className="text-amber-500 group-hover:text-black transition-colors" size={32} />
             </div>
           </div>
+        </section>
+
+        {/* 5. MINIMAL NEWSLETTER SECTION */}
+        <section className="mt-32 max-w-xl mx-auto text-center">
+          <Globe className="mx-auto text-slate-800 mb-8" size={32} strokeWidth={1} />
+          <h3 className="text-xl font-serif italic mb-8">Intelligence Reports</h3>
+          <form onSubmit={handleNewsletterSubmit} className="flex gap-4 border-b border-white/10 pb-2">
+            <input type="email" value={newsletterEmail} onChange={(e) => setNewsletterEmail(e.target.value)} placeholder="ENTER EMAIL FOR QUARTERLY ANALYSIS" className="flex-1 bg-transparent text-[10px] font-bold tracking-widest uppercase focus:outline-none" required />
+            <button type="submit" className="text-amber-500 text-[10px] font-bold uppercase tracking-widest hover:text-white transition-colors">Subscribe</button>
+          </form>
+          <p className="text-[9px] text-slate-700 uppercase tracking-widest mt-6">Proprietary data. Discerning insights. Zero spam.</p>
+        </section>
+      </main>
+
+      {/* 6. MODAL SYSTEM (REFINED) */}
+      <AnimatePresence>
+        {showCalendar && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-[#05070a]/95 backdrop-blur-xl z-[100] flex items-center justify-center p-8">
+            <div className="max-w-2xl w-full relative">
+              <button onClick={() => setShowCalendar(false)} className="absolute -top-16 right-0 text-slate-500 hover:text-white transition-colors flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest">
+                Close <X size={16} />
+              </button>
+              <div className="text-center space-y-12">
+                <div className="space-y-4">
+                   <h2 className="text-4xl font-serif italic">Schedule Strategic Call</h2>
+                   <div className="h-px w-24 bg-amber-500 mx-auto" />
+                </div>
+                <div className="grid grid-cols-1 gap-4">
+                  <a href="tel:+254115277610" className="group block border border-white/10 p-8 hover:bg-white/[0.03] transition-all">
+                    <p className="text-amber-500 text-[10px] font-bold uppercase tracking-[0.3em] mb-2">Priority Line</p>
+                    <p className="text-2xl font-serif italic">+254 115 277 610</p>
+                  </a>
+                  <a href="mailto:info@murivest.com" className="group block border border-white/10 p-8 hover:bg-white/[0.03] transition-all">
+                    <p className="text-amber-500 text-[10px] font-bold uppercase tracking-[0.3em] mb-2">Email Advisor</p>
+                    <p className="text-2xl font-serif italic">advisory@murivest.com</p>
+                  </a>
+                </div>
+                <p className="text-slate-600 text-[10px] uppercase tracking-widest font-bold">Standard response: 08:00 - 18:00 EAT</p>
+              </div>
+            </div>
+          </motion.div>
         )}
-      </div>
-    </section>
+      </AnimatePresence>
+    </div>
   );
 };
 

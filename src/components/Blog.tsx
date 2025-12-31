@@ -1,8 +1,9 @@
 'use client';
 
-import { Search, Filter, TrendingUp, ArrowRight } from 'lucide-react';
+import { Search, Filter, TrendingUp, ArrowRight, Clock, Mail, User } from 'lucide-react';
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 interface Blog {
   id: string;
@@ -5374,11 +5375,12 @@ const blog: Blog[] =[
 
 
 const Blog = () => {
-    const categories = ['All', 'Thought Leadership', 'Institutional Insights', 'Market Intelligence', 'Legal & Structuring', 'Sustainability & ESG', 'Private Equity', 'Asset Allocation', 'Economic Analysis', 'Investment Tips', 'Commercial Trends'];
+  const categories = ['All', 'Thought Leadership', 'Institutional Insights', 'Market Intelligence', 'Legal & Structuring', 'Sustainability & ESG', 'Private Equity', 'Asset Allocation', 'Economic Analysis', 'Investment Tips', 'Commercial Trends'];
 
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
 
+  // Dummy filter logic (ensure 'blog' data is available in your scope)
   const filteredPosts = blog.filter(post => {
     const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -5387,156 +5389,164 @@ const Blog = () => {
   });
 
   return (
-    <section className="luxury-spacing bg-gradient-to-br from-slate-50 to-white min-h-screen">
-      <div className="luxury-container luxury-padding">
-        {/* Header */}
-        <div className="text-center luxury-margin-bottom">
-          <h1 className="text-5xl md:text-6xl font-serif font-light text-slate-900 mb-6 luxury-text-spacing">
-            Property <span className="text-amber-600">Insights</span>
-          </h1>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light luxury-text-spacing">
-            Stay informed with the latest trends, analysis, and insights from Nairobi's commercial real estate market.
-            Expert commentary and data-driven insights to guide your investment decisions.
-          </p>
-        </div>
-
-        {/* Filters and Search */}
-        <div className="mb-16 bg-white rounded-2xl shadow-xl p-8 border border-slate-200/50">
-          <div className="flex flex-col lg:flex-row gap-6 items-center">
-            {/* Search */}
-            <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-              <input
-                type="text"
-                placeholder="Search articles..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent font-light"
-              />
-            </div>
-
-            {/* Category Filter */}
-            <div className="flex items-center gap-2">
-              <Filter className="h-5 w-5 text-gray-500" />
-              <div className="flex flex-wrap gap-2">
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => setSelectedCategory(category)}
-                    className={`px-6 py-3 rounded-full font-light font-medium transition-all duration-300 ${
-                      selectedCategory === category
-                        ? 'bg-amber-600 text-white shadow-lg'
-                        : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-                    }`}
-                  >
-                    {category}
-                  </button>
-                ))}
-              </div>
+    <div className="min-h-screen bg-[#05070a] text-white font-light selection:bg-amber-500/30">
+      
+      {/* 1. INSTITUTIONAL HERO HEADER */}
+      <section className="relative pt-40 pb-24 px-8 overflow-hidden">
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-amber-600/5 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2" />
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center gap-3 mb-8"
+          >
+            <div className="h-px w-8 bg-amber-500" />
+            <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-amber-500">
+              Intelligence & Analysis
+            </span>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+            <div className="lg:col-span-8">
+              <h1 className="text-6xl lg:text-8xl font-serif italic mb-8 leading-tight">
+                Property <br />
+                <span className="text-amber-200/90 font-serif">Insights</span>
+              </h1>
+              <p className="max-w-2xl text-slate-400 text-lg leading-relaxed font-light">
+                Expert commentary, structured market data, and institutional-grade analysis on 
+                Nairobi's commercial landscape and global capital flows.
+              </p>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Featured Article */}
-        {filteredPosts.length > 0 && (
-          <div className="luxury-margin-bottom">
-            <div className="bg-slate-900 rounded-2xl overflow-hidden text-white relative shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-transparent z-10"></div>
-              <img
-                src={filteredPosts[0].image}
-                alt={filteredPosts[0].title}
-                className="absolute inset-0 w-full h-full object-cover opacity-30"
-              />
-              <div className="relative z-20 luxury-padding py-12 lg:py-16">
-                <div className="flex items-center mb-6">
-                  <TrendingUp className="h-6 w-6 text-amber-400 mr-3" />
-                  <span className="text-amber-400 font-serif font-semibold uppercase tracking-wider text-sm">Featured Article</span>
-                </div>
-                <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-6 luxury-text-spacing">{filteredPosts[0].title}</h2>
-                <p className="text-slate-300 font-light text-lg mb-8 max-w-2xl luxury-text-spacing">{filteredPosts[0].excerpt}</p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center text-slate-300">
-                    <span className="font-light">By {filteredPosts[0].author}</span>
-                    <span className="mx-3">•</span>
-                    <span className="font-light">{filteredPosts[0].date}</span>
-                    <span className="mx-3">•</span>
-                    <span className="font-light">{filteredPosts[0].readTime}</span>
-                  </div>
-                  <Link href={`/blog/${filteredPosts[0].id}`} className="inline-flex items-center bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg group">
-                    Read More
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Blog Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 luxury-grid-gap mb-20">
-            {filteredPosts.slice(1).map((post, index) => (
-              <div key={post.id} className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              <img
-                src={post.image}
-                alt={post.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-8 flex flex-col flex-1">
-                <span className="text-xs font-semibold text-amber-600 mb-3 uppercase tracking-wider">{post.category}</span>
-                <h3 className="text-xl font-bold font-serif text-slate-900 mb-4 leading-tight">{post.title}</h3>
-                <p className="text-slate-600 font-light mb-6 flex-1 luxury-text-spacing">{post.excerpt}</p>
-                <div className="flex items-center justify-between text-sm text-slate-500 font-light mt-auto mb-4">
-                <span>By {post.author}</span>
-                <span>{post.date}</span>
-                <span>{post.readTime}</span>
-                </div>
-                <Link href={`/blog/${post.id}`} className="inline-flex items-center text-amber-600 hover:text-amber-700 font-medium transition-colors group">
-                  Read More
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-              </div>
-            ))}
-        </div>
-
-        {/* No Results */}
-        {filteredPosts.length === 0 && (
-          <div className="text-center py-16">
-            <h3 className="text-2xl font-luxury font-bold text-gray-900 mb-4">No Articles Found</h3>
-            <p className="text-gray-600 font-elegant mb-6">
-              Try adjusting your search criteria or browse all articles
-            </p>
-            <button 
-              onClick={() => {
-                setSelectedCategory('All');
-                setSearchTerm('');
-              }}
-              className="bg-gold-600 hover:bg-gold-700 text-white px-6 py-3 rounded-lg font-elegant font-semibold transition-all duration-300"
-            >
-              Clear Filters
-            </button>
-          </div>
-        )}
-
-        {/* Newsletter Signup */}
-        <div className="bg-navy-950 rounded-2xl p-8 lg:p-12 text-white text-center">
-          <h3 className="text-3xl font-luxury font-bold mb-4">Stay Updated</h3>
-          <p className="text-slate-300 font-light mb-8 max-w-2xl mx-auto luxury-text-spacing">
-            Subscribe to our newsletter for the latest insights, market analysis, and exclusive investment opportunities.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent font-light"
+      {/* 2. RESEARCH TOOLBAR (Filters & Search) */}
+      <div className="sticky top-0 z-50 bg-[#05070a]/80 backdrop-blur-xl border-y border-white/5 py-6">
+        <div className="max-w-7xl mx-auto px-8 flex flex-col lg:flex-row items-center justify-between gap-8">
+          
+          <div className="relative w-full lg:max-w-md group">
+            <Search className="absolute left-0 top-1/2 -translate-y-1/2 text-slate-600 group-focus-within:text-amber-500 transition-colors" size={16} />
+            <input 
+              type="text" 
+              placeholder="SEARCH RESEARCH ARCHIVE..." 
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full pl-8 pr-4 py-2 bg-transparent border-none text-[10px] font-bold tracking-[0.2em] focus:ring-0 placeholder:text-slate-700 uppercase"
             />
-            <button className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-light font-semibold transition-all duration-300">
-              Subscribe
-            </button>
+          </div>
+          
+          <div className="w-full lg:w-auto flex items-center gap-4 overflow-x-auto no-scrollbar pb-2 lg:pb-0">
+            <Filter size={14} className="text-amber-500 shrink-0" />
+            <div className="flex gap-6 whitespace-nowrap">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`text-[10px] font-bold uppercase tracking-[0.3em] transition-all relative py-1 ${
+                    selectedCategory === category ? 'text-white' : 'text-slate-600 hover:text-slate-400'
+                  }`}
+                >
+                  {category}
+                  {selectedCategory === category && (
+                    <motion.div layoutId="catUnderline" className="absolute -bottom-1 left-0 w-full h-px bg-amber-500" />
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </section>
+
+      <main className="max-w-7xl mx-auto px-8 py-20">
+        
+        {/* 3. FEATURED BRIEFING */}
+        {filteredPosts.length > 0 && (
+          <motion.div 
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+            className="mb-32 group cursor-pointer"
+          >
+            <Link href={`/blog/${filteredPosts[0].id}`} className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+              <div className="lg:col-span-7 relative overflow-hidden aspect-video lg:aspect-auto lg:h-[500px] border border-white/10">
+                <img
+                  src={filteredPosts[0].image}
+                  className="w-full h-full object-cover grayscale opacity-40 group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-1000"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#05070a] via-transparent to-transparent" />
+                <div className="absolute bottom-10 left-10">
+                  <div className="flex items-center gap-3 text-amber-500 mb-4">
+                    <TrendingUp size={16} />
+                    <span className="text-[10px] font-bold uppercase tracking-[0.4em]">Essential Reading</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="lg:col-span-5">
+                <h2 className="text-4xl lg:text-5xl font-serif italic mb-8 leading-tight">
+                  {filteredPosts[0].title}
+                </h2>
+                <p className="text-slate-400 text-lg mb-10 font-light leading-relaxed">
+                  {filteredPosts[0].excerpt}
+                </p>
+                <div className="flex items-center gap-8 text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-10">
+                  <span className="flex items-center gap-2"><User size={12} className="text-amber-500"/> {filteredPosts[0].author}</span>
+                  <span className="flex items-center gap-2"><Clock size={12}/> {filteredPosts[0].readTime}</span>
+                </div>
+                <div className="inline-flex items-center gap-4 text-amber-500 text-[10px] font-bold uppercase tracking-[0.4em] group-hover:gap-6 transition-all">
+                  Access Full Briefing <ArrowRight size={14} />
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+        )}
+
+        {/* 4. RESEARCH GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 mb-32">
+          {filteredPosts.slice(1).map((post) => (
+            <div key={post.id} className="bg-[#05070a] group hover:bg-white/[0.02] transition-colors p-10 flex flex-col h-full">
+              <div className="aspect-video overflow-hidden mb-8 border border-white/5">
+                <img src={post.image} className="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" />
+              </div>
+              <span className="text-[9px] font-bold text-amber-500 uppercase tracking-[0.3em] mb-4">{post.category}</span>
+              <h3 className="text-2xl font-serif italic mb-6 leading-snug group-hover:text-amber-200 transition-colors">{post.title}</h3>
+              <p className="text-slate-500 text-sm font-light leading-relaxed mb-8 flex-1 line-clamp-3">
+                {post.excerpt}
+              </p>
+              <div className="flex items-center justify-between pt-8 border-t border-white/5">
+                <span className="text-[9px] text-slate-600 uppercase tracking-widest">{post.date}</span>
+                <Link href={`/blog/${post.id}`} className="text-amber-500">
+                   <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* 5. NEWSLETTER / BRIEFING SUBSCRIPTION */}
+        <section className="relative p-12 lg:p-24 border border-white/10 overflow-hidden text-center bg-white/[0.01]">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-amber-600/5 blur-[80px] rounded-full" />
+          
+          <div className="relative z-10 max-w-2xl mx-auto">
+            <Mail className="mx-auto text-amber-500 mb-8" size={32} />
+            <h3 className="text-3xl font-serif italic mb-4">The Weekly Briefing</h3>
+            <p className="text-slate-500 text-sm uppercase tracking-[0.3em] mb-12">Private Market Intelligence Delivered</p>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <input
+                type="email"
+                placeholder="PROFESSIONAL EMAIL ADDRESS"
+                className="flex-1 bg-transparent border-b border-white/20 px-4 py-4 text-[10px] font-bold tracking-widest text-white focus:outline-none focus:border-amber-500 transition-colors uppercase"
+              />
+              <button className="bg-amber-600 hover:bg-amber-500 text-black px-10 py-5 text-[10px] font-bold uppercase tracking-[0.4em] transition-all">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
   );
 };
 

@@ -30,16 +30,37 @@ const KEProperties = () => {
       status: "Prime Yield",
     },
     {
-      id: "the-atrium-office-development",
-      title: "The Atrium Development",
-      location: "Kilimani, Nairobi",
-      type: "Commercial",
-      price: "US$13.5M",
-      yield: "13.8%",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80",
+      id: 'lynwood-court-westlands',
+      title: 'Prime Commercial Investment - Lynwood Court Office Development',
+      location: 'Waiyaki Way, Westlands, Nairobi',
+      price: "Ksh400M",
+      image: 'https://content.knightfrank.com/property/kecom311/images/e80477fd-d2ca-43da-a099-44a0f81bd29b-0.jpg?cio=true&w=1200',
+      yield: "18%",
+      type: 'Commercial',
       features: ["161k sqft GLA", "6-Storey A-Grade", "221 Parking"],
-      status: "Trophy Asset",
+      status: "Core Asset",
     },
+  {
+    id: 'basl-house-nairobi-cbd',
+    title: 'BASL House - Prime CBD Commercial Investment',
+    location: 'Kumasi Road, Nairobi CBD',
+    price: "Ksh190M",
+    image: 'https://content.knightfrank.com/property/hub2448515/images/89393bfa-52be-4c67-8bbf-aee9cf35b19d-0.jpg?cio=true&w=1200',
+    type: 'Commercial',
+    features: ["18,988 sqft GLA", "CBD Location", "Office Investment"],
+    status: "Prime Asset",
+  },
+  {
+      id: "the-atrium-office-development",
+      title: "The Atrium, Chaka Road, Kilimani",
+      location: "Nairobi, Kenya",
+      type: "Office",
+      price: "US$12.5M",
+      yield: "12.5%",
+      image: "https://content.knightfrank.com/property/kecom271/images/226a7572-f157-48c6-abb5-6defef5af962-0.jpg?cio=true&w=1200",
+      features: ["14,959 sqm", "6-storey modern office", "221 parking bays"],
+      status: "Development Asset",
+  },
     {
       id: "icd-industrial-complex",
       title: "ICD Logistics Hub",
@@ -47,21 +68,65 @@ const KEProperties = () => {
       type: "Industrial",
       price: "KSh 1.0B",
       yield: "14.8%",
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80",
+      image: "/p/IMG-20250813-WA0001.jpg",
       features: ["3.0 Acres", "99k sqft GLA", "Strategic Access"],
       status: "Growth Asset",
+    },
+    {
+      id: "wood-avenue-apartment-block",
+      title: "Wood Avenue Apartments Kilimani",
+      location: "Kilimani, Nairobi",
+      type: "Commercial",
+      price: "KSh 1.0B",
+      yield: "8.5%",
+      image: "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzULT2CNLinGqobwI5YlWTtkc7keVQJfhLCulFDmqq6LMlC88_Tj9iuTlqWxi5gruypHpAY2TV03KcSjsNC2HCieG9ARejHMRPOO9KLKMnm0tdF7UGsna-E7Qd-SK5YjmUSbPfIiw=s680-w680-h510-rw",
+      features: ["80 Units", "Fully Leased", "Prime Location"],
+      status: "Core Asset",
+    },
+    {
+      id: "syokimau-industrial-warehouses",
+      title: "Syokimau Industrial Asset – 6 Warehouses",
+      location: "Syokimau, Nairobi",
+      type: "Industrial",
+      price: "KSh 400M",
+      yield: "Est. high yield",
+      image: "",
+      features: ["57,000 sqft Warehousing", "6 Go-downs", "Strong Tenant Profile"],
+      status: "Income-Generating",
+    },
+    {
+      id: "parklands-commercial-block",
+      title: "Prime Commercial Block – Parklands / Westlands",
+      location: "Parklands, Nairobi",
+      type: "Commercial Office",
+      price: "KSh 210M",
+      yield: "TBD",
+      image: "https://via.placeholder.com/1200?text=Parklands+Commercial+Block",
+      features: ["Office & Retail Units", "High Foot Traffic Location", "Parking"],
+      status: "Income Investment",
+    },
+    {
+      id: "skymall-parklands",
+      title: "SkyMall – Parklands Commercial Building",
+      location: "4th Avenue, Parklands, Nairobi",
+      type: "Retail & Commercial",
+      price: "KSh 800M",
+      yield: "Est. 7–10%+",
+      image: "https://via.placeholder.com/1200?text=SkyMall+Parklands",
+      features: ["85,000 sqft Built-Up Area", "Net Lettable ~65,000 sqft", "Multiple Shops & Offices"],
+      status: "Income-Generating",
     }
   ];
 
   const filteredProperties = allProperties.filter(property => {
     const matchesType = selectedType === 'All' || property.type === selectedType;
-    const matchesSearch = property.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          property.location.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesSearch = (property.title ?? '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          (property.location ?? '').toLowerCase().includes(searchTerm.toLowerCase());
     return matchesType && matchesSearch;
   });
 
   return (
-    <div className="min-h-screen bg-[#05070a] text-white font-light">
+    <div className="min-h-screen bg-slate-950 text-white font-light">
       
       {/* 1. CINEMATIC HERO HEADER */}
       <section className="relative pt-32 pb-20 overflow-hidden border-b border-white/5">
@@ -76,15 +141,6 @@ const KEProperties = () => {
             {/* UK CROSS-BORDER BRIDGE */}
             <Link href="/uk-properties" className="group w-full lg:w-auto">
               <div className="relative p-8 bg-white/[0.02] border border-white/10 rounded-sm hover:border-amber-500/50 transition-all duration-700">
-                <div className="flex items-center gap-6 mb-4">
-                  <div className="p-3 bg-blue-500/10 rounded-full group-hover:bg-blue-500/20 transition-colors">
-                    <Globe className="text-blue-400 h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold tracking-widest text-slate-500 uppercase">UK Cross-Border</p>
-                    <p className="text-sm font-medium text-white">Resident Buyer Services</p>
-                  </div>
-                </div>
                 <div className="flex items-center justify-between gap-12">
                    <span className="text-xs text-amber-500 font-bold uppercase tracking-tighter">View UK Portfolio</span>
                    <ChevronRight className="h-4 w-4 text-amber-500 group-hover:translate-x-2 transition-transform" />
@@ -96,7 +152,7 @@ const KEProperties = () => {
       </section>
 
       {/* 2. INSTITUTIONAL CONTROL BAR */}
-      <div className="sticky top-0 z-50 bg-[#05070a]/80 backdrop-blur-2xl border-b border-white/5 py-6">
+      <div className="sticky top-0 z-50 bg-white-950 backdrop-blur-2xl border-b border-white/5 py-6">
         <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex items-center gap-6 w-full md:w-auto border-b md:border-b-0 border-white/10 pb-4 md:pb-0">
             <div className="flex items-center gap-4 text-slate-400">
@@ -132,7 +188,7 @@ const KEProperties = () => {
 
       {/* 3. THE MANDATE GRID */}
       <section className="py-24 px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1px bg-white/5 border border-white/5">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-3 gap-1px bg-white/5 border border-white/5">
           {filteredProperties.map((property) => (
             <div key={property.id} className="group relative bg-[#05070a] p-8 hover:bg-white/[0.02] transition-all duration-700 overflow-hidden">
               
@@ -140,7 +196,7 @@ const KEProperties = () => {
               <div className="relative aspect-[4/5] mb-8 overflow-hidden bg-slate-900">
                 <img 
                   src={property.image} 
-                  className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000" 
+                  className="w-full h-full" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#05070a] via-transparent to-transparent" />
                 
@@ -169,7 +225,7 @@ const KEProperties = () => {
                 </div>
 
                 <div className="grid grid-cols-1 gap-3 mb-10">
-                  {property.features.map((feat, i) => (
+                  {property.features?.map((feat, i) => (
                     <div key={i} className="flex items-center gap-3 text-[10px] text-slate-400 font-light tracking-wide border-b border-white/5 pb-2">
                       <div className="h-1 w-1 bg-amber-500 rounded-full" />
                       {feat}
@@ -180,7 +236,7 @@ const KEProperties = () => {
                 <div className="flex items-center justify-between pt-4 border-t border-white/5">
                   <div>
                     <p className="text-[9px] uppercase tracking-widest text-slate-600">Asset Value</p>
-                    <p className="text-sm font-bold text-slate-200">{property.price}</p>
+                    <p className="text-lg font-bold text-slate-200">{property.price}</p>
                   </div>
                   <Link href={`/properties/${property.id}`} className="p-4 bg-white/5 hover:bg-amber-500 group/btn transition-all">
                     <ArrowRight size={16} className="text-white group-hover/btn:text-black group-hover/btn:translate-x-1 transition-all" />
