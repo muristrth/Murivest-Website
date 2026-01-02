@@ -4,9 +4,9 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  MapPin, Search, Shield, Award, 
+  MapPin, PoundSterling, Shield, Award, 
   Globe, Filter, Landmark,
-  ChevronRight, ExternalLink, Building,
+  ChevronRight, Search, Building,
   ArrowUpRight, BarChart3, Lock
 } from 'lucide-react';
 
@@ -570,6 +570,126 @@ const UKProperties = () => {
               <Award className="text-amber-500" size={32} />
               <h4 className="text-xl font-serif italic">RICS Valuations</h4>
               <p className="text-slate-500 text-sm leading-relaxed">Mandatory Red Book valuations by the Royal Institution of Chartered Surveyors for all listed assets.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. LEGAL STRUCTURES FOR UK INVESTMENTS */}
+      <section className="py-32 max-w-7xl mx-auto px-8">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl font-serif italic mb-4">Legal Structures</h2>
+          <p className="text-[10px] text-slate-500 uppercase tracking-[0.4em]">Tax-Efficient UK Investment Vehicles</p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-px bg-white/10 border border-white/10">
+          <div className="bg-[#05070a] p-12 hover:bg-white/[0.02] transition-colors">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-12 h-12 border border-amber-500/30 flex items-center justify-center">
+                <Building className="text-amber-500" size={20} />
+              </div>
+              <h4 className="text-xl font-serif italic">Special Purpose Vehicles (SPVs)</h4>
+            </div>
+            <p className="text-slate-500 text-sm leading-relaxed mb-8">
+              Dedicated corporate entities established for single asset ownership, providing liability protection and tax optimization for institutional investors.
+            </p>
+            <ul className="space-y-3 text-[10px] uppercase tracking-widest text-slate-400">
+              <li>• Limited liability protection</li>
+              <li>• Tax-efficient structuring</li>
+              <li>• Asset isolation</li>
+              <li>• Regulatory compliance</li>
+            </ul>
+          </div>
+
+          <div className="bg-[#05070a] p-12 hover:bg-white/[0.02] transition-colors">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-12 h-12 border border-amber-500/30 flex items-center justify-center">
+                <Shield className="text-amber-500" size={20} />
+              </div>
+              <h4 className="text-xl font-serif italic">Trust Structures</h4>
+            </div>
+            <p className="text-slate-500 text-sm leading-relaxed mb-8">
+              Flexible trust arrangements including unit trusts and discretionary trusts for collective investment schemes and family office structures.
+            </p>
+            <ul className="space-y-3 text-[10px] uppercase tracking-widest text-slate-400">
+              <li>• Collective investment vehicles</li>
+              <li>• Estate planning benefits</li>
+              <li>• Tax optimization</li>
+              <li>• Succession planning</li>
+            </ul>
+          </div>
+
+          <div className="bg-[#05070a] p-12 hover:bg-white/[0.02] transition-colors">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-12 h-12 border border-amber-500/30 flex items-center justify-center">
+                <BarChart3 className="text-amber-500" size={20} />
+              </div>
+              <h4 className="text-xl font-serif italic">Real Estate Investment Trusts (REITs)</h4>
+            </div>
+            <p className="text-slate-500 text-sm leading-relaxed mb-8">
+              UK REITs offering tax-transparent investment in income-generating real estate with mandatory distribution requirements and regulatory oversight.
+            </p>
+            <ul className="space-y-3 text-[10px] uppercase tracking-widest text-slate-400">
+              <li>• Tax-transparent structure</li>
+              <li>• Mandatory distributions</li>
+              <li>• Diversified portfolios</li>
+              <li>• Institutional liquidity</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. CURRENCY HEDGING FOR GBP INVESTMENTS */}
+      <section className="bg-white/5 border-y border-white/10 py-32">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-serif italic mb-4">Currency Risk Management</h2>
+            <p className="text-[10px] text-slate-500 uppercase tracking-[0.4em]">GBP Hedging Strategies</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-16">
+            <div className="space-y-8">
+              <div className="flex items-center gap-4">
+                <PoundSterling className="text-amber-500" size={32} />
+                <h4 className="text-xl font-serif italic">GBP/USD Exchange Rate Protection</h4>
+              </div>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                Comprehensive hedging solutions to protect against GBP volatility. Forward contracts, options strategies, and dynamic hedging approaches tailored to institutional risk profiles.
+              </p>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="p-6 border border-white/10 bg-white/[0.01]">
+                  <p className="text-[8px] uppercase tracking-widest text-slate-600 mb-2">Current GBP/USD</p>
+                  <p className="text-lg font-serif italic text-amber-500">1.2675</p>
+                </div>
+                <div className="p-6 border border-white/10 bg-white/[0.01]">
+                  <p className="text-[8px] uppercase tracking-widest text-slate-600 mb-2">12-Month Average</p>
+                  <p className="text-lg font-serif italic text-amber-500">1.2842</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              <div className="flex items-center gap-4">
+                <Globe className="text-amber-500" size={32} />
+                <h4 className="text-xl font-serif italic">Multi-Currency Portfolio Hedging</h4>
+              </div>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                Integrated currency risk management across GBP, EUR, and USD exposures. Cross-currency swaps and collar strategies to optimize returns while managing FX volatility.
+              </p>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center p-4 border border-white/5">
+                  <span className="text-[10px] uppercase tracking-widest text-slate-500">GBP/EUR Hedge Ratio</span>
+                  <span className="text-sm font-bold">85%</span>
+                </div>
+                <div className="flex justify-between items-center p-4 border border-white/5">
+                  <span className="text-[10px] uppercase tracking-widest text-slate-500">USD Carry Cost</span>
+                  <span className="text-sm font-bold">2.1%</span>
+                </div>
+                <div className="flex justify-between items-center p-4 border border-white/5">
+                  <span className="text-[10px] uppercase tracking-widest text-slate-500">FX Volatility Index</span>
+                  <span className="text-sm font-bold">12.4</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

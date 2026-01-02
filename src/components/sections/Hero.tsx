@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState, useCallback } from 'react';
+import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
 
 const Hero = () => {
@@ -72,15 +73,15 @@ const Hero = () => {
         </p>
 
         {/* Minimalist Contact */}
-        <button 
-          onClick={() => window.open('https://wa.me/254115277610', '_blank')}
+        <Link
+          href="/institutional-investors"
           className="group relative px-12 py-4 bg-transparent border border-white/20 hover:border-amber-500/50 transition-all duration-700"
         >
           <span className="relative z-10 text-sm tracking-[0.2em] uppercase group-hover:text-amber-200 transition-colors">
-            Request a Private Briefing
+            Access Institutional Data
           </span>
           <div className="absolute inset-0 bg-white/5 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
-        </button>
+        </Link>
       </div>
 
       {/* SCROLL INDICATOR - The "Settle" factor */}

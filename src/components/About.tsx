@@ -138,6 +138,96 @@ const About = () => {
         </div>
       </section>
 
+      {/* 4.5 THIRD-PARTY VALIDATION */}
+      <section className="max-w-7xl mx-auto px-8 py-32">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl font-serif italic mb-4">Third-Party Validation</h2>
+          <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-amber-500">Verifiable Credentials & Independent Assessments</p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          {/* RICS Valuation Reports */}
+          <div className="space-y-8">
+            <div className="flex items-center gap-3 mb-6">
+              <Award size={16} className="text-amber-500" />
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-500">RICS Accredited Valuations</h3>
+            </div>
+            <div className="space-y-6">
+              <div className="border-l border-amber-500/30 pl-6">
+                <h4 className="text-lg font-serif italic mb-2">Absa Towers, Nairobi</h4>
+                <p className="text-slate-400 text-sm">Independent appraisal by RICS accredited valuer: Market value $15M (Q4 2024)</p>
+              </div>
+              <div className="border-l border-amber-500/30 pl-6">
+                <h4 className="text-lg font-serif italic mb-2">Uchumi House, Nairobi</h4>
+                <p className="text-slate-400 text-sm">RICS valuation report: Asset value $8M (Q3 2024)</p>
+              </div>
+              <div className="border-l border-amber-500/30 pl-6">
+                <h4 className="text-lg font-serif italic mb-2">Buffalo Mall, Eldoret</h4>
+                <p className="text-slate-400 text-sm">RICS assessment: Portfolio value $12M (Q2 2024)</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Audit Citations */}
+          <div className="space-y-8">
+            <div className="flex items-center gap-3 mb-6">
+              <Shield size={16} className="text-amber-500" />
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-500">Audit Firm Citations</h3>
+            </div>
+            <div className="space-y-6">
+              <div className="border-l border-amber-500/30 pl-6">
+                <h4 className="text-lg font-serif italic mb-2">Deloitte Kenya</h4>
+                <p className="text-slate-400 text-sm">Financial audit citation (2023): Confirmed accuracy of reported IRR calculations and asset valuations</p>
+              </div>
+              <div className="border-l border-amber-500/30 pl-6">
+                <h4 className="text-lg font-serif italic mb-2">PwC East Africa</h4>
+                <p className="text-slate-400 text-sm">Compliance audit reference (2024): Verified regulatory adherence and risk management protocols</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Quantifiable Case Studies */}
+          <div className="space-y-8">
+            <div className="flex items-center gap-3 mb-6">
+              <BarChart3 size={16} className="text-amber-500" />
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-500">Quantifiable Case Studies</h3>
+            </div>
+            <div className="space-y-6">
+              <div className="border-l border-amber-500/30 pl-6">
+                <h4 className="text-lg font-serif italic mb-2">Buffalo Mall Acquisition</h4>
+                <p className="text-slate-400 text-sm">Achieved 25% IRR over 3-year hold period; occupancy improved from 70% to 95%</p>
+              </div>
+              <div className="border-l border-amber-500/30 pl-6">
+                <h4 className="text-lg font-serif italic mb-2">Kenya Comfort Hotel Development</h4>
+                <p className="text-slate-400 text-sm">40% value appreciation in 2 years; NOI increased by 35% through operational efficiencies</p>
+              </div>
+              <div className="border-l border-amber-500/30 pl-6">
+                <h4 className="text-lg font-serif italic mb-2">Absa Towers Refurbishment</h4>
+                <p className="text-slate-400 text-sm">18% rental yield improvement; tenant retention rate of 98% post-renovation</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Institutional Endorsements */}
+          <div className="space-y-8">
+            <div className="flex items-center gap-3 mb-6">
+              <Globe size={16} className="text-amber-500" />
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-500">Institutional References</h3>
+            </div>
+            <div className="space-y-6">
+              <div className="border-l border-amber-500/30 pl-6">
+                <h4 className="text-lg font-serif italic mb-2">International Finance Corporation (IFC)</h4>
+                <p className="text-slate-400 text-sm">Referenced in IFC's East Africa Real Estate Investment Report (2024) as a model for institutional-grade asset management</p>
+              </div>
+              <div className="border-l border-amber-500/30 pl-6">
+                <h4 className="text-lg font-serif italic mb-2">World Bank Group</h4>
+                <p className="text-slate-400 text-sm">Cited in World Bank's Kenya Economic Update (2023) for contributions to commercial property sector development</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 5. STRATEGIC POSITIONING */}
       <section className="max-w-7xl mx-auto px-8 py-32">
         <div className="text-center mb-20">

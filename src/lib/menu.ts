@@ -25,6 +25,7 @@ export const MENU_DATA: MenuData = {
 
   invest: [
     { label: 'Private Equity Real Estate', href: '/private-equity-real-estate' },
+    { label: 'Investment Calculator', href: '/calculator' },    
     { label: 'Investment Analysis', href: '/investment-analysis' },
     { label: 'Exit Strategy Planning', href: '/exit-strategy-planning' },
     { label: 'Capital Structuring', href: '/strategic-land-banking' },

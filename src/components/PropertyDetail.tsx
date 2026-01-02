@@ -34,6 +34,13 @@ interface Property {
     appreciationRate: string;
     totalROI: string;
   };
+  ukSpecific?: {
+    leaseTerms: string;
+    tenantProfile: string;
+    regulatoryCompliance: string;
+    taxImplications: string;
+    currencyHedging: string;
+  };
 }
 
 interface PropertyData {
@@ -459,6 +466,13 @@ const propertyData: PropertyData = {
       netYield: "5.5%",
       appreciationRate: "4%",
       totalROI: "9.5%"
+    },
+    ukSpecific: {
+      leaseTerms: "Long-term leases with institutional covenants. Average lease length: 12.5 years. Break clauses at year 5 and 10. Full repairing and insuring terms with service charge caps.",
+      tenantProfile: "Blue-chip legal firms including Magic Circle firms and international law practices. Weighted average lease expiry: 2032. Tenant covenant strength: Investment Grade.",
+      regulatoryCompliance: "FCA regulated investment vehicle. HMRC approved structure. RICS Red Book valuation compliant. FCA client money rules applicable for institutional investors.",
+      taxImplications: "UK REIT structure available. Corporation tax relief on property income. Withholding tax considerations for non-UK investors. SDLT relief for qualifying institutional acquisitions.",
+      currencyHedging: "GBP/USD forward contracts in place. 80% of rental income hedged for 3-year period. Currency collar strategy protecting against GBP depreciation beyond 10%."
     }
   },
   12: {
@@ -1589,9 +1603,81 @@ const PropertyDetail = () => {
             </div>
           </div>
         </section>
+
+        {/* 5. UK-SPECIFIC INVESTMENT DETAILS */}
+        {property.ukSpecific && (
+          <section className="mb-32">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl font-serif italic mb-4">UK Investment Framework</h2>
+              <p className="text-[10px] text-slate-500 uppercase tracking-[0.4em]">Institutional Standards & Compliance</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-px bg-white/10 border border-white/10">
+              <div className="bg-[#05070a] p-12 hover:bg-white/[0.02] transition-colors">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 border border-amber-500/30 flex items-center justify-center">
+                    <Clock className="text-amber-500" size={20} />
+                  </div>
+                  <h4 className="text-xl font-serif italic">Lease Terms</h4>
+                </div>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  {property.ukSpecific.leaseTerms}
+                </p>
+              </div>
+
+              <div className="bg-[#05070a] p-12 hover:bg-white/[0.02] transition-colors">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 border border-amber-500/30 flex items-center justify-center">
+                    <Building className="text-amber-500" size={20} />
+                  </div>
+                  <h4 className="text-xl font-serif italic">Tenant Profile</h4>
+                </div>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  {property.ukSpecific.tenantProfile}
+                </p>
+              </div>
+
+              <div className="bg-[#05070a] p-12 hover:bg-white/[0.02] transition-colors">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 border border-amber-500/30 flex items-center justify-center">
+                    <Shield className="text-amber-500" size={20} />
+                  </div>
+                  <h4 className="text-xl font-serif italic">Regulatory Compliance</h4>
+                </div>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  {property.ukSpecific.regulatoryCompliance}
+                </p>
+              </div>
+
+              <div className="bg-[#05070a] p-12 hover:bg-white/[0.02] transition-colors">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 border border-amber-500/30 flex items-center justify-center">
+                    <Coins className="text-amber-500" size={20} />
+                  </div>
+                  <h4 className="text-xl font-serif italic">Tax Implications</h4>
+                </div>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  {property.ukSpecific.taxImplications}
+                </p>
+              </div>
+
+              <div className="bg-[#05070a] p-12 hover:bg-white/[0.02] transition-colors md:col-span-2">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 border border-amber-500/30 flex items-center justify-center">
+                    <PoundSterling className="text-amber-500" size={20} />
+                  </div>
+                  <h4 className="text-xl font-serif italic">Currency Hedging Strategy</h4>
+                </div>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  {property.ukSpecific.currencyHedging}
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
       </main>
 
-      {/* 5. MODAL MAINTAINED */}
+      {/* 6. MODAL MAINTAINED */}
       <AnimatePresence>
         {isImageModalOpen && (
           <motion.div
