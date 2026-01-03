@@ -1,53 +1,47 @@
 import type { Metadata } from 'next'
 import Hero from '../components/sections/Hero'
-import LegacyPlanningSection from '../components/sections/LegacyPlanningSection'
 import TaxIntelligenceSection from '../components/sections/TaxIntelligenceSection'
-import IndustrialLandBankingSection from '../components/sections/IndustrialLandBankingSection'
-import YieldMapLeadMagnet from '../components/sections/YieldMapLeadMagnet'
-import SmartBuildingService from '../components/sections/SmartBuildingService'
-import YieldReportSection from '../components/sections/YieldReportSection'
-import ExclusiveOpportunities from '../components/sections/ExclusiveOpportunitiesNew'
-import ExecutiveTargetedSection from '../components/sections/ExecutiveTargetedSection'
-import GlobalPresence from '../components/sections/GlobalPresence'
-import InvestmentProcess from '../components/sections/InvestmentProcess'
-import TrustIndicators from '../components/sections/TrustIndicators'
+import CoreInvestmentStrategies from '../components/sections/CoreInvestmentStrategies'
+import RepresentativeTransactions from '../components/sections/RepresentativeTransactions'
+import ResearchPreview from '../components/sections/ResearchPreview'
+import InstitutionalTrustSignals from '../components/sections/InstitutionalTrustSignals'
+import InstitutionalEngagementModel from '../components/sections/InstitutionalEngagementModel'
 
 export const metadata: Metadata = {
   // 1. STRATEGIC TITLE (Max 60 chars recommended for SEO)
-  title: 'Murivest Realty Group Ltd | Institutional Real Estate Investment Authority',
-  
+  title: 'Murivest Realty Group | Institutional Real Estate Advisory Kenya',
+
   // 2. AUTHORITATIVE DESCRIPTION
-  description: 'The premier fiduciary gateway to East African commercial assets. Specialized in Grade A office towers, institutional-grade retail, and high-yield hospitality for global family offices and sovereign funds. Architecting generational wealth through rigorous due diligence and legacy asset management.',
-  
+  description: 'Independent real estate investment advisory firm specializing in commercial asset origination and structuring for institutional investors in East Africa. Mandate sizes $10M–$100M+ across office, logistics, and industrial sectors.',
+
   // 3. TARGETED KEYWORDS (Curated for High-Net-Worth intent)
   keywords: [
-    'Institutional Capital Allocation Kenya',
-    'Grade A Commercial Real Estate Nairobi',
-    'Nairobi Financial District Trophy Assets',
-    'Fiduciary Real Estate Advisory East Africa',
-    'Off-market Commercial Properties Kenya',
-    'Family Office Real Estate Strategies Africa',
-    'Institutional Asset Management Nairobi',
-    'Kenya Real Estate Investment for UK Investors',
-    'Capital Preservation Real Estate Africa',
-    'African REIT Advisory',
+    'Institutional Real Estate Advisory Kenya',
+    'Commercial Real Estate Investment Nairobi',
+    'East Africa Property Origination',
+    'Family Office Real Estate Kenya',
+    'Institutional Capital Deployment Africa',
+    'Off-Market Commercial Assets Kenya',
+    'Real Estate Investment Advisory Nairobi',
+    'Kenya Commercial Property Investment',
+    'Institutional Real Estate Mandate',
     'Murivest Realty Group',
-    'Generational Wealth Real Estate Kenya',
-    'Nairobi Prime Office Market 2025'
+    'East African Real Estate Advisory',
+    'Commercial Real Estate Kenya 2025'
   ].join(', '),
 
   // 4. OPEN GRAPH (Social Sharing)
   openGraph: {
-    title: 'Murivest Realty Group: East Africa’s Investment Authority',
-    description: 'Exclusive access to institutional-grade commercial real estate in Kenya’s most coveted financial districts.',
+    title: 'Murivest Realty Group | Institutional Real Estate Advisory',
+    description: 'Independent advisory firm providing institutional investors with structured access to East African commercial real estate markets.',
     url: 'https://murivest.co.ke',
     siteName: 'Murivest Realty Group Ltd',
     images: [
       {
-        url: '/og-institutional-hero.png', // Recommend a high-contrast architectural shot of Nairobi Financial District
+        url: '/og-institutional-hero.png',
         width: 1200,
         height: 630,
-        alt: 'Murivest Realty Group Ltd - Nairobi Financial District Assets',
+        alt: 'Murivest Realty Group Ltd - Institutional Real Estate Advisory',
       },
     ],
     locale: 'en_GB',
@@ -57,8 +51,8 @@ export const metadata: Metadata = {
   // 5. TWITTER CARD
   twitter: {
     card: 'summary_large_image',
-    title: 'Murivest Realty Group | Institutional Real Estate',
-    description: 'Securing trophy assets and architecting legacy wealth in the East African commercial sector.',
+    title: 'Murivest Realty Group | Institutional Real Estate Advisory',
+    description: 'Independent advisory for institutional capital deployment in East African commercial real estate.',
     images: ['/og-institutional-hero.png'],
   },
 
@@ -83,16 +77,12 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <LegacyPlanningSection />
+      <InstitutionalEngagementModel />
+      <CoreInvestmentStrategies />
       <TaxIntelligenceSection />
-      <IndustrialLandBankingSection />
-      <YieldMapLeadMagnet />
-      <SmartBuildingService />
-      <ExclusiveOpportunities />
-      <ExecutiveTargetedSection />
-      <YieldReportSection />
-      <GlobalPresence />
-      <TrustIndicators />
+      <RepresentativeTransactions />
+      <ResearchPreview />
+      <InstitutionalTrustSignals />
     </>
   )
 }

@@ -24,8 +24,10 @@ export const MENU_DATA: MenuData = {
   ],
 
   invest: [
+    { label: 'Institutional Investors', href: '/institutional-investors' },
+    { label: 'How We Work With Institutions', href: '/how-we-work-with-institutions' },
     { label: 'Private Equity Real Estate', href: '/private-equity-real-estate' },
-    { label: 'Investment Calculator', href: '/calculator' },    
+    { label: 'Investment Calculator', href: '/calculator' },
     { label: 'Investment Analysis', href: '/investment-analysis' },
     { label: 'Exit Strategy Planning', href: '/exit-strategy-planning' },
     { label: 'Capital Structuring', href: '/strategic-land-banking' },

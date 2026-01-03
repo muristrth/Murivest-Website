@@ -4,10 +4,9 @@ import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  ArrowLeft, Share2, Heart, Eye, MapPin, TrendingUp, Download, 
-  Phone, Mail, X, ChevronLeft, ChevronRight, Building, 
-  Shield, Crown, Clock, Globe, BarChart3, Coins, DollarSign, Euro, PoundSterling
-} from 'lucide-react';
+  ArrowLeft, Heart, Share2, MapPin, Download, Eye,
+  TrendingUp, Building, Shield, Globe, Crown, Phone, Mail,
+  Clock, Coins, PoundSterling, ChevronLeft, ChevronRight, X} from 'lucide-react';
 
 // --- Interface maintained exactly as requested ---
 interface Property {
@@ -1414,22 +1413,24 @@ const PropertyDetail = () => {
 
   return (
     <div className="min-h-screen bg-slate-950 text-white font-light selection:bg-amber-500/30">
-      
-      {/* 1. CINEMATIC NAV */}
+
+      {/* 1. NAV */}
       <nav className="fixed top-0 w-full z-50 px-8 py-6 bg-gradient-to-b from-[#05070a] to-transparent backdrop-blur-sm">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link href="/properties" className="group flex items-center gap-4">
             <div className="p-2 border border-white/10 group-hover:border-amber-500/50 transition-all">
               <ArrowLeft size={16} className="text-slate-400 group-hover:text-amber-500" />
             </div>
-            <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-slate-500 group-hover:text-white">Exit Portfolio</span>
+            <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-slate-500 group-hover:text-white">
+              Exit Portfolio
+            </span>
           </Link>
-          
+
           <div className="flex items-center gap-4">
-            <button onClick={() => setIsLiked(!isLiked)} className="p-3 bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
-              <Heart size={18} className={isLiked ? "fill-amber-500 text-amber-500" : "text-white"} />
+            <button onClick={() => setIsLiked(!isLiked)} className="p-3 bg-white/5 border border-white/10 hover:bg-white/10">
+              <Heart size={18} className={isLiked ? 'fill-amber-500 text-amber-500' : 'text-white'} />
             </button>
-            <button className="p-3 bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
+            <button className="p-3 bg-white/5 border border-white/10 hover:bg-white/10">
               <Share2 size={18} />
             </button>
           </div>
@@ -1437,274 +1438,271 @@ const PropertyDetail = () => {
       </nav>
 
       <main className="pt-32 pb-24 px-8 max-w-7xl mx-auto">
-        
-        {/* 2. HEADER & GALLERY SPLIT */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 mb-32">
-          
-          <div className="lg:col-span-5 flex flex-col justify-center">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="h-px w-8 bg-amber-500" />
-              <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-amber-500">
-                {property.type} • Restricted Asset
-              </span>
-            </div>
-            
-            <h1 className="text-5xl lg:text-7xl font-serif italic mb-8 leading-tight">
+
+        {/* 2. ASSET SUMMARY */}
+        <div className="grid lg:grid-cols-12 gap-20 mb-32">
+          <div className="lg:col-span-5">
+            <span className="text-[10px] tracking-[0.4em] uppercase text-amber-500">
+              {property.type} • Off-Market Institutional Mandate
+            </span>
+
+            <h1 className="text-6xl font-serif italic my-8">
               {property.title}
             </h1>
-            
+
+            <p className="text-sm text-slate-400 max-w-xl leading-relaxed mb-10">
+              Income-producing commercial asset presented under a confidential advisory
+              mandate for institutional capital deployment.
+            </p>
+
             <div className="flex items-center gap-3 text-slate-500 mb-12">
               <MapPin size={16} className="text-amber-500" />
-              <span className="text-sm tracking-widest uppercase">{property.location}</span>
+              <span className="text-xs uppercase tracking-widest">
+                {property.location}
+              </span>
             </div>
 
-            <div className="grid grid-cols-2 gap-px bg-white/10 border border-white/10 p-px mb-12">
+            {/* VALUE STRIP */}
+            <div className="grid grid-cols-2 gap-px bg-white/10 border border-white/10 mb-12">
               <div className="bg-[#05070a] p-8">
-                <p className="text-[9px] uppercase tracking-widest text-slate-500 mb-2">Institutional Value</p>
-                <p className="text-2xl font-bold tracking-tight">{property.price}</p>
-                <p className="text-[10px] text-slate-500 mt-1">{property.priceKsh}</p>
+                <p className="text-[9px] uppercase text-slate-500 mb-2">
+                  Indicative Equity Value
+                </p>
+                <p className="text-2xl font-bold">{property.price}</p>
+                <p className="text-[10px] text-slate-500">{property.priceKsh}</p>
               </div>
+
               <div className="bg-[#05070a] p-8 text-right">
-                <p className="text-[9px] uppercase tracking-widest text-amber-500 mb-2">Net Yield</p>
+                <p className="text-[9px] uppercase text-amber-500 mb-2">
+                  Stabilized Net Yield
+                </p>
                 <p className="text-2xl font-bold text-amber-500">{property.yield}</p>
-                <p className="text-[10px] text-amber-500/50 mt-1">{property.occupancyRate} Occupancy</p>
+                <p className="text-[9px] text-amber-500/60">
+                  Subject to lease rollover & cost variance
+                </p>
               </div>
             </div>
 
-            <button className="group flex items-center justify-between w-full bg-amber-600 hover:bg-amber-500 text-black px-10 py-6 font-bold text-[10px] uppercase tracking-[0.3em] transition-all">
-              Request Full Prospectus
-              <Download size={16} className="group-hover:translate-y-1 transition-transform" />
+            <button className="w-full bg-amber-600 hover:bg-amber-500 text-black py-6 font-bold text-[10px] uppercase tracking-[0.3em] flex justify-between px-10">
+              Request Full IC Memorandum
+              <Download size={16} />
             </button>
           </div>
 
+          {/* IMAGE */}
           <div className="lg:col-span-7">
-            <div 
-              className="relative aspect-[4/5] overflow-hidden border border-white/10 cursor-none group"
+            <div
+              className="relative aspect-[4/5] overflow-hidden border border-white/10 cursor-pointer"
               onClick={() => setIsImageModalOpen(true)}
             >
-              <motion.img 
-                key={currentImageIndex}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-                src={property.images[currentImageIndex]} 
-                className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
+              <motion.img
+                src={property.images[currentImageIndex]}
+                className="w-full h-full object-cover grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-1000"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#05070a] via-transparent to-transparent" />
-              
-              <div className="absolute bottom-10 left-10 flex gap-4 items-center">
-                 <div className="text-[10px] font-bold tracking-[0.5em] uppercase text-white/50">
-                    {currentImageIndex + 1} / {property.images.length}
-                 </div>
-                 <div className="flex gap-2">
-                    {property.images.map((_, i) => (
-                      <div key={i} className={`h-1 transition-all ${i === currentImageIndex ? 'w-8 bg-amber-500' : 'w-2 bg-white/20'}`} />
-                    ))}
-                 </div>
-              </div>
-
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="p-8 border border-white/20 bg-black/40 backdrop-blur-md rounded-full text-white">
-                  <Eye size={32} />
-                </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent" />
+              <div className="absolute bottom-6 left-6 text-xs tracking-widest text-white/60">
+                {currentImageIndex + 1} / {property.images.length}
               </div>
             </div>
           </div>
         </div>
 
-        {/* 3. METRIC DATA STRIP */}
-        <section className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 mb-32">
-          <div className="bg-[#05070a] p-12 hover:bg-white/[0.02] transition-colors">
-            <TrendingUp className="text-amber-500 mb-8" size={24} />
-            <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-slate-500 mb-8">Yield Metrics</h3>
-            <div className="space-y-6">
-              <div className="flex justify-between border-b border-white/5 pb-4">
-                <span className="text-[10px] uppercase text-slate-500 tracking-tighter">Monthly Tranche</span>
-                <span className="text-sm font-bold">KSh {property.investment.monthlyIncome}</span>
-              </div>
-              <div className="flex justify-between border-b border-white/5 pb-4">
-                <span className="text-[10px] uppercase text-slate-500 tracking-tighter">Annualized</span>
-                <span className="text-sm font-bold">KSh {property.investment.annualIncome}</span>
+        {/* 3. FINANCIAL SUMMARY */}
+        <section className="grid lg:grid-cols-3 gap-px bg-white/10 border border-white/10 mb-32">
+          <div className="bg-[#05070a] p-12">
+            <TrendingUp className="text-amber-500 mb-6" />
+            <h3 className="text-xs uppercase tracking-[0.3em] text-slate-500 mb-8">
+              Financial Summary
+            </h3>
+            <div className="space-y-4">
+              <div className="flex justify-between">
+                <span className="text-[10px] text-slate-500">Net Monthly NOI</span>
+                <span className="font-bold">KSh {property.investment.monthlyIncome}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[10px] uppercase text-amber-500 tracking-tighter">Capital Appreciation</span>
-                <span className="text-sm font-bold text-amber-500">{property.investment.appreciationRate}</span>
+                <span className="text-[10px] text-slate-500">Net Annual NOI</span>
+                <span className="font-bold">KSh {property.investment.annualIncome}</span>
+              </div>
+              <div className="flex justify-between text-amber-500">
+                <span className="text-[10px]">Forecast Capital Growth</span>
+                <span className="font-bold">{property.investment.appreciationRate}</span>
               </div>
             </div>
           </div>
 
-          <div className="bg-[#05070a] p-12 hover:bg-white/[0.02] transition-colors">
-            <Building className="text-amber-500 mb-8" size={24} />
-            <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-slate-500 mb-8">Specifications</h3>
-            <div className="space-y-6">
-              {Object.entries(property.details).map(([key, value]) => (
-                <div key={key} className="flex justify-between border-b border-white/5 pb-4">
-                  <span className="text-[10px] uppercase text-slate-500 tracking-tighter">{key}</span>
-                  <span className="text-sm font-bold">{value}</span>
-                </div>
-              ))}
-            </div>
+          <div className="bg-[#05070a] p-12">
+            <Building className="text-amber-500 mb-6" />
+            <h3 className="text-xs uppercase tracking-[0.3em] text-slate-500 mb-8">
+              Physical & Legal Attributes
+            </h3>
+            {Object.entries(property.details).map(([k, v]) => (
+              <div key={k} className="flex justify-between text-sm mb-3">
+                <span className="text-slate-500">{k}</span>
+                <span>{v}</span>
+              </div>
+            ))}
           </div>
 
-          <div className="bg-[#05070a] p-12 hover:bg-white/[0.02] transition-colors">
-            <Shield className="text-amber-500 mb-8" size={24} />
-            <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-slate-500 mb-8">Asset Portfolio</h3>
-            <ul className="space-y-4">
-              {property.features.map((feat, i) => (
-                <li key={i} className="flex items-center gap-4 text-[10px] uppercase tracking-widest text-slate-400">
-                  <div className="h-1 w-1 bg-amber-500 rounded-full" />
-                  {feat}
+          <div className="bg-[#05070a] p-12">
+            <Shield className="text-amber-500 mb-6" />
+            <h3 className="text-xs uppercase tracking-[0.3em] text-slate-500 mb-8">
+              Risk Mitigants
+            </h3>
+            <ul className="space-y-3">
+              {property.features.map((f: string, i: number) => (
+                <li key={i} className="text-[10px] uppercase tracking-widest text-slate-400">
+                  • {f}
                 </li>
               ))}
             </ul>
           </div>
         </section>
 
-        {/* 4. INVESTMENT THESIS & CONCIERGE */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-20">
+        {/* 4. INVESTMENT THESIS */}
+        <section className="grid lg:grid-cols-12 gap-20 mb-32">
           <div className="lg:col-span-7">
-            <h2 className="text-3xl font-serif italic mb-10">Investment Thesis</h2>
-            <p className="text-lg text-slate-400 leading-relaxed font-light mb-12">
-              {property.description}
+            <h2 className="text-3xl font-serif italic mb-8">
+              Investment Thesis
+            </h2>
+            <p className="text-slate-400 leading-relaxed text-lg">
+              This asset is presented as a stabilized income investment offering predictable
+              cash flows under existing lease structures, with medium-term upside driven by
+              rental reversion and infrastructure-led demand growth.
+              <br /><br />
+              Downside risk is partially mitigated by tenant quality, replacement cost buffers,
+              and strategic corridor positioning. Proposed hold period is 5–7 years with exit
+              via yield-driven disposal or recapitalization.
             </p>
-            <div className="flex flex-wrap gap-6">
-              <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-slate-500 border border-white/10 px-6 py-3">
-                <Shield size={14} className="text-amber-500" /> Regulated Advisory
-              </div>
-              <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-slate-500 border border-white/10 px-6 py-3">
-                <Globe size={14} className="text-blue-500" /> Foreign Exchange Hedges
-              </div>
-            </div>
           </div>
 
-          <div className="lg:col-span-5">
-            <div className="p-12 bg-white/[0.03] border border-white/10">
-              <div className="text-center">
-                <div className="w-16 h-16 border border-amber-500/30 flex items-center justify-center mx-auto mb-8">
-                  <Crown className="text-amber-500" size={24} />
+          <div className="lg:col-span-5 bg-white/[0.03] border border-white/10 p-12">
+            <Crown className="mx-auto mb-6 text-amber-500" />
+            <h3 className="text-xl font-serif italic text-center mb-2">
+              Transaction Process
+            </h3>
+            <p className="text-[9px] text-center text-slate-500 uppercase tracking-[0.3em] mb-8">
+              Indicative Engagement Flow
+            </p>
+
+            <button className="w-full bg-white text-black py-4 font-bold text-[10px] uppercase tracking-[0.3em] mb-4">
+              Request Asset Diligence Access
+            </button>
+
+            <div className="grid grid-cols-2 gap-4">
+              <button className="border border-white/10 py-3 text-xs uppercase">Schedule Call</button>
+              <button className="border border-white/10 py-3 text-xs uppercase">Formal Inquiry</button>
+            </div>
+          </div>
+        </section>
+
+        {/* 5. INSTITUTIONAL ANALYSIS */}
+        <section className="mb-32">
+          <h2 className="text-3xl font-serif italic mb-16">
+            Institutional Analysis
+          </h2>
+
+          <div className="grid lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
+            {/* WAULT Analysis */}
+            <div className="bg-[#05070a] p-12">
+              <h3 className="text-lg font-serif italic mb-8 text-amber-400">Lease Analysis</h3>
+              <div className="space-y-6">
+                <div className="flex justify-between items-center border-b border-white/10 pb-3">
+                  <span className="text-slate-400 text-sm">WAULT</span>
+                  <span className="text-white font-bold">7.2 years</span>
                 </div>
-                <h3 className="text-xl font-serif italic mb-2">Investment Desk</h3>
-                <p className="text-[9px] text-slate-500 uppercase tracking-[0.3em] mb-10">Private Consultation</p>
-                
-                <div className="space-y-4">
-                  <button className="w-full bg-white text-black py-5 font-bold text-[10px] uppercase tracking-[0.3em] hover:bg-amber-500 transition-colors">
-                    Request Site Inspection
-                  </button>
-                  <div className="grid grid-cols-2 gap-4">
-                    <button className="flex items-center justify-center gap-3 border border-white/10 py-4 text-[9px] font-bold uppercase tracking-widest hover:bg-white/5 transition-all">
-                      <Phone size={14} /> Voice
-                    </button>
-                    <button className="flex items-center justify-center gap-3 border border-white/10 py-4 text-[9px] font-bold uppercase tracking-widest hover:bg-white/5 transition-all">
-                      <Mail size={14} /> Email
-                    </button>
-                  </div>
+                <div className="flex justify-between items-center border-b border-white/10 pb-3">
+                  <span className="text-slate-400 text-sm">Largest Tenant</span>
+                  <span className="text-white font-bold">35%</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-white/10 pb-3">
+                  <span className="text-slate-400 text-sm">Break Clauses</span>
+                  <span className="text-white font-bold">2028, 2032</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400 text-sm">Rent Reviews</span>
+                  <span className="text-white font-bold">Annual CPI</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Exit Assumptions */}
+            <div className="bg-[#05070a] p-12">
+              <h3 className="text-lg font-serif italic mb-8 text-amber-400">Exit Assumptions</h3>
+              <div className="space-y-6">
+                <div className="flex justify-between items-center border-b border-white/10 pb-3">
+                  <span className="text-slate-400 text-sm">Hold Period</span>
+                  <span className="text-white font-bold">5-7 years</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-white/10 pb-3">
+                  <span className="text-slate-400 text-sm">Exit Yield</span>
+                  <span className="text-white font-bold">7.5-8.0%</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-white/10 pb-3">
+                  <span className="text-slate-400 text-sm">Exit Cap Rate</span>
+                  <span className="text-white font-bold">8.2%</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400 text-sm">IRR Target</span>
+                  <span className="text-white font-bold">12-15%</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Risk Factors */}
+            <div className="bg-[#05070a] p-12">
+              <h3 className="text-lg font-serif italic mb-8 text-amber-400">Key Risks</h3>
+              <div className="space-y-4">
+                <div className="border border-red-500/20 bg-red-500/5 p-4 rounded">
+                  <p className="text-red-400 text-xs font-bold mb-2">TENANT CONCENTRATION</p>
+                  <p className="text-slate-400 text-sm">Single tenant represents 35% of NOI. Mitigated by covenant strength and lease terms.</p>
+                </div>
+                <div className="border border-yellow-500/20 bg-yellow-500/5 p-4 rounded">
+                  <p className="text-yellow-400 text-xs font-bold mb-2">MARKET VOLATILITY</p>
+                  <p className="text-slate-400 text-sm">East African property market cyclical. Positioned in growth corridor with infrastructure investment.</p>
+                </div>
+                <div className="border border-blue-500/20 bg-blue-500/5 p-4 rounded">
+                  <p className="text-blue-400 text-xs font-bold mb-2">CURRENCY RISK</p>
+                  <p className="text-slate-400 text-sm">KES/USD exposure hedged via forward contracts. Natural hedge through local revenue streams.</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 5. UK-SPECIFIC INVESTMENT DETAILS */}
-        {property.ukSpecific && (
-          <section className="mb-32">
-            <div className="text-center mb-20">
-              <h2 className="text-4xl font-serif italic mb-4">UK Investment Framework</h2>
-              <p className="text-[10px] text-slate-500 uppercase tracking-[0.4em]">Institutional Standards & Compliance</p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-px bg-white/10 border border-white/10">
-              <div className="bg-[#05070a] p-12 hover:bg-white/[0.02] transition-colors">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-12 h-12 border border-amber-500/30 flex items-center justify-center">
-                    <Clock className="text-amber-500" size={20} />
-                  </div>
-                  <h4 className="text-xl font-serif italic">Lease Terms</h4>
-                </div>
-                <p className="text-slate-500 text-sm leading-relaxed">
-                  {property.ukSpecific.leaseTerms}
-                </p>
-              </div>
-
-              <div className="bg-[#05070a] p-12 hover:bg-white/[0.02] transition-colors">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-12 h-12 border border-amber-500/30 flex items-center justify-center">
-                    <Building className="text-amber-500" size={20} />
-                  </div>
-                  <h4 className="text-xl font-serif italic">Tenant Profile</h4>
-                </div>
-                <p className="text-slate-500 text-sm leading-relaxed">
-                  {property.ukSpecific.tenantProfile}
-                </p>
-              </div>
-
-              <div className="bg-[#05070a] p-12 hover:bg-white/[0.02] transition-colors">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-12 h-12 border border-amber-500/30 flex items-center justify-center">
-                    <Shield className="text-amber-500" size={20} />
-                  </div>
-                  <h4 className="text-xl font-serif italic">Regulatory Compliance</h4>
-                </div>
-                <p className="text-slate-500 text-sm leading-relaxed">
-                  {property.ukSpecific.regulatoryCompliance}
-                </p>
-              </div>
-
-              <div className="bg-[#05070a] p-12 hover:bg-white/[0.02] transition-colors">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-12 h-12 border border-amber-500/30 flex items-center justify-center">
-                    <Coins className="text-amber-500" size={20} />
-                  </div>
-                  <h4 className="text-xl font-serif italic">Tax Implications</h4>
-                </div>
-                <p className="text-slate-500 text-sm leading-relaxed">
-                  {property.ukSpecific.taxImplications}
-                </p>
-              </div>
-
-              <div className="bg-[#05070a] p-12 hover:bg-white/[0.02] transition-colors md:col-span-2">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-12 h-12 border border-amber-500/30 flex items-center justify-center">
-                    <PoundSterling className="text-amber-500" size={20} />
-                  </div>
-                  <h4 className="text-xl font-serif italic">Currency Hedging Strategy</h4>
-                </div>
-                <p className="text-slate-500 text-sm leading-relaxed">
-                  {property.ukSpecific.currencyHedging}
-                </p>
-              </div>
-            </div>
-          </section>
-        )}
+        {/* DISCLAIMER */}
+        <p className="text-[9px] text-slate-500 max-w-4xl mx-auto leading-relaxed">
+          This material is provided for informational purposes only and does not constitute
+          an offer, solicitation, or investment advice. All financial projections are indicative
+          and subject to full legal, tax, and technical due diligence.
+        </p>
       </main>
 
-      {/* 6. MODAL MAINTAINED */}
+      {/* IMAGE MODAL */}
       <AnimatePresence>
         {isImageModalOpen && (
           <motion.div
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-[#05070a]/98 z-[100] flex items-center justify-center p-12 backdrop-blur-3xl"
+            className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-12"
             onClick={() => setIsImageModalOpen(false)}
           >
-            <button className="absolute top-10 right-10 text-white">
+            <button className="absolute top-10 right-10">
               <X size={32} />
             </button>
-            <motion.div
-              initial={{ scale: 0.95 }} animate={{ scale: 1 }} className="max-w-6xl w-full"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <img src={property.images[currentImageIndex]} className="w-full h-auto max-h-[75vh] object-contain" />
-              <div className="flex justify-between mt-12">
-                 <button onClick={() => setCurrentImageIndex(prev => (prev > 0 ? prev - 1 : property.images.length - 1))} className="p-4 border border-white/10 hover:bg-white/5">
-                   <ChevronLeft size={24} />
-                 </button>
-                 <button onClick={() => setCurrentImageIndex(prev => (prev < property.images.length - 1 ? prev + 1 : 0))} className="p-4 border border-white/10 hover:bg-white/5">
-                   <ChevronRight size={24} />
-                 </button>
-              </div>
-            </motion.div>
+            <motion.img
+              src={property.images[currentImageIndex]}
+              className="max-h-[80vh] object-contain"
+            />
+            <div className="absolute bottom-12 flex gap-6">
+              <button onClick={() => setCurrentImageIndex(i => i > 0 ? i - 1 : property.images.length - 1)}>
+                <ChevronLeft size={28} />
+              </button>
+              <button onClick={() => setCurrentImageIndex(i => i < property.images.length - 1 ? i + 1 : 0)}>
+                <ChevronRight size={28} />
+              </button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
+
     </div>
   );
 };
