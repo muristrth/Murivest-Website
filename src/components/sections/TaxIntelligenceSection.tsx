@@ -24,17 +24,17 @@ const items = [
 
 const TaxIntelligenceSection = () => {
   return (
-    <section className="py-32 bg-slate-50 border-t">
+    <section className="py-32 bg-slate-950 text-white border-t border-white/5">
       <div className="max-w-7xl mx-auto px-8 lg:px-12">
         <div className="max-w-3xl mb-24">
           <p className="text-[10px] tracking-[0.4em] uppercase text-slate-400 mb-6">
             Governance & Risk
           </p>
-          <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-serif text-white mb-6">
             Tax Structuring & <br />
-            <span className="italic text-slate-500">Risk Management</span>
+            <span className="italic text-slate-300">Risk Management</span>
           </h2>
-          <p className="text-slate-500 text-lg leading-relaxed">
+          <p className="text-slate-400 text-lg leading-relaxed">
             We work alongside legal, tax, and valuation professionals to ensure institutional
             capital is deployed with full compliance and exit clarity.
           </p>
@@ -48,13 +48,13 @@ const TaxIntelligenceSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.15 }}
-              className="bg-white border border-slate-200 p-10"
+              className="bg-white/[0.02] border border-white/10 p-10"
             >
-              <item.icon className="h-7 w-7 text-amber-600 mb-6" />
-              <h3 className="text-lg font-serif text-slate-900 mb-4">
+              <item.icon className="h-7 w-7 text-amber-500 mb-6" />
+              <h3 className="text-lg font-serif text-white mb-4">
                 {item.title}
               </h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
+              <p className="text-slate-400 text-sm leading-relaxed">
                 {item.desc}
               </p>
             </motion.div>

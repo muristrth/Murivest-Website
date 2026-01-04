@@ -77,42 +77,42 @@ export default function EuropePage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-slate-950 text-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-navy-950 via-navy-900 to-navy-950 text-white luxury-section-spacing">
-        <div className="absolute inset-0 bg-black opacity-30"></div>
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="relative pt-40 pb-24 px-8 overflow-hidden">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-amber-600/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2" />
+        <div className="relative max-w-7xl mx-auto">
           <div className="max-w-4xl">
             <div className="flex items-center mb-6">
-              <Shield className="h-8 w-8 luxury-gold-accent mr-3" />
-              <span className="luxury-gold-accent font-luxury text-lg">European Investment Gateway</span>
+              <Shield className="h-8 w-8 text-amber-500 mr-3" />
+              <span className="text-amber-500 font-serif italic text-lg">European Investment Gateway</span>
             </div>
 
-            <h1 className="luxury-heading text-4xl md:text-6xl mb-6">
+            <h1 className="text-4xl md:text-6xl font-serif mb-6 leading-tight">
               Mature Markets Meet
-              <span className="block font-medium text-white">Frontier Growth</span>
+              <span className="block text-amber-200/90 font-serif italic">Frontier Growth</span>
             </h1>
-            <p className="luxury-body text-xl text-white/80 mb-8 leading-relaxed">
+            <p className="text-lg text-slate-400 mb-8 leading-relaxed font-light">
               Phase 3: Partner with institutional wealth firms investing in Africa. Host "Africa Yield Delegation" events.
               Connect European private wealth managers and asset managers with African commercial real estate opportunities.
             </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 luxury-grid-gap mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
               {investmentMetrics.map((metric, index) => (
                 <div
                   key={index}
-                  className="luxury-card text-center"
+                  className="bg-white/5 border border-white/10 p-4 text-center rounded"
                 >
-                  <div className="text-2xl luxury-heading text-white mb-1">{metric.value}</div>
-                  <div className="text-sm luxury-gold-accent mb-1">{metric.label}</div>
-                  <div className="text-xs text-green-300">{metric.trend}</div>
+                  <div className="text-2xl font-serif text-amber-400 mb-1">{metric.value}</div>
+                  <div className="text-sm text-slate-400 mb-1">{metric.label}</div>
+                  <div className="text-xs text-green-400">{metric.trend}</div>
                 </div>
               ))}
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
-                <button className="luxury-button-primary flex items-center justify-center group">
+                <button className="px-8 py-4 bg-amber-500 text-black font-bold uppercase tracking-widest hover:bg-amber-400 transition-all flex items-center justify-center group">
                   <Euro className="mr-3 h-5 w-5" />
                   Connect with European Investors
                   <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -124,46 +124,46 @@ export default function EuropePage() {
       </section>
 
       {/* Market Comparison */}
-      <section className="luxury-section-spacing bg-white">
-        <div className="luxury-container luxury-padding">
-          <div className="text-center luxury-margin-bottom">
-            <h2 className="luxury-heading text-4xl md:text-5xl mb-6">
+      <section className="py-32 border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-24">
+            <h2 className="text-4xl md:text-5xl font-serif mb-6 leading-tight">
               European vs African Market Dynamics
             </h2>
-            <p className="luxury-subheading text-xl max-w-3xl mx-auto">
+            <p className="text-slate-400 text-xl max-w-3xl mx-auto font-light">
               Understanding the yield and growth differentials between mature European markets and high-growth African opportunities.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 luxury-grid-gap">
+          <div className="grid md:grid-cols-3 gap-12">
             {marketComparison.map((market, index) => (
               <div
                 key={index}
-                className="luxury-card"
+                className="bg-white/[0.02] border border-white/10 p-8 rounded"
               >
                 <div className="text-center mb-6">
-                  <h3 className="luxury-heading text-2xl mb-2">{market.city}</h3>
-                  <div className="luxury-gold-accent font-luxury font-medium text-sm">{market.maturity}</div>
+                  <h3 className="text-2xl font-serif mb-2">{market.city}</h3>
+                  <div className="text-amber-400 font-serif italic text-sm">{market.maturity}</div>
                 </div>
 
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="luxury-body">Prime Yields</span>
-                    <span className="luxury-subheading font-medium">{market.yields}</span>
+                    <span className="text-slate-400">Prime Yields</span>
+                    <span className="text-amber-400 font-medium">{market.yields}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="luxury-body">Annual Growth</span>
-                    <span className="luxury-subheading font-medium">{market.growth}</span>
+                    <span className="text-slate-400">Annual Growth</span>
+                    <span className="text-amber-400 font-medium">{market.growth}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="luxury-body">Stability Rating</span>
-                    <span className="luxury-gold-accent font-luxury font-medium">{market.stability}</span>
+                    <span className="text-slate-400">Stability Rating</span>
+                    <span className="text-amber-400 font-serif italic">{market.stability}</span>
                   </div>
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-gold-400/20">
-                  <div className="text-sm luxury-subheading font-medium mb-2">African Comparison</div>
-                  <div className="luxury-body text-sm">{market.africanComparison}</div>
+                <div className="mt-6 pt-6 border-t border-white/10">
+                  <div className="text-sm text-amber-400 font-serif italic mb-2">African Comparison</div>
+                  <div className="text-slate-400 text-sm font-light">{market.africanComparison}</div>
                 </div>
               </div>
             ))}
@@ -172,13 +172,13 @@ export default function EuropePage() {
       </section>
 
       {/* Diversification Strategies */}
-      <section className="luxury-section-spacing luxury-navy-bg text-white">
-        <div className="luxury-container luxury-padding">
-          <div className="text-center luxury-margin-bottom">
-            <h2 className="luxury-heading text-4xl md:text-5xl mb-6">
+      <section className="py-32 border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-24">
+            <h2 className="text-4xl md:text-5xl font-serif mb-6 leading-tight">
               Capital Diversification Strategies
             </h2>
-            <p className="luxury-body text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="text-slate-400 text-xl max-w-3xl mx-auto font-light">
               How European institutional investors are strategically allocating capital to African real estate for enhanced portfolio performance.
             </p>
           </div>
@@ -187,17 +187,17 @@ export default function EuropePage() {
             {diversificationStrategies.map((strategy, index) => (
               <div
                 key={index}
-                className="luxury-card"
+                className="bg-white/[0.02] border border-white/10 p-8 rounded"
               >
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex-1">
-                    <h3 className="luxury-heading text-2xl text-white mb-3">{strategy.strategy}</h3>
-                    <p className="luxury-body text-white/80 leading-relaxed mb-4">{strategy.description}</p>
-                    <div className="luxury-gold-accent font-luxury font-medium mb-2">{strategy.benefits}</div>
+                    <h3 className="text-2xl font-serif mb-3">{strategy.strategy}</h3>
+                    <p className="text-slate-400 leading-relaxed mb-4 font-light">{strategy.description}</p>
+                    <div className="text-amber-400 font-serif italic mb-2">{strategy.benefits}</div>
                   </div>
                   <div className="text-right ml-6">
-                    <div className="text-2xl luxury-heading luxury-gold-accent mb-1">{strategy.capital}</div>
-                    <div className="text-sm luxury-body text-white/60">{strategy.timeline}</div>
+                    <div className="text-2xl font-serif text-amber-400 mb-1">{strategy.capital}</div>
+                    <div className="text-sm text-slate-500">{strategy.timeline}</div>
                   </div>
                 </div>
               </div>
@@ -207,25 +207,25 @@ export default function EuropePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="luxury-section-spacing bg-gold-600 text-navy-950">
-        <div className="luxury-container luxury-padding text-center">
+      <section className="py-32 border-t border-white/5">
+        <div className="max-w-4xl mx-auto px-8 text-center">
           <div>
-            <h2 className="luxury-heading text-3xl md:text-4xl mb-6">
+            <h2 className="text-3xl md:text-4xl font-serif mb-6 leading-tight">
               Optimize Your European Portfolio with African Growth
             </h2>
-            <p className="luxury-body text-xl text-navy-800 mb-8 leading-relaxed">
+            <p className="text-slate-400 text-xl mb-8 leading-relaxed font-light">
               Connect with European institutional investors seeking strategic African real estate exposure for portfolio diversification.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <button className="luxury-button-primary">
+                <button className="px-8 py-4 bg-amber-500 text-black font-bold uppercase tracking-widest hover:bg-amber-400 transition-all">
                   Schedule European Consultation
                 </button>
               </Link>
 
               <Link href="/research">
-                <button className="luxury-button-secondary">
+                <button className="px-8 py-4 border border-amber-500/60 text-amber-300 hover:bg-amber-500 hover:text-black transition-all font-bold uppercase tracking-widest">
                   European Investment Report
                 </button>
               </Link>

@@ -49,9 +49,9 @@ const engagementModels = [
 
 const InstitutionalEngagementModel = () => {
   return (
-    <section className="py-32 bg-white border-t border-slate-100">
+    <section className="py-32 bg-slate-950 text-white border-t border-white/5">
       <div className="max-w-7xl mx-auto px-8 lg:px-12">
-        
+
         {/* Header - Sharp & Direct */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -60,16 +60,16 @@ const InstitutionalEngagementModel = () => {
           transition={{ duration: 0.8 }}
           className="max-w-3xl mb-24"
         >
-          <p className="text-[10px] tracking-[0.5em] uppercase text-amber-600 font-bold mb-6">
+          <p className="text-[10px] tracking-[0.5em] uppercase text-amber-500 font-bold mb-6">
             Engagement Framework
           </p>
-          <h2 className="text-4xl md:text-5xl font-serif text-slate-900 leading-tight mb-8">
+          <h2 className="text-4xl md:text-5xl font-serif text-white leading-tight mb-8">
             A Disciplined Approach to <br />
-            <span className="italic text-slate-500 font-light text-3xl md:text-4xl">Institutional Capital Deployment</span>
+            <span className="italic text-slate-300 font-light text-3xl md:text-4xl">Institutional Capital Deployment</span>
           </h2>
-          <p className="text-slate-600 text-lg leading-relaxed border-l-2 border-amber-500/30 pl-6">
-            Murivest operates under a rigorous fiduciary standard, providing 
-            institutional investors with a structured, transparent pathway to 
+          <p className="text-slate-400 text-lg leading-relaxed border-l-2 border-amber-500/30 pl-6">
+            Murivest operates under a rigorous fiduciary standard, providing
+            institutional investors with a structured, transparent pathway to
             East African real estate markets.
           </p>
         </motion.div>
@@ -77,8 +77,8 @@ const InstitutionalEngagementModel = () => {
         {/* Process Steps with Visual Connector */}
         <div className="relative">
           {/* Subtle connecting line for desktop */}
-          <div className="hidden md:block absolute top-[2.25rem] left-0 w-full h-[1px] bg-slate-100 z-0" />
-          
+          <div className="hidden md:block absolute top-[2.25rem] left-0 w-full h-[1px] bg-white/10 z-0" />
+
           <div className="grid md:grid-cols-4 gap-12 mb-32 relative z-10">
             {steps.map((item, idx) => (
               <motion.div
@@ -90,15 +90,15 @@ const InstitutionalEngagementModel = () => {
                 className="group"
               >
                 <div className="mb-8 flex items-center justify-between">
-                  <span className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-[10px] font-bold text-amber-600 shadow-sm group-hover:border-amber-500 transition-colors duration-500">
+                  <span className="w-10 h-10 rounded-full bg-slate-900 border border-white/10 flex items-center justify-center text-[10px] font-bold text-amber-500 shadow-sm group-hover:border-amber-500 transition-colors duration-500">
                     {item.step}
                   </span>
-                  <item.icon className="h-5 w-5 text-slate-300 group-hover:text-amber-500 transition-colors duration-500" />
+                  <item.icon className="h-5 w-5 text-slate-400 group-hover:text-amber-500 transition-colors duration-500" />
                 </div>
-                <h3 className="text-xl font-serif text-slate-900 mb-4 group-hover:text-amber-700 transition-colors">
+                <h3 className="text-xl font-serif text-white mb-4 group-hover:text-amber-300 transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-slate-500 text-sm leading-relaxed antialiased">
+                <p className="text-slate-400 text-sm leading-relaxed antialiased">
                   {item.desc}
                 </p>
               </motion.div>
@@ -107,17 +107,17 @@ const InstitutionalEngagementModel = () => {
         </div>
 
         {/* Engagement Models - Minimalist & Authoritative */}
-        <div className="bg-slate-50 p-12 md:p-16 rounded-sm mb-24">
+        <div className="bg-white/[0.02] border border-white/10 p-12 md:p-16 rounded-sm mb-24">
           <h3 className="text-xs tracking-[0.3em] uppercase text-slate-400 mb-12 font-semibold">
             Standard Engagement Structures
           </h3>
           <div className="grid md:grid-cols-3 gap-16">
             {engagementModels.map((model, idx) => (
               <div key={idx} className="relative">
-                <h4 className="text-lg font-serif text-slate-900 mb-4 flex items-center gap-2">
+                <h4 className="text-lg font-serif text-white mb-4 flex items-center gap-2">
                   {model.title}
                 </h4>
-                <p className="text-slate-500 text-sm leading-relaxed italic">
+                <p className="text-slate-400 text-sm leading-relaxed italic">
                   "{model.desc}"
                 </p>
               </div>
@@ -126,19 +126,19 @@ const InstitutionalEngagementModel = () => {
         </div>
 
         {/* Final CTA - Professional Reassurance */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12 border-t border-slate-200 pt-16">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12 border-t border-white/10 pt-16">
           <div className="flex items-start gap-4 max-w-lg">
             <div className="mt-1 h-2 w-2 rounded-full bg-amber-500 animate-pulse" />
-            <p className="text-slate-500 text-sm leading-relaxed">
-              Our mandates are exclusive and limited in number to ensure 
-              uncompromised attention to detail and fiduciary integrity. 
-              <span className="block mt-2 font-medium text-slate-900">Next availability for new mandates: Q2 2026.</span>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Our mandates are exclusive and limited in number to ensure
+              uncompromised attention to detail and fiduciary integrity.
+              <span className="block mt-2 font-medium text-white">Next availability for new mandates: Q2 2026.</span>
             </p>
           </div>
-          
+
           <Link
             href="/institutional-investors"
-            className="group flex items-center gap-6 px-12 py-5 bg-slate-900 text-white text-xs tracking-[0.3em] uppercase hover:bg-amber-600 transition-all duration-500 shadow-xl"
+            className="group flex items-center gap-6 px-12 py-5 bg-amber-500 text-black text-xs tracking-[0.3em] uppercase hover:bg-amber-400 transition-all duration-500 shadow-xl"
           >
             Initiate Mandate Discussion
             <ArrowRight className="h-4 w-4 group-hover:translate-x-2 transition-transform" />

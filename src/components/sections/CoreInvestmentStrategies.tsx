@@ -25,17 +25,17 @@ const strategies = [
 
 const CoreInvestmentStrategies = () => {
   return (
-    <section className="py-32 bg-white border-t border-slate-100">
+    <section className="py-32 bg-slate-950 text-white border-t border-white/5">
       <div className="max-w-7xl mx-auto px-8 lg:px-12">
         <div className="max-w-3xl mb-24">
           <p className="text-[10px] tracking-[0.4em] uppercase text-slate-400 mb-6">
             Core Strategies
           </p>
-          <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-serif text-white mb-6">
             Capital Deployment <br />
-            <span className="italic text-slate-500">Focus Areas</span>
+            <span className="italic text-slate-300">Focus Areas</span>
           </h2>
-          <p className="text-slate-500 text-lg leading-relaxed">
+          <p className="text-slate-400 text-lg leading-relaxed">
             Murivest advises institutional capital across a focused set of real estate strategies
             where scale, governance, and risk-adjusted returns can be clearly underwritten.
           </p>
@@ -51,15 +51,15 @@ const CoreInvestmentStrategies = () => {
               transition={{ delay: idx * 0.15 }}
             >
               <item.icon className="h-8 w-8 text-amber-500 mb-6" />
-              <h3 className="text-xl font-serif text-slate-900 mb-4">
+              <h3 className="text-xl font-serif text-white mb-4">
                 {item.title}
               </h3>
-              <p className="text-slate-500 text-sm leading-relaxed mb-6">
+              <p className="text-slate-400 text-sm leading-relaxed mb-6">
                 {item.desc}
               </p>
               <Link
                 href="/institutional-investors"
-                className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase text-amber-600"
+                className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase text-amber-400 hover:text-amber-300"
               >
                 Request Strategy Brief <ArrowRight className="h-3 w-3" />
               </Link>
