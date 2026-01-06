@@ -57,7 +57,7 @@ const Hero = () => {
       <div className="relative z-10 max-w-6xl px-6 text-center">
         {/* Eyebrow - Signals Professional Breadth */}
         <p className="mb-6 text-amber-500/80 uppercase tracking-[0.5em] text-[10px] md:text-xs font-semibold">
-          Capital Origination & Asset Stewardship
+          Murivest Realty Group Ltd
         </p>
 
         {/* H1 - Institutional Hook */}
@@ -74,9 +74,9 @@ const Hero = () => {
         {/* Institutional Filter - The "Credibility Line" */}
         <div className="mb-8 inline-flex items-center gap-4 py-2 px-6 border-x border-amber-500/20 bg-amber-500/5 backdrop-blur-sm">
           <p className="text-slate-400 text-[10px] md:text-xs tracking-widest uppercase">
-            Mandate Size: <span className="text-amber-200/90">USD 10M – 100M+</span>
+            Mandate Size: <span className="text-amber-200/90">USD 2M – 100M+</span>
             <span className="mx-4 opacity-30">|</span>
-            Asset Classes: <span className="text-amber-200/90 font-medium">Logistics • Office • Land</span>
+            Asset Classes: <span className="text-amber-200/90 font-medium">Retail • Office • Hotel • Industrial</span>
           </p>
         </div>
 
@@ -96,10 +96,10 @@ const Hero = () => {
           </Link>
 
           <Link
-            href="/portfolio"
+            href="/uk"
             className="group flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-slate-400 hover:text-amber-300 transition-colors duration-300"
           >
-            <span>View Representative Transactions</span>
+            <span>View UK Portfolio</span>
             <svg 
               className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" 
               fill="none" stroke="currentColor" viewBox="0 0 24 24"

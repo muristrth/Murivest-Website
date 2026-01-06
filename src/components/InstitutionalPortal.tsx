@@ -8,7 +8,7 @@ import {
   Calendar, Building2, ArrowUpRight, Award
 } from 'lucide-react';
 
-const InstitutionalInvestors = () => {
+const InstitutionalPortal = () => {
   const [password, setPassword] = useState('');
   const [authenticated, setAuthenticated] = useState(false);
   const [error, setError] = useState('');
@@ -55,7 +55,7 @@ const InstitutionalInvestors = () => {
             </button>
           </form>
           <p className="text-slate-500 text-xs text-center mt-8">
-            Credentials: Murivest2025
+            Credentials: Contact Murivest Advisor
           </p>
         </motion.div>
       </div>
@@ -307,11 +307,7 @@ const InstitutionalInvestors = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <Shield className="text-amber-500 mt-1" size={16} />
-                  <span><strong>Diversification:</strong> Geographic and sector spread to reduce concentration risk</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <TrendingUp className="text-amber-500 mt-1" size={16} />
-                  <span><strong>Insurance Coverage:</strong> Comprehensive policies for property damage and business interruption</span>
+                  <span><strong>Diversification:</strong> Strategic allocation across non-correlated asset classes and geographies</span>
                 </li>
               </ul>
             </div>
@@ -319,85 +315,10 @@ const InstitutionalInvestors = () => {
         </div>
       </section>
 
-      {/* Credible Third-Party Validation */}
+      {/* Risk Factors & Legal */}
       <section className="border-y border-white/10 bg-white/[0.01] py-32">
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex items-center gap-3 mb-16">
-            <Award className="text-amber-500" size={24} />
-            <h2 className="text-3xl font-serif italic">Third-Party Validation & Independent Verification</h2>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-            <div>
-              <h3 className="text-xl font-serif italic mb-8 text-amber-200">Independent Appraisal Reports</h3>
-              <p className="text-slate-400 leading-relaxed mb-6">
-                All portfolio valuations are conducted by RICS-accredited independent valuers, ensuring compliance with international valuation standards.
-              </p>
-              <div className="space-y-4">
-                <div className="border border-white/10 p-4 rounded">
-                  <p className="text-slate-500 text-sm">RICS Valuation Certificate</p>
-                  <p className="text-white text-sm">Absa Towers - Q4 2024</p>
-                </div>
-                <div className="border border-white/10 p-4 rounded">
-                  <p className="text-slate-500 text-sm">RICS Valuation Certificate</p>
-                  <p className="text-white text-sm">Uchumi House - Q4 2024</p>
-                </div>
-                <div className="border border-white/10 p-4 rounded">
-                  <p className="text-slate-500 text-sm">RICS Valuation Certificate</p>
-                  <p className="text-white text-sm">Buffalo Mall - Q4 2024</p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-serif italic mb-8 text-amber-200">Audit Citations & Institutional References</h3>
-              <p className="text-slate-400 leading-relaxed mb-6">
-                Annual audits by Big Four accounting firms provide assurance on financial reporting and compliance with regulatory standards.
-              </p>
-              <div className="space-y-4">
-                <div className="border border-white/10 p-4 rounded">
-                  <p className="text-slate-500 text-sm">KPMG Audit Report</p>
-                  <p className="text-white text-sm">FY 2023 - Clean Opinion</p>
-                </div>
-                <div className="border border-white/10 p-4 rounded">
-                  <p className="text-slate-500 text-sm">PwC Compliance Review</p>
-                  <p className="text-white text-sm">Regulatory Framework Assessment</p>
-                </div>
-                <div className="border border-white/10 p-4 rounded">
-                  <p className="text-slate-500 text-sm">Deloitte Tax Advisory</p>
-                  <p className="text-white text-sm">SDLT & REIT Structure Optimization</p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-serif italic mb-8 text-amber-200">Case Studies with Quantifiable Outcomes</h3>
-              <p className="text-slate-400 leading-relaxed mb-6">
-                Documented investment performance demonstrating value creation through active asset management and strategic repositioning.
-              </p>
-              <div className="space-y-4">
-                <div className="border border-white/10 p-4 rounded">
-                  <p className="text-slate-500 text-sm">Absa Towers Repositioning</p>
-                  <p className="text-white text-sm">+15% NOI increase through tenant upgrade</p>
-                </div>
-                <div className="border border-white/10 p-4 rounded">
-                  <p className="text-slate-500 text-sm">Industrial Complex Optimization</p>
-                  <p className="text-white text-sm">+22% occupancy through sector diversification</p>
-                </div>
-                <div className="border border-white/10 p-4 rounded">
-                  <p className="text-slate-500 text-sm">Buffalo Mall Expansion</p>
-                  <p className="text-white text-sm">+18% valuation uplift through GLA increase</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Risk Factors & Legal Disclaimers */}
-      <section className="border-y border-white/10 bg-white/[0.01] py-16">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="flex items-center gap-3 mb-8">
             <AlertTriangle className="text-amber-500" size={24} />
             <h2 className="text-2xl font-serif italic">Risk Factors & Legal Considerations</h2>
           </div>
@@ -455,4 +376,4 @@ const InstitutionalInvestors = () => {
   );
 };
 
-export default InstitutionalInvestors;
+export default InstitutionalPortal;

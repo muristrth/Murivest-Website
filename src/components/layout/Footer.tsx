@@ -62,8 +62,7 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
             />
             <h3 className="text-2xl font-serif italic text-slate-200 mb-6">Murivest Realty Group Ltd</h3>
             <p className="text-slate-500 font-light leading-relaxed mb-8 text-sm max-w-sm">
-              Established 2025. Four generations of distinguished service to international families, 
-              sovereign wealth funds, and institutional investors seeking superior returns.
+              Established 2020 by a team of seasoned professionals with over two decades of experience in the real estate industry.
             </p>
             
             <div className="space-y-4 border-l border-amber-500/30 pl-6">

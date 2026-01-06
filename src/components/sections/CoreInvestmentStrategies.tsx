@@ -9,16 +9,19 @@ const strategies = [
   {
     title: 'Sale-Leaseback & Capital Monetization',
     desc: 'Structured sale-leaseback transactions enabling corporates to unlock embedded real estate capital while retaining operational continuity and balance sheet efficiency.',
+    metrics: 'Target Yield: 9.0% - 10.5%',
     icon: Landmark,
   },
   {
     title: 'Industrial & Strategic Land Banking',
     desc: 'Origination and advisory on industrial assets and large-scale land holdings positioned along infrastructure-led growth corridors.',
+    metrics: 'Target IRR: 18% - 24%',
     icon: Factory,
   },
   {
     title: 'Stabilized Income Assets',
     desc: 'Acquisition advisory for income-producing office, retail, and mixed-use assets with defensible downside protection and clear exit horizons.',
+    metrics: 'WALE Focus: 5 - 10 Years',
     icon: Landmark,
   },
 ];
@@ -57,6 +60,9 @@ const CoreInvestmentStrategies = () => {
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
                 {item.desc}
               </p>
+              <div className="mb-6 p-4 bg-white/5 border border-white/5">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-amber-500">{item.metrics}</span>
+              </div>
               <Link
                 href="/institutional-investors"
                 className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase text-amber-400 hover:text-amber-300"

@@ -479,7 +479,7 @@ const UKProperties = () => {
 
       {/* 3. PREMIUM ASSET GRID */}
       <section className="py-24 px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-1 gap-px bg-white/10 border border-white/10">
           {filteredProperties.map((asset) => (
             <motion.div 
               layout
@@ -490,7 +490,7 @@ const UKProperties = () => {
               <div className="lg:col-span-4 relative h-[400px] lg:h-auto overflow-hidden">
                 <img 
                   src={asset.image} 
-                  className="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" 
+                  className="w-full h-full object-cover" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#05070a] via-transparent to-transparent hidden lg:block" />
                 <div className="absolute top-8 left-8">
