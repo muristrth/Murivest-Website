@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Inter, Playfair_Display } from 'next/font/google';
+import { Suspense } from 'react';
 import './globals.css';
 import ScrollToTopButton from '../components/ui/ScrollToTopButton';
 import Header from '../components/layout/Header';
@@ -231,7 +232,9 @@ export default function RootLayout({
       <body className={`${inter.variable} ${playfair.variable} font-elegant text-navy-900 bg-white`}>
         <div className="min-h-screen">
           <Header />
-          <AnalyticsTracker />
+          <Suspense fallback={null}>
+            <AnalyticsTracker />
+          </Suspense>
           <main>{children}</main>
           <Footer />
           <WhatsAppButton />
