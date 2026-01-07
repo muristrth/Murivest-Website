@@ -6,6 +6,7 @@ import ScrollToTopButton from '../components/ui/ScrollToTopButton';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import WhatsAppButton from '../components/ui/WhatsAppButton';
+import AnalyticsTracker from '../components/AnalyticsTracker';
 
 // Define the fonts here
 const inter = Inter({
@@ -212,10 +213,25 @@ export default function RootLayout({
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData[2]) }}
         />
+
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-TQF6VT5RR3"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TQF6VT5RR3');
+          `}
+        </Script>
       </head>
       <body className={`${inter.variable} ${playfair.variable} font-elegant text-navy-900 bg-white`}>
         <div className="min-h-screen">
           <Header />
+          <AnalyticsTracker />
           <main>{children}</main>
           <Footer />
           <WhatsAppButton />

@@ -63,12 +63,12 @@ const Hero = () => {
         {/* H1 - Institutional Hook */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif leading-[1.15] mb-8 tracking-tight text-white/95">
           Strategic Advisory for <br className="hidden md:block" />
-          <span className="italic text-amber-50/90">Institutional Real Estate</span>
+          <span className="italic text-amber-50/90">Commercial Real Estate</span>
         </h1>
 
         {/* Sub-headline - The "How & Who" */}
-        <p className="text-slate-300 text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed mb-8 font-light">
-          Murivest structures and places large-scale commercial real estate investments in Kenya for institutional and family office capital.
+        <p className="text-xs text-slate-300 max-w-3xl mx-auto leading-relaxed mb-8 font-light">
+          Murivest advises how these transactions are structured, underwritten, and executed — acting exclusively for institutional investors, family offices, and financial corporates deploying capital into large-scale commercial real estate across Kenya, the United Kingdom and select few international markets.
         </p>
 
         {/* Institutional Filter - The "Credibility Line" */}
