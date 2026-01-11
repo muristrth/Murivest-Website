@@ -96,7 +96,7 @@ const Hero = () => {
           </Link>
 
           <Link
-            href="/uk"
+            href="/uk-properties"
             className="group flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-slate-400 hover:text-amber-300 transition-colors duration-300"
           >
             <span>View UK Portfolio</span>

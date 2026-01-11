@@ -49,11 +49,11 @@ const InstitutionalGateway = () => {
             </p>
             
             <div className="flex gap-4">
-              <button className="px-8 py-4 bg-amber-500 text-black text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-amber-400 transition-all duration-500">
-                Request Institutional Briefing
-              </button>
-              <a href="#qualification" className="px-8 py-4 border border-white/10 text-white text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-white/5 transition-all duration-500 flex items-center gap-2">
-                View Criteria <ArrowRight size={14} />
+              <a href="/institutional-portal" className="px-8 py-4 bg-amber-500 text-black text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-amber-400 transition-all duration-500">
+                Access Institutional Data
+              </a>
+              <a href="/uk-properties" className="px-8 py-4 border border-white/10 text-white text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-white/5 transition-all duration-500 flex items-center gap-2">
+                View UK Portfolio <ArrowRight size={14} />
               </a>
             </div>
           </div>

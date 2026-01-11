@@ -93,7 +93,7 @@ const structuredData = [
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+254-740-469-911',
+      telephone: '+254-115-277-610',
       contactType: 'customer service',
       areaServed: 'KE',
       availableLanguage: ['English'],

@@ -15,7 +15,7 @@ const InstitutionalPortal = () => {
 
   const handlePasswordSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === 'Murivest2025') {
+    if (password === 'Murivest2026') {
       setAuthenticated(true);
       setError('');
     } else {

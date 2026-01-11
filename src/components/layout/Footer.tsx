@@ -69,7 +69,7 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
               {[
                 { icon: Award, text: "CMA Licensed" },
                 { icon: Shield, text: "International Arbitration Member" },
-                { icon: TrendingUp, text: "KSh 10B+ AUM" },
+                { icon: TrendingUp, text: "$10M+" },
                 { icon: Users, text: "50+ Distinguished Clients" }
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 text-xs text-slate-400 font-light tracking-wide">
