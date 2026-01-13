@@ -747,16 +747,6 @@ const ROICalculator = ({ onPrint, onDownload }: { onPrint: () => void; onDownloa
                 ROI measures the efficiency of an investment by comparing the gain relative to the cost.
               </p>
             </div>
-            <div className="flex gap-4">
-              <button onClick={onPrint} className="flex-1 py-3 bg-slate-700 hover:bg-slate-600 text-white text-xs tracking-[0.2em] uppercase font-medium transition-all duration-300 flex items-center justify-center gap-2">
-                <Printer size={14} />
-                Print
-              </button>
-              <button onClick={onDownload} className="flex-1 py-3 bg-amber-600 hover:bg-amber-500 text-slate-950 text-xs tracking-[0.2em] uppercase font-bold transition-all duration-300 flex items-center justify-center gap-2">
-                <Download size={14} />
-                Download
-              </button>
-            </div>
           </div>
         </div>
       </div>

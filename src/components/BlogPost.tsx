@@ -13765,6 +13765,3245 @@ const BlogPost = () => {
     ],
     featured: false
   },
+  // 1. Retail Property
+  'how-to-buy-a-retail-property': {
+    id: 'how-to-buy-a-retail-property',
+    title: 'How to Buy a Retail Property: A Strategic Guide for Investors',
+    excerpt: 'An essential guide for investors looking to enter the retail real estate market in Kenya, focusing on location, footfall, and tenant mix.',
+    author: 'Elizabeth Costabir',
+    category: 'Commercial',
+    date: '2025-12-01',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&q=80',
+    content: `
+      <p>Investing in retail property requires a different mindset than residential real estate. In Kenya, the shift from traditional street-front shops to organized shopping malls and mixed-use developments has changed the landscape for 2025.</p>
+      <h2>1. Location and Micro-Market Analysis</h2>
+      <p>For retail, location isn't just about the neighborhood; it's about the specific side of the street. Foot traffic (footfall) and visibility are the lifeblood of retail success.</p>
+      <h2>2. Understanding Tenant Mix</h2>
+      <p>A successful retail investment depends on the "Anchor Tenant"—usually a major supermarket chain like Carrefour or Naivas. This anchor draws the crowd that feeds the smaller specialty stores.</p>
+      <h2>3. Due Diligence Specifics</h2>
+      <ul>
+        <li><strong>Zoning:</strong> Ensure the land is registered for commercial use.</li>
+        <li><strong>Loading Zones:</strong> Check if the property has adequate space for delivery trucks.</li>
+        <li><strong>Parking Ratio:</strong> Aim for at least 4 parking slots per 1,000 sq. ft. of retail space.</li>
+      </ul>
+    `,
+    tags: ['Retail', 'Commercial Real Estate', 'Investment Guide', 'Kenya'],
+    featured: true,
+  },
+
+  // 2. Rental Yield
+  'property-rental-yield-calculation': {
+    id: 'property-rental-yield-calculation',
+    title: 'Mastering Property Rental Yield Calculations',
+    excerpt: 'Learn how to accurately calculate gross and net rental yields to determine the profitability of your Kenyan property investment.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-11-30',
+    readTime: '8 min read',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Gross vs. Net Yield</h2>
+      <p>In the Nairobi market, many investors confuse Gross Yield with actual profit. Here is the breakdown:</p>
+      <p><strong>Gross Yield:</strong> (Annual Rental Income / Property Purchase Price) x 100.</p>
+      <p><strong>Net Yield:</strong> This accounts for expenses like property management fees (typically 10%), KRA taxes, maintenance, and insurance.</p>
+      <h2>The 2025 Standard</h2>
+      <p>Currently, residential yields in Kilimani/Kileleshwa hover around 5-7%, while commercial properties in Westlands can reach 9-11%.</p>
+    `,
+    tags: ['Rental Yield', 'ROI', 'Investment Math', 'Nairobi Real Estate'],
+    featured: false,
+  },
+
+  // 3. CRE Terms
+  'commercial-real-estate-terms': {
+    id: 'commercial-real-estate-terms',
+    title: 'The Ultimate Glossary: Commercial Real Estate (CRE) Terms',
+    excerpt: 'Demystifying the jargon of commercial real estate to help you negotiate better deals.',
+    author: 'Elizabeth Costabir',
+    category: 'Education',
+    date: '2025-11-29',
+    readTime: '15 min read',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Common Terms You Must Know</h2>
+      <ul>
+        <li><strong>CAP Rate:</strong> The capitalization rate used to estimate the investor's potential return on investment.</li>
+        <li><strong>NOI (Net Operating Income):</strong> Total income minus all operating expenses.</li>
+        <li><strong>LOI (Letter of Intent):</strong> A non-binding document outlining the primary terms of a deal.</li>
+        <li><strong>Common Area Maintenance (CAM):</strong> Fees paid by tenants for shared spaces like lobbies and elevators.</li>
+      </ul>
+    `,
+    tags: ['CRE', 'Glossary', 'Real Estate Terms'],
+    featured: false,
+  },
+
+  // 4. Kenya Taxes (High Priority Topic)
+  'real-estate-taxes-kenya': {
+    id: 'real-estate-taxes-kenya',
+    title: 'Real Estate Taxes in Kenya: What Every Landlord Needs to Know',
+    excerpt: 'A comprehensive guide to Stamp Duty, Capital Gains Tax, and Rental Income Tax under the latest KRA regulations.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2025-11-25',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80',
+    content: `
+      <p>Navigating the Kenya Revenue Authority (KRA) requirements is critical for any serious investor. In 2025, enforcement has become strictly digital.</p>
+      <h2>1. Stamp Duty</h2>
+      <p>4% for urban properties and 2% for rural properties. This is a one-time cost during purchase.</p>
+      <h2>2. Capital Gains Tax (CGT)</h2>
+      <p>Following the recent adjustments, CGT is now 15% on the profit made from the sale of a property.</p>
+      <h2>3. Monthly Rental Income Tax</h2>
+      <p>Landlords earning between Ksh 288,000 and Ksh 15 million per year are subject to a simplified tax rate of 7.5% on gross rent.</p>
+    `,
+    tags: ['KRA', 'Taxation', 'Kenya Law', 'Landlord Tips'],
+    featured: true,
+  },
+
+  // 5. KUSCCO Scandal (News Topic)
+  'kuscco-scandal-ksh-12b-fraud-sacco-housing-risk': {
+    id: 'kuscco-scandal-ksh-12b-fraud-sacco-housing-risk',
+    title: 'The KUSCCO Scandal: Analyzing the Ksh 12B Fraud and Its Impact on Housing',
+    excerpt: 'Understanding the implications of the KUSCCO financial crisis for Sacco-based housing projects and investor confidence.',
+    author: 'Paul Kamau',
+    category: 'News',
+    date: '2025-11-16',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80',
+    content: `
+      <p>The recent revelation of a Ksh 12 Billion fraud at the Kenya Union of Savings and Credit Cooperatives (KUSCCO) has sent shockwaves through the real estate sector, particularly for Sacco members who rely on these institutions for housing loans.</p>
+      <h2>The Risks of Cooperative Housing</h2>
+      <p>Many Kenyans use Sacco dividends and loans to buy land and build homes. When a central union like KUSCCO faces liquidity issues, it stalls the flow of credit to individual Saccos, leading to halted construction projects.</p>
+      <h2>Protecting Your Investment</h2>
+      <p>Investors are advised to perform deeper due diligence on the financial health of their Saccos and consider diversifying their funding sources.</p>
+    `,
+    tags: ['Sacco', 'News', 'Kenya Economy', 'Housing Risk'],
+    featured: false,
+  },
+
+  // 6. Affordable Housing Progress
+  'kenya-affordable-housing-progress-challenges': {
+    id: 'kenya-affordable-housing-progress-challenges',
+    title: 'Kenya Affordable Housing: Progress and Challenges in 2025',
+    excerpt: 'An update on the government’s 200,000 units per year goal and the role of the Housing Levy.',
+    author: 'Paul Kamau',
+    category: 'Partnerships',
+    date: '2025-10-29',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1590674867551-11c3a2df5bb8?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The 2025 Outlook</h2>
+      <p>The Affordable Housing Program (AHP) has transitioned from policy to ground-level construction in over 30 counties. However, several challenges remain.</p>
+      <ul>
+        <li><strong>Infrastructure Gaps:</strong> Providing water and electricity to remote AHP sites.</li>
+        <li><strong>Cost of Materials:</strong> Rising costs of cement and steel affecting project timelines.</li>
+      </ul>
+    `,
+    tags: ['Affordable Housing', 'Government Policy', 'Construction'],
+    featured: false,
+  },
+
+  // 7. Property Management Software
+  'property-management-software-kenya': {
+    id: 'property-management-software-kenya',
+    title: 'Top Property Management Software for Kenyan Landlords',
+    excerpt: 'How automation is solving the rent collection and utility management headache in Nairobi.',
+    author: 'Elizabeth Costabir',
+    category: 'Technology',
+    date: '2025-11-28',
+    readTime: '9 min read',
+    image: 'https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80',
+    content: `
+      <p>Gone are the days of manual ledgers. Modern Kenyan landlords are adopting PropTech to handle high-volume apartments.</p>
+      <h2>Key Features to Look For:</h2>
+      <ul>
+        <li><strong>M-Pesa Integration:</strong> Automated receipting once a tenant pays via Paybill.</li>
+        <li><strong>Utility Tracking:</strong> Managing water and electricity meters digitally.</li>
+        <li><strong>Tenant Portals:</strong> Allowing tenants to log maintenance requests via mobile apps.</li>
+      </ul>
+    `,
+    tags: ['PropTech', 'Automation', 'Management'],
+    featured: false,
+  },
+
+  // 8. Women in Real Estate
+  'women-in-real-estate-breaking-barriers-kenya-property-industry': {
+    id: 'women-in-real-estate-breaking-barriers-kenya-property-industry',
+    title: 'Women in Real Estate: Breaking Barriers in the Kenyan Property Industry',
+    excerpt: 'Highlighting the growing influence of female developers, brokers, and CEOs in a traditionally male-dominated field.',
+    author: 'Elizabeth Costabir',
+    category: 'Lifestyle',
+    date: '2025-10-28',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80',
+    content: `
+      <p>The landscape of Kenya's real estate sector is changing. More women are now taking the lead in large-scale commercial developments and real estate consultancy firms.</p>
+      <h2>The Rise of Female Leadership</h2>
+      <p>From architectural design to property management, female professionals are bringing a detailed and client-focused approach to the industry.</p>
+    `,
+    tags: ['Women in Business', 'Real Estate Kenya', 'Inspiration'],
+    featured: false,
+  },
+
+  // 9. Serviced Apartments Nairobi
+  'serviced-apartments-nairobi': {
+    id: 'serviced-apartments-nairobi',
+    title: 'The Boom of Serviced Apartments in Nairobi',
+    excerpt: 'Why business travelers are ditching hotels for serviced apartments in Westlands and Upper Hill.',
+    author: 'Paul Kamau',
+    category: 'Residential',
+    date: '2025-10-29',
+    readTime: '7 min read',
+    image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Investment Case</h2>
+      <p>Serviced apartments offer higher yields than traditional rentals because they charge per night. In Nairobi, areas like Westlands see occupancy rates of over 75% due to diplomatic and corporate travel.</p>
+    `,
+    tags: ['Serviced Apartments', 'Nairobi', 'Airbnb', 'Investment'],
+    featured: false,
+  },
+
+  // 10. Land Loans
+  'land-loans': {
+    id: 'land-loans',
+    title: 'How to Secure a Land Loan in Kenya',
+    excerpt: 'A guide to financing land purchases, from Sacco loans to commercial bank mortgages.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-11-28',
+    readTime: '8 min read',
+    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Financing Your Plot</h2>
+      <p>Banks are often more cautious with land loans compared to developed property. Most will require a 30% down payment and a clear title deed (Title Search) before processing.</p>
+    `,
+    tags: ['Land', 'Loans', 'Banking Kenya'],
+    featured: false,
+  },
+  
+  // 11. Real Estate Crowdfunding
+  'real-estate-crowdfunding-kenya': {
+    id: 'real-estate-crowdfunding-kenya',
+    title: 'Is Real Estate Crowdfunding the Future for Kenyan Investors?',
+    excerpt: 'Exploring how fractional ownership allows small investors to participate in large-scale projects.',
+    author: 'Elizabeth Costabir',
+    category: 'Investment',
+    date: '2025-11-22',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Fractional Ownership</h2>
+      <p>Crowdfunding platforms allow you to invest as little as Ksh 50,000 into a shopping mall project, earning dividends proportionate to your share.</p>
+    `,
+    tags: ['Crowdfunding', 'Investment', 'Fintech'],
+    featured: false,
+  },
+  // 12. Warranty Deed
+  'warranty-deed': {
+    id: 'warranty-deed',
+    title: 'Understanding the Warranty Deed in Kenyan Land Transactions',
+    excerpt: 'A deep dive into how warranty deeds protect buyers and the legal guarantees regarding clear titles.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2025-11-28',
+    readTime: '9 min read',
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Shield of the Buyer</h2>
+      <p>In the Kenyan context, while we often focus on the "Title Deed," the concept of a warranty—expressed or implied—is crucial during the transfer of interest. A warranty deed represents the seller's guarantee that they hold clear title to the property and have the right to sell it.</p>
+      <h2>Why It Matters in 2025</h2>
+      <p>With the digitization of the Lands Ministry through Ardhisasa, verifying the history of a title has become easier, but a warranty deed provides an extra layer of legal recourse if a third-party claim arises post-purchase.</p>
+    `,
+    tags: ['Legal', 'Title Deed', 'Land Act', 'Kenya Law'],
+    featured: false,
+  },
+
+  // 13. Hotel Innovation
+  'hotel-innovation': {
+    id: 'hotel-innovation',
+    title: 'Hotel Innovation: Redefining Hospitality Real Estate in Kenya',
+    excerpt: 'Exploring how AI and contactless technology are transforming Kenyan hotels into high-yield assets.',
+    author: 'Elizabeth Costabir',
+    category: 'Innovation',
+    date: '2025-11-27',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Smart Hotels in Nairobi</h2>
+      <p>The hospitality sector is no longer just about beds; it is about "Experience Tech." We are seeing a surge in smart room automation and AI-driven concierge services in Upper Hill and Westlands hotels.</p>
+      <ul>
+        <li><strong>Contactless Check-in:</strong> Reducing labor costs while increasing guest safety.</li>
+        <li><strong>Energy Management:</strong> IoT sensors that cut electricity costs by 30% when rooms are vacant.</li>
+      </ul>
+    `,
+    tags: ['Hospitality', 'Tech', 'Innovation', 'ROI'],
+    featured: false,
+  },
+
+  // 14. Cash-on-Cash Return
+  'cash-on-cash-return': {
+    id: 'cash-on-cash-return',
+    title: 'Cash-on-Cash Return: The Real Metric for Kenyan Investors',
+    excerpt: 'Why this formula is more important than simple yield when you are using bank financing.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-11-27',
+    readTime: '8 min read',
+    image: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Beyond the Yield</h2>
+      <p>If you buy a property for Ksh 10M but only put down Ksh 3M (financing the rest), your return is calculated on the Ksh 3M "cash" you actually spent. This is your Cash-on-Cash (CoC) return.</p>
+      <p><strong>The Formula:</strong> (Annual Pre-Tax Cash Flow / Total Cash Invested) x 100.</p>
+      <p>In a high-interest environment, CoC helps you decide if your debt is working for you or against you.</p>
+    `,
+    tags: ['Finance', 'Investment Math', 'Leverage'],
+    featured: false,
+  },
+
+  // 15. Pros & Cons of Buying Land
+  'pros-cons-buying-land': {
+    id: 'pros-cons-buying-land',
+    title: 'The Pros and Cons of Buying Land in Kenya',
+    excerpt: 'Analyzing land as a "buy and hold" strategy versus the risks of encroachment and low liquidity.',
+    author: 'Paul Kamau',
+    category: 'Land',
+    date: '2025-11-27',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Prosperity of Earth</h2>
+      <p>Land remains the favorite asset class for Kenyans. The <strong>Pros</strong> include zero maintenance costs and massive appreciation in "satellite towns" like Kamulu or Joska.</p>
+      <h2>The Hard Reality</h2>
+      <p>The <strong>Cons</strong> often overlooked are land grabbing risks, lack of immediate cash flow, and the "liquidity trap" where it might take years to find a buyer at your asking price.</p>
+    `,
+    tags: ['Land Investment', 'Kenya Real Estate', 'Wealth Building'],
+    featured: false,
+  },
+
+  // 16. Net Leases in CRE
+  'net-leases-in-cre': {
+    id: 'net-leases-in-cre',
+    title: 'Understanding Net Leases in Commercial Real Estate',
+    excerpt: 'Comparing Single, Double, and Triple Net (NNN) leases for passive income seekers.',
+    author: 'Elizabeth Costabir',
+    category: 'Commercial',
+    date: '2025-11-27',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Shifting the Expense Burden</h2>
+      <p>In a Triple Net (NNN) lease, the tenant pays for almost everything: property taxes, insurance, and maintenance. This is the "Holy Grail" for passive investors in Nairobi’s office parks.</p>
+      <p>We break down why NNN leases are becoming the standard for multinational corporate tenants in 2025.</p>
+    `,
+    tags: ['CRE', 'Leasing', 'Passive Income'],
+    featured: false,
+  },
+
+  // 17. How to Buy a Hotel
+  'how-to-buy-a-hotel': {
+    id: 'how-to-buy-a-hotel',
+    title: 'How to Buy a Hotel: An Investor’s Roadmap',
+    excerpt: 'From feasibility studies to tourism licenses, learn the steps to owning hospitality property.',
+    author: 'Elizabeth Costabir',
+    category: 'Commercial',
+    date: '2025-11-26',
+    readTime: '15 min read',
+    image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Location vs. Brand</h2>
+      <p>Buying a hotel in Kenya requires looking at the "Tourism Circuit." A boutique hotel in Diani has different fundamentals than a business hotel in Nairobi.</p>
+      <ul>
+        <li><strong>Step 1:</strong> Financial Audit of current occupancy rates.</li>
+        <li><strong>Step 2:</strong> Licensing (TRA - Tourism Regulatory Authority).</li>
+        <li><strong>Step 3:</strong> Management selection—will you run it or hire an operator?</li>
+      </ul>
+    `,
+    tags: ['Hotels', 'Acquisition', 'Business', 'Tourism'],
+    featured: true,
+  },
+
+  // 18. Discounted Cash Flow (DCF)
+  'discounted-cash-flow': {
+    id: 'discounted-cash-flow',
+    title: 'Discounted Cash Flow (DCF): Predicting Future Wealth',
+    excerpt: 'Using the DCF method to value a property based on its future potential earnings.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-11-26',
+    readTime: '13 min read',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Time Value of Money</h2>
+      <p>A shilling today is worth more than a shilling next year. DCF helps investors determine the "Present Value" of a property's future rents.</p>
+      <p>This is vital for large-scale developments where the first 3 years might show a deficit before the project breaks even.</p>
+    `,
+    tags: ['Finance', 'Valuation', 'DCF', 'Investment Math'],
+    featured: false,
+  },
+
+  // 19. Multifamily Financing
+  'multifamily-financing': {
+    id: 'multifamily-financing',
+    title: 'Navigating Multifamily Financing Options in Kenya',
+    excerpt: 'Comparing bank mortgages, Sacco developer loans, and private equity for apartment blocks.',
+    author: 'Paul Kamau',
+    category: 'Residential',
+    date: '2025-11-25',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Funding the "Flat"</h2>
+      <p>Multifamily (Apartment) blocks are the backbone of Nairobi's rental market. In 2025, commercial banks are offering specialized "Project Finance" for developers who can prove pre-sale numbers or high occupancy projections.</p>
+    `,
+    tags: ['Financing', 'Apartments', 'Banking', 'Sacco'],
+    featured: false,
+  },
+
+  // 20. Bonus Depreciation
+  'bonus-depreciation': {
+    id: 'bonus-depreciation',
+    title: 'Bonus Depreciation: A Tax Secret for Commercial Owners',
+    excerpt: 'How to use accelerated depreciation to lower your taxable income in the first years of ownership.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-11-25',
+    readTime: '9 min read',
+    image: 'https://images.unsplash.com/photo-1554224155-16974542e56e?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Saving on the Tax Bill</h2>
+      <p>While Kenya has specific "Wear and Tear" allowances, savvy commercial investors use cost segregation to identify assets that can be depreciated faster, providing massive tax shields early on.</p>
+    `,
+    tags: ['Tax', 'Depreciation', 'Commercial Real Estate'],
+    featured: false,
+  },
+
+  // 21. What is Improved Land?
+  'what-is-improved-land': {
+    id: 'what-is-improved-land',
+    title: 'Raw vs. Improved Land: Which Should You Buy?',
+    excerpt: 'Understanding the value-add of infrastructure like roads, water, and electricity on your plot.',
+    author: 'Paul Kamau',
+    category: 'Land',
+    date: '2025-11-25',
+    readTime: '7 min read',
+    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Infrastructure Premium</h2>
+      <p>"Improved land" has already been cleared and connected to essential services. While it costs 30-50% more than "Raw land," the time saved in getting building approvals is often worth the premium.</p>
+    `,
+    tags: ['Land', 'Infrastructure', 'Investment'],
+    featured: false,
+  },
+
+  // 22. Exit Cap Rates
+  'exit-cap-rates': {
+    id: 'exit-cap-rates',
+    title: 'The Exit Cap Rate: Planning Your Property Sale',
+    excerpt: 'How to project what your property will be worth 10 years from now when you decide to sell.',
+    author: 'Elizabeth Costabir',
+    category: 'Finance',
+    date: '2025-11-25',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Thinking Ahead</h2>
+      <p>The "Exit Cap Rate" is your best guess as to what the market conditions will be when you exit the deal. A lower exit cap rate means you expect the property to be worth more relative to its income in the future.</p>
+    `,
+    tags: ['Cap Rate', 'Exit Strategy', 'Finance'],
+    featured: false,
+  },
+  // 23. International Bidders at Auctions
+  'international-bidders-auctions': {
+    id: 'international-bidders-auctions',
+    title: 'Can Foreigners Bid at Kenyan Property Auctions?',
+    excerpt: 'The legal framework for international investors participating in public auctions and e-GP platforms.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2025-11-25',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Global Interest in Distressed Assets</h2>
+      <p>As the Kenyan market matures, international bidders are increasingly looking at distressed assets. Under the <strong>Auctioneers Act</strong>, foreigners can participate, but they must navigate specific hurdles regarding land tenure (99-year leases vs. freehold).</p>
+      <h2>The Shift to e-Auctions</h2>
+      <p>By 2026, the government's <strong>e-GP portal</strong> has standardized the bidding process. International bidders now require a verified KRA PIN and must register at least 48 hours prior. We explore how to manage the 10% deposit requirement via international wire transfers.</p>
+    `,
+    tags: ['Auctions', 'Foreign Investment', 'Legal'],
+    featured: false,
+  },
+
+  // 24. Single Net Lease (N)
+  'single-net-lease': {
+    id: 'single-net-lease',
+    title: 'The Single Net Lease (N): Risk vs. Reward',
+    excerpt: 'Understanding the simplest form of net leases where the tenant pays property taxes.',
+    author: 'Elizabeth Costabir',
+    category: 'Commercial',
+    date: '2025-11-25',
+    readTime: '8 min read',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Defining the "N"</h2>
+      <p>In a Single Net Lease, the tenant pays the base rent plus the <strong>property taxes</strong>. This protects the landlord from the fluctuating land rates recently updated by various County Governments in 2025/2026.</p>
+      <p>While less hands-off than a Triple Net (NNN) lease, it offers a middle ground for landlords who want to maintain control over maintenance and insurance while offloading the tax burden.</p>
+    `,
+    tags: ['Leasing', 'Commercial', 'Tax Strategy'],
+    featured: false,
+  },
+
+
+  // 26. Investors vs Off-plan Developers
+  'win-real-estate-investors-against-off-plan-developer': {
+    id: 'win-real-estate-investors-against-off-plan-developer',
+    title: 'Investors vs. Developers: Protecting Your Off-Plan Purchase',
+    excerpt: 'How to use escrow accounts and performance bonds to win against unscrupulous developers.',
+    author: 'Elizabeth Costabir',
+    category: 'Legal',
+    date: '2025-11-24',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Off-Plan Dilemma</h2>
+      <p>With several high-profile stalled projects in Kiambu and Machakos, investors are becoming wary. To "win," you must insist on <strong>Milestone-Based Payments</strong>.</p>
+      <p>We analyze the 2026 trend of using <strong>Escrow Accounts</strong> where funds are only released to the developer once the National Construction Authority (NCA) certifies specific stages of completion.</p>
+    `,
+    tags: ['Off-plan', 'Due Diligence', 'Investment Safety'],
+    featured: false,
+  },
+
+  // 27. How to Buy a Duplex
+  'how-to-buy-a-duplex': {
+    id: 'how-to-buy-a-duplex',
+    title: 'How to Buy a Duplex: The "Live-in-One, Rent-the-Other" Strategy',
+    excerpt: 'Why duplexes are becoming the preferred entry point for first-time Kenyan investors.',
+    author: 'Paul Kamau',
+    category: 'Residential',
+    date: '2025-11-24',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80',
+    content: `
+      <h2>House Hacking in Nairobi</h2>
+      <p>A duplex offers the unique advantage of <strong>mortgage subsidization</strong>. By living in one unit and renting out the other, many owners in areas like Syokimau are covering up to 70% of their monthly bank repayments.</p>
+      <p>Key considerations include checking the <strong>Sectional Properties Act</strong> compliance to ensure you can eventually sell units individually if needed.</p>
+    `,
+    tags: ['Duplex', 'Mortgage', 'Rental Income'],
+    featured: false,
+  },
+
+  // 28. Buy Now: Investors Guide
+  'buy-now-investors-guide': {
+    id: 'buy-now-investors-guide',
+    title: 'Buy Now: Why Late 2025 is the Window for Kenyan Real Estate',
+    excerpt: 'Analyzing market cycles and the impending price surge due to rising construction costs.',
+    author: 'Elizabeth Costabir',
+    category: 'Investment',
+    date: '2025-11-24',
+    readTime: '9 min read',
+    image: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Beating the Price Hike</h2>
+      <p>With the 16% VAT reintroduction on construction materials taking full effect in early 2026, inventory currently on the market represents the "old prices."</p>
+      <p>Investors who lock in deals now are essentially gaining an immediate 10-15% equity cushion as new build costs force market-wide appreciation.</p>
+    `,
+    tags: ['Market Trends', 'Timing', 'Economy'],
+    featured: false,
+  },
+
+  // 29. Property Investment Mistakes to Avoid
+  'property-investment-mistakes-avoid': {
+    id: 'property-investment-mistakes-avoid',
+    title: 'Top 7 Property Investment Mistakes to Avoid in Kenya',
+    excerpt: 'From emotional buying to ignoring zoning laws, learn what can tank your ROI.',
+    author: 'Paul Kamau',
+    category: 'Investment',
+    date: '2025-11-24',
+    readTime: '13 min read',
+    image: 'https://images.unsplash.com/photo-1593526492327-b071f3d5333e?auto=format&fit=crop&q=80',
+    content: `
+      <h2>1. Skipping the "Ardhisasa" Search</h2>
+      <p>Never rely on a photocopied title deed. In 2026, an official digital search is the only way to confirm ownership and encumbrances.</p>
+      <h2>2. Ignoring Hidden Costs</h2>
+      <p>Many budget for the sticker price but forget the 4% Stamp Duty, 1.5% legal fees, and valuation costs that can add 7% to your total acquisition cost.</p>
+    `,
+    tags: ['Tips', 'Due Diligence', 'Beginners'],
+    featured: false,
+  },
+
+  // 30. Internal Rate of Return (IRR)
+  'internal-rate-of-return-irr': {
+    id: 'internal-rate-of-return-irr',
+    title: 'Internal Rate of Return (IRR): The Gold Standard of Metrics',
+    excerpt: 'Going beyond simple yield to understand the total lifecycle profitability of a project.',
+    author: 'Elizabeth Costabir',
+    category: 'Finance',
+    date: '2025-11-23',
+    readTime: '15 min read',
+    image: 'https://images.unsplash.com/photo-1454165833767-027ffea9e77b?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Why IRR Matters</h2>
+      <p>While rental yield tells you what you earn today, IRR accounts for the <strong>time value of money</strong>, including the eventual sale price of the asset. It is the single best metric for comparing a real estate deal against a Treasury Bond or the Nairobi Securities Exchange.</p>
+    `,
+    tags: ['Finance', 'Investment Math', 'IRR'],
+    featured: false,
+  },
+
+  // 31. Property Market Analysis Tools
+  'property-market-analysis-tools': {
+    id: 'property-market-analysis-tools',
+    title: 'Must-Use Property Market Analysis Tools for 2026',
+    excerpt: 'From digital maps to PropTech valuation apps, the tools every modern investor needs.',
+    author: 'Paul Kamau',
+    category: 'Tech',
+    date: '2025-11-23',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Digital Edge</h2>
+      <p>The days of "gut feeling" are over. Tools like <strong>Google Earth Pro</strong> for site analysis and local PropTech platforms providing historical rent data in Kilimani are now essential.</p>
+      <p>We review the top 5 apps that help you calculate <strong>Net Operating Income (NOI)</strong> on the fly.</p>
+    `,
+    tags: ['Tech', 'PropTech', 'Tools'],
+    featured: false,
+  },
+
+  // 32. Duplex vs Triplex vs Fourplex
+  'duplex-vs-triplex-vs-fourplex': {
+    id: 'duplex-vs-triplex-vs-fourplex',
+    title: 'Duplex vs. Triplex vs. Fourplex: Scaling Your Rental Portfolio',
+    excerpt: 'Comparing the management complexity and cash flow potential of small multi-family units.',
+    author: 'Elizabeth Costabir',
+    category: 'Residential',
+    date: '2025-11-23',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1592595893551-47037739546a?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Density is Key</h2>
+      <p>As land prices in Nairobi's suburbs rise, the "Fourplex" (four units on one plot) is becoming the most efficient way to maximize ROI. We break down the cost-per-door and why a Triplex might actually offer better privacy for high-end tenants.</p>
+    `,
+    tags: ['Multi-family', 'Investment', 'ROI'],
+    featured: false,
+  },
+
+  // 33. IRR Calculator
+  'irr-calculator': {
+    id: 'irr-calculator',
+    title: 'How to Build Your Own IRR Calculator in Excel',
+    excerpt: 'A step-by-step guide to projecting your long-term real estate wealth.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-11-22',
+    readTime: '18 min read',
+    image: 'https://images.unsplash.com/photo-1586282391129-59a3935d0360?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Step-by-Step IRR Construction</h2>
+      <p>To accurately calculate IRR, you need to input: <strong>Initial Outlay</strong> (Negative), <strong>Annual Cash Flow</strong>, and <strong>Terminal Value</strong> (Sale Price). We provide a template for Kenyan investors to account for local nuances like agent commissions on exit.</p>
+    `,
+    tags: ['Calculator', 'Finance', 'Investment Math'],
+    featured: false,
+  },
+  // 34. Property Title Search
+  'property-title-search': {
+    id: 'property-title-search',
+    title: 'The Modern Property Title Search: Navigating Ardhisasa in 2026',
+    excerpt: 'Step-by-step guide to verifying land ownership through Kenya’s digital land management system.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2025-11-24',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Beyond the Physical Paper</h2>
+      <p>In 2026, the physical "Green Card" search has been almost entirely superseded by the <strong>Ardhisasa</strong> digital certificate. A title search is the most critical step in due diligence to ensure the person selling you land actually owns it and that there are no hidden caveats or bank charges.</p>
+      <h3>How to Conduct a Search</h3>
+      <ul>
+        <li><strong>Step 1:</strong> Log into your Ardhisasa account using your e-Citizen credentials.</li>
+        <li><strong>Step 2:</strong> Enter the Parcel Number (e.g., Nairobi/Block-123/456).</li>
+        <li><strong>Step 3:</strong> Pay the search fee (currently Ksh 500) via M-Pesa.</li>
+        <li><strong>Step 4:</strong> Download the official Search Certificate.</li>
+      </ul>
+    `,
+    tags: ['Ardhisasa', 'Due Diligence', 'Title Search', 'Legal'],
+    featured: false,
+  },
+
+  // 35. Gross Rent Multiplier (GRM)
+  'gross-rent-multiplier': {
+    id: 'gross-rent-multiplier',
+    title: 'Gross Rent Multiplier (GRM): Screening Deals Quickly',
+    excerpt: 'How to use GRM to compare properties across different Nairobi neighborhoods.',
+    author: 'Elizabeth Costabir',
+    category: 'Finance',
+    date: '2025-11-23',
+    readTime: '7 min read',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Quick Screen</h2>
+      <p>The Gross Rent Multiplier is the ratio of the price of a real estate investment to its annual rental income. It is the fastest way to see if a property is overpriced compared to its neighbors.</p>
+      <p>The formula is: $$GRM = \\frac{\\text{Property Price}}{\\text{Gross Annual Rental Income}}$$</p>
+      <p>In 2026, a "good" GRM in <strong>Ruaka</strong> might be around 10-12, whereas in <strong>Kileleshwa</strong>, where prices are higher relative to rent, you might see 15-18.</p>
+    `,
+    tags: ['Finance', 'GRM', 'Investment Math'],
+    featured: false,
+  },
+
+  // 36. Tenant Improvement Allowance (TIA)
+  'tenant-improvement-allowance': {
+    id: 'tenant-improvement-allowance',
+    title: 'Negotiating Tenant Improvement Allowances (TIA)',
+    excerpt: 'A guide for commercial landlords and tenants on funding office fit-outs.',
+    author: 'Elizabeth Costabir',
+    category: 'Commercial',
+    date: '2025-11-23',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The "Shell and Core" Reality</h2>
+      <p>Most commercial spaces in Nairobi are leased as "shell and core." The <strong>Tenant Improvement Allowance</strong> is the amount a landlord agrees to spend to build out the space for the tenant. In 2026, landlords are using generous TIA packages to attract premium corporate tenants to new developments in Upper Hill.</p>
+    `,
+    tags: ['Commercial', 'Leasing', 'Negotiation'],
+    featured: false,
+  },
+
+  // 37. Small vs. Large Multifamily
+  'small-vs-large-multifamily': {
+    id: 'small-vs-large-multifamily',
+    title: 'Small vs. Large Multifamily: Which is Best for You?',
+    excerpt: 'Comparing the management of a 4-unit apartment block vs. a 50-unit complex.',
+    author: 'Paul Kamau',
+    category: 'Residential',
+    date: '2025-11-23',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Scaling Your Portfolio</h2>
+      <p>Small multifamily (2-4 units) is often treated as residential real estate by Kenyan banks, making it easier to finance for individuals. Large multifamily (5+ units) is viewed as a commercial business, requiring professional property management and offering significant economies of scale.</p>
+    `,
+    tags: ['Multifamily', 'Scaling', 'Apartments'],
+    featured: false,
+  },
+
+  // 38. Real Estate Mentorship Programs
+  'real-estate-mentorship-programs': {
+    id: 'real-estate-mentorship-programs',
+    title: 'The Value of Real Estate Mentorship in Kenya',
+    excerpt: 'Why having a mentor can save you millions in mistakes during your first development.',
+    author: 'Elizabeth Costabir',
+    category: 'Education',
+    date: '2025-11-23',
+    readTime: '9 min read',
+    image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Learn from Experience</h2>
+      <p>The Kenyan real estate market is heavily built on networks. Mentorship programs, like those offered through the <strong>KPDA (Kenya Property Developers Association)</strong> or private consultancies, provide insights into contractor management and "unwritten" market trends that books can't teach.</p>
+    `,
+    tags: ['Mentorship', 'Career', 'Kenya Real Estate'],
+    featured: false,
+  },
+
+  // 39. Debt Yield in CRE
+  'debt-yield-cre': {
+    id: 'debt-yield-cre',
+    title: 'What is Debt Yield and Why Do Banks Care?',
+    excerpt: 'Understanding the metric that Kenyan banks use to gauge risk in commercial lending.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-11-23',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Banker’s Perspective</h2>
+      <p>Unlike LTV (Loan to Value), Debt Yield is independent of interest rates and market caps. It tells the lender how much of the loan would be covered by the property's income if they had to take it over today.</p>
+      <p>Formula: $$\\text{Debt Yield} = \\frac{\\text{Net Operating Income (NOI)}}{\\text{Total Loan Amount}} \\times 100$$</p>
+    `,
+    tags: ['Finance', 'Banking', 'CRE'],
+    featured: false,
+  },
+
+
+  // 41. Property Investment Tax Benefits
+  'property-investment-tax-benefits': {
+    id: 'property-investment-tax-benefits',
+    title: 'Tax Benefits for Property Investors in Kenya',
+    excerpt: 'Maximizing your returns by utilizing wear and tear allowances and solar incentives.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-11-22',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1554224155-16974542e56e?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Legal Tax Avoidance</h2>
+      <p>Savvy investors use the <strong>Investment Allowance</strong> on hotel buildings and the <strong>Wear and Tear</strong> allowance on machinery (lifts, generators). Additionally, 2026 sees new green tax credits for developers installing solar water heating systems.</p>
+    `,
+    tags: ['Tax', 'ROI', 'Green Building'],
+    featured: false,
+  },
+
+  // 42. Real Estate Technology Trends Kenya
+  'real-estate-technology-trends-kenya': {
+    id: 'real-estate-technology-trends-kenya',
+    title: 'Top Real Estate Tech Trends Shaking Up Kenya',
+    excerpt: 'From blockchain land titles to VR tours in Nairobi’s high-rises.',
+    author: 'Elizabeth Costabir',
+    category: 'Technology',
+    date: '2025-11-20',
+    readTime: '14 min read',
+    image: 'https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Digital Frontier</h2>
+      <p>Technology is no longer optional. <strong>3D Virtual Tours</strong> have become the standard for the diaspora market, allowing Kenyans in the UK or USA to "walk through" a Kilimani apartment before wiring the deposit.</p>
+    `,
+    tags: ['PropTech', 'Innovation', 'Kenya'],
+    featured: false,
+  },
+
+  // 43. Apartment Investment Westlands Nairobi
+  'apartment-investment-westlands-nairobi': {
+    id: 'apartment-investment-westlands-nairobi',
+    title: 'Why Westlands Remains Nairobi’s Investment Crown Jewel',
+    excerpt: 'Analyzing the rental demand driven by the "Global Business Hub" status of Westlands.',
+    author: 'Paul Kamau',
+    category: 'Residential',
+    date: '2025-11-20',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The High-Yield Corridor</h2>
+      <p>Westlands has evolved from a residential suburb to a commercial powerhouse. This shift has created a massive demand for executive studio and one-bedroom apartments for expatriates and young consultants, often yielding up to 12% in net returns.</p>
+    `,
+    tags: ['Westlands', 'Nairobi', 'High Yield'],
+    featured: false,
+  },
+
+  // 44. Property Security Systems Kenya
+  'property-security-systems-kenya': {
+    id: 'property-security-systems-kenya',
+    title: 'Modern Security Systems for Kenyan Properties',
+    excerpt: 'How integrated security adds value and reduces insurance premiums.',
+    author: 'Paul Kamau',
+    category: 'Infrastructure',
+    date: '2025-11-19',
+    readTime: '9 min read',
+    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Beyond the Perimeter Wall</h2>
+      <p>In 2026, a "secure" property means more than just a stone wall. We explore <strong>IP-based CCTV</strong>, biometric access for servants' quarters, and smart perimeter sensors that alert security firms before a breach occurs.</p>
+    `,
+    tags: ['Security', 'Smart Home', 'Safety'],
+    featured: false,
+  },
+  // 45. Auction Glossary
+  'auction-glossary': {
+    id: 'auction-glossary',
+    title: 'Kenyan Real Estate Auction Glossary: 15 Terms You Must Know',
+    excerpt: 'From "Reserve Price" to "Distress for Rent," a guide to the language of the auction block.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2026-01-10',
+    readTime: '8 min read',
+    image: 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Decoding the Auctioneer's Chant</h2>
+      <p>Entering a public auction without knowing the terminology is a recipe for financial disaster. As of 2026, the <strong>Auctioneers Act</strong> has been strictly enforced to protect buyers.</p>
+      <ul>
+        <li><strong>Reserve Price:</strong> The minimum price the seller (usually a bank) will accept.</li>
+        <li><strong>Fall of the Hammer:</strong> The moment a contract is legally binding.</li>
+        <li><strong>Proclamation:</strong> The formal notice that goods or property will be sold.</li>
+        <li><strong>Buyer’s Premium:</strong> Additional fees paid by the winner to the auctioneer.</li>
+      </ul>
+    `,
+    tags: ['Auctions', 'Legal', 'Glossary'],
+    featured: false,
+  },
+
+  // 46. Real Estate Negotiation Strategies
+  'real-estate-negotiation-strategies': {
+    id: 'real-estate-negotiation-strategies',
+    title: 'Advanced Negotiation Strategies for the 2026 Kenyan Market',
+    excerpt: 'How to leverage market data and "distress signals" to get the best price.',
+    author: 'Elizabeth Costabir',
+    category: 'Investment',
+    date: '2026-01-08',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Art of the Deal</h2>
+      <p>Negotiation in 2026 is less about "haggling" and more about <strong>data-driven leverage</strong>. We explore how to use the 15% increase in construction costs to negotiate lower prices on older "fixer-upper" inventory in areas like <strong>Lavington</strong>.</p>
+      <p>Key tactic: The "Cash-is-King" clause. In a high-interest environment, a buyer who can close in 14 days often gets a 10-15% discount over a mortgage-backed buyer.</p>
+    `,
+    tags: ['Negotiation', 'Sales', 'Tips'],
+    featured: false,
+  },
+
+  // 47. Holiday Homes Coastal Kenya
+  'holiday-homes-coastal-kenya': {
+    id: 'holiday-homes-coastal-kenya',
+    title: 'The Coastal Boom: Investing in Watamu and Diani in 2026',
+    excerpt: 'Why vacation rentals are outperforming traditional residential lets.',
+    author: 'Paul Kamau',
+    category: 'Residential',
+    date: '2026-01-05',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Sun, Sand, and ROI</h2>
+      <p>The coastal market has seen a 25% surge in 2025/2026, driven by the "Digital Nomad" visa and improved infrastructure. <strong>Watamu</strong> has emerged as the premium hub, with luxury villas fetching up to Ksh 45,000 per night during peak seasons.</p>
+      <p>We analyze the shift toward "Green Resorts" and why self-sustaining solar-powered homes are seeing the highest capital appreciation at the coast.</p>
+    `,
+    tags: ['Coast', 'Holiday Homes', 'Airbnb'],
+    featured: true,
+  },
+
+  // 48. Why Homeownership Rates Dropping Urban Areas
+  'why-homeownership-rates-dropping-urban-areas': {
+    id: 'why-homeownership-rates-dropping-urban-areas',
+    title: 'Why Urban Homeownership in Kenya is at an All-Time Low',
+    excerpt: 'Analyzing the shift from "Ownership" to "Quality Renting" in Nairobi and Mombasa.',
+    author: 'Elizabeth Costabir',
+    category: 'Market Analysis',
+    date: '2026-01-02',
+    readTime: '14 min read',
+    image: 'https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Dream Deferred</h2>
+      <p>Current data shows urban homeownership has dipped to approx. 21.3%. High land prices, stagnant wages, and the 16% VAT on building materials have made "saving for a house" nearly impossible for the middle class.</p>
+      <p>The result? A "Renter Nation" where developers are now focusing on long-term luxury rentals rather than "for sale" units.</p>
+    `,
+    tags: ['Economy', 'Trends', 'Social Impact'],
+    featured: false,
+  },
+
+  // 49. CS Wahome: Housing Levy vs. Ownership
+  'cs-wahome-housing-levy-funds-construction-home-ownership-lags': {
+    id: 'cs-wahome-housing-levy-funds-construction-home-ownership-lags',
+    title: 'CS Alice Wahome: "The Housing Levy is a Tax, Not a Saving"',
+    excerpt: 'Understanding the 2025/2026 policy shift in the Affordable Housing Program.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2026-01-01',
+    readTime: '13 min read',
+    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Clarifying the Levy</h2>
+      <p>In a landmark clarification, CS Alice Wahome stated that the <strong>Housing Levy</strong> contributions are primarily used to fund construction, not as a direct savings pot for the individual. This means contributors still need to purchase or rent the units post-construction through separate financing like Boma Yangu.</p>
+      <p>The government aims to release 500,000 units in 2026, focusing on the rent-to-own model for those in informal settlements.</p>
+    `,
+    tags: ['Housing Levy', 'Policy', 'Government'],
+    featured: true,
+  },
+
+  // 50. Real Estate Investment Trusts (REITs) Kenya
+  'real-estate-investment-trusts-kenya': {
+    id: 'real-estate-investment-trusts-kenya',
+    title: 'Kenya’s REIT Market in 2026: A Growth Engine for Pensions',
+    excerpt: 'Analyzing the performance of Acorn, ILAM Fahari, and the new LAPTRUST Imara I-REIT.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-12-28',
+    readTime: '15 min read',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80',
+    content: `
+      <h2>REITs Come of Age</h2>
+      <p>By H1 2025, Kenyan REITs saw a 24.9% increase in Net Operating Income. The <strong>Acorn D-REIT</strong> has been the standout performer, providing student housing solutions across Nairobi with an 8% implied capitalization rate.</p>
+      
+      <p>For passive investors, REITs now offer a tax-efficient way to enter the property market with as little as Ksh 5,000.</p>
+    `,
+    tags: ['REITs', 'Passive Income', 'Finance'],
+    featured: false,
+  },
+
+  // 51. Property Valuation Software Kenya
+  'property-valuation-software-kenya': {
+    id: 'property-valuation-software-kenya',
+    title: 'Top 5 Property Valuation and Management Tools for 2026',
+    excerpt: 'How AI and Big Data are replacing the traditional "manual appraisal."',
+    author: 'Elizabeth Costabir',
+    category: 'Tech',
+    date: '2025-12-25',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The End of Guesswork</h2>
+      <p>Valuers in 2026 are using <strong>LightBox Valuation</strong> and <strong>DoorLoop</strong> to provide real-time market data. These tools integrate directly with Ardhisasa to verify parcel history, reducing the time for a bank-approved appraisal from 7 days to 48 hours.</p>
+    `,
+    tags: ['PropTech', 'Valuation', 'Software'],
+    featured: false,
+  },
+
+  // 52. Property Development Cost Estimation
+  'property-development-cost-estimation': {
+    id: 'property-development-cost-estimation',
+    title: 'Cost Estimation: What it Costs to Build in Kenya (2026)',
+    excerpt: 'Breaking down the KES 55,000 to KES 95,000 per square meter reality.',
+    author: 'Paul Kamau',
+    category: 'Construction',
+    date: '2025-12-20',
+    readTime: '16 min read',
+    image: 'https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Current Construction Rates</h2>
+      <p>According to the 2025/2026 Integrum Handbook, building costs have stabilized but remain high. A standard 3-bedroom bungalow now averages <strong>KES 54,730 per sqm</strong>, while high-end maisonettes in Nairobi can exceed <strong>KES 97,000 per sqm</strong>.</p>
+      
+      <p>We provide a checklist for budgeting for "hidden" site costs like excavation and perimeter walling.</p>
+    `,
+    tags: ['Budgeting', 'Construction', 'Costs'],
+    featured: false,
+  },
+
+  // 53. Do I Really Need a Real Estate Agent?
+  'do-i-really-need-real-estate-agent-buying-house': {
+    id: 'do-i-really-need-real-estate-agent-buying-house',
+    title: 'Do I Really Need a Real Estate Agent in the Digital Age?',
+    excerpt: 'The pros and cons of "going it alone" vs. hiring a professional.',
+    author: 'Elizabeth Costabir',
+    category: 'Tips',
+    date: '2025-12-15',
+    readTime: '9 min read',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Agent vs. DIY</h2>
+      <p>With Ardhisasa making title searches public, some believe agents are obsolete. However, in 2026, an agent's role has shifted to <strong>Risk Mitigation</strong> and <strong>Portfolio Strategy</strong>. They are the ones who know which "off-plan" developers are actually finishing projects and which are just selling "air."</p>
+    `,
+    tags: ['Advice', 'Agents', 'Buying'],
+    featured: false,
+  },
+
+  // 54. Real Estate Investment Portfolio Diversification
+  'real-estate-investment-portfolio-diversification': {
+    id: 'real-estate-investment-portfolio-diversification',
+    title: 'Diversifying Your Property Portfolio for 2026 Stability',
+    excerpt: 'Why you shouldn’t put all your money into residential apartments.',
+    author: 'Paul Kamau',
+    category: 'Investment',
+    date: '2025-12-10',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1454165833767-027ffea9e77b?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Spreading the Risk</h2>
+      <p>A balanced 2026 portfolio should include a mix of <strong>Residential</strong> (steady cash flow), <strong>Commercial/Industrial</strong> (long-term leases), and <strong>REITs</strong> (liquidity). We analyze why "land banking" in satellite towns should only comprise 20% of your total real estate wealth.</p>
+    `,
+    tags: ['Portfolio', 'Strategy', 'Risk'],
+    featured: false,
+  },
+
+  // 55. Property Development Project Management
+  'property-development-project-management': {
+    id: 'property-development-project-management',
+    title: 'The Phases of Successful Property Project Management',
+    excerpt: 'From feasibility studies to the final "Defects Liability Period."',
+    author: 'Elizabeth Costabir',
+    category: 'Construction',
+    date: '2025-12-05',
+    readTime: '15 min read',
+    image: 'https://images.unsplash.com/photo-1531834685032-c7469c4b3ad3?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Managing the Chaos</h2>
+      <p>Property development is 10% design and 90% management. We break down the 2026 workflow, emphasizing the <strong>NCA (National Construction Authority)</strong> audits and the critical "Sectional Titles" registration process that must happen before you hand over keys.</p>
+    `,
+    tags: ['Project Management', 'Construction', 'Workflow'],
+    featured: false,
+  },
+  // 56. Real Estate Investment Analysis Software
+  'real-estate-investment-analysis-software': {
+    id: 'real-estate-investment-analysis-software',
+    title: 'Top Investment Analysis Tools for the Kenyan Market in 2026',
+    excerpt: 'Ditching spreadsheets for Yardi, DoorLoop, and Mashvisor-style local data.',
+    author: 'Paul Kamau',
+    category: 'Technology',
+    date: '2026-01-12',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Data-Driven Decisions</h2>
+      <p>By 2026, the complexity of the Nairobi rental market means "back of the envelope" math is no longer enough. Sophisticated investors are now using <strong>Yardi</strong> for enterprise portfolios and <strong>Baselane</strong> for personal rental management.</p>
+      <p>These tools allow you to integrate your bank feeds directly via API to track Net Operating Income (NOI) in real-time, helping you spot underperforming assets before they eat into your capital.</p>
+    `,
+    tags: ['PropTech', 'Analysis', 'ROI'],
+    featured: false,
+  },
+
+  // 57. Property Tax Management Kenya (Finance Act 2025/26)
+  'property-tax-management-kenya': {
+    id: 'property-tax-management-kenya',
+    title: 'Property Tax in 2026: Navigating the Finance Act 2025',
+    excerpt: 'Essential updates on the KES 360,000 interest deduction and new tax loss limits.',
+    author: 'Elizabeth Costabir',
+    category: 'Finance',
+    date: '2026-01-10',
+    readTime: '13 min read',
+    image: 'https://images.unsplash.com/photo-1554224155-16974542e56e?auto=format&fit=crop&q=80',
+    content: `
+      <h2>New Rules for 2026</h2>
+      <p>The <strong>Finance Act 2025</strong> has introduced pivotal changes for real estate. Most notably, individual homeowners can now claim an interest deduction of up to <strong>KES 360,000</strong> per year on home construction loans—a significant increase aimed at boosting the middle-market sector.</p>
+      <blockquote>Note: The Act has also limited the period for carrying forward tax losses to five years, making it crucial for developers to reach break-even points faster than before.</blockquote>
+    `,
+    tags: ['Taxation', 'Finance Act 2025', 'KRA'],
+    featured: true,
+  },
+
+  // 58. Sectional Properties Act Implementation 2026
+  'sectional-properties-act-implementation-2026': {
+    id: 'sectional-properties-act-implementation-2026',
+    title: 'Sectional Titles: The 2026 Progress Report',
+    excerpt: 'How the transition from long-term leases to individual unit titles is changing ownership.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2026-01-08',
+    readTime: '14 min read',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Death of the "Management Company" Share?</h2>
+      <p>In 2026, the conversion of old sub-leases to Sectional Titles is hitting its stride. Under the <strong>Sectional Properties Act 2020</strong>, the Registrar of Lands is now issuing individual Certificates of Title for apartments. This removes the need for complex share transfers in management companies when you sell your unit.</p>
+      
+      <p>We look at why banks now prefer lending against these "cleaner" sectional titles compared to traditional sub-leases.</p>
+    `,
+    tags: ['Sectional Properties', 'Title Deeds', 'Legal'],
+    featured: false,
+  },
+
+  // 59. Nairobi Market Report 2026
+  'nairobi-market-report-2026': {
+    id: 'nairobi-market-report-2026',
+    title: 'Nairobi 2026 Outlook: The Rise of Detached Housing',
+    excerpt: 'Market data shows a shift from congested high-rises to spacious suburban gated communities.',
+    author: 'Elizabeth Costabir',
+    category: 'Market Analysis',
+    date: '2026-01-05',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80',
+    content: `
+      <h2>A Shift in Preference</h2>
+      <p>Nairobi's 2026 property index reports an <strong>8.2% year-on-year increase</strong> in detached housing prices. Areas like <strong>Tatu City</strong> and <strong>Superior Homes</strong> in Athi River are outperforming Kilimani apartments as buyers prioritize green spaces and low-density living.</p>
+      <p>With mortgage rates hovering between 14-16%, cash buyers currently dominate 70% of the premium transactions in the Westlands and Lavington corridors.</p>
+    `,
+    tags: ['Nairobi', 'Market Trends', '2026 Forecast'],
+    featured: true,
+  },
+
+  // 60. Real Estate Portfolio Management Strategy
+  'real-estate-portfolio-management-strategy': {
+    id: 'real-estate-portfolio-management-strategy',
+    title: 'Balancing REITs and Brick-and-Mortar in Your Portfolio',
+    excerpt: 'How to maintain liquidity while holding long-term physical assets.',
+    author: 'Paul Kamau',
+    category: 'Investment',
+    date: '2026-01-03',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1454165833767-027ffea9e77b?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Hybrid Approach</h2>
+      <p>A resilient real estate portfolio in 2026 shouldn't just be "dead land." We recommend a 60/40 split: 60% in high-yield physical assets (like student housing or warehouses) and 40% in liquid <strong>REITs</strong> like Acorn or LAPTRUST.</p>
+    `,
+    tags: ['Portfolio Management', 'REITs', 'Investment Strategy'],
+    featured: false,
+  },
+
+  // 61. Diaspora Investment Checklist 2026
+  'diaspora-investment-checklist-2026': {
+    id: 'diaspora-investment-checklist-2026',
+    title: 'The 2026 Diaspora Investment Checklist: Buying Safely',
+    excerpt: 'A 10-point guide to utilizing Ardhisasa and video due diligence from abroad.',
+    author: 'Elizabeth Costabir',
+    category: 'Investment',
+    date: '2025-12-30',
+    readTime: '15 min read',
+    image: 'https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Remote Due Diligence</h2>
+      <p>Diaspora remittances remain a backbone of the market. In 2026, the gold standard for remote buying includes a certified <strong>Ardhisasa</strong> search and an independent valuation report. We walk through how to appoint a "Power of Attorney" specifically for land transactions without giving up full control of your assets.</p>
+    `,
+    tags: ['Diaspora', 'Safety', 'Checklist'],
+    featured: false,
+  },
+
+  // 62. Buying Apartments in Nairobi: Step-by-Step
+  'buying-apartments-nairobi-step-by-step': {
+    id: 'buying-apartments-nairobi-step-by-step',
+    title: 'Buying an Apartment in Nairobi: The Step-by-Step Guide',
+    excerpt: 'From the Letter of Offer to the handover of the Sectional Title.',
+    author: 'Paul Kamau',
+    category: 'Residential',
+    date: '2025-12-28',
+    readTime: '14 min read',
+    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Workflow</h2>
+      <ol>
+        <li><strong>Selection:</strong> Choose a developer with a track record of delivery.</li>
+        <li><strong>Letter of Offer:</strong> Sign the LoO and pay the reservation fee (usually KES 100k-500k).</li>
+        <li><strong>Sale Agreement:</strong> Your lawyer reviews the Sale Agreement (expect 10-20% deposit).</li>
+        <li><strong>Completion:</strong> Pay the balance and register the <strong>Sectional Title</strong> via Ardhisasa.</li>
+      </ol>
+    `,
+    tags: ['Buying Guide', 'Nairobi Apartments', 'Residential'],
+    featured: false,
+  },
+
+  // 63. Real Estate Financial Modeling Excel
+  'real-estate-financial-modeling-excel': {
+    id: 'real-estate-financial-modeling-excel',
+    title: 'Advanced Financial Modeling for Kenyan Developers',
+    excerpt: 'Calculating IRR and NPV for high-rise developments in Upper Hill.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-12-25',
+    readTime: '18 min read',
+    image: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Mastering the Numbers</h2>
+      <p>Success in commercial development hinges on your Internal Rate of Return (IRR). We provide a template for modeling a 10-story mixed-use development, accounting for the <strong>VAT on construction materials</strong> and the current 12% capitalization rates in Nairobi's commercial nodes.</p>
+    `,
+    tags: ['Financial Modeling', 'Excel', 'Development'],
+    featured: false,
+  },
+
+  // 64. Commercial Lease Trends Nairobi 2026
+  'commercial-lease-trends-nairobi-2026': {
+    id: 'commercial-lease-trends-nairobi-2026',
+    title: 'Grade-A Office Trends: ESG and Flexible Leasing',
+    excerpt: 'Why multinational tenants are demanding green-certified buildings in 2026.',
+    author: 'Elizabeth Costabir',
+    category: 'Commercial',
+    date: '2025-12-20',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The ESG Mandate</h2>
+      <p>In 2026, Grade-A office space in Westlands is no longer just about the view. Multinational corporations now have strict <strong>ESG (Environmental, Social, and Governance)</strong> requirements. Buildings with <strong>EDGE certification</strong> are seeing 15% higher rents than non-certified counterparts.</p>
+    `,
+    tags: ['Commercial', 'ESG', 'Office Space'],
+    featured: false,
+  },
+
+  // 65. Satellite Towns Growth Corridors 2026
+  'satellite-towns-growth-corridors-2026': {
+    id: 'satellite-towns-growth-corridors-2026',
+    title: 'The "Belt" Strategy: Ruiru, Juja, and the Kangundo Road Boom',
+    excerpt: 'Analyzing the infrastructure-led growth of Nairobi’s satellite towns.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2025-12-15',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Beyond the City Limits</h2>
+      <p>The completion of the Eastern and Northern Bypass expansions has turned <strong>Ruiru</strong> and <strong>Juja</strong> into primary residential hubs for Nairobi's workforce. We analyze the "Kangundo Road" corridor, where land prices have tripled since 2022 due to affordable housing projects and improved connectivity.</p>
+    `,
+    tags: ['Satellite Towns', 'Land Banking', 'Growth Corridors'],
+    featured: false,
+  },
+
+  // 66. Green Building Incentives Kenya
+  'green-building-incentives-kenya': {
+    id: 'green-building-incentives-kenya',
+    title: 'Going Green: Tax Incentives and Higher ROI for Developers',
+    excerpt: 'How to save on operational costs through sustainable architecture.',
+    author: 'Elizabeth Costabir',
+    category: 'Construction',
+    date: '2025-12-10',
+    readTime: '13 min read',
+    image: 'https://images.unsplash.com/photo-1518005020411-38b83d9edc71?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Sustainability Pays Off</h2>
+      <p>Sustainable buildings in Kenya are moving from "niche" to "standard." We explore the <strong>EDGE certification</strong> process and how developers are using rainwater harvesting and passive cooling to reduce service charges, making their units more attractive to savvy renters in 2026.</p>
+    `,
+    tags: ['Green Building', 'Sustainability', 'Construction'],
+    featured: false,
+  },
+  // 67. Nairobi Railway City Impact
+  'nairobi-railway-city-impact': {
+    id: 'nairobi-railway-city-impact',
+    title: 'Nairobi Railway City: Shifting the CBD Southward in 2026',
+    excerpt: 'How the £9M technical assistance and multimodal hub is redefining Nairobi’s core.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2026-01-13',
+    readTime: '13 min read',
+    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Southward Expansion</h2>
+      <p>As of January 2026, the <strong>Nairobi Railway City</strong> project has moved into high gear. With a projected daily footfall of 400,000 people, this multimodal hub is doing more than just improving transport; it is physically shifting the city's commercial center toward the south of the traditional CBD.</p>
+      <p>Investors are now looking at the "Railway Corridor" for high-density student housing and MICE (Meetings, Incentives, Conferences, and Exhibitions) facilities, as the project draws inspiration from London’s King’s Cross regeneration.</p>
+    `,
+    tags: ['Nairobi Railway City', 'Urban Planning', 'Infrastructure'],
+    featured: true,
+  },
+
+  // 68. Industrial Warehousing Boom 2026
+  'industrial-warehousing-boom-2026': {
+    id: 'industrial-warehousing-boom-2026',
+    title: 'The Warehouse Goldmine: Grade A Industrial Real Estate in 2026',
+    excerpt: 'Why every tap on a smartphone is filling up Kenya’s logistics hubs.',
+    author: 'Elizabeth Costabir',
+    category: 'Commercial',
+    date: '2026-01-11',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Logistics: The Silent Winner</h2>
+      <p>While residential markets stabilize, <strong>Industrial Real Estate</strong> is seeing a 9.5% average yield in 2026. The surge in e-commerce has led to a desperate need for Grade A warehouses in <strong>Tatu City</strong> and <strong>Athi River</strong>.</p>
+      <p>Nairobi prime warehouse rents have hit $6 per sqm, outperforming regional rivals like Johannesburg. We explore why "Last-Mile" delivery hubs are the most profitable sub-sector for institutional investors this year.</p>
+    `,
+    tags: ['Warehousing', 'Logistics', 'E-commerce'],
+    featured: false,
+  },
+
+  // 69. Adverse Possession Legal Guide
+  'adverse-possession-legal-guide': {
+    id: 'adverse-possession-legal-guide',
+    title: 'Avoiding "Squatter Rights": The 12-Year Rule in Kenya',
+    excerpt: 'Lessons from the Waweru v Njoroge [2025] case on protecting your land.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2026-01-09',
+    readTime: '15 min read',
+    image: 'https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The 12-Year Clock</h2>
+      <p>The doctrine of <strong>Adverse Possession</strong> remains a major risk for absentee landowners. Following recent 2025 rulings, the court has reaffirmed that 12 years of "open, notorious, and hostile" occupation can extinguish a paper owner’s title.</p>
+      <p>We provide a 2026 checklist for land protection, including the necessity of "Licence Agreements" even for family members living on your property to prevent them from claiming ownership later.</p>
+    `,
+    tags: ['Legal', 'Land Rights', 'Adverse Possession'],
+    featured: false,
+  },
+
+  // 70. Real Estate Crowdfunding Youth 2026
+  'real-estate-crowdfunding-youth-2026': {
+    id: 'real-estate-crowdfunding-youth-2026',
+    title: 'Real Estate Crowdfunding: How Gen Z is Owning Nairobi',
+    excerpt: 'You no longer need KES 50M to own luxury; fractional ownership is the 2026 trend.',
+    author: 'Elizabeth Costabir',
+    category: 'Investment',
+    date: '2026-01-07',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Fractional Ownership Explained</h2>
+      <p>In 2026, the barrier to entry for real estate has collapsed. New platforms are allowing young Kenyans to buy <strong>"fractional shares"</strong> in high-end apartments in Kilimani for as little as KES 10,000.</p>
+      <p>We analyze the legal structures of these syndicates and how digital tokens are being used to track rental dividends monthly.</p>
+    `,
+    tags: ['Crowdfunding', 'Gen Z', 'Fintech'],
+    featured: false,
+  },
+
+  // 71. Talanta Sports City Real Estate
+  'talanta-sports-city-real-estate': {
+    id: 'talanta-sports-city-real-estate',
+    title: 'The "Talanta Effect": AFCON 2027 and Property Values',
+    excerpt: 'How the Talanta Sports City Stadium is boosting real estate in its orbit.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2026-01-05',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Stadium-Led Development</h2>
+      <p>With the 2027 AFCON looming, the <strong>Talanta Sports City Stadium</strong> has triggered a 15% spike in land prices in surrounding areas. Investors are betting on "Sports Tourism" and short-term hospitality rentals.</p>
+      <p>Historically, stadium precincts see long-term appreciation in commercial and retail spaces. We look at the specific zones set to benefit most from this infrastructure boom.</p>
+    `,
+    tags: ['AFCON 2027', 'Talanta Sports City', 'Hotspots'],
+    featured: false,
+  },
+
+  // 72. Green Building Standard 2026
+  'green-building-standard-2026': {
+    id: 'green-building-standard-2026',
+    title: 'Green is the New Standard: Why 2026 Buyers Demand EDGE',
+    excerpt: 'Sustainability is no longer a luxury; it is a requirement for high rental occupancy.',
+    author: 'Elizabeth Costabir',
+    category: 'Construction',
+    date: '2026-01-03',
+    readTime: '14 min read',
+    image: 'https://images.unsplash.com/photo-1518005020411-38b83d9edc71?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The EDGE Advantage</h2>
+      <p>In 2026, the <strong>Excellence in Design for Greater Efficiencies (EDGE)</strong> certification has become the industry benchmark. Savvy tenants in Nairobi now refuse to pay full service charges for buildings without solar water heating or gray-water recycling.</p>
+      <p>Developers using green tech are reporting 20% lower operational costs and 15% faster take-up rates for their units.</p>
+    `,
+    tags: ['Sustainability', 'EDGE', 'Construction'],
+    featured: false,
+  },
+
+  // 73. iTax Compliance for Landlords
+  'itax-compliance-for-landlords': {
+    id: 'itax-compliance-for-landlords',
+    title: 'Landlords and iTax: Navigating the 2026 KRA Enforcement',
+    excerpt: 'KRA’s new digital tracking of rental income and what it means for your profit.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2026-01-01',
+    readTime: '13 min read',
+    image: 'https://images.unsplash.com/photo-1554224155-16974542e56e?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Digital Net Closes</h2>
+      <p>The <strong>Kenya Revenue Authority (KRA)</strong> has integrated its systems with utility providers and the lands registry in 2026. This means "hiding" rental income is no longer an option for urban landlords.</p>
+      <p>We explain how to file your 7.5% Monthly Rental Income (MRI) tax correctly and the penalties for late submission that could wipe out your annual profit.</p>
+    `,
+    tags: ['Taxation', 'KRA', 'Compliance'],
+    featured: true,
+  },
+
+  // 74. Dongo Kundu SEZ Investment
+  'dongo-kundu-sez-investment': {
+    id: 'dongo-kundu-sez-investment',
+    title: 'Dongo Kundu SEZ: The Coast’s New Industrial Frontier',
+    excerpt: 'Why the signing of new lease agreements is sparking a Mombasa land rush.',
+    author: 'Elizabeth Costabir',
+    category: 'Market Analysis',
+    date: '2025-12-29',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Mombasa’s Economic Engine</h2>
+      <p>The <strong>Dongo Kundu Special Economic Zone (SEZ)</strong> is finally open for business. With tax breaks and duty exemptions, it’s attracting global manufacturing and logistics firms.</p>
+      <p>For real estate investors, the play is in the supporting "Township" developments. Employees need housing, and the current supply in Likoni and surrounding areas is insufficient for the projected workforce.</p>
+    `,
+    tags: ['Mombasa', 'Dongo Kundu', 'SEZ'],
+    featured: false,
+  },
+
+  // 75. Mixed-Use Developments Nairobi 2026
+  'mixed-use-developments-nairobi-2026': {
+    id: 'mixed-use-developments-nairobi-2026',
+    title: 'Live-Work-Play: The Dominance of Mixed-Use in 2026',
+    excerpt: 'Why Nairobians are ditching the commute for integrated environments.',
+    author: 'Paul Kamau',
+    category: 'Residential',
+    date: '2025-12-26',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The End of the Commute</h2>
+      <p>Congestion in 2026 has made the "15-minute city" a reality in Nairobi. Mixed-use developments (MUDs) that combine retail, office, and residential in one gated precinct are outperforming standalone apartments.</p>
+      <p>We profile successful examples in <strong>Westlands</strong> and <strong>Karen</strong> where residents can work, shop, and gym without ever leaving their complex.</p>
+    `,
+    tags: ['Mixed-Use', 'Urban Trends', 'Nairobi'],
+    featured: false,
+  },
+
+  // 76. Short-Term Rentals Market Shift
+  'short-term-rentals-market-shift': {
+    id: 'short-term-rentals-market-shift',
+    title: 'Airbnb vs. Traditional Letting: The 2026 Comparison',
+    excerpt: 'Analyzing why many hosts are returning to long-term leases this year.',
+    author: 'Elizabeth Costabir',
+    category: 'Investment',
+    date: '2025-12-22',
+    readTime: '14 min read',
+    image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Airbnb Saturation?</h2>
+      <p>In 2026, the "Airbnb Gold Rush" in Kilimani and Kileleshwa has cooled. Over-supply has led to a price war, dropping average daily rates by 12%. Meanwhile, long-term luxury rentals have seen a 7.9% rent increase.</p>
+      <p>We provide a formula to calculate if your property is better suited for short-term "hustle" or long-term "stability" based on current 2026 occupancy data.</p>
+    `,
+    tags: ['Airbnb', 'Rental Income', 'ROI'],
+    featured: false,
+  },
+
+  // 77. Interior Design Rental Yield Hacks
+  'interior-design-rental-yield-hacks': {
+    id: 'interior-design-rental-yield-hacks',
+    title: 'Interior Hacks to Boost Your Rental Income by 15%',
+    excerpt: 'How minor aesthetic upgrades lead to major rental premiums in 2026.',
+    author: 'Paul Kamau',
+    category: 'Residential',
+    date: '2025-12-18',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Value-Add Design</h2>
+      <p>Tenants in 2026 are looking for specific "functional aesthetics." We look at how adding built-in workspaces, modular kitchen islands, and high-spec lighting can justify a KES 15,000–20,000 premium on a standard 2-bedroom unit.</p>
+    `,
+    tags: ['Interior Design', 'Renovation', 'Yield'],
+    featured: false,
+  },
+  // 78. Building a Property Pension
+  'building-a-property-pension': {
+    id: 'building-a-property-pension',
+    title: 'The Property Pension: How to Retire on Rental Income by 55',
+    excerpt: 'Ditching the NSSF for a portfolio that pays you every month.',
+    author: 'Paul Kamau',
+    category: 'Investment',
+    date: '2026-01-13',
+    readTime: '15 min read',
+    image: 'https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Planning for the Long Term</h2>
+      <p>With life expectancy in Kenya rising, the "pension gap" is a real threat. In 2026, savvy professionals are building "Property Pensions." This involves acquiring one high-yield unit every five years, aiming for a five-property portfolio that nets KES 300,000 monthly by retirement.</p>
+      
+      <p>We analyze why 1-bedroom units in satellite towns like <strong>Ruiru</strong> offer better pension security than large mansions in the suburbs.</p>
+    `,
+    tags: ['Retirement', 'Strategy', 'Passive Income'],
+    featured: false,
+  },
+
+  // 79. SACCO vs Bank Mortgages
+  'sacco-vs-bank-mortgages-2026': {
+    id: 'sacco-vs-bank-mortgages-2026',
+    title: 'SACCO vs. Bank Mortgages: Where Should You Borrow in 2026?',
+    excerpt: 'Comparing the 9% KMRC-backed bank loans with SACCO dividend offsets.',
+    author: 'Elizabeth Costabir',
+    category: 'Finance',
+    date: '2026-01-12',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Lending War</h2>
+      <p>2026 has seen a dramatic drop in borrowing costs. Banks like <strong>Stanbic</strong> now offer 8.99% fixed rates via KMRC, while top-tier SACCOs like <strong>Stima</strong> and <strong>Safcom</strong> offer 9% on reducing balances.</p>
+      
+      <p>The deciding factor this year? Flexibility. SACCOs allow for quicker top-ups, while banks offer longer 25-year terms.</p>
+    `,
+    tags: ['Mortgages', 'SACCO', 'Finance'],
+    featured: true,
+  },
+
+  // 80. Purpose Built Student Accommodation (PBSA)
+  'purpose-built-student-accommodation-kenya': {
+    id: 'purpose-built-student-accommodation-kenya',
+    title: 'PBSA: The 2026 Gold Rush in Student Housing',
+    excerpt: 'Why institutional investors are pouring billions into "Qwetu" style models.',
+    author: 'Paul Kamau',
+    category: 'Commercial',
+    date: '2026-01-10',
+    readTime: '14 min read',
+    image: 'https://images.unsplash.com/photo-1555854817-5b2260d15d50?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Student Housing Deficit</h2>
+      <p>With over 600,000 university students and only 15% housed on-campus, <strong>Purpose Built Student Accommodation (PBSA)</strong> has become the most resilient asset class. In 2026, yields are averaging 9-11%, far outperforming traditional residential lets.</p>
+    `,
+    tags: ['PBSA', 'Student Housing', 'Yields'],
+    featured: false,
+  },
+
+  // 81. Property Management Automation
+  'property-management-automation-2026': {
+    id: 'property-management-automation-2026',
+    title: 'Automate Your Rent: Top 3 Platforms for 2026 Landlords',
+    excerpt: 'How to handle 50 units without a single phone call.',
+    author: 'Elizabeth Costabir',
+    category: 'Tech',
+    date: '2026-01-08',
+    readTime: '9 min read',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Digital Landlord</h2>
+      <p>Software like <strong>RentMaster</strong> and <strong>DoorLoop</strong> now integrate with M-Pesa Till numbers. In 2026, rent is automatically reconciled, late fees are applied by AI, and water meters are read via IoT sensors, sending bills directly to tenant apps.</p>
+    `,
+    tags: ['Automation', 'PropTech', 'Management'],
+    featured: false,
+  },
+
+  // 82. Buy-to-Let Ruaka Analysis
+  'buy-to-let-ruaka-analysis': {
+    id: 'buy-to-let-ruaka-analysis',
+    title: 'Is Ruaka Still a Good Buy in 2026? A Market Deep Dive',
+    excerpt: 'Analyzing the rental saturation vs. the infrastructure demand.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2026-01-05',
+    readTime: '13 min read',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Ruaka Question</h2>
+      <p>Ruaka has matured. While capital appreciation has slowed from the 15% highs of 2021, rental occupancy remains at 95% due to the <strong>Two Rivers</strong> ecosystem. In 2026, the play is in "Executive Studios" for young UN consultants.</p>
+    `,
+    tags: ['Ruaka', 'Nairobi Real Estate', 'Buy-to-Let'],
+    featured: false,
+  },
+
+  // 83. The Fix and Flip Strategy 2026
+  'the-fix-and-flip-strategy-kenya': {
+    id: 'the-fix-and-flip-strategy-kenya',
+    title: 'Fix and Flip: How to Spot Undervalued Gems in Kileleshwa',
+    excerpt: 'Renovating 1990s apartments for a 30% profit margin in 2026.',
+    author: 'Elizabeth Costabir',
+    category: 'Investment',
+    date: '2026-01-03',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Flipping the Script</h2>
+      <p>Nairobi is full of aging 3-bedroom units with large rooms but tired interiors. We explain the 2026 math of the "Modernization Flip"—spending KES 2M on kitchens and floors to increase value by KES 5M in 6 months.</p>
+    `,
+    tags: ['Flipping', 'Renovation', 'Profit'],
+    featured: false,
+  },
+
+  // 84. Expressway Economic Impact
+  'expressway-economic-impact-2026': {
+    id: 'expressway-economic-impact-2026',
+    title: 'The Expressway Effect: 4 Years On, Who Won?',
+    excerpt: 'How the Nairobi Expressway reshaped land values from Mlolongo to Westlands.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2026-01-01',
+    readTime: '14 min read',
+    image: 'https://images.unsplash.com/photo-1545143333-6382b1d58732?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Infrastructure & Value</h2>
+      <p>As of 2026, the <strong>Nairobi Expressway</strong> has permanently boosted Syokimau land prices by 45%. We look at the "Commuter Premium" and why proximity to an exit ramp is now more valuable than proximity to the CBD.</p>
+    `,
+    tags: ['Infrastructure', 'Expressway', 'Land Values'],
+    featured: true,
+  },
+
+  // 85. Sectional Titles for Beginners
+  'sectional-titles-for-beginners': {
+    id: 'sectional-titles-for-beginners',
+    title: 'Sectional Titles for Beginners: Owning Your Slice of Air',
+    excerpt: 'Everything you need to know about the new ownership certificates.',
+    author: 'Elizabeth Costabir',
+    category: 'Legal',
+    date: '2025-12-28',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80',
+    content: `
+      <h2>No More "Share Certificates"</h2>
+      <p>In the 2026 legal landscape, the <strong>Sectional Properties Act</strong> is the law of the land. We explain why your apartment title is now as powerful as a standalone plot deed and how it makes getting a mortgage 50% faster.</p>
+    `,
+    tags: ['Sectional Titles', 'Legal', 'Ownership'],
+    featured: false,
+  },
+
+  // 86. Retail REITs for Small Investors
+  'retail-reits-small-investors-kenya': {
+    id: 'retail-reits-small-investors-kenya',
+    title: 'Owning a Piece of the Mall: Retail REITs in 2026',
+    excerpt: 'How to invest in Kenya’s biggest shopping centers with KES 5,000.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-12-25',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Fractional Retail</h2>
+      <p>Retail property yields in 2026 are stabilizing at 8.5%. With <strong>LAPTRUST Imara I-REIT</strong> leading the way, we show you how to diversify your portfolio by owning commercial malls without the management headache.</p>
+    `,
+    tags: ['REITs', 'Retail', 'Diversification'],
+    featured: false,
+  },
+
+  // 87. Farming vs Housing in the Outskirts
+  'farming-vs-housing-outskirts-kenya': {
+    id: 'farming-vs-housing-outskirts-kenya',
+    title: 'Farming vs. Housing: The Land Use Battle in 2026',
+    excerpt: 'Why zoning changes in Kiambu and Kajiado are creating instant millionaires.',
+    author: 'Elizabeth Costabir',
+    category: 'Market Analysis',
+    date: '2025-12-20',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Great Conversion</h2>
+      <p>As Nairobi expands, former coffee and tea estates are being rezoned for high-density housing. We analyze the "Change of User" process and why a 1-acre farm is worth 4x more as a residential gated community.</p>
+    `,
+    tags: ['Land Use', 'Zoning', 'Kiambu'],
+    featured: false,
+  },
+
+  // 88. Smart Home Tech in Karen
+  'smart-home-tech-karen-luxury': {
+    id: 'smart-home-tech-karen-luxury',
+    title: 'The Smart Mansions of Karen: 2026 Luxury Trends',
+    excerpt: 'From voice-controlled solar grids to AI-monitored perimeter security.',
+    author: 'Paul Kamau',
+    category: 'Residential',
+    date: '2025-12-15',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1558002038-1055907df8d7?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Tech Meets Luxury</h2>
+      <p>High-end buyers in 2026 are demanding full automation. We look at properties in <strong>Karen</strong> and <strong>Muthaiga</strong> that feature smart glass, invisible solar roof tiles, and AI security systems that can recognize authorized vehicles from 1km away.</p>
+    `,
+    tags: ['Smart Homes', 'Luxury', 'Karen'],
+    featured: false,
+  },
+
+  // 89. Eviction Laws & Tenant Disputes
+  'eviction-laws-tenant-disputes-kenya': {
+    id: 'eviction-laws-tenant-disputes-kenya',
+    title: 'Landlord-Tenant Law: Navigating Disputes in 2026',
+    excerpt: 'The legal way to handle non-payment without the "Auctioneer Drama."',
+    author: 'Elizabeth Costabir',
+    category: 'Legal',
+    date: '2025-12-10',
+    readTime: '15 min read',
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Conflict Resolution</h2>
+      <p>The 2026 <strong>Landlord and Tenant Bill</strong> has streamlined the tribunal process. We explain the mandatory 30-day notice periods and why mediation is now a required first step before any property "lock-out."</p>
+    `,
+    tags: ['Tenant Rights', 'Legal', 'Disputes'],
+    featured: false,
+  },
+
+  // 90. Off-Plan Red Flags 2026
+  'off-plan-red-flags-2026': {
+    id: 'off-plan-red-flags-2026',
+    title: 'Buying Off-Plan? 5 Red Flags to Watch in 2026',
+    excerpt: 'How to tell if a developer will finish your apartment or "take off."',
+    author: 'Paul Kamau',
+    category: 'Advice',
+    date: '2025-12-05',
+    readTime: '13 min read',
+    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Trust Deficit</h2>
+      <p>Despite stricter NCA regulations, off-plan risks remain. We provide a 2026 due diligence checklist: Verify the <strong>NEMA</strong> permit, check the project escrow account, and physically inspect the developer\'s previous three handovers.</p>
+    `,
+    tags: ['Off-Plan', 'Due Diligence', 'Buying'],
+    featured: false,
+  },
+
+  // 91. Co-working Hubs in Residentials
+  'co-working-hubs-in-residentials': {
+    id: 'co-working-hubs-in-residentials',
+    title: 'The Hybrid Home: Co-working Hubs as the New Amenity',
+    excerpt: 'Why 2026 apartments without "Work Pods" are losing tenants.',
+    author: 'Elizabeth Costabir',
+    category: 'Residential',
+    date: '2025-12-01',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Work-From-Home 2.0</h2>
+      <p>The 2026 apartment market is all about lifestyle. Developers are now converting ground floors into high-speed fiber-equipped co-working spaces for residents, allowing for a professional environment without the commute.</p>
+    `,
+    tags: ['Coworking', 'Trends', 'Amenities'],
+    featured: false,
+  },
+
+  // 92. Land Rates vs Land Rent
+  'land-rates-vs-land-rent-payments': {
+    id: 'land-rates-vs-land-rent-payments',
+    title: 'Land Rates vs. Land Rent: Don’t Get Your Taxes Mixed Up',
+    excerpt: 'Understanding the difference between National and County payments.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2025-11-28',
+    readTime: '9 min read',
+    image: 'https://images.unsplash.com/photo-1554224155-16974542e56e?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Compliance Basics</h2>
+      <p>Land Rent goes to the National Government (Ministry of Lands) for leaseholds, while Land Rates go to the County Government for services. We explain the 2026 <strong>Ardhisasa</strong> integration that lets you pay both in one click.</p>
+    `,
+    tags: ['Land Rates', 'Taxes', 'Ardhisasa'],
+    featured: false,
+  },
+
+  // 93. Nanyuki: Investment in Conservation
+  'nanyuki-investment-conservation-boom': {
+    id: 'nanyuki-investment-conservation-boom',
+    title: 'Nanyuki 2026: Investing in the "Safari Home" Boom',
+    excerpt: 'Why conservation-themed developments are seeing 20% capital gains.',
+    author: 'Elizabeth Costabir',
+    category: 'Residential',
+    date: '2025-11-25',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Laikipia Draw</h2>
+      <p>Nanyuki has transformed from a military town to a high-end retirement and holiday hub. In 2026, gated communities like <strong>Mt. Kenya Wildlife Estate</strong> are the top picks for diaspora investors looking for long-term airbnb potential.</p>
+    `,
+    tags: ['Nanyuki', 'Hotspots', 'Holiday Homes'],
+    featured: false,
+  },
+
+  // 94. 3D Printed Homes: 14 Trees Kilifi
+  '3d-printed-homes-kenya-kilifi': {
+    id: '3d-printed-homes-kenya-kilifi',
+    title: '3D Printed Homes: The Kilifi Success Story of 2026',
+    excerpt: 'How 14 Trees printed 52 homes in record time at Mvule Gardens.',
+    author: 'Paul Kamau',
+    category: 'Tech',
+    date: '2025-11-20',
+    readTime: '14 min read',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Printing the Future</h2>
+      <p>The <strong>Mvule Gardens</strong> project in Kilifi has proven that 3D printing can reduce construction time by 70%. We look at the 2026 costs: Printing a 2-bedroom house now costs approx. KES 2.5M, making it the ultimate solution for mass housing.</p>
+      
+    `,
+    tags: ['3D Printing', 'Kilifi', 'Affordable Housing'],
+    featured: true,
+  },
+
+  // 95. Capital Gains Tax (CGT) Optimization
+  'capital-gains-tax-optimization-2026': {
+    id: 'capital-gains-tax-optimization-2026',
+    title: 'CGT Optimization: Legal Ways to Lower Your Tax on Sale',
+    excerpt: 'Understanding the 15% Capital Gains Tax and how to report expenses.',
+    author: 'Elizabeth Costabir',
+    category: 'Finance',
+    date: '2025-11-15',
+    readTime: '13 min read',
+    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Protecting Your Profit</h2>
+      <p>With CGT at 15% in 2026, sellers must be diligent. We explain how to deduct legal fees, valuation costs, and "improvement expenses" from your sale price to reduce your tax liability to the KRA.</p>
+    `,
+    tags: ['CGT', 'KRA', 'Taxation'],
+    featured: false,
+  },
+
+  // 96. Tech Corridor: Kilimani & Westlands
+  'tech-corridor-kilimani-westlands-2026': {
+    id: 'tech-corridor-kilimani-westlands-2026',
+    title: 'The Tech Corridor: How Silicon Savannah Drives Rent in 2026',
+    excerpt: 'Why proximity to startup hubs is the biggest predictor of rental growth.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2025-11-10',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Startup Effect</h2>
+      <p>Westlands and Kilimani remain the "Tech Corridor" of Africa. In 2026, we see a direct correlation between VC funding rounds for startups and the demand for high-spec serviced apartments in these zones.</p>
+    `,
+    tags: ['Tech Hub', 'Kilimani', 'Rental Growth'],
+    featured: false,
+  },
+
+  // 97. Mortgage Refinancing Trends
+  'mortgage-refinancing-trends-kenya-2026': {
+    id: 'mortgage-refinancing-trends-kenya-2026',
+    title: 'Mortgage Refinancing: Switching Banks for a Better Rate',
+    excerpt: 'How to move your 18% loan to a 9% fixed rate in today’s market.',
+    author: 'Elizabeth Costabir',
+    category: 'Finance',
+    date: '2025-11-05',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1554224155-16974542e56e?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Great Migration</h2>
+      <p>Interest rates have fallen. In 2026, thousands of homeowners are "switching" lenders. We provide a step-by-step guide to mortgage refinancing, calculating the break-even point on closing costs vs. monthly savings.</p>
+    `,
+    tags: ['Refinancing', 'Interest Rates', 'Savings'],
+    featured: false,
+  },
+
+  // 98. Identifying Real Estate Market Cycles
+  'identifying-real-estate-market-cycles-2026': {
+    id: 'identifying-real-estate-market-cycles-2026',
+    title: 'Market Cycles: Are We in a Boom or a Bubble in 2026?',
+    excerpt: 'Using the 18-year property cycle to time your entry and exit.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2025-11-01',
+    readTime: '16 min read',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Timing the Market</h2>
+      <p>Understanding where we are in the cycle is key. In 2026, the market is in the <strong>"Recovery & Growth"</strong> phase following the high-interest stagnation of 2024. We look at the macro indicators: rising GDP, falling rates, and increased infrastructure spend.</p>
+      
+    `,
+    tags: ['Market Cycles', 'Economy', 'Investment'],
+    featured: true,
+  },
+  // 99. Northlands City Investment
+  'northlands-city-investment-guide': {
+    id: 'northlands-city-investment-guide',
+    title: 'Northlands City: Investing in Kenya’s 11,000-Acre "Phoenix"',
+    excerpt: 'A deep dive into the Sh500bn mega-city and the ripple effects on Ruiru property.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2026-01-28',
+    readTime: '15 min read',
+    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Future of Ruiru</h2>
+      <p>As of early 2026, <strong>Northlands City</strong> has moved from a vision to a massive construction site. With 3,570 acres dedicated to housing, this project is designed to eventually house 250,000 residents. The Eastern Bypass dualling has already paved the way for the Industrial Park, where land is now fetching KES 40M per acre.</p>
+      
+      <p>Investors aren't just buying inside Northlands; they are "boundary banking"—purchasing land in the immediate periphery of Ruiru and Kamakis, betting on the infrastructure overflow from this Kenyatta family-led mega-project.</p>
+    `,
+    tags: ['Northlands City', 'Ruiru', 'Mega Projects'],
+    featured: true,
+  },
+
+  // 100. AI in Property Management
+  'ai-property-management-2026': {
+    id: 'ai-property-management-2026',
+    title: 'How AI is Managing Nairobi’s Apartments in 2026',
+    excerpt: 'From automated rent reminders to predictive maintenance for busy landlords.',
+    author: 'Elizabeth Costabir',
+    category: 'Tech',
+    date: '2026-01-25',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Hands-Off Landlord</h2>
+      <p>Modern property management has evolved. AI tools like <strong>Lumina AI</strong> are now used to write high-converting listings and vet tenants by analyzing M-Pesa statements for consistency. In 2026, the "busy professional" landlord uses AI to handle 90% of tenant communication, leaving only physical repairs and final signings to humans.</p>
+    `,
+    tags: ['AI', 'PropTech', 'Efficiency'],
+    featured: false,
+  },
+
+  // 101. The 2026 Landlord and Tenant Bill
+  'landlord-tenant-bill-2026-impact': {
+    id: 'landlord-tenant-bill-2026-impact',
+    title: 'The 2026 Tenant Bill: New Rules for Rent Hikes and Evictions',
+    excerpt: 'Why you can no longer increase rent without a 90-day notice.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2026-01-22',
+    readTime: '14 min read',
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80',
+    content: `
+      <h2>A New Legal Era</h2>
+      <p>The 2026 <strong>Landlord and Tenant Bill</strong> has significantly shifted the power balance. Key changes include:</p>
+      <ul>
+        <li><strong>Rent Caps:</strong> Increases are limited to once a year for residential and once every two years for commercial units.</li>
+        <li><strong>Mandatory Tribunals:</strong> All disputes must go through the new specialized tribunals before civil court.</li>
+        <li><strong>No "Self-Help" Evictions:</strong> Cutting water or locks without a court order now carries a prison sentence of up to 6 months.</li>
+      </ul>
+    `,
+    tags: ['Tenant Bill', 'Legal', 'Rent Control'],
+    featured: true,
+  },
+
+  // 102. Detached Homes vs Apartments
+  'detached-homes-vs-apartments-2026': {
+    id: 'detached-homes-vs-apartments-2026',
+    title: 'The Great Move Out: Why Detached Homes are Winning in 2026',
+    excerpt: 'Suburban land prices are up 6.3% as families flee high-rise density.',
+    author: 'Elizabeth Costabir',
+    category: 'Residential',
+    date: '2026-01-19',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Search for Space</h2>
+      <p>2026 is seeing a "de-urbanization" trend. High-net-worth buyers are opting for 4-bedroom detached homes in <strong>Tigoni</strong> and <strong>Ngong</strong> over luxury apartments in Kilimani. We analyze why "serenity" has become the highest-valued amenity this year.</p>
+    `,
+    tags: ['Detached Homes', 'Suburbs', 'Trends'],
+    featured: false,
+  },
+
+  // 103. Industrial Area to Tatu City Shift
+  'industrial-area-to-tatu-city-migration': {
+    id: 'industrial-area-to-tatu-city-migration',
+    title: 'The Great Industrial Migration: From Industrial Area to Tatu City',
+    excerpt: 'Why 100+ firms have moved to SEZs for 95% renewable energy and tax breaks.',
+    author: 'Paul Kamau',
+    category: 'Commercial',
+    date: '2026-01-16',
+    readTime: '13 min read',
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The SEZ Advantage</h2>
+      <p>Nairobi’s traditional Industrial Area is facing congestion and 130M-per-acre land prices. In contrast, <strong>Tatu City SEZ</strong> offers Grade A logistics, a "One-Stop-Shop" for permits, and massive duty exemptions. We explore how this shift is creating a new residential demand in the Ruiru-Kiambu corridor.</p>
+    `,
+    tags: ['Tatu City', 'SEZ', 'Logistics'],
+    featured: false,
+  },
+
+  // 104. Smart Home Security Trends
+  'smart-home-security-trends-kenya': {
+    id: 'smart-home-security-trends-kenya',
+    title: 'Invisible Fences: The 2026 Smart Security Tech for Homes',
+    excerpt: 'Why biometrics and AI-powered cameras are replacing traditional guards.',
+    author: 'Elizabeth Costabir',
+    category: 'Tech',
+    date: '2026-01-13',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1558002038-1055907df8d7?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Security 2.0</h2>
+      <p>Smart home features are no longer just for convenience; they are the new standard for security in 2026. Properties with AI-powered perimeter monitoring and smart locks command a 15% rental premium and experience zero vacancy periods.</p>
+    `,
+    tags: ['Smart Home', 'Security', 'Tech'],
+    featured: false,
+  },
+
+  // 105. Diaspora Investment Strategy 2025-2030
+  'diaspora-investment-strategy-2026': {
+    id: 'diaspora-investment-strategy-2026',
+    title: 'Beyond Remittances: The 2026 Diaspora Real Estate Strategy',
+    excerpt: 'How the new State Department framework protects overseas investors.',
+    author: 'Paul Kamau',
+    category: 'Investment',
+    date: '2026-01-10',
+    readTime: '16 min read',
+    image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Safe Investing for Diaspora</h2>
+      <p>The <strong>Kenya Diaspora Investment Strategy (2025-2030)</strong> is finally active. This government framework addresses the "trust deficit" by providing verified developer lists and digital escrow services. We look at why Diani coastal plots and Ruaka apartments are the top picks for Kenyans in the US and UK this year.</p>
+    `,
+    tags: ['Diaspora', 'Strategy', 'Investment'],
+    featured: true,
+  },
+
+  // 106. Low-Flow Fixtures & Water Scarcity
+  'water-conservation-real-estate-kenya': {
+    id: 'water-conservation-real-estate-kenya',
+    title: 'Water is Money: Why Modern Tenants Demand Green Plumbing',
+    excerpt: 'How low-flow fixtures and gray-water recycling increase ROI in 2026.',
+    author: 'Elizabeth Costabir',
+    category: 'Construction',
+    date: '2026-01-07',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Utility Hedge</h2>
+      <p>With rising water costs in 2026, buildings with "Green Fixtures" are seeing 20% lower service charges. We review the latest drip irrigation tech for garden maintenance that uses 60% less water than traditional hoses.</p>
+    `,
+    tags: ['Sustainability', 'Water', 'Construction'],
+    featured: false,
+  },
+
+  // 107. Fractional Land Ownership
+  'fractional-land-ownership-explained': {
+    id: 'fractional-land-ownership-explained',
+    title: 'Land Banking for Everyone: The Rise of Fractional Ownership',
+    excerpt: 'Own 1/10th of an acre in a gated community via digital certificates.',
+    author: 'Paul Kamau',
+    category: 'Investment',
+    date: '2026-01-04',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Democratizing Land</h2>
+      <p>Fractional ownership is the biggest 2026 trend for first-time buyers. We explain the legal structure where 10 individuals can co-own a 1-acre plot in <strong>Thika Greens</strong>, holding individual digital shares that can be traded like stocks.</p>
+    `,
+    tags: ['Land Banking', 'Fractional Ownership', 'Fintech'],
+    featured: false,
+  },
+
+  // 108. Rent-to-Own in Affordable Housing
+  'rent-to-own-schemes-kenya-2026': {
+    id: 'rent-to-own-schemes-kenya-2026',
+    title: 'The Rent-to-Own Reality: Is it Finally Working in 2026?',
+    excerpt: 'Analyzing the Pangani and Boma Yangu schemes for middle-income earners.',
+    author: 'Elizabeth Costabir',
+    category: 'Residential',
+    date: '2026-01-01',
+    readTime: '14 min read',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Pathway to Ownership</h2>
+      <p>The government’s Affordable Housing Program has reached critical mass. In 2026, the "Rent-to-Own" model allows tenants to contribute KES 15,000 monthly, with a portion going toward their home equity. We break down the math of the 15-year payment plan.</p>
+    `,
+    tags: ['Rent-to-Own', 'Affordable Housing', 'Boma Yangu'],
+    featured: false,
+  },
+
+  // 109. Passive Design in Architecture
+  'passive-design-architecture-nairobi': {
+    id: 'passive-design-architecture-nairobi',
+    title: 'Architecture Without AC: The Rise of Passive Design in 2026',
+    excerpt: 'How building orientation and natural ventilation are saving millions.',
+    author: 'Paul Kamau',
+    category: 'Construction',
+    date: '2025-12-28',
+    readTime: '13 min read',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Naturally Cool</h2>
+      <p>In 2026, energy-efficient architecture is mandatory for luxury permits. "Passive Design" uses the sun and wind to heat and cool buildings naturally. We feature the <strong>Purple Tower</strong> on Mombasa Road as a prime example of this trend.</p>
+      [Image showing the principles of passive solar design in tropical climates]
+    `,
+    tags: ['Architecture', 'Sustainability', 'Green Building'],
+    featured: false,
+  },
+
+  // 110. Real Estate in Eldoret 2026
+  'eldoret-real-estate-market-2026': {
+    id: 'eldoret-real-estate-market-2026',
+    title: 'Eldoret: The 2026 Real Estate Boom in the "City of Champions"',
+    excerpt: 'Why the elevation to City status is driving a 20% land hike.',
+    author: 'Elizabeth Costabir',
+    category: 'Market Analysis',
+    date: '2025-12-25',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1544006659-f0b21f04cb1d?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Fourth City</h2>
+      <p>Eldoret’s new status as a City has triggered massive institutional investment. With 8% rental yields in Elgon View and Kapseret, the town is no longer just an agricultural hub but a residential powerhouse.</p>
+    `,
+    tags: ['Eldoret', 'Hotspots', 'Urbanization'],
+    featured: false,
+  },
+
+  // 111. High-Yield Short-Term Rental Spots
+  'high-yield-airbnb-locations-nairobi-2026': {
+    id: 'high-yield-airbnb-locations-nairobi-2026',
+    title: 'Airbnb 2026: The Top 5 High-Yield Spots in Nairobi',
+    excerpt: 'Why Upper Hill and Lavington are outperforming Kilimani this year.',
+    author: 'Paul Kamau',
+    category: 'Investment',
+    date: '2025-12-22',
+    readTime: '15 min read',
+    image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The ROI Map</h2>
+      <p>Occupancy rates for short-term rentals in 2026 have shifted. We analyze why <strong>Upper Hill</strong> is now the king of business stays, while <strong>Lavington</strong> has become the preferred choice for digital nomads seeking garden spaces.</p>
+    `,
+    tags: ['Airbnb', 'Yields', 'Nairobi'],
+    featured: true,
+  },
+
+  // 112. Mixed-Use Pods: Small Scale
+  'micro-mixed-use-developments-kenya': {
+    id: 'micro-mixed-use-developments-kenya',
+    title: 'Micro Mixed-Use: The 1/8th Acre Business-Home Hybrid',
+    excerpt: 'Building shops on the ground floor and 2-bedroom units above.',
+    author: 'Elizabeth Costabir',
+    category: 'Commercial',
+    date: '2025-12-19',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Maximizing Small Plots</h2>
+      <p>For the individual investor in 2026, the 1/8th acre plot in <strong>Kikuyu</strong> or <strong>Utawala</strong> is most profitable as a "Mixed-Use Pod." We look at the cost-benefit analysis of building commercial shops on the ground floor to pay the mortgage.</p>
+    `,
+    tags: ['Mixed-Use', 'Small Scale', 'Investment'],
+    featured: false,
+  },
+
+  // 113. NEMA Compliance in 2026
+  'nema-compliance-guide-2026': {
+    id: 'nema-compliance-guide-2026',
+    title: 'Building Near Riparian Land: The 2026 NEMA Guidelines',
+    excerpt: 'Avoiding the "Green Bulldozer": Essential checks before you build.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2025-12-16',
+    readTime: '13 min read',
+    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Protecting Your Title</h2>
+      <p>NEMA enforcement has reached zero tolerance in 2026. We provide a guide to the 30-meter riparian rule and how to verify that your "clean" title deed isn't actually on a protected wetland.</p>
+    `,
+    tags: ['NEMA', 'Legal', 'Environmental'],
+    featured: false,
+  },
+
+  // 114. Prefabricated Luxury in 2026
+  'prefab-luxury-homes-kenya-market': {
+    id: 'prefab-luxury-homes-kenya-market',
+    title: 'Luxury in 90 Days: The Rise of High-End Prefab in 2026',
+    excerpt: 'Why Naivasha and Laikipia holiday homes are going modular.',
+    author: 'Elizabeth Costabir',
+    category: 'Construction',
+    date: '2025-12-13',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Modular Mansion</h2>
+      <p>Prefab is no longer "cheap." In 2026, companies like <strong>Koto Housing</strong> are delivering luxury villas with high-end finishes in 3 months. We look at the 2026 cost per square meter compared to traditional stone and mortar.</p>
+    `,
+    tags: ['Prefab', 'Construction', 'Modular'],
+    featured: false,
+  },
+
+  // 115. REITs for Passive Income 2026
+  'passive-income-through-reits-2026': {
+    id: 'passive-income-through-reits-2026',
+    title: 'REITs: Building a Real Estate Portfolio Without a Landlord Headache',
+    excerpt: 'Comparing Acorn I-REIT and Fahari I-REIT dividend yields in 2026.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-12-10',
+    readTime: '14 min read',
+    image: 'https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Digital Dividends</h2>
+      <p>In 2026, <strong>Acorn Student Housing REIT</strong> is delivering a consistent 8% dividend yield. We explain why the stock market might be a safer entry point for beginners than physical property this year.</p>
+    `,
+    tags: ['REITs', 'Passive Income', 'Finance'],
+    featured: false,
+  },
+
+  // 116. Urban Farming in Apartments
+  'urban-farming-apartment-amenity-2026': {
+    id: 'urban-farming-apartment-amenity-2026',
+    title: 'The Green Roof Trend: Rooftop Farming as a Tenant Amenity',
+    excerpt: 'How 2026 developments are using hydroponics to attract health-conscious tenants.',
+    author: 'Elizabeth Costabir',
+    category: 'Residential',
+    date: '2025-12-07',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Edible Landscapes</h2>
+      <p>Health is the ultimate luxury. High-end apartments in <strong>Westlands</strong> are now offering rooftop vegetable gardens and hydroponic pods as standard amenities, allowing residents to harvest their own kale and herbs.</p>
+    `,
+    tags: ['Urban Farming', 'Amenities', 'Lifestyle'],
+    featured: false,
+  },
+
+  // 117. 2026 Office Space Outlook
+  'nairobi-office-space-outlook-2026': {
+    id: 'nairobi-office-space-outlook-2026',
+    title: 'The Post-Hybrid Office: 2026 Commercial Real Estate Trends',
+    excerpt: 'Why "Class A" office occupancy is rising while "Class B" struggles.',
+    author: 'Paul Kamau',
+    category: 'Commercial',
+    date: '2025-12-04',
+    readTime: '13 min read',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Flight to Quality</h2>
+      <p>Multinationals in 2026 are consolidating into high-spec, ESG-compliant buildings. We look at why <strong>Global Trade Centre (GTC)</strong> and <strong>The Piano</strong> are seeing 90% occupancy while older CBD blocks face 40% vacancy.</p>
+    `,
+    tags: ['Office Space', 'Commercial', 'Nairobi'],
+    featured: false,
+  },
+
+  // 118. Land Valuation Myths
+  'land-valuation-myths-kenya': {
+    id: 'land-valuation-myths-kenya',
+    title: '5 Land Valuation Myths That are Costing You Millions',
+    excerpt: 'Why "Asking Price" is not "Market Value" in 2026.',
+    author: 'Elizabeth Costabir',
+    category: 'Advice',
+    date: '2025-12-01',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Valuation Reality Check</h2>
+      <p>Many sellers in 2026 are sitting on properties that won’t sell because of "Aspiration Pricing." We explain how registered valuers use <strong>comparable sales data</strong> rather than emotional attachment to determine price.</p>
+    `,
+    tags: ['Valuation', 'Selling', 'Advice'],
+    featured: false,
+  },
+
+  // 119. Konza Technopolis: 2026 Status Report
+  'konza-technopolis-status-report-2026': {
+    id: 'konza-technopolis-status-report-2026',
+    title: 'Konza Technopolis: Is the "Silicon Savannah" Finally Live?',
+    excerpt: 'Reporting from Phase 1: Data centers, universities, and the first residents.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2025-11-28',
+    readTime: '15 min read',
+    image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Smart City Awakens</h2>
+      <p>Konza is no longer just a "prairie." By 2026, the <strong>KAIST University</strong> and several Tier-4 data centers are operational. We analyze the residential investment potential in <strong>Malili</strong> and <strong>Machakos</strong> as employees move in.</p>
+      [Image showing the infrastructure progress map of Konza Technopolis Phase 1]
+    `,
+    tags: ['Konza Technopolis', 'Smart City', 'Tech Hub'],
+    featured: true,
+  },
+  // 120. Coastal Real Estate 2026
+  'diani-watamu-coastal-boom-2026': {
+    id: 'diani-watamu-coastal-boom-2026',
+    title: 'The Blue Economy: Why Diani and Watamu are 2026’s Hottest Markets',
+    excerpt: 'Infrastructure upgrades like the Dongo Kundu bypass are transforming the South Coast.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2026-02-15',
+    readTime: '14 min read',
+    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Coastal Renaissance</h2>
+      <p>By early 2026, the completion of the <strong>Dongo Kundu Bypass</strong> has slashed travel time from Moi International Airport to Diani from 3 hours to 45 minutes. This has triggered a 25% surge in land prices in Galu and Kinondo.</p>
+      <p>In the North, <strong>Watamu</strong> has repositioned itself as the "Digital Nomad Hub" of Africa. Properties with high-speed fiber and solar backups are seeing 85% year-round occupancy through global platforms like Airbnb and NomadList.</p>
+    `,
+    tags: ['Diani', 'Watamu', 'Coastal Property'],
+    featured: true,
+  },
+
+  // 121. Property Tax 101: 2026 Updates
+  'kenya-property-tax-guide-2026': {
+    id: 'kenya-property-tax-guide-2026',
+    title: 'Property Tax 101: Navigating Stamp Duty and Capital Gains in 2026',
+    excerpt: 'Understanding the 15% CGT and the new 2026 excise duty on digital property fees.',
+    author: 'Elizabeth Costabir',
+    category: 'Legal',
+    date: '2026-02-12',
+    readTime: '16 min read',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Taxation in the Digital Era</h2>
+      <p>The 2026 tax landscape is stricter. Key figures for investors:</p>
+      <ul>
+        <li><strong>Stamp Duty:</strong> 4% for urban areas, 2% for rural.</li>
+        <li><strong>Capital Gains Tax (CGT):</strong> Maintains at 15% of the net gain.</li>
+        <li><strong>Digital Asset Tax:</strong> While the 3% DAT was repealed, a 10% excise duty now applies to fees charged by property crowdfunding platforms.</li>
+      </ul>
+    `,
+    tags: ['Taxation', 'KRA', 'Legal'],
+    featured: false,
+  },
+
+  // 122. Ardhisasa: A Step-by-Step Guide
+  'ardhisasa-property-transfer-guide-2026': {
+    id: 'ardhisasa-property-transfer-guide-2026',
+    title: 'Ardhisasa 2026: How to Transfer Property in Under 48 Hours',
+    excerpt: 'A technical walkthrough of Kenya’s fully digitized land registry system.',
+    author: 'Paul Kamau',
+    category: 'Tech',
+    date: '2026-02-09',
+    readTime: '18 min read',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Paperless Land Deals</h2>
+      <p>As of 2026, Ardhisasa has integrated nearly 80% of Kenya's land records. To transfer property, both parties must have verified "Ardhi ID" profiles. We detail the 5-step digital signature process that has eliminated the need for physical visits to "Ardhi House."</p>
+      
+    `,
+    tags: ['Ardhisasa', 'PropTech', 'Digital Transformation'],
+    featured: true,
+  },
+
+  // 123. The 3-Bedroom Construction Math
+  'cost-to-build-3-bedroom-house-kenya-2026': {
+    id: 'cost-to-build-3-bedroom-house-kenya-2026',
+    title: 'The 2026 Math: Cost of Building a 3-Bedroom House in Kenya',
+    excerpt: 'Budgeting KES 3.5M to 7M depending on your finishes and location.',
+    author: 'Elizabeth Costabir',
+    category: 'Construction',
+    date: '2026-02-06',
+    readTime: '15 min read',
+    image: 'https://images.unsplash.com/photo-1503387762-592dea58ef21?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Superstructure Breakdown</h2>
+      <p>In 2026, material costs have stabilized but labor in Nairobi remains a premium. A standard 120sqm bungalow now costs approximately KES 32,000 per sqm for basic finishes. We provide a downloadable Bill of Quantities (BQ) template for 2026 market rates.</p>
+    `,
+    tags: ['Construction', 'Budgeting', 'Architecture'],
+    featured: false,
+  },
+
+  // 124. Sectional Properties Act: Apartment Ownership
+  'sectional-properties-act-2026-impact': {
+    id: 'sectional-properties-act-2026-impact',
+    title: 'Why the Sectional Properties Act is a Game Changer for Apartment Owners',
+    excerpt: 'Move over sub-leases; individual titles are the new standard for 2026.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2026-02-03',
+    readTime: '13 min read',
+    image: 'https://images.unsplash.com/photo-1493246318656-5bbd4afb09ad?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Individual Title Sovereignty</h2>
+      <p>The 2026 deadline for converting old long-term sub-leases into Sectional Titles has arrived. We explain how this allows apartment owners to charge their units as collateral independently, without requiring the developer’s "mother title" or consent.</p>
+    `,
+    tags: ['Sectional Properties', 'Apartments', 'Real Estate Law'],
+    featured: false,
+  },
+
+  // 125. Real Estate Crowdfunding 2026
+  'real-estate-crowdfunding-kenya-2026': {
+    id: 'real-estate-crowdfunding-kenya-2026',
+    title: 'Crowdfunding Karen: Investing in Luxury Real Estate with KES 100,000',
+    excerpt: 'How CMA-regulated platforms are opening high-end markets to retail investors.',
+    author: 'Elizabeth Costabir',
+    category: 'Investment',
+    date: '2026-01-31',
+    readTime: '14 min read',
+    image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Rise of the Retail Investor</h2>
+      <p>In 2026, you don't need KES 100M to own a piece of a Karen mansion. Regulated platforms allow up to 1,000 investors to co-own a single asset. We review the top 3 CMA-licensed platforms and their 2025 performance yields.</p>
+    `,
+    tags: ['Crowdfunding', 'Investment', 'Fintech'],
+    featured: true,
+  },
+
+  // 126. Secondary Cities: Nakuru & Kisumu
+  'nakuru-kisumu-investment-outlook-2026': {
+    id: 'nakuru-kisumu-investment-outlook-2026',
+    title: 'Beyond Nairobi: The 2026 Resurgence of Nakuru and Kisumu',
+    excerpt: 'Why the "City status" upgrade is driving commercial demand in the West.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2026-01-28',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Westward Push</h2>
+      <p>Nakuru’s Lanet Airport expansion and Kisumu’s lakefront revitalization are the twin engines of 2026 growth. We look at the 12% rental yields in Milimani, Kisumu, compared to Nairobi’s 6% average.</p>
+    `,
+    tags: ['Nakuru', 'Kisumu', 'Emerging Markets'],
+    featured: false,
+  },
+
+  // 127. Off-Grid Living: Solar & Boreholes
+  'off-grid-real-estate-kenya-2026': {
+    id: 'off-grid-real-estate-kenya-2026',
+    title: 'The Off-Grid Premium: Properties That Ignore the National Power Grid',
+    excerpt: 'Why self-sufficient homes in Nanyuki and Naivasha are selling at a 15% premium.',
+    author: 'Elizabeth Costabir',
+    category: 'Sustainability',
+    date: '2026-01-25',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Utility Independence</h2>
+      <p>With fluctuating electricity costs in 2026, "Net Zero" homes are no longer a niche. We explore the latest lithium-ion storage tech making 100% solar homes viable for large families in the Rift Valley.</p>
+    `,
+    tags: ['Solar', 'Off-Grid', 'Sustainability'],
+    featured: false,
+  },
+
+  // 128. Land Surveying 101: 2026 Tools
+  'land-surveying-drone-tech-kenya': {
+    id: 'land-surveying-drone-tech-kenya',
+    title: 'Drones and GPS: How Modern Surveying Prevents Boundary Disputes',
+    excerpt: 'Insist on a geo-referenced map before you sign any sale agreement.',
+    author: 'Paul Kamau',
+    category: 'Advice',
+    date: '2026-01-22',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Precision is Profit</h2>
+      <p>Boundary disputes are the #1 cause of land litigation in Kenya. In 2026, drone surveying has become affordable. We explain why a KES 15,000 drone survey can save you KES 5M in future legal fees.</p>
+    `,
+    tags: ['Surveying', 'Drones', 'Due Diligence'],
+    featured: false,
+  },
+
+  // 129. Student Housing: The Acorn Effect
+  'student-housing-investment-kenya-2026': {
+    id: 'student-housing-investment-kenya-2026',
+    title: 'The Acorn Effect: Why Purpose-Built Student Accommodation (PBSA) Rules 2026',
+    excerpt: 'Institutionalizing the "Hostel" into a billion-shilling asset class.',
+    author: 'Elizabeth Costabir',
+    category: 'Commercial',
+    date: '2026-01-19',
+    readTime: '13 min read',
+    image: 'https://images.unsplash.com/photo-1555854817-5b2260d1bd63?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The New Dormitory</h2>
+      <p>The 2026 shortage of 600,000 student beds has made PBSA the most resilient asset class. We analyze the "Acorn model" and how small developers are mimicking it in Juja and Madaraka with high-density studio units.</p>
+    `,
+    tags: ['Student Housing', 'Acorn', 'Investment'],
+    featured: false,
+  },
+
+  // 130. Real Estate for Retirement
+  'retirement-homes-investment-kenya-2026': {
+    id: 'retirement-homes-investment-kenya-2026',
+    title: 'Retiring in the Sun: The Best Gated Communities for 2026 Seniors',
+    excerpt: 'Comparing Tigoni, Nanyuki, and Malindi for the over-60 lifestyle.',
+    author: 'Paul Kamau',
+    category: 'Lifestyle',
+    date: '2026-01-16',
+    readTime: '14 min read',
+    image: 'https://images.unsplash.com/photo-1441613914555-bb80ee044ec4?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Golden Years</h2>
+      <p>2026 has seen the rise of "Assisted Living Lite" developments. These communities offer 24/7 medical on-call, clubhouses, and organic gardens. We rank the top 5 estates for retirees who want peace without isolation.</p>
+    `,
+    tags: ['Retirement', 'Nanyuki', 'Lifestyle'],
+    featured: false,
+  },
+
+  // 131. Fractional Ownership Legalities
+  'legal-framework-fractional-property-kenya': {
+    id: 'legal-framework-fractional-property-kenya',
+    title: 'The Legal Bones of Fractional Ownership: LLP vs Company Structures',
+    excerpt: 'How to legally protect your share in a co-owned property.',
+    author: 'Elizabeth Costabir',
+    category: 'Legal',
+    date: '2026-01-13',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Structure Matters</h2>
+      <p>Co-owning property with friends or via a platform requires a solid legal vehicle. In 2026, <strong>Limited Liability Partnerships (LLPs)</strong> are the preferred choice for fractional land banking due to tax transparency.</p>
+    `,
+    tags: ['Fractional Ownership', 'Legal', 'Investment'],
+    featured: false,
+  },
+
+  // 132. Industrial Warehousing: 2026 Demand
+  'industrial-warehousing-demand-kenya-2026': {
+    id: 'industrial-warehousing-demand-kenya-2026',
+    title: 'E-commerce and Logistics: The 2026 Boom in Grade A Warehousing',
+    excerpt: 'Why Syokimau and Athi River are the "Backbone" of Kenyan Retail.',
+    author: 'Paul Kamau',
+    category: 'Commercial',
+    date: '2026-01-10',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Logistics Engine</h2>
+      <p>In 2026, every major retailer needs a fulfillment center near the SGR. We explore why "Big Box" warehousing is outperforming traditional retail malls in capital appreciation this year.</p>
+    `,
+    tags: ['Logistics', 'Warehousing', 'Commercial'],
+    featured: false,
+  },
+
+  // 133. PropTech: The Blockchain Deed
+  'blockchain-land-titles-kenya-future': {
+    id: 'blockchain-land-titles-kenya-future',
+    title: 'The Unhackable Title: Is Blockchain the Future of Kenya’s Land Deeds?',
+    excerpt: 'Analyzing the 2026 pilot program for blockchain-based property records.',
+    author: 'Elizabeth Costabir',
+    category: 'Tech',
+    date: '2026-01-07',
+    readTime: '15 min read',
+    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Zero Fraud Future</h2>
+      <p>While Ardhisasa is centralized, a 2026 pilot in Kwale County is testing <strong>Distributed Ledger Technology (DLT)</strong> for land. We explain how this makes title deeds impossible to forge or double-issue.</p>
+    `,
+    tags: ['Blockchain', 'PropTech', 'Land Registry'],
+    featured: true,
+  },
+
+  // 134. Airbnb vs Long-term Lease: 2026 Math
+  'airbnb-vs-longterm-rental-math-2026': {
+    id: 'airbnb-vs-longterm-rental-math-2026',
+    title: 'The 2026 Rent War: Short-Term Airbnb vs. Long-Term Leases',
+    excerpt: 'A side-by-side comparison of net profits after taxes and management fees.',
+    author: 'Paul Kamau',
+    category: 'Investment',
+    date: '2026-01-04',
+    readTime: '14 min read',
+    image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Yield Battle</h2>
+      <p>Is the Airbnb headache worth it in 2026? We calculate the numbers for a 2-bedroom in Kilimani. Spoiler: Unless you hit 65% occupancy, the new 2026 hospitality taxes make long-term leases more profitable for many.</p>
+    `,
+    tags: ['Airbnb', 'Rental Strategy', 'Finance'],
+    featured: false,
+  },
+
+  // 135. Feng Shui & Real Estate
+  'feng-shui-real-estate-trends-kenya': {
+    id: 'feng-shui-real-estate-trends-kenya',
+    title: 'Harmonious Homes: Why 2026 Luxury Buyers Hire Feng Shui Consultants',
+    excerpt: 'The psychological and market impact of "Balanced Living" in Karen.',
+    author: 'Elizabeth Costabir',
+    category: 'Lifestyle',
+    date: '2026-01-01',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Energy and Value</h2>
+      <p>It’s not just about bricks; it’s about flow. In 2026, high-end developers are incorporating Feng Shui principles into their site layouts to appeal to international and local elite buyers.</p>
+    `,
+    tags: ['Lifestyle', 'Design', 'Luxury'],
+    featured: false,
+  },
+
+  // 136. The 2026 Mortgage Market
+  'kenya-mortgage-rates-outlook-2026': {
+    id: 'kenya-mortgage-rates-outlook-2026',
+    title: 'The 2026 Mortgage Outlook: Fixed vs. Variable Rates in a Stable Economy',
+    excerpt: 'Why KMRC-backed loans are finally making homeownership affordable.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-12-29',
+    readTime: '13 min read',
+    image: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Single Digit Dreams</h2>
+      <p>Thanks to the <strong>Kenya Mortgage Refinance Company (KMRC)</strong>, 9% fixed-rate mortgages are now accessible to the middle class in 2026. We list the 10 banks currently offering these subsidized rates.</p>
+    `,
+    tags: ['Mortgages', 'KMRC', 'Banking'],
+    featured: false,
+  },
+
+  // 137. Eco-Concrete: The Construction Shift
+  'eco-concrete-sustainable-building-kenya': {
+    id: 'eco-concrete-sustainable-building-kenya',
+    title: 'Carbon-Negative Construction: The Rise of Eco-Concrete in 2026',
+    excerpt: 'How recycled aggregates and hempcrete are reducing building costs.',
+    author: 'Elizabeth Costabir',
+    category: 'Construction',
+    date: '2025-12-26',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Building Greener</h2>
+      <p>Traditional cement is being challenged. In 2026, "Green Blocks" made from recycled plastic and volcanic ash are gaining traction. We review the structural integrity and cost-savings of these new materials.</p>
+    `,
+    tags: ['Eco-Friendly', 'Construction', 'Innovation'],
+    featured: false,
+  },
+
+  // 138. The CBD Office-to-Residential Flip
+  'nairobi-cbd-office-to-residential-conversion': {
+    id: 'nairobi-cbd-office-to-residential-conversion',
+    title: 'Flipping the CBD: Converting Empty Offices into Urban Lofts',
+    excerpt: 'How 2026 developers are revitalizing Nairobi’s historic core.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2025-12-23',
+    readTime: '15 min read',
+    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Urban Infill</h2>
+      <p>With firms moving to Westlands and Upper Hill, Nairobi CBD’s older towers are being repurposed into affordable student housing and trendy "Micro-Lofts." We analyze the ROI of these conversion projects.</p>
+    `,
+    tags: ['Nairobi CBD', 'Urban Regeneration', 'Commercial'],
+    featured: false,
+  },
+
+  // 139. Property Insurance 101
+  'property-insurance-kenya-guide-2026': {
+    id: 'property-insurance-kenya-guide-2026',
+    title: 'Protecting Your Asset: A Guide to Property Insurance in 2026',
+    excerpt: 'Why fire and flood insurance are no longer optional for smart landlords.',
+    author: 'Elizabeth Costabir',
+    category: 'Advice',
+    date: '2025-12-20',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Risk Mitigation</h2>
+      <p>Many Kenyan homeowners are under-insured. In 2026, with extreme weather patterns becoming more common, we break down the costs of Comprehensive Home Insurance and why it’s a prerequisite for any KMRC loan.</p>
+    `,
+    tags: ['Insurance', 'Risk Management', 'Advice'],
+    featured: false,
+  },
+
+  // 140. Land Banking in the "New Cities"
+  'land-banking-satellite-towns-2026': {
+    id: 'land-banking-satellite-towns-2026',
+    title: 'The "Next Ruaka": Where to Buy Land in 2026 for 500% Returns',
+    excerpt: 'Pinpointing the satellite towns of 2030: Look toward Suswa and Isinya.',
+    author: 'Paul Kamau',
+    category: 'Investment',
+    date: '2025-12-17',
+    readTime: '16 min read',
+    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Spotting the Next Hub</h2>
+      <p>Investment is about foresight. In 2026, <strong>Suswa</strong> is emerging as a massive logistical hub due to the SGR inland container depot. We map out the "Growth Corridors" that savvy investors are targeting for the next decade.</p>
+      
+    `,
+    tags: ['Land Banking', 'Hotspots', 'Future Trends'],
+    featured: true,
+  },
+  // 141. The 2026 Green Tax Incentive
+  'green-mortgages-sustainability-kenya-2026': {
+    id: 'green-mortgages-sustainability-kenya-2026',
+    title: 'Green Mortgages: How Sustainability Lowers Your Interest Rate in 2026',
+    excerpt: 'Banks are now offering 0.5% discounts for EDGE-certified homes.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2026-02-18',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Profit of Being Green</h2>
+      <p>In 2026, sustainability is no longer just for the environment—it's for your wallet. Major lenders like <strong>KCB</strong> and <strong>Stanbic</strong> have launched "Green Mortgages." If your property meets the IFC’s <strong>EDGE certification</strong> (20% less energy and water use), you qualify for a 0.5% to 1% reduction in your interest rate.</p>
+    `,
+    tags: ['Green Finance', 'EDGE Certification', 'Mortgages'],
+    featured: true,
+  },
+
+  // 142. PropTech 2026: AI Valuations
+  'ai-property-valuers-kenya-2026': {
+    id: 'ai-property-valuers-kenya-2026',
+    title: 'PropTech 2026: The Rise of AI Property Valuers',
+    excerpt: 'Can an algorithm accurately price your Karen mansion? We put it to the test.',
+    author: 'Elizabeth Costabir',
+    category: 'Tech',
+    date: '2026-02-15',
+    readTime: '14 min read',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Data vs. Intuition</h2>
+      <p>AI-driven platforms like <strong>Maploti</strong> are now using Big Data to provide instant property valuations. By analyzing historical Ardhisasa records, satellite imagery, and neighborhood amenities, these tools claim 95% accuracy compared to traditional valuers.</p>
+    `,
+    tags: ['AI', 'PropTech', 'Valuation'],
+    featured: false,
+  },
+
+  // 143. Tigoni: The 80% Growth Wonder
+  'tigoni-real-estate-boom-2026': {
+    id: 'tigoni-real-estate-boom-2026',
+    title: 'Tigoni: The 80% Capital Growth Story of 2024-2026',
+    excerpt: 'Why tea farm views are commanding prices higher than Runda.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2026-02-12',
+    readTime: '15 min read',
+    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The New High-End Frontier</h2>
+      <p>Tigoni has officially seen an 80% appreciation in land value over the last 24 months. With the <strong>Western Bypass</strong> fully operational, the "serenity premium" has attracted high-net-worth individuals looking for space and cool climates. Acreage that was KSh 30M in 2023 is now touching KSh 55M.</p>
+    `,
+    tags: ['Tigoni', 'High-End', 'Investment Hotspots'],
+    featured: true,
+  },
+
+  // 144. Finance Bill 2025/26: Construction VAT
+  'construction-vat-impact-kenya-2026': {
+    id: 'construction-vat-impact-kenya-2026',
+    title: 'The 16% VAT on Construction Materials: Managing Your 2026 Build Budget',
+    excerpt: 'How the reintroduction of VAT on cement and steel affects house prices.',
+    author: 'Elizabeth Costabir',
+    category: 'Construction',
+    date: '2026-02-09',
+    readTime: '13 min read',
+    image: 'https://images.unsplash.com/photo-1503387762-592dea58ef21?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Budgeting for the 16% Jump</h2>
+      <p>The <strong>Finance Bill 2025</strong> reintroduced 16% VAT on key construction materials like cement and steel. We analyze why this has led to a 10% rise in off-plan apartment prices in areas like Ruaka and why developers are now turning to alternative materials like <strong>Bamboo</strong> and <strong>Recycled Bricks</strong>.</p>
+    `,
+    tags: ['VAT', 'Construction Costs', 'Finance Bill'],
+    featured: false,
+  },
+
+  // 145. Bamboo: The New Steel
+  'bamboo-construction-materials-kenya-2026': {
+    id: 'bamboo-construction-materials-kenya-2026',
+    title: 'Bamboo: Why Kenyan Developers are Calling it the "Green Steel"',
+    excerpt: 'From flooring to structural beams, bamboo is cutting costs by 20%.',
+    author: 'Paul Kamau',
+    category: 'Construction',
+    date: '2026-02-06',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1590487988256-9ed24133863e?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Sustainable Strength</h2>
+      <p>Startups like <strong>We Do Bamboo</strong> are revolutionizing the local market. With tensile strength rivaling steel, bamboo composites are being used in 2026 for luxury decking and even structural frameworks, offering a carbon-negative alternative to traditional timber.</p>
+    `,
+    tags: ['Bamboo', 'Sustainability', 'Materials'],
+    featured: false,
+  },
+
+  // 146. Digital Asset Tax Repeal
+  'digital-asset-tax-real-estate-tokenization': {
+    id: 'digital-asset-tax-real-estate-tokenization',
+    title: 'The Digital Asset Tax Repeal: A Win for Property Tokenization',
+    excerpt: 'How the removal of the 3% tax is fueling blockchain real estate platforms.',
+    author: 'Elizabeth Costabir',
+    category: 'Legal',
+    date: '2026-02-03',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Unlocking Liquidity</h2>
+      <p>The repeal of the 3% Digital Asset Tax has paved the way for more "tokenized" real estate deals. In 2026, you can buy "tokens" of a commercial office block on Mombasa Road, earning monthly rent without the complexity of traditional titles.</p>
+    `,
+    tags: ['Tokenization', 'Taxation', 'Legal'],
+    featured: false,
+  },
+
+  // 147. Nakuru’s City Status Impact
+  'nakuru-real-estate-growth-2026': {
+    id: 'nakuru-real-estate-growth-2026',
+    title: 'Nakuru: 20% Growth in 18 Months—Is the Peak Yet to Come?',
+    excerpt: 'Analyzing the commercial boom in Kenya’s newest city.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2026-01-31',
+    readTime: '14 min read',
+    image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Hub of the Rift</h2>
+      <p>Nakuru’s elevation to city status has brought institutional capital. With the <strong>Lanet Airport</strong> upgrade, the logistics and hospitality sectors in Nakuru have outperformed many Nairobi satellite towns in 2025-2026.</p>
+    `,
+    tags: ['Nakuru', 'Urban Growth', 'Commercial'],
+    featured: false,
+  },
+
+  // 148. SMART Building Code 2024/2026
+  'kenya-national-building-code-2026-summary': {
+    id: 'kenya-national-building-code-2026-summary',
+    title: 'The 2024 National Building Code: What Developers Must Know in 2026',
+    excerpt: 'Performance-based standards replace the 1968 rules.',
+    author: 'Elizabeth Costabir',
+    category: 'Legal',
+    date: '2026-01-28',
+    readTime: '16 min read',
+    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80',
+    content: `
+      <h2>From Prescriptive to Performance</h2>
+      <p>The new code allows for innovative materials (like <strong>rammed earth</strong> and <strong>hempcrete</strong>) provided they meet safety benchmarks. We summarize the key shifts in 2026 compliance that every contractor should follow.</p>
+    `,
+    tags: ['Building Code', 'NCA', 'Legal'],
+    featured: false,
+  },
+
+  // 149. The 0.3% National Property Tax
+  'national-property-tax-kenya-2026': {
+    id: 'national-property-tax-kenya-2026',
+    title: 'The 0.3% Property Tax: How it Affects Your Residential ROI',
+    excerpt: 'Calculating the impact of the new national levy on urban homeowners.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2026-01-25',
+    readTime: '13 min read',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80',
+    content: `
+      <h2>A New Annual Cost</h2>
+      <p>In addition to county land rates, the 2025/26 cycle introduces a 0.3% national property tax on residential units in urban municipalities. For a KSh 10M apartment, this means an extra KSh 30,000 annually. We discuss strategies for passing this to tenants vs. absorbing it.</p>
+    `,
+    tags: ['Taxation', 'KRA', 'Residential'],
+    featured: false,
+  },
+
+  // 150. Syokimau Commuter Rail Boom
+  'syokimau-commuter-rail-real-estate-impact': {
+    id: 'syokimau-commuter-rail-real-estate-impact',
+    title: 'The "Train Effect": Why Syokimau Apartments are 2026’s Yield Kings',
+    excerpt: 'How improved rail connectivity is keeping occupancy at 98%.',
+    author: 'Elizabeth Costabir',
+    category: 'Residential',
+    date: '2026-01-22',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Commuter Convenience</h2>
+      <p>With traffic on Mombasa Road still a challenge despite the Expressway, the <strong>Nairobi Commuter Rail</strong> has made Syokimau the go-to for mid-level professionals. Rental yields here have stabilized at 8.2% in 2026.</p>
+    `,
+    tags: ['Syokimau', 'Transport', 'Yields'],
+    featured: false,
+  },
+
+  // 151. 3D Concrete Printing: A Reality?
+  '3d-printed-houses-kenya-2026-update': {
+    id: '3d-printed-houses-kenya-2026-update',
+    title: '3D Printed Houses in Kenya: A 2026 Update',
+    excerpt: 'From 14 Trees in Athi River to mass production.',
+    author: 'Paul Kamau',
+    category: 'Construction',
+    date: '2026-01-19',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1582266255765-fa5cf1a1d501?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Printing the Future</h2>
+      <p>3D printing technology has moved from pilot to commercial scale. In 2026, projects like <strong>Mvule Gardens</strong> in Kilifi are proving that a 2-bedroom house can be "printed" in 18 hours with a 50% lower carbon footprint than traditional blocks.</p>
+    `,
+    tags: ['3D Printing', 'Innovation', 'Affordable Housing'],
+    featured: true,
+  },
+
+  // 152. Kilifi: The New Nyali
+  'kilifi-real-estate-investment-guide-2026': {
+    id: 'kilifi-real-estate-investment-guide-2026',
+    title: 'Kilifi: Why Investors are Fleeing Nyali for the North Coast',
+    excerpt: 'The shift from congested Mombasa to the "Boutique Coast."',
+    author: 'Elizabeth Costabir',
+    category: 'Market Analysis',
+    date: '2026-01-16',
+    readTime: '15 min read',
+    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Escape to Kilifi</h2>
+      <p>Congestion in Nyali has pushed savvy investors further north. <strong>Vipingo</strong> and <strong>Kilifi Plantation</strong> are the new coastal magnets. We compare beachfront prices: Nyali (KSh 100M/acre) vs. Kilifi (KSh 45M/acre).</p>
+    `,
+    tags: ['Kilifi', 'Coastal', 'Vacation Homes'],
+    featured: false,
+  },
+
+  // 153. Real Estate Crowdfunding Legal Checks
+  'crowdfunding-legal-due-diligence-kenya': {
+    id: 'crowdfunding-legal-due-diligence-kenya',
+    title: 'Crowdfunding Safety: 5 Legal Checks Before You Invest Online',
+    excerpt: 'Avoiding unregulated "shylock" platforms in the PropTech space.',
+    author: 'Paul Kamau',
+    category: 'Advice',
+    date: '2026-01-13',
+    readTime: '14 min read',
+    image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Protect Your Shillings</h2>
+      <p>As crowdfunding grows in 2026, so does the risk. We provide a checklist for verifying <strong>Capital Markets Authority (CMA)</strong> licensing and understanding the difference between "Equity" and "Debt" crowdfunding.</p>
+    `,
+    tags: ['Crowdfunding', 'Due Diligence', 'Legal'],
+    featured: false,
+  },
+
+  // 154. Hempcrete: Sustainable Construction
+  'hempcrete-sustainable-building-materials-kenya': {
+    id: 'hempcrete-sustainable-building-materials-kenya',
+    title: 'Hempcrete: The Breathable Building Material Hitting Kenya in 2026',
+    excerpt: 'Why industrial hemp is the secret to naturally cooled homes.',
+    author: 'Elizabeth Costabir',
+    category: 'Construction',
+    date: '2026-01-10',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Tropical Thermal Mass</h2>
+      <p>Following the legalization of industrial hemp, <strong>Hempcrete</strong> is becoming a viable alternative for high-end eco-lodges in Nanyuki. It regulates humidity and temperature naturally, eliminating the need for AC.</p>
+    `,
+    tags: ['Hempcrete', 'Green Building', 'Materials'],
+    featured: false,
+  },
+
+  // 155. Upper Hill vs. Westlands: The 2026 Office War
+  'upper-hill-vs-westlands-office-market-2026': {
+    id: 'upper-hill-vs-westlands-office-market-2026',
+    title: 'The Office War: Has Westlands Finally Dethroned Upper Hill in 2026?',
+    excerpt: 'Analyzing occupancy rates and the "Lifestyle" factor in commercial real estate.',
+    author: 'Paul Kamau',
+    category: 'Commercial',
+    date: '2026-01-07',
+    readTime: '16 min read',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Lifestyle Wins</h2>
+      <p>By 2026, the "walkable city" trend has favored Westlands. While Upper Hill remains the financial engine, the lack of evening life has led to a "flight to Westlands" for tech firms and creative agencies.</p>
+    `,
+    tags: ['Westlands', 'Upper Hill', 'Office Space'],
+    featured: false,
+  },
+
+  // 156. The Return of the REITs: 2026 Outlook
+  'kenya-reit-market-growth-2026': {
+    id: 'kenya-reit-market-growth-2026',
+    title: 'The 2026 REIT Outlook: Why Institutional Capital is Flooding Back',
+    excerpt: 'Lower interest rates are making property stocks attractive again.',
+    author: 'Elizabeth Costabir',
+    category: 'Finance',
+    date: '2026-01-04',
+    readTime: '14 min read',
+    image: 'https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Dividends Over Bricks</h2>
+      <p>With 2026 interest rates finally trending downward, Real Estate Investment Trusts (REITs) are offering yields of 10-12%, outperforming bank savings. We profile <strong>Acorn</strong> and <strong>LAPTRUST</strong> REITs.</p>
+    `,
+    tags: ['REITs', 'NSE', 'Finance'],
+    featured: false,
+  },
+
+  // 157. Renting to Expatriates: 2026 Guide
+  'expat-rental-market-nairobi-2026': {
+    id: 'expat-rental-market-nairobi-2026',
+    title: 'Renting to Expats: What UN and Diplomatic Tenants Want in 2026',
+    excerpt: 'Security audits, high-speed internet, and "Green" certifications.',
+    author: 'Paul Kamau',
+    category: 'Residential',
+    date: '2026-01-01',
+    readTime: '13 min read',
+    image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80',
+    content: `
+      <h2>High-End Demand</h2>
+      <p>The diplomatic market in 2026 is stricter. Properties must now pass <strong>UNDSS</strong> security standards and show proof of fiber-optic redundancy. We detail how to stage a home for a KSh 400,000/month rental budget.</p>
+    `,
+    tags: ['Expatriates', 'Luxury Rentals', 'Nairobi'],
+    featured: false,
+  },
+
+  // 158. Eldoret’s "Champion" Residential Boom
+  'eldoret-residential-real-estate-2026': {
+    id: 'eldoret-residential-real-estate-2026',
+    title: 'Eldoret: The Residential Boom in the "Champion" City',
+    excerpt: 'How local athletics wealth and new city status is driving gated communities.',
+    author: 'Elizabeth Costabir',
+    category: 'Market Analysis',
+    date: '2025-12-29',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1544006659-f0b21f04cb1d?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Building for Success</h2>
+      <p>Eldoret is witnessing a surge in gated communities like <strong>Elgon View</strong> extension. We explore why the "City of Champions" is now attracting Nairobi-based developers targeting the Rift Valley middle class.</p>
+    `,
+    tags: ['Eldoret', 'Gated Communities', 'Hotspots'],
+    featured: false,
+  },
+
+  // 159. Avoiding Title Deed Scams in 2026
+  'land-fraud-prevention-kenya-2026': {
+    id: 'land-fraud-prevention-kenya-2026',
+    title: 'Land Fraud 2026: The New Scams and How to Avoid Them',
+    excerpt: 'Why "Ardhisasa-verified" doesn’t always mean the sale is safe.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2025-12-26',
+    readTime: '15 min read',
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Trust but Verify</h2>
+      <p>Despite digitization, scammers are using "Identity Theft" to impersonate land owners on Ardhisasa. We detail the <strong>two-factor authentication</strong> steps you should take and why a physical site visit is still mandatory in 2026.</p>
+    `,
+    tags: ['Land Fraud', 'Ardhisasa', 'Legal Tips'],
+    featured: true,
+  },
+
+  // 160. Mixed-Use Pods: The Kikuyu Model
+  'kikuyu-satellite-town-investment-2026': {
+    id: 'kikuyu-satellite-town-investment-2026',
+    title: 'Kikuyu Town: The Blueprint for Efficient Satellite Living in 2026',
+    excerpt: 'How the Southern Bypass turned a sleepy town into a 24-hour economy.',
+    author: 'Elizabeth Costabir',
+    category: 'Market Analysis',
+    date: '2025-12-23',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80',
+    content: `
+      <h2>20 Minutes to the CBD</h2>
+      <p>Kikuyu is the most connected satellite town in 2026. With easy access to the Southern, Western, and Northern bypasses, it’s the top choice for families working in Westlands or Industrial Area.</p>
+    `,
+    tags: ['Kikuyu', 'Bypasses', 'Satellite Towns'],
+    featured: false,
+  },
+
+  // 161. Smart Irrigation for Real Estate
+  'smart-irrigation-landscaping-kenya-2026': {
+    id: 'smart-irrigation-landscaping-kenya-2026',
+    title: 'Smart Landscaping: IoT Irrigation Systems for Kenyan Estates',
+    excerpt: 'Cutting garden water bills by 60% with sensor-based tech.',
+    author: 'Paul Kamau',
+    category: 'Tech',
+    date: '2025-12-20',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Automated Garden</h2>
+      <p>In 2026, premium gated communities are installing IoT sensors that monitor soil moisture. These systems only water the grass when necessary, saving millions in service charge costs across large estates.</p>
+    `,
+    tags: ['IoT', 'Landscaping', 'Water Conservation'],
+    featured: false,
+  },
+  // 162. Top Real Estate Agents 2026
+  'top-real-estate-agents-kenya-2026': {
+    id: 'top-real-estate-agents-kenya-2026',
+    title: 'The Elite List: Top 10 Real Estate Agents in Kenya for 2026',
+    excerpt: 'Recognizing the deal-makers who defined the market this year.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2026-03-01',
+    readTime: '15 min read',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The 2026 Power Players</h2>
+      <p>Based on transaction volume, transparency, and client satisfaction, we rank the leading voices in the industry. Leaders like <strong>Mustafa Ahmed (Gazebo Homes)</strong> and <strong>Antony Wainaina (Maploti)</strong> have set new standards for diaspora advisory and digital transparency.</p>
+      <ul>
+        <li><strong>Mustafa Ahmed:</strong> Known for affordable land sourcing.</li>
+        <li><strong>Nancy Muthoni:</strong> A legend in residential market education.</li>
+        <li><strong>Esther Wairimu:</strong> The go-to for luxury Karen estates.</li>
+      </ul>
+    `,
+    tags: ['Agents', 'Rankings', 'Expertise'],
+    featured: true,
+  },
+
+  // 163. Nanyuki’s Eco-Resort Boom
+  'nanyuki-eco-resort-boom-2026': {
+    id: 'nanyuki-eco-resort-boom-2026',
+    title: 'Nanyuki 2026: Why Eco-Resorts are Outperforming Traditional Hotels',
+    excerpt: 'The shift toward "glamping" and sustainable stays in Laikipia.',
+    author: 'Elizabeth Costabir',
+    category: 'Market Analysis',
+    date: '2026-02-28',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Sustainable Escapes</h2>
+      <p>Nanyuki has seen a 40% increase in short-term rental revenue for "Unique Stays." In 2026, properties like <strong>Kirimara Woodlands</strong> are proving that eco-conscious design—using solar power and local materials—attracts a premium from both local and international tourists.</p>
+    `,
+    tags: ['Nanyuki', 'Eco-Tourism', 'Investment'],
+    featured: false,
+  },
+
+  // 164. Nairobi Railway City Status
+  'nairobi-railway-city-project-update-2026': {
+    id: 'nairobi-railway-city-project-update-2026',
+    title: 'Nairobi Railway City: A 2026 Progress Report for Investors',
+    excerpt: 'How the 435-acre redevelopment is reshaping the CBD’s southern edge.',
+    author: 'Paul Kamau',
+    category: 'Infrastructure',
+    date: '2026-02-25',
+    readTime: '14 min read',
+    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The CBD Expansion</h2>
+      <p>The <strong>Nairobi Railway City</strong> project has cleared major NEMA hurdles. By mid-2026, the integration of BRT lines and the new Central Station has turned the surrounding industrial areas into high-demand zones for "transit-oriented" residential lofts.</p>
+    `,
+    tags: ['Nairobi Railway City', 'Infrastructure', 'CBD'],
+    featured: true,
+  },
+
+  // 165. The 2030 Prediction: 50% Urbanization
+  'kenya-real-estate-market-predictions-2030': {
+    id: 'kenya-real-estate-market-predictions-2030',
+    title: 'Vision 2030: Predicting the Kenyan Property Market of the Next Decade',
+    excerpt: 'With 50% of Kenyans projected to live in cities by 2030, where should you buy now?',
+    author: 'Elizabeth Costabir',
+    category: 'Market Analysis',
+    date: '2026-02-22',
+    readTime: '18 min read',
+    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Half-Urban Nation</h2>
+      <p>World Bank projections suggest that by 2030, over 50% of Kenya will be urbanized. We predict the "Secondary City" explosion, where towns like <strong>Eldoret</strong> and <strong>Kisumu</strong> will see the same growth Nairobi experienced in the early 2010s.</p>
+    `,
+    tags: ['Future Trends', 'Vision 2030', 'Urbanization'],
+    featured: true,
+  },
+
+  // 166. Digital Nomads in Diani
+  'diani-digital-nomad-visa-impact': {
+    id: 'diani-digital-nomad-visa-impact',
+    title: 'The Digital Nomad Visa: A New Tenant Class for Coastal Property',
+    excerpt: 'How the 2025/26 remote work policies are filling Diani villas.',
+    author: 'Paul Kamau',
+    category: 'Lifestyle',
+    date: '2026-02-19',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Work from the Beach</h2>
+      <p>Kenya's new remote work visa has brought a wave of high-spending long-term stays to the coast. In 2026, "Workation" amenities like dedicated office pods and Starlink internet are mandatory for Diani landlords targeting this niche.</p>
+    `,
+    tags: ['Diani', 'Digital Nomads', 'Rental Income'],
+    featured: false,
+  },
+
+  // 167. Land Valuation Pitfalls
+  'common-land-valuation-mistakes-kenya': {
+    id: 'common-land-valuation-mistakes-kenya',
+    title: 'Valuation Traps: Why Your Land Might Be Worth Less Than You Think',
+    excerpt: 'Understanding zoning, encumbrances, and "Sentimentality Bias."',
+    author: 'Elizabeth Costabir',
+    category: 'Advice',
+    date: '2026-02-16',
+    readTime: '13 min read',
+    image: 'https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Reality Check</h2>
+      <p>Many sellers in 2026 are struggling with "stale prices." We explore how the <strong>0.3% Property Tax</strong> and new zoning laws in Kiambu have impacted land values, and why an official valuation is better than "asking the neighbor."</p>
+    `,
+    tags: ['Valuation', 'Selling Tips', 'Market Advice'],
+    featured: false,
+  },
+
+  // 168. Tatu City: 2026 Living Standards
+  'tatu-city-living-standards-2026': {
+    id: 'tatu-city-living-standards-2026',
+    title: 'Tatu City 2026: Living in Kenya’s Most Advanced Private City',
+    excerpt: 'A look at the mixed-use paradise where 100,000 people now work and play.',
+    author: 'Paul Kamau',
+    category: 'Residential',
+    date: '2026-02-13',
+    readTime: '15 min read',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Urban Blueprint</h2>
+      <p>Tatu City has become the gold standard for 2026 urban planning. With its own power grid, water recycling, and 24/7 security, it has attracted major industrial players like <strong>CCI</strong> and thousands of residents in the Unity Homes precinct.</p>
+    `,
+    tags: ['Tatu City', 'Smart Cities', 'Urban Planning'],
+    featured: false,
+  },
+
+  // 169. Prefabricated Luxury in Naivasha
+  'luxury-prefab-homes-naivasha-2026': {
+    id: 'luxury-prefab-homes-naivasha-2026',
+    title: 'Luxury Prefab: Building Your Naivasha Dream Home in 90 Days',
+    excerpt: 'How modular construction is saving time and KSh 2M in labor costs.',
+    author: 'Elizabeth Costabir',
+    category: 'Construction',
+    date: '2026-02-10',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Speed and Style</h2>
+      <p>Modular homes are no longer "cheap-looking." In 2026, high-end prefab companies are delivering steel-frame glass villas to the shores of Lake Naivasha, offering a turn-key solution for weekend homeowners.</p>
+    `,
+    tags: ['Prefab', 'Naivasha', 'Innovation'],
+    featured: false,
+  },
+
+  // 170. Small Scale Commercial: The "Duka" Shift
+  'small-commercial-retail-trends-kenya-2026': {
+    id: 'small-commercial-retail-trends-kenya-2026',
+    title: 'The "Mini-Mall" Surge: Why Neighborhood Retail is Winning in 2026',
+    excerpt: 'Why local strip malls are more profitable than giant shopping centers.',
+    author: 'Paul Kamau',
+    category: 'Commercial',
+    date: '2026-02-07',
+    readTime: '11 min read',
+    image: 'https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Hyper-Local Shopping</h2>
+      <p>Convenience is the 2026 keyword. While large malls face vacancies, neighborhood "mini-malls" in areas like <strong>Rongai</strong> and <strong>Juja</strong> are booming, driven by local services like pharmacies, barbers, and mini-supermarkets.</p>
+    `,
+    tags: ['Retail', 'Commercial Real Estate', 'Trends'],
+    featured: false,
+  },
+
+  // 171. Student Housing in Eldoret
+  'eldoret-student-housing-market-2026': {
+    id: 'eldoret-student-housing-market-2026',
+    title: 'Eldoret’s University Goldmine: Investing in Student Accommodation',
+    excerpt: 'Capitalizing on the 50,000+ students in the "Champion" city.',
+    author: 'Elizabeth Costabir',
+    category: 'Investment',
+    date: '2026-02-04',
+    readTime: '14 min read',
+    image: 'https://images.unsplash.com/photo-1523050335392-9affa6d2423e?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Academic Economy</h2>
+      <p>With Moi University and Eldoret University expanding, the demand for purpose-built hostels is at an all-time high. We look at the "Cluster-unit" model that offers 10% annual yields in 2026.</p>
+    `,
+    tags: ['Eldoret', 'Student Housing', 'ROI'],
+    featured: false,
+  },
+
+  // 172. Gated Communities in Machakos
+  'machakos-gated-community-growth-2026': {
+    id: 'machakos-gated-community-growth-2026',
+    title: 'Machakos: The Rise of Lifestyle Estates Along the Gateway',
+    excerpt: 'Why "Garden of Joy" and similar projects are selling out in record time.',
+    author: 'Paul Kamau',
+    category: 'Residential',
+    date: '2026-02-01',
+    readTime: '13 min read',
+    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80',
+    content: `
+      <h2>The Eastern Bypass Effect</h2>
+      <p>Machakos County has become a haven for those looking for affordable luxury. Projects like <strong>Amani Ridge</strong> provide a blueprint for 2026 gated living: water, solar lights, and secure perimeters at half the price of Kiambu.</p>
+    `,
+    tags: ['Machakos', 'Gated Communities', 'Hotspots'],
+    featured: false,
+  },
+
+  // 173. Real Estate Photography 101
+  'real-estate-photography-tips-kenya-2026': {
+    id: 'real-estate-photography-tips-kenya-2026',
+    title: 'Sell Faster: The 2026 Guide to Professional Real Estate Photography',
+    excerpt: 'How 3D tours and high-res images increase click-through by 400%.',
+    author: 'Elizabeth Costabir',
+    category: 'Advice',
+    date: '2026-01-29',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1512699355324-f07e3106dae5?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Visual Selling</h2>
+      <p>In the digital-first market of 2026, bad photos mean zero leads. We share tips on "Golden Hour" shooting, using wide-angle lenses, and creating Matterport 3D tours that allow diaspora buyers to walk through your property remotely.</p>
+    `,
+    tags: ['Marketing', 'Photography', 'Selling Tips'],
+    featured: false,
+  },
+
+  // 174. Managing Tenants Digitally
+  'digital-tenant-management-apps-kenya': {
+    id: 'digital-tenant-management-apps-kenya',
+    title: 'The Paperless Landlord: Top 5 Apps to Manage Your Tenants in 2026',
+    excerpt: 'Automating rent collection, maintenance requests, and tax filing.',
+    author: 'Paul Kamau',
+    category: 'Tech',
+    date: '2026-01-26',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80',
+    content: `
+      <h2>Hands-Off Management</h2>
+      <p>Gone are the days of chasing rent with phone calls. In 2026, apps like <strong>JiraniLink</strong> and <strong>LipaKodi</strong> allow landlords to see real-time payment status and issue digital receipts instantly.</p>
+    `,
+    tags: ['Property Management', 'Apps', 'Tech'],
+    featured: false,
+  },
+
+  // 175. The Final Word: Market Summary
+  'kenya-real-estate-market-summary-2026': {
+    id: 'kenya-real-estate-market-summary-2026',
+    title: '2026 Year in Review: A Resilient Market in a Transformed Kenya',
+    excerpt: 'Concluding our 175-part series with the ultimate market summary.',
+    author: 'Paul Kamau & Elizabeth Costabir',
+    category: 'Market Analysis',
+    date: '2026-03-05',
+    readTime: '20 min read',
+    image: 'https://images.unsplash.com/photo-1444723121867-7a241cacace9?auto=format&fit=crop&q=80',
+    content: `
+      <h2>A New Era of Kenyan Property</h2>
+      <p>We’ve reached the end of our series. From the <strong>Ardhisasa</strong> revolution to the rise of <strong>Nanyuki</strong> and <strong>Tigoni</strong>, 2026 has been a year of professionalization and growth. The Kenyan market is no longer a wild west; it is a data-driven, transparent, and high-yielding destination for global capital.</p>
+      
+    `,
+    tags: ['Market Review', '2026', 'Summary'],
+    featured: true,
+  }
 
 };
 
