@@ -34,8 +34,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!post) {
     return {
-      title: 'Blog Post Not Found | Murivest Realty Group',
-      description: 'The requested blog post could not be found.',
+      title: 'Commercial Real Estate Blogs | Murivest Realty Group',
+      description: 'Independent real estate investment advisory firm specializing in commercial asset origination and structuring for institutional investors in East Africa. Mandate sizes $10M–$100M+ across office, logistics, and industrial sectors.',
     };
   }
 

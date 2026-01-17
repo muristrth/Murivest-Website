@@ -20,7 +20,7 @@ const KEProperties = () => {
   const allProperties = [
     {
       id: "best-western-meridian-hotel",
-      title: "Best Western Meridian",
+      title: "The Best Western Meridian Hotel for Sale",
       location: "Nairobi CBD, Kenya",
       type: "Hospitality",
       price: "US$10.0M",
