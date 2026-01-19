@@ -47,6 +47,7 @@ interface PropertyData {
 }
 
 const propertyData: PropertyData = {
+  
   "best-western-meridian-hotel": {
     title: "Best Western Meridian Hotel",
     subtitle: "A Prime Landmark Hotel For Sale In The Nairobi CBD",
@@ -81,6 +82,260 @@ const propertyData: PropertyData = {
       netYield: "15.2%",
       appreciationRate: "12%",
       totalROI: "27.2%"
+    }
+  },
+
+  "uchumi-house": {
+    title: "Uchumi House",
+    subtitle: "",
+    location: "",
+    type: "Commercial",
+    price: "KSh 570M",
+    priceKsh: "KSh 570M",
+    priceGbp: "£3,600,000",
+    priceUsd: "$4,400,000",
+    priceEur: "€4,100,000",
+    yield: "9%",
+    occupancyRate: "99.8%",
+    images: [
+      "https://content.knightfrank.com/property/kecom310/images/1e2f3c6e-5f4e-4f3a-8f3b-5e1d9f7c8a2b-0.jpg?cio=true&w=1200"
+    ],
+    features: ["17 Storey", "143,300 sq.ft NLA", "99.8% Occupancy"],
+    description: "Iconic commercial office tower in Nairobi CBD with strong tenant roster and stable cash flows.",
+    details: {
+      area: "143,300 sq.ft",
+      floors: "17 Storey",
+      occupancy: "99.8%",
+      annualIncome: "KSh 51M",
+      description: "Iconic commercial office tower in Nairobi CBD with strong tenant roster and stable cash flows."
+    },
+    investment: {
+      totalInvestment: "570,000,000",
+      monthlyIncome: "4,250,000",
+      netYield: "9%", 
+      annualIncome: "51,000,000",
+      appreciationRate: "9%",
+      totalROI: "27.2%"
+    }
+  },
+  "absa-towers-for-sale": {
+    title: "Absa Towers Building for Sale",
+    subtitle: "A Trophy Tower - Institutional Grade Investment",
+    location: "Loita & Market Street, Nairobi CBD, Kenya",
+    type: "Commercial Office Tower",
+    price: "KSh 2.44B", // Inclusive of VAT
+    priceKsh: "KSh 2,440,000,000",
+    priceGbp: "£16,200,000", // Approximate conversion
+    priceUsd: "$16,200,000",
+    priceEur: "€15,000,000", // Approximate conversion
+    yield: "9.0%",
+    occupancyRate: "99.8%",
+    images: [
+      "https://content.knightfrank.com/property/kecom310/images/1e2f3c6e-5f4e-4f3a-8f3b-5e1d9f7c8a2b-0.jpg?cio=true&w=1200"
+    ],
+    features: [
+      "17 Storey Iconic Tower",
+      "143,300 sq.ft Net Lettable Area (NLA)",
+      "Grand executive reception area",
+      "Four high-speed Schindler lifts",
+      "Dual backup generator systems (500KVA & 640KVA)",
+      "Solar panel supplementation",
+      "Advanced fibre optic connectivity",
+      "Full handicapped accessibility",
+      "Premium glass curtain walling",
+      "Access-controlled tenant spaces",
+      "Executive security with body scanner & 24-hour CCTV",
+      "Professional water & fire safety systems",
+      "Private executive parking with automated access"
+    ],
+  
+    description: "Iconic commercial office tower in Nairobi CBD with strong tenant roster and stable cash flows. Home to blue-chip tenants delivering consistent, institutional-grade returns in Kenya's established financial heart.",
+      details: {
+      area: "143,300 sq.ft",
+      floors: "17 Storey",
+      occupancy: "99.8%",
+      tenure: "Leasehold title with 60 years remaining",
+      status: "Valid Certificates & Clear Title Search",
+    },
+    
+    investment: {
+      totalInvestment: "2,440,000,000",
+      monthlyIncome: "16,000,000",
+      annualIncome: "192,000,000",
+      netYield: "9.0%",
+      appreciationRate: "9%",
+      totalROI: "27.2%",
+    },
+  },
+  "tassia-fully-occupied-block": {
+    title: "Fully Occupied Apartment Block",
+    subtitle: "Tassia Estate - Ready Investment",
+    location: "Tassia Estate, Nairobi",
+    type: "Residential Apartment Block",
+    price: "KSh 33,000,000",
+    priceKsh: "KSh 33,000,000",
+    priceGbp: "£200,000",
+    priceUsd: "$250,000",
+    priceEur: "€270,000",
+    yield: "9.0%",
+    occupancyRate: "100%",
+    features: [
+        "Unfurnished units (tenant-customized)",
+        "Large plot: 2,178 sqm",
+        "Secure parking available",
+        "Ready rental income stream",
+        "Established tenant base",
+    ],
+    images: [
+      "https://www.pointproperties.org/wp-content/uploads/2019/11/1-Bedroom-Apartments-Rongai-1.jpeg"
+    ],
+    
+    description: "A ready, fully occupied residential apartment block sitting on a large plot with secure parking.",
+    details: {
+      area: "2,178 sqm",
+      floors: "2 Storey",
+      occupancy: "100%",
+      tenure: "Details Provided Upon application",
+      status: "Valid Certificates & Clear Title Search",
+    },
+    
+    investment: {
+      totalInvestment: "33,000,000",
+      monthlyIncome: "180,000",
+      annualIncome: "2,160,000",
+      netYield: "9.0%",
+      appreciationRate: "9%",
+      totalROI: "27.2%",
+    }
+  },
+  
+  "tassia-high-yield-apartment": {
+    title: "High-Yield Residential Apartment Block",
+    subtitle: "Tassia Estate - Premium Location",
+    location: "Tassia Estate, Nairobi",
+    type: "Multi-Storey Residential Block",
+    price: "KSh 37,000,000",
+    priceKsh: "KSh 37,000,000",
+    priceGbp: "£220,000",
+    priceUsd: "$275,000",
+    priceEur: "€300,000",
+    yield: "10.0%",
+    occupancyRate: "100%",
+    images: [
+      "https://propscout.co.ke/storage/properties/files/block-of-flats/webp/tassia-embakasi-block-of-flats-for-sale-hbihi.webp"
+    ],
+    features: [
+        "High-yield investment (10% ROI)",
+        "Plot size: 25×66 ft",
+        "Multi-storey design",
+        "Connected to sewer line",
+        "Reliable water supply",
+        "Fully occupied"
+    ],
+    
+    description: "Located on a 25×66 ft plot, this multi-storey block is connected to the sewer line and has a reliable water supply.",
+    
+    details: {
+      area: "143,300 sq.ft",
+      floors: "17 Storey",
+      occupancy: "99.8%",
+      tenure: "Leasehold title with 60 years remaining",
+      status: "Valid Certificates & Clear Title Search",
+    },
+    
+    investment: {
+      totalInvestment: "33,000,000",
+      monthlyIncome: "180,000",
+      annualIncome: "2,160,000",
+      netYield: "9.0%",
+      appreciationRate: "9%",
+      totalROI: "27.2%",
+    }
+  },
+  
+  "tassia-makuti-ready-occupied": {
+    title: "Ready Occupied Apartment Block",
+    subtitle: "Makuti Stage, Tassia",
+    location: "Makuti Stage, Tassia Estate, Nairobi",
+    type: "Mixed-Use Residential Block",
+    price: "KSh 26,000,000",
+    priceKsh: "KSh 26,000,000",
+    priceGbp: "£160,000",
+    priceUsd: "$200,000",
+    priceEur: "€220,000",
+    yield: "11.8%",
+    occupancyRate: "100%",
+    images: [
+      "https://pictures-kenya.jijistatic.com/46941574_MzAwLTUzMy05ZmZkYzAxZThm.webp"
+    ],
+    features: [
+        "Strong yield (11.8% ROI)",
+        "Diverse unit mix",
+        "2 commercial shops",
+        "Rental range: KSh 13K-25K/month",
+        "Ready and operational",
+        "Established rental history"
+    ],
+    
+    description: "Comprises various units ranging from KSh 13,000 to KSh 25,000 per month and includes 2 shops.",
+    details: {
+      area: "143,300 sq.ft",
+      floors: "17 Storey",
+      occupancy: "99.8%",
+      tenure: "Leasehold title with 60 years remaining",
+      status: "Valid Certificates & Clear Title Search",
+    },
+    investment: {
+      totalInvestment: "33,000,000",
+      monthlyIncome: "180,000",
+      annualIncome: "2,160,000",
+      netYield: "9.0%",
+      appreciationRate: "9%",
+      totalROI: "27.2%",
+    }
+  },
+  
+  "tassia-ii-prime-block": {
+    title: "Prime Residential Block",
+    subtitle: "Tassia-II - Modern Development",
+    location: "Tassia-II Estate, Nairobi",
+    type: "Purpose-Built Residential Block",
+    price: "KSh 33,000,000",
+    priceKsh: "KSh 33,000,000",
+    priceGbp: "£210,000",
+    priceUsd: "$260,000",
+    priceEur: "€280,000",
+    yield: "8.06%",
+    occupancyRate: "100%",
+    images: [
+      "https://pictures-kenya.jijistatic.com/46941577_NjIwLTM0OS02Y2ZlNGFmM2Ri.webp"
+    ],
+    features: [
+        "Modern purpose-built design",
+        "Ground floor + 4 floors",
+        "Institutional-quality management",
+        "Secure and well-maintained",
+        "24/7 live CCTV monitoring",
+        "Metered electricity tokens per house"
+    ],
+    
+    description: "A ground floor plus four (4) floor development featuring 29 one-bedroom units and one bedsitter.",
+    
+    details: {
+      area: "143,300 sq.ft",
+      floors: "17 Storey",
+      occupancy: "99.8%",
+      tenure: "Leasehold title with 60 years remaining",
+      status: "Valid Certificates & Clear Title Search",
+    },
+    
+    investment: {
+      totalInvestment: "33,000,000",
+      monthlyIncome: "180,000",
+      annualIncome: "2,160,000",
+      netYield: "9.0%",
+      appreciationRate: "9%",
+      totalROI: "27.2%",
     }
   },
 "wood-avenue-apartment-block": {
@@ -474,7 +729,7 @@ const propertyData: PropertyData = {
       currencyHedging: "GBP/USD forward contracts in place. 80% of rental income hedged for 3-year period. Currency collar strategy protecting against GBP depreciation beyond 10%."
     }
   },
-  12: {
+  "22-23-princes-street": {
     title: "22-23 Princes Street",
     subtitle: "London West End",
     location: "London, W1B",
@@ -509,7 +764,7 @@ const propertyData: PropertyData = {
       totalROI: "8.75%"
     }
   },
-  13: {
+  "estuary-house": {
     title: "Estuary House",
     subtitle: "Liverpool Business Park",
     location: "Leeward Drive, Speke, Liverpool",
@@ -543,7 +798,7 @@ const propertyData: PropertyData = {
       totalROI: "18%"
     }
   },
-  14: {
+  "307-euston-road": {
     title: "307 Euston Road",
     subtitle: "King's Cross Development Zone",
     location: "London, NW1",
@@ -577,7 +832,7 @@ const propertyData: PropertyData = {
       totalROI: "12.34%"
     }
   },
-  15: {
+  "vintners-place": {
     title: "Vintners Place",
     subtitle: "City of London Financial District",
     location: "68 Upper Thames Street, EC4V",
@@ -612,7 +867,7 @@ const propertyData: PropertyData = {
       totalROI: "13.78%"
     }
   },
-  16: {
+  "the-great-eastern-wharf-estate": {
     title: "The Great Eastern Wharf Estate",
     subtitle: "Battersea Riverside",
     location: "London, SW11",
@@ -647,7 +902,7 @@ const propertyData: PropertyData = {
       totalROI: "12.25%"
     }
   },
-  17: {
+  "former-wilko-car-park": {
     title: "Former Wilko & Car Park",
     subtitle: "Mansfield Town Centre",
     location: "32-38 Clumber Street, Mansfield",
@@ -681,7 +936,7 @@ const propertyData: PropertyData = {
       totalROI: "10%"
     }
   },
-  18: {
+  "4-8-east-street-1-5-cambridge-place-farnham-gu9": {
     title: "4-8 East Street & 1-5 Cambridge Place, Farnham, GU9",
     subtitle: "Farnham Mixed Use",
     location: "Farnham, GU9",
@@ -716,7 +971,7 @@ const propertyData: PropertyData = {
       totalROI: "13%"
     }
   },
-  19: {
+  "the-royal-arcade": {
     title: "The Royal Arcade",
     subtitle: "Mayfair Luxury Retail",
     location: "28 Old Bond Street, W1S",
@@ -751,7 +1006,7 @@ const propertyData: PropertyData = {
       totalROI: "10.5%"
     }
   },
-  20: {
+  "co-working-spaces-lavington": {
     title: "Co-working Spaces Lavington",
     subtitle: "Nairobi Premium Suburb",
     location: "Lavington, Nairobi",
@@ -787,7 +1042,7 @@ const propertyData: PropertyData = {
     }
   },
 
-  22: {
+  "warehouse-godown-mlolongo": {
     title: "Warehouse Godown Mlolongo",
     subtitle: "Unlock excellent investment potential with this spacious warehouse situated on a prime 0.5-acre plot. Priced at KSh 95 million plus VAT, this property offers a robust foundation for your commercial endeavors.",
     location: "Mlolongo",
@@ -1497,7 +1752,7 @@ const PropertyDetail = () => {
             >
               <motion.img
                 src={property.images[currentImageIndex]}
-                className="w-full h-full object-cover grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-1000"
+                className="w-full h-full"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent" />
               <div className="absolute bottom-6 left-6 text-xs tracking-widest text-white/60">

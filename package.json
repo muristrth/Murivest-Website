@@ -10,6 +10,7 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@react-pdf/renderer": "^4.3.2",
     "@types/nodemailer": "^7.0.1",
     "@types/react-router-dom": "^5.3.3",
     "autoprefixer": "^10.4.0",
@@ -26,6 +27,7 @@
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.5",
     "react-router-dom": "^7.8.2",
+    "resend": "^6.7.0",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^3.3.0"
   },
