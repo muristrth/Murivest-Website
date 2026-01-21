@@ -206,7 +206,7 @@ const KEProperties = () => {
     type: "Land",
     price: "KES500,000,000",
     yield: "",
-    image: "/p1/upper-hill-1acre.jpg",
+    image: "https://d21tw07c6rnmp0.cloudfront.net/media/uploads/709/agents/2025/10/709_170e224fe73d40c3a4bde5ddbf9b2e11_t_w_1440_h_900.jpg",
     features: ["1 Acres", "Prime location", "Ready for development"],
     description: "Prime vacant land in Upper Hill with exclusive mandate.",
     status: "Exclusive Mandate"

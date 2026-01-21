@@ -66,11 +66,6 @@ const Hero = () => {
           <span className="italic text-amber-50/90">Commercial Real Estate</span>
         </h1>
 
-        {/* Sub-headline - The "How & Who" */}
-        <p className="text-xs text-slate-300 max-w-3xl mx-auto leading-relaxed mb-8 font-light">
-          Murivest advises how these transactions are structured, underwritten, and executed — acting exclusively for institutional investors, family offices, and financial corporates deploying capital into large-scale commercial real estate across Kenya, the United Kingdom and select few international markets.
-        </p>
-
         {/* Institutional Filter - The "Credibility Line" */}
         <div className="mb-8 inline-flex items-center gap-4 py-2 px-6 border-x border-amber-500/20 bg-amber-500/5 backdrop-blur-sm">
           <p className="text-slate-400 text-[10px] md:text-xs tracking-widest uppercase">
