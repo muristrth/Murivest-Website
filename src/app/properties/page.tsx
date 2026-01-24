@@ -1,18 +1,42 @@
 import type { Metadata } from 'next'
-import Properties from '../../components/Properties'
+import { client } from "@/sanity/lib/client"
+import { defineQuery } from "next-sanity"
+import KEProperties from '../../components/Properties'
 
+// 1. Define the GROQ query to "Shape" the data for your component
+const PROPERTIES_QUERY = defineQuery(`*[_type == "property" && !(_id in path('drafts.**'))] | order(_createdAt desc) {
+  _id,
+  title,
+  "slug": slug.current,
+  price,
+  location,
+  type,
+  description,
+  yield,
+  features,
+  "mainImage": images[0].asset->url
+}`);
 
 export const metadata: Metadata = {
   title: 'Global Investment Properties - Commercial Real Estate Portfolio',
-  description: 'Explore our exclusive portfolio of premium commercial properties across Africa, Asia-Pacific, Europe, and the Americas. Grade A office buildings, luxury hotels, retail centers, and industrial developments with guaranteed returns.',
-  keywords: 'investment properties global, commercial properties Africa, office buildings international, hotel investments worldwide, retail properties global, industrial properties international, property portfolio global, real estate investments worldwide',
+  description: 'Explore our exclusive portfolio of premium commercial properties across Africa, Asia-Pacific, Europe, and the Americas.',
   openGraph: {
-    title: 'Global Investment Properties - Commercial Real Estate Portfolio',
-    description: 'Explore our exclusive portfolio of premium commercial properties worldwide.',
+    title: 'Global Investment Properties',
     images: ['/image.png'],
   },
 }
 
-export default function PropertiesPage() {
-  return <Properties />
+// 2. Enable ISR: This refreshes the page in the background when Sanity data changes
+export const revalidate = 60; 
+
+export default async function PropertiesPage() {
+  // 3. Fetch data from Sanity on the server
+  const propertyData = await client.fetch(PROPERTIES_QUERY);
+
+  // 4. Pass the clean data into your existing component
+  return (
+    <main>
+      <KEProperties data={propertyData} />
+    </main>
+  )
 }

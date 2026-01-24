@@ -229,7 +229,9 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${inter.variable} ${playfair.variable} font-elegant text-navy-900 bg-white`}>
+      <body className={`${inter.variable} ${playfair.variable} font-elegant text-navy-900 bg-white`}
+      suppressHydrationWarning={true}
+      >
         <div className="min-h-screen">
           <Header />
           <Suspense fallback={null}>

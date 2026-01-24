@@ -37,6 +37,9 @@ export async function POST(req: Request) {
       );
     }
 
+    // Generate mandate reference
+    const mandateRef = `ATS-${data.titleNumber.replace(/\//g, '').slice(-5)}-${Date.now().toString().slice(-6)}`;
+
     // Create transporter
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
@@ -107,6 +110,20 @@ export async function POST(req: Request) {
               <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
                 <tr>
                   <td style="padding: 50px;">
+                    
+                    <!-- Mandate Reference -->
+                    <table width="100%" style="background: linear-gradient(135deg, #f8f9fa 0%, #e2e8f0 100%); border-left: 6px solid #d4af37; border-radius: 6px; margin-bottom: 40px;">
+                      <tr>
+                        <td style="padding: 20px;">
+                          <p style="margin: 0; color: #0a192f; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;">
+                            Official Mandate Reference Number
+                          </p>
+                          <p style="margin: 8px 0 0 0; color: #d4af37; font-size: 24px; font-weight: 800; letter-spacing: 2px;">
+                            ${mandateRef}
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
 
                     <!-- Title -->
                     <h2 style="color: #0a192f; font-size: 26px; margin: 0 0 25px 0; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">
@@ -299,20 +316,32 @@ export async function POST(req: Request) {
       },
       to: sellerEmail,
       cc: companyEmail,
-      subject: `Authority to Sell Mandate`,
+      subject: `Authority to Sell Mandate - ${mandateRef}`,
       html: htmlTemplate,
       priority: "high" as "high",
+      attachments: [
+        {
+          filename: `Mandate-${mandateRef}.pdf`,
+          contentType: 'application/pdf'
+        }
+      ],
+      headers: {
+        'X-Mandate-Ref': mandateRef,
+        'X-Priority': '1',
+        'Importance': 'high'
+      }
     };
-
     const info = await transporter.sendMail(mailOptions);
     console.log('Email sent successfully:', {
       messageId: info.messageId,
+      mandateRef: mandateRef,
       accepted: info.accepted,
       rejected: info.rejected
     });
 
     return NextResponse.json({ 
       success: true, 
+      mandateReference: mandateRef,
       message: 'Mandate executed and email sent successfully'
     });
 
