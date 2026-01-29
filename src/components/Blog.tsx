@@ -5496,7 +5496,7 @@ const Blog = () => {
               <div className="lg:col-span-7 relative overflow-hidden aspect-video lg:aspect-auto lg:h-[500px] border border-white/10">
                 <img
                   src={filteredPosts[0].image}
-                  className="w-full h-full object-cover grayscale opacity-40 group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-1000"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#05070a] via-transparent to-transparent" />
                 <div className="absolute bottom-10 left-10">
@@ -5531,7 +5531,7 @@ const Blog = () => {
           {filteredPosts.slice(1).map((post) => (
             <div key={post.id} className="bg-[#05070a] group hover:bg-white/[0.02] transition-colors p-10 flex flex-col h-full">
               <div className="aspect-video overflow-hidden mb-8 border border-white/5">
-                <img src={post.image} className="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" />
+                <img src={post.image} className="w-full h-full object-cover" />
               </div>
               <span className="text-[9px] font-bold text-amber-500 uppercase tracking-[0.3em] mb-4">{post.category}</span>
               <h3 className="text-2xl font-serif italic mb-6 leading-snug group-hover:text-amber-200 transition-colors">{post.title}</h3>
