@@ -20,6 +20,31 @@ interface Blog {
 
 const blog: Blog[] =[
   {
+    id: 'complete-commercial-investment-guide-nairobi-cbd',
+    title: 'Complete Investment Guide to Commercial Property in Nairobi CBD (2024)',
+    excerpt:
+      'A comprehensive pillar guide covering yields, lease structures, building grades, transport links, and tenant mix in Nairobi CBD commercial real estate.',
+    author: 'Murivest Research Team',
+    category: 'Investing',
+    date: '2024-09-15',
+    readTime: '30 min read',
+    image:
+      '/image.png',
+    featured: true,
+  },
+  {
+    id: 'nairobi-cbd-office-market-analysis-2024',
+    title: 'Nairobi CBD Office Market Analysis 2024: Trends, Yields & Opportunities',
+    excerpt:
+      'An in-depth analysis of Nairobi CBD\'s office market in 2024, covering vacancy rates, rental trends, key developments, and investment opportunities.',
+    author: 'Murivest Research Team',
+    category: 'Market Analysis',
+    date: '2024-08-10',
+    readTime: '30 min read',
+    image:'',
+    featured: true,
+  },
+  {
     id: 'improve-credit-score-property-loans-kenya',
     title: 'How to Improve Your Credit Score for Property Loans in Kenya',
     excerpt: 'A vital guide for aspiring homeowners in Kenya, detailing actionable steps to enhance your credit score and secure favorable property loan terms in 2025.',

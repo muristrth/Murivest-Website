@@ -17,6 +17,1422 @@ const BlogPost = () => {
 
   // Mock blog post data - in a real app, this would come from Firebase
   const blogData = {
+    'nairobi-office-market-report-2022': {
+  title: "Nairobi Commercial Office Market Report 2022 – In-Depth Analysis",
+  author: "Murivest Realty Research Team",
+  date: "March 15, 2026",
+  readTime: "18 min read",
+  category: "Market Research",
+  image: "https://murivest.co.ke/images/nairobi-office-market.jpg",
+  content: `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nairobi Metropolitan Area Commercial Office Report – 2022</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); color: #2c3e50; line-height: 1.6;">
+
+<div style="max-width: 1200px; margin: 0 auto; background-color: #ffffff; box-shadow: 0 10px 40px rgba(0,0,0,0.1); min-height: 100vh; padding: 40px;">
+
+<!-- Header Section -->
+<div style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 40px; margin: -40px -40px 40px -40px; border-bottom: 5px solid #f39c12;">
+    <h1 style="margin: 0; font-size: 32px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; line-height: 1.3;">
+        Nairobi Metropolitan Area Commercial Office Report – 2022<br/>
+        <span style="font-size: 24px; font-weight: 400; color: #ecf0f1; display: block; margin-top: 10px;">Changing Working Patterns Driving the Market</span>
+    </h1>
+</div>
+
+<!-- Executive Summary Section -->
+<div style="background-color: #ecf0f1; border-left: 5px solid #3498db; padding: 20px; margin-bottom: 30px; border-radius: 0 8px 8px 0;">
+    <h2 style="color: #2c3e50; margin-top: 0; font-size: 24px; border-bottom: 2px solid #3498db; padding-bottom: 10px;">Macroeconomic Contribution</h2>
+    
+    <p style="margin-bottom: 20px; text-align: justify;">
+        Real Estate sector performance improved in 2021 mainly due to the reopening of the economy that fueled aggressive expansion by retailers, increased construction activities, and full resumption of most businesses.
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <thead>
+            <tr style="background-color: #34495e; color: white;">
+                <th style="padding: 12px; text-align: left; border: 1px solid #ddd; width: 20%;">Factor</th>
+                <th style="padding: 12px; text-align: left; border: 1px solid #ddd; width: 40%;">Characteristics</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #f8f9fa;">
+                <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #2980b9;">Macro economic Contribution</td>
+                <td style="padding: 12px; border: 1px solid #ddd;">
+                    • The Real Estate sector grew by 5.2% in Q3'2021, 0.3% points higher than the 4.9% growth recorded in Q2'2021, according to the Q3'2021 GDP Report by the Kenya National Bureau of Statistics (KNBS)<br/>
+                    • The improvement in performance was mainly attributed to the reopening of the economy which facilitated aggressive expansion by retailers, increased construction activities by investors, and various businesses resuming full operations
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #2980b9;">Recent Developments</td>
+                <td style="padding: 12px; border: 1px solid #ddd;">
+                    • Notable buildings completed in 2021 include: Global Trade Centre (678,000 SQFT) in Westlands, Karen Green (69,000 SQFT) in Karen, Riverside Square in Westlands (136,907 SQFT), Imaara Mall in Imaara Daima (146,066 SQFT), Palm Ridge Estate phase one project in Kilifi, Great Wall Gardens phase 3 project in Mavoko, and, Kitisuru Heights phase one<br/>
+                    • Additionally, in January 2022, CCI Group of Companies and Max International Company took up office spaces worth 200,000 Sqft at Garden City Business Park, bringing its total occupancy rate to 90.3%<br/>
+                    • Also, the affordable housing initiative continues to take shape in the country, with some of the projects launched in 2021 being the Athi River Waterfront project in Mavoko, and, Buxton project in Mombasa County
+                </td>
+            </tr>
+            <tr style="background-color: #f8f9fa;">
+                <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #2980b9;">Real Estate Market outlook</td>
+                <td style="padding: 12px; border: 1px solid #ddd;">
+                    • The overall outlook for the real estate sector is NEUTRAL, supported by; i) government's focus on implementing affordable housing projects, coupled with improved investor confidence in the country's housing market, ii) increased demand for office spaces following the reopening of the economy, iii) aggressive expansion by local and international retailers, iv) increased visitor arrivals into the country hence boosting the performance of hospitality sector, v) government's aggressiveness towards completing and launching of infrastructural projects thus boosting Real Estate investments through accessibility, and, vi) positive demographics<br/>
+                    • However, factors such as financial constraints, oversupply in the commercial office and retail sectors, and low investor appetite in Real Estate Investments Trusts (REITs) are expected to continue impeding performance of the sector.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Section II -->
+<h2 style="color: #1e3c72; font-size: 28px; margin-top: 40px; border-bottom: 3px solid #f39c12; padding-bottom: 10px;">II. Nairobi Metropolitan Area Commercial Office Report</h2>
+
+<h3 style="color: #2980b9; font-size: 22px; margin-top: 30px;">A. Introduction</h3>
+<h4 style="color: #27ae60; font-size: 20px; margin-top: 25px; background-color: #e8f5e9; padding: 10px; border-radius: 5px;">Executive Summary</h4>
+
+<div style="background-color: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; margin: 20px 0; border-radius: 5px;">
+    <p style="margin: 0; font-weight: 600;">The Commercial Office sector realized a slight improvement in its overall performance in FY'2021, with the average rental yields coming in at 7.1%, 0.1 % points higher than the 7.0% recorded in 2020</p>
+</div>
+
+<ul style="line-height: 1.8; padding-left: 20px;">
+    <li style="margin-bottom: 10px;">We carried out research on 9 nodes within the Nairobi Metropolitan Area (NMA), with an aim of determining the performance and supply of office spaces The 9 nodes are; Gigiri, Kilimani, Upperhill, Nairobi CBD, Karen, Parklands, Westlands, Thika Road, and, Mombasa Road</li>
+    <li style="margin-bottom: 10px;">The Commercial Office sector realized an improvement in its overall performance in FY'2021, with the average rental yields coming in at 7.1%, 0.1 % points higher than the 7.0% recorded in 2020. The average occupancy rates increased as well by 0.2% points to 77.9%, from 77.7% recorded in 2020</li>
+    <li style="margin-bottom: 10px;">In terms of sub markets performance, Gigiri was the best performing node in FY'2021 recording average rental yields of 8.6%, 1.5% points higher than the market average of 7.1%. On the other hand, Mombasa Road was the worst performing node with average rental yields at 5.1% in 2021</li>
+    <li style="margin-bottom: 10px;">Grade A and B office spaces recorded average rental yields of 7.5% each as tenants prefer them because of their adequate amenities and facilities in comparison to Grade C office spaces, which recorded average rental yields of 6.6%</li>
+    <li style="margin-bottom: 10px;">There was an office space oversupply of 6.7 mn SQFT in 2021, an 8.2% decrease from the 7.3 mn SQFT realized in 2020. This was attributed to increased demand of physical office spaces as some firms resumed full operations, as well as a decline in the supply of new office developments, which came in at 0.5 mn SQFT in 2021, 37.5% lower than the 0.8 mn SQFT recorded in 2020</li>
+    <li style="margin-bottom: 10px;">Our outlook for the NMA commercial office sector is NEUTRAL mainly due to the full resumption of operations by some firms and businesses amidst the improved economy driving occupancies. However, the performance of the commercial office sector is expected to be weighed down more so by the existing oversupply of office spaces currently at 6.7 mn SQFT</li>
+    <li style="margin-bottom: 10px;">Investment opportunity lies in Gigiri and Karen supported by relatively low supply of office spaces as well as high returns of 8.6% and 7.7%, respectively, compared to the market average of 7.1%, as at FY'2021. The remarkable performance was as a result of the presence of quality office spaces attracting high-end clients with ability to pay premium rental rates</li>
+</ul>
+
+<div style="background-color: #f8f9fa; padding: 20px; margin: 30px 0; border-left: 4px solid #e74c3c;">
+    <h4 style="color: #c0392b; margin-top: 0;">NMA Commercial Office Report – Overview of the sector</h4>
+    <p style="font-style: italic; color: #555;">Our outlook for the sector is NEUTRAL due to an improved business environment following the lifting of the COVID-19 containment measures, as well as some businesses resuming full operations</p>
+    
+    <table style="width: 100%; border-collapse: collapse; margin-top: 20px; background: white;">
+        <thead>
+            <tr style="background-color: #e74c3c; color: white;">
+                <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Value Area</th>
+                <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold;">Oversupply</td>
+                <td style="padding: 12px; border: 1px solid #ddd;">
+                    • In 2020, the commercial office sector had a supply of 7.1 mn SQFT against a demand decline of (0.2) mn SQFT, thus resulting to an oversupply of 7.3 mn SQFT<br/>
+                    • The oversupply decreased by 8.2% to 6.7 mn SQFT in 2021, due to; i) increased demand which came in at 1.2 mn SQFT in 2021, from (0.20 mn in 2020, and a decreased supply of new office spaces which came in at 0.5 mn SQFT, from the 0.8 mn SQFT offices supplied in 2020
+                </td>
+            </tr>
+            <tr style="background-color: #f8f9fa;">
+                <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold;">Returns Opportunity & Outlook</td>
+                <td style="padding: 12px; border: 1px solid #ddd;">
+                    • The sector realized an increase in activities which led to an improvement its overall performance. The improved business environment following the lifting of the COVID-19 containment measures, as well as some businesses resuming full operations were some of the factors that boosted the occupancy rates and rental yields of the sector<br/>
+                    • We have a NEUTRAL outlook for the commercial office sector, whose performance is expected to boosted by the improved business environment, hence some businesses resuming full operations. However, its performance is expected to continue being hindered by the existing oversupply at 6.7 mn SQFT<br/>
+                    • Investment opportunity lies in areas such as Westlands and Parklands which recorded high yields at 8.1%, and 7.6%, respectively, compared to the market average of 7.2% in 2021, as well as low supply zones such as Thika Road with a current market share of 4.4%
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold;">Effect on The Office Market</td>
+                <td style="padding: 12px; border: 1px solid #ddd;">
+                    • The average occupancy rates increased by 0.2% points to 77.9%, from 77.7% recorded in 2020 promoting the decline in the current oversupply<br/>
+                    • The average rental yields came in at 7.1%, 0.1% points higher than the 7.0% recorded in 2020<br/>
+                    • We expect the occupancy rates decline by 1.5% points to 76.4% in 2022, from 77.9% recorded in 2021, mainly attributed to the existing oversupply at 6.7 mn SQFT, some businesses still embracing the working from home initiative and the hybrid business model, and the market uncertainties due to the general elections
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4 style="color: #8e44ad; font-size: 18px; margin-top: 30px;">Key Factors Driving Office Market in Kenya</h4>
+<p style="background-color: #f3e5f5; padding: 15px; border-radius: 5px; border-left: 4px solid #8e44ad;">The reopening of the economy in 2021 facilitated the full resumption of various business operations and in turn led to an overall increase in the occupancy rates</p>
+
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <thead>
+        <tr style="background-color: #8e44ad; color: white;">
+            <th style="padding: 12px; text-align: left; border: 1px solid #ddd; width: 25%;">Factor</th>
+            <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Characteristics</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: #ffffff;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: 600; color: #8e44ad;">Reopening of the Economy</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">• The reopening of the economy in 2021 facilitated the full resumption of various business operations. This in turn led to a slight increase in the overall occupancy rates of the commercial office sector, as well as the overall rental yields</td>
+        </tr>
+        <tr style="background-color: #f8f9fa;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: 600; color: #8e44ad;">Serviced Offices/ Co working Spaces</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">• Serviced offices have been gaining traction in Kenya due to their convenience and flexibility making them attractive to tenants and investors</td>
+        </tr>
+        <tr style="background-color: #ffffff;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: 600; color: #8e44ad;">Nairobi's recognition as a regional hub</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">• Nairobi's recognition as a regional hub has attracted investments from foreigners. In January 2022, Max International company alongside CCI Group of Companies took up commercial office space at the Garden City Business Park worth 200,000 SQFT</td>
+        </tr>
+        <tr style="background-color: #f8f9fa;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: 600; color: #8e44ad;">Positive Demographics</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">• Kenya's urbanization growth rate is currently at 4.0%, 3.2% points higher than the global average of 1.8% according to the World Bank. This in turn drives the demand for office spaces as a result of people moving into the urban areas</td>
+        </tr>
+        <tr style="background-color: #ffffff;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: 600; color: #8e44ad;">Popularity of Green Offices</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">• The growing popularity of green offices under the Environmental Social and Governance (ESG) model has been driving demand for environmentally sustainable office spaces in the country. Some of these office spaces include the UNEP building in Gigiri</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4 style="color: #c0392b; font-size: 18px; margin-top: 30px;">Challenges Affecting Office Sector</h4>
+<p style="background-color: #ffebee; padding: 15px; border-radius: 5px; border-left: 4px solid #c0392b;">The remote working model still being adopted by some firms, continue to weigh down the overall occupancy rates of office spaces and the overall returns to landlords</p>
+
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <thead>
+        <tr style="background-color: #c0392b; color: white;">
+            <th style="padding: 12px; text-align: left; border: 1px solid #ddd; width: 30%;">Challenge</th>
+            <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Characteristics</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: #ffffff;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: 600; color: #c0392b;">Remote/ Hybrid Working Model</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">• The remote/hybrid working model which continues to be embraced by some firms, continues to weigh down the overall occupancy rates of office spaces and the overall returns to landlords. Notably, though, a shift to a hybrid working model by companies who had adapted the full remote working model will help boost office occupancy rates</td>
+        </tr>
+        <tr style="background-color: #ffebee;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: 600; color: #c0392b;">Price/Rent Concessions</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">• The addition of office spaces against the existing demand in Nairobi has led to an oversupply of 6.7 mn SQFT in 2021, and in turn affecting the overall occupancy rates of the buildings<br/>• Moreover, developers are halting their construction plans as they await the absorption of the existing office spaces</td>
+        </tr>
+        <tr style="background-color: #ffffff;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: 600; color: #c0392b;">Oversupply</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">• The addition of office spaces against the existing demand in Nairobi has led to an oversupply of 6.7 mn SQFT in 2021, and in turn affecting the overall occupancy rates of the buildings.<br/>• Moreover, developers are halting their construction plans as they await the absorption of the existing office spaces</td>
+        </tr>
+        <tr style="background-color: #ffebee;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: 600; color: #c0392b;">Financial Constraints</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">• Access to credit loans continue to be a challenge faced by developers due to the tedious transaction processes and timelines. Moreover, banks continue to tighten their loan lending terms while requesting for more collateral, due to the increasing default rates. According to Central Bank of Kenya's October-December 2021 Quarterly Economic Review, the Gross Non Performing Loans in the Real Estate sector increased by 21.7% to Kshs 74.7 bn in FY'2021, from Kshs 61.4 bn realized in FY'2020<br/>• This therefore leads to longer construction timelines and heavy debts incurred at the end of projects</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4 style="color: #27ae60; font-size: 18px; margin-top: 30px;">Highlights in the Commercial Office Sector</h4>
+<p style="background-color: #e8f5e9; padding: 15px; border-radius: 5px; border-left: 4px solid #27ae60;">The market saw the opening of a number of office buildings such as the Global Trade Centre, among others</p>
+
+<div style="background-color: white; padding: 20px; border: 2px solid #27ae60; border-radius: 8px; margin: 20px 0;">
+    <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+            <tr style="background-color: #27ae60; color: white;">
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Highlight</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold; vertical-align: top;">New Developments</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">
+                    • In 2021, the commercial office market saw the completion and opening of various office buildings. Some of the developments that were completed during the period include:<br/>
+                    i. Global Trade Centre Office Tower in Westlands (272,359 SQFT). The 42 level tower which was officially launched by President Uhuru Kenyatta in December 2021, is a one of a kind development cutting into Nairobi City's newest skyline, while also giving Westlands a new vibrant look,<br/>
+                    ii. Karen Green (69,000 SQFT) in Karen, and,<br/>
+                    iii. Riverside Square (94,722 SQFT) in Westlands<br/><br/>
+                    • Additionally, some of the expansion activities witnessed in the sector include;<br/>
+                    i. In January 2022, CCI Group of companies, and Max International, took up new office spaces worth 200,000 SQFT at Garden City Business Park, and,<br/>
+                    ii. Insurance Regulatory Authority (IRA) and Capital Markets Authority (CMA) announced plans to jointly purchase office spaces worth 55,000 SQFT in Upper Hill
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="font-size: 12px; color: #7f8c8d; margin-top: 10px; font-style: italic;">Source: Knight Frank, Cytonn Research</p>
+</div>
+
+<!-- Section B -->
+<h3 style="color: #2980b9; font-size: 22px; margin-top: 40px; border-bottom: 2px solid #2980b9; padding-bottom: 10px;">B. Commercial Office Supply in Nairobi</h3>
+
+<h4 style="color: #2c3e50; font-size: 20px; margin-top: 25px;">Commercial Office Space Supply-Nairobi</h4>
+<p style="font-size: 18px; color: #e74c3c; font-weight: bold;">The commercial market supply increased by 0.5 mn SQFT in 2021</p>
+
+<h5 style="color: #34495e; font-size: 16px; margin-top: 20px;">Nairobi Metropolitan Area Commercial Office Space Supply</h5>
+
+<h5 style="color: #2980b9; font-size: 16px; margin-top: 20px;">Major Commercial Office Completion in 2021</h5>
+<table style="width: 100%; border-collapse: collapse; margin: 15px 0; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <thead>
+        <tr style="background-color: #2980b9; color: white;">
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: center;">#</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Development</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Location</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Size (SQFT)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: #f8f9fa;">
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">1</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">Global Trade Centre (GTC) Office Tower</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">Westlands</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">272,359</td>
+        </tr>
+        <tr>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">2</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">Riverside Square</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">Westlands</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">136,907</td>
+        </tr>
+        <tr style="background-color: #f8f9fa;">
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">3</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">Karen Green</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">Karen</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">69,000</td>
+        </tr>
+        <tr style="background-color: #e8f6f3; font-weight: bold;">
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"></td>
+            <td style="padding: 12px; border: 1px solid #ddd;">Total</td>
+            <td style="padding: 12px; border: 1px solid #ddd;"></td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">478,266</td>
+        </tr>
+    </tbody>
+</table>
+<p style="font-size: 12px; color: #7f8c8d; font-style: italic;">Source: Knight Frank, Cytonn Research</p>
+
+<h5 style="color: #2980b9; font-size: 16px; margin-top: 20px;">Major Incoming Commercial Office Space Supply in 2022</h5>
+<table style="width: 100%; border-collapse: collapse; margin: 15px 0; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <thead>
+        <tr style="background-color: #27ae60; color: white;">
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Development</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Location</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Size (SQFT)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: #f8f9fa;">
+            <td style="padding: 12px; border: 1px solid #ddd;">The Cube</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">Riverside</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">77,876</td>
+        </tr>
+        <tr>
+            <td style="padding: 12px; border: 1px solid #ddd;">Sandalwood</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">Riverside</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">250,000</td>
+        </tr>
+        <tr style="background-color: #f8f9fa;">
+            <td style="padding: 12px; border: 1px solid #ddd;">One Principal Place</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">Westlands</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">126,109</td>
+        </tr>
+        <tr>
+            <td style="padding: 12px; border: 1px solid #ddd;">The Piano</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">Westlands</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">136,167</td>
+        </tr>
+        <tr style="background-color: #e8f6f3; font-weight: bold;">
+            <td style="padding: 12px; border: 1px solid #ddd;"></td>
+            <td style="padding: 12px; border: 1px solid #ddd;"></td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">590,152</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul style="background-color: #fff8e1; padding: 20px; border-left: 4px solid #ffc107; border-radius: 5px;">
+    <li style="margin-bottom: 10px;">• The supply of new commercial space continued to rise in 2021, with the addition of 3 other commercial buildings offering up to 0.5 mn SQFT of extra space in to the commercial office market</li>
+    <li style="margin-bottom: 10px;">• The developments included; Global Trade Centre (GTC) Office Tower and Riverside Square, both located in Westlands, and Karen Green in Karen</li>
+    <li style="margin-bottom: 10px;">• We expect the office space supply to further increase in 2022 with the addition of other various developments in the Pipeline totaling 0.6 mn SQFT of space. These developments include; The Cube and Sandalwood both located in Riverside, and, One Principal Place and the Piano both located in Westlands</li>
+</ul>
+
+<h4 style="color: #2c3e50; font-size: 20px; margin-top: 30px;">Commercial Office Space Supply-Nairobi Cont.…</h4>
+<p style="font-size: 16px; font-weight: 600; color: #e74c3c;">The office space supply in 2021 realized a 10 year CAGR decline of 6.8% from 1.2 mn in 2012 to 0.5 mn in 2021</p>
+
+<div style="background-color: #f5f5f5; padding: 20px; margin: 20px 0; text-align: center; border: 2px dashed #bdc3c7;">
+    <p style="margin: 0; font-weight: bold; color: #e74c3c; font-size: 18px;">CAGR=-6.8%</p>
+    <div style="display: flex; justify-content: space-around; align-items: flex-end; height: 200px; margin-top: 20px; padding: 0 20px;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 40px; height: 60px; background-color: #3498db;"></div>
+            <span style="font-size: 12px; margin-top: 5px;">1.2</span>
+            <span style="font-size: 10px;">2012</span>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 40px; height: 100px; background-color: #3498db;"></div>
+            <span style="font-size: 12px; margin-top: 5px;">2.1</span>
+            <span style="font-size: 10px;">2013</span>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 40px; height: 280px; background-color: #3498db;"></div>
+            <span style="font-size: 12px; margin-top: 5px;">5.9</span>
+            <span style="font-size: 10px;">2014</span>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 40px; height: 370px; background-color: #3498db;"></div>
+            <span style="font-size: 12px; margin-top: 5px;">7.8</span>
+            <span style="font-size: 10px;">2015</span>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 40px; height: 310px; background-color: #3498db;"></div>
+            <span style="font-size: 12px; margin-top: 5px;">6.5</span>
+            <span style="font-size: 10px;">2016</span>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 40px; height: 170px; background-color: #3498db;"></div>
+            <span style="font-size: 12px; margin-top: 5px;">3.5</span>
+            <span style="font-size: 10px;">2017</span>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 40px; height: 210px; background-color: #3498db;"></div>
+            <span style="font-size: 12px; margin-top: 5px;">4.3</span>
+            <span style="font-size: 10px;">2018</span>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 40px; height: 75px; background-color: #3498db;"></div>
+            <span style="font-size: 12px; margin-top: 5px;">1.5</span>
+            <span style="font-size: 10px;">2019</span>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 40px; height: 40px; background-color: #3498db;"></div>
+            <span style="font-size: 12px; margin-top: 5px;">0.8</span>
+            <span style="font-size: 10px;">2020</span>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 40px; height: 25px; background-color: #e74c3c;"></div>
+            <span style="font-size: 12px; margin-top: 5px;">0.5</span>
+            <span style="font-size: 10px;">2021</span>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 40px; height: 30px; background-color: #f39c12;"></div>
+            <span style="font-size: 12px; margin-top: 5px;">0.6</span>
+            <span style="font-size: 10px;">2022F</span>
+        </div>
+    </div>
+    <p style="margin-top: 10px; font-size: 14px; color: #7f8c8d;">Commercial Office Space Supply Over time (Mn Sqft)</p>
+</div>
+<p style="font-size: 12px; color: #7f8c8d; font-style: italic;">Source: Cytonn Research 2022</p>
+
+<ul style="background-color: #e3f2fd; padding: 20px; border-left: 4px solid #2196f3; border-radius: 5px;">
+    <li style="margin-bottom: 10px;">• The total office completions in Nairobi declined by 37.5% to approximately 0.5 mn SQFT in 2021, from the 0.8 mn SQFT recorded in 2020. This was due to slowdown in construction activities attributable to limited access to credit as banks have been limiting their lending's to real estate due to high levels of loan defaults and restructuring</li>
+    <li style="margin-bottom: 10px;">• Overall, the office space supply in 2021 realized a 10 year CAGR decline of 6.8% from 1.2 mn in 2012 to 0.5 mn in 2021, due to reduced activities and developers holding back their development plans as they await the absorption of the existing office spaces</li>
+</ul>
+
+<h4 style="color: #2c3e50; font-size: 20px; margin-top: 30px;">Commercial Office Space Supply – Market Share</h4>
+<p style="font-size: 18px; color: #2980b9; font-weight: 600;">Westlands and Upperhill had the highest office supply with market shares of 35.7% & 26.0%, respectively</p>
+
+<div style="background-color: white; padding: 20px; border: 2px solid #ecf0f1; border-radius: 8px; margin: 20px 0;">
+    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 20px 0;">
+        <div style="width: 100%; background-color: #e74c3c; color: white; padding: 10px; text-align: center; border-radius: 5px; font-weight: bold;">Westlands 35.7%</div>
+        <div style="width: 80%; background-color: #3498db; color: white; padding: 10px; text-align: center; border-radius: 5px; font-weight: bold;">Upperhill 26.0%</div>
+        <div style="width: 40%; background-color: #f39c12; color: white; padding: 10px; text-align: center; border-radius: 5px; font-weight: bold;">Parklands 8.6%</div>
+        <div style="width: 35%; background-color: #9b59b6; color: white; padding: 10px; text-align: center; border-radius: 5px; font-weight: bold;">Kilimani 11.2%</div>
+        <div style="width: 20%; background-color: #1abc9c; color: white; padding: 10px; text-align: center; border-radius: 5px; font-weight: bold;">Karen 5.5%</div>
+        <div style="width: 18%; background-color: #34495e; color: white; padding: 10px; text-align: center; border-radius: 5px; font-weight: bold;">Nrb CBD 5.4%</div>
+        <div style="width: 15%; background-color: #e67e22; color: white; padding: 10px; text-align: center; border-radius: 5px; font-weight: bold;">Msa Rd 3.3%</div>
+        <div style="width: 12%; background-color: #95a5a6; color: white; padding: 10px; text-align: center; border-radius: 5px; font-weight: bold;">Thika RD 2.5%</div>
+        <div style="width: 10%; background-color: #16a085; color: white; padding: 10px; text-align: center; border-radius: 5px; font-weight: bold;">Gigiri 1.9%</div>
+    </div>
+    <p style="text-align: center; font-weight: bold; color: #2c3e50;">Commercial Office Market Share Supply 2021</p>
+</div>
+
+<ul style="background-color: #f3e5f5; padding: 20px; border-left: 4px solid #9c27b0; border-radius: 5px;">
+    <li style="margin-bottom: 10px;">• Westlands, Upperhill and Kilimani had the largest supply of Nairobi office space in 2021, with market shares of 35.7%, 26.0% and 11.2%, respectively</li>
+    <li style="margin-bottom: 10px;">• On the side, Gigiri and Thika Road had the lowest supply with a market share of 1.9% and 2.5% respectively</li>
+    <li style="margin-bottom: 10px;">• Westlands and Upperhill have grown as business nodes as firms move away from the CBD due to traffic congestion and in search of better quality space, hence the high supply</li>
+    <li style="margin-bottom: 10px;">• Westlands and Karen recorded completions of new office buildings in 2021</li>
+</ul>
+<p style="font-size: 12px; color: #7f8c8d; font-style: italic;">Source: Cytonn Research 2022</p>
+
+<!-- Section C -->
+<h3 style="color: #2980b9; font-size: 22px; margin-top: 40px; border-bottom: 2px solid #2980b9; padding-bottom: 10px;">C. Commercial Office Market Performance</h3>
+
+<h4 style="color: #27ae60; font-size: 20px; margin-top: 25px;">Commercial Office Market Performance Summary</h4>
+<p style="font-size: 18px; font-weight: 600; color: #27ae60; background-color: #e8f5e9; padding: 15px; border-radius: 5px;">The commercial office sector realized a slight improvement in its overall performance in 2021, with the average rental yields coming in at 7.1%, 0.1% points higher than the 7.0% recorded in 2020</p>
+
+<p style="font-style: italic; color: #7f8c8d; margin-bottom: 20px;">All values in Kshs Unless Stated Otherwise</p>
+
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <thead>
+        <tr style="background-color: #27ae60; color: white;">
+            <th style="padding: 10px; border: 1px solid #ddd;">Node</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Occupancy %</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Asking Rents (Kshs/SQFT)</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Average Prices (Kshs/SQFT)</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Average Rental Yields (%)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="text-align: center; background-color: #f8f9fa;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Q1' 2020</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">81.7%</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">97</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">12,535</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">7.8%</td>
+        </tr>
+        <tr style="text-align: center;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">H1' 2020</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">80.0%</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">95</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">12,516</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">7.3%</td>
+        </tr>
+        <tr style="text-align: center; background-color: #f8f9fa;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Q3' 2020</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">79.9%</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">94</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">12,479</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">7.2%</td>
+        </tr>
+        <tr style="text-align: center;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">FY' 2020</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">77.7%</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">93</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">12,280</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">7.0%</td>
+        </tr>
+        <tr style="text-align: center; background-color: #f8f9fa;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Q1'2021</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">76.3%</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">92</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">12,228</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">6.8%</td>
+        </tr>
+        <tr style="text-align: center;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">H1'2021</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">75.8%</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">93</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">12,224</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">6.9%</td>
+        </tr>
+        <tr style="text-align: center; background-color: #f8f9fa;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Q3' 2021</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">77.3%</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">93</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">12,211</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">6.9%</td>
+        </tr>
+        <tr style="text-align: center; background-color: #e8f5e9; font-weight: bold;">
+            <td style="padding: 10px; border: 1px solid #ddd;">FY'2021</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">77.9%</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">93</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">12,279</td>
+            <td style="padding: 10px; border: 1px solid #ddd; color: #27ae60;">7.1%</td>
+        </tr>
+        <tr style="text-align: center; background-color: #fff3e0; font-weight: bold; color: #e65100;">
+            <td style="padding: 10px; border: 1px solid #ddd;">∆ FY'2020/FY'2021</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">0.2%</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">0.0%</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">0.0%</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">0.1%</td>
+        </tr>
+    </tbody>
+</table>
+<p style="font-size: 12px; color: #7f8c8d; font-style: italic;">Source: Cytonn Research</p>
+
+<ul style="background-color: #e8f5e9; padding: 20px; border-left: 4px solid #4caf50; border-radius: 5px;">
+    <li style="margin-bottom: 10px;">• The commercial office sector realized a slight improvement in its overall performance in 2021, with the average rental yields coming in at 7.1%, 0.1% points higher than the 7.0% recorded in 2020</li>
+    <li style="margin-bottom: 10px;">• The average occupancy rates increased as well by 0.2% points to 77.9% in 2021, from 77.7% recorded in 2020</li>
+    <li style="margin-bottom: 10px;">• The improvement in performance was mainly driven by an improved business environment following the lifting of the COVID-19 containment measures, as well as some businesses resuming full operations hence boosting the occupancy rates</li>
+    <li style="margin-bottom: 10px;">• The average asking rents remained flat at Kshs 93, as some landlords still offer discounts in order to retain and attract new clients, hence the rents haven't resumed their pre-covid rates which averaged Kshs 96 per SQFT as at 2019</li>
+</ul>
+
+<h4 style="color: #2980b9; font-size: 20px; margin-top: 30px;">i. Performance by Nodes</h4>
+
+<h5 style="color: #e74c3c; font-size: 18px;">Nairobi Office Sub-Market Performance</h5>
+<p style="font-size: 16px; font-weight: 600; color: #c0392b;">Gigiri was the best performing node in 2021 with average rental yields at 8.6%, 1.5% points higher than the market average 7.1%</p>
+<p style="font-size: 14px; color: #7f8c8d; font-style: italic;">(All values in Kshs unless stated otherwise)</p>
+
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow-x: auto; display: block;">
+    <thead>
+        <tr style="background-color: #2980b9; color: white;">
+            <th style="padding: 8px; border: 1px solid #ddd;">Area</th>
+            <th style="padding: 8px; border: 1px solid #ddd;">Price/SQFT (Kshs) 2020</th>
+            <th style="padding: 8px; border: 1px solid #ddd;">Rent/SQFT (Kshs) 2020</th>
+            <th style="padding: 8px; border: 1px solid #ddd;">Occupancy 2020</th>
+            <th style="padding: 8px; border: 1px solid #ddd;">Rental Yields 2020</th>
+            <th style="padding: 8px; border: 1px solid #ddd;">Price Kshs/SQFT 2021</th>
+            <th style="padding: 8px; border: 1px solid #ddd;">Rent Kshs/SQFT 2021</th>
+            <th style="padding: 8px; border: 1px solid #ddd;">Occupancy 2021(%)</th>
+            <th style="padding: 8px; border: 1px solid #ddd;">Rental Yield (%) 2021</th>
+            <th style="padding: 8px; border: 1px solid #ddd;">∆ in Rent</th>
+            <th style="padding: 8px; border: 1px solid #ddd;">∆ in Occupancy (% points)</th>
+            <th style="padding: 8px; border: 1px solid #ddd;">∆ in Rental Yields (% points)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: #fff3cd; font-weight: bold;">
+            <td style="padding: 8px; border: 1px solid #ddd;">Gigiri</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">13,400</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">116</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">82.5%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">8.5%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">13,500</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">119</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">81.3%</td>
+            <td style="padding: 8px; border: 1px solid #ddd; color: #d35400;">8.6%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">2.3%</td>
+            <td style="padding: 8px; border: 1px solid #ddd; color: #e74c3c;">(1.2%)</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">0.1%</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">Westlands</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">11,975</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">104</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">74.4%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">7.8%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">11,972</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">104</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">75.5%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">8.1%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">0.4%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1.1%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">0.3%</td>
+        </tr>
+        <tr style="background-color: #f8f9fa;">
+            <td style="padding: 8px; border: 1px solid #ddd;">Karen</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">13,567</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">106</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">83.6%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">7.8%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">13,325</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">106</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">83.0%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">7.7%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">(0.4%)</td>
+            <td style="padding: 8px; border: 1px solid #ddd; color: #e74c3c;">(0.6%)</td>
+            <td style="padding: 8px; border: 1px solid #ddd; color: #e74c3c;">(0.1%)</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">Parklands</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">10,958</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">93</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">79.9%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">7.6%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">11,336</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">91</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">80.1%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">7.6%</td>
+            <td style="padding: 8px; border: 1px solid #ddd; color: #e74c3c;">(1.4%)</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">0.2%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">0.0%</td>
+        </tr>
+        <tr style="background-color: #f8f9fa;">
+            <td style="padding: 8px; border: 1px solid #ddd;">Kilimani</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">12,233</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">93</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">79.1%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">6.8%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">12,364</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">91</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">79.8%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">7.1%</td>
+            <td style="padding: 8px; border: 1px solid #ddd; color: #e74c3c;">(1.5%)</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">0.7%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">0.3%</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">Upperhill</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">12,684</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">92</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">78.5%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">6.9%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">12,409</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">94</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">78.0%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">7.0%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">2.2%</td>
+            <td style="padding: 8px; border: 1px solid #ddd; color: #e74c3c;">(0.5%)</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">0.2%</td>
+        </tr>
+        <tr style="background-color: #f8f9fa;">
+            <td style="padding: 8px; border: 1px solid #ddd;">Nairobi CBD</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">11,889</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">82</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">82.4%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">6.8%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">11,787</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">82</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">82.8%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">6.8%</td>
+            <td style="padding: 8px; border: 1px solid #ddd; color: #e74c3c;">(0.7%)</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">0.4%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">0.0%</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">Thika Road</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">12,500</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">80</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">76.1%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">5.8%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">12,571</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">79</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">76.3%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">5.7%</td>
+            <td style="padding: 8px; border: 1px solid #ddd; color: #e74c3c;">(1.8%)</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">0.2%</td>
+            <td style="padding: 8px; border: 1px solid #ddd; color: #e74c3c;">(0.1%)</td>
+        </tr>
+        <tr style="background-color: #ffebee;">
+            <td style="padding: 8px; border: 1px solid #ddd;">Mombasa road</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">11,313</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">73</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">63.0%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">4.8%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">11,250</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">73</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">64.2%</td>
+            <td style="padding: 8px; border: 1px solid #ddd; color: #c0392b;">5.1%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">0.6%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1.2%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">0.3%</td>
+        </tr>
+        <tr style="background-color: #e3f2fd; font-weight: bold;">
+            <td style="padding: 8px; border: 1px solid #ddd;">Node Averages</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">12,280</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">93</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">77.7%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">7.0%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">12,279</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">93</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">77.9%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">7.1%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">0.0%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">0.2%</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">0.1%</td>
+        </tr>
+    </tbody>
+</table>
+<p style="font-size: 12px; color: #7f8c8d; font-style: italic;">Source: Cytonn Research, 2022</p>
+
+<h5 style="color: #c0392b; font-size: 18px; margin-top: 30px;">Nairobi Office Market Performance- By Rank</h5>
+<p style="font-weight: 600; color: #2c3e50;">Gigiri, Westlands, and Karen were the best performing nodes in 2021 with average rental yields of 8.6%, 8.1%, and 7.7%, respectively</p>
+
+<div style="background-color: #fff; padding: 20px; border: 2px solid #ecf0f1; border-radius: 8px; margin: 20px 0;">
+    <h6 style="color: #d35400; margin-top: 0; font-size: 16px;">1. Gigiri</h6>
+    <p>• Gigiri was the best performing node in 2021 with average rental yields at 8.6%, 1.5% points higher than the market average 7.1%. The performance also represented a 0.1% points increase from the 8.5% recorded in 2020. The improvement in performance was mainly attributed to the availability of top quality grade A and B offices charging premium rental prices, affluent neighborhood, and availability of adequate infrastructure and amenities in the area such as the Limuru Road</p>
+    
+    <h6 style="color: #d35400; margin-top: 20px; font-size: 16px;">2. Westlands</h6>
+    <p>• Westlands recorded average rental yields of 8.1% in 2021, a 0.3% points increase from the 7.8% recorded in 2020. The occupancy rates also realized a 1.1% points increase to 75.5% in 2021 from 74.4% rate recorded in 2020. The remarkable performance was mainly driven by; i) close proximity to Nairobi's CBD, ii) presence of adequate infrastructure fueling demand for office spaces, and, iii) serene environment with capability to attract high net worth entities that are willing to pay for the development spaces</p>
+    
+    <h6 style="color: #d35400; margin-top: 20px; font-size: 16px;">3. Karen</h6>
+    <p>• Karen recorded a 0.1% points decline in the rental yields to 7.7% in 2021, from 7.8% recorded in 2020. This was driven by a 0.6% points decline in occupancy rates to 83.0% from 83.6% in 2020, coupled with a reduction of rental rates by property managers in a bid to attract tenants and retain the existing ones. Karen was the third best performing node with the performance attributed to the serenity of the environment attracting high net worth individuals, coupled with improving infrastructure servicing the area</p>
+</div>
+
+<div style="background-color: #f5f5f5; padding: 20px; border-left: 4px solid #7f8c8d; border-radius: 5px; margin: 20px 0;">
+    <p style="margin: 0; font-weight: 600; color: #555;">Parklands, Kilimani and Upperhill recorded average rental yields of 7.6%, 7.1% and 7.0%, respectively, in 2021</p>
+    
+    <h6 style="color: #555; margin-top: 20px; font-size: 16px;">4. Parklands</h6>
+    <p>• Parklands recorded an average rental yield of 7.6% in 2021, maintaining the similar performance as in 2020. The average asking rents and occupancy rates came in at Kshs 91 and 80.1%, respectively, from the Kshs 93 per SQFT and 79.9% recorded in 2020. Some of the factors influencing performance of the area includes; its proximity to the CBD and Westlands thus attractive to tenants, ample infrastructure and favourable zoning regulations facilitating densification</p>
+    
+    <h6 style="color: #555; margin-top: 20px; font-size: 16px;">5. Kilimani</h6>
+    <p>• Kilimani recorded average rental yields of 7.1% in 2021, a 0.3% points increase from the 6.8% recoded in 2020. Occupancy rates increased as well by 0.7% points to 79.8% in 2021 from 79.1% in 2020 attributed to increased demand resulting from favorable infrastructure as well as some businesses resuming full operations. Also Kilimani hosts various government embassies making it ideal and attractive for office investments, such as the Nigerian, Chinese, Ethiopian, and Zambian Embassies, among others</p>
+    
+    <h6 style="color: #555; margin-top: 20px; font-size: 16px;">6. Upperhill</h6>
+    <p>• Upperhill recorded a 0.1% points increase in the average rental yields which came in at 7.0% in 2021, from the 6.9% recorded in 2020. This was mainly driven by the 2.2% increase in the average asking rents which came in at Kshs 94 per SQFT in 2021 from the Kshs 92 per SQFT recorded in 2020</p>
+    <p>• Conversely, occupancy rates continued to be weighed down by the existing oversupply that was driven by new developments such as the Upperhill Chambers adding 270,000 SQFT in 2020, among others, which further increased supply in the area</p>
+</div>
+
+<div style="background-color: #ffebee; padding: 20px; border-left: 4px solid #c0392b; border-radius: 5px; margin: 20px 0;">
+    <p style="margin: 0; font-weight: 600; color: #c0392b;">Nairobi CBD, Thika Road, and Mombasa Road recorded average rental yields of 6.8%, 5.7% and 5.1%, respectively, in 2021</p>
+    
+    <h6 style="color: #555; margin-top: 20px; font-size: 16px;">7. Nairobi CBD</h6>
+    <p>• The Nairobi CBD maintained its average rental yields at 6.8% in 2021, with the occupancy coming in at 82.8% in 2021, a 0.4% points increase from the 82.4% realized in 2020. This was attributed to affordability of the office spaces hence fueling their demand amidst an improving economy as well. In support of this, the average asking rents came in at Kshs 82 per SQFT, 14.0% lower than the market average which was recorded at 93 per SQFT</p>
+    
+    <h6 style="color: #555; margin-top: 20px; font-size: 16px;">8. Thika Road</h6>
+    <p>• Over the last four years, Thika Road has established itself as an upcoming office zone offering quality grade B offices. The node, however, recorded a 0.1% points decline in performance recording rental yields of 5.7% in 2021 from 5.8% in 2020. The decline in performance was mainly driven by a 1.8% decline in asking rents to Kshs 79 per SQFT in 2021 from Kshs 80 per SQFT recorded in 2020</p>
+    
+    <h6 style="color: #c0392b; margin-top: 20px; font-size: 16px;">9. Mombasa Road</h6>
+    <p>• Mombasa Road was the worst performing node with average rental yields at 5.1% in 2021, 2.0% points lower than the market average of 7.1%, attributed to the low average rents at Kshs 73.0 per SQFT which is lower than the market average of Kshs 93 Per SQFT, zoning regulations as Mombasa Road is mainly considered an industrial area thus making it unattractive to business firms, and current traffic snarl-ups caused by the ongoing Nairobi Expressway project thus making the area unattractive. However this is a temporary situation as we expect the area to record improved performance upon the completion of the project</p>
+</div>
+
+<h4 style="color: #2980b9; font-size: 20px; margin-top: 30px;">ii. Performance by Grades</h4>
+
+<h5 style="color: #2c3e50; font-size: 18px;">Classification of Offices in Nairobi</h5>
+<p>Kenya has various types of offices according to the global classification, that is, Grades A, B and C</p>
+<ul style="background-color: #e3f2fd; padding: 20px; border-left: 4px solid #2196f3; border-radius: 5px;">
+    <li style="margin-bottom: 10px;"><strong>Grade A:</strong> These are high quality office buildings characterized by their adequate amenities, facilities, and finishes. They therefore fetch higher rental rates and yields compared to other office types. Also these office building sizes range from 100,001- 300,000 SQFT,</li>
+    <li style="margin-bottom: 10px;"><strong>Grade B:</strong> These office buildings have their sizes ranging between 50,000 to 100,000 SQFT. They have good amenities and services, however not as good as Grade A offices, hence charge moderate rental rates, and,</li>
+    <li style="margin-bottom: 10px;"><strong>Grade C:</strong> These buildings are usually old, hence their lack of adequate services and facilities. Usually, they charge rents below the average market rate</li>
+</ul>
+
+<h5 style="color: #8e44ad; font-size: 18px; margin-top: 25px;">Distribution of Various Classes Offices</h5>
+<p style="font-weight: 600; color: #8e44ad;">Grade B offices are the most common within the NMA, accounting in 56.0% of the market share</p>
+
+<ul style="background-color: #f3e5f5; padding: 20px; border-left: 4px solid #9c27b0; border-radius: 5px;">
+    <li style="margin-bottom: 10px;">• From our analysis, Grade B office spaces still account for a majority office spaces in Nairobi, with the current market share being 56.0%. However, this is a 1.8% points decline from the 57.8% share recorded in 2020, as a result of the increased completions of Grade A offices such as the GTC Office Tower in Westlands</li>
+    <li style="margin-bottom: 10px;">• For the individual nodes, Gigiri has the highest percentage of Grade A offices at 60.0%, whereas Kilimani has the highest percentage of Grade B offices at 81.8%</li>
+    <li style="margin-bottom: 10px;">• For Grade C, Mombasa Road accounts for majority of the office spaces with a current market share of 55.6%</li>
+    <li style="margin-bottom: 10px;">• In terms of concentration, Parklands has the highest mix of office types, having recorded 21.1%, 52.6%, and 26.3% of Grade A, Grade B, and Grade C office spaces</li>
+</ul>
+
+<div style="background-color: white; padding: 20px; margin: 20px 0; border: 2px solid #ecf0f1;">
+    <h6 style="text-align: center; color: #2c3e50;">Office Space Distribution by Grades</h6>
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; height: 300px; padding: 20px; background-color: #fafafa; border-radius: 8px;">
+        <!-- Gigiri -->
+        <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
+            <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                <div style="background-color: #e74c3c; width: 80%; height: 120px; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: bold;">60.0%</div>
+                <div style="background-color: #3498db; width: 80%; height: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px;">40.0%</div>
+                <div style="background-color: #95a5a6; width: 80%; height: 5px;"></div>
+            </div>
+            <span style="font-size: 11px; margin-top: 5px; text-align: center; font-weight: 600;">Gigiri</span>
+        </div>
+        <!-- Karen -->
+        <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
+            <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                <div style="background-color: #e74c3c; width: 80%; height: 30px; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px;">9.1%</div>
+                <div style="background-color: #3498db; width: 80%; height: 45px; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px;">55.6%</div>
+                <div style="background-color: #95a5a6; width: 80%; height: 20px;"></div>
+            </div>
+            <span style="font-size: 11px; margin-top: 5px; text-align: center; font-weight: 600;">Karen</span>
+        </div>
+        <!-- Kilimani -->
+        <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
+            <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                <div style="background-color: #e74c3c; width: 80%; height: 88px; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: bold;">81.8%</div>
+                <div style="background-color: #3498db; width: 80%; height: 20px;"></div>
+                <div style="background-color: #95a5a6; width: 80%; height: 10px;"></div>
+            </div>
+            <span style="font-size: 11px; margin-top: 5px; text-align: center; font-weight: 600;">Kilimani</span>
+        </div>
+        <!-- Msa Road -->
+        <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
+            <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                <div style="background-color: #e74c3c; width: 80%; height: 10px;"></div>
+                <div style="background-color: #3498db; width: 80%; height: 22px; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px;">22.2%</div>
+                <div style="background-color: #95a5a6; width: 80%; height: 55px; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: bold;">64.7%</div>
+            </div>
+            <span style="font-size: 11px; margin-top: 5px; text-align: center; font-weight: 600;">Msa Road</span>
+        </div>
+        <!-- Nairobi CBD -->
+        <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
+            <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                <div style="background-color: #e74c3c; width: 80%; height: 26px;"></div>
+                <div style="background-color: #3498db; width: 80%; height: 65px; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px;">52.6%</div>
+                <div style="background-color: #95a5a6; width: 80%; height: 12px;"></div>
+            </div>
+            <span style="font-size: 11px; margin-top: 5px; text-align: center; font-weight: 600;">Nairobi CBD</span>
+        </div>
+        <!-- Parklands -->
+        <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
+            <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                <div style="background-color: #e74c3c; width: 80%; height: 42px;"></div>
+                <div style="background-color: #3498db; width: 80%; height: 35px;"></div>
+                <div style="background-color: #95a5a6; width: 80%; height: 42px;"></div>
+            </div>
+            <span style="font-size: 11px; margin-top: 5px; text-align: center; font-weight: 600;">Parklands</span>
+        </div>
+        <!-- Thika Road -->
+        <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
+            <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                <div style="background-color: #e74c3c; width: 80%; height: 20px;"></div>
+                <div style="background-color: #3498db; width: 80%; height: 8px;"></div>
+                <div style="background-color: #95a5a6; width: 80%; height: 35px;"></div>
+            </div>
+            <span style="font-size: 11px; margin-top: 5px; text-align: center; font-weight: 600;">Thika Road</span>
+        </div>
+        <!-- UpperHill -->
+        <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
+            <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                <div style="background-color: #e74c3c; width: 80%; height: 100px;"></div>
+                <div style="background-color: #3498db; width: 80%; height: 75px;"></div>
+                <div style="background-color: #95a5a6; width: 80%; height: 50px;"></div>
+            </div>
+            <span style="font-size: 11px; margin-top: 5px; text-align: center; font-weight: 600;">UpperHill</span>
+        </div>
+        <!-- Westlands -->
+        <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
+            <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                <div style="background-color: #e74c3c; width: 80%; height: 55px;"></div>
+                <div style="background-color: #3498db; width: 80%; height: 45px;"></div>
+                <div style="background-color: #95a5a6; width: 80%; height: 30px;"></div>
+            </div>
+            <span style="font-size: 11px; margin-top: 5px; text-align: center; font-weight: 600;">Westlands</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: center; gap: 20px; margin-top: 10px;">
+        <span style="display: flex; align-items: center; font-size: 12px;"><span style="width: 15px; height: 15px; background-color: #e74c3c; margin-right: 5px; border-radius: 3px;"></span>Grade A</span>
+        <span style="display: flex; align-items: center; font-size: 12px;"><span style="width: 15px; height: 15px; background-color: #3498db; margin-right: 5px; border-radius: 3px;"></span>Grade B</span>
+        <span style="display: flex; align-items: center; font-size: 12px;"><span style="width: 15px; height: 15px; background-color: #95a5a6; margin-right: 5px; border-radius: 3px;"></span>Grade C</span>
+    </div>
+    <p style="text-align: center; font-size: 11px; color: #7f8c8d; margin-top: 10px;">Source: Cytonn Research</p>
+</div>
+
+<h5 style="color: #27ae60; font-size: 18px; margin-top: 25px;">Commercial Office Performance Based On Grades</h5>
+<p style="font-weight: 600; color: #27ae60;">Grade A and B office spaces had the highest rental yields at 7.5% per annum</p>
+
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <thead>
+        <tr style="background-color: #27ae60; color: white;">
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Office Grade</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Price 2020 Kshs/SQFT</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Rent 2020 Kshs/SQFT</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Occupancy 2020 (%)</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Rental Yield 2020</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Price 2021 Kshs/SQFT</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Rent 2021 Kshs/SQFT</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Occupancy 2021 (%)</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Rental Yield (%) 2021</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">∆ Rent Y/Y</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">∆ Occupancy Y/Y (% points)</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">∆ Rental Yield Y/Y (%points)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: #fff3cd;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold;">Grade A</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">13,628</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">101</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">76.3%</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">6.8%</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">12,674</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">99</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right; color: #27ae60; font-weight: bold;">79.4%</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right; color: #27ae60; font-weight: bold;">7.5%</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right; color: #e74c3c;">(1.8%)</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right; color: #27ae60; font-weight: bold;">3.1%</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right; color: #27ae60; font-weight: bold;">0.7%</td>
+        </tr>
+        <tr>
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold;">Grade B</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">12,202</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">96</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">78.7%</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right; background-color: #e8f5e9; font-weight: bold;">7.5%</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">12,340</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">97</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">78.2%</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right; background-color: #e8f5e9; font-weight: bold;">7.5%</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right; color: #e74c3c;">(1.1%)</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right; color: #e74c3c;">(0.5%)</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">0.0%</td>
+        </tr>
+        <tr style="background-color: #f8f9fa;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold;">Grade C</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">10,721</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">85</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">74.3%</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">6.8%</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">10,839</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">82</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">74.3%</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right; color: #e74c3c;">6.6%</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right; color: #e74c3c; font-weight: bold;">(3.3%)</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">0.0%</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: right; color: #e74c3c;">(0.2%)</td>
+        </tr>
+    </tbody>
+</table>
+<p style="font-size: 12px; color: #7f8c8d; font-style: italic;">Source: Cytonn Research</p>
+
+<ul style="background-color: #e8f5e9; padding: 20px; border-left: 4px solid #4caf50; border-radius: 5px;">
+    <li style="margin-bottom: 10px;">• Grade A and B office spaces had the highest rental yields at 7.5% as tenants prefer them because of their relative better technical services in comparison to Grade C office spaces</li>
+    <li style="margin-bottom: 10px;">• Grade A offices recorded the highest overall increase in occupancy rates by 3.1% points in 2021 to 79.4% from the 76.3% realized in 2020 as a result of increased demand</li>
+    <li style="margin-bottom: 10px;">• For rental rates, Grade C offices recorded the largest drop in the average rental rates by 3.3% which in turn led to the largest drop in rental yields by 0.2% points in the period of focus</li>
+</ul>
+
+<h4 style="color: #2980b9; font-size: 20px; margin-top: 30px;">iii. Performance by Nodes & Grades</h4>
+<h5 style="color: #8e44ad; font-size: 18px;">Performance by Nodes and Grades</h5>
+<p style="font-weight: 600; color: #8e44ad;">For Grade B spaces, Gigiri and Westlands offer the highest rental yield of 9.0% and 8.6%, respectively</p>
+
+<ul style="background-color: #f3e5f5; padding: 20px; border-left: 4px solid #9c27b0; border-radius: 5px;">
+    <li style="margin-bottom: 10px;">• In 2021, Grade A offices in Gigiri, Karen and Parklands offered the highest average rental yields all at 8.2%, and Westlands at 7.8%. This was attributed to their superior locations characterized by serene environment attracting high end clients and premium rates, coupled with the presence of adequate amenities and infrastructure servicing the areas</li>
+    <li style="margin-bottom: 10px;">• The Grade B offices in Gigiri and Westlands had the highest rental yields of 9.0% and 8.6%, respectively, whereas for the Grade C category, Westlands and Nairobi CBD had the best returns with average rental yields that came in at 7.7% and 7.3%, respectively</li>
+</ul>
+
+<h6 style="color: #2c3e50; text-align: center; margin-top: 20px;">Commercial Office Performance in 2021 by Nodes and Grades</h6>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <thead>
+        <tr style="background-color: #8e44ad; color: white;">
+            <th rowspan="2" style="padding: 12px; border: 1px solid #ddd; text-align: left;">Row Labels</th>
+            <th colspan="2" style="padding: 12px; border: 1px solid #ddd; text-align: center;">Grade A</th>
+            <th colspan="2" style="padding: 12px; border: 1px solid #ddd; text-align: center;">Grade B</th>
+            <th colspan="2" style="padding: 12px; border: 1px solid #ddd; text-align: center;">Grade C</th>
+        </tr>
+        <tr style="background-color: #9b59b6; color: white;">
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: right;">Average of Occupancy (%)</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: right;">Average of Rental Yield</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: right;">Average of Occupancy (%)</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: right;">Average of Rental Yield</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: right;">Average of Occupancy (%)</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: right;">Average of Rental Yield</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: #fff3cd;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Gigiri</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">77.5%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; font-weight: bold; color: #d35400;">8.2%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">85.1%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; font-weight: bold; color: #d35400;">9.0%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Karen</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">85.8%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; font-weight: bold; color: #27ae60;">8.2%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">80.3%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">7.4%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+        </tr>
+        <tr style="background-color: #f8f9fa;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Parklands</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">84.8%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">8.2%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">75.0%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">7.2%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">84.6%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; font-weight: bold;">7.7%</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Westlands</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">78.2%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">7.8%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">75.6%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; font-weight: bold; color: #e67e22;">8.6%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">71.8%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">7.2%</td>
+        </tr>
+        <tr style="background-color: #f8f9fa;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Kilimani</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">72.5%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">6.2%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">80.7%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">7.2%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">80.0%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">7.2%</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Upper Hill</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">77.9%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">7.3%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">80.2%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">7.2%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">72.5%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #e74c3c;">6.3%</td>
+        </tr>
+        <tr style="background-color: #f8f9fa;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Nairobi CBD</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">83.2%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">6.7%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">82.0%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">7.3%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Thika Road</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">80.0%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">6.6%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">76.3%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #e74c3c;">5.7%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">73.0%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #c0392b;">4.6%</td>
+        </tr>
+        <tr style="background-color: #ffebee;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Msa Road</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">75.0%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #c0392b;">5.3%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">61.5%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">5.0%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">61.0%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">5.0%</td>
+        </tr>
+    </tbody>
+</table>
+<p style="font-size: 12px; color: #7f8c8d; font-style: italic;">Source: Cytonn Research</p>
+
+<h4 style="color: #e67e22; font-size: 20px; margin-top: 30px;">iv. Serviced Offices Performance</h4>
+<h5 style="color: #d35400; font-size: 18px;">Serviced Offices Performance</h5>
+<p style="font-weight: 600; color: #d35400;">Serviced offices realized a 0.8% Y/Y rental growth to Kshs 183 per SQFT in 2021, from Kshs 161 per SQFT recorded in 2020</p>
+
+<ul style="background-color: #fff3e0; padding: 20px; border-left: 4px solid #f39c12; border-radius: 5px;">
+    <li style="margin-bottom: 10px;">• Serviced offices realized a 0.8% Y/Y rental growth to Kshs 183 per SQFT in 2021, from Kshs 161 per SQFT recorded in 2020. In comparison to the unserviced offices which recorded average rents of Kshs 93, the average rents for the serviced offices were higher by 49.2% in 2021. The remarkable performance was mainly attributed to; i) convenience resulting from access to existing facilities, ii) flexibility of the leases, and, iii) no set-up costs required</li>
+    <li style="margin-bottom: 10px;">• Westlands and Karen recorded the highest rent appreciations of 3.9% and 3.1%, respectively, compared to the market average of 0.8% for the serviced offices, due to the presence of quality infrastructure, and facilities attracting primerents</li>
+</ul>
+
+<h6 style="color: #2c3e50; text-align: center; margin-top: 20px;">Nairobi Metropolitan Area Serviced Office Performance</h6>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <thead>
+        <tr style="background-color: #e67e22; color: white;">
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Location</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Rent Per SQFT 2020</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Rent Per SQFT 2021</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: center;" colspan="2">Serviced Offices Rental growth (%)</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: center;" colspan="2">Un-serviced Offices Rental growth (%)</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Serviced Offices</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Un-serviced Offices</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: center;">Serviced Offices</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: center;">Un-serviced Offices</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: #e8f5e9;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Westlands</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">204</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">212</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; font-weight: bold; color: #27ae60;" colspan="2">3.9%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;" colspan="2">10.6%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Karen</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">186</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">192</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; font-weight: bold; color: #27ae60;" colspan="2">3.1%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;" colspan="2">1.9%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+        </tr>
+        <tr style="background-color: #ffebee;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Parklands</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">174</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">169</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #e74c3c; font-weight: bold;" colspan="2">(3.3%)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #e74c3c;" colspan="2">(16.5%)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Gigiri</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">181</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">116-119</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #e74c3c;" colspan="2">-2.5%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;" colspan="2">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+        </tr>
+        <tr style="background-color: #f8f9fa;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Upperhill</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">92 235</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;" colspan="2">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #e74c3c;" colspan="2">-2.1%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">94</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Kilimani</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">190</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">194</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;" colspan="2">2.2%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;" colspan="2">9.9%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+        </tr>
+        <tr style="background-color: #f8f9fa;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Nairobi CBD</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">160</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">164</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;" colspan="2">2.6%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #e74c3c;" colspan="2">(13.4%)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Msa Rd</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">105</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">73</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;" colspan="2">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;" colspan="2">-0.0%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+        </tr>
+        <tr style="background-color: #ffebee;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Thika Rd</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">116</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">112</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #e74c3c;" colspan="2">(3.6%)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #e74c3c;" colspan="2">(1.3%)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">79</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+        </tr>
+        <tr style="background-color: #e3f2fd; font-weight: bold;">
+            <td style="padding: 10px; border: 1px solid #ddd;">Average</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">161</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">183</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #27ae60;" colspan="2">0.8%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;" colspan="2">0.0%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">93</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">93</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">-</td>
+        </tr>
+    </tbody>
+</table>
+<p style="font-size: 12px; color: #7f8c8d; font-style: italic;">Source: Cytonn Research</p>
+
+<!-- Section D -->
+<h3 style="color: #2980b9; font-size: 22px; margin-top: 40px; border-bottom: 2px solid #2980b9; padding-bottom: 10px;">D. Office Space Opportunity</h3>
+
+<h4 style="color: #8e44ad; font-size: 20px; margin-top: 25px;">Office Space Opportunity – Methodology</h4>
+<ul style="background-color: #f3e5f5; padding: 20px; border-left: 4px solid #9c27b0; border-radius: 5px;">
+    <li style="margin-bottom: 10px;">• Gap analysis is a tool that measures the under or oversupply situation of an office market using demand and supply dynamics</li>
+    <li style="margin-bottom: 10px;">• To gauge the supply situation in Nairobi, we used the Gap Analysis</li>
+    <li style="margin-bottom: 10px;">• Demand is calculated by adding up net absorption (space taken up in a market in a year) by the space required to replenish depreciated office stock</li>
+    <li style="margin-bottom: 10px;">• Supply is calculated by summing up the completed office stock in a given year and the vacant stock from the previous year</li>
+    <li style="margin-bottom: 10px;">• To get the over/undersupply in the market, the supply is subtracted from the demand</li>
+    <li style="margin-bottom: 10px;">• If it is a positive figure then the market has an under supply that is demand is more than supply and if it is a negative figure then the market has an oversupply that is supply is more than demand</li>
+    <li style="margin-bottom: 10px;">• Based on building plan approvals data, in 2021, the market had a supply of 7.9 mn SQFT against a demand of (1.2) mn SQFT resulting in an oversupply of 6.7 mn SQFT assuming a 2 year lag between building approvals and completion of construction</li>
+</ul>
+
+<div style="background-color: #fff3e0; border: 2px solid #f39c12; padding: 15px; border-radius: 8px; margin: 20px 0;">
+    <p style="margin: 0; font-weight: 600; color: #d35400;">Gap Analysis used to estimate over/undersupply situation in the market, supply is subtracted from demand and if a positive figure the market is undersupplied with a negative figure indicating an oversupply</p>
+</div>
+
+<h4 style="color: #c0392b; font-size: 20px; margin-top: 30px;">Office Space Opportunity</h4>
+<p style="font-size: 18px; font-weight: 600; color: #c0392b;">In 2021, the commercial office sector had an oversupply of 6.7 mn SQFT</p>
+<p style="font-size: 12px; color: #7f8c8d; font-style: italic;">Source: KNBS, NCG Completions data, Cytonn Research</p>
+
+<h5 style="color: #2c3e50; text-align: center; margin-top: 20px;">Nairobi Metropolitan Area Office Space Analysis</h5>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 11px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <thead>
+        <tr style="background-color: #c0392b; color: white;">
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Year</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: right;">2012</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: right;">2013</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: right;">2014</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: right;">2015</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: right;">2016</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: right;">2017</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: right;">2018</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: right;">2019</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: right;">2020</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: right;">2021</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: right;">2022 F</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: #f8f9fa;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Stock (Mn Sqft)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">7.7</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">9.7</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">15.4</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">22.9</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">28.9</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">31.8</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">35.5</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">36.3</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">36.4</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">36.8</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">37.4</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Completions (Mn Sqft)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">1.2</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">2.1</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">5.9</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">7.8</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">6.5</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">3.5</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">4.3</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">1.5</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">0.8</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">0.5</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">0.6</td>
+        </tr>
+        <tr style="background-color: #f8f9fa;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Vacancy Rate (%)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">9.0%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">10.0%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">10.0%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">11.0%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">12.0%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">16.8%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">16.7%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">19.5%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #e74c3c;">22.3%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">22.1%</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">23.3%</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Vacant Stock (Mn Sqft)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">0.7</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">1.0</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">1.5</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">2.5</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">3.5</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">5.3</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">5.9</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">7.1</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #c0392b;">8.1</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">8.1</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">8.7</td>
+        </tr>
+        <tr style="background-color: #f8f9fa;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Occupied Stock (Mn Sqft)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">7.1</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">8.8</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">13.9</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">20.3</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">25.4</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">26.5</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">29.6</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">29.2</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">28.3</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">28.7</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">28.7</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Net Absorption</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">1.0</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">1.7</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">5.1</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">6.5</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">5.1</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">1.0</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">3.1</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #e74c3c;">(0.4)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #e74c3c;">(1.0)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">0.4</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">0.0</td>
+        </tr>
+        <tr style="background-color: #e8f5e9;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Demand</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #27ae60;">1.1</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #27ae60;">1.9</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #27ae60;">5.3</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #27ae60;">6.8</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #27ae60;">5.6</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #27ae60;">1.6</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #27ae60;">3.7</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">0.4</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; color: #e74c3c;">(0.2)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">1.2</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">0.8</td>
+        </tr>
+        <tr style="background-color: #fff3e0;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Available Supply, AS(T)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">1.7</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">2.6</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">6.5</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">8.8</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">8.4</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">6.3</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">9.0</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">6.7</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">7.1</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; font-weight: bold; color: #d35400;">7.9</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">8.0</td>
+        </tr>
+        <tr style="background-color: #ffebee; font-weight: bold; color: #c0392b;">
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Gap, GAP(T)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">(0.5)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">(0.8)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">(1.2)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">(2.1)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">(2.9)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">(4.7)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">(5.2)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">(6.3)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">(7.3)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right; background-color: #ffcdd2;">(6.7)</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">(7.2)</td>
+        </tr>
+    </tbody>
+</table>
+
+<h5 style="color: #27ae60; font-size: 18px; margin-top: 25px;">Office Space Opportunity</h5>
+<p style="font-weight: 600; color: #27ae60;">Opportunity in the sector is in serviced offices, in zones with low supply and in new markets such as county headquarters with low supply of office space</p>
+
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <thead>
+        <tr style="background-color: #27ae60; color: white;">
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: left; width: 25%;">Concept/Market Niche</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Characteristics</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: #ffffff;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #27ae60;">Mixed-Use Developments</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">
+                • Mixed-Use Development (MUD) refers to a Real Estate development containing more than one Real Estate theme<br/>
+                • They have attractive returns with average rental yields of up to 7.1%. Such developments will increase the occupancy rates of a building due to their convenience and hence the greater returns to investors
+            </td>
+        </tr>
+        <tr style="background-color: #e8f5e9;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #27ae60;">Serviced Offices</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">
+                • Serviced offices recorded revenue growth of 0.8% in 2021, unlike unserviced offices whose asking rents remained stable at Kshs 93 per SQFT in 2021<br/>
+                • This was as a result of their convenience and flexibility hence fetching higher rents and appreciations as well
+            </td>
+        </tr>
+        <tr style="background-color: #ffffff;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #27ae60;">Low Supply Zones</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">
+                • Despite the oversupply in the market, some zones still have relatively low supply and high returns such as Gigiri with a market share of 2.9% and a rental yield of 8.6% thus offering a good investment opportunity<br/>
+                • Gigiri, Westlands, and Karen that performed well in 2021 with average rental yields of 8.6%, 8.1% and, 7.7%, respectively, against a market average of 7.2%
+            </td>
+        </tr>
+        <tr style="background-color: #e8f5e9;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #27ae60;">New Markets</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">
+                • Undersupplied zones such as Gigiri and Thika Road that currently have market shares of 2.9% and 4.4%<br/>
+                • Quality Grade A and B offices which are most popular in areas such as Westlands and Parklands
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Section E -->
+<h3 style="color: #2980b9; font-size: 22px; margin-top: 40px; border-bottom: 2px solid #2980b9; padding-bottom: 10px;">E. Office Market Conclusion and Outlook</h3>
+
+<h4 style="color: #2c3e50; font-size: 20px; margin-top: 25px;">Office Market Conclusion and Outlook</h4>
+<p style="font-size: 18px; font-weight: 600; color: #f39c12; background-color: #fff3cd; padding: 15px; border-radius: 5px; border-left: 5px solid #f39c12;">Our overall outlook for the Commercial Office sector is Neutral, with a current oversupply of 6.7 mn SQFT, in the Nairobi Metropolitan Area (NMA)</p>
+
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <thead>
+        <tr style="background-color: #2c3e50; color: white;">
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: left; width: 15%;">Measure</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: left; width: 35%;">2020 Sentiment</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: left; width: 35%;">2021 Sentiment and 2022 Outlook</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: center; width: 8%;">2021 Review</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: center; width: 7%;">2022 Outlook</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: #ffffff;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #2980b9;">Supply</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">We had an oversupply of 7.3 mn SQFT of office space in 2020, and it is expected to grow by 1.1% to 8.0 mn SQFT in 2021, due to reduced occupancy rates brought about by reduced demand as people adopt the working from home alongside the incoming supply which is expected to affect the occupancy rates</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">There was an oversupply of 6.7 mn SQFT in 2021, an 8.3% decrease from the 7.3 mn SQFT realized in 2020. This was due to increased demand of physical office spaces as some firms resumed full operations. The incoming supply in 2021 came it 0.5 mn SQFT 3.6% lower than the 0.8 mn SQFT recorded in 2020.<br/><br/>We expect the office space oversupply to further increase by 9.0% in 2022 to 7.1 mn SQFT, attribute to an expected addition of 0.6 mn SQFT from commercial office buildings that are currently under construction, coupled with an anticipated decline in occupancy rates in 2022 as per Cytonn</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: center; font-weight: bold; color: #f39c12; background-color: #fff3cd;">Neutral</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: center; font-weight: bold; color: #e74c3c; background-color: #ffebee;">Negative</td>
+        </tr>
+        <tr style="background-color: #f8f9fa;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #2980b9;">Demand</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">There was reduced demand for office space in the Nairobi Metropolitan Area (NMA) evidenced by the 1.3% y/y decline in the average occupancy rates mainly attributable to an oversupply. investment opportunity lies in differentiated concepts such as serviced offices offering yields of up to 11.2% compared to 7.0% average rental yields of Unserviced materials</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">There was an increased demand for office spaces, evidenced by the 0.2% increase in the average occupancy rates which came in at 77.9% in 2021, from the 77.7% recorded in 2020. This was mainly attributed to businesses resuming full operations after the lifting of COVID-19 containment measures. In addition to this, the absorption of office spaces increased to 1.2 mn SQFT in 2021 from (0.2) mn SQFT recorded in 2020<br/><br/>We however expect the occupancy rates to be weighed down by some businesses still embracing the remote/ hybrid working model, and the market uncertainties due to the incoming general elections</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: center; font-weight: bold; color: #f39c12; background-color: #fff3cd;">Neutral</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: center; font-weight: bold; color: #f39c12; background-color: #fff3cd;">Neutral</td>
+        </tr>
+        <tr style="background-color: #ffffff;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #2980b9;">Office Market Performance</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">The commercial office sector performance softened in 2020 recording a 0.5% points decline in average rental yields to 7.0% in 2020 from 7.5% in 2019. The average occupancies also declined in 2020 coming in at 77.7%, a 2.6% points decline from 80.3% in 2019. In 2020, we expect average rental prices to drop slightly over the short term due to downward pressure arising from the decline in effective demand from the existing oversupply in the market, and the COVID-19 effects that has caused decline in occupancy rates and yields</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">The sector realized a slight improvement in its overall performance in FY'2021, with the average rental yields coming in at 7.1%. We expect that the full resumption of operations by some firms and businesses amidst the improved economy to continue driving the market's performance. However, the remote working model still being embraced by some firms, coupled with existing oversupply of office spaces currently at 6.7 mn SQFT are expected to weigh down the overall occupancy rates and yields of the sector</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: center; font-weight: bold; color: #f39c12; background-color: #fff3cd;">Neutral</td>
+            <td style="padding: 12px; border: 1px solid #ddd; text-align: center; font-weight: bold; color: #f39c12; background-color: #fff3cd;">Neutral</td>
+        </tr>
+    </tbody>
+</table>
+
+</div>
+
+</body>
+</html>
+    `,
+  tags: [
+    "Nairobi Office Market",
+    "Commercial Property Kenya",
+    "Office Investment",
+    "Market Research",
+    "Murivest Realty",
+    "Real Estate Advisory"
+  ]
+},
     'what-is-a-cap-rate': {
     title: "What Is a Cap Rate? Calculating This Critical CRE Investment Metric",
     author: "LoopNet Team",
