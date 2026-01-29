@@ -33,10 +33,10 @@ const blog: Blog[] =[
     featured: true,
   },
   {
-    id: 'nairobi-cbd-office-market-analysis-2024',
-    title: 'Nairobi CBD Office Market Analysis 2024: Trends, Yields & Opportunities',
+    id: 'nairobi-cbd-office-market-analysis-2026',
+    title: 'Nairobi CBD Office Market Analysis 2026: Trends, Yields & Opportunities',
     excerpt:
-      'An in-depth analysis of Nairobi CBD\'s office market in 2024, covering vacancy rates, rental trends, key developments, and investment opportunities.',
+      'An in-depth analysis of Nairobi CBD\'s office market in 2026, covering vacancy rates, rental trends, key developments, and investment opportunities.',
     author: 'Murivest Research Team',
     category: 'Market Analysis',
     date: '2024-08-10',

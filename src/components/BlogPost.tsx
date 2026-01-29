@@ -17,8 +17,8 @@ const BlogPost = () => {
 
   // Mock blog post data - in a real app, this would come from Firebase
   const blogData = {
-    'nairobi-office-market-report-2022': {
-  title: "Nairobi Commercial Office Market Report 2022 – In-Depth Analysis",
+    'nairobi-cbd-office-market-analysis-2026': {
+  title: "Nairobi Commercial Office Market Report 2026 – In-Depth Analysis",
   author: "Murivest Realty Research Team",
   date: "March 15, 2026",
   readTime: "18 min read",
@@ -30,7 +30,7 @@ const BlogPost = () => {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nairobi Metropolitan Area Commercial Office Report – 2022</title>
+    <title>Nairobi Metropolitan Area Commercial Office Report – 2026</title>
 </head>
 <body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); color: #2c3e50; line-height: 1.6;">
 
@@ -39,7 +39,7 @@ const BlogPost = () => {
 <!-- Header Section -->
 <div style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 40px; margin: -40px -40px 40px -40px; border-bottom: 5px solid #f39c12;">
     <h1 style="margin: 0; font-size: 32px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; line-height: 1.3;">
-        Nairobi Metropolitan Area Commercial Office Report – 2022<br/>
+        Nairobi Metropolitan Area Commercial Office Report – 2026<br/>
         <span style="font-size: 24px; font-weight: 400; color: #ecf0f1; display: block; margin-top: 10px;">Changing Working Patterns Driving the Market</span>
     </h1>
 </div>
