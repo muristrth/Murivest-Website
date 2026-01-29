@@ -41,7 +41,7 @@ const blog: Blog[] =[
     category: 'Market Analysis',
     date: '2024-08-10',
     readTime: '30 min read',
-    image:'',
+    image:'https://properties.avenuevaluers.co.ke/wp-content/uploads/2026/01/Grade-A-offices-in-nairobi.jpg',
     featured: true,
   },
   {

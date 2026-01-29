@@ -23,7 +23,7 @@ const BlogPost = () => {
   date: "March 15, 2026",
   readTime: "18 min read",
   category: "Market Research",
-  image: "https://murivest.co.ke/images/nairobi-office-market.jpg",
+  image: "https://properties.avenuevaluers.co.ke/wp-content/uploads/2026/01/Grade-A-offices-in-nairobi.jpg",
   content: `
 <!DOCTYPE html>
 <html lang="en">
