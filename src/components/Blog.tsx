@@ -837,17 +837,6 @@ const blog: Blog[] =[
     featured: false,
   },
   {
-    id: 'land-loan-calculator',
-    title: 'Land Loan Calculator: Estimate Monthly Payments',
-    excerpt: 'Use this calculator to estimate monthly payments, interest, and total financing costs for raw, unimproved, or improved land purchases.',
-    author: 'LoopNet Team',
-    category: 'Tools',
-    date: 'January 30, 2023',
-    readTime: '5 min read',
-    image: 'https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    featured: false,
-  },
-  {
     id: 'balloon-payment-calculator',
     title: 'Balloon Payment Calculator: Estimate Lump-Sum Payments',
     excerpt: 'Use this calculator to estimate monthly payments, total interest, and the final lump-sum balloon payment for commercial real estate loans.',
@@ -5306,95 +5295,7 @@ const blog: Blog[] =[
     image: "https://www.businessdailyafrica.com/resource/image/view/-/5947234/medRes/3058656-3058656.jpg",
     featured: false
   },
-  // Thought Leadership Content
-  {
-    id: "legacy-wealth-preservation-through-institutional-real-estate",
-    title: "Legacy Wealth Preservation: Institutional Real Estate as the Cornerstone of Multi-Generational Wealth",
-    excerpt: "How discerning families and institutions are using commercial real estate to preserve and grow wealth across generations, with Nairobi emerging as Africa's institutional gateway.",
-    author: "Elizabeth Costabir, CEO & Founder",
-    category: "Thought Leadership",
-    date: "2025-11-15",
-    readTime: "12 min read",
-    image: "/murivest_ceo_office.png",
-    featured: true
-  },
-  {
-    id: "african-real-estate-sovereign-wealth-diversification",
-    title: "African Real Estate: The New Frontier for Sovereign Wealth Diversification",
-    excerpt: "GCC sovereign wealth funds are increasingly allocating to African commercial assets. Analysis of risk-adjusted returns, regulatory frameworks, and Nairobi's role as the continental gateway.",
-    author: "Dr. Ahmed Al-Rashid, Senior Investment Advisor",
-    category: "Institutional Insights",
-    date: "2025-11-10",
-    readTime: "15 min read",
-    image: "/kenya-night.png",
-    featured: true
-  },
-  {
-    id: "nairobi-cbd-transformation-institutional-perspective",
-    title: "Nairobi CBD Transformation: An Institutional Investor's Guide to Africa's Premier Office Market",
-    excerpt: "Comprehensive analysis of Nairobi's commercial real estate evolution, from colonial architecture to modern institutional-grade assets. Investment thesis for global capital allocation.",
-    author: "Marcus Wellington, Head of Research",
-    category: "Market Intelligence",
-    date: "2025-11-05",
-    readTime: "18 min read",
-    image: "/image.png",
-    featured: true
-  },
-  {
-    id: "cross-border-real-estate-structures-africa-europe",
-    title: "Cross-Border Real Estate Structures: Bridging European Capital and African Growth",
-    excerpt: "Legal and structural frameworks for European institutional investors accessing African real estate. Case studies of successful cross-continental partnerships and yield enhancement strategies.",
-    author: "Sir Reginald Harrington, International Counsel",
-    category: "Legal & Structuring",
-    date: "2025-10-28",
-    readTime: "14 min read",
-    image: "/murivest_secretary.png",
-    featured: false
-  },
-  {
-    id: "climate-resilient-infrastructure-african-real-estate",
-    title: "Climate-Resilient Infrastructure: The Future of African Real Estate Investment",
-    excerpt: "How climate change is reshaping African real estate investment strategies. Analysis of flood-resistant developments, sustainable infrastructure, and institutional risk mitigation approaches.",
-    author: "Dr. Sarah Chen, Sustainability Director",
-    category: "Sustainability & ESG",
-    date: "2025-10-20",
-    readTime: "16 min read",
-    image: "/cin_pdf.png",
-    featured: false
-  },
-  {
-    id: "private-equity-real-estate-africa-institutional-approach",
-    title: "Private Equity Real Estate in Africa: An Institutional Approach to Frontier Markets",
-    excerpt: "Murivest's framework for institutional-grade private equity real estate in Africa. Due diligence standards, risk assessment methodologies, and portfolio construction strategies.",
-    author: "Victoria Kensington, Investment Director",
-    category: "Private Equity",
-    date: "2025-10-15",
-    readTime: "13 min read",
-    image: "/CEO.Founder.jpg",
-    featured: false
-  },
-  {
-    id: "wealth-preservation-commercial-vs-residential-africa",
-    title: "Wealth Preservation: Commercial vs Residential Real Estate in Africa",
-    excerpt: "Institutional perspective on asset allocation between commercial and residential real estate in African markets. Risk profiles, return expectations, and portfolio diversification strategies.",
-    author: "Lord Henry Pembroke, Senior Partner",
-    category: "Asset Allocation",
-    date: "2025-10-08",
-    readTime: "11 min read",
-    image: "/murivest_ceo_office.png",
-    featured: false
-  },
-  {
-    id: "nairobi-economic-corridor-investment-thesis",
-    title: "The Nairobi Economic Corridor: Investment Thesis for Institutional Capital",
-    excerpt: "Comprehensive analysis of Nairobi's role as East Africa's economic hub. Infrastructure developments, demographic trends, and institutional investment opportunities in the corridor.",
-    author: "Dr. James Nkrumah, Economic Research Director",
-    category: "Economic Analysis",
-    date: "2025-10-01",
-    readTime: "17 min read",
-    image: "/kenya-night.png",
-    featured: false
-  }
+  
 
 ];
 

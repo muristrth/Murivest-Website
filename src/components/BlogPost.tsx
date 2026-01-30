@@ -7,16 +7,9 @@ import { ArrowLeft, Calendar, User, Clock, Share2, Bookmark, ThumbsUp } from 'lu
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 
-const BlogPost = () => {
-  const router = useRouter();
-  const { id } = useParams();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [id]);
 
   // Mock blog post data - in a real app, this would come from Firebase
-  const blogData = {
+  export const blogData = {
     'nairobi-cbd-office-market-analysis-2026': {
   title: "Nairobi Commercial Office Market Report 2026 – In-Depth Analysis",
   author: "Murivest Realty Research Team",
@@ -18423,7 +18416,19 @@ const BlogPost = () => {
 
 };
 
-  const post = blogData[id as unknown as keyof typeof blogData];
+export default function BlogPost() {
+  const params = useParams();
+  // Use id instead of slug
+  const id = params?.id as string;
+
+   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+  
+  // Lookup post by id from the URL
+  const post = blogData[id as keyof typeof blogData];
+
+
 
   if (!post) {
     return (
@@ -18578,5 +18583,3 @@ const BlogPost = () => {
     </div>
   );
 };
-
-export default BlogPost;
