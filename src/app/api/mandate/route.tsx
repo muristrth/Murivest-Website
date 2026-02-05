@@ -278,12 +278,12 @@ export async function POST(req: Request) {
                   <td style="border-top: 2px solid #1e40af; padding-top: 25px; text-align: center;">
                     <p style="margin: 0 0 12px 0; color: #cbd5e1; font-size: 13px; font-weight: 500;">
                       <strong style="color: #d4af37;">Registered Office:</strong> 
-                      [Your Office Address Here], Nairobi, Kenya
+                      Westlands, Nairobi, Kenya
                     </p>
                     <p style="margin: 0 0 12px 0; color: #cbd5e1; font-size: 13px; font-weight: 500;">
                       <strong style="color: #d4af37;">Investments & Mandates:</strong> 
                       <a href="mailto:investments@murivest.co.ke" style="color: #d4af37; text-decoration: none;">investments@murivest.co.ke</a> 
-                      | <strong style="color: #d4af37;">Tel:</strong> +254 [Your Phone]
+                      | <strong style="color: #d4af37;">Tel:</strong> +254 729 170 156
                     </p>
                     <p style="margin: 25px 0 0 0; color: #94a3b8; font-size: 11px; line-height: 1.6; text-align: justify;">
                       <strong>CONFIDENTIALITY NOTICE:</strong> This document contains confidential and privileged information intended solely for the named recipient(s). 

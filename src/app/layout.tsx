@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     default: 'Commercial Real Estate Investment Kenya - Murivest Realty Group',
     template: '%s | Murivest Realty Group',
   },
-  description: 'Premier commercial real estate investment firm in Nairobi, Kenya. Discover curated investment opportunities with 15%+ annual returns. Expert property management and wealth-building strategies for discerning investors.',
+  description: 'Premier commercial real estate investment firm in Nairobi, Kenya. Discover curated investment opportunities, property management and commericla properties.',
   keywords: 'commercial real estate Kenya, property investment Nairobi, real estate investment firm Kenya, commercial property Nairobi, investment properties Kenya, property management Kenya, real estate returns Kenya, Murivest Realty Group, passive income properties Kenya',
   authors: [{ name: 'Murivest Realty Group' }],
   creator: 'Murivest Realty Group',

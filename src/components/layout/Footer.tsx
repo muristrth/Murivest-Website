@@ -6,8 +6,16 @@ import Image from 'next/image';
 import { 
   Phone, Mail, MapPin, Globe, Award, Shield, 
   TrendingUp, Users, ArrowUp, ExternalLink, 
-  ChevronRight, Landmark, Scale 
+  ChevronRight, Landmark 
 } from 'lucide-react';
+import { 
+  FaFacebookF, 
+  FaInstagram, 
+  FaLinkedinIn, 
+  FaXTwitter, 
+  FaYoutube, FaWhatsapp, 
+  FaPinterestP, FaTiktok, FaGoogle
+} from 'react-icons/fa6';
 
 interface FooterProps {
   copyrightYear?: number;
@@ -17,6 +25,19 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const socialLinks = [
+  { name: 'WhatsApp', href: 'https://wa.me/254115277610', icon: FaWhatsapp, color: 'hover:text-green-500' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/murivest-realty-group', icon: FaLinkedinIn, color: 'hover:text-blue-700' },
+  { name: 'Instagram', href: 'https://www.instagram.com/murivest_realty', icon: FaInstagram, color: 'hover:text-pink-500' },
+  { name: 'TikTok', href: 'https://www.tiktok.com/@murivestrealty', icon: FaTiktok, color: 'hover:text-white' },
+  { name: 'Facebook', href: 'https://www.facebook.com/murivestrealtygroup', icon: FaFacebookF, color: 'hover:text-blue-500' },
+  { name: 'X', href: 'https://twitter.com/murivestrealty', icon: FaXTwitter, color: 'hover:text-white' },
+  { name: 'Pinterest', href: 'https://www.pinterest.com/murivestrealty', icon: FaPinterestP, color: 'hover:text-red-600' },
+  { name: 'YouTube', href: 'https://www.youtube.com/@murivestrealty', icon: FaYoutube, color: 'hover:text-red-600' },
+  { name: 'Google', href: 'https://www.google.com', icon: FaGoogle, color: 'hover:text-yellow-500' },
+  { name: 'Jiji', href: 'https://www.jiji.co.ke', icon: Globe, color: 'hover:text-green-600' },
+];
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -77,6 +98,42 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
                   {item.text}
                 </div>
               ))}
+            </div>
+          </div>
+
+         {/* Social Media Section */}
+          <div className="max-w-md">
+            <h4 className="text-lg font-luxury font-semibold text-gold-500 mb-4 uppercase tracking-wider">
+              Connect With Us
+            </h4>
+            <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+              Follow MuriVest for exclusive property listings, investment tips, and premium real estate opportunities in Kenya.
+            </p>
+            
+            <div className="flex flex-wrap gap-3">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={social.name}
+                    className="group relative bg-gray-900/50 border border-gray-800 p-2 rounded-lg 
+                              transition-all duration-300 hover:border-gold-500/50 hover:-translate-y-1"
+                  >
+                    <Icon className={`h-5 w-5 text-gray-400 transition-colors duration-300 ${social.color}`} />
+                    
+                    {/* Tooltip for better UX */}
+                    <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gold-500 text-black 
+                                    text-[10px] font-bold px-2 py-1 rounded opacity-0 
+                                    group-hover:opacity-100 transition-opacity pointer-events-none">
+                      {social.name}
+                    </span>
+                  </a>
+                );
+              })}
             </div>
           </div>
 
