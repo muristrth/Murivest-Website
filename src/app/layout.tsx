@@ -185,7 +185,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <head>
         {/* Favicon and Apple Touch Icon */}
-        <link rel="icon" type="image/png" href="/logo.png" />
+        <link rel="icon" type="image/png" href="/logo.png" sizes="192x192"/>
         <link rel="apple-touch-icon" href="/logo.png" sizes="180x180" />
 
         {/* Other manually added meta tags */}

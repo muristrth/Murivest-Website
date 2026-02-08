@@ -102,41 +102,38 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
           </div>
 
          {/* Social Media Section */}
-          <div className="max-w-md">
-            <h4 className="text-lg font-luxury font-semibold text-gold-500 mb-4 uppercase tracking-wider">
-              Connect With Us
-            </h4>
-            <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-              Follow MuriVest for exclusive property listings, investment tips, and premium real estate opportunities in Kenya.
-            </p>
-            
-            <div className="flex flex-wrap gap-3">
-              {socialLinks.map((social) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={social.name}
-                    className="group relative bg-gray-900/50 border border-gray-800 p-2 rounded-lg 
-                              transition-all duration-300 hover:border-gold-500/50 hover:-translate-y-1"
-                  >
-                    <Icon className={`h-5 w-5 text-gray-400 transition-colors duration-300 ${social.color}`} />
-                    
-                    {/* Tooltip for better UX */}
-                    <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gold-500 text-black 
-                                    text-[10px] font-bold px-2 py-1 rounded opacity-0 
-                                    group-hover:opacity-100 transition-opacity pointer-events-none">
-                      {social.name}
-                    </span>
-                  </a>
-                );
-              })}
-            </div>
-          </div>
+<div className="w-full max-w-md">
 
+  {/* Flex container: items-center and justify-center for mobile, left-aligned for desktop */}
+  <div className="flex flex-row flex-nowrap items-center justify-center md:justify-start gap-2">
+    {socialLinks.map((social) => {
+      const Icon = social.icon;
+      return (
+        <a
+          key={social.name}
+          href={social.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative bg-gray-900/50 border border-gray-800 p-2 rounded-lg 
+                     transition-all duration-300 hover:border-gold-500/50 hover:-translate-y-1 
+                     flex items-center justify-center shrink-0"
+        >
+          <Icon className={`h-4 w-4 text-gray-400 transition-colors duration-300 group-hover:text-gold-500 ${social.color}`} />
+          
+          {/* Tooltip - Hidden on touch devices to prevent layout jumps */}
+          <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-gold-500 text-black 
+                           text-[10px] font-bold px-2 py-1 rounded opacity-0 
+                           group-hover:opacity-100 transition-opacity pointer-events-none
+                           hidden md:block whitespace-nowrap shadow-lg">
+            {social.name}
+            {/* Small arrow for tooltip */}
+            <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gold-500"></span>
+          </span>
+        </a>
+      );
+    })}
+  </div>
+</div>
           {/* Links Columns */}
           <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-12">
             

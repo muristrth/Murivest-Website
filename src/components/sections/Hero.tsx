@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 /**
  * Institutional Hero Component for Murivest
@@ -41,14 +42,24 @@ const Hero = () => {
         style={{ transform: `translate3d(${mousePos.x}px, ${mousePos.y}px, 0) scale(1.05)` }}
       >
         {images.map((img, i) => (
-          <div
-            key={img}
-            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-[3000ms] ${
-              i === currentImage ? 'opacity-30' : 'opacity-0'
-            }`}
-            style={{ backgroundImage: `url(${img})` }}
+        <div
+          key={img}
+          className={`absolute inset-0 transition-opacity duration-[3000ms] ${
+            i === currentImage ? 'opacity-30' : 'opacity-0'
+          }`}
+        >
+          <Image
+            src={img}
+            alt={`Murivest Gallery Image ${i}`}
+            fill
+            className="object-cover object-center"
+            // 🚨 CRITICAL: Only the first image gets priority to fix LCP
+            priority={i === 0} 
+            sizes="100vw"
+            quality={75} // Lowering to 75% quality is invisible to the eye but cuts 50% file size
           />
-        ))}
+        </div>
+      ))}
         {/* Cinematic Vignette & Gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/40 to-slate-950" />
       </div>
