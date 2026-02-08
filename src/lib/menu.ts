@@ -33,6 +33,9 @@ export const MENU_DATA: MenuData = {
     { label: 'Capital Structuring', href: '/strategic-land-banking' },
     { label: 'Trust Structures', href: '/trust-structures' },
     { label: 'Wealth Management', href: '/wealth-management' },
+    { label: 'East Africa Industrial Advisory', href: '/east-africa-industrial-real-estate-advisory' },
+    { label: 'Kenya Sale-Leaseback', href: '/kenya-sale-leaseback-transactions' },
+    { label: 'Institutional Land Banking', href: '/institutional-land-banking-nairobi' },
   ],
 
   insights: [

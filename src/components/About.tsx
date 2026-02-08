@@ -9,6 +9,11 @@ import {
   Link
 } from 'lucide-react';
 
+import Team from './Team';
+import Testimonials from './Testimonials';
+import TrustBadges from './TrustBadges';
+import CaseStudies from './CaseStudies';
+
 const About = () => {
   const institutionalValues = [
     {
@@ -266,7 +271,19 @@ const About = () => {
         </div>
       </section>
 
-      {/* 6. CALL TO ACTION */}
+      {/* 6. TRUST BADGES SECTION */}
+      <TrustBadges />
+
+      {/* 7. TEAM SECTION */}
+      <Team />
+
+      {/* 8. CASE STUDIES SECTION */}
+      <CaseStudies />
+
+      {/* 9. TESTIMONIALS SECTION */}
+      <Testimonials />
+
+      {/* 10. CALL TO ACTION */}
       <section className="border-t border-white/10">
         <Link href="/contact" className="group flex flex-col items-center py-32 hover:bg-white/[0.02] transition-colors">
           <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-amber-500 mb-8">Partner with the Authority</span>

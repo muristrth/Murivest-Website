@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import BlogPost, { blogData } from '../../../components/BlogPost'
+import Script from 'next/script'
 
 // Generate static pages for all blog ids
 export async function generateStaticParams() {
@@ -61,6 +62,53 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
+// Generate Article Schema for blog posts
+function generateArticleSchema(post: BlogPostData, id: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt || `Read about ${post.title} on Murivest Realty Group`,
+    image: post.image,
+    author: {
+      '@type': 'Organization',
+      name: 'Murivest Realty Group',
+      url: 'https://murivest.co.ke',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Murivest Realty Group',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://murivest.co.ke/logo.png',
+      },
+    },
+    datePublished: post.date,
+    dateModified: post.date,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://murivest.co.ke/blog/${id}`,
+    },
+    articleSection: post.category,
+    keywords: post.tags?.join(', ') || post.category,
+    inLanguage: 'en-KE',
+  };
+}
+
 export default async function BlogPostPage({ params }: PageProps) {
-  return <BlogPost />
+  const { id } = await params;
+  const post = blogData[id as keyof typeof blogData] as BlogPostData | undefined;
+
+  return (
+    <>
+      {post && (
+        <Script
+          id={`article-schema-${id}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema(post, id)) }}
+        />
+      )}
+      <BlogPost />
+    </>
+  );
 }
