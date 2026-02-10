@@ -61,20 +61,20 @@ export default function USPropertyDetail({ property }: USPropertyDetailProps) {
   return (
     <div className="min-h-screen bg-[#05070a] text-white font-light">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 px-8">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/5 blur-[120px] rounded-full" />
+      <section className="relative pt-32 md:pt-40 pb-16 px-4 md:px-8">
+        <div className="absolute top-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-blue-600/5 blur-[80px] md:blur-[120px] rounded-full" />
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <Link href="/us-properties" className="inline-flex items-center gap-2 text-amber-500 text-sm font-bold uppercase tracking-widest mb-8 hover:text-white transition-colors">
-            <ArrowLeft size={16} /> Back to US Properties
+          <Link href="/us-properties" className="inline-flex items-center gap-2 text-amber-500 text-sm font-bold uppercase tracking-widest mb-6 md:mb-8 hover:text-white transition-colors">
+            <ArrowLeft size={16} /> <span className="hidden sm:inline">Back to US Properties</span><span className="sm:hidden">Back</span>
           </Link>
           
-          <div className="flex flex-col lg:flex-row gap-12">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
             <div className="lg:w-1/2">
               <img 
                 src={allImages[0]} 
                 alt={property.title || 'US Property'}
-                className="w-full h-[500px] object-cover rounded-lg"
+                className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-lg"
               />
             </div>
             
@@ -88,23 +88,23 @@ export default function USPropertyDetail({ property }: USPropertyDetailProps) {
                 </span>
               </div>
               
-              <h1 className="text-4xl lg:text-5xl font-serif italic mb-4">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif italic mb-4">
                 {property.title}
               </h1>
               
-              <div className="flex items-center gap-2 text-slate-400 text-sm uppercase tracking-widest mb-8">
+              <div className="flex items-center gap-2 text-slate-400 text-sm uppercase tracking-widest mb-6 md:mb-8">
                 <MapPin size={16} className="text-amber-500" />
                 {property.location}
               </div>
               
-              <div className="grid grid-cols-2 gap-8 mb-8">
+              <div className="grid grid-cols-2 gap-6 md:gap-8 mb-8">
                 <div>
                   <p className="text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-1">Asset Value</p>
-                  <p className="text-3xl font-bold text-amber-400">{property.price}</p>
+                  <p className="text-2xl md:text-3xl font-bold text-amber-400">{property.price}</p>
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-1">Net Yield</p>
-                  <p className="text-3xl font-bold text-amber-400">{property.yield}</p>
+                  <p className="text-2xl md:text-3xl font-bold text-amber-400">{property.yield}</p>
                 </div>
               </div>
               

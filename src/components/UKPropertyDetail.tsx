@@ -65,63 +65,63 @@ export default function UKPropertyDetail({ property }: UKPropertyDetailProps) {
   return (
     <div className="min-h-screen bg-[#05070a] text-white">
       {/* NAV */}
-      <nav className="fixed top-0 left-0 right-0 z-40 bg-[#05070a]/80 backdrop-blur-xl border-b border-white/5 px-8 py-6">
+      <nav className="fixed top-16 left-0 right-0 z-40 bg-[#05070a]/80 backdrop-blur-xl border-b border-white/5 px-4 md:px-8 py-4">
         <div className="max-w-[1800px] mx-auto flex items-center justify-between">
-          <Link href="/uk-properties" className="flex items-center gap-3 text-amber-500 hover:text-white transition-colors">
-            <ArrowLeft size={18} />
-            <span className="text-xs font-bold uppercase tracking-[0.2em]">Back to UK Properties</span>
+          <Link href="/uk-properties" className="flex items-center gap-2 md:gap-3 text-amber-500 hover:text-white transition-colors">
+            <ArrowLeft size={18} className="w-4 h-4 md:w-auto md:h-auto" />
+            <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.15em] md:tracking-[0.2em]">Back to UK Properties</span>
           </Link>
 
-          <div className="flex items-center gap-4">
-            <button onClick={() => setIsLiked(!isLiked)} className="p-3 bg-white/5 border border-white/10 hover:bg-white/10">
-              <Heart size={18} className={isLiked ? 'fill-amber-500 text-amber-500' : 'text-white'} />
+          <div className="flex items-center gap-2 md:gap-4">
+            <button onClick={() => setIsLiked(!isLiked)} className="p-2 md:p-3 bg-white/5 border border-white/10 hover:bg-white/10">
+              <Heart size={18} className={`${isLiked ? 'fill-amber-500 text-amber-500' : 'text-white'} w-4 h-4 md:w-auto md:h-auto`} />
             </button>
-            <button className="p-3 bg-white/5 border border-white/10 hover:bg-white/10">
-              <Share2 size={18} />
+            <button className="p-2 md:p-3 bg-white/5 border border-white/10 hover:bg-white/10">
+              <Share2 size={18} className="w-4 h-4 md:w-auto md:h-auto" />
             </button>
           </div>
         </div>
       </nav>
 
-      <main className="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+      <main className="pt-36 md:pt-40 pb-16 md:pb-24 px-4 md:px-8 max-w-7xl mx-auto">
 
         {/* ASSET SUMMARY */}
-        <div className="grid lg:grid-cols-12 gap-20 mb-32">
+        <div className="grid lg:grid-cols-12 gap-8 md:gap-20 mb-16 md:mb-32">
           <div className="lg:col-span-5">
-            <span className="text-[10px] tracking-[0.4em] uppercase text-amber-500">
+            <span className="text-[10px] tracking-[0.3em] md:tracking-[0.4em] uppercase text-amber-500">
               {property.type || 'Commercial Property'} • {property.status || 'Available'}
             </span>
 
-            <h1 className="text-6xl font-serif italic my-8">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif italic my-6 md:my-8">
               {property.title}
             </h1>
 
-            <p className="text-sm text-slate-400 max-w-xl leading-relaxed mb-10">
+            <p className="text-sm md:text-base text-slate-400 max-w-xl leading-relaxed mb-8 md:mb-10">
               {property.subtitle || 'Income-producing commercial asset presented under a confidential advisory mandate for institutional capital deployment.'}
             </p>
 
-            <div className="flex items-center gap-3 text-slate-500 mb-12">
-              <MapPin size={16} className="text-amber-500" />
-              <span className="text-xs uppercase tracking-widest">
+            <div className="flex items-center gap-3 text-slate-500 mb-8 md:mb-12">
+              <MapPin size={16} className="text-amber-500 w-4 h-4 md:w-auto md:h-auto" />
+              <span className="text-[10px] md:text-xs uppercase tracking-widest">
                 {property.location}
               </span>
             </div>
 
             {/* VALUE STRIP */}
-            <div className="grid grid-cols-2 gap-px bg-white/10 border border-white/10 mb-12">
-              <div className="bg-[#05070a] p-8">
-                <p className="text-[9px] uppercase text-slate-500 mb-2">
+            <div className="grid grid-cols-2 gap-px bg-white/10 border border-white/10 mb-8 md:mb-12">
+              <div className="bg-[#05070a] p-6 md:p-8">
+                <p className="text-[9px] md:text-[10px] uppercase text-slate-400 mb-2">
                   Indicative Equity Value
                 </p>
-                <p className="text-2xl font-bold">{property.price}</p>
+                <p className="text-xl md:text-2xl font-bold text-white">{property.price}</p>
               </div>
 
-              <div className="bg-[#05070a] p-8 text-right">
-                <p className="text-[9px] uppercase text-amber-500 mb-2">
+              <div className="bg-[#05070a] p-6 md:p-8 text-right">
+                <p className="text-[9px] md:text-[10px] uppercase text-amber-500 mb-2">
                   Stabilized Net Yield
                 </p>
-                <p className="text-2xl font-bold text-amber-500">{property.yield}</p>
-                <p className="text-[9px] text-amber-500/60">
+                <p className="text-xl md:text-2xl font-bold text-amber-500">{property.yield}</p>
+                <p className="text-[9px] text-amber-500/60 mt-1">
                   Subject to lease rollover & cost variance
                 </p>
               </div>
