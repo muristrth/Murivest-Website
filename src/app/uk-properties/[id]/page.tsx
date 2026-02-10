@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { client } from '@/sanity/lib/client'
 import { defineQuery } from 'next-sanity'
+import { notFound } from 'next/navigation'
 import UKPropertyDetail from '@/components/UKPropertyDetail'
 
 const UK_PROPERTY_QUERY = defineQuery(`*[_type == "ukProperty" && slug.current == $slug][0]{
@@ -49,9 +50,7 @@ export default async function UKPropertyPage({ params }: { params: Promise<{ id:
   const property = await client.fetch(UK_PROPERTY_QUERY, { slug: resolvedParams.id });
 
   if (!property) {
-    return {
-      metadata: { title: 'Property Not Found' },
-    };
+    notFound();
   }
 
   return <UKPropertyDetail property={property} />;
