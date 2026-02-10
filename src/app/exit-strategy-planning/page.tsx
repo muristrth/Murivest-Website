@@ -10,23 +10,23 @@ export const metadata: Metadata = {
 
 export default function ExitStrategyPlanningPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-20">
       {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative max-w-7xl mx-auto px-6 py-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24">
           <div className="text-center">
             <Link
               href="/"
-              className="inline-flex items-center text-amber-400 hover:text-amber-300 transition-colors mb-8"
+              className="inline-flex items-center text-amber-400 hover:text-amber-300 transition-colors mb-6 text-sm"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Home
             </Link>
-            <h1 className="text-4xl md:text-6xl font-light text-white mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-light text-white mb-4 md:mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
               Exit Strategy Planning
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
               Strategic planning for optimal property divestment. Maximize returns through
               timing, valuation enhancement, and efficient exit execution.
             </p>
@@ -35,12 +35,12 @@ export default function ExitStrategyPlanningPage() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         {/* Exit Strategy Overview */}
-        <div className="mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="mb-12 md:mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
-              <h2 className="text-3xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
+              <h2 className="text-2xl md:text-3xl font-light text-slate-900 mb-4 md:mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
                 Strategic Exit Planning
               </h2>
               <p className="text-gray-600 leading-relaxed mb-6">
@@ -63,8 +63,8 @@ export default function ExitStrategyPlanningPage() {
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-amber-50 to-slate-50 p-8 rounded-lg border border-amber-100">
-              <h3 className="text-2xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
+            <div className="bg-gradient-to-br from-amber-50 to-slate-50 p-6 md:p-8 rounded-lg border border-amber-100">
+              <h3 className="text-xl md:text-2xl font-light text-slate-900 mb-4 md:mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
                 Exit Strategy Framework
               </h3>
               <div className="space-y-4">
@@ -95,8 +95,8 @@ export default function ExitStrategyPlanningPage() {
         </div>
 
         {/* Exit Strategies */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-light text-slate-900 text-center mb-12" style={{ fontFamily: 'Playfair Display, serif' }}>
+        <div className="mb-12 md:mb-16">
+          <h2 className="text-2xl md:text-3xl font-light text-slate-900 text-center mb-8 md:mb-12" style={{ fontFamily: 'Playfair Display, serif' }}>
             Exit Strategy Options
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -176,8 +176,8 @@ export default function ExitStrategyPlanningPage() {
         </div>
 
         {/* Value Enhancement Strategies */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-light text-slate-900 text-center mb-12" style={{ fontFamily: 'Playfair Display, serif' }}>
+        <div className="mb-12 md:mb-16">
+          <h2 className="text-2xl md:text-3xl font-light text-slate-900 text-center mb-8 md:mb-12" style={{ fontFamily: 'Playfair Display, serif' }}>
             Value Enhancement Strategies
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -229,9 +229,9 @@ export default function ExitStrategyPlanningPage() {
         </div>
 
         {/* Exit Planning Process */}
-        <div className="mb-16">
-          <div className="bg-gradient-to-r from-amber-50 to-slate-50 p-8 rounded-lg">
-            <h2 className="text-3xl font-light text-slate-900 text-center mb-8" style={{ fontFamily: 'Playfair Display, serif' }}>
+        <div className="mb-12 md:mb-16">
+          <div className="bg-gradient-to-r from-amber-50 to-slate-50 p-6 md:p-8 rounded-lg">
+            <h2 className="text-2xl md:text-3xl font-light text-slate-900 text-center mb-6 md:mb-8" style={{ fontFamily: 'Playfair Display, serif' }}>
               Exit Planning Process
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -268,8 +268,8 @@ export default function ExitStrategyPlanningPage() {
         </div>
 
         {/* Tax Considerations */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-light text-slate-900 text-center mb-12" style={{ fontFamily: 'Playfair Display, serif' }}>
+        <div className="mb-12 md:mb-16">
+          <h2 className="text-2xl md:text-3xl font-light text-slate-900 text-center mb-8 md:mb-12" style={{ fontFamily: 'Playfair Display, serif' }}>
             Tax Optimization Strategies
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -292,9 +292,9 @@ export default function ExitStrategyPlanningPage() {
         </div>
 
         {/* Success Metrics */}
-        <div className="mb-16">
-          <div className="bg-gradient-to-r from-slate-50 to-amber-50 p-8 rounded-lg">
-            <h2 className="text-3xl font-light text-slate-900 text-center mb-8" style={{ fontFamily: 'Playfair Display, serif' }}>
+        <div className="mb-12 md:mb-16">
+          <div className="bg-gradient-to-r from-slate-50 to-amber-50 p-6 md:p-8 rounded-lg">
+            <h2 className="text-2xl md:text-3xl font-light text-slate-900 text-center mb-6 md:mb-8" style={{ fontFamily: 'Playfair Display, serif' }}>
               Exit Strategy Success Metrics
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -323,11 +323,11 @@ export default function ExitStrategyPlanningPage() {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-r from-slate-900 to-slate-800 text-white rounded-lg p-8 text-center">
-          <h2 className="text-3xl font-light mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
+        <div className="bg-gradient-to-r from-slate-900 to-slate-800 text-white rounded-lg p-6 md:p-8 text-center">
+          <h2 className="text-2xl md:text-3xl font-light mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
             Maximize Your Returns
           </h2>
-          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto px-4">
             Plan your exit strategy to optimize timing, maximize valuation, and achieve successful divestment.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
