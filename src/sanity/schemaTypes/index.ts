@@ -1,9 +1,13 @@
 import property from './property'
+import usProperty from './usProperty'
+import ukProperty from './ukProperty'
 import post from './post'
-import insight from './insights' // Import the new insight schema
+import insight from './insights'
 
 export const schemaTypes = [
-  property, 
-  post, 
-  insight // Add it to the array
+  property,
+  usProperty,
+  ukProperty,
+  post,
+  insight
 ]

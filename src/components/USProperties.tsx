@@ -3,22 +3,21 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { 
-  MapPin, PoundSterling, Shield, Award, 
+import {
+  MapPin, DollarSign, Shield, Award,
   Globe, Filter, Landmark,
   ChevronRight, Search, Building,
   ArrowUpRight, BarChart3, Lock
 } from 'lucide-react';
 
-interface UKProperty {
+interface USProperty {
   _id: string;
   title?: string;
   slug?: string;
   price?: string;
   location?: string;
   city?: string;
-  region?: string;
-  postcode?: string;
+  state?: string;
   type?: string;
   description?: string;
   yield?: string;
@@ -27,14 +26,14 @@ interface UKProperty {
   images?: string[];
 }
 
-interface UKPropertiesProps {
-  data?: UKProperty[];
+interface USPropertiesProps {
+  data?: USProperty[];
 }
 
-const UKProperties = ({ data = [] }: UKPropertiesProps) => {
+const USProperties = ({ data = [] }: USPropertiesProps) => {
   const [selectedType, setSelectedType] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
-  const [filteredProperties, setFilteredProperties] = useState<UKProperty[]>(data);
+  const [filteredProperties, setFilteredProperties] = useState<USProperty[]>(data);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -46,7 +45,7 @@ const UKProperties = ({ data = [] }: UKPropertiesProps) => {
       const matchesSearch = (property.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
                             property.location?.toLowerCase().includes(searchTerm.toLowerCase()) ||
                             property.city?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            property.postcode?.toLowerCase().includes(searchTerm.toLowerCase())) || false;
+                            property.state?.toLowerCase().includes(searchTerm.toLowerCase())) || false;
       return matchesType && matchesSearch;
     });
     setFilteredProperties(filtered);
@@ -54,10 +53,9 @@ const UKProperties = ({ data = [] }: UKPropertiesProps) => {
 
   return (
     <div className="min-h-screen bg-[#05070a] text-white font-light selection:bg-amber-500/30">
-      
-      {/* 1. CINEMATIC HERO SECTION */}
+      {/* HERO SECTION */}
       <section className="relative pt-40 pb-24 px-8 overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/5 blur-[120px] rounded-full" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px]bg-blue-600/5 blur-[120px] rounded-full" />
         
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div 
@@ -67,13 +65,13 @@ const UKProperties = ({ data = [] }: UKPropertiesProps) => {
           >
             <div className="h-px w-8 bg-amber-500" />
             <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-amber-500">
-              Direct UK Institutional Desk
+              US Institutional Desk
             </span>
           </motion.div>
         </div>
       </section>
 
-      {/* 2. SOPHISTICATED TOOLBAR */}
+      {/* TOOLBAR */}
       <div className="sticky top-0 z-50 bg-[#05070a]/80 backdrop-blur-xl border-y border-white/5 py-4">
         <div className="max-w-7xl mx-auto px-8 flex flex-wrap items-center justify-between gap-6">
           <div className="flex items-center gap-8 flex-1">
@@ -81,14 +79,14 @@ const UKProperties = ({ data = [] }: UKPropertiesProps) => {
               <Search className="absolute left-0 top-1/2 -translate-y-1/2 text-slate-600 group-focus-within:text-amber-500 transition-colors" size={16} />
               <input 
                 type="text" 
-                placeholder="SEARCH BY POSTCODE OR ASSET..." 
+                placeholder="SEARCH BY CITY OR ASSET..." 
                 className="w-full pl-8 pr-4 py-2 bg-transparent border-none text-[10px] font-bold tracking-[0.2em] focus:ring-0 placeholder:text-slate-700"
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
             
             <nav className="hidden lg:flex items-center gap-8">
-              {['All', 'Office', 'Hotel', 'Retail', 'Industrial', 'Mixed-Use'].map((type) => (
+              {['All', 'Office', 'Hotel', 'Industrial', 'Retail', 'Mixed-Use'].map((type) => (
                 <button
                   key={type}
                   onClick={() => setSelectedType(type)}
@@ -97,7 +95,7 @@ const UKProperties = ({ data = [] }: UKPropertiesProps) => {
                   }`}
                 >
                   {type}
-                  {selectedType === type && <motion.div layoutId="underline" className="absolute bottom-0 left-0 w-full h-px bg-amber-500" />}
+                  {selectedType === type && <motion.div layoutId="underline-us" className="absolute bottom-0 left-0 w-full h-px bg-amber-500" />}
                 </button>
               ))}
             </nav>
@@ -109,7 +107,7 @@ const UKProperties = ({ data = [] }: UKPropertiesProps) => {
         </div>
       </div>
 
-      {/* 3. PREMIUM ASSET GRID */}
+      {/* ASSET GRID */}
       <section className="py-24 px-8 max-w-7xl mx-auto">
         {filteredProperties.length === 0 ? (
           <div className="text-center py-24">
@@ -127,7 +125,7 @@ const UKProperties = ({ data = [] }: UKPropertiesProps) => {
                 <div className="lg:col-span-4 relative h-[400px] lg:h-auto overflow-hidden">
                   <img 
                     src={asset.mainImage || asset.images?.[0] || 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80'} 
-                    alt={asset.title || 'UK Property'}
+                    alt={asset.title || 'US Property'}
                     className="w-full h-full object-cover" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-[#05070a] via-transparent to-transparent hidden lg:block" />
@@ -175,10 +173,10 @@ const UKProperties = ({ data = [] }: UKPropertiesProps) => {
 
                   <div className="flex items-center justify-between border-t border-white/5 pt-8">
                     <div className="flex items-center gap-2 text-[10px] font-bold text-amber-500 uppercase tracking-widest">
-                      <Lock size={12} /> Direct Investment
+                      <Lock size={12} /> Institutional Mandate
                     </div>
                     <Link 
-                      href={`/uk-properties/${asset.slug}`}
+                      href={`/us-properties/${asset.slug}`}
                       className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-[0.3em] hover:text-amber-500 transition-colors group/link"
                     >
                       View Prospectus <ArrowUpRight size={16} className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
@@ -191,31 +189,30 @@ const UKProperties = ({ data = [] }: UKPropertiesProps) => {
         )}
       </section>
 
-      {/* 4. INSTITUTIONAL FRAMEWORK */}
-      <section className="py-24 px-8">
-        <div className="max-w-7xl mx-auto">
+      {/* REGULATORY SECTION */}
+      <section className="bg-white/5 border-y border-white/10 py-32">
+        <div className="max-w-7xl mx-auto px-8">
           <div className="grid md:grid-cols-3 gap-16">
             <div className="space-y-6">
               <Shield className="text-amber-500" size={32} />
-              <h4 className="text-xl font-serif italic">FCA Regulated</h4>
-              <p className="text-slate-500 text-sm leading-relaxed">Investment vehicles compliant with Financial Conduct Authority regulations for institutional and qualified investors.</p>
+              <h4 className="text-xl font-serif italic">SEC Compliance</h4>
+              <p className="text-slate-500 text-sm leading-relaxed">Full adherence to SEC regulations for offshore and domestic institutional investors in US real estate.</p>
             </div>
             <div className="space-y-6">
               <Landmark className="text-amber-500" size={32} />
-              <h4 className="text-xl font-serif italic">UK REIT Structure</h4>
-              <p className="text-slate-500 text-sm leading-relaxed">Tax-efficient investment through Real Estate Investment Trust structures with established track records.</p>
+              <h4 className="text-xl font-serif italic">1031 Exchange</h4>
+              <p className="text-slate-500 text-sm leading-relaxed">Expert structuring advice on 1031 like-kind exchanges and tax-deferred investment vehicles.</p>
             </div>
             <div className="space-y-6">
               <Award className="text-amber-500" size={32} />
-              <h4 className="text-xl font-serif italic">RICS Compliant</h4>
-              <p className="text-slate-500 text-sm leading-relaxed">All properties valued in accordance with Royal Institution of Chartered Surveyors Red Book standards.</p>
+              <h4 className="text-xl font-serif italic">CREFC Standards</h4>
+              <p className="text-slate-500 text-sm leading-relaxed">Industry-leading reporting and compliance with Commercial Real Estate Finance Council standards.</p>
             </div>
           </div>
         </div>
       </section>
-
     </div>
   );
 };
 
-export default UKProperties;
+export default USProperties;
