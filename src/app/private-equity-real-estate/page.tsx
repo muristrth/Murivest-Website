@@ -10,55 +10,71 @@ export const metadata: Metadata = {
 
 export default function PrivateEquityRealEstatePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen bg-slate-950 text-white">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative max-w-7xl mx-auto px-6 py-24">
-          <div className="text-center">
-            <Link
-              href="/"
-              className="inline-flex items-center text-amber-400 hover:text-amber-300 transition-colors mb-8"
-            >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Home
-            </Link>
-            <h1 className="text-4xl md:text-6xl font-light text-white mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
+      <section className="pt-32 pb-20 bg-slate-950 relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 w-[800px] h-[400px] bg-amber-600/5 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2" />
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+          <div className="max-w-3xl">
+            <p className="text-[10px] tracking-[0.5em] uppercase text-amber-500 font-bold mb-6">
               Private Equity Real Estate
+            </p>
+            <h1 className="text-3xl md:text-4xl lg:text-6xl font-serif text-white leading-tight mb-8">
+              Direct Ownership & Value <span className="italic text-amber-200/80">Creation Strategies</span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Direct ownership in premium real estate assets with active management and value creation.
-              Exclusive opportunities for sophisticated investors.
+            <p className="text-slate-400 text-sm md:text-lg leading-relaxed font-light border-l-2 border-amber-500/50 pl-6">
+              Direct ownership in premium real estate assets with active management and value creation. 
+              Exclusive opportunities for sophisticated institutional and HNW investors.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Trust Bar */}
+      <div className="bg-slate-900 border-y border-white/10 py-6">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-wrap justify-between items-center gap-6">
+          {[
+            { icon: Target, text: "Direct Asset Ownership" },
+            { icon: TrendingUp, text: "Value Creation Focus" },
+            { icon: Shield, text: "Active Management" }
+          ].map((item, i) => (
+            <div key={i} className="flex items-center gap-3">
+              <item.icon className="w-4 h-4 text-amber-500" />
+              <span className="text-[10px] tracking-widest uppercase text-slate-300 font-medium">
+                {item.text}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <section className="py-16 md:py-24 bg-slate-950">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         {/* Key Features */}
-        <div className="mb-16">
+        <div className="mb-24">
+          <h3 className="text-xs tracking-[0.3em] uppercase text-amber-600 font-bold mb-8">Investment Features</h3>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
-                <Target className="h-6 w-6 text-amber-600" />
+            <div className="bg-slate-900 border border-slate-800 p-8 hover:border-amber-500 transition-colors">
+              <div className="w-12 h-12 bg-amber-600/10 border border-amber-600/30 rounded-lg flex items-center justify-center mb-6">
+                <Target className="h-6 w-6 text-amber-500" />
               </div>
-              <h3 className="text-xl font-medium text-slate-900 mb-3">Direct Ownership</h3>
-              <p className="text-gray-600">Full ownership stake in individual properties or portfolios with complete control.</p>
+              <h3 className="text-lg font-serif text-white mb-3">Direct Ownership</h3>
+              <p className="text-slate-400 text-sm font-light">Full ownership stake in individual properties or portfolios with complete control and upside participation.</p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
-                <TrendingUp className="h-6 w-6 text-amber-600" />
+            <div className="bg-slate-900 border border-slate-800 p-8 hover:border-amber-500 transition-colors">
+              <div className="w-12 h-12 bg-amber-600/10 border border-amber-600/30 rounded-lg flex items-center justify-center mb-6">
+                <TrendingUp className="h-6 w-6 text-amber-500" />
               </div>
-              <h3 className="text-xl font-medium text-slate-900 mb-3">Value Creation</h3>
-              <p className="text-gray-600">Active management strategies to enhance property value and rental income.</p>
+              <h3 className="text-lg font-serif text-white mb-3">Value Creation</h3>
+              <p className="text-slate-400 text-sm font-light">Active management strategies to enhance property value and rental income.</p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
-                <Users className="h-6 w-6 text-amber-600" />
+            <div className="bg-slate-900 border border-slate-800 p-8 hover:border-amber-500 transition-colors">
+              <div className="w-12 h-12 bg-amber-600/10 border border-amber-600/30 rounded-lg flex items-center justify-center mb-6">
+                <Users className="h-6 w-6 text-amber-500" />
               </div>
-              <h3 className="text-xl font-medium text-slate-900 mb-3">Exclusive Access</h3>
-              <p className="text-gray-600">Private equity funds available only to accredited investors with minimum commitments.</p>
+              <h3 className="text-lg font-serif text-white mb-3">Exclusive Access</h3>
+              <p className="text-slate-400 text-sm font-light">Private equity funds available only to accredited investors with minimum commitments.</p>
             </div>
           </div>
         </div>

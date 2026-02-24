@@ -19,7 +19,6 @@ import {
 import Link from 'next/link';
 
 export default function VideosPage() {
-  // --- 1. STATE & DATA ---
   const [isSubscribed, setIsSubscribed] = useState(false);
   
   const [activeVideo, setActiveVideo] = useState({

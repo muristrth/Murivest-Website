@@ -10,73 +10,85 @@ export const metadata: Metadata = {
 
 export default function SectorPerformancePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen bg-slate-950 text-white">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative max-w-7xl mx-auto px-6 py-24">
-          <div className="text-center">
-            <Link
-              href="/"
-              className="inline-flex items-center text-amber-400 hover:text-amber-300 transition-colors mb-8"
-            >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Home
-            </Link>
-            <h1 className="text-4xl md:text-6xl font-light text-white mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
-              Sector Performance
+      <section className="pt-32 pb-20 bg-slate-950 relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 w-[800px] h-[400px] bg-amber-600/5 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2" />
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+          <div className="max-w-3xl">
+            <p className="text-[10px] tracking-[0.5em] uppercase text-amber-500 font-bold mb-6">
+              Market Performance Analysis
+            </p>
+            <h1 className="text-3xl md:text-4xl lg:text-6xl font-serif text-white leading-tight mb-8">
+              Sector Performance <span className="italic text-amber-200/80">& Analysis</span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Comprehensive analysis of real estate sector performance across office, retail,
-              industrial, and residential markets in Kenya.
+            <p className="text-slate-400 text-sm md:text-lg leading-relaxed font-light border-l-2 border-amber-500/50 pl-6">
+              Comprehensive analysis of real estate sector performance across office, retail, industrial, and residential markets in Kenya.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Trust Bar */}
+      <div className="bg-slate-900 border-y border-white/10 py-6">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-wrap justify-between items-center gap-6">
+          {[
+            { icon: Building, text: "Office Sector Analysis" },
+            { icon: ShoppingBag, text: "Retail Market Data" },
+            { icon: Factory, text: "Industrial Performance" }
+          ].map((item, i) => (
+            <div key={i} className="flex items-center gap-3">
+              <item.icon className="w-4 h-4 text-amber-500" />
+              <span className="text-[10px] tracking-widest uppercase text-slate-300 font-medium">
+                {item.text}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <section className="py-16 md:py-24 bg-slate-950">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         {/* Sector Overview */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-light text-slate-900 text-center mb-12" style={{ fontFamily: 'Playfair Display, serif' }}>
-            Real Estate Sector Overview
-          </h2>
+        <div className="mb-24">
+          <h3 className="text-xs tracking-[0.3em] uppercase text-amber-600 font-bold mb-8">Sector Overview</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-lg border border-gray-100 text-center">
-              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Building className="h-8 w-8 text-amber-600" />
+            <div className="bg-slate-900 border border-slate-800 p-8 text-center hover:border-amber-500 transition-colors">
+              <div className="w-16 h-16 bg-amber-600/10 border border-amber-600/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Building className="h-8 w-8 text-amber-500" />
               </div>
-              <h3 className="text-xl font-medium text-slate-900 mb-3">Office Sector</h3>
-              <p className="text-gray-600 mb-3">Grade A office buildings in prime CBD locations</p>
-              <div className="text-2xl font-light text-amber-600">+8.5%</div>
-              <div className="text-sm text-gray-500">YoY Growth</div>
+              <h3 className="text-lg font-serif text-white mb-3">Office Sector</h3>
+              <p className="text-slate-400 text-sm mb-4 font-light">Grade A office buildings in prime CBD locations</p>
+              <div className="text-3xl font-light text-amber-400">+8.5%</div>
+              <div className="text-[10px] uppercase tracking-widest text-slate-500 mt-2">YoY Growth</div>
             </div>
-            <div className="bg-white p-6 rounded-lg border border-gray-100 text-center">
-              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <ShoppingBag className="h-8 w-8 text-amber-600" />
+            <div className="bg-slate-900 border border-slate-800 p-8 text-center hover:border-amber-500 transition-colors">
+              <div className="w-16 h-16 bg-amber-600/10 border border-amber-600/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                <ShoppingBag className="h-8 w-8 text-amber-500" />
               </div>
-              <h3 className="text-xl font-medium text-slate-900 mb-3">Retail Sector</h3>
-              <p className="text-gray-600 mb-3">Shopping centers and retail developments</p>
-              <div className="text-2xl font-light text-amber-600">+12.2%</div>
-              <div className="text-sm text-gray-500">YoY Growth</div>
+              <h3 className="text-lg font-serif text-white mb-3">Retail Sector</h3>
+              <p className="text-slate-400 text-sm mb-4 font-light">Shopping centers and retail developments</p>
+              <div className="text-3xl font-light text-amber-400">+12.2%</div>
+              <div className="text-[10px] uppercase tracking-widest text-slate-500 mt-2">YoY Growth</div>
             </div>
-            <div className="bg-white p-6 rounded-lg border border-gray-100 text-center">
-              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Factory className="h-8 w-8 text-amber-600" />
+            <div className="bg-slate-900 border border-slate-800 p-8 text-center hover:border-amber-500 transition-colors">
+              <div className="w-16 h-16 bg-amber-600/10 border border-amber-600/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Factory className="h-8 w-8 text-amber-500" />
               </div>
-              <h3 className="text-xl font-medium text-slate-900 mb-3">Industrial Sector</h3>
-              <p className="text-gray-600 mb-3">Warehouses and logistics facilities</p>
-              <div className="text-2xl font-light text-amber-600">+15.8%</div>
-              <div className="text-sm text-gray-500">YoY Growth</div>
+              <h3 className="text-lg font-serif text-white mb-3">Industrial Sector</h3>
+              <p className="text-slate-400 text-sm mb-4 font-light">Warehouses and logistics facilities</p>
+              <div className="text-3xl font-light text-amber-400">+15.8%</div>
+              <div className="text-[10px] uppercase tracking-widest text-slate-500 mt-2">YoY Growth</div>
             </div>
-            <div className="bg-white p-6 rounded-lg border border-gray-100 text-center">
-              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="h-8 w-8 text-amber-600" />
+            <div className="bg-slate-900 border border-slate-800 p-8 text-center hover:border-amber-500 transition-colors">
+              <div className="w-16 h-16 bg-amber-600/10 border border-amber-600/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                <TrendingUp className="h-8 w-8 text-amber-500" />
               </div>
-              <h3 className="text-xl font-medium text-slate-900 mb-3">Overall Market</h3>
-              <p className="text-gray-600 mb-3">Total commercial real estate market</p>
-              <div className="text-2xl font-light text-amber-600">+11.7%</div>
-              <div className="text-sm text-gray-500">YoY Growth</div>
+              <h3 className="text-lg font-serif text-white mb-3">Overall Market</h3>
+              <p className="text-slate-400 text-sm mb-4 font-light">Total commercial real estate market</p>
+              <div className="text-3xl font-light text-amber-400">+11.7%</div>
+              <div className="text-[10px] uppercase tracking-widest text-slate-500 mt-2">YoY Growth</div>
             </div>
           </div>
         </div>
@@ -311,6 +323,7 @@ export default function SectorPerformancePage() {
           </div>
         </div>
       </div>
+      </section>
     </div>
   );
 }

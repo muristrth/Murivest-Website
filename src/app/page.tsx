@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import IntroVideoModal from '../components/IntroVideoModal'
 import Hero from '../components/sections/Hero'
 import TaxIntelligenceSection from '../components/sections/TaxIntelligenceSection'
 import CoreInvestmentStrategies from '../components/sections/CoreInvestmentStrategies'
@@ -76,6 +77,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      {/* <IntroVideoModal/> */}
       <Hero />
       <InstitutionalEngagementModel />
       <CoreInvestmentStrategies />

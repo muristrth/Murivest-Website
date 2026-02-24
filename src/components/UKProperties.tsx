@@ -167,7 +167,7 @@ const UKProperties = ({ data = [] }: UKPropertiesProps) => {
             <p className="text-slate-400 text-base md:text-lg">No properties found matching your criteria.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 md:gap-px bg-white/10 border border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 md:gap-px bg-white/10 border border-white/10">
             {filteredProperties.map((asset) => (
               <motion.div 
                 layout

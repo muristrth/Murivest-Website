@@ -83,51 +83,51 @@ export default function ResearchPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-950 text-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white py-24">
-        <div className="absolute inset-0 bg-black opacity-30"></div>
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="max-w-4xl">
-            <div className="flex items-center mb-6">
-              <BookOpen className="h-8 w-8 text-purple-300 mr-3" />
-              <span className="text-purple-300 font-serif text-lg">Institutional Report Library</span>
-            </div>
-
-            <h1 className="text-4xl md:text-6xl font-light mb-6">
-              The Murivest Institutional
-              <span className="block font-medium text-white">Report Library</span>
-            </h1>
-            <p className="text-xl text-purple-100 mb-8 leading-relaxed">
-              Access comprehensive research and analysis on global commercial real estate markets.
-              Institutional-grade reports for pension funds, family offices, and sovereign wealth funds.
+      <section className="pt-32 pb-20 bg-slate-950 relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 w-[800px] h-[400px] bg-amber-600/5 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2" />
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+          <div className="max-w-3xl">
+            <p className="text-[10px] tracking-[0.5em] uppercase text-amber-500 font-bold mb-6">
+              Institutional Report Library
             </p>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-              {researchMetrics.map((metric, index) => (
-                <div
-                  key={index}
-                  className="text-center bg-white/10 backdrop-blur-md rounded-lg p-4"
-                >
-                  <div className="text-2xl font-light text-white mb-1">{metric.value}</div>
-                  <div className="text-sm text-purple-200 mb-1">{metric.label}</div>
-                  <div className="text-xs text-green-300">{metric.trend}</div>
-                </div>
-              ))}
-            </div>
+            <h1 className="text-3xl md:text-4xl lg:text-6xl font-serif text-white leading-tight mb-8">
+              Murivest Institutional <span className="italic text-amber-200/80">Research Library</span>
+            </h1>
+            <p className="text-slate-400 text-sm md:text-lg leading-relaxed font-light border-l-2 border-amber-500/50 pl-6">
+              Access comprehensive research and analysis on global commercial real estate markets. 
+              Institutional-grade reports designed for pension funds, family offices, and sovereign wealth funds.
+            </p>
           </div>
         </div>
       </section>
 
+      {/* Key Metrics Bar */}
+      <div className="bg-slate-900 border-y border-white/10 py-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {researchMetrics.map((metric, index) => (
+              <div key={index} className="text-center">
+                <div className="text-3xl font-light text-amber-400 mb-2">{metric.value}</div>
+                <div className="text-[10px] uppercase tracking-widest text-slate-400 mb-1">{metric.label}</div>
+                <div className="text-xs text-slate-500">{metric.trend}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Reports Grid */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-24 bg-slate-950">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
-              Latest Research Publications
+            <h3 className="text-xs tracking-[0.3em] uppercase text-amber-600 font-bold mb-6">Latest Publications</h3>
+            <h2 className="text-3xl md:text-5xl font-serif text-white mb-6">
+              Research Publications
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
-              Comprehensive market analysis and investment insights written for institutional investors.
+            <p className="text-slate-400 max-w-3xl mx-auto font-light leading-relaxed">
+              Comprehensive market analysis and investment insights written for institutional investors and capital allocators.
             </p>
           </div>
 
@@ -135,49 +135,48 @@ export default function ResearchPage() {
             {reports.map((report, index) => (
               <div
                 key={index}
-                className="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-slate-900 border border-slate-800 overflow-hidden hover:border-amber-500 transition-all duration-300"
               >
-                <div className="relative h-48">
+                <div className="relative h-48 overflow-hidden bg-slate-800">
                   <img
                     src={report.image}
                     alt={report.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                   />
-                  <div className="absolute inset-0 bg-slate-900/20" />
-                  <div className="absolute bottom-4 left-4">
-                    <div className="bg-white/90 backdrop-blur-md rounded-lg px-3 py-1">
-                      <span className="text-sm font-medium text-slate-900">{report.pages} pages</span>
+                  <div className="absolute inset-0 bg-slate-950/40" />
+                  <div className="absolute top-4 right-4">
+                    <div className="bg-amber-600/80 backdrop-blur-md rounded px-3 py-1">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-white">{report.pages} pages</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="p-6">
-                  <h3 className="text-xl font-light text-slate-900 mb-3">{report.title}</h3>
-
-                  <div className="flex items-center text-slate-500 text-sm mb-4">
-                    <Calendar className="h-4 w-4 mr-2" />
-                    <span>{report.publishDate}</span>
+                <div className="p-8">
+                  <div className="flex items-center text-amber-500 text-[10px] mb-4 uppercase tracking-widest font-semibold">
+                    <Calendar className="h-3 w-3 mr-2" />
+                    {report.publishDate}
                   </div>
 
-                  <p className="text-slate-600 text-sm leading-relaxed mb-6">{report.abstract}</p>
+                  <h3 className="text-lg font-serif text-white mb-3">{report.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed mb-6 font-light">{report.abstract}</p>
 
                   <div className="space-y-3">
                     {report.downloadLink !== "#" ? (
                       <Link href={report.downloadLink}>
-                        <button className="w-full bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 font-medium text-sm transition-all duration-300 flex items-center justify-center group">
+                        <button className="w-full bg-amber-600 hover:bg-amber-500 text-white px-4 py-3 font-medium text-[10px] uppercase tracking-widest transition-all duration-300 flex items-center justify-center group">
                           <Download className="mr-2 h-4 w-4" />
                           Download PDF
                           <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                         </button>
                       </Link>
                     ) : (
-                      <div className="w-full bg-slate-200 text-slate-500 px-4 py-3 font-medium text-sm text-center rounded-lg">
+                      <div className="w-full bg-slate-800/50 text-slate-400 px-4 py-3 font-medium text-[10px] uppercase tracking-widest text-center">
                         Coming Soon
                       </div>
                     )}
 
                     <Link href={report.confidentialLink}>
-                      <button className="w-full border-2 border-purple-400 hover:bg-purple-400 hover:text-white text-purple-600 px-4 py-3 font-medium text-sm transition-all duration-300">
+                      <button className="w-full border border-amber-600/30 hover:bg-amber-600/10 text-amber-400 hover:text-amber-300 px-4 py-3 font-medium text-[10px] uppercase tracking-widest transition-all duration-300">
                         Request Confidential Note
                       </button>
                     </Link>
@@ -190,28 +189,28 @@ export default function ResearchPage() {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="py-24 bg-slate-900 text-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <section className="py-24 bg-slate-950 border-t border-white/10">
+        <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-light mb-6">
-              Stay Ahead of Market Developments
+            <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">
+              Stay Ahead of <span className="italic text-amber-200/80">Market Developments</span>
             </h2>
-            <p className="text-xl text-slate-300 mb-8 leading-relaxed">
+            <p className="text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed font-light">
               Subscribe to receive our latest research reports and market insights directly in your inbox.
             </p>
 
             <div className="max-w-md mx-auto">
-              <div className="flex gap-4">
+              <div className="flex gap-2 bg-slate-900 border border-slate-800 p-2 focus-within:border-amber-500 transition-colors">
                 <input
                   type="email"
-                  placeholder="Enter your institutional email"
-                  className="flex-1 px-4 py-3 bg-white text-slate-900 rounded-lg border-0 focus:ring-2 focus:ring-purple-400"
+                  placeholder="Enter institutional email"
+                  className="flex-1 px-4 py-2 bg-slate-900 text-white text-sm outline-none placeholder:text-slate-500"
                 />
-                <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 font-medium transition-all duration-300">
+                <button className="bg-amber-600 hover:bg-amber-500 text-white px-6 py-2 text-[10px] font-bold uppercase tracking-widest transition-all duration-300">
                   Subscribe
                 </button>
               </div>
-              <p className="text-xs text-slate-400 mt-3">
+              <p className="text-[10px] text-slate-500 mt-4 uppercase tracking-widest">
                 We respect your privacy. Unsubscribe at any time.
               </p>
             </div>
