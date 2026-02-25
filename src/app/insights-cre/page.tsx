@@ -68,7 +68,7 @@ export default async function InsightsPage() {
 
               <div className="mt-6 md:mt-8 lg:mt-12 pt-4 md:pt-6 lg:pt-8 border-t border-white/5 flex items-center justify-between">
                 <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-slate-600">
-                  {new Date(insight.publishedAt).toLocaleDateString('en-KE', { month: 'short', year: 'numeric' })}
+                  {insight.publishedAt ? new Date(insight.publishedAt).toLocaleDateString('en-KE', { month: 'short', year: 'numeric' }) : 'Recent'}
                 </span>
                 <span className="text-amber-500 text-[10px] md:text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
                   View Report +
