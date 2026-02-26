@@ -370,6 +370,7 @@ export default function WealthManagementPage() {
           </div>
         </div>
       </div>
+      </section>
     </div>
   );
 }

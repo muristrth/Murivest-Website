@@ -254,6 +254,7 @@ export default function PrivateEquityRealEstatePage() {
           </div>
         </div>
       </div>
+      </section>
     </div>
   );
 }
