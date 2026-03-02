@@ -10,6 +10,8 @@ import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
  */
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,9 +20,31 @@ const Contact = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsLoading(true);
+    setError('');
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError('Failed to send your inquiry. Please try again or contact us directly.');
+      console.error('Contact form error:', err);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -227,11 +251,17 @@ const Contact = () => {
                   </div>
 
                   <div className="pt-4">
+                    {error && (
+                      <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-700 text-sm">
+                        {error}
+                      </div>
+                    )}
                     <button
                       type="submit"
-                      className="w-full md:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 bg-[#2C2C2C] text-[#F8F7F4] text-[12px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors duration-500"
+                      disabled={isLoading}
+                      className="w-full md:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 bg-[#2C2C2C] text-[#F8F7F4] text-[12px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors duration-500 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      <span>Send Inquiry</span>
+                      <span>{isLoading ? 'Sending...' : 'Send Inquiry'}</span>
                       <Send className="w-4 h-4" />
                     </button>
                   </div>
