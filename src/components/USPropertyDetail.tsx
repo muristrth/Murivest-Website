@@ -1,255 +1,302 @@
 'use client';
 
-import React from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import {
-  MapPin, DollarSign, Shield, Award,
-  ChevronRight, Building, ArrowLeft,
-  ArrowUpRight, Lock, Phone, Mail, Landmark
-} from 'lucide-react';
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowLeft, MapPin, Bed, Bath, Square, DollarSign, Calendar, Phone, Mail, ChevronLeft, ChevronRight } from 'lucide-react';
 
-interface USPropertyDetailProps {
-  property: {
-    title?: string;
-    subtitle?: string;
-    location?: string;
-    city?: string;
-    state?: string;
-    zipCode?: string;
-    type?: string;
-    status?: string;
-    price?: string;
-    yield?: string;
-    description?: string;
-    roi?: string;
-    mainImageUrl?: string;
-    images?: string[];
-    features?: string[];
-    sqft?: string;
-    details?: Array<{ label?: string; value?: string }>;
-    investment?: {
-      monthlyIncome?: string;
-      annualIncome?: string;
-      appreciationRate?: string;
-      totalROI?: string;
-    };
-    regulatory?: {
-      secCompliant?: boolean;
-      exchange1031?: boolean;
-      crefcStandards?: boolean;
-    };
+interface PropertyDetail {
+  id: string;
+  title: string;
+  location: string;
+  price: string;
+  bedrooms: number;
+  bathrooms: number;
+  sqft: string;
+  description: string;
+  images: string[];
+  features: string[];
+  agent: {
+    name: string;
+    title: string;
+    phone: string;
+    email: string;
   };
 }
 
-export default function USPropertyDetail({ property }: USPropertyDetailProps) {
-  const allImages = property.mainImageUrl 
-    ? [property.mainImageUrl, ...(property.images || [])]
-    : property.images || [];
+interface USPropertyDetailProps {
+  property?: PropertyDetail;
+}
 
-  if (!allImages.length) {
-    allImages.push('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80');
-  }
+/**
+ * US Property Detail - Golf Club Lounge Aesthetic
+ * Elegant property detail page for US properties
+ */
+const USPropertyDetail = ({ property }: USPropertyDetailProps) => {
+  const [currentImage, setCurrentImage] = useState(0);
 
-  const detailsMap = property.details?.reduce((acc, item) => {
-    if (item.label && item.value) {
-      acc[item.label] = item.value;
+  const defaultProperty: PropertyDetail = {
+    id: '1',
+    title: 'Manhattan Penthouse',
+    location: 'Upper East Side, New York, NY 10021',
+    price: '$12,500,000',
+    bedrooms: 4,
+    bathrooms: 4,
+    sqft: '3,800',
+    description: `An extraordinary full-floor penthouse in one of Manhattan's most prestigious addresses. This residence offers unparalleled luxury with panoramic views of Central Park and the Manhattan skyline.
+
+The penthouse features a grand living room with floor-to-ceiling windows, a chef's kitchen with premium appliances, and four en-suite bedrooms including a master suite with his and hers walk-in closets. Additional amenities include a private elevator, wine cellar, and two parking spaces.
+
+Located on the Upper East Side, this residence provides immediate access to Central Park, world-class museums, and the finest dining and shopping in New York City.`,
+    images: ['/murivest_ceo_office.png', '/kenya-night.png', '/murivest_ceo_office.png', '/kenya-night.png'],
+    features: [
+      'Full-floor penthouse with private elevator',
+      'Panoramic Central Park and city views',
+      'Grand living room with 14-foot ceilings',
+      'Chef\'s kitchen with premium appliances',
+      'Four en-suite bedrooms',
+      'Master suite with his and hers walk-in closets',
+      'Private wine cellar',
+      'Two dedicated parking spaces',
+      '24-hour doorman and concierge',
+      'Fitness center and spa access',
+      'Private storage included',
+      'Steps from Central Park'
+    ],
+    agent: {
+      name: 'Victoria Sterling',
+      title: 'Senior Property Consultant',
+      phone: '+1 (212) 555-0123',
+      email: 'victoria@murivest.com'
     }
-    return acc;
-  }, {} as Record<string, string>) || {};
+  };
+
+  const displayProperty = property || defaultProperty;
+
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % displayProperty.images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImage((prev) => (prev - 1 + displayProperty.images.length) % displayProperty.images.length);
+  };
 
   return (
-    <div className="min-h-screen bg-[#05070a] text-white font-light">
-      {/* Hero Section */}
-      <section className="relative pt-32 md:pt-40 pb-16 px-4 md:px-8">
-        <div className="absolute top-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-blue-600/5 blur-[80px] md:blur-[120px] rounded-full" />
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <Link href="/us-properties" className="inline-flex items-center gap-2 text-amber-500 text-sm font-bold uppercase tracking-widest mb-6 md:mb-8 hover:text-white transition-colors">
-            <ArrowLeft size={16} /> <span className="hidden sm:inline">Back to US Properties</span><span className="sm:hidden">Back</span>
-          </Link>
-          
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-            <div className="lg:w-1/2">
-              <img 
-                src={allImages[0]} 
-                alt={property.title || 'US Property'}
-                className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-lg"
+    <div className="min-h-screen bg-[#F8F7F4] text-[#2C2C2C]">
+      
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#F8F7F4]/95 backdrop-blur-sm border-b border-[#E5E2DC]">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-4">
+          <div className="flex items-center justify-between">
+            <a 
+              href="/us-properties"
+              className="group inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-[#8B7355] font-medium hover:text-[#2C2C2C] transition-colors duration-500"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              <span>Back to Collection</span>
+            </a>
+
+            <div className="flex items-center gap-2">
+              <div className="w-6 h-[1px] bg-[#8B7355]" />
+              <span className="text-[11px] tracking-[0.3em] uppercase text-[#8B7355] font-medium">
+                Murivest
+              </span>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Image Gallery */}
+      <div className="pt-16">
+        <div className="relative aspect-[21/9] md:aspect-[3/1] overflow-hidden bg-[#E5E2DC]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentImage}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={displayProperty.images[currentImage]}
+                alt={displayProperty.title}
+                fill
+                className="object-cover"
+                priority
+                sizes="100vw"
               />
-            </div>
-            
-            <div className="lg:w-1/2">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="px-3 py-1 bg-amber-500 text-black text-[10px] font-black uppercase tracking-tighter">
-                  {property.type || 'Commercial'}
-                </span>
-                <span className="px-3 py-1 border border-amber-500/50 text-amber-400 text-[10px] font-bold uppercase tracking-widest">
-                  {property.status || 'Available'}
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Navigation arrows */}
+          <button
+            onClick={prevImage}
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#F8F7F4]/90 flex items-center justify-center hover:bg-[#8B7355] hover:text-white transition-colors duration-300"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            onClick={nextImage}
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#F8F7F4]/90 flex items-center justify-center hover:bg-[#8B7355] hover:text-white transition-colors duration-300"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+
+          {/* Image counter */}
+          <div className="absolute bottom-4 right-4 bg-[#2C2C2C]/80 px-4 py-2">
+            <span className="text-[12px] text-[#F8F7F4]">
+              {currentImage + 1} / {displayProperty.images.length}
+            </span>
+          </div>
+        </div>
+
+        {/* Thumbnail strip */}
+        <div className="hidden md:flex gap-2 px-6 md:px-12 py-4 bg-white border-b border-[#E5E2DC]">
+          {displayProperty.images.map((img, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImage(index)}
+              className={`relative w-20 h-14 overflow-hidden ${
+                index === currentImage ? 'ring-2 ring-[#8B7355]' : 'opacity-60 hover:opacity-100'
+              } transition-all duration-300`}
+            >
+              <Image
+                src={img}
+                alt={`Thumbnail ${index + 1}`}
+                fill
+                className="object-cover"
+                sizes="80px"
+              />
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-12 md:py-16">
+        <div className="grid lg:grid-cols-12 gap-12">
+          
+          {/* Left: Property Details */}
+          <div className="lg:col-span-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              {/* Location */}
+              <div className="flex items-center gap-2 mb-4">
+                <MapPin className="w-4 h-4 text-[#8B7355]" strokeWidth={1} />
+                <span className="text-[12px] tracking-[0.15em] uppercase text-[#5A5A5A]">
+                  {displayProperty.location}
                 </span>
               </div>
-              
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif italic mb-4">
-                {property.title}
+
+              {/* Title */}
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif mb-8 text-[#2C2C2C]">
+                {displayProperty.title}
               </h1>
-              
-              <div className="flex items-center gap-2 text-slate-400 text-sm uppercase tracking-widest mb-6 md:mb-8">
-                <MapPin size={16} className="text-amber-500" />
-                {property.location}
-              </div>
-              
-              <div className="grid grid-cols-2 gap-6 md:gap-8 mb-8">
-                <div>
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-1">Asset Value</p>
-                  <p className="text-2xl md:text-3xl font-bold text-amber-400">{property.price}</p>
+
+              {/* Key stats */}
+              <div className="flex flex-wrap gap-8 mb-8 pb-8 border-b border-[#E5E2DC]">
+                <div className="flex items-center gap-3">
+                  <Bed className="w-5 h-5 text-[#8B7355]" strokeWidth={1} />
+                  <div>
+                    <p className="text-[10px] tracking-[0.15em] uppercase text-[#5A5A5A]">Bedrooms</p>
+                    <p className="text-lg font-serif">{displayProperty.bedrooms}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-1">Net Yield</p>
-                  <p className="text-2xl md:text-3xl font-bold text-amber-400">{property.yield}</p>
+                <div className="flex items-center gap-3">
+                  <Bath className="w-5 h-5 text-[#8B7355]" strokeWidth={1} />
+                  <div>
+                    <p className="text-[10px] tracking-[0.15em] uppercase text-[#5A5A5A]">Bathrooms</p>
+                    <p className="text-lg font-serif">{displayProperty.bathrooms}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Square className="w-5 h-5 text-[#8B7355]" strokeWidth={1} />
+                  <div>
+                    <p className="text-[10px] tracking-[0.15em] uppercase text-[#5A5A5A]">Size</p>
+                    <p className="text-lg font-serif">{displayProperty.sqft} sq ft</p>
+                  </div>
                 </div>
               </div>
-              
-              <div className="border-t border-white/10 pt-8">
-                <p className="text-slate-400 leading-relaxed mb-6">
-                  {property.description || 'Premium commercial property investment opportunity.'}
-                </p>
+
+              {/* Description */}
+              <div className="mb-12">
+                <h2 className="text-xl font-serif mb-6 text-[#8B7355]">Description</h2>
+                <div className="text-[15px] leading-[1.8] text-[#5A5A5A] font-light whitespace-pre-line">
+                  {displayProperty.description}
+                </div>
+              </div>
+
+              {/* Features */}
+              <div>
+                <h2 className="text-xl font-serif mb-6 text-[#8B7355]">Key Features</h2>
+                <ul className="grid md:grid-cols-2 gap-3">
+                  {displayProperty.features.map((feature, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 bg-[#8B7355] mt-2 shrink-0" />
+                      <span className="text-[14px] text-[#5A5A5A] font-light">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Right: Sidebar */}
+          <div className="lg:col-span-4">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="sticky top-24"
+            >
+              {/* Price Card */}
+              <div className="bg-white border border-[#E5E2DC] p-6 md:p-8 mb-6">
+                <p className="text-[10px] tracking-[0.2em] uppercase text-[#5A5A5A] mb-2">Indicative Value</p>
+                <div className="flex items-center gap-2 mb-6">
+                  <DollarSign className="w-6 h-6 text-[#8B7355]" strokeWidth={1} />
+                  <span className="text-3xl font-serif text-[#2C2C2C]">{displayProperty.price}</span>
+                </div>
+                <a 
+                  href="/contact"
+                  className="w-full py-4 bg-[#2C2C2C] text-[#F8F7F4] text-[12px] tracking-[0.2em] uppercase font-medium text-center block hover:bg-[#8B7355] transition-colors duration-500"
+                >
+                  Request Viewing
+                </a>
+              </div>
+
+              {/* Agent Card */}
+              <div className="bg-white border border-[#E5E2DC] p-6 md:p-8">
+                <p className="text-[10px] tracking-[0.2em] uppercase text-[#5A5A5A] mb-4">Portfolio Agent</p>
+                <h3 className="text-xl font-serif mb-1">{displayProperty.agent.name}</h3>
+                <p className="text-[12px] text-[#8B7355] mb-6">{displayProperty.agent.title}</p>
                 
-                {property.roi && (
-                  <div className="flex items-center gap-2 text-[10px] font-bold text-amber-500 uppercase tracking-widest">
-                    <Lock size={12} /> {property.roi}
-                  </div>
-                )}
+                <div className="space-y-3">
+                  <a 
+                    href={`tel:${displayProperty.agent.phone}`}
+                    className="flex items-center gap-3 text-[14px] text-[#5A5A5A] hover:text-[#8B7355] transition-colors duration-300"
+                  >
+                    <Phone className="w-4 h-4" strokeWidth={1} />
+                    <span>{displayProperty.agent.phone}</span>
+                  </a>
+                  <a 
+                    href={`mailto:${displayProperty.agent.email}`}
+                    className="flex items-center gap-3 text-[14px] text-[#5A5A5A] hover:text-[#8B7355] transition-colors duration-300"
+                  >
+                    <Mail className="w-4 h-4" strokeWidth={1} />
+                    <span>{displayProperty.agent.email}</span>
+                  </a>
+                </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
-
-      {/* Features & Details */}
-      <section className="py-16 px-8 border-t border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-2xl font-serif italic mb-6">Key Features</h2>
-              <ul className="space-y-4">
-                {property.features?.map((feature, i) => (
-                  <li key={i} className="flex items-center gap-3 text-slate-300">
-                    <ChevronRight size={16} className="text-amber-500" />
-                    {feature}
-                  </li>
-                ))}
-                {property.sqft && (
-                  <li className="flex items-center gap-3 text-slate-300">
-                    <ChevronRight size={16} className="text-amber-500" />
-                    {property.sqft}
-                  </li>
-                )}
-              </ul>
-            </div>
-            
-            <div>
-              <h2 className="text-2xl font-serif italic mb-6">Property Details</h2>
-              <div className="space-y-4">
-                {Object.entries(detailsMap).map(([key, value]) => (
-                  <div key={key} className="flex justify-between items-center py-3 border-b border-white/5">
-                    <span className="text-slate-500 uppercase tracking-widest text-sm">{key}</span>
-                    <span className="text-white font-medium">{value}</span>
-                  </div>
-                ))}
-                {property.city && (
-                  <div className="flex justify-between items-center py-3 border-b border-white/5">
-                    <span className="text-slate-500 uppercase tracking-widest text-sm">City</span>
-                    <span className="text-white font-medium">{property.city}</span>
-                  </div>
-                )}
-                {property.state && (
-                  <div className="flex justify-between items-center py-3 border-b border-white/5">
-                    <span className="text-slate-500 uppercase tracking-widest text-sm">State</span>
-                    <span className="text-white font-medium">{property.state}</span>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Investment Details */}
-      {property.investment && (
-        <section className="py-16 px-8 border-t border-white/5">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl font-serif italic mb-8">Investment Summary</h2>
-            <div className="grid md:grid-cols-4 gap-8">
-              {property.investment.monthlyIncome && (
-                <div className="bg-white/5 border border-white/10 p-6">
-                  <p className="text-[10px] uppercase tracking-widest text-slate-500 mb-2">Monthly Income</p>
-                  <p className="text-xl font-bold text-amber-400">{property.investment.monthlyIncome}</p>
-                </div>
-              )}
-              {property.investment.annualIncome && (
-                <div className="bg-white/5 border border-white/10 p-6">
-                  <p className="text-[10px] uppercase tracking-widest text-slate-500 mb-2">Annual Income</p>
-                  <p className="text-xl font-bold text-amber-400">{property.investment.annualIncome}</p>
-                </div>
-              )}
-              {property.investment.appreciationRate && (
-                <div className="bg-white/5 border border-white/10 p-6">
-                  <p className="text-[10px] uppercase tracking-widest text-slate-500 mb-2">Appreciation</p>
-                  <p className="text-xl font-bold text-amber-400">{property.investment.appreciationRate}</p>
-                </div>
-              )}
-              {property.investment.totalROI && (
-                <div className="bg-white/5 border border-white/10 p-6">
-                  <p className="text-[10px] uppercase tracking-widest text-slate-500 mb-2">Total ROI</p>
-                  <p className="text-xl font-bold text-amber-400">{property.investment.totalROI}</p>
-                </div>
-              )}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* CTA Section */}
-      <section className="py-16 px-8 bg-white/5 border-y border-white/10">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-serif italic mb-4">Interested in this property?</h2>
-          <p className="text-slate-400 mb-8 leading-relaxed">
-            Contact our US Institutional Desk for more information and to arrange a viewing.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="px-8 py-4 bg-amber-500 text-black font-bold uppercase tracking-widest hover:bg-amber-400 transition-all flex items-center justify-center">
-              <Phone className="mr-3 h-5 w-5" />
-              Schedule Viewing
-            </Link>
-            <Link href="/contact" className="px-8 py-4 border border-amber-500/60 text-amber-300 hover:bg-amber-500 hover:text-black transition-all font-bold uppercase tracking-widest flex items-center justify-center">
-              <Mail className="mr-3 h-5 w-5" />
-              Request Brochure
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Regulatory Info */}
-      <section className="py-16 px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="space-y-4">
-              <Shield className="text-amber-500" size={32} />
-              <h4 className="text-lg font-serif italic">SEC Compliance</h4>
-              <p className="text-slate-500 text-sm leading-relaxed">Full adherence to SEC regulations for offshore and domestic institutional investors.</p>
-            </div>
-            <div className="space-y-4">
-              <Landmark className="text-amber-500" size={32} />
-              <h4 className="text-lg font-serif italic">1031 Exchange</h4>
-              <p className="text-slate-500 text-sm leading-relaxed">Expert structuring advice on 1031 like-kind exchanges and tax-deferred investment vehicles.</p>
-            </div>
-            <div className="space-y-4">
-              <Award className="text-amber-500" size={32} />
-              <h4 className="text-lg font-serif italic">CREFC Standards</h4>
-              <p className="text-slate-500 text-sm leading-relaxed">Industry-leading reporting and compliance with Commercial Real Estate Finance Council standards.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
   );
-}
+};
+
+export default USPropertyDetail;

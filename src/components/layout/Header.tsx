@@ -1,29 +1,26 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
-// Assuming MENU_DATA contains: properties, markets, invest, insights, utilities, company
+import { Menu, X, ChevronDown, Phone, Globe } from 'lucide-react';
 import { MENU_DATA } from '@/lib/menu';
-// Import or define MobileAccordion and required icons
-import { Phone, Globe } from 'lucide-react';
 
-// Simple MobileAccordion implementation (replace with your actual one if available)
+// Mobile Accordion - Club Directory Style
 const MobileAccordion = ({ title, items }: { title: string; items: any[] }) => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="mb-4">
+    <div className="mb-6 border-b border-[#3D3530]">
       <button
-        className="flex justify-between items-center w-full text-left text-slate-300 py-3 border-b border-white/10"
+        className="flex justify-between items-center w-full text-left text-[#A8A39D] py-4 transition-colors hover:text-[#F8F7F4]"
         onClick={() => setOpen((o) => !o)}
       >
-        <span className="text-[12px] font-semibold">{title}</span>
-        <ChevronDown size={16} className={`transition-transform ${open ? 'rotate-180' : ''}`} />
+        <span className="text-[12px] tracking-[0.2em] uppercase font-medium">{title}</span>
+        <ChevronDown size={14} className={`text-[#8B7355] transition-transform duration-500 ${open ? 'rotate-180' : ''}`} />
       </button>
       {open && (
-        <ul className="pl-4 mt-2 space-y-2">
+        <ul className="pb-4 space-y-3">
           {items.map((item) => (
             <li key={item.href}>
-              <a href={item.href} className="block text-[12px] text-slate-400 hover:text-amber-500 transition-colors py-1">
+              <a href={item.href} className="block text-[13px] text-[#5A5A5A] hover:text-[#8B7355] transition-colors py-1 font-light">
                 {item.label}
               </a>
             </li>
@@ -41,12 +38,12 @@ const MobileMenuDropdown = ({ title, items }: { title: string, items: any[] }) =
     <div className="group">
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-center gap-3 w-full text-3xl font-serif text-white hover:text-amber-200 transition-all duration-500"
+        className="flex items-center justify-center gap-3 w-full text-2xl font-serif text-[#F8F7F4] hover:text-[#C4B59D] transition-colors duration-500"
       >
         <span>{title}</span>
         <ChevronDown 
-          size={20} 
-          className={`text-amber-600 transition-transform duration-500 ${isOpen ? 'rotate-180' : ''}`} 
+          size={16} 
+          className={`text-[#8B7355] transition-transform duration-500 ${isOpen ? 'rotate-180' : ''}`} 
         />
       </button>
       
@@ -58,7 +55,7 @@ const MobileMenuDropdown = ({ title, items }: { title: string, items: any[] }) =
             <li key={item.label}>
               <a 
                 href={item.href} 
-                className="text-[11px] tracking-[0.3em] uppercase text-slate-400 hover:text-white transition-colors"
+                className="text-[11px] tracking-[0.25em] uppercase text-[#5A5A5A] hover:text-[#F8F7F4] transition-colors"
               >
                 {item.label}
               </a>
@@ -72,27 +69,27 @@ const MobileMenuDropdown = ({ title, items }: { title: string, items: any[] }) =
 
 const MegaMenu = ({ title, items }: { title: string; items: any[] }) => (
   <div className="relative group/menu">
-    <button className="flex items-center gap-1 text-[11px] font-medium tracking-[0.2em] uppercase text-slate-300 hover:text-amber-500 py-8 transition-all duration-500">
+    <button className="flex items-center gap-1.5 text-[11px] tracking-[0.15em] uppercase text-[#A8A39D] hover:text-[#8B7355] py-8 transition-all duration-500 font-medium">
       {title}
-      <ChevronDown size={10} className="opacity-40 transition-transform duration-500 group-hover/menu:rotate-180" />
+      <ChevronDown size={10} className="opacity-50 transition-transform duration-500 group-hover/menu:rotate-180" />
     </button>
     
-    {/* Full Width or Large Dropdown */}
-    <div className="absolute left-0 top-[100%] invisible opacity-0 translate-y-4 group-hover/menu:visible group-hover/menu:opacity-100 group-hover/menu:translate-y-0 transition-all duration-700 w-[280px] z-50">
-      <div className="bg-slate-950/95 backdrop-blur-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] mt-1 p-6">
+    {/* Dropdown - Club Menu Style */}
+    <div className="absolute left-0 top-[100%] invisible opacity-0 translate-y-4 group-hover/menu:visible group-hover/menu:opacity-100 group-hover/menu:translate-y-0 transition-all duration-500 w-[280px] z-50">
+      <div className="bg-[#F8F7F4] border border-[#E5E2DC] shadow-[0_20px_50px_rgba(0,0,0,0.15)] mt-2 p-8">
         <div className="mb-4">
-          <p className="text-[9px] tracking-[0.3em] text-amber-500/60 uppercase font-bold border-b border-white/5 pb-2 mb-4">
-            Select Department
+          <p className="text-[9px] tracking-[0.3em] uppercase text-[#8B7355] font-medium border-b border-[#E5E2DC] pb-3 mb-4">
+            Select
           </p>
-          <ul className="space-y-1">
+          <ul className="space-y-2">
             {items.map((item) => (
               <li key={item.href}>
                 <a 
                   href={item.href} 
-                  className="group/link flex items-center justify-between py-2 text-[12px] text-slate-300 hover:text-white transition-colors"
+                  className="group/link flex items-center justify-between py-2 text-[13px] text-[#2C2C2C] hover:text-[#8B7355] transition-colors font-light"
                 >
-                  <span className="tracking-wide">{item.label}</span>
-                  <div className="h-[1px] w-0 bg-amber-500 transition-all duration-500 group-hover/link:w-4" />
+                  <span>{item.label}</span>
+                  <div className="h-[1px] w-0 bg-[#8B7355] transition-all duration-500 group-hover/link:w-4" />
                 </a>
               </li>
             ))}
@@ -114,84 +111,89 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-1000 ${
-      scrolled ? 'bg-slate-950/95 border-b border-white/5 py-0' : 'bg-transparent py-4'
+    <header className={`fixed top-0 w-full z-50 transition-all duration-700 ${
+      scrolled ? 'bg-[#F8F7F4]/95 border-b border-[#E5E2DC] py-0' : 'bg-transparent py-6'
     }`}>
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="flex items-center justify-between h-20">
           
-          {/* BRANDING */}
-          <a href="/" className="flex flex-col min-w-fit">
-            <span className="text-2xl font-serif tracking-[0.15em] text-white">MURIVEST</span>
-            <span className="text-[9px] tracking-[0.5em] text-amber-500/80 font-light uppercase -mt-1">Nairobi Private Office</span>
+          {/* BRANDING - Club Letterhead Style */}
+          <a href="/" className="flex flex-col min-w-fit group">
+            <span className={`text-2xl font-serif tracking-[0.1em] transition-colors duration-500 ${
+              scrolled ? 'text-[#2C2C2C] group-hover:text-[#8B7355]' : 'text-[#F8F7F4]'
+            }`}>
+              MURIVEST
+            </span>
+            <span className={`text-[9px] tracking-[0.4em] font-light uppercase -mt-1 transition-colors duration-500 ${
+              scrolled ? 'text-[#8B7355]' : 'text-[#C4B59D]'
+            }`}>
+              Nairobi Private Office
+            </span>
           </a>
 
-          {/* NAV: Logic-based groupings for UHNWI */}
-          <nav className="hidden xl:flex items-center space-x-8">
+          {/* NAV - Club Directory Style */}
+          <nav className="hidden xl:flex items-center space-x-10">
             <MegaMenu title="Portfolio" items={MENU_DATA.properties} />
             <MegaMenu title="Markets" items={MENU_DATA.markets} />
             <MegaMenu title="Invest" items={MENU_DATA.invest} />
-            <MegaMenu title="Intel" items={MENU_DATA.insights} />
+            <MegaMenu title="Intelligence" items={MENU_DATA.insights} />
             <MegaMenu title="The Firm" items={MENU_DATA.company} />
             <MegaMenu title="Client Desk" items={MENU_DATA.utilities} />
             
-            <div className="h-6 w-[1px] bg-white/10 mx-4" />
+            <div className={`h-6 w-[1px] transition-colors duration-500 ${
+              scrolled ? 'bg-[#E5E2DC]' : 'bg-white/10'
+            }`} />
 
             <a 
               href="/sell" 
-              className="text-[10px] tracking-[0.3em] uppercase border border-amber-500/40 px-8 py-3.5 hover:bg-amber-600 hover:text-slate-950 transition-all duration-700 font-semibold text-amber-500"
+              className={`text-[10px] tracking-[0.25em] uppercase border px-8 py-3.5 transition-all duration-500 font-medium ${
+                scrolled 
+                  ? 'border-[#8B7355] text-[#8B7355] hover:bg-[#8B7355] hover:text-[#F8F7F4]' 
+                  : 'border-[#8B7355]/40 text-[#C4B59D] hover:bg-[#8B7355] hover:text-[#2C2C2C]'
+              }`}
             >
               Asset Divestment
             </a>
           </nav>
 
-          {/* MOBILE TOGGLE */}
-          <button className="lg:hidden text-white p-2" onClick={() => setMobileOpen(true)}>
+          {/* MOBILE TOGGLE - Minimal Lines */}
+          <button 
+            className="lg:hidden p-2" 
+            onClick={() => setMobileOpen(true)}
+            aria-label="Open menu"
+          >
             <div className="space-y-1.5">
-              <div className="w-6 h-[1px] bg-white"></div>
-              <div className="w-4 h-[1px] bg-white ml-auto"></div>
+              <div className={`w-6 h-[1px] transition-colors duration-500 ${scrolled ? 'bg-[#2C2C2C]' : 'bg-[#F8F7F4]'}`}></div>
+              <div className={`w-4 h-[1px] ml-auto transition-colors duration-500 ${scrolled ? 'bg-[#2C2C2C]' : 'bg-[#F8F7F4]'}`}></div>
             </div>
           </button>
         </div>
       </div>
 
-{/* MOBILE OVERLAY: High-end Drawer */}
-      <div className={`fixed inset-0 z-[60] bg-slate-950 transition-all duration-700 ease-in-out ${
+      {/* MOBILE OVERLAY - Club Lounge Atmosphere */}
+      <div className={`fixed inset-0 z-[60] bg-[#2C2C2C] transition-all duration-700 ease-in-out ${
         mobileOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'
       }`}>
         <div className="p-12 h-full flex flex-col justify-center items-center text-center overflow-y-auto">
           <button 
             onClick={() => setMobileOpen(false)} 
-            className="absolute top-10 right-10 text-slate-400 hover:text-white transition-colors"
+            className="absolute top-10 right-10 text-[#5A5A5A] hover:text-[#F8F7F4] transition-colors"
+            aria-label="Close menu"
           >
-            <X size={32} strokeWidth={1} />
+            <X size={28} strokeWidth={1} />
           </button>
 
           <nav className="w-full max-w-sm space-y-8">
-            {/* 1. PORTFOLIO DROPDOWN */}
-            <MobileMenuDropdown 
-              title="Portfolio" 
-              items={MENU_DATA.properties} 
-            />
+            <MobileMenuDropdown title="Portfolio" items={MENU_DATA.properties} />
+            <MobileMenuDropdown title="Intelligence" items={MENU_DATA.insights} />
+            <MobileMenuDropdown title="The Firm" items={MENU_DATA.company} />
 
-            {/* 2. INTELLIGENCE DROPDOWN */}
-            <MobileMenuDropdown 
-              title="Intelligence" 
-              items={MENU_DATA.insights} 
-            />
-
-            {/* 3. THE FIRM DROPDOWN */}
-            <MobileMenuDropdown 
-              title="The Firm" 
-              items={MENU_DATA.company} 
-            />
-
-            <div className="pt-12">
+            <div className="pt-12 border-t border-[#3D3530]">
               <a 
                 href="/contact" 
-                className="text-[10px] tracking-[0.5em] uppercase text-amber-500 border-b border-amber-500/20 pb-2 hover:text-amber-200 transition-colors"
+                className="text-[10px] tracking-[0.4em] uppercase text-[#8B7355] hover:text-[#C4B59D] transition-colors border-b border-[#8B7355]/20 pb-2"
               >
-                Request a Private Consultation
+                Request Private Consultation
               </a>
             </div>
           </nav>

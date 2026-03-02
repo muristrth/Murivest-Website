@@ -1,270 +1,236 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  MapPin, PoundSterling, Shield, Award, 
-  Globe, Filter, Landmark,
-  ChevronRight, Search, Building,
-  ArrowUpRight, BarChart3, Lock, X
-} from 'lucide-react';
+import React from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { ArrowRight, MapPin, Bed, Bath, Square, PoundSterling } from 'lucide-react';
 
-interface UKProperty {
-  _id: string;
-  title?: string;
-  slug?: string;
-  price?: string;
-  location?: string;
-  city?: string;
-  region?: string;
-  postcode?: string;
-  type?: string;
-  description?: string;
-  yield?: string;
-  features?: string[];
-  mainImage?: string;
-  images?: string[];
+interface Property {
+  id: string;
+  title: string;
+  location: string;
+  price: string;
+  bedrooms: number;
+  bathrooms: number;
+  sqft: string;
+  image: string;
+  slug: string;
+  status: 'available' | 'under-offer' | 'sold';
 }
 
 interface UKPropertiesProps {
-  data?: UKProperty[];
+  properties?: Property[];
 }
 
-const UKProperties = ({ data = [] }: UKPropertiesProps) => {
-  const [selectedType, setSelectedType] = useState('All');
-  const [searchTerm, setSearchTerm] = useState('');
-  const [filteredProperties, setFilteredProperties] = useState<UKProperty[]>(data);
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
+/**
+ * UK Properties - Golf Club Lounge Aesthetic
+ * Elegant property listing for UK portfolio
+ */
+const UKProperties = ({ properties = [] }: UKPropertiesProps) => {
+  const defaultProperties: Property[] = [
+    {
+      id: '1',
+      title: 'The Kensington Residence',
+      location: 'Kensington, London',
+      price: '£4,250,000',
+      bedrooms: 5,
+      bathrooms: 4,
+      sqft: '4,200',
+      image: '/murivest_ceo_office.png',
+      slug: '#',
+      status: 'available'
+    },
+    {
+      id: '2',
+      title: 'Mayfair Townhouse',
+      location: 'Mayfair, London',
+      price: '£7,800,000',
+      bedrooms: 6,
+      bathrooms: 5,
+      sqft: '6,500',
+      image: '/kenya-night.png',
+      slug: '#',
+      status: 'available'
+    },
+    {
+      id: '3',
+      title: 'Chelsea Penthouse',
+      location: 'Chelsea, London',
+      price: '£3,950,000',
+      bedrooms: 3,
+      bathrooms: 3,
+      sqft: '2,800',
+      image: '/murivest_ceo_office.png',
+      slug: '#',
+      status: 'under-offer'
+    },
+    {
+      id: '4',
+      title: 'Belgravia Apartment',
+      location: 'Belgravia, London',
+      price: '£5,200,000',
+      bedrooms: 4,
+      bathrooms: 3,
+      sqft: '3,500',
+      image: '/kenya-night.png',
+      slug: '#',
+      status: 'available'
+    }
+  ];
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const displayProperties = properties.length > 0 ? properties : defaultProperties;
 
-  useEffect(() => {
-    const filtered = data.filter(property => {
-      const matchesType = selectedType === 'All' || property.type === selectedType;
-      const matchesSearch = (property.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            property.location?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            property.city?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            property.postcode?.toLowerCase().includes(searchTerm.toLowerCase())) || false;
-      return matchesType && matchesSearch;
-    });
-    setFilteredProperties(filtered);
-  }, [data, selectedType, searchTerm]);
-
-  const propertyTypes = ['All', 'Office', 'Hotel', 'Retail', 'Industrial', 'Mixed-Use'];
+  const getStatusLabel = (status: string) => {
+    switch (status) {
+      case 'under-offer':
+        return { text: 'Under Offer', color: 'bg-amber-600' };
+      case 'sold':
+        return { text: 'Sold', color: 'bg-red-600' };
+      default:
+        return { text: 'Available', color: 'bg-green-600' };
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-[#05070a] text-white font-light selection:bg-amber-500/30">
+    <div className="min-h-screen bg-[#F8F7F4] text-[#2C2C2C]">
       
-      {/* 1. CINEMATIC HERO SECTION */}
-      <section className="relative pt-24 md:pt-40 pb-16 md:pb-24 px-6 md:px-8 overflow-hidden">
-        <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue-600/5 blur-[80px] md:blur-[120px] rounded-full" />
+      {/* Hero Section */}
+      <section className="relative pt-32 md:pt-40 pb-16 md:pb-24 px-6 md:px-12 overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#8B7355]/5 blur-[120px] rounded-full" />
         
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div 
+        <div className="max-w-[1400px] mx-auto relative z-10">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-3 mb-6 md:mb-8"
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="flex items-center gap-3 mb-8"
           >
-            <div className="h-px w-6 md:w-8 bg-amber-500" />
-            <span className="text-[10px] md:text-[10px] font-bold tracking-[0.3em] md:tracking-[0.4em] uppercase text-amber-500">
-              Direct UK Institutional Desk
+            <div className="w-8 h-[1px] bg-[#8B7355]" />
+            <span className="text-[11px] tracking-[0.4em] uppercase text-[#8B7355] font-medium">
+              UK Collection
             </span>
           </motion.div>
+
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-[1.1] mb-8">
+            Prime London <span className="italic text-[#8B7355] font-light">Properties</span>
+          </h1>
+          
+          <div className="grid lg:grid-cols-2 gap-12 items-end mt-12">
+            <p className="text-[15px] leading-[1.8] text-[#5A5A5A] font-light border-l border-[#8B7355]/30 pl-6">
+              A curated collection of exceptional properties in London's most prestigious addresses. 
+              Each residence represents the pinnacle of architectural distinction and refined living.
+            </p>
+            
+            <div className="flex flex-wrap gap-4">
+              <a 
+                href="/contact" 
+                className="inline-flex items-center gap-3 px-8 py-4 bg-[#2C2C2C] text-[#F8F7F4] text-[11px] tracking-[0.25em] uppercase font-medium hover:bg-[#8B7355] transition-colors duration-500"
+              >
+                Request Private Viewing
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* 2. SOPHISTICATED TOOLBAR - Fixed position to prevent overlap */}
-      <div className="sticky top-0 z-40 bg-[#05070a]/95 backdrop-blur-xl border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 py-3 md:py-4">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-            {/* Search */}
-            <div className="relative flex-1 max-w-full md:max-w-md group order-2 md:order-1">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 group-focus-within:text-amber-500 transition-colors" size={16} />
-              <input 
-                type="text" 
-                placeholder="SEARCH BY POSTCODE OR ASSET..." 
-                className="w-full pl-10 pr-4 py-2.5 md:py-2 bg-white/5 border border-white/10 rounded-lg text-[10px] md:text-[10px] font-bold tracking-[0.15em] md:tracking-[0.2em] focus:ring-1 focus:ring-amber-500/50 focus:border-amber-500/50 placeholder:text-slate-700 text-white"
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </div>
-            
-            {/* Filter Toggle - Mobile */}
-            <button 
-              onClick={() => setIsFilterOpen(!isFilterOpen)}
-              className="md:hidden flex items-center justify-center gap-2 px-4 py-2.5 border border-white/10 text-[9px] font-bold uppercase tracking-widest hover:bg-white/5 transition-all order-1"
-            >
-              <Filter size={14} /> 
-              {selectedType === 'All' ? 'All Types' : selectedType}
-            </button>
-
-            {/* Filter Buttons - Desktop */}
-            <nav className="hidden md:flex items-center gap-6 order-2">
-              {propertyTypes.map((type) => (
-                <button
-                  key={type}
-                  onClick={() => setSelectedType(type)}
-                  className={`text-[10px] font-bold uppercase tracking-[0.25em] transition-all relative py-2 ${
-                    selectedType === type ? 'text-amber-500' : 'text-slate-500 hover:text-white'
-                  }`}
-                >
-                  {type}
-                  {selectedType === type && (
-                    <motion.div 
-                      layoutId="underline-uk" 
-                      className="absolute bottom-0 left-0 w-full h-px bg-amber-500" 
+      {/* Properties Grid */}
+      <section className="py-16 md:py-24 border-t border-[#E5E2DC]">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {displayProperties.map((property, index) => (
+              <motion.article
+                key={property.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="group bg-white border border-[#E5E2DC] overflow-hidden hover:shadow-lg transition-shadow duration-500"
+              >
+                <a href={property.slug} className="block">
+                  {/* Image */}
+                  <div className="relative aspect-[4/3] overflow-hidden bg-[#E5E2DC]">
+                    <Image
+                      src={property.image}
+                      alt={property.title}
+                      fill
+                      className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                  )}
-                </button>
-              ))}
-            </nav>
-
-            {/* Refine Button */}
-            <button className="hidden md:flex items-center gap-3 px-5 py-2 border border-white/10 text-[9px] font-bold uppercase tracking-widest hover:bg-white/5 transition-all order-3">
-              <Filter size={14} /> Refine Portfolio
-            </button>
-          </div>
-
-          {/* Mobile Filter Dropdown */}
-          <AnimatePresence>
-            {isFilterOpen && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="md:hidden overflow-hidden border-t border-white/10 mt-3 pt-3"
-              >
-                <div className="flex flex-wrap gap-2">
-                  {propertyTypes.map((type) => (
-                    <button
-                      key={type}
-                      onClick={() => {
-                        setSelectedType(type);
-                        setIsFilterOpen(false);
-                      }}
-                      className={`px-4 py-2 text-[10px] font-bold uppercase tracking-wider transition-all ${
-                        selectedType === type 
-                          ? 'bg-amber-500 text-black' 
-                          : 'bg-white/5 border border-white/10 hover:bg-white/10'
-                      }`}
-                    >
-                      {type}
-                    </button>
-                  ))}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      </div>
-
-      {/* 3. PREMIUM ASSET GRID */}
-      <section className="py-16 md:py-24 px-4 md:px-8 max-w-7xl mx-auto">
-        {filteredProperties.length === 0 ? (
-          <div className="text-center py-16">
-            <p className="text-slate-400 text-base md:text-lg">No properties found matching your criteria.</p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 md:gap-px bg-white/10 border border-white/10">
-            {filteredProperties.map((asset) => (
-              <motion.div 
-                layout
-                key={asset._id} 
-                className="group bg-[#05070a] grid grid-cols-1 md:grid-cols-12 overflow-hidden hover:bg-white/[0.02] transition-colors"
-              >
-                {/* Image Column */}
-                <div className="md:col-span-4 relative h-[280px] md:h-auto overflow-hidden">
-                  <img 
-                    src={asset.mainImage || asset.images?.[0] || 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80'} 
-                    alt={asset.title || 'UK Property'}
-                    className="w-full h-full object-cover" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#05070a] via-transparent to-transparent hidden md:block" />
-                  <div className="absolute top-4 left-4 md:top-8 md:left-8">
-                    <span className="px-2.5 py-1 md:px-3 md:py-1 bg-amber-500 text-black text-[9px] md:text-[9px] font-black uppercase tracking-tighter">
-                      {asset.type || 'Commercial'}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Content Column */}
-                <div className="md:col-span-8 p-6 md:p-8 lg:p-12 flex flex-col justify-between">
-                  <div>
-                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4 md:mb-6">
-                      <div>
-                        <h3 className="text-2xl md:text-3xl font-serif italic mb-2">{asset.title}</h3>
-                        <div className="flex items-center gap-2 text-slate-500 text-[10px] uppercase tracking-widest">
-                          <MapPin size={12} className="text-amber-500" />
-                          {asset.location}
-                        </div>
-                      </div>
-                      <div className="text-left sm:text-right">
-                        <p className="text-[9px] uppercase tracking-[0.2em] text-slate-500 mb-1">Asset Value</p>
-                        <p className="text-xl md:text-2xl font-bold">{asset.price}</p>
-                      </div>
-                    </div>
-                    
-                    <p className="text-slate-400 text-sm leading-relaxed mb-6 md:mb-8 max-w-xl line-clamp-2">
-                      {asset.description}
-                    </p>
-
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mb-6 md:mb-12">
-                      <div className="p-3 md:p-4 border border-white/5 bg-white/[0.01]">
-                        <p className="text-[8px] uppercase tracking-widest text-slate-600 mb-1">Net Yield</p>
-                        <p className="text-lg md:text-lg font-serif italic text-amber-500">{asset.yield}</p>
-                      </div>
-                      {(asset.features || []).slice(0, 3).map((feat, i) => (
-                        <div key={i} className="p-3 md:p-4 border border-white/5">
-                          <p className="text-[8px] uppercase tracking-widest text-slate-600 mb-1">Spec {i+1}</p>
-                          <p className="text-xs md:text-xs font-bold uppercase tracking-tighter truncate">{feat}</p>
-                        </div>
-                      ))}
+                    {/* Status badge */}
+                    <div className="absolute top-4 left-4">
+                      <span className={`px-3 py-1 ${getStatusLabel(property.status).color} text-[10px] tracking-[0.2em] uppercase text-white font-medium`}>
+                        {getStatusLabel(property.status).text}
+                      </span>
                     </div>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-white/5 pt-6 md:pt-8">
-                    <div className="flex items-center gap-2 text-[10px] font-bold text-amber-500 uppercase tracking-widest">
-                      <Lock size={12} /> Direct Investment
+                  {/* Content */}
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <MapPin className="w-3 h-3 text-[#8B7355]" />
+                      <span className="text-[11px] tracking-[0.15em] uppercase text-[#5A5A5A]">
+                        {property.location}
+                      </span>
                     </div>
-                    <Link 
-                      href={`/uk-properties/${asset.slug}`}
-                      className="flex items-center gap-2 md:gap-4 text-[10px] font-bold uppercase tracking-[0.25em] hover:text-amber-500 transition-colors group/link"
-                    >
-                      View Prospectus <ArrowUpRight size={14} className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform md:text-base" />
-                    </Link>
+
+                    <h3 className="text-xl font-serif mb-4 text-[#2C2C2C] group-hover:text-[#8B7355] transition-colors duration-500">
+                      {property.title}
+                    </h3>
+
+                    {/* Features */}
+                    <div className="flex items-center gap-4 mb-4 text-[12px] text-[#5A5A5A]">
+                      <div className="flex items-center gap-1">
+                        <Bed className="w-3 h-3" strokeWidth={1} />
+                        <span>{property.bedrooms}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Bath className="w-3 h-3" strokeWidth={1} />
+                        <span>{property.bathrooms}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Square className="w-3 h-3" strokeWidth={1} />
+                        <span>{property.sqft} sq ft</span>
+                      </div>
+                    </div>
+
+                    {/* Price */}
+                    <div className="flex items-center justify-between pt-4 border-t border-[#E5E2DC]">
+                      <div className="flex items-center gap-2">
+                        <PoundSterling className="w-4 h-4 text-[#8B7355]" strokeWidth={1} />
+                        <span className="text-xl font-serif text-[#2C2C2C]">{property.price}</span>
+                      </div>
+                      <span className="inline-flex items-center gap-1 text-[11px] tracking-[0.2em] uppercase text-[#8B7355] font-medium group-hover:text-[#2C2C2C] transition-colors duration-300">
+                        <span>Details</span>
+                        <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
+                </a>
+              </motion.article>
             ))}
           </div>
-        )}
-      </section>
-
-      {/* 4. INSTITUTIONAL FRAMEWORK */}
-      <section className="py-16 md:py-24 px-6 md:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-16">
-            <div className="space-y-4 md:space-y-6">
-              <Shield className="text-amber-500 w-7 h-7 md:w-8 md:h-8" />
-              <h4 className="text-lg md:text-xl font-serif italic">FCA Regulated</h4>
-              <p className="text-slate-500 text-sm leading-relaxed">Investment vehicles compliant with Financial Conduct Authority regulations for institutional and qualified investors.</p>
-            </div>
-            <div className="space-y-4 md:space-y-6">
-              <Landmark className="text-amber-500 w-7 h-7 md:w-8 md:h-8" />
-              <h4 className="text-lg md:text-xl font-serif italic">UK REIT Structure</h4>
-              <p className="text-slate-500 text-sm leading-relaxed">Tax-efficient investment through Real Estate Investment Trust structures with established track records.</p>
-            </div>
-            <div className="space-y-4 md:space-y-6">
-              <Award className="text-amber-500 w-7 h-7 md:w-8 md:h-8" />
-              <h4 className="text-lg md:text-xl font-serif italic">RICS Compliant</h4>
-              <p className="text-slate-500 text-sm leading-relaxed">All properties valued in accordance with Royal Institution of Chartered Surveyors Red Book standards.</p>
-            </div>
-          </div>
         </div>
       </section>
 
+      {/* CTA */}
+      <section className="py-16 md:py-24 bg-[#2C2C2C] text-[#F8F7F4]">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-serif mb-6">
+            Access <span className="italic text-[#C4B59D] font-light">Off-Market</span> Opportunities
+          </h2>
+          <p className="text-[15px] leading-[1.8] text-[#A8A39D] font-light max-w-2xl mx-auto mb-10">
+            Our private collection includes properties not publicly listed. 
+            Contact our London office for exclusive access.
+          </p>
+          <a 
+            href="/contact"
+            className="inline-flex items-center gap-3 px-8 py-4 border border-[#C4B59D] text-[12px] tracking-[0.2em] uppercase text-[#F8F7F4] font-medium hover:bg-[#C4B59D] hover:text-[#2C2C2C] transition-all duration-500"
+          >
+            Contact London Office
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
+      </section>
     </div>
   );
 };

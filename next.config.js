@@ -12,6 +12,110 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'cdn.sanity.io',
       },
+      {
+        protocol: 'https',
+        hostname: 'upload.wikimedia.org',
+      },
+      {
+        protocol: 'https',
+        hostname: 'content.knightfrank.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'streamlinefeed.co.ke',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'nyjbuhvfbjutcfbphchh.supabase.co',
+      },
+      {
+        protocol: 'https',
+        hostname: 'properties.avenuevaluers.co.ke',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.pesapal.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.pexels.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.loopnet.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.buyrentkenya.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.co.ke',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.gstatic.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.radioafrica.digital',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.ytimg.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'usafactsdata.blob.core.windows.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'ext.same-assets.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.businessday.ng',
+      },
+      {
+        protocol: 'https',
+        hostname: 'chinaglobalsouth.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'housingfinanceafrica.org',
+      },
+      {
+        protocol: 'https',
+        hostname: 'media.licdn.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.mwakilishi.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'trendipgroup.co.za',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.policeinvestment.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.ng',
+      },
+      {
+        protocol: 'https',
+        hostname: 'samrack.com',
+      },
     ],
   },
 

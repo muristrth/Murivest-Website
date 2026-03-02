@@ -1,306 +1,331 @@
 'use client';
 
-import { useState, useEffect, ChangeEvent, FormEvent } from 'react';
-import {
-  Crown,
-  Globe,
-  Shield,
-  CheckCircle,
-  MapPin,
-  Phone,
-  Mail,
-  Building2,
-  Clock,
-  ArrowRight,
-  Lock,
-  BarChart3
-} from 'lucide-react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Building2, MapPin, DollarSign, TrendingUp, ArrowRight, CheckCircle, Send } from 'lucide-react';
 
-type FormErrors = {
-  name?: string;
-  email?: string;
-  phone?: string;
-  propertyType?: string;
-};
-
-interface FormData {
-  propertyType: string;
-  location: string;
-  price: string;
-  name: string;
-  email: string;
-  phone: string;
-  description: string;
-}
-
+/**
+ * Sell Property - Golf Club Lounge Aesthetic
+ * Elegant property listing submission form
+ */
 const SellProperty = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] =
-    useState<'success' | 'error' | 'validation-error' | null>(null);
-  const [errors, setErrors] = useState<FormErrors>({});
-  const [formData, setFormData] = useState<FormData>({
-    propertyType: '',
-    location: '',
-    price: '',
-    name: '',
+  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    ownerName: '',
     email: '',
     phone: '',
+    propertyName: '',
+    location: '',
+    propertyType: '',
+    size: '',
+    askingPrice: '',
     description: ''
   });
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  const validateForm = () => {
-    const newErrors: FormErrors = {};
-    if (!formData.name.trim()) newErrors.name = 'Required';
-    if (!formData.email.trim()) newErrors.email = 'Required';
-    if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Invalid email';
-    if (!formData.phone.trim()) newErrors.phone = 'Required';
-    if (!formData.propertyType) newErrors.propertyType = 'Required';
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleInputChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    setErrors(prev => ({ ...prev, [name as keyof FormErrors]: undefined }));
-  };
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitStatus(null);
+    setSubmitted(true);
+  };
 
-    if (!validateForm()) {
-      setSubmitStatus('validation-error');
-      return;
-    }
-
-    setIsSubmitting(true);
-    try {
-      const response = await fetch('/api/property-inquiries', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, source: 'asset-divestment' })
-      });
-
-      if (!response.ok) throw new Error();
-      setSubmitStatus('success');
-      setFormData({
-        propertyType: '',
-        location: '',
-        price: '',
-        name: '',
-        email: '',
-        phone: '',
-        description: ''
-      });
-    } catch {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white font-sans selection:bg-amber-500/30">
+    <div className="min-h-screen bg-[#F8F7F4] text-[#2C2C2C]">
       
-      {/* HERO SECTION */}
-      <section className="relative pt-40 pb-32 overflow-hidden border-b border-white/5">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-10 pointer-events-none">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-amber-900/20 via-transparent to-transparent" />
-        </div>
+      {/* Hero Section */}
+      <section className="relative pt-32 md:pt-40 pb-16 md:pb-24 px-6 md:px-12 overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#8B7355]/5 blur-[120px] rounded-full" />
         
-        <div className="container mx-auto px-6 relative z-10 text-center">
-          <div className="flex justify-center mb-8">
-            <div className="p-4 border border-amber-500/20 rounded-full">
-              <Crown className="h-8 w-8 text-amber-500" />
-            </div>
-          </div>
-          <p className="text-amber-200/60 uppercase tracking-[0.4em] text-[10px] mb-6">
-            Confidential Capital Placement
-          </p>
-          <h1 className="text-5xl md:text-7xl font-serif mb-8 tracking-tight leading-tight">
-            Institutional Asset <span className="italic text-amber-200/90">Disposition</span>
-          </h1>
-          <p className="max-w-3xl mx-auto text-slate-400 text-lg font-light leading-relaxed mb-16">
-            Murivest facilitates the discreet disposition of prime commercial assets, 
-            connecting property owners with global sovereign wealth, pension funds, 
-            and family office capital.
-          </p>
+        <div className="max-w-[1400px] mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="flex items-center gap-3 mb-8"
+          >
+            <div className="w-8 h-[1px] bg-[#8B7355]" />
+            <span className="text-[11px] tracking-[0.4em] uppercase text-[#8B7355] font-medium">
+              Property Disposition
+            </span>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-white/10 max-w-4xl mx-auto bg-white/[0.02] backdrop-blur-sm">
-            <div className="p-10 border-b md:border-b-0 md:border-r border-white/10">
-              <div className="text-3xl font-serif text-amber-200 mb-2">$10M+</div>
-              <div className="text-[10px] uppercase tracking-[0.3em] text-slate-500 font-bold">Mandate Floor</div>
-            </div>
-            <div className="p-10 border-b md:border-b-0 md:border-r border-white/10">
-              <div className="text-3xl font-serif text-amber-200 mb-2">Tier 1</div>
-              <div className="text-[10px] uppercase tracking-[0.3em] text-slate-500 font-bold">Investor Pipeline</div>
-            </div>
-            <div className="p-10">
-              <div className="text-3xl font-serif text-amber-200 mb-2">Off-Market</div>
-              <div className="text-[10px] uppercase tracking-[0.3em] text-slate-500 font-bold">Protocol</div>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-[1.1] mb-8">
+            List Your <span className="italic text-[#8B7355] font-light">Property</span>
+          </h1>
+          
+          <div className="grid lg:grid-cols-2 gap-12 items-end mt-12">
+            <p className="text-[15px] leading-[1.8] text-[#5A5A5A] font-light border-l border-[#8B7355]/30 pl-6">
+              Murivest works with property owners to achieve optimal outcomes through our network 
+              of institutional buyers and investors. Submit your property details for confidential review.
+            </p>
+            
+            <div className="flex flex-wrap gap-4">
+              <a 
+                href="/contact" 
+                className="inline-flex items-center gap-3 px-8 py-4 bg-[#2C2C2C] text-[#F8F7F4] text-[11px] tracking-[0.25em] uppercase font-medium hover:bg-[#8B7355] transition-colors duration-500"
+              >
+                Contact Advisory Team
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* STRATEGIC MANDATE FORM */}
-      <section className="py-32 relative">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-12 gap-20">
-            
-            {/* Left side: Context */}
-            <div className="lg:col-span-4 space-y-12">
-              <div>
-                <h3 className="text-xs uppercase tracking-[0.4em] text-amber-500 font-bold mb-8 text-left">The Murivest Standard</h3>
-                <div className="space-y-10">
-                  {[
-                    { icon: Globe, title: "Capital Reach", text: "Direct access to institutional LPs in London, Dubai, and Singapore." },
-                    { icon: Lock, title: "Discretion", text: "Selective information disclosure protocols to protect asset value." },
-                    { icon: BarChart3, title: "Yield Optimization", text: "Financial modeling designed to satisfy institutional risk-return mandates." }
-                  ].map((item, i) => (
-                    <div key={i} className="flex gap-6 group">
-                      <item.icon size={24} className="text-amber-500/40 shrink-0 group-hover:text-amber-500 transition-colors duration-500" />
-                      <div>
-                        <h4 className="font-serif text-xl mb-2">{item.title}</h4>
-                        <p className="text-slate-500 text-sm font-light leading-relaxed">{item.text}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              
-              <div className="p-8 bg-amber-500/5 border border-amber-500/10 italic text-slate-400 font-light text-sm leading-loose">
-                "Our disposition process is engineered to reduce time-on-market while maintaining the valuation integrity expected by top-tier owners."
-              </div>
-            </div>
+      {/* Why Sell With Us */}
+      <section className="py-16 md:py-24 border-t border-[#E5E2DC]">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="text-center mb-16"
+          >
+            <p className="text-[11px] tracking-[0.4em] uppercase text-[#8B7355] font-medium mb-4">
+              Our Approach
+            </p>
+            <h2 className="text-3xl md:text-4xl font-serif">
+              Why Sell With <span className="italic text-[#8B7355] font-light">Murivest</span>
+            </h2>
+          </motion.div>
 
-            {/* Right side: Form */}
-            <div className="lg:col-span-8">
-              <div className="bg-white/[0.02] border border-white/5 p-10 md:p-16 shadow-2xl">
-                <h2 className="text-3xl font-serif mb-12">Submit <span className="italic text-amber-200/90">Asset for Review</span></h2>
-                
-                <form onSubmit={handleSubmit} className="space-y-12">
-                  <div className="grid md:grid-cols-2 gap-12">
-                    <div className="relative group">
-                      <label className="block text-[10px] uppercase tracking-[0.3em] text-slate-500 mb-2 group-focus-within:text-amber-500 transition-colors">Principal Name</label>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: Building2,
+                title: 'Institutional Network',
+                desc: 'Access to qualified buyers including family offices, pension funds, and REITs'
+              },
+              {
+                icon: DollarSign,
+                title: 'Optimal Pricing',
+                desc: 'Data-driven valuation and pricing strategy to maximize sale proceeds'
+              },
+              {
+                icon: TrendingUp,
+                title: 'Market Intelligence',
+                desc: 'Deep understanding of buyer motivations and market timing'
+              },
+              {
+                icon: CheckCircle,
+                title: 'Confidential Process',
+                desc: 'Discreet marketing to protect your position and tenant relationships'
+              }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="group p-8 bg-white border border-[#E5E2DC] hover:border-[#8B7355] transition-colors duration-500 text-center"
+              >
+                <item.icon className="w-8 h-8 text-[#8B7355] mx-auto mb-6 group-hover:scale-110 transition-transform duration-500" strokeWidth={1} />
+                <h4 className="text-lg font-serif mb-4 text-[#2C2C2C]">{item.title}</h4>
+                <p className="text-[13px] leading-[1.7] text-[#5A5A5A] font-light">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Property Submission Form */}
+      <section className="py-16 md:py-24 bg-[#FAFAF8] border-t border-[#E5E2DC]">
+        <div className="max-w-3xl mx-auto px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-serif mb-4">
+              Submit Your <span className="italic text-[#8B7355] font-light">Property</span>
+            </h2>
+            <p className="text-[14px] leading-[1.7] text-[#5A5A5A] font-light">
+              Complete the form below for confidential review by our advisory team.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="bg-white border border-[#E5E2DC] p-8 md:p-12"
+          >
+            {submitted ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="text-center py-12"
+              >
+                <CheckCircle className="w-16 h-16 text-[#8B7355] mx-auto mb-6" strokeWidth={1} />
+                <h3 className="text-2xl font-serif mb-4 text-[#2C2C2C]">Submission Received</h3>
+                <p className="text-[15px] leading-[1.8] text-[#5A5A5A] font-light">
+                  Thank you for submitting your property details. Our advisory team will review 
+                  your submission and contact you within 48 hours.
+                </p>
+              </motion.div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-8">
+                {/* Owner Information */}
+                <div>
+                  <h3 className="text-lg font-serif mb-6 text-[#8B7355]">Owner Information</h3>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-[11px] tracking-[0.2em] uppercase text-[#5A5A5A] mb-2">
+                        Full Name *
+                      </label>
                       <input
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        className="bg-transparent border-b border-white/10 w-full py-3 outline-none focus:border-amber-500 transition-colors text-amber-50 text-lg font-light"
-                        placeholder="Full Legal Name"
+                        type="text"
+                        name="ownerName"
+                        required
+                        value={formData.ownerName}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-transparent border-b border-[#E5E2DC] text-[#2C2C2C] font-light focus:border-[#8B7355] focus:outline-none transition-colors duration-300"
                       />
                     </div>
-                    <div className="relative group">
-                      <label className="block text-[10px] uppercase tracking-[0.3em] text-slate-500 mb-2 group-focus-within:text-amber-500 transition-colors">Institutional Email</label>
+                    <div>
+                      <label className="block text-[11px] tracking-[0.2em] uppercase text-[#5A5A5A] mb-2">
+                        Email Address *
+                      </label>
                       <input
+                        type="email"
                         name="email"
+                        required
                         value={formData.email}
-                        onChange={handleInputChange}
-                        className="bg-transparent border-b border-white/10 w-full py-3 outline-none focus:border-amber-500 transition-colors text-amber-50 text-lg font-light"
-                        placeholder="email@company.com"
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-transparent border-b border-[#E5E2DC] text-[#2C2C2C] font-light focus:border-[#8B7355] focus:outline-none transition-colors duration-300"
                       />
                     </div>
                   </div>
-
-                  <div className="grid md:grid-cols-2 gap-12">
-                    <div className="relative group">
-                      <label className="block text-[10px] uppercase tracking-[0.3em] text-slate-500 mb-2 group-focus-within:text-amber-500 transition-colors">Primary Asset Class</label>
-                      <select
-                        name="propertyType"
-                        value={formData.propertyType}
-                        onChange={handleInputChange}
-                        className="bg-transparent border-b border-white/10 w-full py-3 outline-none focus:border-amber-500 transition-colors text-amber-50 text-lg font-light appearance-none"
-                      >
-                        <option value="" className="bg-slate-900">Select Asset Class</option>
-                        <option value="office" className="bg-slate-900">Grade A Office</option>
-                        <option value="industrial" className="bg-slate-900">Logistics / Industrial</option>
-                        <option value="hospitality" className="bg-slate-900">Hospitality Portfolio</option>
-                        <option value="retail" className="bg-slate-900">Prime Retail / Mixed-Use</option>
-                      </select>
-                    </div>
-                    <div className="relative group">
-                      <label className="block text-[10px] uppercase tracking-[0.3em] text-slate-500 mb-2 group-focus-within:text-amber-500 transition-colors">Target Valuation</label>
-                      <input
-                        name="price"
-                        value={formData.price}
-                        onChange={handleInputChange}
-                        className="bg-transparent border-b border-white/10 w-full py-3 outline-none focus:border-amber-500 transition-colors text-amber-50 text-lg font-light"
-                        placeholder="USD / KES Range"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="relative group">
-                    <label className="block text-[10px] uppercase tracking-[0.3em] text-slate-500 mb-2 group-focus-within:text-amber-500 transition-colors">Asset Summary</label>
-                    <textarea
-                      name="description"
-                      value={formData.description}
-                      onChange={handleInputChange}
-                      rows={3}
-                      className="bg-transparent border-b border-white/10 w-full py-3 outline-none focus:border-amber-500 transition-colors text-amber-50 text-lg font-light resize-none"
-                      placeholder="High-level overview of tenancy and lease duration"
+                  <div className="mt-6">
+                    <label className="block text-[11px] tracking-[0.2em] uppercase text-[#5A5A5A] mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-transparent border-b border-[#E5E2DC] text-[#2C2C2C] font-light focus:border-[#8B7355] focus:outline-none transition-colors duration-300"
                     />
                   </div>
+                </div>
 
-                  <div className="pt-8">
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full py-6 bg-amber-600 hover:bg-amber-500 text-slate-950 text-[10px] tracking-[0.4em] uppercase font-bold transition-all flex items-center justify-center gap-4 group"
-                    >
-                      {isSubmitting ? 'Processing Mandate...' : (
-                        <>Initialize Consultation <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" /></>
-                      )}
-                    </button>
-                    <p className="text-center text-[10px] text-slate-600 mt-8 tracking-[0.2em] uppercase font-light">
-                      All engagements are governed by strict non-disclosure protocols
-                    </p>
-                  </div>
-
-                  {submitStatus === 'success' && (
-                    <div className="bg-emerald-500/10 border border-emerald-500/20 p-6 text-emerald-400 text-center flex items-center justify-center gap-3">
-                      <CheckCircle size={18} /> Mandate received. A Senior Partner will contact you shortly.
+                {/* Property Information */}
+                <div className="pt-8 border-t border-[#E5E2DC]">
+                  <h3 className="text-lg font-serif mb-6 text-[#8B7355]">Property Information</h3>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-[11px] tracking-[0.2em] uppercase text-[#5A5A5A] mb-2">
+                        Property Name
+                      </label>
+                      <input
+                        type="text"
+                        name="propertyName"
+                        value={formData.propertyName}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-transparent border-b border-[#E5E2DC] text-[#2C2C2C] font-light focus:border-[#8B7355] focus:outline-none transition-colors duration-300"
+                      />
                     </div>
-                  )}
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+                    <div>
+                      <label className="block text-[11px] tracking-[0.2em] uppercase text-[#5A5A5A] mb-2">
+                        Location *
+                      </label>
+                      <input
+                        type="text"
+                        name="location"
+                        required
+                        value={formData.location}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-transparent border-b border-[#E5E2DC] text-[#2C2C2C] font-light focus:border-[#8B7355] focus:outline-none transition-colors duration-300"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid md:grid-cols-3 gap-6 mt-6">
+                    <div>
+                      <label className="block text-[11px] tracking-[0.2em] uppercase text-[#5A5A5A] mb-2">
+                        Property Type *
+                      </label>
+                      <select
+                        name="propertyType"
+                        required
+                        value={formData.propertyType}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-transparent border-b border-[#E5E2DC] text-[#2C2C2C] font-light focus:border-[#8B7355] focus:outline-none transition-colors duration-300"
+                      >
+                        <option value="">Select Type</option>
+                        <option value="office">Office</option>
+                        <option value="retail">Retail</option>
+                        <option value="industrial">Industrial</option>
+                        <option value="hospitality">Hospitality</option>
+                        <option value="mixed-use">Mixed Use</option>
+                        <option value="land">Land</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-[11px] tracking-[0.2em] uppercase text-[#5A5A5A] mb-2">
+                        Size (sq ft)
+                      </label>
+                      <input
+                        type="text"
+                        name="size"
+                        value={formData.size}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-transparent border-b border-[#E5E2DC] text-[#2C2C2C] font-light focus:border-[#8B7355] focus:outline-none transition-colors duration-300"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[11px] tracking-[0.2em] uppercase text-[#5A5A5A] mb-2">
+                        Asking Price (USD)
+                      </label>
+                      <input
+                        type="text"
+                        name="askingPrice"
+                        value={formData.askingPrice}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-transparent border-b border-[#E5E2DC] text-[#2C2C2C] font-light focus:border-[#8B7355] focus:outline-none transition-colors duration-300"
+                      />
+                    </div>
+                  </div>
+                  <div className="mt-6">
+                    <label className="block text-[11px] tracking-[0.2em] uppercase text-[#5A5A5A] mb-2">
+                      Property Description
+                    </label>
+                    <textarea
+                      name="description"
+                      rows={4}
+                      value={formData.description}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-transparent border-b border-[#E5E2DC] text-[#2C2C2C] font-light focus:border-[#8B7355] focus:outline-none transition-colors duration-300 resize-none"
+                      placeholder="Please describe the property, including key features, tenant information, and any other relevant details..."
+                    />
+                  </div>
+                </div>
 
-      {/* PRIVATE DISCLOSURE FOOTER */}
-      <section className="bg-black py-24 border-t border-white/5">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-2xl font-serif mb-12 italic">Bespoke <span className="text-amber-200/90">Briefings</span></h2>
-          <div className="flex flex-col md:flex-row justify-center gap-12 text-slate-400 text-sm">
-            <span className="flex items-center justify-center gap-3">
-              <Phone className="h-4 w-4 text-amber-500" />
-              +254 729 170 156
-            </span>
-            <span className="flex items-center justify-center gap-3">
-              <Mail className="h-4 w-4 text-amber-500" />
-              investments@murivest.co.ke
-            </span>
-            <span className="flex items-center justify-center gap-3">
-              <MapPin className="h-4 w-4 text-amber-500" />
-              Nairobi, Kenya
-            </span>
-          </div>
-          <div className="mt-16 max-w-2xl mx-auto border-t border-white/5 pt-12">
-            <p className="text-[9px] uppercase tracking-[0.3em] text-slate-700 leading-loose">
-              Murivest Asset Stewardship © 2026. This portal is for qualified institutional investors and asset owners. 
-              The information provided herein is subject to the Murivest Privacy and Confidentiality Framework.
-            </p>
-          </div>
+                {/* Submit */}
+                <div className="pt-8 border-t border-[#E5E2DC]">
+                  <button
+                    type="submit"
+                    className="w-full md:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 bg-[#2C2C2C] text-[#F8F7F4] text-[12px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors duration-500"
+                  >
+                    <span>Submit Property</span>
+                    <Send className="w-4 h-4" />
+                  </button>
+                  <p className="text-[11px] text-[#5A5A5A] mt-4">
+                    * Required fields. All submissions are held in strict confidence.
+                  </p>
+                </div>
+              </form>
+            )}
+          </motion.div>
         </div>
       </section>
     </div>

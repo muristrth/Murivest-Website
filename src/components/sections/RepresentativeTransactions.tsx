@@ -3,70 +3,142 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const transactions = [
   {
     title: 'UK Family Office — USD 18M Industrial Acquisition (Nairobi)',
     strategy: 'Core / Income Generation',
-    metric: 'Yield: 8.7% Net'
+    metric: 'Yield: 8.7% Net',
+    year: '2023',
   },
   {
     title: 'Regional Pension Scheme — Sale-Leaseback Advisory',
     strategy: 'Capital Recycling / Yield Enhancement',
-    metric: 'Lease Term: 15 Years'
+    metric: 'Lease Term: 15 Years',
+    year: '2022',
   },
   {
     title: 'Kenyan Corporate Group — Strategic Land Banking (120 Acres)',
     strategy: 'Opportunistic / Infrastructure-Led',
-    metric: 'Target IRR: 22%+'
+    metric: 'Target IRR: 22%+',
+    year: '2024',
   },
 ];
 
 const RepresentativeTransactions = () => {
   return (
-    <section className="py-32 bg-slate-950 text-white border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-8 lg:px-12">
-        <div className="flex flex-col md:flex-row justify-between items-end gap-12 mb-16">
-          <div className="max-w-3xl">
-            <p className="text-[10px] tracking-[0.4em] uppercase text-amber-500 font-bold mb-6">
-              Track Record & Stewardship
-            </p>
-            <h2 className="text-4xl md:text-5xl font-serif text-white mb-6 leading-tight">
-              Selected <br />
-              <span className="italic text-slate-300 font-light">Advisory Mandates</span>
-            </h2>
-            <p className="text-slate-400 text-sm max-w-xl leading-relaxed">
-              Demonstrated capability in executing large-scale commercial mandates for institutional and private capital providers.
-            </p>
-          </div>
-          
-          <Link 
-            href="/representative-transactions"
-            className="group flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.3em] text-amber-500 hover:text-white transition-colors border-b border-amber-500/20 pb-2"
+    <section className="bg-[#F8F7F4] text-[#2C2C2C] border-t border-[#2C2C2C]">
+      <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-24 lg:py-32">
+        
+        {/* Header - Club Trophy Room Style */}
+        <div className="grid lg:grid-cols-12 gap-12 mb-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="lg:col-span-7"
           >
-            View Full Track Record <ArrowUpRight size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-          </Link>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-6 h-[1px] bg-[#8B7355]" />
+              <p className="text-[11px] tracking-[0.35em] uppercase text-[#8B7355] font-medium">
+                Stewardship & Record
+              </p>
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif leading-[1.15] text-[#2C2C2C]">
+              Selected Mandates<br />
+              <span className="italic text-[#5A5A5A] font-light">& Transactions</span>
+            </h2>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="lg:col-span-5 lg:pt-12 flex flex-col justify-between"
+          >
+            <p className="text-[15px] leading-[1.8] text-[#5A5A5A] font-light border-l border-[#C4B59D] pl-6 mb-8">
+              Demonstrated capability in executing large-scale commercial mandates 
+              for institutional and private capital providers across East African markets.
+            </p>
+            
+            <Link 
+              href="/representative-transactions"
+              className="group self-start flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase text-[#2C2C2C] hover:text-[#8B7355] transition-colors duration-500"
+            >
+              <span>View Complete Record</span>
+              <span className="w-8 h-[1px] bg-current group-hover:w-12 transition-all duration-500" />
+            </Link>
+          </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Transactions - Like Club Honours Boards */}
+        <div className="space-y-px bg-[#E5E2DC] border border-[#E5E2DC]">
           {transactions.map((t, i) => (
-            <div key={i} className="group bg-white/[0.02] border border-white/5 p-8 hover:bg-white/[0.05] transition-all duration-500">
-              <div className="flex justify-between items-start mb-4">
-                <p className="text-[9px] uppercase tracking-widest text-slate-500 font-bold">{t.strategy}</p>
-                <span className="text-[9px] font-mono text-amber-500/60 uppercase">{t.metric}</span>
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              className="group bg-[#F8F7F4] hover:bg-[#FDFCFA] transition-colors duration-500"
+            >
+              <div className="grid md:grid-cols-12 gap-6 p-8 lg:p-10 items-center">
+                {/* Year - Like a tournament date */}
+                <div className="md:col-span-1">
+                  <span className="text-[11px] tracking-[0.2em] uppercase text-[#C4B59D] font-medium">
+                    {t.year}
+                  </span>
+                </div>
+
+                {/* Strategy - The category */}
+                <div className="md:col-span-3">
+                  <p className="text-[11px] tracking-[0.15em] uppercase text-[#8B7355]">
+                    {t.strategy}
+                  </p>
+                </div>
+
+                {/* Title - The main event */}
+                <div className="md:col-span-5">
+                  <h3 className="text-base font-serif text-[#2C2C2C] group-hover:text-[#8B7355] transition-colors duration-500 leading-snug">
+                    {t.title}
+                  </h3>
+                </div>
+
+                {/* Metric - The score */}
+                <div className="md:col-span-2">
+                  <span className="text-[12px] text-[#5A5A5A] font-light">
+                    {t.metric}
+                  </span>
+                </div>
+
+                {/* Arrow - Discreet indicator */}
+                <div className="md:col-span-1 flex justify-end">
+                  <ArrowUpRight 
+                    className="w-4 h-4 text-[#C4B59D] opacity-0 group-hover:opacity-100 group-hover:text-[#8B7355] transition-all duration-500" 
+                  />
+                </div>
               </div>
-              <h3 className="text-white text-base font-serif leading-relaxed mb-4 group-hover:text-amber-200 transition-colors">
-                {t.title}
-              </h3>
-              <div className="h-[1px] w-8 bg-amber-500/30 group-hover:w-full transition-all duration-700" />
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        <div className="mt-12 flex items-center gap-3 text-slate-500 text-[10px] uppercase tracking-[0.2em]">
-          <span className="w-1.5 h-1.5 bg-amber-500 rounded-full" />
-          <span>Transactions shown are representative and anonymized to protect client confidentiality</span>
-        </div>
+        {/* Footer Note - Like a club secretary's discretion */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="mt-12 flex items-start gap-4 text-[12px] text-[#5A5A5A] font-light italic"
+        >
+          <div className="w-1.5 h-1.5 rounded-full bg-[#8B7355] mt-2 flex-shrink-0" />
+          <p>
+            Transactions shown are representative and anonymized to protect client confidentiality. 
+            Full details available to qualified institutional partners under NDA.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

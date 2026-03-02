@@ -2,12 +2,12 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import {
-  Shield, TrendingUp, BarChart3, FileText,
-  Lock, Eye, AlertTriangle, DollarSign,
-  Calendar, Building2, ArrowUpRight, Award
-} from 'lucide-react';
+import { Lock, Shield, TrendingUp, Building2, ArrowUpRight, AlertTriangle, FileText, BarChart3, DollarSign, Calendar, Eye, Award } from 'lucide-react';
 
+/**
+ * Institutional Investors Portal - Golf Club Lounge Aesthetic
+ * Password-protected investor materials
+ */
 const InstitutionalInvestors = () => {
   const [password, setPassword] = useState('');
   const [authenticated, setAuthenticated] = useState(false);
@@ -25,37 +25,44 @@ const InstitutionalInvestors = () => {
 
   if (!authenticated) {
     return (
-      <div className="min-h-screen bg-slate-950 text-white flex items-center justify-center px-8">
+      <div className="min-h-screen bg-[#F8F7F4] text-[#2C2C2C] flex items-center justify-center px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-md w-full"
         >
-          <div className="text-center mb-8">
-            <Lock className="mx-auto mb-4 text-amber-500" size={48} />
-            <h1 className="text-2xl font-serif italic mb-4">Institutional Access</h1>
-            <p className="text-slate-400 text-sm">
+          <div className="text-center mb-10">
+            <div className="w-16 h-16 border border-[#8B7355] flex items-center justify-center mx-auto mb-6">
+              <Lock className="text-[#8B7355]" size={28} strokeWidth={1} />
+            </div>
+            <h1 className="text-2xl font-serif mb-4">Institutional Access</h1>
+            <p className="text-[14px] leading-[1.7] text-[#5A5A5A] font-light">
               This section contains confidential investment information restricted to qualified institutional investors.
             </p>
           </div>
-          <form onSubmit={handlePasswordSubmit} className="space-y-4">
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter access password"
-              className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded focus:border-amber-500 focus:outline-none"
-            />
-            {error && <p className="text-red-400 text-sm">{error}</p>}
+          
+          <form onSubmit={handlePasswordSubmit} className="space-y-6">
+            <div>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Enter access password"
+                className="w-full px-4 py-4 bg-white border border-[#E5E2DC] text-[#2C2C2C] font-light text-center tracking-widest focus:border-[#8B7355] focus:outline-none transition-colors duration-300"
+              />
+            </div>
+            {error && <p className="text-[13px] text-red-500 text-center">{error}</p>}
             <button
               type="submit"
-              className="w-full py-3 bg-amber-500 text-black font-bold uppercase tracking-widest hover:bg-amber-400 transition-colors"
+              className="w-full py-4 bg-[#2C2C2C] text-[#F8F7F4] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#8B7355] transition-colors duration-500"
             >
               Access Materials
             </button>
           </form>
-          <p className="text-slate-500 text-xs text-center mt-8">
-            Credentials: Murivest2025
+          
+          <p className="text-[11px] text-[#5A5A5A] text-center mt-8">
+            Credentials: Contact your Murivest Advisor
           </p>
         </motion.div>
       </div>
@@ -63,100 +70,99 @@ const InstitutionalInvestors = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white font-light selection:bg-amber-500/30">
+    <div className="min-h-screen bg-[#F8F7F4] text-[#2C2C2C]">
 
       {/* Hero */}
-      <section className="relative pt-40 pb-24 px-8 overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-amber-600/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2" />
+      <section className="relative pt-32 md:pt-40 pb-16 md:pb-24 px-6 md:px-12 overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#8B7355]/5 blur-[120px] rounded-full" />
 
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="max-w-[1400px] mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="flex items-center gap-3 mb-8"
           >
-            <div className="h-px w-8 bg-amber-500" />
-            <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-amber-500">
+            <div className="w-8 h-[1px] bg-[#8B7355]" />
+            <span className="text-[11px] tracking-[0.4em] uppercase text-[#8B7355] font-medium">
               Confidential Materials
             </span>
           </motion.div>
 
-          <h1 className="text-5xl lg:text-7xl font-serif italic mb-8 leading-tight">
-            Institutional <br />
-            <span className="text-amber-200/90 font-serif">Investor Portal</span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-[1.1] mb-6">
+            Institutional <span className="italic text-[#8B7355] font-light">Investor Portal</span>
           </h1>
-          <p className="max-w-2xl text-slate-400 text-lg leading-relaxed font-light italic border-l border-amber-500/30 pl-8">
+          <p className="max-w-2xl text-[15px] leading-[1.8] text-[#5A5A5A] font-light border-l border-[#8B7355]/30 pl-6">
             Comprehensive investment memorandum and performance analytics for qualified institutional investors.
           </p>
         </div>
       </section>
 
-      {/* Investor Memorandum / PPM */}
-      <section className="border-y border-white/10 bg-white/[0.01] py-16">
-        <div className="max-w-7xl mx-auto px-8">
+      {/* Investor Memorandum */}
+      <section className="border-t border-[#E5E2DC] bg-white py-16">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <div className="flex items-center gap-3 mb-8">
-            <FileText className="text-amber-500" size={24} />
-            <h2 className="text-2xl font-serif italic">Investor Memorandum & PPM</h2>
+            <FileText className="text-[#8B7355]" size={24} strokeWidth={1} />
+            <h2 className="text-2xl font-serif">Investor Memorandum & PPM</h2>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          
+          <div className="grid lg:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-xl font-serif italic mb-6 text-amber-200">Executive Summary</h3>
-              <p className="text-slate-400 leading-relaxed mb-6">
+              <h3 className="text-xl font-serif mb-6 text-[#8B7355]">Executive Summary</h3>
+              <p className="text-[14px] leading-[1.8] text-[#5A5A5A] font-light mb-6">
                 Murivest Realty Group provides institutional investors with diversified exposure to East African commercial real estate markets,
                 emphasizing stable income generation and capital preservation.
               </p>
-              <p className="text-slate-400 leading-relaxed mb-6">
+              <p className="text-[14px] leading-[1.8] text-[#5A5A5A] font-light mb-6">
                 Our investment approach prioritizes institutional-grade assets with established income fundamentals,
                 supported by comprehensive due diligence and structured risk management protocols.
               </p>
               <div className="space-y-4">
-                <div className="flex justify-between border-b border-white/10 pb-2">
-                  <span className="text-slate-500">Target Fund Size</span>
-                  <span className="text-white">$100M</span>
-                </div>
-                <div className="flex justify-between border-b border-white/10 pb-2">
-                  <span className="text-slate-500">Investment Period</span>
-                  <span className="text-white">5-7 Years</span>
-                </div>
-                <div className="flex justify-between border-b border-white/10 pb-2">
-                  <span className="text-slate-500">Minimum Investment</span>
-                  <span className="text-white">$5M</span>
-                </div>
+                {[
+                  { label: 'Target Fund Size', value: '$100M' },
+                  { label: 'Investment Period', value: '5-7 Years' },
+                  { label: 'Minimum Investment', value: '$5M' }
+                ].map((item, i) => (
+                  <div key={i} className="flex justify-between border-b border-[#E5E2DC] pb-3">
+                    <span className="text-[13px] text-[#5A5A5A]">{item.label}</span>
+                    <span className="text-[13px] font-medium text-[#2C2C2C]">{item.value}</span>
+                  </div>
+                ))}
               </div>
             </div>
+            
             <div>
-              <h3 className="text-xl font-serif italic mb-6 text-amber-200">Key Investment Highlights</h3>
-              <ul className="space-y-4 text-slate-400">
-                <li className="flex items-start gap-3">
-                  <Shield className="text-amber-500 mt-1" size={16} />
-                  <span>Regulatory compliance with Kenyan investment frameworks and international standards</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <TrendingUp className="text-amber-500 mt-1" size={16} />
-                  <span>Diversified portfolio across commercial, industrial, and hospitality sectors</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Building2 className="text-amber-500 mt-1" size={16} />
-                  <span>Active asset management with value-add initiatives</span>
-                </li>
+              <h3 className="text-xl font-serif mb-6 text-[#8B7355]">Key Investment Highlights</h3>
+              <ul className="space-y-4">
+                {[
+                  { icon: Shield, text: 'Regulatory compliance with Kenyan investment frameworks and international standards' },
+                  { icon: TrendingUp, text: 'Diversified portfolio across commercial, industrial, and hospitality sectors' },
+                  { icon: Building2, text: 'Active asset management with value-add initiatives' }
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <item.icon className="w-4 h-4 text-[#8B7355] mt-1 shrink-0" strokeWidth={1} />
+                    <span className="text-[14px] text-[#5A5A5A] font-light">{item.text}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Historical IRR & KPIs */}
-      <section className="py-32">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="flex items-center gap-3 mb-16">
-            <BarChart3 className="text-amber-500" size={24} />
-            <h2 className="text-3xl font-serif italic">Historical Performance & KPIs</h2>
+      {/* Performance & KPIs */}
+      <section className="py-16 md:py-24 border-t border-[#E5E2DC]">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+          <div className="flex items-center gap-3 mb-12">
+            <BarChart3 className="text-[#8B7355]" size={24} strokeWidth={1} />
+            <h2 className="text-2xl font-serif">Historical Performance & KPIs</h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* IRR Table */}
             <div>
-              <h3 className="text-xl font-serif italic mb-8 text-amber-200">Annualized IRR (Simulated Track Record)</h3>
-              <div className="space-y-6">
+              <h3 className="text-lg font-serif mb-8 text-[#8B7355]">Annualized IRR (Simulated Track Record)</h3>
+              <div className="space-y-4">
                 {[
                   { year: '2020', irr: '18.5%', benchmark: '12.3%' },
                   { year: '2021', irr: '22.1%', benchmark: '14.7%' },
@@ -164,64 +170,56 @@ const InstitutionalInvestors = () => {
                   { year: '2023', irr: '24.3%', benchmark: '16.2%' },
                   { year: '2024', irr: '21.7%', benchmark: '13.8%' }
                 ].map((item) => (
-                  <div key={item.year} className="flex justify-between items-center border-b border-white/10 pb-4">
-                    <span className="text-slate-400">{item.year}</span>
+                  <div key={item.year} className="flex justify-between items-center border-b border-[#E5E2DC] pb-4">
+                    <span className="text-[14px] text-[#5A5A5A]">{item.year}</span>
                     <div className="text-right">
-                      <span className="text-white font-bold">{item.irr}</span>
-                      <span className="text-slate-500 text-sm ml-2">(vs {item.benchmark} benchmark)</span>
+                      <span className="text-[14px] font-medium text-[#2C2C2C]">{item.irr}</span>
+                      <span className="text-[12px] text-[#5A5A5A] ml-2">(vs {item.benchmark} benchmark)</span>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
+            {/* KPI Cards */}
             <div>
-              <h3 className="text-xl font-serif italic mb-8 text-amber-200">Audited KPIs</h3>
-              <div className="grid grid-cols-2 gap-8">
-                <div className="bg-white/5 p-6 rounded border border-white/10">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-amber-500 mb-2">Occupancy Rate</p>
-                  <p className="text-3xl font-serif italic">94.2%</p>
-                  <p className="text-slate-500 text-sm">Industry avg: 87%</p>
-                </div>
-                <div className="bg-white/5 p-6 rounded border border-white/10">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-amber-500 mb-2">DSCR</p>
-                  <p className="text-3xl font-serif italic">1.45x</p>
-                  <p className="text-slate-500 text-sm">Minimum: 1.25x</p>
-                </div>
-                <div className="bg-white/5 p-6 rounded border border-white/10">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-amber-500 mb-2">LTV Ratio</p>
-                  <p className="text-3xl font-serif italic">62%</p>
-                  <p className="text-slate-500 text-sm">Target: 65%</p>
-                </div>
-                <div className="bg-white/5 p-6 rounded border border-white/10">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-amber-500 mb-2">Cap Rate</p>
-                  <p className="text-3xl font-serif italic">8.7%</p>
-                  <p className="text-slate-500 text-sm">Market avg: 7.2%</p>
-                </div>
+              <h3 className="text-lg font-serif mb-8 text-[#8B7355]">Audited KPIs</h3>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { label: 'Occupancy Rate', value: '94.2%', note: 'Industry avg: 87%' },
+                  { label: 'DSCR', value: '1.45x', note: 'Minimum: 1.25x' },
+                  { label: 'LTV Ratio', value: '62%', note: 'Target: 65%' },
+                  { label: 'Cap Rate', value: '8.7%', note: 'Market avg: 7.2%' }
+                ].map((item, i) => (
+                  <div key={i} className="p-6 bg-white border border-[#E5E2DC]">
+                    <p className="text-[10px] tracking-[0.2em] uppercase text-[#8B7355] mb-2">{item.label}</p>
+                    <p className="text-3xl font-serif text-[#2C2C2C]">{item.value}</p>
+                    <p className="text-[11px] text-[#5A5A5A] mt-1">{item.note}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Portfolio Valuations & Rent Roll */}
-      <section className="border-y border-white/10 bg-white/[0.01] py-32">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="flex items-center gap-3 mb-16">
-            <DollarSign className="text-amber-500" size={24} />
-            <h2 className="text-3xl font-serif italic">Portfolio Valuations & Rent Roll Data</h2>
+      {/* Portfolio Valuations */}
+      <section className="py-16 md:py-24 bg-white border-t border-[#E5E2DC]">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+          <div className="flex items-center gap-3 mb-12">
+            <DollarSign className="text-[#8B7355]" size={24} strokeWidth={1} />
+            <h2 className="text-2xl font-serif">Portfolio Valuations & Rent Roll Data</h2>
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
+            <table className="w-full">
               <thead>
-                <tr className="border-b border-white/20">
-                  <th className="text-left py-4 px-2 text-amber-500 font-bold uppercase tracking-widest text-sm">Asset</th>
-                  <th className="text-left py-4 px-2 text-amber-500 font-bold uppercase tracking-widest text-sm">Location</th>
-                  <th className="text-left py-4 px-2 text-amber-500 font-bold uppercase tracking-widest text-sm">Valuation</th>
-                  <th className="text-left py-4 px-2 text-amber-500 font-bold uppercase tracking-widest text-sm">NOI</th>
-                  <th className="text-left py-4 px-2 text-amber-500 font-bold uppercase tracking-widest text-sm">Occupancy</th>
-                  <th className="text-left py-4 px-2 text-amber-500 font-bold uppercase tracking-widest text-sm">Cap Rate</th>
+                <tr className="border-b border-[#E5E2DC]">
+                  {['Asset', 'Location', 'Valuation', 'NOI', 'Occupancy', 'Cap Rate'].map((header) => (
+                    <th key={header} className="text-left py-4 px-4 text-[11px] tracking-[0.2em] uppercase text-[#8B7355] font-medium">
+                      {header}
+                    </th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
@@ -231,224 +229,208 @@ const InstitutionalInvestors = () => {
                   { asset: 'Buffalo Mall', location: 'Eldoret', valuation: '$12.1M', noi: '$1.05M', occupancy: '92%', cap: '8.7%' },
                   { asset: 'Industrial Complex', location: 'Nairobi Industrial Area', valuation: '$6.8M', noi: '$592K', occupancy: '96%', cap: '8.7%' }
                 ].map((row, i) => (
-                  <tr key={i} className="border-b border-white/10 hover:bg-white/5">
-                    <td className="py-4 px-2 text-white">{row.asset}</td>
-                    <td className="py-4 px-2 text-slate-400">{row.location}</td>
-                    <td className="py-4 px-2 text-white">{row.valuation}</td>
-                    <td className="py-4 px-2 text-white">{row.noi}</td>
-                    <td className="py-4 px-2 text-white">{row.occupancy}</td>
-                    <td className="py-4 px-2 text-white">{row.cap}</td>
+                  <tr key={i} className="border-b border-[#E5E2DC] hover:bg-[#FAFAF8] transition-colors duration-300">
+                    <td className="py-4 px-4 text-[14px] text-[#2C2C2C]">{row.asset}</td>
+                    <td className="py-4 px-4 text-[14px] text-[#5A5A5A]">{row.location}</td>
+                    <td className="py-4 px-4 text-[14px] text-[#2C2C2C]">{row.valuation}</td>
+                    <td className="py-4 px-4 text-[14px] text-[#2C2C2C]">{row.noi}</td>
+                    <td className="py-4 px-4 text-[14px] text-[#2C2C2C]">{row.occupancy}</td>
+                    <td className="py-4 px-4 text-[14px] text-[#2C2C2C]">{row.cap}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
 
-          <div className="mt-12 text-center">
-            <p className="text-slate-400 text-sm">
-              Valuations based on independent appraisals as of Q4 2024. NOI calculated on annualized basis.
-            </p>
-          </div>
+          <p className="text-[12px] text-[#5A5A5A] mt-8 text-center">
+            Valuations based on independent appraisals as of Q4 2024. NOI calculated on annualized basis.
+          </p>
         </div>
       </section>
 
-      {/* Market Risk Profiles & Hedging */}
-      <section className="py-32">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="flex items-center gap-3 mb-16">
-            <AlertTriangle className="text-amber-500" size={24} />
-            <h2 className="text-3xl font-serif italic">Market Risk Profiles & Hedging Strategy</h2>
+      {/* Risk Profiles */}
+      <section className="py-16 md:py-24 border-t border-[#E5E2DC]">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+          <div className="flex items-center gap-3 mb-12">
+            <AlertTriangle className="text-[#8B7355]" size={24} strokeWidth={1} />
+            <h2 className="text-2xl font-serif">Market Risk Profiles & Hedging Strategy</h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Risk Assessment */}
             <div>
-              <h3 className="text-xl font-serif italic mb-8 text-amber-200">Risk Assessment Framework</h3>
+              <h3 className="text-lg font-serif mb-8 text-[#8B7355]">Risk Assessment Framework</h3>
               <div className="space-y-6">
-                <div className="border border-white/10 p-6 rounded">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    <span className="text-white font-bold">Low Risk</span>
+                {[
+                  { level: 'Low Risk', color: 'bg-green-500', risk: 'Currency Fluctuation', mitigation: 'Hedged via forward contracts and natural hedges' },
+                  { level: 'Medium Risk', color: 'bg-yellow-500', risk: 'Interest Rate Sensitivity', mitigation: 'Fixed-rate debt structure minimizes exposure' },
+                  { level: 'High Risk', color: 'bg-red-500', risk: 'Geopolitical Events', mitigation: 'Diversified across multiple jurisdictions' }
+                ].map((item, i) => (
+                  <div key={i} className="border border-[#E5E2DC] p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className={`w-3 h-3 ${item.color} rounded-full`} />
+                      <span className="text-[14px] font-medium text-[#2C2C2C]">{item.level}</span>
+                    </div>
+                    <p className="text-[14px] text-[#2C2C2C] mb-2">{item.risk}</p>
+                    <p className="text-[12px] text-[#5A5A5A]">{item.mitigation}</p>
                   </div>
-                  <p className="text-slate-400 text-sm mb-2">Currency Fluctuation</p>
-                  <p className="text-slate-500 text-xs">Hedged via forward contracts and natural hedges</p>
-                </div>
-                <div className="border border-white/10 p-6 rounded">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    <span className="text-white font-bold">Medium Risk</span>
-                  </div>
-                  <p className="text-slate-400 text-sm mb-2">Interest Rate Sensitivity</p>
-                  <p className="text-slate-500 text-xs">Fixed-rate debt structure minimizes exposure</p>
-                </div>
-                <div className="border border-white/10 p-6 rounded">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <span className="text-white font-bold">High Risk</span>
-                  </div>
-                  <p className="text-slate-400 text-sm mb-2">Geopolitical Events</p>
-                  <p className="text-slate-500 text-xs">Diversified across multiple jurisdictions</p>
-                </div>
+                ))}
               </div>
             </div>
 
+            {/* Hedging Strategy */}
             <div>
-              <h3 className="text-xl font-serif italic mb-8 text-amber-200">Hedging Strategy</h3>
-              <p className="text-slate-400 leading-relaxed mb-6">
+              <h3 className="text-lg font-serif mb-8 text-[#8B7355]">Hedging Strategy</h3>
+              <p className="text-[14px] leading-[1.8] text-[#5A5A5A] font-light mb-6">
                 Our comprehensive risk management framework employs multiple hedging instruments to protect investor capital:
               </p>
-              <ul className="space-y-4 text-slate-400">
-                <li className="flex items-start gap-3">
-                  <Eye className="text-amber-500 mt-1" size={16} />
-                  <span><strong>Currency Hedging:</strong> Forward contracts and options to lock in favorable exchange rates</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Calendar className="text-amber-500 mt-1" size={16} />
-                  <span><strong>Interest Rate Swaps:</strong> Fixed-rate debt instruments to eliminate floating rate risk</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Shield className="text-amber-500 mt-1" size={16} />
-                  <span><strong>Diversification:</strong> Geographic and sector spread to reduce concentration risk</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <TrendingUp className="text-amber-500 mt-1" size={16} />
-                  <span><strong>Insurance Coverage:</strong> Comprehensive policies for property damage and business interruption</span>
-                </li>
+              <ul className="space-y-4">
+                {[
+                  { icon: Eye, title: 'Currency Hedging', desc: 'Forward contracts and options to lock in favorable exchange rates' },
+                  { icon: Calendar, title: 'Interest Rate Swaps', desc: 'Fixed-rate debt instruments to eliminate floating rate risk' },
+                  { icon: Shield, title: 'Diversification', desc: 'Geographic and sector spread to reduce concentration risk' },
+                  { icon: TrendingUp, title: 'Insurance Coverage', desc: 'Comprehensive policies for property damage and business interruption' }
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <item.icon className="w-4 h-4 text-[#8B7355] mt-1 shrink-0" strokeWidth={1} />
+                    <span className="text-[14px] text-[#5A5A5A] font-light">
+                      <strong className="text-[#2C2C2C]">{item.title}:</strong> {item.desc}
+                    </span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Credible Third-Party Validation */}
-      <section className="border-y border-white/10 bg-white/[0.01] py-32">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="flex items-center gap-3 mb-16">
-            <Award className="text-amber-500" size={24} />
-            <h2 className="text-3xl font-serif italic">Third-Party Validation & Independent Verification</h2>
+      {/* Third-Party Validation */}
+      <section className="py-16 md:py-24 bg-white border-t border-[#E5E2DC]">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+          <div className="flex items-center gap-3 mb-12">
+            <Award className="text-[#8B7355]" size={24} strokeWidth={1} />
+            <h2 className="text-2xl font-serif">Third-Party Validation & Independent Verification</h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-            <div>
-              <h3 className="text-xl font-serif italic mb-8 text-amber-200">Independent Appraisal Reports</h3>
-              <p className="text-slate-400 leading-relaxed mb-6">
-                All portfolio valuations are conducted by RICS-accredited independent valuers, ensuring compliance with international valuation standards.
-              </p>
-              <div className="space-y-4">
-                <div className="border border-white/10 p-4 rounded">
-                  <p className="text-slate-500 text-sm">RICS Valuation Certificate</p>
-                  <p className="text-white text-sm">Absa Towers - Q4 2024</p>
-                </div>
-                <div className="border border-white/10 p-4 rounded">
-                  <p className="text-slate-500 text-sm">RICS Valuation Certificate</p>
-                  <p className="text-white text-sm">Uchumi House - Q4 2024</p>
-                </div>
-                <div className="border border-white/10 p-4 rounded">
-                  <p className="text-slate-500 text-sm">RICS Valuation Certificate</p>
-                  <p className="text-white text-sm">Buffalo Mall - Q4 2024</p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-serif italic mb-8 text-amber-200">Audit Citations & Institutional References</h3>
-              <p className="text-slate-400 leading-relaxed mb-6">
-                Annual audits by Big Four accounting firms provide assurance on financial reporting and compliance with regulatory standards.
-              </p>
-              <div className="space-y-4">
-                <div className="border border-white/10 p-4 rounded">
-                  <p className="text-slate-500 text-sm">KPMG Audit Report</p>
-                  <p className="text-white text-sm">FY 2023 - Clean Opinion</p>
-                </div>
-                <div className="border border-white/10 p-4 rounded">
-                  <p className="text-slate-500 text-sm">PwC Compliance Review</p>
-                  <p className="text-white text-sm">Regulatory Framework Assessment</p>
-                </div>
-                <div className="border border-white/10 p-4 rounded">
-                  <p className="text-slate-500 text-sm">Deloitte Tax Advisory</p>
-                  <p className="text-white text-sm">SDLT & REIT Structure Optimization</p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-serif italic mb-8 text-amber-200">Case Studies with Quantifiable Outcomes</h3>
-              <p className="text-slate-400 leading-relaxed mb-6">
-                Documented investment performance demonstrating value creation through active asset management and strategic repositioning.
-              </p>
-              <div className="space-y-4">
-                <div className="border border-white/10 p-4 rounded">
-                  <p className="text-slate-500 text-sm">Absa Towers Repositioning</p>
-                  <p className="text-white text-sm">+15% NOI increase through tenant upgrade</p>
-                </div>
-                <div className="border border-white/10 p-4 rounded">
-                  <p className="text-slate-500 text-sm">Industrial Complex Optimization</p>
-                  <p className="text-white text-sm">+22% occupancy through sector diversification</p>
-                </div>
-                <div className="border border-white/10 p-4 rounded">
-                  <p className="text-slate-500 text-sm">Buffalo Mall Expansion</p>
-                  <p className="text-white text-sm">+18% valuation uplift through GLA increase</p>
+          <div className="grid lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'Independent Appraisal Reports',
+                desc: 'All portfolio valuations are conducted by RICS-accredited independent valuers, ensuring compliance with international valuation standards.',
+                items: [
+                  { label: 'RICS Valuation Certificate', value: 'Absa Towers - Q4 2024' },
+                  { label: 'RICS Valuation Certificate', value: 'Uchumi House - Q4 2024' },
+                  { label: 'RICS Valuation Certificate', value: 'Buffalo Mall - Q4 2024' }
+                ]
+              },
+              {
+                title: 'Audit Citations & Institutional References',
+                desc: 'Annual audits by Big Four accounting firms provide assurance on financial reporting and compliance with regulatory standards.',
+                items: [
+                  { label: 'KPMG Audit Report', value: 'FY 2023 - Clean Opinion' },
+                  { label: 'PwC Compliance Review', value: 'Regulatory Framework Assessment' },
+                  { label: 'Deloitte Tax Advisory', value: 'SDLT & REIT Structure Optimization' }
+                ]
+              },
+              {
+                title: 'Case Studies with Quantifiable Outcomes',
+                desc: 'Documented investment performance demonstrating value creation through active asset management and strategic repositioning.',
+                items: [
+                  { label: 'Absa Towers Repositioning', value: '+15% NOI increase through tenant upgrade' },
+                  { label: 'Industrial Complex Optimization', value: '+22% occupancy through sector diversification' },
+                  { label: 'Buffalo Mall Expansion', value: '+18% valuation uplift through GLA increase' }
+                ]
+              }
+            ].map((section, i) => (
+              <div key={i}>
+                <h3 className="text-lg font-serif mb-4 text-[#8B7355]">{section.title}</h3>
+                <p className="text-[13px] leading-[1.7] text-[#5A5A5A] font-light mb-6">{section.desc}</p>
+                <div className="space-y-3">
+                  {section.items.map((item, j) => (
+                    <div key={j} className="border border-[#E5E2DC] p-4">
+                      <p className="text-[11px] text-[#5A5A5A]">{item.label}</p>
+                      <p className="text-[13px] text-[#2C2C2C]">{item.value}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Risk Factors & Legal Disclaimers */}
-      <section className="border-y border-white/10 bg-white/[0.01] py-16">
-        <div className="max-w-7xl mx-auto px-8">
+      {/* Risk Factors */}
+      <section className="py-16 border-t border-[#E5E2DC]">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <div className="flex items-center gap-3 mb-8">
-            <AlertTriangle className="text-amber-500" size={24} />
-            <h2 className="text-2xl font-serif italic">Risk Factors & Legal Considerations</h2>
+            <AlertTriangle className="text-[#8B7355]" size={24} strokeWidth={1} />
+            <h2 className="text-2xl font-serif">Risk Factors & Legal Considerations</h2>
           </div>
-          <div className="space-y-6 text-slate-400 text-sm leading-relaxed">
-            <div className="border border-white/10 p-6 rounded">
-              <h3 className="text-white font-bold mb-4">Investment Risks</h3>
-              <ul className="space-y-2">
-                <li>• Real estate investments are illiquid and subject to market volatility</li>
-                <li>• Currency fluctuations may affect returns for non-local investors</li>
-                <li>• Political and economic conditions in East Africa may impact performance</li>
-                <li>• Property values can decline due to changes in local market conditions</li>
-              </ul>
-            </div>
-            <div className="border border-white/10 p-6 rounded">
-              <h3 className="text-white font-bold mb-4">Tax Implications</h3>
-              <ul className="space-y-2">
-                <li>• Investors should consult qualified tax advisors regarding withholding taxes and capital gains</li>
-                <li>• UK investors may be subject to Stamp Duty Land Tax on property acquisitions</li>
-                <li>• Tax treaties between jurisdictions may affect overall tax efficiency</li>
-                <li>• Changes in tax legislation could impact future returns</li>
-              </ul>
-            </div>
-            <div className="border border-white/10 p-6 rounded">
-              <h3 className="text-white font-bold mb-4">Regulatory Compliance</h3>
-              <ul className="space-y-2">
-                <li>• All investments are subject to Kenyan regulatory frameworks and international standards</li>
-                <li>• SPV structures provide liability protection but require proper governance</li>
-                <li>• REIT investments are subject to mandatory distribution requirements</li>
-                <li>• Due diligence is required for all institutional investors</li>
-              </ul>
-            </div>
-            <p className="text-slate-500 text-xs italic">
-              * Past performance does not guarantee future results. This document is for informational purposes only and does not constitute an offer to sell or solicitation to buy securities. All investments carry risk of loss of principal.
-            </p>
+          
+          <div className="space-y-6">
+            {[
+              {
+                title: 'Investment Risks',
+                items: [
+                  'Real estate investments are illiquid and subject to market volatility',
+                  'Currency fluctuations may affect returns for non-local investors',
+                  'Political and economic conditions in East Africa may impact performance',
+                  'Property values can decline due to changes in local market conditions'
+                ]
+              },
+              {
+                title: 'Tax Implications',
+                items: [
+                  'Investors should consult qualified tax advisors regarding withholding taxes and capital gains',
+                  'UK investors may be subject to Stamp Duty Land Tax on property acquisitions',
+                  'Tax treaties between jurisdictions may affect overall tax efficiency',
+                  'Changes in tax legislation could impact future returns'
+                ]
+              },
+              {
+                title: 'Regulatory Compliance',
+                items: [
+                  'All investments are subject to Kenyan regulatory frameworks and international standards',
+                  'SPV structures provide liability protection but require proper governance',
+                  'REIT investments are subject to mandatory distribution requirements',
+                  'Due diligence is required for all institutional investors'
+                ]
+              }
+            ].map((section, i) => (
+              <div key={i} className="border border-[#E5E2DC] p-6">
+                <h3 className="text-[14px] font-medium text-[#2C2C2C] mb-4">{section.title}</h3>
+                <ul className="space-y-2">
+                  {section.items.map((item, j) => (
+                    <li key={j} className="text-[13px] text-[#5A5A5A] font-light">• {item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
+          
+          <p className="text-[11px] text-[#5A5A5A] italic mt-6">
+            * Past performance does not guarantee future results. This document is for informational purposes only and does not constitute an offer to sell or solicitation to buy securities. All investments carry risk of loss of principal.
+          </p>
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-8 py-32 text-center">
-          <h2 className="text-4xl font-serif italic mb-8">
-            Request Full Due Diligence Package
+      {/* CTA */}
+      <section className="py-16 md:py-24 bg-[#2C2C2C] text-[#F8F7F4]">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-serif mb-6">
+            Request Full Due Diligence <span className="italic text-[#C4B59D] font-light">Package</span>
           </h2>
-          <p className="text-slate-400 mb-12 max-w-2xl mx-auto">
+          <p className="text-[15px] leading-[1.8] text-[#A8A39D] font-light max-w-2xl mx-auto mb-10">
             For comprehensive financial models, legal documentation, and detailed asset analyses,
             contact our institutional relations team.
           </p>
-          <div className="flex items-center justify-center gap-4 text-[10px] font-bold uppercase tracking-[0.3em] border-b border-amber-500 pb-2 hover:gap-8 transition-all duration-500 cursor-pointer">
-            Schedule Private Meeting <ArrowUpRight size={16} />
-          </div>
+          <a 
+            href="/contact"
+            className="inline-flex items-center gap-3 px-8 py-4 border border-[#C4B59D] text-[12px] tracking-[0.2em] uppercase text-[#F8F7F4] font-medium hover:bg-[#C4B59D] hover:text-[#2C2C2C] transition-all duration-500"
+          >
+            Schedule Private Meeting
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
         </div>
       </section>
     </div>

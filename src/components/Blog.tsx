@@ -1,8 +1,9 @@
 'use client';
 
-import { Search, Filter, TrendingUp, ArrowRight, Clock, Mail, User } from 'lucide-react';
+import { Search, Filter, TrendingUp, ArrowRight, Clock, Mail, User, Calendar } from 'lucide-react';
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 interface Blog {
@@ -1549,7 +1550,7 @@ const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   // Dummy filter logic (ensure 'blog' data is available in your scope)
-  const filteredPosts = blog.filter(post => {
+  const filteredPosts: Blog[] = blog.filter(post => {
     const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
@@ -1557,166 +1558,104 @@ const Blog = () => {
   });
 
   return (
-    <div className="min-h-screen bg-[#05070a] text-white font-light selection:bg-amber-500/30">
+    <section className="relative bg-[#F8F7F4] text-[#2C2C2C] overflow-hidden">
+      {/* Hairline top border */}
+      <div className="absolute top-0 left-0 w-full h-px bg-[#E5E2DC]" />
       
-      {/* 1. INSTITUTIONAL HERO HEADER */}
-      <section className="relative pt-40 pb-24 px-8 overflow-hidden">
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-amber-600/5 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2" />
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-3 mb-8"
-          >
-            <div className="h-px w-8 bg-amber-500" />
-            <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-amber-500">
-              Intelligence & Analysis
-            </span>
-          </motion.div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-            <div className="lg:col-span-8">
-              <h1 className="text-6xl lg:text-8xl font-serif italic mb-8 leading-tight">
-                Property <br />
-                <span className="text-amber-200/90 font-serif">Insights</span>
-              </h1>
-              <p className="max-w-2xl text-slate-400 text-lg leading-relaxed font-light">
-                Expert commentary, structured market data, and institutional-grade analysis on 
-                Nairobi's commercial landscape and global capital flows.
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-32">
+        {/* Section Header */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 md:mb-24"
+        >
+          <div>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-8 h-[1px] bg-[#8B7355]" />
+              <p className="text-[11px] tracking-[0.4em] uppercase text-[#8B7355] font-medium">
+                Market Intelligence
               </p>
             </div>
+            
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif leading-[1.1] text-[#2C2C2C]">
+              Latest <span className="italic text-[#8B7355] font-light">Insights</span>
+            </h2>
           </div>
-        </div>
-      </section>
 
-      {/* 2. RESEARCH TOOLBAR (Filters & Search) */}
-      <div className="sticky top-0 z-50 bg-[#05070a]/80 backdrop-blur-xl border-y border-white/5 py-6">
-        <div className="max-w-7xl mx-auto px-8 flex flex-col lg:flex-row items-center justify-between gap-8">
-          
-          <div className="relative w-full lg:max-w-md group">
-            <Search className="absolute left-0 top-1/2 -translate-y-1/2 text-slate-600 group-focus-within:text-amber-500 transition-colors" size={16} />
-            <input 
-              type="text" 
-              placeholder="SEARCH RESEARCH ARCHIVE..." 
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-8 pr-4 py-2 bg-transparent border-none text-[10px] font-bold tracking-[0.2em] focus:ring-0 placeholder:text-slate-700 uppercase"
-            />
-          </div>
-          
-          <div className="w-full lg:w-auto flex items-center gap-4 overflow-x-auto no-scrollbar pb-2 lg:pb-0">
-            <Filter size={14} className="text-amber-500 shrink-0" />
-            <div className="flex gap-6 whitespace-nowrap">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`text-[10px] font-bold uppercase tracking-[0.3em] transition-all relative py-1 ${
-                    selectedCategory === category ? 'text-white' : 'text-slate-600 hover:text-slate-400'
-                  }`}
-                >
-                  {category}
-                  {selectedCategory === category && (
-                    <motion.div layoutId="catUnderline" className="absolute -bottom-1 left-0 w-full h-px bg-amber-500" />
-                  )}
-                </button>
-              ))}
-            </div>
-          </div>
+          <a 
+            href="/insights"
+            className="group inline-flex items-center gap-3 text-[12px] tracking-[0.2em] uppercase text-[#2C2C2C] font-medium hover:text-[#8B7355] transition-colors duration-500"
+          >
+            <span>View All Articles</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+          </a>
+        </motion.div>
+
+        {/* Blog Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6">
+          {filteredPosts.map((post, index) => (
+            <motion.article
+              key={post.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.1,
+                ease: [0.16, 1, 0.3, 1] 
+              }}
+              className="group"
+            >
+              <a href={`/blog/${post.id}`} className="block">
+                {/* Image */}
+                <div className="relative aspect-[4/3] overflow-hidden bg-[#E5E2DC] mb-6">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  {/* Category badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 bg-[#F8F7F4] text-[11px] tracking-[0.2em] uppercase text-[#8B7355] font-medium">
+                      {post.category}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="flex items-center gap-2 mb-3">
+                  <Calendar className="w-3 h-3 text-[#8B7355]" />
+                  <span className="text-[11px] tracking-[0.15em] uppercase text-[#5A5A5A]">
+                    {post.date}
+                  </span>
+                </div>
+
+                <h3 className="text-xl md:text-2xl font-serif mb-3 text-[#2C2C2C] group-hover:text-[#8B7355] transition-colors duration-500 line-clamp-2">
+                  {post.title}
+                </h3>
+
+                <p className="text-[14px] leading-[1.7] text-[#5A5A5A] font-light mb-4 line-clamp-3">
+                  {post.excerpt}
+                </p>
+
+                <span className="inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-[#8B7355] font-medium group-hover:text-[#2C2C2C] transition-colors duration-500">
+                  <span>Read Analysis</span>
+                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+              </a>
+            </motion.article>
+          ))}
         </div>
       </div>
 
-      <main className="max-w-7xl mx-auto px-8 py-20">
-        
-        {/* 3. FEATURED BRIEFING */}
-        {filteredPosts.length > 0 && (
-          <motion.div 
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-            className="mb-32 group cursor-pointer"
-          >
-            <Link href={`/blog/${filteredPosts[0].id}`} className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-              <div className="lg:col-span-7 relative overflow-hidden aspect-video lg:aspect-auto lg:h-[500px] border border-white/10">
-                <img
-                  src={filteredPosts[0].image}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#05070a] via-transparent to-transparent" />
-                <div className="absolute bottom-10 left-10">
-                  <div className="flex items-center gap-3 text-amber-500 mb-4">
-                    <TrendingUp size={16} />
-                    <span className="text-[10px] font-bold uppercase tracking-[0.4em]">Essential Reading</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="lg:col-span-5">
-                <h2 className="text-4xl lg:text-5xl font-serif italic mb-8 leading-tight">
-                  {filteredPosts[0].title}
-                </h2>
-                <p className="text-slate-400 text-lg mb-10 font-light leading-relaxed">
-                  {filteredPosts[0].excerpt}
-                </p>
-                <div className="flex items-center gap-8 text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-10">
-                  <span className="flex items-center gap-2"><User size={12} className="text-amber-500"/> {filteredPosts[0].author}</span>
-                  <span className="flex items-center gap-2"><Clock size={12}/> {filteredPosts[0].readTime}</span>
-                </div>
-                <div className="inline-flex items-center gap-4 text-amber-500 text-[10px] font-bold uppercase tracking-[0.4em] group-hover:gap-6 transition-all">
-                  Access Full Briefing <ArrowRight size={14} />
-                </div>
-              </div>
-            </Link>
-          </motion.div>
-        )}
-
-        {/* 4. RESEARCH GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 mb-32">
-          {filteredPosts.slice(1).map((post) => (
-            <div key={post.id} className="bg-[#05070a] group hover:bg-white/[0.02] transition-colors p-10 flex flex-col h-full">
-              <div className="aspect-video overflow-hidden mb-8 border border-white/5">
-                <img src={post.image} className="w-full h-full object-cover" />
-              </div>
-              <span className="text-[9px] font-bold text-amber-500 uppercase tracking-[0.3em] mb-4">{post.category}</span>
-              <h3 className="text-2xl font-serif italic mb-6 leading-snug group-hover:text-amber-200 transition-colors">{post.title}</h3>
-              <p className="text-slate-500 text-sm font-light leading-relaxed mb-8 flex-1 line-clamp-3">
-                {post.excerpt}
-              </p>
-              <div className="flex items-center justify-between pt-8 border-t border-white/5">
-                <span className="text-[9px] text-slate-600 uppercase tracking-widest">{post.date}</span>
-                <Link href={`/blog/${post.id}`} className="text-amber-500">
-                   <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* 5. NEWSLETTER / BRIEFING SUBSCRIPTION */}
-        <section className="relative p-12 lg:p-24 border border-white/10 overflow-hidden text-center bg-white/[0.01]">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-amber-600/5 blur-[80px] rounded-full" />
-          
-          <div className="relative z-10 max-w-2xl mx-auto">
-            <Mail className="mx-auto text-amber-500 mb-8" size={32} />
-            <h3 className="text-3xl font-serif italic mb-4">The Weekly Briefing</h3>
-            <p className="text-slate-500 text-sm uppercase tracking-[0.3em] mb-12">Private Market Intelligence Delivered</p>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <input
-                type="email"
-                placeholder="PROFESSIONAL EMAIL ADDRESS"
-                className="flex-1 bg-transparent border-b border-white/20 px-4 py-4 text-[10px] font-bold tracking-widest text-white focus:outline-none focus:border-amber-500 transition-colors uppercase"
-              />
-              <button className="bg-amber-600 hover:bg-amber-500 text-black px-10 py-5 text-[10px] font-bold uppercase tracking-[0.4em] transition-all">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </section>
-
-      </main>
-    </div>
+      {/* Hairline bottom border */}
+      <div className="absolute bottom-0 left-0 w-full h-px bg-[#E5E2DC]" />
+    </section>
   );
 };
 
-export default Blog;  
-
+export default Blog;

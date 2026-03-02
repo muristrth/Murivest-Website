@@ -1,226 +1,159 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
-const testimonials = [
-  {
-    id: 1,
-    quote: "Murivest's institutional approach to commercial property investment exceeded our expectations. Their due diligence process was exhaustive, and the returns have been consistent.",
-    author: "Managing Director",
-    company: "European Family Office",
-    location: "Zurich, Switzerland",
-    investment: "$12M+",
-    type: "Commercial Portfolio",
-  },
-  {
-    id: 2,
-    quote: "The team's deep understanding of East Africa's regulatory landscape helped us navigate complex cross-border transactions seamlessly. A true partner in every sense.",
-    author: "Chief Investment Officer",
-    company: "Sovereign Wealth Fund",
-    location: "Middle East",
-    investment: "$45M+",
-    type: "Mixed-Use Development",
-  },
-  {
-    id: 3,
-    quote: "We were particularly impressed by the off-market opportunities Murivest identified. These were assets we never saw on the open market, and they've performed exceptionally.",
-    author: "Partner",
-    company: "Global Private Equity Firm",
-    location: "London, UK",
-    investment: "$28M+",
-    type: "Industrial & Logistics",
-  },
-  {
-    id: 4,
-    quote: "Their asset care and property management division maintains our investments to institutional standards. The reporting is transparent, comprehensive, and timely.",
-    author: "Director",
-    company: "Asian Investment Holding",
-    location: "Singapore",
-    investment: "$18M+",
-    type: "Retail & Office",
-  },
-  {
-    id: 5,
-    quote: "Murivest's expertise in Kenya's REIT market helped us structure our entry strategically. Their local networks and market intelligence are unmatched.",
-    author: "Portfolio Manager",
-    company: "US Institutional Investor",
-    location: "New York, USA",
-    investment: "$35M+",
-    type: "REIT Investments",
-  },
-];
+interface Testimonial {
+  id: string;
+  quote: string;
+  author: string;
+  title: string;
+  organization: string;
+}
 
-const Testimonials = () => {
+interface TestimonialsProps {
+  testimonials?: Testimonial[];
+}
+
+/**
+ * Testimonials - Golf Club Lounge Aesthetic
+ * Elegant testimonial carousel
+ */
+const Testimonials = ({ testimonials = [] }: TestimonialsProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
 
-  const slideVariants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 300 : -300,
-      opacity: 0,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
+  const defaultTestimonials: Testimonial[] = [
+    {
+      id: '1',
+      quote: 'Murivest has been an exceptional partner in our East African real estate investments. Their deep market knowledge, professional approach, and commitment to transparency have consistently delivered results that exceed our expectations.',
+      author: 'James Richardson',
+      title: 'Chief Investment Officer',
+      organization: 'Heritage Family Office'
     },
-    exit: (direction: number) => ({
-      x: direction < 0 ? 300 : -300,
-      opacity: 0,
-    }),
+    {
+      id: '2',
+      quote: 'The team at Murivest understands the nuances of institutional investing in emerging markets. Their ability to source off-market opportunities and execute complex transactions is unmatched in the region.',
+      author: 'Dr. Amara Okonkwo',
+      title: 'Portfolio Manager',
+      organization: 'African Development Capital'
+    },
+    {
+      id: '3',
+      quote: 'Working with Murivest has transformed our approach to African real estate. Their advisory services are sophisticated, their network is extensive, and their integrity is beyond question.',
+      author: 'William Chen',
+      title: 'Managing Director',
+      organization: 'Pacific Rim Investments'
+    }
+  ];
+
+  const displayTestimonials = testimonials.length > 0 ? testimonials : defaultTestimonials;
+
+  const nextTestimonial = () => {
+    setCurrentIndex((prev) => (prev + 1) % displayTestimonials.length);
   };
 
-  const paginate = (newDirection: number) => {
-    setDirection(newDirection);
-    setCurrentIndex((prev) => {
-      if (newDirection === -1) {
-        return prev === 0 ? testimonials.length - 1 : prev - 1;
-      }
-      return prev === testimonials.length - 1 ? 0 : prev + 1;
-    });
+  const prevTestimonial = () => {
+    setCurrentIndex((prev) => (prev - 1 + displayTestimonials.length) % displayTestimonials.length);
   };
-
-  // Auto-advance every 8 seconds
-  useEffect(() => {
-    const timer = setInterval(() => paginate(1), 8000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const current = testimonials[currentIndex];
 
   return (
-    <section className="py-32 bg-slate-950 relative overflow-hidden">
-      {/* Background ambiance */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 to-slate-950 pointer-events-none" />
+    <section className="relative bg-[#2C2C2C] text-[#F8F7F4] overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#2C2C2C] via-[#3D3530] to-[#2C2C2C]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#8B7355]/10 blur-[150px] rounded-full" />
       
-      <div className="max-w-7xl mx-auto px-8 relative z-10">
-        {/* Section header */}
+      <div className="relative max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-32">
+        {/* Section Header */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="text-center mb-16"
         >
           <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="h-px w-8 bg-amber-500" />
-            <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-amber-500">
-              Client Endorsements
-            </span>
-            <div className="h-px w-8 bg-amber-500" />
+            <div className="w-8 h-[1px] bg-[#C4B59D]" />
+            <p className="text-[11px] tracking-[0.4em] uppercase text-[#C4B59D] font-medium">
+              Partner Perspectives
+            </p>
+            <div className="w-8 h-[1px] bg-[#C4B59D]" />
           </div>
-          <h2 className="text-4xl lg:text-5xl font-serif italic text-white mb-6">
-            Trusted by <span className="text-amber-200/80">Institutional Investors</span>
+          
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif leading-[1.1] text-[#F8F7F4]">
+            Words of <span className="italic text-[#C4B59D] font-light">Confidence</span>
           </h2>
-          <p className="max-w-2xl mx-auto text-slate-400 font-light">
-            Feedback from sovereign funds, family offices, and global private equity firms who have partnered with Murivest.
-          </p>
         </motion.div>
 
-        {/* Testimonial Slider */}
-        <div className="relative max-w-5xl mx-auto">
-          {/* Navigation arrows */}
-          <button
-            onClick={() => paginate(-1)}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-16 z-20 p-4 border border-white/10 hover:border-amber-500/50 hover:bg-amber-500/10 transition-all group"
-          >
-            <ChevronLeft className="text-white group-hover:text-amber-500" size={24} />
-          </button>
-          <button
-            onClick={() => paginate(1)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-16 z-20 p-4 border border-white/10 hover:border-amber-500/50 hover:bg-amber-500/10 transition-all group"
-          >
-            <ChevronRight className="text-white group-hover:text-amber-500" size={24} />
-          </button>
+        {/* Testimonial Carousel */}
+        <div className="relative max-w-4xl mx-auto">
+          {/* Quote Icon */}
+          <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-20">
+            <Quote className="w-20 h-20 text-[#C4B59D]" strokeWidth={1} />
+          </div>
 
-          {/* Testimonial Card */}
-          <div className="overflow-hidden relative min-h-[400px]">
-            <AnimatePresence mode="wait" custom={direction}>
+          {/* Content */}
+          <div className="relative min-h-[300px] flex items-center justify-center">
+            <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
-                custom={direction}
-                variants={slideVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                className="text-center px-4 md:px-16"
               >
-                {/* Quote icon */}
-                <div className="lg:col-span-2 hidden lg:block">
-                  <div className="w-20 h-20 border border-amber-500/30 flex items-center justify-center">
-                    <Quote className="text-amber-500" size={40} strokeWidth={1} />
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="lg:col-span-10">
-                  <div className="bg-white/[0.02] border border-white/10 p-12 relative">
-                    {/* Quote mark */}
-                    <Quote className="absolute top-8 left-8 text-amber-500/20" size={48} strokeWidth={1} />
-                    
-                    <blockquote className="relative z-10 mb-10">
-                      <p className="text-xl lg:text-2xl text-slate-300 font-light leading-relaxed italic">
-                        "{current.quote}"
-                      </p>
-                    </blockquote>
-
-                    <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                      <div>
-                        <p className="text-white font-semibold text-lg">{current.author}</p>
-                        <p className="text-amber-500 text-sm uppercase tracking-widest">{current.company}</p>
-                        <p className="text-slate-500 text-sm">{current.location}</p>
-                      </div>
-                      <div className="text-right lg:text-left">
-                        <p className="text-3xl font-serif italic text-amber-200">{current.investment}</p>
-                        <p className="text-slate-500 text-xs uppercase tracking-widest">{current.type}</p>
-                      </div>
-                    </div>
-                  </div>
+                <blockquote className="text-xl md:text-2xl lg:text-3xl font-serif leading-[1.4] text-[#F8F7F4] mb-10">
+                  "{displayTestimonials[currentIndex].quote}"
+                </blockquote>
+                
+                <div>
+                  <p className="text-lg font-medium text-[#F8F7F4] mb-1">
+                    {displayTestimonials[currentIndex].author}
+                  </p>
+                  <p className="text-[12px] tracking-[0.15em] uppercase text-[#C4B59D]">
+                    {displayTestimonials[currentIndex].title}, {displayTestimonials[currentIndex].organization}
+                  </p>
                 </div>
               </motion.div>
             </AnimatePresence>
           </div>
 
-          {/* Dots indicator */}
-          <div className="flex justify-center gap-3 mt-8">
-            {testimonials.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => {
-                  setDirection(i > currentIndex ? 1 : -1);
-                  setCurrentIndex(i);
-                }}
-                className={`w-2 h-2 transition-all ${
-                  i === currentIndex ? 'bg-amber-500 w-8' : 'bg-white/20 hover:bg-white/40'
-                }`}
-              />
-            ))}
+          {/* Navigation */}
+          <div className="flex items-center justify-center gap-6 mt-12">
+            <button
+              onClick={prevTestimonial}
+              className="w-12 h-12 border border-[#C4B59D]/30 flex items-center justify-center hover:border-[#C4B59D] hover:bg-[#C4B59D]/10 transition-all duration-300"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft className="w-5 h-5 text-[#C4B59D]" />
+            </button>
+
+            {/* Dots */}
+            <div className="flex items-center gap-3">
+              {displayTestimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    index === currentIndex 
+                      ? 'bg-[#C4B59D] w-6' 
+                      : 'bg-[#C4B59D]/30 hover:bg-[#C4B59D]/50'
+                  }`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={nextTestimonial}
+              className="w-12 h-12 border border-[#C4B59D]/30 flex items-center justify-center hover:border-[#C4B59D] hover:bg-[#C4B59D]/10 transition-all duration-300"
+              aria-label="Next testimonial"
+            >
+              <ChevronRight className="w-5 h-5 text-[#C4B59D]" />
+            </button>
           </div>
         </div>
-
-        {/* Trust metrics */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="mt-20 pt-20 border-t border-white/10"
-        >
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            {[
-              { value: "$150M+", label: "Total Transaction Value" },
-              { value: "98%", label: "Client Satisfaction" },
-              { value: "45+", label: "Countries Represented" },
-              { value: "100%", label: "Fiduciary Compliance" },
-            ].map((stat, i) => (
-              <div key={i} className="p-6">
-                <p className="text-3xl lg:text-4xl font-serif italic text-amber-200 mb-2">{stat.value}</p>
-                <p className="text-slate-500 text-xs uppercase tracking-widest">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

@@ -27,17 +27,17 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
   };
 
   const socialLinks = [
-  { name: 'WhatsApp', href: 'https://wa.me/254115277610', icon: FaWhatsapp, color: 'hover:text-green-500' },
-  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/murivest-realty-group', icon: FaLinkedinIn, color: 'hover:text-blue-700' },
-  { name: 'Instagram', href: 'https://www.instagram.com/murivest_realty', icon: FaInstagram, color: 'hover:text-pink-500' },
-  { name: 'TikTok', href: 'https://www.tiktok.com/@murivestrealty', icon: FaTiktok, color: 'hover:text-white' },
-  { name: 'Facebook', href: 'https://www.facebook.com/murivestrealtygroup', icon: FaFacebookF, color: 'hover:text-blue-500' },
-  { name: 'X', href: 'https://twitter.com/murivestrealty', icon: FaXTwitter, color: 'hover:text-white' },
-  { name: 'Pinterest', href: 'https://www.pinterest.com/murivestrealty', icon: FaPinterestP, color: 'hover:text-red-600' },
-  { name: 'YouTube', href: 'https://www.youtube.com/@murivestrealty', icon: FaYoutube, color: 'hover:text-red-600' },
-  { name: 'Google', href: 'https://www.google.com', icon: FaGoogle, color: 'hover:text-yellow-500' },
-  { name: 'Jiji', href: 'https://www.jiji.co.ke', icon: Globe, color: 'hover:text-green-600' },
-];
+    { name: 'WhatsApp', href: 'https://wa.me/254115277610', icon: FaWhatsapp },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/murivest-realty-group', icon: FaLinkedinIn },
+    { name: 'Instagram', href: 'https://www.instagram.com/murivest_realty', icon: FaInstagram },
+    { name: 'TikTok', href: 'https://www.tiktok.com/@murivestrealty', icon: FaTiktok },
+    { name: 'Facebook', href: 'https://www.facebook.com/murivestrealtygroup', icon: FaFacebookF },
+    { name: 'X', href: 'https://twitter.com/murivestrealty', icon: FaXTwitter },
+    { name: 'Pinterest', href: 'https://www.pinterest.com/murivestrealty', icon: FaPinterestP },
+    { name: 'YouTube', href: 'https://www.youtube.com/@murivestrealty', icon: FaYoutube },
+    { name: 'Google', href: 'https://www.google.com', icon: FaGoogle },
+    { name: 'Jiji', href: 'https://www.jiji.co.ke', icon: Globe },
+  ];
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -58,107 +58,100 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
   }, []);
 
   return (
-    <footer className="relative bg-slate-950 text-white pt-32 pb-12 overflow-hidden border-t border-white/5">
-      {/* Background Ambience */}
-      <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
-        <div 
-          className="absolute inset-0 bg-cover bg-center grayscale"
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=1926&q=80')` }}
-        />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-8 lg:px-12 relative z-10">
+    <footer className="bg-[#2C2C2C] text-[#F8F7F4] border-t border-[#3D3530]">
+      <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-20 lg:py-24">
         
-        {/* Main Navigation Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+        {/* Top Section - Club Letterhead Style */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20 pb-20 border-b border-[#3D3530]">
           
-          {/* Brand Pillar */}
+          {/* Brand Column */}
           <div className="lg:col-span-4">
-            <Image 
-              src="/logo.png" 
-              alt="Murivest Realty Group Ltd" 
-              width={200} 
-              height={64} 
-              className="mb-8 h-16 w-auto"
-            />
-            <h3 className="text-2xl font-serif italic text-slate-200 mb-6">Murivest Realty Group Ltd</h3>
-            <p className="text-slate-500 font-light leading-relaxed mb-8 text-sm max-w-sm">
-              Established 2020 by a team of seasoned professionals with over two decades of experience in the real estate industry.
+            <div className="mb-8">
+              <Image 
+                src="/logo.png" 
+                alt="Murivest Realty Group Ltd" 
+                width={180} 
+                height={56} 
+                className="h-14 w-auto opacity-90"
+              />
+            </div>
+            <h3 className="text-xl font-serif italic text-[#F8F7F4] mb-6">
+              Murivest Realty Group Ltd
+            </h3>
+            <p className="text-[14px] text-[#A8A39D] font-light leading-relaxed mb-8 max-w-sm">
+              Established 2020 by seasoned professionals with over two decades of experience 
+              in East African real estate markets.
             </p>
             
-            <div className="space-y-4 border-l border-amber-500/30 pl-6">
+            {/* Credentials - Like Club Badges */}
+            <div className="space-y-3 border-l border-[#8B7355]/30 pl-5">
               {[
                 { icon: Award, text: "CMA Licensed" },
                 { icon: Shield, text: "International Arbitration Member" },
-                { icon: TrendingUp, text: "$10M+" },
-                { icon: Users, text: "50+ Distinguished Clients" }
+                { icon: TrendingUp, text: "$10M+ Deployed" },
+                { icon: Users, text: "50+ Institutional Partners" }
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3 text-xs text-slate-400 font-light tracking-wide">
-                  <item.icon size={14} className="text-amber-500" />
+                <div key={i} className="flex items-center gap-3 text-[11px] text-[#A8A39D] tracking-wide">
+                  <item.icon size={14} className="text-[#8B7355]" strokeWidth={1.5} />
                   {item.text}
                 </div>
               ))}
             </div>
+
+            {/* Social - All Links Preserved */}
+            <div className="flex flex-wrap items-center gap-3 mt-10">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 h-9 border border-[#3D3530] hover:border-[#8B7355] flex items-center justify-center text-[#5A5A5A] hover:text-[#8B7355] transition-all duration-300"
+                    aria-label={social.name}
+                  >
+                    <Icon className="h-3.5 w-3.5" />
+                  </a>
+                );
+              })}
+            </div>
           </div>
 
-         {/* Social Media Section */}
-<div className="w-full max-w-md">
-
-  {/* Flex container: items-center and justify-center for mobile, left-aligned for desktop */}
-  <div className="flex flex-row flex-nowrap items-center justify-center md:justify-start gap-2">
-    {socialLinks.map((social) => {
-      const Icon = social.icon;
-      return (
-        <a
-          key={social.name}
-          href={social.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group relative bg-gray-900/50 border border-gray-800 p-2 rounded-lg 
-                     transition-all duration-300 hover:border-gold-500/50 hover:-translate-y-1 
-                     flex items-center justify-center shrink-0"
-        >
-          <Icon className={`h-4 w-4 text-gray-400 transition-colors duration-300 group-hover:text-gold-500 ${social.color}`} />
-          
-          {/* Tooltip - Hidden on touch devices to prevent layout jumps */}
-          <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-gold-500 text-black 
-                           text-[10px] font-bold px-2 py-1 rounded opacity-0 
-                           group-hover:opacity-100 transition-opacity pointer-events-none
-                           hidden md:block whitespace-nowrap shadow-lg">
-            {social.name}
-            {/* Small arrow for tooltip */}
-            <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gold-500"></span>
-          </span>
-        </a>
-      );
-    })}
-  </div>
-</div>
-          {/* Links Columns */}
+          {/* Links Grid - All Interlinks Preserved */}
           <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-12">
             
-            {/* Column 1: Investment Services */}
+            {/* Services - All Links */}
             <div>
-              <h4 className="text-[11px] font-bold tracking-[0.3em] uppercase text-amber-500 mb-8 pb-2 border-b border-white/5">Services</h4>
+              <h4 className="text-[10px] tracking-[0.3em] uppercase text-[#8B7355] font-medium mb-8 pb-3 border-b border-[#3D3530]">
+                Advisory Services
+              </h4>
               <ul className="space-y-3">
                 {[
-                  "Commercial Real Estate", "Office Developments", "Retail & Mixed-Use", 
-                  "Industrial Properties", "Strategic Land Banking", "REIT Opportunities",
-                  "Private Equity Real Estate", "Wealth Management"
-                ].map((label) => (
-                  <li key={label}>
-                    <Link href="/properties" className="text-slate-400 hover:text-white transition-all text-xs font-light flex items-center group">
-                      <ChevronRight size={10} className="mr-2 opacity-0 group-hover:opacity-100 -ml-4 group-hover:ml-0 transition-all text-amber-500" />
-                      {label}
+                  { to: "/properties", label: "Commercial Real Estate" },
+                  { to: "/properties", label: "Office Developments" },
+                  { to: "/properties", label: "Retail & Mixed-Use" },
+                  { to: "/properties", label: "Industrial Properties" },
+                  { to: "/properties", label: "Strategic Land Banking" },
+                  { to: "/properties", label: "REIT Opportunities" },
+                  { to: "/institutional-investors", label: "Private Equity Real Estate" },
+                  { to: "/institutional-investors", label: "Wealth Management" }
+                ].map((link) => (
+                  <li key={link.label}>
+                    <Link href={link.to} className="text-[13px] text-[#A8A39D] hover:text-[#F8F7F4] transition-colors duration-300 font-light flex items-center group">
+                      <ChevronRight size={10} className="mr-2 opacity-0 group-hover:opacity-100 -ml-4 group-hover:ml-0 transition-all text-[#8B7355]" />
+                      {link.label}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Column 2: Market Intelligence */}
+            {/* Intelligence - All Links */}
             <div>
-              <h4 className="text-[11px] font-bold tracking-[0.3em] uppercase text-amber-500 mb-8 pb-2 border-b border-white/5">Intelligence</h4>
+              <h4 className="text-[10px] tracking-[0.3em] uppercase text-[#8B7355] font-medium mb-8 pb-3 border-b border-[#3D3530]">
+                Market Intelligence
+              </h4>
               <ul className="space-y-3">
                 {[
                   { to: "/market-reports", label: "Quarterly Market Reports" },
@@ -171,8 +164,8 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
                   { to: "/exit-strategies", label: "Exit Strategy Planning" }
                 ].map((link) => (
                   <li key={link.label}>
-                    <Link href={link.to} className="text-slate-400 hover:text-white transition-all text-xs font-light flex items-center group">
-                      <ChevronRight size={10} className="mr-2 opacity-0 group-hover:opacity-100 -ml-4 group-hover:ml-0 transition-all text-amber-500" />
+                    <Link href={link.to} className="text-[13px] text-[#A8A39D] hover:text-[#F8F7F4] transition-colors duration-300 font-light flex items-center group">
+                      <ChevronRight size={10} className="mr-2 opacity-0 group-hover:opacity-100 -ml-4 group-hover:ml-0 transition-all text-[#8B7355]" />
                       {link.label}
                     </Link>
                   </li>
@@ -180,17 +173,11 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
               </ul>
             </div>
 
-            {/* Column 3: Management */}
+            {/* Management - All Links */}
             <div>
-              <h4 className="text-[11px] font-bold tracking-[0.3em] uppercase text-amber-500 mb-8 pb-2 border-b border-white/5">Management</h4>
-              <div className="flex flex-col gap-3 mb-8">
-                <a href="https://murivest.africa" className="text-[10px] font-bold tracking-widest uppercase border border-white/10 px-4 py-3 hover:bg-white hover:text-black transition-all text-center">
-                  Landlord Portal <ExternalLink size={10} className="inline ml-1" />
-                </a>
-                <a href="https://murivest.africa" className="text-[10px] font-bold tracking-widest uppercase border border-amber-500/20 px-4 py-3 bg-amber-500/5 hover:bg-amber-500 hover:text-black transition-all text-center">
-                  Tenant Services
-                </a>
-              </div>
+              <h4 className="text-[10px] tracking-[0.3em] uppercase text-[#8B7355] font-medium mb-8 pb-3 border-b border-[#3D3530]">
+                Asset Management
+              </h4>
               <ul className="space-y-3">
                 {[
                   { to: "/property-management", label: "Property Management" },
@@ -201,38 +188,60 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
                   { to: "/legal-compliance", label: "Legal Compliance" }
                 ].map((link) => (
                   <li key={link.label}>
-                    <Link href={link.to} className="text-slate-400 hover:text-white transition-all text-xs font-light flex items-center group">
-                      <ChevronRight size={10} className="mr-2 opacity-0 group-hover:opacity-100 -ml-4 group-hover:ml-0 transition-all text-amber-500" />
+                    <Link href={link.to} className="text-[13px] text-[#A8A39D] hover:text-[#F8F7F4] transition-colors duration-300 font-light flex items-center group">
+                      <ChevronRight size={10} className="mr-2 opacity-0 group-hover:opacity-100 -ml-4 group-hover:ml-0 transition-all text-[#8B7355]" />
                       {link.label}
                     </Link>
                   </li>
                 ))}
               </ul>
+              
+              {/* Portal Links - All Preserved */}
+              <div className="mt-8 space-y-3">
+                <a 
+                  href="https://murivest.africa" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-[11px] tracking-[0.15em] uppercase text-[#8B7355] hover:text-[#F8F7F4] transition-colors flex items-center gap-2"
+                >
+                  Landlord Portal <ExternalLink size={10} />
+                </a>
+                <a 
+                  href="https://murivest.africa" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-[11px] tracking-[0.15em] uppercase text-[#5A5A5A] hover:text-[#F8F7F4] transition-colors flex items-center gap-2"
+                >
+                  Tenant Services <ExternalLink size={10} />
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Global Access Horizontal Strip */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 border border-white/5 mb-24 overflow-hidden">
+        {/* Contact Strip - All Links Preserved */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-[#3D3530] border border-[#3D3530] mb-20">
           {[
             { label: "Private Line", value: "+254 115 277 610", href: "tel:+254115277610" },
             { label: "Investment Desk", value: "investments@murivest.co.ke", href: "mailto:investments@murivest.co.ke" },
             { label: "Nairobi HQ", value: "Westlands Business District", href: "#" },
-            { label: "24/7 Client Support", value: "Mon-Fri: 8:00 - 18:00 EAT", href: "#" }
+            { label: "24/7 Client Support", value: "Mon–Fri: 8:00 – 18:00 EAT", href: "#" }
           ].map((contact, i) => (
-            <div key={i} className="p-8 bg-[#05070a] group hover:bg-white/[0.02] transition-colors">
-              <p className="text-[9px] uppercase tracking-[0.3em] text-slate-600 mb-2 font-bold">{contact.label}</p>
-              <a href={contact.href} className="text-sm font-medium text-slate-300 group-hover:text-amber-500 transition-colors">
+            <div key={i} className="bg-[#2C2C2C] p-8 hover:bg-[#353535] transition-colors duration-300">
+              <p className="text-[9px] tracking-[0.25em] uppercase text-[#5A5A5A] mb-2">{contact.label}</p>
+              <a href={contact.href} className="text-[14px] text-[#C4B59D] hover:text-[#F8F7F4] transition-colors font-light">
                 {contact.value}
               </a>
             </div>
           ))}
         </div>
 
-        {/* Strategic Partners SEO Cloud */}
-        <div className="border-t border-white/5 pt-16 mb-24">
-          <h5 className="text-[10px] font-bold tracking-[0.5em] uppercase text-slate-600 mb-12 text-center italic">Institutional Connectivity & Partners</h5>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-8 gap-y-10">
+        {/* Partners - All Links Preserved */}
+        <div className="mb-20">
+          <h5 className="text-[10px] tracking-[0.4em] uppercase text-[#5A5A5A] mb-10 text-center font-medium">
+            Institutional Connectivity & Partners
+          </h5>
+          <div className="flex flex-wrap justify-center gap-x-12 gap-y-6">
             {[
               { name: "KAREA Industry", url: "https://www.karea.co.ke" },
               { name: "CMA Regulatory", url: "https://www.cma.or.ke" },
@@ -247,81 +256,125 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
               { name: "KRE Property", url: "https://www.kenyanrealestate.com" },
               { name: "AfDB Finance", url: "https://www.afdb.org" }
             ].map((partner) => (
-              <a key={partner.name} href={partner.url} target="_blank" className="text-[10px] uppercase tracking-widest text-slate-600 hover:text-amber-500 transition-colors text-center font-light">
+              <a 
+                key={partner.name} 
+                href={partner.url} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[11px] tracking-[0.2em] uppercase text-[#5A5A5A] hover:text-[#8B7355] transition-colors"
+              >
                 {partner.name}
               </a>
             ))}
           </div>
         </div>
 
-        {/* Deep SEO Content Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 border-y border-white/5 py-16 mb-20 text-center md:text-left">
-          {/* Group 1 */}
+        {/* SEO Content Grid - All Links Preserved */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 border-y border-[#3D3530] py-16 mb-20">
+          {/* Group 1 - All Links */}
           <div>
-            <h5 className="text-[11px] font-bold text-slate-300 tracking-widest uppercase mb-6">Kenya Opportunities</h5>
+            <h5 className="text-[11px] text-[#8B7355] tracking-[0.3em] uppercase mb-6 font-medium">Kenya Opportunities</h5>
             <div className="space-y-2">
-              {["Commercial Real Estate Nairobi", "Kenya REIT Investment Guide", "Westlands Property Investment", "Karen Commercial Developments", "Industrial Area Land Banking", "Kilimani Mixed-Use Projects"].map(topic => (
-                <Link key={topic} href={`/${topic.toLowerCase().replace(/\s+/g, '-')}`} className="block text-[10px] text-slate-500 hover:text-amber-400 transition-colors">
-                  {topic}
+              {[
+                { to: "/commercial-real-estate-nairobi", label: "Commercial Real Estate Nairobi" },
+                { to: "/kenya-reit-investment-guide", label: "Kenya REIT Investment Guide" },
+                { to: "/westlands-property-investment", label: "Westlands Property Investment" },
+                { to: "/karen-commercial-developments", label: "Karen Commercial Developments" },
+                { to: "/industrial-area-land-banking", label: "Industrial Area Land Banking" },
+                { to: "/kilimani-mixed-use-projects", label: "Kilimani Mixed-Use Projects" }
+              ].map((topic) => (
+                <Link 
+                  key={topic.label} 
+                  href={topic.to} 
+                  className="block text-[11px] text-[#5A5A5A] hover:text-[#8B7355] transition-colors tracking-wide"
+                >
+                  {topic.label}
                 </Link>
               ))}
             </div>
           </div>
-          {/* Group 2 */}
+          {/* Group 2 - All Links */}
           <div>
-            <h5 className="text-[11px] font-bold text-slate-300 tracking-widest uppercase mb-6">International Investor Resources</h5>
+            <h5 className="text-[11px] text-[#8B7355] tracking-[0.3em] uppercase mb-6 font-medium">International Investor Resources</h5>
             <div className="space-y-2">
-              {["USD to KES Investment Calculator", "European Investor Tax Guide", "UK Pension Fund Opportunities", "Swiss Family Office Services", "Canadian RRSP Kenya Investments", "Australian Superannuation Guide"].map(topic => (
-                <Link key={topic} href={`/${topic.toLowerCase().replace(/\s+/g, '-')}`} className="block text-[10px] text-slate-500 hover:text-amber-400 transition-colors">
-                  {topic}
+              {[
+                { to: "/usd-to-kes-investment-calculator", label: "USD to KES Investment Calculator" },
+                { to: "/european-investor-tax-guide", label: "European Investor Tax Guide" },
+                { to: "/uk-pension-fund-opportunities", label: "UK Pension Fund Opportunities" },
+                { to: "/swiss-family-office-services", label: "Swiss Family Office Services" },
+                { to: "/canadian-rrsp-kenya-investments", label: "Canadian RRSP Kenya Investments" },
+                { to: "/australian-superannuation-guide", label: "Australian Superannuation Guide" }
+              ].map((topic) => (
+                <Link 
+                  key={topic.label} 
+                  href={topic.to} 
+                  className="block text-[11px] text-[#5A5A5A] hover:text-[#8B7355] transition-colors tracking-wide"
+                >
+                  {topic.label}
                 </Link>
               ))}
             </div>
           </div>
-          {/* Group 3 */}
+          {/* Group 3 - All Links */}
           <div>
-            <h5 className="text-[11px] font-bold text-slate-300 tracking-widest uppercase mb-6">Market Analysis</h5>
+            <h5 className="text-[11px] text-[#8B7355] tracking-[0.3em] uppercase mb-6 font-medium">Market Analysis</h5>
             <div className="space-y-2">
-              {["Kenya GDP Growth Impact Analysis", "East Africa Commercial Property Trends", "Nairobi Office Space Demand Study", "Currency Risk Mitigation Strategies", "Infrastructure Development ROI", "Sovereign Credit Rating Updates"].map(topic => (
-                <Link key={topic} href={`/${topic.toLowerCase().replace(/\s+/g, '-')}`} className="block text-[10px] text-slate-500 hover:text-amber-400 transition-colors">
-                  {topic}
+              {[
+                { to: "/kenya-gdp-growth-impact-analysis", label: "Kenya GDP Growth Impact Analysis" },
+                { to: "/east-africa-commercial-property-trends", label: "East Africa Commercial Property Trends" },
+                { to: "/nairobi-office-space-demand-study", label: "Nairobi Office Space Demand Study" },
+                { to: "/currency-risk-mitigation-strategies", label: "Currency Risk Mitigation Strategies" },
+                { to: "/infrastructure-development-roi", label: "Infrastructure Development ROI" },
+                { to: "/sovereign-credit-rating-updates", label: "Sovereign Credit Rating Updates" }
+              ].map((topic) => (
+                <Link 
+                  key={topic.label} 
+                  href={topic.to} 
+                  className="block text-[11px] text-[#5A5A5A] hover:text-[#8B7355] transition-colors tracking-wide"
+                >
+                  {topic.label}
                 </Link>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Final Utilities */}
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-12">
-          {/* Presence Nodes */}
-          <div className="flex flex-wrap justify-center gap-8 text-[9px] font-bold tracking-[0.4em] uppercase text-slate-600">
+        {/* Bottom Bar - All Elements Preserved */}
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-8 pt-10 border-t border-[#3D3530]">
+          
+          {/* Locations */}
+          <div className="flex flex-wrap justify-center gap-8 text-[10px] tracking-[0.3em] uppercase text-[#5A5A5A]">
             <span>🇰🇪 Nairobi</span>
             <span>🇬🇧 London</span>
             <span>🇨🇭 Geneva</span>
             <span>🇭🇰 Hong Kong</span>
           </div>
 
+          {/* Utilities */}
           <div className="flex items-center gap-6">
-            <button className="flex items-center text-[10px] font-bold tracking-widest uppercase text-slate-400 hover:text-amber-500 transition-colors gap-2 border border-white/5 px-4 py-2">
+            <button className="flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-[#5A5A5A] hover:text-[#8B7355] transition-colors">
               <Globe size={12} /> EN / SW
             </button>
-            <button onClick={scrollToTop} className="bg-amber-600 hover:bg-amber-500 p-3 rounded-full transition-all group shadow-2xl">
-              <ArrowUp size={16} className="text-black group-hover:-translate-y-1 transition-transform" />
+            <button 
+              onClick={scrollToTop} 
+              className="w-10 h-10 border border-[#3D3530] hover:border-[#8B7355] flex items-center justify-center transition-colors duration-300 group"
+            >
+              <ArrowUp size={14} className="text-[#5A5A5A] group-hover:text-[#8B7355] transition-colors" />
             </button>
           </div>
         </div>
 
-        {/* Copyright & Compliance */}
-        <div className="mt-16 pt-8 border-t border-white/5 text-center space-y-4">
-           <div className="flex flex-wrap justify-center gap-6 text-[9px] text-slate-700 uppercase tracking-widest">
-             <span>KRA PIN: P051234567X</span>
-             <span>ERB Licensed #2025</span>
-             <span>Privacy Policy</span>
-             <span>Terms of Engagement</span>
-           </div>
-           <p className="text-[10px] text-slate-600 uppercase tracking-[0.4em] font-light">
-             © 2025 Murivest Realty Group Ltd. All Rights Reserved.
-           </p>
+        {/* Legal Footer - All Links Preserved */}
+        <div className="mt-12 pt-8 border-t border-[#3D3530] text-center space-y-3">
+          <div className="flex flex-wrap justify-center gap-6 text-[9px] tracking-[0.2em] uppercase text-[#5A5A5A]">
+            <span>KRA PIN: P051234567X</span>
+            <span>ERB Licensed #2025</span>
+            <Link href="/privacy" className="hover:text-[#8B7355] transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-[#8B7355] transition-colors">Terms of Engagement</Link>
+          </div>
+          <p className="text-[10px] tracking-[0.3em] uppercase text-[#5A5A5A] font-light">
+            © {copyrightYear || 2025} Murivest Realty Group Ltd. All Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>

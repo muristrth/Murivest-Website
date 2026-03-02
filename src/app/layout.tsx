@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Inter, Playfair_Display, Montserrat } from 'next/font/google';
 import { Suspense } from 'react';
 import './globals.css';
 import Header from '../components/layout/Header';
@@ -19,6 +19,12 @@ const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-playfair',
   display: 'swap',
+});
+// Configure Montserrat
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'], // 300/400 for body, 500/600 for headers
+  variable: '--font-montserrat', // Define the CSS variable
 });
 
 // Define the site-wide metadata using the Metadata API
@@ -181,7 +187,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${montserrat.variable} font-sans`}>
       <head>
         {/* Favicon and Apple Touch Icon */}
         <link rel="icon" type="image/png" href="/logo.png" sizes="192x192"/>
@@ -228,7 +234,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${inter.variable} ${playfair.variable} font-elegant text-navy-900 bg-white`}
+      <body className={`${montserrat.variable} font-sans text-navy-900 bg-white`}
       suppressHydrationWarning={true}
       >
         <div className="min-h-screen">

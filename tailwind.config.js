@@ -12,6 +12,7 @@ export default {
         'luxury': ['Playfair Display', 'serif'],
         'elegant': ['Inter', 'sans-serif'],
         'times': ['Times New Roman', 'serif'],
+        sans: ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
       },
       colors: {
         navy: {

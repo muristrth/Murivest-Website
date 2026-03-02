@@ -1,157 +1,204 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Building2, TrendingUp, Shield, Landmark } from 'lucide-react';
+import { ArrowRight, MapPin, TrendingUp, Building } from 'lucide-react';
 
-const caseStudies = [
-  {
-    id: 1,
-    title: "Nairobi CBD Grade-A Office Portfolio",
-    category: "Commercial Office",
-    challenge: "A European sovereign fund sought exposure to Nairobi's premium office market but required institutional-grade tenants and long-term lease structures.",
-    solution: "Identified and acquired three Grade-A office buildings in the CBD with multi-national tenants (banks, telecoms, oil & gas). Negotiated 15-year lease terms with annual escalations.",
-    outcome: "$32M transaction | 9.2% IRR | Triple-net leases | 100% occupancy",
-    metrics: ["32M USD", "9.2% IRR", "15 Yr Leases", "100% Occupancy"],
-    icon: Building2,
-  },
-  {
-    id: 2,
-    title: "Mombasa Road Industrial Logistics Hub",
-    category: "Industrial & Logistics",
-    challenge: "A global private equity firm needed exposure to East Africa's logistics sector, requiring cold chain capabilities and proximity to port infrastructure.",
-    solution: "Acquired 45 acres along Mombasa Road, developed a 280,000 sqft logistics facility with cold chain infrastructure. Secured a Fortune 500 e-commerce tenant on a 10-year lease.",
-    outcome: "$48M development | 18% development yield | Tier-1 tenant",
-    metrics: ["48M USD", "18% Yield", "280K Sqft", "Fortune 500 Tenant"],
-    icon: TrendingUp,
-  },
-  {
-    id: 3,
-    title: "Westlands Mixed-Use Development",
-    category: "Mixed-Use",
-    challenge: "A family office from the Middle East sought a trophy asset with diversification across retail, office, and residential uses in Nairobi's premier commercial node.",
-    solution: "Structured an off-market acquisition of a 5-acre mixed-use development in Westlands. Asset included retail podium, Grade-A office tower, and luxury apartments.",
-    outcome: "$55M acquisition | 12% cash-on-cash | Institutional tenants",
-    metrics: ["55M USD", "12% CoC Return", "5 Acres", "Mixed-Use"],
-    icon: Landmark,
-  },
-  {
-    id: 4,
-    title: "Regional Shopping Mall Portfolio",
-    category: "Retail",
-    challenge: "A listed REIT sought to expand its retail footprint with high-quality neighborhood shopping centers in underserved secondary cities.",
-    solution: "Originated and acquired three shopping malls in Kisumu, Nakuru, and Eldoret. Implemented value-add strategy including rebranding and tenant mix optimization.",
-    outcome: "$28M portfolio | 85% to 97% occupancy | 15% NOI growth",
-    metrics: ["28M USD", "15% NOI Growth", "3 Malls", "Secondary Cities"],
-    icon: Shield,
-  },
-];
+interface CaseStudy {
+  id: string;
+  title: string;
+  location: string;
+  type: string;
+  value: string;
+  return_: string;
+  description: string;
+  image: string;
+}
 
-const CaseStudies = () => {
+interface CaseStudiesProps {
+  studies?: CaseStudy[];
+}
+
+/**
+ * Case Studies - Golf Club Lounge Aesthetic
+ * Portfolio highlights with understated elegance
+ */
+const CaseStudies = ({ studies = [] }: CaseStudiesProps) => {
+  const defaultStudies: CaseStudy[] = [
+    {
+      id: '1',
+      title: 'Absa Towers',
+      location: 'Nairobi CBD',
+      type: 'Grade-A Office',
+      value: '$15.2M',
+      return_: '18.5% IRR',
+      description: 'Strategic acquisition of a landmark commercial tower in Nairobi\'s central business district, delivering consistent income through blue-chip tenancy.',
+      image: '/kenya-night.png'
+    },
+    {
+      id: '2',
+      title: 'Buffalo Mall',
+      location: 'Eldoret',
+      type: 'Retail Portfolio',
+      value: '$12.1M',
+      return_: '16.2% IRR',
+      description: 'Regional retail destination serving Kenya\'s agricultural heartland, anchored by national retailers and local franchises.',
+      image: '/murivest_ceo_office.png'
+    },
+    {
+      id: '3',
+      title: 'Industrial Complex',
+      location: 'Nairobi Industrial Area',
+      type: 'Logistics',
+      value: '$6.8M',
+      return_: '21.3% IRR',
+      description: 'Modern warehousing and distribution facility positioned to serve East Africa\'s growing logistics demand.',
+      image: '/kenya-night.png'
+    }
+  ];
+
+  const displayStudies = studies.length > 0 ? studies : defaultStudies;
+
   return (
-    <section className="py-32 bg-slate-950 relative overflow-hidden">
-      {/* Background ambiance */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-amber-600/3 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-600/3 blur-[100px] rounded-full -translate-x-1/2 translate-y-1/2" />
-
-      <div className="max-w-7xl mx-auto px-8 relative z-10">
-        {/* Section header */}
+    <section className="relative bg-[#2C2C2C] text-[#F8F7F4] overflow-hidden">
+      {/* Subtle background texture */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#8B7355]/20 via-transparent to-[#8B7355]/10" />
+      </div>
+      
+      <div className="relative max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-32">
+        {/* Section Header */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 md:mb-24"
         >
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="h-px w-8 bg-amber-500" />
-            <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-amber-500">
-              Mandate Track Record
-            </span>
-            <div className="h-px w-8 bg-amber-500" />
+          <div>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-8 h-[1px] bg-[#C4B59D]" />
+              <p className="text-[11px] tracking-[0.4em] uppercase text-[#C4B59D] font-medium">
+                Portfolio Highlights
+              </p>
+            </div>
+            
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif leading-[1.1] text-[#F8F7F4]">
+              Selected <span className="italic text-[#C4B59D] font-light">Mandates</span>
+            </h2>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-serif italic text-white mb-6">
-            Selected <span className="text-amber-200/80">Transaction Case Studies</span>
-          </h2>
-          <p className="max-w-2xl mx-auto text-slate-400 font-light">
-            Demonstrating our ability to execute complex, high-value real estate mandates across East Africa.
+
+          <p className="text-[15px] leading-[1.8] text-[#A8A39D] font-light max-w-md">
+            A representative selection of advisory engagements demonstrating our approach to institutional real estate investment.
           </p>
         </motion.div>
 
-        {/* Case studies grid */}
-        <div className="space-y-24">
-          {caseStudies.map((study, i) => (
-            <motion.div
+        {/* Case Studies Grid */}
+        <div className="space-y-8 md:space-y-12">
+          {displayStudies.map((study, index) => (
+            <motion.article
               key={study.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-start ${
-                i % 2 === 1 ? 'lg:grid-flow-dense' : ''
-              }`}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ 
+                duration: 0.8, 
+                delay: index * 0.15,
+                ease: [0.16, 1, 0.3, 1] 
+              }}
+              className="group"
             >
-              {/* Icon and category */}
-              <div className={`lg:col-span-2 ${i % 2 === 1 ? 'lg:col-start-11' : ''}`}>
-                <div className="w-16 h-16 border border-amber-500/30 flex items-center justify-center mb-6">
-                  <study.icon className="text-amber-500" size={28} strokeWidth={1} />
-                </div>
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-amber-500">
-                  {study.category}
-                </span>
-              </div>
-
-              {/* Content */}
-              <div className={`lg:col-span-8 ${i % 2 === 1 ? 'lg:col-start-3 lg:row-start-1' : ''}`}>
-                <h3 className="text-2xl lg:text-3xl font-serif italic text-white mb-8">
-                  {study.title}
-                </h3>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
-                  <div className="p-6 bg-white/[0.02] border border-white/10">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-3">Challenge</p>
-                    <p className="text-slate-400 font-light text-sm leading-relaxed">{study.challenge}</p>
-                  </div>
-                  <div className="p-6 bg-white/[0.02] border border-white/10">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-500 mb-3">Solution</p>
-                    <p className="text-slate-400 font-light text-sm leading-relaxed">{study.solution}</p>
-                  </div>
-                  <div className="p-6 bg-amber-500/5 border border-amber-500/20">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-500 mb-3">Outcome</p>
-                    <p className="text-slate-300 font-light text-sm leading-relaxed">{study.outcome}</p>
+              <div className="grid lg:grid-cols-12 gap-6 lg:gap-12 items-center">
+                {/* Image */}
+                <div className={`lg:col-span-5 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image
+                      src={study.image}
+                      alt={study.title}
+                      fill
+                      className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#2C2C2C]/40 to-transparent" />
+                    
+                    {/* Type badge */}
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 bg-[#2C2C2C]/80 backdrop-blur-sm text-[10px] tracking-[0.2em] uppercase text-[#C4B59D] font-medium">
+                        {study.type}
+                      </span>
+                    </div>
                   </div>
                 </div>
 
-                {/* Metrics */}
-                <div className="flex flex-wrap gap-4">
-                  {study.metrics.map((metric, j) => (
-                    <span 
-                      key={j}
-                      className="px-4 py-2 bg-white/[0.02] border border-white/10 text-slate-300 text-xs font-medium"
+                {/* Content */}
+                <div className={`lg:col-span-7 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                  <div className="border-b border-[#E5E2DC]/20 pb-8">
+                    {/* Location */}
+                    <div className="flex items-center gap-2 mb-4">
+                      <MapPin className="w-4 h-4 text-[#C4B59D]" strokeWidth={1} />
+                      <span className="text-[11px] tracking-[0.2em] uppercase text-[#A8A39D]">
+                        {study.location}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif mb-4 text-[#F8F7F4] group-hover:text-[#C4B59D] transition-colors duration-500">
+                      {study.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-[15px] leading-[1.8] text-[#A8A39D] font-light mb-6">
+                      {study.description}
+                    </p>
+
+                    {/* Stats */}
+                    <div className="flex flex-wrap gap-8 mb-6">
+                      <div className="flex items-center gap-3">
+                        <Building className="w-4 h-4 text-[#C4B59D]" strokeWidth={1} />
+                        <div>
+                          <p className="text-[10px] tracking-[0.15em] uppercase text-[#5A5A5A]">Asset Value</p>
+                          <p className="text-lg font-serif text-[#F8F7F4]">{study.value}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <TrendingUp className="w-4 h-4 text-[#C4B59D]" strokeWidth={1} />
+                        <div>
+                          <p className="text-[10px] tracking-[0.15em] uppercase text-[#5A5A5A]">Target Return</p>
+                          <p className="text-lg font-serif text-[#C4B59D]">{study.return_}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Link */}
+                    <a 
+                      href="#"
+                      className="inline-flex items-center gap-3 text-[12px] tracking-[0.2em] uppercase text-[#C4B59D] font-medium hover:text-[#F8F7F4] transition-colors duration-500"
                     >
-                      {metric}
-                    </span>
-                  ))}
+                      <span>View Case Study</span>
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                    </a>
+                  </div>
                 </div>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
 
-        {/* CTA */}
+        {/* Bottom CTA */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-20 text-center"
+          transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-16 md:mt-24 text-center"
         >
           <a 
-            href="/representative-transactions" 
-            className="inline-flex items-center gap-3 px-8 py-4 border border-amber-500/30 hover:border-amber-500 hover:bg-amber-500/10 transition-all group"
+            href="/institutional-investors"
+            className="inline-flex items-center gap-3 px-8 py-4 border border-[#C4B59D] text-[12px] tracking-[0.2em] uppercase text-[#F8F7F4] font-medium hover:bg-[#C4B59D] hover:text-[#2C2C2C] transition-all duration-500"
           >
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-amber-500 group-hover:text-amber-400">
-              View Complete Transaction History
-            </span>
-            <ArrowUpRight className="text-amber-500 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" size={18} />
+            <span>View Full Portfolio</span>
+            <ArrowRight className="w-4 h-4" />
           </a>
         </motion.div>
       </div>

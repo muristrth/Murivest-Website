@@ -1,302 +1,327 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { 
-  Target, Eye, Award, Users, Shield, 
-  Crown, Globe, TrendingUp, Building2, 
-  Landmark, ArrowUpRight, BarChart3,
-  Link
+  ChevronRight, Quote, MapPin, 
+  ArrowUpRight, Award, Shield, Landmark, 
+  Users, Globe, Phone, Mail
 } from 'lucide-react';
 
-import Team from './Team';
-import Testimonials from './Testimonials';
-import TrustBadges from './TrustBadges';
-import CaseStudies from './CaseStudies';
+// --- Types & Interfaces ---
+interface StatProps {
+  value: string;
+  label: string;
+  suffix?: string;
+}
 
-const About = () => {
-  const institutionalValues = [
-    {
-      icon: Crown,
-      title: "Heritage & Legacy",
-      description: "Built on time-tested investment principles, architecting generational wealth through unwavering commitment to excellence."
-    },
-    {
-      icon: Shield,
-      title: "Fiduciary Excellence", 
-      description: "Operating under the highest institutional standards with complete transparency and regulatory compliance."
-    },
-    {
-      icon: Landmark,
-      title: "Institutional Grade",
-      description: "A portfolio of trophy assets vetted through rigorous due diligence processes typical of top-tier global firms."
-    }
-  ];
+interface ValueCardProps {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  delay: number;
+}
+
+// --- Mock Data ---
+const STATS: StatProps[] = [
+  { value: "45", suffix: "+", label: "Years of Stewardship" },
+  { value: "$2.4", suffix: "B", label: "Assets Under Management" },
+  { value: "12", suffix: "", label: "Global Markets" },
+  { value: "100", suffix: "%", label: "Client Retention" },
+];
+
+const VALUES = [
+  {
+    icon: Landmark,
+    title: "Intergenerational Stewardship",
+    description: "We do not merely manage assets; we curate legacies designed to outlive market cycles and transcend generations."
+  },
+  {
+    icon: Shield,
+    title: "Discretion & Privacy",
+    description: "Absolute confidentiality is the bedrock of our practice. Your affairs remain shielded by institutional-grade privacy protocols."
+  },
+  {
+    icon: Award,
+    title: "Uncompromising Quality",
+    description: "Access to trophy assets is reserved for the few. We select only properties that meet the strictest criteria of rarity and location."
+  }
+];
+
+// --- Components ---
+
+const Hero = () => {
+  const { scrollY } = useScroll();
+  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white font-light selection:bg-amber-500/30">
-      
-      {/* 1. EDITORIAL HERO HEADER */}
-      <section className="relative pt-40 pb-24 px-8 overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-amber-600/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2" />
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-3 mb-8"
-          >
-            <div className="h-px w-8 bg-amber-500" />
-            <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-amber-500">
-              The Murivest Authority
-            </span>
-          </motion.div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            <div className="lg:col-span-8">
-              <h1 className="text-5xl lg:text-7xl font-serif italic mb-8 leading-tight">
-                East Africa's <br />
-                <span className="text-amber-200/90 font-serif">Investment Authority</span>
-              </h1>
-              <p className="max-w-2xl text-slate-400 text-lg leading-relaxed font-light italic border-l border-amber-500/30 pl-8">
-                "Murivest Realty Group stands as the premier gateway for institutional capital, 
-                serving the world's most discerning family offices and sovereign funds."
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+    <section className="relative h-[85vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center pt-20">
+      {/* Background Image with Parallax */}
+      <motion.div 
+        style={{ y: y1 }}
+        className="absolute inset-0 z-0"
+      >
+        <div className="absolute inset-0 bg-black/40 z-10" /> {/* Overlay */}
+        <img 
+          src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=2070&auto=format&fit=crop" 
+          alt="Luxury Golf Course Estate" 
+          className="w-full h-full object-cover scale-110"
+        />
+      </motion.div>
 
-      {/* 2. CORE PERFORMANCE METRICS (STARK & BOLD) */}
-      <section className="border-y border-white/10 bg-white/[0.01]">
-        <div className="max-w-7xl mx-auto px-8 py-16 grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-px lg:bg-white/10">
-          {[
-            { label: "Assets Managed", value: "$50M+", sub: "Institutional Grade" },
-            { label: "Average IRR", value: "22%", sub: "Annualized Performance" },
-            { label: "Global Reach", value: "45+", sub: "Countries Represented" },
-            { label: "Client Retention", value: "100%", sub: "Fiduciary Trust" }
-          ].map((stat, i) => (
-            <div key={i} className="bg-[#05070a] lg:p-12 text-center lg:text-left transition-colors hover:bg-white/[0.02]">
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-500 mb-4">{stat.label}</p>
-              <h2 className="text-5xl lg:text-6xl font-serif italic mb-2 tracking-tighter">{stat.value}</h2>
-              <p className="text-slate-600 text-[10px] uppercase tracking-widest">{stat.sub}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* Content */}
+      <motion.div 
+        style={{ opacity }}
+        className="relative z-20 text-center px-4 max-w-4xl mx-auto"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+        >
+          <span className="block text-amber-400 text-[10px] md:text-xs font-bold tracking-[0.4em] uppercase mb-6">
+            Established MCMXCVIII
+          </span>
+          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-8 leading-[0.9]">
+            Cultivating <br/>
+            <span className="italic text-stone-200">Timeless Wealth</span>
+          </h1>
+          <p className="text-stone-300 text-sm md:text-base font-light tracking-wide max-w-lg mx-auto leading-relaxed">
+            For three decades, Murivest has been the silent architect behind East Africa's most significant private asset acquisitions.
+          </p>
+        </motion.div>
+      </motion.div>
 
-      {/* 3. LEGACY & INTEL GRID */}
-      <section className="max-w-7xl mx-auto px-8 py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-               <Landmark size={16} className="text-amber-500" />
-               <h3 className="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-500">The Legacy</h3>
-            </div>
-            <h2 className="text-4xl font-serif italic mb-10 leading-tight">
-              Decades of expertise in <br />Global Capital Markets.
-            </h2>
-            <div className="space-y-8 text-slate-400 font-light leading-relaxed">
-              <p>
-                Founded by former investment bankers with a combined <span className="text-white">40-year tenure</span> in international hubs, Murivest bridges the gap between traditional wealth management and Africa's emerging high-yield opportunities.
-              </p>
-              <p>
-                We do not simply broker transactions; we architect <span className="text-white">generational wealth</span>. Our intelligence-driven approach secures trophy assets before they ever reach the public market.
-              </p>
-            </div>
-          </div>
-          
-          <div className="relative group">
-            <div className="absolute -inset-4 border border-amber-500/20 translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-700" />
-            <div className="relative overflow-hidden border border-white/10">
-              <img 
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200" 
-                className="w-full grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
-                alt="Nairobi Financial District"
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-[#05070a] to-transparent">
-                <div className="flex items-center gap-3 text-amber-500">
-                  <Award size={16} />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-white">Financial Times Recognized • 2023</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. INSTITUTIONAL VALUES (SMALL CARDS) */}
-      <section className="bg-white/[0.02] py-32">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
-            {institutionalValues.map((value, index) => (
-              <div key={index} className="bg-[#05070a] p-12 hover:bg-white/[0.03] transition-all group">
-                <value.icon className="text-amber-500 mb-8 transition-transform group-hover:scale-110" size={32} strokeWidth={1} />
-                <h4 className="text-2xl font-serif italic mb-6">{value.title}</h4>
-                <p className="text-slate-500 text-sm leading-relaxed font-light mb-8">
-                  {value.description}
-                </p>
-                <div className="h-px w-0 bg-amber-500 group-hover:w-full transition-all duration-700" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 4.5 THIRD-PARTY VALIDATION */}
-      <section className="max-w-7xl mx-auto px-8 py-32">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl font-serif italic mb-4">Third-Party Validation</h2>
-          <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-amber-500">Verifiable Credentials & Independent Assessments</p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* RICS Valuation Reports */}
-          <div className="space-y-8">
-            <div className="flex items-center gap-3 mb-6">
-              <Award size={16} className="text-amber-500" />
-              <h3 className="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-500">RICS Accredited Valuations</h3>
-            </div>
-            <div className="space-y-6">
-              <div className="border-l border-amber-500/30 pl-6">
-                <h4 className="text-lg font-serif italic mb-2">Absa Towers, Nairobi</h4>
-                <p className="text-slate-400 text-sm">Independent appraisal by RICS accredited valuer: Market value $15M (Q4 2024)</p>
-              </div>
-              <div className="border-l border-amber-500/30 pl-6">
-                <h4 className="text-lg font-serif italic mb-2">Uchumi House, Nairobi</h4>
-                <p className="text-slate-400 text-sm">RICS valuation report: Asset value $8M (Q3 2024)</p>
-              </div>
-              <div className="border-l border-amber-500/30 pl-6">
-                <h4 className="text-lg font-serif italic mb-2">Buffalo Mall, Eldoret</h4>
-                <p className="text-slate-400 text-sm">RICS assessment: Portfolio value $12M (Q2 2024)</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Audit Citations */}
-          <div className="space-y-8">
-            <div className="flex items-center gap-3 mb-6">
-              <Shield size={16} className="text-amber-500" />
-              <h3 className="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-500">Audit Firm Citations</h3>
-            </div>
-            <div className="space-y-6">
-              <div className="border-l border-amber-500/30 pl-6">
-                <h4 className="text-lg font-serif italic mb-2">Deloitte Kenya</h4>
-                <p className="text-slate-400 text-sm">Financial audit citation (2023): Confirmed accuracy of reported IRR calculations and asset valuations</p>
-              </div>
-              <div className="border-l border-amber-500/30 pl-6">
-                <h4 className="text-lg font-serif italic mb-2">PwC East Africa</h4>
-                <p className="text-slate-400 text-sm">Compliance audit reference (2024): Verified regulatory adherence and risk management protocols</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Quantifiable Case Studies */}
-          <div className="space-y-8">
-            <div className="flex items-center gap-3 mb-6">
-              <BarChart3 size={16} className="text-amber-500" />
-              <h3 className="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-500">Quantifiable Case Studies</h3>
-            </div>
-            <div className="space-y-6">
-              <div className="border-l border-amber-500/30 pl-6">
-                <h4 className="text-lg font-serif italic mb-2">Buffalo Mall Acquisition</h4>
-                <p className="text-slate-400 text-sm">Achieved 25% IRR over 3-year hold period; occupancy improved from 70% to 95%</p>
-              </div>
-              <div className="border-l border-amber-500/30 pl-6">
-                <h4 className="text-lg font-serif italic mb-2">Kenya Comfort Hotel Development</h4>
-                <p className="text-slate-400 text-sm">40% value appreciation in 2 years; NOI increased by 35% through operational efficiencies</p>
-              </div>
-              <div className="border-l border-amber-500/30 pl-6">
-                <h4 className="text-lg font-serif italic mb-2">Absa Towers Refurbishment</h4>
-                <p className="text-slate-400 text-sm">18% rental yield improvement; tenant retention rate of 98% post-renovation</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Institutional Endorsements */}
-          <div className="space-y-8">
-            <div className="flex items-center gap-3 mb-6">
-              <Globe size={16} className="text-amber-500" />
-              <h3 className="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-500">Institutional References</h3>
-            </div>
-            <div className="space-y-6">
-              <div className="border-l border-amber-500/30 pl-6">
-                <h4 className="text-lg font-serif italic mb-2">International Finance Corporation (IFC)</h4>
-                <p className="text-slate-400 text-sm">Referenced in IFC's East Africa Real Estate Investment Report (2024) as a model for institutional-grade asset management</p>
-              </div>
-              <div className="border-l border-amber-500/30 pl-6">
-                <h4 className="text-lg font-serif italic mb-2">World Bank Group</h4>
-                <p className="text-slate-400 text-sm">Cited in World Bank's Kenya Economic Update (2023) for contributions to commercial property sector development</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. STRATEGIC POSITIONING */}
-      <section className="max-w-7xl mx-auto px-8 py-32">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl font-serif italic mb-4">Strategic Positioning</h2>
-          <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-amber-500">Market Intelligence Authority</p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-          {[
-            { 
-              icon: Shield, 
-              title: "Risk Mitigation", 
-              desc: "Comprehensive due diligence leveraging deep local intelligence to minimize volatility." 
-            },
-            { 
-              icon: Users, 
-              title: "Dedicated Advisory", 
-              desc: "Personalized portfolio management for family offices and institutional funds." 
-            },
-            { 
-              icon: BarChart3, 
-              title: "Alpha Generation", 
-              desc: "Access to exclusive off-market trophy properties that outperform market benchmarks." 
-            }
-          ].map((item, i) => (
-            <div key={i} className="text-center">
-              <div className="w-16 h-16 border border-white/10 flex items-center justify-center mx-auto mb-8 bg-white/[0.02]">
-                <item.icon className="text-amber-500" size={24} strokeWidth={1} />
-              </div>
-              <h4 className="text-xl font-serif italic mb-4">{item.title}</h4>
-              <p className="text-slate-500 text-xs leading-relaxed uppercase tracking-widest font-bold px-4">
-                {item.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 6. TRUST BADGES SECTION */}
-      <TrustBadges />
-
-      {/* 7. TEAM SECTION */}
-      <Team />
-
-      {/* 8. CASE STUDIES SECTION */}
-      <CaseStudies />
-
-      {/* 9. TESTIMONIALS SECTION */}
-      <Testimonials />
-
-      {/* 10. CALL TO ACTION */}
-      <section className="border-t border-white/10">
-        <Link href="/contact" className="group flex flex-col items-center py-32 hover:bg-white/[0.02] transition-colors">
-          <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-amber-500 mb-8">Partner with the Authority</span>
-          <h2 className="text-5xl lg:text-7xl font-serif italic text-center mb-12">
-            Architect Your <br />Generational Legacy
-          </h2>
-          <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-[0.3em] border-b border-amber-500 pb-2 group-hover:gap-8 transition-all duration-500">
-            Request Private Briefing <ArrowUpRight size={16} />
-          </div>
-        </Link>
-      </section>
-    </div>
+      {/* Scroll Indicator */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
+      >
+        <span className="text-[10px] uppercase tracking-widest text-white/60">Scroll</span>
+        <div className="w-px h-12 bg-gradient-to-b from-amber-500/50 to-transparent" />
+      </motion.div>
+    </section>
   );
 };
 
-export default About;
+const ValueCard = ({ icon: Icon, title, description, delay }: ValueCardProps) => (
+  <motion.div 
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6, delay }}
+    className="group p-8 md:p-12 border border-stone-200 hover:border-emerald-900/20 hover:bg-stone-50 transition-all duration-500"
+  >
+    <div className="mb-8 text-emerald-900 group-hover:text-amber-600 transition-colors duration-500">
+      <Icon size={32} strokeWidth={1} />
+    </div>
+    <h3 className="font-serif text-2xl text-emerald-950 mb-4 group-hover:translate-x-2 transition-transform duration-500">
+      {title}
+    </h3>
+    <p className="text-stone-600 font-light leading-relaxed text-sm">
+      {description}
+    </p>
+  </motion.div>
+);
+
+const StatBlock = ({ value, label, suffix }: StatProps) => (
+  <div className="flex flex-col items-center text-center p-6">
+    <div className="font-serif text-4xl md:text-5xl text-emerald-950 mb-2">
+      {value}<span className="text-amber-600 text-2xl align-top ml-1">{suffix}</span>
+    </div>
+    <div className="text-[10px] uppercase tracking-[0.2em] text-stone-500 font-medium">
+      {label}
+    </div>
+  </div>
+);
+
+const QuoteSection = () => (
+  <section className="py-24 md:py-32 bg-emerald-950 text-stone-100 relative overflow-hidden">
+    <div className="absolute top-0 right-0 w-64 h-64 bg-amber-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+    
+    <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
+      <Quote className="w-12 h-12 text-amber-600/30 mx-auto mb-8" strokeWidth={1} />
+      <h2 className="font-serif text-3xl md:text-5xl leading-tight mb-8">
+        "True wealth is not measured in returns, but in the <span className="italic text-amber-500">permanence</span> of the legacy you leave behind."
+      </h2>
+      <div className="flex items-center justify-center gap-4">
+        <div className="w-12 h-px bg-stone-600" />
+        <span className="text-xs uppercase tracking-widest text-stone-400">The Murivest Philosophy</span>
+        <div className="w-12 h-px bg-stone-600" />
+      </div>
+    </div>
+  </section>
+);
+
+const Footer = () => (
+  <footer className="bg-stone-100 pt-20 pb-10 border-t border-stone-200">
+    <div className="max-w-[1800px] mx-auto px-6 md:px-12">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+        <div className="col-span-1 md:col-span-2">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-6 h-6 border border-emerald-900 rounded-full flex items-center justify-center">
+              <span className="font-serif text-emerald-900 text-xs">M</span>
+            </div>
+            <span className="font-serif text-lg tracking-widest uppercase text-emerald-950">
+              Murivest
+            </span>
+          </div>
+          <p className="text-stone-500 font-light text-sm max-w-sm leading-relaxed mb-8">
+            A private investment office dedicated to the preservation and growth of significant family wealth through strategic real asset allocation.
+          </p>
+          <div className="flex gap-4">
+            {['LinkedIn', 'Instagram', 'Twitter'].map(social => (
+              <a key={social} href="#" className="text-[10px] uppercase tracking-widest text-stone-400 hover:text-emerald-900 transition-colors">
+                {social}
+              </a>
+            ))}
+          </div>
+        </div>
+        
+        <div>
+          <h4 className="text-xs font-bold uppercase tracking-widest text-emerald-950 mb-6">Nairobi Office</h4>
+          <address className="not-italic text-stone-500 font-light text-sm leading-loose">
+            14th Floor, The Lofts<br/>
+            Riverside Drive, Westlands<br/>
+            Nairobi, Kenya<br/>
+            +254 20 123 4567
+          </address>
+        </div>
+
+        <div>
+          <h4 className="text-xs font-bold uppercase tracking-widest text-emerald-950 mb-6">London Office</h4>
+          <address className="not-italic text-stone-500 font-light text-sm leading-loose">
+            12 Berkeley Square<br/>
+            Mayfair<br/>
+            London W1J 6BS<br/>
+            +44 20 7123 4567
+          </address>
+        </div>
+      </div>
+      
+      <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-stone-200 text-[10px] text-stone-400 uppercase tracking-widest">
+        <p>&copy; 2024 Murivest Group. All rights reserved.</p>
+        <div className="flex gap-8 mt-4 md:mt-0">
+          <a href="#" className="hover:text-emerald-900">Privacy Policy</a>
+          <a href="#" className="hover:text-emerald-900">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+);
+
+// --- Main Page Component ---
+
+export default function AboutPage() {
+  return (
+    <div className="bg-stone-50 min-h-screen selection:bg-amber-200 selection:text-emerald-950">
+      <main>
+        <Hero />
+
+        {/* Intro Section */}
+        <section className="py-24 md:py-32 px-6 md:px-12 max-w-[1800px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="text-amber-600 text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">
+                The Heritage
+              </span>
+              <h2 className="font-serif text-4xl md:text-5xl text-emerald-950 mb-8 leading-tight">
+                A Legacy Forged in <br/>
+                <span className="italic">Quiet Confidence</span>
+              </h2>
+              <div className="space-y-6 text-stone-600 font-light leading-relaxed">
+                <p>
+                  Founded in the spirit of the great European family offices, Murivest was established to serve a singular purpose: to shield and amplify wealth through the ownership of irreplaceable land and architecture.
+                </p>
+                <p>
+                  We reject the noise of speculation. Instead, we embrace the patient accumulation of assets that define skylines and anchor communities. Our partners are not merely clients; they are stewards of history, entrusting us with the physical manifestation of their success.
+                </p>
+              </div>
+              
+              <div className="mt-10 flex items-center gap-4 group cursor-pointer">
+                <span className="text-xs font-bold uppercase tracking-widest text-emerald-950 group-hover:text-amber-600 transition-colors">
+                  Read Our History
+                </span>
+                <div className="w-8 h-8 rounded-full border border-emerald-900/20 flex items-center justify-center group-hover:bg-emerald-950 group-hover:text-white transition-all">
+                  <ArrowUpRight size={14} />
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="absolute -top-4 -left-4 w-full h-full border border-amber-500/30 z-0" />
+              <div className="relative z-10 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop" 
+                  alt="Luxury Estate" 
+                  className="w-full h-[600px] object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-in-out"
+                />
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Stats Strip */}
+        <section className="bg-white border-y border-stone-200">
+          <div className="max-w-[1800px] mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 divide-x divide-stone-100">
+            {STATS.map((stat, i) => (
+              <StatBlock key={i} {...stat} />
+            ))}
+          </div>
+        </section>
+
+        {/* Values Grid */}
+        <section className="py-24 md:py-32 px-6 md:px-12 max-w-[1800px] mx-auto bg-stone-50">
+          <div className="text-center mb-20">
+            <span className="text-amber-600 text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">
+              Pillars of Practice
+            </span>
+            <h2 className="font-serif text-4xl md:text-5xl text-emerald-950">
+              Guiding Principles
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-stone-200 border border-stone-200">
+            {VALUES.map((value, i) => (
+              <ValueCard key={i} {...value} delay={i * 0.2} />
+            ))}
+          </div>
+        </section>
+
+        <QuoteSection />
+
+        {/* CTA Section */}
+        <section className="py-32 px-6 text-center bg-stone-100">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="font-serif text-4xl md:text-6xl text-emerald-950 mb-8">
+              Begin Your Legacy
+            </h2>
+            <p className="text-stone-600 font-light mb-12 leading-relaxed">
+              Access to our portfolio is strictly by referral or private invitation. 
+              If you wish to explore the Murivest standard of stewardship, we invite you to initiate a confidential conversation.
+            </p>
+            <button className="bg-emerald-950 text-white px-10 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-amber-600 transition-colors duration-300">
+              Request Private Consultation
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}

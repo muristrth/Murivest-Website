@@ -3,121 +3,171 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 /**
- * Institutional Hero Component for Murivest
- * Features: Subliminal parallax, smooth image transitions, and tiered filtering copy.
+ * Private Club Hero - Murivest
+ * Aesthetic: Augusta National meets family office library
  */
 const Hero = () => {
   const images = [
-    '/murivest_ceo_office.png', // Ensure these paths exist in your /public folder
+    '/murivest_ceo_office.png',
     '/kenya-night.png',
   ];
 
   const [currentImage, setCurrentImage] = useState(0);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
-  // Subtle parallax effect for "Stately" movement
+  // Gentler parallax - like observing from a leather chair
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 15;
-    const y = (e.clientY / window.innerHeight - 0.5) * 15;
+    const x = (e.clientX / window.innerWidth - 0.5) * 8;
+    const y = (e.clientY / window.innerHeight - 0.5) * 8;
     setMousePos({ x, y });
   }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 8000);
+    }, 10000); // Slower, more stately transitions
     return () => clearInterval(interval);
   }, [images.length]);
 
   return (
     <section
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen w-full bg-slate-950 text-white overflow-hidden flex items-center justify-center pt-20"
+      className="relative min-h-screen w-full bg-[#2C2C2C] text-[#F8F7F4] overflow-hidden flex items-center"
     >
-      {/* Background Layer with Depth */}
+      {/* Background - Like paintings in a club library */}
       <div
-        className="absolute inset-0 z-0 transition-transform duration-[4000ms] ease-out will-change-transform"
-        style={{ transform: `translate3d(${mousePos.x}px, ${mousePos.y}px, 0) scale(1.05)` }}
+        className="absolute inset-0 z-0 transition-transform duration-[6000ms] ease-out will-change-transform"
+        style={{ transform: `translate3d(${mousePos.x}px, ${mousePos.y}px, 0) scale(1.03)` }}
       >
         {images.map((img, i) => (
-        <div
-          key={img}
-          className={`absolute inset-0 transition-opacity duration-[3000ms] ${
-            i === currentImage ? 'opacity-30' : 'opacity-0'
-          }`}
-        >
-          <Image
-            src={img}
-            alt={`Murivest Gallery Image ${i}`}
-            fill
-            className="object-cover object-center"
-            // 🚨 CRITICAL: Only the first image gets priority to fix LCP
-            priority={i === 0} 
-            sizes="100vw"
-            quality={75} // Lowering to 75% quality is invisible to the eye but cuts 50% file size
-          />
-        </div>
-      ))}
-        {/* Cinematic Vignette & Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/40 to-slate-950" />
+          <div
+            key={img}
+            className={`absolute inset-0 transition-opacity duration-[4000ms] ease-in-out ${
+              i === currentImage ? 'opacity-40' : 'opacity-0'
+            }`}
+          >
+            <Image
+              src={img}
+              alt={`Murivest ${i === 0 ? 'Advisory' : 'Markets'}`}
+              fill
+              className="object-cover object-center grayscale-[20%]"
+              priority={i === 0}
+              sizes="100vw"
+              quality={80}
+            />
+          </div>
+        ))}
+        
+        {/* Clubhouse warmth - tobacco-toned overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2C2C2C]/95 via-[#3D3530]/60 to-[#2C2C2C]/90" />
+        <div className="absolute inset-0 bg-[#8B7355]/10 mix-blend-overlay" />
       </div>
 
-      {/* Main Content Area */}
-      <div className="relative z-10 max-w-6xl px-6 text-center">
-        {/* Eyebrow - Signals Professional Breadth */}
-        <p className="mb-6 text-amber-500/80 uppercase tracking-[0.5em] text-[10px] md:text-xs font-semibold">
-          Murivest Realty Group Ltd
-        </p>
-
-        {/* H1 - Institutional Hook */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif leading-[1.15] mb-8 tracking-tight text-white/95">
-          Strategic Advisory for <br className="hidden md:block" />
-          <span className="italic text-amber-50/90">Commercial Real Estate</span>
-        </h1>
-
-        {/* Institutional Filter - The "Credibility Line" */}
-        <div className="mb-8 inline-flex items-center gap-4 py-2 px-6 border-x border-amber-500/20 bg-amber-500/5 backdrop-blur-sm">
-          <p className="text-slate-400 text-[10px] md:text-xs tracking-widest uppercase">
-            Mandate Size: <span className="text-amber-200/90">USD 2M – 100M+</span>
-            <span className="mx-4 opacity-30">|</span>
-            Asset Classes: <span className="text-amber-200/90 font-medium">Retail • Office • Hotel • Industrial</span>
-          </p>
-        </div>
-
-        {/* Advisory Positioning Statement */}
-        <p className="text-slate-500 text-xs max-w-2xl mx-auto mb-12 leading-relaxed">
-          Murivest is an independent real estate investment advisory and deal-origination firm. We do not pool capital or act as a fund unless under a specific mandate.
-        </p>
-
-        {/* Action Tier */}
-        <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-          <Link
-            href="/institutional-investors"
-            className="group relative px-10 py-4 bg-amber-500 text-slate-950 text-xs tracking-[0.2em] uppercase font-bold hover:bg-white transition-all duration-500 overflow-hidden"
+      {/* Content - Centered like a club crest */}
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-8 lg:px-16 py-32">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Left: Typography - Like engraved stationery */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="lg:col-span-7"
           >
-            <span className="relative z-10">Request Institutional Briefing</span>
-            <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500" />
-          </Link>
+            {/* Club Mark */}
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-8 h-[1px] bg-[#C4B59D]" />
+              <p className="text-[11px] tracking-[0.4em] uppercase text-[#C4B59D] font-medium">
+                Established Advisory
+              </p>
+            </div>
 
-          <Link
-            href="/uk-properties"
-            className="group flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-slate-400 hover:text-amber-300 transition-colors duration-300"
+            {/* Main Headline - Serif, stately */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-[1.1] mb-8 text-[#F8F7F4]">
+              Strategic Advisory for<br />
+              <span className="italic text-[#C4B59D] font-light">Commercial Properties</span>
+            </h1>
+
+            {/* Subtle divider - like a scorecard line */}
+            <div className="w-16 h-[1px] bg-[#8B7355] mb-8" />
+
+            {/* Description - Understated authority */}
+            <p className="text-[15px] leading-[1.8] text-[#A8A39D] font-light max-w-lg mb-10">
+              Independent investment advisory and origination for institutional capital 
+              deploying into East African commercial real estate. Fiduciary standards. 
+              Off-market access. Long-term stewardship.
+            </p>
+
+            {/* Mandate Parameters - The "membership criteria" */}
+            <div className="flex flex-wrap items-center gap-6 text-[12px] tracking-[0.15em] uppercase text-[#8B7355]">
+              <span>USD 2M – 100M+</span>
+              <span className="w-1 h-1 rounded-full bg-[#8B7355]" />
+              <span>Retail • Office • Industrial • Hospitality</span>
+            </div>
+          </motion.div>
+
+          {/* Right: Action Card - Like a member's invitation */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+            className="lg:col-span-5 lg:pl-12"
           >
-            <span>View UK Portfolio</span>
-            <svg 
-              className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" 
-              fill="none" stroke="currentColor" viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
+            <div className="bg-[#F8F7F4]/5 backdrop-blur-sm border border-[#C4B59D]/20 p-10 lg:p-12">
+              <p className="text-[11px] tracking-[0.3em] uppercase text-[#C4B59D] mb-6">
+                Private Mandates
+              </p>
+              
+              <p className="text-[14px] leading-[1.7] text-[#A8A39D] font-light mb-8">
+                Current availability for new advisory engagements. 
+                Q2 2026 mandate window now open for qualified institutional partners.
+              </p>
+
+              <div className="space-y-4">
+                <Link
+                  href="/institutional-investors"
+                  className="group flex items-center justify-between w-full py-4 border-b border-[#C4B59D]/30 hover:border-[#8B7355] transition-colors duration-500"
+                >
+                  <span className="text-[12px] tracking-[0.2em] uppercase text-[#F8F7F4] group-hover:text-[#C4B59D] transition-colors">
+                    Request Introduction
+                  </span>
+                  <span className="text-[#8B7355] group-hover:translate-x-1 transition-transform duration-300">
+                    →
+                  </span>
+                </Link>
+
+                <Link
+                  href="/uk-properties"
+                  className="group flex items-center justify-between w-full py-4 border-b border-[#C4B59D]/30 hover:border-[#8B7355] transition-colors duration-500"
+                >
+                  <span className="text-[12px] tracking-[0.2em] uppercase text-[#A8A39D] group-hover:text-[#C4B59D] transition-colors">
+                    View UK Collection
+                  </span>
+                  <span className="text-[#8B7355] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300">
+                    →
+                  </span>
+                </Link>
+              </div>
+
+              {/* Discreet footnote */}
+              <p className="mt-8 text-[10px] text-[#5A5A5A] italic">
+                "We do not pool capital. We advise and originate under specific mandate."
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
 
-      {/* Aesthetic Detail: Bottom Fade Out */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-950 to-transparent" />
+      {/* Bottom fade - like mist on the fairway */}
+      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-[#2C2C2C] to-transparent" />
+      
+      {/* Corner detail - like a course marker */}
+      <div className="absolute bottom-8 right-8 text-[10px] tracking-[0.2em] uppercase text-[#5A5A5A]">
+        <span className="text-[#8B7355]">NBO</span> • London • Dubai
+      </div>
     </section>
   );
 };
