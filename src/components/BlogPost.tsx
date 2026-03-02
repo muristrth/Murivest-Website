@@ -4202,7 +4202,7 @@ import { useParams, useRouter } from 'next/navigation';
     category: 'Sustainability',
     date: '2025-08-15',
     readTime: '10 min read',
-    image: 'https://nairobiwire.com/wp-content/uploads/2025/05/afford.jpg',
+    image: '/image.png',
     content: `
       <p>The recent halting of a major housing project in Nairobi's Lang’ata area due to environmental concerns serves as a stark reminder of the increasing emphasis on sustainable development and robust environmental oversight in Kenya. This incident underscores a growing trend where environmental considerations are taking precedence, reshaping the landscape of **real estate in Kenya**. Developers, investors, and policymakers alike are being compelled to integrate ecological impact assessments more rigorously into their project planning, acknowledging that sustainable practices are not just good for the environment, but also critical for project viability and public acceptance.</p>
 

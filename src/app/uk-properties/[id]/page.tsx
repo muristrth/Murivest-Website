@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import UKPropertyDetail from '@/components/UKPropertyDetail'
 
 const UK_PROPERTY_QUERY = defineQuery(`*[_type == "ukProperty" && slug.current == $slug][0]{
+  _id,
   title,
   subtitle,
   location,
@@ -24,7 +25,8 @@ const UK_PROPERTY_QUERY = defineQuery(`*[_type == "ukProperty" && slug.current =
   details,
   investment,
   tenure,
-  regulatory
+  regulatory,
+  agent->{name, title, phone, email}
 }`)
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {

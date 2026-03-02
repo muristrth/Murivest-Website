@@ -116,6 +116,14 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'samrack.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'source.unsplash.com',
+      },
+
+
+
+      
     ],
   },
 

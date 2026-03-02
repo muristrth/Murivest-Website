@@ -326,7 +326,7 @@ const blog: Blog[] =[
     category: 'Sustainability',
     date: '2025-08-15',
     readTime: '10 min read',
-    image: 'https://nairobiwire.com/wp-content/uploads/2025/05/afford.jpg',
+    image: '/image.png',
     featured: false,
   },
   {

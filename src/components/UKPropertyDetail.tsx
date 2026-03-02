@@ -1,26 +1,28 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, MapPin, Bed, Bath, Square, PoundSterling, Calendar, Phone, Mail, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface PropertyDetail {
-  id: string;
-  title: string;
-  location: string;
-  price: string;
-  bedrooms: number;
-  bathrooms: number;
-  sqft: string;
-  description: string;
-  images: string[];
-  features: string[];
-  agent: {
-    name: string;
-    title: string;
-    phone: string;
-    email: string;
+  id?: string;
+  _id?: string;
+  title?: string;
+  location?: string;
+  price?: string;
+  bedrooms?: number;
+  bathrooms?: number;
+  sqft?: string;
+  description?: string;
+  images?: string[] | null;
+  features?: string[];
+  agent?: {
+    name?: string;
+    title?: string;
+    phone?: string;
+    email?: string;
   };
 }
 
@@ -34,6 +36,11 @@ interface UKPropertyDetailProps {
  */
 const UKPropertyDetail = ({ property }: UKPropertyDetailProps) => {
   const [currentImage, setCurrentImage] = useState(0);
+
+  // Reset currentImage when property changes to prevent index out of bounds
+  useEffect(() => {
+    setCurrentImage(0);
+  }, [property?._id]);
 
   const defaultProperty: PropertyDetail = {
     id: '1',
@@ -72,13 +79,16 @@ Located moments from Kensington Gardens and High Street Kensington, this residen
   };
 
   const displayProperty = property || defaultProperty;
+  const images: string[] = (displayProperty.images && displayProperty.images.length > 0) 
+    ? displayProperty.images 
+    : defaultProperty.images ?? [];
 
   const nextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % displayProperty.images.length);
+    setCurrentImage((prev) => (prev + 1) % images.length);
   };
 
   const prevImage = () => {
-    setCurrentImage((prev) => (prev - 1 + displayProperty.images.length) % displayProperty.images.length);
+    setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
   };
 
   return (
@@ -119,8 +129,8 @@ Located moments from Kensington Gardens and High Street Kensington, this residen
               className="absolute inset-0"
             >
               <Image
-                src={displayProperty.images[currentImage]}
-                alt={displayProperty.title}
+                src={images[currentImage]}
+                alt={displayProperty?.title ?? 'Property Image'}
                 fill
                 className="object-cover"
                 priority
@@ -146,14 +156,14 @@ Located moments from Kensington Gardens and High Street Kensington, this residen
           {/* Image counter */}
           <div className="absolute bottom-4 right-4 bg-[#2C2C2C]/80 px-4 py-2">
             <span className="text-[12px] text-[#F8F7F4]">
-              {currentImage + 1} / {displayProperty.images.length}
+              {currentImage + 1} / {images.length}
             </span>
           </div>
         </div>
 
         {/* Thumbnail strip */}
         <div className="hidden md:flex gap-2 px-6 md:px-12 py-4 bg-white border-b border-[#E5E2DC]">
-          {displayProperty.images.map((img, index) => (
+          {images.map((img, index) => (
             <button
               key={index}
               onClick={() => setCurrentImage(index)}
@@ -188,13 +198,13 @@ Located moments from Kensington Gardens and High Street Kensington, this residen
               <div className="flex items-center gap-2 mb-4">
                 <MapPin className="w-4 h-4 text-[#8B7355]" strokeWidth={1} />
                 <span className="text-[12px] tracking-[0.15em] uppercase text-[#5A5A5A]">
-                  {displayProperty.location}
+                  {displayProperty?.location}
                 </span>
               </div>
 
               {/* Title */}
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif mb-8 text-[#2C2C2C]">
-                {displayProperty.title}
+                {displayProperty?.title}
               </h1>
 
               {/* Key stats */}
@@ -203,21 +213,21 @@ Located moments from Kensington Gardens and High Street Kensington, this residen
                   <Bed className="w-5 h-5 text-[#8B7355]" strokeWidth={1} />
                   <div>
                     <p className="text-[10px] tracking-[0.15em] uppercase text-[#5A5A5A]">Bedrooms</p>
-                    <p className="text-lg font-serif">{displayProperty.bedrooms}</p>
+                    <p className="text-lg font-serif">{displayProperty?.bedrooms}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <Bath className="w-5 h-5 text-[#8B7355]" strokeWidth={1} />
                   <div>
                     <p className="text-[10px] tracking-[0.15em] uppercase text-[#5A5A5A]">Bathrooms</p>
-                    <p className="text-lg font-serif">{displayProperty.bathrooms}</p>
+                    <p className="text-lg font-serif">{displayProperty?.bathrooms}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <Square className="w-5 h-5 text-[#8B7355]" strokeWidth={1} />
                   <div>
                     <p className="text-[10px] tracking-[0.15em] uppercase text-[#5A5A5A]">Size</p>
-                    <p className="text-lg font-serif">{displayProperty.sqft} sq ft</p>
+                    <p className="text-lg font-serif">{displayProperty?.sqft} sq ft</p>
                   </div>
                 </div>
               </div>
@@ -226,7 +236,7 @@ Located moments from Kensington Gardens and High Street Kensington, this residen
               <div className="mb-12">
                 <h2 className="text-xl font-serif mb-6 text-[#8B7355]">Description</h2>
                 <div className="text-[15px] leading-[1.8] text-[#5A5A5A] font-light whitespace-pre-line">
-                  {displayProperty.description}
+                  {displayProperty?.description}
                 </div>
               </div>
 
@@ -234,7 +244,7 @@ Located moments from Kensington Gardens and High Street Kensington, this residen
               <div>
                 <h2 className="text-xl font-serif mb-6 text-[#8B7355]">Key Features</h2>
                 <ul className="grid md:grid-cols-2 gap-3">
-                  {displayProperty.features.map((feature, index) => (
+                  {displayProperty?.features?.map((feature, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 bg-[#8B7355] mt-2 shrink-0" />
                       <span className="text-[14px] text-[#5A5A5A] font-light">{feature}</span>
@@ -258,7 +268,7 @@ Located moments from Kensington Gardens and High Street Kensington, this residen
                 <p className="text-[10px] tracking-[0.2em] uppercase text-[#5A5A5A] mb-2">Indicative Value</p>
                 <div className="flex items-center gap-2 mb-6">
                   <PoundSterling className="w-6 h-6 text-[#8B7355]" strokeWidth={1} />
-                  <span className="text-3xl font-serif text-[#2C2C2C]">{displayProperty.price}</span>
+                  <span className="text-3xl font-serif text-[#2C2C2C]">{displayProperty?.price}</span>
                 </div>
                 <a 
                   href="/contact"
@@ -271,23 +281,23 @@ Located moments from Kensington Gardens and High Street Kensington, this residen
               {/* Agent Card */}
               <div className="bg-white border border-[#E5E2DC] p-6 md:p-8">
                 <p className="text-[10px] tracking-[0.2em] uppercase text-[#5A5A5A] mb-4">Portfolio Agent</p>
-                <h3 className="text-xl font-serif mb-1">{displayProperty.agent.name}</h3>
-                <p className="text-[12px] text-[#8B7355] mb-6">{displayProperty.agent.title}</p>
+                <h3 className="text-xl font-serif mb-1">{displayProperty.agent?.name}</h3>
+                <p className="text-[12px] text-[#8B7355] mb-6">{displayProperty.agent?.title}</p>
                 
                 <div className="space-y-3">
                   <a 
-                    href={`tel:${displayProperty.agent.phone}`}
+                    href={`tel:${displayProperty.agent?.phone}`}
                     className="flex items-center gap-3 text-[14px] text-[#5A5A5A] hover:text-[#8B7355] transition-colors duration-300"
                   >
                     <Phone className="w-4 h-4" strokeWidth={1} />
-                    <span>{displayProperty.agent.phone}</span>
+                    <span>{displayProperty.agent?.phone}</span>
                   </a>
                   <a 
-                    href={`mailto:${displayProperty.agent.email}`}
+                    href={`mailto:${displayProperty.agent?.email}`}
                     className="flex items-center gap-3 text-[14px] text-[#5A5A5A] hover:text-[#8B7355] transition-colors duration-300"
                   >
                     <Mail className="w-4 h-4" strokeWidth={1} />
-                    <span>{displayProperty.agent.email}</span>
+                    <span>{displayProperty.agent?.email}</span>
                   </a>
                 </div>
               </div>
