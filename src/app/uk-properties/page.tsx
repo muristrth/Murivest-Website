@@ -40,5 +40,5 @@ export default async function UKPropertiesPage() {
   const propertyData = await client.fetch(UK_PROPERTIES_QUERY);
 
   // Pass the clean data into your existing component
-  return <UKProperties data={propertyData} />
+  return <UKProperties properties={propertyData} />
 }
