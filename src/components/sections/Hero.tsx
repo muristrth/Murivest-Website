@@ -67,7 +67,7 @@ const Hero = () => {
       </div>
 
       {/* Content - Centered like a club crest */}
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-8 lg:px-16 py-32">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 md:px-6 lg:px-16 py-20 md:py-32">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           
           {/* Left: Typography - Like engraved stationery */}

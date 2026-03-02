@@ -96,7 +96,7 @@ Located moments from Kensington Gardens and High Street Kensington, this residen
       
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#F8F7F4]/95 backdrop-blur-sm border-b border-[#E5E2DC]">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-4">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-12 lg:px-16 py-3 md:py-4">
           <div className="flex items-center justify-between">
             <a 
               href="/uk-properties"
@@ -117,8 +117,8 @@ Located moments from Kensington Gardens and High Street Kensington, this residen
       </nav>
 
       {/* Image Gallery */}
-      <div className="pt-16">
-        <div className="relative aspect-[21/9] md:aspect-[3/1] overflow-hidden bg-[#E5E2DC]">
+      <div className="pt-14 md:pt-16">
+        <div className="relative aspect-[4/3] md:aspect-[3/1] lg:aspect-[21/9] overflow-hidden bg-[#E5E2DC]">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentImage}

@@ -114,7 +114,7 @@ export default function Header() {
     <header className={`fixed top-0 w-full z-50 transition-all duration-700 ${
       scrolled ? 'bg-[#F8F7F4]/95 border-b border-[#E5E2DC] py-0' : 'bg-transparent py-6'
     }`}>
-      <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-16">
         <div className="flex items-center justify-between h-20">
           
           {/* BRANDING - Club Letterhead Style */}

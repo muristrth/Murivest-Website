@@ -59,26 +59,26 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
 
   return (
     <footer className="bg-[#2C2C2C] text-[#F8F7F4] border-t border-[#3D3530]">
-      <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-20 lg:py-24">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-16 py-12 lg:py-24">
         
         {/* Top Section - Club Letterhead Style */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20 pb-20 border-b border-[#3D3530]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mb-16 pb-16 border-b border-[#3D3530]">
           
           {/* Brand Column */}
           <div className="lg:col-span-4">
-            <div className="mb-8">
+            <div className="mb-6">
               <Image 
                 src="/logo.png" 
                 alt="Murivest Realty Group Ltd" 
-                width={180} 
-                height={56} 
-                className="h-14 w-auto opacity-90"
+                width={140} 
+                height={44} 
+                className="h-12 w-auto opacity-90"
               />
             </div>
-            <h3 className="text-xl font-serif italic text-[#F8F7F4] mb-6">
+            <h3 className="text-lg font-serif italic text-[#F8F7F4] mb-4">
               Murivest Realty Group Ltd
             </h3>
-            <p className="text-[14px] text-[#A8A39D] font-light leading-relaxed mb-8 max-w-sm">
+            <p className="text-[13px] text-[#A8A39D] font-light leading-relaxed mb-6 max-w-sm">
               Established 2020 by seasoned professionals with over two decades of experience 
               in East African real estate markets.
             </p>
@@ -99,7 +99,7 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
             </div>
 
             {/* Social - All Links Preserved */}
-            <div className="flex flex-wrap items-center gap-3 mt-10">
+            <div className="flex flex-wrap items-center gap-2 mt-8">
               {socialLinks.map((social) => {
                 const Icon = social.icon;
                 return (
@@ -119,7 +119,7 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
           </div>
 
           {/* Links Grid - All Interlinks Preserved */}
-          <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             
             {/* Services - All Links */}
             <div>
@@ -220,16 +220,16 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
         </div>
 
         {/* Contact Strip - All Links Preserved */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-[#3D3530] border border-[#3D3530] mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#3D3530] border border-[#3D3530] mb-12">
           {[
             { label: "Private Line", value: "+254 115 277 610", href: "tel:+254115277610" },
             { label: "Investment Desk", value: "investments@murivest.co.ke", href: "mailto:investments@murivest.co.ke" },
             { label: "Nairobi HQ", value: "Westlands Business District", href: "#" },
             { label: "24/7 Client Support", value: "Mon–Fri: 8:00 – 18:00 EAT", href: "#" }
           ].map((contact, i) => (
-            <div key={i} className="bg-[#2C2C2C] p-8 hover:bg-[#353535] transition-colors duration-300">
+            <div key={i} className="bg-[#2C2C2C] p-6 md:p-8 hover:bg-[#353535] transition-colors duration-300">
               <p className="text-[9px] tracking-[0.25em] uppercase text-[#5A5A5A] mb-2">{contact.label}</p>
-              <a href={contact.href} className="text-[14px] text-[#C4B59D] hover:text-[#F8F7F4] transition-colors font-light">
+              <a href={contact.href} className="text-[13px] md:text-[14px] text-[#C4B59D] hover:text-[#F8F7F4] transition-colors font-light">
                 {contact.value}
               </a>
             </div>
@@ -237,11 +237,11 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
         </div>
 
         {/* Partners - All Links Preserved */}
-        <div className="mb-20">
-          <h5 className="text-[10px] tracking-[0.4em] uppercase text-[#5A5A5A] mb-10 text-center font-medium">
+        <div className="mb-12">
+          <h5 className="text-[10px] tracking-[0.4em] uppercase text-[#5A5A5A] mb-8 text-center font-medium">
             Institutional Connectivity & Partners
           </h5>
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-6">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-4">
             {[
               { name: "KAREA Industry", url: "https://www.karea.co.ke" },
               { name: "CMA Regulatory", url: "https://www.cma.or.ke" },
@@ -270,7 +270,7 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
         </div>
 
         {/* SEO Content Grid - All Links Preserved */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 border-y border-[#3D3530] py-16 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16 border-y border-[#3D3530] py-10 lg:py-16 mb-12">
           {/* Group 1 - All Links */}
           <div>
             <h5 className="text-[11px] text-[#8B7355] tracking-[0.3em] uppercase mb-6 font-medium">Kenya Opportunities</h5>
@@ -340,10 +340,10 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
         </div>
 
         {/* Bottom Bar - All Elements Preserved */}
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-8 pt-10 border-t border-[#3D3530]">
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-6 pt-8 border-t border-[#3D3530]">
           
           {/* Locations */}
-          <div className="flex flex-wrap justify-center gap-8 text-[10px] tracking-[0.3em] uppercase text-[#5A5A5A]">
+          <div className="flex flex-wrap justify-center gap-4 lg:gap-8 text-[10px] tracking-[0.3em] uppercase text-[#5A5A5A]">
             <span>🇰🇪 Nairobi</span>
             <span>🇬🇧 London</span>
             <span>🇨🇭 Geneva</span>
@@ -365,8 +365,8 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
         </div>
 
         {/* Legal Footer - All Links Preserved */}
-        <div className="mt-12 pt-8 border-t border-[#3D3530] text-center space-y-3">
-          <div className="flex flex-wrap justify-center gap-6 text-[9px] tracking-[0.2em] uppercase text-[#5A5A5A]">
+        <div className="mt-8 pt-6 border-t border-[#3D3530] text-center space-y-3">
+          <div className="flex flex-wrap justify-center gap-4 lg:gap-6 text-[9px] tracking-[0.2em] uppercase text-[#5A5A5A]">
             <span>KRA PIN: P051234567X</span>
             <span>ERB Licensed #2025</span>
             <Link href="/privacy" className="hover:text-[#8B7355] transition-colors">Privacy Policy</Link>
