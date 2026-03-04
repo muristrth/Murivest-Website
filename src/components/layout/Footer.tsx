@@ -79,17 +79,16 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
               Murivest Realty Group Ltd
             </h3>
             <p className="text-[13px] text-[#A8A39D] font-light leading-relaxed mb-6 max-w-sm">
-              Established 2020 by seasoned professionals with over two decades of experience 
-              in East African real estate markets.
+              Our principals have advised in commercial real estate transactions for over 2 decades across Kenya, East Africa, and globally. We are proud members of the International Arbitration community, ensuring our clients receive world-class service and expertise.
             </p>
             
             {/* Credentials - Like Club Badges */}
             <div className="space-y-3 border-l border-[#8B7355]/30 pl-5">
               {[
-                { icon: Award, text: "CMA Licensed" },
+                { icon: Award, text: "Recognized by CBRE" },
                 { icon: Shield, text: "International Arbitration Member" },
-                { icon: TrendingUp, text: "$10M+ Deployed" },
-                { icon: Users, text: "50+ Institutional Partners" }
+                { icon: TrendingUp, text: "$8M+ Pipeline Deals" },
+                { icon: Users, text: "10+ Institutional Partners" }
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 text-[11px] text-[#A8A39D] tracking-wide">
                   <item.icon size={14} className="text-[#8B7355]" strokeWidth={1.5} />
@@ -181,9 +180,6 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
               <ul className="space-y-3">
                 {[
                   { to: "/property-management", label: "Property Management" },
-                  { to: "/tenant-screening", label: "Tenant Screening" },
-                  { to: "/lease-administration", label: "Lease Administration" },
-                  { to: "/maintenance-services", label: "Maintenance Services" },
                   { to: "/financial-reporting", label: "Financial Reporting" },
                   { to: "/legal-compliance", label: "Legal Compliance" }
                 ].map((link) => (
@@ -244,7 +240,7 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-4">
             {[
               { name: "KAREA Industry", url: "https://www.karea.co.ke" },
-              { name: "CMA Regulatory", url: "https://www.cma.or.ke" },
+              { name: "CBRE Regulatory", url: "https://www.cbre.com" },
               { name: "NSE Markets", url: "https://www.nse.co.ke" },
               { name: "CBK Banking", url: "https://www.centralbank.go.ke" },
               { name: "KNBS Data", url: "https://www.knbs.or.ke" },
@@ -269,76 +265,6 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
           </div>
         </div>
 
-        {/* SEO Content Grid - All Links Preserved */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16 border-y border-[#3D3530] py-10 lg:py-16 mb-12">
-          {/* Group 1 - All Links */}
-          <div>
-            <h5 className="text-[11px] text-[#8B7355] tracking-[0.3em] uppercase mb-6 font-medium">Kenya Opportunities</h5>
-            <div className="space-y-2">
-              {[
-                { to: "/commercial-real-estate-nairobi", label: "Commercial Real Estate Nairobi" },
-                { to: "/kenya-reit-investment-guide", label: "Kenya REIT Investment Guide" },
-                { to: "/westlands-property-investment", label: "Westlands Property Investment" },
-                { to: "/karen-commercial-developments", label: "Karen Commercial Developments" },
-                { to: "/industrial-area-land-banking", label: "Industrial Area Land Banking" },
-                { to: "/kilimani-mixed-use-projects", label: "Kilimani Mixed-Use Projects" }
-              ].map((topic) => (
-                <Link 
-                  key={topic.label} 
-                  href={topic.to} 
-                  className="block text-[11px] text-[#5A5A5A] hover:text-[#8B7355] transition-colors tracking-wide"
-                >
-                  {topic.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-          {/* Group 2 - All Links */}
-          <div>
-            <h5 className="text-[11px] text-[#8B7355] tracking-[0.3em] uppercase mb-6 font-medium">International Investor Resources</h5>
-            <div className="space-y-2">
-              {[
-                { to: "/usd-to-kes-investment-calculator", label: "USD to KES Investment Calculator" },
-                { to: "/european-investor-tax-guide", label: "European Investor Tax Guide" },
-                { to: "/uk-pension-fund-opportunities", label: "UK Pension Fund Opportunities" },
-                { to: "/swiss-family-office-services", label: "Swiss Family Office Services" },
-                { to: "/canadian-rrsp-kenya-investments", label: "Canadian RRSP Kenya Investments" },
-                { to: "/australian-superannuation-guide", label: "Australian Superannuation Guide" }
-              ].map((topic) => (
-                <Link 
-                  key={topic.label} 
-                  href={topic.to} 
-                  className="block text-[11px] text-[#5A5A5A] hover:text-[#8B7355] transition-colors tracking-wide"
-                >
-                  {topic.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-          {/* Group 3 - All Links */}
-          <div>
-            <h5 className="text-[11px] text-[#8B7355] tracking-[0.3em] uppercase mb-6 font-medium">Market Analysis</h5>
-            <div className="space-y-2">
-              {[
-                { to: "/kenya-gdp-growth-impact-analysis", label: "Kenya GDP Growth Impact Analysis" },
-                { to: "/east-africa-commercial-property-trends", label: "East Africa Commercial Property Trends" },
-                { to: "/nairobi-office-space-demand-study", label: "Nairobi Office Space Demand Study" },
-                { to: "/currency-risk-mitigation-strategies", label: "Currency Risk Mitigation Strategies" },
-                { to: "/infrastructure-development-roi", label: "Infrastructure Development ROI" },
-                { to: "/sovereign-credit-rating-updates", label: "Sovereign Credit Rating Updates" }
-              ].map((topic) => (
-                <Link 
-                  key={topic.label} 
-                  href={topic.to} 
-                  className="block text-[11px] text-[#5A5A5A] hover:text-[#8B7355] transition-colors tracking-wide"
-                >
-                  {topic.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-
         {/* Bottom Bar - All Elements Preserved */}
         <div className="flex flex-col lg:flex-row justify-between items-center gap-6 pt-8 border-t border-[#3D3530]">
           
@@ -346,34 +272,21 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
           <div className="flex flex-wrap justify-center gap-4 lg:gap-8 text-[10px] tracking-[0.3em] uppercase text-[#5A5A5A]">
             <span>🇰🇪 Nairobi</span>
             <span>🇬🇧 London</span>
-            <span>🇨🇭 Geneva</span>
-            <span>🇭🇰 Hong Kong</span>
-          </div>
-
-          {/* Utilities */}
-          <div className="flex items-center gap-6">
-            <button className="flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-[#5A5A5A] hover:text-[#8B7355] transition-colors">
-              <Globe size={12} /> EN / SW
-            </button>
-            <button 
-              onClick={scrollToTop} 
-              className="w-10 h-10 border border-[#3D3530] hover:border-[#8B7355] flex items-center justify-center transition-colors duration-300 group"
-            >
-              <ArrowUp size={14} className="text-[#5A5A5A] group-hover:text-[#8B7355] transition-colors" />
-            </button>
+            <span>🇺🇬 Uganda</span>
+            <span>🇿🇦 South Africa</span>
           </div>
         </div>
 
         {/* Legal Footer - All Links Preserved */}
         <div className="mt-8 pt-6 border-t border-[#3D3530] text-center space-y-3">
           <div className="flex flex-wrap justify-center gap-4 lg:gap-6 text-[9px] tracking-[0.2em] uppercase text-[#5A5A5A]">
-            <span>KRA PIN: P051234567X</span>
-            <span>ERB Licensed #2025</span>
+            <span>Commercial Brokerage</span>
+            <span>Property Management</span>
             <Link href="/privacy" className="hover:text-[#8B7355] transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-[#8B7355] transition-colors">Terms of Engagement</Link>
           </div>
           <p className="text-[10px] tracking-[0.3em] uppercase text-[#5A5A5A] font-light">
-            © {copyrightYear || 2025} Murivest Realty Group Ltd. All Rights Reserved.
+            © {copyrightYear || 2026} Murivest Realty Group Ltd. All Rights Reserved.
           </p>
         </div>
       </div>

@@ -132,7 +132,7 @@ const ResearchPreview = () => {
         {/* Market Activity Summary - Like Club Statistics */}
         <div className="grid md:grid-cols-3 gap-px bg-[#E5E2DC] border border-[#E5E2DC] mb-20">
           {[
-            { value: '$127M', label: 'Q4 Transaction Volume', sub: 'East Africa' },
+            { value: '$30M', label: 'Active Book of Business', sub: 'East Africa' },
             { value: '23', label: 'Institutional Deals', sub: 'Closed' },
             { value: '8.5%', label: 'Average Cap Rate', sub: 'Prime Assets' },
           ].map((stat, idx) => (

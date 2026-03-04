@@ -7,6 +7,8 @@ import RepresentativeTransactions from '../components/sections/RepresentativeTra
 import ResearchPreview from '../components/sections/ResearchPreview'
 import InstitutionalTrustSignals from '../components/sections/InstitutionalTrustSignals'
 import InstitutionalEngagementModel from '../components/sections/InstitutionalEngagementModel'
+import ESGFrameworkSection from '../components/sections/ESGFrameworkSection'
+import CEOInstitutionalProfile from '@/components/CEOInstitutionalProfile'
 
 export const metadata: Metadata = {
   // 1. STRATEGIC TITLE (Max 60 chars recommended for SEO)
@@ -84,6 +86,8 @@ export default function HomePage() {
       <TaxIntelligenceSection />
       <RepresentativeTransactions />
       <ResearchPreview />
+      <ESGFrameworkSection />
+      <CEOInstitutionalProfile />
       <InstitutionalTrustSignals />
     </>
   )
