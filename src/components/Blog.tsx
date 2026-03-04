@@ -719,7 +719,7 @@ const blog: Blog[] =[
   {
     id: 'property-management-tips-kenya',
     title: 'Essential Property Management Tips for Landlords in Kenya',
-    excerpt: 'Best practices for managing rental properties in Kenya, from tenant screening to maintenance and legal compliance.',
+    excerpt: 'Best practices for managing rental properties in Kenya',
     author: 'Samuel Kamau',
     category: 'Property Management',
     date: '2025-03-15',

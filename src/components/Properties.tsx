@@ -66,11 +66,11 @@ const KEProperties = ({ data = [] }: { data: Property[] }) => {
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#F8F7F4] mb-6 leading-[1.1]">
               Commercial Assets<br />
-              <span className="italic text-[#C4B59D] font-light">Available by Mandate</span>
+              <span className="italic text-[#C4B59D] font-light">Business Case Available</span>
             </h1>
             <p className="text-[15px] text-[#A8A39D] font-light max-w-2xl mx-auto leading-relaxed">
               A curated selection of institutional-grade commercial properties 
-              and development sites. Available exclusively to qualified partners.
+              and development sites.
             </p>
           </motion.div>
         </div>

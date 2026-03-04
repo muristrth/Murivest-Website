@@ -1,327 +1,578 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { 
-  ChevronRight, Quote, MapPin, 
-  ArrowUpRight, Award, Shield, Landmark, 
-  Users, Globe, Phone, Mail
-} from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
 
-// --- Types & Interfaces ---
-interface StatProps {
-  value: string;
-  label: string;
-  suffix?: string;
-}
+const useInView = (threshold = 0.15): [React.RefObject<HTMLDivElement>, boolean] => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setInView(true); }, { threshold });
+    if (ref.current) obs.observe(ref.current);
+    return () => obs.disconnect();
+  }, [threshold]);
+  return [ref as React.RefObject<HTMLDivElement>, inView];
+};
 
-interface ValueCardProps {
-  icon: React.ElementType;
-  title: string;
-  description: string;
-  delay: number;
-}
+import { ReactNode } from 'react';
 
-// --- Mock Data ---
-const STATS: StatProps[] = [
-  { value: "45", suffix: "+", label: "Years of Stewardship" },
-  { value: "$2.4", suffix: "B", label: "Assets Under Management" },
-  { value: "12", suffix: "", label: "Global Markets" },
-  { value: "100", suffix: "%", label: "Client Retention" },
-];
+type RevealProps = {
+  children: ReactNode;
+  delay?: number;
+  className?: string;
+};
 
-const VALUES = [
-  {
-    icon: Landmark,
-    title: "Intergenerational Stewardship",
-    description: "We do not merely manage assets; we curate legacies designed to outlive market cycles and transcend generations."
-  },
-  {
-    icon: Shield,
-    title: "Discretion & Privacy",
-    description: "Absolute confidentiality is the bedrock of our practice. Your affairs remain shielded by institutional-grade privacy protocols."
-  },
-  {
-    icon: Award,
-    title: "Uncompromising Quality",
-    description: "Access to trophy assets is reserved for the few. We select only properties that meet the strictest criteria of rarity and location."
-  }
-];
-
-// --- Components ---
-
-const Hero = () => {
-  const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
-
+const Reveal = ({ children, delay = 0, className = '' }: RevealProps) => {
+  const [ref, inView] = useInView();
   return (
-    <section className="relative h-[85vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center pt-20">
-      {/* Background Image with Parallax */}
-      <motion.div 
-        style={{ y: y1 }}
-        className="absolute inset-0 z-0"
-      >
-        <div className="absolute inset-0 bg-black/40 z-10" /> {/* Overlay */}
-        <img 
-          src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=2070&auto=format&fit=crop" 
-          alt="Luxury Golf Course Estate" 
-          className="w-full h-full object-cover scale-110"
-        />
-      </motion.div>
-
-      {/* Content */}
-      <motion.div 
-        style={{ opacity }}
-        className="relative z-20 text-center px-4 max-w-4xl mx-auto"
-      >
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-        >
-          <span className="block text-amber-400 text-[10px] md:text-xs font-bold tracking-[0.4em] uppercase mb-6">
-            Established MCMXCVIII
-          </span>
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-8 leading-[0.9]">
-            Cultivating <br/>
-            <span className="italic text-stone-200">Timeless Wealth</span>
-          </h1>
-          <p className="text-stone-300 text-sm md:text-base font-light tracking-wide max-w-lg mx-auto leading-relaxed">
-            For three decades, Murivest has been the silent architect behind East Africa's most significant private asset acquisitions.
-          </p>
-        </motion.div>
-      </motion.div>
-
-      {/* Scroll Indicator */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
-      >
-        <span className="text-[10px] uppercase tracking-widest text-white/60">Scroll</span>
-        <div className="w-px h-12 bg-gradient-to-b from-amber-500/50 to-transparent" />
-      </motion.div>
-    </section>
+    <div ref={ref as React.Ref<HTMLDivElement>} className={className} style={{
+      opacity: inView ? 1 : 0,
+      transform: inView ? 'translateY(0)' : 'translateY(28px)',
+      transition: `opacity 0.9s ease ${delay}s, transform 0.9s ease ${delay}s`
+    }}>
+      {children}
+    </div>
   );
 };
 
-const ValueCard = ({ icon: Icon, title, description, delay }: ValueCardProps) => (
-  <motion.div 
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.6, delay }}
-    className="group p-8 md:p-12 border border-stone-200 hover:border-emerald-900/20 hover:bg-stone-50 transition-all duration-500"
-  >
-    <div className="mb-8 text-emerald-900 group-hover:text-amber-600 transition-colors duration-500">
-      <Icon size={32} strokeWidth={1} />
-    </div>
-    <h3 className="font-serif text-2xl text-emerald-950 mb-4 group-hover:translate-x-2 transition-transform duration-500">
-      {title}
-    </h3>
-    <p className="text-stone-600 font-light leading-relaxed text-sm">
-      {description}
-    </p>
-  </motion.div>
-);
-
-const StatBlock = ({ value, label, suffix }: StatProps) => (
-  <div className="flex flex-col items-center text-center p-6">
-    <div className="font-serif text-4xl md:text-5xl text-emerald-950 mb-2">
-      {value}<span className="text-amber-600 text-2xl align-top ml-1">{suffix}</span>
-    </div>
-    <div className="text-[10px] uppercase tracking-[0.2em] text-stone-500 font-medium">
-      {label}
-    </div>
-  </div>
-);
-
-const QuoteSection = () => (
-  <section className="py-24 md:py-32 bg-emerald-950 text-stone-100 relative overflow-hidden">
-    <div className="absolute top-0 right-0 w-64 h-64 bg-amber-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-    
-    <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
-      <Quote className="w-12 h-12 text-amber-600/30 mx-auto mb-8" strokeWidth={1} />
-      <h2 className="font-serif text-3xl md:text-5xl leading-tight mb-8">
-        "True wealth is not measured in returns, but in the <span className="italic text-amber-500">permanence</span> of the legacy you leave behind."
-      </h2>
-      <div className="flex items-center justify-center gap-4">
-        <div className="w-12 h-px bg-stone-600" />
-        <span className="text-xs uppercase tracking-widest text-stone-400">The Murivest Philosophy</span>
-        <div className="w-12 h-px bg-stone-600" />
-      </div>
-    </div>
-  </section>
-);
-
-const Footer = () => (
-  <footer className="bg-stone-100 pt-20 pb-10 border-t border-stone-200">
-    <div className="max-w-[1800px] mx-auto px-6 md:px-12">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
-        <div className="col-span-1 md:col-span-2">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-6 h-6 border border-emerald-900 rounded-full flex items-center justify-center">
-              <span className="font-serif text-emerald-900 text-xs">M</span>
-            </div>
-            <span className="font-serif text-lg tracking-widest uppercase text-emerald-950">
-              Murivest
-            </span>
-          </div>
-          <p className="text-stone-500 font-light text-sm max-w-sm leading-relaxed mb-8">
-            A private investment office dedicated to the preservation and growth of significant family wealth through strategic real asset allocation.
-          </p>
-          <div className="flex gap-4">
-            {['LinkedIn', 'Instagram', 'Twitter'].map(social => (
-              <a key={social} href="#" className="text-[10px] uppercase tracking-widest text-stone-400 hover:text-emerald-900 transition-colors">
-                {social}
-              </a>
-            ))}
-          </div>
-        </div>
-        
-        <div>
-          <h4 className="text-xs font-bold uppercase tracking-widest text-emerald-950 mb-6">Nairobi Office</h4>
-          <address className="not-italic text-stone-500 font-light text-sm leading-loose">
-            14th Floor, The Lofts<br/>
-            Riverside Drive, Westlands<br/>
-            Nairobi, Kenya<br/>
-            +254 20 123 4567
-          </address>
-        </div>
-
-        <div>
-          <h4 className="text-xs font-bold uppercase tracking-widest text-emerald-950 mb-6">London Office</h4>
-          <address className="not-italic text-stone-500 font-light text-sm leading-loose">
-            12 Berkeley Square<br/>
-            Mayfair<br/>
-            London W1J 6BS<br/>
-            +44 20 7123 4567
-          </address>
-        </div>
-      </div>
-      
-      <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-stone-200 text-[10px] text-stone-400 uppercase tracking-widest">
-        <p>&copy; 2024 Murivest Group. All rights reserved.</p>
-        <div className="flex gap-8 mt-4 md:mt-0">
-          <a href="#" className="hover:text-emerald-900">Privacy Policy</a>
-          <a href="#" className="hover:text-emerald-900">Terms of Service</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-);
-
-// --- Main Page Component ---
-
 export default function AboutPage() {
+  const [scrollY, setScrollY] = useState(0);
+  useEffect(() => {
+    const onScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <div className="bg-stone-50 min-h-screen selection:bg-amber-200 selection:text-emerald-950">
-      <main>
-        <Hero />
+    <div style={{
+      background: '#F5F2ED',
+      minHeight: '100vh',
+      fontFamily: "'Georgia', 'Times New Roman', serif",
+      color: '#1C2B1E',
+      overflowX: 'hidden'
+      
+    }}>
 
-        {/* Intro Section */}
-        <section className="py-24 md:py-32 px-6 md:px-12 max-w-[1800px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <span className="text-amber-600 text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">
-                The Heritage
-              </span>
-              <h2 className="font-serif text-4xl md:text-5xl text-emerald-950 mb-8 leading-tight">
-                A Legacy Forged in <br/>
-                <span className="italic">Quiet Confidence</span>
-              </h2>
-              <div className="space-y-6 text-stone-600 font-light leading-relaxed">
-                <p>
-                  Founded in the spirit of the great European family offices, Murivest was established to serve a singular purpose: to shield and amplify wealth through the ownership of irreplaceable land and architecture.
-                </p>
-                <p>
-                  We reject the noise of speculation. Instead, we embrace the patient accumulation of assets that define skylines and anchor communities. Our partners are not merely clients; they are stewards of history, entrusting us with the physical manifestation of their success.
-                </p>
-              </div>
-              
-              <div className="mt-10 flex items-center gap-4 group cursor-pointer">
-                <span className="text-xs font-bold uppercase tracking-widest text-emerald-950 group-hover:text-amber-600 transition-colors">
-                  Read Our History
-                </span>
-                <div className="w-8 h-8 rounded-full border border-emerald-900/20 flex items-center justify-center group-hover:bg-emerald-950 group-hover:text-white transition-all">
-                  <ArrowUpRight size={14} />
-                </div>
-              </div>
-            </motion.div>
+      {/* ── GLOBAL STYLES ─────────────────────────────────────────── */}
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative"
-            >
-              <div className="absolute -top-4 -left-4 w-full h-full border border-amber-500/30 z-0" />
-              <div className="relative z-10 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop" 
-                  alt="Luxury Estate" 
-                  className="w-full h-[600px] object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-in-out"
-                />
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        {/* Stats Strip */}
-        <section className="bg-white border-y border-stone-200">
-          <div className="max-w-[1800px] mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 divide-x divide-stone-100">
-            {STATS.map((stat, i) => (
-              <StatBlock key={i} {...stat} />
-            ))}
-          </div>
-        </section>
+        .murivest-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+        .murivest-body  { font-family: 'EB Garamond', Georgia, serif; }
 
-        {/* Values Grid */}
-        <section className="py-24 md:py-32 px-6 md:px-12 max-w-[1800px] mx-auto bg-stone-50">
-          <div className="text-center mb-20">
-            <span className="text-amber-600 text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">
-              Pillars of Practice
-            </span>
-            <h2 className="font-serif text-4xl md:text-5xl text-emerald-950">
-              Guiding Principles
-            </h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-stone-200 border border-stone-200">
-            {VALUES.map((value, i) => (
-              <ValueCard key={i} {...value} delay={i * 0.2} />
-            ))}
-          </div>
-        </section>
+        .rule-gold { display: block; width: 48px; height: 1px; background: #8B6C2A; margin-bottom: 1.5rem; }
 
-        <QuoteSection />
+        .prose-block p {
+          font-family: 'EB Garamond', Georgia, serif;
+          font-size: 1.1rem;
+          line-height: 1.9;
+          color: #3D3328;
+          font-weight: 400;
+          margin-bottom: 1.4rem;
+        }
 
-        {/* CTA Section */}
-        <section className="py-32 px-6 text-center bg-stone-100">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="font-serif text-4xl md:text-6xl text-emerald-950 mb-8">
-              Begin Your Legacy
-            </h2>
-            <p className="text-stone-600 font-light mb-12 leading-relaxed">
-              Access to our portfolio is strictly by referral or private invitation. 
-              If you wish to explore the Murivest standard of stewardship, we invite you to initiate a confidential conversation.
+        .link-rule {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.6rem;
+          font-family: 'Libre Baskerville', Georgia, serif;
+          font-size: 0.65rem;
+          letter-spacing: 0.22em;
+          text-transform: uppercase;
+          color: #1C2B1E;
+          cursor: pointer;
+          border: none;
+          background: none;
+          padding: 0;
+          text-decoration: none;
+        }
+        .link-rule:hover { color: #8B6C2A; }
+        .link-rule:hover .arrow-box { background: #1C2B1E; color: #F5F2ED; }
+
+        .arrow-box {
+          width: 28px; height: 28px;
+          border: 1px solid currentColor;
+          display: flex; align-items: center; justify-content: center;
+          font-size: 0.75rem;
+          transition: background 0.3s, color 0.3s;
+        }
+
+        .image-frame {
+          position: relative;
+          overflow: hidden;
+        }
+        .image-frame::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to bottom, transparent 55%, rgba(28,43,30,0.35) 100%);
+          pointer-events: none;
+        }
+
+        .grain-overlay {
+          position: fixed;
+          inset: 0;
+          pointer-events: none;
+          z-index: 0;
+          opacity: 0.025;
+          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        .section-number {
+          font-family: 'Cormorant Garamond', Georgia, serif;
+          font-size: 5rem;
+          font-weight: 300;
+          color: #C4B49A;
+          line-height: 1;
+          opacity: 0.5;
+          user-select: none;
+          flex-shrink: 0;
+        }
+
+        @keyframes heroFadeIn {
+          from { opacity: 0; transform: translateY(24px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+
+        img { display: block; width: 100%; height: 100%; object-fit: cover; }
+      `}</style>
+
+      <div className="grain-overlay" />
+
+      {/* ── HERO — full-width image, text bottom-anchored ─────────── */}
+      <section style={{
+        position: 'relative',
+        minHeight: '100vh',
+        overflow: 'hidden',
+        display: 'flex',
+        alignItems: 'flex-end',
+        paddingTop: '120px'
+      }}>
+        {/* Parallax background */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          transform: `translateY(${scrollY * 0.12}px)`,
+          height: 'calc(100% + 80px)',
+          marginTop: '-40px',
+          transition: 'transform 0.05s linear'
+        }}>
+          <img
+            src="/murivest_secretary.png"
+            alt="Murivest Advisory Office"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
+          />
+        </div>
+
+        {/* Dark gradient */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'linear-gradient(to bottom, rgba(28,43,30,0.1) 0%, rgba(28,43,30,0.75) 100%)',
+          zIndex: 1
+        }} />
+
+        {/* Hero text */}
+        <div style={{
+          position: 'relative', zIndex: 2,
+          width: '100%', maxWidth: '1300px',
+          margin: '0 auto', padding: '0 5rem 6rem'
+        }}>
+          <div style={{ animation: 'heroFadeIn 1.1s ease forwards', opacity: 0 }}>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '2rem' }}>
+              <div style={{ width: '32px', height: '1px', background: '#C4B49A' }} />
+              <span style={{
+                fontFamily: "'Libre Baskerville', Georgia, serif",
+                fontSize: '0.58rem', letterSpacing: '0.35em',
+                textTransform: 'uppercase', color: '#6e4606'
+              }}>About the Firm · Nairobi · Est. 2025</span>
+            </div>
+
+            <h1 className="murivest-serif" style={{
+              fontSize: 'clamp(2.8rem, 5vw, 5rem)',
+              fontWeight: 300, lineHeight: 1.1,
+              color: '#F5F2ED', letterSpacing: '-0.01em',
+              marginBottom: '2.5rem', maxWidth: '780px'
+            }}>
+              Building Institutional<br />
+              Discipline in East<br />
+              <em style={{ fontStyle: 'italic', fontWeight: 300 }}>African Commercial</em><br />
+              Real Estate.
+            </h1>
+
+            <div style={{ width: '48px', height: '1px', background: '#8B6C2A', marginBottom: '2rem' }} />
+
+            <p className="murivest-body" style={{
+              fontSize: '1.1rem', lineHeight: 1.8,
+              color: 'rgba(245,242,237,0.75)',
+              maxWidth: '520px', marginBottom: '3rem'
+            }}>
+              An independent origination and advisory practice applying the underwriting standards of institutional capital to commercial real estate in Kenya.
             </p>
-            <button className="bg-emerald-950 text-white px-10 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-amber-600 transition-colors duration-300">
-              Request Private Consultation
-            </button>
-          </div>
-        </section>
-      </main>
 
-      <Footer />
+            <a href="/contact" className="link-rule" style={{ color: '#F5F2ED' }}>
+              Request a Private Briefing
+              <span className="arrow-box" style={{ borderColor: 'rgba(245,242,237,0.5)' }}>↗</span>
+            </a>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div style={{
+          position: 'absolute', bottom: '2.5rem', right: '5rem',
+          display: 'flex', flexDirection: 'column', alignItems: 'center',
+          gap: '0.75rem', zIndex: 3
+        }}>
+          <span style={{
+            fontFamily: "'Libre Baskerville', Georgia, serif",
+            fontSize: '0.52rem', letterSpacing: '0.3em',
+            textTransform: 'uppercase', color: 'rgba(196,180,154,0.7)',
+            writingMode: 'vertical-rl'
+          }}>Scroll</span>
+          <div style={{ width: '1px', height: '40px', background: 'rgba(196,180,154,0.5)' }} />
+        </div>
+
+        {/* Location caption */}
+        <div style={{ position: 'absolute', bottom: '2.5rem', left: '5rem', zIndex: 3 }}>
+          <span style={{
+            fontFamily: "'Libre Baskerville', Georgia, serif",
+            fontSize: '0.55rem', letterSpacing: '0.28em',
+            textTransform: 'uppercase', color: 'rgba(196,180,154,0.6)'
+          }}>Westlands · Nairobi</span>
+        </div>
+      </section>
+
+
+      {/* ── HBR ISSUE HEADER ──────────────────────────────────────── */}
+      <div style={{ padding: '0 5rem' }}>
+        <div style={{
+          borderTop: '3px solid #1C2B1E',
+          borderBottom: '1px solid #C4B49A',
+          padding: '1.25rem 0',
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between'
+        }}>
+          <span style={{
+            fontFamily: "'Libre Baskerville', Georgia, serif",
+            fontSize: '0.58rem', letterSpacing: '0.3em',
+            textTransform: 'uppercase', color: '#1C2B1E'
+          }}>The Firm</span>
+          <span style={{
+            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontSize: '0.95rem', fontStyle: 'italic', color: '#8B6C2A'
+          }}>Origin · Philosophy · Markets · Governance</span>
+          <span style={{
+            fontFamily: "'Libre Baskerville', Georgia, serif",
+            fontSize: '0.58rem', letterSpacing: '0.3em',
+            textTransform: 'uppercase', color: '#1C2B1E'
+          }}>Murivest Realty Group</span>
+        </div>
+      </div>
+
+
+      {/* ── § I — FOUNDATION ──────────────────────────────────────── */}
+      <section style={{ padding: '7rem 5rem', maxWidth: '1300px', margin: '0 auto' }}>
+        <Reveal>
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '3rem', marginBottom: '4rem' }}>
+            <span className="section-number">I</span>
+            <div>
+              <span className="rule-gold" />
+              <span style={{
+                fontFamily: "'Libre Baskerville', Georgia, serif",
+                fontSize: '0.6rem', letterSpacing: '0.3em',
+                textTransform: 'uppercase', color: '#8B6C2A',
+                display: 'block', marginBottom: '1rem'
+              }}>Origin &amp; Orientation</span>
+              <h2 className="murivest-serif" style={{
+                fontSize: 'clamp(2rem, 3.5vw, 3.2rem)',
+                fontWeight: 300, lineHeight: 1.2, color: '#1C2B1E'
+              }}>The Foundation</h2>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Two prose columns — text only, no image */}
+        <Reveal delay={0.1}>
+          <div style={{
+            display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem',
+            borderTop: '1px solid #C4B49A', paddingTop: '3rem'
+          }}>
+            <div className="prose-block">
+              <p>Murivest Realty Group was founded in Nairobi in 2025 with a single purpose: to build the institutional infrastructure that East African commercial real estate has historically lacked — structured underwriting, disciplined capital allocation, and fiduciary standards aligned with international investor expectations.</p>
+              <p>We are an early-stage platform. We do not pretend otherwise. What we bring is not a fabricated track record — it is a framework, a network, and a commitment to executing the first mandate with the same rigour we intend to apply to the hundredth.</p>
+            </div>
+            <div className="prose-block">
+              <p>Our pipeline is focused on Grade A office, logistics, and mixed-use assets within the Nairobi Metropolitan Area — markets we know with precision and in which we maintain active origination relationships.</p>
+              <p>Murivest operates with long-term alignment in mind, prioritising risk-adjusted performance over transaction volume. We seek capital partners who share that orientation.</p>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+
+      {/* ── § II — PHILOSOPHY ─────────────────────────────────────── */}
+      <section style={{ padding: '7rem 5rem', maxWidth: '1300px', margin: '0 auto', borderTop: '1px solid #E8E3DA' }}>
+        <Reveal>
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '3rem', marginBottom: '4rem' }}>
+            <span className="section-number">II</span>
+            <div>
+              <span className="rule-gold" />
+              <span style={{
+                fontFamily: "'Libre Baskerville', Georgia, serif",
+                fontSize: '0.6rem', letterSpacing: '0.3em',
+                textTransform: 'uppercase', color: '#8B6C2A',
+                display: 'block', marginBottom: '1rem'
+              }}>Investment Orientation</span>
+              <h2 className="murivest-serif" style={{
+                fontSize: 'clamp(2rem, 3.5vw, 3.2rem)',
+                fontWeight: 300, lineHeight: 1.2, color: '#1C2B1E'
+              }}>Underwriting Philosophy</h2>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Full-width pull quote — HBR signature element */}
+        <Reveal delay={0.1}>
+          <div style={{
+            borderTop: '1px solid #C4B49A', borderBottom: '1px solid #C4B49A',
+            padding: '3rem 0', margin: '0 0 3.5rem'
+          }}>
+            <p style={{
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontSize: 'clamp(1.5rem, 2.5vw, 2.2rem)',
+              fontStyle: 'italic', fontWeight: 300,
+              color: '#1C2B1E', lineHeight: 1.45,
+              borderLeft: '3px solid #8B6C2A',
+              paddingLeft: '2.5rem', maxWidth: '860px'
+            }}>
+              "The gap between institutional standards and East African execution is not permanent. It is the opportunity."
+            </p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.15}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem' }}>
+            <div className="prose-block">
+              <p>Commercial real estate in emerging markets rewards discipline above all else. The premiums are real. So are the structural risks. Our evaluation framework is built around downside protection first — lease quality, tenant covenant strength, capital expenditure planning, and exit strategy clarity before any acquisition is advanced.</p>
+            </div>
+            <div className="prose-block">
+              <p>We do not chase yield. We underwrite it. Every asset we present to capital partners has been reviewed against a conservative stress scenario, a realistic hold period, and a defined realisation pathway. We are aligned with the long-term capital partners we seek — patient, measured, and oriented toward durable value rather than transaction velocity.</p>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+
+      {/* ── FULL-WIDTH IMAGE BREAK ─────────────────────────────────── */}
+      <Reveal>
+        <div style={{ margin: '0 5rem', position: 'relative' }}>
+          <div className="image-frame" style={{ height: '480px' }}>
+            <img
+              src="/kenya-night.png"
+              alt="Nairobi Metropolitan Area"
+              style={{ objectPosition: 'center 60%' }}
+            />
+          </div>
+          <div style={{
+            position: 'absolute', bottom: '2rem', right: '2rem', zIndex: 3, textAlign: 'right'
+          }}>
+            <span style={{
+              fontFamily: "'Libre Baskerville', Georgia, serif",
+              fontSize: '0.55rem', letterSpacing: '0.25em',
+              textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)'
+            }}>Nairobi Metropolitan Area · Primary Market</span>
+          </div>
+        </div>
+      </Reveal>
+
+
+      {/* ── § III — GOVERNANCE ────────────────────────────────────── */}
+      <section style={{ padding: '8rem 5rem', background: '#1C2B1E' }}>
+        <div style={{ maxWidth: '1300px', margin: '0 auto' }}>
+          <Reveal>
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '3rem', marginBottom: '5rem' }}>
+              <span className="section-number">III</span>
+              <div>
+                <span style={{
+                  display: 'block',
+                  fontFamily: "'Libre Baskerville', Georgia, serif",
+                  fontSize: '0.6rem', letterSpacing: '0.3em',
+                  textTransform: 'uppercase', color: '#8B6C2A', marginBottom: '1rem'
+                }}>Governance &amp; Transparency</span>
+                <h2 className="murivest-serif" style={{
+                  fontSize: 'clamp(2rem, 3vw, 3rem)',
+                  fontWeight: 300, color: '#F5F2ED', lineHeight: 1.2, maxWidth: '600px'
+                }}>
+                  Structured Growth.<br /><em>Measured Discipline.</em>
+                </h2>
+              </div>
+            </div>
+          </Reveal>
+
+          <div style={{
+            display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '3rem', borderTop: '1px solid rgba(196,180,154,0.25)'
+          }}>
+            {[
+              {
+                label: 'Capital Stage', title: 'Pipeline Development',
+                body: 'We are in active pipeline cultivation. Our current mandate focus spans industrial logistics and Grade A office in Nairobi — sectors with credible yield and institutional lease structures. No capital has been deployed. No deployment claims are made.'
+              },
+              {
+                label: 'Reporting Standard', title: 'Transparency by Default',
+                body: 'Transaction case studies and performance documentation will be published as mandates are executed and formally closed. We will not circulate projected performance as realised performance. Every figure presented to capital partners will be clearly categorised.'
+              },
+              {
+                label: 'Engagement Model', title: 'Mandate-Only Access',
+                body: 'All capital partner introductions and deal presentations are conducted under executed NDA and following our standard KYC verification process. We do not publish live deal terms or pipeline specifics on public-facing platforms.'
+              }
+            ].map((item, i) => (
+              <Reveal key={i} delay={i * 0.15}>
+                <div style={{ borderTop: '1px solid rgba(196,180,154,0.25)', paddingTop: '2.5rem' }}>
+                  <span style={{
+                    display: 'block',
+                    fontFamily: "'Libre Baskerville', Georgia, serif",
+                    fontSize: '0.55rem', letterSpacing: '0.3em',
+                    textTransform: 'uppercase', color: '#8B6C2A', marginBottom: '1.25rem'
+                  }}>{item.label}</span>
+                  <h3 className="murivest-serif" style={{
+                    fontSize: '1.5rem', fontWeight: 300,
+                    color: '#F5F2ED', marginBottom: '1.25rem', lineHeight: 1.3
+                  }}>{item.title}</h3>
+                  <p className="murivest-body" style={{
+                    fontSize: '1rem', lineHeight: 1.85,
+                    color: 'rgba(245,242,237,0.6)'
+                  }}>{item.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* ── § IV — MARKET FOCUS — full width, prose only ──────────── */}
+      <section style={{ padding: '8rem 5rem', maxWidth: '1300px', margin: '0 auto', borderTop: '1px solid #E8E3DA' }}>
+        <Reveal>
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '3rem', marginBottom: '4rem' }}>
+            <span className="section-number">IV</span>
+            <div>
+              <span className="rule-gold" />
+              <span style={{
+                fontFamily: "'Libre Baskerville', Georgia, serif",
+                fontSize: '0.6rem', letterSpacing: '0.3em',
+                textTransform: 'uppercase', color: '#8B6C2A',
+                display: 'block', marginBottom: '1rem'
+              }}>Market Focus</span>
+              <h2 className="murivest-serif" style={{
+                fontSize: 'clamp(2rem, 3.5vw, 3.2rem)',
+                fontWeight: 300, lineHeight: 1.2, color: '#1C2B1E'
+              }}>East Africa. <em>Institutional Grade.</em></h2>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.1}>
+          <div style={{
+            display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem',
+            borderTop: '1px solid #C4B49A', paddingTop: '3rem', marginBottom: '4rem'
+          }}>
+            <div className="prose-block">
+              <p>Kenya's commercial real estate sector is at an inflection point. Infrastructure expansion along the Nairobi–Mombasa corridor, sustained foreign direct investment, and a maturing institutional tenant base have created conditions for disciplined long-term investment that remain underserved by globally-oriented advisory capacity.</p>
+              <p>That is the gap Murivest is structured to close.</p>
+            </div>
+            <div className="prose-block">
+              <p>Our primary focus is Nairobi. We maintain sourcing relationships in Westlands, Upper Hill, Karen, and the Industrial Area — the city's four principal commercial corridors.</p>
+              <p>We are extending our origination network to Mombasa and Kigali as secondary markets. No active mandates exist in these markets at this stage.</p>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* 4-column market stats bar */}
+        <Reveal delay={0.2}>
+          <div style={{
+            display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
+            borderTop: '1px solid #C4B49A', paddingTop: '2.5rem'
+          }}>
+            {[
+              { figure: '8.2%', label: 'Prime Office Net Yield, CBD' },
+              { figure: '9.1%', label: 'Logistics Parks Net Yield' },
+              { figure: '4.1%', label: 'Prime Office Vacancy Rate' },
+              { figure: 'Q2 2026', label: 'Mandate Window Open' }
+            ].map((s, i) => (
+              <div key={i} style={{
+                paddingRight: '2rem',
+                borderRight: i < 3 ? '1px solid #C4B49A' : 'none',
+                paddingLeft: i > 0 ? '2rem' : 0
+              }}>
+                <p className="murivest-serif" style={{
+                  fontSize: '2.4rem', fontWeight: 400,
+                  color: '#1C2B1E', lineHeight: 1, marginBottom: '0.6rem'
+                }}>{s.figure}</p>
+                <p style={{
+                  fontFamily: "'Libre Baskerville', Georgia, serif",
+                  fontSize: '0.58rem', letterSpacing: '0.18em',
+                  textTransform: 'uppercase', color: '#8B6C2A'
+                }}>{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      </section>
+
+
+      {/* ── HBR EDITORIAL DIVIDER ─────────────────────────────────── */}
+      <div style={{ padding: '0 5rem' }}>
+        <div style={{
+          borderTop: '1px solid #C4B49A', borderBottom: '1px solid #C4B49A',
+          padding: '2.5rem 0', display: 'flex', alignItems: 'center', justifyContent: 'space-between'
+        }}>
+          <span style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: '1.05rem', fontStyle: 'italic', color: '#3D3328' }}>
+            Murivest Realty Group Ltd. — Westlands, Nairobi
+          </span>
+          <span style={{ fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: '0.58rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: '#8B6C2A' }}>
+            KEREA · Engagements by Mandate Only
+          </span>
+          <span style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: '1.05rem', fontStyle: 'italic', color: '#3D3328' }}>
+            Est. 2025
+          </span>
+        </div>
+      </div>
+
+
+      {/* ── § V — CLOSING CTA ─────────────────────────────────────── */}
+      <section style={{ padding: '10rem 5rem', maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
+        <Reveal>
+          <span style={{
+            display: 'block',
+            fontFamily: "'Libre Baskerville', Georgia, serif",
+            fontSize: '0.6rem', letterSpacing: '0.3em',
+            textTransform: 'uppercase', color: '#8B6C2A', marginBottom: '2.5rem'
+          }}>§ V — Long-Term Alignment</span>
+
+          <h2 className="murivest-serif" style={{
+            fontSize: 'clamp(2.5rem, 4vw, 4rem)',
+            fontWeight: 300, lineHeight: 1.2, color: '#1C2B1E', marginBottom: '3rem'
+          }}>
+            Capital Partners Who Value<br />
+            <em>Process Over Promises.</em>
+          </h2>
+
+          <div style={{ width: '48px', height: '1px', background: '#8B6C2A', margin: '0 auto 3rem' }} />
+
+          <p className="murivest-body" style={{
+            fontSize: '1.1rem', lineHeight: 1.9, color: '#3D3328',
+            maxWidth: '620px', margin: '0 auto 4rem'
+          }}>
+            We are building Murivest for principals who understand that the highest-quality real estate relationships are formed before the deal — through alignment of standards, expectations, and long-horizon thinking. We are not the right firm for every mandate. We intend to be exactly right for a few.
+          </p>
+
+          <a href="/contact" className="link-rule" style={{ justifyContent: 'center' }}>
+            Request Private Investor Briefing
+            <span className="arrow-box">↗</span>
+          </a>
+        </Reveal>
+      </section>
+
     </div>
   );
 }

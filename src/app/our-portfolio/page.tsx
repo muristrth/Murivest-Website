@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import { MapPin, Building, TrendingUp } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Our Portfolio - 150+ Verified CRE Deals | Murivest Realty Group',
-  description: 'Explore our proprietary database of 150+ verified commercial real estate deals across Nairobi. Interactive map showing live properties with yields, tenants, and locations.',
+  title: 'Our Portfolio - 15+ Verified CRE Deals | Murivest Realty Group',
+  description: 'Explore our proprietary database of 15+ verified commercial real estate deals across Nairobi. Interactive map showing live properties with yields, tenants, and locations.',
 }
 
 export default function OurPortfolioPage() {
@@ -15,7 +15,7 @@ export default function OurPortfolioPage() {
             Our Portfolio
           </h1>
           <p className="text-gray-400 font-serif text-lg">
-            150+ verified CRE deals. What we control, what you can own.
+            15+ verified CRE deals. What we control, what you can own.
           </p>
         </div>
 
@@ -23,7 +23,7 @@ export default function OurPortfolioPage() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
           <div className="bg-slate-800 p-6 rounded-lg text-center">
             <Building className="w-8 h-8 text-amber-400 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-amber-400">150+</div>
+            <div className="text-2xl font-bold text-amber-400">15+</div>
             <div className="text-gray-300 text-sm">Verified Deals</div>
           </div>
           <div className="bg-slate-800 p-6 rounded-lg text-center">
@@ -38,7 +38,7 @@ export default function OurPortfolioPage() {
           </div>
           <div className="bg-slate-800 p-6 rounded-lg text-center">
             <Building className="w-8 h-8 text-amber-400 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-amber-400">50+</div>
+            <div className="text-2xl font-bold text-amber-400">5+</div>
             <div className="text-gray-300 text-sm">Title Templates</div>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function OurPortfolioPage() {
               <MapPin className="w-16 h-16 text-amber-400 mx-auto mb-4" />
               <p className="text-gray-300 mb-4">Interactive Google My Maps Embed</p>
               <p className="text-sm text-gray-400">
-                Showing 150+ verified properties with pins, yields, and tenant information
+                Showing 15+ verified properties with pins, yields, and tenant information
               </p>
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function OurPortfolioPage() {
               <div className="bg-slate-800 p-6 rounded-lg">
                 <h4 className="font-serif font-medium text-white mb-3">Proprietary Database</h4>
                 <p className="text-gray-300 text-sm mb-3">
-                  150+ verified CRE deals with complete documentation: addresses, yields, leases, tenant financials.
+                  15+ verified CRE deals with complete documentation: addresses, yields, leases, tenant financials.
                 </p>
                 <ul className="text-sm text-gray-400 space-y-1">
                   <li>• Title deeds verified</li>
@@ -107,7 +107,7 @@ export default function OurPortfolioPage() {
               <div className="bg-slate-800 p-6 rounded-lg">
                 <h4 className="font-serif font-medium text-white mb-3">Legal Templates</h4>
                 <p className="text-gray-300 text-sm mb-3">
-                  50+ title deed structures reviewed by Michael Mungai Advocates for tax optimization and compliance.
+                  5+ title deed structures reviewed by Michael Mungai Advocates for tax optimization and compliance.
                 </p>
                 <div className="text-amber-400 text-sm font-medium">Download Sample →</div>
               </div>

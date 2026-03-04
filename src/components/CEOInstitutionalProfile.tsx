@@ -63,19 +63,7 @@ const CEOInstitutionalProfile = () => {
             <div className="space-y-6 text-[14px] leading-[1.9] text-[#5A5A5A] font-light">
               
               <p>
-                Mark Muriithi is the Founder and Chief Executive Officer of Murivest Realty Group, 
-                an institutional-focused commercial real estate advisory firm structuring 
-                commercial property transactions across Kenya, London and East Africa.
-              </p>
-
-              <p>
-                He holds academic training in Economics, a Bachelor of Business 
-                Information Technology (BSc. BBIT), and a Master of Science in 
-                Finance (MSc Finance). His work integrates capital markets theory, 
-                macroeconomic analysis, and real asset valuation. He is currently 
-                pursuing postgraduate research in Economics with a focus on 
-                the Theory of Systems and its application to financial and 
-                real estate cycles.
+              Mark Muriithi founded Murivest Realty Group in 2025 with a mandate to build Kenya's first institutionally-structured commercial real estate advisory practice oriented toward international capital. He brings a background spanning technology, commercial distribution, and real estate sales — disciplines that inform Murivest's integrated approach to deal origination, asset positioning, and investor relations. His early career included commercial roles at Vineyard Properties Ltd, where he developed hands-on experience in property transactions and client acquisition across the Kenyan market. He subsequently held senior commercial positions in distribution and marketing, building the capital markets literacy and cross-sector network that underpins Murivest's advisory model.
               </p>
 
               <p>

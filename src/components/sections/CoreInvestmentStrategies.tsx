@@ -2,28 +2,28 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Landmark, Factory, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Building, ShoppingBag, Hotel } from 'lucide-react';
 import Link from 'next/link';
 
 const strategies = [
   {
-    title: 'Sale-Leaseback & Capital Monetization',
-    desc: 'Structured sale-leaseback transactions enabling corporates to unlock embedded real estate capital while retaining operational continuity.',
-    metrics: 'Target Yield: 9.0% - 10.5%',
-    icon: Landmark,
+    title: 'Grade A Office Assets',
+    desc: 'Acquisition of institutional-quality office buildings within established commercial nodes, emphasizing tenant covenant strength, lease duration, and long-term income resilience. Underwriting prioritizes downside protection, asset liquidity, and sustainable occupancy fundamentals.',
+    metrics: 'Target Yield: 8.5% – 10.0% | WAULT: 5+ Years',
+    icon: Building,
   },
   {
-    title: 'Industrial & Strategic Land Banking',
-    desc: 'Origination and advisory on industrial assets and large-scale land holdings positioned along infrastructure-led growth corridors.',
-    metrics: 'Target IRR: 18% - 24%',
-    icon: Factory,
+    title: 'Hospitality & Hotel Assets',
+    desc: 'Selective investment in operational hospitality assets within high-demand urban and tourism corridors. Evaluation framework emphasizes operator quality, RevPAR sustainability, brand strength, and cash flow stabilization under conservative demand assumptions.',
+    metrics: 'Stabilized Yield Target: 10.0% – 12.5%',
+    icon: Hotel,
   },
   {
-    title: 'Stabilized Income Assets',
-    desc: 'Acquisition advisory for income-producing office, retail, and mixed-use assets with defensible downside protection.',
-    metrics: 'WALE Focus: 5 - 10 Years',
-    icon: Landmark,
-  },
+    title: 'Retail & Mixed-Use Hubs',
+    desc: 'Strategic acquisition of necessity-driven retail and integrated mixed-use centers anchored by defensive tenant categories. Underwriting emphasizes footfall durability, tenant diversification, lease rollover risk, and structural demand fundamentals.',
+    metrics: 'Target Yield: 9.5% – 11.5% | Diversified Tenant Mix',
+    icon: ShoppingBag,
+  }
 ];
 
 const CoreInvestmentStrategies = () => {

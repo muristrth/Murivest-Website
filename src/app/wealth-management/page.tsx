@@ -276,7 +276,7 @@ export default function WealthManagementPage() {
                   <TrendingUp className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-lg font-medium text-slate-900 mb-2">Value Creation</h3>
-                <p className="text-gray-600 text-sm">Active management and value enhancement strategies for superior returns</p>
+                <p className="text-gray-600 text-sm">Active management and value enhancement strategies for high returns</p>
               </div>
             </div>
           </div>
@@ -328,17 +328,17 @@ export default function WealthManagementPage() {
                 <div className="text-sm text-gray-500 mt-2">Annualized</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-light text-amber-600 mb-2">$2.4B</div>
-                <div className="text-gray-600">Assets Under Management</div>
+                <div className="text-4xl font-light text-amber-600 mb-2">$8M</div>
+                <div className="text-gray-600">Pipeline Deals</div>
                 <div className="text-sm text-gray-500 mt-2">Globally</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-light text-amber-600 mb-2">150+</div>
+                <div className="text-4xl font-light text-amber-600 mb-2">5+</div>
                 <div className="text-gray-600">Client Families</div>
                 <div className="text-sm text-gray-500 mt-2">Served</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-light text-amber-600 mb-2">25+</div>
+                <div className="text-4xl font-light text-amber-600 mb-2">20+</div>
                 <div className="text-gray-600">Years Experience</div>
                 <div className="text-sm text-gray-500 mt-2">Average</div>
               </div>

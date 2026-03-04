@@ -48,7 +48,7 @@ const InstitutionalTrustSignals = () => {
             
             <div className="flex items-center gap-3 text-[#A8A39D]">
               <Scale className="h-4 w-4 text-[#8B7355]" strokeWidth={1.5} />
-              <span className="text-[11px] tracking-[0.2em] uppercase">CMA • RICS • KRA</span>
+              <span className="text-[11px] tracking-[0.2em] uppercase">FIABCI • RICS • KRA</span>
             </div>
             
             <div className="flex items-center gap-3 text-[#A8A39D]">

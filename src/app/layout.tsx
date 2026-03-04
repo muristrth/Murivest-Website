@@ -33,8 +33,8 @@ export const metadata: Metadata = {
     default: 'Commercial Real Estate Investment Kenya - Murivest Realty Group',
     template: '%s | Murivest Realty Group',
   },
-  description: 'Premier commercial real estate investment firm in Nairobi, Kenya. Discover curated investment opportunities, property management and commericla properties.',
-  keywords: 'commercial real estate Kenya, property investment Nairobi, real estate investment firm Kenya, commercial property Nairobi, investment properties Kenya, property management Kenya, real estate returns Kenya, Murivest Realty Group, passive income properties Kenya',
+  description: 'Murivest Realty Group is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.',
+  keywords: 'commercial properties in Nairobi CBD, property investment Nairobi, real estate investment firm Kenya, commercial property Nairobi, investment properties Kenya, property management Kenya, real estate returns Kenya, Murivest Realty Group, passive income properties Kenya',
   authors: [{ name: 'Murivest Realty Group' }],
   creator: 'Murivest Realty Group',
   publisher: 'Murivest Realty Group',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     locale: 'en_KE',
     url: 'https://murivest.co.ke',
     title: 'Commercial Real Estate Investment Kenya - Murivest Realty Group',
-    description: 'Premier commercial real estate investment firm in Nairobi, Kenya. Discover curated investment opportunities with 15%+ annual returns. Expert property management and wealth-building strategies for discerning investors.',
+    description: 'Murivest Realty Group is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.',
     siteName: 'Murivest Realty Group',
     images: [
       {
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Commercial Real Estate Investment Kenya - Murivest Realty Group',
-    description: 'Premier commercial real estate investment firm in Nairobi, Kenya. Discover curated investment opportunities with 15%+ annual returns. Expert property management and wealth-building strategies for discerning investors.',
+    description: 'Murivest Realty Group is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.',
     images: ['https://murivest.co.ke/kenya-night.png'],
   },
   robots: {
@@ -87,7 +87,7 @@ const structuredData = [
     url: 'https://murivest.co.ke',
     logo: 'https://murivest.co.ke/logo.png',
     image: 'https://murivest.co.ke/image.png',
-    description: 'Premier commercial real estate investment firm in Nairobi, Kenya, offering curated investment opportunities and comprehensive property management services for discerning clientele.',
+    description: 'Murivest Realty Group is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Westlands Business District',
@@ -128,7 +128,7 @@ const structuredData = [
     '@type': 'WebSite',
     name: 'Murivest Realty Group',
     url: 'https://murivest.co.ke',
-    description: 'Premier commercial real estate investment firm in Nairobi, Kenya',
+    description: 'Murivest Realty Group is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.',
     publisher: {
       '@type': 'Organization',
       name: 'Murivest Realty Group',

@@ -316,11 +316,11 @@ const InstitutionalInvestors = () => {
             {[
               {
                 title: 'Independent Appraisal Reports',
-                desc: 'All portfolio valuations are conducted by RICS-accredited independent valuers, ensuring compliance with international valuation standards.',
+                desc: 'All portfolio valuations are conducted by accredited independent valuers, ensuring compliance with international valuation standards.',
                 items: [
-                  { label: 'RICS Valuation Certificate', value: 'Absa Towers - Q4 2024' },
-                  { label: 'RICS Valuation Certificate', value: 'Uchumi House - Q4 2024' },
-                  { label: 'RICS Valuation Certificate', value: 'Buffalo Mall - Q4 2024' }
+                  { label: 'Valuation Certificate', value: 'Absa Towers - Q4 2024' },
+                  { label: 'Valuation Certificate', value: 'Uchumi House - Q4 2024' },
+                  { label: 'Valuation Certificate', value: 'Buffalo Mall - Q4 2024' }
                 ]
               },
               {

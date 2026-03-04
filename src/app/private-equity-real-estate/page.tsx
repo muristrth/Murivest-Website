@@ -181,7 +181,7 @@ export default function PrivateEquityRealEstatePage() {
               <div className="bg-white p-6 rounded-lg border border-gray-100">
                 <BarChart3 className="h-8 w-8 text-amber-600 mb-4" />
                 <h3 className="text-xl font-medium text-slate-900 mb-3">Higher Returns</h3>
-                <p className="text-gray-600">Potential for superior returns through active management and value creation strategies.</p>
+                <p className="text-gray-600">Potential for high returns through active management and value creation strategies.</p>
               </div>
               <div className="bg-white p-6 rounded-lg border border-gray-100">
                 <Shield className="h-8 w-8 text-amber-600 mb-4" />

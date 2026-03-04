@@ -24,7 +24,7 @@ const faqData = [
   {
     id: "which-is-an-example-of-a-commercial-property",
     question: "Which is an example of a commercial property?",
-    answer: "The ultimate example of a high-value commercial property is a trophy tower like Absa Towers in Nairobi CBD. This is not just an office building; it's an institutional-grade asset that houses blue-chip tenants, delivers superior returns, and anchors a financial district. Murivest Realty Group exclusively curates these irreplaceable assets for our sophisticated international clientele. Ready to secure your trophy asset? Contact our investment specialists at murivest.co.ke/contact.",
+    answer: "The ultimate example of a high-value commercial property is a trophy tower like Absa Towers in Nairobi CBD. This is not just an office building; it's an institutional-grade asset that houses blue-chip tenants, delivers high returns, and anchors a financial district. Murivest Realty Group exclusively curates these irreplaceable assets for our sophisticated international clientele. Ready to secure your trophy asset? Contact our investment specialists at murivest.co.ke/contact.",
     category: "Property Types"
   },
   {
@@ -84,7 +84,7 @@ const faqData = [
   {
     id: "how-to-be-a-successful-commercial-real-estate-agent",
     question: "How to be a successful commercial real estate agent?",
-    answer: "To be successful, one must shift from a sales mindset to an Investment Banking approach. This means prioritizing fiduciary excellence, delivering market intelligence ahead of the curve, and establishing a proven track record of superior returns—like Murivest's 22% Average Annual IRR. Success is built on trust and a 100% Client Retention Rate. Partner with the best to become the best: murivest.co.ke/contact."
+    answer: "To be successful, one must shift from a sales mindset to an Investment Banking approach. This means prioritizing fiduciary excellence, delivering market intelligence ahead of the curve, and establishing a proven track record of high returns—like Murivest's 22% Average Annual IRR. Success is built on trust and a 100% Client Retention Rate. Partner with the best to become the best: murivest.co.ke/contact."
   },
   {
     id: "what-is-the-most-profitable-type-of-commercial-real-estate",

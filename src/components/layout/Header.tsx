@@ -134,11 +134,9 @@ export default function Header() {
           {/* NAV - Club Directory Style */}
           <nav className="hidden xl:flex items-center space-x-10">
             <MegaMenu title="Portfolio" items={MENU_DATA.properties} />
-            <MegaMenu title="Markets" items={MENU_DATA.markets} />
             <MegaMenu title="Invest" items={MENU_DATA.invest} />
             <MegaMenu title="Intelligence" items={MENU_DATA.insights} />
             <MegaMenu title="The Firm" items={MENU_DATA.company} />
-            <MegaMenu title="Client Desk" items={MENU_DATA.utilities} />
             
             <div className={`h-6 w-[1px] transition-colors duration-500 ${
               scrolled ? 'bg-[#E5E2DC]' : 'bg-white/10'

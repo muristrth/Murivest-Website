@@ -131,16 +131,14 @@ export default function GovernanceCompliancePage() {
                   <h4 className="text-[9px] uppercase tracking-widest text-amber-500 font-bold mb-4">Audit & Tax</h4>
                   <ul className="text-xs text-slate-400 space-y-2">
                     <li>• Big 4 Affiliates</li>
-                    <li>• KRA Compliance Experts</li>
+                    <li>• KRA Compliant</li>
                     <li>• Tax Structuring Advisors</li>
                   </ul>
                 </div>
                 <div>
                   <h4 className="text-[9px] uppercase tracking-widest text-amber-500 font-bold mb-4">Valuation</h4>
                   <ul className="text-xs text-slate-400 space-y-2">
-                    <li>• RICS Registered Valuers</li>
-                    <li>• CMA Approved Firms</li>
-                    <li>• Independent Appraisers</li>
+                    <li>• In-house Appraisers</li>
                   </ul>
                 </div>
                 <div>

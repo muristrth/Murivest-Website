@@ -73,7 +73,7 @@ export default function InvestorPortalPage() {
       title: "Absa Towers Investment Note",
       date: "December 2025",
       pages: "16",
-      description: "Comprehensive investment memorandum for the prime 17-storey office tower in Nairobi CBD with institutional-grade tenants and superior returns.",
+      description: "Comprehensive investment memorandum for the prime 17-storey office tower in Nairobi CBD with institutional-grade tenants and high returns.",
       type: "Investment Memorandum"
     },
     {

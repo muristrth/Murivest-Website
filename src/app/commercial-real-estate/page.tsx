@@ -28,7 +28,7 @@ export default function CommercialRealEstatePage() {
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Strategic investment opportunities in Kenya's premier commercial properties.
-              Office buildings, retail spaces, and industrial facilities delivering superior returns.
+              Office buildings, retail spaces, and industrial facilities delivering good returns.
             </p>
           </div>
         </div>
@@ -55,7 +55,7 @@ export default function CommercialRealEstatePage() {
                 </div>
                 <div className="flex items-center">
                   <TrendingUp className="h-5 w-5 text-amber-600 mr-3" />
-                  <span className="text-gray-700">15%+ annual returns guaranteed</span>
+                  <span className="text-gray-700">Targeted returns based on historocal performance</span>
                 </div>
                 <div className="flex items-center">
                   <Shield className="h-5 w-5 text-amber-600 mr-3" />

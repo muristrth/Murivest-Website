@@ -29,29 +29,11 @@ const ExecutiveLeadership = ({ leaders = [] }: ExecutiveLeadershipProps) => {
       id: '1',
       name: 'Mark Muriithi',
       title: 'Chief Executive Officer & Founder',
-      bio: 'Over two decades of experience in East African commercial real estate. Former Managing Director at a leading property consultancy, with $500M+ in executed transactions.',
-      image: '/CEO.Founder.jpg',
-      linkedin: '#',
-      email: 'mark@murivest.com'
+      bio: 'Mark Muriithi founded Murivest Realty Group in 2025 with a mandate to build Kenya\'s first institutionally-structured commercial real estate advisory practice oriented toward international capital. He brings a background spanning technology, commercial distribution, and real estate sales — disciplines that inform Murivest\'s integrated approach to deal origination, asset positioning, and investor relations. His early career included commercial roles at Vineyard Properties Ltd, where he developed hands-on experience in property transactions and client acquisition across the Kenyan market. He subsequently held senior commercial positions in distribution and marketing, building the capital markets literacy and cross-sector network that underpins Murivest\'s advisory model.',
+      image: '/ceo.png',
+      linkedin: 'https://www.linkedin.com/in/mark-muriithi-343365215/',
+      email: 'mark.muriithi@murivest.co.ke'
     },
-    {
-      id: '2',
-      name: 'Dr. Samuel Ochieng',
-      title: 'Chief Investment Officer',
-      bio: 'PhD Finance, London School of Economics. CFA Charterholder with 15+ years in African capital markets and real estate investment structuring.',
-      image: '/p2/profile-placeholder.jpg',
-      linkedin: '#',
-      email: 'samuel@murivest.com'
-    },
-    {
-      id: '3',
-      name: 'Michael Chang',
-      title: 'Head of Asset Management',
-      bio: 'MSc Real Estate, University of Reading. RICS Member with 12+ years managing institutional portfolios exceeding $200M across East Africa.',
-      image: '/p2/profile-placeholder.jpg',
-      linkedin: '#',
-      email: 'michael@murivest.com'
-    }
   ];
 
   const displayLeaders = leaders.length > 0 ? leaders : defaultLeaders;
@@ -79,12 +61,11 @@ const ExecutiveLeadership = ({ leaders = [] }: ExecutiveLeadershipProps) => {
           </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif leading-[1.1] mb-6 text-[#2C2C2C]">
-            The <span className="italic text-[#8B7355] font-light">Investment Authority</span>
+            The <span className="italic text-[#8B7355] font-light">Principals</span>
           </h2>
           
           <p className="text-[15px] leading-[1.8] text-[#5A5A5A] font-light max-w-2xl mx-auto">
-            A team of seasoned professionals with deep expertise in East African real estate 
-            and international investment advisory.
+          The founders and senior advisors behind Murivest's commercial real estate mandates in East Africa.
           </p>
         </motion.div>
 

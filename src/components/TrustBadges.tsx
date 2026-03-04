@@ -27,8 +27,8 @@ const TrustBadges = ({ badges = [] }: TrustBadgesProps) => {
     },
     {
       icon: Award,
-      title: 'RICS Accredited',
-      description: 'Royal Institution of Chartered Surveyors'
+      title: 'FIABCI Member',
+      description: 'International Real Estate Federation membership'
     },
     {
       icon: CheckCircle,
@@ -48,7 +48,7 @@ const TrustBadges = ({ badges = [] }: TrustBadgesProps) => {
     {
       icon: TrendingUp,
       title: 'Track Record',
-      description: '$500M+ in executed transactions'
+      description: '$18M+ in closed transactions since 2020'
     }
   ];
 

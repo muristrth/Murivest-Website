@@ -79,16 +79,15 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
               Murivest Realty Group Ltd
             </h3>
             <p className="text-[13px] text-[#A8A39D] font-light leading-relaxed mb-6 max-w-sm">
-              Our principals have advised in commercial real estate transactions for over 2 decades across Kenya, East Africa, and globally. We are proud members of the International Arbitration community, ensuring our clients receive world-class service and expertise.
+              Murivest Realty Group is an independent origination and advisory firm focused exclusively on institutional-grade commercial real estate in East Africa. We source, structure, and present off-market mandates to qualified international capital. Founded in Nairobi, 2024.
             </p>
             
             {/* Credentials - Like Club Badges */}
             <div className="space-y-3 border-l border-[#8B7355]/30 pl-5">
               {[
-                { icon: Award, text: "Recognized by CBRE" },
-                { icon: Shield, text: "International Arbitration Member" },
-                { icon: TrendingUp, text: "$8M+ Pipeline Deals" },
-                { icon: Users, text: "10+ Institutional Partners" }
+                { icon: Shield, text: "KAREA Member" },
+                { icon: TrendingUp, text: "Commercial Grade A Assets" },
+                { icon: Users, text: "For Institutional Investors" }
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 text-[11px] text-[#A8A39D] tracking-wide">
                   <item.icon size={14} className="text-[#8B7355]" strokeWidth={1.5} />
@@ -170,47 +169,6 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            {/* Management - All Links */}
-            <div>
-              <h4 className="text-[10px] tracking-[0.3em] uppercase text-[#8B7355] font-medium mb-8 pb-3 border-b border-[#3D3530]">
-                Asset Management
-              </h4>
-              <ul className="space-y-3">
-                {[
-                  { to: "/property-management", label: "Property Management" },
-                  { to: "/financial-reporting", label: "Financial Reporting" },
-                  { to: "/legal-compliance", label: "Legal Compliance" }
-                ].map((link) => (
-                  <li key={link.label}>
-                    <Link href={link.to} className="text-[13px] text-[#A8A39D] hover:text-[#F8F7F4] transition-colors duration-300 font-light flex items-center group">
-                      <ChevronRight size={10} className="mr-2 opacity-0 group-hover:opacity-100 -ml-4 group-hover:ml-0 transition-all text-[#8B7355]" />
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              
-              {/* Portal Links - All Preserved */}
-              <div className="mt-8 space-y-3">
-                <a 
-                  href="https://murivest.africa" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-[11px] tracking-[0.15em] uppercase text-[#8B7355] hover:text-[#F8F7F4] transition-colors flex items-center gap-2"
-                >
-                  Landlord Portal <ExternalLink size={10} />
-                </a>
-                <a 
-                  href="https://murivest.africa" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-[11px] tracking-[0.15em] uppercase text-[#5A5A5A] hover:text-[#F8F7F4] transition-colors flex items-center gap-2"
-                >
-                  Tenant Services <ExternalLink size={10} />
-                </a>
-              </div>
             </div>
           </div>
         </div>

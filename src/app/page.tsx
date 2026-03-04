@@ -1,9 +1,7 @@
 import type { Metadata } from 'next'
-import IntroVideoModal from '../components/IntroVideoModal'
 import Hero from '../components/sections/Hero'
 import TaxIntelligenceSection from '../components/sections/TaxIntelligenceSection'
 import CoreInvestmentStrategies from '../components/sections/CoreInvestmentStrategies'
-import RepresentativeTransactions from '../components/sections/RepresentativeTransactions'
 import ResearchPreview from '../components/sections/ResearchPreview'
 import InstitutionalTrustSignals from '../components/sections/InstitutionalTrustSignals'
 import InstitutionalEngagementModel from '../components/sections/InstitutionalEngagementModel'
@@ -15,11 +13,11 @@ export const metadata: Metadata = {
   title: 'Murivest Realty Group | Institutional Real Estate Advisory Kenya',
 
   // 2. AUTHORITATIVE DESCRIPTION
-  description: 'Independent real estate investment advisory firm specializing in commercial asset origination and structuring for institutional investors in East Africa. Mandate sizes $10M–$100M+ across office, logistics, and industrial sectors.',
+  description: 'Murivest Realty Group is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.',
 
   // 3. TARGETED KEYWORDS (Curated for High-Net-Worth intent)
   keywords: [
-    'Institutional Real Estate Advisory Kenya',
+    'Commercial Properties in Nairobi CBD',
     'Commercial Real Estate Investment Nairobi',
     'East Africa Property Origination',
     'Family Office Real Estate Kenya',
@@ -36,7 +34,7 @@ export const metadata: Metadata = {
   // 4. OPEN GRAPH (Social Sharing)
   openGraph: {
     title: 'Murivest Realty Group | Institutional Real Estate Advisory',
-    description: 'Independent advisory firm providing institutional investors with structured access to East African commercial real estate markets.',
+    description: 'Murivest Realty Group is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.',
     url: 'https://murivest.co.ke',
     siteName: 'Murivest Realty Group Ltd',
     images: [
@@ -55,7 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Murivest Realty Group | Institutional Real Estate Advisory',
-    description: 'Independent advisory for institutional capital deployment in East African commercial real estate.',
+    description: 'Murivest Realty Group is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.',
     images: ['/og-institutional-hero.png'],
   },
 
@@ -84,7 +82,6 @@ export default function HomePage() {
       <InstitutionalEngagementModel />
       <CoreInvestmentStrategies />
       <TaxIntelligenceSection />
-      <RepresentativeTransactions />
       <ResearchPreview />
       <ESGFrameworkSection />
       <CEOInstitutionalProfile />

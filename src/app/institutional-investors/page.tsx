@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import InstitutionalGateway from '../../components/InstitutionalGateway'
+import InstitutionalGateway from '../../components/InstitutionalInvestors'
 
 export const metadata: Metadata = {
   title: 'Institutional Real Estate Advisory & Capital Deployment | Murivest',
@@ -8,6 +8,6 @@ export const metadata: Metadata = {
   robots: 'index, follow',
 }
 
-export default function InstitutionalInvestorsPage() {
-  return <InstitutionalGateway />
+export default function InstitutionalInvestors() {
+  return <InstitutionalInvestors />
 }
