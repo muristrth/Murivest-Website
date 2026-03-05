@@ -8,6 +8,6 @@ export const metadata: Metadata = {
   robots: 'index, follow',
 }
 
-export default function InstitutionalInvestors() {
-  return <InstitutionalInvestors />
+export default function InstitutionalInvestorsPage() {
+  return <InstitutionalGateway />
 }
