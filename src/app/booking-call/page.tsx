@@ -95,7 +95,7 @@ const SchedulePage = () => {
             System Status: Verified Secure
           </div>
           <p className="text-slate-500 text-[10px] font-light tracking-wide uppercase">
-            Institutional Support: <span className="text-amber-200/70 ml-1">concierge@murivest.co.ke</span>
+            Institutional Support: <span className="text-amber-200/70 ml-1">info@murivest.co.ke</span>
           </p>
         </div>
       </main>

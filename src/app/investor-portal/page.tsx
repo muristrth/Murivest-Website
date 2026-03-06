@@ -420,11 +420,11 @@ export default function InvestorPortalPage() {
               <h5 className="text-[11px] tracking-wider text-[#0B1426]/70 uppercase mb-4">Institutional Desk</h5>
               <p className="text-sm text-[#0B1426]/70 mb-2 flex items-center">
                 <Phone className="h-4 w-4 mr-2" />
-                +254 20 271 3000
+                +254 115 277 610
               </p>
               <p className="text-sm text-[#0B1426]/70 mb-2 flex items-center">
                 <Mail className="h-4 w-4 mr-2" />
-                institutional@murivest.co.ke
+                info@murivest.co.ke
               </p>
             </div>
             <div>

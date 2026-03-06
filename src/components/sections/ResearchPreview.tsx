@@ -8,23 +8,23 @@ import { ArrowUpRight } from 'lucide-react';
 const marketData = [
   {
     category: 'Prime Office CBD',
-    yield: '8.2%',
-    vacancy: '4.1%',
+    yield: '8.5%',
+    vacancy: '19.7%',
   },
   {
     category: 'Logistics Parks',
-    yield: '9.1%',
-    vacancy: '2.8%',
+    yield: '9.5%',
+    vacancy: '17%',
   },
   {
     category: 'Retail Malls',
-    yield: '8.7%',
-    vacancy: '6.2%',
+    yield: '8%',
+    vacancy: '20%',
   },
   {
     category: 'Industrial Estates',
-    yield: '8.9%',
-    vacancy: '3.5%',
+    yield: '9%',
+    vacancy: '15%',
   },
 ];
 

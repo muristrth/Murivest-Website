@@ -87,18 +87,17 @@ const Hero = () => {
 
             {/* Main Headline - Serif, stately */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-[1.1] mb-8 text-[#F8F7F4]">
-              Strategic Advisory for<br />
+              Off-Market <br />Income-Producing Institutional Grade A<br />
               <span className="italic text-[#C4B59D] font-light">Commercial Properties</span>
             </h1>
 
             {/* Subtle divider - like a scorecard line */}
             <div className="w-16 h-[1px] bg-[#8B7355] mb-8" />
-
+            "Where do I deploy this capital that isn't correlated to equities?"<br />
             {/* Description - Understated authority */}
             <p className="text-[15px] leading-[1.8] text-[#A8A39D] font-light max-w-lg mb-10">
-              Independent investment advisory and origination for institutional capital 
-              deploying into East African commercial real estate. Fiduciary standards. 
-              Off-market access. Long-term stewardship.
+              <br />
+              We originate off-market commercial mandates across Nairobi CBD, Kilimani, Karen, Westlands, Upperhill, Nakuru and other key locations — structuring them for international capital that demands yield certainty, governance transparency, and clear exit pathways.
             </p>
 
             {/* Mandate Parameters - The "membership criteria" */}

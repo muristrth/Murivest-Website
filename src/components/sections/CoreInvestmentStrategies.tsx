@@ -40,11 +40,11 @@ const CoreInvestmentStrategies = () => {
             className="lg:col-span-6"
           >
             <p className="text-[11px] tracking-[0.35em] uppercase text-[#8B7355] mb-6 font-medium">
-              Investment Committee
+              Investment System
             </p>
             <h2 className="text-4xl md:text-5xl font-serif leading-[1.15] text-[#2C2C2C]">
-              Core Strategies<br />
-              <span className="italic text-[#5A5A5A] font-light">For Long-Term Capital</span>
+              Our Core Strategies<br />
+              <span className="italic text-[#5A5A5A] font-light">For Predictable, Durable Income</span>
             </h2>
           </motion.div>
           
@@ -57,8 +57,7 @@ const CoreInvestmentStrategies = () => {
           >
             <p className="text-[15px] leading-[1.8] text-[#5A5A5A] font-light border-l border-[#C4B59D] pl-6">
               Murivest advises on a focused set of real estate strategies where scale, 
-              governance, and risk-adjusted returns can be clearly underwritten and stewarded 
-              across market cycles.
+              governance, and risk-adjusted returns can be clearly underwritten across market cycles.
             </p>
           </motion.div>
         </div>
@@ -102,10 +101,10 @@ const CoreInvestmentStrategies = () => {
               {/* Link - Discreet */}
               <div className="mt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <Link
-                  href="/institutional-investors"
+                  href="/contact"
                   className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase text-[#8B7355] hover:text-[#6B5635]"
                 >
-                  Strategy Brief <ArrowUpRight className="h-3 w-3" />
+                  Murivest Advisor <ArrowUpRight className="h-3 w-3" />
                 </Link>
               </div>
             </motion.div>
@@ -122,10 +121,10 @@ const CoreInvestmentStrategies = () => {
             </p>
             
             <Link 
-              href="/institutional-investors"
+              href="/properties"
               className="group flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase text-[#2C2C2C] hover:text-[#8B7355] transition-colors duration-500"
             >
-              <span>Schedule Committee Presentation</span>
+              <span>View Portfolio</span>
               <span className="w-8 h-[1px] bg-current group-hover:w-12 transition-all duration-500" />
             </Link>
           </div>

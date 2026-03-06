@@ -136,12 +136,135 @@ export default function AboutPage() {
         }
 
         img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 1024px) {
+          .section-number {
+            font-size: 3.5rem;
+          }
+
+          /* Tablet header */
+          .about-header {
+            padding: 0 2rem !important;
+          }
+
+          /* Tablet sections */
+          .about-section {
+            padding: 4rem 2rem !important;
+          }
+
+          .about-section-grid {
+            gap: 2rem !important;
+          }
+
+          .about-image-break {
+            margin: 0 2rem !important;
+          }
+
+          .about-governance-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .section-number {
+            font-size: 2.5rem;
+          }
+          
+          .prose-block p {
+            font-size: 1rem;
+            line-height: 1.8;
+          }
+
+          /* Hero responsive */
+          .about-hero {
+            min-height: 80vh !important;
+            padding-top: 80px !important;
+          }
+
+          .about-hero-content {
+            padding: 0 1.5rem 4rem !important;
+          }
+
+          .about-scroll-indicator,
+          .about-location {
+            display: none !important;
+          }
+
+          /* Header responsive */
+          .about-header {
+            padding: 0 1.5rem !important;
+          }
+
+          .about-header > div {
+            flex-direction: column !important;
+            gap: 0.5rem !important;
+            text-align: center !important;
+          }
+
+          /* Sections responsive */
+          .about-section {
+            padding: 4rem 1.5rem !important;
+          }
+
+          .about-section-grid {
+            grid-template-columns: 1fr !important;
+            gap: 2rem !important;
+          }
+
+          .about-section-title {
+            flex-direction: column !important;
+            gap: 1rem !important;
+          }
+
+          /* Image break */
+          .about-image-break {
+            margin: 0 1.5rem !important;
+          }
+
+          .about-image-break .image-frame {
+            height: 280px !important;
+          }
+
+          .about-image-break > div:last-child {
+            position: relative !important;
+            text-align: left !important;
+            padding: 1rem !important;
+            background: rgba(28,43,30,0.5);
+          }
+
+          /* Governance grid */
+          .about-governance-grid {
+            grid-template-columns: 1fr !important;
+            gap: 2rem !important;
+          }
+
+          /* Market stats */
+          .about-stats-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 1.5rem !important;
+          }
+
+          .about-stats-grid > div {
+            padding: 1rem !important;
+            border-right: none !important;
+            border-bottom: 1px solid #C4B49A !important;
+          }
+
+          .about-stats-grid > div:last-child {
+            border-bottom: none !important;
+          }
+
+          .about-stats-grid .murivest-serif {
+            font-size: 1.8rem !important;
+          }
+        }
       `}</style>
 
       <div className="grain-overlay" />
 
       {/* ── HERO — full-width image, text bottom-anchored ─────────── */}
-      <section style={{
+      <section className="about-hero" style={{
         position: 'relative',
         minHeight: '100vh',
         overflow: 'hidden',
@@ -172,7 +295,7 @@ export default function AboutPage() {
         }} />
 
         {/* Hero text */}
-        <div style={{
+        <div className="about-hero-content" style={{
           position: 'relative', zIndex: 2,
           width: '100%', maxWidth: '1300px',
           margin: '0 auto', padding: '0 5rem 6rem'
@@ -218,7 +341,7 @@ export default function AboutPage() {
         </div>
 
         {/* Scroll indicator */}
-        <div style={{
+        <div className="about-scroll-indicator" style={{
           position: 'absolute', bottom: '2.5rem', right: '5rem',
           display: 'flex', flexDirection: 'column', alignItems: 'center',
           gap: '0.75rem', zIndex: 3
@@ -233,7 +356,7 @@ export default function AboutPage() {
         </div>
 
         {/* Location caption */}
-        <div style={{ position: 'absolute', bottom: '2.5rem', left: '5rem', zIndex: 3 }}>
+        <div className="about-location" style={{ position: 'absolute', bottom: '2.5rem', left: '5rem', zIndex: 3 }}>
           <span style={{
             fontFamily: "'Libre Baskerville', Georgia, serif",
             fontSize: '0.55rem', letterSpacing: '0.28em',
@@ -244,7 +367,7 @@ export default function AboutPage() {
 
 
       {/* ── HBR ISSUE HEADER ──────────────────────────────────────── */}
-      <div style={{ padding: '0 5rem' }}>
+      <div className="about-header" style={{ padding: '0 5rem' }}>
         <div style={{
           borderTop: '3px solid #1C2B1E',
           borderBottom: '1px solid #C4B49A',
@@ -270,9 +393,9 @@ export default function AboutPage() {
 
 
       {/* ── § I — FOUNDATION ──────────────────────────────────────── */}
-      <section style={{ padding: '7rem 5rem', maxWidth: '1300px', margin: '0 auto' }}>
+      <section className="about-section" style={{ padding: '7rem 5rem', maxWidth: '1300px', margin: '0 auto' }}>
         <Reveal>
-          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '3rem', marginBottom: '4rem' }}>
+          <div className="about-section-title" style={{ display: 'flex', alignItems: 'flex-start', gap: '3rem', marginBottom: '4rem' }}>
             <span className="section-number">I</span>
             <div>
               <span className="rule-gold" />
@@ -292,7 +415,7 @@ export default function AboutPage() {
 
         {/* Two prose columns — text only, no image */}
         <Reveal delay={0.1}>
-          <div style={{
+          <div className="about-section-grid" style={{
             display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem',
             borderTop: '1px solid #C4B49A', paddingTop: '3rem'
           }}>
@@ -310,9 +433,9 @@ export default function AboutPage() {
 
 
       {/* ── § II — PHILOSOPHY ─────────────────────────────────────── */}
-      <section style={{ padding: '7rem 5rem', maxWidth: '1300px', margin: '0 auto', borderTop: '1px solid #E8E3DA' }}>
+      <section className="about-section" style={{ padding: '7rem 5rem', maxWidth: '1300px', margin: '0 auto', borderTop: '1px solid #E8E3DA' }}>
         <Reveal>
-          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '3rem', marginBottom: '4rem' }}>
+          <div className="about-section-title" style={{ display: 'flex', alignItems: 'flex-start', gap: '3rem', marginBottom: '4rem' }}>
             <span className="section-number">II</span>
             <div>
               <span className="rule-gold" />
@@ -350,7 +473,7 @@ export default function AboutPage() {
         </Reveal>
 
         <Reveal delay={0.15}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem' }}>
+          <div className="about-section-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem' }}>
             <div className="prose-block">
               <p>Commercial real estate in emerging markets rewards discipline above all else. The premiums are real. So are the structural risks. Our evaluation framework is built around downside protection first — lease quality, tenant covenant strength, capital expenditure planning, and exit strategy clarity before any acquisition is advanced.</p>
             </div>
@@ -364,7 +487,7 @@ export default function AboutPage() {
 
       {/* ── FULL-WIDTH IMAGE BREAK ─────────────────────────────────── */}
       <Reveal>
-        <div style={{ margin: '0 5rem', position: 'relative' }}>
+        <div className="about-image-break" style={{ margin: '0 5rem', position: 'relative' }}>
           <div className="image-frame" style={{ height: '480px' }}>
             <img
               src="/kenya-night.png"
@@ -386,10 +509,10 @@ export default function AboutPage() {
 
 
       {/* ── § III — GOVERNANCE ────────────────────────────────────── */}
-      <section style={{ padding: '8rem 5rem', background: '#1C2B1E' }}>
+      <section className="about-section" style={{ padding: '8rem 5rem', background: '#1C2B1E' }}>
         <div style={{ maxWidth: '1300px', margin: '0 auto' }}>
           <Reveal>
-            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '3rem', marginBottom: '5rem' }}>
+            <div className="about-section-title" style={{ display: 'flex', alignItems: 'flex-start', gap: '3rem', marginBottom: '5rem' }}>
               <span className="section-number">III</span>
               <div>
                 <span style={{
@@ -408,7 +531,7 @@ export default function AboutPage() {
             </div>
           </Reveal>
 
-          <div style={{
+          <div className="about-governance-grid" style={{
             display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
             gap: '3rem', borderTop: '1px solid rgba(196,180,154,0.25)'
           }}>
@@ -451,9 +574,9 @@ export default function AboutPage() {
 
 
       {/* ── § IV — MARKET FOCUS — full width, prose only ──────────── */}
-      <section style={{ padding: '8rem 5rem', maxWidth: '1300px', margin: '0 auto', borderTop: '1px solid #E8E3DA' }}>
+      <section className="about-section" style={{ padding: '8rem 5rem', maxWidth: '1300px', margin: '0 auto', borderTop: '1px solid #E8E3DA' }}>
         <Reveal>
-          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '3rem', marginBottom: '4rem' }}>
+          <div className="about-section-title" style={{ display: 'flex', alignItems: 'flex-start', gap: '3rem', marginBottom: '4rem' }}>
             <span className="section-number">IV</span>
             <div>
               <span className="rule-gold" />
@@ -472,7 +595,7 @@ export default function AboutPage() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div style={{
+          <div className="about-section-grid" style={{
             display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem',
             borderTop: '1px solid #C4B49A', paddingTop: '3rem', marginBottom: '4rem'
           }}>
@@ -489,7 +612,7 @@ export default function AboutPage() {
 
         {/* 4-column market stats bar */}
         <Reveal delay={0.2}>
-          <div style={{
+          <div className="about-stats-grid" style={{
             display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
             borderTop: '1px solid #C4B49A', paddingTop: '2.5rem'
           }}>

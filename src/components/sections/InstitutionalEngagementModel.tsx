@@ -9,8 +9,8 @@ import Link from 'next/link';
 const properties = [
   {
     id: '01',
-    location: 'Nairobi CBD',
-    type: 'Grade A Office',
+    location: 'Grade A Office Tower, Nairobi CBD',
+    type: 'Fully tenanted with blue-chip anchor covenant. Net rental income distributable quarterly. Available exclusively under mandate.',
     size: '47,000 sqm',
     yield: '22% IRR',
     status: 'Off-Market',
@@ -18,8 +18,8 @@ const properties = [
   },
   {
     id: '02',
-    location: 'Nairobi CBD',
-    type: 'Hotel',
+    location: 'Luxury Hotel, Nairobi CBD',
+    type: 'Operational hospitality asset within Nairobi\'s prime urban corridor — stabilized F&B and accommodation revenue streams delivering consistent net income to investors from day one of ownership transfer, with yield distributed quarterly under a structured operator agreement.',
     size: '6,450 sqm',
     yield: '15.2% IRR',
     status: 'Exclusive',
@@ -28,7 +28,7 @@ const properties = [
   {
     id: '03',
     location: 'Karen',
-    type: 'Mixed-Use Development',
+    type: 'Anchor retail tenants pre-positioned across a 50-acre mixed-use corridor in Nairobi\'s most affluent suburb — generating layered income from retail leases, F&B concessions, and land appreciation simultaneously, with distributable cash flow commencing from Phase 1 handover.',
     size: '128,000 sqm',
     yield: '24% IRR',
     status: 'Off-Market',
@@ -68,7 +68,7 @@ const InstitutionalEngagementModel = () => {
             <p className="text-[15px] leading-relaxed text-[#4A4A4A] font-light border-l border-[#8B7355] pl-6">
               A curated selection of institutional-grade commercial properties 
               and development sites. Available exclusively to mandated partners 
-              and qualified institutional investors.
+              and qualified investors.
             </p>
           </motion.div>
         </div>
@@ -144,10 +144,10 @@ const InstitutionalEngagementModel = () => {
             </p>
             
             <Link 
-              href="/private-collection"
+              href="/contact"
               className="group flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase text-[#1A1A1A] hover:text-[#8B7355] transition-colors duration-500"
             >
-              <span>Request Private Memorandum</span>
+              <span>Request Business Case</span>
               <span className="w-8 h-[1px] bg-current group-hover:w-12 transition-all duration-500" />
             </Link>
           </div>

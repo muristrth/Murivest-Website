@@ -1,6 +1,6 @@
 export const SITE_CONFIG = {
   name: 'Murivest Realty Group',
-  description: 'Premier commercial real estate investment firm in Nairobi, Kenya',
+  description: 'Murivest Realty Group is an independent commercial real estate advisory practice based in Nairobi, Kenya. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.',
   url: 'https://murivest.co.ke',
   ogImage: 'https://murivest.co.ke/image.png',
   links: {

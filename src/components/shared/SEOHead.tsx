@@ -14,7 +14,7 @@ interface SEOHeadProps {
 
 const SEOHead: React.FC<SEOHeadProps> = ({
   title = "Commercial Real Estate Investment Kenya - Murivest Realty Group",
-  description = "Premier commercial real estate investment firm in Nairobi, Kenya. Discover curated investment opportunities with 15%+ annual returns. Expert property management and wealth-building strategies for discerning investors.",
+  description = "Murivest Realty Group is an independent commercial real estate advisory practice based in Nairobi, Kenya. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.",
   keywords = "commercial real estate Kenya, property investment Nairobi, real estate investment firm Kenya, commercial property Nairobi, investment properties Kenya, property management Kenya, real estate returns Kenya, Murivest Realty Group, passive income properties Kenya",
   image = "https://murivest.co.ke/image.png",
   url = "https://murivest.co.ke",

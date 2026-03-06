@@ -51,7 +51,7 @@ export const metadata: Metadata = {
         url: 'https://murivest.co.ke/kenya-night.png',
         width: 1200,
         height: 630,
-        alt: 'Murivest Realty Group - Premier Commercial Real Estate Investment',
+        alt: 'Murivest Realty Group - Commercial Real Estate Advisory',
       },
     ],
   },

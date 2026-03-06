@@ -25,10 +25,10 @@ const InstitutionalTrustSignals = () => {
             </div>
             <div>
               <p className="text-[12px] tracking-[0.3em] uppercase text-[#F8F7F4] font-medium mb-2">
-                Fiduciary Standards
+                Global Standards
               </p>
               <p className="text-[13px] text-[#A8A39D] font-light leading-relaxed">
-                Confidential Mandates • IC-Safe Process • Stewardship
+                Steady Income • Generational Cashflow • Capital Preservation
               </p>
             </div>
           </motion.div>

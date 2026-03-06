@@ -145,8 +145,8 @@ export default function SitemapPage() {
               <div className="bg-white p-4 rounded-xl shadow-sm border border-amber-100 mb-4">
                 <Mail className="h-8 w-8 text-amber-600 mx-auto mb-2" />
                 <h4 className="font-serif font-medium text-gray-900 mb-1">Email Us</h4>
-                <Link href="mailto:info@murivest.co.ke" className="text-amber-600 hover:text-amber-700 font-serif">
-                  info@murivest.co.ke
+                <Link href="mailto:investments@murivest.co.ke" className="text-amber-600 hover:text-amber-700 font-serif">
+                  investments@murivest.co.ke
                 </Link>
               </div>
             </div>

@@ -119,7 +119,7 @@ const ESGFrameworkSection = () => {
               href="/esg-policy"
               className="group flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase text-[#2C2C22] hover:text-[#8B7355] transition-colors duration-500"
             >
-              <span>Download ESG Framework</span>
+              <span>Explore Full ESG Framework</span>
               <span className="w-8 h-[1px] bg-current group-hover:w-12 transition-all duration-500" />
             </Link>
           </div>

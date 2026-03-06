@@ -1,94 +1,100 @@
-'use client';
+  'use client'
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { 
-  Building2, 
-  UserCheck, 
-  Key, 
-  HelpCircle,
-  ArrowRight 
-} from 'lucide-react';
-import Link from 'next/link';
+  import { motion } from 'framer-motion'
 
-const segments = [
+  const framework = [
   {
-    title: "Institutional Investors",
-    desc: "Bespoke mandates for pension funds, SWFs, and global capital allocators seeking structured CRE exposure.",
-    cta: "Institutional Gateway",
-    href: "/institutional-investors",
-    icon: Building2,
-    color: "bg-amber-500"
+  title: "Market Philosophy",
+  desc:
+  "Murivest focuses on structurally resilient segments of commercial real estate where long-term demographic and economic trends support tenant demand. Priority sectors include logistics, mixed-use retail nodes, and strategically located Grade A office assets."
   },
+
   {
-    title: "HNWI & Family Offices",
-    desc: "Discreet advisory and off-market deal origination for private wealth and family-led investment vehicles.",
-    cta: "Private Advisory",
-    href: "/wealth-management",
-    icon: UserCheck,
-    color: "bg-slate-700"
+  title: "Asset Selection",
+  desc:
+  "Investment opportunities are screened based on location durability, tenant covenant strength, transport connectivity, and long-term land scarcity. Preference is given to assets capable of generating stable income while offering operational value creation potential."
   },
+
   {
-    title: "Property Owners",
-    desc: "Strategic divestment and sale-leaseback solutions for corporate and private real estate owners.",
-    cta: "List Asset",
-    href: "/sell",
-    icon: Key,
-    color: "bg-slate-800"
+  title: "Underwriting Discipline",
+  desc:
+  "Each opportunity undergoes conservative underwriting assumptions including vacancy stress testing, lease rollover risk modelling, and capital expenditure forecasting. Acquisition decisions prioritise downside protection over speculative appreciation."
   },
+
   {
-    title: "General Inquiries",
-    desc: "Connect with our Nairobi office for general partnership or service-related discussions.",
-    cta: "Contact Desk",
-    href: "/contact",
-    icon: HelpCircle,
-    color: "bg-slate-900"
+  title: "Capital Preservation",
+  desc:
+  "Murivest structures transactions using prudent leverage and long-term tenant strategies designed to preserve investor capital through market cycles. The objective is durable income rather than transaction velocity."
+  },
+
+  {
+  title: "Exit Strategy",
+  desc:
+  "Investment exits are typically structured through institutional asset sales, portfolio recapitalisation, or income stabilisation followed by yield compression once capital markets strengthen."
   }
-];
+  ]
 
-const UserJourneySegmentation = () => {
-  return (
-    <section className="py-24 bg-slate-950 border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="text-center mb-16">
-          <p className="text-[10px] tracking-[0.4em] uppercase text-amber-500 font-bold mb-4">Select Engagement Path</p>
-          <h2 className="text-3xl md:text-4xl font-serif italic text-white">How Can We Assist You?</h2>
-        </div>
+  export default function InvestmentFramework(){
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {segments.map((segment, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="group relative bg-white/[0.02] border border-white/10 p-8 hover:bg-white/[0.04] transition-all duration-500 flex flex-col h-full"
-            >
-              <div className="mb-6">
-                <segment.icon className="text-amber-500" size={24} strokeWidth={1.5} />
-              </div>
-              
-              <h3 className="text-xl font-serif text-white mb-4 group-hover:text-amber-200 transition-colors">
-                {segment.title}
-              </h3>
-              
-              <p className="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">
-                {segment.desc}
-              </p>
+  return(
 
-              <Link 
-                href={segment.href}
-                className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-amber-500 border-b border-amber-500/20 pb-2 hover:border-amber-500 transition-all duration-300"
-              >
-                {segment.cta} <ArrowRight size={14} />
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+  <section className="bg-[#FDFCFA] border-t border-[#E5E2DC]">
 
-export default UserJourneySegmentation;
+  <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-28">
+
+  {/* Section Header */}
+
+  <div className="max-w-3xl mb-20">
+
+  <div className="flex items-center gap-3 mb-6">
+  <div className="w-6 h-[1px] bg-[#8B7355]" />
+  <p className="text-[11px] tracking-[0.35em] uppercase text-[#8B7355] font-medium">
+  Investment Framework
+  </p>
+  </div>
+
+  <h2 className="text-4xl md:text-5xl font-serif leading-[1.15] text-[#2C2C2C] mb-6">
+  Disciplined Capital
+  <span className="italic text-[#5A5A5A] font-light"> Deployment</span>
+  </h2>
+
+  <p className="text-[15px] leading-[1.9] text-[#5A5A5A] font-light">
+  Murivest applies institutional investment principles to the acquisition and management of commercial real estate. 
+  The objective is to generate stable income and long-term value through disciplined underwriting and prudent capital structures.
+  </p>
+
+  </div>
+
+  {/* Framework Grid */}
+
+  <div className="grid md:grid-cols-2 gap-x-20 gap-y-14">
+
+  {framework.map((item, i)=>(
+  <motion.div
+  key={i}
+  initial={{opacity:0, y:20}}
+  whileInView={{opacity:1, y:0}}
+  viewport={{once:true}}
+  transition={{duration:0.6, delay:i*0.1}}
+  >
+
+  <h3 className="font-serif text-xl text-[#2C2C2C] mb-3">
+  {item.title}
+  </h3>
+
+  <p className="text-[14px] leading-[1.9] text-[#5A5A5A] font-light">
+  {item.desc}
+  </p>
+
+  </motion.div>
+  ))}
+
+  </div>
+
+  </div>
+
+  </section>
+
+  )
+
+  }
