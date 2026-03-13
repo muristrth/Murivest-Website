@@ -431,7 +431,7 @@ export default function InvestorMagazinePopup() {
             <div className="npcab-eyebrow"><span>◆</span><span>Restricted Institutional Publication · 2026</span><span>◆</span></div>
             <div className="npcab-title">Nairobi Private Commercial Asset Brief</div>
             <div className="npcab-subtitle">Independent intelligence for institutional capital allocators, family offices and ultra-high-net-worth investors navigating East Africa's foremost real estate market.</div>
-            <button className="npcab-close" onClick={closeTemp} aria-label="Close"><Ico.Close /></button>
+            <button className="npcab-close" onClick={closeAndRemember} aria-label="Close"><Ico.Close /></button>
           </div>
 
           {/* TABS */}
