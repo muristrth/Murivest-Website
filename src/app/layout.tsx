@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 import { Inter, Playfair_Display, Montserrat } from 'next/font/google';
 import { Suspense } from 'react';
@@ -8,6 +8,7 @@ import Footer from '../components/layout/Footer';
 import WhatsAppButton from '../components/ui/WhatsAppButton';
 import AnalyticsTracker from '../components/AnalyticsTracker';
 import InvestorMagazinePopup from '@/components/InvestorMagazinePopup';
+import CookieBanner from '@/components/CookieBanner';
 
 // Define the fonts here
 const inter = Inter({
@@ -182,6 +183,17 @@ const structuredData = [
   },
 ];
 
+export const viewport: Viewport = {
+  width:        'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor:   '#1A1A1A',
+};
+ 
+/* ── GA4 Measurement ID ────────────────────────────────────────────────────── */
+ 
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? 'G-TQF6VT5RR3';
+
 export default function RootLayout({
   children,
 }: {
@@ -221,6 +233,64 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData[2]) }}
         />
 
+
+<Script id="google-consent-default" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              analytics_storage:        'denied',
+              ad_storage:               'denied',
+              ad_user_data:             'denied',
+              ad_personalization:       'denied',
+              functionality_storage:    'denied',
+              personalization_storage:  'denied',
+              wait_for_update:          2000,
+            });
+            gtag('js', new Date());
+          `}
+        </Script>
+ 
+        {/*
+         * ── Google Analytics 4 ────────────────────────────────────────
+         * Loads after consent default is set.
+         * Replace GA_ID with your actual Measurement ID via .env.local:
+         * NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+         */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`gtag('config', '${GA_ID}', { send_page_view: false });`}
+        </Script>
+ 
+        {/*
+         * ── LinkedIn Insight Tag ──────────────────────────────────────
+         * Replace 1234567 with your actual LinkedIn Partner ID.
+         * CookieBanner nullifies _linkedin_partner_id on Decline.
+         */}
+        <Script id="linkedin-insight" strategy="afterInteractive">
+          {`
+            _linkedin_partner_id = "1234567";
+            window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+            window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+            (function(l) {
+              if (!l){
+                window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+                window.lintrk.q=[];
+              }
+              var s = document.getElementsByTagName("script")[0];
+              var b = document.createElement("script");
+              b.type = "text/javascript"; b.async = true;
+              b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+              s.parentNode.insertBefore(b, s);
+            })(window.lintrk);
+          `}
+        </Script>
+
+
+
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-TQF6VT5RR3"
@@ -237,6 +307,14 @@ export default function RootLayout({
       </head>
       <body className={`${montserrat.variable} font-sans text-navy-900 bg-white`}
       suppressHydrationWarning={true}
+
+      style={{
+          backgroundColor:       '#F9F7F4',
+          color:                 '#1A1A1A',
+          WebkitFontSmoothing:   'antialiased',
+          MozOsxFontSmoothing:   'grayscale',
+          overflowX:             'hidden',
+        }}
       >
         <div className="min-h-screen">
           <Header />
@@ -244,10 +322,10 @@ export default function RootLayout({
             <AnalyticsTracker />
           </Suspense>
           <main>{children}</main>
+         <CookieBanner />
           <Footer />
           <WhatsAppButton />
-          {children}
-      <InvestorMagazinePopup />
+\      <InvestorMagazinePopup />
         </div>
       </body>
     </html>
