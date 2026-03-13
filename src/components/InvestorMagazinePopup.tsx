@@ -24,8 +24,8 @@
 import React, { useEffect, useState, useCallback } from 'react';
 
 /* ── Constants ─────────────────────────────────────────────────────────── */
-const FLIPHTML5_URL      = 'https://online.fliphtml5.com/YOUR-LINK-HERE/';
-const GOOGLE_SCRIPT_URL  = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+const FLIPHTML5_URL      = 'https://online.fliphtml5.com/murivest/yhhx/';
+const GOOGLE_SCRIPT_URL  = 'https://script.google.com/macros/s/AKfycbwZsDw5wImmahoJ6ofT_HG18CPfz8kdTSAd6iyDknrbNRS_sPXAaoNj7A_KBcbexBQn6g/exec';
 const COVER_IMAGE        = '/brochure-asset-brief.png';
 const STORAGE_KEY        = 'npcab_v3_dismissed';
 const PAYBILL            = '303030';
