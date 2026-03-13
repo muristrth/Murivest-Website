@@ -55,7 +55,7 @@ function investorConfirmationEmail(data: {
     <tr><td style="background:linear-gradient(135deg,#071828 0%,#0A2540 55%,#0d3160 100%);padding:36px 36px 30px;border-bottom:3px solid #C49E4C;">
       <p style="margin:0 0 10px;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#C49E4C;font-family:Arial,sans-serif;">◆ &nbsp; Restricted Institutional Publication &nbsp; ◆</p>
       <h1 style="margin:0 0 8px;font-size:24px;font-weight:700;color:#F9F6EF;line-height:1.2;">Nairobi Private Commercial Asset Brief</h1>
-      <p style="margin:0;font-size:13px;color:rgba(249,246,239,0.68);font-style:italic;font-family:Arial,sans-serif;">Inaugural Edition · Murivest Realty Ltd · 2025</p>
+      <p style="margin:0;font-size:13px;color:rgba(249,246,239,0.68);font-style:italic;font-family:Arial,sans-serif;">Inaugural Edition · Murivest Realty Ltd · 2026</p>
     </td></tr>
 
     <!-- Body -->

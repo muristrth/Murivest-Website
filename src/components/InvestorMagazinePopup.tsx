@@ -428,7 +428,7 @@ export default function InvestorMagazinePopup() {
 
           {/* HEADER */}
           <div className="npcab-header">
-            <div className="npcab-eyebrow"><span>◆</span><span>Restricted Institutional Publication · Inaugural Edition · 2025</span><span>◆</span></div>
+            <div className="npcab-eyebrow"><span>◆</span><span>Restricted Institutional Publication · 2026</span><span>◆</span></div>
             <div className="npcab-title">Nairobi Private Commercial Asset Brief</div>
             <div className="npcab-subtitle">Independent intelligence for institutional capital allocators, family offices and ultra-high-net-worth investors navigating East Africa's foremost real estate market.</div>
             <button className="npcab-close" onClick={closeTemp} aria-label="Close"><Ico.Close /></button>
@@ -453,7 +453,7 @@ export default function InvestorMagazinePopup() {
               <div className="npcab-cover-stats">
                 <div className="npcab-cover-wrap">
                   <img src={COVER_IMAGE} alt="Nairobi Private Commercial Asset Brief — Cover" />
-                  <div className="npcab-cover-caption">Inaugural Edition · 2025</div>
+                  <button className="npcab-btn npcab-btn-gold" onClick={() => setStage('request')}>Request Your Copy &nbsp;→</button>
                 </div>
                 <div className="npcab-stats-col">
                   <div className="npcab-section-title">Selected Market Data · The Investment Case</div>
