@@ -7,6 +7,7 @@ import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import WhatsAppButton from '../components/ui/WhatsAppButton';
 import AnalyticsTracker from '../components/AnalyticsTracker';
+import InvestorMagazinePopup from '@/components/InvestorMagazinePopup';
 
 // Define the fonts here
 const inter = Inter({
@@ -245,6 +246,8 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
           <WhatsAppButton />
+          {children}
+      <InvestorMagazinePopup />
         </div>
       </body>
     </html>

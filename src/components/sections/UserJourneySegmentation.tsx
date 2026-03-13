@@ -156,12 +156,6 @@ export default function InvestmentFramework() {
               into a structure that protects it — or into the informal mid-market
               that destroyed KES 43.8 billion in NPLs in the first half of 2024 alone.
             </p>
-            <p className="text-[13px] text-[#8B7355] italic"
-               style={{ fontFamily: 'Arial, sans-serif' }}>
-              Sources: Knight Frank Wealth Report 2025 · McKinsey Five Alphas 2024 ·
-              McKinsey GPM Report 2025 · MSCI Real Estate in Focus 2025 ·
-              Cytonn NMA Reports 2024/2025 · Knight Frank Africa Industrial H1 2025
-            </p>
           </div>
         </div>
 
