@@ -667,7 +667,13 @@ export default function InvestorMagazinePopup() {
               <div className="lg-visual">
                 <div className="lg-cover-frame">
                   <img src={COVER_IMAGE} alt="Asset Brief Cover" className="lg-cover-img" />
-                  <div className="lg-cover-caption">Inaugural Edition · 2025</div>
+                  <button
+                    className="lg-btn lg-btn-tobacco"
+                    style={{ alignSelf: 'flex-start' }}
+                    onClick={() => goToStage('request')}
+                  >
+                    Request Investment Memorandum <Ico.ArrowRight />
+                  </button>
                 </div>
                 <div className="lg-stats">
                   {[
