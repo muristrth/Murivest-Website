@@ -91,22 +91,34 @@ interface FormState {
 
 type Stage = 'overview' | 'request' | 'payment' | 'success_digital' | 'success_hard';
 
+const SESSION_TTL_MS = 30 * 60 * 1000; // 30 minutes
+
 /* ── Session persistence helpers ────────────────────────────────────────── */
 function saveSession(form: FormState, stage: Stage) {
   try {
-    sessionStorage.setItem(SESSION_KEY, JSON.stringify({ form, stage }));
+    localStorage.setItem(SESSION_KEY, JSON.stringify({
+      form, stage,
+      savedAt: Date.now(),
+    }));
   } catch { /* silent */ }
 }
 
 function loadSession(): { form: FormState; stage: Stage } | null {
   try {
-    const raw = sessionStorage.getItem(SESSION_KEY);
-    return raw ? JSON.parse(raw) : null;
+    const raw = localStorage.getItem(SESSION_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    // Discard sessions older than 30 minutes
+    if (Date.now() - parsed.savedAt > SESSION_TTL_MS) {
+      localStorage.removeItem(SESSION_KEY);
+      return null;
+    }
+    return { form: parsed.form, stage: parsed.stage };
   } catch { return null; }
 }
 
 function clearSession() {
-  try { sessionStorage.removeItem(SESSION_KEY); } catch { /* silent */ }
+  try { localStorage.removeItem(SESSION_KEY); } catch { /* silent */ }
 }
 
 /* ── Scroll panel to top ────────────────────────────────────────────────── */
