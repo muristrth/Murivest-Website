@@ -9,6 +9,12 @@
  *   Cream (#F8F7F4) · Charcoal (#2C2C2C) · Tobacco brass (#8B7355)
  *   Asymmetric 5/7 grid · Playfair Display · 400ms slow transitions
  *   44px touch targets · Mobile-first · No shadows · Hairline borders
+ *   Red payment banner (#8B1A1A) with gold step numbers
+ *
+ * Updates in this revision:
+ *   ✓ Red payment banner restored (crimson gradient + gold steps)
+ *   ✓ Scroll-to-top on all stage transitions
+ *   ✓ sessionStorage session persistence — survives Chrome refresh/tab switch
  *
  * Flow:
  *   Digital → form → submit → success → "View Asset Brief" (FlipHTML5)
@@ -17,10 +23,6 @@
  *
  * Leads  → Google Sheets (Apps Script webhook)
  * Emails → SMTP via /api/investor-brief-request & /api/mpesa-confirmation
- *
- * !! REPLACE !!
- *   FLIPHTML5_URL     → your real FlipHTML5 link
- *   GOOGLE_SCRIPT_URL → your deployed Apps Script URL
  */
 
 import React, { useEffect, useState, useCallback } from 'react';
@@ -30,6 +32,7 @@ const FLIPHTML5_URL     = 'https://online.fliphtml5.com/murivest/yhhx/';
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwZsDw5wImmahoJ6ofT_HG18CPfz8kdTSAd6iyDknrbNRS_sPXAaoNj7A_KBcbexBQn6g/exec';
 const COVER_IMAGE       = '/brochure-asset-brief.png';
 const STORAGE_KEY       = 'npcab_lounge_v2';
+const SESSION_KEY       = 'npcab_form_session';
 const PAYBILL           = '303030';
 const ACCOUNT           = '2048650433';
 const AMOUNT            = 'KES 2,000';
@@ -63,6 +66,10 @@ const C = {
   hairlineDark:  '#D5D2CC',
   white:         '#FFFFFF',
   error:         '#8B4513',
+  red:           '#8B1A1A',
+  redLight:      '#A52020',
+  redDark:       '#6B1010',
+  gold:          '#C49E4C',
 };
 
 const serif = "'Playfair Display', 'Georgia', 'Times New Roman', serif";
@@ -83,6 +90,31 @@ interface FormState {
 }
 
 type Stage = 'overview' | 'request' | 'payment' | 'success_digital' | 'success_hard';
+
+/* ── Session persistence helpers ────────────────────────────────────────── */
+function saveSession(form: FormState, stage: Stage) {
+  try {
+    sessionStorage.setItem(SESSION_KEY, JSON.stringify({ form, stage }));
+  } catch { /* silent */ }
+}
+
+function loadSession(): { form: FormState; stage: Stage } | null {
+  try {
+    const raw = sessionStorage.getItem(SESSION_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch { return null; }
+}
+
+function clearSession() {
+  try { sessionStorage.removeItem(SESSION_KEY); } catch { /* silent */ }
+}
+
+/* ── Scroll panel to top ────────────────────────────────────────────────── */
+function scrollPanelTop() {
+  setTimeout(() => {
+    document.querySelector('.lg-panel')?.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 50);
+}
 
 /* ── SVG Icons ──────────────────────────────────────────────────────────── */
 const Ico = {
@@ -148,7 +180,7 @@ const Ico = {
   ),
 };
 
-/* ── Payment validator (full production rules) ──────────────────────────── */
+/* ── Payment validator ──────────────────────────────────────────────────── */
 function validatePaymentMessage(msg: string): string | null {
   const text = msg.trim();
   if (text.length < 10)
@@ -157,7 +189,7 @@ function validatePaymentMessage(msg: string): string | null {
   const hasMpesaCode = /[A-Z0-9]{10}/i.test(text);
   const hasAmount    = /2[,.]?000|kes\s*2000|ksh\s*2000/i.test(text);
   const hasBankRef   = /ref|reference|account|acct|absa|confirmed|sent|paid/i.test(text);
-  const hasRecipient = /MARK|maina|muriithi|account|303030|2048650433/i.test(text);
+  const hasRecipient = /murivest|maina|muriithi|paybill|303030|2048650433/i.test(text);
   const isCodeOnly   = hasMpesaCode && /confirmed|confirm|done|paid|complete/i.test(text);
   const isMpesa      = hasMpesaCode && hasAmount;
   const isBank       = hasAmount && hasBankRef;
@@ -186,14 +218,31 @@ export default function InvestorMagazinePopup() {
     shippingAddress: '', consent: false,
   });
 
+  /* ── Mount: restore session or show popup after delay ─────────────────── */
   useEffect(() => {
     if (localStorage.getItem(STORAGE_KEY)) return;
+
+    const saved = loadSession();
+    if (saved) {
+      setForm(saved.form);
+      setStage(saved.stage);
+      setOpen(true);
+      return;
+    }
+
     const t = setTimeout(() => setOpen(true), 2800);
     return () => clearTimeout(t);
   }, []);
 
+  /* ── Persist form + stage to sessionStorage on every change ───────────── */
+  useEffect(() => {
+    if (open) saveSession(form, stage);
+  }, [form, stage, open]);
+
+  /* ── Close handlers ───────────────────────────────────────────────────── */
   const closeAndRemember = useCallback(() => {
     localStorage.setItem(STORAGE_KEY, 'true');
+    clearSession();
     setOpen(false);
   }, []);
 
@@ -221,6 +270,12 @@ export default function InvestorMagazinePopup() {
       setTimeout(() => setCopied(null), 2000);
     } catch { /* silent */ }
   };
+
+  /* ── Navigate with scroll-to-top ────────────────────────────────────────  */
+  const goToStage = useCallback((s: Stage) => {
+    setStage(s);
+    scrollPanelTop();
+  }, []);
 
   /* ── Submit initial form ──────────────────────────────────────────────── */
   const handleSubmit = async (e: React.FormEvent) => {
@@ -259,12 +314,13 @@ export default function InvestorMagazinePopup() {
       });
 
       localStorage.setItem(STORAGE_KEY, 'true');
+      clearSession();
 
       if (form.copyType === 'digital') {
-        setStage('success_digital');
+        goToStage('success_digital');
         window.open(FLIPHTML5_URL, '_blank', 'noopener,noreferrer');
       } else {
-        setStage('payment');
+        goToStage('payment');
       }
     } catch {
       setError('Unable to process request. Please contact your portfolio agent.');
@@ -319,7 +375,9 @@ export default function InvestorMagazinePopup() {
         mode: 'no-cors',
       });
 
-      setStage('success_hard');
+      localStorage.setItem(STORAGE_KEY, 'true');
+      clearSession();
+      goToStage('success_hard');
     } catch {
       setError('Confirmation failed. Please contact your portfolio agent directly.');
     } finally {
@@ -337,22 +395,17 @@ export default function InvestorMagazinePopup() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
 
-        /* ── Base ──────────────────────────────────────────────────────── */
         .lg-overlay {
           position: fixed; inset: 0; z-index: 9999;
           background: rgba(44, 44, 44, 0.88);
           display: flex; align-items: center; justify-content: center;
-          padding: 16px;
-          font-family: ${sans};
+          padding: 16px; font-family: ${sans};
           -webkit-font-smoothing: antialiased;
         }
         .lg-panel {
-          position: relative;
-          width: 100%; max-width: 1020px;
-          max-height: 92vh;
-          overflow-y: auto; overflow-x: hidden;
-          background: ${C.cream};
-          border-radius: 2px;
+          position: relative; width: 100%; max-width: 1020px;
+          max-height: 92vh; overflow-y: auto; overflow-x: hidden;
+          background: ${C.cream}; border-radius: 2px;
           display: flex; flex-direction: column;
           -webkit-overflow-scrolling: touch;
         }
@@ -360,29 +413,23 @@ export default function InvestorMagazinePopup() {
         .lg-panel::-webkit-scrollbar-track { background: ${C.creamDark}; }
         .lg-panel::-webkit-scrollbar-thumb { background: ${C.tobacco}; border-radius: 2px; }
 
-        /* ── Header ────────────────────────────────────────────────────── */
+        /* HEADER */
         .lg-header {
-          background: ${C.creamDark};
-          padding: 28px 32px 24px;
-          border-bottom: 1px solid ${C.hairline};
-          position: relative;
+          background: ${C.creamDark}; padding: 28px 32px 24px;
+          border-bottom: 1px solid ${C.hairline}; position: relative;
         }
         .lg-eyebrow {
           font-family: ${sans}; font-size: 9px; letter-spacing: 0.3em;
-          text-transform: uppercase; color: ${C.tobacco};
-          margin-bottom: 12px; font-weight: 400;
+          text-transform: uppercase; color: ${C.tobacco}; margin-bottom: 12px; font-weight: 400;
         }
         .lg-title {
-          font-family: ${serif};
-          font-size: clamp(24px, 4.5vw, 36px);
-          font-weight: 400; color: ${C.charcoal};
-          line-height: 1.15; margin-bottom: 8px; letter-spacing: -0.01em;
+          font-family: ${serif}; font-size: clamp(24px, 4.5vw, 36px);
+          font-weight: 400; color: ${C.charcoal}; line-height: 1.15;
+          margin-bottom: 8px; letter-spacing: -0.01em;
         }
         .lg-subtitle {
-          font-size: clamp(13px, 2vw, 14px);
-          color: ${C.charcoalLight}; font-style: italic;
-          line-height: 1.6; font-weight: 300;
-          max-width: 600px;
+          font-size: clamp(13px, 2vw, 14px); color: ${C.charcoalLight};
+          font-style: italic; line-height: 1.6; font-weight: 300; max-width: 600px;
         }
         .lg-close {
           position: absolute; top: 18px; right: 18px;
@@ -394,7 +441,7 @@ export default function InvestorMagazinePopup() {
         }
         .lg-close:hover { border-color: ${C.tobacco}; color: ${C.tobacco}; }
 
-        /* ── Inner nav ─────────────────────────────────────────────────── */
+        /* INNER NAV */
         .lg-nav {
           display: flex; align-items: center; gap: 16px;
           padding: 14px 32px; border-bottom: 1px solid ${C.hairline};
@@ -402,348 +449,169 @@ export default function InvestorMagazinePopup() {
         }
         .lg-back {
           display: flex; align-items: center; gap: 8px;
-          background: transparent; border: none;
-          color: ${C.tobacco}; font-family: ${sans};
-          font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-          cursor: pointer; padding: 10px 0; transition: color 0.4s ease; font-weight: 400;
-          min-height: 44px;
+          background: transparent; border: none; color: ${C.tobacco};
+          font-family: ${sans}; font-size: 10px; letter-spacing: 0.2em;
+          text-transform: uppercase; cursor: pointer; padding: 10px 0;
+          transition: color 0.4s ease; font-weight: 400; min-height: 44px;
         }
         .lg-back:hover { color: ${C.tobaccoDark}; }
         .lg-nav-rule { flex: 1; height: 1px; background: ${C.hairline}; }
 
-        /* ── Asymmetric body grid ───────────────────────────────────────── */
+        /* ASYMMETRIC BODY */
         .lg-body {
-          padding: 36px 32px;
-          display: grid;
-          grid-template-columns: 5fr 7fr;
-          gap: 52px;
-          align-items: start;
+          padding: 36px 32px; display: grid;
+          grid-template-columns: 5fr 7fr; gap: 52px; align-items: start;
         }
-        .lg-body-single {
-          grid-template-columns: 1fr;
-          max-width: 620px;
-          margin: 0 auto;
-          width: 100%;
-        }
+        .lg-body-single { grid-template-columns: 1fr; max-width: 620px; margin: 0 auto; width: 100%; }
 
-        /* ── Left column ───────────────────────────────────────────────── */
+        /* LEFT COLUMN */
         .lg-visual { display: flex; flex-direction: column; gap: 24px; }
-        .lg-cover-frame {
-          border: 1px solid ${C.hairline};
-          padding: 10px; background: ${C.white};
-          overflow: hidden;
-        }
-        .lg-cover-img {
-          width: 100%; display: block;
-          filter: sepia(6%) contrast(98%);
-          transition: transform 0.5s ease;
-        }
+        .lg-cover-frame { border: 1px solid ${C.hairline}; padding: 10px; background: ${C.white}; overflow: hidden; }
+        .lg-cover-img { width: 100%; display: block; filter: sepia(6%) contrast(98%); transition: transform 0.5s ease; }
         .lg-cover-frame:hover .lg-cover-img { transform: scale(1.02); }
         .lg-cover-caption {
-          margin-top: 10px; text-align: center;
-          font-family: ${sans}; font-size: 9px;
-          letter-spacing: 0.25em; text-transform: uppercase; color: ${C.tobacco};
+          margin-top: 10px; text-align: center; font-family: ${sans};
+          font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: ${C.tobacco};
         }
+        .lg-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: ${C.hairline}; border: 1px solid ${C.hairline}; }
+        .lg-stat { background: ${C.cream}; padding: 16px 12px; text-align: center; }
+        .lg-stat-value { font-family: ${serif}; font-size: clamp(18px, 2.5vw, 24px); font-weight: 400; color: ${C.charcoal}; line-height: 1; margin-bottom: 6px; }
+        .lg-stat-label { font-family: ${sans}; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: ${C.tobacco}; line-height: 1.4; }
 
-        /* ── Stats grid ─────────────────────────────────────────────────── */
-        .lg-stats {
-          display: grid; grid-template-columns: 1fr 1fr;
-          gap: 1px; background: ${C.hairline};
-          border: 1px solid ${C.hairline};
-        }
-        .lg-stat {
-          background: ${C.cream}; padding: 16px 12px; text-align: center;
-        }
-        .lg-stat-value {
-          font-family: ${serif};
-          font-size: clamp(18px, 2.5vw, 24px);
-          font-weight: 400; color: ${C.charcoal}; line-height: 1; margin-bottom: 6px;
-        }
-        .lg-stat-label {
-          font-family: ${sans}; font-size: 9px;
-          letter-spacing: 0.18em; text-transform: uppercase;
-          color: ${C.tobacco}; line-height: 1.4;
-        }
-
-        /* ── Right column ───────────────────────────────────────────────── */
+        /* RIGHT COLUMN */
         .lg-content { display: flex; flex-direction: column; gap: 28px; }
         .lg-section-title {
-          font-family: ${serif};
-          font-size: clamp(17px, 2.8vw, 22px);
-          font-weight: 400; color: ${C.charcoal};
-          margin-bottom: 16px; padding-bottom: 12px;
+          font-family: ${serif}; font-size: clamp(17px, 2.8vw, 22px); font-weight: 400;
+          color: ${C.charcoal}; margin-bottom: 16px; padding-bottom: 12px;
           border-bottom: 1px solid ${C.hairline};
         }
-        .lg-quote {
-          border-left: 2px solid ${C.tobacco}; padding-left: 20px;
-        }
-        .lg-quote-text {
-          font-family: ${serif}; font-style: italic;
-          font-size: clamp(14px, 2.2vw, 17px);
-          color: ${C.charcoal}; line-height: 1.65; font-weight: 400;
-        }
-        .lg-quote-cite {
-          font-family: ${sans}; font-size: 10px; color: ${C.tobacco};
-          margin-top: 10px; letter-spacing: 0.15em; text-transform: uppercase;
-        }
-        .lg-benefit {
-          display: flex; align-items: flex-start; gap: 14px;
-          padding-bottom: 16px; margin-bottom: 4px;
-          border-bottom: 1px solid ${C.hairline};
-        }
+        .lg-quote { border-left: 2px solid ${C.tobacco}; padding-left: 20px; }
+        .lg-quote-text { font-family: ${serif}; font-style: italic; font-size: clamp(14px, 2.2vw, 17px); color: ${C.charcoal}; line-height: 1.65; font-weight: 400; }
+        .lg-quote-cite { font-family: ${sans}; font-size: 10px; color: ${C.tobacco}; margin-top: 10px; letter-spacing: 0.15em; text-transform: uppercase; }
+        .lg-benefit { display: flex; align-items: flex-start; gap: 14px; padding-bottom: 16px; margin-bottom: 4px; border-bottom: 1px solid ${C.hairline}; }
         .lg-benefit:last-child { border-bottom: none; padding-bottom: 0; }
-        .lg-benefit-marker {
-          width: 7px; height: 7px; min-width: 7px;
-          background: ${C.tobacco}; margin-top: 9px;
-        }
-        .lg-benefit-text {
-          font-family: ${sans}; font-size: clamp(12px, 1.8vw, 13.5px);
-          color: ${C.charcoalLight}; line-height: 1.75; font-weight: 300;
-        }
+        .lg-benefit-marker { width: 7px; height: 7px; min-width: 7px; background: ${C.tobacco}; margin-top: 9px; }
+        .lg-benefit-text { font-family: ${sans}; font-size: clamp(12px, 1.8vw, 13.5px); color: ${C.charcoalLight}; line-height: 1.75; font-weight: 300; }
         .lg-benefit-text strong { color: ${C.charcoal}; font-weight: 400; font-family: ${serif}; }
 
-        /* ── Forms ──────────────────────────────────────────────────────── */
+        /* FORMS */
         .lg-form { display: flex; flex-direction: column; gap: 20px; }
         .lg-field { display: flex; flex-direction: column; gap: 8px; }
         .lg-field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        .lg-label {
-          font-family: ${sans}; font-size: 10px; letter-spacing: 0.25em;
-          text-transform: uppercase; color: ${C.tobacco}; font-weight: 400;
-        }
+        .lg-label { font-family: ${sans}; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: ${C.tobacco}; font-weight: 400; }
         .lg-input, .lg-select, .lg-textarea {
-          padding: 14px 16px;
-          border: 1px solid ${C.hairline};
-          border-radius: 0;
-          background: ${C.white};
-          font-family: ${sans}; font-size: 14px; color: ${C.charcoal};
-          outline: none; transition: border-color 0.4s ease;
-          width: 100%; box-sizing: border-box; -webkit-appearance: none;
-          min-height: 44px;
+          padding: 14px 16px; border: 1px solid ${C.hairline}; border-radius: 0;
+          background: ${C.white}; font-family: ${sans}; font-size: 14px; color: ${C.charcoal};
+          outline: none; transition: border-color 0.4s ease; width: 100%;
+          box-sizing: border-box; -webkit-appearance: none; min-height: 44px;
         }
-        .lg-input:focus, .lg-select:focus, .lg-textarea:focus {
-          border-color: ${C.tobacco};
-        }
+        .lg-input:focus, .lg-select:focus, .lg-textarea:focus { border-color: ${C.tobacco}; }
         .lg-input::placeholder, .lg-textarea::placeholder { color: #B0A898; }
         .lg-select {
-          cursor: pointer;
+          cursor: pointer; appearance: none;
           background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238B7355' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
           background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px;
         }
         .lg-textarea { resize: vertical; min-height: 90px; line-height: 1.6; }
 
-        /* ── Copy type selection ────────────────────────────────────────── */
+        /* COPY TYPE */
         .lg-copy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        .lg-copy-card {
-          border: 1px solid ${C.hairline}; padding: 20px;
-          cursor: pointer; background: ${C.white};
-          transition: all 0.4s ease; position: relative;
-        }
+        .lg-copy-card { border: 1px solid ${C.hairline}; padding: 20px; cursor: pointer; background: ${C.white}; transition: all 0.4s ease; position: relative; }
         .lg-copy-card:hover { border-color: ${C.tobacco}; }
         .lg-copy-card.selected { border-color: ${C.tobacco}; background: ${C.creamDark}; }
         .lg-copy-icon { color: ${C.tobacco}; margin-bottom: 12px; }
-        .lg-copy-title {
-          font-family: ${serif}; font-size: 16px; font-weight: 400;
-          color: ${C.charcoal}; margin-bottom: 6px;
-        }
-        .lg-copy-desc {
-          font-family: ${sans}; font-size: 12px; color: ${C.charcoalLight};
-          line-height: 1.55; margin-bottom: 12px; font-weight: 300;
-        }
-        .lg-copy-price {
-          font-family: ${sans}; font-size: 10px; letter-spacing: 0.15em;
-          text-transform: uppercase; color: ${C.tobacco};
-        }
-        .lg-copy-check {
-          position: absolute; top: 14px; right: 14px;
-          width: 20px; height: 20px; border: 1px solid ${C.hairline};
-          display: flex; align-items: center; justify-content: center;
-          color: ${C.tobacco}; opacity: 0; transition: opacity 0.3s ease;
-        }
+        .lg-copy-title { font-family: ${serif}; font-size: 16px; font-weight: 400; color: ${C.charcoal}; margin-bottom: 6px; }
+        .lg-copy-desc { font-family: ${sans}; font-size: 12px; color: ${C.charcoalLight}; line-height: 1.55; margin-bottom: 12px; font-weight: 300; }
+        .lg-copy-price { font-family: ${sans}; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: ${C.tobacco}; }
+        .lg-copy-check { position: absolute; top: 14px; right: 14px; width: 20px; height: 20px; border: 1px solid ${C.hairline}; display: flex; align-items: center; justify-content: center; color: ${C.tobacco}; opacity: 0; transition: opacity 0.3s ease; }
         .lg-copy-card.selected .lg-copy-check { opacity: 1; border-color: ${C.tobacco}; }
 
-        /* ── Address box ─────────────────────────────────────────────────── */
-        .lg-address-box {
-          padding: 16px; background: ${C.creamDark};
-          border: 1px solid ${C.hairline};
-          display: flex; gap: 12px; align-items: flex-start;
-        }
+        /* ADDRESS */
+        .lg-address-box { padding: 16px; background: ${C.creamDark}; border: 1px solid ${C.hairline}; display: flex; gap: 12px; align-items: flex-start; }
         .lg-address-icon { color: ${C.tobacco}; margin-top: 2px; flex-shrink: 0; }
-        .lg-address-hint {
-          font-family: ${sans}; font-size: 10px; color: ${C.tobaccoLight};
-          margin-top: 8px; line-height: 1.5;
-        }
+        .lg-address-hint { font-family: ${sans}; font-size: 10px; color: ${C.tobaccoLight}; margin-top: 8px; line-height: 1.5; }
 
-        /* ── Consent ─────────────────────────────────────────────────────── */
-        .lg-consent {
-          display: flex; gap: 14px; align-items: flex-start;
-          padding: 16px; border: 1px solid ${C.hairline};
-          cursor: pointer; transition: border-color 0.4s ease;
-        }
+        /* CONSENT */
+        .lg-consent { display: flex; gap: 14px; align-items: flex-start; padding: 16px; border: 1px solid ${C.hairline}; cursor: pointer; transition: border-color 0.4s ease; }
         .lg-consent:hover { border-color: ${C.tobacco}; }
-        .lg-checkbox {
-          width: 20px; height: 20px; min-width: 20px;
-          border: 1px solid ${C.hairlineDark};
-          display: flex; align-items: center; justify-content: center;
-          margin-top: 2px; color: ${C.tobacco}; transition: all 0.3s ease;
-        }
+        .lg-checkbox { width: 20px; height: 20px; min-width: 20px; border: 1px solid ${C.hairlineDark}; display: flex; align-items: center; justify-content: center; margin-top: 2px; color: ${C.tobacco}; transition: all 0.3s ease; }
         .lg-checkbox.checked { border-color: ${C.tobacco}; background: ${C.tobacco}; color: ${C.white}; }
-        .lg-consent-text {
-          font-family: ${sans}; font-size: 12px; color: ${C.charcoalLight};
-          line-height: 1.75; font-weight: 300;
-        }
+        .lg-consent-text { font-family: ${sans}; font-size: 12px; color: ${C.charcoalLight}; line-height: 1.75; font-weight: 300; }
         .lg-consent-text strong { color: ${C.charcoal}; font-weight: 400; }
 
-        /* ── Buttons ─────────────────────────────────────────────────────── */
+        /* BUTTONS */
         .lg-btn {
-          display: inline-flex; align-items: center; justify-content: center;
-          gap: 10px; padding: 16px 28px;
-          border: none; background: ${C.charcoal}; color: ${C.cream};
-          font-family: ${sans}; font-size: 10px;
-          letter-spacing: 0.25em; text-transform: uppercase;
-          cursor: pointer; transition: all 0.4s ease;
-          text-decoration: none; min-height: 44px; font-weight: 400;
-          box-sizing: border-box;
+          display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+          padding: 16px 28px; border: none; background: ${C.charcoal}; color: ${C.cream};
+          font-family: ${sans}; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+          cursor: pointer; transition: all 0.4s ease; text-decoration: none;
+          min-height: 44px; font-weight: 400; box-sizing: border-box;
         }
         .lg-btn:hover { background: ${C.tobacco}; }
         .lg-btn:disabled { background: ${C.hairlineDark}; color: ${C.charcoalLight}; cursor: not-allowed; }
         .lg-btn-full { width: 100%; }
-        .lg-btn-outline {
-          background: transparent; color: ${C.charcoal};
-          border: 1px solid ${C.hairlineDark};
-        }
+        .lg-btn-outline { background: transparent; color: ${C.charcoal}; border: 1px solid ${C.hairlineDark}; }
         .lg-btn-outline:hover { border-color: ${C.tobacco}; color: ${C.tobacco}; background: transparent; }
         .lg-btn-tobacco { background: ${C.tobacco}; color: ${C.white}; }
         .lg-btn-tobacco:hover { background: ${C.tobaccoDark}; }
 
-        /* ── Payment screen ──────────────────────────────────────────────── */
+        /* ── PAYMENT BANNER — Crimson red ──────────────────────────────── */
         .lg-payment-banner {
-          background: linear-gradient(135deg, #8B1A1A 0%, #A52020 40%, #6B1010 100%);
-          padding: 28px;
-          color: #F9F6EF;
+          background: linear-gradient(135deg, ${C.red} 0%, ${C.redLight} 40%, ${C.redDark} 100%);
+          padding: 28px; color: #F9F6EF;
           border: 1px solid rgba(255,255,255,0.08);
         }
-        .lg-payment-title {
-          font-family: ${serif}; font-size: 20px; font-weight: 400;
-          color: #F9F6EF; margin-bottom: 6px;
-        }
-        .lg-payment-sub {
-          font-family: ${sans}; font-size: 12px; color: rgba(249,246,239,0.72);
-          font-weight: 300; margin-bottom: 24px; line-height: 1.5;
-        }
-        .lg-payment-row {
-          display: flex; align-items: center; justify-content: space-between;
-          padding: 14px 0; border-bottom: 1px solid rgba(139,115,85,0.3);
-          gap: 16px;
-        }
+        .lg-payment-title { font-family: ${serif}; font-size: 20px; font-weight: 400; color: #F9F6EF; margin-bottom: 6px; }
+        .lg-payment-sub { font-family: ${sans}; font-size: 12px; color: rgba(249,246,239,0.72); font-weight: 300; margin-bottom: 24px; line-height: 1.5; }
+        .lg-payment-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(249,246,239,0.15); gap: 16px; }
         .lg-payment-row:last-of-type { border-bottom: none; }
-        .lg-payment-label {
-          font-family: ${sans}; font-size: 9px; letter-spacing: 0.25em;
-          text-transform: uppercase; color: ${C.tobaccoLight};
-        }
-        .lg-payment-value {
-          font-family: ${serif}; font-size: clamp(16px, 3vw, 20px); color: ${C.cream};
-        }
+        .lg-payment-label { font-family: ${sans}; font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(249,246,239,0.6); }
+        .lg-payment-value { font-family: ${serif}; font-size: clamp(16px, 3vw, 20px); color: #F9F6EF; }
         .lg-copy-small {
-          background: transparent; border: 1px solid rgba(139,115,85,0.5);
-          color: ${C.cream}; padding: 8px 12px;
-          font-family: ${sans}; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase;
-          cursor: pointer; display: flex; align-items: center; gap: 6px;
+          background: transparent; border: 1px solid rgba(249,246,239,0.3);
+          color: #F9F6EF; padding: 8px 12px; font-family: ${sans}; font-size: 9px;
+          letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer;
+          display: flex; align-items: center; gap: 6px;
           transition: all 0.3s ease; white-space: nowrap; min-height: 44px;
         }
-        .lg-copy-small:hover { border-color: ${C.tobacco}; background: rgba(139,115,85,0.12); }
-        .lg-steps {
-          margin-top: 20px; padding-top: 20px;
-          border-top: 1px solid rgba(139,115,85,0.3);
-        }
-        .lg-step {
-          display: flex; align-items: flex-start; gap: 12px;
-          margin-bottom: 10px; font-family: ${sans};
-          font-size: 13px; color: ${C.cream}; font-weight: 300;
-        }
+        .lg-copy-small:hover { border-color: ${C.gold}; background: rgba(196,158,76,0.12); }
+        .lg-steps { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(249,246,239,0.15); }
+        .lg-step { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; font-family: ${sans}; font-size: 13px; color: #F9F6EF; font-weight: 300; }
+        /* Gold step numbers on red background */
         .lg-step-num {
           width: 22px; height: 22px; min-width: 22px;
-          border: 1px solid #C49E4C;
+          border: 1px solid ${C.gold};
           display: flex; align-items: center; justify-content: center;
-          font-family: ${serif}; font-size: 11px; color: #C49E4C;
+          font-family: ${serif}; font-size: 11px; color: ${C.gold};
           flex-shrink: 0; margin-top: 1px;
         }
 
-        /* ── Info box ────────────────────────────────────────────────────── */
-        .lg-info {
-          padding: 16px; border: 1px solid ${C.hairline};
-          font-family: ${sans}; font-size: 13px;
-          color: ${C.charcoalLight}; line-height: 1.7; font-weight: 300;
-        }
+        /* CONFIRMED ADDRESS */
+        .lg-confirmed-address { padding: 16px; background: ${C.creamDark}; border: 1px solid ${C.hairline}; display: flex; gap: 12px; align-items: flex-start; }
+
+        /* INFO + ERROR */
+        .lg-info { padding: 16px; border: 1px solid ${C.hairline}; font-family: ${sans}; font-size: 13px; color: ${C.charcoalLight}; line-height: 1.7; font-weight: 300; }
         .lg-info strong { color: ${C.charcoal}; font-weight: 400; }
         .lg-info-tobacco { border-color: rgba(139,115,85,0.35); background: rgba(139,115,85,0.05); }
+        .lg-error { padding: 14px 16px; background: rgba(139,69,19,0.07); border-left: 2px solid ${C.error}; font-family: ${sans}; font-size: 13px; color: ${C.error}; font-weight: 300; }
 
-        /* ── Error ───────────────────────────────────────────────────────── */
-        .lg-error {
-          padding: 14px 16px; background: rgba(139,69,19,0.07);
-          border-left: 2px solid ${C.error};
-          font-family: ${sans}; font-size: 13px; color: ${C.error}; font-weight: 300;
-        }
-
-        /* ── Confirmed address row ───────────────────────────────────────── */
-        .lg-confirmed-address {
-          padding: 16px; background: ${C.creamDark}; border: 1px solid ${C.hairline};
-          display: flex; gap: 12px; align-items: flex-start;
-        }
-
-        /* ── Success ─────────────────────────────────────────────────────── */
-        .lg-success {
-          padding: 56px 36px; text-align: center;
-          display: flex; flex-direction: column; align-items: center; gap: 20px;
-        }
-        .lg-success-icon {
-          width: 64px; height: 64px;
-          border: 1px solid ${C.tobacco};
-          display: flex; align-items: center; justify-content: center;
-          color: ${C.tobacco};
-        }
-        .lg-success-title {
-          font-family: ${serif}; font-size: clamp(24px, 4vw, 32px);
-          font-weight: 400; color: ${C.charcoal};
-        }
-        .lg-success-text {
-          font-family: ${sans}; font-size: 14px; color: ${C.charcoalLight};
-          line-height: 1.85; max-width: 480px; font-weight: 300;
-        }
+        /* SUCCESS */
+        .lg-success { padding: 56px 36px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+        .lg-success-icon { width: 64px; height: 64px; border: 1px solid ${C.tobacco}; display: flex; align-items: center; justify-content: center; color: ${C.tobacco}; }
+        .lg-success-title { font-family: ${serif}; font-size: clamp(24px, 4vw, 32px); font-weight: 400; color: ${C.charcoal}; }
+        .lg-success-text { font-family: ${sans}; font-size: 14px; color: ${C.charcoalLight}; line-height: 1.85; max-width: 480px; font-weight: 300; }
         .lg-success-text strong { color: ${C.charcoal}; font-weight: 400; }
-        .lg-success-actions {
-          display: flex; flex-direction: column; gap: 12px;
-          width: 100%; max-width: 320px; margin-top: 8px;
-        }
-        .lg-success-badges {
-          display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
-          margin-top: 12px;
-        }
-        .lg-success-badge {
-          font-family: ${sans}; font-size: 9px; letter-spacing: 0.12em;
-          text-transform: uppercase; color: ${C.charcoalLight};
-          border: 1px solid ${C.hairline}; padding: 4px 10px;
-        }
+        .lg-success-actions { display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 320px; margin-top: 8px; }
+        .lg-success-badges { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 12px; }
+        .lg-success-badge { font-family: ${sans}; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: ${C.charcoalLight}; border: 1px solid ${C.hairline}; padding: 4px 10px; }
 
-        /* ── Footer ──────────────────────────────────────────────────────── */
-        .lg-footer {
-          padding: 18px 32px; border-top: 1px solid ${C.hairline};
-          background: ${C.creamDark};
-          display: flex; align-items: center; justify-content: space-between;
-          flex-wrap: wrap; gap: 10px;
-        }
-        .lg-footer-text {
-          font-family: ${sans}; font-size: 10px; letter-spacing: 0.15em;
-          text-transform: uppercase; color: ${C.tobacco};
-          display: flex; align-items: center; gap: 8px;
-        }
+        /* FOOTER */
+        .lg-footer { padding: 18px 32px; border-top: 1px solid ${C.hairline}; background: ${C.creamDark}; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+        .lg-footer-text { font-family: ${sans}; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: ${C.tobacco}; display: flex; align-items: center; gap: 8px; }
         .lg-badges { display: flex; gap: 8px; flex-wrap: wrap; }
-        .lg-badge {
-          font-family: ${sans}; font-size: 9px; letter-spacing: 0.1em;
-          text-transform: uppercase; color: ${C.charcoalLight};
-          border: 1px solid ${C.hairline}; padding: 4px 10px;
-        }
+        .lg-badge { font-family: ${sans}; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: ${C.charcoalLight}; border: 1px solid ${C.hairline}; padding: 4px 10px; }
 
-        /* ── Responsive ──────────────────────────────────────────────────── */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
           .lg-body { grid-template-columns: 1fr; padding: 24px 20px; gap: 28px; }
           .lg-body-single { padding: 24px 20px; }
@@ -778,39 +646,35 @@ export default function InvestorMagazinePopup() {
             </button>
           </div>
 
-          {/* ── INNER NAV (all stages except overview + success) ── */}
+          {/* ── INNER NAV ── */}
           {(stage === 'request' || stage === 'payment') && (
             <div className="lg-nav">
               <button
                 className="lg-back"
-                onClick={() => setStage(stage === 'payment' ? 'request' : 'overview')}
+                onClick={() => goToStage(stage === 'payment' ? 'request' : 'overview')}
               >
-                <Ico.ArrowLeft />
-                Return to Collection
+                <Ico.ArrowLeft /> Return to Collection
               </button>
               <div className="lg-nav-rule" />
             </div>
           )}
 
           {/* ════════════════════════════════════════════════════════════ */}
-          {/* OVERVIEW — Asymmetric 5/7 grid                             */}
+          {/* OVERVIEW                                                    */}
           {/* ════════════════════════════════════════════════════════════ */}
           {stage === 'overview' && (
             <div className="lg-body">
-
-              {/* Left: Cover + Stats */}
               <div className="lg-visual">
                 <div className="lg-cover-frame">
                   <img src={COVER_IMAGE} alt="Asset Brief Cover" className="lg-cover-img" />
                   <div className="lg-cover-caption">Inaugural Edition · 2025</div>
                 </div>
-
                 <div className="lg-stats">
                   {[
-                    { value: '12%',      label: 'Peak Rental Yields'      },
-                    { value: 'KES 773B', label: 'Market Value 2025'        },
-                    { value: '5.1% CAGR',label: 'Projected Growth'         },
-                    { value: '90%',      label: 'Industrial Occupancy'     },
+                    { value: '12%',       label: 'Peak Rental Yields'   },
+                    { value: 'KES 773B',  label: 'Market Value 2025'    },
+                    { value: '5.1% CAGR', label: 'Projected Growth'     },
+                    { value: '90%',       label: 'Industrial Occupancy' },
                   ].map(s => (
                     <div key={s.value} className="lg-stat">
                       <div className="lg-stat-value">{s.value}</div>
@@ -820,7 +684,6 @@ export default function InvestorMagazinePopup() {
                 </div>
               </div>
 
-              {/* Right: Content */}
               <div className="lg-content">
                 <div className="lg-quote">
                   <p className="lg-quote-text">
@@ -837,15 +700,13 @@ export default function InvestorMagazinePopup() {
                     ['Grade A Office Market Dynamics.', 'Prime occupancy analysis and rental trajectories across Westlands, Upper Hill, and CBD corridor. Benchmarked against KNBS sector data.'],
                     ['Industrial & Logistics Alpha.', 'Go-Down repositioning, SEZ incentives at Tatu City and Tilisi, and Africa Logistics Properties pipeline — a high-conviction asset class.'],
                     ['Capital Stack & Structuring.', 'Debt and equity structures for institutional capital. KMRC frameworks, REIT pathways, and offshore vehicle options via Mauritius IHC.'],
-                    ['UHNWI Wealth Mapping.', "Family office formation, intergenerational transfer and alternative asset allocation trends across East Africa. Sourced from Altrata World Ultra Wealth Report 2024."],
-                    ['Risk-Adjusted Return Scenarios.', 'Three-scenario DCF models across Nairobi Metropolitan Area sub-markets. Inflation, FX, and regulatory sensitivity analysis.'],
+                    ['UHNWI Wealth Mapping.', "Family office formation, intergenerational transfer and alternative asset allocation trends. Sourced from Altrata World Ultra Wealth Report 2024."],
+                    ['Risk-Adjusted Return Scenarios.', 'Three-scenario DCF models across Nairobi Metropolitan Area sub-markets with inflation, FX, and regulatory sensitivity analysis.'],
                     ['Regulatory & Governance Intelligence.', 'Physical Planning & Land Use Act 2019, Sectional Properties Act, pending REIT regulations — implications for institutional deal structuring.'],
                   ].map(([h, d]) => (
                     <div key={h} className="lg-benefit">
                       <div className="lg-benefit-marker" />
-                      <div className="lg-benefit-text">
-                        <strong>{h}</strong> {d}
-                      </div>
+                      <div className="lg-benefit-text"><strong>{h}</strong> {d}</div>
                     </div>
                   ))}
                 </div>
@@ -853,8 +714,8 @@ export default function InvestorMagazinePopup() {
                 <div>
                   <button
                     className="lg-btn lg-btn-tobacco"
-                    onClick={() => setStage('request')}
                     style={{ alignSelf: 'flex-start' }}
+                    onClick={() => goToStage('request')}
                   >
                     Request Investment Memorandum <Ico.ArrowRight />
                   </button>
@@ -870,7 +731,6 @@ export default function InvestorMagazinePopup() {
             <div className="lg-body lg-body-single">
               <form className="lg-form" onSubmit={handleSubmit} noValidate>
 
-                {/* Edition selection */}
                 <div>
                   <h2 className="lg-section-title">Select Edition</h2>
                   <div className="lg-copy-grid">
@@ -879,25 +739,17 @@ export default function InvestorMagazinePopup() {
                         key={t}
                         className={`lg-copy-card${form.copyType === t ? ' selected' : ''}`}
                         onClick={() => setForm(p => ({ ...p, copyType: t }))}
-                        role="radio"
-                        aria-checked={form.copyType === t}
-                        tabIndex={0}
+                        role="radio" aria-checked={form.copyType === t} tabIndex={0}
                         onKeyDown={e => e.key === 'Enter' && setForm(p => ({ ...p, copyType: t }))}
                       >
-                        <div className="lg-copy-icon">
-                          {t === 'digital' ? <Ico.Mail /> : <Ico.Book />}
-                        </div>
-                        <div className="lg-copy-title">
-                          {t === 'digital' ? 'Digital Edition' : 'Physical Bound Copy'}
-                        </div>
+                        <div className="lg-copy-icon">{t === 'digital' ? <Ico.Mail /> : <Ico.Book />}</div>
+                        <div className="lg-copy-title">{t === 'digital' ? 'Digital Edition' : 'Physical Bound Copy'}</div>
                         <div className="lg-copy-desc">
                           {t === 'digital'
                             ? 'Delivered to your institutional email. Instant access upon submission. Complimentary for qualified investors.'
                             : 'Premium cloth-bound print on archival paper. Couriered to your confirmed address. Limited to qualified institutional requestees.'}
                         </div>
-                        <div className="lg-copy-price">
-                          {t === 'digital' ? 'Complimentary' : 'KES 2,000 · Shipping & Handling'}
-                        </div>
+                        <div className="lg-copy-price">{t === 'digital' ? 'Complimentary' : 'KES 2,000 · Shipping & Handling'}</div>
                         <div className="lg-copy-check"><Ico.Check /></div>
                       </div>
                     ))}
@@ -909,7 +761,6 @@ export default function InvestorMagazinePopup() {
                   )}
                 </div>
 
-                {/* Investor profile */}
                 <div>
                   <h2 className="lg-section-title">Investor Profile</h2>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -954,7 +805,6 @@ export default function InvestorMagazinePopup() {
                       </select>
                     </div>
 
-                    {/* Shipping address — hard copy only */}
                     {form.copyType === 'hard' && (
                       <div className="lg-field">
                         <label className="lg-label">Delivery Address * — Home or Office</label>
@@ -969,7 +819,7 @@ export default function InvestorMagazinePopup() {
                               placeholder="Building name, floor/unit, street, area, city"
                               rows={3}
                               required
-                              style={{ border: 'none', padding: '0', background: 'transparent', minHeight: '60px', width: '100%', boxSizing: 'border-box' }}
+                              style={{ border: 'none', padding: '0', background: 'transparent', minHeight: '60px', width: '100%', boxSizing: 'border-box' as const }}
                             />
                             <div className="lg-address-hint">
                               Include building name, floor/unit, street, area and city for accurate courier delivery.
@@ -981,13 +831,10 @@ export default function InvestorMagazinePopup() {
                   </div>
                 </div>
 
-                {/* Consent */}
                 <div
                   className="lg-consent"
                   onClick={() => setForm(p => ({ ...p, consent: !p.consent }))}
-                  role="checkbox"
-                  aria-checked={form.consent}
-                  tabIndex={0}
+                  role="checkbox" aria-checked={form.consent} tabIndex={0}
                   onKeyDown={e => e.key === ' ' && setForm(p => ({ ...p, consent: !p.consent }))}
                 >
                   <div className={`lg-checkbox${form.consent ? ' checked' : ''}`}>
@@ -1005,11 +852,7 @@ export default function InvestorMagazinePopup() {
                 {error && <div className="lg-error">{error}</div>}
 
                 <button type="submit" className="lg-btn lg-btn-full" disabled={!canSubmit || loading}>
-                  {loading
-                    ? 'Processing Request...'
-                    : form.copyType === 'hard'
-                      ? 'Proceed to Payment'
-                      : 'Request Digital Edition'}
+                  {loading ? 'Processing Request...' : form.copyType === 'hard' ? 'Proceed to Payment' : 'Request Digital Edition'}
                 </button>
               </form>
             </div>
@@ -1021,7 +864,6 @@ export default function InvestorMagazinePopup() {
           {stage === 'payment' && (
             <div className="lg-body lg-body-single">
 
-              {/* Confirmed delivery address */}
               <div className="lg-confirmed-address">
                 <div className="lg-address-icon"><Ico.Location /></div>
                 <div>
@@ -1032,13 +874,11 @@ export default function InvestorMagazinePopup() {
                 </div>
               </div>
 
-              {/* ABSA payment details */}
               <div className="lg-payment-banner">
                 <div className="lg-payment-title">M-Pesa Paybill Payment</div>
                 <div className="lg-payment-sub">
                   Complete payment to confirm physical copy dispatch to your confirmed address
                 </div>
-
                 {[
                   { label: 'Paybill Number', value: PAYBILL,           key: 'paybill' },
                   { label: 'Account Number', value: ACCOUNT,           key: 'account' },
@@ -1057,7 +897,6 @@ export default function InvestorMagazinePopup() {
                     )}
                   </div>
                 ))}
-
                 <div className="lg-steps">
                   {[
                     'M-Pesa → Lipa na M-Pesa → Paybill',
@@ -1074,12 +913,12 @@ export default function InvestorMagazinePopup() {
                 </div>
               </div>
 
-              {/* M-Pesa confirmation form */}
               <form className="lg-form" onSubmit={handleMpesaConfirm} noValidate>
                 <div className="lg-field">
                   <label className="lg-label">Payment Confirmation *</label>
                   <p style={{ fontFamily: sans, fontSize: '13px', color: C.charcoalLight, marginBottom: '10px', fontWeight: 300, lineHeight: '1.6' }}>
-                    Paste your M-Pesa SMS, bank transfer message. Your digital edition will be sent to your email immediately.
+                    Paste your M-Pesa SMS, bank transfer message. Your digital edition will be
+                    sent to your email immediately.
                   </p>
                   <textarea
                     className="lg-textarea"
@@ -1091,23 +930,18 @@ export default function InvestorMagazinePopup() {
                     style={{ minHeight: '90px' }}
                   />
                 </div>
-
                 {error && <div className="lg-error">{error}</div>}
-
                 <button type="submit" className="lg-btn lg-btn-full" disabled={!mpesaMsg.trim() || mpesaLoading}>
                   {mpesaLoading ? 'Confirming...' : 'Submit Payment Confirmation'}
                 </button>
               </form>
 
-              {/* Digital access while waiting */}
               <div className="lg-info" style={{ textAlign: 'center' }}>
                 <strong>Digital Access Available Now</strong><br />
                 Your digital copy is available for immediate reading while your physical copy is processed.
                 <br /><br />
                 <a
-                  href={FLIPHTML5_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={FLIPHTML5_URL} target="_blank" rel="noopener noreferrer"
                   className="lg-btn lg-btn-outline"
                   style={{ marginTop: '10px', display: 'inline-flex', textDecoration: 'none' }}
                 >
@@ -1133,13 +967,7 @@ export default function InvestorMagazinePopup() {
                 and future collection releases.
               </p>
               <div className="lg-success-actions">
-                <a
-                  href={FLIPHTML5_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="lg-btn lg-btn-tobacco"
-                  style={{ textDecoration: 'none' }}
-                >
+                <a href={FLIPHTML5_URL} target="_blank" rel="noopener noreferrer" className="lg-btn lg-btn-tobacco" style={{ textDecoration: 'none' }}>
                   <Ico.External /> View Asset Brief
                 </a>
                 <button className="lg-btn lg-btn-outline" onClick={closeAndRemember}>
@@ -1159,10 +987,7 @@ export default function InvestorMagazinePopup() {
           {/* ════════════════════════════════════════════════════════════ */}
           {stage === 'success_hard' && (
             <div className="lg-success">
-              <div
-                className="lg-success-icon"
-                style={{ borderColor: C.tobacco, background: C.tobacco, color: C.white }}
-              >
+              <div className="lg-success-icon" style={{ borderColor: C.tobacco, background: C.tobacco, color: C.white }}>
                 <Ico.Phone />
               </div>
               <h2 className="lg-success-title">Payment Received</h2>
@@ -1178,13 +1003,7 @@ export default function InvestorMagazinePopup() {
                 available for immediate reading using the button below.
               </p>
               <div className="lg-success-actions">
-                <a
-                  href={FLIPHTML5_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="lg-btn lg-btn-tobacco"
-                  style={{ textDecoration: 'none' }}
-                >
+                <a href={FLIPHTML5_URL} target="_blank" rel="noopener noreferrer" className="lg-btn lg-btn-tobacco" style={{ textDecoration: 'none' }}>
                   <Ico.External /> Read Digital Edition
                 </a>
                 <button className="lg-btn lg-btn-outline" onClick={closeAndRemember}>
@@ -1201,9 +1020,7 @@ export default function InvestorMagazinePopup() {
 
           {/* ── FOOTER ── */}
           <div className="lg-footer">
-            <div className="lg-footer-text">
-              <Ico.Shield /> Confidential · Not for Distribution
-            </div>
+            <div className="lg-footer-text"><Ico.Shield /> Confidential · Not for Distribution</div>
             <div className="lg-badges">
               {['KNBS', 'Knight Frank', 'Statista', 'Altrata', 'Cytonn'].map(b => (
                 <span key={b} className="lg-badge">{b}</span>
