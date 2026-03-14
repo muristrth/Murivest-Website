@@ -380,7 +380,7 @@ export default function InvestorMagazinePopup() {
           investmentFocus: form.investmentFocus,
           deliveryType:    'hardcopy_payment_confirmed',
           shippingAddress: form.shippingAddress || '',
-          mpesaCode:       mpesaMsg.substring(0, 20),
+          mpesaCode:       mpesaMsg,
           amount:          2000,
           source:          'Club Lounge - Payment Confirmed',
         }),
