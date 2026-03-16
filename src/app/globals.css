@@ -117,3 +117,14 @@ input:focus-visible {
     color: black;
   }
 }
+
+.property-popup .mapboxgl-popup-content {
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.property-popup .mapboxgl-popup-tip {
+  display: none !important;
+}

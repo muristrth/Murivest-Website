@@ -58,7 +58,7 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
   }, []);
 
   return (
-    <footer className="bg-[#2C2C2C] text-[#F8F7F4] border-t border-[#3D3530]">
+    <footer className="bg-[#2a4a2e] text-[#FAF9F6] border-t border-[#3D3530]">
       <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-16 py-12 lg:py-24">
         
         {/* Top Section - Club Letterhead Style */}
@@ -106,7 +106,7 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 border border-[#3D3530] hover:border-[#8B7355] flex items-center justify-center text-[#5A5A5A] hover:text-[#8B7355] transition-all duration-300"
+                    className="w-9 h-9 border border-[#3D3530] hover:border-[#8B7355] flex items-center justify-center text-[#FAF9F6] hover:text-[#8B7355] transition-all duration-300"
                     aria-label={social.name}
                   >
                     <Icon className="h-3.5 w-3.5" />
@@ -181,7 +181,7 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
             { label: "Nairobi HQ", value: "Westlands Business District", href: "#" },
             { label: "24/7 Client Support", value: "Mon–Fri: 8:00 – 18:00 EAT", href: "#" }
           ].map((contact, i) => (
-            <div key={i} className="bg-[#2C2C2C] p-6 md:p-8 hover:bg-[#353535] transition-colors duration-300">
+            <div key={i} className="bg-[#FAF9F6] p-6 md:p-8 hover:bg-[#353535] transition-colors duration-300">
               <p className="text-[9px] tracking-[0.25em] uppercase text-[#5A5A5A] mb-2">{contact.label}</p>
               <a href={contact.href} className="text-[13px] md:text-[14px] text-[#C4B59D] hover:text-[#F8F7F4] transition-colors font-light">
                 {contact.value}
@@ -192,7 +192,7 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
 
         {/* Partners - All Links Preserved */}
         <div className="mb-12">
-          <h5 className="text-[10px] tracking-[0.4em] uppercase text-[#5A5A5A] mb-8 text-center font-medium">
+          <h5 className="text-[10px] tracking-[0.4em] uppercase text-[#FAF9F6] mb-8 text-center font-medium">
             Institutional Connectivity & Partners
           </h5>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-4">
@@ -215,7 +215,7 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
                 href={partner.url} 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[11px] tracking-[0.2em] uppercase text-[#5A5A5A] hover:text-[#8B7355] transition-colors"
+                className="text-[11px] tracking-[0.2em] uppercase text-[#FAF9F6] hover:text-[#8B7355] transition-colors"
               >
                 {partner.name}
               </a>
@@ -227,7 +227,7 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
         <div className="flex flex-col lg:flex-row justify-between items-center gap-6 pt-8 border-t border-[#3D3530]">
           
           {/* Locations */}
-          <div className="flex flex-wrap justify-center gap-4 lg:gap-8 text-[10px] tracking-[0.3em] uppercase text-[#5A5A5A]">
+          <div className="flex flex-wrap justify-center gap-4 lg:gap-8 text-[10px] tracking-[0.3em] uppercase text-[#FAF9F6]">
             <span>🇰🇪 Nairobi</span>
             <span>🇬🇧 London</span>
             <span>🇺🇬 Uganda</span>
@@ -237,13 +237,13 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
 
         {/* Legal Footer - All Links Preserved */}
         <div className="mt-8 pt-6 border-t border-[#3D3530] text-center space-y-3">
-          <div className="flex flex-wrap justify-center gap-4 lg:gap-6 text-[9px] tracking-[0.2em] uppercase text-[#5A5A5A]">
+          <div className="flex flex-wrap justify-center gap-4 lg:gap-6 text-[9px] tracking-[0.2em] uppercase text-[#FAF9F6]">
             <span>Commercial Brokerage</span>
             <span>Property Management</span>
             <Link href="/privacy" className="hover:text-[#8B7355] transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-[#8B7355] transition-colors">Terms of Engagement</Link>
           </div>
-          <p className="text-[10px] tracking-[0.3em] uppercase text-[#5A5A5A] font-light">
+          <p className="text-[10px] tracking-[0.3em] uppercase text-[#FAF9F6] font-light">
             © {copyrightYear || 2026} Murivest Realty Group Ltd. All Rights Reserved.
           </p>
         </div>

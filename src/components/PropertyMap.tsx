@@ -16,7 +16,6 @@
  * In your next.config.js add:
  *   transpilePackages: ['mapbox-gl'],
  */
-import { EventEmitter } from 'events';
 import { Property } from '@/types';
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import Map, {
@@ -25,9 +24,10 @@ import Map, {
   NavigationControl,
 } from 'react-map-gl/mapbox';
 import type { MapRef } from 'react-map-gl/mapbox';
-import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Maximize2, Layers, Sun, Moon, X } from 'lucide-react';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import mapboxgl from 'mapbox-gl';
+import { createRoot } from 'react-dom/client';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -35,6 +35,17 @@ interface WalkScores {
   walk: number;
   transit: number | null;
   bike: number | null;
+}
+
+interface PropertyMapProps {
+  properties: Property[];
+  hoveredId: string | null;
+  selectedId: string | null;
+  onPinHover: (id: string | null) => void;
+  onPinClick: (property: Property) => void;
+  isDark: boolean;
+  onStyleChange: (isDark: boolean) => void;
+  renderPopup: (property: Property, onClose: () => void) => React.ReactElement; // <-- Add this line
 }
 
 // ─── Map Styles ───────────────────────────────────────────────────────────────
@@ -47,7 +58,7 @@ const MAP_STYLES = {
 
 // ─── Score helpers ────────────────────────────────────────────────────────────
 
-const getScoreColor = (score: number) => {
+const getScoreColor = (score: number): string => {
   if (score >= 90) return '#22c55e';
   if (score >= 70) return '#eab308';
   if (score >= 50) return '#f97316';
@@ -100,14 +111,23 @@ const MiniScoreRing: React.FC<{ score: number; label: string }> = ({ score, labe
 
 // ─── Custom Pin Component ─────────────────────────────────────────────────────
 
-const PropertyPin: React.FC<{
+interface PropertyPinProps {
   property: Property;
   isHovered: boolean;
   isSelected: boolean;
   onClick: () => void;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
-}> = ({ property, isHovered, isSelected, onClick, onMouseEnter, onMouseLeave }) => {
+}
+
+const PropertyPin: React.FC<PropertyPinProps> = ({ 
+  property, 
+  isHovered, 
+  isSelected, 
+  onClick, 
+  onMouseEnter, 
+  onMouseLeave 
+}) => {
   const active = isHovered || isSelected;
   const scale = isSelected ? 1.4 : isHovered ? 1.2 : 1;
   const bodyColor = isSelected ? '#4a3520' : isHovered ? '#6b4c2a' : '#8B7355';
@@ -188,11 +208,13 @@ const PropertyPin: React.FC<{
 
 // ─── Hover Card ───────────────────────────────────────────────────────────────
 
-const HoverCard: React.FC<{
+interface HoverCardProps {
   property: Property;
   onClose: () => void;
   onViewDetails: (property: Property) => void;
-}> = ({ property, onClose, onViewDetails }) => {
+}
+
+const HoverCard: React.FC<HoverCardProps> = ({ property, onClose, onViewDetails }) => {
   return (
     <div style={{
       width: 280,
@@ -296,10 +318,10 @@ const HoverCard: React.FC<{
           }}>
             <MiniScoreRing score={property.walkScores.walk} label="Walk" />
             {property.walkScores.transit !== null && (
-              <MiniScoreRing score={property.walkScores.transit!} label="Transit" />
+              <MiniScoreRing score={property.walkScores.transit} label="Transit" />
             )}
             {property.walkScores.bike !== null && (
-              <MiniScoreRing score={property.walkScores.bike!} label="Bike" />
+              <MiniScoreRing score={property.walkScores.bike} label="Bike" />
             )}
           </div>
         )}
@@ -328,17 +350,48 @@ const HoverCard: React.FC<{
   );
 };
 
-// ─── Main Map Component ───────────────────────────────────────────────────────
+// ─── Property Popup Component for Mapbox GL ───────────────────────────────────
 
-interface PropertyMapProps {
-  properties: Property[];
-  hoveredId: string | null;
-  selectedId: string | null;
-  onPinHover: (id: string | null) => void;
-  onPinClick: (property: Property) => void;
-  isDark: boolean;
-  onStyleChange: (dark: boolean) => void;
+interface PropertyPopupProps {
+  property: Property;
+  onClose: () => void;
 }
+
+const PropertyPopup: React.FC<PropertyPopupProps> = ({ property, onClose }) => {
+  return (
+    <div style={{
+      padding: '12px',
+      minWidth: '200px',
+      fontFamily: 'Inter, sans-serif',
+    }}>
+      <h3 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 600 }}>
+        {property.title}
+      </h3>
+      <p style={{ margin: '0 0 8px 0', fontSize: '12px', color: '#666' }}>
+        {property.address}, {property.city}
+      </p>
+      <p style={{ margin: '0 0 12px 0', fontSize: '16px', fontWeight: 700, color: '#111' }}>
+        {property.price}
+      </p>
+      <button
+        onClick={onClose}
+        style={{
+          padding: '6px 12px',
+          backgroundColor: '#1a1a1a',
+          color: '#fff',
+          border: 'none',
+          borderRadius: '4px',
+          fontSize: '11px',
+          cursor: 'pointer',
+        }}
+      >
+        Close
+      </button>
+    </div>
+  );
+};
+
+// ─── Main Map Component ───────────────────────────────────────────────────────
 
 const PropertyMap: React.FC<PropertyMapProps> = ({
   properties,
@@ -350,6 +403,7 @@ const PropertyMap: React.FC<PropertyMapProps> = ({
   onStyleChange,
 }) => {
   const mapRef = useRef<MapRef>(null);
+  const mapboxMapRef = useRef<mapboxgl.Map | null>(null);
   const [popupProperty, setPopupProperty] = useState<Property | null>(null);
   const [mapStyle, setMapStyle] = useState<'dark' | 'light' | 'satellite'>('light');
   const [isLoaded, setIsLoaded] = useState(false);
@@ -358,45 +412,105 @@ const PropertyMap: React.FC<PropertyMapProps> = ({
     (p) => p.location?.lat && p.location?.lng
   );
 
+  // Get underlying mapbox map instance
+  useEffect(() => {
+    if (mapRef.current) {
+      mapboxMapRef.current = mapRef.current.getMap();
+    }
+  }, [mapRef.current]);
+
   // Fit map to all properties
   const fitAll = useCallback(() => {
-  if (!mapRef.current || validProperties.length === 0) return;
-  if (validProperties.length === 1) {
-    mapRef.current?.flyTo({
-      center: [validProperties[0].location.lng, validProperties[0].location.lat],
-      zoom: 14,
-      duration: 1200,
-    });
-    return;
-  }
-  const lngs = validProperties.map((p) => p.location.lng);
-  const lats = validProperties.map((p) => p.location.lat);
-  mapRef.current?.fitBounds(
-    [
-      [Math.min(...lngs), Math.min(...lats)],
-      [Math.max(...lngs), Math.max(...lats)],
-    ],
-    { padding: { top: 80, bottom: 80, left: 80, right: 80 }, duration: 1200 }
-  );
-}, [validProperties]);
+    if (!mapRef.current || validProperties.length === 0) return;
+    if (validProperties.length === 1) {
+      mapRef.current?.flyTo({
+        center: [validProperties[0].location.lng, validProperties[0].location.lat],
+        zoom: 14,
+        duration: 1200,
+      });
+      return;
+    }
+    const lngs = validProperties.map((p) => p.location.lng);
+    const lats = validProperties.map((p) => p.location.lat);
+    mapRef.current?.fitBounds(
+      [
+        [Math.min(...lngs), Math.min(...lats)],
+        [Math.max(...lngs), Math.max(...lats)],
+      ],
+      { padding: { top: 80, bottom: 80, left: 80, right: 80 }, duration: 1200 }
+    );
+  }, [validProperties]);
 
   // Fly to selected property when drawer opens
-useEffect(() => {
-  if (!selectedId || !mapRef.current) return;
-  const prop = validProperties.find((p) => p._id === selectedId);
-  if (!prop) return;
-  mapRef.current?.flyTo({
-    center: [prop.location.lng, prop.location.lat],
-    zoom: 15,
-    offset: [-200, 0],
-    duration: 800,
-  });
-}, [selectedId]);
+  useEffect(() => {
+    if (!selectedId || !mapRef.current) return;
+    const prop = validProperties.find((p) => p._id === selectedId);
+    if (!prop) return;
+    mapRef.current?.flyTo({
+      center: [prop.location.lng, prop.location.lat],
+      zoom: 15,
+      offset: [-200, 0],
+      duration: 800,
+    });
+  }, [selectedId, validProperties]);
 
   const handleStyleToggle = (style: 'light' | 'dark' | 'satellite') => {
     setMapStyle(style);
     onStyleChange(style === 'dark');
   };
+
+  // Native Mapbox GL popup with React component (optional enhancement)
+  useEffect(() => {
+    const map = mapboxMapRef.current;
+    if (!map) return;
+
+    // This is an example of how to add native mapbox popups
+    // You can remove this if you're using the react-map-gl Popup component instead
+    const handleClick = (e: mapboxgl.MapMouseEvent) => {
+      const features = map.queryRenderedFeatures(e.point, {
+        layers: ['properties-layer']
+      });
+      
+      if (!features.length) return;
+      
+      const feature = features[0];
+      const coordinates = (feature.geometry as GeoJSON.Point).coordinates.slice() as [number, number];
+      const property = feature.properties as unknown as Property;
+
+      const popupNode = document.createElement('div');
+      const root = createRoot(popupNode);
+      
+      const popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false,
+        offset: [0, -10],
+        className: 'property-popup',
+      });
+
+      root.render(
+        <PropertyPopup 
+          property={property} 
+          onClose={() => popup.remove()} 
+        />
+      );
+
+      popup
+        .setLngLat(coordinates)
+        .setDOMContent(popupNode)
+        .addTo(map);
+
+      popup.on('close', () => {
+        root.unmount();
+      });
+    };
+
+    // Only add if you have a properties-layer
+    // map.on('click', 'properties-layer', handleClick);
+
+    return () => {
+      // map.off('click', 'properties-layer', handleClick);
+    };
+  }, []);
 
   const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || '';
 

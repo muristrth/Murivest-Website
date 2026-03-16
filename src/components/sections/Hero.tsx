@@ -35,7 +35,7 @@ const Hero = () => {
   return (
     <section
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen w-full bg-[#1B4332] text-[#FAF9F6] overflow-hidden flex items-center"
+      className="relative min-h-screen w-full bg-[#2a4a2e] text-[#FAF9F6] overflow-hidden flex items-center"
     >
       {/* Background - Like paintings in a club library */}
       <div
@@ -62,7 +62,7 @@ const Hero = () => {
         ))}
         
         {/* Clubhouse warmth - tobacco-toned overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1B4332]/95 via-[#2D5A45]/60 to-[#1B4332]/90" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2a4a2e]/95 via-[#2D5A45]/60 to-[#2a4a2e]/90" />
         <div className="absolute inset-0 bg-[#B8956B]/10 mix-blend-overlay" />
       </div>
 

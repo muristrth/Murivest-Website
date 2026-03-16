@@ -6,7 +6,7 @@ import { ShieldCheck, Globe, Scale, Lock } from 'lucide-react';
 
 const InstitutionalTrustSignals = () => {
   return (
-    <section className="bg-[#2C2C2C] text-[#F8F7F4]">
+    <section className="bg-[#2a4a2e] text-[#FAF9F6]">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-16 lg:py-20">
         
         {/* Main Trust Bar - Like Club Credentials */}
@@ -69,7 +69,7 @@ const InstitutionalTrustSignals = () => {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="text-center"
         >
-          <p className="text-[10px] text-[#5A5A5A] uppercase tracking-[0.25em] leading-relaxed max-w-4xl mx-auto">
+          <p className="text-[10px] text-[#FAF9F6] uppercase tracking-[0.25em] leading-relaxed max-w-4xl mx-auto">
             Murivest Realty Group is an independent advisory firm. We do not offer unlicensed financial products 
             or pool capital from the general public. All engagements are by mandate only and subject to rigorous 
             KYC/AML verification.

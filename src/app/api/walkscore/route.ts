@@ -1,18 +1,29 @@
 /**
- * Walk Score API Proxy
- * Server-side proxy to avoid CORS issues with Walk Score API
+ * Walk Score API Proxy with Sanity Integration
+ * Fetches property coordinates from Sanity then queries Walk Score API
  */
 
 import { NextResponse } from 'next/server';
+import { createClient } from '@sanity/client';
+
+const sanityClient = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
+  apiVersion: '2024-01-01',
+  useCdn: false,
+});
 
 export const runtime = 'edge';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   
+  const propertyId = searchParams.get('propertyId');
   const address = searchParams.get('address') || '';
-  const lat = searchParams.get('lat');
-  const lon = searchParams.get('lon');
+  
+  // Allow manual override with lat/lon params for testing
+  let lat = searchParams.get('lat');
+  let lon = searchParams.get('lon');
 
   const apiKey = process.env.WALKSCORE_API_KEY;
 
@@ -23,9 +34,52 @@ export async function GET(request: Request) {
     );
   }
 
+  // If propertyId provided, fetch coordinates from Sanity
+  if (propertyId && (!lat || !lon)) {
+    try {
+      // Query property - adjust field names based on your schema
+      // Based on your memory: documents have 'location' (string) but schema defines 'coordinates' (geopoint)
+      const property = await sanityClient.fetch(`
+        *[_type == "property" && _id == $propertyId][0]{
+          "coordinates": coordinates {
+            lat,
+            lng
+          },
+          "location": location, // fallback string address
+          address,
+          city,
+          state
+        }
+      `, { propertyId });
+
+      if (property?.coordinates?.lat && property?.coordinates?.lng) {
+        lat = String(property.coordinates.lat);
+        lon = String(property.coordinates.lng);
+      } else if (property?.location) {
+        // If no geopoint but has location string, you might need to geocode it
+        // For now, return error or fallback
+        return NextResponse.json(
+          { 
+            error: 'Property has no coordinates. Please update the property with lat/lng.',
+            walkscore: 0, 
+            transit: null, 
+            bike: null 
+          },
+          { status: 400 }
+        );
+      }
+    } catch (error) {
+      console.error('Sanity fetch error:', error);
+      return NextResponse.json(
+        { error: 'Failed to fetch property from Sanity', walkscore: 0, transit: null, bike: null },
+        { status: 500 }
+      );
+    }
+  }
+
   if (!lat || !lon) {
     return NextResponse.json(
-      { error: 'Latitude and longitude required', walkscore: 0, transit: null, bike: null },
+      { error: 'Latitude and longitude required (provide propertyId or lat/lon)', walkscore: 0, transit: null, bike: null },
       { status: 400 }
     );
   }
@@ -45,7 +99,6 @@ export async function GET(request: Request) {
     });
 
     if (!res.ok) {
-      // Return fallback data if API fails
       return NextResponse.json({
         walkscore: 0,
         transit: { score: null },

@@ -33,6 +33,9 @@ import {
   Building2,
   Shield,
   FileText,
+  Navigation,
+  Train,
+  Bike,
   Bookmark,
 } from 'lucide-react';
 import dynamic from 'next/dynamic';
@@ -75,7 +78,6 @@ interface PropertyLocation {
   area?: string;
 }
 
-
 // ─── Color Palette (Old Money Aesthetic) ─────────────────────────────────────
 
 const COLORS = {
@@ -108,6 +110,22 @@ const getScoreLabel = (score: number) => {
   return 'Auto-Dependent';
 };
 
+const getTransitLabel = (score: number) => {
+  if (score >= 90) return "Rider's Paradise";
+  if (score >= 70) return 'Excellent Transit';
+  if (score >= 50) return 'Good Transit';
+  if (score >= 25) return 'Some Transit';
+  return 'Minimal Transit';
+};
+
+const getBikeLabel = (score: number) => {
+  if (score >= 90) return "Biker's Paradise";
+  if (score >= 70) return 'Very Bikeable';
+  if (score >= 50) return 'Bikeable';
+  if (score >= 25) return 'Somewhat Bikeable';
+  return 'Minimal Bikeability';
+};
+
 // ─── Walk Score Ring ─────────────────────────────────────────────────────────
 
 const WalkScoreRing: React.FC<{
@@ -115,7 +133,8 @@ const WalkScoreRing: React.FC<{
   size?: number;
   strokeWidth?: number;
   label?: string;
-}> = ({ score, size = 48, strokeWidth = 3, label }) => {
+  showLabel?: boolean;
+}> = ({ score, size = 48, strokeWidth = 3, label, showLabel = true }) => {
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
   const offset = circumference - (score / 100) * circumference;
@@ -151,7 +170,7 @@ const WalkScoreRing: React.FC<{
           {score}
         </span>
       </div>
-      {label && (
+      {showLabel && label && (
         <span className="text-[8px] tracking-[0.2em] uppercase text-[#8B8680] font-medium">
           {label}
         </span>
@@ -160,100 +179,148 @@ const WalkScoreRing: React.FC<{
   );
 };
 
-// ─── Property Hover Card (Map Overlay) ───────────────────────────────────────
+// ─── Compact Score for Hover Popup ────────────────────────────────────────────
 
-const PropertyHoverCard: React.FC<{
+const CompactScore: React.FC<{
+  score: number;
+  icon: React.ReactNode;
+  label: string;
+}> = ({ score, icon, label }) => {
+  const getScoreBgColor = (s: number) => {
+    if (s >= 70) return 'bg-[#1B4332] text-white';
+    if (s >= 50) return 'bg-[#B8956B] text-white';
+    return 'bg-[#E8E6E1] text-[#2C2C2C]';
+  };
+
+  return (
+    <div className="flex flex-col items-center gap-1">
+      <div className={`w-8 h-8 rounded-full flex items-center justify-center ${getScoreBgColor(score)}`}>
+        {icon}
+      </div>
+      <span className="text-[9px] font-medium text-[#2C2C2C]">{score}</span>
+      <span className="text-[8px] text-[#8B8680] uppercase tracking-wider">{label}</span>
+    </div>
+  );
+};
+
+// ─── Property Hover Popup (Map Overlay) ─────────────────────────────────────
+
+const PropertyHoverPopup: React.FC<{
   property: Property;
   onClose: () => void;
 }> = ({ property, onClose }) => {
   const imgSrc = property.image
-    ? urlFor(property.image).width(480).height(320).fit('crop').url()
-    : '';
+    ? urlFor(property.image).width(400).height(240).fit('crop').url()
+    : null;
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 12, scale: 0.96 }}
+      initial={{ opacity: 0, y: 8, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: 12, scale: 0.96 }}
-      transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
-      className="w-[320px] bg-white shadow-2xl overflow-hidden border border-[#E8E6E1]"
+      exit={{ opacity: 0, y: 8, scale: 0.95 }}
+      transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
+      className="w-[260px] bg-white rounded-lg shadow-2xl overflow-hidden border border-[#E8E6E1]"
       style={{ pointerEvents: 'auto' }}
     >
-      {/* Image */}
-      <div className="relative h-[180px] overflow-hidden">
+      {/* Compact Image Section */}
+      <div className="relative h-[120px] overflow-hidden">
         {imgSrc ? (
-          <img src={imgSrc} alt={property.title} className="w-full h-full object-cover" />
+          <img
+            src={imgSrc}
+            alt={property.title}
+            className="w-full h-full object-cover"
+          />
         ) : (
           <div className="w-full h-full bg-[#F5F4F0] flex items-center justify-center">
-            <MapPin className="w-8 h-8 text-[#8B8680]" />
+            <MapPin className="w-6 h-6 text-[#8B8680]" />
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-        <div className="absolute top-3 left-3">
-          <span className="bg-[#1B4332] text-white text-[9px] tracking-[0.2em] uppercase px-3 py-1.5 font-medium">
+
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+
+        {/* Type badge */}
+        <div className="absolute top-2 left-2">
+          <span className="bg-white/95 backdrop-blur-sm text-[#2C2C2C] text-[9px] tracking-[0.15em] uppercase px-2.5 py-1 font-medium rounded-sm">
             {property.propertyType}
           </span>
         </div>
+
+        {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 w-7 h-7 bg-white/90 backdrop-blur-sm flex items-center justify-center hover:bg-white transition-colors"
+          className="absolute top-2 right-2 w-6 h-6 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors"
         >
-          <X className="w-3.5 h-3.5 text-[#2C2C2C]" />
+          <X className="w-3 h-3 text-[#2C2C2C]" />
         </button>
-      </div>
 
-      {/* Content */}
-      <div className="p-5 space-y-3">
-        <div>
-          <h3 className="text-lg font-serif text-[#2C2C2C] leading-tight mb-1">
+        {/* Title overlay at bottom */}
+        <div className="absolute bottom-0 inset-x-0 p-3">
+          <h3 className="text-sm font-serif text-white leading-tight truncate">
             {property.title}
           </h3>
-          <div className="flex items-center gap-1.5">
-            <MapPin className="w-3 h-3 text-[#8B8680]" />
-            <span className="text-[11px] text-[#8B8680] tracking-wide">
-              {property.city}, {property.state}
-            </span>
-          </div>
+          <p className="text-[10px] text-white/80 mt-0.5 truncate">
+            {property.city}, {property.state}
+          </p>
         </div>
+      </div>
 
-        <div className="flex items-center justify-between pt-2 border-t border-[#E8E6E1]">
+      {/* Compact Content */}
+      <div className="p-3 space-y-3">
+        {/* Price & Size Row */}
+        <div className="flex items-center justify-between">
           <div>
-            <span className="text-[9px] tracking-[0.15em] uppercase text-[#8B8680] block mb-0.5">
-              Value
+            <span className="text-[9px] tracking-[0.1em] uppercase text-[#8B8680] block">
+              Price
             </span>
-            <span className="text-base font-serif text-[#2C2C2C]">{property.price}</span>
+            <span className="text-sm font-serif text-[#2C2C2C]">{property.price}</span>
           </div>
           <div className="text-right">
-            <span className="text-[9px] tracking-[0.15em] uppercase text-[#8B8680] block mb-0.5">
+            <span className="text-[9px] tracking-[0.1em] uppercase text-[#8B8680] block">
               Size
             </span>
-            <span className="text-sm text-[#2C2C2C]">{property.squareFootage}</span>
+            <span className="text-xs text-[#2C2C2C]">{property.squareFootage}</span>
           </div>
         </div>
 
+        {/* Walk Scores - Minimalist Row */}
         {property.walkScores && (
-          <div className="flex items-center justify-around pt-3 border-t border-[#E8E6E1]">
-            <WalkScoreRing score={property.walkScores.walk} size={36} strokeWidth={2.5} label="Walk" />
+          <div className="flex items-center justify-between pt-2 border-t border-[#E8E6E1]">
+            <CompactScore
+              score={property.walkScores.walk}
+              icon={<Navigation className="w-3.5 h-3.5" />}
+              label="Walk"
+            />
             {property.walkScores.transit !== null && (
-              <WalkScoreRing score={property.walkScores.transit} size={36} strokeWidth={2.5} label="Transit" />
+              <CompactScore
+                score={property.walkScores.transit}
+                icon={<Train className="w-3.5 h-3.5" />}
+                label="Transit"
+              />
             )}
             {property.walkScores.bike !== null && (
-              <WalkScoreRing score={property.walkScores.bike} size={36} strokeWidth={2.5} label="Bike" />
+              <CompactScore
+                score={property.walkScores.bike}
+                icon={<Bike className="w-3.5 h-3.5" />}
+                label="Bike"
+              />
             )}
           </div>
         )}
 
-        <div className="text-[9px] tracking-[0.15em] uppercase text-[#B8956B] pt-1 font-medium">
-          Click for details →
+        {/* CTA Hint */}
+        <div className="text-center pt-1">
+          <span className="text-[9px] tracking-[0.15em] uppercase text-[#B8956B] font-medium">
+            Click to view details →
+          </span>
         </div>
       </div>
 
-      {/* Pointer */}
-      <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-r border-b border-[#E8E6E1] rotate-45" />
+      {/* Pointer arrow */}
+      <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-r border-b border-[#E8E6E1] rotate-45" />
     </motion.div>
   );
 };
-
 
 // ─── Side Drawer (Property Detail) ───────────────────────────────────────────
 
@@ -325,7 +392,7 @@ const PropertyDrawer: React.FC<{
                     {property.address}, {property.city}, {property.state} {property.zipCode || ''}
                   </span>
                 </div>
-                
+
                 <div className="grid grid-cols-2 gap-4 pt-4 border-t border-[#E8E6E1]">
                   <div>
                     <span className="text-[9px] tracking-[0.2em] uppercase text-[#8B8680] block mb-1">
@@ -368,22 +435,70 @@ const PropertyDrawer: React.FC<{
                 )}
               </div>
 
-              {/* Walk Scores */}
+              {/* Walk Scores - Enhanced Section */}
               {property.walkScores && (
                 <div className="bg-white border border-[#E8E6E1] p-5 space-y-4">
-                  <span className="text-[9px] tracking-[0.2em] uppercase text-[#8B8680] font-medium">
+                  <span className="text-[9px] tracking-[0.2em] uppercase text-[#8B8680] font-medium flex items-center gap-2">
+                    <Navigation className="w-3.5 h-3.5" />
                     Location Accessibility
                   </span>
-                  <div className="flex items-center justify-around">
-                    <WalkScoreRing score={property.walkScores.walk} size={56} strokeWidth={4} label="Walk" />
+
+                  <div className="grid grid-cols-3 gap-3">
+                    {/* Walk Score */}
+                    <div className="text-center space-y-2">
+                      <WalkScoreRing
+                        score={property.walkScores.walk}
+                        size={64}
+                        strokeWidth={4}
+                        showLabel={false}
+                      />
+                      <div>
+                        <span className="text-[10px] font-medium text-[#2C2C2C] block">Walk</span>
+                        <span className="text-[9px] text-[#8B8680]">
+                          {getScoreLabel(property.walkScores.walk)}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Transit Score */}
                     {property.walkScores.transit !== null && (
-                      <WalkScoreRing score={property.walkScores.transit} size={56} strokeWidth={4} label="Transit" />
+                      <div className="text-center space-y-2">
+                        <WalkScoreRing
+                          score={property.walkScores.transit}
+                          size={64}
+                          strokeWidth={4}
+                          showLabel={false}
+                        />
+                        <div>
+                          <span className="text-[10px] font-medium text-[#2C2C2C] block">Transit</span>
+                          <span className="text-[9px] text-[#8B8680]">
+                            {getTransitLabel(property.walkScores.transit)}
+                          </span>
+                        </div>
+                      </div>
                     )}
+
+                    {/* Bike Score */}
                     {property.walkScores.bike !== null && (
-                      <WalkScoreRing score={property.walkScores.bike} size={56} strokeWidth={4} label="Bike" />
+                      <div className="text-center space-y-2">
+                        <WalkScoreRing
+                          score={property.walkScores.bike}
+                          size={64}
+                          strokeWidth={4}
+                          showLabel={false}
+                        />
+                        <div>
+                          <span className="text-[10px] font-medium text-[#2C2C2C] block">Bike</span>
+                          <span className="text-[9px] text-[#8B8680]">
+                            {getBikeLabel(property.walkScores.bike)}
+                          </span>
+                        </div>
+                      </div>
                     )}
                   </div>
-                  <p className="text-xs text-center text-[#8B8680] italic">
+
+                  {/* Summary text */}
+                  <p className="text-[10px] text-center text-[#8B8680] italic pt-2 border-t border-[#E8E6E1]">
                     {getScoreLabel(property.walkScores.walk)}
                   </p>
                 </div>
@@ -503,7 +618,7 @@ const PropertyDrawer: React.FC<{
                   <FileText className="w-4 h-4" />
                   View Full Prospectus
                 </NextLink>
-                
+
                 {property.brochureUrl && (
                   <a
                     href={property.brochureUrl}
@@ -515,7 +630,7 @@ const PropertyDrawer: React.FC<{
                     Download Brochure
                   </a>
                 )}
-                
+
                 <a
                   href={`mailto:${property.broker?.email}?subject=Investment Inquiry: ${property.title}`}
                   className="flex items-center justify-center gap-2 w-full h-12 border border-[#E8E6E1] hover:border-[#B8956B] hover:text-[#B8956B] transition-colors text-[11px] tracking-[0.2em] uppercase font-medium text-[#2C2C2C]"
@@ -528,7 +643,7 @@ const PropertyDrawer: React.FC<{
               {/* Disclaimer */}
               <div className="pt-6 border-t border-[#E8E6E1]">
                 <p className="text-[10px] text-[#8B8680] leading-relaxed italic text-center">
-                  Confidential investment materials. Qualified investors only. 
+                  Confidential investment materials. Qualified investors only.
                   All figures indicative subject to due diligence.
                 </p>
               </div>
@@ -540,7 +655,7 @@ const PropertyDrawer: React.FC<{
   );
 };
 
-// ─── Property Card (Grid View) ───────────────────────────────────────────────
+// ─── Property Card (Grid View) ─────────────────────────────────────────────
 
 const PropertyCard: React.FC<{
   property: Property;
@@ -579,7 +694,7 @@ const PropertyCard: React.FC<{
           </div>
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        
+
         {/* Type Badge */}
         <div className="absolute top-4 left-4">
           <span className="bg-[#1B4332] text-white text-[9px] tracking-[0.2em] uppercase px-3 py-1.5 font-medium">
@@ -893,14 +1008,14 @@ export default function Properties({ initialData }: PropertiesProps) {
 
   return (
     <div className="min-h-screen bg-[#FAF9F6] text-[#2C2C2C]">
-      
+
       {/* ── HERO SECTION ─────────────────────────────────────────────────────── */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden bg-[#1B4332]">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80')] bg-cover bg-center" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#1B4332]/90 via-[#1B4332]/70 to-[#1B4332]" />
-        
+
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -917,7 +1032,7 @@ export default function Properties({ initialData }: PropertiesProps) {
               </span>
             </h1>
             <p className="text-[13px] text-white/70 font-light max-w-2xl mx-auto leading-relaxed tracking-wide">
-              Exclusive commercial assets across prime African markets. 
+              Exclusive commercial assets across prime African markets.
               Mandate-only opportunities with full due diligence support.
             </p>
           </motion.div>
@@ -934,7 +1049,7 @@ export default function Properties({ initialData }: PropertiesProps) {
       >
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-4">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
-            
+
             {/* Search */}
             <div className="relative w-full lg:w-80">
               <Search className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-[#8B8680]" strokeWidth={1.5} />
@@ -946,8 +1061,8 @@ export default function Properties({ initialData }: PropertiesProps) {
                 className="w-full bg-transparent border-b border-[#E8E6E1] focus:border-[#1B4332] pl-8 pr-8 py-2.5 text-[13px] text-[#2C2C2C] placeholder:text-[#8B8680]/60 outline-none transition-colors font-light tracking-wide"
               />
               {searchTerm && (
-                <button 
-                  onClick={() => setSearchTerm('')} 
+                <button
+                  onClick={() => setSearchTerm('')}
                   className="absolute right-0 top-1/2 -translate-y-1/2 hover:text-[#1B4332] transition-colors"
                 >
                   <X className="w-4 h-4 text-[#8B8680]" />
@@ -1052,23 +1167,29 @@ export default function Properties({ initialData }: PropertiesProps) {
       {/* ── MAP SECTION ─────────────────────────────────────────────────────── */}
       <AnimatePresence>
         {viewMode !== 'grid' && (
-          <motion.div
+            <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: viewMode === 'map' ? '80vh' : '500px', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
             className="relative w-full overflow-hidden border-b border-[#E8E6E1]"
-          >
+            >
             <PropertyMap
               properties={filteredProperties}
               hoveredId={hoveredId}
               selectedId={drawerProperty?._id || null}
-              onPinHover={setHoveredId}
-              onPinClick={handleOpenDrawer}
+              onPinHover={setHoveredId as (id: string | null) => void}
+              onPinClick={handleOpenDrawer as (property: Property) => void}
               isDark={isDarkMap}
-              onStyleChange={setIsDarkMap}
+              onStyleChange={setIsDarkMap as (isDark: boolean) => void}
+              renderPopup={(
+              property: Property,
+              onClose: () => void
+              ) => (
+              <PropertyHoverPopup property={property} onClose={onClose} />
+              )}
             />
-          </motion.div>
+            </motion.div>
         )}
       </AnimatePresence>
 
