@@ -942,7 +942,7 @@ export default function InvestorMagazinePopup() {
                     className="lg-textarea"
                     value={mpesaMsg}
                     onChange={e => { setMpesaMsg(e.target.value); setError(''); }}
-                    placeholder={'SGH7K9L2MN Confirmed. KES2,000.00 paid to MURIVEST REALTY LTD on 14/3/26…\nor simply: SGH7K9L2MN confirmed'}
+                    placeholder={'SGH7K9L2MN Confirmed. KES2,000.00 paid to Absa Bank on 14/3/26…\nor simply: Dear Jane, we have received your payment of KES 2,000'}
                     rows={4}
                     required
                     style={{ minHeight: '90px' }}

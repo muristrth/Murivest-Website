@@ -9,6 +9,7 @@ import WhatsAppButton from '../components/ui/WhatsAppButton';
 import AnalyticsTracker from '../components/AnalyticsTracker';
 import InvestorMagazinePopup from '@/components/InvestorMagazinePopup';
 import CookieBanner from '@/components/CookieBanner';
+import MetaPixel from '@/components/MetaPixel';
 
 // Define the fonts here
 const inter = Inter({
@@ -187,7 +188,7 @@ export const viewport: Viewport = {
   width:        'device-width',
   initialScale: 1,
   maximumScale: 1,
-  themeColor:   '#1A1A1A',
+  themeColor:   '#1B4332',
 };
  
 /* ── GA4 Measurement ID ────────────────────────────────────────────────────── */
@@ -207,8 +208,8 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/logo.png" sizes="180x180" />
 
         {/* Other manually added meta tags */}
-        <meta name="theme-color" content="#1e1b4b" />
-        <meta name="msapplication-TileColor" content="#1e1b4b" />
+        <meta name="theme-color" content="#1B4332" />
+        <meta name="msapplication-TileColor" content="#1B4332" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="format-detection" content="telephone=yes" />
@@ -305,12 +306,12 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${montserrat.variable} font-sans text-navy-900 bg-white`}
+      <body className={`${montserrat.variable} font-sans text-forest bg-cream`}
       suppressHydrationWarning={true}
 
       style={{
-          backgroundColor:       '#F9F7F4',
-          color:                 '#1A1A1A',
+          backgroundColor:       '#FAF9F6',
+          color:                 '#1B4332',
           WebkitFontSmoothing:   'antialiased',
           MozOsxFontSmoothing:   'grayscale',
           overflowX:             'hidden',
@@ -320,6 +321,7 @@ export default function RootLayout({
           <Header />
           <Suspense fallback={null}>
             <AnalyticsTracker />
+            <MetaPixel />
           </Suspense>
           <main>{children}</main>
          <CookieBanner />

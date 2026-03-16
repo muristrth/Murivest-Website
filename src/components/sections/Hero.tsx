@@ -35,7 +35,7 @@ const Hero = () => {
   return (
     <section
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen w-full bg-[#2C2C2C] text-[#F8F7F4] overflow-hidden flex items-center"
+      className="relative min-h-screen w-full bg-[#1B4332] text-[#FAF9F6] overflow-hidden flex items-center"
     >
       {/* Background - Like paintings in a club library */}
       <div
@@ -62,8 +62,8 @@ const Hero = () => {
         ))}
         
         {/* Clubhouse warmth - tobacco-toned overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#2C2C2C]/95 via-[#3D3530]/60 to-[#2C2C2C]/90" />
-        <div className="absolute inset-0 bg-[#8B7355]/10 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1B4332]/95 via-[#2D5A45]/60 to-[#1B4332]/90" />
+        <div className="absolute inset-0 bg-[#B8956B]/10 mix-blend-overlay" />
       </div>
 
       {/* Content - Centered like a club crest */}
@@ -79,31 +79,31 @@ const Hero = () => {
           >
             {/* Club Mark */}
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-8 h-[1px] bg-[#C4B59D]" />
-              <p className="text-[11px] tracking-[0.4em] uppercase text-[#C4B59D] font-medium">
+              <div className="w-8 h-[1px] bg-[#B8956B]" />
+              <p className="text-[11px] tracking-[0.4em] uppercase text-[#B8956B] font-medium">
                 Established Advisory
               </p>
             </div>
 
             {/* Main Headline - Serif, stately */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-[1.1] mb-8 text-[#F8F7F4]">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-[1.1] mb-8 text-[#FAF9F6]">
               Off-Market <br />Income-Producing Institutional Grade A<br />
-              <span className="italic text-[#C4B59D] font-light">Commercial Properties</span>
+              <span className="italic text-[#B8956B] font-light">Commercial Properties</span>
             </h1>
 
             {/* Subtle divider - like a scorecard line */}
-            <div className="w-16 h-[1px] bg-[#8B7355] mb-8" />
+            <div className="w-16 h-[1px] bg-[#B8956B] mb-8" />
             "Where do I deploy this capital that isn't correlated to equities?"<br />
             {/* Description - Understated authority */}
-            <p className="text-[15px] leading-[1.8] text-[#A8A39D] font-light max-w-lg mb-10">
+            <p className="text-[15px] leading-[1.8] text-[#B8956B] font-light max-w-lg mb-10">
               <br />
               We originate off-market commercial mandates across Nairobi CBD, Kilimani, Karen, Westlands, Upperhill, Nakuru and other key locations — structuring them for international capital that demands yield certainty, governance transparency, and clear exit pathways.
             </p>
 
             {/* Mandate Parameters - The "membership criteria" */}
-            <div className="flex flex-wrap items-center gap-6 text-[12px] tracking-[0.15em] uppercase text-[#8B7355]">
+            <div className="flex flex-wrap items-center gap-6 text-[12px] tracking-[0.15em] uppercase text-[#B8956B]">
               <span>USD 2M – 100M+</span>
-              <span className="w-1 h-1 rounded-full bg-[#8B7355]" />
+              <span className="w-1 h-1 rounded-full bg-[#B8956B]" />
               <span>Retail • Office • Industrial • Hospitality</span>
             </div>
           </motion.div>
@@ -115,12 +115,12 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
             className="lg:col-span-5 lg:pl-12"
           >
-            <div className="bg-[#F8F7F4]/5 backdrop-blur-sm border border-[#C4B59D]/20 p-10 lg:p-12">
-              <p className="text-[11px] tracking-[0.3em] uppercase text-[#C4B59D] mb-6">
+            <div className="bg-[#FAF9F6]/5 backdrop-blur-sm border border-[#B8956B]/20 p-10 lg:p-12">
+              <p className="text-[11px] tracking-[0.3em] uppercase text-[#B8956B] mb-6">
                 Private Mandates
               </p>
               
-              <p className="text-[14px] leading-[1.7] text-[#A8A39D] font-light mb-8">
+              <p className="text-[14px] leading-[1.7] text-[#B8956B] font-light mb-8">
                 Current availability for new advisory engagements. 
                 Q2 2026 mandate window now open for qualified institutional partners.
               </p>
@@ -128,24 +128,24 @@ const Hero = () => {
               <div className="space-y-4">
                 <Link
                   href="/institutional-investors"
-                  className="group flex items-center justify-between w-full py-4 border-b border-[#C4B59D]/30 hover:border-[#8B7355] transition-colors duration-500"
+                  className="group flex items-center justify-between w-full py-4 border-b border-[#B8956B]/30 hover:border-[#B8956B] transition-colors duration-500"
                 >
-                  <span className="text-[12px] tracking-[0.2em] uppercase text-[#F8F7F4] group-hover:text-[#C4B59D] transition-colors">
+                  <span className="text-[12px] tracking-[0.2em] uppercase text-[#FAF9F6] group-hover:text-[#B8956B] transition-colors">
                     Request Introduction
                   </span>
-                  <span className="text-[#8B7355] group-hover:translate-x-1 transition-transform duration-300">
+                  <span className="text-[#B8956B] group-hover:translate-x-1 transition-transform duration-300">
                     →
                   </span>
                 </Link>
 
                 <Link
                   href="/uk-properties"
-                  className="group flex items-center justify-between w-full py-4 border-b border-[#C4B59D]/30 hover:border-[#8B7355] transition-colors duration-500"
+                  className="group flex items-center justify-between w-full py-4 border-b border-[#B8956B]/30 hover:border-[#B8956B] transition-colors duration-500"
                 >
-                  <span className="text-[12px] tracking-[0.2em] uppercase text-[#A8A39D] group-hover:text-[#C4B59D] transition-colors">
+                  <span className="text-[12px] tracking-[0.2em] uppercase text-[#B8956B] group-hover:text-[#B8956B] transition-colors">
                     View UK Collection
                   </span>
-                  <span className="text-[#8B7355] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300">
+                  <span className="text-[#B8956B] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300">
                     →
                   </span>
                 </Link>
@@ -161,11 +161,11 @@ const Hero = () => {
       </div>
 
       {/* Bottom fade - like mist on the fairway */}
-      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-[#2C2C2C] to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-[#1B4332] to-transparent" />
       
       {/* Corner detail - like a course marker */}
-      <div className="absolute bottom-8 right-8 text-[10px] tracking-[0.2em] uppercase text-[#5A5A5A]">
-        <span className="text-[#8B7355]">NBO</span> • London • Dubai
+      <div className="absolute bottom-8 right-8 text-[10px] tracking-[0.2em] uppercase text-[#8B8680]">
+        <span className="text-[#B8956B]">NBO</span> • London • Dubai
       </div>
     </section>
   );

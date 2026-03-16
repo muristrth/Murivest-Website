@@ -120,12 +120,12 @@ export default function Header() {
           {/* BRANDING - Club Letterhead Style */}
           <a href="/" className="flex flex-col min-w-fit group">
             <span className={`text-2xl font-serif tracking-[0.1em] transition-colors duration-500 ${
-              scrolled ? 'text-[#2C2C2C] group-hover:text-[#8B7355]' : 'text-[#F8F7F4]'
+              scrolled ? 'text-[#1B4332] group-hover:text-[#B8956B]' : 'text-[#F8F7F4]'
             }`}>
               MURIVEST
             </span>
             <span className={`text-[9px] tracking-[0.4em] font-light uppercase -mt-1 transition-colors duration-500 ${
-              scrolled ? 'text-[#8B7355]' : 'text-[#C4B59D]'
+              scrolled ? 'text-[#B8956B]' : 'text-[#C4B59D]'
             }`}>
               Nairobi Private Office
             </span>
@@ -146,8 +146,8 @@ export default function Header() {
               href="/sell" 
               className={`text-[10px] tracking-[0.25em] uppercase border px-8 py-3.5 transition-all duration-500 font-medium ${
                 scrolled 
-                  ? 'border-[#8B7355] text-[#8B7355] hover:bg-[#8B7355] hover:text-[#F8F7F4]' 
-                  : 'border-[#8B7355]/40 text-[#C4B59D] hover:bg-[#8B7355] hover:text-[#2C2C2C]'
+                  ? 'border-[#B8956B] text-[#B8956B] hover:bg-[#B8956B] hover:text-[#F8F7F4]' 
+                  : 'border-[#B8956B]/40 text-[#C4B59D] hover:bg-[#B8956B] hover:text-[#1B4332]'
               }`}
             >
               Asset Divestment
@@ -161,15 +161,15 @@ export default function Header() {
             aria-label="Open menu"
           >
             <div className="space-y-1.5">
-              <div className={`w-6 h-[1px] transition-colors duration-500 ${scrolled ? 'bg-[#2C2C2C]' : 'bg-[#F8F7F4]'}`}></div>
-              <div className={`w-4 h-[1px] ml-auto transition-colors duration-500 ${scrolled ? 'bg-[#2C2C2C]' : 'bg-[#F8F7F4]'}`}></div>
+              <div className={`w-6 h-[1px] transition-colors duration-500 ${scrolled ? 'bg-[#1B4332]' : 'bg-[#F8F7F4]'}`}></div>
+              <div className={`w-4 h-[1px] ml-auto transition-colors duration-500 ${scrolled ? 'bg-[#1B4332]' : 'bg-[#F8F7F4]'}`}></div>
             </div>
           </button>
         </div>
       </div>
 
       {/* MOBILE OVERLAY - Club Lounge Atmosphere */}
-      <div className={`fixed inset-0 z-[60] bg-[#2C2C2C] transition-all duration-700 ease-in-out ${
+      <div className={`fixed inset-0 z-[60] bg-[#1B4332] transition-all duration-700 ease-in-out ${
         mobileOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'
       }`}>
         <div className="p-12 h-full flex flex-col justify-center items-center text-center overflow-y-auto">

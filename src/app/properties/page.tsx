@@ -1,42 +1,68 @@
 import type { Metadata } from 'next'
 import { client } from "@/sanity/lib/client"
 import { defineQuery } from "next-sanity"
-import KEProperties from '../../components/Properties'
+import Properties from '@/components/Properties'
 
-// 1. Define the GROQ query to "Shape" the data for your component
+// Updated GROQ query with coalesce for legacy field support
 const PROPERTIES_QUERY = defineQuery(`*[_type == "property" && !(_id in path('drafts.**'))] | order(_createdAt desc) {
   _id,
   title,
   "slug": slug.current,
+  subtitle,
+  address,
+  city,
+  state,
+  zipCode,
   price,
-  location,
-  type,
-  description,
+  priceKsh,
+  priceUsd,
+  priceGbp,
+  priceEur,
+  squareFootage,
+  // Coalesce: use propertyType if exists, fall back to type (legacy)
+  "propertyType": coalesce(propertyType, type, "Commercial"),
+  listingType,
+  occupancyRate,
   yield,
+  description,
   features,
-  "mainImage": images[0].asset->url
+  details,
+  investment,
+  // Coalesce for location: coordinates (geopoint) is preferred, but handle legacy
+  "location": select(
+    defined(coordinates) => coordinates,
+    defined(location) => {"lat": null, "lng": null, "area": location},
+    {"lat": null, "lng": null}
+  ),
+  "image": images[0],
+  "gallery": images,
+  "brochureUrl": brochure.asset->url,
+  broker {
+    name,
+    email,
+    phone,
+    "photo": photo.asset->url
+  }
 }`);
 
 export const metadata: Metadata = {
-  title: 'Global Investment Properties - Commercial Real Estate Portfolio',
-  description: 'Explore our exclusive portfolio of premium commercial properties across Africa, Asia-Pacific, Europe, and the Americas.',
+  title: 'Institutional Real Estate Portfolio | Murivest',
+  description: 'Exclusive mandate-only commercial properties across African markets. Curated for UHNWI and institutional investors.',
   openGraph: {
-    title: 'Global Investment Properties',
-    images: ['/image.png'],
+    title: 'Murivest Real Estate Portfolio',
+    description: 'Private placement opportunities in prime African commercial assets.',
+    images: ['/og-properties.jpg'],
   },
 }
 
-// 2. Enable ISR: This refreshes the page in the background when Sanity data changes
-export const revalidate = 60; 
+export const revalidate = 60;
 
 export default async function PropertiesPage() {
-  // 3. Fetch data from Sanity on the server
   const propertyData = await client.fetch(PROPERTIES_QUERY);
-
-  // 4. Pass the clean data into your existing component
+  
   return (
-    <main>
-      <KEProperties data={propertyData} />
+    <main className="bg-[#FAF9F6]">
+      <Properties initialData={propertyData} />
     </main>
   )
 }

@@ -1,5 +1,5 @@
 /* app/globals.css */
-
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
 @import "../styles/forms.css";
 @import "../styles/components.css";
 @import "../styles/animations.css";
@@ -22,4 +22,98 @@
 
 .font-luxury {
   font-family: var(--font-playfair);
+}
+
+
+/* Old Money Aesthetic Base */
+:root {
+  --color-forest: #1B4332;
+  --color-forest-light: #2D5A45;
+  --color-cream: #FAF9F6;
+  --color-cream-dark: #F5F4F0;
+  --color-brass: #B8956B;
+  --color-brass-light: #C9A87C;
+  --color-charcoal: #2C2C2C;
+  --color-stone: #8B8680;
+  --color-border: #E8E6E1;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection Styling */
+::selection {
+  background-color: rgba(184, 149, 107, 0.3);
+  color: #1B4332;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-stone);
+}
+
+/* Typography Refinements */
+.prose {
+  max-width: none;
+}
+
+.prose p {
+  margin-bottom: 1.5em;
+  line-height: 1.8;
+}
+
+/* Animation Utilities */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Map Container Fixes */
+.gm-style {
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* Image Loading States */
+img {
+  background-color: var(--color-cream-dark);
+}
+
+/* Focus States for Accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 2px;
+}
+
+/* Print Styles for Prospectus */
+@media print {
+  nav, footer, button {
+    display: none !important;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
 }

@@ -1,130 +1,138 @@
 'use client';
 
-import React, { useState, useMemo, useRef, useCallback, useEffect } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
+import { motion } from 'framer-motion';
+import {
+  Building2, FileText, TrendingUp, DollarSign,
+  Printer, Copy, CheckCircle2, AlertTriangle,
+} from 'lucide-react';
 
-/* ── Constants ────────────────────────────────────────────────────────────── */
-const KES_PER_USD = 129.5;
+/* ═══════════════════════════════════════════════════════════════════ */
+/*  CONSTANTS & FORMATTERS                                            */
+/* ═══════════════════════════════════════════════════════════════════ */
+const KES_PER_USD = 135.5;
+const toUSD = (v: number) => v / KES_PER_USD;
+const n = (v: string | number) => { const p = Number(String(v).replace(/,/g, '')); return isFinite(p) ? p : 0; };
+const fKES = (v: number) => new Intl.NumberFormat('en-KE', { style: 'currency', currency: 'KES', maximumFractionDigits: 0 }).format(isFinite(v) ? v : 0);
+const fUSD = (v: number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(isFinite(v) ? v : 0);
+const fPct = (v: number) => `${isFinite(v) ? v.toFixed(2) : '0.00'}%`;
+const fX = (v: number) => `${isFinite(v) ? v.toFixed(2) : '—'}x`;
 
-/* ── Formatters ───────────────────────────────────────────────────────────── */
-const toUSD   = (v: number) => v / KES_PER_USD;
-const n       = (v: string | number) => { const p = Number(String(v).replace(/,/g,'')); return isFinite(p) ? p : 0; };
-const fKES    = (v: number) => new Intl.NumberFormat('en-KE',{ style:'currency',currency:'KES',maximumFractionDigits:0 }).format(isFinite(v)?v:0);
-const fUSD    = (v: number) => new Intl.NumberFormat('en-US',{ style:'currency',currency:'USD',maximumFractionDigits:0 }).format(isFinite(v)?v:0);
-const fPct    = (v: number) => `${isFinite(v)?v.toFixed(2):'0.00'}%`;
-const fX      = (v: number) => `${isFinite(v)?v.toFixed(2):'—'}x`;
-
-/* ── Types ────────────────────────────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════════ */
+/*  TYPES                                                             */
+/* ═══════════════════════════════════════════════════════════════════ */
 type Deal = {
-  propertyName:string; submarket:string; assetType:string;
-  seller:string; buyer:string; tenure:string;
-  occupancy:string; wale:string; closingTimeline:string;
-  purchasePriceKES:number; downPaymentPct:number;
-  interestRatePct:number; amortYears:number;
-  grossMonthlyRentKES:number; otherIncomeKES:number; vacancyPct:number;
-  managementPct:number; maintenancePct:number; capexPct:number;
-  taxMonthlyKES:number; insuranceMonthlyKES:number; miscMonthlyKES:number;
-  loiDate:string; addressee:string; agentFirm:string;
-  vendor:string; purchaser:string; propertyDescription:string;
-  proposedConsideration:string; depositPct:number;
-  ddDays:number; closingDays:number; exclusivityDays:number;
-  loiExpiryDays:number; conditionsPrecedent:string;
-  purchaserAdvocate:string; vendorAdvocate:string;
-  signatoryName:string; signatoryTitle:string;
+  propertyName: string; submarket: string; assetType: string;
+  seller: string; buyer: string; tenure: string;
+  occupancy: string; wale: string; closingTimeline: string;
+  purchasePriceKES: number; downPaymentPct: number;
+  interestRatePct: number; amortYears: number;
+  grossMonthlyRentKES: number; otherIncomeKES: number; vacancyPct: number;
+  managementPct: number; maintenancePct: number; capexPct: number;
+  taxMonthlyKES: number; insuranceMonthlyKES: number; miscMonthlyKES: number;
+  loiDate: string; addressee: string; agentFirm: string;
+  vendor: string; purchaser: string; propertyDescription: string;
+  proposedConsideration: string; depositPct: number;
+  ddDays: number; closingDays: number; exclusivityDays: number;
+  loiExpiryDays: number; conditionsPrecedent: string;
+  purchaserAdvocate: string; vendorAdvocate: string;
+  signatoryName: string; signatoryTitle: string;
 };
 
 const DEFAULTS: Deal = {
-  propertyName:'Karen Golf Estate', submarket:'Karen, Nairobi',
-  assetType:'Luxury Residential Villa', seller:'', buyer:'',
-  tenure:'Freehold — Absolute Title', occupancy:'100%', wale:'N/A',
-  closingTimeline:'60 days from LOI acceptance',
-  purchasePriceKES:450_000_000, downPaymentPct:100,
-  interestRatePct:0, amortYears:15,
-  grossMonthlyRentKES:2_800_000, otherIncomeKES:150_000, vacancyPct:0,
-  managementPct:8, maintenancePct:3, capexPct:2,
-  taxMonthlyKES:180_000, insuranceMonthlyKES:85_000, miscMonthlyKES:45_000,
-  loiDate:new Date().toISOString().split('T')[0],
-  addressee:'', agentFirm:'', vendor:'', purchaser:'',
-  propertyDescription:'[Property Address], [Title Number], together with all fixtures, fittings, and appurtenances thereto, situated within the exclusive Karen Golf & Country Club estate.',
-  proposedConsideration:'', depositPct:10,
-  ddDays:21, closingDays:45, exclusivityDays:14, loiExpiryDays:7,
-  conditionsPrecedent:[
+  propertyName: '', submarket: '',
+  assetType: '', seller: '', buyer: '',
+  tenure: '', occupancy: '100%', wale: 'N/A',
+  closingTimeline: '60 days from LOI acceptance',
+  purchasePriceKES: 450_000_000, downPaymentPct: 100,
+  interestRatePct: 0, amortYears: 15,
+  grossMonthlyRentKES: 2_800_000, otherIncomeKES: 150_000, vacancyPct: 0,
+  managementPct: 8, maintenancePct: 3, capexPct: 2,
+  taxMonthlyKES: 180_000, insuranceMonthlyKES: 85_000, miscMonthlyKES: 45_000,
+  loiDate: new Date().toISOString().split('T')[0],
+  addressee: '', agentFirm: '', vendor: '', purchaser: '',
+  propertyDescription: '[Property Address], [LR No.], together with all fixtures, fittings, and appurtenances thereto.',
+  proposedConsideration: '', depositPct: 10,
+  ddDays: 21, closingDays: 45, exclusivityDays: 14, loiExpiryDays: 7,
+  conditionsPrecedent: [
     'Satisfactory completion of legal, financial, technical and environmental due diligence',
-    "Execution of definitive Sale Agreement in agreed form",
+    'Execution of definitive Sale Agreement in agreed form',
     "Obtaining all requisite internal approvals from the Purchaser's investment committee",
-    'Confirmation of clear and marketable title, free from encumbrances',
-    'Verification of membership transfer rights to Karen Golf & Country Club',
   ].join('\n'),
-  purchaserAdvocate:'', vendorAdvocate:'',
-  signatoryName:'Investment Director',
-  signatoryTitle:'Private Wealth Division',
+  purchaserAdvocate: '', vendorAdvocate: '',
+  signatoryName: 'Investment Director', signatoryTitle: 'Private Wealth Division',
 };
 
-/* ── Calculations ─────────────────────────────────────────────────────────── */
-function useCalcs(d: Deal) {
-  return useMemo(() => {
-    const price    = n(d.purchasePriceKES);
-    const eqPct    = n(d.downPaymentPct)/100;
-    const equityKES = price*eqPct;
-    const debtKES   = price*(1-eqPct);
-    const mRate     = n(d.interestRatePct)/100/12;
-    const periods   = n(d.amortYears)*12;
-    let ds = 0;
-    if (debtKES>0&&mRate>0&&periods>0) ds = debtKES*(mRate*Math.pow(1+mRate,periods))/(Math.pow(1+mRate,periods)-1);
-    const grossRent   = n(d.grossMonthlyRentKES);
-    const otherInc    = n(d.otherIncomeKES);
-    const grossIncome = grossRent+otherInc;
-    const vacLoss     = grossIncome*n(d.vacancyPct)/100;
-    const egi         = grossIncome-vacLoss;
-    const mgmt        = egi*n(d.managementPct)/100;
-    const maint       = grossIncome*n(d.maintenancePct)/100;
-    const capex       = grossIncome*n(d.capexPct)/100;
-    const taxes       = n(d.taxMonthlyKES);
-    const ins         = n(d.insuranceMonthlyKES);
-    const misc        = n(d.miscMonthlyKES);
-    const totalOpex   = mgmt+maint+capex+taxes+ins+misc;
-    const opexRatio   = egi>0?(totalOpex/egi)*100:0;
-    const noiM        = egi-totalOpex;
-    const noiA        = noiM*12;
-    const cfM         = noiM-ds;
-    const cfA         = cfM*12;
-    const capRate     = price>0?(noiA/price)*100:0;
-    const coc         = equityKES>0?(cfA/equityKES)*100:0;
-    const dscr        = ds>0?noiM/ds:Infinity;
-    const debtYield   = debtKES>0?(noiA/debtKES)*100:0;
-    const grm         = grossIncome>0?price/(grossIncome*12):0;
-    return {
-      price, priceUSD:toUSD(price), equityKES, equityUSD:toUSD(equityKES),
-      debtKES, debtUSD:toUSD(debtKES), ds, dsA:ds*12,
-      grossIncome, vacLoss, egi, mgmt, maint, capex, taxes, ins, misc,
-      totalOpex, opexRatio, noiM, noiA, noiUSD:toUSD(noiA),
-      cfM, cfA, cfUSD:toUSD(cfA),
-      gsiA:grossIncome*12, vacA:vacLoss*12, egiA:egi*12, opexA:totalOpex*12,
-      capRate, coc, dscr, debtYield, grm,
-    };
-  }, [d]);
+/* ═══════════════════════════════════════════════════════════════════ */
+/*  CALCULATIONS                                                      */
+/* ═══════════════════════════════════════════════════════════════════ */
+function calculate(d: Deal) {
+  const price = n(d.purchasePriceKES);
+  const eqPct = n(d.downPaymentPct) / 100;
+  const equityKES = price * eqPct;
+  const debtKES = price * (1 - eqPct);
+  const mRate = n(d.interestRatePct) / 100 / 12;
+  const periods = n(d.amortYears) * 12;
+  let ds = 0;
+  if (debtKES > 0 && mRate > 0 && periods > 0)
+    ds = debtKES * (mRate * Math.pow(1 + mRate, periods)) / (Math.pow(1 + mRate, periods) - 1);
+  const grossRent = n(d.grossMonthlyRentKES);
+  const otherInc = n(d.otherIncomeKES);
+  const grossIncome = grossRent + otherInc;
+  const vacLoss = grossIncome * n(d.vacancyPct) / 100;
+  const egi = grossIncome - vacLoss;
+  const mgmt = egi * n(d.managementPct) / 100;
+  const maint = grossIncome * n(d.maintenancePct) / 100;
+  const capex = grossIncome * n(d.capexPct) / 100;
+  const taxes = n(d.taxMonthlyKES);
+  const ins = n(d.insuranceMonthlyKES);
+  const misc = n(d.miscMonthlyKES);
+  const totalOpex = mgmt + maint + capex + taxes + ins + misc;
+  const opexRatio = egi > 0 ? (totalOpex / egi) * 100 : 0;
+  const noiM = egi - totalOpex;
+  const noiA = noiM * 12;
+  const cfM = noiM - ds;
+  const cfA = cfM * 12;
+  const capRate = price > 0 ? (noiA / price) * 100 : 0;
+  const coc = equityKES > 0 ? (cfA / equityKES) * 100 : 0;
+  const dscr = ds > 0 ? noiM / ds : Infinity;
+  const debtYield = debtKES > 0 ? (noiA / debtKES) * 100 : 0;
+  const grm = grossIncome > 0 ? price / (grossIncome * 12) : 0;
+  return {
+    price, priceUSD: toUSD(price), equityKES, equityUSD: toUSD(equityKES),
+    debtKES, debtUSD: toUSD(debtKES), ds, dsA: ds * 12,
+    grossIncome, vacLoss, egi, mgmt, maint, capex, taxes, ins, misc,
+    totalOpex, opexRatio, noiM, noiA, noiUSD: toUSD(noiA),
+    cfM, cfA, cfUSD: toUSD(cfA),
+    gsiA: grossIncome * 12, vacA: vacLoss * 12, egiA: egi * 12, opexA: totalOpex * 12,
+    capRate, coc, dscr, debtYield, grm,
+  };
 }
 
-/* ── LOI Generator ────────────────────────────────────────────────────────── */
-function makeLOI(d: Deal, c: ReturnType<typeof useCalcs>): string {
-  const dep    = c.price*n(d.depositPct)/100;
-  const bal    = c.price-dep;
-  const expiry = new Date(d.loiDate||new Date().toISOString().split('T')[0]);
-  expiry.setDate(expiry.getDate()+n(d.loiExpiryDays));
-  const fmt    = (dt: Date) => dt.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
-  const cps    = (d.conditionsPrecedent||'').split('\n').filter(l=>l.trim()).map((l,i)=>`   (${String.fromCharCode(97+i)}) ${l.trim()}`).join(';\n');
+/* ═══════════════════════════════════════════════════════════════════ */
+/*  LOI GENERATOR                                                     */
+/* ═══════════════════════════════════════════════════════════════════ */
+function makeLOI(d: Deal, c: ReturnType<typeof calculate>): string {
+  const dep = c.price * n(d.depositPct) / 100;
+  const bal = c.price - dep;
+  const expiry = new Date(d.loiDate || new Date().toISOString().split('T')[0]);
+  expiry.setDate(expiry.getDate() + n(d.loiExpiryDays));
+  const fmt = (dt: Date) => dt.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+  const cps = (d.conditionsPrecedent || '').split('\n').filter(l => l.trim()).map((l, i) => `   (${String.fromCharCode(97 + i)}) ${l.trim()}`).join(';\n');
+
   return `LETTER OF INTENT
 Indicative · Non-Binding · Subject to Contract · Subject to Due Diligence
 ──────────────────────────────────────────────────────────────────
 
-${fmt(new Date(d.loiDate||Date.now()))}
+${fmt(new Date(d.loiDate || Date.now()))}
 
-${d.addressee||'[Addressee]'}
-${d.agentFirm||''}
+${d.addressee || '[Addressee]'}
+${d.agentFirm || ''}
 
-Dear ${d.addressee||'Sir / Madam'},
+Dear ${d.addressee || 'Sir / Madam'},
 
 RE: Indicative Proposal for the Acquisition of
-    ${d.propertyDescription||d.propertyName+', '+d.submarket}
+    ${d.propertyDescription || d.propertyName + ', ' + d.submarket}
 
 This Letter of Intent sets out the principal commercial terms upon which
 the Purchaser proposes to acquire the property identified below, subject
@@ -133,19 +141,19 @@ documents, and all requisite internal approvals.
 
 1. PROPERTY
 
-   ${d.propertyDescription||d.propertyName+', '+d.submarket}
+   ${d.propertyDescription || d.propertyName + ', ' + d.submarket}
 
 2. VENDOR
 
-   ${d.vendor||'[Vendor — to be confirmed]'}
+   ${d.vendor || '[Vendor — to be confirmed]'}
 
 3. PURCHASER
 
-   ${d.purchaser||'[Purchaser — to be confirmed]'}
+   ${d.purchaser || '[Purchaser — to be confirmed]'}
 
 4. PROPOSED CONSIDERATION
 
-   ${d.proposedConsideration||fKES(c.price)+' ('+fUSD(c.priceUSD)+' at KES '+KES_PER_USD.toFixed(2)+'/USD)'}
+   ${d.proposedConsideration || fKES(c.price) + ' (' + fUSD(c.priceUSD) + ' at KES ' + KES_PER_USD.toFixed(2) + '/USD)'}
 
 5. DEPOSIT
 
@@ -161,15 +169,12 @@ documents, and all requisite internal approvals.
 7. DUE DILIGENCE PERIOD
 
    ${n(d.ddDays)} calendar days from the date of acceptance of this Letter
-   of Intent. The Vendor undertakes to provide full and timely access to
-   all relevant documentation including title documents, lease schedules,
-   service charge accounts, planning consents, and all subsisting
-   agreements affecting the property.
+   of Intent.
 
 8. CLOSING PERIOD
 
    Completion within ${n(d.closingDays)} calendar days of the expiry of the
-   due diligence period, subject to satisfaction of all conditions precedent.
+   due diligence period.
 
 9. CONDITIONS PRECEDENT
 
@@ -180,21 +185,17 @@ ${cps}
 10. EXCLUSIVITY
 
     The Vendor grants the Purchaser ${n(d.exclusivityDays)} calendar days of
-    exclusivity from the date of acceptance. The Vendor shall not solicit,
-    entertain, or enter into negotiations with any third party in respect
-    of the property during this period.
+    exclusivity from the date of acceptance.
 
 11. CONFIDENTIALITY
 
-    The existence and contents of this Letter of Intent and all information
-    provided in connection with the proposed transaction shall be treated
+    The existence and contents of this Letter of Intent shall be treated
     as strictly confidential by both parties and their advisors.
 
 12. COSTS AND TAXES
 
     Each party bears its own legal and professional costs. Stamp duty,
-    land rent, and all transaction levies borne by the Purchaser per the
-    Stamp Duty Act (Cap. 480) and Land Registration Act (No. 3 of 2012).
+    land rent, and all transaction levies borne by the Purchaser.
 
 13. GOVERNING LAW
 
@@ -202,17 +203,15 @@ ${cps}
 
 14. PURCHASER'S ADVOCATES
 
-    ${d.purchaserAdvocate||'[To be confirmed]'}
+    ${d.purchaserAdvocate || '[To be confirmed]'}
 
 15. VENDOR'S ADVOCATES
 
-    ${d.vendorAdvocate||'[To be confirmed]'}
+    ${d.vendorAdvocate || '[To be confirmed]'}
 
 16. NON-BINDING NATURE
 
-    This Letter of Intent is indicative only. No binding commitment shall
-    arise until execution of definitive transaction documents in agreed
-    form by all parties.
+    This Letter of Intent is indicative only.
 
 17. EXPIRY
 
@@ -232,1144 +231,566 @@ Date: _________________________________
 ACKNOWLEDGED AND AGREED
 
 _________________________________
-For and on behalf of ${d.vendor||'[Vendor]'}
+For and on behalf of ${d.vendor || '[Vendor]'}
 
-Date: _________________________________
-
-──────────────────────────────────────────────────────────────────
-Private Wealth Real Estate Advisory
-Nairobi · Karen Golf Estate
-Indicative · Non-Binding · Subject to Contract · Subject to Due Diligence`;
+Date: _________________________________`;
 }
 
-/* ── Scroll reveal ────────────────────────────────────────────────────────── */
-const useInView = (threshold = 0.08) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [inView, setInView] = useState(false);
-  useEffect(() => {
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setInView(true); }, { threshold });
-    if (ref.current) obs.observe(ref.current);
-    return () => obs.disconnect();
-  }, []);
-  return [ref, inView] as const;
-};
+/* ═══════════════════════════════════════════════════════════════════ */
+/*  INLINE SUB-COMPONENTS                                             */
+/* ═══════════════════════════════════════════════════════════════════ */
 
-const Reveal = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
-  const [ref, inView] = useInView();
+/* ── Scoped Styles (injected once) ─────────────────────────────────── */
+const ScopedStyles = () => (
+  <style>{`
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+    .cre-uw { 
+      --cre-bg: hsl(40, 20%, 97%); 
+      --cre-fg: hsl(30, 10%, 15%); 
+      --cre-border: hsl(35, 15%, 85%); 
+      --cre-muted: hsl(35, 10%, 92%); 
+      --cre-muted-fg: hsl(30, 8%, 45%); 
+      --cre-primary: hsl(25, 60%, 35%); 
+      --cre-primary-fg: hsl(0, 0%, 100%); 
+      --cre-surface: hsl(40, 25%, 99%); 
+      --cre-destructive: hsl(0, 55%, 45%); 
+      --cre-risk-low: hsl(140, 50%, 30%); 
+      --cre-risk-med: hsl(35, 80%, 45%); 
+      --cre-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.06); 
+      --cre-radius: 4px; 
+      --cre-font: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; 
+      --cre-serif: 'Times New Roman', Times, Georgia, serif; 
+      --cre-mono: 'Times New Roman', Times, Georgia, serif; 
+    }
+    .cre-uw { 
+      font-family: var(--cre-font); 
+      color: var(--cre-fg); 
+      background: var(--cre-bg); 
+      -webkit-font-smoothing: antialiased;
+      font-size: 13px;
+    }
+    .cre-uw * { box-sizing: border-box; }
+    .cre-uw .mono { 
+      font-family: var(--cre-mono); 
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.02em;
+    }
+    .cre-uw .serif { font-family: var(--cre-serif); }
+    .cre-uw button:active { transform: scale(0.98); }
+    .cre-uw input, .cre-uw textarea { 
+      font-family: var(--cre-font); 
+      font-size: 12px;
+    }
+    .cre-uw h1, .cre-uw h2, .cre-uw h3 { 
+      font-family: var(--cre-serif); 
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+    .cre-uw label {
+      font-family: var(--cre-font);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+  `}</style>
+);
+
+/* ── Field Input ───────────────────────────────────────────────────── */
+function FI({ label, type = 'text', value, onChange, step, min, max, placeholder }: {
+  label: string; type?: string; value: string | number;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  step?: string; min?: string; max?: string; placeholder?: string;
+}) {
   return (
-    <div ref={ref} style={{ opacity: inView?1:0, transform: inView?'translateY(0)':'translateY(16px)', transition:`opacity 500ms ease ${delay}ms, transform 500ms ease ${delay}ms` }}>
-      {children}
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+      <label style={{ fontSize: 9, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--cre-muted-fg)' }}>
+        {label}
+      </label>
+      <input
+        type={type} value={value} onChange={onChange} step={step} min={min} max={max} placeholder={placeholder}
+        style={{
+          width: '100%', padding: '10px 12px', background: 'var(--cre-surface)',
+          border: '1px solid var(--cre-border)', borderRadius: 'var(--cre-radius)',
+          fontSize: 12, color: 'var(--cre-fg)', outline: 'none',
+          fontFamily: 'var(--cre-font)',
+          transition: 'border-color 150ms ease, box-shadow 150ms ease',
+        }}
+        onFocus={e => { e.target.style.borderColor = 'var(--cre-primary)'; e.target.style.boxShadow = '0 0 0 2px hsla(25, 60%, 35%, 0.1)'; }}
+        onBlur={e => { e.target.style.borderColor = 'var(--cre-border)'; e.target.style.boxShadow = 'none'; }}
+      />
     </div>
   );
-};
+}
 
-/* ── Golf Club Lounge Style Tokens ───────────────────────────────────────── */
-const T = {
-  // Club Stationery Palette
-  cream:        '#F8F7F4',
-  creamDark:    '#F0EDE8',
-  charcoal:     '#2C2C2C',
-  charcoalMid:  '#4A4A4A',
-  charcoalFade: '#6B6B6B',
-  tobacco:      '#8B7355',
-  tobaccoLight: '#A68B6A',
-  tobaccoFade:  '#C4B8A8',
-  hairline:     '#E5E2DC',
-  hairlineDark: '#D5D2CC',
-  white:        '#FDFCFA',
-  
-  // Typography
-  serif:        "'Cormorant Garamond', 'Times New Roman', serif",
-  serifItalic:  "'Cormorant Garamond', 'Times New Roman', serif",
-  label:        "'Libre Baskerville', Georgia, serif",
-  body:         "'EB Garamond', Georgia, serif",
-  
-  // Weights - No bold, only light (300) and medium (400)
-  weightLight:  300,
-  weightMedium: 400,
-};
+/* ── Field Textarea ────────────────────────────────────────────────── */
+function FTA({ label, value, onChange, rows = 4, placeholder }: {
+  label: string; value: string; onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  rows?: number; placeholder?: string;
+}) {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+      <label style={{ fontSize: 9, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--cre-muted-fg)' }}>
+        {label}
+      </label>
+      <textarea
+        value={value} onChange={onChange} rows={rows} placeholder={placeholder}
+        style={{
+          width: '100%', padding: '10px 12px', background: 'var(--cre-surface)',
+          border: '1px solid var(--cre-border)', borderRadius: 'var(--cre-radius)',
+          fontSize: 12, color: 'var(--cre-fg)', outline: 'none', resize: 'vertical',
+          fontFamily: 'var(--cre-font)',
+          lineHeight: 1.6,
+          transition: 'border-color 150ms ease, box-shadow 150ms ease',
+        }}
+        onFocus={e => { e.target.style.borderColor = 'var(--cre-primary)'; e.target.style.boxShadow = '0 0 0 2px hsla(25, 60%, 35%, 0.1)'; }}
+        onBlur={e => { e.target.style.borderColor = 'var(--cre-border)'; e.target.style.boxShadow = 'none'; }}
+      />
+    </div>
+  );
+}
 
-/* ── Sub-components ───────────────────────────────────────────────────────── */
+/* ── Metric Card ───────────────────────────────────────────────────── */
+function MC({ label, value, sub }: { label: string; value: string; sub?: string }) {
+  return (
+    <motion.div
+      whileHover={{ y: -2 }}
+      transition={{ duration: 0.15, ease: [0.2, 0, 0, 1] }}
+      style={{
+        border: '1px solid var(--cre-border)', background: 'var(--cre-surface)',
+        padding: '18px 16px', borderRadius: 'var(--cre-radius)', boxShadow: 'var(--cre-shadow)',
+      }}
+    >
+      <p style={{ fontSize: 9, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--cre-muted-fg)', marginBottom: 10, fontFamily: 'var(--cre-font)' }}>
+        {label}
+      </p>
+      <p className="mono" style={{ fontSize: 17, fontWeight: 600, color: 'var(--cre-fg)', fontFamily: 'var(--cre-serif)' }}>{value}</p>
+      {sub && <p className="mono" style={{ fontSize: 10, color: 'var(--cre-muted-fg)', marginTop: 6, fontFamily: 'var(--cre-serif)', fontStyle: 'italic' }}>{sub}</p>}
+    </motion.div>
+  );
+}
 
-// HBR-style section header with roman numeral - Golf Club aesthetic
-const SectionHead = ({ num, tag, title, delay=0 }: { num:string; tag:string; title:string; delay?:number }) => (
-  <Reveal delay={delay}>
-    <div style={{ display:'flex', alignItems:'flex-start', gap:'clamp(1rem, 3vw, 2rem)', marginBottom:'clamp(2rem, 5vw, 3rem)' }}>
-      <span style={{ 
-        fontFamily:T.serif, 
-        fontSize:'clamp(2.5rem, 6vw, 4rem)', 
-        fontWeight:T.weightLight, 
-        color:T.tobaccoFade, 
-        lineHeight:1, 
-        opacity:0.4, 
-        flexShrink:0, 
-        userSelect:'none',
-        fontStyle:'italic'
-      }}>
-        {num}
+/* ── Operating Row ─────────────────────────────────────────────────── */
+function Row({ label, kes, neg, bold }: { label: string; kes: number; neg?: boolean; bold?: boolean }) {
+  return (
+    <div style={{
+      display: 'flex', justifyContent: 'space-between', alignItems: 'baseline',
+      padding: '6px 10px', borderBottom: '1px solid var(--cre-border)',
+      background: bold ? 'var(--cre-muted)' : 'transparent',
+    }}>
+      <span style={{ fontSize: 13, fontWeight: bold ? 600 : 400, color: bold ? 'var(--cre-fg)' : 'var(--cre-muted-fg)', fontFamily: 'var(--cre-serif)' }}>
+        {label}
       </span>
-      <div style={{ paddingTop:'0.5rem' }}>
-        <span style={{ display:'block', width:24, height:1, background:T.tobacco, marginBottom:'0.75rem' }} />
-        <span style={{ 
-          display:'block', 
-          fontFamily:T.label, 
-          fontSize:'0.55rem', 
-          letterSpacing:'0.35em', 
-          textTransform:'uppercase', 
-          color:T.tobacco, 
-          marginBottom:'0.5rem' 
-        }}>
-          {tag}
+      <div style={{ textAlign: 'right', display: 'flex', alignItems: 'baseline', gap: 12 }}>
+        <span className="mono" style={{ fontSize: 13, fontWeight: bold ? 600 : 400, color: neg ? 'var(--cre-destructive)' : 'var(--cre-fg)', fontFamily: 'var(--cre-serif)' }}>
+          {fKES(kes)}
         </span>
-        <h2 style={{ 
-          fontFamily:T.serif, 
-          fontSize:'clamp(1.4rem, 3vw, 2rem)', 
-          fontWeight:T.weightLight, 
-          lineHeight:1.25, 
-          color:T.charcoal,
-          fontStyle:'italic'
-        }}>
-          {title}
-        </h2>
+        <span className="mono" style={{ fontSize: 10, color: 'var(--cre-muted-fg)', width: 80, textAlign: 'right', fontFamily: 'var(--cre-serif)', fontStyle: 'italic' }}>
+          {fUSD(toUSD(kes))}
+        </span>
       </div>
     </div>
-  </Reveal>
-);
+  );
+}
 
-// Minimal input with tobacco focus - 44px touch target
-const F = ({ label, children }: { label:string; children:React.ReactNode }) => (
-  <div style={{ display:'flex', flexDirection:'column', gap:'0.5rem' }}>
-    <label style={{ 
-      fontFamily:T.label, 
-      fontSize:'0.55rem', 
-      letterSpacing:'0.3em', 
-      textTransform:'uppercase', 
-      color:T.tobacco,
-      fontWeight:T.weightMedium
-    }}>
-      {label}
-    </label>
-    {children}
-  </div>
-);
-
-// Stat card - old money minimal, no shadows
-const StatCard = ({ label, value, sub, dark=false }: { label:string; value:string; sub?:string; dark?:boolean }) => (
-  <div style={{
-    borderTop:`1px solid ${dark ? 'rgba(139,115,85,0.25)' : T.hairline}`,
-    paddingTop:'1.25rem',
-  }}>
-    <p style={{ 
-      fontFamily:T.label, 
-      fontSize:'0.5rem', 
-      letterSpacing:'0.3em', 
-      textTransform:'uppercase', 
-      color:dark ? T.tobaccoLight : T.tobacco, 
-      marginBottom:'0.6rem',
-      fontWeight:T.weightMedium
-    }}>
-      {label}
-    </p>
-    <p style={{ 
-      fontFamily:T.serif, 
-      fontSize:'clamp(1.5rem, 3vw, 1.75rem)', 
-      fontWeight:T.weightLight, 
-      color: dark ? T.cream : T.charcoal, 
-      lineHeight:1.1, 
-      marginBottom:'0.4rem',
-      fontStyle:'italic'
-    }}>
-      {value}
-    </p>
-    {sub && <p style={{ 
-      fontFamily:T.label, 
-      fontSize:'0.5rem', 
-      letterSpacing:'0.2em', 
-      textTransform:'uppercase', 
-      color: dark ? 'rgba(248,247,244,0.5)' : T.charcoalFade,
-      fontWeight:T.weightLight
-    }}>
-      {sub}
-    </p>}
-  </div>
-);
-
-// Income/expense line - refined elegance
-const Row = ({ label, kes, neg, bold=false }: { label:string; kes:number; neg?:boolean; bold?:boolean }) => (
-  <div style={{ 
-    display:'flex', 
-    justifyContent:'space-between', 
-    alignItems:'baseline', 
-    padding:'0.6rem 0', 
-    borderBottom:`1px solid ${T.hairline}`,
-    minHeight:44
-  }}>
-    <span style={{ 
-      fontFamily:T.body, 
-      fontSize:'0.95rem', 
-      color: bold ? T.charcoal : T.charcoalMid, 
-      fontWeight: T.weightLight,
-      fontStyle: bold ? 'normal' : 'italic'
-    }}>
-      {label}
-    </span>
-    <div style={{ textAlign:'right' }}>
-      <span style={{ 
-        fontFamily:T.body, 
-        fontSize:'0.95rem', 
-        color: neg ? '#8B4513' : bold ? T.charcoal : T.charcoalMid, 
-        fontWeight: T.weightLight,
-        letterSpacing:'0.02em'
-      }}>
-        {fKES(kes)}
-      </span>
-      <span style={{ 
-        display:'block', 
-        fontFamily:T.label, 
-        fontSize:'0.5rem', 
-        letterSpacing:'0.15em', 
-        color:T.charcoalFade,
-        marginTop:'0.15rem'
-      }}>
-        {fUSD(toUSD(kes))}
-      </span>
+/* ── Operating Table ───────────────────────────────────────────────── */
+function OpTable({ c }: { c: ReturnType<typeof calculate> }) {
+  return (
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: 24 }}>
+      <div>
+        <p style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--cre-muted-fg)', marginBottom: 14, fontFamily: 'var(--cre-font)' }}>
+          Monthly Operating Performance
+        </p>
+        <div style={{ border: '1px solid var(--cre-border)', borderRadius: 'var(--cre-radius)', overflow: 'hidden' }}>
+          <Row label="Gross Scheduled Income" kes={c.grossIncome} />
+          <Row label="Vacancy & Credit Loss" kes={-c.vacLoss} neg />
+          <Row label="Effective Gross Income" kes={c.egi} bold />
+          <Row label="Management Fee" kes={-c.mgmt} neg />
+          <Row label="Maintenance Reserve" kes={-c.maint} neg />
+          <Row label="Capital Reserve" kes={-c.capex} neg />
+          <Row label="Property Tax / KRA" kes={-c.taxes} neg />
+          <Row label="Insurance" kes={-c.ins} neg />
+          {c.misc > 0 && <Row label="Miscellaneous" kes={-c.misc} neg />}
+          <Row label="Total OpEx" kes={-c.totalOpex} neg bold />
+          <Row label="Net Operating Income" kes={c.noiM} bold />
+          {c.ds > 0 && <>
+            <Row label="Debt Service" kes={-c.ds} neg />
+            <Row label="Pre-Tax Cash Flow" kes={c.cfM} bold />
+          </>}
+        </div>
+      </div>
+      <div>
+        <p style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--cre-muted-fg)', marginBottom: 14, fontFamily: 'var(--cre-font)' }}>
+          Annual Summary
+        </p>
+        <div style={{ border: '1px solid var(--cre-border)', borderRadius: 'var(--cre-radius)', overflow: 'hidden' }}>
+          <Row label="Gross Scheduled Income" kes={c.gsiA} />
+          <Row label="Vacancy & Credit Loss" kes={-c.vacA} neg />
+          <Row label="Operating Expenditure" kes={-c.opexA} neg />
+          {c.dsA > 0 && <Row label="Debt Service" kes={-c.dsA} neg />}
+          <Row label="Net Operating Income" kes={c.noiA} bold />
+          {c.debtKES > 0 && <Row label="Pre-Tax Cash Flow" kes={c.cfA} bold />}
+        </div>
+        <p style={{ fontSize: 10, color: 'var(--cre-muted-fg)', marginTop: 14, lineHeight: 1.7, fontFamily: 'var(--cre-serif)', fontStyle: 'italic' }}>
+          Benchmarks: Knight Frank Kenya H2 2024 · HassConsult Property Index 2024 ·
+          Kenya Bankers Association HPI 2024 · Central Bank of Kenya CBR 2024.
+        </p>
+      </div>
     </div>
-  </div>
-);
+  );
+}
 
-// Tab pill - refined for touch
-const Tab = ({ active, label, onClick }: { active:boolean; label:string; onClick:()=>void }) => (
-  <button onClick={onClick} style={{
-    background:'none', 
-    border:'none', 
-    cursor:'pointer',
-    fontFamily:T.label, 
-    fontSize:'0.55rem', 
-    letterSpacing:'0.3em', 
-    textTransform:'uppercase',
-    color: active ? T.charcoal : T.charcoalFade,
-    borderBottom: active ? `1px solid ${T.tobacco}` : '1px solid transparent',
-    padding:'1rem 0', 
-    marginRight:'clamp(1.5rem, 4vw, 2.5rem)',
-    transition:'color 400ms ease, border-color 400ms ease',
-    minHeight:44,
-    fontWeight:T.weightMedium
-  }}>
-    {label}
-  </button>
-);
-
-/* ═══════════════════════════════════════════════════════════════════════════ */
-/*  MAIN PAGE - Golf Club Lounge Aesthetic                                     */
-/* ═══════════════════════════════════════════════════════════════════════════ */
-export default function InstitutionalUnderwritingPage() {
-  const [d, setD]    = useState<Deal>(DEFAULTS);
-  const [tab, setTab]= useState<'uw'|'loi'>('uw');
-  const c            = useCalcs(d);
-  const loi          = useMemo(() => makeLOI(d,c), [d,c]);
-  const set          = useCallback((k: keyof Deal, v: string|number) => setD(p => ({...p,[k]:v})), []);
+/* ═══════════════════════════════════════════════════════════════════ */
+/*  MAIN COMPONENT                                                    */
+/* ═══════════════════════════════════════════════════════════════════ */
+export default function CreUnderwriting() {
+  const [d, setD] = useState<Deal>(DEFAULTS);
+  const [tab, setTab] = useState<'uw' | 'loi'>('uw');
+  const c = useMemo(() => calculate(d), [d]);
+  const loi = useMemo(() => makeLOI(d, c), [d, c]);
+  const set = useCallback((k: keyof Deal, v: string | number) => setD(p => ({ ...p, [k]: v })), []);
 
   const printLOI = useCallback(() => {
-    const w = window.open('','_blank');
+    const w = window.open('', '_blank');
     if (!w) return;
     w.document.write(`<!DOCTYPE html><html><head>
-<title>LOI — ${d.propertyName} — Private Wealth Advisory</title>
+<title style="font-size:4.5pt">LOI — ${d.propertyName}</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=EB+Garamond:wght@300;400&family=Libre+Baskerville:wght@400&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'EB Garamond',Georgia,serif;font-size:11pt;line-height:1.9;color:#2C2C2C;padding:48pt 56pt;background:#F8F7F4}
-.hdr{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:14pt;border-bottom:0.5pt solid #8B7355;margin-bottom:24pt}
-.hdr-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:16pt;font-weight:300;font-style:italic;color:#2C2C2C}
-.hdr-tag{font-size:7pt;letter-spacing:0.25em;text-transform:uppercase;color:#8B7355;margin-top:4pt;font-family:'Libre Baskerville',serif}
-.brand{font-family:'Cormorant Garamond',Georgia,serif;font-size:14pt;font-weight:300;letter-spacing:0.15em;color:#2C2C2C}
-pre{font-family:'EB Garamond',Georgia,serif;font-size:10pt;white-space:pre-wrap;line-height:1.9;word-break:break-word;font-weight:300}
-.ftr{position:fixed;bottom:24pt;left:56pt;right:56pt;border-top:0.5pt solid #E5E2DC;padding-top:6pt;display:flex;justify-content:space-between;font-size:7.5pt;color:#8B7355;font-family:'Libre Baskerville',serif;letter-spacing:0.1em}
-@page{margin:0}
+body{font-family:'Times New Roman',Times,Georgia,serif;font-size:4.5pt;line-height:1.45;color:#1a1a1a;padding:32pt 36pt;background:#fff}
+pre{font-family:'Times New Roman',Times,Georgia,serif;font-size:4.5pt;white-space:pre-wrap;word-break:break-word;line-height:1.45;letter-spacing:0.01em}
+@page{margin:0.4in}
 </style></head><body>
-<div class="hdr">
-  <div><div class="hdr-title">Letter of Intent</div><div class="hdr-tag">Indicative · Non-Binding · Subject to Contract</div></div>
-  <div style="text-align:right"><div class="brand">KAREN ESTATES</div><div class="hdr-tag">Private Wealth Real Estate Advisory</div></div>
-</div>
-<pre>${loi.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</pre>
-<div class="ftr"><span>Karen Golf Estate · Nairobi</span><span>Private Wealth Advisory</span></div>
+<pre>${loi.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>
 </body></html>`);
     w.document.close();
     setTimeout(() => { w.focus(); w.print(); }, 400);
   }, [d, loi]);
 
-  // IC narrative paragraphs - refined for UHNWI
   const ic = useMemo(() => [
-    `The subject asset — ${d.propertyName||'[Asset]'} — presents as a rare acquisition opportunity within the prestigious ${d.submarket||'Karen Golf Estate'}, offering both lifestyle utility and capital preservation for discerning principals. The indicative value of ${fKES(c.price)} (${fUSD(c.priceUSD)}) reflects current market positioning for luxury residential within this exclusive enclave.`,
-    
-    `Net Operating Income is underwritten at ${fKES(c.noiA)} per annum (${fUSD(c.noiUSD)}), derived from an Effective Gross Income of ${fKES(c.egiA)}. The operating expense ratio of ${fPct(c.opexRatio)} aligns with institutional standards for premium residential assets in comparable global markets.`,
-    
-    c.debtKES>0
-      ? `The proposed capital structure maintains conservative leverage at ${Math.round(100-n(d.downPaymentPct))}% loan-to-value, with debt service coverage of ${fX(c.dscr)}. This prudent approach preserves liquidity while optimizing tax-efficient returns, consistent with family office investment criteria.`
-      : `The all-equity acquisition structure eliminates refinancing risk and interest rate exposure, reflecting a capital preservation mandate consistent with generational wealth management principles. The unlevered cash yield of ${fPct(c.coc)} represents the pure equity return on deployed capital.`,
-    
-    `Primary diligence considerations: (i) verification of Karen Golf & Country Club membership transferability — a material value component; (ii) forensic title audit via Ardhisasa platform; (iii) assessment of estate covenant compliance; (iv) KRA Capital Gains Tax implications at 15% on chargeable gain.`,
-    
-    `Investment thesis: Subject to satisfactory due diligence, this acquisition represents a defensive store of value with embedded optionality through golf club membership privileges and estate exclusivity. The asset class demonstrates historical resilience through market cycles, with Karen Estate properties maintaining premium valuations over two decades.`,
+    `${d.propertyName || '[Asset]'} — ${d.submarket || 'Karen'}. Indicative value: ${fKES(c.price)} (${fUSD(c.priceUSD)}). ${d.assetType}, ${d.tenure}.`,
+    `NOI underwritten at ${fKES(c.noiA)}/annum (${fUSD(c.noiUSD)}). EGI: ${fKES(c.egiA)}. OpEx ratio: ${fPct(c.opexRatio)}.`,
+    c.debtKES > 0
+      ? `Capital structure: ${Math.round(100 - n(d.downPaymentPct))}% LTV. DSCR: ${fX(c.dscr)}. Debt yield: ${fPct(c.debtYield)}.`
+      : `All-equity acquisition. Unlevered cash yield: ${fPct(c.coc)}.`,
+    `Diligence: (i) Club membership transfer; (ii) Ardhisasa title audit; (iii) covenant compliance; (iv) CGT at 15%.`,
   ], [d, c]);
 
+  const tabBtn = (key: 'uw' | 'loi', label: string, Icon: typeof TrendingUp) => (
+    <button
+      key={key}
+      onClick={() => setTab(key)}
+      style={{
+        display: 'flex', alignItems: 'center', gap: 8, padding: '8px 14px',
+        fontSize: 11, fontWeight: 600, borderRadius: 'var(--cre-radius)', border: 'none', cursor: 'pointer',
+        transition: 'all 150ms cubic-bezier(0.2,0,0,1)',
+        background: tab === key ? 'var(--cre-fg)' : 'transparent',
+        color: tab === key ? 'var(--cre-bg)' : 'var(--cre-muted-fg)',
+        fontFamily: 'var(--cre-font)',
+        letterSpacing: '0.02em',
+      }}
+    >
+      <Icon size={14} />
+      {label}
+    </button>
+  );
+
+  /* ── Shared button styles ────────────────────────────────────────── */
+  const btnPrimary: React.CSSProperties = {
+    width: '100%', padding: '10px 18px', background: 'var(--cre-primary)', color: 'var(--cre-primary-fg)',
+    fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em',
+    borderRadius: 'var(--cre-radius)', border: 'none', cursor: 'pointer',
+    transition: 'all 150ms ease',
+    fontFamily: 'var(--cre-font)',
+  };
+  const btnOutline: React.CSSProperties = {
+    ...btnPrimary,
+    background: 'transparent', color: 'var(--cre-fg)',
+    border: '1px solid var(--cre-border)',
+  };
+
+  const sectionLabel: React.CSSProperties = {
+    fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--cre-muted-fg)', marginBottom: 14,
+    fontFamily: 'var(--cre-font)',
+  };
+
+  const card: React.CSSProperties = {
+    border: '1px solid var(--cre-border)', borderRadius: 'var(--cre-radius)', padding: '18px', marginBottom: 18,
+    background: 'var(--cre-surface)',
+  };
+
   return (
-    <div style={{ background:T.cream, minHeight:'100vh', color:T.charcoal, overflowX:'hidden', WebkitFontSmoothing:'antialiased', MozOsxFontSmoothing:'grayscale' }}>
+    <div className="cre-uw" style={{ minHeight: '100vh', paddingTop: '120px' }}>
+      <ScopedStyles />
 
-      {/* ── GLOBAL STYLES ───────────────────────────────────────────── */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap');
-        
-        *{box-sizing:border-box;margin:0;padding:0}
-        
-        .uw-input {
-          width:100%; 
-          padding:0.75rem 0; 
-          background:transparent;
-          border:none; 
-          border-bottom:1px solid #E5E2DC; 
-          outline:none;
-          font-family:'EB Garamond',Georgia,serif; 
-          font-size:1rem; 
-          color:#2C2C2C;
-          transition:border-color 400ms ease; 
-          -webkit-appearance:none;
-          border-radius:0;
-          font-weight:300;
-          min-height:44px;
-        }
-        .uw-input:focus { border-bottom-color:#8B7355; }
-        .uw-input::placeholder { color:#6B6B6B; font-style:italic; }
-        
-        .uw-textarea {
-          width:100%; 
-          padding:0.75rem 0; 
-          background:transparent;
-          border:none; 
-          border-bottom:1px solid #E5E2DC; 
-          outline:none;
-          font-family:'EB Garamond',Georgia,serif; 
-          font-size:1rem; 
-          color:#2C2C2C;
-          resize:vertical; 
-          min-height:100px; 
-          transition:border-color 400ms ease;
-          font-weight:300;
-          line-height:1.6;
-        }
-        .uw-textarea:focus { border-bottom-color:#8B7355; }
-        
-        .uw-select {
-          width:100%; 
-          padding:0.75rem 0; 
-          background:transparent;
-          border:none; 
-          border-bottom:1px solid #E5E2DC; 
-          outline:none;
-          font-family:'EB Garamond',Georgia,serif; 
-          font-size:1rem; 
-          color:#2C2C2C;
-          -webkit-appearance:none; 
-          cursor:pointer; 
-          transition:border-color 400ms ease;
-          font-weight:300;
-          min-height:44px;
-          border-radius:0;
-        }
-        .uw-select:focus { border-bottom-color:#8B7355; }
-
-        .cta-btn {
-          display:inline-flex; 
-          align-items:center; 
-          gap:0.6rem;
-          font-family:'Libre Baskerville',Georgia,serif;
-          font-size:0.55rem; 
-          letter-spacing:0.25em; 
-          text-transform:uppercase;
-          color:#2C2C2C; 
-          background:none; 
-          border:1px solid #2C2C2C;
-          padding:0.875rem 1.5rem; 
-          cursor:pointer; 
-          transition:all 400ms ease;
-          min-height:44px;
-          font-weight:400;
-        }
-        .cta-btn:hover { 
-          background:#2C2C2C; 
-          color:#F8F7F4; 
-        }
-        
-        .cta-btn-gold {
-          display:inline-flex; 
-          align-items:center; 
-          gap:0.6rem;
-          font-family:'Libre Baskerville',Georgia,serif;
-          font-size:0.55rem; 
-          letter-spacing:0.25em; 
-          text-transform:uppercase;
-          color:#8B7355; 
-          background:none; 
-          border:1px solid #8B7355;
-          padding:0.875rem 1.5rem; 
-          cursor:pointer; 
-          transition:all 400ms ease;
-          min-height:44px;
-          font-weight:400;
-        }
-        .cta-btn-gold:hover { 
-          background:#8B7355; 
-          color:#F8F7F4; 
-        }
-
-        /* Responsive Grid Classes */
-        .two-col { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem 3rem; }
-        .three-col { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem 3rem; }
-        .four-col { display:grid; grid-template-columns:repeat(4,1fr); gap:0 1px; background:#E5E2DC; }
-        .stat-four { display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; }
-        .loi-grid { display:grid; grid-template-columns:360px 1fr; gap:4rem; align-items:start; }
-        
-        /* Asymmetric editorial layout */
-        .editorial-split { 
-          display:grid; 
-          grid-template-columns:5fr 7fr; 
-          gap:clamp(2rem, 5vw, 4rem); 
-        }
-        
-        /* Mobile optimizations */
-        @media (max-width: 1024px) {
-          .editorial-split { grid-template-columns:1fr; }
-          .loi-grid { grid-template-columns:1fr; }
-        }
-        
-        @media (max-width: 900px) {
-          .two-col { grid-template-columns:1fr; }
-          .three-col { grid-template-columns:1fr 1fr; }
-          .four-col { grid-template-columns:1fr 1fr; }
-          .stat-four { grid-template-columns:1fr 1fr; }
-        }
-        
-        @media (max-width: 640px) {
-          .three-col { grid-template-columns:1fr; }
-          .four-col { grid-template-columns:1fr; }
-          .stat-four { grid-template-columns:1fr; }
-        }
-        
-        /* iPhone safe areas and touch optimization */
-        @supports (padding: max(0px)) {
-          .page-pad {
-            padding-left: max(1.25rem, env(safe-area-inset-left));
-            padding-right: max(1.25rem, env(safe-area-inset-right));
-          }
-        }
-        
-        /* Reduced motion preference */
-        @media (prefers-reduced-motion: reduce) {
-          * { transition-duration:0.01ms !important; animation-duration:0.01ms !important; }
-        }
-      `}</style>
-
-      {/* ── HERO ────────────────────────────────────────────────────── */}
-      <div className="page-pad" style={{ padding:'clamp(4rem, 10vw, 8rem) clamp(1.25rem, 5vw, 5rem) clamp(3rem, 6vw, 5rem)', maxWidth:1200, margin:'0 auto' }}>
-        <Reveal>
-          <div style={{ display:'flex', alignItems:'center', gap:'1rem', marginBottom:'1.5rem' }}>
-            <div style={{ width:28, height:1, background:T.tobaccoFade }} />
-            <span style={{ 
-              fontFamily:T.label, 
-              fontSize:'0.55rem', 
-              letterSpacing:'0.4em', 
-              textTransform:'uppercase', 
-              color:T.tobacco,
-              fontWeight:T.weightMedium
-            }}>
-              Private Wealth Advisory · Karen Golf Estate
+      {/* ── Header ───────────────────────────────────────────── */}
+      <header style={{
+        borderBottom: '1px solid var(--cre-border)', background: 'var(--cre-surface)',
+      }}>
+        <div style={{ maxWidth: 1400, margin: '0 auto', padding: '14px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <Building2 size={18} style={{ color: 'var(--cre-primary)' }} />
+            <span style={{ fontSize: 15, fontWeight: 700, letterSpacing: '0.01em', fontFamily: 'var(--cre-serif)' }}>CRE Underwriting</span>
+            <span style={{ fontSize: 9, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--cre-muted-fg)', marginLeft: 8, fontWeight: 500 }}>
+              Private Wealth Advisory
             </span>
           </div>
-          
-          <h1 style={{ 
-            fontFamily:T.serif, 
-            fontSize:'clamp(2rem, 6vw, 3.5rem)', 
-            fontWeight:T.weightLight, 
-            lineHeight:1.15, 
-            color:T.charcoal, 
-            letterSpacing:'-0.02em', 
-            marginBottom:'1.5rem', 
-            maxWidth:700,
-            fontStyle:'italic'
-          }}>
-            Executive Property<br />
-            <span style={{ fontStyle:'normal' }}>Analysis & Documentation</span>
-          </h1>
-          
-          <div style={{ width:36, height:1, background:T.tobacco, marginBottom:'1.5rem' }} />
-          
-          <p style={{ 
-            fontFamily:T.body, 
-            fontSize:'clamp(1rem, 2vw, 1.1rem)', 
-            lineHeight:1.8, 
-            color:T.charcoalMid, 
-            maxWidth:560, 
-            marginBottom:'2rem',
-            fontWeight:T.weightLight
-          }}>
-            A confidential underwriting suite for principals and family offices 
-            evaluating premium residential acquisitions within Nairobi's most 
-            exclusive golf estate community.
-          </p>
-          
-          <div style={{ display:'flex', gap:'0.6rem', flexWrap:'wrap' }}>
-            {['KES + USD Dual-Currency','Indicative Valuation','Membership Transfer Analysis','Private Treaty Documentation'].map(t=>(
-              <span key={t} style={{ 
-                fontFamily:T.label, 
-                fontSize:'0.5rem', 
-                letterSpacing:'0.2em', 
-                textTransform:'uppercase', 
-                color:T.tobacco, 
-                border:`1px solid ${T.tobaccoFade}`, 
-                padding:'0.4rem 0.875rem',
-                fontWeight:T.weightMedium
-              }}>
-                {t}
-              </span>
-            ))}
+          <div style={{ display: 'flex', gap: 4 }}>
+            {tabBtn('uw', 'Underwriting', TrendingUp)}
+            {tabBtn('loi', 'Letter of Intent', FileText)}
           </div>
-        </Reveal>
-      </div>
-
-      {/* ── EDITORIAL DIVIDER ───────────────────────────────────────── */}
-      <div className="page-pad" style={{ padding:'0 clamp(1.25rem, 5vw, 5rem)' }}>
-        <div style={{ 
-          borderTop:`2px solid ${T.charcoal}`, 
-          borderBottom:`1px solid ${T.tobaccoFade}`, 
-          padding:'1rem 0', 
-          display:'flex', 
-          alignItems:'center', 
-          justifyContent:'space-between', 
-          flexWrap:'wrap', 
-          gap:'0.75rem' 
-        }}>
-          <span style={{ 
-            fontFamily:T.label, 
-            fontSize:'0.55rem', 
-            letterSpacing:'0.35em', 
-            textTransform:'uppercase', 
-            color:T.charcoal,
-            fontWeight:T.weightMedium
-          }}>
-            Underwriting
-          </span>
-          <span style={{ 
-            fontFamily:T.serif, 
-            fontSize:'0.85rem', 
-            fontStyle:'italic', 
-            color:T.tobacco,
-            fontWeight:T.weightLight
-          }}>
-            Asset Overview · Income Analysis · Yield Metrics · IC Narrative · Letter of Intent
-          </span>
-          <span style={{ 
-            fontFamily:T.label, 
-            fontSize:'0.55rem', 
-            letterSpacing:'0.35em', 
-            textTransform:'uppercase', 
-            color:T.charcoal,
-            fontWeight:T.weightMedium
-          }}>
-            By Private Appointment
-          </span>
         </div>
-      </div>
+      </header>
 
-      {/* ── TAB BAR ─────────────────────────────────────────────────── */}
-      <div className="page-pad" style={{ padding:'0 clamp(1.25rem, 5vw, 5rem)', borderBottom:`1px solid ${T.hairline}` }}>
-        <Tab active={tab==='uw'}  label="Investment Analysis"        onClick={()=>setTab('uw')}  />
-        <Tab active={tab==='loi'} label="Private Treaty Documentation"  onClick={()=>setTab('loi')} />
-      </div>
-
-      {/* ══════════════════════════════════════════════════════════════ */}
-      {/* UNDERWRITING TAB                                              */}
-      {/* ══════════════════════════════════════════════════════════════ */}
+      {/* ═══════════════════════════════════════════════════════ */}
+      {/* UNDERWRITING TAB                                       */}
+      {/* ═══════════════════════════════════════════════════════ */}
       {tab === 'uw' && (
-        <div className="page-pad" style={{ padding:'clamp(3rem, 6vw, 5rem) clamp(1.25rem, 5vw, 5rem) clamp(4rem, 8vw, 8rem)', maxWidth:1200, margin:'0 auto' }}>
+        <div style={{ maxWidth: 1400, margin: '0 auto', display: 'grid', gridTemplateColumns: '260px 1fr 340px', minHeight: 'calc(100vh - 57px)' }}>
 
-          {/* § I — Asset Overview - Asymmetric Layout */}
-          <section style={{ marginBottom:'clamp(4rem, 8vw, 6rem)', borderTop:`1px solid ${T.hairline}`, paddingTop:'clamp(3rem, 5vw, 5rem)' }}>
-            <SectionHead num="I" tag="Asset Overview" title="Property & Transaction Particulars" />
-            
-            <Reveal delay={0.1}>
-              <div className="editorial-split" style={{ marginBottom:'3rem' }}>
-                {/* Left column - Key details */}
-                <div style={{ display:'flex', flexDirection:'column', gap:'1.25rem' }}>
-                  {([
-                    ['Property Name',         'propertyName','text'],
-                    ['Submarket / Estate',    'submarket','text'],
-                    ['Asset Classification',  'assetType','text'],
-                    ['Tenure Structure',      'tenure','text'],
-                  ] as [string,keyof Deal,string][]).map(([lbl,key])=>(
-                    <F key={key} label={lbl}>
-                      <input className="uw-input" value={String(d[key])} onChange={e=>set(key,e.target.value)} />
-                    </F>
-                  ))}
+          {/* Left Rail */}
+          <aside style={{ borderRight: '1px solid var(--cre-border)', padding: '20px', background: 'var(--cre-surface)', position: 'sticky', top: 57, height: 'calc(100vh - 57px)', overflowY: 'auto' }}>
+            <p style={sectionLabel}>Applicant Summary</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 28 }}>
+              <FI label="Property" value={d.propertyName} onChange={e => set('propertyName', e.target.value)} />
+              <FI label="Submarket" value={d.submarket} onChange={e => set('submarket', e.target.value)} />
+              <FI label="Asset Type" value={d.assetType} onChange={e => set('assetType', e.target.value)} />
+              <FI label="Tenure" value={d.tenure} onChange={e => set('tenure', e.target.value)} />
+              <FI label="Vendor" value={d.seller} onChange={e => set('seller', e.target.value)} />
+              <FI label="Buyer" value={d.buyer} onChange={e => set('buyer', e.target.value)} />
+              <FI label="Occupancy" value={d.occupancy} onChange={e => set('occupancy', e.target.value)} />
+            </div>
+            <div style={{ borderTop: '1px solid var(--cre-border)', paddingTop: 20 }}>
+              <p style={{ ...sectionLabel, marginBottom: 14 }}>Quick Metrics</p>
+              {([
+                ['Cap Rate', fPct(c.capRate)],
+                ['Cash Yield', fPct(c.coc)],
+                ['DSCR', isFinite(c.dscr) ? fX(c.dscr) : 'Unlev.'],
+                ['NOI (Annual)', fUSD(c.noiUSD)],
+              ] as [string, string][]).map(([l, v]) => (
+                <div key={l} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 10 }}>
+                  <span style={{ fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--cre-muted-fg)', fontWeight: 500 }}>{l}</span>
+                  <span className="mono" style={{ fontSize: 14, fontWeight: 600, fontFamily: 'var(--cre-serif)' }}>{v}</span>
                 </div>
-                
-                {/* Right column - Transaction details */}
-                <div style={{ display:'flex', flexDirection:'column', gap:'1.25rem' }}>
-                  {([
-                    ['Vendor',                'seller','text'],
-                    ['Prospective Purchaser', 'buyer','text'],
-                    ['Occupancy Status',      'occupancy','text'],
-                    ['Closing Timeline',      'closingTimeline','text'],
-                  ] as [string,keyof Deal,string][]).map(([lbl,key])=>(
-                    <F key={key} label={lbl}>
-                      <input className="uw-input" value={String(d[key])} onChange={e=>set(key,e.target.value)} />
-                    </F>
-                  ))}
-                  <F label="Indicative Value (KES)">
-                    <input className="uw-input" type="number" value={d.purchasePriceKES} onChange={e=>set('purchasePriceKES',n(e.target.value))} />
-                  </F>
-                </div>
+              ))}
+            </div>
+          </aside>
+
+          {/* Center */}
+          <main style={{ padding: '28px', overflowY: 'auto' }}>
+            {/* Capital Structure */}
+            <section style={{ marginBottom: 36 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 18 }}>
+                <DollarSign size={18} style={{ color: 'var(--cre-primary)' }} />
+                <h2 style={{ fontSize: 22, fontWeight: 600, letterSpacing: '0.01em', fontFamily: 'var(--cre-serif)' }}>Capital Structure & Income</h2>
               </div>
-            </Reveal>
-
-            {/* Dark stats strip - refined */}
-            <Reveal delay={0.2}>
-              <div style={{ background:T.charcoal, padding:'clamp(1.5rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 3rem)' }}>
-                <div className="stat-four">
-                  {[
-                    ['Indicative Value (KES)', fKES(c.price)],
-                    ['Indicative Value (USD)', fUSD(c.priceUSD)],
-                    ['Exchange Rate',   `KES ${KES_PER_USD}/USD`],
-                    ['Asset Class',              d.assetType||'—'],
-                  ].map(([lbl,val])=>(
-                    <StatCard key={lbl} dark label={lbl} value={val} />
-                  ))}
+              <div style={card}>
+                <p style={sectionLabel}>Acquisition Pricing</p>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14 }}>
+                  <FI label="Purchase Price (KES)" type="number" value={d.purchasePriceKES} onChange={e => set('purchasePriceKES', n(e.target.value))} />
+                  <FI label="Equity (%)" type="number" value={d.downPaymentPct} onChange={e => set('downPaymentPct', Math.min(100, Math.max(0, n(e.target.value))))} step="5" min="0" max="100" />
+                  <FI label="Closing Timeline" value={d.closingTimeline} onChange={e => set('closingTimeline', e.target.value)} />
                 </div>
               </div>
-            </Reveal>
-          </section>
-
-          {/* § II — Income & Expense */}
-          <section style={{ marginBottom:'clamp(4rem, 8vw, 6rem)', borderTop:`1px solid ${T.hairline}`, paddingTop:'clamp(3rem, 5vw, 5rem)' }}>
-            <SectionHead num="II" tag="Income and Expenditure" title="Monthly Operating Assumptions · KES" />
-            
-            <Reveal delay={0.1}>
-              {/* GSI */}
-              <p style={{ 
-                fontFamily:T.label, 
-                fontSize:'0.55rem', 
-                letterSpacing:'0.35em', 
-                textTransform:'uppercase', 
-                color:T.tobacco, 
-                marginBottom:'1.25rem',
-                fontWeight:T.weightMedium
-              }}>
-                Gross Scheduled Income
-              </p>
-              <div className="three-col" style={{ marginBottom:'2.5rem' }}>
-                <F label="Monthly Rental Income (KES)">
-                  <input className="uw-input" type="number" value={d.grossMonthlyRentKES} onChange={e=>set('grossMonthlyRentKES',n(e.target.value))} />
-                </F>
-                <F label="Ancillary Income (KES)">
-                  <input className="uw-input" type="number" value={d.otherIncomeKES} onChange={e=>set('otherIncomeKES',n(e.target.value))} />
-                </F>
-                <F label="Vacancy Provision (%)">
-                  <input className="uw-input" type="number" step="0.5" value={d.vacancyPct} onChange={e=>set('vacancyPct',n(e.target.value))} />
-                </F>
+              <div style={card}>
+                <p style={sectionLabel}>Debt Assumptions</p>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+                  <FI label="Interest Rate (% p.a.)" type="number" value={d.interestRatePct} onChange={e => set('interestRatePct', n(e.target.value))} step="0.25" />
+                  <FI label="Amortisation (Years)" type="number" value={d.amortYears} onChange={e => set('amortYears', n(e.target.value))} />
+                </div>
               </div>
-
-              {/* OpEx */}
-              <p style={{ 
-                fontFamily:T.label, 
-                fontSize:'0.55rem', 
-                letterSpacing:'0.35em', 
-                textTransform:'uppercase', 
-                color:T.tobacco, 
-                marginBottom:'1.25rem',
-                fontWeight:T.weightMedium
-              }}>
-                Operating Expenditure
-              </p>
-              <div className="three-col" style={{ marginBottom:'2.5rem' }}>
-                <F label="Management Fee (% EGI)">
-                  <input className="uw-input" type="number" step="0.5" value={d.managementPct} onChange={e=>set('managementPct',n(e.target.value))} />
-                </F>
-                <F label="Maintenance Reserve (% GSI)">
-                  <input className="uw-input" type="number" step="0.5" value={d.maintenancePct} onChange={e=>set('maintenancePct',n(e.target.value))} />
-                </F>
-                <F label="Capital Reserve (% GSI)">
-                  <input className="uw-input" type="number" step="0.25" value={d.capexPct} onChange={e=>set('capexPct',n(e.target.value))} />
-                </F>
-                <F label="Property Tax / KRA (KES/mo)">
-                  <input className="uw-input" type="number" value={d.taxMonthlyKES} onChange={e=>set('taxMonthlyKES',n(e.target.value))} />
-                </F>
-                <F label="Insurance Premium (KES/mo)">
-                  <input className="uw-input" type="number" value={d.insuranceMonthlyKES} onChange={e=>set('insuranceMonthlyKES',n(e.target.value))} />
-                </F>
-                <F label="Miscellaneous (KES/mo)">
-                  <input className="uw-input" type="number" value={d.miscMonthlyKES} onChange={e=>set('miscMonthlyKES',n(e.target.value))} />
-                </F>
+              <div style={card}>
+                <p style={sectionLabel}>Gross Scheduled Income</p>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14 }}>
+                  <FI label="Monthly Rent (KES)" type="number" value={d.grossMonthlyRentKES} onChange={e => set('grossMonthlyRentKES', n(e.target.value))} />
+                  <FI label="Other Income (KES)" type="number" value={d.otherIncomeKES} onChange={e => set('otherIncomeKES', n(e.target.value))} />
+                  <FI label="Vacancy (%)" type="number" value={d.vacancyPct} onChange={e => set('vacancyPct', n(e.target.value))} step="0.5" />
+                </div>
               </div>
-
-              {/* Capital Structure */}
-              <p style={{ 
-                fontFamily:T.label, 
-                fontSize:'0.55rem', 
-                letterSpacing:'0.35em', 
-                textTransform:'uppercase', 
-                color:T.tobacco, 
-                marginBottom:'1.25rem',
-                fontWeight:T.weightMedium
-              }}>
-                Capital Structure
-              </p>
-              <div className="three-col">
-                <F label="Equity Contribution (%)">
-                  <input className="uw-input" type="number" step="5" min="0" max="100" value={d.downPaymentPct} onChange={e=>set('downPaymentPct',Math.min(100,Math.max(0,n(e.target.value))))} />
-                </F>
-                <F label="Interest Rate (% p.a.)">
-                  <input className="uw-input" type="number" step="0.25" value={d.interestRatePct} onChange={e=>set('interestRatePct',n(e.target.value))} />
-                </F>
-                <F label="Amortisation (Years)">
-                  <input className="uw-input" type="number" value={d.amortYears} onChange={e=>set('amortYears',n(e.target.value))} />
-                </F>
+              <div style={{ ...card, marginBottom: 0 }}>
+                <p style={sectionLabel}>Operating Expenditure</p>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14 }}>
+                  <FI label="Management (% EGI)" type="number" value={d.managementPct} onChange={e => set('managementPct', n(e.target.value))} step="0.5" />
+                  <FI label="Maintenance (% GSI)" type="number" value={d.maintenancePct} onChange={e => set('maintenancePct', n(e.target.value))} step="0.5" />
+                  <FI label="CapEx (% GSI)" type="number" value={d.capexPct} onChange={e => set('capexPct', n(e.target.value))} step="0.25" />
+                  <FI label="Property Tax (KES/mo)" type="number" value={d.taxMonthlyKES} onChange={e => set('taxMonthlyKES', n(e.target.value))} />
+                  <FI label="Insurance (KES/mo)" type="number" value={d.insuranceMonthlyKES} onChange={e => set('insuranceMonthlyKES', n(e.target.value))} />
+                  <FI label="Miscellaneous (KES/mo)" type="number" value={d.miscMonthlyKES} onChange={e => set('miscMonthlyKES', n(e.target.value))} />
+                </div>
               </div>
-            </Reveal>
-          </section>
+            </section>
 
-          {/* § III — Returns */}
-          <section style={{ marginBottom:'clamp(4rem, 8vw, 6rem)', borderTop:`1px solid ${T.hairline}`, paddingTop:'clamp(3rem, 5vw, 5rem)' }}>
-            <SectionHead num="III" tag="Returns Analysis" title="Yield Metrics & Performance Indicators" />
-            
-            <Reveal delay={0.1}>
-              <div className="four-col" style={{ marginBottom:'2rem' }}>
-                {[
-                  ['Going-In Cap Rate',    fPct(c.capRate),   `NOI ${fUSD(c.noiUSD)}/annum`],
-                  ['Target Cash Yield', fPct(c.coc),        'After debt service'],
-                  ['Net Operating Income', fUSD(c.noiUSD),     `${fKES(c.noiA)} / annum`],
-                  ['DSCR',                 isFinite(c.dscr)?fX(c.dscr):'Unlevered', !isFinite(c.dscr)||c.dscr>=1.25?'Meets threshold':'Below 1.25x'],
-                  ['Equity Deployment',  fUSD(c.equityUSD),  `${Math.round(n(d.downPaymentPct))}% of indicative value`],
-                  ['Debt Yield',           c.debtKES>0?fPct(c.debtYield):'N/A', 'NOI ÷ Loan Balance'],
-                  ['Gross Rent Multiplier',fX(c.grm),           'Value ÷ Annual GSI'],
-                  ['Expense Ratio',        fPct(c.opexRatio),  'Opex ÷ Effective GI'],
-                ].map(([lbl,val,sub])=>(
-                  <div key={String(lbl)} style={{ background:T.white, padding:'clamp(1.25rem, 3vw, 1.75rem) clamp(1rem, 2vw, 1.5rem)' }}>
-                    <StatCard label={String(lbl)} value={String(val)} sub={String(sub)} />
+            {/* Yield Metrics */}
+            <section style={{ marginBottom: 36 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 18 }}>
+                <TrendingUp size={18} style={{ color: 'var(--cre-primary)' }} />
+                <h2 style={{ fontSize: 22, fontWeight: 600, letterSpacing: '0.01em', fontFamily: 'var(--cre-serif)' }}>Yield Metrics</h2>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14, marginBottom: 28 }}>
+                <MC label="Cap Rate" value={fPct(c.capRate)} sub={`NOI ${fUSD(c.noiUSD)}/yr`} />
+                <MC label="Cash-on-Cash" value={fPct(c.coc)} sub="After debt service" />
+                <MC label="NOI (Annual)" value={fUSD(c.noiUSD)} sub={fKES(c.noiA)} />
+                <MC label="DSCR" value={isFinite(c.dscr) ? fX(c.dscr) : 'Unlevered'} sub={!isFinite(c.dscr) || c.dscr >= 1.25 ? 'Meets threshold' : 'Below 1.25x'} />
+                <MC label="Equity" value={fUSD(c.equityUSD)} sub={`${Math.round(n(d.downPaymentPct))}% of value`} />
+                <MC label="Debt Yield" value={c.debtKES > 0 ? fPct(c.debtYield) : 'N/A'} sub="NOI ÷ Loan" />
+                <MC label="GRM" value={fX(c.grm)} sub="Value ÷ Annual GSI" />
+                <MC label="OpEx Ratio" value={fPct(c.opexRatio)} sub="OpEx ÷ EGI" />
+              </div>
+              <OpTable c={c} />
+            </section>
+
+            {/* IC Narrative */}
+            <section>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 18 }}>
+                <FileText size={18} style={{ color: 'var(--cre-primary)' }} />
+                <h2 style={{ fontSize: 22, fontWeight: 600, letterSpacing: '0.01em', fontFamily: 'var(--cre-serif)' }}>Investment Committee Notes</h2>
+              </div>
+              <div style={{ border: '1px solid var(--cre-border)', borderRadius: 'var(--cre-radius)', overflow: 'hidden' }}>
+                {ic.map((para, i) => (
+                  <div key={i} style={{ display: 'flex', gap: 14, padding: '18px', borderTop: i > 0 ? '1px solid var(--cre-border)' : 'none' }}>
+                    <div style={{ width: 3, background: 'var(--cre-primary)', borderRadius: 2, flexShrink: 0, marginTop: 6 }} />
+                    <p style={{ fontSize: 13, lineHeight: 1.8, color: 'var(--cre-muted-fg)', fontFamily: 'var(--cre-serif)' }}>{para}</p>
                   </div>
                 ))}
               </div>
-            </Reveal>
+              <p style={{ fontSize: 10, color: 'var(--cre-muted-fg)', marginTop: 14, fontFamily: 'var(--cre-serif)', fontStyle: 'italic' }}>Auto-generated from live inputs. Not investment advice.</p>
+            </section>
+          </main>
 
-            {/* Operating performance table - asymmetric */}
-            <Reveal delay={0.15}>
-              <div className="editorial-split" style={{ marginTop:'3rem' }}>
-                <div>
-                  <p style={{ 
-                    fontFamily:T.label, 
-                    fontSize:'0.55rem', 
-                    letterSpacing:'0.35em', 
-                    textTransform:'uppercase', 
-                    color:T.tobacco, 
-                    marginBottom:'1.25rem',
-                    fontWeight:T.weightMedium
-                  }}>
-                    Monthly Operating Performance
-                  </p>
-                  <Row label="Gross Scheduled Income" kes={c.grossIncome} />
-                  <Row label="Vacancy and Credit Loss" kes={-c.vacLoss} neg />
-                  <Row label="Effective Gross Income" kes={c.egi} bold />
-                  <Row label="Management Fee" kes={-c.mgmt} neg />
-                  <Row label="Maintenance Reserve" kes={-c.maint} neg />
-                  <Row label="Capital Reserve" kes={-c.capex} neg />
-                  <Row label="Property Tax / KRA" kes={-c.taxes} neg />
-                  <Row label="Insurance" kes={-c.ins} neg />
-                  {c.misc>0 && <Row label="Miscellaneous" kes={-c.misc} neg />}
-                  <Row label="Total Operating Expenditure" kes={-c.totalOpex} neg bold />
-                  <Row label="Net Operating Income (Monthly)" kes={c.noiM} bold />
-                  {c.ds>0 && <>
-                    <Row label="Debt Service" kes={-c.ds} neg />
-                    <Row label="Pre-Tax Cash Flow (Monthly)" kes={c.cfM} bold />
-                  </>}
+          {/* Right Rail */}
+          <aside style={{ borderLeft: '1px solid var(--cre-border)', padding: '20px', background: 'var(--cre-surface)', position: 'sticky', top: 57, height: 'calc(100vh - 57px)', overflowY: 'auto' }}>
+            <p style={sectionLabel}>Verdict Panel</p>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 28 }}>
+              {([
+                ['Indicative Value', fKES(c.price), fUSD(c.priceUSD)],
+                ['Net Operating Income', `${fKES(c.noiA)}/yr`, `${fUSD(c.noiUSD)}/yr`],
+              ] as [string, string, string][]).map(([lbl, val, sub]) => (
+                <div key={lbl} style={{ border: '1px solid var(--cre-border)', borderRadius: 'var(--cre-radius)', padding: '16px' }}>
+                  <p style={{ fontSize: 9, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--cre-muted-fg)', marginBottom: 6, fontWeight: 600 }}>{lbl}</p>
+                  <p className="mono" style={{ fontSize: 20, fontWeight: 600, fontFamily: 'var(--cre-serif)' }}>{val}</p>
+                  <p className="mono" style={{ fontSize: 11, color: 'var(--cre-muted-fg)', fontFamily: 'var(--cre-serif)', fontStyle: 'italic' }}>{sub}</p>
                 </div>
-                <div>
-                  <p style={{ 
-                    fontFamily:T.label, 
-                    fontSize:'0.55rem', 
-                    letterSpacing:'0.35em', 
-                    textTransform:'uppercase', 
-                    color:T.tobacco, 
-                    marginBottom:'1.25rem',
-                    fontWeight:T.weightMedium
-                  }}>
-                    Annual Summary
-                  </p>
-                  <Row label="Gross Scheduled Income" kes={c.gsiA} />
-                  <Row label="Vacancy and Credit Loss" kes={-c.vacA} neg />
-                  <Row label="Operating Expenditure" kes={-c.opexA} neg />
-                  {c.dsA>0 && <Row label="Debt Service" kes={-c.dsA} neg />}
-                  <Row label="Net Operating Income (Annual)" kes={c.noiA} bold />
-                  {c.debtKES>0 && <Row label="Pre-Tax Cash Flow (Annual)" kes={c.cfA} bold />}
-                  <div style={{ marginTop:'2rem', paddingTop:'1.5rem', borderTop:`1px solid ${T.tobaccoFade}` }}>
-                    <p style={{ 
-                      fontFamily:T.label, 
-                      fontSize:'0.5rem', 
-                      letterSpacing:'0.2em', 
-                      textTransform:'uppercase', 
-                      color:T.charcoalFade, 
-                      lineHeight:1.7,
-                      fontWeight:T.weightLight
-                    }}>
-                      Benchmarks: Knight Frank Kenya H2 2024 · HassConsult Property Index 2024 · 
-                      Kenya Bankers Association HPI 2024 · Central Bank of Kenya CBR 2024.
-                    </p>
-                  </div>
+              ))}
+              <div style={{ border: '1px solid var(--cre-border)', borderRadius: 'var(--cre-radius)', padding: '16px' }}>
+                <p style={{ fontSize: 9, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--cre-muted-fg)', marginBottom: 6, fontWeight: 600 }}>Exchange Rate</p>
+                <p className="mono" style={{ fontSize: 15, fontWeight: 600, fontFamily: 'var(--cre-serif)' }}>KES {KES_PER_USD}/USD</p>
+              </div>
+            </div>
+
+            {/* Checklist */}
+            <p style={{ ...sectionLabel, marginBottom: 14 }}>Verification Checklist</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 28 }}>
+              {[
+                { label: 'Title Verified', ok: !!d.tenure },
+                { label: 'Income Confirmed', ok: c.noiA > 0 },
+                { label: 'DSCR ≥ 1.25x', ok: !isFinite(c.dscr) || c.dscr >= 1.25 },
+                { label: 'OpEx < 45%', ok: c.opexRatio < 45 },
+                { label: 'Vendor Identified', ok: !!d.seller },
+                { label: 'Buyer Identified', ok: !!d.buyer },
+              ].map(item => (
+                <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  {item.ok
+                    ? <CheckCircle2 size={16} style={{ color: 'var(--cre-risk-low)', flexShrink: 0 }} />
+                    : <AlertTriangle size={16} style={{ color: 'var(--cre-risk-med)', flexShrink: 0 }} />}
+                  <span style={{ fontSize: 12, fontFamily: 'var(--cre-serif)' }}>{item.label}</span>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              <button style={btnPrimary} onClick={() => setTab('loi')}>Generate LOI →</button>
+              <button style={btnOutline}>Flag for Review</button>
+            </div>
+            <p style={{ fontSize: 10, color: 'var(--cre-muted-fg)', marginTop: 18, lineHeight: 1.7, fontFamily: 'var(--cre-serif)', fontStyle: 'italic' }}>
+              {d.propertyName} · {d.submarket} · {d.assetType}
+            </p>
+          </aside>
+        </div>
+      )}
+
+      {/* ═══════════════════════════════════════════════════════ */}
+      {/* LOI TAB                                                */}
+      {/* ═══════════════════════════════════════════════════════ */}
+      {tab === 'loi' && (
+        <div style={{ maxWidth: 1400, margin: '0 auto', padding: '28px', paddingTop: '85px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 28 }}>
+            <FileText size={18} style={{ color: 'var(--cre-primary)' }} />
+            <h2 style={{ fontSize: 22, fontWeight: 600, letterSpacing: '0.01em', fontFamily: 'var(--cre-serif)' }}>Letter of Intent</h2>
+            <span style={{ fontSize: 9, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--cre-muted-fg)', marginLeft: 10, fontWeight: 500 }}>
+              Non-Binding · Subject to Contract
+            </span>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '400px 1fr', gap: 28 }}>
+            {/* Form */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+              <div style={card}>
+                <p style={sectionLabel}>Transaction Parties</p>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                  <FI label="Date" type="date" value={d.loiDate} onChange={e => set('loiDate', e.target.value)} />
+                  <FI label="Addressee" value={d.addressee} onChange={e => set('addressee', e.target.value)} />
+                  <FI label="Agency / Broker" value={d.agentFirm} onChange={e => set('agentFirm', e.target.value)} />
+                  <FI label="Purchaser" value={d.purchaser} onChange={e => set('purchaser', e.target.value)} />
+                  <FI label="Vendor" value={d.vendor} onChange={e => set('vendor', e.target.value)} />
                 </div>
               </div>
-            </Reveal>
-          </section>
-
-          {/* § IV — IC Narrative */}
-          <section style={{ borderTop:`1px solid ${T.hairline}`, paddingTop:'clamp(3rem, 5vw, 5rem)' }}>
-            <SectionHead num="IV" tag="Investment Committee Notes" title="Acquisition Narrative" />
-            
-            <Reveal delay={0.1}>
-              <div style={{ borderTop:`1px solid ${T.tobaccoFade}`, paddingTop:'2rem' }}>
-                {ic.map((para,i)=>(
-                  <div key={i} style={{ display:'flex', gap:'1.5rem', marginBottom:'1.75rem', alignItems:'flex-start' }}>
-                    <div style={{ width:1, minWidth:1, background:T.tobacco, marginTop:8, flexShrink:0, alignSelf:'stretch', opacity:0.5 }} />
-                    <p style={{ 
-                      fontFamily:T.body, 
-                      fontSize:'clamp(0.95rem, 2vw, 1.05rem)', 
-                      lineHeight:1.85, 
-                      color:T.charcoalMid,
-                      fontWeight:T.weightLight
-                    }}>
-                      {para}
-                    </p>
-                  </div>
-                ))}
-                <p style={{ 
-                  fontFamily:T.label, 
-                  fontSize:'0.5rem', 
-                  letterSpacing:'0.18em', 
-                  textTransform:'uppercase', 
-                  color:T.charcoalFade, 
-                  lineHeight:1.8, 
-                  marginTop:'1.5rem', 
-                  borderTop:`1px solid ${T.hairline}`, 
-                  paddingTop:'1.25rem',
-                  fontWeight:T.weightLight
-                }}>
-                  Auto-generated based on live inputs. This narrative does not constitute investment advice. 
-                  Full investment memorandum available to mandated principals under confidentiality agreement.
-                </p>
+              <div style={card}>
+                <p style={sectionLabel}>Property & Consideration</p>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                  <FTA label="Property Description" value={d.propertyDescription} onChange={e => set('propertyDescription', e.target.value)} rows={3} />
+                  <FI label="Consideration Override" value={d.proposedConsideration} onChange={e => set('proposedConsideration', e.target.value)} placeholder="Leave blank for calculated" />
+                </div>
               </div>
-            </Reveal>
+              <div style={card}>
+                <p style={sectionLabel}>Commercial Terms</p>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+                  <FI label="Deposit (%)" type="number" value={d.depositPct} onChange={e => set('depositPct', n(e.target.value))} />
+                  <FI label="DD (days)" type="number" value={d.ddDays} onChange={e => set('ddDays', n(e.target.value))} />
+                  <FI label="Closing (days)" type="number" value={d.closingDays} onChange={e => set('closingDays', n(e.target.value))} />
+                  <FI label="Exclusivity (days)" type="number" value={d.exclusivityDays} onChange={e => set('exclusivityDays', n(e.target.value))} />
+                  <FI label="LOI Validity (days)" type="number" value={d.loiExpiryDays} onChange={e => set('loiExpiryDays', n(e.target.value))} />
+                </div>
+              </div>
+              <div style={card}>
+                <p style={sectionLabel}>Conditions & Legal</p>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                  <FTA label="Conditions Precedent (one per line)" value={d.conditionsPrecedent} onChange={e => set('conditionsPrecedent', e.target.value)} rows={5} />
+                  <FI label="Purchaser's Advocates" value={d.purchaserAdvocate} onChange={e => set('purchaserAdvocate', e.target.value)} />
+                  <FI label="Vendor's Advocates" value={d.vendorAdvocate} onChange={e => set('vendorAdvocate', e.target.value)} />
+                  <FI label="Signatory Name" value={d.signatoryName} onChange={e => set('signatoryName', e.target.value)} />
+                  <FI label="Signatory Title" value={d.signatoryTitle} onChange={e => set('signatoryTitle', e.target.value)} />
+                </div>
+              </div>
+            </div>
 
-            {/* LOI shortcut - refined dark panel */}
-            <Reveal delay={0.2}>
-              <div style={{ marginTop:'3rem', padding:'clamp(1.5rem, 4vw, 2.5rem)', background:T.charcoal }}>
-                <p style={{ 
-                  fontFamily:T.label, 
-                  fontSize:'0.55rem', 
-                  letterSpacing:'0.35em', 
-                  textTransform:'uppercase', 
-                  color:T.tobaccoLight, 
-                  marginBottom:'0.75rem',
-                  fontWeight:T.weightMedium
-                }}>
-                  Next Step
-                </p>
-                <h3 style={{ 
-                  fontFamily:T.serif, 
-                  fontSize:'clamp(1.25rem, 3vw, 1.6rem)', 
-                  fontWeight:T.weightLight, 
-                  color:T.cream, 
-                  marginBottom:'0.75rem',
-                  fontStyle:'italic'
-                }}>
-                  Generate Private Treaty Documentation
-                </h3>
-                <p style={{ 
-                  fontFamily:T.body, 
-                  fontSize:'0.95rem', 
-                  lineHeight:1.75, 
-                  color:'rgba(248,247,244,0.6)', 
-                  marginBottom:'1.5rem', 
-                  maxWidth:480,
-                  fontWeight:T.weightLight
-                }}>
-                  Complete the transaction details to produce a 17-clause Letter of Intent 
-                  governed by Kenya law, ready for presentation to the Vendor's advocates.
-                </p>
-                <button className="cta-btn-gold" onClick={()=>setTab('loi')}>
-                  Proceed to Documentation →
+            {/* Preview */}
+            <div style={{ position: 'sticky', top: 73 }}>
+              <div style={{ background: 'var(--cre-fg)', color: 'var(--cre-bg)', padding: '14px 18px', borderRadius: '4px 4px 0 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div>
+                  <p style={{ fontSize: 13, fontWeight: 600, fontFamily: 'var(--cre-serif)' }}>Letter of Intent</p>
+                  <p style={{ fontSize: 9, textTransform: 'uppercase', letterSpacing: '0.1em', opacity: 0.6, fontWeight: 500 }}>Indicative · Non-Binding</p>
+                </div>
+                <span className="mono" style={{ fontSize: 12, opacity: 0.6, fontFamily: 'var(--cre-serif)' }}>{d.propertyName}</span>
+              </div>
+              <div style={{ border: '1px solid var(--cre-border)', borderTop: 'none', borderRadius: '0 0 4px 4px', background: 'var(--cre-surface)', padding: '28px', maxHeight: '70vh', overflowY: 'auto' }}>
+                <pre className="mono" style={{ fontSize: 11, lineHeight: 1.7, whiteSpace: 'pre-wrap', wordBreak: 'break-word', margin: 0, fontFamily: 'var(--cre-serif)', color: 'var(--cre-fg)' }}>
+                  {loi}
+                </pre>
+              </div>
+              <div style={{ display: 'flex', gap: 10, marginTop: 14 }}>
+                <button onClick={printLOI} style={{ ...btnPrimary, width: 'auto', display: 'flex', alignItems: 'center', gap: 8, background: 'var(--cre-fg)', padding: '10px 16px' }}>
+                  <Printer size={14} /> Print / PDF
+                </button>
+                <button onClick={() => navigator.clipboard?.writeText(loi)} style={{ ...btnOutline, width: 'auto', display: 'flex', alignItems: 'center', gap: 8, padding: '10px 16px' }}>
+                  <Copy size={14} /> Copy
                 </button>
               </div>
-            </Reveal>
-          </section>
-        </div>
-      )}
-
-      {/* ══════════════════════════════════════════════════════════════ */}
-      {/* LOI TAB - Private Treaty Documentation                        */}
-      {/* ══════════════════════════════════════════════════════════════ */}
-      {tab === 'loi' && (
-        <div className="page-pad" style={{ padding:'clamp(3rem, 6vw, 5rem) clamp(1.25rem, 5vw, 5rem) clamp(4rem, 8vw, 8rem)', maxWidth:1200, margin:'0 auto' }}>
-
-          <SectionHead num="V" tag="Transaction Documentation" title="Private Treaty Letter of Intent" />
-
-          <div className="loi-grid">
-
-            {/* Form - left column */}
-            <Reveal delay={0.1}>
-              <div style={{ display:'flex', flexDirection:'column', gap:'1.25rem' }}>
-                <p style={{ 
-                  fontFamily:T.label, 
-                  fontSize:'0.55rem', 
-                  letterSpacing:'0.35em', 
-                  textTransform:'uppercase', 
-                  color:T.tobacco,
-                  fontWeight:T.weightMedium
-                }}>
-                  Transaction Parties
-                </p>
-                {([
-                  ['Date of Letter',        'loiDate',   'date'],
-                  ['Addressee',             'addressee', 'text'],
-                  ['Agency / Broker',       'agentFirm', 'text'],
-                  ['Purchaser (legal name)','purchaser', 'text'],
-                  ['Vendor (legal name)',   'vendor',    'text'],
-                ] as [string,keyof Deal,string][]).map(([lbl,key,type])=>(
-                  <F key={key} label={lbl}>
-                    <input className="uw-input" type={type} value={String(d[key])} onChange={e=>set(key,e.target.value)} />
-                  </F>
-                ))}
-
-                <p style={{ 
-                  fontFamily:T.label, 
-                  fontSize:'0.55rem', 
-                  letterSpacing:'0.35em', 
-                  textTransform:'uppercase', 
-                  color:T.tobacco, 
-                  marginTop:'0.5rem',
-                  fontWeight:T.weightMedium
-                }}>
-                  Property & Consideration
-                </p>
-                <F label="Property Description (formal)">
-                  <textarea className="uw-textarea" value={d.propertyDescription} onChange={e=>set('propertyDescription',e.target.value)} />
-                </F>
-                <F label="Proposed Consideration (optional override)">
-                  <input className="uw-input" value={d.proposedConsideration} placeholder="Leave blank to use calculated value" onChange={e=>set('proposedConsideration',e.target.value)} />
-                </F>
-
-                <p style={{ 
-                  fontFamily:T.label, 
-                  fontSize:'0.55rem', 
-                  letterSpacing:'0.35em', 
-                  textTransform:'uppercase', 
-                  color:T.tobacco, 
-                  marginTop:'0.5rem',
-                  fontWeight:T.weightMedium
-                }}>
-                  Commercial Terms
-                </p>
-                <div className="two-col">
-                  {([
-                    ['Deposit (%)',           'depositPct',      'number'],
-                    ['Due Diligence (days)',  'ddDays',          'number'],
-                    ['Closing (days)',        'closingDays',     'number'],
-                    ['Exclusivity (days)',    'exclusivityDays', 'number'],
-                    ['LOI Validity (days)',   'loiExpiryDays',   'number'],
-                  ] as [string,keyof Deal,string][]).map(([lbl,key])=>(
-                    <F key={key} label={lbl}>
-                      <input className="uw-input" type="number" value={String(d[key])} onChange={e=>set(key,n(e.target.value))} />
-                    </F>
-                  ))}
-                </div>
-
-                <p style={{ 
-                  fontFamily:T.label, 
-                  fontSize:'0.55rem', 
-                  letterSpacing:'0.35em', 
-                  textTransform:'uppercase', 
-                  color:T.tobacco, 
-                  marginTop:'0.5rem',
-                  fontWeight:T.weightMedium
-                }}>
-                  Conditions Precedent
-                </p>
-                <F label="One condition per line">
-                  <textarea className="uw-textarea" style={{ minHeight:100 }} value={d.conditionsPrecedent} onChange={e=>set('conditionsPrecedent',e.target.value)} />
-                </F>
-
-                <p style={{ 
-                  fontFamily:T.label, 
-                  fontSize:'0.55rem', 
-                  letterSpacing:'0.35em', 
-                  textTransform:'uppercase', 
-                  color:T.tobacco, 
-                  marginTop:'0.5rem',
-                  fontWeight:T.weightMedium
-                }}>
-                  Legal Representatives
-                </p>
-                {([
-                  ["Purchaser's Advocates", 'purchaserAdvocate'],
-                  ["Vendor's Advocates",    'vendorAdvocate'],
-                  ['Signatory Name',        'signatoryName'],
-                  ['Signatory Title',       'signatoryTitle'],
-                ] as [string,keyof Deal][]).map(([lbl,key])=>(
-                  <F key={key} label={lbl}>
-                    <input className="uw-input" value={String(d[key])} onChange={e=>set(key,e.target.value)} />
-                  </F>
-                ))}
-              </div>
-            </Reveal>
-
-            {/* LOI preview - right column */}
-            <Reveal delay={0.15}>
-              <div>
-                {/* Header bar */}
-                <div style={{ 
-                  background:T.charcoal, 
-                  padding:'clamp(1.25rem, 3vw, 1.75rem) clamp(1.5rem, 3vw, 2.5rem)', 
-                  display:'flex', 
-                  justifyContent:'space-between', 
-                  alignItems:'center', 
-                  flexWrap:'wrap', 
-                  gap:'1rem' 
-                }}>
-                  <div>
-                    <p style={{ 
-                      fontFamily:T.serif, 
-                      fontSize:'clamp(1.1rem, 2.5vw, 1.3rem)', 
-                      fontWeight:T.weightLight, 
-                      color:T.cream,
-                      fontStyle:'italic'
-                    }}>
-                      Letter of Intent
-                    </p>
-                    <p style={{ 
-                      fontFamily:T.label, 
-                      fontSize:'0.5rem', 
-                      letterSpacing:'0.2em', 
-                      textTransform:'uppercase', 
-                      color:T.tobaccoLight, 
-                      marginTop:'0.25rem',
-                      fontWeight:T.weightLight
-                    }}>
-                      Non-Binding · Subject to Contract · Subject to Due Diligence
-                    </p>
-                  </div>
-                  <p style={{ 
-                    fontFamily:T.serif, 
-                    fontSize:'clamp(1rem, 2vw, 1.2rem)', 
-                    fontWeight:T.weightLight, 
-                    letterSpacing:'0.12em', 
-                    color:T.cream
-                  }}>
-                    KAREN ESTATES
-                  </p>
-                </div>
-
-                {/* LOI body */}
-                <div style={{ 
-                  background:T.white, 
-                  padding:'clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 4vw, 3rem)', 
-                  borderLeft:`1px solid ${T.hairline}`, 
-                  borderRight:`1px solid ${T.hairline}`, 
-                  borderBottom:`1px solid ${T.hairline}` 
-                }}>
-                  <pre style={{ 
-                    fontFamily:`'EB Garamond',Georgia,serif`, 
-                    fontSize:'clamp(0.85rem, 1.5vw, 0.95rem)', 
-                    lineHeight:1.85, 
-                    color:T.charcoal, 
-                    whiteSpace:'pre-wrap', 
-                    wordBreak:'break-word', 
-                    margin:0,
-                    fontWeight:T.weightLight
-                  }}>
-                    {loi}
-                  </pre>
-                </div>
-
-                {/* Actions */}
-                <div style={{ 
-                  borderTop:`1px solid ${T.tobaccoFade}`, 
-                  paddingTop:'1.25rem', 
-                  marginTop:'1.25rem', 
-                  display:'flex', 
-                  gap:'0.75rem', 
-                  flexWrap:'wrap' 
-                }}>
-                  <button className="cta-btn" onClick={printLOI}>Print / Export PDF</button>
-                  <button className="cta-btn-gold" onClick={()=>navigator.clipboard?.writeText(loi)}>Copy to Clipboard</button>
-                </div>
-
-                <p style={{ 
-                  fontFamily:T.label, 
-                  fontSize:'0.5rem', 
-                  letterSpacing:'0.15em', 
-                  textTransform:'uppercase', 
-                  color:T.charcoalFade, 
-                  lineHeight:1.8, 
-                  marginTop:'1rem',
-                  fontWeight:T.weightLight
-                }}>
-                  Indicative draft for negotiation purposes only. Not a binding agreement. 
-                  Governing law: Republic of Kenya. Stamp Duty Act (Cap. 480). 
-                  Land Registration Act (No. 3 of 2012).
-                </p>
-              </div>
-            </Reveal>
+              <p style={{ fontSize: 10, color: 'var(--cre-muted-fg)', marginTop: 14, fontFamily: 'var(--cre-serif)', fontStyle: 'italic' }}>
+                Indicative draft. Not a binding agreement. Governing law: Republic of Kenya.
+              </p>
+            </div>
           </div>
         </div>
       )}
-
-      {/* ── FOOTER ───────────────────────────────────────────────────── */}
-      <div className="page-pad" style={{ padding:'0 clamp(1.25rem, 5vw, 5rem)' }}>
-        <div style={{ 
-          borderTop:`1px solid ${T.tobaccoFade}`, 
-          borderBottom:`1px solid ${T.tobaccoFade}`, 
-          padding:'clamp(1.5rem, 3vw, 2.25rem) 0', 
-          display:'flex', 
-          alignItems:'center', 
-          justifyContent:'space-between', 
-          flexWrap:'wrap', 
-          gap:'0.75rem' 
-        }}>
-          <span style={{ 
-            fontFamily:T.serif, 
-            fontSize:'0.9rem', 
-            fontStyle:'italic', 
-            color:T.charcoalMid,
-            fontWeight:T.weightLight
-          }}>
-            Karen Golf Estate · Nairobi
-          </span>
-          <span style={{ 
-            fontFamily:T.label, 
-            fontSize:'0.55rem', 
-            letterSpacing:'0.3em', 
-            textTransform:'uppercase', 
-            color:T.tobacco,
-            fontWeight:T.weightMedium
-          }}>
-            By Private Appointment Only
-          </span>
-          <span style={{ 
-            fontFamily:T.serif, 
-            fontSize:'0.9rem', 
-            fontStyle:'italic', 
-            color:T.charcoalMid,
-            fontWeight:T.weightLight
-          }}>
-            Est. 2024
-          </span>
-        </div>
-      </div>
-
     </div>
   );
 }
