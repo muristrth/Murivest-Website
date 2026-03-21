@@ -8,7 +8,7 @@ import {
   TrendingUp, Building2, Shield, X, 
   ChevronLeft, ChevronRight, MessageSquare, 
   FileText, Calendar, ArrowUpRight, Check,
-  Maximize2, Mail
+  Maximize2, Mail, Printer
 } from 'lucide-react';
 
 // ─── Types ─────────────────────────────────────────────────────────────────
@@ -130,70 +130,6 @@ export default function PropertyClientView({ property }: { property: Property })
 
   return (
     <div className="min-h-screen bg-[#FAF9F6] text-[#2C2C2C] selection:bg-[#B8956B]/20 pt-[100px]">
-    <div className="bg-[#1B4332]"><br /></div>
-      {/* Navigation */}
-      <nav className={`top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-[#2C2C2C] backdrop-blur-md border-b border-[#E8E6E1] shadow-sm' : 'bg-[#1B4332]'
-      }`}>
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-5">
-          <div className="flex items-center justify-between">
-            <Link 
-              href="/properties" 
-              className="group flex items-center gap-3 hover:opacity-70 transition-opacity"
-            >
-              <div className={`w-10 h-10 border flex items-center justify-center transition-colors ${
-                isScrolled ? 'border-[#E8E6E1] group-hover:border-[#1B4332]' : 'border-white/30 group-hover:border-white'
-              }`}>
-                <ArrowLeft size={16} className={isScrolled ? 'text-[#2C2C2C]' : 'text-white'} strokeWidth={1.5} />
-              </div>
-              <span className={`hidden md:inline text-[10px] tracking-[0.3em] uppercase transition-colors ${
-                isScrolled ? 'text-[#8B8680] group-hover:text-[#1B4332]' : 'text-white/80 group-hover:text-white'
-              }`}>
-                Return to Portfolio
-              </span>
-            </Link>
-
-            <div className="flex items-center gap-3">
-              <button 
-                onClick={() => setIsLiked(!isLiked)} 
-                className={`w-10 h-10 border flex items-center justify-center transition-all ${
-                  isScrolled 
-                    ? 'border-[#E8E6E1] hover:border-[#1B4332]' 
-                    : 'border-white/30 hover:border-white'
-                } ${isLiked ? 'bg-[#1B4332] border-[#1B4332]' : ''}`}
-              >
-                <Heart 
-                  size={16} 
-                  className={`transition-colors ${isLiked ? 'fill-white text-white' : isScrolled ? 'text-[#2C2C2C]' : 'text-white'}`} 
-                  strokeWidth={1.5} 
-                />
-              </button>
-              <button 
-                onClick={handleShare}
-                className={`w-10 h-10 border flex items-center justify-center transition-colors ${
-                  isScrolled ? 'border-[#E8E6E1] hover:border-[#1B4332]' : 'border-white/30 hover:border-white'
-                }`}
-              >
-                <Share2 size={16} className={isScrolled ? 'text-[#2C2C2C]' : 'text-white'} strokeWidth={1.5} />
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Share Toast */}
-      <AnimatePresence>
-        {showShareToast && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed top-24 left-1/2 -translate-x-1/2 z-50 bg-[#1B4332] text-white px-6 py-3 text-[11px] tracking-[0.2em] uppercase"
-          >
-            Link copied to clipboard
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* Hero Section */}
       <section className="relative h-[70vh] min-h-[500px] overflow-hidden bg-[#1B4332]">
@@ -282,6 +218,92 @@ export default function PropertyClientView({ property }: { property: Property })
           </div>
         )}
       </section>
+
+      {/* Navigation */}
+            <nav
+              className={`bg-[#FAF9F6] border-b border-[#E8E6E1] z-40`}
+            >
+              <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-5">
+                <div className="flex items-center justify-between">
+                  <Link
+                    href="/land-banking"
+                    className="group flex items-center gap-3 hover:opacity-70 transition-opacity"
+                  >
+                    <div
+                      className={`w-10 h-10 border flex items-center justify-center transition-colors ${
+                        isScrolled ? 'border-[#E8E6E1] group-hover:border-[#1B4332]' : 'border-white/30 group-hover:border-white'
+                      }`}
+                    >
+                      <ArrowLeft
+                        size={16}
+                        className={isScrolled ? 'text-[#2C2C2C]' : 'text-white'}
+                        strokeWidth={1.5}
+                      />
+                    </div>
+                    <span
+                      className={`hidden md:inline text-[10px] tracking-[0.3em] uppercase transition-colors ${
+                        isScrolled ? 'text-[#8B8680] group-hover:text-[#1B4332]' : 'text-white/80 group-hover:text-white'
+                      }`}
+                    >
+                      Return to Land Portfolio
+                    </span>
+                  </Link>
+      
+                  <div className="flex items-center gap-3">
+                    <button
+                      onClick={() => setIsLiked(!isLiked)}
+                      className={`w-10 h-10 border flex items-center justify-center transition-all ${
+                        isScrolled ? 'border-[#E8E6E1]' : 'border-white/30'
+                      } ${isLiked ? 'bg-[#1B4332] border-[#1B4332]' : ''}`}
+                    >
+                      <Heart
+                        size={16}
+                        className={isLiked ? 'fill-white text-white' : isScrolled ? 'text-[#2C2C2C]' : 'text-white'}
+                        strokeWidth={1.5}
+                      />
+                    </button>
+                    <button
+                      onClick={handleShare}
+                      className={`w-10 h-10 border flex items-center justify-center transition-colors ${
+                        isScrolled ? 'border-[#E8E6E1]' : 'border-white/30'
+                      }`}
+                    >
+                      <Share2
+                        size={16}
+                        className={isScrolled ? 'text-[#2C2C2C]' : 'text-white'}
+                        strokeWidth={1.5}
+                      />
+                    </button>
+                    <button
+                      onClick={() => window.print()}
+                      className={`w-10 h-10 border flex items-center justify-center transition-colors hidden md:flex ${
+                        isScrolled ? 'border-[#E8E6E1]' : 'border-white/30'
+                      }`}
+                    >
+                      <Printer
+                        size={16}
+                        className={isScrolled ? 'text-[#2C2C2C]' : 'text-white'}
+                        strokeWidth={1.5}
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </nav>
+      
+            {/* Share Toast */}
+            <AnimatePresence>
+              {showShareToast && (
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  className={`fixed left-1/2 -translate-x-1/2 z-[60] bg-[#1B4332] text-white px-6 py-3 text-[11px] tracking-[0.2em] uppercase`}
+                >
+                  Link copied
+                </motion.div>
+              )}
+            </AnimatePresence>
 
       {/* Main Content */}
       <main className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16 lg:py-24">

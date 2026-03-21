@@ -231,7 +231,7 @@ export async function POST(request: NextRequest) {
     // Send email to internal team
     await transporter.sendMail({
       from: `"Murivest Asset Disposition Portal" <${process.env.SMTP_USER}>`,
-      to: process.env.CONTACT_EMAIL || 'info@murivest.co.ke',
+      to: process.env.CONTACT_EMAIL || 'advisory@murivest.co.ke',
       subject: `🔥 HIGH-PRIORITY: New Asset Disposition Inquiry from ${body.name}`,
       text: `New Property Disposition Inquiry - URGENT FOLLOW-UP REQUIRED\n\nOwner: ${body.name}\nEmail: ${body.email}\nProperty Type: ${body.propertyType}\nLocation: ${body.location}\nPrice: ${body.price}\nPhone: ${body.phone}\n\nDescription: ${body.description}`,
       html: htmlContent,

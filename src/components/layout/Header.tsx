@@ -143,14 +143,14 @@ export default function Header() {
             }`} />
 
             <a 
-              href="/sell" 
+              href="/cre-underwriting" 
               className={`text-[10px] tracking-[0.25em] uppercase border px-8 py-3.5 transition-all duration-500 font-medium ${
                 scrolled 
                   ? 'border-[#B8956B] text-[#B8956B] hover:bg-[#B8956B] hover:text-[#F8F7F4]' 
                   : 'border-[#B8956B]/40 text-[#C4B59D] hover:bg-[#B8956B] hover:text-[#1B4332]'
               }`}
             >
-              Asset Divestment
+              underwrite a deal
             </a>
           </nav>
 

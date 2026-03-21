@@ -1,12 +1,13 @@
 'use client';
 
-import { Search, Filter, TrendingUp, ArrowRight, Clock, Mail, User, Calendar } from 'lucide-react';
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
+import { Search, ChevronDown, ChevronUp, ArrowRight, Clock, Calendar, User } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
 
-interface Blog {
+// ─────────────────────────────────────────────────────────────
+// TYPES
+// ─────────────────────────────────────────────────────────────
+interface BlogEntry {
   id: string;
   title: string;
   excerpt: string;
@@ -14,12 +15,13 @@ interface Blog {
   category: string;
   date: string;
   readTime: string;
-  image: string;
   featured?: boolean;
-  content?: string;
 }
 
-const blog: Blog[] =[
+// ─────────────────────────────────────────────────────────────
+// DATA  (262 articles — no image fields)
+// ─────────────────────────────────────────────────────────────
+const blog: BlogEntry[] = [
   {
     id: 'nairobi-cbd-office-market-analysis-2026',
     title: 'Nairobi CBD Office Market Analysis 2026: Trends, Yields & Opportunities',
@@ -29,7 +31,6 @@ const blog: Blog[] =[
     category: 'Market Analysis',
     date: '2024-08-10',
     readTime: '30 min read',
-    image:'https://properties.avenuevaluers.co.ke/wp-content/uploads/2026/01/Grade-A-offices-in-nairobi.jpg',
     featured: true,
   },
   {
@@ -40,7 +41,6 @@ const blog: Blog[] =[
     category: 'Financing',
     date: '2025-06-15',
     readTime: '8 min read',
-    image: 'https://www.pesapal.com/media/118211/02_25-pesapal-ea-blog-how-to-improve-your-credit-score-1.png?center=0.49805447470817121,0.49833333333333335&mode=crop&width=355&height=218&rnd=133863137910000000',
     featured: false,
   },
   {
@@ -51,7 +51,6 @@ const blog: Blog[] =[
     category: 'Investing',
     date: 'September 28, 2025',
     readTime: '7 min read',
-    image: 'https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=1200',
     featured: false,
   },
   {
@@ -62,7 +61,6 @@ const blog: Blog[] =[
     category: 'Investing',
     date: 'September 18, 2025',
     readTime: '10 min read',
-    image: 'https://www.loopnet.com/s/images/what-is-a-cap-rate/cap-rate-range-chart.webp',
     featured: true,
   },
   {
@@ -73,7 +71,6 @@ const blog: Blog[] =[
     category: "Luxury Properties",
     date: "2025-07-01",
     readTime: "3 min read",
-    image: "/p17 heritage/IMG-20250421-WA0093.jpg",
     featured: false
   },
   {
@@ -84,7 +81,6 @@ const blog: Blog[] =[
     category: 'Homeownership',
     date: '2025-06-20',
     readTime: '12 min read',
-    image: 'https://www.buyrentkenya.com/discover/wp-content/uploads/2024/05/brkmarketing-image-of-a-home-owner-in-nairobi-opening-the-door-4b1ed9cc-114b-43d6-b025-479561f02c7b.png',
     featured: true,
   },
   {
@@ -95,7 +91,6 @@ const blog: Blog[] =[
     category: 'Property Management',
     date: '2025-06-25',
     readTime: '9 min read',
-    image: 'https://stepbystepinsurance.co.ke/wp-content/uploads/2024/09/Home-Insurance.png',
     featured: false,
   },
   {
@@ -106,7 +101,6 @@ const blog: Blog[] =[
     category: 'Development',
     date: '2025-07-01',
     readTime: '11 min read',
-    image: 'https://cdn.radioafrica.digital/image/2025/04/6b35a210-6d7e-4e99-bf51-95c1f4b34e8f.jpeg',
     featured: true,
   },
   {
@@ -117,7 +111,6 @@ const blog: Blog[] =[
     category: 'Policy',
     date: '2025-07-05',
     readTime: '10 min read',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEYfxCyZ5PcwMk5J0frim4jkzopToSwUkffw&s',
     featured: false,
   },
   {
@@ -128,7 +121,6 @@ const blog: Blog[] =[
     category: 'Financing',
     date: '2025-07-10',
     readTime: '9 min read',
-    image: 'https://sarabirealtygroup.co.ke/wp-content/uploads/2024/06/127757575_202039111572524_5932344972577205189_n.jpg',
     featured: false,
   },
   {
@@ -139,7 +131,6 @@ const blog: Blog[] =[
     category: 'Financing',
     date: '2025-07-15',
     readTime: '8 min read',
-    image: 'https://www.buyrentkenya.com/discover/wp-content/uploads/2023/09/brkmarketing-people-getting-a-loan-in-a-bank-setup-in-nairobi-k-885d9937-59d8-4b47-aee5-bf3f4432be06-1.png',
     featured: false,
   },
   {
@@ -150,7 +141,6 @@ const blog: Blog[] =[
     category: 'Partnerships',
     date: '2025-07-20',
     readTime: '10 min read',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1uiJUtz_NBf4XX2wvbC6Ru-YrdtV8o8nRtA&s',
     featured: false,
   },
   {
@@ -161,7 +151,6 @@ const blog: Blog[] =[
     category: 'Policy',
     date: '2025-07-25',
     readTime: '11 min read',
-    image: 'https://kenyahomes.co.ke/blog/wp-content/uploads/2019/04/Affordable-housing-in-Kenya-and-growth-in-real-estate-industry-1024x684.jpg',
     featured: false,
   },
   {
@@ -172,7 +161,6 @@ const blog: Blog[] =[
     category: 'Legal',
     date: '2025-08-01',
     readTime: '9 min read',
-    image: 'https://housingfinanceafrica.org/wp-content/uploads/2025/01/teabrice.png',
     featured: false,
   },
   {
@@ -183,7 +171,6 @@ const blog: Blog[] =[
     category: 'Market Trends',
     date: '2025-08-05',
     readTime: '12 min read',
-    image: 'https://epicprime.co.ke/wp-content/uploads/2025/01/5.png',
     featured: true,
   },
   {
@@ -194,7 +181,6 @@ const blog: Blog[] =[
     category: 'Market Analysis',
     date: '2025-08-10',
     readTime: '10 min read',
-    image: 'https://www.policeinvestment.com/wp-content/uploads/2025/04/Kenyas-Real-Estate-Market-Trends.png',
     featured: false,
   },
   {
@@ -205,7 +191,6 @@ const blog: Blog[] =[
     category: 'Infrastructure',
     date: '2025-08-15',
     readTime: '11 min read',
-    image: 'https://chinaglobalsouth.com/wp-content/uploads/2025/03/Kenya-SGR-Site-768x432.jpg',
     featured: false,
   },
   {
@@ -216,7 +201,6 @@ const blog: Blog[] =[
     category: 'Events',
     date: '2025-08-20',
     readTime: '7 min read',
-    image: 'https://property254.co.ke/blogUploadedImages/1026/conversions/418-main.jpg',
     featured: false,
   },
   {
@@ -227,7 +211,6 @@ const blog: Blog[] =[
     category: 'Lifestyle',
     date: '2025-08-25',
     readTime: '9 min read',
-    image: 'https://cdn.businessday.ng/wp-content/uploads/2025/01/Top-5-cities-in-Africa-with-highest-cost-of-living-in-2025.png',
     featured: false,
   },
   {
@@ -238,7 +221,6 @@ const blog: Blog[] =[
     category: 'Urban Development',
     date: '2025-09-01',
     readTime: '12 min read',
-    image: 'https://i.ytimg.com/vi/PaKHjJstPBc/mqdefault.jpg',
     featured: true,
   },
   {
@@ -249,7 +231,6 @@ const blog: Blog[] =[
     category: 'Expert Interview',
     date: '2025-09-05',
     readTime: '10 min read',
-    image: 'https://property254.co.ke/blogs/wp-content/uploads/2024/05/Navigating-Kenyas-real-estate-market.jpg',
     featured: false,
   },
   {
@@ -260,7 +241,6 @@ const blog: Blog[] =[
     category: 'Policy',
     date: '2025-09-10',
     readTime: '9 min read',
-    image: 'https://www.buyrentkenya.com/discover/wp-content/uploads/2023/07/brkmarketing-image-of-kenyan-members-of-parliament-giving-a-pre-7ba7835a-1c89-4182-bfc5-99860b06c78a-1.png',
     featured: false,
   },
   {
@@ -271,7 +251,6 @@ const blog: Blog[] =[
     category: 'Infrastructure',
     date: '2025-09-15',
     readTime: '11 min read',
-    image: 'https://swalanyeti.co.ke/storage/uploads/2024/01/Mombasa%20Gate%20bridge%201-1706616576.jpeg',
     featured: true,
   },
   {
@@ -282,7 +261,6 @@ const blog: Blog[] =[
     category: 'Infrastructure',
     date: '2025-09-20',
     readTime: '10 min read',
-    image: 'https://samrack.com/wp-content/uploads/2019/10/Screen-Shot-2019-10-20-at-6.56.13-PM.png',
     featured: false,
   },
   {
@@ -293,7 +271,6 @@ const blog: Blog[] =[
     category: 'Development',
     date: '2025-08-01',
     readTime: '10 min read',
-    image: 'https://nairobileo.co.ke/storage/uploads/2024/12/Ruto%20Mukuru%20houses-1734768895.jpeg',
     featured: false,
   },
   {
@@ -304,7 +281,6 @@ const blog: Blog[] =[
     category: 'Government Policy',
     date: '2025-07-22',
     readTime: '11 min read',
-    image: 'https://publish.eastleighvoice.co.ke/mugera_lock/uploads/2025/02/Alice-Wahome-2.jpg',
     featured: false,
   },
   {
@@ -315,7 +291,6 @@ const blog: Blog[] =[
     category: 'Current Affairs',
     date: '2025-06-10',
     readTime: '9 min read',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcEMywzPoElIrDvs91zNfdH7kXEN-DeI7g7w&s',
     featured: false,
   },
   {
@@ -326,7 +301,6 @@ const blog: Blog[] =[
     category: 'Sustainability',
     date: '2025-08-15',
     readTime: '10 min read',
-    image: '/image.png',
     featured: false,
   },
   {
@@ -337,7 +311,6 @@ const blog: Blog[] =[
     category: 'Taxation',
     date: '2025-09-01',
     readTime: '8 min read',
-    image: 'https://www.mwakilishi.com/sites/default/files/styles/large/public/2023-01/Fc85dDst%20%282%29.jpg?itok=vPFzgRJR',
     featured: false,
   },
   {
@@ -348,7 +321,6 @@ const blog: Blog[] =[
     category: 'Finance',
     date: '2025-07-05',
     readTime: '13 min read',
-    image: 'https://media.licdn.com/dms/image/v2/D4D12AQEUdvYcXQfFSw/article-cover_image-shrink_720_1280/B4DZVbIqR2HAAI-/0/1740990752474?e=2147483647&v=beta&t=5h0xJQN4JdI-8XaH8sABeT2H8KDv7ZF-nFD5nYmQB34',
     featured: true,
   },
   {
@@ -359,7 +331,6 @@ const blog: Blog[] =[
     category: 'Legal',
     date: '2025-08-20',
     readTime: '11 min read',
-    image: 'https://www.wynnconsult.co.ke/wp-content/uploads/2023/09/1680684458222.png',
     featured: false,
   },
   {
@@ -370,7 +341,6 @@ const blog: Blog[] =[
     category: 'Commercial Real Estate',
     date: '2025-09-10',
     readTime: '9 min read',
-    image: 'https://trendipgroup.co.za/wp-content/uploads/2024/07/Commercial_Office_Cape_Town_Design_and_Build_1st_floor_boardroom-4.jpg',
     featured: false,
   },
   {
@@ -381,7 +351,6 @@ const blog: Blog[] =[
     category: 'Market Trends',
     date: '2025-07-28',
     readTime: '10 min read',
-    image: 'https://source.unsplash.com/random/800x600?kenya-commercial-property',
     featured: false,
   },
   {
@@ -392,7 +361,6 @@ const blog: Blog[] =[
     category: 'Property Review',
     date: '2025-06-25',
     readTime: '8 min read',
-    image: 'https://source.unsplash.com/random/800x600?northlands-apartments',
     featured: false,
   },
   {
@@ -403,7 +371,6 @@ const blog: Blog[] =[
     category: 'Luxury Real Estate',
     date: '2025-09-05',
     readTime: '10 min read',
-    image: 'https://source.unsplash.com/random/800x600?kenya-branded-residences',
     featured: true,
   },
   {
@@ -414,7 +381,6 @@ const blog: Blog[] =[
     category: 'Urban Planning',
     date: '2025-08-25',
     readTime: '11 min read',
-    image: 'https://source.unsplash.com/random/800x600?kenya-urban-housing',
     featured: false,
   },
   {
@@ -425,7 +391,6 @@ const blog: Blog[] =[
     category: 'Home Buying Guide',
     date: '2025-07-10',
     readTime: '9 min read',
-    image: 'https://source.unsplash.com/random/800x600?kenya-residential-types',
     featured: false,
   },
   {
@@ -436,7 +401,6 @@ const blog: Blog[] =[
     category: 'Construction',
     date: '2025-09-15',
     readTime: '12 min read',
-    image: 'https://source.unsplash.com/random/800x600?kenya-cost-effective-building',
     featured: false,
   },
   {
@@ -447,7 +411,6 @@ const blog: Blog[] =[
     category: 'Mortgage & Finance',
     date: '2025-08-08',
     readTime: '10 min read',
-    image: 'https://source.unsplash.com/random/800x600?kenya-mortgage-rates',
     featured: false,
   },
   {
@@ -458,7 +421,6 @@ const blog: Blog[] =[
     category: 'Market Analysis',
     date: '2025-07-01',
     readTime: '11 min read',
-    image: 'https://usafactsdata.blob.core.windows.net/flourish-screenshots/what_is_the_homeownership_rate-LOC__country-United_States-national_homeownership_rate_by_type_line_chart.png',
     featured: false,
   },
   {
@@ -469,7 +431,6 @@ const blog: Blog[] =[
     category: 'Investment Trends',
     date: '2025-09-20',
     readTime: '10 min read',
-    image: 'https://www.buyrentkenya.com/discover/wp-content/uploads/2025/04/image-fx-2025-04-01t144758527-1.jpg',
     featured: true,
   },
   {
@@ -480,7 +441,6 @@ const blog: Blog[] =[
     category: 'Buying Guide',
     date: '2025-06-18',
     readTime: '9 min read',
-    image: 'https://source.unsplash.com/random/800x600?kenya-real-estate-agent',
     featured: false,
   },
   {
@@ -491,7 +451,6 @@ const blog: Blog[] =[
     category: 'Home Improvement',
     date: '2025-08-12',
     readTime: '8 min read',
-    image: 'https://source.unsplash.com/random/800x600?kenya-garden-grass',
     featured: false,
   },
   {
@@ -502,7 +461,6 @@ const blog: Blog[] =[
     category: 'Industry Leaders',
     date: '2025-10-01',
     readTime: '11 min read',
-    image: 'https://source.unsplash.com/random/800x600?women-kenya-real-estate',
     featured: true,
   },
   {
@@ -513,7 +471,6 @@ const blog: Blog[] =[
     category: 'Industry Leaders',
     date: '2025-10-05',
     readTime: '8 min read',
-    image: 'https://source.unsplash.com/random/800x600?elizabeth-costabir-business',
     featured: false,
   },
   {
@@ -524,7 +481,6 @@ const blog: Blog[] =[
     category: 'Industry Leaders',
     date: '2025-10-10',
     readTime: '10 min read',
-    image: 'https://source.unsplash.com/random/800x600?elizabeth-costabir-celebration',
     featured: false,
   },
   {
@@ -535,7 +491,6 @@ const blog: Blog[] =[
     category: 'Architecture',
     date: '2025-06-30',
     readTime: '11 min read',
-    image: 'https://source.unsplash.com/random/800x600?nairobi-colonial-architecture',
     featured: false,
   },
   {
@@ -543,13 +498,10 @@ const blog: Blog[] =[
     title: 'Essential Home Buying Tips for First-Time Buyers',
     excerpt:
       'Navigate the home buying process with confidence using these expert tips and strategies for first-time buyers.',
-    content:
-      'Buying your first home is an exciting milestone, but it can also feel overwhelming...',
     author: 'Mark Muriithi',
     category: 'Tips',
     date: '2025-02-05',
     readTime: '8 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: true,
   },
   {
@@ -557,65 +509,50 @@ const blog: Blog[] =[
     title: 'Services apartments vs Hotels: Which is Right for You?',
     excerpt:
       'Investing in serviced apartments is a fairly new concept, especially in the Kenyan real estate market.',
-    content:
-      'Sustainability has become a driving force in modern home design and construction...',
     author: 'Mark Muriithi',
     category: 'Trends',
     date: '2024-05-13',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/2009473017/923357109.jpeg',
   },
   {
     id: 'real-estate-investment-amount-kenya',
     title: 'How Much Do You Need to Invest in Real Estate in Kenya',
     excerpt:
       'Investing in real estate in Kenya has become a popular option for many investors looking to diversify their portfolios and build long-term wealth.',
-    content:
-      'Investing in real estate in Kenya has become a popular option for many investors looking...',
     author: 'Mark Muriithi',
     category: 'Investment',
     date: '2023-07-19',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
   },
   {
     id: 'making-money-real-estate-kenya',
     title: 'How to Make Money in Real Estate in Kenya',
     excerpt:
       'Overview of the real estate in Kenya. Real estate in Kenya is one of the most lucrative investment opportunities available today.',
-    content:
-      'The mortgage landscape continues to evolve, and staying informed is crucial for buyers...',
     author: 'Mark Muriithi',
     category: 'Updates',
     date: '2022-10-10',
     readTime: '15 min read',
-    image: 'https://images.ctfassets.net/eoa1vvg9v30r/1dFqN08SsUlz9PLb8CfU8g/8792a8bb4464c768a8e93570819fe362/How_to_invest_in_real_estate_Kenya_to_make_money.png',
   },
   {
     id: 'what-is-real-estate-investment',
     title: 'What is Real Estate Investment?',
     excerpt:
       'Real estate investment involves purchasing, owning, managing, renting, or selling real estate for profit.',
-    content:
-      'Real estate investment is a strategy that involves investing money in property with the expectation...',
     author: 'Mark Muriithi',
     category: 'Investment',
     date: '2023-07-19',
     readTime: '7 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
   },
   {
     id: 'boost-home-value',
     title: '10 Ways to Boost Your Home Value Before Selling',
     excerpt:
       'Maximize your property\'s market appeal and value with these strategic home improvement tips.',
-    content:
-      'Selling your home is a significant financial decision, and maximizing its value is crucial...',
     author: 'Mark Muriithi',
     category: 'Tips',
     date: '2024-03-10',
     readTime: '9 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
   },
   {
     id: 'kenya-real-estate-2025-outlook',
@@ -625,7 +562,6 @@ const blog: Blog[] =[
     category: 'Market Analysis',
     date: '2025-01-15',
     readTime: '15 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: true,
   },
   {
@@ -636,7 +572,6 @@ const blog: Blog[] =[
     category: 'Market Trends',
     date: '2025-02-01',
     readTime: '12 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -647,7 +582,6 @@ const blog: Blog[] =[
     category: 'Development',
     date: '2025-02-10',
     readTime: '11 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -658,7 +592,6 @@ const blog: Blog[] =[
     category: 'Investment',
     date: '2025-02-15',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -669,7 +602,6 @@ const blog: Blog[] =[
     category: 'Market Analysis',
     date: '2025-02-20',
     readTime: '9 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -680,7 +612,6 @@ const blog: Blog[] =[
     category: 'Commercial Real Estate',
     date: '2025-02-25',
     readTime: '14 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: true,
   },
   {
@@ -691,7 +622,6 @@ const blog: Blog[] =[
     category: 'Sustainability',
     date: '2025-03-01',
     readTime: '12 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -702,7 +632,6 @@ const blog: Blog[] =[
     category: 'Diaspora Investment',
     date: '2025-03-05',
     readTime: '15 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: true,
   },
   {
@@ -713,7 +642,6 @@ const blog: Blog[] =[
     category: 'Infrastructure',
     date: '2025-03-10',
     readTime: '11 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -724,7 +652,6 @@ const blog: Blog[] =[
     category: 'Property Management',
     date: '2025-03-15',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -735,7 +662,6 @@ const blog: Blog[] =[
     category: 'Investment',
     date: '2025-03-20',
     readTime: '12 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -746,7 +672,6 @@ const blog: Blog[] =[
     category: 'Market Analysis',
     date: '2025-03-25',
     readTime: '9 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -757,7 +682,6 @@ const blog: Blog[] =[
     category: 'Legal',
     date: '2025-03-30',
     readTime: '14 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -768,7 +692,6 @@ const blog: Blog[] =[
     category: 'Investment',
     date: '2025-04-01',
     readTime: '11 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -779,7 +702,6 @@ const blog: Blog[] =[
     category: 'Policy',
     date: '2025-04-05',
     readTime: '13 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -790,7 +712,6 @@ const blog: Blog[] =[
     category: 'Market Trends',
     date: '2025-04-10',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -801,7 +722,6 @@ const blog: Blog[] =[
     category: 'Investment',
     date: '2025-04-15',
     readTime: '12 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -812,7 +732,6 @@ const blog: Blog[] =[
     category: 'Commercial Real Estate',
     date: '2025-04-20',
     readTime: '16 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: true,
   },
   {
@@ -823,7 +742,6 @@ const blog: Blog[] =[
     category: 'Technology',
     date: '2025-04-25',
     readTime: '8 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -834,7 +752,6 @@ const blog: Blog[] =[
     category: 'Development',
     date: '2025-04-28',
     readTime: '11 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -845,7 +762,6 @@ const blog: Blog[] =[
     category: 'Technology',
     date: '2025-05-01',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -856,7 +772,6 @@ const blog: Blog[] =[
     category: 'Investment',
     date: '2025-05-05',
     readTime: '9 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -867,7 +782,6 @@ const blog: Blog[] =[
     category: 'Technology',
     date: '2025-05-08',
     readTime: '8 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -878,7 +792,6 @@ const blog: Blog[] =[
     category: 'Auctions',
     date: '2025-05-10',
     readTime: '7 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -889,7 +802,6 @@ const blog: Blog[] =[
     category: 'Tips',
     date: '2025-05-12',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -900,7 +812,6 @@ const blog: Blog[] =[
     category: 'Investment',
     date: '2025-05-15',
     readTime: '11 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -911,7 +822,6 @@ const blog: Blog[] =[
     category: 'Mortgage & Finance',
     date: '2025-05-20',
     readTime: '9 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -922,7 +832,6 @@ const blog: Blog[] =[
     category: 'Commercial Real Estate',
     date: '2025-05-25',
     readTime: '12 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: true,
   },
   {
@@ -933,7 +842,6 @@ const blog: Blog[] =[
     category: 'Tips',
     date: '2025-05-28',
     readTime: '8 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -944,7 +852,6 @@ const blog: Blog[] =[
     category: 'Development',
     date: '2025-06-01',
     readTime: '11 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -955,7 +862,6 @@ const blog: Blog[] =[
     category: 'Market Trends',
     date: '2025-06-05',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -966,7 +872,6 @@ const blog: Blog[] =[
     category: 'Legal',
     date: '2025-06-08',
     readTime: '12 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -977,7 +882,6 @@ const blog: Blog[] =[
     category: 'Technology',
     date: '2025-06-10',
     readTime: '14 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: true,
   },
   {
@@ -988,7 +892,6 @@ const blog: Blog[] =[
     category: 'Development',
     date: '2025-06-12',
     readTime: '11 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -999,7 +902,6 @@ const blog: Blog[] =[
     category: 'Legal',
     date: '2025-06-15',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -1010,7 +912,6 @@ const blog: Blog[] =[
     category: 'Investment',
     date: '2025-06-18',
     readTime: '12 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1021,7 +922,6 @@ const blog: Blog[] =[
     category: 'Market Analysis',
     date: '2025-06-20',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -1032,7 +932,6 @@ const blog: Blog[] =[
     category: 'Technology',
     date: '2025-06-22',
     readTime: '9 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1043,7 +942,6 @@ const blog: Blog[] =[
     category: 'Technology',
     date: '2025-06-25',
     readTime: '8 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -1054,7 +952,6 @@ const blog: Blog[] =[
     category: 'Investment',
     date: '2025-06-28',
     readTime: '11 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1065,7 +962,6 @@ const blog: Blog[] =[
     category: 'Investment',
     date: '2025-07-01',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -1076,7 +972,6 @@ const blog: Blog[] =[
     category: 'Legal',
     date: '2025-07-05',
     readTime: '9 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1087,7 +982,6 @@ const blog: Blog[] =[
     category: 'Commercial Real Estate',
     date: '2025-07-08',
     readTime: '12 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -1098,7 +992,6 @@ const blog: Blog[] =[
     category: 'Technology',
     date: '2025-07-10',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1109,7 +1002,6 @@ const blog: Blog[] =[
     category: 'Investment',
     date: '2025-07-12',
     readTime: '11 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -1120,7 +1012,6 @@ const blog: Blog[] =[
     category: 'Development',
     date: '2025-07-15',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1131,7 +1022,6 @@ const blog: Blog[] =[
     category: 'Risk Management',
     date: '2025-07-18',
     readTime: '12 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -1142,7 +1032,6 @@ const blog: Blog[] =[
     category: 'Investment',
     date: '2025-07-20',
     readTime: '11 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1153,7 +1042,6 @@ const blog: Blog[] =[
     category: 'Mortgage & Finance',
     date: '2025-07-22',
     readTime: '9 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -1164,7 +1052,6 @@ const blog: Blog[] =[
     category: 'Technology',
     date: '2025-07-25',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1175,7 +1062,6 @@ const blog: Blog[] =[
     category: 'Market Trends',
     date: '2025-07-28',
     readTime: '9 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -1186,7 +1072,6 @@ const blog: Blog[] =[
     category: 'Taxation',
     date: '2025-07-30',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1197,7 +1082,6 @@ const blog: Blog[] =[
     category: 'Sustainability',
     date: '2025-08-01',
     readTime: '8 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -1208,7 +1092,6 @@ const blog: Blog[] =[
     category: 'Taxation',
     date: '2025-08-05',
     readTime: '11 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1219,7 +1102,6 @@ const blog: Blog[] =[
     category: 'Market Analysis',
     date: '2025-08-08',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -1230,7 +1112,6 @@ const blog: Blog[] =[
     category: 'Legal',
     date: '2025-08-10',
     readTime: '12 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1241,7 +1122,6 @@ const blog: Blog[] =[
     category: 'Taxation',
     date: '2025-08-12',
     readTime: '9 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -1252,7 +1132,6 @@ const blog: Blog[] =[
     category: 'Infrastructure',
     date: '2025-08-15',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1263,7 +1142,6 @@ const blog: Blog[] =[
     category: 'Technology',
     date: '2025-08-18',
     readTime: '9 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -1274,7 +1152,6 @@ const blog: Blog[] =[
     category: 'Investment',
     date: '2025-08-20',
     readTime: '11 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1285,7 +1162,6 @@ const blog: Blog[] =[
     category: 'Legal',
     date: '2025-08-22',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -1296,7 +1172,6 @@ const blog: Blog[] =[
     category: 'Sustainability',
     date: '2025-08-25',
     readTime: '8 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1307,7 +1182,6 @@ const blog: Blog[] =[
     category: 'Commercial Real Estate',
     date: '2025-08-28',
     readTime: '12 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -1318,7 +1192,6 @@ const blog: Blog[] =[
     category: 'Investment',
     date: '2025-08-30',
     readTime: '11 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1329,7 +1202,6 @@ const blog: Blog[] =[
     category: 'Rental Market',
     date: '2025-09-01',
     readTime: '9 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -1340,7 +1212,6 @@ const blog: Blog[] =[
     category: 'Market Analysis',
     date: '2025-09-05',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1351,7 +1222,6 @@ const blog: Blog[] =[
     category: 'Risk Management',
     date: '2025-09-08',
     readTime: '11 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: true,
   },
   {
@@ -1362,7 +1232,6 @@ const blog: Blog[] =[
     category: 'Development',
     date: '2025-09-10',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1373,7 +1242,6 @@ const blog: Blog[] =[
     category: 'Technology',
     date: '2025-09-12',
     readTime: '8 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -1384,7 +1252,6 @@ const blog: Blog[] =[
     category: 'Tips',
     date: '2025-09-15',
     readTime: '9 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1395,7 +1262,6 @@ const blog: Blog[] =[
     category: 'Investment',
     date: '2025-09-18',
     readTime: '11 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -1406,7 +1272,6 @@ const blog: Blog[] =[
     category: 'Development',
     date: '2025-09-20',
     readTime: '12 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1417,7 +1282,6 @@ const blog: Blog[] =[
     category: 'Market Analysis',
     date: '2025-09-22',
     readTime: '14 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: true,
   },
   {
@@ -1428,7 +1292,6 @@ const blog: Blog[] =[
     category: 'Market Trends',
     date: '2025-09-25',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1439,7 +1302,6 @@ const blog: Blog[] =[
     category: 'Tips',
     date: '2025-09-28',
     readTime: '9 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -1450,7 +1312,6 @@ const blog: Blog[] =[
     category: 'Development',
     date: '2025-09-30',
     readTime: '11 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1461,7 +1322,6 @@ const blog: Blog[] =[
     category: 'Development',
     date: '2025-10-02',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -1472,7 +1332,6 @@ const blog: Blog[] =[
     category: 'Commercial Real Estate',
     date: '2025-10-05',
     readTime: '9 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1483,7 +1342,6 @@ const blog: Blog[] =[
     category: 'Investment',
     date: '2025-10-08',
     readTime: '10 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -1494,7 +1352,6 @@ const blog: Blog[] =[
     category: 'Market Trends',
     date: '2025-10-10',
     readTime: '9 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1505,7 +1362,6 @@ const blog: Blog[] =[
     category: 'Tips',
     date: '2025-10-12',
     readTime: '8 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: false,
   },
   {
@@ -1516,7 +1372,6 @@ const blog: Blog[] =[
     category: 'Technology',
     date: '2025-10-15',
     readTime: '9 min read',
-    image: 'https://ext.same-assets.com/616702439/4224781709.jpeg',
     featured: false,
   },
   {
@@ -1526,7 +1381,6 @@ const blog: Blog[] =[
     category: 'Market Analysis',
     date: '2025-10-20',
     readTime: '15 min read',
-    image: 'https://ext.same-assets.com/2009473017/2828581621.jpeg',
     featured: true,
     excerpt: 'Comprehensive year-end review of Kenya\'s real estate market performance.',
   },
@@ -1538,124 +1392,1683 @@ const blog: Blog[] =[
     category: 'Investing',
     date: 'October 15, 2025',
     readTime: '10 min read',
-    image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1200',
     featured: false,
+  },
+  {
+    id: '3d-printed-homes-kenya-kilifi',
+    title: '3D Printed Homes: The Kilifi Success Story of 2026',
+    excerpt: 'How 14 Trees printed 52 homes in record time at Mvule Gardens.',
+    author: 'Paul Kamau',
+    category: 'Tech',
+    date: '2025-11-20',
+    readTime: '14 min read',
+    featured: true,
+  },
+  {
+    id: '6TypesResidentialBuildingsKenyaPerfectFit',
+    title: '6 Types of Residential Buildings in Kenya: Find the Perfect Fit',
+    excerpt: 'A practical guide outlining the various types of residential properties available in Kenya, helping prospective homeowners and investors understand their options and make informed decisions.',
+    author: 'Michael Okello',
+    category: 'Home Buying Guide',
+    date: '2025-07-10',
+    readTime: '9 min read',
+  },
+  {
+    id: 'adverse-possession-legal-guide',
+    title: 'Avoiding',
+    excerpt: 'Lessons from the Waweru v Njoroge [2025] case on protecting your land.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2026-01-09',
+    readTime: '15 min read',
+  },
+  {
+    id: 'ai-property-management-2026',
+    title: 'How AI is Managing Nairobi’s Apartments in 2026',
+    excerpt: 'From automated rent reminders to predictive maintenance for busy landlords.',
+    author: 'Elizabeth Costabir',
+    category: 'Tech',
+    date: '2026-01-25',
+    readTime: '12 min read',
+  },
+  {
+    id: 'bestGrassTypesToTransformYourLawnAndCreateADreamGarden',
+    title: 'Best Grass Types to Transform Your Lawn and Create a Dream Garden',
+    excerpt: 'A practical guide for Kenyan homeowners on selecting the ideal grass types for their lawns, considering climate, maintenance, and aesthetic appeal to achieve a stunning garden.',
+    author: 'Lillian Owino',
+    category: 'Home Improvement',
+    date: '2025-08-12',
+    readTime: '8 min read',
+  },
+  {
+    id: 'bonus-depreciation',
+    title: 'Bonus Depreciation: A Tax Secret for Commercial Owners',
+    excerpt: 'How to use accelerated depreciation to lower your taxable income in the first years of ownership.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-11-25',
+    readTime: '9 min read',
+  },
+  {
+    id: 'bpoBoomCommercialDevelopersRethinkOfficeSpaces',
+    title: 'BPO Boom: Why Commercial Developers Must Rethink Office Spaces',
+    excerpt: 'Exploring how the flourishing Business Process Outsourcing (BPO) sector in Kenya is reshaping demand for commercial office spaces, urging developers to innovate in design and functionality.',
+    author: 'Catherine Chege',
+    category: 'Commercial Real Estate',
+    date: '2025-09-10',
+    readTime: '9 min read',
+  },
+  {
+    id: 'building-a-property-pension',
+    title: 'The Property Pension: How to Retire on Rental Income by 55',
+    excerpt: 'Ditching the NSSF for a portfolio that pays you every month.',
+    author: 'Paul Kamau',
+    category: 'Investment',
+    date: '2026-01-13',
+    readTime: '15 min read',
+  },
+  {
+    id: 'buy-now-investors-guide',
+    title: 'Buy Now: Why Late 2025 is the Window for Kenyan Real Estate',
+    excerpt: 'Analyzing market cycles and the impending price surge due to rising construction costs.',
+    author: 'Elizabeth Costabir',
+    category: 'Investment',
+    date: '2025-11-24',
+    readTime: '9 min read',
+  },
+  {
+    id: 'buy-to-let-ruaka-analysis',
+    title: 'Is Ruaka Still a Good Buy in 2026? A Market Deep Dive',
+    excerpt: 'Analyzing the rental saturation vs. the infrastructure demand.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2026-01-05',
+    readTime: '13 min read',
+  },
+  {
+    id: 'buying-apartments-nairobi-step-by-step',
+    title: 'Buying an Apartment in Nairobi: The Step-by-Step Guide',
+    excerpt: 'From the Letter of Offer to the handover of the Sectional Title.',
+    author: 'Paul Kamau',
+    category: 'Residential',
+    date: '2025-12-28',
+    readTime: '14 min read',
+  },
+  {
+    id: 'capital-gains-tax-optimization-2026',
+    title: 'CGT Optimization: Legal Ways to Lower Your Tax on Sale',
+    excerpt: 'Understanding the 15% Capital Gains Tax and how to report expenses.',
+    author: 'Elizabeth Costabir',
+    category: 'Finance',
+    date: '2025-11-15',
+    readTime: '13 min read',
+  },
+  {
+    id: 'cash-on-cash-return',
+    title: 'Cash-on-Cash Return: The Real Metric for Kenyan Investors',
+    excerpt: 'Why this formula is more important than simple yield when you are using bank financing.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-11-27',
+    readTime: '8 min read',
+  },
+  {
+    id: 'celebratingADecadeOfExcellenceElizabethCostabirRealEstateJourney',
+    title: 'Celebrating a Decade of Excellence: Elizabeth Costabir’s Real Estate Journey',
+    excerpt: 'A retrospective look at Elizabeth Costabir',
+    author: 'Editorial Team',
+    category: 'Industry Leaders',
+    date: '2025-10-10',
+    readTime: '10 min read',
+  },
+  {
+    id: 'ceoElizabethLizzieCostabirFeaturedOnNtvWomenInBusiness',
+    title: 'CEO Elizabeth ‘Lizzie’ Costabir Featured on NTV’s ‘Women in Business’',
+    excerpt: 'A spotlight on Elizabeth Costabir',
+    author: 'Editor',
+    category: 'Industry Leaders',
+    date: '2025-10-05',
+    readTime: '8 min read',
+  },
+  {
+    id: 'co-working-hubs-in-residentials',
+    title: 'The Hybrid Home: Co-working Hubs as the New Amenity',
+    excerpt: 'Why 2026 apartments without',
+    author: 'Elizabeth Costabir',
+    category: 'Residential',
+    date: '2025-12-01',
+    readTime: '11 min read',
+  },
+  {
+    id: 'commercial-lease-trends-nairobi-2026',
+    title: 'Grade-A Office Trends: ESG and Flexible Leasing',
+    excerpt: 'Why multinational tenants are demanding green-certified buildings in 2026.',
+    author: 'Elizabeth Costabir',
+    category: 'Commercial',
+    date: '2025-12-20',
+    readTime: '12 min read',
+  },
+  {
+    id: 'commercial-real-estate-terms',
+    title: 'The Ultimate Glossary: Commercial Real Estate (CRE) Terms',
+    excerpt: 'Demystifying the jargon of commercial real estate to help you negotiate better deals.',
+    author: 'Elizabeth Costabir',
+    category: 'Education',
+    date: '2025-11-29',
+    readTime: '15 min read',
+  },
+  {
+    id: 'couldFractionalOwnershipBeKenyaNextRealEstateTrend',
+    title: 'Could Fractional Ownership Be Kenya’s Next Real Estate Trend?',
+    excerpt: 'An insightful look into fractional ownership as an emerging investment model in Kenya',
+    author: 'Ruth Adhiambo',
+    category: 'Investment Trends',
+    date: '2025-09-20',
+    readTime: '10 min read',
+    featured: true,
+  },
+  {
+    id: 'csWahomeHousingLevyFundsConstructionHomeOwnershipLags',
+    title: 'CS Wahome: Housing Levy Funds Construction, But Home Ownership Lags',
+    excerpt: 'An exploration of the Housing Levy',
+    author: 'Aisha Khan',
+    category: 'Government Policy',
+    date: '2025-07-22',
+    readTime: '11 min read',
+  },
+  {
+    id: 'debt-yield-cre',
+    title: 'What is Debt Yield and Why Do Banks Care?',
+    excerpt: 'Understanding the metric that Kenyan banks use to gauge risk in commercial lending.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-11-23',
+    readTime: '10 min read',
+  },
+  {
+    id: 'detached-homes-vs-apartments-2026',
+    title: 'The Great Move Out: Why Detached Homes are Winning in 2026',
+    excerpt: 'Suburban land prices are up 6.3% as families flee high-rise density.',
+    author: 'Elizabeth Costabir',
+    category: 'Residential',
+    date: '2026-01-19',
+    readTime: '11 min read',
+  },
+  {
+    id: 'diaspora-investment-checklist-2026',
+    title: 'The 2026 Diaspora Investment Checklist: Buying Safely',
+    excerpt: 'A 10-point guide to utilizing Ardhisasa and video due diligence from abroad.',
+    author: 'Elizabeth Costabir',
+    category: 'Investment',
+    date: '2025-12-30',
+    readTime: '15 min read',
+  },
+  {
+    id: 'diaspora-investment-strategy-2026',
+    title: 'Beyond Remittances: The 2026 Diaspora Real Estate Strategy',
+    excerpt: 'How the new State Department framework protects overseas investors.',
+    author: 'Paul Kamau',
+    category: 'Investment',
+    date: '2026-01-10',
+    readTime: '16 min read',
+    featured: true,
+  },
+  {
+    id: 'didKenyaStateHouseNeedMakeover',
+    title: 'Did Kenya’s State House Need a Makeover?',
+    excerpt: 'A nuanced look at the recent renovations and expenditures on Kenya',
+    author: 'Kiplagat Ruto',
+    category: 'Current Affairs',
+    date: '2025-06-10',
+    readTime: '9 min read',
+  },
+  {
+    id: 'discounted-cash-flow',
+    title: 'Discounted Cash Flow (DCF): Predicting Future Wealth',
+    excerpt: 'Using the DCF method to value a property based on its future potential earnings.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-11-26',
+    readTime: '13 min read',
+  },
+  {
+    id: 'doIReallyNeedARealEstateAgentWhenBuyingAHouse',
+    title: 'Do I Really Need a Real Estate Agent When Buying a House?',
+    excerpt: 'A balanced discussion on the role of real estate agents in Kenya, weighing the pros and cons of engaging an agent versus navigating the property market independently.',
+    author: 'Benard Kiprotich',
+    category: 'Buying Guide',
+    date: '2025-06-18',
+    readTime: '9 min read',
+  },
+  {
+    id: 'dongo-kundu-sez-investment',
+    title: 'Dongo Kundu SEZ: The Coast’s New Industrial Frontier',
+    excerpt: 'Why the signing of new lease agreements is sparking a Mombasa land rush.',
+    author: 'Elizabeth Costabir',
+    category: 'Market Analysis',
+    date: '2025-12-29',
+    readTime: '11 min read',
+  },
+  {
+    id: 'duplex-vs-triplex-vs-fourplex',
+    title: 'Duplex vs. Triplex vs. Fourplex: Scaling Your Rental Portfolio',
+    excerpt: 'Comparing the management complexity and cash flow potential of small multi-family units.',
+    author: 'Elizabeth Costabir',
+    category: 'Residential',
+    date: '2025-11-23',
+    readTime: '12 min read',
+  },
+  {
+    id: 'eco-concrete-sustainable-building-kenya',
+    title: 'Carbon-Negative Construction: The Rise of Eco-Concrete in 2026',
+    excerpt: 'How recycled aggregates and hempcrete are reducing building costs.',
+    author: 'Elizabeth Costabir',
+    category: 'Construction',
+    date: '2025-12-26',
+    readTime: '12 min read',
+  },
+  {
+    id: 'eldoret-real-estate-market-2026',
+    title: 'Eldoret: The 2026 Real Estate Boom in the',
+    excerpt: 'Why the elevation to City status is driving a 20% land hike.',
+    author: 'Elizabeth Costabir',
+    category: 'Market Analysis',
+    date: '2025-12-25',
+    readTime: '11 min read',
+  },
+  {
+    id: 'environmentalOversightHaltsLangataHousingProject',
+    title: 'Environmental Oversight Halts Lang’ata Housing Project',
+    excerpt: 'Examining the reasons behind the suspension of a major housing project in Lang’ata due to environmental concerns, underscoring the growing importance of sustainability in real estate development.',
+    author: 'Sophia Nzomo',
+    category: 'Sustainability',
+    date: '2025-08-15',
+    readTime: '10 min read',
+  },
+  {
+    id: 'eviction-laws-tenant-disputes-kenya',
+    title: 'Landlord-Tenant Law: Navigating Disputes in 2026',
+    excerpt: 'The legal way to handle non-payment without the',
+    author: 'Elizabeth Costabir',
+    category: 'Legal',
+    date: '2025-12-10',
+    readTime: '15 min read',
+  },
+  {
+    id: 'exit-cap-rates',
+    title: 'The Exit Cap Rate: Planning Your Property Sale',
+    excerpt: 'How to project what your property will be worth 10 years from now when you decide to sell.',
+    author: 'Elizabeth Costabir',
+    category: 'Finance',
+    date: '2025-11-25',
+    readTime: '10 min read',
+  },
+  {
+    id: 'expressway-economic-impact-2026',
+    title: 'The Expressway Effect: 4 Years On, Who Won?',
+    excerpt: 'How the Nairobi Expressway reshaped land values from Mlolongo to Westlands.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2026-01-01',
+    readTime: '14 min read',
+    featured: true,
+  },
+  {
+    id: 'farming-vs-housing-outskirts-kenya',
+    title: 'Farming vs. Housing: The Land Use Battle in 2026',
+    excerpt: 'Why zoning changes in Kiambu and Kajiado are creating instant millionaires.',
+    author: 'Elizabeth Costabir',
+    category: 'Market Analysis',
+    date: '2025-12-20',
+    readTime: '12 min read',
+  },
+  {
+    id: 'feng-shui-real-estate-trends-kenya',
+    title: 'Harmonious Homes: Why 2026 Luxury Buyers Hire Feng Shui Consultants',
+    excerpt: 'The psychological and market impact of',
+    author: 'Elizabeth Costabir',
+    category: 'Lifestyle',
+    date: '2026-01-01',
+    readTime: '10 min read',
+  },
+  {
+    id: 'fractional-land-ownership-explained',
+    title: 'Land Banking for Everyone: The Rise of Fractional Ownership',
+    excerpt: 'Own 1/10th of an acre in a gated community via digital certificates.',
+    author: 'Paul Kamau',
+    category: 'Investment',
+    date: '2026-01-04',
+    readTime: '12 min read',
+  },
+  {
+    id: 'green-building-incentives-kenya',
+    title: 'Going Green: Tax Incentives and Higher ROI for Developers',
+    excerpt: 'How to save on operational costs through sustainable architecture.',
+    author: 'Elizabeth Costabir',
+    category: 'Construction',
+    date: '2025-12-10',
+    readTime: '13 min read',
+  },
+  {
+    id: 'green-building-standard-2026',
+    title: 'Green is the New Standard: Why 2026 Buyers Demand EDGE',
+    excerpt: 'Sustainability is no longer a luxury; it is a requirement for high rental occupancy.',
+    author: 'Elizabeth Costabir',
+    category: 'Construction',
+    date: '2026-01-03',
+    readTime: '14 min read',
+  },
+  {
+    id: 'gross-rent-multiplier',
+    title: 'Gross Rent Multiplier (GRM): Screening Deals Quickly',
+    excerpt: 'How to use GRM to compare properties across different Nairobi neighborhoods.',
+    author: 'Elizabeth Costabir',
+    category: 'Finance',
+    date: '2025-11-23',
+    readTime: '7 min read',
+  },
+  {
+    id: 'high-yield-airbnb-locations-nairobi-2026',
+    title: 'Airbnb 2026: The Top 5 High-Yield Spots in Nairobi',
+    excerpt: 'Why Upper Hill and Lavington are outperforming Kilimani this year.',
+    author: 'Paul Kamau',
+    category: 'Investment',
+    date: '2025-12-22',
+    readTime: '15 min read',
+    featured: true,
+  },
+  {
+    id: 'hotel-innovation',
+    title: 'Hotel Innovation: Redefining Hospitality Real Estate in Kenya',
+    excerpt: 'Exploring how AI and contactless technology are transforming Kenyan hotels into high-yield assets.',
+    author: 'Elizabeth Costabir',
+    category: 'Innovation',
+    date: '2025-11-27',
+    readTime: '11 min read',
+  },
+  {
+    id: 'how-to-buy-a-duplex',
+    title: 'How to Buy a Duplex: The',
+    excerpt: 'Why duplexes are becoming the preferred entry point for first-time Kenyan investors.',
+    author: 'Paul Kamau',
+    category: 'Residential',
+    date: '2025-11-24',
+    readTime: '11 min read',
+  },
+  {
+    id: 'how-to-buy-a-hotel',
+    title: 'How to Buy a Hotel: An Investor’s Roadmap',
+    excerpt: 'From feasibility studies to tourism licenses, learn the steps to owning hospitality property.',
+    author: 'Elizabeth Costabir',
+    category: 'Commercial',
+    date: '2025-11-26',
+    readTime: '15 min read',
+    featured: true,
+  },
+  {
+    id: 'how-to-buy-a-retail-property',
+    title: 'How to Buy a Retail Property: A Strategic Guide for Investors',
+    excerpt: 'An essential guide for investors looking to enter the retail real estate market in Kenya, focusing on location, footfall, and tenant mix.',
+    author: 'Elizabeth Costabir',
+    category: 'Commercial',
+    date: '2025-12-01',
+    readTime: '12 min read',
+    featured: true,
+  },
+  {
+    id: 'howToBuildCostEffectivelyWithoutCompromisingQuality',
+    title: 'How to Build Cost-Effectively Without Compromising on Quality',
+    excerpt: 'Practical strategies and tips for developers and individual builders in Kenya to reduce construction costs while maintaining high standards of quality and durability.',
+    author: 'Collins Kipkemoi',
+    category: 'Construction',
+    date: '2025-09-15',
+    readTime: '12 min read',
+  },
+  {
+    id: 'howUrbanisationRedefiningHousingKenya',
+    title: 'How Urbanisation is Redefining Housing in Kenya',
+    excerpt: 'An examination of how rapid urbanization is profoundly impacting housing patterns and demand in Kenya, leading to innovative solutions and concentrated development in urban centers.',
+    author: 'Joyce Akinyi',
+    category: 'Urban Planning',
+    date: '2025-08-25',
+    readTime: '11 min read',
+  },
+  {
+    id: 'identifying-real-estate-market-cycles-2026',
+    title: 'Market Cycles: Are We in a Boom or a Bubble in 2026?',
+    excerpt: 'Using the 18-year property cycle to time your entry and exit.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2025-11-01',
+    readTime: '16 min read',
+    featured: true,
+  },
+  {
+    id: 'industrial-area-to-tatu-city-migration',
+    title: 'The Great Industrial Migration: From Industrial Area to Tatu City',
+    excerpt: 'Why 100+ firms have moved to SEZs for 95% renewable energy and tax breaks.',
+    author: 'Paul Kamau',
+    category: 'Commercial',
+    date: '2026-01-16',
+    readTime: '13 min read',
+  },
+  {
+    id: 'industrial-warehousing-boom-2026',
+    title: 'The Warehouse Goldmine: Grade A Industrial Real Estate in 2026',
+    excerpt: 'Why every tap on a smartphone is filling up Kenya’s logistics hubs.',
+    author: 'Elizabeth Costabir',
+    category: 'Commercial',
+    date: '2026-01-11',
+    readTime: '11 min read',
+  },
+  {
+    id: 'interestRatesAndHowTheyImpactYourMortgage',
+    title: 'Interest Rates and How They Impact Your Mortgage',
+    excerpt: 'A comprehensive guide explaining the intricacies of interest rates in Kenya and their direct influence on mortgage payments, affordability, and the overall real estate market.',
+    author: 'Monica Wanjiru',
+    category: 'Mortgage & Finance',
+    date: '2025-08-08',
+    readTime: '10 min read',
+  },
+  {
+    id: 'interior-design-rental-yield-hacks',
+    title: 'Interior Hacks to Boost Your Rental Income by 15%',
+    excerpt: 'How minor aesthetic upgrades lead to major rental premiums in 2026.',
+    author: 'Paul Kamau',
+    category: 'Residential',
+    date: '2025-12-18',
+    readTime: '10 min read',
+  },
+  {
+    id: 'internal-rate-of-return-irr',
+    title: 'Internal Rate of Return (IRR): The Gold Standard of Metrics',
+    excerpt: 'Going beyond simple yield to understand the total lifecycle profitability of a project.',
+    author: 'Elizabeth Costabir',
+    category: 'Finance',
+    date: '2025-11-23',
+    readTime: '15 min read',
+  },
+  {
+    id: 'international-bidders-auctions',
+    title: 'Can Foreigners Bid at Kenyan Property Auctions?',
+    excerpt: 'The legal framework for international investors participating in public auctions and e-GP platforms.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2025-11-25',
+    readTime: '10 min read',
+  },
+  {
+    id: 'irr-calculator',
+    title: 'How to Build Your Own IRR Calculator in Excel',
+    excerpt: 'A step-by-step guide to projecting your long-term real estate wealth.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-11-22',
+    readTime: '18 min read',
+  },
+  {
+    id: 'isOneMillionHousingUnitsTargetRealistic2027',
+    title: 'Is the One Million Housing Units Target by 2027 Realistic?',
+    excerpt: 'An in-depth analysis of Kenya',
+    author: 'Grace Wanjiku',
+    category: 'Housing Policy',
+    date: '2025-07-15',
+    readTime: '12 min read',
+    featured: true,
+  },
+  {
+    id: 'itax-compliance-for-landlords',
+    title: 'Landlords and iTax: Navigating the 2026 KRA Enforcement',
+    excerpt: 'KRA’s new digital tracking of rental income and what it means for your profit.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2026-01-01',
+    readTime: '13 min read',
+    featured: true,
+  },
+  {
+    id: 'kenyaAffordableHousingProgressChallenges',
+    title: 'Kenya’s Affordable Housing: Progress and Challenges',
+    excerpt: 'Delve into the current state of affordable housing initiatives in Kenya, highlighting key milestones achieved, persistent challenges, and potential solutions to bridge the housing gap.',
+    author: 'David Omondi',
+    category: 'Development',
+    date: '2025-08-01',
+    readTime: '10 min read',
+  },
+  {
+    id: 'kraNewSystemTaxFilingLandlordsAgents',
+    title: 'KRA Launches New System to Make Tax Filing Easier for Landlords and Agents',
+    excerpt: 'A detailed breakdown of the Kenya Revenue Authority',
+    author: 'James Mwangi',
+    category: 'Taxation',
+    date: '2025-09-01',
+    readTime: '8 min read',
+  },
+  {
+    id: 'kusccoScandalKsh12BFraudSaccoHousingRisk',
+    title: 'KUSCCO Scandal: KSh 12B Fraud Puts SACCO Housing at Risk',
+    excerpt: 'Investigating the ramifications of the KSh 12 billion fraud scandal involving KUSCCO, and how this affects the stability and future of SACCO-backed housing projects in Kenya.',
+    author: 'Njeri Kamau',
+    category: 'Finance',
+    date: '2025-07-05',
+    readTime: '13 min read',
+    featured: true,
+  },
+  {
+    id: 'land-loans',
+    title: 'How to Secure a Land Loan in Kenya',
+    excerpt: 'A guide to financing land purchases, from Sacco loans to commercial bank mortgages.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-11-28',
+    readTime: '8 min read',
+  },
+  {
+    id: 'land-rates-vs-land-rent-payments',
+    title: 'Land Rates vs. Land Rent: Don’t Get Your Taxes Mixed Up',
+    excerpt: 'Understanding the difference between National and County payments.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2025-11-28',
+    readTime: '9 min read',
+  },
+  {
+    id: 'landlord-tenant-bill-2026-impact',
+    title: 'The 2026 Tenant Bill: New Rules for Rent Hikes and Evictions',
+    excerpt: 'Why you can no longer increase rent without a 90-day notice.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2026-01-22',
+    readTime: '14 min read',
+    featured: true,
+  },
+  {
+    id: 'micro-mixed-use-developments-kenya',
+    title: 'Micro Mixed-Use: The 1/8th Acre Business-Home Hybrid',
+    excerpt: 'Building shops on the ground floor and 2-bedroom units above.',
+    author: 'Elizabeth Costabir',
+    category: 'Commercial',
+    date: '2025-12-19',
+    readTime: '12 min read',
+  },
+  {
+    id: 'mixed-use-developments-nairobi-2026',
+    title: 'Live-Work-Play: The Dominance of Mixed-Use in 2026',
+    excerpt: 'Why Nairobians are ditching the commute for integrated environments.',
+    author: 'Paul Kamau',
+    category: 'Residential',
+    date: '2025-12-26',
+    readTime: '12 min read',
+  },
+  {
+    id: 'mortgage-refinancing-trends-kenya-2026',
+    title: 'Mortgage Refinancing: Switching Banks for a Better Rate',
+    excerpt: 'How to move your 18% loan to a 9% fixed rate in today’s market.',
+    author: 'Elizabeth Costabir',
+    category: 'Finance',
+    date: '2025-11-05',
+    readTime: '12 min read',
+  },
+  {
+    id: 'multifamily-financing',
+    title: 'Navigating Multifamily Financing Options in Kenya',
+    excerpt: 'Comparing bank mortgages, Sacco developer loans, and private equity for apartment blocks.',
+    author: 'Paul Kamau',
+    category: 'Residential',
+    date: '2025-11-25',
+    readTime: '11 min read',
+  },
+  {
+    id: 'nairobi-market-report-2026',
+    title: 'Nairobi 2026 Outlook: The Rise of Detached Housing',
+    excerpt: 'Market data shows a shift from congested high-rises to spacious suburban gated communities.',
+    author: 'Elizabeth Costabir',
+    category: 'Market Analysis',
+    date: '2026-01-05',
+    readTime: '12 min read',
+    featured: true,
+  },
+  {
+    id: 'nairobi-railway-city-impact',
+    title: 'Nairobi Railway City: Shifting the CBD Southward in 2026',
+    excerpt: 'How the £9M technical assistance and multimodal hub is redefining Nairobi’s core.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2026-01-13',
+    readTime: '13 min read',
+    featured: true,
+  },
+  {
+    id: 'nanyuki-investment-conservation-boom',
+    title: 'Nanyuki 2026: Investing in the',
+    excerpt: 'Why conservation-themed developments are seeing 20% capital gains.',
+    author: 'Elizabeth Costabir',
+    category: 'Residential',
+    date: '2025-11-25',
+    readTime: '12 min read',
+  },
+  {
+    id: 'nema-compliance-guide-2026',
+    title: 'Building Near Riparian Land: The 2026 NEMA Guidelines',
+    excerpt: 'Avoiding the',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2025-12-16',
+    readTime: '13 min read',
+  },
+  {
+    id: 'net-leases-in-cre',
+    title: 'Understanding Net Leases in Commercial Real Estate',
+    excerpt: 'Comparing Single, Double, and Triple Net (NNN) leases for passive income seekers.',
+    author: 'Elizabeth Costabir',
+    category: 'Commercial',
+    date: '2025-11-27',
+    readTime: '12 min read',
+  },
+  {
+    id: 'northlands-city-investment-guide',
+    title: 'Northlands City: Investing in Kenya’s 11,000-Acre',
+    excerpt: 'A deep dive into the Sh500bn mega-city and the ripple effects on Ruiru property.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2026-01-28',
+    readTime: '15 min read',
+    featured: true,
+  },
+  {
+    id: 'northlandsHeightsApartmentsLookInside',
+    title: 'Northlands Heights Apartments – A Look Inside',
+    excerpt: 'A comprehensive review and virtual tour of the highly anticipated Northlands Heights Apartments, offering insights into their design, amenities, and investment potential.',
+    author: 'Esther Wambui',
+    category: 'Property Review',
+    date: '2025-06-25',
+    readTime: '8 min read',
+  },
+  {
+    id: 'off-plan-red-flags-2026',
+    title: 'Buying Off-Plan? 5 Red Flags to Watch in 2026',
+    excerpt: 'How to tell if a developer will finish your apartment or',
+    author: 'Paul Kamau',
+    category: 'Advice',
+    date: '2025-12-05',
+    readTime: '13 min read',
+  },
+  {
+    id: 'passive-design-architecture-nairobi',
+    title: 'Architecture Without AC: The Rise of Passive Design in 2026',
+    excerpt: 'How building orientation and natural ventilation are saving millions.',
+    author: 'Paul Kamau',
+    category: 'Construction',
+    date: '2025-12-28',
+    readTime: '13 min read',
+  },
+  {
+    id: 'passive-income-through-reits-2026',
+    title: 'REITs: Building a Real Estate Portfolio Without a Landlord Headache',
+    excerpt: 'Comparing Acorn I-REIT and Fahari I-REIT dividend yields in 2026.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-12-10',
+    readTime: '14 min read',
+  },
+  {
+    id: 'prefab-luxury-homes-kenya-market',
+    title: 'Luxury in 90 Days: The Rise of High-End Prefab in 2026',
+    excerpt: 'Why Naivasha and Laikipia holiday homes are going modular.',
+    author: 'Elizabeth Costabir',
+    category: 'Construction',
+    date: '2025-12-13',
+    readTime: '11 min read',
+  },
+  {
+    id: 'property-development-project-management',
+    title: 'The Phases of Successful Property Project Management',
+    excerpt: 'From feasibility studies to the final',
+    author: 'Elizabeth Costabir',
+    category: 'Construction',
+    date: '2025-12-05',
+    readTime: '15 min read',
+  },
+  {
+    id: 'property-investment-mistakes-avoid',
+    title: 'Top 7 Property Investment Mistakes to Avoid in Kenya',
+    excerpt: 'From emotional buying to ignoring zoning laws, learn what can tank your ROI.',
+    author: 'Paul Kamau',
+    category: 'Investment',
+    date: '2025-11-24',
+    readTime: '13 min read',
+  },
+  {
+    id: 'property-investment-tax-benefits',
+    title: 'Tax Benefits for Property Investors in Kenya',
+    excerpt: 'Maximizing your returns by utilizing wear and tear allowances and solar incentives.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-11-22',
+    readTime: '11 min read',
+  },
+  {
+    id: 'property-management-automation-2026',
+    title: 'Automate Your Rent: Top 3 Platforms for 2026 Landlords',
+    excerpt: 'How to handle 50 units without a single phone call.',
+    author: 'Elizabeth Costabir',
+    category: 'Tech',
+    date: '2026-01-08',
+    readTime: '9 min read',
+  },
+  {
+    id: 'property-management-software-kenya',
+    title: 'Top Property Management Software for Kenyan Landlords',
+    excerpt: 'How automation is solving the rent collection and utility management headache in Nairobi.',
+    author: 'Elizabeth Costabir',
+    category: 'Technology',
+    date: '2025-11-28',
+    readTime: '9 min read',
+  },
+  {
+    id: 'property-market-analysis-tools',
+    title: 'Must-Use Property Market Analysis Tools for 2026',
+    excerpt: 'From digital maps to PropTech valuation apps, the tools every modern investor needs.',
+    author: 'Paul Kamau',
+    category: 'Tech',
+    date: '2025-11-23',
+    readTime: '10 min read',
+  },
+  {
+    id: 'property-rental-yield-calculation',
+    title: 'Mastering Property Rental Yield Calculations',
+    excerpt: 'Learn how to accurately calculate gross and net rental yields to determine the profitability of your Kenyan property investment.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-11-30',
+    readTime: '8 min read',
+  },
+  {
+    id: 'property-tax-management-kenya',
+    title: 'Property Tax in 2026: Navigating the Finance Act 2025',
+    excerpt: 'Essential updates on the KES 360,000 interest deduction and new tax loss limits.',
+    author: 'Elizabeth Costabir',
+    category: 'Finance',
+    date: '2026-01-10',
+    readTime: '13 min read',
+    featured: true,
+  },
+  {
+    id: 'property-title-search',
+    title: 'The Modern Property Title Search: Navigating Ardhisasa in 2026',
+    excerpt: 'Step-by-step guide to verifying land ownership through Kenya’s digital land management system.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2025-11-24',
+    readTime: '10 min read',
+  },
+  {
+    id: 'pros-cons-buying-land',
+    title: 'The Pros and Cons of Buying Land in Kenya',
+    excerpt: 'Analyzing land as a',
+    author: 'Paul Kamau',
+    category: 'Land',
+    date: '2025-11-27',
+    readTime: '10 min read',
+  },
+  {
+    id: 'purpose-built-student-accommodation-kenya',
+    title: 'PBSA: The 2026 Gold Rush in Student Housing',
+    excerpt: 'Why institutional investors are pouring billions into',
+    author: 'Paul Kamau',
+    category: 'Commercial',
+    date: '2026-01-10',
+    readTime: '14 min read',
+  },
+  {
+    id: 'real-estate-crowdfunding-kenya',
+    title: 'Is Real Estate Crowdfunding the Future for Kenyan Investors?',
+    excerpt: 'Exploring how fractional ownership allows small investors to participate in large-scale projects.',
+    author: 'Elizabeth Costabir',
+    category: 'Investment',
+    date: '2025-11-22',
+    readTime: '10 min read',
+  },
+  {
+    id: 'real-estate-crowdfunding-youth-2026',
+    title: 'Real Estate Crowdfunding: How Gen Z is Owning Nairobi',
+    excerpt: 'You no longer need KES 50M to own luxury; fractional ownership is the 2026 trend.',
+    author: 'Elizabeth Costabir',
+    category: 'Investment',
+    date: '2026-01-07',
+    readTime: '10 min read',
+  },
+  {
+    id: 'real-estate-financial-modeling-excel',
+    title: 'Advanced Financial Modeling for Kenyan Developers',
+    excerpt: 'Calculating IRR and NPV for high-rise developments in Upper Hill.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-12-25',
+    readTime: '18 min read',
+  },
+  {
+    id: 'real-estate-investment-analysis-software',
+    title: 'Top Investment Analysis Tools for the Kenyan Market in 2026',
+    excerpt: 'Ditching spreadsheets for Yardi, DoorLoop, and Mashvisor-style local data.',
+    author: 'Paul Kamau',
+    category: 'Technology',
+    date: '2026-01-12',
+    readTime: '11 min read',
+  },
+  {
+    id: 'real-estate-investment-portfolio-diversification',
+    title: 'Diversifying Your Property Portfolio for 2026 Stability',
+    excerpt: 'Why you shouldn’t put all your money into residential apartments.',
+    author: 'Paul Kamau',
+    category: 'Investment',
+    date: '2025-12-10',
+    readTime: '12 min read',
+  },
+  {
+    id: 'real-estate-investment-trusts-reits',
+    title: 'Real Estate Investment Trusts (REITs): Understanding the Basics and Benefits',
+    excerpt: 'Expert analysis on Real Estate Investment Trusts (REITs): Understanding the Basics and Benefits in Kenya\'s real estate market.',
+    author: 'LoopNet Team',
+    category: 'Investing',
+    date: 'August 25, 2025',
+    readTime: '9 min read',
+  },
+  {
+    id: 'real-estate-mentorship-programs',
+    title: 'The Value of Real Estate Mentorship in Kenya',
+    excerpt: 'Why having a mentor can save you millions in mistakes during your first development.',
+    author: 'Elizabeth Costabir',
+    category: 'Education',
+    date: '2025-11-23',
+    readTime: '9 min read',
+  },
+  {
+    id: 'real-estate-portfolio-management-strategy',
+    title: 'Balancing REITs and Brick-and-Mortar in Your Portfolio',
+    excerpt: 'How to maintain liquidity while holding long-term physical assets.',
+    author: 'Paul Kamau',
+    category: 'Investment',
+    date: '2026-01-03',
+    readTime: '10 min read',
+  },
+  {
+    id: 'real-estate-taxes-kenya',
+    title: 'Real Estate Taxes in Kenya: What Every Landlord Needs to Know',
+    excerpt: 'A comprehensive guide to Stamp Duty, Capital Gains Tax, and Rental Income Tax under the latest KRA regulations.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2025-11-25',
+    readTime: '12 min read',
+    featured: true,
+  },
+  {
+    id: 'rent-to-own-schemes-kenya-2026',
+    title: 'The Rent-to-Own Reality: Is it Finally Working in 2026?',
+    excerpt: 'Analyzing the Pangani and Boma Yangu schemes for middle-income earners.',
+    author: 'Elizabeth Costabir',
+    category: 'Residential',
+    date: '2026-01-01',
+    readTime: '14 min read',
+  },
+  {
+    id: 'retail-reits-small-investors-kenya',
+    title: 'Owning a Piece of the Mall: Retail REITs in 2026',
+    excerpt: 'How to invest in Kenya’s biggest shopping centers with KES 5,000.',
+    author: 'Paul Kamau',
+    category: 'Finance',
+    date: '2025-12-25',
+    readTime: '11 min read',
+  },
+  {
+    id: 'riseBrandedResidencesKenya',
+    title: 'The Rise of Branded Residences in Kenya',
+    excerpt: 'Unpacking the growing trend of branded residences in Kenya, where luxury hospitality brands are partnering with developers to offer exclusive living experiences.',
+    author: 'Samuel Kariuki',
+    category: 'Luxury Real Estate',
+    date: '2025-09-05',
+    readTime: '10 min read',
+    featured: true,
+  },
+  {
+    id: 'sacco-vs-bank-mortgages-2026',
+    title: 'SACCO vs. Bank Mortgages: Where Should You Borrow in 2026?',
+    excerpt: 'Comparing the 9% KMRC-backed bank loans with SACCO dividend offsets.',
+    author: 'Elizabeth Costabir',
+    category: 'Finance',
+    date: '2026-01-12',
+    readTime: '12 min read',
+    featured: true,
+  },
+  {
+    id: 'satellite-towns-growth-corridors-2026',
+    title: 'The',
+    excerpt: 'Analyzing the infrastructure-led growth of Nairobi’s satellite towns.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2025-12-15',
+    readTime: '11 min read',
+  },
+  {
+    id: 'sectional-properties-act-implementation-2026',
+    title: 'Sectional Titles: The 2026 Progress Report',
+    excerpt: 'How the transition from long-term leases to individual unit titles is changing ownership.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2026-01-08',
+    readTime: '14 min read',
+  },
+  {
+    id: 'sectional-titles-for-beginners',
+    title: 'Sectional Titles for Beginners: Owning Your Slice of Air',
+    excerpt: 'Everything you need to know about the new ownership certificates.',
+    author: 'Elizabeth Costabir',
+    category: 'Legal',
+    date: '2025-12-28',
+    readTime: '10 min read',
+  },
+  {
+    id: 'serviced-apartments-nairobi',
+    title: 'The Boom of Serviced Apartments in Nairobi',
+    excerpt: 'Why business travelers are ditching hotels for serviced apartments in Westlands and Upper Hill.',
+    author: 'Paul Kamau',
+    category: 'Residential',
+    date: '2025-10-29',
+    readTime: '7 min read',
+  },
+  {
+    id: 'short-term-rentals-market-shift',
+    title: 'Airbnb vs. Traditional Letting: The 2026 Comparison',
+    excerpt: 'Analyzing why many hosts are returning to long-term leases this year.',
+    author: 'Elizabeth Costabir',
+    category: 'Investment',
+    date: '2025-12-22',
+    readTime: '14 min read',
+  },
+  {
+    id: 'single-net-lease',
+    title: 'The Single Net Lease (N): Risk vs. Reward',
+    excerpt: 'Understanding the simplest form of net leases where the tenant pays property taxes.',
+    author: 'Elizabeth Costabir',
+    category: 'Commercial',
+    date: '2025-11-25',
+    readTime: '8 min read',
+  },
+  {
+    id: 'small-vs-large-multifamily',
+    title: 'Small vs. Large Multifamily: Which is Best for You?',
+    excerpt: 'Comparing the management of a 4-unit apartment block vs. a 50-unit complex.',
+    author: 'Paul Kamau',
+    category: 'Residential',
+    date: '2025-11-23',
+    readTime: '11 min read',
+  },
+  {
+    id: 'smart-home-security-trends-kenya',
+    title: 'Invisible Fences: The 2026 Smart Security Tech for Homes',
+    excerpt: 'Why biometrics and AI-powered cameras are replacing traditional guards.',
+    author: 'Elizabeth Costabir',
+    category: 'Tech',
+    date: '2026-01-13',
+    readTime: '10 min read',
+  },
+  {
+    id: 'smart-home-tech-karen-luxury',
+    title: 'The Smart Mansions of Karen: 2026 Luxury Trends',
+    excerpt: 'From voice-controlled solar grids to AI-monitored perimeter security.',
+    author: 'Paul Kamau',
+    category: 'Residential',
+    date: '2025-12-15',
+    readTime: '10 min read',
+  },
+  {
+    id: 'talanta-sports-city-real-estate',
+    title: 'The',
+    excerpt: 'How the Talanta Sports City Stadium is boosting real estate in its orbit.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2026-01-05',
+    readTime: '12 min read',
+  },
+  {
+    id: 'tech-corridor-kilimani-westlands-2026',
+    title: 'The Tech Corridor: How Silicon Savannah Drives Rent in 2026',
+    excerpt: 'Why proximity to startup hubs is the biggest predictor of rental growth.',
+    author: 'Paul Kamau',
+    category: 'Market Analysis',
+    date: '2025-11-10',
+    readTime: '11 min read',
+  },
+  {
+    id: 'tenant-improvement-allowance',
+    title: 'Negotiating Tenant Improvement Allowances (TIA)',
+    excerpt: 'A guide for commercial landlords and tenants on funding office fit-outs.',
+    author: 'Elizabeth Costabir',
+    category: 'Commercial',
+    date: '2025-11-23',
+    readTime: '12 min read',
+  },
+  {
+    id: 'the-fix-and-flip-strategy-kenya',
+    title: 'Fix and Flip: How to Spot Undervalued Gems in Kileleshwa',
+    excerpt: 'Renovating 1990s apartments for a 30% profit margin in 2026.',
+    author: 'Elizabeth Costabir',
+    category: 'Investment',
+    date: '2026-01-03',
+    readTime: '11 min read',
+  },
+  {
+    id: 'theTimelessBeautyOfNairobiColonialEraBuildings',
+    title: 'The Timeless Beauty of Nairobi’s Colonial-Era Buildings',
+    excerpt: 'A captivating journey through Nairobi',
+    author: 'Historian',
+    category: 'Architecture',
+    date: '2025-06-30',
+    readTime: '11 min read',
+  },
+  {
+    id: 'urban-farming-apartment-amenity-2026',
+    title: 'The Green Roof Trend: Rooftop Farming as a Tenant Amenity',
+    excerpt: 'How 2026 developments are using hydroponics to attract health-conscious tenants.',
+    author: 'Elizabeth Costabir',
+    category: 'Residential',
+    date: '2025-12-07',
+    readTime: '10 min read',
+  },
+  {
+    id: 'warranty-deed',
+    title: 'Understanding the Warranty Deed in Kenyan Land Transactions',
+    excerpt: 'A deep dive into how warranty deeds protect buyers and the legal guarantees regarding clear titles.',
+    author: 'Paul Kamau',
+    category: 'Legal',
+    date: '2025-11-28',
+    readTime: '9 min read',
+  },
+  {
+    id: 'water-conservation-real-estate-kenya',
+    title: 'Water is Money: Why Modern Tenants Demand Green Plumbing',
+    excerpt: 'How low-flow fixtures and gray-water recycling increase ROI in 2026.',
+    author: 'Elizabeth Costabir',
+    category: 'Construction',
+    date: '2026-01-07',
+    readTime: '11 min read',
+  },
+  {
+    id: 'what-is-improved-land',
+    title: 'Raw vs. Improved Land: Which Should You Buy?',
+    excerpt: 'Understanding the value-add of infrastructure like roads, water, and electricity on your plot.',
+    author: 'Paul Kamau',
+    category: 'Land',
+    date: '2025-11-25',
+    readTime: '7 min read',
+  },
+  {
+    id: 'whyAreHomeownershipRatesDroppingInUrbanAreas',
+    title: 'Why Are Homeownership Rates Dropping in Urban Areas?',
+    excerpt: 'Investigating the factors contributing to the decline in homeownership rates within Kenya',
+    author: 'Paul Kimani',
+    category: 'Market Analysis',
+    date: '2025-07-01',
+    readTime: '11 min read',
+  },
+  {
+    id: 'whyCommercialRealEstateKenyaFacingNewChallenges',
+    title: 'Why Commercial Real Estate in Kenya is Facing New Challenges',
+    excerpt: 'An analysis of the evolving landscape of commercial real estate in Kenya, addressing new challenges such as remote work trends, oversupply, and shifting economic conditions.',
+    author: 'Peter Kihara',
+    category: 'Market Trends',
+    date: '2025-07-28',
+    readTime: '10 min read',
+  },
+  {
+    id: 'winRealEstateInvestorsAgainstOffPlanDeveloper',
+    title: 'Win for Real Estate Investors Against Off-Plan Developer',
+    excerpt: 'A case study detailing a landmark legal victory for real estate investors against a defaulting off-plan developer, offering crucial lessons for mitigating risks in off-plan purchases.',
+    author: 'Daniel Otieno',
+    category: 'Legal',
+    date: '2025-08-20',
+    readTime: '11 min read',
+  },
+  {
+    id: 'womenInRealEstateBreakingBarriersInKenyaPropertyIndustry',
+    title: 'Women in Real Estate: Breaking Barriers in Kenya’s Property Industry',
+    excerpt: 'Celebrating the achievements and contributions of women in Kenya',
+    author: 'Christine Wanjiku',
+    category: 'Industry Leaders',
+    date: '2025-10-01',
+    readTime: '11 min read',
+    featured: true,
   },
 ];
 
-const Blog = () => {
-  const categories = ['All', 'Thought Leadership', 'Institutional Insights', 'Market Intelligence', 'Legal & Structuring', 'Sustainability & ESG', 'Private Equity', 'Asset Allocation', 'Economic Analysis', 'Investment Tips', 'Commercial Trends'];
-
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
-
-  // Dummy filter logic (ensure 'blog' data is available in your scope)
-  const filteredPosts: Blog[] = blog.filter(post => {
-    const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
-    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesCategory && matchesSearch;
+// ─────────────────────────────────────────────────────────────
+// UTILITIES
+// ─────────────────────────────────────────────────────────────
+function formatDate(raw: string): string {
+  const d = new Date(raw);
+  if (isNaN(d.getTime())) return raw;
+  return d.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
   });
+}
+
+// ─────────────────────────────────────────────────────────────
+// COMPONENT
+// ─────────────────────────────────────────────────────────────
+export default function Blog() {
+  const [search, setSearch] = useState('');
+  const [activeCat, setActiveCat] = useState('All');
+  const [showAllCats, setShowAllCats] = useState(false);
+
+  const catMap = useMemo(() => {
+    const m = new Map<string, number>();
+    blog.forEach(p => m.set(p.category, (m.get(p.category) || 0) + 1));
+    return m;
+  }, []);
+
+  const sortedCats = useMemo(
+    () =>
+      Array.from(catMap.entries())
+        .sort((a, b) => b[1] - a[1])
+        .map(([name, count]) => ({ name, count })),
+    [catMap]
+  );
+
+  const CATS_VISIBLE = 12;
+  const visibleCats = showAllCats ? sortedCats : sortedCats.slice(0, CATS_VISIBLE);
+
+  const filtered = useMemo(() => {
+    const q = search.toLowerCase().trim();
+    return blog.filter(p => {
+      const catOk = activeCat === 'All' || p.category === activeCat;
+      const searchOk =
+        !q ||
+        p.title.toLowerCase().includes(q) ||
+        p.excerpt.toLowerCase().includes(q) ||
+        p.author.toLowerCase().includes(q);
+      return catOk && searchOk;
+    });
+  }, [search, activeCat]);
 
   return (
-    <section className="relative bg-[#F8F7F4] text-[#2C2C2C] overflow-hidden">
-      {/* Hairline top border */}
-      <div className="absolute top-0 left-0 w-full h-px bg-[#E5E2DC]" />
-      
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-32">
-        {/* Section Header */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 md:mb-24"
-        >
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-[1px] bg-[#8B7355]" />
-              <p className="text-[11px] tracking-[0.4em] uppercase text-[#8B7355] font-medium">
-                Market Intelligence
-              </p>
-            </div>
-            
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif leading-[1.1] text-[#2C2C2C]">
-              Latest <span className="italic text-[#8B7355] font-light">Insights</span>
-            </h2>
+    <>
+      <style>{`
+        /* ═══ Blog page — exact palette from BlogPost.tsx ═══ */
+        .bp-page {
+          font-family: Georgia, "Times New Roman", serif;
+          min-height: 100vh;
+          background: #FAFAF8;
+        }
+
+        /* Header */
+        .bp-header {
+          border-bottom: 1px solid #E2DDD6;
+          background: #FAFAF8;
+        }
+        .bp-header-inner {
+          max-width: 1160px;
+          margin: 0 auto;
+          padding: 44px 24px 36px;
+        }
+        .bp-kicker {
+          font-family: Georgia, serif;
+          font-size: 10px;
+          letter-spacing: 0.28em;
+          text-transform: uppercase;
+          color: #9B8F7E;
+          margin: 0 0 14px 0;
+        }
+        .bp-headline {
+          font-family: Georgia, "Times New Roman", serif;
+          font-size: clamp(28px, 4vw, 46px);
+          font-weight: 700;
+          color: #1C1C1C;
+          line-height: 1.12;
+          letter-spacing: -0.4px;
+          margin: 0 0 12px 0;
+        }
+        .bp-subhead {
+          font-family: Georgia, serif;
+          font-size: 16px;
+          color: #6B6259;
+          line-height: 1.65;
+          margin: 0;
+          max-width: 540px;
+        }
+
+        /* Layout */
+        .bp-body {
+          max-width: 1160px;
+          margin: 0 auto;
+          padding: 44px 24px 100px;
+          display: grid;
+          grid-template-columns: 240px 1fr;
+          gap: 0 56px;
+          align-items: start;
+        }
+
+        /* Sidebar */
+        .bp-sidebar {
+          position: sticky;
+          top: 84px;
+        }
+        .bp-search-wrap {
+          position: relative;
+          margin-bottom: 28px;
+        }
+        .bp-search-icon {
+          position: absolute;
+          left: 12px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 13px;
+          height: 13px;
+          color: #9B8F7E;
+          pointer-events: none;
+        }
+        .bp-search {
+          width: 100%;
+          padding: 10px 14px 10px 34px;
+          border: 1px solid #E2DDD6;
+          background: #FAFAF8;
+          font-family: Georgia, serif;
+          font-size: 13px;
+          color: #1C1C1C;
+          outline: none;
+          transition: border-color 0.2s;
+          -webkit-appearance: none;
+        }
+        .bp-search::placeholder { color: #B0A89F; }
+        .bp-search:focus { border-color: #7B6C55; }
+
+        .bp-cat-label {
+          font-family: Georgia, serif;
+          font-size: 10px;
+          letter-spacing: 0.24em;
+          text-transform: uppercase;
+          color: #9B8F7E;
+          font-weight: 700;
+          margin: 0 0 6px 0;
+          padding-left: 12px;
+        }
+        .bp-all-btn {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          padding: 9px 12px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          font-family: Georgia, serif;
+          font-size: 13px;
+          color: #3A3530;
+          border-left: 2px solid transparent;
+          transition: background 0.15s, color 0.15s, border-color 0.15s;
+          margin-bottom: 2px;
+          text-align: left;
+        }
+        .bp-all-btn:hover { background: #F5F3EE; color: #1C1C1C; }
+        .bp-all-btn.bp-active {
+          background: #F5F3EE;
+          color: #1C1C1C;
+          border-left-color: #7B6C55;
+          font-weight: 700;
+        }
+        .bp-cat-btn {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          padding: 7px 12px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          font-family: Georgia, serif;
+          font-size: 13px;
+          color: #3A3530;
+          border-left: 2px solid transparent;
+          transition: background 0.15s, color 0.15s, border-color 0.15s;
+          margin-bottom: 1px;
+          line-height: 1.35;
+          text-align: left;
+        }
+        .bp-cat-btn:hover { background: #F5F3EE; color: #1C1C1C; }
+        .bp-cat-btn.bp-active {
+          background: #F5F3EE;
+          color: #1C1C1C;
+          border-left-color: #7B6C55;
+          font-weight: 700;
+        }
+        .bp-cat-count {
+          font-size: 11px;
+          color: #B0A89F;
+          flex-shrink: 0;
+          margin-left: 8px;
+        }
+        .bp-cat-btn.bp-active .bp-cat-count,
+        .bp-all-btn.bp-active .bp-cat-count { color: #7B6C55; }
+
+        .bp-show-more {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          padding: 8px 12px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          font-family: Georgia, serif;
+          font-size: 12px;
+          color: #7B6C55;
+          transition: color 0.15s;
+          margin-top: 4px;
+        }
+        .bp-show-more:hover { color: #1C1C1C; }
+        .bp-show-more svg { width: 12px; height: 12px; }
+
+        /* Main */
+        .bp-main { min-width: 0; }
+
+        .bp-results-bar {
+          border-bottom: 2px solid #1C1C1C;
+          padding-bottom: 16px;
+          margin-bottom: 0;
+        }
+        .bp-results-label {
+          font-family: Georgia, serif;
+          font-size: 10px;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          color: #9B8F7E;
+          display: block;
+          margin-bottom: 4px;
+        }
+        .bp-results-count {
+          font-family: Georgia, serif;
+          font-size: 22px;
+          font-weight: 700;
+          color: #1C1C1C;
+        }
+
+        /* Article card */
+        .bp-card {
+          padding: 32px 0;
+          border-bottom: 1px solid #E2DDD6;
+        }
+        .bp-card:last-of-type { border-bottom: none; }
+
+        .bp-featured-strip {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          margin-bottom: 10px;
+        }
+        .bp-featured-dot {
+          width: 6px; height: 6px;
+          background: #7B6C55;
+          border-radius: 50%;
+        }
+        .bp-featured-text {
+          font-family: Georgia, serif;
+          font-size: 9px;
+          letter-spacing: 0.22em;
+          text-transform: uppercase;
+          color: #7B6C55;
+        }
+
+        .bp-card-cat-row {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 12px;
+        }
+        .bp-card-cat {
+          font-family: Georgia, serif;
+          font-size: 10px;
+          letter-spacing: 0.22em;
+          text-transform: uppercase;
+          color: #9B8F7E;
+          white-space: nowrap;
+        }
+        .bp-card-rule {
+          flex: 1;
+          height: 1px;
+          background: #E2DDD6;
+        }
+
+        .bp-card-title {
+          font-family: Georgia, "Times New Roman", serif;
+          font-size: clamp(17px, 2vw, 22px);
+          font-weight: 700;
+          color: #1C1C1C;
+          line-height: 1.25;
+          text-decoration: none;
+          display: block;
+          margin: 0 0 12px 0;
+          transition: color 0.2s;
+        }
+        .bp-card-title:hover { color: #7B6C55; }
+
+        .bp-card-excerpt {
+          font-family: Georgia, serif;
+          font-size: 15px;
+          line-height: 1.75;
+          color: #4A4540;
+          margin: 0 0 16px 0;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .bp-card-meta {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 4px 14px;
+          margin-bottom: 18px;
+        }
+        .bp-card-meta-item {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          font-family: Georgia, serif;
+          font-size: 12px;
+          color: #9B8F7E;
+        }
+        .bp-card-meta-item svg {
+          width: 12px; height: 12px;
+          color: #B0A89F;
+        }
+        .bp-meta-sep { color: #D4CFC9; font-size: 11px; }
+
+        .bp-read-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 7px;
+          font-family: Georgia, serif;
+          font-size: 11px;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: #7B6C55;
+          text-decoration: none;
+          padding-bottom: 2px;
+          border-bottom: 1px solid #C8BFB4;
+          transition: color 0.2s, border-color 0.2s;
+        }
+        .bp-read-link:hover { color: #1C1C1C; border-color: #1C1C1C; }
+        .bp-read-link svg {
+          width: 12px; height: 12px;
+          transition: transform 0.2s;
+        }
+        .bp-read-link:hover svg { transform: translateX(3px); }
+
+        .bp-empty {
+          padding: 64px 0;
+          text-align: center;
+        }
+        .bp-empty p {
+          font-family: Georgia, serif;
+          font-size: 15px;
+          color: #9B8F7E;
+        }
+
+        /* Mobile */
+        @media (max-width: 900px) {
+          .bp-body {
+            grid-template-columns: 1fr;
+          }
+          .bp-sidebar {
+            position: static;
+            border-bottom: 1px solid #E2DDD6;
+            padding-bottom: 28px;
+            margin-bottom: 32px;
+          }
+          .bp-cat-label { padding-left: 0; }
+          .bp-all-btn,
+          .bp-cat-btn {
+            padding-left: 0;
+            border-left: none !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .bp-header-inner { padding: 32px 20px 28px; }
+          .bp-body { padding: 28px 20px 80px; gap: 0; }
+          .bp-card-title { font-size: 17px; }
+          .bp-card-excerpt { font-size: 14px; -webkit-line-clamp: 2; }
+        }
+      `}</style>
+
+      <div className="bp-page" style={{ paddingTop: '64px' }}>
+
+        {/* ── Page header ── */}
+        <div className="bp-header">
+          <div className="bp-header-inner">
+            <p className="bp-kicker">Market Intelligence</p>
+            <h1 className="bp-headline">The Murivest Journal</h1>
+            <p className="bp-subhead">
+              Institutional-grade analysis, market intelligence, and investment
+              insight for Kenya&apos;s property market — sourced from KNBS, PwC,
+              Deloitte, McKinsey, and Statista.
+            </p>
           </div>
+        </div>
 
-          <a 
-            href="/insights"
-            className="group inline-flex items-center gap-3 text-[12px] tracking-[0.2em] uppercase text-[#2C2C2C] font-medium hover:text-[#8B7355] transition-colors duration-500"
-          >
-            <span>View All Articles</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-          </a>
-        </motion.div>
+        {/* ── Body ── */}
+        <div className="bp-body">
 
-        {/* Blog Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6">
-          {filteredPosts.map((post, index) => (
-            <motion.article
-              key={post.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ 
-                duration: 0.6, 
-                delay: index * 0.1,
-                ease: [0.16, 1, 0.3, 1] 
-              }}
-              className="group"
+          {/* ── Sidebar ── */}
+          <aside className="bp-sidebar">
+            <div className="bp-search-wrap">
+              <Search className="bp-search-icon" />
+              <input
+                className="bp-search"
+                type="text"
+                placeholder="Search 262 articles…"
+                value={search}
+                onChange={e => setSearch(e.target.value)}
+                aria-label="Search articles"
+              />
+            </div>
+
+            <p className="bp-cat-label">Categories</p>
+
+            <button
+              className={`bp-all-btn${activeCat === 'All' ? ' bp-active' : ''}`}
+              onClick={() => setActiveCat('All')}
             >
-              <a href={`/blog/${post.id}`} className="block">
-                {/* Image */}
-                <div className="relative aspect-[4/3] overflow-hidden bg-[#E5E2DC] mb-6">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                  {/* Category badge */}
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-[#F8F7F4] text-[11px] tracking-[0.2em] uppercase text-[#8B7355] font-medium">
-                      {post.category}
+              <span>All Posts</span>
+              <span className="bp-cat-count">{blog.length}</span>
+            </button>
+
+            {visibleCats.map(({ name, count }) => (
+              <button
+                key={name}
+                className={`bp-cat-btn${activeCat === name ? ' bp-active' : ''}`}
+                onClick={() => setActiveCat(name)}
+              >
+                <span>{name}</span>
+                <span className="bp-cat-count">{count}</span>
+              </button>
+            ))}
+
+            {sortedCats.length > CATS_VISIBLE && (
+              <button
+                className="bp-show-more"
+                onClick={() => setShowAllCats(v => !v)}
+              >
+                {showAllCats
+                  ? <><ChevronUp />Show less</>
+                  : <><ChevronDown />{sortedCats.length - CATS_VISIBLE} more categories</>
+                }
+              </button>
+            )}
+          </aside>
+
+          {/* ── Article list ── */}
+          <main className="bp-main">
+            <div className="bp-results-bar">
+              <span className="bp-results-label">
+                {activeCat === 'All' ? 'All Articles' : activeCat}
+                {search ? ` matching "${search}"` : ''}
+              </span>
+              <span className="bp-results-count">
+                {filtered.length} {filtered.length === 1 ? 'article' : 'articles'}
+              </span>
+            </div>
+
+            {filtered.length === 0 ? (
+              <div className="bp-empty">
+                <p>No articles found{search ? ` for "${search}"` : ''}.</p>
+              </div>
+            ) : (
+              filtered.map(post => (
+                <article key={post.id} className="bp-card">
+
+                  {post.featured && (
+                    <div className="bp-featured-strip">
+                      <span className="bp-featured-dot" />
+                      <span className="bp-featured-text">Featured</span>
+                    </div>
+                  )}
+
+                  <div className="bp-card-cat-row">
+                    <span className="bp-card-cat">{post.category}</span>
+                    <span className="bp-card-rule" />
+                  </div>
+
+                  <Link href={`/blog/${post.id}`} className="bp-card-title">
+                    {post.title}
+                  </Link>
+
+                  <p className="bp-card-excerpt">{post.excerpt}</p>
+
+                  <div className="bp-card-meta">
+                    <span className="bp-card-meta-item">
+                      <Calendar />{formatDate(post.date)}
+                    </span>
+                    <span className="bp-meta-sep">·</span>
+                    <span className="bp-card-meta-item">
+                      <Clock />{post.readTime}
+                    </span>
+                    <span className="bp-meta-sep">·</span>
+                    <span className="bp-card-meta-item">
+                      <User />{post.author}
                     </span>
                   </div>
-                </div>
 
-                {/* Content */}
-                <div className="flex items-center gap-2 mb-3">
-                  <Calendar className="w-3 h-3 text-[#8B7355]" />
-                  <span className="text-[11px] tracking-[0.15em] uppercase text-[#5A5A5A]">
-                    {post.date}
-                  </span>
-                </div>
+                  <Link href={`/blog/${post.id}`} className="bp-read-link">
+                    Read article <ArrowRight />
+                  </Link>
 
-                <h3 className="text-xl md:text-2xl font-serif mb-3 text-[#2C2C2C] group-hover:text-[#8B7355] transition-colors duration-500 line-clamp-2">
-                  {post.title}
-                </h3>
-
-                <p className="text-[14px] leading-[1.7] text-[#5A5A5A] font-light mb-4 line-clamp-3">
-                  {post.excerpt}
-                </p>
-
-                <span className="inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-[#8B7355] font-medium group-hover:text-[#2C2C2C] transition-colors duration-500">
-                  <span>Read Analysis</span>
-                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-              </a>
-            </motion.article>
-          ))}
+                </article>
+              ))
+            )}
+          </main>
         </div>
       </div>
-
-      {/* Hairline bottom border */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-[#E5E2DC]" />
-    </section>
+    </>
   );
-};
-
-export default Blog;
+}

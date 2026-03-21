@@ -11,6 +11,7 @@ import { motion } from 'framer-motion';
  */
 const Hero = () => {
   const images = [
+    '/nairobi.png',
     '/murivest_ceo_office.png',
     '/kenya-night.png',
   ];

@@ -541,7 +541,7 @@ export async function POST(request: NextRequest) {
                 <strong>MURIVEST REALTY GROUP</strong><br>
                 Westlands Business District, Nairobi, Kenya<br><br>
                 <strong>Direct Line:</strong> +254 115 277 610<br>
-                <strong>Email:</strong> info@murivest.co.ke<br>
+                <strong>Email:</strong> investments@murivest.co.ke<br>
                 <strong>Website:</strong> <a href="https://www.murivest.co.ke/" style="color: #d4af37; text-decoration: none;">www.murivest.co.ke</a>
               </div>
 
@@ -563,7 +563,7 @@ export async function POST(request: NextRequest) {
     // Send email to internal team
     await transporter.sendMail({
       from: `"Murivest Investment Portal" <${process.env.SMTP_USER}>`,
-      to: process.env.CONTACT_EMAIL || 'info@murivest.co.ke',
+      to: process.env.CONTACT_EMAIL || 'investments@murivest.co.ke',
       subject: `🔥 HIGH-PRIORITY: New International Investment Inquiry from ${body.name}`,
       text: `New Investment Inquiry - URGENT FOLLOW-UP REQUIRED\n\nInvestor: ${body.name}\nEmail: ${body.email}\nInvestment Range: ${body.investmentRange}\nPhone: ${body.phone}\n\nMessage: ${body.message}`,
       html: htmlContent,

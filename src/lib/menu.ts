@@ -10,6 +10,7 @@ export interface MenuData {
 export const MENU_DATA: MenuData = {
   properties: [
     {label: 'KE Commercial Properties', href:'/properties'},
+    {label: 'KE Land Parcels', href:'/land-portfolio'},
     {label: 'UK Commercial Properties', href:'/uk-properties'},
     {label: 'US Commercial Properties', href:'/us-properties'},
   ],

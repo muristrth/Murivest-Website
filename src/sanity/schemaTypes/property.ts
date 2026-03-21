@@ -226,7 +226,6 @@ export default {
         layout: 'grid',
         hotspot: true,
       },
-      validation: (Rule: Rule) => Rule.required().min(3),
       description: 'High-resolution images. First image is main thumbnail. Minimum 3 images required.',
     },
     {

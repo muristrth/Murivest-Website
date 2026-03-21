@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import UKProperties from '../../components/UKProperties'
+import UKPropertiesClient from '../../components/UKPropertiesClient'
 
 export const metadata: Metadata = {
   title: 'Europe Commercial Properties | UK, Germany, France | Murivest Realty',
@@ -13,5 +13,5 @@ export const metadata: Metadata = {
 }
 
 export default function EuropeCommercialPropertiesPage() {
-  return <UKProperties />
+  return <UKPropertiesClient properties={[]} />
 }

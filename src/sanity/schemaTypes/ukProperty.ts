@@ -201,6 +201,12 @@ export default {
       },
     },
     {
+      name: 'coordinates',
+      title: 'GPS Coordinates',
+      type: 'geopoint',
+      description: 'Precise location for mapping. Right-click in Google Maps → "What\'s here?" to get coordinates',
+    },
+    {
       name: 'regulatory',
       title: 'Regulatory Information',
       type: 'object',
@@ -208,6 +214,18 @@ export default {
         { name: 'fcaCompliant', title: 'FCA Compliant', type: 'boolean', initialValue: true },
         { name: 'stampDuty', title: 'Stamp Duty Included', type: 'boolean', initialValue: false },
         { name: 'sicr', title: 'SICR Compliant', type: 'boolean', initialValue: true },
+      ],
+    },
+    {
+      name: 'agent',
+      title: 'Property Agent',
+      type: 'object',
+      fields: [
+        { name: 'name', title: 'Agent Name', type: 'string' },
+        { name: 'title', title: 'Agent Title', type: 'string' },
+        { name: 'phone', title: 'Phone Number', type: 'string' },
+        { name: 'email', title: 'Email Address', type: 'string' },
+        { name: 'photo', title: 'Agent Photo', type: 'image', options: { hotspot: true } },
       ],
     },
   ],

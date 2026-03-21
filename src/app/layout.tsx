@@ -149,7 +149,7 @@ const structuredData = [
     name: 'Murivest Realty Group',
     image: 'https://murivest.co.ke/image.png',
     telephone: '+254-740-469-911',
-    email: 'info@murivest.com',
+    email: 'investments@murivest.com',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Westlands Business District',

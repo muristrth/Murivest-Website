@@ -424,7 +424,7 @@ export default function InvestorPortalPage() {
               </p>
               <p className="text-sm text-[#0B1426]/70 mb-2 flex items-center">
                 <Mail className="h-4 w-4 mr-2" />
-                info@murivest.co.ke
+                investments@murivest.co.ke
               </p>
             </div>
             <div>

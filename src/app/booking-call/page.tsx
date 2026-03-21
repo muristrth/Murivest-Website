@@ -1,104 +1,222 @@
-// pages/booking-call/page.tsx
+'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Lock, Calendar, Globe, Video, ShieldCheck, Mail, Phone, MapPin } from 'lucide-react';
+import { Calendar, Globe, Video, ShieldCheck, Clock, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 import BookingCalendar from '@/components/BookingCalendar';
 
 const SchedulePage = () => {
   return (
-    <div className="min-h-screen bg-slate-950 text-white font-light selection:bg-amber-500/30 overflow-x-hidden">
+    <div className="min-h-screen bg-[#FAF9F6] text-[#2C2C2C] selection:bg-[#B8956B]/20 pt-[64px]">
       
-      {/* 1. HERO SECTION */}
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 px-6">
-        <div className="absolute top-0 left-1/2 w-full max-w-[800px] h-[400px] bg-amber-600/5 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+      {/* 1. EDITORIAL HERO SECTION */}
+      <section className="relative py-16 md:py-24 px-6 md:px-12 border-b border-[#E8E6E1]">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#B8956B]/5 blur-[150px] rounded-full pointer-events-none" />
         
-        <div className="max-w-7xl mx-auto relative z-10 text-center">
-          <div className="flex items-center justify-center gap-3 mb-6"
-          >
-            <Lock size={12} className="text-amber-500" />
-            <span className="text-[9px] md:text-[10px] font-bold tracking-[0.5em] uppercase text-amber-500">
-              Secure Consultation Portal
-            </span>
+        <div className="max-w-[1400px] mx-auto relative z-10">
+          <div className="grid lg:grid-cols-12 gap-12 items-end">
+            <div className="lg:col-span-8 space-y-6">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="flex items-center gap-4"
+              >
+                <div className="w-12 h-[1px] bg-[#B8956B]" />
+                <span className="text-[11px] tracking-[0.3em] uppercase text-[#B8956B] font-medium">
+                  Private Consultation
+                </span>
+              </motion.div>
+              
+              <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#1B4332] leading-[1.1]"
+              >
+                Advisory <span className="italic text-[#B8956B] font-light">Calendar</span>
+              </motion.h1>
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-lg md:text-xl text-[#2C2C2C]/70 font-light leading-relaxed max-w-2xl border-l-2 border-[#B8956B]/30 pl-6"
+              >
+                We invite principals and qualified investors to schedule a private consultation. 
+                Meetings are held exclusively on Mondays to ensure dedicated attention to each portfolio inquiry.
+              </motion.p>
+            </div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="lg:col-span-4 lg:text-right"
+            >
+              <div className="inline-flex items-center gap-3 text-[11px] tracking-[0.2em] uppercase text-[#2C2C2C]/60">
+                <span className="w-2 h-2 bg-[#1B4332] rounded-full" />
+                Accepting Appointments
+              </div>
+            </motion.div>
           </div>
-          
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif italic mb-6 leading-tight">
-            Connect with the <span className="text-amber-200/90">Authority</span>
-          </h1>
-          <p className="max-w-2xl mx-auto text-slate-400 text-base md:text-lg font-light leading-relaxed px-4">
-            Direct sessions are synchronized for <span className="text-white font-normal text-amber-100">Mondays</span> to provide 
-            dedicated institutional oversight for every inquiry.
-          </p>
         </div>
       </section>
 
-      {/* 2. MAIN INTERFACE GRID */}
-      <main className="max-w-7xl mx-auto px-4 md:px-8 pb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-px bg-white/10 border border-white/10 shadow-2xl">
+      {/* 2. MAIN CONTENT GRID */}
+      <main className="max-w-[1400px] mx-auto px-6 md:px-12 py-16 md:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           
-          {/* LEFT PANEL: INTEL & PROTOCOL */}
-          <div className="lg:col-span-4 bg-[#080a0f] p-8 md:p-12 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/5">
-            <div className="space-y-12">
-              <div>
-                <h3 className="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-500 mb-8 md:mb-12">
-                  Protocol & Logistics
+          {/* LEFT PANEL: PROTOCOL & CONTACT */}
+          <div className="lg:col-span-4 space-y-12">
+            
+            {/* Scheduling Protocol */}
+            <div className="space-y-8">
+              <div className="pb-4 border-b border-[#E8E6E1]">
+                <h3 className="text-[10px] tracking-[0.2em] uppercase text-[#2C2C2C]/60 font-medium">
+                  Scheduling Protocol
                 </h3>
+              </div>
+              
+              <div className="space-y-6">
+                <div className="group">
+                  <div className="flex items-center gap-3 mb-2 text-[#B8956B]">
+                    <Calendar size={14} strokeWidth={1.5} />
+                    <span className="text-[10px] tracking-[0.2em] uppercase font-medium">Availability</span>
+                  </div>
+                  <p className="font-serif text-xl text-[#1B4332]">Mondays Only</p>
+                  <p className="text-sm text-[#2C2C2C]/60 font-light mt-1">09:00 — 17:00 EAT</p>
+                </div>
+
+                <div className="group">
+                  <div className="flex items-center gap-3 mb-2 text-[#B8956B]">
+                    <Globe size={14} strokeWidth={1.5} />
+                    <span className="text-[10px] tracking-[0.2em] uppercase font-medium">Timezone</span>
+                  </div>
+                  <p className="font-serif text-xl text-[#1B4332]">East Africa Time</p>
+                  <p className="text-sm text-[#2C2C2C]/60 font-light mt-1">UTC+3 (Nairobi)</p>
+                </div>
+
+                <div className="group">
+                  <div className="flex items-center gap-3 mb-2 text-[#B8956B]">
+                    <Video size={14} strokeWidth={1.5} />
+                    <span className="text-[10px] tracking-[0.2em] uppercase font-medium">Format</span>
+                  </div>
+                  <p className="font-serif text-xl text-[#1B4332]">Video Conference</p>
+                  <p className="text-sm text-[#2C2C2C]/60 font-light mt-1">Secure Google Meet link</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Assurance Section */}
+            <div className="bg-white border border-[#E8E6E1] p-6 md:p-8 space-y-6">
+              <div className="flex items-center gap-3 text-[#1B4332]">
+                <ShieldCheck size={18} strokeWidth={1.5} />
+                <span className="text-[10px] tracking-[0.2em] uppercase font-medium">Client Assurance</span>
+              </div>
+              
+              <ul className="space-y-3 text-sm text-[#2C2C2C]/70 font-light">
+                <li className="flex items-start gap-3">
+                  <div className="w-1 h-1 bg-[#B8956B] mt-2 shrink-0" />
+                  <span>Automated calendar invitations</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-1 h-1 bg-[#B8956B] mt-2 shrink-0" />
+                  <span>Multi-currency advisory capability</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-1 h-1 bg-[#B8956B] mt-2 shrink-0" />
+                  <span>NDA execution available upon request</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-1 h-1 bg-[#B8956B] mt-2 shrink-0" />
+                  <span>Encrypted video conferencing</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Direct Contact */}
+            <div className="space-y-6">
+              <div className="pb-4 border-b border-[#E8E6E1]">
+                <h3 className="text-[10px] tracking-[0.2em] uppercase text-[#2C2C2C]/60 font-medium">
+                  Direct Correspondence
+                </h3>
+              </div>
+              
+              <div className="space-y-4 text-sm">
+                <a href="mailto:investments@murivest.co.ke" className="flex items-center gap-3 text-[#2C2C2C]/80 hover:text-[#B8956B] transition-colors group">
+                  <Mail size={14} strokeWidth={1.5} className="text-[#B8956B]" />
+                  <span className="font-light">investments@murivest.co.ke</span>
+                </a>
                 
-                <div className="space-y-8 md:space-y-10">
-                  <div className="group">
-                    <p className="text-[9px] font-bold text-amber-500 uppercase tracking-widest mb-2 flex items-center gap-2">
-                      <Calendar size={12} /> Scheduling Window
-                    </p>
-                    <p className="text-lg md:text-xl font-serif italic text-slate-200">Exclusively Mondays</p>
-                  </div>
-
-                  <div className="group">
-                    <p className="text-[9px] font-bold text-amber-500 uppercase tracking-widest mb-2 flex items-center gap-2">
-                      <Globe size={12} /> Primary Timezone
-                    </p>
-                    <p className="text-lg md:text-xl font-serif italic text-slate-200">East Africa Time (EAT)</p>
-                  </div>
-
-                  <div className="group">
-                    <p className="text-[9px] font-bold text-amber-500 uppercase tracking-widest mb-2 flex items-center gap-2">
-                      <Video size={12} /> Delivery Method
-                    </p>
-                    <p className="text-lg md:text-xl font-serif italic text-slate-200">Google Meet (Encrypted)</p>
-                  </div>
+                <a href="tel:+254729170156" className="flex items-center gap-3 text-[#2C2C2C]/80 hover:text-[#B8956B] transition-colors">
+                  <Phone size={14} strokeWidth={1.5} className="text-[#B8956B]" />
+                  <span className="font-light">+254 729 170 156</span>
+                </a>
+                
+                <div className="flex items-start gap-3 text-[#2C2C2C]/80">
+                  <MapPin size={14} strokeWidth={1.5} className="text-[#B8956B] mt-1" />
+                  <span className="font-light">Westlands Business Park<br />Nairobi, Kenya</span>
                 </div>
               </div>
+            </div>
 
-              <div className="pt-10 border-t border-white/5">
-                <div className="flex items-center gap-3 mb-6">
-                  <ShieldCheck className="text-amber-500" size={20} strokeWidth={1.5} />
-                  <span className="text-[9px] font-bold uppercase tracking-widest text-white">Client Assurance</span>
-                </div>
-                <ul className="space-y-3 text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-slate-500 font-medium">
-                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-amber-500 rounded-full" /> Automated Link Dispatch</li>
-                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-amber-500 rounded-full" /> Multi-Currency Advisory</li>
-                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-amber-500 rounded-full" /> NDAs Available Upon Request</li>
-                </ul>
-              </div>
+            {/* Note */}
+            <div className="bg-[#1B4332]/5 border-l-2 border-[#1B4332] p-6">
+              <p className="text-xs text-[#2C2C2C]/70 font-light leading-relaxed italic">
+                For matters requiring immediate attention outside Monday availability, 
+                please contact our office directly for priority scheduling.
+              </p>
             </div>
           </div>
 
-          {/* RIGHT PANEL: INTERACTIVE CALENDAR */}
-          <div className="lg:col-span-8 bg-[#0a0c12] min-h-[600px] lg:min-h-full">
-            <BookingCalendar />
+          {/* RIGHT PANEL: CALENDAR */}
+          <div className="lg:col-span-8">
+            <div className="bg-white border border-[#E8E6E1] shadow-[0_4px_20px_rgba(0,0,0,0.03)] overflow-hidden">
+              {/* Calendar Header */}
+              <div className="bg-[#1B4332] px-6 py-4 flex items-center justify-between">
+                <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8956B] font-medium">
+                  Select Appointment Time
+                </span>
+                <div className="flex items-center gap-2 text-[#FAF9F6]/60 text-[10px] tracking-wider">
+                  <Clock size={12} />
+                  <span>EAT (UTC+3)</span>
+                </div>
+              </div>
+              
+              {/* Calendar Component */}
+              <div className="h-[600px] md:h-[700px] bg-white">
+                <BookingCalendar />
+              </div>
+            </div>
+            
+            {/* Footer Note */}
+            <div className="mt-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-[10px] text-[#2C2C2C]/50 tracking-wider uppercase">
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-[#1B4332] rounded-full" />
+                <span>Secure SSL Connection</span>
+              </div>
+              <p>All times displayed in Nairobi local time</p>
+            </div>
           </div>
           
         </div>
-
-        {/* 3. SUB-INTERFACE FOOTER */}
-        <div className="mt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-          <div className="flex items-center gap-2 text-slate-500 text-[9px] uppercase tracking-[0.2em]">
-            <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-            System Status: Verified Secure
-          </div>
-          <p className="text-slate-500 text-[10px] font-light tracking-wide uppercase">
-            Institutional Support: <span className="text-amber-200/70 ml-1">info@murivest.co.ke</span>
-          </p>
-        </div>
       </main>
+
+      {/* 3. EDITORIAL FOOTER */}
+      <footer className="border-t border-[#E8E6E1] py-12 px-6 md:px-12">
+        <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-[10px] tracking-[0.2em] uppercase text-[#2C2C2C]/50">
+            © {new Date().getFullYear()} Murivest Realty Limited
+          </p>
+          
+          <div className="flex items-center gap-2 text-[10px] text-[#2C2C2C]/50 tracking-wider">
+            <span>Estate Agents Registration Board Kenya</span>
+            <span className="text-[#B8956B]">•</span>
+            <span>Licensed & Regulated</span>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

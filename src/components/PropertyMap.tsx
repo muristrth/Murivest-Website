@@ -187,7 +187,7 @@ const PropertyPin: React.FC<PropertyPinProps> = ({
           pointerEvents: 'none',
           boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
         }}>
-          {property.price}
+          {property.title}
           {/* Arrow */}
           <div style={{
             position: 'absolute',
