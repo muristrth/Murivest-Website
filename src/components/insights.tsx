@@ -39,7 +39,7 @@ const InsightCard = ({ insight }: InsightCardProps) => {
             src={insight.image}
             alt={insight.title}
             fill
-            className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+            className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
           {/* Category badge */}

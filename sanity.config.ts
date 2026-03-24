@@ -39,6 +39,7 @@ export default defineConfig({
           occupancyRate: '100%',
         },
       },
+
       {
         id: 'property-for-lease',
         title: 'Commercial Property - For Lease',
@@ -71,6 +72,17 @@ export default defineConfig({
           titleType: 'Freehold',
         },
       },
+      {
+        id: 'house-for-sale',
+        title: 'House For Sale',
+        schemaType: 'land',
+        value: {
+          landCategory: 'House For Sale',
+          availabilityStatus: 'Available',
+          confidentiality: 'Qualified',
+          titleType: 'Freehold',
+        },
+      }
     ],
   },
   

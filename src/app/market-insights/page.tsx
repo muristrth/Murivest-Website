@@ -107,7 +107,7 @@ const MarketInsightsPage = () => {
                   <img 
                     src={insight.image} 
                     alt={insight.title} 
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute top-8 left-8 bg-slate-950/90 backdrop-blur-md px-6 py-2 text-white text-[10px] tracking-[0.3em] uppercase">
                     {insight.tag}

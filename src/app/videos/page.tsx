@@ -386,7 +386,7 @@ export default function VideosPage() {
               </div>
 
               {/* Trust Symbols */}
-              <div className="pt-8 border-t border-white/5 flex items-center justify-around opacity-30 grayscale group-hover:opacity-60 transition-opacity">
+              <div className="pt-8 border-t border-white/5 flex items-center justify-around">
                   <Shield size={24} />
                   <Building2 size={24} />
                   <Globe size={24} />

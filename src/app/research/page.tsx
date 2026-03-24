@@ -141,7 +141,7 @@ export default function ResearchPage() {
                   <img
                     src={report.image}
                     alt={report.title}
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-slate-950/40" />
                   <div className="absolute top-4 right-4">

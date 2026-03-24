@@ -305,14 +305,12 @@ const PropertyDrawer: React.FC<{
             {/* Hero Image */}
             <div className="relative h-[280px] overflow-hidden">
               {(property.mainImage || property.mainImageUrl) ? (
-                <img 
-                  src={property.mainImage || property.mainImageUrl} 
-                  alt={property.title} 
-                  className="w-full h-full object-cover" 
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = '/kenya-night.png';
-                  }}
+                <Image 
+                  src={property.mainImage || property.mainImageUrl || '/kenya-night.png'} 
+                  alt={property.title || 'Property'} 
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 500px"
                 />
               ) : (
                 <div className="w-full h-full bg-[#F5F4F0] flex items-center justify-center">
@@ -778,47 +776,47 @@ const UKPropertiesClient = ({ properties = [] }: UKPropertiesClientProps) => {
                   onClick={() => handleOpenDrawer(property)}
                 >
                   {/* Image */}
-<div className="relative aspect-[4/3] overflow-hidden bg-[#E5E2DC]">
-  {(property.mainImage || property.mainImageUrl) ? (
-    <img
-      src={
-        typeof property.mainImage === 'string'
-          ? property.mainImage
-          : typeof property.mainImageUrl === 'string'
-          ? property.mainImageUrl
-          : '/kenya-night.png'
-      }
-      alt={property.title || 'Property image'}
-      className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-      onError={(e) => {
-        e.currentTarget.src = '/kenya-night.png';
-      }}
-    />
-  ) : (
-    <div className="w-full h-full bg-[#F5F4F0] flex items-center justify-center">
-      <div className="text-center">
-        <MapPin className="w-8 h-8 text-[#8B8680] mx-auto mb-2" />
-        <span className="text-xs text-[#8B8680]">No Image</span>
-      </div>
-    </div>
-  )}
+                <div className="relative aspect-[4/3] overflow-hidden bg-[#E5E2DC]">
+                  {(property.mainImage || property.mainImageUrl) ? (
+                    <img
+                      src={
+                        typeof property.mainImage === 'string'
+                          ? property.mainImage
+                          : typeof property.mainImageUrl === 'string'
+                          ? property.mainImageUrl
+                          : '/kenya-night.png'
+                      }
+                      alt={property.title || 'Property image'}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.currentTarget.src = '/kenya-night.png';
+                      }}
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-[#F5F4F0] flex items-center justify-center">
+                      <div className="text-center">
+                        <MapPin className="w-8 h-8 text-[#8B8680] mx-auto mb-2" />
+                        <span className="text-xs text-[#8B8680]">No Image</span>
+                      </div>
+                    </div>
+                  )}
 
-  {property.status && (
-    <div className="absolute top-4 left-4">
-      <span className={`px-3 py-1 ${getStatusColor(property.status)} text-[10px] tracking-[0.2em] uppercase text-white font-medium`}>
-        {property.status}
-      </span>
-    </div>
-  )}
+                  {property.status && (
+                    <div className="absolute top-4 left-4">
+                      <span className={`px-3 py-1 ${getStatusColor(property.status)} text-[10px] tracking-[0.2em] uppercase text-white font-medium`}>
+                        {property.status}
+                      </span>
+                    </div>
+                  )}
 
-  {property.type && (
-    <div className="absolute top-4 right-4">
-      <span className="px-3 py-1 bg-[#2C2C2C]/80 text-[10px] tracking-[0.2em] uppercase text-white font-medium">
-        {property.type}
-      </span>
-    </div>
-  )}
-</div>
+                  {property.type && (
+                    <div className="absolute top-4 right-4">
+                      <span className="px-3 py-1 bg-[#2C2C2C]/80 text-[10px] tracking-[0.2em] uppercase text-white font-medium">
+                        {property.type}
+                      </span>
+                    </div>
+                  )}
+                </div>
 
                   {/* Content */}
                   <div className="p-6">

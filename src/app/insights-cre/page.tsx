@@ -49,7 +49,7 @@ export default async function InsightsPage() {
                       src={urlFor(insight.mainImage).url()} 
                       alt={insight.title}
                       fill 
-                      className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 opacity-60 group-hover:opacity-100"
+                      className="object-cover"
                     />
                    ) : (
                     <div className="w-full h-full bg-slate-800 flex items-center justify-center">

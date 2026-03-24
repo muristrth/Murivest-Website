@@ -18,7 +18,7 @@ const ptComponents = {
   types: {
     image: ({ value }: any) => (
       <div className="my-12 border border-white/10 p-2 bg-[#080a0f]">
-        <div className="relative h-[400px] w-full grayscale opacity-70 hover:grayscale-0 transition-all duration-700">
+        <div className="relative h-[400px] w-full">
           <Image src={urlFor(value).url()} alt="Strategic Location" fill className="object-cover" />
         </div>
         <p className="text-[10px] uppercase tracking-widest text-slate-500 mt-4 px-2">
@@ -111,7 +111,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
               </p>
             </div>
 
-            <div className="relative h-[500px] w-full mb-16 grayscale opacity-80 border border-white/10">
+            <div className="relative h-[500px] w-full mb-16">
               <Image 
                 src={urlFor(insight.mainImage).url()} 
                 alt={insight.title}

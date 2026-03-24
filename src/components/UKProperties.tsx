@@ -27,58 +27,7 @@ interface UKPropertiesProps {
  * Elegant property listing for UK portfolio
  */
 const UKProperties = ({ properties = [] }: UKPropertiesProps) => {
-  const defaultProperties: Property[] = [
-    {
-      id: '1',
-      title: 'The Kensington Residence',
-      location: 'Kensington, London',
-      price: '£4,250,000',
-      bedrooms: 5,
-      bathrooms: 4,
-      sqft: '4,200',
-      image: '/murivest_ceo_office.png',
-      slug: '#',
-      status: 'available'
-    },
-    {
-      id: '2',
-      title: 'Mayfair Townhouse',
-      location: 'Mayfair, London',
-      price: '£7,800,000',
-      bedrooms: 6,
-      bathrooms: 5,
-      sqft: '6,500',
-      image: '/kenya-night.png',
-      slug: '#',
-      status: 'available'
-    },
-    {
-      id: '3',
-      title: 'Chelsea Penthouse',
-      location: 'Chelsea, London',
-      price: '£3,950,000',
-      bedrooms: 3,
-      bathrooms: 3,
-      sqft: '2,800',
-      image: '/murivest_ceo_office.png',
-      slug: '#',
-      status: 'under-offer'
-    },
-    {
-      id: '4',
-      title: 'Belgravia Apartment',
-      location: 'Belgravia, London',
-      price: '£5,200,000',
-      bedrooms: 4,
-      bathrooms: 3,
-      sqft: '3,500',
-      image: '/kenya-night.png',
-      slug: '#',
-      status: 'available'
-    }
-  ];
 
-  const displayProperties = properties.length > 0 ? properties : defaultProperties;
 
   const getStatusLabel = (status: string) => {
     switch (status) {
@@ -137,7 +86,7 @@ const UKProperties = ({ properties = [] }: UKPropertiesProps) => {
       <section className="py-16 md:py-24 border-t border-[#E5E2DC]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {displayProperties.map((property, index) => (
+            {properties.map((property: any, index: any) => (
               <motion.article
                 key={property.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -153,7 +102,7 @@ const UKProperties = ({ properties = [] }: UKPropertiesProps) => {
                       src={property.image}
                       alt={property.title}
                       fill
-                      className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                      className="object-cover"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                     {/* Status badge */}

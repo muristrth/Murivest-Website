@@ -58,6 +58,7 @@ export default {
       options: {
         list: [
           { title: 'Strategic Land Bank', value: 'Strategic Land Bank' },
+          { title: 'House For Sale', value: 'House For Sale' },
           { title: 'Development Ready', value: 'Development Ready' },
           { title: 'Agricultural', value: 'Agricultural' },
           { title: 'Commercial Mixed-Use', value: 'Commercial Mixed-Use' },

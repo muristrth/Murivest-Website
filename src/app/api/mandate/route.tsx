@@ -38,17 +38,36 @@ export async function POST(req: Request) {
     const mandateRef = `ATS-${data.titleNumber.replace(/\//g, '').slice(-5)}-${Date.now().toString().slice(-6)}`;
 
     // Create transporter
+    const smtpHost = process.env.SMTP_HOST || 'smtp.gmail.com';
+    const smtpPort = parseInt(process.env.SMTP_PORT || '465', 10);
+    const smtpUser = process.env.SMTP_USER;
+    const smtpPass = process.env.SMTP_PASS;
+    
+    console.log('SMTP Configuration:', { 
+      host: smtpHost, 
+      port: smtpPort, 
+      user: smtpUser,
+      hasPass: !!smtpPass 
+    });
+
+    if (!smtpUser || !smtpPass) {
+      console.error('SMTP credentials not configured');
+      return NextResponse.json(
+        { success: false, error: 'Email service not configured. Please contact support.' }, 
+        { status: 503 }
+      );
+    }
+
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT) || 587,
-      secure: false,
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpPort === 465, // Use SSL for port 465, TLS for others
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
+        user: smtpUser,
+        pass: smtpPass,
       },
-      tls: {
-        rejectUnauthorized: false,
-      },
+      connectionTimeout: 10000,
+      socketTimeout: 10000,
     });
 
     // Verify transporter connection
@@ -57,10 +76,8 @@ export async function POST(req: Request) {
       console.log('SMTP transporter verified successfully');
     } catch (verifyError) {
       console.error('SMTP verification failed:', verifyError);
-      return NextResponse.json(
-        { success: false, error: 'Email service temporarily unavailable' }, 
-        { status: 503 }
-      );
+      // Don't fail - try to send anyway as verification can fail but sending might work
+      console.log('Proceeding with email send despite verification failure');
     }
 
     // Email recipients
@@ -295,10 +312,7 @@ export async function POST(req: Request) {
 
     // Send email to seller and CC company
     const mailOptions = {
-      from: {
-        name: 'Murivest Realty',
-        address: process.env.SMTP_USER || 'investments@murivest.co.ke'
-      },
+      from: process.env.SMTP_FROM || process.env.SMTP_USER || 'investments@murivest.co.ke',
       to: sellerEmail,
       cc: companyEmail,
       subject: `Authority to Sell Mandate – ${mandateRef}`,

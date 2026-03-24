@@ -205,7 +205,7 @@ const BlogClientView = ({
                       src={relatedPost.image}
                       alt={relatedPost.title}
                       fill
-                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                      className="object-cover"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </div>

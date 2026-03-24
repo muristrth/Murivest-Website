@@ -3,11 +3,11 @@ import Script from 'next/script';
 import { Inter, Playfair_Display, Montserrat } from 'next/font/google';
 import { Suspense } from 'react';
 import './globals.css';
-import Header from '../components/layout/Header';
+import Header, { HeaderSpacer } from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import WhatsAppButton from '../components/ui/WhatsAppButton';
 import AnalyticsTracker from '../components/AnalyticsTracker';
-import InvestorMagazinePopup from '@/components/InvestorMagazinePopup';
+//import InvestorMagazinePopup from '@/components/InvestorMagazinePopup';
 import CookieBanner from '@/components/CookieBanner';
 import MetaPixel from '@/components/MetaPixel';
 
@@ -319,6 +319,7 @@ export default function RootLayout({
       >
         <div className="min-h-screen">
           <Header />
+          <HeaderSpacer />
           <Suspense fallback={null}>
             <AnalyticsTracker />
             <MetaPixel />
@@ -327,7 +328,6 @@ export default function RootLayout({
          <CookieBanner />
           <Footer />
           <WhatsAppButton />
-\      <InvestorMagazinePopup />
         </div>
       </body>
     </html>

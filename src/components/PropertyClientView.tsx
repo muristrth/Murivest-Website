@@ -129,104 +129,15 @@ export default function PropertyClientView({ property }: { property: Property })
   const displayType = property.propertyType || property.type || 'Commercial';
 
   return (
-    <div className="min-h-screen bg-[#FAF9F6] text-[#2C2C2C] selection:bg-[#B8956B]/20 pt-[100px]">
-
-      {/* Hero Section */}
-      <section className="relative h-[70vh] min-h-[500px] overflow-hidden bg-[#1B4332]">
-        <div className="absolute inset-0">
-          {property.images?.[0] ? (
-            <img 
-              src={property.images[0]} 
-              alt={property.title}
-              className="w-full h-full object-cover opacity-60"
-            />
-          ) : (
-            <div className="w-full h-full bg-[#2D5A45]" />
-          )}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1B4332] via-[#1B4332]/50 to-transparent" />
-        </div>
-
-        <div className="relative z-10 h-full flex items-end pb-16 lg:pb-24">
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-            >
-              <div className="flex items-center gap-4 mb-6">
-                <span className="text-[10px] tracking-[0.3em] uppercase text-[#B8956B] font-medium bg-[#B8956B]/10 px-3 py-1.5">
-                  {displayType}
-                </span>
-                <span className="w-1 h-1 rounded-full bg-[#B8956B]" />
-                <span className="text-[10px] tracking-[0.2em] uppercase text-white/80">
-                  {property.listingType || 'For Sale'}
-                </span>
-                {property.occupancyRate && (
-                  <>
-                    <span className="w-1 h-1 rounded-full bg-white/40" />
-                    <span className="text-[10px] tracking-[0.2em] uppercase text-white/80">
-                      {property.occupancyRate} Occupied
-                    </span>
-                  </>
-                )}
-              </div>
-
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-4 leading-[1.1] max-w-4xl">
-                {property.title}
-                {property.subtitle && (
-                  <span className="block italic text-[#B8956B] font-light text-2xl md:text-3xl lg:text-4xl mt-3">
-                    {property.subtitle}
-                  </span>
-                )}
-              </h1>
-
-              <div className="flex items-center gap-2 text-white/70 mt-6">
-                <MapPin size={16} className="text-[#B8956B]" strokeWidth={1.5} />
-                <span className="text-[12px] tracking-wide">
-                  {property.address}, {property.city}, {property.state} {property.zipCode}
-                </span>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Thumbnail Strip */}
-        {property.images && property.images.length > 1 && (
-          <div className="absolute bottom-6 right-6 lg:right-12 hidden lg:flex gap-2">
-            {property.images.slice(0, 4).map((img, idx) => (
-              <button
-                key={idx}
-                onClick={() => {
-                  setCurrentImageIndex(idx);
-                  setIsImageModalOpen(true);
-                }}
-                className={`w-20 h-20 border-2 overflow-hidden transition-all ${
-                  idx === 0 ? 'border-[#B8956B]' : 'border-white/30 hover:border-white'
-                }`}
-              >
-                <img src={img} className="w-full h-full object-cover" alt="" />
-              </button>
-            ))}
-            {property.images.length > 4 && (
-              <button
-                onClick={() => setIsImageModalOpen(true)}
-                className="w-20 h-20 border border-white/30 flex items-center justify-center text-white text-xs tracking-wide hover:border-white transition-colors"
-              >
-                +{property.images.length - 4}
-              </button>
-            )}
-          </div>
-        )}
-      </section>
-
+    <div className="min-h-screen bg-[#FAF9F6] text-[#2C2C2C] selection:bg-[#B8956B]/20">
       {/* Navigation */}
             <nav
-              className={`bg-[#FAF9F6] border-b border-[#E8E6E1] z-40`}
+              className={`bg-[#1B4332] border-b border-[#E8E6E1] z-40`}
             >
               <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-5">
                 <div className="flex items-center justify-between">
                   <Link
-                    href="/land-banking"
+                    href="/properties"
                     className="group flex items-center gap-3 hover:opacity-70 transition-opacity"
                   >
                     <div
@@ -245,7 +156,7 @@ export default function PropertyClientView({ property }: { property: Property })
                         isScrolled ? 'text-[#8B8680] group-hover:text-[#1B4332]' : 'text-white/80 group-hover:text-white'
                       }`}
                     >
-                      Return to Land Portfolio
+                      Return to Portfolio
                     </span>
                   </Link>
       
@@ -304,6 +215,94 @@ export default function PropertyClientView({ property }: { property: Property })
                 </motion.div>
               )}
             </AnimatePresence>
+
+      {/* Hero Section */}
+      <section className="relative h-[70vh] min-h-[500px] overflow-hidden bg-[#1B4332]">
+        <div className="absolute inset-0">
+          {property.images?.[0] ? (
+            <img 
+              src={property.images[0]} 
+              alt={property.title}
+              className="w-full h-full object-cover opacity-60"
+            />
+          ) : (
+            <div className="w-full h-full bg-[#2D5A45]" />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1B4332] via-[#1B4332]/50 to-transparent" />
+        </div>
+
+        <div className="relative z-10 h-full flex items-end pb-16 lg:pb-24">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-[10px] tracking-[0.3em] uppercase text-[#B8956B] font-medium bg-[#B8956B]/10 px-3 py-1.5">
+                  {displayType}
+                </span>
+                <span className="w-1 h-1 rounded-full bg-[#B8956B]" />
+                <span className="text-[10px] tracking-[0.2em] uppercase text-white/80">
+                  {property.listingType || 'For Sale'}
+                </span>
+                {property.occupancyRate && (
+                  <>
+                    <span className="w-1 h-1 rounded-full bg-white/40" />
+                    <span className="text-[10px] tracking-[0.2em] uppercase text-white/80">
+                      {property.occupancyRate} Occupied
+                    </span>
+                  </>
+                )}
+              </div>
+
+              <h1 className="text-4xl md:text-5xl lg:text-3xl font-serif text-sm text-white mb-4 leading-[1.1] max-w-4xl">
+                {property.title}
+                {property.subtitle && (
+                  <span className="block italic text-[#B8956B] font-light text-xs md:text-sm lg:text-base mt-3">
+                    {property.subtitle}
+                  </span>
+                )}
+              </h1>
+
+              <div className="flex items-center gap-2 text-white/70 mt-6">
+                <MapPin size={16} className="text-[#B8956B]" strokeWidth={1.5} />
+                <span className="text-[12px] tracking-wide">
+                  {property.address}, {property.city}, {property.state} {property.zipCode}
+                </span>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Thumbnail Strip */}
+        {property.images && property.images.length > 1 && (
+          <div className="absolute bottom-6 right-6 lg:right-12 hidden lg:flex gap-2">
+            {property.images.slice(0, 4).map((img, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  setCurrentImageIndex(idx);
+                  setIsImageModalOpen(true);
+                }}
+                className={`w-20 h-20 border-2 overflow-hidden transition-all ${
+                  idx === 0 ? 'border-[#B8956B]' : 'border-white/30 hover:border-white'
+                }`}
+              >
+                <img src={img} className="w-full h-full object-cover" alt="" />
+              </button>
+            ))}
+            {property.images.length > 4 && (
+              <button
+                onClick={() => setIsImageModalOpen(true)}
+                className="w-20 h-20 border border-white/30 flex items-center justify-center text-white text-xs tracking-wide hover:border-white transition-colors"
+              >
+                +{property.images.length - 4}
+              </button>
+            )}
+          </div>
+        )}
+      </section>
 
       {/* Main Content */}
       <main className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16 lg:py-24">

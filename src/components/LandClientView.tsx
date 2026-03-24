@@ -457,7 +457,7 @@ export default function LandClientView({ land }: { land: LandParcel }) {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-5">
           <div className="flex items-center justify-between">
             <Link
-              href="/land-banking"
+              href="/land-portfolio"
               className="group flex items-center gap-3 hover:opacity-70 transition-opacity"
             >
               <div
@@ -546,17 +546,37 @@ export default function LandClientView({ land }: { land: LandParcel }) {
               <p className="text-[16px] text-[#5A5A5A] leading-[1.8] font-light">
                 {land.description}
               </p>
-            </section>
 
-            <section>
-              <SectionTitle icon={<MapPin className="w-5 h-5 text-[#1B4332]" />} title="Location" />
-              <div className="h-[400px] border border-[#E8E6E1]">
-                <LandMap parcel={land} />
-              </div>
-              {land.coordinates && (
-                <p className="text-xs text-[#8B8680] mt-3 font-mono text-center">
-                  GPS: {land.coordinates.lat.toFixed(6)}, {land.coordinates.lng.toFixed(6)}
-                </p>
+              {/* Gallery Preview */}
+              {land.images && land.images.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-[11px] tracking-[0.25em] uppercase text-[#2C2C2C] font-medium mb-6">
+                    Visual Documentation
+                  </h3>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    {land.images.slice(0, 6).map((img, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => {
+                          setGalleryIndex(idx);
+                          setGalleryOpen(true);
+                        }}
+                        className="relative aspect-square overflow-hidden group"
+                      >
+                        <img 
+                          src={img} 
+                          alt={`${land.title} - ${idx + 1}`}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-[#1B4332]/0 group-hover:bg-[#1B4332]/20 transition-colors" />
+                      </button>
+                    ))}
+                  </div>
+                </motion.div>
               )}
             </section>
 

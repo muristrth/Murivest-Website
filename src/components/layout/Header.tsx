@@ -69,7 +69,7 @@ const MobileMenuDropdown = ({ title, items }: { title: string, items: any[] }) =
 
 const MegaMenu = ({ title, items }: { title: string; items: any[] }) => (
   <div className="relative group/menu">
-    <button className="flex items-center gap-1.5 text-[11px] tracking-[0.15em] uppercase text-[#A8A39D] hover:text-[#8B7355] py-8 transition-all duration-500 font-medium">
+    <button className="flex items-center gap-1.5 text-[11px] tracking-[0.15em] uppercase text-[#C4B59D] hover:text-[#B8956B] py-8 transition-all duration-500 font-medium">
       {title}
       <ChevronDown size={10} className="opacity-50 transition-transform duration-500 group-hover/menu:rotate-180" />
     </button>
@@ -112,7 +112,9 @@ export default function Header() {
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-700 ${
-      scrolled ? 'bg-[#F8F7F4]/95 border-b border-[#E5E2DC] py-0' : 'bg-transparent py-6'
+      scrolled 
+        ? 'bg-[#F8F7F4]/95 border-b border-[#E5E2DC] py-0' 
+        : 'bg-[#1B4332]/90 backdrop-blur-md py-6'
     }`}>
       <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-16">
         <div className="flex items-center justify-between h-20">
@@ -200,3 +202,9 @@ export default function Header() {
     </header>
   );
 }
+
+// Spacer component to push content below fixed header
+// Usage: <HeaderSpacer /> immediately after <Header /> in your layout
+export const HeaderSpacer = () => (
+  <div className="h-32" /> // 128px accounts for header height (80px) + padding (48px)
+);

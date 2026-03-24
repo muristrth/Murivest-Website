@@ -117,7 +117,7 @@ const CaseStudies = ({ studies = [] }: CaseStudiesProps) => {
                       src={study.image}
                       alt={study.title}
                       fill
-                      className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
+                      className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 40vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#2C2C2C]/40 to-transparent" />
