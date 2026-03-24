@@ -1,5 +1,7 @@
 import { createAdminClient } from '@/lib/supabase/admin'
 
+export const dynamic = 'force-dynamic'
+
 type OrderRow = {
   id: string
   order_type: 'digital' | 'hard'
