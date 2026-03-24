@@ -41,7 +41,7 @@ export async function POST(req: Request) {
     const smtpHost = process.env.SMTP_HOST || 'smtp.gmail.com';
     const smtpPort = parseInt(process.env.SMTP_PORT || '465', 10);
     const smtpUser = process.env.SMTP_USER;
-    const smtpPass = process.env.SMTP_PASS;
+    const smtpPass = process.env.SMTP_PASS?.replace(/"/g, ''); // Remove quotes if present
     
     console.log('SMTP Configuration:', { 
       host: smtpHost, 
@@ -51,7 +51,7 @@ export async function POST(req: Request) {
     });
 
     if (!smtpUser || !smtpPass) {
-      console.error('SMTP credentials not configured');
+      console.error('SMTP credentials missing:', { user: !!smtpUser, pass: !!smtpPass });
       return NextResponse.json(
         { success: false, error: 'Email service not configured. Please contact support.' }, 
         { status: 503 }
