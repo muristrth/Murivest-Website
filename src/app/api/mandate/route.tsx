@@ -73,237 +73,240 @@ export async function POST(req: Request) {
     console.log('Sending emails to:', { seller: sellerEmail, company: companyEmail });
 
     // HTML Email Template
-    // Email HTML Template - Old Money / Golf Club Lounge Aesthetic
-const htmlTemplate = `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Authority to Sell - Mandate Confirmation</title>
-</head>
-<body style="margin: 0; padding: 0; background-color: #FAF9F6; font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;">
-  
-  <!-- Header -->
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #1B4332; padding: 48px 0;">
-    <tr>
-      <td align="center">
-        <table width="600" cellpadding="0" cellspacing="0">
+    const htmlTemplate = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Authority to Sell - Mandate Confirmation</title>
+      </head>
+      <body style="margin: 0; padding: 0; background-color: #f5f7fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        
+        <!-- Header -->
+        <table width="100%" cellpadding="0" cellspacing="0" style="background: linear-gradient(135deg, #0a192f 0%, #1e3a8a 100%); padding: 40px 0;">
           <tr>
-            <td style="text-align: center; padding: 24px;">
-              <div style="border: 1px solid #B8956B; padding: 32px 48px; display: inline-block;">
-                <h1 style="color: #FAF9F6; font-size: 28px; margin: 0; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase;">
-                  Murivest
-                </h1>
-                <p style="color: #B8956B; font-size: 11px; margin: 12px 0 0 0; font-weight: 400; letter-spacing: 0.4em; text-transform: uppercase; font-family: 'Inter', system-ui, sans-serif;">
-                  Realty Limited
-                </p>
-              </div>
+            <td align="center">
+              <table width="600" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="text-align: center; padding: 20px;">
+                    <h1 style="color: #d4af37; font-size: 32px; margin: 0; font-weight: 700; letter-spacing: 2px;">
+                      MURIVEST REALTY LIMITED
+                    </h1>
+                    <p style="color: #ffffff; font-size: 14px; margin: 10px 0 0 0; font-weight: 300; letter-spacing: 1px;">
+                      Transforming Real Estate Transactions
+                    </p>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
         </table>
-      </td>
-    </tr>
-  </table>
 
-  <!-- Main Content -->
-  <table width="100%" cellpadding="0" cellspacing="0">
-    <tr>
-      <td align="center" style="padding: 48px 24px;">
-        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #FFFFFF; border: 1px solid #E8E6E1;">
+        <!-- Main Content -->
+        <table width="100%" cellpadding="0" cellspacing="0">
           <tr>
-            <td style="padding: 56px 48px;">
-              
-              <!-- Mandate Reference -->
-              <table width="100%" style="background-color: #FAF9F6; border-left: 3px solid #B8956B; margin-bottom: 40px;">
+            <td align="center" style="padding: 40px 0;">
+              <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
                 <tr>
-                  <td style="padding: 24px;">
-                    <p style="margin: 0; color: #8B8680; font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; font-family: 'Inter', system-ui, sans-serif;">
-                      Mandate Reference
+                  <td style="padding: 50px;">
+                    
+                    <!-- Mandate Reference -->
+                    <table width="100%" style="background: linear-gradient(135deg, #f8f9fa 0%, #e2e8f0 100%); border-left: 6px solid #d4af37; border-radius: 6px; margin-bottom: 40px;">
+                      <tr>
+                        <td style="padding: 20px;">
+                          <p style="margin: 0; color: #0a192f; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;">
+                            Official Mandate Reference Number
+                          </p>
+                          <p style="margin: 8px 0 0 0; color: #d4af37; font-size: 24px; font-weight: 800; letter-spacing: 2px;">
+                            ${mandateRef}
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- Title -->
+                    <h2 style="color: #0a192f; font-size: 26px; margin: 0 0 25px 0; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">
+                      Authority to Sell – Formal Mandate Acknowledgment
+                    </h2>
+                    
+                    <p style="color: #475569; font-size: 15px; margin: 0 0 35px 0; line-height: 1.7;">
+                      This communication serves as official confirmation that <strong style="color: #0a192f;">Murivest Realty Limited</strong> 
+                      has been granted formal authority to market and facilitate the sale of the property detailed below, 
+                      pursuant to the terms and conditions herein contained.
                     </p>
-                    <p style="margin: 8px 0 0 0; color: #1B4332; font-size: 20px; font-weight: 400; letter-spacing: 0.15em; font-family: 'Cormorant Garamond', Georgia, serif;">
-                      ${mandateRef}
+
+                    <!-- Section 1: Vendor Info -->
+                    <table width="100%" style="margin-bottom: 35px;">
+                      <tr>
+                        <td style="border-bottom: 3px solid #d4af37; padding-bottom: 12px;">
+                          <h3 style="color: #0a192f; font-size: 18px; margin: 0; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">
+                            Section 1: Vendor Information
+                          </h3>
+                        </td>
+                      </tr>
+                    </table>
+                    
+                    <table width="100%" style="margin-bottom: 30px; background: #f8fafc; border-radius: 8px;">
+                      <tr>
+                        <td style="padding: 20px;">
+                      <table width="100%">
+                        <tr>
+                          <td width="50%" style="padding: 10px 0;">
+                            <p style="margin: 0; color: #64748b; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Full Legal Name</p>
+                            <p style="margin: 6px 0 0 0; color: #0a192f; font-size: 15px; font-weight: 600;">${data.vendorName}</p>
+                          </td>
+                          <td width="50%" style="padding: 10px 0;">
+                            <p style="margin: 0; color: #64748b; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Identification No.</p>
+                            <p style="margin: 6px 0 0 0; color: #0a192f; font-size: 15px; font-weight: 600;">${data.vendorId}</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="50%" style="padding: 10px 0;">
+                            <p style="margin: 0; color: #64748b; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Primary Contact</p>
+                            <p style="margin: 6px 0 0 0; color: #0a192f; font-size: 15px; font-weight: 600;">${data.phone}</p>
+                          </td>
+                          <td width="50%" style="padding: 10px 0;">
+                            <p style="margin: 0; color: #64748b; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Email Address</p>
+                            <p style="margin: 6px 0 0 0; color: #0a192f; font-size: 15px; font-weight: 600;">${data.email}</p>
+                          </td>
+                        </tr>
+                      </table>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- Section 2: Property Details -->
+                    <table width="100%" style="margin-bottom: 35px;">
+                      <tr>
+                        <td style="border-bottom: 3px solid #d4af37; padding-bottom: 12px;">
+                          <h3 style="color: #0a192f; font-size: 18px; margin: 0; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">
+                            Section 2: Property & Transaction Details
+                          </h3>
+                        </td>
+                      </tr>
+                    </table>
+                    
+                    <table width="100%" style="margin-bottom: 30px; background: #f8fafc; border-radius: 8px;">
+                      <tr>
+                        <td style="padding: 20px;">
+                      <table width="100%">
+                        <tr>
+                          <td width="50%" style="padding: 10px 0;">
+                            <p style="margin: 0; color: #64748b; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Property Title No.</p>
+                            <p style="margin: 6px 0 0 0; color: #0a192f; font-size: 15px; font-weight: 600;">${data.titleNumber}</p>
+                          </td>
+                          <td width="50%" style="padding: 10px 0;">
+                            <p style="margin: 0; color: #64748b; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Physical Location</p>
+                            <p style="margin: 6px 0 0 0; color: #0a192f; font-size: 15px; font-weight: 600;">${data.location}</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="50%" style="padding: 10px 0;">
+                            <p style="margin: 0; color: #64748b; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Listing Price</p>
+                            <p style="margin: 6px 0 0 0; color: #0a192f; font-size: 15px; font-weight: 600;">KES ${parseInt(data.price || '0').toLocaleString()}</p>
+                          </td>
+                          <td width="50%" style="padding: 10px 0;">
+                            <p style="margin: 0; color: #64748b; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Professional Commission</p>
+                            <p style="margin: 6px 0 0 0; color: #0a192f; font-size: 15px; font-weight: 600;">${data.commission}</p>
+                          </td>
+                        </tr>
+                      </table>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- Authorization Statement -->
+                    <table width="100%" style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1px solid #f59e0b; border-radius: 8px; margin: 35px 0;">
+                      <tr>
+                        <td style="padding: 25px;">
+                          <p style="margin: 0; color: #92400e; font-size: 14px; line-height: 1.7; font-style: italic;">
+                            <strong>Authorization & Verification:</strong> By execution of this mandate, the Vendor hereby 
+                            confirms that all information provided herein is true, accurate, and complete to the best of 
+                            their knowledge. The Vendor further warrants that they possess the requisite legal authority 
+                            to effect the sale of the aforementioned property. Murivest Realty Limited is hereby 
+                            authorized to commence marketing activities immediately upon receipt of this formal acknowledgment.
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- Important Notice -->
+                    <table width="100%" style="background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%); border: 1px solid #ef4444; border-radius: 8px; margin: 35px 0;">
+                      <tr>
+                        <td style="padding: 20px;">
+                          <p style="margin: 0; color: #b91c1c; font-size: 13px; font-weight: 700; text-transform: uppercase;">
+                            ⚠️ IMPORTANT NOTICE FOR MURIVEST ADMINISTRATION
+                          </p>
+                          <p style="margin: 12px 0 0 0; color: #7f1d1d; font-size: 13px; line-height: 1.6;">
+                            Prior to finalizing the Authority to Sell document for signature, please conduct due diligence 
+                            by cross-referencing the Property Title Number against the Vendor's official Identification 
+                            Documents to verify ownership authenticity and legal capacity.
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <p style="color: #64748b; font-size: 13px; margin: 30px 0 0 0; text-align: center; font-style: italic;">
+                      This electronic communication constitutes a binding record of the marketing commencement date 
+                      and shall be retained for compliance and audit purposes in accordance with Kenyan law.
                     </p>
+
                   </td>
                 </tr>
               </table>
-
-              <!-- Title -->
-              <h2 style="color: #2C2C2C; font-size: 24px; margin: 0 0 24px 0; font-weight: 400; letter-spacing: 0.02em; line-height: 1.3;">
-                Authority to Sell<br>
-                <span style="color: #8B8680; font-style: italic; font-size: 20px;">Formal Mandate Acknowledgment</span>
-              </h2>
-              
-              <div style="width: 48px; height: 1px; background-color: #B8956B; margin: 32px 0;"></div>
-
-              <p style="color: #5A5A5A; font-size: 15px; margin: 0 0 40px 0; line-height: 1.8; font-weight: 300;">
-                This communication serves as confirmation that <strong style="color: #1B4332; font-weight: 400;">Murivest Realty Limited</strong> 
-                has been formally engaged to represent your property interests. We are honored to act as your exclusive advisor 
-                in the disposition of the asset detailed herein.
-              </p>
-
-              <!-- Section 1: Vendor Info -->
-              <table width="100%" style="margin-bottom: 32px;">
-                <tr>
-                  <td style="border-bottom: 1px solid #E8E6E1; padding-bottom: 16px;">
-                    <p style="color: #1B4332; font-size: 11px; margin: 0; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; font-family: 'Inter', system-ui, sans-serif;">
-                      Principal Information
-                    </p>
-                  </td>
-                </tr>
-              </table>
-              
-              <table width="100%" style="margin-bottom: 40px;">
-                <tr>
-                  <td width="50%" style="padding: 0 16px 16px 0; vertical-align: top;">
-                    <p style="margin: 0; color: #8B8680; font-size: 9px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.15em; font-family: 'Inter', system-ui, sans-serif;">Vendor Name</p>
-                    <p style="margin: 6px 0 0 0; color: #2C2C2C; font-size: 14px; font-weight: 400; letter-spacing: 0.02em;">${data.vendorName}</p>
-                  </td>
-                  <td width="50%" style="padding: 0 0 16px 16px; vertical-align: top;">
-                    <p style="margin: 0; color: #8B8680; font-size: 9px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.15em; font-family: 'Inter', system-ui, sans-serif;">Identification</p>
-                    <p style="margin: 6px 0 0 0; color: #2C2C2C; font-size: 14px; font-weight: 400; letter-spacing: 0.02em;">${data.vendorId}</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td width="50%" style="padding: 16px 16px 0 0; vertical-align: top; border-top: 1px solid #F5F4F0;">
-                    <p style="margin: 0; color: #8B8680; font-size: 9px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.15em; font-family: 'Inter', system-ui, sans-serif;">Telephone</p>
-                    <p style="margin: 6px 0 0 0; color: #2C2C2C; font-size: 14px; font-weight: 400; letter-spacing: 0.02em;">${data.phone}</p>
-                  </td>
-                  <td width="50%" style="padding: 16px 0 0 16px; vertical-align: top; border-top: 1px solid #F5F4F0;">
-                    <p style="margin: 0; color: #8B8680; font-size: 9px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.15em; font-family: 'Inter', system-ui, sans-serif;">Email Address</p>
-                    <p style="margin: 6px 0 0 0; color: #2C2C2C; font-size: 14px; font-weight: 400; letter-spacing: 0.02em;">${data.email}</p>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- Section 2: Property Details -->
-              <table width="100%" style="margin-bottom: 32px;">
-                <tr>
-                  <td style="border-bottom: 1px solid #E8E6E1; padding-bottom: 16px;">
-                    <p style="color: #1B4332; font-size: 11px; margin: 0; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; font-family: 'Inter', system-ui, sans-serif;">
-                      Asset & Transaction Details
-                    </p>
-                  </td>
-                </tr>
-              </table>
-              
-              <table width="100%" style="margin-bottom: 40px;">
-                <tr>
-                  <td width="50%" style="padding: 0 16px 16px 0; vertical-align: top;">
-                    <p style="margin: 0; color: #8B8680; font-size: 9px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.15em; font-family: 'Inter', system-ui, sans-serif;">Title Number</p>
-                    <p style="margin: 6px 0 0 0; color: #2C2C2C; font-size: 14px; font-weight: 400; letter-spacing: 0.02em;">${data.titleNumber}</p>
-                  </td>
-                  <td width="50%" style="padding: 0 0 16px 16px; vertical-align: top;">
-                    <p style="margin: 0; color: #8B8680; font-size: 9px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.15em; font-family: 'Inter', system-ui, sans-serif;">Location</p>
-                    <p style="margin: 6px 0 0 0; color: #2C2C2C; font-size: 14px; font-weight: 400; letter-spacing: 0.02em;">${data.location}</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td width="50%" style="padding: 16px 16px 0 0; vertical-align: top; border-top: 1px solid #F5F4F0;">
-                    <p style="margin: 0; color: #8B8680; font-size: 9px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.15em; font-family: 'Inter', system-ui, sans-serif;">Indicative Value</p>
-                    <p style="margin: 6px 0 0 0; color: #1B4332; font-size: 16px; font-weight: 400; letter-spacing: 0.02em;">KES ${parseInt(data.price || '0').toLocaleString()}</p>
-                  </td>
-                  <td width="50%" style="padding: 16px 0 0 16px; vertical-align: top; border-top: 1px solid #F5F4F0;">
-                    <p style="margin: 0; color: #8B8680; font-size: 9px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.15em; font-family: 'Inter', system-ui, sans-serif;">Commission Structure</p>
-                    <p style="margin: 6px 0 0 0; color: #2C2C2C; font-size: 14px; font-weight: 400; letter-spacing: 0.02em;">${data.commission}</p>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- Authorization Statement -->
-              <table width="100%" style="background-color: #FAF9F6; border: 1px solid #E8E6E1; margin: 40px 0;">
-                <tr>
-                  <td style="padding: 32px;">
-                    <p style="margin: 0; color: #5A5A5A; font-size: 13px; line-height: 1.8; font-weight: 300; font-style: italic;">
-                      By execution of this mandate, the undersigned confirms that all information provided is true, accurate, 
-                      and complete to the best of their knowledge, and that they possess the requisite legal authority to 
-                      effect the sale of the aforementioned property.
-                    </p>
-                    <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #E8E6E1;">
-                      <p style="margin: 0; color: #1B4332; font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.15em; font-family: 'Inter', system-ui, sans-serif;">
-                        Marketing Authorization Granted
-                      </p>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- Internal Notice -->
-              <table width="100%" style="background-color: #FEFCFA; border-left: 3px solid #B8956B; margin: 40px 0;">
-                <tr>
-                  <td style="padding: 24px;">
-                    <p style="margin: 0; color: #8B8680; font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; font-family: 'Inter', system-ui, sans-serif;">
-                      Internal Advisory Notice
-                    </p>
-                    <p style="margin: 12px 0 0 0; color: #5A5A5A; font-size: 12px; line-height: 1.7; font-weight: 300;">
-                      Prior to finalizing documentation, please verify title ownership against vendor identification 
-                      and conduct standard due diligence as per firm protocols.
-                    </p>
-                  </td>
-                </tr>
-              </table>
-
-              <div style="width: 48px; height: 1px; background-color: #B8956B; margin: 48px auto;"></div>
-
-              <p style="color: #8B8680; font-size: 11px; margin: 0; text-align: center; font-weight: 300; font-style: italic; line-height: 1.6;">
-                This communication constitutes a binding record of engagement commencement 
-                and shall be retained for compliance purposes in accordance with Kenyan law.
-              </p>
-
             </td>
           </tr>
         </table>
-      </td>
-    </tr>
-  </table>
 
-  <!-- Footer -->
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #1B4332; padding: 48px 24px;">
-    <tr>
-      <td align="center">
-        <table width="600" cellpadding="0" cellspacing="0">
+        <!-- Footer -->
+        <table width="100%" cellpadding="0" cellspacing="0" style="background: linear-gradient(135deg, #0a192f 0%, #1e3a8a 100%); padding: 50px 0; margin-top: 50px;">
           <tr>
-            <td style="text-align: center; padding-bottom: 32px;">
-              <div style="border: 1px solid #B8956B; padding: 24px 40px; display: inline-block; margin-bottom: 32px;">
-                <p style="color: #FAF9F6; font-size: 20px; margin: 0; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;">
-                  Murivest Realty Limited
-                </p>
-              </div>
-              <p style="color: #B8956B; font-size: 10px; margin: 0; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; font-family: 'Inter', system-ui, sans-serif;">
-                Licensed Real Estate Agency | Estate Agents Registration Board (EARB) Kenya
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <td style="border-top: 1px solid #2D5A45; padding-top: 32px; text-align: center;">
-              <p style="margin: 0 0 8px 0; color: #8B8680; font-size: 12px; font-weight: 300; letter-spacing: 0.05em;">
-                Westlands, Nairobi, Kenya
-              </p>
-              <p style="margin: 0 0 24px 0; color: #8B8680; font-size: 12px; font-weight: 300; letter-spacing: 0.05em;">
-                <a href="mailto:investments@murivest.co.ke" style="color: #B8956B; text-decoration: none; border-bottom: 1px solid #B8956B;">investments@murivest.co.ke</a>
-                <span style="color: #2D5A45; margin: 0 12px;">|</span>
-                +254 729 170 156
-              </p>
-              
-              <div style="width: 24px; height: 1px; background-color: #B8956B; margin: 24px auto;"></div>
-
-              <p style="margin: 24px 0 0 0; color: #5A7A6A; font-size: 10px; line-height: 1.6; font-weight: 300; font-style: italic;">
-                Confidential communication intended solely for the named recipient. 
-                If received in error, please notify the sender immediately and delete all copies.
-              </p>
-              <p style="margin: 16px 0 0 0; color: #5A7A6A; font-size: 10px; font-weight: 300;">
-                © ${new Date().getFullYear()} Murivest Realty Limited. All Rights Reserved.
-              </p>
+            <td align="center">
+              <table width="600" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="text-align: center; padding-bottom: 25px;">
+                    <h3 style="color: #d4af37; font-size: 22px; margin: 0 0 12px 0; font-weight: 800;">
+                      Murivest Realty Limited
+                    </h3>
+                    <p style="color: #e2e8f0; font-size: 14px; margin: 0; font-weight: 500;">
+                      Licensed Real Estate Agency | Estate Agents Registration Board (EARB) Kenya
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border-top: 2px solid #1e40af; padding-top: 25px; text-align: center;">
+                    <p style="margin: 0 0 12px 0; color: #cbd5e1; font-size: 13px; font-weight: 500;">
+                      <strong style="color: #d4af37;">Registered Office:</strong> 
+                      Westlands, Nairobi, Kenya
+                    </p>
+                    <p style="margin: 0 0 12px 0; color: #cbd5e1; font-size: 13px; font-weight: 500;">
+                      <strong style="color: #d4af37;">Investments & Mandates:</strong> 
+                      <a href="mailto:investments@murivest.co.ke" style="color: #d4af37; text-decoration: none;">investments@murivest.co.ke</a> 
+                      | <strong style="color: #d4af37;">Tel:</strong> +254 729 170 156
+                    </p>
+                    <p style="margin: 25px 0 0 0; color: #94a3b8; font-size: 11px; line-height: 1.6; text-align: justify;">
+                      <strong>CONFIDENTIALITY NOTICE:</strong> This document contains confidential and privileged information intended solely for the named recipient(s). 
+                      If you have received this communication in error, please notify the sender immediately and delete all copies from your system. 
+                      Unauthorized dissemination, distribution, copying, or disclosure is strictly prohibited and may be unlawful.
+                    </p>
+                    <p style="margin: 20px 0 0 0; color: #94a3b8; font-size: 11px;">
+                      <strong>DISCLAIMER:</strong> This mandate acknowledgment does not constitute a legally binding contract until a formal Authority to Sell agreement is executed by both parties.
+                    </p>
+                    <p style="margin: 25px 0 0 0; color: #94a3b8; font-size: 11px; font-weight: 600;">
+                      © ${new Date().getFullYear()} Murivest Realty Limited. All Rights Reserved. 
+                      | <a href="#" style="color: #94a3b8;">Privacy Policy</a> | <a href="#" style="color: #94a3b8;">Terms of Service</a>
+                    </p>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
         </table>
-      </td>
-    </tr>
-  </table>
 
-</body>
-</html>
-`;
+      </body>
+      </html>
+    `;
 
     // Send email to seller and CC company
     const mailOptions = {
