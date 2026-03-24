@@ -50,7 +50,7 @@ export async function POST(req: Request) {
         pass: process.env.SMTP_PASS,
       },
       tls: {
-        rejectUnauthorized: false, // Set to true in production
+        rejectUnauthorized: true, // Set to true in production
       },
     });
 
