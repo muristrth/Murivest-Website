@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 import { createClient as createUserClient } from '@/lib/supabase/server'
+import { createNotification } from '@/lib/notifications'
 
 function createTransporter() {
   return nodemailer.createTransport({
@@ -105,6 +106,15 @@ export async function POST(req: Request) {
           <p><strong>M-Pesa message:</strong><br>${mpesaMessage}</p>
         </div>
       `,
+    })
+
+    // Create notification for the user
+    await createNotification({
+      userId: user.id,
+      type: 'payment_received',
+      title: 'Payment Confirmation Submitted',
+      message: 'Your M-Pesa payment confirmation has been submitted and is pending verification. You will be notified once verified.',
+      link: '/investor-portal/payments',
     })
 
     return NextResponse.json({ success: true })

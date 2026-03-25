@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 import { createClient as createUserClient } from '@/lib/supabase/server'
 import { createAdminClient } from '@/lib/supabase/admin'
+import { createNotification } from '@/lib/notifications'
 
 function createTransporter() {
   return nodemailer.createTransport({
@@ -137,6 +138,17 @@ export async function POST(req: Request) {
       to: process.env.ALERT_EMAIL!,
       subject: `[Murivest Order] ${profile.full_name || user.email} · ${orderType.toUpperCase()} · ${order.id}`,
       html: `<p>New order created.</p><p>Order ID: ${order.id}</p><p>User: ${profile.full_name || user.email}</p><p>Type: ${orderType}</p>`,
+    })
+
+    // Create notification for the user
+    await createNotification({
+      userId: user.id,
+      type: 'order_created',
+      title: orderType === 'digital' ? 'Digital Brief Requested' : 'Hard Copy Order Created',
+      message: orderType === 'digital' 
+        ? `Your digital Investment Brief has been requested and is being processed.`
+        : `Your hard copy order (KES 2,000) has been created. Please complete payment to confirm.`,
+      link: '/investor-portal/orders',
     })
 
     return NextResponse.json({

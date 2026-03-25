@@ -8,6 +8,7 @@ import InstitutionalEngagementModel from '../components/sections/InstitutionalEn
 import ESGFrameworkSection from '../components/sections/ESGFrameworkSection'
 import CEOInstitutionalProfile from '@/components/CEOInstitutionalProfile'
 import UserJourneySegmentation from '@/components/sections/UserJourneySegmentation'
+import InvestorBriefTeaser from '@/components/sections/InvestorBriefTeaser'
 
 export const metadata: Metadata = {
   // 1. STRATEGIC TITLE (Max 60 chars recommended for SEO)
@@ -96,6 +97,7 @@ export default function HomePage() {
     <>
       {/* <IntroVideoModal/> */}
       <Hero />
+      <InvestorBriefTeaser />
       <InstitutionalEngagementModel />
       <CoreInvestmentStrategies />
       <TaxIntelligenceSection />

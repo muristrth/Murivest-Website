@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
 import { sendPaymentApprovedEmail } from '@/lib/email/templates/paymentApproved';
+import { createNotification } from '@/lib/notifications';
 
 export async function POST(request: NextRequest) {
   try {
@@ -61,6 +62,24 @@ export async function POST(request: NextRequest) {
         payment.currency || 'USD',
         payment.orders.order_type || 'default'
       );
+
+      // Create notification for the user
+      await createNotification({
+        userId: payment.user_id,
+        type: 'payment_confirmed',
+        title: 'Payment Confirmed',
+        message: `Your payment of KES ${payment.amount?.toLocaleString() || '2,000'} has been verified and confirmed. Your order is now being processed.`,
+        link: '/investor-portal/orders',
+      });
+    } else if (decision === 'declined') {
+      // Create notification for declined payment
+      await createNotification({
+        userId: payment.user_id,
+        type: 'payment_declined',
+        title: 'Payment Declined',
+        message: 'Your payment could not be verified. Please contact support or try again.',
+        link: '/investor-portal/payments',
+      });
     }
 
     return NextResponse.json({ success: true, payment });

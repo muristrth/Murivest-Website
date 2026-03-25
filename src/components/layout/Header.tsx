@@ -262,7 +262,7 @@ export default function Header() {
               {/* Investor Portal */}
               <InvestorPortal 
                 isLoggedIn={isLoggedIn} 
-                userName="J. Harrington" 
+                userName="My Murivest" 
                 scrolled={scrolled}
                 onLogin={() => setIsLoggedIn(true)}
               />
@@ -450,4 +450,3 @@ export default function Header() {
 }
 
 // Legacy export for backward compatibility
-export const HeaderSpacer = () => <div className="h-16 md:h-20 lg:h-24" />;

@@ -126,6 +126,8 @@ const statusConfig = {
   cancelled: { color: 'red', label: 'Cancelled' }
 }
 
+import OrdersList from './OrdersList'
+
 export default async function InvestorOrdersPage() {
   const supabase = await createClient()
 
@@ -180,6 +182,9 @@ export default async function InvestorOrdersPage() {
 
   // Use sample data if no database records
   const displayOrders = orders?.length ? orders : sampleOrders
+
+  // If we have real orders, add client-side interactivity
+  const hasRealOrders = orders && orders.length > 0
 
   return (
     <div className="space-y-12">
@@ -265,8 +270,13 @@ export default async function InvestorOrdersPage() {
         </div>
       </section>
 
-      {/* Orders List */}
+      {/* Orders List - Client Component */}
       <section>
+        {hasRealOrders ? (
+          <OrdersList initialOrders={displayOrders} />
+        ) : (
+        <>
+        {/* Fallback for sample data - Static display */}
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="font-serif text-2xl text-[#1B4332] mb-1">Order History</h2>
@@ -470,6 +480,8 @@ export default async function InvestorOrdersPage() {
               Browse Briefs
             </Link>
           </div>
+        )}
+        </>
         )}
       </section>
 

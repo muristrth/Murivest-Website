@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
 import { sendOrderFulfilledEmail } from '@/lib/email/templates/orderFulfilled';
+import { createNotification } from '@/lib/notifications';
 
 export async function POST(request: NextRequest) {
   try {
@@ -58,6 +59,15 @@ export async function POST(request: NextRequest) {
     } catch (emailError) {
       console.error('Failed to send order fulfilled email:', emailError);
     }
+
+    // Create notification for the user
+    await createNotification({
+      userId: order.user_id,
+      type: 'order_fulfilled',
+      title: 'Order Fulfilled',
+      message: 'Your order has been fulfilled and is being dispatched. You will receive tracking information shortly.',
+      link: '/investor-portal/orders',
+    })
 
     return NextResponse.json({ success: true, order });
   } catch (error) {
