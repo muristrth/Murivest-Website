@@ -97,7 +97,7 @@ export async function POST(req: Request) {
     await transporter.sendMail({
       from: process.env.SMTP_FROM,
       to: process.env.ALERT_EMAIL!,
-      subject: `⚠️ Payment submitted · ${profile?.full_name || user.email} · Order ${order.id}`,
+      subject: `Payment submitted · ${profile?.full_name || user.email} · Order ${order.id}`,
       html: `
         <div style="font-family:Arial,sans-serif;padding:24px">
           <h2>Payment submitted</h2>

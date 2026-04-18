@@ -15,7 +15,7 @@ export default {
       name: 'contactEmail',
       title: 'Contact Email',
       type: 'string',
-      initialValue: 'investments@murivest.co.ke',
+      initialValue: 'info@murivest.co.ke',
     },
     {
       name: 'contactPhone',

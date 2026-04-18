@@ -11,7 +11,7 @@ export default function SettingsPage() {
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
   const [settings, setSettings] = useState({
     siteName: 'Murivest Investor Portal',
-    contactEmail: 'investments@murivest.co.ke',
+    contactEmail: 'info@murivest.co.ke',
     mpesaShortcode: '',
     bankAccountName: '',
     bankAccountNumber: '',

@@ -144,9 +144,9 @@ const SchedulePage = () => {
               </div>
               
               <div className="space-y-4 text-sm">
-                <a href="mailto:investments@murivest.co.ke" className="flex items-center gap-3 text-[#2C2C2C]/80 hover:text-[#B8956B] transition-colors group">
+                <a href="mailto:info@murivest.co.ke" className="flex items-center gap-3 text-[#2C2C2C]/80 hover:text-[#B8956B] transition-colors group">
                   <Mail size={14} strokeWidth={1.5} className="text-[#B8956B]" />
-                  <span className="font-light">investments@murivest.co.ke</span>
+                  <span className="font-light">info@murivest.co.ke</span>
                 </a>
                 
                 <a href="tel:+254729170156" className="flex items-center gap-3 text-[#2C2C2C]/80 hover:text-[#B8956B] transition-colors">

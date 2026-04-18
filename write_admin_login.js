@@ -71,7 +71,7 @@ export default function AdminLoginPage() {
                 <input
                   type="email"
                   className="w-full bg-white border border-[#1B4332]/20 text-[#1B4332] px-4 py-3 text-sm focus:border-[#B8956B] focus:outline-none transition-colors"
-                  placeholder="admin@murivest.co.ke"
+                   placeholder="admin@murivest.co.ke"
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   required

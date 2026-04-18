@@ -52,7 +52,7 @@ const BookingCalendar = () => {
                 </p>
                 <p className="flex items-center gap-3">
                   <span className="text-[#B8956B]">E.</span>
-                  <span>investments@murivest.co.ke</span>
+                   <span>info@murivest.co.ke</span>
                 </p>
               </div>
             </div>

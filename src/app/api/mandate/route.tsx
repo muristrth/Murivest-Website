@@ -68,7 +68,7 @@ export async function POST(req: Request) {
 
     // Email recipients
     const sellerEmail = data.email;
-    const companyEmail = 'murivestrealty@gmail.com';
+    const companyEmail = 'investments@murivest.co.ke';
     
     console.log('Sending emails to:', { seller: sellerEmail, company: companyEmail });
 
@@ -282,7 +282,7 @@ export async function POST(req: Request) {
                     </p>
                     <p style="margin: 0 0 12px 0; color: #cbd5e1; font-size: 13px; font-weight: 500;">
                       <strong style="color: #d4af37;">Investments & Mandates:</strong> 
-                      <a href="mailto:investments@murivest.co.ke" style="color: #d4af37; text-decoration: none;">investments@murivest.co.ke</a> 
+                       <a href="mailto:investments@murivest.co.ke" style="color: #d4af37; text-decoration: none;">investments@murivest.co.ke</a>
                       | <strong style="color: #d4af37;">Tel:</strong> +254 729 170 156
                     </p>
                     <p style="margin: 25px 0 0 0; color: #94a3b8; font-size: 11px; line-height: 1.6; text-align: justify;">
@@ -312,7 +312,7 @@ export async function POST(req: Request) {
     const mailOptions = {
       from: {
         name: 'Murivest Realty Limited',
-        address: process.env.SMTP_USER || 'investments@murivest.co.ke'
+         address: process.env.SMTP_USER || 'investments@murivest.co.ke'
       },
       to: sellerEmail,
       cc: companyEmail,

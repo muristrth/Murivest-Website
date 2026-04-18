@@ -35,8 +35,8 @@ export async function POST(request: NextRequest) {
     // Email to internal team about new subscriber
     await transporter.sendMail({
       from: `"Murivest Newsletter" <${process.env.SMTP_USER}>`,
-      to: process.env.NEWSLETTER_EMAIL || process.env.CONTACT_EMAIL || 'investments@murivest.co.ke',
-      subject: `📧 New Newsletter Subscriber: ${email}`,
+      to: process.env.NEWSLETTER_EMAIL || process.env.CONTACT_EMAIL || 'info@murivest.co.ke',
+      subject: `New Newsletter Subscriber: ${email}`,
       text: `New newsletter subscriber: ${email}\n\nSubscribed on: ${new Date().toLocaleString('en-KE', { timeZone: 'Africa/Nairobi' })}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -110,7 +110,7 @@ export async function POST(request: NextRequest) {
               <div class="footer">
                 <p><strong>Murivest Realty Group</strong><br>
                 Westlands Business District, Nairobi, Kenya<br>
-                +254 115 277 610 | investments@murivest.co.ke</p>
+                 +254 115 277 610 | info@murivest.co.ke</p>
               </div>
             </div>
           </body>

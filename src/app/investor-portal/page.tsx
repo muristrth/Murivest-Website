@@ -518,7 +518,7 @@ export default function InvestorPortalPage() {
 
               {mode === 'login' && (
                 <p className="text-center text-xs text-[#1B4332]/50">
-                  Forgot credentials? Contact <a href="mailto:investments@murivest.co.ke" className="text-[#B8956B] hover:underline">investments@murivest.co.ke</a>
+                  Forgot credentials? Contact <a href="mailto:info@murivest.co.ke" className="text-[#B8956B] hover:underline">info@murivest.co.ke</a>
                 </p>
               )}
             </form>
