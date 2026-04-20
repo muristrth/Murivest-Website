@@ -30,7 +30,7 @@ interface ClaimFormData {
 // --- Animation Variants ---
 const fadeInUp = {
   hidden: { opacity: 0, y: 60 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const } }
 };
 
 const staggerContainer = {
@@ -1018,7 +1018,7 @@ export default function BookLandingPage() {
             ].map((item, i) => (
               <motion.div 
                 key={i}
-                variants={scaleIn}
+                variants={staggerContainer}
                 className="relative text-center p-8 border border-[#FAF9F6]/10 rounded-sm bg-[#FAF9F6]/5 backdrop-blur-sm"
               >
                 <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#B8956B] text-[#1B4332] w-8 h-8 flex items-center justify-center rounded-full text-xs font-bold">
@@ -1067,7 +1067,7 @@ export default function BookLandingPage() {
 
             {/* Offer Box */}
             <motion.div 
-              variants={scaleIn}
+              variants={staggerContainer}
               className="relative bg-white border border-[#1B4332]/10 p-10 md:p-12 rounded-sm shadow-xl shadow-[#1B4332]/5 max-w-2xl mx-auto mb-12"
             >
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#1B4332] text-[#FAF9F6] px-6 py-1 text-xs tracking-[0.2em] uppercase font-semibold">
