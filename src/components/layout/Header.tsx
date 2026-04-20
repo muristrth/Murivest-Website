@@ -7,23 +7,24 @@ import { motion, AnimatePresence } from 'framer-motion';
 // Menu data structure - adjust paths as needed
 const MENU_DATA = {
   properties: [
-    { label: 'Commercial Assets', href: '/properties' },
+    { label: 'Kenya Portfolio', href: '/properties' },
+    { label: 'UK Portfolio', href: '/uk-properties' },
+    { label: 'US Portfolio', href: '/us-properties' },
     { label: 'Land Parcels', href: '/land-portfolio' },
-    { label: 'UK Collection', href: '/uk-properties' },
-    { label: 'Portfolio Map', href: '/map' },
+
   ],
   invest: [
-    { label: 'Investment Criteria', href: '/invest' },
+    { label: 'Private Investors', href: '/private-brief' },
     { label: 'Underwrite Deal', href: '/cre-underwriting' },
     { label: 'Due Diligence', href: '/due-diligence' },
     { label: 'Institutional Investors', href: '/institutional-investors' },
   ],
   insights: [
     { label: 'Market Intel', href: '/blog' },
-    { label: 'CRE Insights', href: '/cre-insights' },
+    { label: 'CRE Insights', href: '/insights-cre' },
     { label: 'Asset Intelligence', href: '/intelligence' },
     { label: 'Research', href: '/research' },
-    { label: 'Videos', href: '/videos' },
+    { label: 'CRE News', href: '/videos' },
   ],
   company: [
     { label: 'The Firm', href: '/about' },
