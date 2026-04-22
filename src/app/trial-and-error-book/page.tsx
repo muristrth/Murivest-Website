@@ -1562,7 +1562,7 @@ export default function BookLandingPage() {
               {/* Pledge Edition */}
               <div className="border-2 border-[#1B4332] p-8 relative">
                 <div className="absolute -top-3 left-6 bg-[#1B4332] text-[#FAF9F6] px-4 py-0.5 text-[10px] tracking-[0.2em] uppercase font-bold font-sans">
-                  Recommended — Investor Reader
+                  Recommended — Investor Readers
                 </div>
                 <p className="text-[#C9973A] text-[11px] tracking-[0.25em] uppercase font-sans font-bold mb-2">GET YOUR FREE COPY</p>
                 {/* ── FIX 4: Price label reframed ── */}
