@@ -36,8 +36,13 @@ export function PageHero({
       )}
       style={image ? { backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' } : undefined}
     >
-      {/* Overlay */}
-      {image && <div className="absolute inset-0 bg-[#1B4332]/80" />}
+      {/* Overlay - Clubhouse warmth gradient */}
+      {image && (
+        <>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#2a4a2e]/95 via-[#2D5A45]/60 to-[#2a4a2e]/90" />
+          <div className="absolute inset-0 bg-[#B8956B]/10 mix-blend-overlay" />
+        </>
+      )}
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">

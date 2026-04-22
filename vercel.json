@@ -1,5 +1,12 @@
 {
   "framework": "nextjs",
   "buildCommand": "next build",
-  "outputDirectory": ".next"
+  "outputDirectory": ".next",
+
+  "crons": [
+    {
+      "path": "/api/send-email-sequence",
+      "schedule": "0 * * * *"
+    }
+  ]
 }
