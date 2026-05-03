@@ -23,6 +23,16 @@ interface BlogEntry {
 // ─────────────────────────────────────────────────────────────
 const blog: BlogEntry[] = [
     {
+    id: 'standard-chartered-nakumatt-auction-distressed-real-estate-kenya-2026',
+    title: 'Distressed Real Estate in Kenya: The Nakumatt Auction and the Anatomy of Secured Lending Recovery',
+    excerpt: 'An institutional analysis of the Standard Chartered Bank Kenya auction of Nakumatt-linked properties over Sh1.9 billion in debt, examining the mechanics of statutory notices, charged land recovery, and the strategic opportunities emerging from Kenya\'s corporate distress cycle in commercial real estate.',
+    author: 'Murivest',
+    category: 'Market Intelligence',
+    date: '2026-05-03',
+    readTime: '52 min read',
+    featured: true,
+    },
+    {
     id: 'invest-uk-commercial-property-sipp-ssas-pension',
     title: 'How to Invest in UK Commercial Property with a SIPP or SSAS Pension',
     excerpt: 'A comprehensive analysis of pension-led commercial property investment, examining structural advantages, regulatory frameworks, and wealth preservation strategies for sophisticated retirement planners.',
@@ -30,7 +40,7 @@ const blog: BlogEntry[] = [
     category: 'Investment & Wealth',
     date: '2026-03-22',
     readTime: '22 min read',
-    featured: true,
+    featured: false,
   },
   {
   id: 'commercial-property-vs-residential-returns-2026',
