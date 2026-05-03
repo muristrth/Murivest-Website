@@ -3,10 +3,4 @@
   "buildCommand": "next build",
   "outputDirectory": ".next",
 
-  "crons": [
-    {
-      "path": "/api/send-email-sequence",
-      "schedule": "0 * * * *"
-    }
-  ]
 }
