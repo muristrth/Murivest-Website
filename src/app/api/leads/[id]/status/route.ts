@@ -6,25 +6,46 @@ function isAuthorized(request: NextRequest): boolean {
   return token === process.env.ADMIN_SECRET_TOKEN;
 }
 
-export async function POST(request: NextRequest, { params }: { params: { id: string } }) {
+type RouteContext = {
+  params: Promise<{
+    id: string;
+  }>;
+};
+
+export async function POST(
+  request: NextRequest,
+  context: RouteContext
+) {
   if (!isAuthorized(request)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  const { id } = params;
+  const { id } = await context.params;
   const body = await request.json();
 
-  const { data: existing } = await supabaseAdmin.from('leads').select('status').eq('id', id).single();
-  if (!existing) return NextResponse.json({ error: 'Lead not found' }, { status: 404 });
+  const { data: existing } = await supabaseAdmin
+    .from('leads')
+    .select('status')
+    .eq('id', id)
+    .single();
+
+  if (!existing) {
+    return NextResponse.json({ error: 'Lead not found' }, { status: 404 });
+  }
 
   const { data: lead, error } = await supabaseAdmin
     .from('leads')
-    .update({ status: body.status, internal_notes: body.notes || undefined })
+    .update({
+      status: body.status,
+      internal_notes: body.notes || undefined,
+    })
     .eq('id', id)
     .select()
     .single();
 
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  if (error) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
 
   await supabaseAdmin.from('lead_activities').insert({
     lead_id: id,
