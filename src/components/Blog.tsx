@@ -33,6 +33,16 @@ const blog: BlogEntry[] = [
     featured: true,
     },
     {
+      id: 'standard-chartered-chiromo-headquarters-sale-westlands-nairobi-2026',
+      title: "The Chiromo Disposition: Standard Chartered's Exit from Physical Banking and the Institutional Investment Imperative in Nairobi's Prime Commercial Real Estate",
+      excerpt: 'Comprehensive analysis of Standard Chartered Bank Kenya\'s KES 1.41 billion Chiromo headquarters sale, examining the structural retreat from physical banking, Westlands land value dynamics, and direct investment pathways for institutional capital seeking exposure to Nairobi\'s Grade A commercial property.',
+      author: 'Murivest',
+      category: 'Market Intelligence',
+      date: '2026-05-05',
+      readTime: '65 min read',
+      featured: true,
+    },
+    {
     id: 'invest-uk-commercial-property-sipp-ssas-pension',
     title: 'How to Invest in UK Commercial Property with a SIPP or SSAS Pension',
     excerpt: 'A comprehensive analysis of pension-led commercial property investment, examining structural advantages, regulatory frameworks, and wealth preservation strategies for sophisticated retirement planners.',
