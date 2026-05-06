@@ -34,43 +34,7 @@ const Reveal = ({ children, delay = 0, className = '' }: RevealProps) => {
   );
 };
 
-export default function AboutPage() {
-  const [scrollY, setScrollY] = useState(0);
-  useEffect(() => {
-    const onScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
-  return (
-    <div style={{
-      background: '#F5F2ED',
-      minHeight: '100vh',
-      fontFamily: "'Georgia', 'Times New Roman', serif",
-      color: '#1C2B1E',
-      overflowX: 'hidden'
-      
-    }}>
-
-      {/* ── GLOBAL STYLES ─────────────────────────────────────────── */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        .murivest-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
-        .murivest-body  { font-family: 'EB Garamond', Georgia, serif; }
-
-        .rule-gold { display: block; width: 48px; height: 1px; background: #8B6C2A; margin-bottom: 1.5rem; }
-
-        .prose-block p {
-          font-family: 'EB Garamond', Georgia, serif;
-          font-size: 1.1rem;
-          line-height: 1.9;
-          color: #3D3328;
-          font-weight: 400;
-          margin-bottom: 1.4rem;
-        }
 
         .link-rule {
           display: inline-flex;

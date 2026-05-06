@@ -130,7 +130,7 @@ const scoreLabel = getScoreLabel(leadScore).label;
 
     try {
       await sendEmail({
-        to: process.env.ADMIN_EMAIL || "investments@murivest.co.ke",
+        to: process.env.ADMIN_EMAIL || "capital@murivest.co.ke",
         subject: `New Mandate Access Lead: ${fullName}`,
         replyTo: email,
         html: `

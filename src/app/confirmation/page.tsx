@@ -114,11 +114,11 @@ const BookingConfirmation = () => {
                 </a>
 
                 <a
-                  href="mailto:investments@murivest.co.ke"
+                  href="mailto:capital@murivest.co.ke"
                   className="flex items-center gap-3 text-[#FAF9F6] hover:text-[#B8956B] transition-colors group"
                 >
                   <Mail className="w-4 h-4 text-[#B8956B]" />
-                  <span className="text-[14px] font-light">investments@murivest.co.ke</span>
+                  <span className="text-[14px] font-light">capital@murivest.co.ke</span>
                   <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
               </div>

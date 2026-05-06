@@ -575,7 +575,7 @@ export default function PropertyClientView({ property }: { property: Property })
                 )}
 
                 <a
-                  href={`mailto:${property.broker?.email || 'investments@murivest.co.ke'}?subject=Investment Inquiry: ${property.title}`}
+                  href={`mailto:${property.broker?.email || 'capital@murivest.co.ke'}?subject=Investment Inquiry: ${property.title}`}
                   className="w-full block border border-[#1B4332] text-[#1B4332] hover:bg-[#1B4332] hover:text-white py-4 text-[11px] tracking-[0.25em] uppercase text-center transition-colors"
                 >
                   Schedule Consultation

@@ -132,8 +132,8 @@ const SchedulePage = () => {
                 <Phone size={14} /> +254 115 277 610
               </a>
 
-              <a href="mailto:investments@murivest.co.ke" className="flex items-center gap-3 text-white">
-                <Mail size={14} /> investments@murivest.co.ke
+              <a href="mailto:capital@murivest.co.ke" className="flex items-center gap-3 text-white">
+                <Mail size={14} /> capital@murivest.co.ke
               </a>
 
               <div className="flex items-start gap-3 text-white/80">

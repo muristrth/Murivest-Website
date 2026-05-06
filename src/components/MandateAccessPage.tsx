@@ -184,7 +184,7 @@ export default function MandateAccessPage() {
   const [formStep, setFormStep] = useState(0);
 
   const WA_LINK = 'https://wa.me/254729170156';
-  const DESK_EMAIL = 'investments@murivest.co.ke';
+  const DESK_EMAIL = 'capital@murivest.co.ke';
 
   const { register, handleSubmit, watch, formState: { errors }, setValue } = useForm<LeadFormSchema>({
     resolver: zodResolver(leadFormSchema),
@@ -840,7 +840,7 @@ export default function MandateAccessPage() {
             <div>
               <h5 className="text-[#B8956B] text-[11px] tracking-widest uppercase mb-4" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>Contact</h5>
               <ul className="space-y-2 text-sm" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 300 }}>
-                <li>investments@murivest.co.ke</li>
+                <li>capital@murivest.co.ke</li>
                 <li><a href={WA_LINK} className="hover:text-[#B8956B] transition-colors">WhatsApp +254 729 170156</a></li>
                 <li>Westlands, Nairobi</li>
               </ul>
