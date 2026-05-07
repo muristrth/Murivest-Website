@@ -328,6 +328,7 @@ const ClaimModal = ({
     }
 
     setIsSubmitting(true);
+    window.scrollTo(0, 0);
     setErrorMsg("");
 
     try {

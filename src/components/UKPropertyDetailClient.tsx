@@ -162,6 +162,7 @@ const EnquiryDrawer = ({ open, onClose, property }: DrawerProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    window.scrollTo(0, 0);
     
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));

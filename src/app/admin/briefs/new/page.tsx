@@ -11,6 +11,9 @@ export default function NewBriefPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    
+
     setError("");
 
     const formData = new FormData(e.currentTarget);

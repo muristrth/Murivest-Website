@@ -11,6 +11,7 @@ export default function NewPublicationPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    window.scrollTo(0, 0);
     setError("");
 
     const formData = new FormData(e.currentTarget);
