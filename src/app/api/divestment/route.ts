@@ -1,4 +1,3 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
 import { createClient } from '@supabase/supabase-js';
 import formidable, {
   type Fields,
@@ -6,10 +5,8 @@ import formidable, {
   type File,
 } from 'formidable';
 import fs from 'fs';
+import { NextRequest, NextResponse } from 'next/server';
 
-// ─────────────────────────────────────────────────────────────
-// Supabase client
-// ─────────────────────────────────────────────────────────────
 function getSupabase() {
   return createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -17,35 +14,14 @@ function getSupabase() {
   );
 }
 
-// ─────────────────────────────────────────────────────────────
-// Upload config
-// ─────────────────────────────────────────────────────────────
-export const config = {
-  api: { bodyParser: false },
-};
-
 const MAX_FILE_SIZE = 100 * 1024 * 1024;
 const MAX_TOTAL_SIZE = 500 * 1024 * 1024;
-const UPLOAD_DIR =
-  process.env.UPLOAD_DIR || '/tmp/murivest-uploads';
+const UPLOAD_DIR = process.env.UPLOAD_DIR || '/tmp/murivest-uploads';
 
-
-// ─────────────────────────────────────────────────────────────
-// MAIN SUBMIT HANDLER
-// ─────────────────────────────────────────────────────────────
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if (req.method !== 'POST')
-    return res.status(405).json({ error: 'Method not allowed' });
-
+export async function POST(request: NextRequest) {
   const supabase = getSupabase();
 
   try {
-    // ─────────────────────────────────────────────
-    // FORM PARSE (FIXED TYPES)
-    // ─────────────────────────────────────────────
     const form = formidable({
       uploadDir: UPLOAD_DIR,
       maxFileSize: MAX_FILE_SIZE,
@@ -54,33 +30,33 @@ export default async function handler(
       multiples: true,
     });
 
-    const [fields, files] = await new Promise<
-      [Fields, Files]
-    >((resolve, reject) => {
-      form.parse(req, (err, f, fi) =>
-        err ? reject(err) : resolve([f, fi])
-      );
-    });
+    const [fields, files] = await new Promise<[Fields, Files]>(
+      (resolve, reject) => {
+        form.parse(request as any, (err: any, f: any, fi: any) =>
+          err ? reject(err) : resolve([f, fi])
+        );
+      }
+    );
 
-    // ─────────────────────────────────────────────
-    // SAFE JSON PARSE
-    // ─────────────────────────────────────────────
     const rawData = Array.isArray(fields.data)
       ? fields.data[0]
       : fields.data;
 
     const data = JSON.parse(rawData || '{}');
 
-    // ─────────────────────────────────────────────
-    // VALIDATION (UNCHANGED)
-    // ─────────────────────────────────────────────
     if (!data.lrNumber || !/^\d+\/\d+\/\d+$/.test(data.lrNumber)) {
-      return res.status(400).json({ error: 'Invalid LR Number format. Expected: 209/10842/1' });
+      return NextResponse.json(
+        { error: 'Invalid LR Number format. Expected: 209/10842/1' },
+        { status: 400 }
+      );
     }
 
     const askingPrice = parseFloat(data.askingPrice);
     if (isNaN(askingPrice) || askingPrice < 30_000_000) {
-      return res.status(400).json({ error: 'Minimum asking price is KES 30,000,000' });
+      return NextResponse.json(
+        { error: 'Minimum asking price is KES 30,000,000' },
+        { status: 400 }
+      );
     }
 
     const primaryEmail =
@@ -92,7 +68,10 @@ export default async function handler(
       data.sovereignEmail;
 
     if (!primaryEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(primaryEmail)) {
-      return res.status(400).json({ error: 'Valid email address is required' });
+      return NextResponse.json(
+        { error: 'Valid email address is required' },
+        { status: 400 }
+      );
     }
 
     if (
@@ -101,16 +80,19 @@ export default async function handler(
       !data.noExistingNdaViolation ||
       !data.authorizedToSubmit
     ) {
-      return res.status(400).json({ error: 'All four representations must be confirmed' });
+      return NextResponse.json(
+        { error: 'All four representations must be confirmed' },
+        { status: 400 }
+      );
     }
 
     if (data.role === 'BROKER' && data.brokerHasEarb && !data.brokerEarbNumber) {
-      return res.status(400).json({ error: 'EARB registration number is required for registered brokers' });
+      return NextResponse.json(
+        { error: 'EARB registration number is required for registered brokers' },
+        { status: 400 }
+      );
     }
 
-    // ─────────────────────────────────────────────
-    // PRIORITY LOGIC
-    // ─────────────────────────────────────────────
     const priority =
       askingPrice >= 1_000_000_000
         ? 'TROPHY'
@@ -118,9 +100,6 @@ export default async function handler(
         ? 'PRIORITY'
         : 'STANDARD';
 
-    // ─────────────────────────────────────────────
-    // ROLE FIELDS (UNCHANGED)
-    // ─────────────────────────────────────────────
     let roleFields: Record<string, unknown> = {};
 
     if (data.role === 'DEVELOPER') {
@@ -151,9 +130,6 @@ export default async function handler(
       };
     }
 
-    // ─────────────────────────────────────────────
-    // DATABASE INSERT (FULL ORIGINAL STRUCTURE PRESERVED)
-    // ─────────────────────────────────────────────
     const { data: submission, error: insertError } = await supabase
       .from('divestment_submissions')
       .insert({
@@ -243,9 +219,6 @@ export default async function handler(
 
     if (insertError) throw insertError;
 
-    // ─────────────────────────────────────────────
-    // FILE UPLOADS (FIXED TYPES ONLY)
-    // ─────────────────────────────────────────────
     const BUCKET = 'divestment-documents';
     const processedFiles: string[] = [];
 
@@ -298,9 +271,6 @@ export default async function handler(
       }
     }
 
-    // ─────────────────────────────────────────────
-    // AI SCORING (RESTORED FULLY - GEMINI)
-    // ─────────────────────────────────────────────
     try {
       const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
@@ -346,9 +316,6 @@ export default async function handler(
       console.error('AI scoring failed:', e);
     }
 
-    // ─────────────────────────────────────────────
-    // ONEDRIVE INTEGRATION (FULLY RESTORED)
-    // ─────────────────────────────────────────────
     try {
       await createOneDriveFolder(
         submission.reference_number,
@@ -358,7 +325,7 @@ export default async function handler(
       console.error('OneDrive failed:', e);
     }
 
-    return res.status(200).json({
+    return NextResponse.json({
       success: true,
       referenceNumber: submission.reference_number,
       submissionId: submission.id,
@@ -367,16 +334,13 @@ export default async function handler(
 
   } catch (error: any) {
     console.error(error);
-    return res.status(500).json({
-      error: error?.message || 'Internal server error',
-    });
+    return NextResponse.json(
+      { error: error?.message || 'Internal server error' },
+      { status: 500 }
+    );
   }
 }
 
-
-// ─────────────────────────────────────────────────────────────
-// ONE DRIVE FUNCTION (RESTORED FULLY)
-// ─────────────────────────────────────────────────────────────
 async function createOneDriveFolder(ref: string, name: string) {
   const CLIENT_ID = process.env.MS_CLIENT_ID;
   const CLIENT_SECRET = process.env.MS_CLIENT_SECRET;

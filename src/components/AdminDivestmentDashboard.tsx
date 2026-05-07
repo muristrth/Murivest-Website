@@ -243,7 +243,7 @@ const AdminDivestmentDashboard: React.FC = () => {
     } catch {
       setActivityLog([
         { id: '1', action: 'STATUS_CHANGE', description: 'Submission received via web form', old_value: null, new_value: 'LEAD_RECEIVED', created_at: selectedSubmission?.created_at || '', user_name: 'System' },
-        { id: '2', action: 'ASSIGNED', description: 'Lead assigned to advisor', old_value: null, new_value: selectedSubmission?.assigned_to_name, created_at: selectedSubmission?.updated_at || '', user_name: 'System' },
+        { id: '2', action: 'ASSIGNED', description: 'Lead assigned to advisor', old_value: null, new_value: selectedSubmission?.assigned_to_name || null, created_at: selectedSubmission?.updated_at || '', user_name: 'System' },
       ]);
     }
   };
