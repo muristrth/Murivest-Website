@@ -1,7 +1,4 @@
 /* Component-specific styles */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 .property-card {
   @apply bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl;

@@ -15,12 +15,12 @@ const InstitutionalTrustSignals = () => {
   return (
     <section className="bg-[#2a4a2e] text-[#FAF9F6]">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-16 lg:py-20">
-        
-        {/* Main Trust Bar */}
+
+        {/* MAIN TRUST BAR */}
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-12 mb-12">
-          
-          {/* Left: Primary Credential */}
-          <motion.div 
+
+          {/* LEFT */}
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -30,18 +30,19 @@ const InstitutionalTrustSignals = () => {
             <div className="w-12 h-12 rounded-full border border-[#8B7355]/30 flex items-center justify-center flex-shrink-0">
               <ShieldCheck className="h-5 w-5 text-[#8B7355]" strokeWidth={1.5} />
             </div>
+
             <div>
               <p className="text-[12px] tracking-[0.3em] uppercase text-[#F8F7F4] font-medium mb-2">
-                Independent Advisory
+                Independent Advisory Platform
               </p>
               <p className="text-[13px] text-[#A8A39D] font-light leading-relaxed">
-                Mandate-based engagements • Institutional standards • Fiduciary alignment
+                Mandate-based engagements • Institutional underwriting standards • Fiduciary alignment
               </p>
             </div>
           </motion.div>
 
-          {/* Right: Location */}
-          <motion.div 
+          {/* RIGHT */}
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -52,7 +53,7 @@ const InstitutionalTrustSignals = () => {
               <Scale className="h-4 w-4 text-[#8B7355]" strokeWidth={1.5} />
               <span className="text-[11px] tracking-[0.2em] uppercase">Nairobi, Kenya</span>
             </div>
-            
+
             <div className="flex items-center gap-3 text-[#A8A39D]">
               <Lock className="h-4 w-4 text-[#8B7355]" strokeWidth={1.5} />
               <span className="text-[11px] tracking-[0.2em] uppercase">KYC/AML Verified</span>
@@ -60,21 +61,21 @@ const InstitutionalTrustSignals = () => {
           </motion.div>
         </div>
 
-        {/* Strategic Alliances */}
-        <motion.div 
+        {/* STRATEGIC NETWORK */}
+        <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15, duration: 0.6 }}
-          className="mb-12"
+          className="mb-14"
         >
           <div className="flex items-center gap-4 mb-6">
             <Handshake className="h-4 w-4 text-[#8B7355]" strokeWidth={1.5} />
             <span className="text-[11px] tracking-[0.25em] uppercase text-[#8B7355] font-medium">
-              Professional Collaboration
+              Professional & Strategic Collaboration
             </span>
           </div>
-          
+
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {partners.map((partner, index) => (
               <motion.div
@@ -94,17 +95,48 @@ const InstitutionalTrustSignals = () => {
               </motion.div>
             ))}
           </div>
-          
-          <p className="text-[10px] text-[#8B7355] tracking-[0.15em] mt-4 italic">
-            Details available upon request for qualified partners
-          </p>
         </motion.div>
 
-        {/* Divider */}
+        {/* BLACK STANDARD — NEW INTEGRATION */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="mb-14 border-t border-[#8B7355]/20 pt-10"
+        >
+          <div className="flex items-center gap-4 mb-5">
+            <span className="text-[11px] tracking-[0.25em] uppercase text-[#8B7355] font-medium">
+              Strategic Access Layer
+            </span>
+          </div>
+
+          <div className="border-l border-[#8B7355]/30 pl-6 space-y-3">
+            <p className="text-[14px] text-[#F8F7F4] font-light leading-relaxed">
+              <span className="text-[#8B7355] font-medium">Black Standard</span> — Private lifestyle infrastructure partner
+              providing UHNW mobility coordination, aviation access, concierge services, security orchestration,
+              and global residence logistics through a discreet, invitation-based network.
+            </p>
+
+            <p className="text-[10px] text-[#A8A39D] tracking-[0.15em] uppercase">
+              Non-public access layer · Discretion-first execution model · Invitation-only coordination
+            </p>
+
+            <a
+              href="https://www.black-standard.com/en/"
+              target="_blank"
+              className="text-[10px] tracking-[0.2em] uppercase text-[#8B7355] hover:text-[#F8F7F4] transition-colors"
+            >
+              Visit Strategic Partner →
+            </a>
+          </div>
+        </motion.div>
+
+        {/* DIVIDER */}
         <div className="h-[1px] bg-[#8B7355]/20 mb-8" />
 
-        {/* Compliance Section */}
-        <motion.div 
+        {/* COMPLIANCE */}
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -113,64 +145,59 @@ const InstitutionalTrustSignals = () => {
         >
           <div className="text-center">
             <h4 className="text-[12px] tracking-[0.4em] uppercase text-[#8B7355] font-medium mb-6">
-              Regulatory Framework &amp; Disclosures
+              Regulatory Framework & Disclosures
             </h4>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-6">
+
             <div className="flex gap-4">
               <div className="w-10 h-10 rounded-full bg-[#8B7355]/20 flex items-center justify-center flex-shrink-0">
                 <FileText className="h-5 w-5 text-[#8B7355]" strokeWidth={1.5} />
               </div>
               <div>
-                <p className="text-[11px] text-[#FAF9F6] font-medium mb-1">Mandate Documentation Required</p>
+                <p className="text-[11px] text-[#FAF9F6] font-medium mb-1">
+                  Mandate Documentation Required
+                </p>
                 <p className="text-[10px] text-[#A8A39D] leading-relaxed">
-                  Formal agreements executed prior to any transaction engagement. Scope of work clearly defined.
+                  All engagements governed by formal mandate agreements defining scope, liability, and execution terms.
                 </p>
               </div>
             </div>
-            
+
             <div className="flex gap-4">
               <div className="w-10 h-10 rounded-full bg-[#8B7355]/20 flex items-center justify-center flex-shrink-0">
                 <Lock className="h-5 w-5 text-[#8B7355]" strokeWidth={1.5} />
               </div>
               <div>
-                <p className="text-[11px] text-[#FAF9F6] font-medium mb-1">KYC/AML Compliance</p>
+                <p className="text-[11px] text-[#FAF9F6] font-medium mb-1">
+                  KYC / AML Compliance
+                </p>
                 <p className="text-[10px] text-[#A8A39D] leading-relaxed">
-                  Full verification required for all capital partner introductions and mandate participants.
+                  Full verification required for all capital partners prior to any advisory or transaction engagement.
                 </p>
               </div>
             </div>
-            
+
             <div className="flex gap-4">
               <div className="w-10 h-10 rounded-full bg-[#8B7355]/20 flex items-center justify-center flex-shrink-0">
                 <AlertCircle className="h-5 w-5 text-[#8B7355]" strokeWidth={1.5} />
               </div>
               <div>
-                <p className="text-[11px] text-[#FAF9F6] font-medium mb-1">No Collective Schemes</p>
+                <p className="text-[11px] text-[#FAF9F6] font-medium mb-1">
+                  No Collective Investment Schemes
+                </p>
                 <p className="text-[10px] text-[#A8A39D] leading-relaxed">
-                  We do not pool capital or operate collective investment vehicles. Advisory services only.
+                  Murivest does not pool capital or operate regulated investment funds. Advisory services only.
                 </p>
               </div>
             </div>
-          </div>
-          
-          <div className="flex gap-4">
-            <div className="w-10 h-10 rounded-full bg-[#8B7355]/20 flex items-center justify-center flex-shrink-0">
-              <Scale className="h-5 w-5 text-[#8B7355]" strokeWidth={1.5} />
-            </div>
-            <div>
-              <p className="text-[11px] text-[#FAF9F6] font-medium mb-1">Licensed Activities Only</p>
-              <p className="text-[10px] text-[#A8A39D] leading-relaxed">
-                Murivest Realty Group does not offer regulated financial products or unlicensed investment advice. 
-                All services provided within our licensed commercial real estate advisory scope.
-              </p>
-            </div>
+
           </div>
         </motion.div>
 
-        {/* Footer Disclaimer */}
-        <motion.div 
+        {/* FOOTER DISCLAIMER */}
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -178,9 +205,12 @@ const InstitutionalTrustSignals = () => {
           className="mt-12 pt-8 border-t border-[#8B7355]/20 text-center"
         >
           <p className="text-[10px] text-[#A8A39D] leading-relaxed max-w-2xl mx-auto">
-            Murivest Realty Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products. All opportunities are subject to independent verification, legal due diligence, and formal mandate documentation.
+            Murivest Realty Group Ltd is an independent commercial real estate advisory platform.
+            All engagements are subject to formal mandate agreements, independent due diligence,
+            and regulatory compliance frameworks.
           </p>
         </motion.div>
+
       </div>
     </section>
   );

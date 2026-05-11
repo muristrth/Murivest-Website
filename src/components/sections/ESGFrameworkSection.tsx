@@ -7,123 +7,143 @@ import Link from 'next/link';
 
 const esgPillars = [
   {
-    title: 'Responsible Investment Principles',
-    desc: 'Murivest integrates globally recognized responsible investment principles into its underwriting and advisory mandates. Investment screening and due diligence are aligned, where applicable, with the UN-supported Principles for Responsible Investment (PRI), ensuring environmental, social, and governance factors are embedded within risk-adjusted return analysis rather than treated as peripheral considerations.',
-    metrics: 'Alignment: PRI-Informed Screening',
+    title: 'Responsible Investment Integration',
+    desc: 'Environmental, social, and governance considerations are embedded directly into underwriting rather than treated as post-investment reporting. Each mandate is screened through a risk-adjusted lens consistent with institutional capital expectations, including PRI-aligned frameworks where applicable.',
+    metrics: 'PRI-informed underwriting lens',
     icon: Leaf,
   },
   {
-    title: 'Green Building & Climate Standards',
-    desc: 'Assets are evaluated against green building frameworks relevant to East Africa, including IFC EDGE certification and LEED standards administered by the U.S. Green Building Council. Priority is given to developments demonstrating measurable efficiency in energy, water, and embodied carbon, alongside climate-adaptive design appropriate for regional conditions.',
-    metrics: 'Focus: EDGE / LEED Benchmarking',
+    title: 'Built Asset Sustainability Standards',
+    desc: 'Asset selection prioritizes measurable efficiency in energy use, water consumption, and embodied carbon. Where applicable, developments are assessed against IFC EDGE and LEED frameworks, with emphasis on climate resilience and long-term operating cost stability.',
+    metrics: 'EDGE / LEED benchmarked assets',
     icon: ShieldCheck,
   },
   {
-    title: 'Governance, Transparency & Reporting',
-    desc: 'Institutional governance structures, legal compliance, and structured reporting protocols form the foundation of each transaction. ESG performance indicators may be tracked alongside financial metrics in accordance with Global Reporting Initiative (GRI) principles, supporting the disclosure requirements of European family offices, pension funds, and fiduciary capital partners.',
-    metrics: 'Standard: GRI-Oriented Reporting',
+    title: 'Institutional Governance & Reporting',
+    desc: 'Each mandate is structured with formal governance controls, legal compliance verification, and reporting frameworks aligned with institutional investor requirements. ESG and financial performance are tracked in parallel where required for fiduciary reporting.',
+    metrics: 'GRI-aligned reporting structure',
     icon: LineChart,
   },
 ];
 
 const ESGFrameworkSection = () => {
   return (
-    <section className="bg-[#FDFCFA] text-[#2C2C2C]">
-      {/* Header */}
-      <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-24 lg:py-32">
-        <div className="grid lg:grid-cols-12 gap-12 items-end">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+    <section className="bg-[#FDFCFA] text-[#2C2C2C] border-t border-[#E5E2DC]">
+
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16 py-20 lg:py-32">
+
+        {/* ── HEADER ───────────────────────────── */}
+        <div className="grid lg:grid-cols-12 gap-12 items-end mb-16">
+
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7 }}
             className="lg:col-span-6"
           >
             <p className="text-[11px] tracking-[0.35em] uppercase text-[#8B7355] mb-6 font-medium">
-              Environmental, Social & Governance
+              Environmental · Social · Governance
             </p>
-            <h2 className="text-4xl md:text-5xl font-serif leading-[1.15] text-[#2C2C2C]">
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-[1.15]">
               ESG Framework<br />
-              <span className="italic text-[#5A5A5A] font-light">Aligned With Institutional Capital</span>
+              <span className="italic text-[#5A5A5A] font-light">
+                Capital Risk Lens
+              </span>
             </h2>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="lg:col-span-6 lg:pb-2"
+            transition={{ delay: 0.2 }}
+            className="lg:col-span-6 lg:pt-10"
           >
-            <p className="text-[15px] leading-[1.8] text-[#5A5A5A] font-light border-l border-[#C4B59D] pl-6">
-              Murivest integrates responsible investment principles and green building benchmarks into its acquisition advisory process, reflecting the expectations of institutional capital allocating into East Africa.
+            <p className="text-[14px] sm:text-[15px] leading-[1.9] text-[#5A5A5A] font-light border-l border-[#C4B59D] pl-6">
+              ESG at Murivest is not a reporting function — it is a capital protection filter.
+              It determines what is investable, what is bankable, and what is institutionally
+              acceptable before capital is deployed into East African real estate markets.
             </p>
           </motion.div>
-        </div>
-      </div>
 
-      {/* ESG Cards */}
-      <div className="max-w-[1400px] mx-auto px-8 lg:px-16 pb-24">
-        <div className="grid md:grid-cols-3 gap-px bg-[#E5E2DC] border border-[#E5E2DC]">
+        </div>
+
+        {/* ── CARDS (mobile-first stacking consistency) ───────────────── */}
+        <div className="grid md:grid-cols-3 gap-px border border-[#E5E2DC] bg-[#E5E2DC]">
+
           {esgPillars.map((item, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1, duration: 0.6 }}
-              className="group bg-[#FDFCFA] p-10 lg:p-12 hover:bg-[#F8F7F4] transition-colors duration-700"
+              transition={{ delay: idx * 0.08 }}
+              className="bg-[#FDFCFA] p-8 sm:p-10 lg:p-12 hover:bg-[#F8F7F4] transition-colors duration-500 group flex flex-col"
             >
-              <div className="mb-10">
-                <div className="w-12 h-12 rounded-full border border-[#C4B59D] flex items-center justify-center group-hover:border-[#8B7355] transition-colors duration-500">
+
+              {/* Icon */}
+              <div className="mb-8">
+                <div className="w-11 h-11 rounded-full border border-[#C4B59D] flex items-center justify-center group-hover:border-[#8B7355] transition-colors duration-500">
                   <item.icon className="h-5 w-5 text-[#8B7355]" strokeWidth={1.5} />
                 </div>
               </div>
 
-              <h3 className="text-xl font-serif text-[#2C2C2C] mb-4 leading-tight group-hover:text-[#8B7355] transition-colors duration-500">
+              {/* Title */}
+              <h3 className="text-lg sm:text-xl font-serif mb-4 leading-tight group-hover:text-[#8B7355] transition-colors duration-500">
                 {item.title}
               </h3>
-              
-              <p className="text-[14px] leading-[1.7] text-[#5A5A5A] font-light mb-8">
+
+              {/* Body */}
+              <p className="text-[14px] leading-[1.8] text-[#5A5A5A] font-light flex-1">
                 {item.desc}
               </p>
 
-              <div className="pt-6 border-t border-[#E5E2DC]">
-                <p className="text-[11px] tracking-[0.2em] uppercase text-[#8B7355] font-medium">
+              {/* Metric */}
+              <div className="mt-8 pt-6 border-t border-[#E5E2DC]">
+                <p className="text-[10px] tracking-[0.2em] uppercase text-[#8B7355] font-medium">
                   {item.metrics}
                 </p>
               </div>
 
-              <div className="mt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              {/* CTA (subtle reveal) */}
+              <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <Link
                   href="/esg-policy"
                   className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase text-[#8B7355] hover:text-[#6B5635]"
                 >
-                  ESG Policy Brief <ArrowUpRight className="h-3 w-3" />
+                  ESG Framework Brief
+                  <ArrowUpRight className="h-3 w-3" />
                 </Link>
               </div>
+
             </motion.div>
           ))}
-        </div>
-      </div>
 
-      {/* Footer */}
-      <div className="border-t border-[#E5E2DC]">
-        <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-12">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <p className="text-[13px] text-[#5A5A5A] font-light italic">
+        </div>
+
+        {/* ── FOOTER ───────────────────────────── */}
+        <div className="border-t border-[#E5E2DC] mt-14 pt-10">
+
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+
+            <p className="text-[13px] text-[#5A5A5A] italic font-light max-w-md">
               Long-duration capital requires long-duration stewardship.
             </p>
-            
-            <Link 
+
+            <Link
               href="/esg-policy"
-              className="group flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase text-[#2C2C22] hover:text-[#8B7355] transition-colors duration-500"
+              className="group inline-flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase text-[#2C2C2C] hover:text-[#8B7355] transition-colors duration-500"
             >
-              <span>Explore Full ESG Framework</span>
+              <span>View Full ESG Framework</span>
               <span className="w-8 h-[1px] bg-current group-hover:w-12 transition-all duration-500" />
             </Link>
+
           </div>
+
         </div>
+
       </div>
     </section>
   );

@@ -6,160 +6,190 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 
-const properties = [
+const coverage = [
   {
     id: '01',
-    location: 'Grade A Office, Nairobi CBD',
-    type: 'Fully tenanted office asset. Focus on core income generation with long-term lease covenants. Available selectively under advisory mandate.',
-    size: '47,000 sqm',
-    yield: 'N/A — Advisory Mandate',
-    status: 'Under Advisory',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Absa_Towers_%28Nairobi%29%2C_2025_%2801%29.jpg',
+    title: 'Nairobi CBD — Core Office Market',
+    desc: 'Institutional-grade office assets within Nairobi’s established commercial core, focusing on tenant quality, lease durability, and capital preservation.',
+    note: 'Select advisory coverage only',
+    image: '/kenya-night.png',
   },
   {
     id: '02',
-    location: 'Mixed-Use Asset, Nairobi',
-    type: 'Stabilized urban mixed-use development with defensive tenant mix. Long-term income profile suitable for institutional capital allocation.',
-    size: '6,450 sqm',
-    yield: 'N/A — Advisory Mandate',
-    status: 'Under Advisory',
+    title: 'Urban Mixed-Use Corridors',
+    desc: 'Stabilized mixed-use and retail-led developments positioned along high-density urban growth nodes.',
+    note: 'Mandate-based engagement',
     image: '/mall.avif',
   },
   {
     id: '03',
-    location: 'Logistics, Mombasa Road',
-    type: 'Industrial logistics facility serving East African trade corridor. Infrastructure-aligned asset class with diversified tenant base.',
-    size: '128,000 sqm',
-    yield: 'N/A — Advisory Mandate',
-    status: 'Pipeline Development',
-    image: '/logistics.jpg',
+    title: 'Logistics & Infrastructure Corridor',
+    desc: 'Strategic industrial and logistics assets aligned with East Africa’s primary trade and transport routes.',
+    note: 'Pipeline advisory positioning',
+    image: '/p/IMG-20250813-WA0001.jpg',
   },
 ];
 
 const InstitutionalEngagementModel = () => {
   return (
-    <section className="bg-[#F5F5F3] text-[#1A1A1A]">
-      {/* Header - Asymmetric Layout */}
-      <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-24">
-        <div className="grid lg:grid-cols-12 gap-16 items-end">
-          <motion.div 
+    <section className="relative overflow-hidden bg-[#F5F5F3] text-[#1A1A1A]">
+
+      {/* ================= BACKGROUND ================= */}
+      <div className="absolute inset-0 pointer-events-none">
+
+        <div className="absolute inset-0 bg-gradient-to-b from-[#F5F5F3]/95 via-[#F5F5F3]/92 to-[#F5F5F3]/98" />
+
+        <div className="absolute inset-0 bg-[url('/images/mandate-hero.jpg')] bg-cover bg-center opacity-[0.06]" />
+
+        <div className="absolute top-[-150px] left-[-120px] w-[500px] h-[500px] bg-[#C4B59D]/10 blur-3xl rounded-full" />
+
+        <div className="absolute bottom-[-120px] right-[-100px] w-[400px] h-[400px] bg-[#8B7355]/10 blur-3xl rounded-full" />
+      </div>
+
+      {/* ================= HEADER ================= */}
+      <div className="relative max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16 py-16 md:py-24">
+
+        <div className="grid lg:grid-cols-12 gap-10 items-end">
+
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
             className="lg:col-span-7"
           >
-            <p className="text-[11px] tracking-[0.4em] uppercase text-[#8B7355] mb-6 font-medium">
+            <p className="text-[10px] sm:text-[11px] tracking-[0.35em] uppercase text-[#8B7355] mb-4">
               Advisory Scope
             </p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-[1.1] text-[#1A1A1A]">
-              Institutional Grade<br />
-              <span className="italic text-[#4A4A4A] font-light">Commercial Assets</span>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-[1.1]">
+              Institutional<br />
+              <span className="italic text-[#4A4A4A] font-light">
+                Coverage Areas
+              </span>
             </h2>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="lg:col-span-5 lg:pb-2"
+            className="hidden lg:block lg:col-span-5"
           >
             <p className="text-[15px] leading-relaxed text-[#4A4A4A] font-light border-l border-[#8B7355] pl-6">
-              We advise on a focused portfolio of commercial properties across East Africa. 
-              All opportunities presented to qualified capital partners undergo rigorous 
-              due diligence consistent with institutional investment standards.
+              Murivest advises on select commercial real estate exposures across East Africa.
+              All engagements are structured under formal mandate with qualified capital partners.
             </p>
           </motion.div>
         </div>
       </div>
 
-      {/* Property Grid - Editorial Spacing */}
-      <div className="max-w-[1400px] mx-auto px-8 lg:px-16 pb-24">
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-          {properties.map((property, idx) => (
+      {/* ================= DESKTOP / MOBILE ================= */}
+      <div className="relative max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16 pb-20">
+
+        {/* DESKTOP GRID (quiet, restrained) */}
+        <div className="hidden md:grid md:grid-cols-3 gap-10">
+
+          {coverage.map((item, idx) => (
             <motion.div
-              key={property.id}
+              key={item.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1, duration: 0.6 }}
-              className="group cursor-pointer"
+              className="group"
             >
-              {/* Image Container - Minimal Frame */}
-              <div className="group relative aspect-[4/5] bg-[#F5F5F7] mb-6 overflow-hidden cursor-pointer">
-                {/* The Actual Image - Optimized for Retina Displays */}
+              {/* IMAGE (background feel, not product showcase) */}
+              <div className="relative aspect-[4/5] overflow-hidden mb-6 bg-[#EDEBE6]">
+
                 <Image
-                  src={property.image} 
-                  alt={property.location}
+                  src={item.image}
+                  alt={item.title}
                   fill
-                  priority={idx === 0}
-                  className="object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover grayscale-[10%] opacity-90 group-hover:opacity-100 transition duration-700"
                 />
 
-                {/* Apple-style "Glass" Overlay on Hover */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-700" />
-
-                {/* Status Tag - Integrated Glassmorphism */}
-                <div className="absolute top-5 left-5">
-                  <span className="backdrop-blur-md bg-white/80 border border-white/20 text-[10px] tracking-[0.2em] uppercase px-4 py-2 text-[#1A1A1A] shadow-sm">
-                    {property.status}
-                  </span>
-                </div>
-
-                {/* Bottom Detail Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition" />
               </div>
 
-              {/* Details - Restrained Typography */}
-              <div className="space-y-3">
-                <div className="flex justify-between items-baseline border-b border-[#D4D0C8] pb-3">
-                  <h3 className="text-lg font-serif text-[#1A1A1A] group-hover:text-[#8B7355] transition-colors duration-500">
-                    {property.location}
-                  </h3>
-                  <ArrowUpRight className="w-4 h-4 text-[#8B7355] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </div>
-                
-                <div className="flex justify-between text-[13px] text-[#4A4A4A] font-light">
-                  <span>{property.type}</span>
-                  <span>{property.size}</span>
-                </div>
-                
-                <p className="text-[11px] tracking-[0.15em] uppercase text-[#8B7355] pt-1">
-                  {property.yield}
-                </p>
-              </div>
+              <h3 className="font-serif text-lg group-hover:text-[#8B7355] transition">
+                {item.title}
+              </h3>
+
+              <p className="text-sm text-[#4A4A4A] mt-2 leading-relaxed">
+                {item.desc}
+              </p>
+
+              <p className="text-[11px] uppercase tracking-wider text-[#8B7355] mt-4">
+                {item.note}
+              </p>
             </motion.div>
           ))}
         </div>
-        
-        {/* Advisory Footer Note */}
-        <div className="mt-12 p-6 bg-[#E8E3DA] border border-[#E8E3DA]">
-          <p className="text-[12px] text-[#5A5A5A] leading-relaxed font-light text-center max-w-3xl mx-auto">
-            Assets shown represent advisory scope and market positioning. Specific opportunities, yields, and terms are disclosed exclusively to qualified institutional investors under formal mandate agreements. All investments carry inherent risks including potential capital loss.
-          </p>
+
+        {/* ================= MOBILE (VERY PREMIUM MINIMAL LIST) ================= */}
+        <div className="md:hidden space-y-6">
+
+          {coverage.map((item) => (
+            <div
+              key={item.id}
+              className="flex gap-4 items-start border-b border-[#D4D0C8] pb-5"
+            >
+
+              {/* SMALL IMAGE */}
+              <div className="relative w-[62px] h-[78px] flex-shrink-0 overflow-hidden bg-[#EDEBE6]">
+
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover opacity-80"
+                />
+              </div>
+
+              {/* TEXT */}
+              <div className="flex-1">
+
+                <h3 className="text-sm font-serif leading-tight">
+                  {item.title}
+                </h3>
+
+                <p className="text-[11px] text-[#4A4A4A] mt-1 leading-relaxed line-clamp-2">
+                  {item.desc}
+                </p>
+
+                <p className="text-[10px] uppercase tracking-wider text-[#8B7355] mt-2">
+                  {item.note}
+                </p>
+              </div>
+
+              <ArrowUpRight className="w-4 h-4 text-[#8B7355]" />
+            </div>
+          ))}
+        </div>
+
+        {/* ================= NOTE ================= */}
+        <div className="mt-10 p-5 bg-[#E8E3DA]/70 text-center text-[11px] text-[#5A5A5A] leading-relaxed">
+          Advisory positioning only. Access restricted to qualified investors under mandate.
         </div>
       </div>
 
-      {/* Footer CTA - Understated Elegance */}
-      <div className="border-t border-[#D4D0C8]">
-        <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-12">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <p className="text-[13px] text-[#4A4A4A] font-light">
-              Advisory services available by formal mandate only.
-            </p>
-            
-            <Link 
-              href="/contact"
-              className="group flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase text-[#1A1A1A] hover:text-[#8B7355] transition-colors duration-500"
-            >
-              <span>Request Advisory Engagement</span>
-              <span className="w-8 h-[1px] bg-current group-hover:w-12 transition-all duration-500" />
-            </Link>
-          </div>
+      {/* ================= FOOTER ================= */}
+      <div className="border-t border-[#E5E2DC]">
+        <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
+
+          <p className="text-[12px] text-[#4A4A4A]">
+            Structured advisory engagements only.
+          </p>
+
+          <Link
+            href="/contact"
+            className="text-[11px] uppercase tracking-[0.25em] text-[#1A1A1A] hover:text-[#8B7355]"
+          >
+            Request Engagement →
+          </Link>
+
         </div>
       </div>
+
     </section>
   );
 };

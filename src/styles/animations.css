@@ -1,9 +1,5 @@
 /* Animation styles */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @keyframes fadeIn {
   from {
     opacity: 0;

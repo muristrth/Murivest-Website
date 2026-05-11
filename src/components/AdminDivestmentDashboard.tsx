@@ -1,7 +1,9 @@
 "use client"
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { createClient } from '@/lib/admin/client';
+import type { Database } from '@/lib/database.types';
 import {
   Building2, DollarSign, Users, TrendingUp, Clock, CheckCircle2,
   AlertTriangle, X, ExternalLink, FileText, Image, Mail, Phone,
@@ -9,79 +11,18 @@ import {
   Search, Download, Eye, Send, Star, BarChart3, Activity,
   Briefcase, User, Crown, Globe, Landmark, HardHat,
   ChevronDown, RefreshCw, MoreHorizontal, ArrowUpRight,
-  Shield, Zap, Target, Layers, FileCheck
+  Shield, Zap, Target, Layers, FileCheck, Loader2
 } from 'lucide-react';
 
-// ─── Types ────────────────────────────────────────────────────────────────────
+// ─── Supabase Types ───────────────────────────────────────────────────────────
 
-type SubmissionStatus =
-  | 'LEAD_RECEIVED' | 'UNDER_REVIEW' | 'QUALIFICATION_CALL' | 'NDA_PENDING'
-  | 'ADVISORY_ENGAGEMENT' | 'UNDERWRITING' | 'INSTITUTIONALIZED' | 'ON_MARKET'
-  | 'IOI_RECEIVED' | 'SHORTLISTED' | 'BAFO' | 'LOI_NEGOTIATION'
-  | 'PSA_NEGOTIATION' | 'DUE_DILIGENCE' | 'FINANCING' | 'CLOSING'
-  | 'CLOSED' | 'REJECTED' | 'WITHDRAWN';
+type DivestmentSubmission = Database['public']['Tables']['divestment_submissions']['Row'];
+type SubmissionActivityLog = Database['public']['Tables']['submission_activity_log']['Row'];
+type User = Database['public']['Tables']['users']['Row'];
 
-type Priority = 'TROPHY' | 'PRIORITY' | 'STANDARD' | 'OPPORTUNISTIC';
-type Role = 'OWNER' | 'BROKER' | 'DEVELOPER' | 'REIT' | 'FAMILY_OFFICE' | 'SOVEREIGN_FUND';
-
-interface DivestmentSubmission {
-  id: string;
-  reference_number: string;
-  created_at: string;
-  updated_at: string;
-  status: SubmissionStatus;
-  priority: Priority;
-  submitter_role: Role;
-  property_name: string;
-  asset_class: string;
-  location_city: string;
-  location_neighborhood: string;
-  lr_number: string;
-  asking_price: number | null;
-  currency: string;
-  cap_rate: number | null;
-  noi: number | null;
-  occupancy_rate: number | null;
-  wale_years: number | null;
-  anchor_tenant_name: string | null;
-  building_grade: string | null;
-  year_built: number | null;
-  total_built_up_area_sqm: number | null;
-  net_operating_income: number | null;
-  owner_full_name: string | null;
-  owner_entity_name: string | null;
-  owner_email: string | null;
-  owner_phone: string | null;
-  broker_full_name: string | null;
-  broker_entity_name: string | null;
-  broker_email: string | null;
-  broker_phone: string | null;
-  broker_earb_number: string | null;
-  broker_has_earb: boolean;
-  broker_mandate_chain: string | null;
-  marketing_rights_granted: boolean;
-  ai_deal_score: number | null;
-  ai_investor_readiness: number | null;
-  qualification_notes: string | null;
-  rejection_reason: string | null;
-  admin_onedrive_folder_link: string | null;
-  assigned_to: string | null;
-  assigned_to_name: string | null;
-  exclusivity_period_days: number | null;
-  divestment_reason: string | null;
-  source: string;
-  file_count: number;
-}
-
-interface ActivityLogEntry {
-  id: string;
-  action: string;
-  description: string;
-  old_value: string | null;
-  new_value: string | null;
-  created_at: string;
-  user_name: string | null;
-}
+type SubmissionStatus = Database['public']['Enums']['submission_status'];
+type DealPriority = Database['public']['Enums']['deal_priority'];
+type SubmitterRole = Database['public']['Enums']['submitter_role'];
 
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
@@ -108,15 +49,15 @@ const STATUS_CONFIG: Record<SubmissionStatus, { label: string; color: string; bg
 };
 
 const PIPELINE_STAGES = [
-  { name: 'Intake', statuses: ['LEAD_RECEIVED', 'UNDER_REVIEW', 'QUALIFICATION_CALL'] },
-  { name: 'Engagement', statuses: ['NDA_PENDING', 'ADVISORY_ENGAGEMENT'] },
-  { name: 'Preparation', statuses: ['UNDERWRITING', 'INSTITUTIONALIZED'] },
-  { name: 'Marketing', statuses: ['ON_MARKET', 'IOI_RECEIVED'] },
-  { name: 'Bidding', statuses: ['SHORTLISTED', 'BAFO'] },
-  { name: 'Negotiation', statuses: ['LOI_NEGOTIATION', 'PSA_NEGOTIATION'] },
-  { name: 'Closing', statuses: ['DUE_DILIGENCE', 'FINANCING', 'CLOSING'] },
-  { name: 'Complete', statuses: ['CLOSED'] },
-  { name: 'Terminal', statuses: ['REJECTED', 'WITHDRAWN'] },
+  { name: 'Intake', statuses: ['LEAD_RECEIVED', 'UNDER_REVIEW', 'QUALIFICATION_CALL'] as SubmissionStatus[] },
+  { name: 'Engagement', statuses: ['NDA_PENDING', 'ADVISORY_ENGAGEMENT'] as SubmissionStatus[] },
+  { name: 'Preparation', statuses: ['UNDERWRITING', 'INSTITUTIONALIZED'] as SubmissionStatus[] },
+  { name: 'Marketing', statuses: ['ON_MARKET', 'IOI_RECEIVED'] as SubmissionStatus[] },
+  { name: 'Bidding', statuses: ['SHORTLISTED', 'BAFO'] as SubmissionStatus[] },
+  { name: 'Negotiation', statuses: ['LOI_NEGOTIATION', 'PSA_NEGOTIATION'] as SubmissionStatus[] },
+  { name: 'Closing', statuses: ['DUE_DILIGENCE', 'FINANCING', 'CLOSING'] as SubmissionStatus[] },
+  { name: 'Complete', statuses: ['CLOSED'] as SubmissionStatus[] },
+  { name: 'Terminal', statuses: ['REJECTED', 'WITHDRAWN'] as SubmissionStatus[] },
 ];
 
 const STATUS_TRANSITIONS: Partial<Record<SubmissionStatus, SubmissionStatus[]>> = {
@@ -141,14 +82,6 @@ const STATUS_TRANSITIONS: Partial<Record<SubmissionStatus, SubmissionStatus[]>> 
   WITHDRAWN: ['LEAD_RECEIVED'],
 };
 
-const TEAM_MEMBERS = [
-  { id: '1', name: 'Unassigned' },
-  { id: '2', name: 'Sarah Kimani' },
-  { id: '3', name: 'James Mwangi' },
-  { id: '4', name: 'Amina Hassan' },
-  { id: '5', name: 'David Ochieng' },
-];
-
 const ROLE_ICONS: Record<string, React.ReactNode> = {
   OWNER: <User className="w-4 h-4" />,
   BROKER: <Briefcase className="w-4 h-4" />,
@@ -158,7 +91,7 @@ const ROLE_ICONS: Record<string, React.ReactNode> = {
   SOVEREIGN_FUND: <Globe className="w-4 h-4" />,
 };
 
-const PRIORITY_COLORS: Record<Priority, string> = {
+const PRIORITY_COLORS: Record<DealPriority, string> = {
   TROPHY: 'text-purple-400 bg-purple-500/10 border-purple-500/30',
   PRIORITY: 'text-amber-400 bg-amber-500/10 border-amber-500/30',
   STANDARD: 'text-blue-400 bg-blue-500/10 border-blue-500/30',
@@ -172,11 +105,13 @@ const formatPrice = (amount: number | null, currency: string = 'KES') => {
   return `${currency === 'USD' ? '$' : 'KES'} ${amount.toLocaleString()}`;
 };
 
-const formatDate = (dateStr: string) => {
+const formatDate = (dateStr: string | null) => {
+  if (!dateStr) return 'N/A';
   return new Date(dateStr).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
 };
 
-const formatRelativeTime = (dateStr: string) => {
+const formatRelativeTime = (dateStr: string | null) => {
+  if (!dateStr) return 'N/A';
   const now = new Date();
   const date = new Date(dateStr);
   const diff = now.getTime() - date.getTime();
@@ -191,95 +126,331 @@ const formatRelativeTime = (dateStr: string) => {
 // ─── Main Component ─────────────────────────────────────────────────────────
 
 const AdminDivestmentDashboard: React.FC = () => {
+  const supabase = createClient();
+
   const [submissions, setSubmissions] = useState<DivestmentSubmission[]>([]);
+  const [teamMembers, setTeamMembers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [selectedSubmission, setSelectedSubmission] = useState<DivestmentSubmission | null>(null);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
-  const [activityLog, setActivityLog] = useState<ActivityLogEntry[]>([]);
+  const [activityLog, setActivityLog] = useState<SubmissionActivityLog[]>([]);
+  const [activityLoading, setActivityLoading] = useState(false);
   const [statusFilter, setStatusFilter] = useState<string>('ALL');
   const [priorityFilter, setPriorityFilter] = useState<string>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
   const [viewMode, setViewMode] = useState<'list' | 'pipeline'>('list');
   const [sortBy, setSortBy] = useState<string>('created_desc');
+  const [actionLoading, setActionLoading] = useState<string | null>(null);
 
-  // Fetch submissions
-  useEffect(() => {
-    fetchSubmissions();
-  }, []);
+  // ─── Fetch Submissions ─────────────────────────────────────────────────────
 
-  const fetchSubmissions = async () => {
+  const fetchSubmissions = useCallback(async () => {
     setLoading(true);
+    setError(null);
     try {
-      const res = await fetch('/api/divestment/divestments');
-      const data = await res.json();
-      setSubmissions(data.submissions || []);
-    } catch (err) {
-      console.error('Failed to fetch:', err);
-      // Load sample data for demo
-      setSubmissions([
-        { id: '1', reference_number: 'MRV-2026-00001', created_at: '2026-05-07T10:30:00Z', updated_at: '2026-05-07T10:30:00Z', status: 'LEAD_RECEIVED', priority: 'PRIORITY', submitter_role: 'OWNER', property_name: 'Westpark Towers', asset_class: 'OFFICE', location_city: 'Nairobi', location_neighborhood: 'Westlands', lr_number: '209/10842/1', asking_price: 850000000, currency: 'KES', cap_rate: 8.5, noi: 72250000, occupancy_rate: 92, wale_years: 4.2, anchor_tenant_name: 'Safaricom PLC', building_grade: 'A', year_built: 2010, total_built_up_area_sqm: 12000, net_operating_income: 72250000, owner_full_name: 'John Kamau Mwangi', owner_entity_name: 'Westpark Properties Ltd', owner_email: 'john@westpark.co.ke', owner_phone: '+254 722 123456', broker_full_name: null, broker_entity_name: null, broker_email: null, broker_phone: null, broker_earb_number: null, broker_has_earb: true, broker_mandate_chain: null, marketing_rights_granted: false, ai_deal_score: 8.2, ai_investor_readiness: 7.5, qualification_notes: null, rejection_reason: null, admin_onedrive_folder_link: null, assigned_to: '2', assigned_to_name: 'Sarah Kimani', exclusivity_period_days: 60, divestment_reason: 'PORTFOLIO_REBALANCING', source: 'WEB_FORM', file_count: 8 },
-        { id: '2', reference_number: 'MRV-2026-00002', created_at: '2026-05-06T14:15:00Z', updated_at: '2026-05-07T09:00:00Z', status: 'UNDER_REVIEW', priority: 'TROPHY', submitter_role: 'BROKER', property_name: 'Gateway Business Park', asset_class: 'LOGISTICS', location_city: 'Nairobi', location_neighborhood: 'Mombasa Road', lr_number: '330/1234/5', asking_price: 2500000000, currency: 'KES', cap_rate: 9.2, noi: 230000000, occupancy_rate: 100, wale_years: 7.5, anchor_tenant_name: 'DHL Express', building_grade: 'A', year_built: 2018, total_built_up_area_sqm: 35000, net_operating_income: 230000000, owner_full_name: null, owner_entity_name: null, owner_email: null, owner_phone: null, broker_full_name: 'Jane Oduor', broker_entity_name: 'Metropolitan Real Estate', broker_email: 'jane@metro.co.ke', broker_phone: '+254 733 987654', broker_earb_number: 'EARB/2023/00456', broker_has_earb: true, broker_mandate_chain: 'DIRECT', marketing_rights_granted: false, ai_deal_score: 9.1, ai_investor_readiness: 8.8, qualification_notes: 'Strong logistics asset with long-term tenant', rejection_reason: null, admin_onedrive_folder_link: null, assigned_to: '3', assigned_to_name: 'James Mwangi', exclusivity_period_days: 90, divestment_reason: 'FUND_MATURITY', source: 'BROKER_NETWORK', file_count: 12 },
-        { id: '3', reference_number: 'MRV-2026-00003', created_at: '2026-05-05T08:45:00Z', updated_at: '2026-05-06T16:20:00Z', status: 'QUALIFICATION_CALL', priority: 'STANDARD', submitter_role: 'DEVELOPER', property_name: 'Kilimani Heights Residences', asset_class: 'RESIDENTIAL_BLOCK', location_city: 'Nairobi', location_neighborhood: 'Kilimani', lr_number: '36/452/7', asking_price: 420000000, currency: 'KES', cap_rate: null, noi: null, occupancy_rate: null, wale_years: null, anchor_tenant_name: null, building_grade: 'B', year_built: 2015, total_built_up_area_sqm: 8500, net_operating_income: null, owner_full_name: null, owner_entity_name: 'Kilimani Heights Development Ltd', owner_email: 'sales@kilimaniheights.co.ke', owner_phone: null, broker_full_name: null, broker_entity_name: null, broker_email: null, broker_phone: null, broker_earb_number: null, broker_has_earb: true, broker_mandate_chain: null, marketing_rights_granted: false, ai_deal_score: 5.8, ai_investor_readiness: 4.2, qualification_notes: null, rejection_reason: null, admin_onedrive_folder_link: null, assigned_to: '4', assigned_to_name: 'Amina Hassan', exclusivity_period_days: 60, divestment_reason: 'CAPITAL_RECYCLING', source: 'WEB_FORM', file_count: 5 },
-        { id: '4', reference_number: 'MRV-2026-00004', created_at: '2026-05-04T11:00:00Z', updated_at: '2026-05-05T14:30:00Z', status: 'INSTITUTIONALIZED', priority: 'PRIORITY', submitter_role: 'FAMILY_OFFICE', property_name: 'The Sovereign Centre', asset_class: 'MIXED_USE', location_city: 'Nairobi', location_neighborhood: 'Upper Hill', lr_number: '208/8976/3', asking_price: 1800000000, currency: 'KES', cap_rate: 7.8, noi: 140400000, occupancy_rate: 88, wale_years: 5.3, anchor_tenant_name: 'KCB Bank', building_grade: 'A', year_built: 2012, total_built_up_area_sqm: 28000, net_operating_income: 140400000, owner_full_name: null, owner_entity_name: 'The Sovereign Family Office', owner_email: 'investments@sovereign.fo', owner_phone: '+254 722 345678', broker_full_name: null, broker_entity_name: null, broker_email: null, broker_phone: null, broker_earb_number: null, broker_has_earb: true, broker_mandate_chain: null, marketing_rights_granted: true, ai_deal_score: 8.5, ai_investor_readiness: 8.0, qualification_notes: 'Premium mixed-use with institutional tenants', rejection_reason: null, admin_onedrive_folder_link: 'https://murivest-my.sharepoint.com/...', assigned_to: '2', assigned_to_name: 'Sarah Kimani', exclusivity_period_days: 90, divestment_reason: 'PORTFOLIO_REBALANCING', source: 'REFERRAL', file_count: 15 },
-        { id: '5', reference_number: 'MRV-2026-00005', created_at: '2026-05-03T16:30:00Z', updated_at: '2026-05-04T10:00:00Z', status: 'REJECTED', priority: 'OPPORTUNISTIC', submitter_role: 'OWNER', property_name: 'Riverside Apartments', asset_class: 'RESIDENTIAL_BLOCK', location_city: 'Nairobi', location_neighborhood: 'Riverside', lr_number: '1/234/5', asking_price: 120000000, currency: 'KES', cap_rate: null, noi: null, occupancy_rate: null, wale_years: null, anchor_tenant_name: null, building_grade: 'C', year_built: 1995, total_built_up_area_sqm: 3000, net_operating_income: null, owner_full_name: 'Peter Njoroge', owner_entity_name: null, owner_email: 'peter@email.com', owner_phone: '+254 711 223344', broker_full_name: null, broker_entity_name: null, broker_email: null, broker_phone: null, broker_earb_number: null, broker_has_earb: true, broker_mandate_chain: null, marketing_rights_granted: false, ai_deal_score: 3.1, ai_investor_readiness: 2.5, qualification_notes: null, rejection_reason: 'Below minimum transaction size and asset quality below institutional threshold', admin_onedrive_folder_link: null, assigned_to: null, assigned_to_name: null, exclusivity_period_days: null, divestment_reason: 'DISTRESSED_SALE', source: 'WEB_FORM', file_count: 3 },
-      ]);
+      const { data, error: supaError } = await supabase
+        .from('divestment_submissions')
+        .select(`
+          *,
+          assigned_to:users!divestment_submissions_assigned_to_fkey(id, first_name, last_name, email)
+        `)
+        .order('created_at', { ascending: false });
+
+      if (supaError) throw supaError;
+
+      // Map assigned user name if joined
+      const mapped = (data || []).map((sub: any) => ({
+        ...sub,
+        assigned_to_name: sub.assigned_to
+          ? `${sub.assigned_to.first_name} ${sub.assigned_to.last_name}`
+          : null,
+      }));
+
+      setSubmissions(mapped);
+    } catch (err: any) {
+      console.error('Failed to fetch submissions:', err);
+      setError(err.message || 'Failed to load submissions');
+      setSubmissions([]);
     } finally {
       setLoading(false);
     }
-  };
+  }, [supabase]);
 
-  // Fetch activity log when submission selected
+  // ─── Fetch Team Members ────────────────────────────────────────────────────
+
+  const fetchTeamMembers = useCallback(async () => {
+    try {
+      const { data, error: supaError } = await supabase
+        .from('users')
+        .select('id, first_name, last_name, email, role, is_active')
+        .eq('is_active', true)
+        .order('first_name', { ascending: true });
+
+      if (supaError) throw supaError;
+      const mapped = (data || []).map((user: any) => ({
+        id: String(user.id ?? ''),
+        created_at: String(user.created_at ?? ''),
+        email: String(user.email ?? ''),
+        password_hash: user.password_hash ?? null,
+        first_name: String(user.first_name ?? ''),
+        last_name: String(user.last_name ?? ''),
+        title: user.title !== undefined && user.title !== null ? String(user.title) : null,
+        department: user.department !== undefined && user.department !== null ? String(user.department) : null,
+        role: String(user.role ?? ''),
+        is_active: Boolean(user.is_active ?? false),
+        phone: String(user.phone ?? ''),
+        avatar_url: String(user.avatar_url ?? ''),
+        last_login: user.last_login !== undefined && user.last_login !== null ? String(user.last_login) : null,
+        metadata: user.metadata ?? {},
+        // Add missing required fields with default values
+        profile_image_url: user.profile_image_url !== undefined && user.profile_image_url !== null ? String(user.profile_image_url) : '',
+        last_login_at: user.last_login_at !== undefined && user.last_login_at !== null ? String(user.last_login_at) : '',
+        login_count: typeof user.login_count === 'number' ? user.login_count : 0,
+        commission_split_percentage: typeof user.commission_split_percentage === 'number' ? user.commission_split_percentage : 0,
+      }));
+      setTeamMembers(mapped);
+    } catch (err: any) {
+      console.error('Failed to fetch team:', err);
+      setTeamMembers([]);
+    }
+  }, [supabase]);
+
+  // ─── Fetch Activity Log ────────────────────────────────────────────────────
+
+  const fetchActivityLog = useCallback(async (submissionId: string) => {
+    setActivityLoading(true);
+    try {
+      const { data, error: supaError } = await supabase
+        .from('submission_activity_log')
+        .select(`
+          *,
+          user:users(first_name, last_name)
+        `)
+        .eq('submission_id', submissionId)
+        .order('created_at', { ascending: false });
+
+      if (supaError) throw supaError;
+
+      const mapped = (data || []).map((log: any) => ({
+        ...log,
+        user_name: log.user ? `${log.user.first_name} ${log.user.last_name}` : log.user_name,
+      }));
+
+      setActivityLog(mapped);
+    } catch (err: any) {
+      console.error('Failed to fetch activity log:', err);
+      setActivityLog([]);
+    } finally {
+      setActivityLoading(false);
+    }
+  }, [supabase]);
+
+  // ─── Initial Load ──────────────────────────────────────────────────────────
+
   useEffect(() => {
-    if (selectedSubmission) {
+    fetchSubmissions();
+    fetchTeamMembers();
+  }, [fetchSubmissions, fetchTeamMembers]);
+
+  // ─── Load Activity When Panel Opens ────────────────────────────────────────
+
+  useEffect(() => {
+    if (selectedSubmission && isPanelOpen) {
       fetchActivityLog(selectedSubmission.id);
     }
-  }, [selectedSubmission]);
+  }, [selectedSubmission, isPanelOpen, fetchActivityLog]);
 
-  const fetchActivityLog = async (submissionId: string) => {
+  // ─── Real-time Subscription ────────────────────────────────────────────────
+
+  useEffect(() => {
+    const channel = supabase
+      .channel('divestment_changes')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'divestment_submissions' },
+        (payload) => {
+          if (payload.eventType === 'INSERT') {
+            setSubmissions((prev) => [payload.new as DivestmentSubmission, ...prev]);
+          } else if (payload.eventType === 'UPDATE') {
+            setSubmissions((prev) =>
+              prev.map((s) => (s.id === payload.new.id ? { ...s, ...payload.new } : s))
+            );
+            if (selectedSubmission?.id === payload.new.id) {
+              setSelectedSubmission((prev) => (prev ? { ...prev, ...payload.new } : null));
+            }
+          } else if (payload.eventType === 'DELETE') {
+            setSubmissions((prev) => prev.filter((s) => s.id !== payload.old.id));
+            if (selectedSubmission?.id === payload.old.id) {
+              setIsPanelOpen(false);
+              setSelectedSubmission(null);
+            }
+          }
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [supabase, selectedSubmission]);
+
+  // ─── Update Status ─────────────────────────────────────────────────────────
+
+  const updateStatus = async (submissionId: string, newStatus: SubmissionStatus, notes?: string) => {
+    setActionLoading(`status-${submissionId}`);
     try {
-      const res = await fetch(`/api/divestment/activity-log?submissionId=${submissionId}`);
-      const data = await res.json();
-      setActivityLog(data.activities || []);
-    } catch {
-      setActivityLog([
-        { id: '1', action: 'STATUS_CHANGE', description: 'Submission received via web form', old_value: null, new_value: 'LEAD_RECEIVED', created_at: selectedSubmission?.created_at || '', user_name: 'System' },
-        { id: '2', action: 'ASSIGNED', description: 'Lead assigned to advisor', old_value: null, new_value: selectedSubmission?.assigned_to_name || null, created_at: selectedSubmission?.updated_at || '', user_name: 'System' },
-      ]);
+      const { error: supaError } = await supabase
+        .from('divestment_submissions')
+        .update({ status: newStatus, updated_at: new Date().toISOString() })
+        .eq('id', submissionId);
+
+      if (supaError) throw supaError;
+
+      // Insert activity log entry manually (trigger also handles this, but this ensures immediate UI feedback)
+      await supabase.from('submission_activity_log').insert({
+        submission_id: submissionId,
+        action: 'STATUS_CHANGE',
+        description: notes || `Status updated to ${STATUS_CONFIG[newStatus].label}`,
+        new_value: newStatus,
+      });
+
+      await fetchSubmissions();
+      if (selectedSubmission?.id === submissionId) {
+        setSelectedSubmission((prev) => (prev ? { ...prev, status: newStatus } : null));
+        await fetchActivityLog(submissionId);
+      }
+    } catch (err: any) {
+      console.error('Status update failed:', err);
+      alert(`Failed to update status: ${err.message}`);
+    } finally {
+      setActionLoading(null);
     }
   };
 
-  // Filtered submissions
-  const filteredSubmissions = useMemo(() => {
-    return submissions.filter(s => {
-      if (statusFilter !== 'ALL' && s.status !== statusFilter) return false;
-      if (priorityFilter !== 'ALL' && s.priority !== priorityFilter) return false;
-      if (searchQuery) {
-        const q = searchQuery.toLowerCase();
-        return (
-          s.property_name?.toLowerCase().includes(q) ||
-          s.reference_number?.toLowerCase().includes(q) ||
-          s.lr_number?.toLowerCase().includes(q) ||
-          s.owner_full_name?.toLowerCase().includes(q) ||
-          s.broker_full_name?.toLowerCase().includes(q) ||
-          s.location_city?.toLowerCase().includes(q) ||
-          s.location_neighborhood?.toLowerCase().includes(q)
+  // ─── Assign Submission ─────────────────────────────────────────────────────
+
+  const assignSubmission = async (submissionId: string, userId: string | null) => {
+    setActionLoading(`assign-${submissionId}`);
+    try {
+      const { error: supaError } = await supabase
+        .from('divestment_submissions')
+        .update({ assigned_to: userId, updated_at: new Date().toISOString() })
+        .eq('id', submissionId);
+
+      if (supaError) throw supaError;
+
+      const userName = userId
+        ? teamMembers.find((u) => u.id === userId)
+          ? `${teamMembers.find((u) => u.id === userId)!.first_name} ${teamMembers.find((u) => u.id === userId)!.last_name}`
+          : 'Unknown'
+        : 'Unassigned';
+
+      await supabase.from('submission_activity_log').insert({
+        submission_id: submissionId,
+        action: 'ASSIGNED',
+        description: `Assigned to ${userName}`,
+        new_value: userId,
+      });
+
+      await fetchSubmissions();
+      if (selectedSubmission?.id === submissionId) {
+        setSelectedSubmission((prev) =>
+          prev
+            ? {
+                ...prev,
+                assigned_to: userId,
+                assigned_to_name: userName,
+              }
+            : null
         );
+        await fetchActivityLog(submissionId);
       }
-      return true;
-    }).sort((a, b) => {
-      if (sortBy === 'created_desc') return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
-      if (sortBy === 'created_asc') return new Date(a.created_at).getTime() - new Date(b.created_at).getTime();
-      if (sortBy === 'price_desc') return (b.asking_price || 0) - (a.asking_price || 0);
-      if (sortBy === 'score_desc') return (b.ai_deal_score || 0) - (a.ai_deal_score || 0);
-      return 0;
-    });
+    } catch (err: any) {
+      console.error('Assignment failed:', err);
+      alert(`Failed to assign: ${err.message}`);
+    } finally {
+      setActionLoading(null);
+    }
+  };
+
+  // ─── Generate Teaser ───────────────────────────────────────────────────────
+
+  const generateTeaser = async (submissionId: string) => {
+    setActionLoading(`teaser-${submissionId}`);
+    try {
+      const { error: supaError } = await supabase
+        .from('ai_automation_runs')
+        .insert({
+          automation_type: 'COMMS_DRAFT',
+          entity_type: 'SUBMISSION',
+          entity_id: submissionId,
+          status: 'PENDING',
+        });
+
+      if (supaError) throw supaError;
+
+      await supabase.from('submission_activity_log').insert({
+        submission_id: submissionId,
+        action: 'PDF_GENERATED',
+        description: 'Teaser generation initiated',
+      });
+
+      alert('Teaser generation queued successfully');
+      if (selectedSubmission?.id === submissionId) {
+        await fetchActivityLog(submissionId);
+      }
+    } catch (err: any) {
+      console.error('Teaser generation failed:', err);
+      alert(`Failed to generate teaser: ${err.message}`);
+    } finally {
+      setActionLoading(null);
+    }
+  };
+
+  // ─── Open Slide-over ───────────────────────────────────────────────────────
+
+  const openSubmission = (sub: DivestmentSubmission) => {
+    setSelectedSubmission(sub);
+    setIsPanelOpen(true);
+  };
+
+  // ─── Filtered Submissions ──────────────────────────────────────────────────
+
+  const filteredSubmissions = useMemo(() => {
+    return submissions
+      .filter((s) => {
+        if (statusFilter !== 'ALL' && s.status !== statusFilter) return false;
+        if (priorityFilter !== 'ALL' && s.priority !== priorityFilter) return false;
+        if (searchQuery) {
+          const q = searchQuery.toLowerCase();
+          return (
+            s.property_name?.toLowerCase().includes(q) ||
+            s.reference_number?.toLowerCase().includes(q) ||
+            s.lr_number?.toLowerCase().includes(q) ||
+            s.owner_full_name?.toLowerCase().includes(q) ||
+            s.broker_full_name?.toLowerCase().includes(q) ||
+            s.location_city?.toLowerCase().includes(q) ||
+            s.location_neighborhood?.toLowerCase().includes(q)
+          );
+        }
+        return true;
+      })
+      .sort((a, b) => {
+        if (sortBy === 'created_desc') return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+        if (sortBy === 'created_asc') return new Date(a.created_at).getTime() - new Date(b.created_at).getTime();
+        if (sortBy === 'price_desc') return (b.asking_price || 0) - (a.asking_price || 0);
+        if (sortBy === 'score_desc') return (b.ai_deal_score || 0) - (a.ai_deal_score || 0);
+        return 0;
+      });
   }, [submissions, statusFilter, priorityFilter, searchQuery, sortBy]);
 
-  // Pipeline counts
+  // ─── Pipeline Counts ───────────────────────────────────────────────────────
+
   const pipelineCounts = useMemo(() => {
     const counts: Record<string, { count: number; value: number }> = {};
-    PIPELINE_STAGES.forEach(stage => {
-      const stageSubs = submissions.filter(s => stage.statuses.includes(s.status));
+    PIPELINE_STAGES.forEach((stage) => {
+      const stageSubs = submissions.filter((s) => stage.statuses.includes(s.status));
       counts[stage.name] = {
         count: stageSubs.length,
         value: stageSubs.reduce((sum, s) => sum + (s.asking_price || 0), 0),
@@ -288,78 +459,44 @@ const AdminDivestmentDashboard: React.FC = () => {
     return counts;
   }, [submissions]);
 
-  // Metrics
+  // ─── Metrics ───────────────────────────────────────────────────────────────
+
   const totalPipelineValue = submissions
-    .filter(s => s.status !== 'REJECTED' && s.status !== 'WITHDRAWN')
+    .filter((s) => s.status !== 'REJECTED' && s.status !== 'WITHDRAWN')
     .reduce((sum, s) => sum + (s.asking_price || 0), 0);
 
   const totalClosedValue = submissions
-    .filter(s => s.status === 'CLOSED')
+    .filter((s) => s.status === 'CLOSED')
     .reduce((sum, s) => sum + (s.asking_price || 0), 0);
 
-  const avgDealScore = submissions.length > 0
-    ? submissions.reduce((sum, s) => sum + (s.ai_deal_score || 0), 0) / submissions.length
-    : 0;
+  const avgDealScore =
+    submissions.length > 0
+      ? submissions.reduce((sum, s) => sum + (s.ai_deal_score || 0), 0) / submissions.length
+      : 0;
 
-  const trophyDeals = submissions.filter(s => s.priority === 'TROPHY').length;
+  const trophyDeals = submissions.filter((s) => s.priority === 'TROPHY').length;
 
-  // Status update
-  const updateStatus = async (submissionId: string, newStatus: SubmissionStatus, notes?: string) => {
+  // ─── File Count Helper ─────────────────────────────────────────────────────
+
+  const getFileCount = async (submissionId: string): Promise<number> => {
     try {
-      await fetch('/api/divestment/update-status', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ submissionId, newStatus, notes }),
-      });
-      await fetchSubmissions();
-      if (selectedSubmission?.id === submissionId) {
-        setSelectedSubmission(prev => prev ? { ...prev, status: newStatus } : null);
-      }
-    } catch (err) {
-      console.error('Status update failed:', err);
+      const { count, error } = await supabase
+        .from('submission_media')
+        .select('*', { count: 'exact', head: true })
+        .eq('submission_id', submissionId);
+
+      if (error) throw error;
+      return count || 0;
+    } catch {
+      return 0;
     }
   };
-
-  // Assign
-  const assignSubmission = async (submissionId: string, userId: string, userName: string) => {
-    try {
-      await fetch('/api/divestment/assign', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ submissionId, userId, userName }),
-      });
-      await fetchSubmissions();
-      if (selectedSubmission?.id === submissionId) {
-        setSelectedSubmission(prev => prev ? { ...prev, assigned_to: userId, assigned_to_name: userName } : null);
-      }
-    } catch (err) {
-      console.error('Assignment failed:', err);
-    }
-  };
-
-  // Open slide-over
-  const openSubmission = (sub: DivestmentSubmission) => {
-    setSelectedSubmission(sub);
-    setIsPanelOpen(true);
-  };
-
-  // Generate teaser
-  const generateTeaser = async (submissionId: string) => {
-    try {
-      await fetch('/api/divestment/generate-teaser', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ submissionId }),
-      });
-    } catch (err) {
-      console.error('Teaser generation failed:', err);
-    }
-  };
+  console.log(process.env.NEXT_PUBLIC_SUPABASE_URL)
+  // ─── Render ────────────────────────────────────────────────────────────────
 
   return (
     <div className="bg-[#050505] text-white min-h-screen p-4 md:p-8 font-sans">
       <div className="max-w-[1400px] mx-auto">
-
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
           <div>
@@ -375,23 +512,76 @@ const AdminDivestmentDashboard: React.FC = () => {
           </div>
           <div className="flex items-center gap-3">
             <div className="flex bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden">
-              <button onClick={() => setViewMode('list')} className={`px-4 py-2 text-xs font-semibold transition-colors ${viewMode === 'list' ? 'bg-amber-500 text-black' : 'text-zinc-400 hover:text-white'}`}>List</button>
-              <button onClick={() => setViewMode('pipeline')} className={`px-4 py-2 text-xs font-semibold transition-colors ${viewMode === 'pipeline' ? 'bg-amber-500 text-black' : 'text-zinc-400 hover:text-white'}`}>Pipeline</button>
+              <button
+                onClick={() => setViewMode('list')}
+                className={`px-4 py-2 text-xs font-semibold transition-colors ${viewMode === 'list' ? 'bg-amber-500 text-black' : 'text-zinc-400 hover:text-white'}`}
+              >
+                List
+              </button>
+              <button
+                onClick={() => setViewMode('pipeline')}
+                className={`px-4 py-2 text-xs font-semibold transition-colors ${viewMode === 'pipeline' ? 'bg-amber-500 text-black' : 'text-zinc-400 hover:text-white'}`}
+              >
+                Pipeline
+              </button>
             </div>
-            <button onClick={fetchSubmissions} className="p-2 bg-zinc-900 border border-zinc-800 rounded-lg text-zinc-400 hover:text-white transition-colors">
-              <RefreshCw className="w-4 h-4" />
+            <button
+              onClick={fetchSubmissions}
+              disabled={loading}
+              className="p-2 bg-zinc-900 border border-zinc-800 rounded-lg text-zinc-400 hover:text-white transition-colors disabled:opacity-50"
+            >
+              <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
             </button>
           </div>
         </div>
 
+        {/* Error Banner */}
+        {error && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-6 p-4 bg-red-500/10 border border-red-500/30 rounded-xl flex items-center gap-3"
+          >
+            <AlertTriangle className="w-5 h-5 text-red-400 flex-shrink-0" />
+            <p className="text-sm text-red-300">{error}</p>
+            <button onClick={fetchSubmissions} className="ml-auto text-xs text-red-400 hover:text-red-300 underline">
+              Retry
+            </button>
+          </motion.div>
+        )}
+
         {/* KPI Cards */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {[
-            { label: 'Active Pipeline', value: formatPrice(totalPipelineValue), icon: <TrendingUp className="w-4 h-4" />, trend: '+12% vs last month', color: 'text-amber-400' },
-            { label: 'Total Deals', value: submissions.length.toString(), icon: <Building2 className="w-4 h-4" />, trend: `${submissions.filter(s => s.status === 'LEAD_RECEIVED').length} new leads`, color: 'text-blue-400' },
-            { label: 'Avg Deal Score', value: avgDealScore.toFixed(1), icon: <Star className="w-4 h-4" />, trend: '/ 10.0 AI score', color: 'text-purple-400' },
-            { label: 'Trophy Assets', value: trophyDeals.toString(), icon: <Crown className="w-4 h-4" />, trend: formatPrice(totalClosedValue) + ' closed', color: 'text-emerald-400' },
-          ].map(kpi => (
+            {
+              label: 'Active Pipeline',
+              value: formatPrice(totalPipelineValue),
+              icon: <TrendingUp className="w-4 h-4" />,
+              trend: `${submissions.filter((s) => s.status === 'LEAD_RECEIVED').length} new leads`,
+              color: 'text-amber-400',
+            },
+            {
+              label: 'Total Deals',
+              value: submissions.length.toString(),
+              icon: <Building2 className="w-4 h-4" />,
+              trend: `${submissions.filter((s) => s.status === 'LEAD_RECEIVED').length} new leads`,
+              color: 'text-blue-400',
+            },
+            {
+              label: 'Avg Deal Score',
+              value: avgDealScore.toFixed(1),
+              icon: <Star className="w-4 h-4" />,
+              trend: '/ 10.0 AI score',
+              color: 'text-purple-400',
+            },
+            {
+              label: 'Trophy Assets',
+              value: trophyDeals.toString(),
+              icon: <Crown className="w-4 h-4" />,
+              trend: formatPrice(totalClosedValue) + ' closed',
+              color: 'text-emerald-400',
+            },
+          ].map((kpi) => (
             <div key={kpi.label} className="bg-zinc-900/40 border border-zinc-800 rounded-xl p-4">
               <div className="flex items-center justify-between mb-2">
                 <p className="text-[10px] font-semibold uppercase tracking-widest text-zinc-500">{kpi.label}</p>
@@ -406,12 +596,15 @@ const AdminDivestmentDashboard: React.FC = () => {
         {/* Pipeline Stages (Pipeline View) */}
         {viewMode === 'pipeline' && (
           <div className="mb-8 grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-3">
-            {PIPELINE_STAGES.map(stage => {
+            {PIPELINE_STAGES.map((stage) => {
               const count = pipelineCounts[stage.name]?.count || 0;
               const isActive = count > 0;
               return (
-                <button key={stage.name} onClick={() => setStatusFilter(isActive ? stage.statuses[0] : 'ALL')}
-                  className={`p-3 rounded-xl border text-center transition-all duration-200 ${isActive ? 'border-amber-500/30 bg-amber-500/5' : 'border-zinc-800 bg-zinc-900/20'}`}>
+                <button
+                  key={stage.name}
+                  onClick={() => setStatusFilter(isActive ? stage.statuses[0] : 'ALL')}
+                  className={`p-3 rounded-xl border text-center transition-all duration-200 ${isActive ? 'border-amber-500/30 bg-amber-500/5' : 'border-zinc-800 bg-zinc-900/20'}`}
+                >
                   <p className={`text-lg font-black ${isActive ? 'text-amber-400' : 'text-zinc-600'}`}>{count}</p>
                   <p className="text-[9px] uppercase tracking-wider text-zinc-500 mt-1">{stage.name}</p>
                 </button>
@@ -439,7 +632,9 @@ const AdminDivestmentDashboard: React.FC = () => {
             >
               <option value="ALL">All Statuses</option>
               {Object.entries(STATUS_CONFIG).map(([key, config]) => (
-                <option key={key} value={key}>{config.label}</option>
+                <option key={key} value={key}>
+                  {config.label}
+                </option>
               ))}
             </select>
             <ChevronDown className="w-3 h-3 text-zinc-500 absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none" />
@@ -482,10 +677,20 @@ const AdminDivestmentDashboard: React.FC = () => {
           ) : filteredSubmissions.length === 0 ? (
             <div className="text-center py-20">
               <Building2 className="w-12 h-12 text-zinc-700 mx-auto mb-4" />
-              <p className="text-zinc-500 text-sm">No submissions match your filters</p>
+              <p className="text-zinc-500 text-sm">
+                {error ? 'Failed to load data' : 'No submissions match your filters'}
+              </p>
+              {!error && (
+                <button
+                  onClick={() => { setStatusFilter('ALL'); setPriorityFilter('ALL'); setSearchQuery(''); }}
+                  className="mt-2 text-xs text-amber-400 hover:text-amber-300 underline"
+                >
+                  Clear filters
+                </button>
+              )}
             </div>
           ) : (
-            filteredSubmissions.map(sub => {
+            filteredSubmissions.map((sub) => {
               const status = STATUS_CONFIG[sub.status];
               return (
                 <motion.div
@@ -497,19 +702,36 @@ const AdminDivestmentDashboard: React.FC = () => {
                   <div className="flex items-start gap-4">
                     {/* Priority Indicator */}
                     <div className="flex flex-col items-center gap-1 pt-1">
-                      <div className={`w-2 h-2 rounded-full ${sub.priority === 'TROPHY' ? 'bg-purple-400' : sub.priority === 'PRIORITY' ? 'bg-amber-400' : sub.priority === 'STANDARD' ? 'bg-blue-400' : 'bg-zinc-600'}`} />
+                      <div
+                        className={`w-2 h-2 rounded-full ${
+                          sub.priority === 'TROPHY'
+                            ? 'bg-purple-400'
+                            : sub.priority === 'PRIORITY'
+                            ? 'bg-amber-400'
+                            : sub.priority === 'STANDARD'
+                            ? 'bg-blue-400'
+                            : 'bg-zinc-600'
+                        }`}
+                      />
                     </div>
 
                     {/* Main Content */}
                     <div className="flex-1 min-w-0">
                       <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
                         <div className="flex items-center gap-3 flex-wrap">
-                          <h3 className="text-sm font-bold text-white group-hover:text-amber-400 transition-colors">{sub.property_name}</h3>
-                          <span className={`inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border ${PRIORITY_COLORS[sub.priority]}`}>
+                          <h3 className="text-sm font-bold text-white group-hover:text-amber-400 transition-colors">
+                            {sub.property_name}
+                          </h3>
+                          <span
+                            className={`inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border ${PRIORITY_COLORS[sub.priority]}`}
+                          >
                             {sub.priority}
                           </span>
-                          <span className={`inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full ${status.bg} ${status.color}`}>
-                            {status.icon}{status.label}
+                          <span
+                            className={`inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full ${status.bg} ${status.color}`}
+                          >
+                            {status.icon}
+                            {status.label}
                           </span>
                         </div>
                         <span className="text-[10px] text-zinc-600 font-mono">{sub.reference_number}</span>
@@ -518,7 +740,10 @@ const AdminDivestmentDashboard: React.FC = () => {
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-1 text-xs text-zinc-400">
                         <div className="flex items-center gap-1.5">
                           <MapPin className="w-3 h-3 text-zinc-600" />
-                          <span className="truncate">{sub.location_city}{sub.location_neighborhood ? `, ${sub.location_neighborhood}` : ''}</span>
+                          <span className="truncate">
+                            {sub.location_city}
+                            {sub.location_neighborhood ? `, ${sub.location_neighborhood}` : ''}
+                          </span>
                         </div>
                         <div className="flex items-center gap-1.5">
                           <Hash className="w-3 h-3 text-zinc-600" />
@@ -526,7 +751,7 @@ const AdminDivestmentDashboard: React.FC = () => {
                         </div>
                         <div className="flex items-center gap-1.5">
                           <DollarSign className="w-3 h-3 text-zinc-600" />
-                          <span className="font-semibold text-white">{formatPrice(sub.asking_price, sub.currency)}</span>
+                          <span className="font-semibold text-white">{formatPrice(sub.asking_price, sub.currency || 'KES')}</span>
                         </div>
                         <div className="flex items-center gap-1.5">
                           <Calendar className="w-3 h-3 text-zinc-600" />
@@ -536,15 +761,25 @@ const AdminDivestmentDashboard: React.FC = () => {
 
                       <div className="flex items-center gap-4 mt-3 flex-wrap">
                         {/* AI Score */}
-                        {sub.ai_deal_score && (
+                        {sub.ai_deal_score !== null && sub.ai_deal_score !== undefined && (
                           <div className="flex items-center gap-1.5">
                             <Zap className="w-3 h-3 text-amber-400" />
                             <span className="text-[10px] text-zinc-400">AI Score</span>
-                            <span className={`text-xs font-bold ${sub.ai_deal_score >= 8 ? 'text-emerald-400' : sub.ai_deal_score >= 6 ? 'text-amber-400' : 'text-zinc-500'}`}>{sub.ai_deal_score.toFixed(1)}</span>
+                            <span
+                              className={`text-xs font-bold ${
+                                sub.ai_deal_score >= 8
+                                  ? 'text-emerald-400'
+                                  : sub.ai_deal_score >= 6
+                                  ? 'text-amber-400'
+                                  : 'text-zinc-500'
+                              }`}
+                            >
+                              {sub.ai_deal_score.toFixed(1)}
+                            </span>
                           </div>
                         )}
                         {/* Cap Rate */}
-                        {sub.cap_rate && (
+                        {sub.cap_rate !== null && sub.cap_rate !== undefined && (
                           <div className="flex items-center gap-1.5">
                             <Percent className="w-3 h-3 text-zinc-600" />
                             <span className="text-[10px] text-zinc-400">Cap Rate</span>
@@ -552,7 +787,7 @@ const AdminDivestmentDashboard: React.FC = () => {
                           </div>
                         )}
                         {/* WALE */}
-                        {sub.wale_years && (
+                        {sub.wale_years !== null && sub.wale_years !== undefined && (
                           <div className="flex items-center gap-1.5">
                             <Clock className="w-3 h-3 text-zinc-600" />
                             <span className="text-[10px] text-zinc-400">WALE</span>
@@ -560,19 +795,13 @@ const AdminDivestmentDashboard: React.FC = () => {
                           </div>
                         )}
                         {/* Occupancy */}
-                        {sub.occupancy_rate && (
+                        {sub.occupancy_rate !== null && sub.occupancy_rate !== undefined && (
                           <div className="flex items-center gap-1.5">
                             <Users className="w-3 h-3 text-zinc-600" />
                             <span className="text-[10px] text-zinc-400">Occupancy</span>
                             <span className="text-xs font-semibold text-white">{sub.occupancy_rate}%</span>
                           </div>
                         )}
-                        {/* Files */}
-                        <div className="flex items-center gap-1.5">
-                          <FileText className="w-3 h-3 text-zinc-600" />
-                          <span className="text-[10px] text-zinc-400">Files</span>
-                          <span className="text-xs font-semibold text-white">{sub.file_count}</span>
-                        </div>
                         {/* Role */}
                         <div className="flex items-center gap-1.5">
                           {ROLE_ICONS[sub.submitter_role] || <User className="w-3 h-3 text-zinc-600" />}
@@ -602,13 +831,17 @@ const AdminDivestmentDashboard: React.FC = () => {
             <>
               {/* Backdrop */}
               <motion.div
-                initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
                 onClick={() => setIsPanelOpen(false)}
                 className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
               />
               {/* Panel */}
               <motion.div
-                initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }}
+                initial={{ x: '100%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '100%' }}
                 transition={{ type: 'spring', damping: 30, stiffness: 300 }}
                 className="fixed right-0 top-0 h-full w-full md:w-[680px] bg-[#080808] border-l border-zinc-800 z-50 overflow-y-auto"
               >
@@ -616,32 +849,62 @@ const AdminDivestmentDashboard: React.FC = () => {
                 <div className="sticky top-0 bg-[#080808]/95 backdrop-blur border-b border-zinc-800 px-6 py-4 z-10">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <span className="text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded">{selectedSubmission.reference_number}</span>
-                      <span className={`inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full ${STATUS_CONFIG[selectedSubmission.status].bg} ${STATUS_CONFIG[selectedSubmission.status].color}`}>
-                        {STATUS_CONFIG[selectedSubmission.status].icon}{STATUS_CONFIG[selectedSubmission.status].label}
+                      <span className="text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded">
+                        {selectedSubmission.reference_number}
+                      </span>
+                      <span
+                        className={`inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full ${STATUS_CONFIG[selectedSubmission.status].bg} ${STATUS_CONFIG[selectedSubmission.status].color}`}
+                      >
+                        {STATUS_CONFIG[selectedSubmission.status].icon}
+                        {STATUS_CONFIG[selectedSubmission.status].label}
                       </span>
                     </div>
-                    <button onClick={() => setIsPanelOpen(false)} className="p-2 hover:bg-zinc-800 rounded-lg transition-colors">
+                    <button
+                      onClick={() => setIsPanelOpen(false)}
+                      className="p-2 hover:bg-zinc-800 rounded-lg transition-colors"
+                    >
                       <X className="w-5 h-5 text-zinc-400" />
                     </button>
                   </div>
                   <h2 className="text-xl font-black mt-3">{selectedSubmission.property_name}</h2>
-                  <div className="flex items-center gap-4 mt-2 text-xs text-zinc-500">
-                    <span className="flex items-center gap-1"><MapPin className="w-3 h-3" />{selectedSubmission.location_city}, {selectedSubmission.location_neighborhood}</span>
-                    <span className="flex items-center gap-1"><Hash className="w-3 h-3" />{selectedSubmission.lr_number}</span>
-                    <span className="flex items-center gap-1"><Calendar className="w-3 h-3" />{formatDate(selectedSubmission.created_at)}</span>
+                  <div className="flex items-center gap-4 mt-2 text-xs text-zinc-500 flex-wrap">
+                    <span className="flex items-center gap-1">
+                      <MapPin className="w-3 h-3" />
+                      {selectedSubmission.location_city}, {selectedSubmission.location_neighborhood}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Hash className="w-3 h-3" />
+                      {selectedSubmission.lr_number}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Calendar className="w-3 h-3" />
+                      {formatDate(selectedSubmission.created_at)}
+                    </span>
                   </div>
                 </div>
 
                 <div className="px-6 py-6 space-y-8">
                   {/* Quick Actions */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                    <button onClick={() => generateTeaser(selectedSubmission.id)} className="flex flex-col items-center gap-2 p-3 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-amber-500/30 transition-colors">
-                      <FileText className="w-5 h-5 text-amber-400" />
+                    <button
+                      onClick={() => generateTeaser(selectedSubmission.id)}
+                      disabled={actionLoading === `teaser-${selectedSubmission.id}`}
+                      className="flex flex-col items-center gap-2 p-3 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-amber-500/30 transition-colors disabled:opacity-50"
+                    >
+                      {actionLoading === `teaser-${selectedSubmission.id}` ? (
+                        <Loader2 className="w-5 h-5 text-amber-400 animate-spin" />
+                      ) : (
+                        <FileText className="w-5 h-5 text-amber-400" />
+                      )}
                       <span className="text-[10px] text-zinc-400 uppercase tracking-wide">Generate Teaser</span>
                     </button>
                     {selectedSubmission.admin_onedrive_folder_link && (
-                      <a href={selectedSubmission.admin_onedrive_folder_link} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 p-3 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-amber-500/30 transition-colors">
+                      <a
+                        href={selectedSubmission.admin_onedrive_folder_link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex flex-col items-center gap-2 p-3 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-amber-500/30 transition-colors"
+                      >
                         <ExternalLink className="w-5 h-5 text-blue-400" />
                         <span className="text-[10px] text-zinc-400 uppercase tracking-wide">OneDrive Folder</span>
                       </a>
@@ -658,12 +921,23 @@ const AdminDivestmentDashboard: React.FC = () => {
 
                   {/* Status Management */}
                   <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-5">
-                    <p className="text-[10px] font-semibold uppercase tracking-widest text-amber-400 mb-4">Status Management</p>
+                    <p className="text-[10px] font-semibold uppercase tracking-widest text-amber-400 mb-4">
+                      Status Management
+                    </p>
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {STATUS_TRANSITIONS[selectedSubmission.status]?.map(nextStatus => (
-                        <button key={nextStatus} onClick={() => updateStatus(selectedSubmission.id, nextStatus)}
-                          className="px-3 py-1.5 bg-zinc-800 border border-zinc-700 rounded-lg text-xs text-white hover:border-amber-500/50 hover:bg-zinc-700 transition-colors">
-                          → {STATUS_CONFIG[nextStatus].label}
+                      {STATUS_TRANSITIONS[selectedSubmission.status]?.map((nextStatus) => (
+                        <button
+                          key={nextStatus}
+                          onClick={() => updateStatus(selectedSubmission.id, nextStatus)}
+                          disabled={actionLoading === `status-${selectedSubmission.id}`}
+                          className="px-3 py-1.5 bg-zinc-800 border border-zinc-700 rounded-lg text-xs text-white hover:border-amber-500/50 hover:bg-zinc-700 transition-colors disabled:opacity-50"
+                        >
+                          {actionLoading === `status-${selectedSubmission.id}` ? (
+                            <Loader2 className="w-3 h-3 animate-spin inline mr-1" />
+                          ) : (
+                            '→ '
+                          )}
+                          {STATUS_CONFIG[nextStatus].label}
                         </button>
                       ))}
                     </div>
@@ -671,10 +945,29 @@ const AdminDivestmentDashboard: React.FC = () => {
                     <div className="flex items-center gap-3 pt-4 border-t border-zinc-800">
                       <span className="text-xs text-zinc-500">Assign to:</span>
                       <div className="flex flex-wrap gap-2">
-                        {TEAM_MEMBERS.map(member => (
-                          <button key={member.id} onClick={() => assignSubmission(selectedSubmission.id, member.id, member.name)}
-                            className={`px-3 py-1 rounded-lg text-xs transition-colors ${selectedSubmission.assigned_to === member.id ? 'bg-amber-500 text-black font-semibold' : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700'}`}>
-                            {member.name}
+                        <button
+                          onClick={() => assignSubmission(selectedSubmission.id, null)}
+                          disabled={actionLoading === `assign-${selectedSubmission.id}`}
+                          className={`px-3 py-1 rounded-lg text-xs transition-colors ${
+                            !selectedSubmission.assigned_to
+                              ? 'bg-amber-500 text-black font-semibold'
+                              : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700'
+                          }`}
+                        >
+                          Unassigned
+                        </button>
+                        {teamMembers.map((member) => (
+                          <button
+                            key={member.id}
+                            onClick={() => assignSubmission(selectedSubmission.id, member.id)}
+                            disabled={actionLoading === `assign-${selectedSubmission.id}`}
+                            className={`px-3 py-1 rounded-lg text-xs transition-colors ${
+                              selectedSubmission.assigned_to === member.id
+                                ? 'bg-amber-500 text-black font-semibold'
+                                : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700'
+                            }`}
+                          >
+                            {member.first_name} {member.last_name}
                           </button>
                         ))}
                       </div>
@@ -683,11 +976,21 @@ const AdminDivestmentDashboard: React.FC = () => {
 
                   {/* AI Scores */}
                   <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-5">
-                    <p className="text-[10px] font-semibold uppercase tracking-widest text-amber-400 mb-4">AI Analysis</p>
+                    <p className="text-[10px] font-semibold uppercase tracking-widest text-amber-400 mb-4">
+                      AI Analysis
+                    </p>
                     <div className="grid grid-cols-3 gap-4">
                       <div className="text-center">
                         <div className="w-16 h-16 mx-auto mb-2 rounded-full bg-zinc-800 flex items-center justify-center">
-                          <span className={`text-xl font-black ${(selectedSubmission.ai_deal_score || 0) >= 7 ? 'text-emerald-400' : (selectedSubmission.ai_deal_score || 0) >= 5 ? 'text-amber-400' : 'text-red-400'}`}>
+                          <span
+                            className={`text-xl font-black ${
+                              (selectedSubmission.ai_deal_score || 0) >= 7
+                                ? 'text-emerald-400'
+                                : (selectedSubmission.ai_deal_score || 0) >= 5
+                                ? 'text-amber-400'
+                                : 'text-red-400'
+                            }`}
+                          >
                             {selectedSubmission.ai_deal_score?.toFixed(1) || 'N/A'}
                           </span>
                         </div>
@@ -695,7 +998,15 @@ const AdminDivestmentDashboard: React.FC = () => {
                       </div>
                       <div className="text-center">
                         <div className="w-16 h-16 mx-auto mb-2 rounded-full bg-zinc-800 flex items-center justify-center">
-                          <span className={`text-xl font-black ${(selectedSubmission.ai_investor_readiness || 0) >= 7 ? 'text-emerald-400' : (selectedSubmission.ai_investor_readiness || 0) >= 5 ? 'text-amber-400' : 'text-red-400'}`}>
+                          <span
+                            className={`text-xl font-black ${
+                              (selectedSubmission.ai_investor_readiness || 0) >= 7
+                                ? 'text-emerald-400'
+                                : (selectedSubmission.ai_investor_readiness || 0) >= 5
+                                ? 'text-amber-400'
+                                : 'text-red-400'
+                            }`}
+                          >
                             {selectedSubmission.ai_investor_readiness?.toFixed(1) || 'N/A'}
                           </span>
                         </div>
@@ -703,7 +1014,7 @@ const AdminDivestmentDashboard: React.FC = () => {
                       </div>
                       <div className="text-center">
                         <div className="w-16 h-16 mx-auto mb-2 rounded-full bg-zinc-800 flex items-center justify-center">
-                          <span className="text-xl font-black text-blue-400">{selectedSubmission.file_count}</span>
+                          <span className="text-xl font-black text-blue-400">—</span>
                         </div>
                         <p className="text-[10px] text-zinc-500 uppercase">Documents</p>
                       </div>
@@ -712,16 +1023,38 @@ const AdminDivestmentDashboard: React.FC = () => {
 
                   {/* Financial Summary */}
                   <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-5">
-                    <p className="text-[10px] font-semibold uppercase tracking-widest text-amber-400 mb-4">Financial Summary</p>
+                    <p className="text-[10px] font-semibold uppercase tracking-widest text-amber-400 mb-4">
+                      Financial Summary
+                    </p>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                       {[
-                        { label: 'Asking Price', value: formatPrice(selectedSubmission.asking_price, selectedSubmission.currency) },
-                        { label: 'NOI', value: formatPrice(selectedSubmission.noi, selectedSubmission.currency) },
-                        { label: 'Cap Rate', value: selectedSubmission.cap_rate ? `${selectedSubmission.cap_rate}%` : 'N/A' },
-                        { label: 'Occupancy', value: selectedSubmission.occupancy_rate ? `${selectedSubmission.occupancy_rate}%` : 'N/A' },
-                        { label: 'WALE', value: selectedSubmission.wale_years ? `${selectedSubmission.wale_years} yrs` : 'N/A' },
-                        { label: 'Built-Up Area', value: selectedSubmission.total_built_up_area_sqm ? `${selectedSubmission.total_built_up_area_sqm.toLocaleString()} SqM` : 'N/A' },
-                      ].map(item => (
+                        {
+                          label: 'Asking Price',
+                          value: formatPrice(selectedSubmission.asking_price, selectedSubmission.currency || 'KES'),
+                        },
+                        {
+                          label: 'NOI',
+                          value: formatPrice(selectedSubmission.net_operating_income, selectedSubmission.currency || 'KES'),
+                        },
+                        {
+                          label: 'Cap Rate',
+                          value: selectedSubmission.cap_rate !== null ? `${selectedSubmission.cap_rate}%` : 'N/A',
+                        },
+                        {
+                          label: 'Occupancy',
+                          value: selectedSubmission.occupancy_rate !== null ? `${selectedSubmission.occupancy_rate}%` : 'N/A',
+                        },
+                        {
+                          label: 'WALE',
+                          value: selectedSubmission.wale_years !== null ? `${selectedSubmission.wale_years} yrs` : 'N/A',
+                        },
+                        {
+                          label: 'Built-Up Area',
+                          value: selectedSubmission.total_built_up_area_sqm
+                            ? `${selectedSubmission.total_built_up_area_sqm.toLocaleString()} SqM`
+                            : 'N/A',
+                        },
+                      ].map((item) => (
                         <div key={item.label} className="bg-black/30 rounded-lg p-3">
                           <p className="text-[10px] text-zinc-600 uppercase">{item.label}</p>
                           <p className="text-sm font-semibold text-white mt-0.5">{item.value}</p>
@@ -733,7 +1066,11 @@ const AdminDivestmentDashboard: React.FC = () => {
                   {/* Submitter Details */}
                   <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-5">
                     <p className="text-[10px] font-semibold uppercase tracking-widest text-amber-400 mb-4">
-                      {selectedSubmission.submitter_role === 'OWNER' ? 'Owner Details' : selectedSubmission.submitter_role === 'BROKER' ? 'Broker Details' : 'Submitter Details'}
+                      {selectedSubmission.submitter_role === 'OWNER'
+                        ? 'Owner Details'
+                        : selectedSubmission.submitter_role === 'BROKER'
+                        ? 'Broker Details'
+                        : 'Submitter Details'}
                     </p>
                     <div className="space-y-3">
                       {selectedSubmission.owner_full_name && (
@@ -741,7 +1078,9 @@ const AdminDivestmentDashboard: React.FC = () => {
                           <User className="w-4 h-4 text-zinc-600" />
                           <div>
                             <p className="text-sm text-white">{selectedSubmission.owner_full_name}</p>
-                            {selectedSubmission.owner_entity_name && <p className="text-xs text-zinc-500">{selectedSubmission.owner_entity_name}</p>}
+                            {selectedSubmission.owner_entity_name && (
+                              <p className="text-xs text-zinc-500">{selectedSubmission.owner_entity_name}</p>
+                            )}
                           </div>
                         </div>
                       )}
@@ -762,8 +1101,12 @@ const AdminDivestmentDashboard: React.FC = () => {
                           <Briefcase className="w-4 h-4 text-zinc-600" />
                           <div>
                             <p className="text-sm text-white">{selectedSubmission.broker_full_name}</p>
-                            {selectedSubmission.broker_entity_name && <p className="text-xs text-zinc-500">{selectedSubmission.broker_entity_name}</p>}
-                            {selectedSubmission.broker_earb_number && <p className="text-xs text-amber-400">EARB: {selectedSubmission.broker_earb_number}</p>}
+                            {selectedSubmission.broker_entity_name && (
+                              <p className="text-xs text-zinc-500">{selectedSubmission.broker_entity_name}</p>
+                            )}
+                            {selectedSubmission.broker_earb_number && (
+                              <p className="text-xs text-amber-400">EARB: {selectedSubmission.broker_earb_number}</p>
+                            )}
                           </div>
                         </div>
                       )}
@@ -772,12 +1115,18 @@ const AdminDivestmentDashboard: React.FC = () => {
 
                   {/* Activity Log */}
                   <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-5">
-                    <p className="text-[10px] font-semibold uppercase tracking-widest text-amber-400 mb-4">Activity Log</p>
+                    <p className="text-[10px] font-semibold uppercase tracking-widest text-amber-400 mb-4">
+                      Activity Log
+                    </p>
                     <div className="space-y-3">
-                      {activityLog.length === 0 ? (
+                      {activityLoading ? (
+                        <div className="flex items-center justify-center py-4">
+                          <Loader2 className="w-4 h-4 text-zinc-600 animate-spin" />
+                        </div>
+                      ) : activityLog.length === 0 ? (
                         <p className="text-xs text-zinc-600">No activity recorded yet</p>
                       ) : (
-                        activityLog.map(log => (
+                        activityLog.map((log) => (
                           <div key={log.id} className="flex gap-3">
                             <div className="w-7 h-7 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0">
                               <Activity className="w-3 h-3 text-zinc-500" />

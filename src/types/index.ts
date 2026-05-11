@@ -98,3 +98,42 @@ export interface Review {
   createdAt: any;
   submittedAt: string;
 }
+
+export interface PropertyForRent {
+  _id: string;
+  title: string;
+  slug: string;
+  subtitle?: string;
+  address: string;
+  city: string;
+  state: string;
+  zipCode?: string;
+  location: {
+    lat: number | null;
+    lng: number | null;
+  };
+  rent: string;
+  rentKsh?: number;
+  rentUsd?: number;
+  currency?: string;
+  assetCategory: string;
+  propertyType?: string;
+  status: string;
+  availableFrom?: string;
+  leaseTerm?: string;
+  securityDeposit?: string;
+  serviceCharge?: string;
+  squareFootage?: string;
+  furnished?: boolean;
+  parking?: boolean;
+  parkingSpaces?: number;
+  image: any;
+  gallery?: any[];
+  floorplan?: {
+    url?: string;
+  };
+  virtualTour?: string;
+  description: string;
+  features: string[];
+  specifications?: { label: string; value: string }[];
+}

@@ -76,46 +76,51 @@ export const structure: StructureResolver = (S) =>
       // KENYA COMMERCIAL REAL ESTATE
       // ═══════════════════════════════════════════════════════════════
       S.listItem()
-        .title('Commercial Real Estate')
-        .icon(Building2)
-        .child(
-          S.list()
-            .title('Commercial Properties')
-            .items([
-              S.documentTypeListItem('property')
-                .title('All Properties')
-                .icon(Building2),
-              
-              S.divider(),
-              
-              S.listItem()
-                .title('By Asset Class')
-                .icon(Shield)
-                .child(
-                  S.list()
-                    .title('Asset Class')
-                    .items([
-                      ['Commercial Office', '🏢'],
-                      ['Retail', '🛍️'],
-                      ['Industrial', '🏭'],
-                      ['Mixed Use', '🏘️'],
-                      ['Hospitality', '🏨'],
-                      ['Healthcare', '🏥'],
-                    ].map(([type, icon]) => 
-                      S.documentListItem()
-                        .title(type as string)
-                        .icon(() => icon)
-                        .schemaType('property')
-                        .child(
-                          S.documentList()
-                            .title(`${type} Properties`)
-                            .filter('_type == "property" && propertyType == $type')
-                            .params({ type })
-                        )
-                    ))
-                ),
-            ])
-        ),
+  .title('Kenya Commercial Real Estate')
+  .icon(Building2)
+  .child(
+    S.list()
+      .title('Commercial Properties')
+      .items([
+        S.documentTypeListItem('property')
+          .title('All Properties')
+          .icon(Building2),
+        
+        S.documentTypeListItem('propertyForRent')
+          .title('Properties For Rent')
+          .icon(() => '🏠'),
+        
+        S.divider(),
+        
+        S.listItem()
+          .title('By Asset Class')
+          .icon(Shield)
+          .child(
+            S.list()
+              .title('Asset Class')
+              .items([
+                ['Commercial Office', '🏢'],
+                ['Retail', '🛍️'],
+                ['Industrial', '🏭'],
+                ['Mixed Use', '🏘️'],
+                ['Hospitality', '🏨'],
+                ['Healthcare', '🏥'],
+              ].map(([type, icon]) => 
+                S.documentListItem()
+                  .title(type as string)
+                  .icon(() => icon)
+                  .schemaType('property')
+                  .child(
+                    S.documentList()
+                      .title(`${type} Properties`)
+                      .filter('_type == "property" && propertyType == $type')
+                      .params({ type })
+                  )
+              ))
+          ),
+      ])
+      
+  ),
 
       S.divider(),
 
