@@ -186,3 +186,36 @@ select:focus-visible {
     color: black !important;
   }
 }
+
+/* Internal Link Styles */
+.internal-link {
+  color: #2563eb;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.internal-link:hover {
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+.internal-link:visited {
+  color: #7c3aed;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .internal-link {
+    color: #60a5fa;
+  }
+  
+  .internal-link:hover {
+    color: #93c5fd;
+  }
+  
+  .internal-link:visited {
+    color: #a78bfa;
+  }
+}
+

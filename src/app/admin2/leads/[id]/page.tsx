@@ -171,7 +171,7 @@ export default function LeadDetailPage() {
                   <div key={ev.id} className="flex items-start gap-4 p-3 border border-[#E8E6E1] bg-[#FAFAF8]">
                     <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${ev.status === 'sent' ? 'bg-[#27AE60]' : ev.status === 'failed' ? 'bg-[#C0392B]' : ev.status === 'opened' ? 'bg-[#3498DB]' : 'bg-[#9A9A9A]'}`} />
                     <div className="flex-1 min-w-0">
-                      <p className="text-[13px] font-medium text-[#1A1A1A] truncate">{ev.subject}</p>
+                      <p className="text-[13px] font-medium text-[#FFFFFF] truncate">{ev.subject}</p>
                       <p className="text-[11px] text-[#9A9A9A] mt-0.5">{ev.sequence_step} · {new Date(ev.created_at).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' })}</p>
                     </div>
                     <span className={`text-[10px] px-2 py-0.5 uppercase tracking-wide font-semibold ${ev.status === 'sent' ? 'bg-green-100 text-green-700' : ev.status === 'failed' ? 'bg-red-100 text-red-700' : ev.status === 'opened' ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-600'}`}>{ev.status}</span>
@@ -190,7 +190,7 @@ export default function LeadDetailPage() {
                     <div key={act.id} className="flex gap-4 relative">
                       <div className="w-3.5 h-3.5 rounded-full bg-[#B8956B] flex-shrink-0 mt-0.5 relative z-10" />
                       <div>
-                        <p className="text-[13px] text-[#1A1A1A]">{act.description}</p>
+                        <p className="text-[13px] text-[#FFFFFF]">{act.description}</p>
                         <p className="text-[11px] text-[#9A9A9A] mt-0.5">{act.actor} · {new Date(act.created_at).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' })}</p>
                       </div>
                     </div>
@@ -265,7 +265,7 @@ const Card = ({ title, children }: { title: string; children: React.ReactNode })
 const InfoRow = ({ label, value, link }: { label: string; value: string; link?: string }) => (
   <div>
     <p className="text-[11px] tracking-widest uppercase text-[#9A9A9A] mb-0.5">{label}</p>
-    {link ? <a href={link} target="_blank" rel="noopener noreferrer" className="text-[#1B4332] font-medium underline underline-offset-2">{value}</a> : <p className="text-[#1A1A1A] font-medium">{value}</p>}
+    {link ? <a href={link} target="_blank" rel="noopener noreferrer" className="text-[#1B4332] font-medium underline underline-offset-2">{value}</a> : <p className="text-[#FFFFFF] font-medium">{value}</p>}
   </div>
 );
 

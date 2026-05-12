@@ -726,7 +726,7 @@ export default function CreUnderwriting() {
 <title>LOI — ${d.propertyName}</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Times New Roman',Times,Georgia,serif;font-size:10pt;line-height:1.5;color:#1a1a1a;padding:32pt 36pt;background:#fff}
+body{font-family:'Times New Roman',Times,Georgia,serif;font-size:10pt;line-height:1.5;color:#FFFFFF;padding:32pt 36pt;background:#fff}
 pre{font-family:'Times New Roman',Times,Georgia,serif;font-size:10pt;white-space:pre-wrap;word-break:break-word;line-height:1.5}
 @page{margin:0.75in}
 </style></head><body>

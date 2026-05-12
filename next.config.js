@@ -13,6 +13,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'cdn.sanity.io',
       },
+      
       {
         protocol: 'https',
         hostname: 'upload.wikimedia.org',
@@ -120,6 +121,34 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'source.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'jkbhousing.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'shiftersmovers.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'storage.googleapis.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'usernameproperties.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.constructionkenya.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.kenyaforum.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'yourhost.io',
       },
 
 

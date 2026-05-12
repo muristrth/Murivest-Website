@@ -55,66 +55,7 @@ export async function POST(request: NextRequest) {
       to: email,
       subject: 'Welcome to Murivest Market Updates',
       html: `
-        <!DOCTYPE html>
-        <html>
-          <head>
-            <meta charset="utf-8">
-            <title>Welcome to Murivest Market Updates</title>
-            <style>
-              body { font-family: 'Inter', Arial, sans-serif; line-height: 1.6; color: #1a1a1a; margin: 0; padding: 0; background-color: #f8f9fb; }
-              .container { max-width: 600px; margin: 0 auto; background: #ffffff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-              .header { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 40px 30px; text-align: center; }
-              .logo img { max-height: 50px; width: auto; margin-bottom: 20px; }
-              .header h1 { color: #ffffff; margin: 0; font-size: 28px; font-weight: 700; }
-              .content { padding: 40px 30px; }
-              .welcome { background: linear-gradient(135deg, #d4af37, #f4d03f); color: #1a1a1a; padding: 20px; margin: -40px -30px 30px -30px; text-align: center; font-weight: 600; }
-              .cta-button { background: linear-gradient(135deg, #d4af37, #f4d03f); color: #1a1a1a; padding: 15px 30px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; margin: 20px 0; }
-              .footer { padding: 30px; background: #f8f9fb; text-align: center; border-top: 1px solid #e5e5e5; }
-            </style>
-          </head>
-          <body>
-            <div class="container">
-              <div class="header">
-                <div class="logo">
-                  <img src="/logo.png" alt="Murivest Realty Group" />
-                </div>
-                <h1>MURIVEST MARKET UPDATES</h1>
-              </div>
-
-              <div class="content">
-                <div class="welcome">
-                  🎯 Welcome to Our Exclusive Market Intelligence Network
-                </div>
-
-                <h2>Thank You for Joining Our Community!</h2>
-
-                <p>You've successfully subscribed to receive our premium market insights and investment opportunities. As a member of our exclusive network, you'll be among the first to know about:</p>
-
-                <ul>
-                  <li>🏢 New property investment opportunities</li>
-                  <li>📊 Quarterly market reports and analysis</li>
-                  <li>💰 Emerging trends in Kenyan real estate</li>
-                  <li>🎪 Exclusive investor events and webinars</li>
-                  <li>📈 Currency and economic updates</li>
-                </ul>
-
-                <p>Our next quarterly report will be delivered to your inbox soon. In the meantime, explore our current investment opportunities:</p>
-
-                <a href="https://www.murivest.co.ke/properties" class="cta-button">View Investment Properties</a>
-
-                <p style="margin-top: 30px; color: #666; font-size: 14px;">
-                  You can unsubscribe at any time using the link in our emails. We respect your privacy and will never share your information.
-                </p>
-              </div>
-
-              <div class="footer">
-                <p><strong>Murivest Realty Group</strong><br>
-                Westlands Business District, Nairobi, Kenya<br>
-                 +254 115 277 610 | info@murivest.co.ke</p>
-              </div>
-            </div>
-          </body>
-        </html>
+        <!DOCTYPE html> <html> <head> <meta charset="utf-8" /> <title>Murivest Market Intelligence</title> <style> body { margin: 0; padding: 0; background: #f5f5f3; font-family: Arial, Helvetica, sans-serif; color: #1f1f1f; line-height: 1.7; } .container { max-width: 640px; margin: 40px auto; background: #ffffff; border: 1px solid #e4e1db; } .header { padding: 42px 48px 32px; border-bottom: 1px solid #ece8e1; } .eyebrow { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #8b7355; margin-bottom: 14px; } .title { font-size: 28px; line-height: 1.3; font-weight: 600; color: #1c1c1c; margin: 0; } .content { padding: 42px 48px; } p { margin: 0 0 18px; color: #3e3e3e; font-size: 15px; } .section-title { font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #1f1f1f; margin: 32px 0 18px; } ul { margin: 0 0 28px; padding-left: 18px; } li { margin-bottom: 10px; color: #3f3f3f; font-size: 15px; } .button { display: inline-block; padding: 14px 22px; background: #1f1f1f; color: #ffffff !important; text-decoration: none; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 12px; } .divider { height: 1px; background: #ece8e1; margin: 36px 0; } .footer { padding: 32px 48px; border-top: 1px solid #ece8e1; background: #faf9f7; } .footer p { font-size: 13px; color: #6a6a6a; margin-bottom: 10px; } .small { font-size: 12px; color: #8a8a8a; } @media (max-width: 640px) { .header, .content, .footer { padding: 28px 24px; } .title { font-size: 24px; } p, li { font-size: 14px; } } </style> </head> <body> <div class="container"> <div class="header"> <div class="eyebrow"> Murivest Research </div> <h1 class="title"> Subscription Confirmed </h1> </div> <div class="content"> <p> Thank you for subscribing to Murivest market updates and research commentary. </p> <p> You will periodically receive analysis covering investment activity, pricing trends, development pipelines, and capital market movements across Kenya’s property sector. </p> <div class="section-title"> Areas Covered </div> <ul> <li>Commercial office and mixed-use markets</li> <li>Residential pricing and rental trends</li> <li>Land and infrastructure corridors</li> <li>Investment transaction activity</li> <li>Hospitality and alternative asset classes</li> </ul> <p> Our research is prepared for investors, developers, occupiers, and institutions monitoring East African real estate markets. </p> <a href="https://www.murivest.co.ke/blog" class="button" > View Latest Research </a> <div class="divider"></div> <p class="small"> This email was sent following a newsletter subscription request submitted through the Murivest website. </p> </div> <div class="footer"> <p> <strong>Murivest Realty Group</strong> </p> <p> Westlands Business District<br /> Nairobi, Kenya </p> <p> +254 115 277 610<br /> info@murivest.co.ke </p> <p class="small"> You may unsubscribe from market updates at any time. </p> </div> </div> </body> </html>
       `,
     });
 

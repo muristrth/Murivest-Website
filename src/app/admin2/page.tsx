@@ -142,7 +142,7 @@ export default function AdminDashboard() {
                   return (
                     <tr key={lead.id} className="border-b border-[#F0EEE8] hover:bg-[#FAF9F6] transition-colors">
                       <td className="px-6 py-4">
-                        <p className="font-semibold text-[#1A1A1A]">{lead.first_name} {lead.last_name}</p>
+                        <p className="font-semibold text-[#FFFFFF]">{lead.first_name} {lead.last_name}</p>
                         <p className="text-[#9A9A9A] text-[11px]">{lead.email}</p>
                         <p className="text-[#B0B0B0] text-[11px]">{lead.company_name}</p>
                       </td>

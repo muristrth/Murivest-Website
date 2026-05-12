@@ -32,7 +32,7 @@ const coverage = [
 
 const InstitutionalEngagementModel = () => {
   return (
-    <section className="relative overflow-hidden bg-[#F5F5F3] text-[#1A1A1A]">
+    <section className="relative overflow-hidden bg-[#F5F5F3] text-[#FFFFFF]">
 
       {/* ================= BACKGROUND ================= */}
       <div className="absolute inset-0 pointer-events-none">
@@ -182,7 +182,7 @@ const InstitutionalEngagementModel = () => {
 
           <Link
             href="/contact"
-            className="text-[11px] uppercase tracking-[0.25em] text-[#1A1A1A] hover:text-[#8B7355]"
+            className="text-[11px] uppercase tracking-[0.25em] text-[#FFFFFF] hover:text-[#8B7355]"
           >
             Request Engagement →
           </Link>

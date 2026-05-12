@@ -93,7 +93,7 @@ const MiniScoreRing: React.FC<{ score: number; label: string }> = ({ score, labe
           position: 'absolute', inset: 0,
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           fontSize: 10, fontWeight: 600, fontFamily: 'Inter, sans-serif',
-          color: '#1a1a1a',
+          color: '#FFFFFF',
         }}>
           {score}
         </span>
@@ -332,7 +332,7 @@ const HoverCard: React.FC<HoverCardProps> = ({ property, onClose, onViewDetails 
           style={{
             width: '100%',
             padding: '8px 0',
-            backgroundColor: '#1a1a1a',
+            backgroundColor: '#FFFFFF',
             color: '#faf9f7',
             border: 'none',
             fontSize: 10,
@@ -377,7 +377,7 @@ const PropertyPopup: React.FC<PropertyPopupProps> = ({ property, onClose }) => {
         onClick={onClose}
         style={{
           padding: '6px 12px',
-          backgroundColor: '#1a1a1a',
+          backgroundColor: '#FFFFFF',
           color: '#fff',
           border: 'none',
           borderRadius: '4px',

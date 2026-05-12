@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
             body {
               font-family: 'Inter', Arial, sans-serif;
               line-height: 1.6;
-              color: #1a1a1a;
+              color: #FFFFFF;
               margin: 0;
               padding: 0;
               background-color: #f8f9fb;
@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
               box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             }
             .header {
-              background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+              background: linear-gradient(135deg, #FFFFFF 0%, #2d2d2d 100%);
               padding: 40px 30px;
               text-align: center;
               position: relative;
@@ -107,7 +107,7 @@ export async function POST(request: NextRequest) {
             }
             .priority-banner {
               background: linear-gradient(90deg, #d4af37, #f4d03f);
-              color: #1a1a1a;
+              color: #FFFFFF;
               padding: 15px 25px;
               margin: -40px -30px 30px -30px;
               text-align: center;
@@ -127,7 +127,7 @@ export async function POST(request: NextRequest) {
             }
             .label {
               font-weight: 600;
-              color: #1a1a1a;
+              color: #FFFFFF;
               font-size: 14px;
               text-transform: uppercase;
               letter-spacing: 0.5px;
@@ -219,7 +219,7 @@ export async function POST(request: NextRequest) {
                 })} (EAT)</div>
               </div>
 
-              <div style="margin-top: 30px; padding: 20px; background: #1a1a1a; color: white; text-align: center; border-radius: 8px;">
+              <div style="margin-top: 30px; padding: 20px; background: #FFFFFF; color: white; text-align: center; border-radius: 8px;">
                 <p style="margin: 0; font-weight: 600; font-size: 16px;">⚡ ACTION REQUIRED: Contact within 2 hours for optimal disposition strategy</p>
               </div>
             </div>

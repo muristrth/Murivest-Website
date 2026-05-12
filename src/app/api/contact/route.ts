@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
             body { 
               font-family: 'Inter', Arial, sans-serif; 
               line-height: 1.6; 
-              color: #1a1a1a; 
+              color: #FFFFFF; 
               margin: 0; 
               padding: 0; 
               background-color: #f8f9fb;
@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
               box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             }
             .header { 
-              background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+              background: linear-gradient(135deg, #FFFFFF 0%, #2d2d2d 100%);
               padding: 40px 30px; 
               text-align: center;
               position: relative;
@@ -105,7 +105,7 @@ export async function POST(request: NextRequest) {
             }
             .priority-banner {
               background: linear-gradient(90deg, #d4af37, #f4d03f);
-              color: #1a1a1a;
+              color: #FFFFFF;
               padding: 15px 25px;
               margin: -40px -30px 30px -30px;
               text-align: center;
@@ -125,7 +125,7 @@ export async function POST(request: NextRequest) {
             }
             .label { 
               font-weight: 600; 
-              color: #1a1a1a;
+              color: #FFFFFF;
               font-size: 14px;
               text-transform: uppercase;
               letter-spacing: 0.5px;
@@ -212,7 +212,7 @@ export async function POST(request: NextRequest) {
                 })} (EAT)</div>
               </div>
 
-              <div style="margin-top: 30px; padding: 20px; background: #1a1a1a; color: white; text-align: center; border-radius: 8px;">
+              <div style="margin-top: 30px; padding: 20px; background: #FFFFFF; color: white; text-align: center; border-radius: 8px;">
                 <p style="margin: 0; font-weight: 600; font-size: 16px;">⚡ ACTION REQUIRED: Contact within 2 hours for optimal conversion</p>
               </div>
             </div>
@@ -234,7 +234,7 @@ export async function POST(request: NextRequest) {
             body { 
               font-family: 'Inter', Arial, sans-serif; 
               line-height: 1.7; 
-              color: #1a1a1a; 
+              color: #FFFFFF; 
               margin: 0; 
               padding: 0; 
               background-color: #f8f9fb;
@@ -246,7 +246,7 @@ export async function POST(request: NextRequest) {
               box-shadow: 0 15px 40px rgba(0,0,0,0.1);
             }
             .header { 
-              background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+              background: linear-gradient(135deg, #FFFFFF 0%, #2d2d2d 100%);
               padding: 50px 40px; 
               text-align: center;
               position: relative;
@@ -296,7 +296,7 @@ export async function POST(request: NextRequest) {
             }
             .welcome-badge {
               background: linear-gradient(135deg, #d4af37, #f4d03f);
-              color: #1a1a1a;
+              color: #FFFFFF;
               padding: 20px 30px;
               margin: -50px -40px 40px -40px;
               text-align: center;
@@ -306,7 +306,7 @@ export async function POST(request: NextRequest) {
             .greeting {
               font-size: 20px;
               margin-bottom: 25px;
-              color: #1a1a1a;
+              color: #FFFFFF;
             }
             .greeting strong {
               font-family: 'Playfair Display', serif;
@@ -335,7 +335,7 @@ export async function POST(request: NextRequest) {
             .value-proposition h3 {
               font-family: 'Playfair Display', serif;
               font-size: 28px;
-              color: #1a1a1a;
+              color: #FFFFFF;
               margin: 20px 0 15px 0;
               font-weight: 700;
             }
@@ -360,7 +360,7 @@ export async function POST(request: NextRequest) {
               font-family: 'Playfair Display', serif;
               font-size: 18px;
               margin: 0 0 10px 0;
-              color: #1a1a1a;
+              color: #FFFFFF;
             }
             .benefit p {
               font-size: 14px;
@@ -368,7 +368,7 @@ export async function POST(request: NextRequest) {
               margin: 0;
             }
             .cta-section {
-              background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+              background: linear-gradient(135deg, #FFFFFF, #2d2d2d);
               color: white;
               padding: 40px;
               margin: 40px -40px;
@@ -383,7 +383,7 @@ export async function POST(request: NextRequest) {
             }
             .cta-button {
               background: linear-gradient(135deg, #d4af37, #f4d03f);
-              color: #1a1a1a;
+              color: #FFFFFF;
               padding: 15px 30px;
               text-decoration: none;
               border-radius: 6px;
@@ -413,7 +413,7 @@ export async function POST(request: NextRequest) {
             .contact-info {
               margin: 25px 0;
               font-size: 16px;
-              color: #1a1a1a;
+              color: #FFFFFF;
             }
             .contact-info strong {
               font-family: 'Playfair Display', serif;
@@ -424,7 +424,7 @@ export async function POST(request: NextRequest) {
               margin-top: 30px;
             }
             .social-links a {
-              color: #1a1a1a;
+              color: #FFFFFF;
               text-decoration: none;
               margin: 0 15px;
               font-size: 16px;
@@ -435,7 +435,7 @@ export async function POST(request: NextRequest) {
               color: #d4af37;
             }
             .exclusive-badge {
-              background: linear-gradient(45deg, #1a1a1a, #d4af37);
+              background: linear-gradient(45deg, #FFFFFF, #d4af37);
               color: white;
               padding: 8px 20px;
               border-radius: 20px;
@@ -527,7 +527,7 @@ export async function POST(request: NextRequest) {
 
               <p style="margin-top: 40px;">
                 Warm regards,<br><br>
-                <strong style="font-family: 'Playfair Display', serif; font-size: 20px; color: #1a1a1a;">The Murivest Executive Team</strong><br>
+                <strong style="font-family: 'Playfair Display', serif; font-size: 20px; color: #FFFFFF;">The Murivest Executive Team</strong><br>
                 <em>Strategic Investment Partners</em>
               </p>
             </div>

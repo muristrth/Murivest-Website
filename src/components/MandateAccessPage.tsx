@@ -160,10 +160,10 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 /* ─── Tiny form primitives ─────────────────────────────────── */
 const Input = (props: React.InputHTMLAttributes<HTMLInputElement>) => (
-  <input {...props} className={`w-full h-12 px-4 border border-[#D4C4A8] bg-white text-[#1A1A1A] text-[15px] placeholder:text-[#B0A898] focus:outline-none focus:border-[#1B4332] focus:ring-1 focus:ring-[#1B4332] transition-colors ${props.className || ''}`} />
+  <input {...props} className={`w-full h-12 px-4 border border-[#D4C4A8] bg-white text-[#FFFFFF] text-[15px] placeholder:text-[#B0A898] focus:outline-none focus:border-[#1B4332] focus:ring-1 focus:ring-[#1B4332] transition-colors ${props.className || ''}`} />
 );
 const SelectEl = ({ children, ...props }: React.SelectHTMLAttributes<HTMLSelectElement>) => (
-  <select {...props} className={`w-full h-12 px-4 border border-[#D4C4A8] bg-white text-[#1A1A1A] text-[15px] focus:outline-none focus:border-[#1B4332] focus:ring-1 focus:ring-[#1B4332] transition-colors appearance-none cursor-pointer ${props.className || ''}`}>{children}</select>
+  <select {...props} className={`w-full h-12 px-4 border border-[#D4C4A8] bg-white text-[#FFFFFF] text-[15px] focus:outline-none focus:border-[#1B4332] focus:ring-1 focus:ring-[#1B4332] transition-colors appearance-none cursor-pointer ${props.className || ''}`}>{children}</select>
 );
 const Label = ({ children, required, ...props }: React.LabelHTMLAttributes<HTMLLabelElement> & { required?: boolean }) => (
   <label className="block text-[13px] font-semibold tracking-wide text-[#1B4332] uppercase mb-2" {...props}>{children}{required && <span className="text-[#C0392B] ml-1">*</span>}</label>
@@ -267,7 +267,7 @@ export default function MandateAccessPage() {
                 <div key={i} className="flex gap-4 items-start">
                   <div className="w-7 h-7 bg-[#1B4332] text-[#B8956B] flex items-center justify-center text-xs shrink-0 mt-0.5" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 600 }}>{String(i + 1).padStart(2, '0')}</div>
                   <div>
-                    <p className="text-[#1A1A1A] font-medium text-[15px]" style={{ fontFamily: "'Jost', sans-serif" }}>{s.title}</p>
+                    <p className="text-[#FFFFFF] font-medium text-[15px]" style={{ fontFamily: "'Jost', sans-serif" }}>{s.title}</p>
                     <p className="text-[#6B6B6B] text-[13px] mt-0.5" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 300 }}>{s.desc}</p>
                   </div>
                 </div>
@@ -296,7 +296,7 @@ export default function MandateAccessPage() {
             <Link href="/about" className={`hover:text-[#B8956B] transition-colors ${stickyNav ? 'text-[#FAF9F6]/80' : 'text-[#FAF9F6]/80'}`}>About</Link>
             <Link href="/contact" className={`hover:text-[#B8956B] transition-colors ${stickyNav ? 'text-[#FAF9F6]/80' : 'text-[#FAF9F6]/80'}`}>Contact</Link>
           </div>
-          <a href="#access-form" className="hidden md:inline-block bg-[#B8956B] text-[#1A1A1A] px-5 py-2.5 text-[11px] tracking-widest uppercase font-semibold hover:bg-[#D4C4A8] transition-colors" style={{ fontFamily: "'Jost', sans-serif" }}>
+          <a href="#access-form" className="hidden md:inline-block bg-[#B8956B] text-[#FFFFFF] px-5 py-2.5 text-[11px] tracking-widest uppercase font-semibold hover:bg-[#D4C4A8] transition-colors" style={{ fontFamily: "'Jost', sans-serif" }}>
             Apply Now
           </a>
         </div>
@@ -331,7 +331,7 @@ export default function MandateAccessPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#access-form" className="bg-[#B8956B] text-[#1A1A1A] px-10 py-4 text-[13px] tracking-widest uppercase hover:bg-[#D4C4A8] transition-colors" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 600 }}>
+            <a href="#access-form" className="bg-[#B8956B] text-[#FFFFFF] px-10 py-4 text-[13px] tracking-widest uppercase hover:bg-[#D4C4A8] transition-colors" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 600 }}>
               Request Mandate Access
             </a>
             <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-[#FAF9F6]/30 text-[#FAF9F6] px-10 py-4 text-[13px] tracking-widest uppercase hover:border-[#B8956B] hover:text-[#B8956B] transition-colors" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
@@ -351,7 +351,7 @@ export default function MandateAccessPage() {
       </section>
 
       {/* ── STATS BAR (Animated Counters) ──────────────────── */}
-      <section className="bg-[#1A1A1A] py-8 border-b border-[#333]">
+      <section className="bg-[#FFFFFF] py-8 border-b border-[#333]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-[#333]">
             {[
@@ -491,7 +491,7 @@ export default function MandateAccessPage() {
             <div className="flex items-center justify-center gap-4">
               <div className="w-12 h-12 bg-[#1B4332] flex items-center justify-center text-[#B8956B] text-lg font-medium" style={{ fontFamily: "'Cormorant Garamond', serif" }}>EO</div>
               <div className="text-left">
-                <p className="text-[#1A1A1A] font-medium text-[15px]" style={{ fontFamily: "'Jost', sans-serif" }}>Emeka O., Lagos</p>
+                <p className="text-[#FFFFFF] font-medium text-[15px]" style={{ fontFamily: "'Jost', sans-serif" }}>Emeka O., Lagos</p>
                 <p className="text-[#9A9A9A] text-[12px]" style={{ fontFamily: "'Jost', sans-serif" }}>Manufacturing · $2.4M mandate allocation</p>
               </div>
             </div>
@@ -813,7 +813,7 @@ export default function MandateAccessPage() {
             The next mandate brief will be released to qualified investors only. Submit your application or speak to the Private Advisor directly.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#access-form" className="bg-[#B8956B] text-[#1A1A1A] px-10 py-4 text-[13px] tracking-widest uppercase hover:bg-[#D4C4A8] transition-colors" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 600 }}>
+            <a href="#access-form" className="bg-[#B8956B] text-[#FFFFFF] px-10 py-4 text-[13px] tracking-widest uppercase hover:bg-[#D4C4A8] transition-colors" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 600 }}>
               Request Access
             </a>
             <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-[#FAF9F6]/30 text-[#FAF9F6] px-10 py-4 text-[13px] tracking-widest uppercase hover:border-[#B8956B] hover:text-[#B8956B] transition-colors" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
@@ -824,7 +824,7 @@ export default function MandateAccessPage() {
       </section>
 
       {/* ── FOOTER ─────────────────────────────────────────── */}
-      <footer className="bg-[#1A1A1A] text-[#9A9A9A] py-16">
+      <footer className="bg-[#FFFFFF] text-[#9A9A9A] py-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>

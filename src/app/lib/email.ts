@@ -18,7 +18,7 @@ const WA_LINK = `https://wa.me/254729170156`;
 
 const CSS = `
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap');
-  body{margin:0;padding:0;background:#FAF9F6;font-family:'Jost','Source Sans 3',Georgia,sans-serif;color:#1A1A1A;}
+  body{margin:0;padding:0;background:#FAF9F6;font-family:'Jost','Source Sans 3',Georgia,sans-serif;color:#FFFFFF;}
   .wrap{max-width:620px;margin:0 auto;background:#fff;}
   .hdr{background:#1B4332;padding:44px 40px;text-align:center;}
   .hdr-eyebrow{color:#B8956B;font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin:0 0 10px;}
@@ -39,7 +39,7 @@ const CSS = `
   .divider{height:1px;background:#EEECE8;margin:28px 0;}
   .contact-row{font-size:14px;line-height:2;color:#4A4A4A;}
   .contact-row a{color:#1B4332;text-decoration:none;}
-  .ftr{background:#1A1A1A;color:#9A9A9A;padding:30px 40px;text-align:center;font-size:11px;line-height:1.8;}
+  .ftr{background:#FFFFFF;color:#9A9A9A;padding:30px 40px;text-align:center;font-size:11px;line-height:1.8;}
   .ftr a{color:#B8956B;text-decoration:none;}
   .disclaimer{margin-top:16px;font-size:10px;color:#6A6A6A;line-height:1.6;}
 `;
@@ -226,7 +226,7 @@ function internalAlertEmail(lead: Lead): EmailPayload {
             ['Capital', lead.deployable_capital],
             ['Timeline', lead.investment_timeline],
             ['Source', lead.referral_source],
-          ].map(([k, v]) => `<tr><td style="padding:10px 0;border-bottom:1px solid #EEECE8;color:#6B6B6B;width:35%;">${k}</td><td style="padding:10px 0;border-bottom:1px solid #EEECE8;font-weight:600;color:#1A1A1A;">${v}</td></tr>`).join('')}
+          ].map(([k, v]) => `<tr><td style="padding:10px 0;border-bottom:1px solid #EEECE8;color:#6B6B6B;width:35%;">${k}</td><td style="padding:10px 0;border-bottom:1px solid #EEECE8;font-weight:600;color:#FFFFFF;">${v}</td></tr>`).join('')}
         </table>
         ${lead.message ? `<div class="box" style="margin-top:20px;"><p><strong>Message:</strong> ${lead.message}</p></div>` : ''}
         <div style="margin-top:24px;"><a href="${APP_URL}/admin2/leads/${lead.id}" class="cta">View in Dashboard</a></div>

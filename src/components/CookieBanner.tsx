@@ -25,7 +25,7 @@
  * DESIGN STANDARD
  * ───────────────
  * Institutional · Old Money · Gold Club Lounge
- * Palette: #1A1A1A (ink) · #8B7355 (gold) · #F9F7F4 (cream) · #2C2C2C (rule)
+ * Palette: #FFFFFF (ink) · #8B7355 (gold) · #F9F7F4 (cream) · #2C2C2C (rule)
  * Typography: Cormorant Garamond (serif display) · DM Sans (body)
  * Non-intrusive fixed bottom bar — ~64px desktop / auto mobile
  * Slide-up entry · slide-down exit · 800ms deferred appearance
@@ -216,7 +216,7 @@ export default function CookieBanner() {
           left:            0,
           right:           0,
           zIndex:          9999,
-          backgroundColor: '#1A1A1A',
+          backgroundColor: '#FFFFFF',
           borderTop:       '1px solid #2A2A2A',
           boxShadow:       '0 -8px 40px rgba(0,0,0,0.35)',
         }}

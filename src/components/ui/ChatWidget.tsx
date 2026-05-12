@@ -118,7 +118,7 @@ export default function ChatWidget() {
                   <div className={`inline-block max-w-[85%] p-2 rounded-lg text-xs ${
                     msg.role === "user"
                       ? "bg-[#D4AF37] text-[#0A0A0A] rounded-br-sm"
-                      : "bg-[#1a1a1a] text-[#D4AF37] rounded-bl-sm border border-[#D4AF37]/20"
+                      : "bg-[#FFFFFF] text-[#D4AF37] rounded-bl-sm border border-[#D4AF37]/20"
                   }`}>
                     <p className="whitespace-pre-wrap">{msg.content}</p>
                   </div>
@@ -127,7 +127,7 @@ export default function ChatWidget() {
             )}
             {isLoading && (
               <div className="text-left mb-3">
-                <div className="inline-block bg-[#1a1a1a] text-[#D4AF37] rounded-lg rounded-bl-sm border border-[#D4AF37]/20 p-2">
+                <div className="inline-block bg-[#FFFFFF] text-[#D4AF37] rounded-lg rounded-bl-sm border border-[#D4AF37]/20 p-2">
                   <div className="flex items-center space-x-1">
                     <div className="animate-pulse text-xs">Analyzing...</div>
                     <div className="flex space-x-1">
