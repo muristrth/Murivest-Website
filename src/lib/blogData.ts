@@ -1,4 +1,4 @@
-import { getAuthor } from "./getAuthor"
+import { getAuthor } from "@/lib/genAuthor"
 
 export interface BlogPostData {
   id?: string;
