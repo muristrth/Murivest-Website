@@ -1,3 +1,5 @@
+import { getAuthor } from "./getAuthor"
+
 export interface BlogPostData {
   id?: string;
   title: string;
@@ -19,7 +21,11 @@ export const blogData: Record<string, BlogPostData> = {
   id: "kenyas-affordable-housing-progress-challenges-and-your-role-as-an-investor",
   title: "Kenya's Affordable Housing: Progress, Challenges, and Your Role as an Investor",
   excerpt: "Explore Kenya's journey toward affordable housing and learn how investors can tap into this growing market.",
-  author: "Mark Muriithi",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
   category: "Affordable Housing",
   date: "2025-05-28",
   readTime: "6 min read",
@@ -33,7 +39,12 @@ export const blogData: Record<string, BlogPostData> = {
   id: "rent-to-own-schemes-in-kenya",
   title: "Rent-to-Own Schemes in Kenya: A Path to Homeownership for Many",
   excerpt: "Discover how rent-to-own housing schemes in Kenya are making homeownership more accessible through flexible financing options.",
-  author: "Mark Muriithi",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+  
   category: "Affordable Housing",
   date: "2025-05-28",
   readTime: "7 min read",
@@ -47,8 +58,12 @@ export const blogData: Record<string, BlogPostData> = {
   id: "investing-in-kenyas-affordable-housing-projects",
   title: "Investing in Kenya's Affordable Housing Projects: What You Need to Know",
   excerpt: "Explore the opportunities and risks of investing in Kenya’s affordable housing sector, one of the country’s fastest-growing real estate segments.",
-  author: "Mark Muriithi",
-  category: "Investment",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+    category: "Investment",
   date: "2025-05-28",
   readTime: "8 min read",
   image: "https://coastproperties.co.ke/wp-content/uploads/2023/07/Facebook-card-010.jpg",
@@ -61,8 +76,12 @@ export const blogData: Record<string, BlogPostData> = {
   id: "the-rise-of-satellite-towns-in-kenya",
   title: "The Rise of Satellite Towns: Affordable Land & Housing Hotspots in Kenya",
   excerpt: "Discover why satellite towns like Ruiru, Kitengela, and Athi River are emerging as key investment destinations for affordable real estate in Kenya.",
-  author: "Mark Muriithi",
-  category: "Location Insights",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+    category: "Location Insights",
   date: "2025-05-28",
   readTime: "8 min read",
   image: "https://murivest.co.ke/default-blog-image.png",
@@ -75,8 +94,12 @@ export const blogData: Record<string, BlogPostData> = {
   id: "cheap-houses-for-sale-in-nairobi",
   title: "Unlocking Value: Finding Cheap Houses for Sale in Nairobi and Beyond",
   excerpt: "Looking for affordable housing in Kenya? Explore top locations and tips for finding cheap houses for sale in Nairobi and its growing suburbs.",
-  author: "Mark Muriithi",
-  category: "Affordable Housing",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+    category: "Affordable Housing",
   date: "2025-05-28",
   readTime: "7 min read",
   image: "https://murivest.co.ke/default-blog-image.png",
@@ -89,8 +112,12 @@ export const blogData: Record<string, BlogPostData> = {
   id: "government-housing-projects-kenya",
   title: "Government Initiatives Driving Real Estate Growth in Kenya: A Deep Dive",
   excerpt: "Explore how government policies, infrastructure projects, and public-private partnerships are accelerating real estate growth in Kenya.",
-  author: "Mark Muriithi",
-  category: "Investment",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+    category: "Investment",
   date: "2025-05-28",
   readTime: "8 min read",
   image: "https://proxima.co.ke/assets/img/1740380938-new-blog-feb-23.jpg",
@@ -103,8 +130,12 @@ export const blogData: Record<string, BlogPostData> = {
   id: "housing-levy-kenya-investment",
   title: "Is the Housing Levy a Good Investment for Kenyans? Expert Analysis",
   excerpt: "The housing levy has sparked national debate in Kenya. Discover whether this government-led initiative is a wise investment for individuals and the country’s real estate sector.",
-  author: "Mark Muriithi",
-  category: "Investment",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+    category: "Investment",
   date: "2025-05-28",
   readTime: "7 min read",
   image: "https://media.licdn.com/dms/image/v2/D4D22AQHcX__hGFNZiA/feedshare-shrink_800/B4DZUc2Mg3HYAg-/0/1739945727667?e=2147483647&v=beta&t=wVvY7FTaFsIN0ZtOVHgprKjOW4T1m5_tfBI_qrhNVxE",
@@ -117,8 +148,12 @@ export const blogData: Record<string, BlogPostData> = {
   id: "emerging-affordable-property-hubs",
   title: "Beyond Nairobi: Emerging Investment Hubs for Affordable Property in Kenya",
   excerpt: "Explore Kenya’s rising real estate destinations outside Nairobi. From Eldoret to Thika, discover where to find affordable properties and promising investment returns.",
-  author: "Mark Muriithi",
-  category: "Investment",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+    category: "Investment",
   date: "2025-05-28",
   readTime: "8 min read",
   image: "https://usernameproperties.com/blog/wp-content/uploads/2025/04/Property-Investment-Trends-Emerging-Opportunities-in-Kenyas-Market.jpg",
@@ -131,8 +166,12 @@ export const blogData: Record<string, BlogPostData> = {
   id: "sustainable-designs-kenyan-housing",
   title: "The Future of Affordable Living: Sustainable Designs in Kenyan Housing",
   excerpt: "Explore how eco-friendly and sustainable building designs are shaping affordable housing in Kenya. Learn why going green is becoming essential for developers and buyers.",
-  author: "Mark Muriithi",
-  category: "Development",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+    category: "Development",
   date: "2025-05-28",
   readTime: "10 min read",
   image: "https://static.ntvkenya.co.ke/uploads/2023/12/WhatsApp-Image-2022-12-07-at-11.48.33-1-1-e1701848346908-1320x762.jpg",
@@ -145,8 +184,12 @@ export const blogData: Record<string, BlogPostData> = {
   id: "kenyan-real-estate-covid-impact",
   title: "How COVID-19 Reshaped the Kenyan Real Estate Market",
   excerpt: "Discover how the pandemic transformed Kenya's property market—from shifting buyer preferences to the surge in digital transactions and suburban growth.",
-  author: "James Mwangi",
-  category: "Investment",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+    category: "Investment",
   date: "2025-05-28",
   readTime: "10 min read",
   image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmOMAVkulcPrlDqtg5FgGf9nQ7Kg1HXUkNiw&s",
@@ -159,8 +202,12 @@ export const blogData: Record<string, BlogPostData> = {
   id: "kenya-land-vs-apartment-investment",
   title: "Land vs Apartments in Kenya: Which Is the Better Investment?",
   excerpt: "Choosing between land and apartments can be tough for investors in Kenya. Here’s a deep dive into the pros and cons of each to help you decide.",
-  author: "Grace Njeri",
-  category: "Investment",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+    category: "Investment",
   date: "2025-05-28",
   readTime: "10 min read",
   image: "https://jkbhousing.com/jb-content/uploads/2023/08/Blog-Featured.jpg",
@@ -173,8 +220,12 @@ export const blogData: Record<string, BlogPostData> = {
   id: "buying-land-vs-buying-house-kenya",
   title: "Buying Land vs Buying a House in Kenya: What Should You Choose?",
   excerpt: "In Kenya’s growing property market, should you buy land and build, or purchase a ready-made house? We compare the pros, cons, and costs to guide your decision.",
-  author: "Daniel Otieno",
-  category: "Home Ownership",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+    category: "Home Ownership",
   date: "2025-05-28",
   readTime: "10 min read",
   image: "https://shiftersmovers.com/wp-content/uploads/2021/10/Building-a-house-vs-buying-cost_032601b80_4999.jpg",
@@ -187,8 +238,12 @@ export const blogData: Record<string, BlogPostData> = {
   id: "nairobi-real-estate-trends-2025-investment-forecast",
   title: "Nairobi Real Estate Trends 2025: Key Insights and Investment Forecast",
   excerpt: "Discover Nairobi’s hottest real estate trends for 2025, including rising suburbs, pricing patterns, and smart investment opportunities.",
-  author: "Kevin Otieno",
-  category: "Real Estate Market Trends",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+    category: "Real Estate Market Trends",
   date: "2025-05-29",
   readTime: "10 min read",
   image: "https://media.licdn.com/dms/image/v2/D4D12AQFR4UOOR9bbBw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1738995219856?e=2147483647&v=beta&t=efKk6zmc_Ft2_g12Nf-98-xfAt6_sYAzTPJsNw1zpIs",
@@ -201,8 +256,12 @@ export const blogData: Record<string, BlogPostData> = {
   id: "why-land-investment-in-kenya-remains-lucrative-in-2025",
   title: "Why Land Investment in Kenya Remains Lucrative in 2025",
   excerpt: "Discover why land remains one of Kenya’s top-performing investments in 2025, including hotspot areas, price trends, and legal tips.",
-  author: "Grace Wanjiru",
-  category: "Land Investment",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+    category: "Land Investment",
   date: "2025-05-29",
   readTime: "10 min read",
   image: "https://www.usernameproperties.com/blog/wp-content/uploads/2025/03/Why-Investing-in-Land-in-Kenya-is-Better-Than-Other-Investments-in-2025-.jpg",
@@ -215,8 +274,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "affordable-housing-hotspots-beyond-nairobi-2025",
     title: "Affordable Housing Hotspots Beyond Nairobi's Traditional Borders in 2025",
     excerpt: "Discover untapped satellite towns and county headquarters offering genuine affordable housing opportunities in Kenya, driven by new infrastructure and devolved growth.",
-    author: "Samuel Koech",
-    category: "Affordable Housing",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Affordable Housing",
     date: "2025-06-01",
     readTime: "12 min read",
     image: "https://storage.googleapis.com/48877118-7272-4a4d-b302-0465d8aa4548/c212548f-9b66-4bdb-8def-845271f90e09/39f1e18f-2c92-4f52-99f5-de6eae1c5145.jpg",
@@ -229,8 +292,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "due-diligence-checklist-kenya-land-2025",
     title: "The Ultimate Due Diligence Checklist for Buying Land in Kenya 2025 (Post-Ardhisasa)",
     excerpt: "Navigate land purchases in Kenya confidently with this comprehensive 2025 due diligence checklist, integrating Ardhisasa and traditional verification methods to avoid pitfalls.",
-    author: "Fatima Juma (Legal Consultant)",
-    category: "Legal & Due Diligence",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Legal & Due Diligence",
     date: "2025-06-05",
     readTime: "15 min read",
     image: "https://www.constructionkenya.com/wp-content/uploads/2024/06/ardhisasa.jpeg",
@@ -243,8 +310,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "financing-real-estate-kenya-2025-options",
     title: "Financing Your Real Estate Dream in Kenya 2025: Mortgages, SACCOs, and Creative Options",
     excerpt: "Explore a comprehensive guide to real estate financing in Kenya for 2025, covering mortgages, SACCO loans, KMRC's impact, off-plan payments, and chamas.",
-    author: "Aisha Mwangi (Finance Analyst)",
-    category: "Finance & Mortgages",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Finance & Mortgages",
     date: "2025-06-10",
     readTime: "14 min read",
     image: "https://www.denvers.co.ke/wp-content/uploads/2024/08/BLOG-POSTS-28th-03-scaled.jpg",
@@ -257,8 +328,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "maximizing-rental-yields-nairobi-2025",
     title: "Maximizing Rental Yields in Nairobi 2025: A Landlord's Strategic Guide",
     excerpt: "Boost your rental income in Nairobi's competitive 2025 market. Strategies for property selection, tenant management, upgrades, and navigating legal landscapes.",
-    author: "Esther Wambui",
-    category: "Property Management",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Property Management",
     date: "2025-06-15",
     readTime: "9 min read",
     image: "https://yourhost.io/wp-content/uploads/2024/12/GTC-Project-Aerial-Shot-10-DJI_0578-1-Copy-4-1-1024x682.jpg",
@@ -271,8 +346,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "impact-infrastructure-kenya-property-values-2025",
     title: "The Ripple Effect: How Major Infrastructure Projects are Shaping Kenyan Property Values in 2025",
     excerpt: "Explore the direct impact of roads (Nairobi Expressway, bypasses), SGR, and new ports (Lamu) on real estate appreciation and development patterns across Kenya.",
-    author: "Dr. David Kinyua",
-    category: "Market Trends",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Market Trends",
     date: "2025-06-20",
     readTime: "11 min read",
     image: "https://images.unsplash.com/photo-1618060932034-407a9160a3f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW5mcmFzdHJ1Y3R1cmUlMjBrZW55YXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
@@ -285,8 +364,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "sectional-properties-act-kenya-2025-explained",
     title: "Kenya's Sectional Properties Act 2020: A 2025 Guide for Apartment Owners and Developers",
     excerpt: "Understand the implications of the Sectional Properties Act 2020 for buying, selling, and managing apartments and shared properties in Kenya as of 2025.",
-    author: "Anne Chebet (Advocate)",
-    category: "Legal & Regulations",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Legal & Regulations",
     date: "2025-06-28",
     readTime: "10 min read",
     image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YXBhcnRtZW50JTIwYnVpbGRpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
@@ -299,8 +382,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "sustainable-building-materials-kenya-2025",
     title: "Eco-Construction 2025: Top Sustainable Building Materials Gaining Traction in Kenya",
     excerpt: "Explore the rise of sustainable building materials in Kenya – from stabilized soil blocks and bamboo to recycled materials – and their benefits for cost, environment, and durability.",
-    author: "Michael Odhiambo (Architect)",
-    category: "Sustainable Development",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Sustainable Development",
     date: "2025-07-05",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1558819375-dd47a917888e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3VzdGFpbmFibGUlMjBidWlsZGluZyUyMG1hdGVyaWFsc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
@@ -313,8 +400,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "real-estate-photography-videography-kenya-2025",
     title: "Visual Appeal: The Power of Professional Real Estate Photography & Videography in Kenya 2025",
     excerpt: "In a digital-first market, high-quality photos and videos are crucial for selling or renting property in Kenya. Explore trends, costs, and tips for impactful visual marketing.",
-    author: "Jane Mukami (Marketing Expert)",
-    category: "Marketing & Sales",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Marketing & Sales",
     date: "2025-07-12",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1587024615493-a20788b7667c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmVhbCUyMGVzdGF0ZSUyMHBob3RvZ3JhcGh5fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
@@ -327,8 +418,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "understanding-capital-gains-tax-kenya-real-estate-2025",
     title: "Capital Gains Tax (CGT) on Real Estate in Kenya 2025: A Clear Guide",
     excerpt: "Navigating Capital Gains Tax on property sales in Kenya can be complex. This guide explains CGT rates, calculations, exemptions, and compliance for 2025.",
-    author: "David Chege (Tax Consultant)",
-    category: "Taxation",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Taxation",
     date: "2025-07-19",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGF4JTIwY2FsY3VsYXRpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
@@ -341,8 +436,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "short-term-rentals-airbnb-kenya-2025-guide",
     title: "The Short-Term Rental Market (Airbnb) in Kenya 2025: A Host's Guide to Success",
     excerpt: "Unlock the potential of short-term rentals in Kenya. This guide covers hotspots, regulations, pricing, guest management, and maximizing profits on platforms like Airbnb.",
-    author: "Brenda Adhiambo",
-    category: "Niche Investments",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Niche Investments",
     date: "2025-07-26",
     readTime: "10 min read",
     image: "https://images.unsplash.com/photo-1611048264200-747f00d9398a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YWlyYm5iJTIwaG9zdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
@@ -355,8 +454,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "warehousing-logistics-real-estate-kenya-2025",
     title: "The Boom in Warehousing & Logistics Real Estate in Kenya 2025",
     excerpt: "Explore the driving forces behind Kenya's burgeoning warehousing and logistics property sector, key locations, investment opportunities, and future trends.",
-    author: "Martin Owino (Logistics Analyst)",
-    category: "Commercial Real Estate",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Commercial Real Estate",
     date: "2025-08-05",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1587293852726-70cdb16d2866?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2FyZWhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
@@ -369,8 +472,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "retirement-homes-kenya-market-2025",
     title: "Retirement Communities in Kenya 2025: An Emerging Real Estate Niche",
     excerpt: "Explore the growing demand for senior living and retirement communities in Kenya, preferred locations, types of facilities, and investment considerations for this niche market.",
-    author: "Dr. Grace Kemunto",
-    category: "Niche Investments",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Niche Investments",
     date: "2025-08-10",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1605299746144-50f009795104?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2VuaW9yJTIwbGl2aW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
@@ -383,8 +490,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "climate-change-coastal-properties-kenya-2025",
     title: "Climate Change & Coastal Properties in Kenya 2025: Risks and Resilience Strategies",
     excerpt: "Examine the impact of climate change (sea-level rise, erosion) on Kenyan coastal real estate. Risks for property owners and strategies for building resilience.",
-    author: "Prof. Ali Hassan (Environmental Scientist)",
-    category: "Sustainable Development",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Sustainable Development",
     date: "2025-08-15",
     readTime: "11 min read",
     image: "https://images.unsplash.com/photo-1509305717900-84f40e786d82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29hc3RhbCUyMGVyb3Npb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
@@ -397,8 +508,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "real-estate-auctions-kenya-2025-guide",
     title: "Buying Property at Auction in Kenya 2025: A Guide to Opportunities and Pitfalls",
     excerpt: "Real estate auctions can offer bargains but come with risks. This guide covers the auction process in Kenya, finding listings, due diligence, and tips for successful bidding.",
-    author: "Mark Kariuki (Auctioneer)",
-    category: "Buying & Selling",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Buying & Selling",
     date: "2025-08-20",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1568530799009-a4420531800b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXVjdGlvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
@@ -411,8 +526,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "renovating-older-properties-kenya-profit-2025",
     title: "Flipping Houses in Kenya 2025: A Guide to Renovating Older Properties for Profit",
     excerpt: "Discover the art of renovating older Kenyan properties for resale or rental income. Tips on property selection, budgeting, value-adding renovations, and navigating the market.",
-    author: "Grace Wacera (Interior Designer)",
-    category: "Development",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Development",
     date: "2025-08-25",
     readTime: "10 min read",
     image: "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG91c2UlMjByZW5vdmF0aW9ufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
@@ -425,8 +544,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "women-in-kenyan-real-estate-2025",
     title: "The Rising Influence of Women in Kenyan Real Estate 2025: Trends and Opportunities",
     excerpt: "Explore the increasing role of women as investors, developers, homeowners, and professionals in Kenya's real estate sector. Challenges, success stories, and future outlook.",
-    author: "Dr. Tabitha Njeri",
-    category: "Market Trends",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Market Trends",
     date: "2025-09-01",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1551829143-a819d5eDEC03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHdvbWFuJTIwYXJjaGl0ZWN0fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
@@ -439,8 +562,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "serviced-apartments-vs-traditional-rentals-kenya-2025",
     title: "Serviced Apartments vs. Traditional Rentals in Kenya 2025: An Investor's Dilemma",
     excerpt: "Compare investment potential, operational demands, and target markets for serviced apartments versus traditional long-term rentals in Kenya's 2025 property landscape.",
-    author: "Paul Kimutai",
-    category: "Investment",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Investment",
     date: "2025-09-05",
     readTime: "10 min read",
     image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXBhcnRtZW50JTIwaW50ZXJpb3J8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
@@ -453,8 +580,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "land-use-zoning-changes-nairobi-2025",
     title: "Nairobi's Evolving Skyline: Understanding Land Use and Zoning Changes in 2025",
     excerpt: "Explore recent and proposed changes to land use and zoning regulations in Nairobi County for 2025. Implications for developers, investors, and residents.",
-    author: "Charles Mbugua (Urban Planner)",
-    category: "Legal & Regulations",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Legal & Regulations",
     date: "2025-09-10",
     readTime: "11 min read",
     image: "https://images.unsplash.com/photo-1502920514358-906c5d41a138?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXJiYW4lMjBwbGFubmluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
@@ -467,8 +598,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "digital-nomads-kenya-real-estate-impact-2025",
     title: "Digital Nomads in Kenya 2025: Impact on Niche Rental Markets and Co-working Spaces",
     excerpt: "Kenya is attracting a growing number of digital nomads. Explore their housing preferences, impact on specific rental markets (e.g., Diani, Nairobi suburbs), and demand for co-working spaces.",
-    author: "Wanjiku Kiarie (Travel & Lifestyle Writer)",
-    category: "Market Trends",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Market Trends",
     date: "2025-09-15",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1517404215738-15263e9f9178?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZGlnaXRhbCUyMG5vbWFkfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
@@ -481,8 +616,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "agricultural-land-investment-kenya-2025",
     title: "Investing in Green Gold: Agricultural Land Investment Trends in Kenya 2025",
     excerpt: "Beyond residential and commercial, explore the lucrative opportunities in agricultural land investment in Kenya. Focus on high-value crops, agribusiness, and key farming regions.",
-    author: "Joseph Karienye (Agribusiness Consultant)",
-    category: "Land Investment",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Land Investment",
     date: "2025-09-20",
     readTime: "10 min read",
     image: "https://images.unsplash.com/photo-1557095603-1510d20a5231?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YWdyaWN1bHR1cmUlMjBrZW55YXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
@@ -495,8 +634,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "best-areas-to-buy-land-in-nairobi",
     title: "Best Areas to Buy Land in Nairobi 2025",
     excerpt: "Discover the most promising areas in Nairobi for land investment. From Kiambu to Machakos, find where smart investors are putting their money.",
-    author: "Sarah Wanjiku",
-    category: "Land Investment",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Land Investment",
     date: "2025-01-15",
     readTime: "12 min read",
     image: "https://ext.same-assets.com/3537751143/3375681213.jpeg",
@@ -508,8 +651,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "commercial-property-investment-kenya",
     title: "Commercial Property Investment in Kenya: Complete Guide",
     excerpt: "Everything you need to know about investing in commercial real estate in Kenya. Office spaces, retail, and industrial properties analyzed.",
-    author: "David Kimani",
-    category: "Commercial",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Commercial",
     date: "2025-01-12",
     readTime: "15 min read",
     image: "https://ext.same-assets.com/3537751143/542694753.jpeg",
@@ -521,8 +668,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "property-buying-process-kenya",
     title: "Property Buying Process in Kenya: Step by Step Guide",
     excerpt: "Navigate Kenya's property buying process with confidence. From due diligence to title transfer, understand every step involved.",
-    author: "John Ochieng",
-    category: "Legal",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Legal",
     date: "2025-01-08",
     readTime: "14 min read",
     image: "https://ext.same-assets.com/3537751143/690996310.jpeg",
@@ -534,8 +685,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "coastal-property-investment-mombasa",
     title: "Coastal Property Investment: Mombasa and Beyond",
     excerpt: "Explore investment opportunities along Kenya's coast. Beach properties, vacation rentals, and commercial developments in coastal regions.",
-    author: "Amina Hassan",
-    category: "Coastal",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Coastal",
     date: "2025-01-05",
     readTime: "13 min read",
     image: "https://ext.same-assets.com/3537751143/3343173247.jpeg",
@@ -547,8 +702,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "real-estate-financing-options-kenya",
     title: "Real Estate Financing Options in Kenya",
     excerpt: "Understand mortgage options, bank loans, and alternative financing for property investment in Kenya. Compare rates and requirements.",
-    author: "Peter Kariuki",
-    category: "Finance",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Finance",
     date: "2025-01-03",
     readTime: "11 min read",
     image: "https://ext.same-assets.com/3537751143/2320505287.jpeg",
@@ -560,8 +719,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "investment-properties-kiambu-county",
     title: "Investment Properties in Kiambu County",
     excerpt: "Kiambu County offers excellent property investment opportunities. Analyze market trends, prices, and growth potential in this prime location.",
-    author: "Mary Njeri",
-    category: "Investment",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Investment",
     date: "2025-01-01",
     readTime: "9 min read",
     image: "https://ext.same-assets.com/3537751143/2651570011.jpeg",
@@ -573,8 +736,12 @@ export const blogData: Record<string, BlogPostData> = {
     id: "land-ownership-laws-kenya",
     title: "Understanding Land Ownership Laws in Kenya",
     excerpt: "Comprehensive guide to Kenya's land laws, ownership types, and legal requirements. Protect your investment with proper legal knowledge.",
-    author: "Advocate James Mwangi",
-    category: "Legal",
+  author: getAuthor(
+  category,
+  tags,
+  slug_or_id
+  ),
+      category: "Legal",
     date: "2024-12-28",
     readTime: "16 min read",
     image: "https://ext.same-assets.com/3537751143/2626151244.jpeg",
