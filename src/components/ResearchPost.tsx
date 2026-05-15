@@ -8,7 +8,7 @@ import {
   ArrowLeft, Calendar, Clock, User, Twitter, Linkedin,
   MessageCircle, Copy, Check, ChevronRight, Mail,
 } from 'lucide-react';
-import { blogData, type BlogPostData } from '@/lib/blogData';
+import { researchData, type researchPostData } from '@/lib/researchData';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface TocItem {
@@ -17,8 +17,8 @@ interface TocItem {
   level: number;
 }
 
-export interface BlogPostProps {
-  post?: BlogPostData;
+export interface researchPostProps {
+  post?: researchPostData;
 }
 
 // ─── Utilities ────────────────────────────────────────────────────────────────
@@ -56,14 +56,14 @@ function injectHeadingIds(html: string): string {
   });
 }
 
-function getRelatedPosts(currentId: string, currentCategory: string, count = 3): Array<{ id: string; data: BlogPostData }> {
-  const sameCat = Object.entries(blogData)
+function getRelatedPosts(currentId: string, currentCategory: string, count = 3): Array<{ id: string; data: researchPostData }> {
+  const sameCat = Object.entries(researchData)
     .filter(([id, post]) => id !== currentId && post.category === currentCategory)
     .slice(0, count);
   
   if (sameCat.length >= count) return sameCat.map(([id, data]) => ({ id, data }));
   
-  const others = Object.entries(blogData)
+  const others = Object.entries(researchData)
     .filter(([id, post]) => id !== currentId && post.category !== currentCategory)
     .slice(0, count - sameCat.length);
     
@@ -223,7 +223,7 @@ function InlineRelatedPosts({ currentId, category }: { currentId: string; catego
       </p>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
         {related.map(({ id, data }) => (
-          <Link key={id} href={`/blog/${id}`} style={{ 
+          <Link key={id} href={`/research/${id}`} style={{ 
             textDecoration: 'none', 
             display: 'block',
             background: '#FAFAF8',
@@ -332,7 +332,7 @@ function NewsletterCTA() {
 
 
 // ─── Related Posts (bottom of article) ────────────────────────────────────────
-function RelatedPosts({ posts }: { posts: Array<{ id: string; data: BlogPostData }> }) {
+function RelatedPosts({ posts }: { posts: Array<{ id: string; data: researchPostData }> }) {
   if (posts.length === 0) return null;
   return (
     <section aria-label="Related articles" style={{ borderTop: '1px solid #E2DDD6', paddingTop: '48px', marginTop: '48px' }}>
@@ -341,7 +341,7 @@ function RelatedPosts({ posts }: { posts: Array<{ id: string; data: BlogPostData
       </p>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px' }}>
         {posts.map(({ id, data }) => (
-          <Link key={id} href={`/blog/${id}`} style={{ textDecoration: 'none', display: 'block', borderTop: '2px solid #E2DDD6', paddingTop: '16px' }}>
+          <Link key={id} href={`/research/${id}`} style={{ textDecoration: 'none', display: 'block', borderTop: '2px solid #E2DDD6', paddingTop: '16px' }}>
             <p style={{ fontFamily: 'Georgia, serif', fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#9B8F7E', marginBottom: '8px' }}>{data.category}</p>
             <p style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '15px', fontWeight: '700', color: '#1C1C1C', lineHeight: '1.4', marginBottom: '8px' }}>{data.title}</p>
             <p style={{ fontFamily: 'Georgia, serif', fontSize: '12px', color: '#9B8F7E' }}>{data.readTime || calcReadTime(data.content)}</p>
@@ -387,9 +387,9 @@ function NotFoundPage() {
           Article Not Found
         </h1>
         <p style={{ fontFamily: 'Georgia, serif', fontSize: '15px', color: '#6B6259', lineHeight: '1.7', marginBottom: '32px' }}>
-          This article doesn't exist — or was moved. Either way, the blog's got plenty of other reading.
+          This article doesn't exist — or was moved. Either way, the research's got plenty of other reading.
         </p>
-        <Link href="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontFamily: 'Georgia, serif', fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#7B6C55', textDecoration: 'none' }}>
+        <Link href="/research" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontFamily: 'Georgia, serif', fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#7B6C55', textDecoration: 'none' }}>
           <ArrowLeft style={{ width: '14px', height: '14px' }} strokeWidth={1.5} /> Return to Journal
         </Link>
       </div>
@@ -398,10 +398,10 @@ function NotFoundPage() {
 }
 
 // ─── Main Component ───────────────────────────────────────────────────────────
-export default function BlogPost({ post: postProp }: BlogPostProps) {
+export default function researchPost({ post: postProp }: researchPostProps) {
   const params = useParams();
   const id = (params?.id as string) ?? '';
-  const post = postProp ?? (id ? blogData[id] : undefined);
+  const post = postProp ?? (id ? researchData[id] : undefined);
 
   const [toc, setToc] = useState<TocItem[]>([]);
   const [ctaShown, setCtaShown] = useState(false);
@@ -425,8 +425,8 @@ export default function BlogPost({ post: postProp }: BlogPostProps) {
   if (!post) return <NotFoundPage />;
 
   const readTime = post.readTime || calcReadTime(post.content);
-  const postUrl = typeof window !== 'undefined' ? window.location.href : `https://murivest.co.ke/blog/${id}`;
-  const heroImage = post.image || 'https://murivest.co.ke/default-blog-image.png';
+  const postUrl = typeof window !== 'undefined' ? window.location.href : `https://murivest.co.ke/research/${id}`;
+  const heroImage = post.image || 'https://murivest.co.ke/default-research-image.png';
   const relatedPosts = getRelatedPosts(id, post.category);
   const processedContent = injectHeadingIds(post.content);
 
@@ -435,8 +435,8 @@ export default function BlogPost({ post: postProp }: BlogPostProps) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://murivest.co.ke' },
-      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://murivest.co.ke/blog' },
-      { '@type': 'ListItem', position: 3, name: post.category, item: `https://murivest.co.ke/blog?category=${encodeURIComponent(post.category)}` },
+      { '@type': 'ListItem', position: 2, name: 'research', item: 'https://murivest.co.ke/research' },
+      { '@type': 'ListItem', position: 3, name: post.category, item: `https://murivest.co.ke/research?category=${encodeURIComponent(post.category)}` },
       { '@type': 'ListItem', position: 4, name: post.title, item: postUrl },
     ],
   };
@@ -451,15 +451,15 @@ export default function BlogPost({ post: postProp }: BlogPostProps) {
         {/* Top Nav */}
         <div style={{ borderBottom: '1px solid #E2DDD6', background: '#FAFAF8' }}>
           <div style={{ maxWidth: '860px', margin: '0 auto', padding: '18px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
-            <Link href="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '11px', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#7B6C55', textDecoration: 'none', fontFamily: 'Georgia, serif' }}>
+            <Link href="/research" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '11px', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#7B6C55', textDecoration: 'none', fontFamily: 'Georgia, serif' }}>
               <ArrowLeft style={{ width: '14px', height: '14px' }} strokeWidth={1.5} /> Back to Journal
             </Link>
             <nav aria-label="Breadcrumb" style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '11px', color: '#9B8F7E', fontFamily: 'Georgia, serif', flexWrap: 'wrap' }}>
               <Link href="/" style={{ color: '#9B8F7E', textDecoration: 'none' }}>Home</Link>
               <ChevronRight style={{ width: '10px', height: '10px' }} />
-              <Link href="/blog" style={{ color: '#9B8F7E', textDecoration: 'none' }}>Blog</Link>
+              <Link href="/research" style={{ color: '#9B8F7E', textDecoration: 'none' }}>research</Link>
               <ChevronRight style={{ width: '10px', height: '10px' }} />
-              <Link href={`/blog?category=${encodeURIComponent(post.category)}`} style={{ color: '#9B8F7E', textDecoration: 'none' }}>{post.category}</Link>
+              <Link href={`/research?category=${encodeURIComponent(post.category)}`} style={{ color: '#9B8F7E', textDecoration: 'none' }}>{post.category}</Link>
               <ChevronRight style={{ width: '10px', height: '10px' }} />
               <span style={{ color: '#6B6259', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '180px' }}>{post.title}</span>
             </nav>
@@ -499,19 +499,22 @@ export default function BlogPost({ post: postProp }: BlogPostProps) {
           </header>
 
           {/* Hero Image */}
-          <div style={{ position: 'relative', width: '100%', aspectRatio: '16/7', marginBottom: '48px', background: '#E8E4DE', overflow: 'hidden' }}>
-            <Image
-              src={heroImage}
-              alt={post.title}
-              fill
-              style={{ objectFit: 'cover' }}
-              priority
-              sizes="(max-width: 860px) 100vw, 860px"
-              placeholder="blur"
-              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='860' height='380'%3E%3Crect fill='%23E8E4DE'/%3E%3C/svg%3E"
-              onError={(e) => { (e.target as HTMLImageElement).src = '/default-blog-image.png'; }}
-            />
-          </div>
+          <div className="relative w-full overflow-hidden rounded-2xl bg-neutral-100">
+          <Image
+            src={heroImage}
+            alt={post.title}
+            width={1600}
+            height={900}
+            priority
+            className="w-full h-auto object-contain"
+            sizes="(max-width: 860px) 100vw, 860px"
+            placeholder="blur"
+            blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'%3E%3Crect fill='%23E8E4DE'/%3E%3C/svg%3E"
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = '/default-research-image.png'
+            }}
+          />
+        </div>
 
           <TableOfContents toc={toc} />
 
@@ -535,7 +538,7 @@ export default function BlogPost({ post: postProp }: BlogPostProps) {
               <p style={{ fontFamily: 'Georgia, serif', fontSize: '10px', letterSpacing: '0.22em', textTransform: 'uppercase', color: '#9B8F7E', marginBottom: '14px' }}>Filed under</p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                 {post.tags.map((tag: string, i: number) => (
-                  <Link key={i} href={`/blog?tag=${encodeURIComponent(tag)}`} style={{ border: '1px solid #E2DDD6', padding: '6px 14px', fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B6259', fontFamily: 'Georgia, serif', textDecoration: 'none', display: 'inline-block' }}>
+                  <Link key={i} href={`/research?tag=${encodeURIComponent(tag)}`} style={{ border: '1px solid #E2DDD6', padding: '6px 14px', fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B6259', fontFamily: 'Georgia, serif', textDecoration: 'none', display: 'inline-block' }}>
                     {tag}
                   </Link>
                 ))}
@@ -551,7 +554,7 @@ export default function BlogPost({ post: postProp }: BlogPostProps) {
           <RelatedPosts posts={relatedPosts} />
 
           <div style={{ textAlign: 'center', paddingTop: '8px', marginTop: '48px', borderTop: '1px solid #E2DDD6' }}>
-            <Link href="/blog" style={{ fontFamily: 'Georgia, serif', fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#7B6C55', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+            <Link href="/research" style={{ fontFamily: 'Georgia, serif', fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#7B6C55', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
               <ArrowLeft style={{ width: '13px', height: '13px' }} strokeWidth={1.5} /> Back to Journal
             </Link>
           </div>
@@ -559,7 +562,7 @@ export default function BlogPost({ post: postProp }: BlogPostProps) {
         </article>
 
         <div style={{ display: 'none' }} className="mobile-sticky-back">
-          <Link href="/blog" style={{ display: 'flex', alignItems: 'center', gap: '6px', fontFamily: 'Georgia, serif', fontSize: '11px', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#7B6C55', textDecoration: 'none' }}>
+          <Link href="/research" style={{ display: 'flex', alignItems: 'center', gap: '6px', fontFamily: 'Georgia, serif', fontSize: '11px', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#7B6C55', textDecoration: 'none' }}>
             <ArrowLeft style={{ width: '13px', height: '13px' }} strokeWidth={1.5} /> Journal
           </Link>
         </div>

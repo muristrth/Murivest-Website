@@ -93,7 +93,7 @@ export default function ThoughtLeadershipPage() {
             </div>
 
             <h1 className="luxury-heading text-4xl md:text-6xl mb-6">
-              Thought Leadership in
+              Leadership in
               <span className="block luxury-gold-accent font-medium">Global Real Estate</span>
             </h1>
             <p className="luxury-body text-xl text-white/80 mb-8 leading-relaxed">
@@ -153,7 +153,7 @@ export default function ThoughtLeadershipPage() {
                     <p className="luxury-body text-white/80 mb-4">{content.excerpt}</p>
                     <div className="flex items-center justify-between">
                       <span className="luxury-body text-white/60">By {content.author}</span>
-                      <Link href={`/blog/${content.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}>
+                      <Link href={`/research/${content.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}>
                         <button className="luxury-button-secondary">
                           Read Full Analysis
                         </button>
@@ -204,7 +204,7 @@ export default function ThoughtLeadershipPage() {
           </div>
 
           <div className="text-center">
-            <Link href="/blog">
+            <Link href="/research">
               <button className="luxury-button-primary">
                 Explore Full Research Library
               </button>

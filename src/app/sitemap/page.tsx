@@ -37,7 +37,7 @@ const sitemapSections = [
     title: "Insights & Resources",
     icon: FileText,
     pages: [
-      { href: "/blog", label: "Investment Blog", description: "Latest market insights and strategies" },
+      { href: "/research", label: "Investment research", description: "Latest market insights and strategies" },
       { href: "/foundation", label: "Murivest Foundation", description: "Community development initiatives" },
       { href: "/sell", label: "Sell Property", description: "List your property with us" }
     ]
@@ -46,7 +46,7 @@ const sitemapSections = [
 
 const quickLinks = [
   { href: "/properties", label: "Browse Properties", icon: Building },
-  { href: "/blog", label: "Latest Insights", icon: FileText },
+  { href: "/research", label: "Latest Insights", icon: FileText },
   { href: "/calculator", label: "ROI Calculator", icon: Calculator },
   { href: "/contact", label: "Schedule Consultation", icon: Phone }
 ]

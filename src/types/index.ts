@@ -63,7 +63,7 @@ export interface Property {
   walkScores?: WalkScores;
 }
 
-export interface BlogPost {
+export interface researchPost {
   id: number;
   title: string;
   excerpt: string;

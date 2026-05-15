@@ -2,15 +2,15 @@
 import fs from 'fs';
 import path from 'path';
 
-const BLOG_DIR = path.join(process.cwd(), 'content/blog');
+const research_DIR = path.join(process.cwd(), 'content/research');
 const OUTPUT_FILE = path.join(process.cwd(), 'lib/generatedInternalLinks.json');
 
 function getAllPosts() {
-  const files = fs.readdirSync(BLOG_DIR);
+  const files = fs.readdirSync(research_DIR);
   return files
     .filter((f) => f.endsWith('.json') || f.endsWith('.md'))
     .map((file) => {
-      const raw = fs.readFileSync(path.join(BLOG_DIR, file), 'utf-8');
+      const raw = fs.readFileSync(path.join(research_DIR, file), 'utf-8');
       return JSON.parse(raw);
     });
 }
@@ -20,7 +20,7 @@ function generateLinks() {
   
   const links = posts.map((post) => ({
     keyword: post.title,
-    href: `/blog/${post.slug}`,
+    href: `/research/${post.slug}`,
   }));
 
   // Add category-based links
@@ -30,7 +30,7 @@ function generateLinks() {
     if (representative) {
       links.push({
         keyword: cat,
-        href: `/blog/${representative.slug}`,
+        href: `/research/${representative.slug}`,
       });
     }
   });

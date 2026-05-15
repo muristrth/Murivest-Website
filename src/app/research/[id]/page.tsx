@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Script from 'next/script';
-import { blogData, type BlogPostData } from '@/lib/blogData';
-import BlogPostClient from '@/components/BlogPost';
-import BlogSidebar from '@/components/BlogSidebar';
+import { researchData, type researchPostData } from '@/lib/researchData';
+import ResearchPostClient from '@/components/ResearchPost';
+import ResearchSidebar from '@/components/ResearchSidebar';
 import { autoLinkContent, generateLinksFromPosts } from '@/lib/autoLinkContent';
 import { internalLinks } from '@/lib/internalLinks';
 
@@ -11,25 +11,25 @@ interface PageProps {
   params: Promise<{ id: string }>;
 }
 
-function getPost(id: string): BlogPostData | undefined {
-  return blogData[id];
+function getPost(id: string): researchPostData | undefined {
+  return researchData[id];
 }
 
 function stripHtml(html: string): string {
   return html.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
-function buildDescription(post: BlogPostData): string {
+function buildDescription(post: researchPostData): string {
   if (post.excerpt) return post.excerpt.slice(0, 160);
   return stripHtml(post.content).slice(0, 160);
 }
 
-function articleSchema(post: BlogPostData, id: string) {
-  const image = post.image || 'https://murivest.co.ke/default-blog-image.png';
+function articleSchema(post: researchPostData, id: string) {
+  const image = post.image || 'https://murivest.co.ke/default-research-image.png';
   const description = buildDescription(post);
   return {
     '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
+    '@type': 'researchPosting',
     headline: post.title,
     description,
     image,
@@ -37,11 +37,11 @@ function articleSchema(post: BlogPostData, id: string) {
     publisher: { '@type': 'Organization', name: 'Murivest Realty Group', url: 'https://murivest.co.ke', logo: { '@type': 'ImageObject', url: 'https://murivest.co.ke/logo.png' } },
     datePublished: post.date,
     dateModified: post.dateModified || post.date,
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://murivest.co.ke/blog/${id}` },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://murivest.co.ke/research/${id}` },
     articleSection: post.category,
     keywords: post.tags?.join(', ') || post.category,
     inLanguage: 'en-KE',
-    url: `https://murivest.co.ke/blog/${id}`,
+    url: `https://murivest.co.ke/research/${id}`,
   };
 }
 
@@ -50,8 +50,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const post = getPost(id);
   if (!post) return { title: 'Article Not Found | Murivest Realty Group' };
   const description = buildDescription(post);
-  const image = post.image || 'https://murivest.co.ke/default-blog-image.png';
-  const url = `https://murivest.co.ke/blog/${id}`;
+  const image = post.image || 'https://murivest.co.ke/default-research-image.png';
+  const url = `https://murivest.co.ke/research/${id}`;
   return {
     title: `${post.title} | Murivest Realty Group`,
     description,
@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function BlogPostPage({ params }: PageProps) {
+export default async function researchPostPage({ params }: PageProps) {
   const { id } = await params;
   const post = getPost(id);
 
@@ -71,11 +71,11 @@ export default async function BlogPostPage({ params }: PageProps) {
   }
 
   // Build allPosts array for sidebar + dynamic link generation
-  const allPosts = Object.entries(blogData).map(([slug, data]) => ({
+  const allPosts = Object.entries(researchData).map(([slug, data]) => ({
     slug,
     title: data.title,
     excerpt: data.excerpt || stripHtml(data.content).slice(0, 120),
-    coverImage: data.image || 'https://murivest.co.ke/default-blog-image.png',
+    coverImage: data.image || 'https://murivest.co.ke/default-research-image.png',
     category: data.category,
     tags: data.tags || [],
   }));
@@ -135,12 +135,12 @@ export default async function BlogPostPage({ params }: PageProps) {
         >
           {/* ARTICLE with linked content */}
           <article className="min-w-0 overflow-hidden">
-            <BlogPostClient post={linkedPost} />
+            <ResearchPostClient post={linkedPost} />
           </article>
 
           {/* DESKTOP SIDEBAR */}
           <aside className="hidden lg:block">
-            <BlogSidebar
+            <ResearchSidebar
               relatedPosts={relatedPosts}
               popularPosts={popularPosts}
             />
@@ -148,8 +148,8 @@ export default async function BlogPostPage({ params }: PageProps) {
         </div>
 
         {/* MOBILE SIDEBAR */}
-        <div className="mt-14 space-y-10 lg:hidden">
-          <BlogSidebar
+        <div className="mt-14 space-y-10 lg:hidden fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm border-t border-gray-200 p-4 z-50">
+          <ResearchSidebar
             relatedPosts={relatedPosts.slice(0, 2)}
             popularPosts={popularPosts.slice(0, 3)}
           />

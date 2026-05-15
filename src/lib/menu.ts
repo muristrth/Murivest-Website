@@ -32,7 +32,7 @@ export const MENU_DATA: MenuData = {
     { label: 'Research', href: '/research' },
     { label: 'Sector Performance', href: '/sector-performance' },
     { label: 'Risk Analysis', href: '/country-risk-analysis' },
-    { label: 'Blog', href: '/blog' },
+    { label: 'research', href: '/research' },
     { label: 'Videos', href: '/videos' },
   ],
 

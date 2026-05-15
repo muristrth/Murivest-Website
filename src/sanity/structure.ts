@@ -172,7 +172,7 @@ export const structure: StructureResolver = (S) =>
             .title('Editorial Content')
             .items([
               S.documentTypeListItem('post')
-                .title('Blog Posts')
+                .title('research Posts')
                 .icon(FileText),
               S.documentTypeListItem('insight')
                 .title('Market Insights')

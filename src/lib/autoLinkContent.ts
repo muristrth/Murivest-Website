@@ -90,14 +90,14 @@ export function generateLinksFromPosts(
     if (post.title && post.title.length > 5 && !isBlacklisted(post.title)) {
       links.push({
         keyword: post.title,
-        href: `/blog/${post.slug}`,
+        href: `/research/${post.slug}`,
       });
     }
 
     if (post.category && !isBlacklisted(post.category)) {
       links.push({
         keyword: post.category,
-        href: `/blog/${post.slug}`,
+        href: `/research/${post.slug}`,
       });
     }
 
@@ -105,7 +105,7 @@ export function generateLinksFromPosts(
       if (!isBlacklisted(tag)) {
         links.push({
           keyword: tag,
-          href: `/blog/${post.slug}`,
+          href: `/research/${post.slug}`,
         });
       }
     });

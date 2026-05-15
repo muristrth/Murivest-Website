@@ -105,7 +105,7 @@ const featuredPublications = [
     publishDate: "2021-08-24",
     accessLevel: "registered",
     type: "external",
-    url: "https://online.hbs.edu/blog/post/real-estate-investment-analysis",
+    url: "https://online.hbs.edu/research/post/real-estate-investment-analysis",
     icon: BookOpen,
     highlights: [
       "Four-factor analytical framework",

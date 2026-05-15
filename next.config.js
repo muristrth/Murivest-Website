@@ -140,7 +140,31 @@ const nextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'www.usernameproperties.com',
+      },
+      {
+        protocol: 'https',
         hostname: 'www.constructionkenya.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i0.wp.com',
+      },
+      {
+        protocol: "https",
+        hostname: "c7.alamy.com",
+      },
+      {
+        protocol: "https",
+        hostname: "i.ibb.co",
+      },
+      {
+        protocol: "https",
+        hostname: "murivest.co.ke",
+      },
+      {
+        protocol: "https",
+        hostname: "proxima.co.ke",
       },
       {
         protocol: 'https',

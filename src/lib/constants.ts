@@ -22,5 +22,5 @@ export const NAVIGATION_ITEMS = [
   { name: 'About', href: '/about' },
   { name: 'Properties', href: '/properties' },
   { name: 'Contact', href: '/contact' },
-  { name: 'Blog', href: '/blog' }
+  { name: 'research', href: '/research' }
 ];
