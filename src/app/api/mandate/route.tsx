@@ -283,7 +283,7 @@ export async function POST(req: Request) {
                     <p style="margin: 0 0 12px 0; color: #cbd5e1; font-size: 13px; font-weight: 500;">
                       <strong style="color: #d4af37;">Investments & Mandates:</strong> 
                        <a href="mailto:capital@murivest.co.ke" style="color: #d4af37; text-decoration: none;">capital@murivest.co.ke</a>
-                      | <strong style="color: #d4af37;">Tel:</strong> +254 729 170 156
+                      | <strong style="color: #d4af37;">Tel:</strong> +254 787 707 284
                     </p>
                     <p style="margin: 25px 0 0 0; color: #94a3b8; font-size: 11px; line-height: 1.6; text-align: justify;">
                       <strong>CONFIDENTIALITY NOTICE:</strong> This document contains confidential and privileged information intended solely for the named recipient(s). 

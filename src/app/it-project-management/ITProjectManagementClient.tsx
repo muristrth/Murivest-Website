@@ -5,7 +5,7 @@ import { ArrowLeft, CheckCircle, CreditCard, Smartphone, Bell, TrendingUp, Users
 
 export default function ITProjectManagementClient() {
   const handleWhatsAppContact = (message: string) => {
-    const phoneNumber = "254115277610";
+    const phoneNumber = "254787707284";
     const encodedMessage = encodeURIComponent(
       `Greetings from a Kenyan landlord interested in IT Property Management. ${message}`
     );

@@ -30,27 +30,33 @@ const Hero = () => {
         }}
       >
 
-        {/* VIDEO - DESKTOP ONLY */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="hidden md:block absolute inset-0 w-full h-full object-cover opacity-90"
-        >
-          <source src="/herovideo.mp4" type="video/mp4" />
-        </video>
+       {/* DESKTOP VIDEO */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        webkit-playsinline="true"
+        poster="/nairobi.png"
+        className="hidden md:block absolute inset-0 w-full h-full object-cover opacity-90"
+      >
+        <source src="/herovideo2.mp4" type="video/mp4" />
+      </video>
 
-        {/* MOBILE VIDEO (SOFTER, OPTIONAL) */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="md:hidden absolute inset-0 w-full h-full object-cover opacity-40"
-        >
-          <source src="/herovideo.mp4" type="video/mp4" />
-        </video>
+      {/* MOBILE VIDEO */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        webkit-playsinline="true"
+        poster="/nairobi.png"
+        className="md:hidden absolute inset-0 w-full h-full object-cover opacity-40"
+      >
+        <source src="/herovideo2.mp4" type="video/mp4" />
+      </video>
 
         {/* DARK OVERLAY */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#1B4332]/95 via-[#244B3C]/80 to-[#1B4332]/92" />
@@ -131,9 +137,9 @@ const Hero = () => {
               </p>
 
               <div className="space-y-3 text-[11px] uppercase tracking-[0.2em]">
-                <p>Mandate-Based Structuring</p>
-                <p>Institutional Investors Only</p>
-                <p>KYC/AML Verified Engagements</p>
+                <a href="/mandate-access"><p>Mandate-Based Structuring</p></a>
+                <a href="/institutional-investors"><p>Institutional Investors Only</p></a>
+                <a href="/policy"><p>KYC/AML Verified Engagements</p></a>
               </div>
 
             </div>

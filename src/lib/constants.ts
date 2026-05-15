@@ -12,7 +12,7 @@ export const SITE_CONFIG = {
 };
 
 export const CONTACT_INFO = {
-  phone: '+254 115 277 610',
+  phone: '+254 787 707 284',
   email: 'info@murivest.co.ke',
   address: 'Westlands Business District, Nairobi, Kenya'
 };

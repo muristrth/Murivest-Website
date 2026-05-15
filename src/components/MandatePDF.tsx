@@ -90,7 +90,7 @@ export const MandatePDF = ({ data, mandateRef }: { data: any, mandateRef: string
       </View>
 
       <Text style={styles.footer}>
-        Murivest Realty Limited | Nairobi, Kenya | info@murivest.co.ke | +254 115 277 610
+        Murivest Realty Limited | Nairobi, Kenya | info@murivest.co.ke | +254 787 707 284
       </Text>
     </Page>
   </Document>

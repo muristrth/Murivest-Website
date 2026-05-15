@@ -67,9 +67,15 @@ const COLORS = {
   border: '#E8E6E1',
 };
 
-// ─── Components ─────────────────────────────────────────────────────────────
+// ─── Component ──────────────────────────────────────────────────────────────
 
-export default function PropertyClientView({ property }: { property: Property }) {
+export default function PropertyClientView({
+  property,
+  sidebar,
+}: {
+  property: Property;
+  sidebar?: React.ReactNode;
+}) {
   const [isLiked, setIsLiked] = useState(false);
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -130,98 +136,101 @@ export default function PropertyClientView({ property }: { property: Property })
 
   return (
     <div className="min-h-screen bg-[#FAF9F6] text-[#2C2C2C] selection:bg-[#B8956B]/20">
-      {/* Navigation */}
-            <nav
-              className={`bg-[#1B4332] border-b border-[#E8E6E1] z-40`}
-            >
-              <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-5">
-                <div className="flex items-center justify-between">
-                  <Link
-                    href="/properties"
-                    className="group flex items-center gap-3 hover:opacity-70 transition-opacity"
-                  >
-                    <div
-                      className={`w-10 h-10 border flex items-center justify-center transition-colors ${
-                        isScrolled ? 'border-[#E8E6E1] group-hover:border-[#1B4332]' : 'border-white/30 group-hover:border-white'
-                      }`}
-                    >
-                      <ArrowLeft
-                        size={16}
-                        className={isScrolled ? 'text-[#2C2C2C]' : 'text-white'}
-                        strokeWidth={1.5}
-                      />
-                    </div>
-                    <span
-                      className={`hidden md:inline text-[10px] tracking-[0.3em] uppercase transition-colors ${
-                        isScrolled ? 'text-[#8B8680] group-hover:text-[#1B4332]' : 'text-white/80 group-hover:text-white'
-                      }`}
-                    >
-                      Return to Portfolio
-                    </span>
-                  </Link>
-      
-                  <div className="flex items-center gap-3">
-                    <button
-                      onClick={() => setIsLiked(!isLiked)}
-                      className={`w-10 h-10 border flex items-center justify-center transition-all ${
-                        isScrolled ? 'border-[#E8E6E1]' : 'border-white/30'
-                      } ${isLiked ? 'bg-[#1B4332] border-[#1B4332]' : ''}`}
-                    >
-                      <Heart
-                        size={16}
-                        className={isLiked ? 'fill-white text-white' : isScrolled ? 'text-[#2C2C2C]' : 'text-white'}
-                        strokeWidth={1.5}
-                      />
-                    </button>
-                    <button
-                      onClick={handleShare}
-                      className={`w-10 h-10 border flex items-center justify-center transition-colors ${
-                        isScrolled ? 'border-[#E8E6E1]' : 'border-white/30'
-                      }`}
-                    >
-                      <Share2
-                        size={16}
-                        className={isScrolled ? 'text-[#2C2C2C]' : 'text-white'}
-                        strokeWidth={1.5}
-                      />
-                    </button>
-                    <button
-                      onClick={() => window.print()}
-                      className={`w-10 h-10 border flex items-center justify-center transition-colors hidden md:flex ${
-                        isScrolled ? 'border-[#E8E6E1]' : 'border-white/30'
-                      }`}
-                    >
-                      <Printer
-                        size={16}
-                        className={isScrolled ? 'text-[#2C2C2C]' : 'text-white'}
-                        strokeWidth={1.5}
-                      />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </nav>
-      
-            {/* Share Toast */}
-            <AnimatePresence>
-              {showShareToast && (
-                <motion.div
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  className={`fixed left-1/2 -translate-x-1/2 z-[60] bg-[#1B4332] text-white px-6 py-3 text-[11px] tracking-[0.2em] uppercase`}
-                >
-                  Link copied
-                </motion.div>
-              )}
-            </AnimatePresence>
 
-      {/* Hero Section */}
+      {/* ── Navigation ─────────────────────────────────────────────── */}
+      <nav className="bg-[#1B4332] border-b border-[#E8E6E1] z-40">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-5">
+          <div className="flex items-center justify-between">
+            <Link
+              href="/properties"
+              className="group flex items-center gap-3 hover:opacity-70 transition-opacity"
+            >
+              <div
+                className={`w-10 h-10 border flex items-center justify-center transition-colors ${
+                  isScrolled
+                    ? 'border-[#E8E6E1] group-hover:border-[#1B4332]'
+                    : 'border-white/30 group-hover:border-white'
+                }`}
+              >
+                <ArrowLeft
+                  size={16}
+                  className={isScrolled ? 'text-[#2C2C2C]' : 'text-white'}
+                  strokeWidth={1.5}
+                />
+              </div>
+              <span
+                className={`hidden md:inline text-[10px] tracking-[0.3em] uppercase transition-colors ${
+                  isScrolled
+                    ? 'text-[#8B8680] group-hover:text-[#1B4332]'
+                    : 'text-white/80 group-hover:text-white'
+                }`}
+              >
+                Return to Portfolio
+              </span>
+            </Link>
+
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setIsLiked(!isLiked)}
+                className={`w-10 h-10 border flex items-center justify-center transition-all ${
+                  isScrolled ? 'border-[#E8E6E1]' : 'border-white/30'
+                } ${isLiked ? 'bg-[#1B4332] border-[#1B4332]' : ''}`}
+              >
+                <Heart
+                  size={16}
+                  className={isLiked ? 'fill-white text-white' : isScrolled ? 'text-[#2C2C2C]' : 'text-white'}
+                  strokeWidth={1.5}
+                />
+              </button>
+              <button
+                onClick={handleShare}
+                className={`w-10 h-10 border flex items-center justify-center transition-colors ${
+                  isScrolled ? 'border-[#E8E6E1]' : 'border-white/30'
+                }`}
+              >
+                <Share2
+                  size={16}
+                  className={isScrolled ? 'text-[#2C2C2C]' : 'text-white'}
+                  strokeWidth={1.5}
+                />
+              </button>
+              <button
+                onClick={() => window.print()}
+                className={`w-10 h-10 border flex items-center justify-center transition-colors hidden md:flex ${
+                  isScrolled ? 'border-[#E8E6E1]' : 'border-white/30'
+                }`}
+              >
+                <Printer
+                  size={16}
+                  className={isScrolled ? 'text-[#2C2C2C]' : 'text-white'}
+                  strokeWidth={1.5}
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* ── Share Toast ─────────────────────────────────────────────── */}
+      <AnimatePresence>
+        {showShareToast && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed left-1/2 -translate-x-1/2 z-[60] bg-[#1B4332] text-white px-6 py-3 text-[11px] tracking-[0.2em] uppercase"
+          >
+            Link copied
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ── Hero ────────────────────────────────────────────────────── */}
       <section className="relative h-[70vh] min-h-[500px] overflow-hidden bg-[#1B4332]">
         <div className="absolute inset-0">
           {property.images?.[0] ? (
-            <img 
-              src={property.images[0]} 
+            <img
+              src={property.images[0]}
               alt={property.title}
               className="w-full h-full object-cover opacity-60"
             />
@@ -304,13 +313,13 @@ export default function PropertyClientView({ property }: { property: Property })
         )}
       </section>
 
-      {/* Main Content */}
+      {/* ── Main Content ────────────────────────────────────────────── */}
       <main className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16 lg:py-24">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
-          
-          {/* Left Column - Investment Details */}
+
+          {/* ── Left Column — Investment Details ─────────────────────── */}
           <div className="lg:col-span-7 space-y-12">
-            
+
             {/* Value Strip */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -319,8 +328,12 @@ export default function PropertyClientView({ property }: { property: Property })
               className="grid grid-cols-2 gap-px bg-[#E8E6E1] border border-[#E8E6E1]"
             >
               <div className="bg-white p-8 lg:p-10">
-                <p className="text-[9px] tracking-[0.25em] uppercase text-[#B8956B] mb-3 font-medium">Indicative Value</p>
-                <p className="text-3xl lg:text-4xl font-serif text-[#2C2C2C] mb-4">{property.price}</p>
+                <p className="text-[9px] tracking-[0.25em] uppercase text-[#B8956B] mb-3 font-medium">
+                  Indicative Value
+                </p>
+                <p className="text-3xl lg:text-4xl font-serif text-[#2C2C2C] mb-4">
+                  {property.price}
+                </p>
                 <div className="space-y-1.5 text-[11px] text-[#8B8680] uppercase tracking-wide">
                   {property.priceKsh && <p>KSh {property.priceKsh}</p>}
                   {property.priceUsd && <p>USD {property.priceUsd}</p>}
@@ -331,10 +344,16 @@ export default function PropertyClientView({ property }: { property: Property })
 
               <div className="bg-[#1B4332] text-white p-8 lg:p-10 flex flex-col justify-between">
                 <div className="text-right">
-                  <p className="text-[9px] tracking-[0.25em] uppercase text-[#B8956B] mb-3 font-medium">Net Yield</p>
-                  <p className="text-3xl lg:text-4xl font-serif text-white">{property.yield || '—'}</p>
+                  <p className="text-[9px] tracking-[0.25em] uppercase text-[#B8956B] mb-3 font-medium">
+                    Net Yield
+                  </p>
+                  <p className="text-3xl lg:text-4xl font-serif text-white">
+                    {property.yield || '—'}
+                  </p>
                 </div>
-                <p className="text-[10px] text-white/60 mt-4 text-right italic">Institutional Grade Asset</p>
+                <p className="text-[10px] text-white/60 mt-4 text-right italic">
+                  Institutional Grade Asset
+                </p>
               </div>
             </motion.div>
 
@@ -354,30 +373,46 @@ export default function PropertyClientView({ property }: { property: Property })
                     Investment Returns Analysis
                   </h3>
                 </div>
-                
+
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#E8E6E1] border border-[#E8E6E1]">
                   {property.investment.monthlyIncome && (
                     <div className="bg-white p-6">
-                      <span className="text-[9px] tracking-[0.15em] uppercase text-[#8B8680] block mb-2">Monthly Income</span>
-                      <span className="text-lg font-medium text-[#2C2C2C]">{property.investment.monthlyIncome}</span>
+                      <span className="text-[9px] tracking-[0.15em] uppercase text-[#8B8680] block mb-2">
+                        Monthly Income
+                      </span>
+                      <span className="text-lg font-medium text-[#2C2C2C]">
+                        {property.investment.monthlyIncome}
+                      </span>
                     </div>
                   )}
                   {property.investment.annualIncome && (
                     <div className="bg-white p-6">
-                      <span className="text-[9px] tracking-[0.15em] uppercase text-[#8B8680] block mb-2">Annual Income</span>
-                      <span className="text-lg font-medium text-[#2C2C2C]">{property.investment.annualIncome}</span>
+                      <span className="text-[9px] tracking-[0.15em] uppercase text-[#8B8680] block mb-2">
+                        Annual Income
+                      </span>
+                      <span className="text-lg font-medium text-[#2C2C2C]">
+                        {property.investment.annualIncome}
+                      </span>
                     </div>
                   )}
                   {property.investment.appreciationRate && (
                     <div className="bg-white p-6">
-                      <span className="text-[9px] tracking-[0.15em] uppercase text-[#8B8680] block mb-2">Appreciation</span>
-                      <span className="text-lg font-medium text-[#2C2C2C]">{property.investment.appreciationRate}</span>
+                      <span className="text-[9px] tracking-[0.15em] uppercase text-[#8B8680] block mb-2">
+                        Appreciation
+                      </span>
+                      <span className="text-lg font-medium text-[#2C2C2C]">
+                        {property.investment.appreciationRate}
+                      </span>
                     </div>
                   )}
                   {property.investment.totalROI && (
                     <div className="bg-[#B8956B] text-white p-6">
-                      <span className="text-[9px] tracking-[0.15em] uppercase text-white/80 block mb-2">Target ROI</span>
-                      <span className="text-xl font-serif">{property.investment.totalROI}</span>
+                      <span className="text-[9px] tracking-[0.15em] uppercase text-white/80 block mb-2">
+                        Target ROI
+                      </span>
+                      <span className="text-xl font-serif">
+                        {property.investment.totalROI}
+                      </span>
                     </div>
                   )}
                 </div>
@@ -445,12 +480,18 @@ export default function PropertyClientView({ property }: { property: Property })
                 </h3>
                 <div className="bg-white border border-[#E8E6E1]">
                   {property.details.map((detail, i) => (
-                    <div 
-                      key={i} 
-                      className={`flex justify-between items-center p-5 ${i !== property.details!.length - 1 ? 'border-b border-[#E8E6E1]' : ''}`}
+                    <div
+                      key={i}
+                      className={`flex justify-between items-center p-5 ${
+                        i !== property.details!.length - 1 ? 'border-b border-[#E8E6E1]' : ''
+                      }`}
                     >
-                      <span className="text-[11px] uppercase tracking-wide text-[#8B8680]">{detail.label}</span>
-                      <span className="text-[14px] text-[#2C2C2C] font-medium">{detail.value}</span>
+                      <span className="text-[11px] uppercase tracking-wide text-[#8B8680]">
+                        {detail.label}
+                      </span>
+                      <span className="text-[14px] text-[#2C2C2C] font-medium">
+                        {detail.value}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -477,8 +518,8 @@ export default function PropertyClientView({ property }: { property: Property })
                       }}
                       className="relative aspect-square overflow-hidden group"
                     >
-                      <img 
-                        src={img} 
+                      <img
+                        src={img}
                         alt={`${property.title} - ${idx + 1}`}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
@@ -490,16 +531,22 @@ export default function PropertyClientView({ property }: { property: Property })
             )}
           </div>
 
-          {/* Right Column - Sticky Sidebar */}
+          {/* ── Right Column — Action Sidebar + Discovery Sidebar ────── */}
           <div className="lg:col-span-5">
+
+            {/* Sticky action cards */}
             <div className="sticky top-28 space-y-6">
-              
+
               {/* Mandate Badge */}
               <div className="bg-[#1B4332] text-white p-6 flex items-center gap-4">
                 <Shield size={24} className="text-[#B8956B]" strokeWidth={1.5} />
                 <div>
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#B8956B] font-medium">Exclusive Mandate</p>
-                  <p className="text-[13px] text-white/90 mt-1">Direct representation by Murivest</p>
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#B8956B] font-medium">
+                    Exclusive Mandate
+                  </p>
+                  <p className="text-[13px] text-white/90 mt-1">
+                    Direct representation by Murivest
+                  </p>
                 </div>
               </div>
 
@@ -511,7 +558,9 @@ export default function PropertyClientView({ property }: { property: Property })
                   </div>
                   <div>
                     <p className="text-[9px] tracking-[0.2em] uppercase text-[#8B8680]">Total Area</p>
-                    <p className="text-lg font-medium text-[#2C2C2C]">{property.squareFootage || '—'}</p>
+                    <p className="text-lg font-medium text-[#2C2C2C]">
+                      {property.squareFootage || '—'}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -519,7 +568,9 @@ export default function PropertyClientView({ property }: { property: Property })
               {/* Broker Card */}
               {property.broker && (
                 <div className="bg-white border border-[#E8E6E1] p-6">
-                  <p className="text-[9px] tracking-[0.2em] uppercase text-[#8B8680] mb-4 font-medium">Mandated Advisor</p>
+                  <p className="text-[9px] tracking-[0.2em] uppercase text-[#8B8680] mb-4 font-medium">
+                    Mandated Advisor
+                  </p>
                   <div className="flex items-start gap-4 mb-6">
                     {property.broker.photo ? (
                       <img
@@ -539,13 +590,19 @@ export default function PropertyClientView({ property }: { property: Property })
                       <p className="text-[11px] text-[#8B8680] mt-1">Investment Advisory</p>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-3 text-[13px]">
-                    <a href={`mailto:${property.broker.email}`} className="flex items-center gap-3 text-[#5A5A5A] hover:text-[#1B4332] transition-colors">
+                    <a
+                      href={`mailto:${property.broker.email}`}
+                      className="flex items-center gap-3 text-[#5A5A5A] hover:text-[#1B4332] transition-colors"
+                    >
                       <Mail size={16} className="text-[#B8956B]" strokeWidth={1.5} />
                       {property.broker.email}
                     </a>
-                    <a href={`tel:${property.broker.phone}`} className="flex items-center gap-3 text-[#5A5A5A] hover:text-[#1B4332] transition-colors">
+                    <a
+                      href={`tel:${property.broker.phone}`}
+                      className="flex items-center gap-3 text-[#5A5A5A] hover:text-[#1B4332] transition-colors"
+                    >
                       <MessageSquare size={16} className="text-[#B8956B]" strokeWidth={1.5} />
                       {property.broker.phone}
                     </a>
@@ -555,12 +612,16 @@ export default function PropertyClientView({ property }: { property: Property })
 
               {/* Action Buttons */}
               <div className="space-y-3">
-                <button 
+                <button
                   onClick={handleDownload}
                   className="w-full bg-[#1B4332] hover:bg-[#2D5A45] text-white py-4 text-[11px] tracking-[0.25em] uppercase flex items-center justify-between px-6 transition-colors duration-300 group"
                 >
                   <span>Download Prospectus</span>
-                  <Download size={18} className="group-hover:translate-y-0.5 transition-transform" strokeWidth={1.5} />
+                  <Download
+                    size={18}
+                    className="group-hover:translate-y-0.5 transition-transform"
+                    strokeWidth={1.5}
+                  />
                 </button>
 
                 {property.businessCaseUrl && (
@@ -587,27 +648,37 @@ export default function PropertyClientView({ property }: { property: Property })
                 <div className="flex items-start gap-3">
                   <Shield size={16} className="text-[#B8956B] mt-0.5 flex-shrink-0" strokeWidth={1.5} />
                   <p className="text-[11px] text-[#8B8680] leading-relaxed">
-                    This memorandum is confidential and provided for qualified investors only. 
+                    This memorandum is confidential and provided for qualified investors only.
                     All figures are indicative and subject to final due diligence.
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
+
+            </div>{/* end sticky */}
+
+            {/* Discovery sidebar — related, popular, subscribe, contact */}
+            {sidebar && (
+              <div className="mt-8">
+                {sidebar}
+              </div>
+            )}
+
+          </div>{/* end right column */}
+
         </div>
       </main>
 
-      {/* Full Screen Image Modal */}
+      {/* ── Full Screen Image Modal ─────────────────────────────────── */}
       <AnimatePresence>
         {isImageModalOpen && (
-          <motion.div 
-            initial={{ opacity: 0 }} 
-            animate={{ opacity: 1 }} 
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-[#1B4332]/98 z-[100] flex items-center justify-center"
             onClick={() => setIsImageModalOpen(false)}
           >
-            <button 
+            <button
               className="absolute top-6 right-6 text-white/60 hover:text-white transition-colors"
               onClick={() => setIsImageModalOpen(false)}
             >
@@ -621,14 +692,14 @@ export default function PropertyClientView({ property }: { property: Property })
               <ChevronLeft size={40} strokeWidth={1} />
             </button>
 
-            <motion.img 
+            <motion.img
               key={currentImageIndex}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.3 }}
-              src={property.images?.[currentImageIndex]} 
-              className="max-h-[85vh] max-w-[90vw] object-contain shadow-2xl" 
+              src={property.images?.[currentImageIndex]}
+              className="max-h-[85vh] max-w-[90vw] object-contain shadow-2xl"
               alt={`${property.title} - ${currentImageIndex + 1}`}
               onClick={(e) => e.stopPropagation()}
             />
@@ -649,20 +720,25 @@ export default function PropertyClientView({ property }: { property: Property })
         )}
       </AnimatePresence>
 
-      {/* Footer Disclaimer */}
+      {/* ── Footer Disclaimer ───────────────────────────────────────── */}
       <footer className="border-t border-[#E8E6E1] bg-white py-12 mt-16">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="flex items-center justify-center gap-2 mb-4">
             <Shield className="w-4 h-4 text-[#B8956B]" strokeWidth={1.5} />
-            <span className="text-[10px] tracking-[0.3em] uppercase text-[#8B8680]">Mandated Advisory</span>
+            <span className="text-[10px] tracking-[0.3em] uppercase text-[#8B8680]">
+              Mandated Advisory
+            </span>
           </div>
           <p className="text-[11px] text-[#8B8680] leading-relaxed max-w-3xl mx-auto text-center font-light">
-            All information contained herein is provided for informational purposes only and should not be construed as investment advice. 
-            Past performance is not indicative of future returns. Available exclusively to mandated partners and qualified institutional investors under NDA. 
-            Murivest Realty Ltd is a licensed real estate agency regulated by the Estate Agents Registration Board of Kenya.
+            All information contained herein is provided for informational purposes only and should
+            not be construed as investment advice. Past performance is not indicative of future
+            returns. Available exclusively to mandated partners and qualified institutional investors
+            under NDA. Murivest Realty Ltd is a licensed real estate agency regulated by the Estate
+            Agents Registration Board of Kenya.
           </p>
         </div>
       </footer>
+
     </div>
   );
 }

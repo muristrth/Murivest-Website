@@ -105,11 +105,11 @@ const BookingConfirmation = () => {
 
               <div className="space-y-3">
                 <a
-                  href="tel:+254115277610"
+                  href="tel:+254787707284"
                   className="flex items-center gap-3 text-[#FAF9F6] hover:text-[#B8956B] transition-colors group"
                 >
                   <Phone className="w-4 h-4 text-[#B8956B]" />
-                  <span className="text-[14px] font-light">+254 115 277 610</span>
+                  <span className="text-[14px] font-light">+254 787 707 284</span>
                   <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
 

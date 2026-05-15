@@ -4,7 +4,7 @@ import React from 'react';
 
 const WhatsAppButton = () => {
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/254115277610?text=Hi%20Murivest,%20I%20am%20interested%20in%20your%20CRE%20services', '_blank');
+    window.open('https://wa.me/254787707284?text=Hi%20Murivest,%20I%20am%20interested%20in%20your%20CRE%20services', '_blank');
   };
 
   return (

@@ -96,7 +96,7 @@ const BookingCalendar = () => {
                   className="flex items-center gap-3 text-[#FAF9F6] hover:text-[#B8956B] transition-colors group"
                 >
                   <Phone className="w-4 h-4 text-[#B8956B]" />
-                  <span className="text-[14px] font-light tracking-wide">+254 729 170 156</span>
+                  <span className="text-[14px] font-light tracking-wide">+254 787 707 284</span>
                   <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
                 

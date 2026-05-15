@@ -128,8 +128,8 @@ const SchedulePage = () => {
                 Direct Contact
               </p>
 
-              <a href="tel:+254115277610" className="flex items-center gap-3 text-white">
-                <Phone size={14} /> +254 115 277 610
+              <a href="tel:+254787707284" className="flex items-center gap-3 text-white">
+                <Phone size={14} /> +254 787 707 284
               </a>
 
               <a href="mailto:capital@murivest.co.ke" className="flex items-center gap-3 text-white">

@@ -171,7 +171,7 @@ export function ProfileForm({ profile, onSuccess }: ProfileFormProps) {
               value={formData.phone}
               onChange={handleChange}
               className="pl-10"
-              placeholder="+254 700 000 000"
+              placeholder="+254 787 707 284"
             />
           </div>
         </div>
