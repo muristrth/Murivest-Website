@@ -4,7 +4,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 
 // ─── Types ────────────────────────────────────────────────────
-type Step = "register" | "otp" | "nda" | "sign" | "complete";
+type Step = "register" | "nda" | "sign" | "complete";
 
 interface FormData {
   fullName: string;
@@ -40,7 +40,7 @@ Murivest reciprocally commits to: (a) not disclose the Recipient's identity to v
 
 4. ELECTRONIC SIGNATURE
 
-The Recipient acknowledges and agrees that an electronic signature applied through the Murivest platform constitutes a legally binding signature of equivalent force to a handwritten signature, pursuant to Kenya's Information and Communications Act (Cap. 411A) and the principles of the UNCITRAL Model Law on Electronic Commerce. The signature process includes identity verification by one-time password (OTP), IP address logging, timestamp recording, and cryptographic hashing of the final signed document.
+The Recipient acknowledges and agrees that an electronic signature applied through the Murivest platform constitutes a legally binding signature of equivalent force to a handwritten signature, pursuant to Kenya's Information and Communications Act (Cap. 411A) and the principles of the UNCITRAL Model Law on Electronic Commerce. The signature process includes IP address logging, timestamp recording, and cryptographic hashing of the final signed document.
 
 5. TERM AND TERMINATION
 
@@ -132,6 +132,7 @@ function SignaturePad({
     const ctx = canvas.getContext("2d")!;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     setHasSignature(false);
+    onSignature("");
   };
 
   return (
@@ -159,12 +160,11 @@ export default function NDAPage() {
   const [step, setStep] = useState<Step>("register");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [otpCode, setOtpCode] = useState("");
   const [signatureData, setSignatureData] = useState("");
-  const [signedPdfUrl, setSignedPdfUrl] = useState("");
   const [signMethod, setSignMethod] = useState<"draw" | "type">("draw");
   const [typedSig, setTypedSig] = useState("");
   const [ndaRead, setNdaRead] = useState(false);
+  const [refCode, setRefCode] = useState("");
   const ndaScrollRef = useRef<HTMLDivElement>(null);
 
   const [form, setForm] = useState<FormData>({
@@ -181,7 +181,6 @@ export default function NDAPage() {
   const updateForm = (k: keyof FormData, v: string | boolean) =>
     setForm((f) => ({ ...f, [k]: v }));
 
-  // Detect when NDA text has been scrolled
   const handleNdaScroll = useCallback(() => {
     const el = ndaScrollRef.current;
     if (!el) return;
@@ -190,70 +189,40 @@ export default function NDAPage() {
     }
   }, []);
 
-  // ── Step 1: Register ──────────────────────────────────────
-  const handleRegister = async () => {
+  // ── Step 1: Register → go straight to NDA ────────────────
+  const handleRegister = () => {
     setError("");
-    if (!form.fullName || !form.email || !form.consentElectronic) {
-      setError("Please complete all required fields and accept consent.");
+    if (!form.fullName.trim() || !form.email.trim()) {
+      setError("Full name and email address are required.");
       return;
     }
-    setLoading(true);
-    try {
-      const res = await fetch("/api/nda/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Registration failed");
-      setStep("otp");
-    } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : "Something went wrong");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // ── Step 2: Verify OTP ────────────────────────────────────
-  const handleOtp = async () => {
-    setError("");
-    if (otpCode.length !== 6) {
-      setError("Please enter the 6-digit code sent to your email.");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      setError("Please enter a valid email address.");
       return;
     }
-    setLoading(true);
-    try {
-      const res = await fetch("/api/nda/verify-otp", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: form.email, otp: otpCode }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Invalid OTP");
-      setStep("nda");
-    } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : "Something went wrong");
-    } finally {
-      setLoading(false);
+    if (!form.consentElectronic) {
+      setError("Please accept the electronic signature consent to continue.");
+      return;
     }
+    setStep("nda");
   };
 
-  // ── Step 3 → 4: NDA read → sign ──────────────────────────
+  // ── Step 2 → 3: NDA read → sign ──────────────────────────
   const handleProceedToSign = () => {
     if (!ndaRead) {
-      setError("Please scroll through and read the full agreement.");
+      setError("Please scroll through and read the full agreement before proceeding.");
       return;
     }
     setError("");
     setStep("sign");
   };
 
-  // ── Step 4: Submit signature ──────────────────────────────
+  // ── Step 3: Submit signature → generate PDF → send email ──
   const handleSign = async () => {
     setError("");
-    const finalSig = signMethod === "draw" ? signatureData : typedSig;
+    const finalSig = signMethod === "draw" ? signatureData : typedSig.trim();
     if (!finalSig) {
-      setError("Please provide your signature before submitting.");
+      setError("Please provide your signature before executing the agreement.");
       return;
     }
     setLoading(true);
@@ -262,19 +231,23 @@ export default function NDAPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          email: form.email,
           fullName: form.fullName,
+          email: form.email,
+          phone: form.phone,
+          company: form.company,
+          title: form.title,
+          investorType: form.investorType,
+          nationality: form.nationality,
           signatureData: finalSig,
           signatureMethod: signMethod === "draw" ? "drawn" : "typed",
-          signatureFont: signMethod === "type" ? "Cormorant Garamond" : undefined,
         }),
       });
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Signing failed");
-      setSignedPdfUrl(data.signedPdfUrl || "");
+      if (!res.ok) throw new Error(data.error || "Signing failed. Please try again.");
+      setRefCode(data.referenceCode || "MVT-NDA-" + Date.now());
       setStep("complete");
     } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : "Something went wrong");
+      setError(e instanceof Error ? e.message : "Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -283,7 +256,6 @@ export default function NDAPage() {
   // ── Step indicators ───────────────────────────────────────
   const steps: { key: Step; label: string }[] = [
     { key: "register", label: "Identity" },
-    { key: "otp", label: "Verify" },
     { key: "nda", label: "Review" },
     { key: "sign", label: "Execute" },
     { key: "complete", label: "Access" },
@@ -315,13 +287,16 @@ export default function NDAPage() {
 
       {/* CARD */}
       <div className="nda-card">
+
         {/* ─── REGISTER ─────────────────────────────────── */}
         {step === "register" && (
           <div className="nda-panel">
+            <div className="nda-panel-eyebrow">Controlled Access · Mandate-Based</div>
             <h2 className="nda-panel-title">Investor Registration</h2>
             <p className="nda-panel-sub">
-              Please provide your legal details. All information is encrypted and
-              held in strict confidence.
+              Provide your legal details to access Murivest&apos;s confidential
+              investment mandates. All information is encrypted and held in
+              strict confidence.
             </p>
 
             <div className="nda-grid-2">
@@ -340,7 +315,7 @@ export default function NDAPage() {
                   type="email"
                   value={form.email}
                   onChange={(e) => updateForm("email", e.target.value)}
-                  placeholder="OTP will be sent here"
+                  placeholder="your@email.com"
                 />
               </label>
               <label className="nda-field">
@@ -381,7 +356,7 @@ export default function NDAPage() {
               </label>
             </div>
 
-            <label className="nda-field nda-field--full">
+            <label className="nda-field nda-field--full" style={{ marginBottom: "1.2rem" }}>
               <span>Investor Type *</span>
               <select
                 value={form.investorType}
@@ -391,7 +366,7 @@ export default function NDAPage() {
                 <option value="family_office">Family Office</option>
                 <option value="institutional">Institutional Investor</option>
                 <option value="pension_fund">Pension Fund</option>
-                <option value="private_equity">Private Equity</option>
+                <option value="private_equity">Private Equity / Fund</option>
                 <option value="other">Other</option>
               </select>
             </label>
@@ -405,55 +380,15 @@ export default function NDAPage() {
               <span>
                 I consent to the use of electronic signatures and acknowledge
                 that my electronic signature carries the same legal effect as a
-                handwritten signature under Kenyan law.
+                handwritten signature under the Laws of Kenya (Information and
+                Communications Act, Cap. 411A).
               </span>
             </label>
 
             {error && <p className="nda-error">{error}</p>}
 
-            <button className="nda-btn" onClick={handleRegister} disabled={loading}>
-              {loading ? "Sending verification code…" : "Continue → Verify Identity"}
-            </button>
-          </div>
-        )}
-
-        {/* ─── OTP ──────────────────────────────────────── */}
-        {step === "otp" && (
-          <div className="nda-panel nda-panel--center">
-            <div className="nda-otp-icon">✉</div>
-            <h2 className="nda-panel-title">Identity Verification</h2>
-            <p className="nda-panel-sub">
-              A 6-digit verification code has been sent to<br />
-              <strong>{form.email}</strong>
-            </p>
-
-            <div className="nda-otp-input-wrap">
-              <input
-                type="text"
-                maxLength={6}
-                className="nda-otp-input"
-                value={otpCode}
-                onChange={(e) => setOtpCode(e.target.value.replace(/\D/g, ""))}
-                placeholder="000000"
-                autoFocus
-              />
-            </div>
-
-            <p className="nda-otp-note">
-              Code expires in 10 minutes. Check your spam folder if not received.
-            </p>
-
-            {error && <p className="nda-error">{error}</p>}
-
-            <button className="nda-btn" onClick={handleOtp} disabled={loading}>
-              {loading ? "Verifying…" : "Verify Code"}
-            </button>
-
-            <button
-              className="nda-btn-ghost"
-              onClick={() => setStep("register")}
-            >
-              ← Back
+            <button className="nda-btn" onClick={handleRegister}>
+              Continue → Review Agreement
             </button>
           </div>
         )}
@@ -461,9 +396,10 @@ export default function NDAPage() {
         {/* ─── NDA REVIEW ───────────────────────────────── */}
         {step === "nda" && (
           <div className="nda-panel">
+            <div className="nda-panel-eyebrow">Step 2 of 3 · Legal Review</div>
             <h2 className="nda-panel-title">Confidentiality Agreement</h2>
             <p className="nda-panel-sub">
-              Please read the full agreement carefully. Scroll to the bottom to
+              Read the full agreement carefully. Scroll to the bottom to
               proceed to execution.
             </p>
 
@@ -476,7 +412,6 @@ export default function NDAPage() {
                 </div>
               </div>
               <pre className="nda-doc-text">{NDA_TEXT}</pre>
-
               {!ndaRead && (
                 <div className="nda-scroll-cue">↓ Scroll to read full agreement</div>
               )}
@@ -490,11 +425,15 @@ export default function NDAPage() {
             {error && <p className="nda-error">{error}</p>}
 
             <button
-              className="nda-btn"
+              className={`nda-btn ${ndaRead ? "nda-btn--gold" : ""}`}
               onClick={handleProceedToSign}
               disabled={!ndaRead}
             >
               I Have Read the Agreement → Proceed to Execute
+            </button>
+
+            <button className="nda-btn-ghost" onClick={() => setStep("register")}>
+              ← Back
             </button>
           </div>
         )}
@@ -502,6 +441,7 @@ export default function NDAPage() {
         {/* ─── SIGN ─────────────────────────────────────── */}
         {step === "sign" && (
           <div className="nda-panel">
+            <div className="nda-panel-eyebrow">Step 3 of 3 · Execution</div>
             <h2 className="nda-panel-title">Execute Agreement</h2>
             <p className="nda-panel-sub">
               By signing below, you confirm you have read and agree to be bound
@@ -511,7 +451,7 @@ export default function NDAPage() {
             {/* Signer summary */}
             <div className="nda-signer-summary">
               <div className="nda-signer-row">
-                <span>Signer</span>
+                <span>Signatory</span>
                 <strong>{form.fullName}</strong>
               </div>
               <div className="nda-signer-row">
@@ -524,13 +464,25 @@ export default function NDAPage() {
                   <strong>{form.company}</strong>
                 </div>
               )}
+              {form.title && (
+                <div className="nda-signer-row">
+                  <span>Title</span>
+                  <strong>{form.title}</strong>
+                </div>
+              )}
+              <div className="nda-signer-row">
+                <span>Investor Type</span>
+                <strong style={{ textTransform: "capitalize" }}>
+                  {form.investorType.replace("_", " ")}
+                </strong>
+              </div>
               <div className="nda-signer-row">
                 <span>Date</span>
                 <strong>{new Date().toLocaleDateString("en-KE", { dateStyle: "long" })}</strong>
               </div>
               <div className="nda-signer-row">
-                <span>Verified via</span>
-                <strong>Email OTP · IP Logged · Timestamped</strong>
+                <span>Audit Trail</span>
+                <strong>IP Logged · Timestamped · Document Hashed</strong>
               </div>
             </div>
 
@@ -570,15 +522,28 @@ export default function NDAPage() {
             )}
 
             <p className="nda-legal-note">
-              By clicking "Execute Agreement", you confirm this is your signature,
-              that you have authority to bind yourself or your entity, and that this
-              agreement is legally binding under the Laws of Kenya.
+              By clicking &quot;Execute Agreement&quot;, you confirm this is your
+              signature, that you have authority to bind yourself or your entity,
+              and that this agreement is legally binding under the Laws of Kenya.
+              A signed copy will be dispatched to your email address.
             </p>
 
             {error && <p className="nda-error">{error}</p>}
 
-            <button className="nda-btn nda-btn--gold" onClick={handleSign} disabled={loading}>
-              {loading ? "Processing…" : "Execute Agreement"}
+            <button
+              className="nda-btn nda-btn--gold"
+              onClick={handleSign}
+              disabled={loading}
+            >
+              {loading ? "Processing — please wait…" : "Execute Agreement"}
+            </button>
+
+            <button
+              className="nda-btn-ghost"
+              onClick={() => setStep("nda")}
+              disabled={loading}
+            >
+              ← Review Agreement
             </button>
           </div>
         )}
@@ -590,13 +555,19 @@ export default function NDAPage() {
             <h2 className="nda-panel-title">Agreement Executed</h2>
             <p className="nda-panel-sub">
               Your confidentiality agreement has been successfully executed and
-              recorded. Your investor portal access is now active.
+              recorded. Investor portal access is now active.
             </p>
 
             <div className="nda-complete-details">
               <div className="nda-complete-row">
                 <span>Signatory</span>
                 <strong>{form.fullName}</strong>
+              </div>
+              <div className="nda-complete-row">
+                <span>Reference</span>
+                <strong style={{ fontFamily: "'Geist Mono', monospace", fontSize: "0.75rem" }}>
+                  {refCode}
+                </strong>
               </div>
               <div className="nda-complete-row">
                 <span>Date &amp; Time</span>
@@ -608,31 +579,26 @@ export default function NDAPage() {
               </div>
               <div className="nda-complete-row">
                 <span>Audit Trail</span>
-                <strong>IP Logged · OTP Verified · Document Hashed</strong>
+                <strong>IP Logged · Timestamped · Document Hashed</strong>
               </div>
             </div>
 
             <p className="nda-complete-note">
-              A confirmation has been sent to <strong>{form.email}</strong> with
-              your executed copy and audit certificate.
+              A signed copy of this agreement has been dispatched to{" "}
+              <strong>{form.email}</strong>. Please retain it for your records.
             </p>
 
             <div className="nda-complete-actions">
               <Link href="/investor-portal" className="nda-btn nda-btn--gold">
                 Enter Investor Portal →
               </Link>
-              {signedPdfUrl && (
-                <a href={signedPdfUrl} download className="nda-btn-ghost">
-                  Download Executed NDA
-                </a>
-              )}
             </div>
           </div>
         )}
       </div>
 
       <footer className="nda-footer">
-        <span>© {new Date().getFullYear()} Murivest Realty Ltd</span>
+        <span>© {new Date().getFullYear()} Murivest Realty Ltd · Nairobi, Kenya</span>
         <span>Governed by the Laws of Kenya</span>
         <Link href="/confidentiality" className="nda-footer-link">
           Confidentiality Policy
@@ -649,8 +615,10 @@ export default function NDAPage() {
           --gold-light: #d4b45a;
           --muted: #6b6358;
           --border: #d6cfc4;
-          --error: #8b1a1a;
-          --success: #1a4a1a;
+          --error-bg: rgba(139,26,26,0.07);
+          --error-text: #8b1a1a;
+          --success-bg: rgba(26,74,26,0.06);
+          --success-text: #1a4a1a;
         }
 
         .nda-root {
@@ -661,6 +629,7 @@ export default function NDAPage() {
           position: relative;
         }
 
+        /* ── Grain overlay ── */
         .nda-grain {
           position: fixed;
           inset: 0;
@@ -669,13 +638,13 @@ export default function NDAPage() {
           z-index: 0;
         }
 
-        /* NAV */
+        /* ── Nav ── */
         .nda-nav {
           display: flex;
           justify-content: space-between;
           align-items: center;
           padding: 1.2rem 3rem;
-          border-bottom: 1px solid rgba(255,255,255,0.08);
+          border-bottom: 1px solid rgba(255,255,255,0.07);
           position: relative;
           z-index: 10;
         }
@@ -686,32 +655,33 @@ export default function NDAPage() {
           color: var(--parchment);
           text-decoration: none;
         }
+        .nda-logo:hover { color: var(--gold); }
         .nda-nav-tag {
           font-family: 'Geist Mono', monospace;
-          font-size: 0.65rem;
+          font-size: 0.6rem;
           letter-spacing: 0.15em;
-          color: rgba(245,240,232,0.4);
+          color: rgba(245,240,232,0.35);
+          text-transform: uppercase;
         }
 
-        /* STEPS */
+        /* ── Steps ── */
         .nda-steps {
           display: flex;
           justify-content: center;
-          gap: 0;
-          padding: 2rem 3rem;
+          padding: 2.5rem 3rem 2rem;
           position: relative;
           z-index: 10;
+          gap: 0;
         }
-
         .nda-step {
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 0.4rem;
+          gap: 0.5rem;
           flex: 1;
-          max-width: 120px;
-          position: relative;
+          max-width: 110px;
           opacity: 0.3;
+          position: relative;
         }
         .nda-step::after {
           content: '';
@@ -720,17 +690,16 @@ export default function NDAPage() {
           left: calc(50% + 14px);
           right: calc(-50% + 14px);
           height: 1px;
-          background: rgba(245,240,232,0.2);
+          background: rgba(245,240,232,0.15);
         }
         .nda-step:last-child::after { display: none; }
-        .nda-step--done { opacity: 0.7; }
+        .nda-step--done { opacity: 0.65; }
         .nda-step--active { opacity: 1; }
-
         .nda-step-dot {
           width: 28px;
           height: 28px;
           border-radius: 50%;
-          border: 1px solid rgba(245,240,232,0.3);
+          border: 1px solid rgba(245,240,232,0.25);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -738,6 +707,7 @@ export default function NDAPage() {
           font-size: 0.65rem;
           color: var(--parchment);
           background: transparent;
+          transition: all 0.3s;
         }
         .nda-step--done .nda-step-dot {
           background: var(--gold);
@@ -748,141 +718,119 @@ export default function NDAPage() {
           border-color: var(--gold);
           color: var(--gold);
         }
-
         .nda-step-label {
           font-family: 'Geist Mono', monospace;
           font-size: 0.55rem;
           letter-spacing: 0.15em;
-          color: rgba(245,240,232,0.6);
+          color: rgba(245,240,232,0.45);
+          text-transform: uppercase;
         }
         .nda-step--active .nda-step-label { color: var(--gold); }
 
-        /* CARD */
+        /* ── Card ── */
         .nda-card {
-          max-width: 780px;
+          max-width: 800px;
           margin: 0 auto 4rem;
           background: var(--parchment);
           position: relative;
           z-index: 10;
-          box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+          box-shadow: 0 40px 100px rgba(0,0,0,0.55), 0 0 0 1px rgba(184,150,46,0.1);
         }
 
         .nda-panel {
           padding: 3.5rem 4rem;
         }
-        .nda-panel--center {
-          text-align: center;
-        }
+        .nda-panel--center { text-align: center; }
 
+        .nda-panel-eyebrow {
+          font-family: 'Geist Mono', monospace;
+          font-size: 0.6rem;
+          letter-spacing: 0.2em;
+          color: var(--gold);
+          text-transform: uppercase;
+          margin-bottom: 0.8rem;
+        }
         .nda-panel-title {
-          font-size: 2rem;
-          font-weight: 400;
+          font-size: 2.2rem;
+          font-weight: 300;
           letter-spacing: 0.01em;
           margin: 0 0 0.8rem;
+          line-height: 1.2;
         }
         .nda-panel-sub {
-          font-size: 1rem;
+          font-size: 1.05rem;
           font-weight: 300;
           color: var(--muted);
-          line-height: 1.7;
+          line-height: 1.75;
           margin: 0 0 2.5rem;
         }
 
-        /* FORM */
+        /* ── Form ── */
         .nda-grid-2 {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 1.2rem;
-          margin-bottom: 1.2rem;
+          gap: 1.25rem;
+          margin-bottom: 1.25rem;
         }
-
         .nda-field {
           display: flex;
           flex-direction: column;
-          gap: 0.4rem;
+          gap: 0.45rem;
         }
-        .nda-field--full { margin-bottom: 1.2rem; }
-
         .nda-field span {
           font-family: 'Geist Mono', monospace;
-          font-size: 0.65rem;
-          letter-spacing: 0.15em;
+          font-size: 0.6rem;
+          letter-spacing: 0.18em;
           color: var(--muted);
+          text-transform: uppercase;
         }
-
         .nda-field input,
         .nda-field select {
           border: 1px solid var(--border);
-          background: rgba(255,255,255,0.6);
-          padding: 0.75rem 1rem;
+          background: rgba(255,255,255,0.55);
+          padding: 0.8rem 1rem;
           font-family: 'Cormorant Garamond', serif;
           font-size: 1rem;
           color: var(--ink);
           outline: none;
-          transition: border-color 0.2s;
+          transition: border-color 0.2s, background 0.2s;
+          width: 100%;
+          box-sizing: border-box;
         }
         .nda-field input:focus,
         .nda-field select:focus {
           border-color: var(--gold);
+          background: rgba(255,255,255,0.85);
         }
+        .nda-field input::placeholder { color: rgba(107,99,88,0.5); }
 
+        /* ── Consent ── */
         .nda-consent {
           display: flex;
           align-items: flex-start;
           gap: 1rem;
-          padding: 1.5rem;
-          background: rgba(184,150,46,0.06);
-          border: 1px solid rgba(184,150,46,0.3);
-          margin-bottom: 1.5rem;
+          padding: 1.4rem 1.5rem;
+          background: rgba(184,150,46,0.05);
+          border: 1px solid rgba(184,150,46,0.25);
+          margin-bottom: 1.75rem;
           cursor: pointer;
         }
-        .nda-consent input { margin-top: 0.2rem; flex-shrink: 0; }
+        .nda-consent input { margin-top: 0.2rem; flex-shrink: 0; accent-color: var(--gold); }
         .nda-consent span {
-          font-size: 0.9rem;
-          line-height: 1.6;
+          font-size: 0.92rem;
+          line-height: 1.65;
           font-weight: 300;
           color: #3a3530;
         }
 
-        /* OTP */
-        .nda-otp-icon {
-          font-size: 3rem;
-          margin-bottom: 1rem;
-          color: var(--gold);
-        }
-        .nda-otp-input-wrap {
-          margin: 2rem auto;
-          max-width: 240px;
-        }
-        .nda-otp-input {
-          width: 100%;
-          text-align: center;
-          font-family: 'Geist Mono', monospace;
-          font-size: 2rem;
-          letter-spacing: 0.4em;
-          border: 2px solid var(--border);
-          border-bottom: 2px solid var(--gold);
-          padding: 1rem;
-          background: transparent;
-          outline: none;
-          color: var(--ink);
-        }
-        .nda-otp-note {
-          font-family: 'Geist Mono', monospace;
-          font-size: 0.65rem;
-          color: var(--muted);
-          letter-spacing: 0.05em;
-          margin-bottom: 1.5rem;
-        }
-
-        /* NDA DOCUMENT */
+        /* ── NDA Document ── */
         .nda-document {
           border: 1px solid var(--border);
-          height: 380px;
+          height: 400px;
           overflow-y: auto;
-          position: relative;
           background: #fff;
-          margin-bottom: 1.5rem;
+          margin-bottom: 1.75rem;
+          scroll-behavior: smooth;
         }
         .nda-doc-header {
           display: flex;
@@ -892,103 +840,113 @@ export default function NDAPage() {
           border-bottom: 2px solid var(--ink);
           background: var(--ink);
           color: var(--parchment);
+          position: sticky;
+          top: 0;
+          z-index: 5;
         }
         .nda-doc-logo {
           font-family: 'Geist Mono', monospace;
-          font-size: 0.75rem;
-          letter-spacing: 0.25em;
+          font-size: 0.72rem;
+          letter-spacing: 0.28em;
         }
         .nda-doc-ref {
           font-family: 'Geist Mono', monospace;
-          font-size: 0.6rem;
+          font-size: 0.58rem;
           letter-spacing: 0.1em;
-          color: rgba(245,240,232,0.5);
+          color: rgba(245,240,232,0.45);
           text-align: right;
-          line-height: 1.6;
+          line-height: 1.7;
         }
         .nda-doc-text {
-          padding: 2rem;
+          padding: 2rem 2.5rem;
           font-family: 'Cormorant Garamond', serif;
-          font-size: 0.95rem;
-          line-height: 1.9;
+          font-size: 0.96rem;
+          line-height: 1.95;
           white-space: pre-wrap;
           color: #1a1a18;
           font-weight: 300;
+          margin: 0;
         }
         .nda-scroll-cue {
           text-align: center;
-          padding: 1rem;
+          padding: 1.2rem;
           font-family: 'Geist Mono', monospace;
-          font-size: 0.65rem;
+          font-size: 0.62rem;
           letter-spacing: 0.2em;
           color: var(--gold);
-          animation: bounce 1.5s infinite;
+          animation: bounce 1.6s ease-in-out infinite;
         }
         @keyframes bounce {
           0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(4px); }
+          50% { transform: translateY(5px); }
         }
         .nda-read-confirm {
           text-align: center;
           padding: 1rem;
           font-family: 'Geist Mono', monospace;
-          font-size: 0.65rem;
+          font-size: 0.62rem;
           letter-spacing: 0.2em;
-          color: var(--success);
-          background: rgba(26,74,26,0.06);
+          color: var(--success-text);
+          background: var(--success-bg);
+          border-top: 1px solid rgba(26,74,26,0.15);
         }
 
-        /* SIGN */
+        /* ── Signer summary ── */
         .nda-signer-summary {
           border: 1px solid var(--border);
-          margin-bottom: 1.5rem;
+          margin-bottom: 1.75rem;
+          background: rgba(255,255,255,0.4);
         }
         .nda-signer-row {
           display: flex;
           justify-content: space-between;
-          padding: 0.75rem 1.2rem;
+          align-items: center;
+          padding: 0.8rem 1.25rem;
           border-bottom: 1px solid var(--border);
-          font-size: 0.9rem;
+          font-size: 0.92rem;
         }
         .nda-signer-row:last-child { border-bottom: none; }
         .nda-signer-row span {
           font-family: 'Geist Mono', monospace;
-          font-size: 0.65rem;
-          letter-spacing: 0.1em;
+          font-size: 0.6rem;
+          letter-spacing: 0.12em;
           color: var(--muted);
-          align-self: center;
+          text-transform: uppercase;
+          flex-shrink: 0;
+          margin-right: 1rem;
         }
-        .nda-signer-row strong { font-weight: 400; }
+        .nda-signer-row strong { font-weight: 400; text-align: right; }
 
+        /* ── Sign toggle ── */
         .nda-sign-toggle {
           display: flex;
-          gap: 0;
-          margin-bottom: 1.2rem;
           border: 1px solid var(--border);
+          margin-bottom: 1.25rem;
         }
         .nda-toggle-btn {
           flex: 1;
-          padding: 0.75rem;
+          padding: 0.8rem;
           background: transparent;
           border: none;
           font-family: 'Geist Mono', monospace;
-          font-size: 0.65rem;
+          font-size: 0.62rem;
           letter-spacing: 0.15em;
           color: var(--muted);
           cursor: pointer;
           transition: all 0.2s;
+          text-transform: uppercase;
         }
         .nda-toggle-btn--active {
           background: var(--ink);
-          color: var(--parchment);
+          color: var(--gold);
         }
 
-        /* Signature pad */
+        /* ── Signature pad ── */
         .sig-wrap {
           border: 1px solid var(--border);
           background: #fff;
           position: relative;
-          margin-bottom: 1rem;
+          margin-bottom: 1.25rem;
         }
         .sig-canvas {
           display: block;
@@ -1002,28 +960,29 @@ export default function NDAPage() {
           top: 0.5rem;
           right: 0.5rem;
           font-family: 'Geist Mono', monospace;
-          font-size: 0.6rem;
+          font-size: 0.58rem;
           letter-spacing: 0.1em;
           background: none;
           border: 1px solid var(--border);
-          padding: 0.3rem 0.6rem;
+          padding: 0.3rem 0.7rem;
           cursor: pointer;
           color: var(--muted);
+          text-transform: uppercase;
         }
         .sig-hint {
           position: absolute;
           top: 50%;
           left: 50%;
-          transform: translate(-50%,-50%);
+          transform: translate(-50%, -50%);
           font-family: 'Geist Mono', monospace;
-          font-size: 0.65rem;
+          font-size: 0.62rem;
           letter-spacing: 0.1em;
-          color: rgba(107,99,88,0.4);
+          color: rgba(107,99,88,0.35);
           pointer-events: none;
         }
 
-        /* Typed sig */
-        .nda-typed-sig-wrap { margin-bottom: 1rem; }
+        /* ── Typed signature ── */
+        .nda-typed-sig-wrap { margin-bottom: 1.25rem; }
         .nda-typed-sig-input {
           width: 100%;
           border: none;
@@ -1035,82 +994,88 @@ export default function NDAPage() {
           outline: none;
           color: var(--ink);
           margin-bottom: 1rem;
+          box-sizing: border-box;
         }
         .nda-typed-sig-preview {
           font-family: 'Cormorant Garamond', serif;
           font-style: italic;
-          font-size: 2.2rem;
+          font-size: 2.4rem;
+          font-weight: 300;
           color: var(--ink);
-          padding: 1rem;
+          padding: 1.2rem 1.5rem;
           border: 1px solid var(--border);
           background: #fff;
-          min-height: 80px;
+          min-height: 90px;
           display: flex;
           align-items: center;
         }
 
+        /* ── Legal note ── */
         .nda-legal-note {
-          font-size: 0.82rem;
-          line-height: 1.6;
+          font-size: 0.85rem;
+          line-height: 1.65;
           color: var(--muted);
           font-weight: 300;
-          margin-bottom: 1.5rem;
-          padding: 1rem;
-          background: rgba(184,150,46,0.05);
+          margin-bottom: 1.75rem;
+          padding: 1rem 1.25rem;
+          background: rgba(184,150,46,0.04);
           border-left: 2px solid var(--gold);
         }
 
-        /* COMPLETE */
+        /* ── Complete ── */
         .nda-complete-seal {
           font-size: 3.5rem;
           color: var(--gold);
-          margin-bottom: 1rem;
-          animation: rotateSeal 8s linear infinite;
+          margin-bottom: 1.5rem;
+          display: inline-block;
+          animation: rotateSeal 10s linear infinite;
         }
         @keyframes rotateSeal {
           from { transform: rotate(0deg); }
           to { transform: rotate(360deg); }
         }
-
         .nda-complete-details {
           border: 1px solid var(--border);
-          margin: 2rem auto 1.5rem;
-          max-width: 480px;
+          margin: 2rem auto 1.75rem;
+          max-width: 500px;
           text-align: left;
+          background: rgba(255,255,255,0.4);
         }
         .nda-complete-row {
           display: flex;
           justify-content: space-between;
-          padding: 0.75rem 1.2rem;
+          align-items: center;
+          padding: 0.8rem 1.25rem;
           border-bottom: 1px solid var(--border);
           font-size: 0.9rem;
+          gap: 1rem;
         }
         .nda-complete-row:last-child { border-bottom: none; }
         .nda-complete-row span {
           font-family: 'Geist Mono', monospace;
-          font-size: 0.65rem;
-          letter-spacing: 0.1em;
+          font-size: 0.58rem;
+          letter-spacing: 0.12em;
           color: var(--muted);
-          align-self: center;
+          text-transform: uppercase;
+          flex-shrink: 0;
         }
-        .nda-complete-row strong { font-weight: 400; }
-
+        .nda-complete-row strong { font-weight: 400; text-align: right; }
         .nda-status-badge {
           font-family: 'Geist Mono', monospace;
-          font-size: 0.65rem;
+          font-size: 0.6rem;
           letter-spacing: 0.15em;
-          background: rgba(26,74,26,0.1);
-          color: #1a4a1a;
-          padding: 0.2rem 0.6rem;
+          background: var(--success-bg);
+          color: var(--success-text);
+          padding: 0.25rem 0.7rem;
+          border: 1px solid rgba(26,74,26,0.2);
         }
-
         .nda-complete-note {
-          font-size: 0.9rem;
+          font-size: 0.95rem;
           color: var(--muted);
           font-weight: 300;
-          margin-bottom: 2rem;
+          margin-bottom: 2.5rem;
+          line-height: 1.7;
         }
-
         .nda-complete-actions {
           display: flex;
           gap: 1rem;
@@ -1118,7 +1083,7 @@ export default function NDAPage() {
           flex-wrap: wrap;
         }
 
-        /* BUTTONS */
+        /* ── Buttons ── */
         .nda-btn {
           width: 100%;
           padding: 1.1rem;
@@ -1126,27 +1091,30 @@ export default function NDAPage() {
           color: var(--parchment);
           border: none;
           font-family: 'Geist Mono', monospace;
-          font-size: 0.7rem;
+          font-size: 0.68rem;
           letter-spacing: 0.2em;
           cursor: pointer;
-          transition: opacity 0.2s;
+          transition: opacity 0.2s, background 0.2s;
           text-decoration: none;
           display: inline-block;
           text-align: center;
+          text-transform: uppercase;
+          box-sizing: border-box;
         }
-        .nda-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+        .nda-btn:hover:not(:disabled) { opacity: 0.85; }
+        .nda-btn:disabled { opacity: 0.35; cursor: not-allowed; }
         .nda-btn--gold {
           background: var(--gold);
           color: var(--ink);
         }
-        .nda-btn--gold:hover { background: var(--gold-light); }
+        .nda-btn--gold:hover:not(:disabled) { background: var(--gold-light); opacity: 1; }
         .nda-btn-ghost {
           width: 100%;
-          padding: 0.8rem;
+          padding: 0.85rem;
           background: transparent;
           border: 1px solid var(--border);
           font-family: 'Geist Mono', monospace;
-          font-size: 0.65rem;
+          font-size: 0.62rem;
           letter-spacing: 0.15em;
           color: var(--muted);
           cursor: pointer;
@@ -1154,44 +1122,58 @@ export default function NDAPage() {
           text-decoration: none;
           display: block;
           text-align: center;
+          text-transform: uppercase;
+          transition: border-color 0.2s, color 0.2s;
+          box-sizing: border-box;
         }
+        .nda-btn-ghost:hover:not(:disabled) {
+          border-color: var(--gold);
+          color: var(--gold);
+        }
+        .nda-btn-ghost:disabled { opacity: 0.4; cursor: not-allowed; }
 
+        /* ── Error ── */
         .nda-error {
-          background: rgba(139,26,26,0.08);
-          border-left: 2px solid var(--error);
-          padding: 0.8rem 1rem;
+          background: var(--error-bg);
+          border-left: 2px solid var(--error-text);
+          padding: 0.85rem 1rem;
           font-family: 'Geist Mono', monospace;
-          font-size: 0.7rem;
+          font-size: 0.68rem;
           letter-spacing: 0.05em;
-          color: var(--error);
-          margin-bottom: 1rem;
+          color: var(--error-text);
+          margin-bottom: 1.25rem;
+          line-height: 1.5;
         }
 
-        /* FOOTER */
+        /* ── Footer ── */
         .nda-footer {
           display: flex;
           justify-content: center;
-          gap: 2rem;
+          gap: 2.5rem;
           padding: 2rem;
           font-family: 'Geist Mono', monospace;
-          font-size: 0.6rem;
+          font-size: 0.58rem;
           letter-spacing: 0.1em;
-          color: rgba(245,240,232,0.3);
+          color: rgba(245,240,232,0.25);
           position: relative;
           z-index: 10;
+          flex-wrap: wrap;
         }
         .nda-footer-link {
-          color: rgba(245,240,232,0.3);
+          color: rgba(245,240,232,0.25);
           text-decoration: none;
+          transition: color 0.2s;
         }
         .nda-footer-link:hover { color: var(--gold); }
 
-        @media (max-width: 640px) {
+        /* ── Responsive ── */
+        @media (max-width: 680px) {
           .nda-nav { padding: 1rem 1.5rem; }
           .nda-panel { padding: 2rem 1.5rem; }
           .nda-grid-2 { grid-template-columns: 1fr; }
-          .nda-steps { gap: 0; padding: 1.5rem 1rem; }
+          .nda-steps { padding: 1.5rem 1rem; }
           .nda-step-label { display: none; }
+          .nda-panel-title { font-size: 1.7rem; }
         }
       `}</style>
     </main>

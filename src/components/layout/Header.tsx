@@ -14,7 +14,7 @@ const MENU_DATA = {
     { label: 'Office space To Let', href: '/properties-for-rent' },
   ],
   invest: [
-    { label: 'Private Investors', href: '/private-brief' },
+    { label: 'Engage NDA-Murivest', href: '/confidentiality' },
     { label: 'Underwrite a Deal', href: '/cre-underwriting' },
     { label: 'Due Diligence', href: '/due-diligence' },
     { label: 'Institutional Investors', href: '/institutional-investors' },
