@@ -275,7 +275,7 @@ Date: ____________________________`;
 }
 
 /* ─── Styles ──────────────────────────────────────────────────────────── */
-const Styles = (): JSX.Element => (
+const Styles = (): React.ReactElement => (
   <style>{`
     @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
     *{box-sizing:border-box;margin:0;padding:0;}
@@ -470,7 +470,7 @@ function MCard({ label, value, sub, highlight }: MCardProps) {
 }
 
 /* ─── Main export ─────────────────────────────────────────────────────── */
-export default function MurivestatUW(): JSX.Element {
+export default function MurivestatUW(): React.ReactElement {
   const [tab, setTab] = useState<Tab>('uw');
   const [cur, setCur] = useState<Currency>('KES');
 
