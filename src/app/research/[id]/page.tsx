@@ -148,7 +148,7 @@ export default async function researchPostPage({ params }: PageProps) {
         </div>
 
         {/* MOBILE SIDEBAR */}
-        <div className="mt-14 space-y-10 lg:hidden fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm border-t border-gray-200 p-4 z-50">
+        <div className="mt-14 space-y-10 lg:hidden bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm border-t border-gray-200 p-4 z-50">
           <ResearchSidebar
             relatedPosts={relatedPosts.slice(0, 2)}
             popularPosts={popularPosts.slice(0, 3)}

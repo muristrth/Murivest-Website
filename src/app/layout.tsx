@@ -254,6 +254,7 @@ export default function RootLayout({
 }) {
   return (
     <html
+      data-scroll-behavior="smooth"
       lang="en"
       className={`${inter.variable} ${playfair.variable} ${montserrat.variable} font-sans`}
     >
