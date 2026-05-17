@@ -963,7 +963,7 @@ export default function BookLandingPage() {
                   style={{ borderRadius: "2px" }}
                 >
                   <span className="relative z-10 flex items-center gap-2">
-                    Secure Your Copy
+                    CLICK HERE TO GET THE FREE BOOK
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </span>
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
