@@ -94,7 +94,7 @@ export async function generateMetadata({
     return { title: 'Property Not Found | Murivest' };
   }
 
-  const url = `https:// murivest.co.ke/properties-for-rent/${property.slug}`;
+  const url = `https://murivest.co.ke/properties-for-rent/${property.slug}`;
   const image = property.image?.asset?.url ?? undefined;
 
   const title = `${property.title} | ${property.city} Commercial Property For Rent | Murivest`;
@@ -165,7 +165,7 @@ export default async function PropertyPage({
 
   if (!property) notFound();
 
-  const baseUrl = 'https:// murivest.co.ke';
+  const baseUrl = 'https://murivest.co.ke';
   const url = `${baseUrl}/properties-for-rent/${property.slug}`;
   const cityUrl = `${baseUrl}/properties-for-rent?city=${encodeURIComponent(property.city ?? '')}`;
   const categoryUrl = `${baseUrl}/properties-for-rent?category=${encodeURIComponent(property.assetCategory ?? '')}`;

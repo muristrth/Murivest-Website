@@ -19,12 +19,12 @@ export const metadata: Metadata = {
     'office space absorption Nairobi',
     'Kenya real estate sector comparison',
   ].join(', '),
-  alternates: { canonical: 'https:// murivest.co.ke/sector-performance' },
+  alternates: { canonical: 'https://murivest.co.ke/sector-performance' },
   openGraph: {
     title: 'Nairobi CRE Sector Performance 2026 | Murivest',
     description: 'Office, industrial, retail, and serviced apartment sectors — comparative yield and absorption analysis for Nairobi CRE investors. Q2 2026.',
     type: 'article',
-    url: 'https:// murivest.co.ke/sector-performance',
+    url: 'https://murivest.co.ke/sector-performance',
     siteName: 'Murivest Realty Group',
   },
   twitter: {
@@ -40,15 +40,15 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Nairobi CRE Sector Performance 2026: Office, Industrial, Retail, and Serviced Apartments',
   description: 'Comparative analysis of Nairobi\'s commercial real estate sectors by yield, vacancy, absorption, and investor suitability — updated Q2 2026.',
-  author: { '@type': 'Organization', name: 'Murivest Research Team', url: 'https:// murivest.co.ke' },
+  author: { '@type': 'Organization', name: 'Murivest Research Team', url: 'https://murivest.co.ke' },
   publisher: {
     '@type': 'Organization',
     name: 'Murivest Realty Group',
-    logo: { '@type': 'ImageObject', url: 'https:// murivest.co.ke/logo.png' },
+    logo: { '@type': 'ImageObject', url: 'https://murivest.co.ke/logo.png' },
   },
   datePublished: '2026-05-12',
   dateModified: '2026-05-12',
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https:// murivest.co.ke/sector-performance' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://murivest.co.ke/sector-performance' },
 };
 
 const faqSchema = {
@@ -94,9 +94,9 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https:// murivest.co.ke' },
-    { '@type': 'ListItem', position: 2, name: 'Research', item: 'https:// murivest.co.ke/research' },
-    { '@type': 'ListItem', position: 3, name: 'Sector Performance 2026', item: 'https:// murivest.co.ke/sector-performance' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://murivest.co.ke' },
+    { '@type': 'ListItem', position: 2, name: 'Research', item: 'https://murivest.co.ke/research' },
+    { '@type': 'ListItem', position: 3, name: 'Sector Performance 2026', item: 'https://murivest.co.ke/sector-performance' },
   ],
 };
 

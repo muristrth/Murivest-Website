@@ -7,7 +7,7 @@ export const SITE_CONFIG = {
   name: 'Murivest',
   tagline: 'Premium Real Estate Investment',
   description: 'Exclusive investment opportunities in commercial real estate across East Africa and key global markets.',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https:// murivest.co.ke',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://murivest.co.ke',
   supportEmail: 'investors@ murivest.co.ke',
   adminEmail: 'admin@ murivest.co.ke'
 }

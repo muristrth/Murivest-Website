@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     'Kenya property law updates',
     'commercial real estate compliance Kenya',
   ].join(', '),
-  alternates: { canonical: 'https:// murivest.co.ke/regulatory-updates' },
+  alternates: { canonical: 'https://murivest.co.ke/regulatory-updates' },
   openGraph: {
     title: 'Kenya Real Estate Regulatory Updates 2026 | Murivest',
     description:
       'Land registration, EARB, CGT, zoning, and foreign ownership. What changed in 2026 and what it means for CRE investors in Nairobi.',
     type: 'article',
-    url: 'https:// murivest.co.ke/regulatory-updates',
+    url: 'https://murivest.co.ke/regulatory-updates',
     siteName: 'Murivest Realty Group',
   },
   twitter: {
@@ -46,16 +46,16 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'Murivest Research Team',
-    url: 'https:// murivest.co.ke',
+    url: 'https://murivest.co.ke',
   },
   publisher: {
     '@type': 'Organization',
     name: 'Murivest Realty Group',
-    logo: { '@type': 'ImageObject', url: 'https:// murivest.co.ke/logo.png' },
+    logo: { '@type': 'ImageObject', url: 'https://murivest.co.ke/logo.png' },
   },
   datePublished: '2026-05-12',
   dateModified: '2026-05-12',
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https:// murivest.co.ke/regulatory-updates' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://murivest.co.ke/regulatory-updates' },
 };
 
 const faqSchema = {
@@ -109,13 +109,13 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https:// murivest.co.ke' },
-    { '@type': 'ListItem', position: 2, name: 'Research', item: 'https:// murivest.co.ke/research' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://murivest.co.ke' },
+    { '@type': 'ListItem', position: 2, name: 'Research', item: 'https://murivest.co.ke/research' },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Regulatory Updates 2026',
-      item: 'https:// murivest.co.ke/regulatory-updates',
+      item: 'https://murivest.co.ke/regulatory-updates',
     },
   ],
 };

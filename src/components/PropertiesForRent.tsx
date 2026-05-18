@@ -88,7 +88,7 @@ const PROPERTIES_RENT_QUERY = defineQuery(`
 
 // ─── SEO Metadata ─────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  metadataBase: new URL('https:// murivest.co.ke'),
+  metadataBase: new URL('https://murivest.co.ke'),
 
   title: {
     default: 'Commercial Properties For Rent in Nairobi Kenya | Murivest',
@@ -123,7 +123,7 @@ export const metadata: Metadata = {
     title: 'Commercial Properties For Rent in Kenya | Murivest',
     description:
       'Browse verified commercial properties for rent in Nairobi and across Kenya. Retail shops, office spaces, warehouses, suites and mixed-use developments.',
-    url: 'https:// murivest.co.ke/properties-for-rent',
+    url: 'https://murivest.co.ke/properties-for-rent',
     siteName: 'Murivest',
     locale: 'en_KE',
     type: 'website',
@@ -173,7 +173,7 @@ export default async function PropertiesForRentPage() {
     console.error('Error fetching rental properties:', error);
   }
 
-  const baseUrl = 'https:// murivest.co.ke';
+  const baseUrl = 'https://murivest.co.ke';
 
   // ── Structured Data ──────────────────────────────────────────────────────────
   const listJsonLd = {

@@ -8388,7 +8388,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https:// murivest.co.ke/">Murivest's regulatory analysis</a> indicates that a typical higher-rate taxpayer landlord now retains approximately 45-55% of gross rental income after tax, mortgage interest (now partially non-deductible), maintenance, void periods, and compliance costs—down from 65-75% in 2014. This compression explains the 23% reduction in private landlord registrations between 2017-2024, with portfolio exits concentrated in the amateur investor segment.
+        <a href="https://murivest.co.ke/">Murivest's regulatory analysis</a> indicates that a typical higher-rate taxpayer landlord now retains approximately 45-55% of gross rental income after tax, mortgage interest (now partially non-deductible), maintenance, void periods, and compliance costs—down from 65-75% in 2014. This compression explains the 23% reduction in private landlord registrations between 2017-2024, with portfolio exits concentrated in the amateur investor segment.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">1.2 Commercial Property's Structural Advantage</h3>

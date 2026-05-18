@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_KE',
   },
-  alternates: { canonical: 'https:// murivest.co.ke/legal-compliance' },
+  alternates: { canonical: 'https://murivest.co.ke/legal-compliance' },
 };
 
 const jsonLd = {
@@ -20,14 +20,14 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'WebPage',
-      url: 'https:// murivest.co.ke/legal-compliance',
+      url: 'https://murivest.co.ke/legal-compliance',
       name: 'Legal & Regulatory Framework | Commercial Real Estate Kenya | Murivest',
       description: 'Institutional legal compliance for commercial real estate — foreign ownership, title structures, tax, financing, and regulatory consents.',
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https:// murivest.co.ke' },
-          { '@type': 'ListItem', position: 2, name: 'Legal Framework', item: 'https:// murivest.co.ke/legal-compliance' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://murivest.co.ke' },
+          { '@type': 'ListItem', position: 2, name: 'Legal Framework', item: 'https://murivest.co.ke/legal-compliance' },
         ],
       },
     },
