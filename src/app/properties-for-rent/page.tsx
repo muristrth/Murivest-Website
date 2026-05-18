@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import { client } from '@/sanity/lib/client';
 import { defineQuery } from 'next-sanity';
 import PropertiesForRent from '@/components/PropertiesForRent';
@@ -7,13 +8,13 @@ const PropertiesForRentComponent =
   PropertiesForRent as React.ComponentType<{ initialData: any[] }>;
 
 // ─────────────────────────────────────────────
-// ✅ Optimized GROQ Query (LIMITED + LIGHTER)
+// ✅ ULTRA-LIGHTWEIGHT GROQ QUERY
 // ─────────────────────────────────────────────
 const PROPERTIES_RENT_QUERY = defineQuery(`
   *[
     _type == "propertyForRent" &&
     !(_id in path('drafts.**'))
-  ] | order(_createdAt desc)[0...50] {
+  ] | order(_createdAt desc)[0...40] {
 
     _id,
     _createdAt,
@@ -55,19 +56,16 @@ const PROPERTIES_RENT_QUERY = defineQuery(`
       value
     },
 
-    // lightweight location object
     "location": {
       "lat": coordinates.lat,
       "lng": coordinates.lng
     },
 
-    // ✅ ONLY FIRST IMAGE (important performance fix)
     "image": images[0]{
       caption,
       "url": asset->url
     },
 
-    // ❌ removed full gallery from list page (move to detail page)
     virtualTour
   }
 `);
@@ -110,31 +108,14 @@ export const metadata: Metadata = {
 };
 
 // ─────────────────────────────────────────────
-// ISR (keep lightweight refresh)
+// CRITICAL: Force dynamic to avoid static gen timeout
 // ─────────────────────────────────────────────
-export const revalidate = 120;
-
-// OPTIONAL (uncomment if still slow on Vercel)
-// export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
 
 // ─────────────────────────────────────────────
-// PAGE
+// Structured Data Component (separate to avoid blocking)
 // ─────────────────────────────────────────────
-export default async function PropertiesForRentPage() {
-  let propertyData: any[] = [];
-
-  try {
-    propertyData = await client.fetch(PROPERTIES_RENT_QUERY, {}, {
-      next: { revalidate: 120 },
-    });
-  } catch (error) {
-    console.error('Error fetching rental properties:', error);
-    propertyData = [];
-  }
-
-  // ─────────────────────────────────────────────
-  // Structured Data (safe with limited data)
-  // ─────────────────────────────────────────────
+function StructuredData({ propertyData }: { propertyData: any[] }) {
   const baseUrl = 'https://murivest.co.ke';
 
   const listJsonLd = {
@@ -165,7 +146,6 @@ export default async function PropertiesForRentPage() {
 
   return (
     <>
-      {/* JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(listJsonLd) }}
@@ -174,7 +154,74 @@ export default async function PropertiesForRentPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
       />
+    </>
+  );
+}
 
+// ─────────────────────────────────────────────
+// Fallback loading state
+// ─────────────────────────────────────────────
+function PropertiesLoadingFallback() {
+  return (
+    <main className="bg-[#FAF9F6] min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="animate-pulse space-y-8">
+          {/* Header skeleton */}
+          <div className="space-y-4">
+            <div className="h-10 bg-gray-200 rounded w-3/4 max-w-2xl"></div>
+            <div className="h-5 bg-gray-200 rounded w-1/2 max-w-lg"></div>
+          </div>
+          {/* Grid skeleton */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div key={i} className="bg-white rounded-xl overflow-hidden shadow-sm">
+                <div className="h-48 bg-gray-200"></div>
+                <div className="p-5 space-y-3">
+                  <div className="h-5 bg-gray-200 rounded w-3/4"></div>
+                  <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+                  <div className="h-4 bg-gray-200 rounded w-1/3"></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+}
+
+// ─────────────────────────────────────────────
+// Data fetcher with timeout protection
+// ─────────────────────────────────────────────
+async function fetchPropertiesWithTimeout(): Promise<any[]> {
+  const FETCH_TIMEOUT_MS = 15000; // 15 second timeout
+
+  const fetchPromise = client.fetch(PROPERTIES_RENT_QUERY, {}, {
+    cache: 'no-store',
+  });
+
+  const timeoutPromise = new Promise<never>((_, reject) =>
+    setTimeout(() => reject(new Error('Sanity fetch timeout')), FETCH_TIMEOUT_MS)
+  );
+
+  try {
+    const data = await Promise.race([fetchPromise, timeoutPromise]);
+    return data || [];
+  } catch (error) {
+    console.error('[properties-for-rent] Fetch error:', error);
+    return [];
+  }
+}
+
+// ─────────────────────────────────────────────
+// PAGE
+// ─────────────────────────────────────────────
+export default async function PropertiesForRentPage() {
+  const propertyData = await fetchPropertiesWithTimeout();
+
+  return (
+    <>
+      <StructuredData propertyData={propertyData} />
       <main className="bg-[#FAF9F6] min-h-screen">
         <PropertiesForRentComponent initialData={propertyData} />
       </main>
