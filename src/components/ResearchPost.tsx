@@ -10,6 +10,11 @@ import {
 } from 'lucide-react';
 import { researchData, type researchPostData } from '@/lib/researchData';
 
+// ─── Discussion imports (Claude's addition) ────────────────────────────────────
+import AnalystSummary    from '@/components/discussions/AnalystSummary';
+import DiscussionSection from '@/components/discussions/DiscussionSection';
+import RelatedInsights   from '@/components/discussions/RelatedInsights';
+
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface TocItem {
   id: string;
@@ -19,6 +24,9 @@ interface TocItem {
 
 export interface researchPostProps {
   post?: researchPostData;
+  /** Optional analyst summary rendered below the article body.
+   *  Falls back to the post's built-in analystSummary field if omitted. */
+  analystSummary?: string;
 }
 
 // ─── Utilities ────────────────────────────────────────────────────────────────
@@ -49,7 +57,7 @@ function extractToc(html: string): TocItem[] {
 }
 
 function injectHeadingIds(html: string): string {
-  return html.replace(/<(h[23])[^>]*>(.*?)<\/h[23]>/gi, (match, tag, content) => {
+  return html.replace(/<(h[23])[^>]*>(.*?)<\/h[23]>/gi, (_match, tag, content) => {
     const text = content.replace(/<[^>]*>/g, '').trim();
     const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
     return `<${tag} id="${id}">${content}</${tag}>`;
@@ -60,13 +68,13 @@ function getRelatedPosts(currentId: string, currentCategory: string, count = 3):
   const sameCat = Object.entries(researchData)
     .filter(([id, post]) => id !== currentId && post.category === currentCategory)
     .slice(0, count);
-  
+
   if (sameCat.length >= count) return sameCat.map(([id, data]) => ({ id, data }));
-  
+
   const others = Object.entries(researchData)
     .filter(([id, post]) => id !== currentId && post.category !== currentCategory)
     .slice(0, count - sameCat.length);
-    
+
   return [...sameCat, ...others].map(([id, data]) => ({ id, data }));
 }
 
@@ -282,7 +290,7 @@ function InlineRelatedPosts({ currentId, category }: { currentId: string; catego
   );
 }
 
-// ─── Newsletter CTA ───────────────────────────────────────────────────────────
+// ─── Newsletter CTA (original interactive form restored) ────────────────────────
 function NewsletterCTA() {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -330,8 +338,7 @@ function NewsletterCTA() {
   );
 }
 
-
-// ─── Related Posts (bottom of article) ────────────────────────────────────────
+// ─── Bottom Related Posts (original grid layout restored) ─────────────────────
 function RelatedPosts({ posts }: { posts: Array<{ id: string; data: researchPostData }> }) {
   if (posts.length === 0) return null;
   return (
@@ -398,7 +405,7 @@ function NotFoundPage() {
 }
 
 // ─── Main Component ───────────────────────────────────────────────────────────
-export default function researchPost({ post: postProp }: researchPostProps) {
+export default function researchPost({ post: postProp, analystSummary: analystSummaryProp }: researchPostProps) {
   const params = useParams();
   const id = (params?.id as string) ?? '';
   const post = postProp ?? (id ? researchData[id] : undefined);
@@ -430,20 +437,37 @@ export default function researchPost({ post: postProp }: researchPostProps) {
   const relatedPosts = getRelatedPosts(id, post.category);
   const processedContent = injectHeadingIds(post.content);
 
+  // Analyst summary: prop override > post field
+  const summaryToShow = analystSummaryProp ?? (post as any).analystSummary;
+
+  // Structured data
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://murivest.co.ke' },
-      { '@type': 'ListItem', position: 2, name: 'research', item: 'https://murivest.co.ke/research' },
+      { '@type': 'ListItem', position: 2, name: 'Research', item: 'https://murivest.co.ke/research' },
       { '@type': 'ListItem', position: 3, name: post.category, item: `https://murivest.co.ke/research?category=${encodeURIComponent(post.category)}` },
       { '@type': 'ListItem', position: 4, name: post.title, item: postUrl },
     ],
   };
 
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    datePublished: post.date,
+    dateModified: (post as any).dateModified ?? post.date,
+    author: { '@type': 'Organization', name: post.author || 'Murivest' },
+    publisher: { '@type': 'Organization', name: 'Murivest Realty Group', url: 'https://murivest.co.ke' },
+    image: heroImage,
+    url: postUrl,
+  };
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <ScrollProgress />
 
       <div style={{ minHeight: '100vh', background: '#FAFAF8', paddingTop: '64px' }}>
@@ -457,7 +481,7 @@ export default function researchPost({ post: postProp }: researchPostProps) {
             <nav aria-label="Breadcrumb" style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '11px', color: '#9B8F7E', fontFamily: 'Georgia, serif', flexWrap: 'wrap' }}>
               <Link href="/" style={{ color: '#9B8F7E', textDecoration: 'none' }}>Home</Link>
               <ChevronRight style={{ width: '10px', height: '10px' }} />
-              <Link href="/research" style={{ color: '#9B8F7E', textDecoration: 'none' }}>research</Link>
+              <Link href="/research" style={{ color: '#9B8F7E', textDecoration: 'none' }}>Research</Link>
               <ChevronRight style={{ width: '10px', height: '10px' }} />
               <Link href={`/research?category=${encodeURIComponent(post.category)}`} style={{ color: '#9B8F7E', textDecoration: 'none' }}>{post.category}</Link>
               <ChevronRight style={{ width: '10px', height: '10px' }} />
@@ -480,10 +504,10 @@ export default function researchPost({ post: postProp }: researchPostProps) {
                 <Calendar style={{ width: '13px', height: '13px', color: '#9B8F7E' }} strokeWidth={1.5} />
                 <time dateTime={post.date}>{formatDate(post.date)}</time>
               </span>
-              {post.dateModified && post.dateModified !== post.date && (
+              {(post as any).dateModified && (post as any).dateModified !== post.date && (
                 <>
                   <span style={{ color: '#C8BFB4' }}>·</span>
-                  <span style={{ fontSize: '12px', color: '#9B8F7E' }}>Updated {formatDate(post.dateModified)}</span>
+                  <span style={{ fontSize: '12px', color: '#9B8F7E' }}>Updated {formatDate((post as any).dateModified)}</span>
                 </>
               )}
               <span style={{ color: '#C8BFB4' }}>·</span>
@@ -500,21 +524,19 @@ export default function researchPost({ post: postProp }: researchPostProps) {
 
           {/* Hero Image */}
           <div className="relative w-full overflow-hidden rounded-2xl bg-neutral-100">
-          <Image
-            src={heroImage}
-            alt={post.title}
-            width={1600}
-            height={900}
-            priority
-            className="w-full h-auto object-contain"
-            sizes="(max-width: 860px) 100vw, 860px"
-            placeholder="blur"
-            blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'%3E%3Crect fill='%23E8E4DE'/%3E%3C/svg%3E"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = '/default-research-image.png'
-            }}
-          />
-        </div>
+            <Image
+              src={heroImage}
+              alt={post.title}
+              width={1600}
+              height={900}
+              priority
+              className="w-full h-auto object-contain"
+              sizes="(max-width: 860px) 100vw, 860px"
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'%3E%3Crect fill='%23E8E4DE'/%3E%3C/svg%3E"
+              onError={(e) => { (e.target as HTMLImageElement).src = '/default-research-image.png'; }}
+            />
+          </div>
 
           <TableOfContents toc={toc} />
 
@@ -524,11 +546,8 @@ export default function researchPost({ post: postProp }: researchPostProps) {
               style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '18px', lineHeight: '1.85', color: '#1C1C1C' }}
               dangerouslySetInnerHTML={{ __html: processedContent }}
             />
-            
-            
-            {/* INLINE RELATED POSTS — inserted mid-article */}
+
             <InlineRelatedPosts currentId={id} category={post.category} />
-            
             {ctaShown && <NewsletterCTA />}
           </div>
 
@@ -553,6 +572,21 @@ export default function researchPost({ post: postProp }: researchPostProps) {
           <AuthorBio authorName={post.author} />
           <RelatedPosts posts={relatedPosts} />
 
+          {/* ── Claude's new discussion sections ─────────────────────────── */}
+          {summaryToShow && (
+            <div style={{ marginTop: '48px' }}>
+              <AnalystSummary summary={summaryToShow} variant="article" />
+            </div>
+          )}
+
+          <DiscussionSection
+            pageSlug={id}
+            pageType="article"
+            variant="article"
+          />
+
+          <RelatedInsights variant="article" />
+
           <div style={{ textAlign: 'center', paddingTop: '8px', marginTop: '48px', borderTop: '1px solid #E2DDD6' }}>
             <Link href="/research" style={{ fontFamily: 'Georgia, serif', fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#7B6C55', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
               <ArrowLeft style={{ width: '13px', height: '13px' }} strokeWidth={1.5} /> Back to Journal
@@ -569,8 +603,8 @@ export default function researchPost({ post: postProp }: researchPostProps) {
 
       </div>
 
+      {/* ── Original CSS (full visual consistency rules restored) ────────── */}
       <style>{`
-      
         @media (max-width: 640px) {
           .mobile-sticky-back { display: flex !important; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #FAFAF8; border: 1px solid #E2DDD6; padding: 10px 20px; z-index: 50; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
         }

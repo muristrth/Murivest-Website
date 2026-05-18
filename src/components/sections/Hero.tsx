@@ -41,7 +41,7 @@ const Hero = () => {
         poster="/nairobi.png"
         className="hidden md:block absolute inset-0 w-full h-full object-cover opacity-90"
       >
-        <source src="/hero.mp4" type="video/mp4" />
+        <source src="https://pub-eeea8897fc4745d9afaa36485de2ff6c.r2.dev/hero.mp4" type="video/mp4" />
       </video>
 
       {/* MOBILE VIDEO */}
@@ -55,7 +55,7 @@ const Hero = () => {
         poster="/nairobi.png"
         className="md:hidden absolute inset-0 w-full h-full object-cover opacity-40"
       >
-        <source src="/hero.mp4" type="video/mp4" />
+        <source src="https://pub-eeea8897fc4745d9afaa36485de2ff6c.r2.dev/hero.mp4" type="video/mp4" />
       </video>
 
         {/* DARK OVERLAY */}
@@ -185,7 +185,7 @@ const Hero = () => {
     playsInline
     className="absolute inset-0 w-full h-full object-cover z-0"
   >
-    <source src="/hero.mp4" type="video/mp4" />
+    <source src="https://pub-eeea8897fc4745d9afaa36485de2ff6c.r2.dev/hero.mp4" type="video/mp4" />
     {/* Fallback image if video fails */}
     <img src="/nairobi.png" alt="Nairobi skyline" className="w-full h-full object-cover" />
   </video>

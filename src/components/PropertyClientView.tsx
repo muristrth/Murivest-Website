@@ -325,13 +325,13 @@ export default function PropertyClientView({
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="grid grid-cols-2 gap-px bg-[#E8E6E1] border border-[#E8E6E1]"
+              className="grid grid-cols-1 gap-px bg-[#E8E6E1] border border-[#E8E6E1]"
             >
               <div className="bg-white p-8 lg:p-10">
                 <p className="text-[9px] tracking-[0.25em] uppercase text-[#B8956B] mb-3 font-medium">
                   Indicative Value
                 </p>
-                <p className="text-3xl lg:text-4xl font-serif text-[#2C2C2C] mb-4">
+                <p className="text-[41px] font-serif text-[#2C2C2C] mb-4">
                   {property.price}
                 </p>
                 <div className="space-y-1.5 text-[11px] text-[#8B8680] uppercase tracking-wide">
@@ -344,11 +344,11 @@ export default function PropertyClientView({
 
               <div className="bg-[#1B4332] text-white p-8 lg:p-10 flex flex-col justify-between">
                 <div className="text-right">
-                  <p className="text-[9px] tracking-[0.25em] uppercase text-[#B8956B] mb-3 font-medium">
+                  <p className="text-[10px] tracking-[0.25em] uppercase text-[#B8956B] mb-3 font-medium">
                     Net Yield
                   </p>
-                  <p className="text-3xl lg:text-4xl font-serif text-white">
-                    {property.yield || '—'}
+                  <p className="text-4xl lg:text-6xl font-serif text-white">
+                    {property.yield || 'N/A'}
                   </p>
                 </div>
                 <p className="text-[10px] text-white/60 mt-4 text-right italic">
@@ -374,7 +374,7 @@ export default function PropertyClientView({
                   </h3>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#E8E6E1] border border-[#E8E6E1]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#E8E6E1] border border-[#E8E6E1]">
                   {property.investment.monthlyIncome && (
                     <div className="bg-white p-6">
                       <span className="text-[9px] tracking-[0.15em] uppercase text-[#8B8680] block mb-2">
@@ -411,7 +411,7 @@ export default function PropertyClientView({
                         Target ROI
                       </span>
                       <span className="text-xl font-serif">
-                        {property.investment.totalROI}
+                        {property.investment.totalROI || 'N/A'}
                       </span>
                     </div>
                   )}
@@ -532,10 +532,10 @@ export default function PropertyClientView({
           </div>
 
           {/* ── Right Column — Action Sidebar + Discovery Sidebar ────── */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-4">
 
             {/* Sticky action cards */}
-            <div className="sticky top-28 space-y-6">
+            <div className="top-28 space-y-6">
 
               {/* Mandate Badge */}
               <div className="bg-[#1B4332] text-white p-6 flex items-center gap-4">
@@ -565,51 +565,7 @@ export default function PropertyClientView({
                 </div>
               </div>
 
-              {/* Broker Card */}
-              {property.broker && (
-                <div className="bg-white border border-[#E8E6E1] p-6">
-                  <p className="text-[9px] tracking-[0.2em] uppercase text-[#8B8680] mb-4 font-medium">
-                    Mandated Advisor
-                  </p>
-                  <div className="flex items-start gap-4 mb-6">
-                    {property.broker.photo ? (
-                      <img
-                        src={property.broker.photo}
-                        alt={property.broker.name}
-                        className="w-14 h-14 rounded-full object-cover border border-[#E8E6E1]"
-                      />
-                    ) : (
-                      <div className="w-14 h-14 rounded-full bg-[#F5F4F0] border border-[#E8E6E1] flex items-center justify-center">
-                        <span className="text-lg font-serif text-[#8B8680]">
-                          {property.broker.name.charAt(0)}
-                        </span>
-                      </div>
-                    )}
-                    <div>
-                      <p className="font-serif text-lg text-[#2C2C2C]">{property.broker.name}</p>
-                      <p className="text-[11px] text-[#8B8680] mt-1">Investment Advisory</p>
-                    </div>
-                  </div>
-
-                  <div className="space-y-3 text-[13px]">
-                    <a
-                      href={`mailto:${property.broker.email}`}
-                      className="flex items-center gap-3 text-[#5A5A5A] hover:text-[#1B4332] transition-colors"
-                    >
-                      <Mail size={16} className="text-[#B8956B]" strokeWidth={1.5} />
-                      {property.broker.email}
-                    </a>
-                    <a
-                      href={`tel:${property.broker.phone}`}
-                      className="flex items-center gap-3 text-[#5A5A5A] hover:text-[#1B4332] transition-colors"
-                    >
-                      <MessageSquare size={16} className="text-[#B8956B]" strokeWidth={1.5} />
-                      {property.broker.phone}
-                    </a>
-                  </div>
-                </div>
-              )}
-
+        
               {/* Action Buttons */}
               <div className="space-y-3">
                 <button

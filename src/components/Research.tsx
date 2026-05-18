@@ -683,16 +683,61 @@ const research: ResearchEntry[] = [
   },
 
       {
-  id: 'retail-property-recovery-contrarian-analysis-2026',
-  title: 'Is the High Street Really Dead, or Is Retail Property Recovering?',
-  excerpt: 'Contrarian analysis of UK retail property revealing selective recovery dynamics, experiential retail demand, and repurposing economics that challenge sector obsolescence narratives.',
-  author: getAuthor('investment'),
-  image: '/research-images/retail-property-recovery-contrarian-analysis-2026.png',
-  category: 'Market Intelligence',
-  date: '2026-05-08',
-  readTime: '13 min read',
-  featured: false
-},
+      id: 'retail-property-recovery-contrarian-analysis-2026',
+      title: 'Is the High Street Really Dead, or Is Retail Property Recovering?',
+      excerpt: 'Contrarian analysis of UK retail property revealing selective recovery dynamics, experiential retail demand, and repurposing economics that challenge sector obsolescence narratives.',
+      author: getAuthor('investment'),
+      image: '/research-images/retail-property-recovery-contrarian-analysis-2026.png',
+      category: 'Market Intelligence',
+      date: '2026-05-08',
+      readTime: '13 min read',
+      featured: false
+    },
+
+    {
+      id: 'uk-bond-market-labour-rhetoric-housing-2026',
+      title: 'UK Bond Markets Are Repricing Political Risk',
+      excerpt: 'Rising gilt yields and renewed concerns around fiscal discipline are reshaping mortgage pricing, residential demand, and investor sentiment across the British housing market.',
+      author: getAuthor('market'),
+      image: '/research-images/uk-bond-market-housing-2026.png',
+      category: 'Market Intelligence',
+      date: '2026-05-18',
+      readTime: '9 min read',
+      featured: true
+    },
+    {
+      id: 'uk-first-time-buyer-deposit-scheme-2026',
+      title: 'Low-Deposit Lending Is Returning to the UK Housing Market',
+      excerpt: 'Lloyds Banking Group’s £5,000 deposit mortgage signals the cautious return of high loan-to-value lending as affordability pressures reshape the UK housing market.',
+      author: getAuthor('market'),
+      image: '/research-images/uk-first-time-buyers-2026.jpg',
+      category: 'Residential Intelligence',
+      date: '2026-05-18',
+      readTime: '7 min read',
+      featured: false
+    },
+    {
+      id: 'us-investors-rotating-into-uk-property-2026',
+      title: 'Why American Capital Is Rotating Into UK Real Estate',
+      excerpt: 'US investors are increasingly allocating capital into UK residential and commercial property as taxes, insurance costs, and market fragmentation reshape global investment strategy.',
+      author: getAuthor('market'),
+      image: '/research-images/us-investors-uk-property-2026.jpg',
+      category: 'Global Capital Markets',
+      date: '2026-05-18',
+      readTime: '11 min read',
+      featured: true
+    },
+    {
+      id: 'global-capital-allocation-dubai-2026',
+      title: 'Global Capital Allocation: Why Dubai’s Real Estate Market Remains Highly Resilient',
+      excerpt: 'Dubai’s equity-driven property market continues demonstrating resilience despite regional uncertainty and remains central to GCC investment allocation strategies.',
+      author: getAuthor('investment'),
+      image: '/research-images/dubai-global-allocation-2026.jpg',
+      category: 'Market Intelligence',
+      date: '2026-04-28',
+      readTime: '8 min read',
+      featured: false
+    },
 
 ];
 
