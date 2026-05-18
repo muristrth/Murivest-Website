@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       locale: 'en_KE',
       images: insight.mainImage ? [{ url: urlFor(insight.mainImage).width(1200).url() }] : [],
     },
-    alternates: { canonical: `https://murivest.com/insights-cre/${slug}` },
+    alternates: { canonical: `https:// murivest.co.ke/insights-cre/${slug}` },
   };
 }
 
@@ -104,15 +104,15 @@ export default async function InsightDetailPage({ params }: PageProps) {
     headline: insight.title,
     description: insight.excerpt,
     datePublished: insight.publishedAt,
-    publisher: { '@type': 'Organization', name: 'Murivest Realty Group', url: 'https://murivest.com' },
-    url: `https://murivest.com/insights-cre/${slug}`,
+    publisher: { '@type': 'Organization', name: 'Murivest Realty Group', url: 'https:// murivest.co.ke' },
+    url: `https:// murivest.co.ke/insights-cre/${slug}`,
     image: insight.mainImage ? urlFor(insight.mainImage).width(1200).url() : undefined,
     breadcrumb: {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://murivest.com' },
-        { '@type': 'ListItem', position: 2, name: 'Insights', item: 'https://murivest.com/insights-cre' },
-        { '@type': 'ListItem', position: 3, name: insight.title, item: `https://murivest.com/insights-cre/${slug}` },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https:// murivest.co.ke' },
+        { '@type': 'ListItem', position: 2, name: 'Insights', item: 'https:// murivest.co.ke/insights-cre' },
+        { '@type': 'ListItem', position: 3, name: insight.title, item: `https:// murivest.co.ke/insights-cre/${slug}` },
       ],
     },
   };

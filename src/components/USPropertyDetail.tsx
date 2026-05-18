@@ -67,7 +67,7 @@ Located on the Upper East Side, this residence provides immediate access to Cent
       name: 'Victoria Sterling',
       title: 'Senior Property Consultant',
       phone: '+1 (212) 555-0123',
-      email: 'victoria@murivest.com'
+      email: 'victoria@ murivest.co.ke'
     }
   };
 

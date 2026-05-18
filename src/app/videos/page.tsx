@@ -175,7 +175,7 @@ export default function VideosPage() {
         "publisher": {
           "@type": "Organization",
           "name": "Murivest",
-          "logo": { "@type": "ImageObject", "url": "https://www.murivest.com/logo.png" }
+          "logo": { "@type": "ImageObject", "url": "https://www. murivest.co.ke/logo.png" }
         },
         "embedUrl": `https://www.youtube.com/embed/${activeVideo.id}`,
         "author": {

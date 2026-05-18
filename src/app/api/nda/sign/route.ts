@@ -16,7 +16,7 @@
  *       SMTP_PORT=587
  *       SMTP_USER=your@gmail.com
  *       SMTP_PASS=your_app_password
- *       ADMIN_EMAIL=admin@murivest.com
+ *       ADMIN_EMAIL=admin@ murivest.co.ke
  *       COMPANY_NAME=Murivest Realty Ltd
  */
 

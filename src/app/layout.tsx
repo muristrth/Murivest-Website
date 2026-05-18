@@ -193,7 +193,7 @@ const structuredData = [
 
     telephone: '+254-740-469-911',
 
-    email: 'investments@murivest.com',
+    email: 'investments@ murivest.co.ke',
 
     address: {
       '@type': 'PostalAddress',

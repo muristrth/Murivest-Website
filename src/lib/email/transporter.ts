@@ -20,7 +20,7 @@ export const transporter = nodemailer.createTransport({
 })
 
 // Email from address
-export const FROM_EMAIL = process.env.FROM_EMAIL || 'noreply@murivest.com'
+export const FROM_EMAIL = process.env.FROM_EMAIL || 'noreply@ murivest.co.ke'
 export const FROM_NAME = 'Murivest Investor Relations'
 
 // Verification email

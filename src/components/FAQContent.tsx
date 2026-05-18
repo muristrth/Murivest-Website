@@ -187,7 +187,7 @@ const FAQContent = ({ faqData = [] }: FAQContentProps) => {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#C4B59D]" strokeWidth={1} />
-                <span className="text-[14px] text-[#A8A39D] font-light">advisory@murivest.com</span>
+                <span className="text-[14px] text-[#A8A39D] font-light">advisory@ murivest.co.ke</span>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-[#C4B59D]" strokeWidth={1} />

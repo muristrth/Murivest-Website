@@ -33,7 +33,7 @@ const Team = ({ members = [] }: TeamProps) => {
       bio: 'Over two decades of experience in East African commercial real estate. Former Managing Director at a leading property consultancy, with $500M+ in executed transactions.',
       image: '/CEO.Founder.jpg',
       linkedin: '#',
-      email: 'mark@murivest.com'
+      email: 'mark@ murivest.co.ke'
     },
     {
       id: '2',
@@ -42,7 +42,7 @@ const Team = ({ members = [] }: TeamProps) => {
       bio: 'PhD Finance, London School of Economics. CFA Charterholder with 15+ years in African capital markets and real estate investment structuring.',
       image: '/p2/profile-placeholder.jpg',
       linkedin: '#',
-      email: 'samuel@murivest.com'
+      email: 'samuel@ murivest.co.ke'
     },
     {
       id: '3',
@@ -51,7 +51,7 @@ const Team = ({ members = [] }: TeamProps) => {
       bio: 'MSc Real Estate, University of Reading. RICS Member with 12+ years managing institutional portfolios exceeding $200M across East Africa.',
       image: '/p2/profile-placeholder.jpg',
       linkedin: '#',
-      email: 'michael@murivest.com'
+      email: 'michael@ murivest.co.ke'
     },
     {
       id: '4',
@@ -60,7 +60,7 @@ const Team = ({ members = [] }: TeamProps) => {
       bio: 'MBA, INSEAD. Former investment banker with deep network across East African commercial real estate markets.',
       image: '/p2/profile-placeholder.jpg',
       linkedin: '#',
-      email: 'sarah@murivest.com'
+      email: 'sarah@ murivest.co.ke'
     }
   ];
 

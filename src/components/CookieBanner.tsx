@@ -307,7 +307,7 @@ export default function CookieBanner() {
               flexShrink: 0,
             }}
           >
-            {/* Decline — equal prominence per EDPB Guidelines 05/2020 */}
+            {/* Manage Preferences — equal prominence per EDPB Guidelines 05/2020 */}
             <button
               className="mrvst-cb-decline"
               onClick={() => dismiss('declined')}
@@ -329,7 +329,7 @@ export default function CookieBanner() {
                 whiteSpace:    'nowrap',
               }}
             >
-              Decline
+              Manage Preferences
             </button>
 
             {/* Accept */}

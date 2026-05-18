@@ -19,12 +19,12 @@ export const metadata: Metadata = {
     'Nairobi mixed use development investment',
     'Kenya real estate deal flow',
   ].join(', '),
-  alternates: { canonical: 'https://murivest.com/our-portfolio' },
+  alternates: { canonical: 'https:// murivest.co.ke/our-portfolio' },
   openGraph: {
     title: 'Murivest CRE Transaction Portfolio | Nairobi Commercial Deals',
     description: 'Active Nairobi CRE deal pipeline: office, industrial, and mixed-use assets. Verified yields, clean titles, institutional access.',
     type: 'website',
-    url: 'https://murivest.com/our-portfolio',
+    url: 'https:// murivest.co.ke/our-portfolio',
     siteName: 'Murivest Realty Group',
   },
   twitter: {
@@ -40,11 +40,11 @@ const webPageSchema = {
   '@type': 'CollectionPage',
   name: 'Murivest CRE Transaction Portfolio',
   description: 'Murivest\'s curated pipeline of verified commercial real estate transactions across Nairobi\'s primary and secondary submarkets.',
-  url: 'https://murivest.com/our-portfolio',
+  url: 'https:// murivest.co.ke/our-portfolio',
   publisher: {
     '@type': 'Organization',
     name: 'Murivest Realty Group',
-    logo: { '@type': 'ImageObject', url: 'https://murivest.com/logo.png' },
+    logo: { '@type': 'ImageObject', url: 'https:// murivest.co.ke/logo.png' },
   },
 };
 
@@ -52,7 +52,7 @@ const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'RealEstateAgent',
   name: 'Murivest Realty Group',
-  url: 'https://murivest.com',
+  url: 'https:// murivest.co.ke',
   description: 'Institutional commercial real estate advisory and transaction services across Nairobi, London, Dubai, and Southeast Asia.',
   areaServed: ['Nairobi', 'Kenya', 'London', 'Dubai', 'Bangkok', 'Bali'],
 };
@@ -61,8 +61,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://murivest.com' },
-    { '@type': 'ListItem', position: 2, name: 'Our Portfolio', item: 'https://murivest.com/our-portfolio' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https:// murivest.co.ke' },
+    { '@type': 'ListItem', position: 2, name: 'Our Portfolio', item: 'https:// murivest.co.ke/our-portfolio' },
   ],
 };
 
