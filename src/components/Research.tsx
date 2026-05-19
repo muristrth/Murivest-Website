@@ -738,6 +738,52 @@ const research: ResearchEntry[] = [
       readTime: '8 min read',
       featured: false
     },
+    {
+      id: 'kenya-psv-strike-commercial-real-estate-2026',
+      title: 'Kenya’s PSV Fuel Strike and the Commercial Real Estate Fragility Question',
+      excerpt: 'Kenya’s two-day PSV strike exposed a structural vulnerability within Nairobi’s commercial real estate ecosystem: transport-linked operational fragility. Rising diesel costs are increasingly shaping logistics pricing, retail absorption, industrial occupancy costs, and institutional capital allocation decisions across Kenya’s urban corridors.',
+      author: getAuthor('investment'),
+      image: '/research-images/kenya-psv-strike-commercial-real-estate-2026.webp',
+      category: 'Breaking News',
+      date: '2026-05-19',
+      readTime: '9 min read',
+      featured: true
+    },
+    {
+      id: 'kenya-fuel-crisis-transport-strike-commercial-real-estate-2026',
+      title: 'Kenya Fuel Crisis Latest: How Record Pump Prices and PSV Strikes Are Forcing a Commercial Real Estate Repricing',
+      excerpt: 'Kenya’s nationwide transport paralysis following record fuel price increases has exposed deeper structural risks within Nairobi’s commercial real estate ecosystem. Rising diesel costs are beginning to influence logistics pricing, tenant affordability, industrial demand patterns, and institutional capital allocation across East Africa.',
+      author: getAuthor('investment'),
+      image: '/research-images/kenya-fuel-crisis-commercial-real-estate-2026.webp',
+      category: 'Breaking News',
+      date: '2026-05-19',
+      readTime: '10 min read',
+      featured: true
+    },
+    {
+
+      id: 'kenya-transport-strike-inflation-commercial-property-2026',
+      title: 'Kenya Transport Strike & Inflation Shock: Why Commercial Property is Entering a Major Repricing Cycle',
+      excerpt: 'Kenya’s nationwide transport paralysis following record fuel price increases has exposed structural vulnerabilities across Nairobi’s commercial real estate ecosystem. Rising diesel costs, inflationary pressure, and supply-chain disruption are beginning to reshape tenant affordability, industrial logistics demand, and institutional capital allocation across East Africa.',
+      author: getAuthor('investment'),
+      image: '/research-images/kenya-transport-strike-inflation-commercial-property-2026.webp',
+      category: 'Breaking News',
+      date: '2026-05-19',
+      readTime: '9 min read',
+      featured: false
+    },
+    {
+
+      id: 'legacy-wealth-nairobi-commercial-property-2026',
+      title: 'Legacy Wealth and Nairobi’s Institutional Property Transition: Why Old Money Capital Is Quietly Repositioning',
+      excerpt: 'As Nairobi enters a new commercial real estate cycle shaped by inflation, infrastructure pressure, and generational capital transfer, East Africa’s wealthiest families are increasingly prioritising institutional-grade property, capital preservation, and legacy-driven portfolio structures over speculative growth narratives.',
+      image: '/research-images/legacy-wealth-2026.webp',
+      author: getAuthor('investment'),
+      date: '2026-05-19',
+      readTime: '10 min read',
+      category: 'Private Wealth & Capital Strategy',
+      featured: false
+    },
 
 ];
 

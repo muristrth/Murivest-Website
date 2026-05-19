@@ -3,14 +3,8 @@ import { client } from '@/sanity/lib/client';
 import { defineQuery } from 'next-sanity';
 import PropertiesForRent from '@/components/PropertiesForRent';
 
-const PropertiesForRentComponent =
-  PropertiesForRent as React.ComponentType<{
-    initialData: any[];
-  }>;
-
 // ─────────────────────────────────────────────
 // LIGHTWEIGHT LISTING QUERY
-// Optimized for Vercel + ISR
 // ─────────────────────────────────────────────
 const PROPERTIES_RENT_QUERY = defineQuery(`
   *[
@@ -89,18 +83,12 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: 'Commercial Properties For Rent in Kenya | Murivest',
-
     description:
       'Browse verified commercial properties for rent in Nairobi and across Kenya.',
-
     url: 'https://murivest.co.ke/properties-for-rent',
-
     siteName: 'Murivest',
-
     locale: 'en_KE',
-
     type: 'website',
-
     images: [
       {
         url: '/og-properties-rent.webp',
@@ -113,12 +101,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-
     title: 'Commercial Properties For Rent in Kenya | Murivest',
-
     description:
       'Verified commercial properties for rent in Nairobi and across Kenya.',
-
     images: ['/og-properties-rent.webp'],
   },
 
@@ -131,20 +116,17 @@ export const metadata: Metadata = {
 };
 
 // ─────────────────────────────────────────────
-// ISR CACHE
-// ─────────────────────────────────────────────
-export const revalidate = 300;
-
-// ─────────────────────────────────────────────
 // PAGE
 // ─────────────────────────────────────────────
 export default async function PropertiesForRentPage() {
   let propertyData: any[] = [];
+  const PropertiesForRentView =
+    PropertiesForRent as React.ComponentType<{
+      initialData: any[];
+    }>;
 
   try {
-    propertyData = await client.fetch(
-      PROPERTIES_RENT_QUERY
-    );
+    propertyData = await client.fetch(PROPERTIES_RENT_QUERY);
   } catch (error) {
     console.error(
       '[properties-for-rent] Fetch failed:',
@@ -159,21 +141,14 @@ export default async function PropertiesForRentPage() {
   // ───────────────────────────────────────────
   const listJsonLd = {
     '@context': 'https://schema.org',
-
     '@type': 'ItemList',
-
     name: 'Commercial Properties For Rent in Kenya',
-
     numberOfItems: propertyData.length,
-
     itemListElement: propertyData.map(
       (property: any, index: number) => ({
         '@type': 'ListItem',
-
         position: index + 1,
-
         url: `${baseUrl}/properties-for-rent/${property.slug}`,
-
         name: property.title,
       })
     ),
@@ -181,59 +156,40 @@ export default async function PropertiesForRentPage() {
 
   const organizationJsonLd = {
     '@context': 'https://schema.org',
-
     '@type': 'RealEstateAgent',
-
     name: 'Murivest',
-
     url: baseUrl,
-
     logo: `${baseUrl}/logo.webp`,
-
     image: `${baseUrl}/og-properties-rent.webp`,
-
     address: {
       '@type': 'PostalAddress',
-
       addressCountry: 'KE',
-
       addressLocality: 'Nairobi',
     },
-
     areaServed: {
       '@type': 'Country',
-
       name: 'Kenya',
     },
   };
 
   const faqJsonLd = {
     '@context': 'https://schema.org',
-
     '@type': 'FAQPage',
-
     mainEntity: [
       {
         '@type': 'Question',
-
         name: 'What types of commercial properties are available for rent?',
-
         acceptedAnswer: {
           '@type': 'Answer',
-
           text:
             'Murivest lists offices, retail shops, warehouses, suites and commercial developments across Kenya.',
         },
       },
-
       {
         '@type': 'Question',
-
         name: 'Do you have shops to let in Nairobi CBD?',
-
         acceptedAnswer: {
           '@type': 'Answer',
-
           text:
             'Yes. Murivest regularly lists retail shops and office spaces in Nairobi CBD and other business districts.',
         },
@@ -244,7 +200,6 @@ export default async function PropertiesForRentPage() {
   return (
     <>
       {/* JSON-LD */}
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -255,9 +210,7 @@ export default async function PropertiesForRentPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            organizationJsonLd
-          ),
+          __html: JSON.stringify(organizationJsonLd),
         }}
       />
 
@@ -269,9 +222,8 @@ export default async function PropertiesForRentPage() {
       />
 
       {/* PAGE */}
-
       <main className="bg-[#FAF9F6] min-h-screen">
-        <PropertiesForRentComponent
+        <PropertiesForRentView
           initialData={propertyData}
         />
       </main>
