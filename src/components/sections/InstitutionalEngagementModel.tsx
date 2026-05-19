@@ -12,7 +12,7 @@ const coverage = [
     title: 'Nairobi CBD — Core Office Market',
     desc: 'Institutional-grade office assets within Nairobi’s established commercial core, focusing on tenant quality, lease durability, and capital preservation.',
     note: 'Select advisory coverage only',
-    image: '/kenya-night.png',
+    image: '/kenya-night.webp',
   },
   {
     id: '02',
@@ -26,7 +26,7 @@ const coverage = [
     title: 'Logistics & Infrastructure Corridor',
     desc: 'Strategic industrial and logistics assets aligned with East Africa’s primary trade and transport routes.',
     note: 'Pipeline advisory positioning',
-    image: '/p/IMG-20250813-WA0001.jpg',
+    image: '/p/IMG-20250813-WA0001.webp',
   },
 ];
 
@@ -39,7 +39,7 @@ const InstitutionalEngagementModel = () => {
 
         <div className="absolute inset-0 bg-gradient-to-b from-[#F5F5F3]/95 via-[#F5F5F3]/92 to-[#F5F5F3]/98" />
 
-        <div className="absolute inset-0 bg-[url('/images/mandate-hero.jpg')] bg-cover bg-center opacity-[0.06]" />
+        <div className="absolute inset-0 bg-[url('/images/mandate-hero.webp')] bg-cover bg-center opacity-[0.06]" />
 
         <div className="absolute top-[-150px] left-[-120px] w-[500px] h-[500px] bg-[#C4B59D]/10 blur-3xl rounded-full" />
 

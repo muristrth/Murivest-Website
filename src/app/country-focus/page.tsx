@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Country Focus: Institutional Intelligence on African Real Estate Markets | Murivest Realty Group',
     description: 'Sovereign-grade market intelligence for institutional capital deployment across Sub-Saharan Africa. Knight Frank, KNBS, McKinsey, PwC, Deloitte, and HBR data synthesis.',
-    images: ['/kenya-night.png'],
+    images: ['/kenya-night.webp'],
   },
   alternates: {
     canonical: 'https://murivest.co.ke/country-focus',

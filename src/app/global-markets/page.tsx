@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Global Markets & Expansion - Murivest Realty Group',
     description: 'Institutional-grade commercial real estate opportunities across Africa, Middle East, Europe, Asia-Pacific, and Americas.',
-    images: ['/kenya-night.png'],
+    images: ['/kenya-night.webp'],
   },
   alternates: {
     canonical: 'https://murivest.co.ke/global-markets',

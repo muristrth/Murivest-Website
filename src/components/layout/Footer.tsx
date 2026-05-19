@@ -64,7 +64,7 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
           <div className="lg:col-span-4">
             <div className="mb-6">
               <Image 
-                src="/logo.png" 
+                src="/logo.webp" 
                 alt="Murivest Realty Group Ltd" 
                 width={140} 
                 height={44} 

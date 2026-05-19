@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Thought Leadership - Murivest Realty Group',
     description: 'Institutional insights and strategic analysis from Africa\'s premier commercial real estate advisory firm.',
-    images: ['/murivest_ceo_office.png'],
+    images: ['/murivest_ceo_office.webp'],
   },
   alternates: {
     canonical: 'https://murivest.co.ke/thought-leadership',
@@ -24,7 +24,7 @@ export default function ThoughtLeadershipPage() {
       excerpt: "How discerning families and institutions are using commercial real estate to preserve and grow wealth across generations, with Nairobi emerging as Africa's institutional gateway.",
       category: "Wealth Preservation",
       readTime: "12 min read",
-      image: "/murivest_ceo_office.png",
+      image: "/murivest_ceo_office.webp",
       featured: true
     },
     {
@@ -33,7 +33,7 @@ export default function ThoughtLeadershipPage() {
       excerpt: "GCC sovereign wealth funds are increasingly allocating to African commercial assets. Analysis of risk-adjusted returns, regulatory frameworks, and Nairobi's role as the continental gateway.",
       category: "Institutional Investment",
       readTime: "15 min read",
-      image: "/kenya-night.png",
+      image: "/kenya-night.webp",
       featured: true
     },
     {
@@ -42,7 +42,7 @@ export default function ThoughtLeadershipPage() {
       excerpt: "Comprehensive analysis of Nairobi's commercial real estate evolution, from colonial architecture to modern institutional-grade assets.",
       category: "Market Intelligence",
       readTime: "18 min read",
-      image: "/image.png",
+      image: "/image.webp",
       featured: true
     }
   ]

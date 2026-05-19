@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Murivest Foundation - Corporate Social Responsibility Kenya',
     description: 'Learn about Murivest Foundation\'s commitment to community development and social impact in Kenya.',
-    images: ['/image.png'],
+    images: ['/image.webp'],
   },
 }
 

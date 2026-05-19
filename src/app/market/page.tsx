@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Kenya Real Estate Market Intelligence - Investment Analysis | Murivest',
     description: 'Comprehensive analysis of Kenya\'s commercial real estate market.',
-    images: ['/image.png'],
+    images: ['/image.webp'],
   },
 }
 

@@ -30,7 +30,7 @@ const ExecutiveLeadership = ({ leaders = [] }: ExecutiveLeadershipProps) => {
       name: 'Mark Muriithi',
       title: 'Chief Executive Officer & Founder',
       bio: 'Mark Muriithi founded Murivest Realty Group in 2025 with a mandate to build Kenya\'s first institutionally-structured commercial real estate advisory practice oriented toward international capital. He brings a background spanning technology, commercial distribution, and real estate sales — disciplines that inform Murivest\'s integrated approach to deal origination, asset positioning, and investor relations. His early career included commercial roles at Vineyard Properties Ltd, where he developed hands-on experience in property transactions and client acquisition across the Kenyan market. He subsequently held senior commercial positions in distribution and marketing, building the capital markets literacy and cross-sector network that underpins Murivest\'s advisory model.',
-      image: '/ceo.png',
+      image: '/ceo.webp',
       linkedin: 'https://www.linkedin.com/in/mark-muriithi-343365215/',
        email: 'mark.muriithi@murivest.co.ke'
     },

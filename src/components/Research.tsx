@@ -29,7 +29,7 @@ const research: ResearchEntry[] = [
     title: 'Distressed Real Estate in Kenya: The Nakumatt Auction and the Anatomy of Secured Lending Recovery',
     excerpt: 'An institutional analysis of the Standard Chartered Bank Kenya auction of Nakumatt-linked properties over Sh1.9 billion in debt, examining the mechanics of statutory notices, charged land recovery, and the strategic opportunities emerging in commercial real estate.',
     author: getAuthor('investment'),
-    image: '/research-images/standard-chartered-nakumatt-auction-distressed-real-estate-kenya-2026.png',
+    image: '/research-images/standard-chartered-nakumatt-auction-distressed-real-estate-kenya-2026.webp',
     category: 'Market Intelligence',
     date: '2026-05-03',
     readTime: '52 min read',
@@ -40,7 +40,7 @@ const research: ResearchEntry[] = [
       title: "The Chiromo Disposition: Standard Chartered's Exit from Physical Banking and the Institutional Investment Imperative in Nairobi's Prime Commercial Real Estate",
       excerpt: 'Comprehensive analysis of Standard Chartered Bank Kenya\'s KES 1.41 billion Chiromo headquarters sale, examining the structural retreat from physical banking, Westlands land value dynamics and Grade A commercial property.',
       author: getAuthor('investment'),
-      image: '/research-images/standard-chartered-chiromo-headquarters-sale-westlands-nairobi-2026.png',
+      image: '/research-images/standard-chartered-chiromo-headquarters-sale-westlands-nairobi-2026.webp',
       category: 'Market Intelligence',
       date: '2026-05-05',
       readTime: '65 min read',
@@ -51,7 +51,7 @@ const research: ResearchEntry[] = [
       title: 'How the Stamp Duty on UK Commercial Property Rate Structures, Available Reliefs, and Strategic Calculation for 2026 Acquisitions can be avhieved',
       excerpt: 'Technical analysis of SDLT on UK commercial property, examining rate structures, calculation methodologies, TOGC reliefs, anti-avoidance provisions, and strategic structuring for legitimate tax efficiency.',
       author: getAuthor('investment'),
-      image: '/research-images/stamp-duty-commercial-property-rates-reliefs-2026.png',
+      image: '/research-images/stamp-duty-commercial-property-rates-reliefs-2026.webp',
       category: 'Process & Legal',
       date: '2026-04-05',
       readTime: '38 min read',
@@ -62,7 +62,7 @@ const research: ResearchEntry[] = [
       title: 'Why Petrol Stations is the MOST Overlooked Commercial Asset Class with High Barriers to Entry',
       excerpt: 'Comprehensive analysis of UK forecourt real estate, examining environmental liability frameworks, fuel retailing economics, the EV transition, and the high barriers to entry creating niche investment opportunities.',
       author: getAuthor('investment'),
-      image: '/research-images/petrol-station-investment-forecourt-real-estate.png',
+      image: '/research-images/petrol-station-investment-forecourt-real-estate.webp',
       category: 'Investment',
       date: '2026-03-18',
       readTime: '14 min read',
@@ -75,7 +75,7 @@ const research: ResearchEntry[] = [
     excerpt: 'How Kenya\'s UHNWI are deploying capital into income-producing commercial assets on Loita Street while sitting on their 10-acre Runda estate or Muthaiga golf course.',
     author: getAuthor('investment'),
     category: 'Investment',
-    image: '/p3/absa.jpg',
+    image: '/p3/absa.webp',
     date: '2026-05-13',
     readTime: '15 min read',
     featured: true,
@@ -84,7 +84,7 @@ const research: ResearchEntry[] = [
       id: 'murivest-institutional-wealth-preservation-guide',
       title: 'The Dangerous Wealth Preservation Myths Costing Kenyan Investors Millions in Commercial Real Estate',
       excerpt: 'Across global markets, investors are being misled by outdated financial assumptions, passive investment structures, and institutional inefficiencies.',
-      image: 'https://i.ibb.co/pjD16k20/The-Dangerous-wealth-preservation-myths.png',
+      image: 'https://i.ibb.co/pjD16k20/The-Dangerous-wealth-preservation-myths.webp',
       author: getAuthor('wealth'),
       category: 'Wealth Preservation',
       date: '2026-05-14',
@@ -97,7 +97,7 @@ const research: ResearchEntry[] = [
     excerpt: 'Former banking insider Chris Mayer exposes the three most costly retirement myths perpetuated by brokers and financial advisors.',
     author: getAuthor('investment'),
     category: 'Investment',
-    image: 'https://i.ibb.co/3yxJYKS9/3-most-dangerous-retirment-lies.png',
+    image: 'https://i.ibb.co/3yxJYKS9/3-most-dangerous-retirment-lies.webp',
     date: '2026-05-15',
     readTime: '10 min read',
     featured: true,
@@ -107,7 +107,7 @@ const research: ResearchEntry[] = [
     title: 'Diani and Watamu Land have appreciated by 400% since 2020',
     excerpt: 'Diani and Watamu Land have appreciated by 400% since 2020 Kenya\'s 536-kilometer coastline. Demand for Land in Watamu and Diani is increasing. There is also an increase in land prices in Mombasa hotspots.',
     author: getAuthor('investment'),
-    image: 'https://i.ibb.co/cc2ttgK2/diani-watamu-land-2026.jpg',
+    image: 'https://i.ibb.co/cc2ttgK2/diani-watamu-land-2026.webp',
     category: 'Investment',
     date: '2026-05-13',
     readTime: '9 min read',
@@ -121,7 +121,7 @@ const research: ResearchEntry[] = [
     category: "Legal",
     date: "2024-12-28",
     readTime: "16 min read",
-    image: "/land-ownership-laws-kenya.png",
+    image: "/land-ownership-laws-kenya.webp",
     featured: true,
   },
 
@@ -133,7 +133,7 @@ const research: ResearchEntry[] = [
     category: "Coastal",
     date: "2025-01-05",
     readTime: "13 min read",
-    image: "/coastal-property-investment-mombasa.png",
+    image: "/coastal-property-investment-mombasa.webp",
     featured: true,
   },
 
@@ -145,7 +145,7 @@ const research: ResearchEntry[] = [
     category: "Investment",
     date: "2025-01-01",
     readTime: "9 min read",
-    image: "/investment-properties-kiambu-county.png",
+    image: "/investment-properties-kiambu-county.webp",
     featured: true,
   },
 
@@ -157,7 +157,7 @@ const research: ResearchEntry[] = [
     category: "Legal",
     date: "2025-01-08",
     readTime: "14 min read",
-    image: "/property-buying-process-kenya.png",
+    image: "/property-buying-process-kenya.webp",
     featured: true,
   },
 
@@ -169,7 +169,7 @@ const research: ResearchEntry[] = [
     category: "Finance",
     date: "2025-01-03",
     readTime: "11 min read",
-    image: "/real-estate-financing-options-kenya.png",
+    image: "/real-estate-financing-options-kenya.webp",
     featured: true,
   },
 
@@ -181,7 +181,7 @@ const research: ResearchEntry[] = [
     category: "Legal & Due Diligence",
     date: "2025-02-05",
     readTime: "15 min read",
-    image: "/due-diligence-checklist-kenya-land-2025.png",
+    image: "/due-diligence-checklist-kenya-land-2025.webp",
     featured: true,
   },
 
@@ -190,7 +190,7 @@ const research: ResearchEntry[] = [
     title: 'Affordable Housing Hotspots Beyond Nairobi\'s Traditional Borders in 2025',
     excerpt: 'The dream of homeownership in Kenya often seems synonymous with Nairobi., as the capital\'s property prices continue to soar and congestion mounts, savvy...',
     author: getAuthor('affordableHousing'),
-    image: "/affordable-housing-hotspots-beyond-nairobi-2025.png",
+    image: "/affordable-housing-hotspots-beyond-nairobi-2025.webp",
     category: 'Logistics & Industrial',
     date: '2025-02-23',
     readTime: '12 min read',
@@ -204,7 +204,7 @@ const research: ResearchEntry[] = [
     category: "Finance & Mortgages",
     date: "2025-02-10",
     readTime: "14 min read",
-    image: "/financing-real-estate-kenya-2025-options.png",
+    image: "/financing-real-estate-kenya-2025-options.webp",
   },
 
   {
@@ -226,7 +226,7 @@ const research: ResearchEntry[] = [
     category: "Commercial",
     date: "2025-01-12",
     readTime: "15 min read",
-    image: "/commercial-property-investment-kenya.png",
+    image: "/commercial-property-investment-kenya.webp",
   },
 
   {
@@ -237,7 +237,7 @@ const research: ResearchEntry[] = [
     category: "Construction",
     date: "2025-04-25",
     readTime: "10 min read",
-    image: "https://static.ntvkenya.co.ke/uploads/2023/12/WhatsApp-Image-2022-12-07-at-11.48.33-1-1-e1701848346908-1320x762.jpg",
+    image: "https://static.ntvkenya.co.ke/uploads/2023/12/WhatsApp-Image-2022-12-07-at-11.48.33-1-1-e1701848346908-1320x762.webp",
   },
 
   {
@@ -245,7 +245,7 @@ const research: ResearchEntry[] = [
     title: 'Nairobi Real Estate Trends 2025: Key Insights and Investment Forecast',
     excerpt: 'Nairobi’s real estate landscape is undergoing a significant transformation in 2025. As Kenya’s capital city and economic nerve center, Nairobi continues to...',
     author: getAuthor('development'),
-    image: "/nairobi-real-estate-trends-2025-investment-forecast.png",
+    image: "/nairobi-real-estate-trends-2025-investment-forecast.webp",
     category: 'Nairobi Office',
     date: '2025-08-29',
     readTime: '10 min read',
@@ -256,7 +256,7 @@ const research: ResearchEntry[] = [
     title: 'Why Land Investment in Kenya Remains Lucrative in 2025',
     excerpt: 'Land has long been considered the foundation of wealth creation in Kenya, and in 2025, this investment vehicle continues to shine. From seasoned real estate...',
     author: getAuthor('investment'),
-    image: "/why-land-investment-in-kenya-remains-lucrative-in-2025.png",
+    image: "/why-land-investment-in-kenya-remains-lucrative-in-2025.webp",
     category: 'Land Investment',
     date: '2025-09-29',
     readTime: '10 min read',
@@ -270,7 +270,7 @@ const research: ResearchEntry[] = [
     category: "Land Investment",
     date: "2025-01-15",
     readTime: "12 min read",
-    image: "/kenya-night.png",
+    image: "/kenya-night.webp",
   },
 
   {
@@ -281,7 +281,7 @@ const research: ResearchEntry[] = [
     category: "Home Ownership",
   date: "2025-05-28",
   readTime: "10 min read",
-  image: "https://shiftersmovers.com/wp-content/uploads/2021/10/Building-a-house-vs-buying-cost_032601b80_4999.jpg",
+  image: "https://shiftersmovers.com/wp-content/uploads/2021/10/Building-a-house-vs-buying-cost_032601b80_4999.webp",
   },
 
   {
@@ -289,7 +289,7 @@ const research: ResearchEntry[] = [
     title: 'Land vs Apartments in Kenya: Which Is the Better Investment?',
     excerpt: 'If you\'re planning to invest in Kenyan real estate, two of the most common options are buying land or investing in apartments. Each has its own advantages an...',
     author: getAuthor('investment'),
-      image: "/research-images/kenya-land-vs-apartment-investment.png",
+      image: "/research-images/kenya-land-vs-apartment-investment.webp",
     category: 'Nairobi Office',
     date: '2025-07-28',
     readTime: '10 min read',
@@ -336,7 +336,7 @@ const research: ResearchEntry[] = [
     category: "Buying & Selling",
     date: "2025-08-20",
     readTime: "9 min read",
-    image: "https://i0.wp.com/www.bidlegacy.com/wp-content/uploads/2024/05/Plymouth-street.jpg?fit=806%2C841&ssl=1",
+    image: "https://i0.wp.com/www.bidlegacy.com/wp-content/uploads/2024/05/Plymouth-street.webp?fit=806%2C841&ssl=1",
   },
 
   {
@@ -366,7 +366,7 @@ const research: ResearchEntry[] = [
     title: 'Beyond Nairobi: Emerging Investment Hubs for Affordable Property in Kenya',
     excerpt: 'Nairobi has long been the focal point of real estate investment in Kenya., escalating property prices, congestion, and shifting population trends have led...',
     author: getAuthor('affordableHousing'),
-    image: "/emerging-affordable-property-hubs.png",
+    image: "/emerging-affordable-property-hubs.webp",
     category: 'Logistics & Industrial',
     date: '2025-05-02',
     readTime: '8 min read',
@@ -380,7 +380,7 @@ const research: ResearchEntry[] = [
     category: "Marketing & Sales",
     date: "2025-07-12",
     readTime: "8 min read",
-    image: "/nairobi.png",
+    image: "/nairobi.webp",
   },
 
   {
@@ -388,7 +388,7 @@ const research: ResearchEntry[] = [
     title: 'Government Initiatives Driving Real Estate Growth in Kenya: A Deep Dive',
     excerpt: 'Kenya’s real estate sector has seen a significant transformation in recent years, with government-backed initiatives acting as a catalyst for growth. From...',
     author: getAuthor('investment'),
-    image: '/government-housing-projects-kenya.png',
+    image: '/government-housing-projects-kenya.webp',
     category: 'Investment',
     date: '2026-01-05',
     readTime: '13 min read',
@@ -402,7 +402,7 @@ const research: ResearchEntry[] = [
     category: "Market Trends",
     date: "2025-06-20",
     readTime: "11 min read",
-    image: "/impact-infrastructure-kenya-property-values-2025.png",
+    image: "/impact-infrastructure-kenya-property-values-2025.webp",
   },
 
   {
@@ -413,7 +413,7 @@ const research: ResearchEntry[] = [
     category: "Land Investment",
     date: "2025-09-20",
     readTime: "10 min read",
-    image: "/agricultural-land-investment-kenya-2025.png",
+    image: "/agricultural-land-investment-kenya-2025.webp",
   },
 
   {
@@ -424,7 +424,7 @@ const research: ResearchEntry[] = [
     category: "Niche Investments",
     date: "2025-07-26",
     readTime: "10 min read",
-    image: "/short-term-rentals-airbnb-kenya-2025-guide.png",
+    image: "/short-term-rentals-airbnb-kenya-2025-guide.webp",
   },
 
   {
@@ -457,7 +457,7 @@ const research: ResearchEntry[] = [
     category: "Market Trends",
     date: "2025-09-01",
     readTime: "9 min read",
-    image: "/women-in-kenyan-real-estate-2025.png",
+    image: "/women-in-kenyan-real-estate-2025.webp",
   },
 
   {
@@ -468,7 +468,7 @@ const research: ResearchEntry[] = [
     category: "Sustainable Development",
     date: "2025-07-05",
     readTime: "9 min read",
-    image: "/sustainable-building-materials-kenya-2025.png",
+    image: "/sustainable-building-materials-kenya-2025.webp",
   },
 
   {
@@ -476,7 +476,7 @@ const research: ResearchEntry[] = [
     title: 'Is the Housing Levy a Good Investment for Kenyans? Expert Analysis',
     excerpt: 'In 2023, the Kenyan government introduced the Housing Levy as part of its push to bridge the country\'s housing deficit. While the initiative promises to make...',
     author: getAuthor('development'),
-    image: '/research-images/housing-levy-kenya-investment.png',
+    image: '/research-images/housing-levy-kenya-investment.webp',
     category: 'Investment',
     date: '2025-11-28',
     readTime: '7 min read',
@@ -487,7 +487,7 @@ const research: ResearchEntry[] = [
     title: 'Unlocking Value: Finding Cheap Houses for Sale in Nairobi and Beyond',
     excerpt: 'The demand for affordable housing in Nairobi and its surrounding areas has led to a surge in interest in cheap houses for sale. Whether you\'re a first-time...',
     author: getAuthor('development'),
-    image: 'https://i.ibb.co/Xfpdjvd0/cheap-houses-for-sale-in-nairobi.png',
+    image: 'https://i.ibb.co/Xfpdjvd0/cheap-houses-for-sale-in-nairobi.webp',
     category: 'Affordable Housing',
     date: '2026-04-23',
     readTime: '12 min read',
@@ -509,7 +509,7 @@ const research: ResearchEntry[] = [
     title: 'The Rise of Satellite Towns: Affordable Land & Housing Hotspots in Kenya',
     excerpt: 'Kenya’s satellite towns are experiencing rapid growth, transforming from rural outposts into bustling urban centers. These towns, including Ruiru, Kitengela,...',
     author: getAuthor('development'),
-    image: 'https://i.ibb.co/4g25Xrgj/the-rise-of-satellite-towns-in-kenya.png',
+    image: 'https://i.ibb.co/4g25Xrgj/the-rise-of-satellite-towns-in-kenya.webp',
     category: 'Location Insights',
     date: '2026-04-13',
     readTime: '13 min read',
@@ -523,7 +523,7 @@ const research: ResearchEntry[] = [
     category: "Commercial Real Estate",
     date: "2025-08-05",
     readTime: "9 min read",
-    image: "/warehousing-logistics-real-estate-kenya-2025.png",
+    image: "/warehousing-logistics-real-estate-kenya-2025.webp",
   },
 
   {
@@ -534,7 +534,7 @@ const research: ResearchEntry[] = [
     category: "Niche Investments",
     date: "2025-08-10",
     readTime: "8 min read",
-    image: "/retirement-homes-kenya-market-2025.png",
+    image: "/retirement-homes-kenya-market-2025.webp",
   },
 
   {
@@ -542,7 +542,7 @@ const research: ResearchEntry[] = [
     title: 'Investing in Kenya\'s Affordable Housing Projects: What You Need to Know',
     excerpt: 'Kenya’s affordable housing sector presents a significant opportunity for both local and foreign investors. As the government pushes forward with the Affordab...',
     author: getAuthor('investment'),
-    image: 'https://coastproperties.co.ke/wp-content/uploads/2023/07/Facebook-card-010.jpg',
+    image: 'https://coastproperties.co.ke/wp-content/uploads/2023/07/Facebook-card-010.webp',
     category: 'Investment',
     date: '2026-05-01',
     readTime: '14 min read',
@@ -553,7 +553,7 @@ const research: ResearchEntry[] = [
     title: 'Rent-to-Own Schemes in Kenya: A Path to Homeownership for Many',
     excerpt: 'Rent-to-own housing schemes are becoming a popular option for many Kenyans seeking an affordable and manageable route to homeownership. These schemes offer...',
     author: getAuthor('affordableHousing'),
-    image: '/research-images/rent-to-own-kenya-2026.jpg',
+    image: '/research-images/rent-to-own-kenya-2026.webp',
     category: 'Affordable Housing',
     date: '2026-03-13',
     readTime: '11 min read',
@@ -574,7 +574,7 @@ const research: ResearchEntry[] = [
     title: 'How much should you pay commercial property broker or solicitor fees in 2026?',
     excerpt: 'Comprehensive analysis of commercial property legal fee structures, examining hourly versus fixed-fee arrangements, value-based billing methodologies, disbursement allocations, and strategic procurement protocols for institutional and private investors.',
     author: getAuthor('investment'),
-    image: '/research-images/commercial-property-solicitor-fees-costs-2026.png',
+    image: '/research-images/commercial-property-solicitor-fees-costs-2026.webp',
     category: 'Process & Legal',
     date: '2026-04-08',
     readTime: '46 min read',
@@ -588,7 +588,7 @@ const research: ResearchEntry[] = [
       date: '2026-03-28',
       readTime: '15 min read',
       category: 'Asset Class Intelligence',
-      image: '/research-images/purpose-built-student-accommodation-pbsa-demographics-2026.png',
+      image: '/research-images/purpose-built-student-accommodation-pbsa-demographics-2026.webp',
       featured: false
 
   },
@@ -598,7 +598,7 @@ const research: ResearchEntry[] = [
     title: 'Where are Institutions (Cardone Capital) deploying their capital and funds for investments & income in 2026?',
     excerpt: 'Global de-dollarization is not an academic debate. It is a capital flow reality reshaping commercial real estate pricing in Dubai, Singapore, and selected African markets.',
     author: getAuthor('investment'),
-    image: '/research-images/global-macro-allocation-commercial-real-estate-dedollarization-2026.png',
+    image: '/research-images/global-macro-allocation-commercial-real-estate-dedollarization-2026.webp',
     category: 'Investment & Wealth',
     date: '2026-04-10',
     readTime: '17 min read',
@@ -609,7 +609,7 @@ const research: ResearchEntry[] = [
     title: 'Medical Centre Property Investment: Why Healthcare Real Estate Outperforms in the UK',
     excerpt: 'Comprehensive analysis of UK medical centre investment, examining NHS lease security, demographic demand drivers, and the defensive characteristics that enable healthcare real estate to outperform through economic cycles.',
     author: getAuthor('investment'),
-    image: '/research-images/medical-centre-property-investment-healthcare-real-estate-uk-2026.png',
+    image: '/research-images/medical-centre-property-investment-healthcare-real-estate-uk-2026.webp',
     category: 'Asset Class Intelligence',
     date: '2026-04-14',
     readTime: '13 min read',
@@ -620,7 +620,7 @@ const research: ResearchEntry[] = [
     title: 'Where to Buy UK Industrial Property in 2026?',
     excerpt: 'Infrastructure-led analysis of the UK\'s premier logistics corridors, examining motorway networks, port connectivity, and land constraints to identify optimal industrial deployment locations.',
     author: getAuthor('investment'),
-    image:'/research-images/industrial-property-investment-uk-growth-corridors-2026.jpg',
+    image:'/research-images/industrial-property-investment-uk-growth-corridors-2026.webp',
     category: 'Asset Class Intelligence',
     date: '2026-04-18',
     readTime: '14 min read',
@@ -631,7 +631,7 @@ const research: ResearchEntry[] = [
     title: 'Where Should You Buy or Lease Office Space in the UK in 2026?',
     excerpt: 'An institutional-grade analysis of commercial lease structures, examining Full Repairing and Insuring (FRI) covenants, Internal Repairing and Insuring (IRI) mechanisms, and hybrid allocations from the perspective of family offices, sovereign wealth vehicles, and corporate real estate directors navigating £100M+ portfolios.',
     author: getAuthor('investment'),
-    image: '/research-images/lease-structures-fri-iri-full-repairing-institutional-guide-2026.png',
+    image: '/research-images/lease-structures-fri-iri-full-repairing-institutional-guide-2026.webp',
     category: 'Process & Legal',
     date: '2026-04-22',
     readTime: '12 min read',
@@ -642,7 +642,7 @@ const research: ResearchEntry[] = [
     title: 'Should Investors Choose Commercial or Residential Property in 2026?',
     excerpt: 'A data-driven comparative analysis examining gross yields, net returns, tax efficiency, and regulatory burdens to determine optimal asset allocation for sophisticated investors.',
     author: getAuthor('investment'),
-    image: '/research-images/commercial-property-vs-residential-returns-2026.png',
+    image: '/research-images/commercial-property-vs-residential-returns-2026.webp',
     category: 'Investment & Wealth',
     date: '2026-03-22',
     readTime: '24 min read',
@@ -653,7 +653,7 @@ const research: ResearchEntry[] = [
     title: 'Which Commercial Property KPI Matters Most for Investors?',
     excerpt: 'Three properties. Three identical headline rents. Three materially different yields — and three different investment implications. Understanding the distinction between net initial yield, equivalent yield, and reversionary yield is not jargon. It is the foundation of every defensible commercial property bid.',
     author: getAuthor('investment'),
-    image: '/research-images/commercial-property-office-kpis-explained.png',
+    image: '/research-images/commercial-property-office-kpis-explained.webp',
     category: 'Investment & Wealth',
     date: '2026-03-22',
     readTime: '26 min read',
@@ -664,7 +664,7 @@ const research: ResearchEntry[] = [
     title: 'Commercial Property Due Diligence in the UK using The Institutional Framework for Minimising Acquisition Risk',
     excerpt: 'An institutional framework for risk mitigation covering legal title verification, lease analysis, building condition assessment, and regulatory compliance verification.',
     author: getAuthor('investment'),
-    image: '/research-images/commercial-property-due-diligence-checklist-uk.png',
+    image: '/research-images/commercial-property-due-diligence-checklist-uk.webp',
     category: 'Process & Legal',
     date: '2026-04-30',
     readTime: '10 min read',
@@ -675,7 +675,7 @@ const research: ResearchEntry[] = [
     title: 'London Commercial Real Estate Q2 2026 Market Intelligence Report for Institutional Investors',
     excerpt: 'Comprehensive analysis of Greater London\'s £4.2 billion Q2 transaction volume, sector yield stabilisation, and institutional capital flows as markets recover from monetary tightening.',
     author: getAuthor('investment'),
-    image: '/research-images/london-commercial-real-estate-market-report-q2-2026.png',
+    image: '/research-images/london-commercial-real-estate-market-report-q2-2026.webp',
     category: 'Market Intelligence',
     date: '2026-05-02',
     readTime: '10 min read',
@@ -687,7 +687,7 @@ const research: ResearchEntry[] = [
       title: 'Is the High Street Really Dead, or Is Retail Property Recovering?',
       excerpt: 'Contrarian analysis of UK retail property revealing selective recovery dynamics, experiential retail demand, and repurposing economics that challenge sector obsolescence narratives.',
       author: getAuthor('investment'),
-      image: '/research-images/retail-property-recovery-contrarian-analysis-2026.png',
+      image: '/research-images/retail-property-recovery-contrarian-analysis-2026.webp',
       category: 'Market Intelligence',
       date: '2026-05-08',
       readTime: '13 min read',
@@ -699,7 +699,7 @@ const research: ResearchEntry[] = [
       title: 'UK Bond Markets Are Repricing Political Risk',
       excerpt: 'Rising gilt yields and renewed concerns around fiscal discipline are reshaping mortgage pricing, residential demand, and investor sentiment across the British housing market.',
       author: getAuthor('market'),
-      image: '/research-images/uk-bond-market-housing-2026.png',
+      image: '/research-images/uk-bond-market-housing-2026.webp',
       category: 'Market Intelligence',
       date: '2026-05-18',
       readTime: '9 min read',
@@ -710,7 +710,7 @@ const research: ResearchEntry[] = [
       title: 'Low-Deposit Lending Is Returning to the UK Housing Market',
       excerpt: 'Lloyds Banking Group’s £5,000 deposit mortgage signals the cautious return of high loan-to-value lending as affordability pressures reshape the UK housing market.',
       author: getAuthor('market'),
-      image: '/research-images/uk-first-time-buyers-2026.jpg',
+      image: '/research-images/uk-first-time-buyers-2026.webp',
       category: 'Residential Intelligence',
       date: '2026-05-18',
       readTime: '7 min read',
@@ -721,7 +721,7 @@ const research: ResearchEntry[] = [
       title: 'Why American Capital Is Rotating Into UK Real Estate',
       excerpt: 'US investors are increasingly allocating capital into UK residential and commercial property as taxes, insurance costs, and market fragmentation reshape global investment strategy.',
       author: getAuthor('market'),
-      image: '/research-images/us-investors-uk-property-2026.jpg',
+      image: '/research-images/us-investors-uk-property-2026.webp',
       category: 'Global Capital Markets',
       date: '2026-05-18',
       readTime: '11 min read',
@@ -732,7 +732,7 @@ const research: ResearchEntry[] = [
       title: 'Global Capital Allocation: Why Dubai’s Real Estate Market Remains Highly Resilient',
       excerpt: 'Dubai’s equity-driven property market continues demonstrating resilience despite regional uncertainty and remains central to GCC investment allocation strategies.',
       author: getAuthor('investment'),
-      image: '/research-images/dubai-global-allocation-2026.jpg',
+      image: '/research-images/dubai-global-allocation-2026.webp',
       category: 'Market Intelligence',
       date: '2026-04-28',
       readTime: '8 min read',
@@ -1258,7 +1258,7 @@ export default function Research() {
                     <Image
                       src={
                         post.image ||
-                        '/default-research-image.png'
+                        '/default-research-image.webp'
                       }
                       alt={post.title}
                       width={1200}

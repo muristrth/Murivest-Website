@@ -145,14 +145,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: `${faq.question} | Murivest Realty Group FAQ`,
       description: faq.answer.substring(0, 160) + '...',
-      images: ['/image.png'],
+      images: ['/image.webp'],
       type: 'article',
     },
     twitter: {
       card: 'summary_large_image',
       title: `${faq.question} | Murivest Realty Group FAQ`,
       description: faq.answer.substring(0, 160) + '...',
-      images: ['/image.png'],
+      images: ['/image.webp'],
     },
   }
 }

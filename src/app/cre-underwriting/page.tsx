@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Commercial Real Estate Underwriting - Murivest Realty Group',
     description: 'Get instant underwriting analysis and generate a Kenya-law Letter of Intent for commercial real estate acquisitions with Murivest Realty Group.',
-    images: ['/image.png'],
+    images: ['/image.webp'],
   },
 }
 

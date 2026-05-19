@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Europe Real Estate Investment - Murivest Realty Group',
     description: 'Europe as a mature, stable market for cross-border investments.',
-    images: ['/kenya-night.png'],
+    images: ['/kenya-night.webp'],
   },
   alternates: {
     canonical: 'https://murivest.co.ke/europe',

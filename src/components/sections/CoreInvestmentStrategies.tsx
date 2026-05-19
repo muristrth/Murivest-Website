@@ -39,7 +39,7 @@ const CoreInvestmentStrategies = () => {
         <div
           className="
             absolute inset-0
-            bg-[url('/murivest_secretary.png')]
+            bg-[url('/murivest_secretary.webp')]
             bg-cover
             bg-center
             opacity-[0.28]

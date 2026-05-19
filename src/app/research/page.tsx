@@ -14,12 +14,12 @@ interface researchPost {
 
 // Example: this could come from a CMS or static props
 const researchPost: researchPost = {
-  title: "Property Insights: Nairobi Real Estate Market Trends 2026",
-  description: "Get expert analysis of Nairobi's real estate market, including REITs, residential and commercial property investment insights.",
+  title: "Property Insights: Global Real Estate Market Trends 2026",
+  description: "Get expert analysis of Global's real estate market, including REITs, residential and commercial property investment insights.",
   author: "Murivest Realty Group",
   datePublished: "2026-05-11T08:00:00Z",
   slug: "nairobi-real-estate-trends-2026",
-  image: "/default-research-image.png",
+  image: "/default-research-image.webp",
 };
 
 export const metadata: Metadata = {
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     description: researchPost.description,
     images: [
       {
-        url: researchPost.image || '/default-research-image.png',
+        url: researchPost.image || '/default-research-image.webp',
         width: 1200,
         height: 630,
         alt: researchPost.title
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: researchPost.title,
     description: researchPost.description,
-    images: [researchPost.image || '/default-research-image.png'],
+    images: [researchPost.image || '/default-research-image.webp'],
   },
 };
 
@@ -73,11 +73,11 @@ export default function researchPage() {
       "name": "Murivest Realty Group",
       "logo": {
         "@type": "ImageObject",
-        "url": "/logo.png"
+        "url": "/logo.webp"
       }
     },
     "datePublished": researchPost.datePublished,
-    "image": researchPost.image || "/image.png",
+    "image": researchPost.image || "/image.webp",
     "mainEntityOfPage": `https://murivest.co.ke/research/${researchPost.slug}`,
     "url": `https://murivest.co.ke/research/${researchPost.slug}`
   };

@@ -44,7 +44,7 @@ const webPageSchema = {
   publisher: {
     '@type': 'Organization',
     name: 'Murivest Realty Group',
-    logo: { '@type': 'ImageObject', url: 'https://murivest.co.ke/logo.png' },
+    logo: { '@type': 'ImageObject', url: 'https://murivest.co.ke/logo.webp' },
   },
 };
 

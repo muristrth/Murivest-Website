@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The Kenyan Business Owner\'s Guide to Converting Operating Capital into Generational Wealth',
     description: 'Learn how to transition from active business ownership to passive wealth through strategic real estate investments.',
-    images: ['/kenya-night.png'],
+    images: ['/kenya-night.webp'],
   },
   alternates: {
     canonical: 'https://murivest.co.ke/legacy-guide',

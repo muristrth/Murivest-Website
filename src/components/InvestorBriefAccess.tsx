@@ -14,7 +14,7 @@ import {
 } from 'lucide-react'
 
 const FLIPHTML5_URL = 'https://online.fliphtml5.com/murivest/yhhx/'
-const COVER_IMAGE = '/brochure-asset-brief.png'
+const COVER_IMAGE = '/brochure-asset-brief.webp'
 const STORAGE_KEY = 'npcab_lounge_v2'
 const SESSION_KEY = 'npcab_form_session'
 const PAYBILL = '303030'

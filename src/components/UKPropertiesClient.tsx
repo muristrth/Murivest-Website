@@ -118,8 +118,8 @@ const defaultProperties: UKProperty[] = [
     status: 'Available',
     description: 'An exceptional five-bedroom residence in one of London\'s most sought-after addresses. This meticulously designed home offers the perfect blend of classical elegance and contemporary luxury.',
     yield: '4.5%',
-    mainImage: '/murivest_ceo_office.png',
-    images: ['/kenya-night.png'],
+    mainImage: '/murivest_ceo_office.webp',
+    images: ['/kenya-night.webp'],
     features: [
       'Grand reception hall',
       'Three reception rooms',
@@ -146,8 +146,8 @@ const defaultProperties: UKProperty[] = [
     status: 'Available',
     description: 'Prime Grade A office tower in Canary Wharf with stunning views of the London skyline. Fully let to blue-chip tenants.',
     yield: '6.2%',
-    mainImage: '/kenya-night.png',
-    images: ['/murivest_ceo_office.png'],
+    mainImage: '/kenya-night.webp',
+    images: ['/murivest_ceo_office.webp'],
     features: [
       'Grade A specification',
       'Floor-by-floor lettable',
@@ -174,7 +174,7 @@ const defaultProperties: UKProperty[] = [
     status: 'Available',
     description: 'Prime retail centre in Manchester city centre with strong tenant mix and excellent footfall.',
     yield: '8.1%',
-    mainImage: '/murivest_ceo_office.png',
+    mainImage: '/murivest_ceo_office.webp',
     features: [
       'Prime city centre location',
       'Strong tenant mix',
@@ -200,7 +200,7 @@ const defaultProperties: UKProperty[] = [
     status: 'Under Offer',
     description: 'Modern logistics facility with excellent access to motorway network. Let to national logistics operator.',
     yield: '7.4%',
-    mainImage: '/kenya-night.png',
+    mainImage: '/kenya-night.webp',
     features: [
       'Strategic location',
       'Motorway access',
@@ -306,7 +306,7 @@ const PropertyDrawer: React.FC<{
             <div className="relative h-[280px] overflow-hidden">
               {(property.mainImage || property.mainImageUrl) ? (
                 <Image 
-                  src={property.mainImage || property.mainImageUrl || '/kenya-night.png'} 
+                  src={property.mainImage || property.mainImageUrl || '/kenya-night.webp'} 
                   alt={property.title || 'Property'} 
                   fill
                   className="object-cover"
@@ -784,12 +784,12 @@ const UKPropertiesClient = ({ properties = [] }: UKPropertiesClientProps) => {
                           ? property.mainImage
                           : typeof property.mainImageUrl === 'string'
                           ? property.mainImageUrl
-                          : '/kenya-night.png'
+                          : '/kenya-night.webp'
                       }
                       alt={property.title || 'Property image'}
                       className="w-full h-full object-cover"
                       onError={(e) => {
-                        e.currentTarget.src = '/kenya-night.png';
+                        e.currentTarget.src = '/kenya-night.webp';
                       }}
                     />
                   ) : (

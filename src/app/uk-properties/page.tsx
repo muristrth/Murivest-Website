@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: 'UK Commercial Properties | London Office Buildings',
     description:
       'Premium UK commercial property investments with institutional-grade returns.',
-    images: ['/kenya-night.png'],
+    images: ['/kenya-night.webp'],
   },
 }
 

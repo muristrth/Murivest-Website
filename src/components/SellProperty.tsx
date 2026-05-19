@@ -235,14 +235,14 @@ const DOCUMENT_CATEGORIES = {
     { key: 'CONSENT_LETTER', label: 'Consent Letter (Leasehold)', required: false, accept: '.pdf', desc: 'Required for leasehold properties' },
   ],
   OWNER: [
-    { key: 'NATIONAL_ID', label: "Owner's National ID / Passport", required: true, accept: '.pdf,.jpg,.jpeg,.png', desc: 'Clear copy of government-issued ID' },
+    { key: 'NATIONAL_ID', label: "Owner's National ID / Passport", required: true, accept: '.pdf,.webp,.jpeg,.webp', desc: 'Clear copy of government-issued ID' },
     { key: 'KRA_PIN', label: 'KRA PIN Certificate', required: true, accept: '.pdf', desc: 'Kenya Revenue Authority PIN' },
     { key: 'CR12', label: 'CR12 (Corporate entities)', required: false, accept: '.pdf', desc: 'If property owned by company/trust' },
     { key: 'DIRECTOR_RESOLUTION', label: "Director's Resolution to Sell", required: false, accept: '.pdf', desc: 'Board authorization for corporate sellers' },
     { key: 'BENEFICIAL_OWNERSHIP', label: 'Beneficial Ownership Declaration', required: false, accept: '.pdf', desc: 'For UHNWI and corporate entities' },
   ],
   BROKER: [
-    { key: 'BROKER_ID', label: "Broker's National ID / Passport", required: true, accept: '.pdf,.jpg,.jpeg,.png', desc: 'Clear copy of government-issued ID' },
+    { key: 'BROKER_ID', label: "Broker's National ID / Passport", required: true, accept: '.pdf,.webp,.jpeg,.webp', desc: 'Clear copy of government-issued ID' },
     { key: 'EARB_CERT', label: 'EARB Registration Certificate', required: false, accept: '.pdf', desc: 'Estate Agents Registration Board cert' },
     { key: 'BROKER_FIRM_REG', label: 'Firm Registration Certificate', required: false, accept: '.pdf', desc: 'Business name / company registration' },
     { key: 'PRIMARY_ATS', label: "Primary Broker's ATS (Sub-agents)", required: false, accept: '.pdf', desc: 'Required if you are a sub-agent' },
@@ -251,15 +251,15 @@ const DOCUMENT_CATEGORIES = {
   FINANCIALS: [
     { key: 'RENT_ROLL', label: 'Current Rent Roll', required: true, accept: '.pdf,.xlsx,.xls,.csv', desc: 'Detailed tenant listing with lease terms' },
     { key: 'MANAGEMENT_ACCOUNTS', label: 'Management Accounts (3 Years)', required: false, accept: '.pdf,.xlsx', desc: 'P&L, Balance Sheet, Cash Flow' },
-    { key: 'UTILITY_BILLS', label: 'Utility Bills (Sample 3 Months)', required: false, accept: '.pdf,.jpg,.jpeg', desc: 'KPLC, NWSC, water evidence' },
+    { key: 'UTILITY_BILLS', label: 'Utility Bills (Sample 3 Months)', required: false, accept: '.pdf,.webp,.jpeg', desc: 'KPLC, NWSC, water evidence' },
     { key: 'SERVICE_CHARGE_BUDGET', label: 'Service Charge Budget', required: false, accept: '.pdf,.xlsx', desc: 'Annual service charge breakdown' },
     { key: 'DEBT_SCHEDULE', label: 'Debt Schedule / Loan Statement', required: false, accept: '.pdf,.xlsx', desc: 'Outstanding mortgage or facility details' },
     { key: 'VALUATION_REPORT', label: 'Previous Valuation Report', required: false, accept: '.pdf', desc: 'Any valuation within 36 months' },
     { key: 'INSURANCE_CERT', label: 'Insurance Certificate', required: false, accept: '.pdf', desc: 'Property insurance documentation' },
   ],
   PROPERTY: [
-    { key: 'FLOOR_PLANS', label: 'Floor Plans (CAD / PDF)', required: false, accept: '.pdf,.dwg,.dxf,.jpg', desc: 'Architectural drawings preferred' },
-    { key: 'SITE_PLAN', label: 'Site Plan', required: false, accept: '.pdf,.jpg,.jpeg,.png', desc: 'Plot/land boundary plan' },
+    { key: 'FLOOR_PLANS', label: 'Floor Plans (CAD / PDF)', required: false, accept: '.pdf,.dwg,.dxf,.webp', desc: 'Architectural drawings preferred' },
+    { key: 'SITE_PLAN', label: 'Site Plan', required: false, accept: '.pdf,.webp,.jpeg,.webp', desc: 'Plot/land boundary plan' },
     { key: 'PLANNING_APPROVAL', label: 'Planning Approval / Change of Use', required: false, accept: '.pdf', desc: 'County development approval' },
     { key: 'BUILDING_PERMIT', label: 'Building Completion Certificate', required: false, accept: '.pdf', desc: 'NCA completion certificate' },
     { key: 'ENVIRONMENTAL', label: 'Environmental Impact Assessment', required: false, accept: '.pdf', desc: 'NEMA approval / EIA report' },
@@ -473,7 +473,7 @@ const PhotoUploadZone = ({
         onDrop={(e) => { e.preventDefault(); handleFiles(e.dataTransfer.files) }}
         className="border-2 border-dashed border-[#E5E2DC] hover:border-[#8B7355] p-6 text-center cursor-pointer transition-all duration-300 group bg-white"
       >
-        <input ref={inputRef} type="file" className="hidden" accept=".jpg,.jpeg,.png,.webp,.heic" multiple onChange={(e) => e.target.files && handleFiles(e.target.files)} />
+        <input ref={inputRef} type="file" className="hidden" accept=".webp,.jpeg,.webp,.webp,.heic" multiple onChange={(e) => e.target.files && handleFiles(e.target.files)} />
         <Image className="w-6 h-6 text-[#B0ADA6] group-hover:text-[#8B7355] mx-auto mb-2 transition-colors" strokeWidth={1} />
         <p className="text-[13px] text-[#5A5A5A] group-hover:text-[#2C2C2C] transition-colors font-light">Upload {label} Photos</p>
         <p className="text-[11px] text-[#B0ADA6] mt-1">JPG, PNG, WEBP up to 20MB each</p>

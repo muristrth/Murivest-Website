@@ -30,7 +30,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 /* ── Constants ─────────────────────────────────────────────────────────── */
 const FLIPHTML5_URL     = 'https://online.fliphtml5.com/murivest/yhhx/';
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwZsDw5wImmahoJ6ofT_HG18CPfz8kdTSAd6iyDknrbNRS_sPXAaoNj7A_KBcbexBQn6g/exec';
-const COVER_IMAGE       = '/brochure-asset-brief.png';
+const COVER_IMAGE       = '/brochure-asset-brief.webp';
 const STORAGE_KEY       = 'npcab_lounge_v2';
 const SESSION_KEY       = 'npcab_form_session';
 const PAYBILL           = '303030';

@@ -51,7 +51,7 @@ const articleSchema = {
   publisher: {
     '@type': 'Organization',
     name: 'Murivest Realty Group',
-    logo: { '@type': 'ImageObject', url: 'https://murivest.co.ke/logo.png' },
+    logo: { '@type': 'ImageObject', url: 'https://murivest.co.ke/logo.webp' },
   },
   datePublished: '2026-05-12',
   dateModified: '2026-05-12',

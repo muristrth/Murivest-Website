@@ -209,7 +209,7 @@ export default function About() {
           transition: 'transform 0.05s linear',
         }}>
           <img
-            src="/murivest_secretary.png"
+            src="/murivest_secretary.webp"
             alt="Murivest Advisory Office"
             style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
           />
@@ -426,7 +426,7 @@ export default function About() {
         <div className="about-image-break" style={{ margin: '0 5rem', position: 'relative' }}>
           <div className="image-frame" style={{ height: '480px' }}>
             <img
-              src="/kenya-night.png"
+              src="/kenya-night.webp"
               alt="Nairobi Metropolitan Area"
               style={{ objectPosition: 'center 60%' }}
             />

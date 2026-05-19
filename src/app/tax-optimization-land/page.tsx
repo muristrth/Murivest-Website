@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Optimizing Capital Gains Tax on Land Disposition in Kenya',
     description: 'Discover legal tax optimization strategies for land sales and commercial property dispositions in Kenya.',
-    images: ['/kenya-night.png'],
+    images: ['/kenya-night.webp'],
   },
   alternates: {
     canonical: 'https://murivest.co.ke/tax-optimization-land',

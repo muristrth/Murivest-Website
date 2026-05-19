@@ -36,7 +36,7 @@ const USProperties = ({ properties = [] }: USPropertiesProps) => {
       bedrooms: 4,
       bathrooms: 4,
       sqft: '3,800',
-      image: '/murivest_ceo_office.png',
+      image: '/murivest_ceo_office.webp',
       slug: '#',
       status: 'available'
     },
@@ -48,7 +48,7 @@ const USProperties = ({ properties = [] }: USPropertiesProps) => {
       bedrooms: 7,
       bathrooms: 8,
       sqft: '12,500',
-      image: '/kenya-night.png',
+      image: '/kenya-night.webp',
       slug: '#',
       status: 'available'
     },
@@ -60,7 +60,7 @@ const USProperties = ({ properties = [] }: USPropertiesProps) => {
       bedrooms: 5,
       bathrooms: 5,
       sqft: '5,200',
-      image: '/murivest_ceo_office.png',
+      image: '/murivest_ceo_office.webp',
       slug: '#',
       status: 'under-contract'
     },
@@ -72,7 +72,7 @@ const USProperties = ({ properties = [] }: USPropertiesProps) => {
       bedrooms: 6,
       bathrooms: 6,
       sqft: '8,000',
-      image: '/kenya-night.png',
+      image: '/kenya-night.webp',
       slug: '#',
       status: 'available'
     }

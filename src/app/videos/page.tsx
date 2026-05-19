@@ -169,13 +169,13 @@ export default function VideosPage() {
         "@type": "VideoObject",
         "name": activeVideo.title,
         "description": activeVideo.abstract,
-        "thumbnailUrl": `https://img.youtube.com/vi/${activeVideo.id}/maxresdefault.jpg`,
+        "thumbnailUrl": `https://img.youtube.com/vi/${activeVideo.id}/maxresdefault.webp`,
         "uploadDate": activeVideo.date,
         "duration": `PT${activeVideo.duration.split(' ')[0]}M`,
         "publisher": {
           "@type": "Organization",
           "name": "Murivest",
-          "logo": { "@type": "ImageObject", "url": "https://www. murivest.co.ke/logo.png" }
+          "logo": { "@type": "ImageObject", "url": "https://www. murivest.co.ke/logo.webp" }
         },
         "embedUrl": `https://www.youtube.com/embed/${activeVideo.id}`,
         "author": {
@@ -350,7 +350,7 @@ export default function VideosPage() {
                   >
                     <div className="aspect-video bg-[#1B4332]/5 relative overflow-hidden rounded-sm">
                       <img 
-                        src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`} 
+                        src={`https://img.youtube.com/vi/${video.id}/mqdefault.webp`} 
                         alt={video.title}
                         className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
                       />

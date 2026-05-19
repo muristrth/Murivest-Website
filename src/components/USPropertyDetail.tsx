@@ -48,7 +48,7 @@ const USPropertyDetail = ({ property }: USPropertyDetailProps) => {
 The penthouse features a grand living room with floor-to-ceiling windows, a chef's kitchen with premium appliances, and four en-suite bedrooms including a master suite with his and hers walk-in closets. Additional amenities include a private elevator, wine cellar, and two parking spaces.
 
 Located on the Upper East Side, this residence provides immediate access to Central Park, world-class museums, and the finest dining and shopping in New York City.`,
-    images: ['/murivest_ceo_office.png', '/kenya-night.png', '/murivest_ceo_office.png', '/kenya-night.png'],
+    images: ['/murivest_ceo_office.webp', '/kenya-night.webp', '/murivest_ceo_office.webp', '/kenya-night.webp'],
     features: [
       'Full-floor penthouse with private elevator',
       'Panoramic Central Park and city views',

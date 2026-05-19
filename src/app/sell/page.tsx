@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Sell Your Property to Global Investors - Murivest Realty Group Kenya',
     description: 'Connect your premium commercial property with our exclusive network of international investors.',
-    images: ['/image.png'],
+    images: ['/image.webp'],
   },
 }
 

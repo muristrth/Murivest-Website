@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Preserving the Legacy: Industrialist Success Story',
     description: 'Learn how a Kenyan industrialist built lasting wealth through strategic real estate investments.',
-    images: ['/kenya-night.png'],
+    images: ['/kenya-night.webp'],
   },
   alternates: {
     canonical: 'https://murivest.co.ke/case-study-legacy',

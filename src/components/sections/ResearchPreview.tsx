@@ -43,7 +43,7 @@ export default function MarketIntelligenceSection() {
     <section className="relative bg-[#F8F7F4] overflow-hidden">
 
       {/* Background */}
-      <div className="absolute inset-0 opacity-[0.06] bg-[url('/nairobi.png')] bg-cover bg-center" />
+      <div className="absolute inset-0 opacity-[0.06] bg-[url('/nairobi.webp')] bg-cover bg-center" />
       <div className="absolute inset-0 bg-[#F8F7F4]/90" />
 
       <div className="relative max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16 py-16 md:py-24">

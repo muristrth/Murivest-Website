@@ -39,7 +39,7 @@ const TaxIntelligenceSection = () => {
     <section className="relative bg-[#F8F7F4] overflow-hidden border-t border-[#E5E2DC]">
 
       {/* Background */}
-      <div className="absolute inset-0 opacity-[0.04] bg-[url('/kenya-night.png')] bg-cover bg-center" />
+      <div className="absolute inset-0 opacity-[0.04] bg-[url('/kenya-night.webp')] bg-cover bg-center" />
       <div className="absolute inset-0 bg-[#F8F7F4]/95" />
 
       <div className="relative max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16 py-16 md:py-24">

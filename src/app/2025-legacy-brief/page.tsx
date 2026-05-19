@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The 2025 Legacy Investment Brief',
     description: 'Exclusive insights for structuring generational wealth through Kenyan commercial real estate.',
-    images: ['/kenya-night.png'],
+    images: ['/kenya-night.webp'],
   },
   alternates: {
     canonical: 'https://murivest.co.ke/2025-legacy-brief',

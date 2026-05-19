@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'IT Property Management Services Kenya | Smart Property Solutions',
     description: 'Revolutionary IT-enabled property management with real-time tracking, automated payments, and AI support. 50% lower fees than traditional managers.',
-    images: ['/kenya-night.png'],
+    images: ['/kenya-night.webp'],
   },
   alternates: {
     canonical: 'https://murivest.co.ke/it-project-management',

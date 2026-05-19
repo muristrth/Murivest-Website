@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Investment Process - How We Preserve & Grow Wealth | Murivest Realty',
     description: 'Discover our time-tested investment methodology for commercial real estate in Kenya.',
-    images: ['/image.png'],
+    images: ['/image.webp'],
   },
 }
 

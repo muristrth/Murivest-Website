@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Executive Leadership Team - Murivest Realty Group Kenya',
     description: 'Meet the distinguished leadership team behind Kenya\'s premier commercial real estate investment firm.',
-    images: ['/CEO.Founder.jpg'],
+    images: ['/CEO.Founder.webp'],
   },
 }
 

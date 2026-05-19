@@ -32,7 +32,7 @@ export function DealCard({ deal, userAccessLevel = 'registered' }: DealCardProps
     (deal.access_level === 'verified' && ['verified', 'premium'].includes(userAccessLevel)) ||
     (deal.access_level === 'premium' && userAccessLevel === 'premium')
 
-  const coverImage = deal.images?.[0] || '/placeholder-property.jpg'
+  const coverImage = deal.images?.[0] || '/placeholder-property.webp'
   const stageConfig = dealStageLabels[deal.deal_stage]
 
   return (

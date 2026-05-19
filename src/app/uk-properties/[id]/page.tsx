@@ -87,7 +87,7 @@ export async function generateMetadata({
     openGraph: {
       title: property.title || 'UK Property Details',
       description: property.subtitle || property.description || '',
-      images: [property.mainImageUrl || '/kenya-night.png'],
+      images: [property.mainImageUrl || '/kenya-night.webp'],
     },
   }
 }

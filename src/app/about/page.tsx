@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About Murivest Realty Group - Independent Advisory Firm Kenya',
     description: 'Learn about Murivest Realty Group, an independent commercial real estate advisory firm based in Nairobi.',
-    images: ['/image.png'],
+    images: ['/image.webp'],
   },
 }
 

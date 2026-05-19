@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Suspense } from 'react';
 import { client } from '@/sanity/lib/client';
 import { defineQuery } from 'next-sanity';
 import PropertiesForRent from '@/components/PropertiesForRent';
@@ -8,65 +7,47 @@ const PropertiesForRentComponent =
   PropertiesForRent as React.ComponentType<{ initialData: any[] }>;
 
 // ─────────────────────────────────────────────
-// ✅ ULTRA-LIGHTWEIGHT GROQ QUERY
+// ISR CACHE (5 minutes)
+// ─────────────────────────────────────────────
+export const revalidate = 300;
+
+// ─────────────────────────────────────────────
+// LIGHTWEIGHT GROQ QUERY
+// ONLY FETCH WHAT THE LISTING PAGE NEEDS
 // ─────────────────────────────────────────────
 const PROPERTIES_RENT_QUERY = defineQuery(`
   *[
     _type == "propertyForRent" &&
     !(_id in path('drafts.**'))
-  ] | order(_createdAt desc)[0...40] {
+  ]
+  | order(_createdAt desc)[0...20] {
 
     _id,
     _createdAt,
 
     title,
     subtitle,
-    description,
+
     "slug": slug.current,
 
-    assetCategory,
     propertyType,
     status,
 
-    address,
     city,
     state,
-    zipCode,
 
-    rent,
     rentKsh,
-    rentUsd,
     currency,
 
     squareFootage,
-    leaseTerm,
-    securityDeposit,
-    serviceCharge,
-
-    availableFrom,
 
     furnished,
     parking,
-    parkingSpaces,
 
-    features,
-
-    specifications[] {
-      label,
-      value
-    },
-
-    "location": {
-      "lat": coordinates.lat,
-      "lng": coordinates.lng
-    },
-
-    "image": images[0]{
-      caption,
-      "url": asset->url
-    },
-
-    virtualTour
+    "image": {
+      "assetRef": images[0].asset._ref,
+      "caption": images[0].caption
+    }
   }
 `);
 
@@ -96,9 +77,10 @@ export const metadata: Metadata = {
     siteName: 'Murivest',
     locale: 'en_KE',
     type: 'website',
+
     images: [
       {
-        url: '/og-properties-rent.jpg',
+        url: '/og-properties-rent.webp',
         width: 1200,
         height: 630,
         alt: 'Murivest Commercial Properties For Rent',
@@ -108,12 +90,7 @@ export const metadata: Metadata = {
 };
 
 // ─────────────────────────────────────────────
-// CRITICAL: Force dynamic to avoid static gen timeout
-// ─────────────────────────────────────────────
-export const dynamic = 'force-dynamic';
-
-// ─────────────────────────────────────────────
-// Structured Data Component (separate to avoid blocking)
+// STRUCTURED DATA
 // ─────────────────────────────────────────────
 function StructuredData({ propertyData }: { propertyData: any[] }) {
   const baseUrl = 'https://murivest.co.ke';
@@ -122,21 +99,27 @@ function StructuredData({ propertyData }: { propertyData: any[] }) {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Commercial Properties For Rent in Kenya',
+
     numberOfItems: propertyData.length,
-    itemListElement: propertyData.slice(0, 20).map((property: any, index: number) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      url: `${baseUrl}/properties-for-rent/${property.slug}`,
-      name: property.title,
-    })),
+
+    itemListElement: propertyData.map(
+      (property: any, index: number) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: `${baseUrl}/properties-for-rent/${property.slug}`,
+        name: property.title,
+      })
+    ),
   };
 
   const organizationJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'RealEstateAgent',
+
     name: 'Murivest',
     url: baseUrl,
-    logo: `${baseUrl}/logo.png`,
+    logo: `${baseUrl}/logo.webp`,
+
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'KE',
@@ -148,82 +131,44 @@ function StructuredData({ propertyData }: { propertyData: any[] }) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(listJsonLd) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(listJsonLd),
+        }}
       />
+
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationJsonLd),
+        }}
       />
     </>
   );
 }
 
 // ─────────────────────────────────────────────
-// Fallback loading state
-// ─────────────────────────────────────────────
-function PropertiesLoadingFallback() {
-  return (
-    <main className="bg-[#FAF9F6] min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="animate-pulse space-y-8">
-          {/* Header skeleton */}
-          <div className="space-y-4">
-            <div className="h-10 bg-gray-200 rounded w-3/4 max-w-2xl"></div>
-            <div className="h-5 bg-gray-200 rounded w-1/2 max-w-lg"></div>
-          </div>
-          {/* Grid skeleton */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className="bg-white rounded-xl overflow-hidden shadow-sm">
-                <div className="h-48 bg-gray-200"></div>
-                <div className="p-5 space-y-3">
-                  <div className="h-5 bg-gray-200 rounded w-3/4"></div>
-                  <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-                  <div className="h-4 bg-gray-200 rounded w-1/3"></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </main>
-  );
-}
-
-// ─────────────────────────────────────────────
-// Data fetcher with timeout protection
-// ─────────────────────────────────────────────
-async function fetchPropertiesWithTimeout(): Promise<any[]> {
-  const FETCH_TIMEOUT_MS = 15000; // 15 second timeout
-
-  const fetchPromise = client.fetch(PROPERTIES_RENT_QUERY, {}, {
-    cache: 'no-store',
-  });
-
-  const timeoutPromise = new Promise<never>((_, reject) =>
-    setTimeout(() => reject(new Error('Sanity fetch timeout')), FETCH_TIMEOUT_MS)
-  );
-
-  try {
-    const data = await Promise.race([fetchPromise, timeoutPromise]);
-    return data || [];
-  } catch (error) {
-    console.error('[properties-for-rent] Fetch error:', error);
-    return [];
-  }
-}
-
-// ─────────────────────────────────────────────
 // PAGE
 // ─────────────────────────────────────────────
 export default async function PropertiesForRentPage() {
-  const propertyData = await fetchPropertiesWithTimeout();
+  let propertyData: any[] = [];
+
+  try {
+    propertyData = await client.fetch(PROPERTIES_RENT_QUERY);
+  } catch (error) {
+    console.error(
+      '[properties-for-rent] Failed to fetch properties:',
+      error
+    );
+  }
 
   return (
     <>
       <StructuredData propertyData={propertyData} />
+
       <main className="bg-[#FAF9F6] min-h-screen">
-        <PropertiesForRentComponent initialData={propertyData} />
+        <PropertiesForRentComponent
+          initialData={propertyData}
+        />
       </main>
     </>
   );

@@ -8,14 +8,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Commercial Real Estate FAQ | Murivest Realty Group',
     description: 'Expert answers to commercial real estate questions and investment opportunities in Kenya.',
-    images: ['/image.png'],
+    images: ['/image.webp'],
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Commercial Real Estate FAQ | Murivest Realty Group',
     description: 'Expert answers to commercial real estate questions and investment opportunities in Kenya.',
-    images: ['/image.png'],
+    images: ['/image.webp'],
   },
 }
 

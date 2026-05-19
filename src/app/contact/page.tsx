@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact Murivest Realty Group - Premier Real Estate Investment Consultations',
     description: 'Get in touch with Kenya\'s leading commercial real estate investment firm.',
-    images: ['/image.png'],
+    images: ['/image.webp'],
   },
 }
 

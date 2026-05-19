@@ -153,7 +153,7 @@ export async function POST(request: NextRequest) {
           <div class="container">
             <div class="header">
               <div class="logo">
-                <img src="/logo.png" alt="Murivest Realty Group" />
+                <img src="/logo.webp" alt="Murivest Realty Group" />
               </div>
               <h1>High-Priority Asset Disposition Inquiry</h1>
               <p>Institutional Property Mandate</p>

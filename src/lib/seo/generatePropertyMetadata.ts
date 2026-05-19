@@ -20,7 +20,7 @@ export function generatePropertyMetadata(property: Property): Metadata {
   const ogImage =
     property.seo?.ogImage ??
     property.images?.[0] ??
-    `${BASE_URL}/og-default.jpg`;
+    `${BASE_URL}/og-default.webp`;
 
   const keywords = property.seo?.keywords ?? [
     property.title,

@@ -32,7 +32,7 @@ export default function InvestorBriefTeaser() {
 
               <div className="relative w-[90px] border border-[#B8956B]/20 bg-white p-1">
                 <Image
-                  src="/brochure-asset-brief.png"
+                  src="/brochure-asset-brief.webp"
                   alt="Investor Brief"
                   width={90}
                   height={120}
@@ -96,7 +96,7 @@ export default function InvestorBriefTeaser() {
 
               <div className="relative w-[60px] border border-[#B8956B]/20 bg-white p-[2px]">
                 <Image
-                  src="/brochure-asset-brief.png"
+                  src="/brochure-asset-brief.webp"
                   alt="Investor Brief"
                   width={60}
                   height={80}

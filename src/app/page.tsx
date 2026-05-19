@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     siteName: 'Murivest Realty Group Ltd',
     images: [
       {
-        url: '/logo.png',
+        url: '/logo.webp',
         width: 1200,
         height: 630,
         alt: 'Murivest Realty Group Ltd - Commercial Real Estate Advisory',
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Murivest Realty Group | Commercial Real Estate Advisory',
     description: 'Murivest Realty Group is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.',
-    images: ['/logo.png'],
+    images: ['/logo.webp'],
   },
 
   // 6. CANONICAL & ROBOTS

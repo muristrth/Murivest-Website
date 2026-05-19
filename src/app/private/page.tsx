@@ -385,7 +385,7 @@ export default function AssetBriefPage() {
       {/* Secretary Background Section */}
       <section className="py-24 bg-[#1B4332]/10 relative overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/murivest_secretary.png" alt="" fill className="object-cover opacity-20 grayscale" />
+          <Image src="/murivest_secretary.webp" alt="" fill className="object-cover opacity-20 grayscale" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent" />
         </div>
         
@@ -393,7 +393,7 @@ export default function AssetBriefPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <div className="aspect-[4/5] relative overflow-hidden border border-[#B8956B]/20">
-                <Image src="/murivest_ceo_office.png" alt="Murivest Advisory" fill className="object-cover grayscale-[20%] contrast-[1.05]" />
+                <Image src="/murivest_ceo_office.webp" alt="Murivest Advisory" fill className="object-cover grayscale-[20%] contrast-[1.05]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 to-transparent" />
               </div>
               <div className="absolute -bottom-6 -right-6 w-48 h-48 border border-[#B8956B]/20 -z-10" />

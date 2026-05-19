@@ -72,7 +72,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: 'https://murivest.co.ke/kenya-night.png',
+        url: 'https://murivest.co.ke/kenya-night.webp',
         width: 1200,
         height: 630,
         alt: 'Murivest Realty Group - Commercial Real Estate Advisory',
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     description:
       'Murivest Realty Group is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.',
 
-    images: ['https://murivest.co.ke/kenya-night.png'],
+    images: ['https://murivest.co.ke/kenya-night.webp'],
   },
 
   robots: {
@@ -123,9 +123,9 @@ const structuredData = [
 
     url: 'https://murivest.co.ke',
 
-    logo: 'https://murivest.co.ke/logo.png',
+    logo: 'https://murivest.co.ke/logo.webp',
 
-    image: 'https://murivest.co.ke/image.png',
+    image: 'https://murivest.co.ke/image.webp',
 
     description:
       'Murivest Realty Group is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.',
@@ -189,7 +189,7 @@ const structuredData = [
 
     name: 'Murivest Realty Group',
 
-    image: 'https://murivest.co.ke/image.png',
+    image: 'https://murivest.co.ke/image.webp',
 
     telephone: '+254-740-469-911',
 
@@ -262,13 +262,13 @@ export default function RootLayout({
         <link
           rel="icon"
           type="image/png"
-          href="/logo.png"
+          href="/logo.webp"
           sizes="192x192"
         />
 
         <link
           rel="apple-touch-icon"
-          href="/logo.png"
+          href="/logo.webp"
           sizes="180x180"
         />
 

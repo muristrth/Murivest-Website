@@ -33,7 +33,7 @@
  *   ✓ Modal: Escape key closes; scroll-locked while open
  *   ✓ All async operations wrapped in try/catch/finally
  *   ✓ ARIA labels on icon-only interactive elements
- *   ✓ Hero: /nairobi.png background + forest-green transparent overlay
+ *   ✓ Hero: /nairobi.webp background + forest-green transparent overlay
  *   ✓ Immediate download link on success (dopamine inside funnel)
  *   ✓ 14-day review deadline computed client-side in useEffect
  *   ✓ Signature image holders on white background in strategic sections
@@ -125,8 +125,8 @@ const GoldCheck = () => (
 
 // ─── Signature Block ──────────────────────────────────────────────────────────
 /**
- * Renders /public/signature.png on a white background panel.
- * Place your handwritten signature scan at /public/signature.png (~320×80px,
+ * Renders /public/signature.webp on a white background panel.
+ * Place your handwritten signature scan at /public/signature.webp (~320×80px,
  * transparent or white background). Falls back to Dancing Script text.
  */
 const SignatureBlock = ({
@@ -144,7 +144,7 @@ const SignatureBlock = ({
       >
         <div className="relative h-10 w-36">
           <Image
-            src="/signature.png"
+            src="/signature.webp"
             alt="Mark Muriithi signature"
             fill
             className="object-contain object-left"
@@ -216,7 +216,7 @@ const Book3D = () => {
           style={{ borderRadius: "0 4px 4px 0" }}
         >
           <Image
-            src="/TEWC-cover.jpg"
+            src="/TEWC-cover.webp"
             alt="Trial & Error To Wealth Creation by Mark Muriithi"
             fill
             className="object-cover"
@@ -871,7 +871,7 @@ export default function BookLandingPage() {
         {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/nairobi.png"
+          src="/nairobi.webp"
           alt="Nairobi commercial real estate skyline"
           fill
           className="object-cover object-center"
@@ -1220,7 +1220,7 @@ export default function BookLandingPage() {
               <div className="aspect-[4/5] relative rounded-sm overflow-hidden bg-[#1B4332]">
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1B4332] via-transparent to-transparent z-10" />
                 <Image
-                  src="/CEO.Founder.jpg"
+                  src="/CEO.Founder.webp"
                   alt="Mark Muriithi"
                   fill
                   className="object-cover opacity-90"
@@ -1427,7 +1427,7 @@ export default function BookLandingPage() {
               <div className="flex items-center gap-4 mt-6 pt-4 border-t border-[#FAF9F6]/10">
                 <div className="w-12 h-12 relative rounded-full overflow-hidden flex-shrink-0 border border-[#C9973A]/30">
                   <Image
-                    src="/ceo.png"
+                    src="/ceo.webp"
                     alt="CEO"
                     fill
                     className="object-cover"

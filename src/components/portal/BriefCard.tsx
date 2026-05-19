@@ -26,7 +26,7 @@ export function BriefCard({ brief, userAccessLevel = 'registered' }: BriefCardPr
     (brief.access_level === 'verified' && ['verified', 'premium'].includes(userAccessLevel)) ||
     (brief.access_level === 'premium' && userAccessLevel === 'premium')
 
-  const coverImage = brief.images?.[0] || '/placeholder-property.jpg'
+  const coverImage = brief.images?.[0] || '/placeholder-property.webp'
 
   return (
     <div className={cn(

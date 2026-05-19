@@ -31,7 +31,7 @@ const Team = ({ members = [] }: TeamProps) => {
       name: 'Mark Muriithi',
       title: 'Chief Executive Officer & Founder',
       bio: 'Over two decades of experience in East African commercial real estate. Former Managing Director at a leading property consultancy, with $500M+ in executed transactions.',
-      image: '/CEO.Founder.jpg',
+      image: '/CEO.Founder.webp',
       linkedin: '#',
       email: 'mark@ murivest.co.ke'
     },
@@ -40,7 +40,7 @@ const Team = ({ members = [] }: TeamProps) => {
       name: 'Dr. Samuel Ochieng',
       title: 'Chief Investment Officer',
       bio: 'PhD Finance, London School of Economics. CFA Charterholder with 15+ years in African capital markets and real estate investment structuring.',
-      image: '/p2/profile-placeholder.jpg',
+      image: '/p2/profile-placeholder.webp',
       linkedin: '#',
       email: 'samuel@ murivest.co.ke'
     },
@@ -49,7 +49,7 @@ const Team = ({ members = [] }: TeamProps) => {
       name: 'Michael Chang',
       title: 'Head of Asset Management',
       bio: 'MSc Real Estate, University of Reading. RICS Member with 12+ years managing institutional portfolios exceeding $200M across East Africa.',
-      image: '/p2/profile-placeholder.jpg',
+      image: '/p2/profile-placeholder.webp',
       linkedin: '#',
       email: 'michael@ murivest.co.ke'
     },
@@ -58,7 +58,7 @@ const Team = ({ members = [] }: TeamProps) => {
       name: 'Sarah Wanjiku',
       title: 'Head of Origination',
       bio: 'MBA, INSEAD. Former investment banker with deep network across East African commercial real estate markets.',
-      image: '/p2/profile-placeholder.jpg',
+      image: '/p2/profile-placeholder.webp',
       linkedin: '#',
       email: 'sarah@ murivest.co.ke'
     }

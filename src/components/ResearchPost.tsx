@@ -433,7 +433,7 @@ export default function researchPost({ post: postProp, analystSummary: analystSu
 
   const readTime = post.readTime || calcReadTime(post.content);
   const postUrl = typeof window !== 'undefined' ? window.location.href : `https://murivest.co.ke/research/${id}`;
-  const heroImage = post.image || 'https://murivest.co.ke/default-research-image.png';
+  const heroImage = post.image || 'https://murivest.co.ke/default-research-image.webp';
   const relatedPosts = getRelatedPosts(id, post.category);
   const processedContent = injectHeadingIds(post.content);
 
@@ -534,7 +534,7 @@ export default function researchPost({ post: postProp, analystSummary: analystSu
               sizes="(max-width: 860px) 100vw, 860px"
               placeholder="blur"
               blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'%3E%3Crect fill='%23E8E4DE'/%3E%3C/svg%3E"
-              onError={(e) => { (e.target as HTMLImageElement).src = '/default-research-image.png'; }}
+              onError={(e) => { (e.target as HTMLImageElement).src = '/default-research-image.webp'; }}
             />
           </div>
 

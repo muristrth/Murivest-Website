@@ -551,7 +551,7 @@ export default function InvestorPortalPage() {
       {/* Welcome Hero - Responsive padding and text sizes */}
       <section className="relative bg-[#1B4332] text-[#FAF9F6] rounded-xl overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[url('/image.png')] bg-cover bg-center" />
+          <div className="absolute inset-0 bg-[url('/image.webp')] bg-cover bg-center" />
         </div>
         <div className="relative p-6 lg:p-12">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 lg:gap-6">

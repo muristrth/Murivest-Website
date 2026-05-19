@@ -183,7 +183,7 @@ export async function generateMetadata({
   const image =
     seo.ogImage ||
     property.images?.[0] ||
-    "https://murivest.co.ke/og-default.jpg";
+    "https://murivest.co.ke/og-default.webp";
 
   const canonical =
     seo.canonicalUrl ||

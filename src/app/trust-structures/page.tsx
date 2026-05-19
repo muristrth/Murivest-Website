@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Family Trusts & Holding Companies for Tax Efficiency',
     description: 'Learn about advanced wealth structuring solutions for Kenyan families and businesses.',
-    images: ['/kenya-night.png'],
+    images: ['/kenya-night.webp'],
   },
   alternates: {
     canonical: 'https://murivest.co.ke/trust-structures',

@@ -55,7 +55,7 @@ const UKPropertyDetail = ({ property }: UKPropertyDetailProps) => {
 The property features a grand reception hall, three elegant reception rooms, a bespoke kitchen with integrated appliances, and a private garden. The master suite includes a dressing room and en-suite bathroom, with four additional bedrooms and three further bathrooms.
 
 Located moments from Kensington Gardens and High Street Kensington, this residence offers unparalleled access to London's finest amenities, schools, and transport links.`,
-    images: ['/murivest_ceo_office.png', '/kenya-night.png', '/murivest_ceo_office.png', '/kenya-night.png'],
+    images: ['/murivest_ceo_office.webp', '/kenya-night.webp', '/murivest_ceo_office.webp', '/kenya-night.webp'],
     features: [
       'Grand reception hall with original period features',
       'Three elegant reception rooms',

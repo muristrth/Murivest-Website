@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Europe Commercial Properties | Institutional Grade',
     description: 'Premium European commercial property investments with institutional-grade returns.',
-    images: ['/kenya-night.png'],
+    images: ['/kenya-night.webp'],
   },
 }
 

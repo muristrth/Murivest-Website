@@ -151,7 +151,7 @@ export async function POST(request: NextRequest) {
           <div class="container">
             <div class="header">
               <div class="logo">
-                <img src="/logo.png" alt="Murivest Realty Group" />
+                <img src="/logo.webp" alt="Murivest Realty Group" />
               </div>
               <h1>High-Priority Investment Inquiry</h1>
               <p>Strategic Partnership Opportunity</p>
@@ -460,7 +460,7 @@ export async function POST(request: NextRequest) {
           <div class="container">
             <div class="header">
               <div class="logo">
-                <img src="/logo.png" alt="Murivest Realty Group" />
+                <img src="/logo.webp" alt="Murivest Realty Group" />
               </div>
               <h1>MURIVEST REALTY GROUP</h1>
               <p class="tagline">Exclusive Investment Partners</p>
@@ -534,7 +534,7 @@ export async function POST(request: NextRequest) {
 
             <div class="footer">
               <div class="footer-logo">
-                <img src="/logo.png" alt="Murivest Realty Group" style="max-height: 50px;" />
+                <img src="/logo.webp" alt="Murivest Realty Group" style="max-height: 50px;" />
               </div>
               
               <div class="contact-info">

@@ -134,7 +134,7 @@ export function PublicationForm({ initialData, onSubmit }: PublicationFormProps)
         label="Image URL"
         value={formData.image_url || ''}
         onChange={(e) => handleChange('image_url', e.target.value)}
-        placeholder="https://example.com/image.jpg"
+        placeholder="https://example.com/image.webp"
       />
 
       <div className="flex items-center gap-3">

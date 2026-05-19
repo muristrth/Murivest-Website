@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Land Banking Portfolio | Murivest',
     description: 'Strategic land acquisition opportunities in prime African growth corridors.',
-    images: ['/og-land-banking.jpg'],
+    images: ['/og-land-banking.webp'],
   },
 }
 

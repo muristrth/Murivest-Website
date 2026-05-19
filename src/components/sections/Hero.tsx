@@ -36,9 +36,9 @@ const Hero = () => {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="none"
         webkit-playsinline="true"
-        poster="/nairobi.png"
+        poster="/nairobi.webp"
         className="hidden md:block absolute inset-0 w-full h-full object-cover opacity-90"
       >
         <source src="https://pub-eeea8897fc4745d9afaa36485de2ff6c.r2.dev/hero.mp4" type="video/mp4" />
@@ -50,9 +50,9 @@ const Hero = () => {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="none"
         webkit-playsinline="true"
-        poster="/nairobi.png"
+        poster="/nairobi.webp"
         className="md:hidden absolute inset-0 w-full h-full object-cover opacity-40"
       >
         <source src="https://pub-eeea8897fc4745d9afaa36485de2ff6c.r2.dev/hero.mp4" type="video/mp4" />
@@ -187,7 +187,7 @@ const Hero = () => {
   >
     <source src="https://pub-eeea8897fc4745d9afaa36485de2ff6c.r2.dev/hero.mp4" type="video/mp4" />
     {/* Fallback image if video fails */}
-    <img src="/nairobi.png" alt="Nairobi skyline" className="w-full h-full object-cover" />
+    <img src="/nairobi.webp" alt="Nairobi skyline" className="w-full h-full object-cover" />
   </video>
 
   {/* Dark overlay for depth and text contrast - keeps the “old money” mood */}

@@ -34,7 +34,7 @@ const CaseStudies = ({ studies = [] }: CaseStudiesProps) => {
       value: '$15.2M',
       return_: '18.5% IRR',
       description: 'Strategic acquisition of a landmark commercial tower in Nairobi\'s central business district, delivering consistent income through blue-chip tenancy.',
-      image: '/kenya-night.png'
+      image: '/kenya-night.webp'
     },
     {
       id: '2',
@@ -44,7 +44,7 @@ const CaseStudies = ({ studies = [] }: CaseStudiesProps) => {
       value: '$12.1M',
       return_: '16.2% IRR',
       description: 'Regional retail destination serving Kenya\'s agricultural heartland, anchored by national retailers and local franchises.',
-      image: '/murivest_ceo_office.png'
+      image: '/murivest_ceo_office.webp'
     },
     {
       id: '3',
@@ -54,7 +54,7 @@ const CaseStudies = ({ studies = [] }: CaseStudiesProps) => {
       value: '$6.8M',
       return_: '21.3% IRR',
       description: 'Modern warehousing and distribution facility positioned to serve East Africa\'s growing logistics demand.',
-      image: '/kenya-night.png'
+      image: '/kenya-night.webp'
     }
   ];
 

@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Murivest Real Estate Portfolio',
     description: 'Private placement opportunities in prime African commercial assets.',
-    images: ['/og-properties.jpg'],
+    images: ['/og-properties.webp'],
   },
 }
 
