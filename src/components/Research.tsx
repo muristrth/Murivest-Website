@@ -29,7 +29,7 @@ const research: ResearchEntry[] = [
     title: 'Distressed Real Estate in Kenya: The Nakumatt Auction and the Anatomy of Secured Lending Recovery',
     excerpt: 'An institutional analysis of the Standard Chartered Bank Kenya auction of Nakumatt-linked properties over Sh1.9 billion in debt, examining the mechanics of statutory notices, charged land recovery, and the strategic opportunities emerging in commercial real estate.',
     author: getAuthor('investment'),
-    image: '/research-images/standard-chartered-nakumatt-auction-distressed-real-estate-kenya-2026.webp',
+    image: '/nairobi.webp',
     category: 'Market Intelligence',
     date: '2026-05-03',
     readTime: '52 min read',

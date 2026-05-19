@@ -4210,7 +4210,7 @@ content: `
     readTime: '22 min read',
     category: 'Market Intelligence',
     tags: ['Distressed Assets', 'Kenya Real Estate', 'Nakumatt', 'Standard Chartered', 'Secured Lending', 'Land Act 2012', 'Statutory Notice', 'Nairobi Commercial Property', 'Insolvency Kenya', 'Property Auction'],
-    image: '/research-images/standard-chartered-nakumatt-auction-distressed-real-estate-kenya-2026.webp',
+    image: '/nairobi.webp',
     imageAlt: 'Aerial view of commercial property in Nairobi Kenya subject to statutory enforcement proceedings',
     featured: true,
     focusKeyword: 'distressed real estate Kenya',

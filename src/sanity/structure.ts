@@ -85,10 +85,7 @@ export const structure: StructureResolver = (S) =>
         S.documentTypeListItem('property')
           .title('All Properties')
           .icon(Building2),
-        
-        S.documentTypeListItem('propertyForRent')
-          .title('Properties For Rent')
-          .icon(() => '🏠'),
+
         
         S.divider(),
         
