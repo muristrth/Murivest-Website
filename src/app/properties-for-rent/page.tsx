@@ -7,13 +7,7 @@ const PropertiesForRentComponent =
   PropertiesForRent as React.ComponentType<{ initialData: any[] }>;
 
 // ─────────────────────────────────────────────
-// ISR CACHE (5 minutes)
-// ─────────────────────────────────────────────
-export const revalidate = 300;
-
-// ─────────────────────────────────────────────
-// LIGHTWEIGHT GROQ QUERY
-// ONLY FETCH WHAT THE LISTING PAGE NEEDS
+// LIGHTWEIGHT GROQ QUERY (SAFE FOR BUILD)
 // ─────────────────────────────────────────────
 const PROPERTIES_RENT_QUERY = defineQuery(`
   *[
@@ -147,7 +141,7 @@ function StructuredData({ propertyData }: { propertyData: any[] }) {
 }
 
 // ─────────────────────────────────────────────
-// PAGE
+// PAGE (NO ISR / NO REVALIDATE)
 // ─────────────────────────────────────────────
 export default async function PropertiesForRentPage() {
   let propertyData: any[] = [];
