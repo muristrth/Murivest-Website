@@ -69,17 +69,7 @@ const PROPERTY_QUERY = defineQuery(`
 async function getProperty(slug: string) {
   return client.fetch(PROPERTY_QUERY, { slug });
 }
-
-// ─── Static params (optional – enables full static generation) ────────────────
-// Uncomment if you want full SSG for all property pages:
-//
-// export async function generateStaticParams() {
-//   const slugs: { slug: string }[] = await client.fetch(
-//     `*[_type == "propertyForRent" && !(_id in path('drafts.**'))]{ "slug": slug.current }`
-//   );
-//   return slugs.map(({ slug }) => ({ slug }));
-// }
-
+export const dynamic = 'force-dynamic';
 // ─── SEO Metadata ─────────────────────────────────────────────────────────────
 export async function generateMetadata({
   params,

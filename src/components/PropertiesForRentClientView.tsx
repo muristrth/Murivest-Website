@@ -66,7 +66,7 @@ export default function PropertiesForRentClientView({ property, sidebar }: Props
   const displayType = property.assetCategory || 'Residential';
 
   // Default contact info – replace with your real data or env vars
-  const agentEmail = 'private.office@murivest.co.ke';
+  const agentEmail = 'capital@murivest.co.ke';
   const agentPhone = '+254787707284';
 
   // ── Helper functions ────────────────────────────────────────────────────
@@ -133,7 +133,7 @@ export default function PropertiesForRentClientView({ property, sidebar }: Props
                 <ArrowLeft size={16} className="text-white" strokeWidth={1.5} />
               </div>
               <span className="hidden md:inline text-[10px] tracking-[0.3em] uppercase text-white/80 group-hover:text-white transition-colors">
-                Back to Rentals
+                Back to Listings
               </span>
             </Link>
 

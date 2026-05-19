@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { client } from '@/sanity/lib/client';
 import { defineQuery } from 'next-sanity';
 import PropertiesForRent from '@/components/PropertiesForRent';
-
+export const dynamic = 'force-dynamic';
 const PropertiesForRentComponent =
   PropertiesForRent as React.ComponentType<{ initialData: any[] }>;
 
