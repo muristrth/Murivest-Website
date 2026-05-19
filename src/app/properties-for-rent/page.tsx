@@ -2,12 +2,11 @@ import type { Metadata } from 'next';
 import { client } from '@/sanity/lib/client';
 import { defineQuery } from 'next-sanity';
 import PropertiesForRent from '@/components/PropertiesForRent';
+
 export const dynamic = 'force-dynamic';
-const PropertiesForRentComponent =
-  PropertiesForRent as React.ComponentType<{ initialData: any[] }>;
 
 // ─────────────────────────────────────────────
-// LIGHTWEIGHT GROQ QUERY (SAFE FOR BUILD)
+// SAFE GROQ QUERY
 // ─────────────────────────────────────────────
 const PROPERTIES_RENT_QUERY = defineQuery(`
   *[
@@ -38,21 +37,27 @@ const PROPERTIES_RENT_QUERY = defineQuery(`
     furnished,
     parking,
 
-    "image": {
-      "assetRef": images[0].asset._ref,
-      "caption": images[0].caption
-    }
+    "image": select(
+      defined(images[0].asset) => {
+        "asset": images[0].asset->{
+          url
+        },
+        "caption": images[0].caption
+      },
+      null
+    )
   }
 `);
 
 // ─────────────────────────────────────────────
-// SEO Metadata
+// SEO METADATA
 // ─────────────────────────────────────────────
 export const metadata: Metadata = {
   metadataBase: new URL('https://murivest.co.ke'),
 
   title: {
-    default: 'Commercial Properties For Rent in Nairobi Kenya | Murivest',
+    default:
+      'Commercial Properties For Rent in Nairobi Kenya | Murivest',
     template: '%s | Murivest',
   },
 
@@ -64,12 +69,18 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: 'Commercial Properties For Rent in Kenya | Murivest',
+    title:
+      'Commercial Properties For Rent in Kenya | Murivest',
+
     description:
       'Browse verified commercial properties for rent in Nairobi and across Kenya.',
+
     url: 'https://murivest.co.ke/properties-for-rent',
+
     siteName: 'Murivest',
+
     locale: 'en_KE',
+
     type: 'website',
 
     images: [
@@ -81,43 +92,82 @@ export const metadata: Metadata = {
       },
     ],
   },
+
+  twitter: {
+    card: 'summary_large_image',
+
+    title:
+      'Commercial Properties For Rent in Kenya | Murivest',
+
+    description:
+      'Browse verified commercial properties for rent in Nairobi and across Kenya.',
+
+    images: ['/og-properties-rent.webp'],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 // ─────────────────────────────────────────────
 // STRUCTURED DATA
 // ─────────────────────────────────────────────
-function StructuredData({ propertyData }: { propertyData: any[] }) {
+function StructuredData({
+  propertyData,
+}: {
+  propertyData: any[];
+}) {
   const baseUrl = 'https://murivest.co.ke';
 
   const listJsonLd = {
     '@context': 'https://schema.org',
+
     '@type': 'ItemList',
+
     name: 'Commercial Properties For Rent in Kenya',
 
     numberOfItems: propertyData.length,
 
-    itemListElement: propertyData.map(
-      (property: any, index: number) => ({
+    itemListElement: propertyData
+      .filter((property: any) => property?.slug)
+      .map((property: any, index: number) => ({
         '@type': 'ListItem',
+
         position: index + 1,
+
         url: `${baseUrl}/properties-for-rent/${property.slug}`,
-        name: property.title,
-      })
-    ),
+
+        name: property.title || 'Commercial Property',
+      })),
   };
 
   const organizationJsonLd = {
     '@context': 'https://schema.org',
+
     '@type': 'RealEstateAgent',
 
     name: 'Murivest',
+
     url: baseUrl,
+
     logo: `${baseUrl}/logo.webp`,
+
+    image: `${baseUrl}/og-properties-rent.webp`,
 
     address: {
       '@type': 'PostalAddress',
+
       addressCountry: 'KE',
+
       addressLocality: 'Nairobi',
+    },
+
+    areaServed: {
+      '@type': 'Country',
+
+      name: 'Kenya',
     },
   };
 
@@ -141,13 +191,15 @@ function StructuredData({ propertyData }: { propertyData: any[] }) {
 }
 
 // ─────────────────────────────────────────────
-// PAGE (NO ISR / NO REVALIDATE)
+// PAGE
 // ─────────────────────────────────────────────
 export default async function PropertiesForRentPage() {
   let propertyData: any[] = [];
 
   try {
-    propertyData = await client.fetch(PROPERTIES_RENT_QUERY);
+    propertyData = await client.fetch(
+      PROPERTIES_RENT_QUERY
+    );
   } catch (error) {
     console.error(
       '[properties-for-rent] Failed to fetch properties:',
@@ -160,8 +212,8 @@ export default async function PropertiesForRentPage() {
       <StructuredData propertyData={propertyData} />
 
       <main className="bg-[#FAF9F6] min-h-screen">
-        <PropertiesForRentComponent
-          initialData={propertyData}
+        <PropertiesForRent
+          {...({ initialData: propertyData } as any)}
         />
       </main>
     </>
