@@ -784,6 +784,18 @@ const research: ResearchEntry[] = [
       category: 'Private Wealth & Capital Strategy',
       featured: false
     },
+    {
+      id: 'inflation-property-industry-reaction-uk-2026',
+      title: 'UK Inflation Surprise Reshapes Property and Mortgage Pricing Expectations',
+      excerpt: 'The UK inflation rate unexpectedly fell to 2.8% in May 2026, easing pressure across mortgage markets and triggering renewed debate around interest rates, housing affordability, and institutional property allocation strategies.',
+      image: '/research-images/uk-inflation-property-reaction-2026.webp',
+      author: getAuthor('investment'),
+      date: '2026-05-20',
+      readTime: '6 min read',
+      category: 'Global Property & Capital Markets',
+      featured: false
+    },
+
 
 ];
 

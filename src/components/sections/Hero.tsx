@@ -4,6 +4,12 @@ import React, { useCallback, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
+const STATS = [
+  { value: '$1.2B+', label: 'Assets Under Advisory' },
+  { value: '8.5–12.5%', label: 'Target Yield Range' },
+  { value: '15+', label: 'Years Active in Market' },
+];
+
 const Hero = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
@@ -16,251 +22,259 @@ const Hero = () => {
   return (
     <section
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen w-full overflow-hidden bg-[#1B4332] text-[#FAF9F6]"
+      className="relative min-h-screen w-full overflow-hidden bg-[#0E2A1C] text-[#FAF9F6]"
     >
-
-      {/* =========================
-          BACKGROUND (ALL DEVICES)
-      ========================== */}
+      {/* ── BACKGROUND ─────────────────────── */}
       <div
         className="absolute inset-0 z-0"
         style={{
-          transform: `translate3d(${mousePos.x}px, ${mousePos.y}px, 0) scale(1.03)`,
+          transform: `translate3d(${mousePos.x}px, ${mousePos.y}px, 0) scale(1.04)`,
           transition: 'transform 6000ms ease-out',
         }}
       >
-
-       {/* DESKTOP VIDEO */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="none"
-        webkit-playsinline="true"
-        poster="/nairobi.webp"
-        className="hidden md:block absolute inset-0 w-full h-full object-cover opacity-90"
-      >
-        <source src="https://pub-eeea8897fc4745d9afaa36485de2ff6c.r2.dev/hero.mp4" type="video/mp4" />
-      </video>
-
-      {/* MOBILE VIDEO */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="none"
-        webkit-playsinline="true"
-        poster="/nairobi.webp"
-        className="md:hidden absolute inset-0 w-full h-full object-cover opacity-40"
-      >
-        <source src="https://pub-eeea8897fc4745d9afaa36485de2ff6c.r2.dev/hero.mp4" type="video/mp4" />
-      </video>
-
-        {/* DARK OVERLAY */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1B4332]/15 via-[#244B3C]/80 to-[#1B4332]/12" />
-        <div className="absolute inset-0 bg-[#B8956B]/10 mix-blend-overlay" />
-        <div className="absolute inset-0 bg-black/10" />
-
-        {/* SOFT GLOW */}
-        <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-[#B8956B]/10 blur-3xl rounded-full" />
-      </div>
-
-      {/* =========================
-    DESKTOP HERO - INSTITUTIONAL
-   ========================= */}
-<div className="relative z-10 hidden md:block w-full max-w-[1400px] mx-auto px-6 lg:px-16 py-32">
-  <div className="grid lg:grid-cols-12 gap-14 items-center">
-    {/* LEFT COLUMN */}
-    <motion.div
-      initial={{ opacity: 0, y: 35 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-      className="lg:col-span-7"
-    >
-      <div className="flex items-center gap-3 mb-8">
-        <div className="w-8 h-[1px] bg-[#B8956B]" />
-        <p className="text-[11px] tracking-[0.4em] uppercase text-[#B8956B] font-mono">
-          Murivest Realty Group
-        </p>
-      </div>
-
-      <h1 className="text-6xl xl:text-7xl font-serif leading-[1.05] mb-8 text-white">
-        Private Institutional Commercial Real Estate
-        <br />
-        <span className="italic text-[#B8956B]">
-          Assets & Asset Management
-        </span>
-      </h1>
-
-      <p className="text-[16px] leading-[1.9] text-[#D6C4AA] max-w-xl mb-8">
-        Murivest Realty Group is an independent advisory firm based in Nairobi,
-        structuring mandate-based engagements for institutional investors.
-      </p>
-
-      <div className="flex gap-4">
-        <Link
-          href="/contact"
-          className="px-7 py-3 border border-[#B8956B] text-[11px] font-semibold uppercase tracking-[0.25em] hover:bg-[#B8956B] hover:text-[#0A0A0A] transition-colors"
+        <video
+          autoPlay muted loop playsInline preload="none"
+          poster="/nairobi.webp"
+          className="hidden md:block absolute inset-0 w-full h-full object-cover opacity-50"
         >
-          Request Confidential Briefing
-        </Link>
-        <Link
-          href="/about"
-          className="px-7 py-3 border border-[#B8956B]/40 text-[#B8956B] text-[11px] font-semibold uppercase tracking-[0.25em] hover:bg-[#B8956B]/10 transition-colors"
+          <source src="https://pub-eeea8897fc4745d9afaa36485de2ff6c.r2.dev/hero.mp4" type="video/mp4" />
+        </video>
+
+        <video
+          autoPlay muted loop playsInline preload="none"
+          poster="/nairobi.webp"
+          className="md:hidden absolute inset-0 w-full h-full object-cover opacity-30"
         >
-          The Investment Mandate
-        </Link>
+          <source src="https://pub-eeea8897fc4745d9afaa36485de2ff6c.r2.dev/hero.mp4" type="video/mp4" />
+        </video>
+
+        {/* Layered overlays */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0E2A1C]/95 via-[#0E2A1C]/70 to-[#0E2A1C]/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0E2A1C]/80 via-transparent to-transparent" />
+
+        {/* Ambient glows */}
+        <div className="absolute top-[-10%] right-[-5%] w-[700px] h-[700px] bg-[#B8956B]/8 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-[-10%] left-[20%] w-[500px] h-[500px] bg-[#1B4332]/40 blur-[100px] rounded-full pointer-events-none" />
       </div>
 
-      {/* Threshold hint */}
-      <p className="text-[9px] uppercase tracking-[0.2em] text-[#8B8680] mt-8 font-mono">
-        Qualified Purchasers Only · Minimum Allocation: $5,000,000
-      </p>
-    </motion.div>
+      {/* ── DESKTOP LAYOUT ─────────────────── */}
+      <div className="relative z-10 hidden md:flex flex-col justify-between min-h-screen max-w-[1400px] mx-auto px-8 lg:px-16 py-14">
 
-    {/* RIGHT CARD - Glassmorphism */}
-    <motion.div
-      initial={{ opacity: 0, x: 25 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1, delay: 0.3 }}
-      className="lg:col-span-5"
-    >
-      <div className="bg-[#1B4332]/30 backdrop-blur-md border border-[#B8956B]/30 p-10 shadow-2xl">
-        <div className="flex items-center gap-2 mb-4">
-          <div className="w-6 h-px bg-[#B8956B]" />
-          <p className="text-[10px] uppercase tracking-[0.3em] text-[#B8956B] font-mono">
-            Advisory Mandate
-          </p>
+        {/* Top bar */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex items-center justify-between"
+        >
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-[1px] bg-[#B8956B]" />
+            <span className="text-[10px] tracking-[0.5em] uppercase text-[#B8956B] font-mono">
+              Murivest Realty Group
+            </span>
+          </div>
+          <div className="flex items-center gap-8">
+            {['Mandate', 'Properties', 'Research', 'Contact'].map((item) => (
+              <Link
+                key={item}
+                href={`/${item.toLowerCase()}`}
+                className="text-[10px] tracking-[0.3em] uppercase text-[#A8A39D] hover:text-[#B8956B] transition-colors duration-300"
+              >
+                {item}
+              </Link>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Centre content */}
+        <div className="grid lg:grid-cols-12 gap-14 items-end">
+
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="lg:col-span-7"
+          >
+            {/* Eyebrow */}
+            <div className="flex items-center gap-3 mb-10">
+              <div className="w-1 h-1 rounded-full bg-[#B8956B]" />
+              <span className="text-[9px] tracking-[0.45em] uppercase text-[#8B8680] font-mono">
+                Private · Institutional · East Africa
+              </span>
+            </div>
+
+            <h1 className="text-6xl xl:text-[72px] font-serif leading-[1.05] mb-10">
+              Institutional Real Estate
+              <br />
+              <span className="italic text-[#B8956B] font-light">
+                Advisory & Asset Management
+              </span>
+            </h1>
+
+            <p className="text-[16px] leading-[1.95] text-[#C2B9AE] max-w-xl font-light mb-12">
+              Murivest Realty Group structures mandate-based engagements for institutional
+              investors seeking risk-adjusted exposure to East African commercial property markets.
+            </p>
+
+            <div className="flex items-center gap-4">
+              <Link
+                href="/contact"
+                className="group relative px-8 py-4 bg-[#B8956B] text-[#0A0A0A] text-[10px] font-semibold uppercase tracking-[0.3em] hover:bg-[#C9A57C] transition-colors duration-300 overflow-hidden"
+              >
+                <span className="relative z-10">Request Confidential Briefing</span>
+              </Link>
+              <Link
+                href="/mandate"
+                className="px-8 py-4 border border-[#B8956B]/30 text-[#B8956B] text-[10px] font-semibold uppercase tracking-[0.3em] hover:border-[#B8956B] hover:bg-[#B8956B]/8 transition-all duration-300"
+              >
+                Investment Mandate
+              </Link>
+            </div>
+
+            <p className="text-[9px] uppercase tracking-[0.25em] text-[#5A5752] mt-8 font-mono">
+              Qualified Purchasers Only · Minimum Allocation: $5,000,000 · KYC Required
+            </p>
+          </motion.div>
+
+          {/* Right panel */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="lg:col-span-5"
+          >
+            <div className="bg-[#0E2A1C]/60 backdrop-blur-lg border border-[#B8956B]/20 p-10">
+
+              <div className="flex items-center gap-2 mb-8">
+                <div className="w-4 h-px bg-[#B8956B]" />
+                <span className="text-[9px] uppercase tracking-[0.4em] text-[#B8956B] font-mono">
+                  Advisory Mandate
+                </span>
+              </div>
+
+              {/* Advisory links */}
+              <div className="space-y-0 divide-y divide-[#B8956B]/10">
+                {[
+                  { label: 'Mandate-Based Structuring', href: '/mandate' },
+                  { label: 'Institutional & UHNW Investors', href: '/investors' },
+                  { label: 'KYC / AML Verified Engagements', href: '/compliance' },
+                  { label: 'Off-Market Transaction Access', href: '/properties' },
+                  { label: 'Exit Strategy & Risk Engineering', href: '/exit-strategy' },
+                ].map((link) => (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    className="group flex items-center justify-between py-4 text-[11px] uppercase tracking-[0.2em] text-[#A8A39D] hover:text-[#B8956B] transition-colors duration-300"
+                  >
+                    <span>{link.label}</span>
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity text-[#B8956B] text-xs">→</span>
+                  </Link>
+                ))}
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-[#B8956B]/15">
+                <p className="text-[9px] text-[#5A5752] tracking-wider font-mono">
+                  Est. 2009 · Nairobi, Kenya · $1.2B+ AUP
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
-        <p className="text-[15px] leading-[1.7] text-[#D6C4AA] mb-6 font-light">
-          Institutional-grade analysis and structured advisory across East African commercial property markets.
-        </p>
-
-        <div className="space-y-3 text-[11px] uppercase tracking-[0.2em]">
-          <a
-            href="/mandate-access"
-            className="block text-[#B8956B] hover:text-white border-b border-[#B8956B]/30 pb-1 transition-colors"
-          >
-            Mandate-Based Structuring
-          </a>
-          <a
-            href="/institutional-investors"
-            className="block text-[#B8956B] hover:text-white border-b border-[#B8956B]/30 pb-1 transition-colors"
-          >
-            Institutional Investors & HNW Investors
-          </a>
-          <a
-            href="/policy"
-            className="block text-[#B8956B] hover:text-white border-b border-[#B8956B]/30 pb-1 transition-colors"
-          >
-            KYC/AML Verified Engagements
-          </a>
-        </div>
-
-        {/* Heritage marker */}
-        <div className="mt-6 pt-4 border-t border-[#B8956B]/20">
-          <p className="text-[9px] text-[#8B8680] tracking-wider font-mono">
-            Since 2025 · $1.2B+ AUP
-          </p>
-        </div>
+        {/* Bottom stats bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          className="grid grid-cols-3 border-t border-[#B8956B]/15 pt-8"
+        >
+          {STATS.map((stat, i) => (
+            <div key={i} className={`${i > 0 ? 'border-l border-[#B8956B]/15 pl-10' : ''}`}>
+              <p className="text-2xl font-serif text-[#FAF9F6] mb-1">{stat.value}</p>
+              <p className="text-[10px] uppercase tracking-[0.25em] text-[#8B8680]">{stat.label}</p>
+            </div>
+          ))}
+        </motion.div>
       </div>
-    </motion.div>
-  </div>
-</div>
 
-      {/* =========================
-   MOBILE HERO - INSTITUTIONAL & OLD MONEY
-   WITH NAIROBI AERIAL BACKGROUND VIDEO
-   ========================= */}
-<div className="relative md:hidden flex items-center min-h-screen overflow-hidden">
-  
-  {/* Background Video - Full Screen, Muted Autoplay for Mobile */}
-  <video
-    autoPlay
-    muted
-    loop
-    playsInline
-    className="absolute inset-0 w-full h-full object-cover z-0"
-  >
-    <source src="https://pub-eeea8897fc4745d9afaa36485de2ff6c.r2.dev/hero.mp4" type="video/mp4" />
-    {/* Fallback image if video fails */}
-    <img src="/nairobi.webp" alt="Nairobi skyline" className="w-full h-full object-cover" />
-  </video>
+      {/* ── MOBILE LAYOUT ──────────────────── */}
+      <div className="relative z-10 md:hidden flex flex-col justify-between min-h-screen px-5 py-10">
 
-  {/* Dark overlay for depth and text contrast - keeps the “old money” mood */}
-  <div className="absolute inset-0 bg-black/10 z-1"></div>
-
-  {/* Content Card */}
-  <div className="relative z-10 w-full px-5">
-    <div className="w-full">
-      {/* Main Card - Deep, Substantial, Understated Elegance */}
-      <div className="bg-[#1B4332]/50 backdrop-blur-sm border-l-[3px] border-l-[#B8956B] border border-[#B8956B]/20 shadow-2xl p-7">
-        
-        {/* Heritage / Exclusivity Marker */}
-        <div className="flex items-center justify-between mb-4">
-          <div className="w-8 h-px bg-[#B8956B]/70"></div>
-          <p className="text-[9px] tracking-[0.3em] text-[#B8956B] font-mono">
-            PRIVATE CAPITAL
-          </p>
-          <div className="w-8 h-px bg-[#B8956B]/70"></div>
-        </div>
-
-        {/* Main Headline - Commanding & Asset-Focused */}
-        <h1 className="text-4xl font-serif leading-[1.2] tracking-tight mb-3">
-          <span className="block text-white">Institutional</span>
-          <span className="block text-[#B8956B] italic">Real Estate</span>
-          <span className="block text-white text-2xl tracking-normal mt-1">
-            East Africa
+        {/* Mobile top bar */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="flex items-center justify-between"
+        >
+          <span className="text-[9px] tracking-[0.4em] uppercase text-[#B8956B] font-mono">
+            Murivest
           </span>
-        </h1>
-
-        {/* Value Proposition - Direct, Capital-Conscious */}
-        <p className="text-[13px] text-[#D6C4AA]/90 leading-relaxed mb-5 font-light">
-          Preservation of capital, institutional-grade returns, and exclusive access to East Africa's most coveted commercial assets.
-        </p>
-
-        {/* Credibility Line - Data-Driven / Heritage */}
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-b border-[#B8956B]/20 py-3 mb-6">
-          <span className="text-[10px] text-[#B8956B] tracking-wider">$3.2B+</span>
-          <span className="text-[9px] text-[#8B8680]">•</span>
-          <span className="text-[10px] text-[#D6C4AA] tracking-wide">Advised Transactions</span>
-          <span className="text-[9px] text-[#8B8680]">•</span>
-          <span className="text-[10px] text-[#D6C4AA] tracking-wide">Since 1997</span>
-        </div>
-
-        {/* CTA Stack - Exclusive & Actionable */}
-        <div className="flex flex-col gap-3 mb-5">
           <Link
             href="/contact"
-            className="bg-[#B8956B] text-[#0A0A0A] text-[11px] font-semibold uppercase tracking-[0.2em] py-3.5 text-center hover:bg-[#C8A47E] transition-colors"
+            className="text-[9px] tracking-[0.3em] uppercase text-[#8B8680] border border-[#B8956B]/20 px-3 py-1.5"
           >
-            Request Confidential Briefing
+            Contact
           </Link>
-          <Link
-            href="/about"
-            className="border border-[#B8956B]/40 text-[#B8956B] text-[11px] font-semibold uppercase tracking-[0.2em] py-3.5 text-center hover:bg-[#B8956B]/10 transition-colors"
-          >
-            The Investment Mandate
-          </Link>
-        </div>
+        </motion.div>
 
-        {/* Institutional Footer - Compliance & Threshold */}
-        <div className="text-center pt-1">
-          <p className="text-[9px] uppercase tracking-[0.2em] text-[#8B8680]">
-            Qualified Purchasers Only · KYC Required
+        {/* Mobile centre */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.2 }}
+          className="py-8"
+        >
+          <div className="flex items-center gap-2 mb-6">
+            <div className="w-6 h-px bg-[#B8956B]" />
+            <span className="text-[9px] tracking-[0.4em] uppercase text-[#B8956B] font-mono">
+              Private Capital · East Africa
+            </span>
+          </div>
+
+          <h1 className="text-[38px] font-serif leading-[1.1] mb-6">
+            Institutional
+            <br />
+            <span className="italic text-[#B8956B] font-light">Real Estate</span>
+            <br />
+            East Africa
+          </h1>
+
+          <p className="text-[13px] text-[#C2B9AE] leading-[1.8] mb-8 font-light">
+            Mandate-based advisory for institutional investors
+            seeking structured exposure to East African commercial assets.
           </p>
-          <p className="text-[8px] text-[#8B8680]/70 tracking-wider mt-2 font-mono">
-            Minimum Allocation: $5,000,000
+
+          <div className="space-y-3">
+            <Link
+              href="/contact"
+              className="block w-full bg-[#B8956B] text-[#0A0A0A] text-[11px] font-semibold uppercase tracking-[0.25em] py-4 text-center"
+            >
+              Request Confidential Briefing
+            </Link>
+            <Link
+              href="/mandate"
+              className="block w-full border border-[#B8956B]/30 text-[#B8956B] text-[11px] font-semibold uppercase tracking-[0.25em] py-4 text-center"
+            >
+              Investment Mandate
+            </Link>
+          </div>
+
+          <p className="text-[9px] uppercase tracking-[0.2em] text-[#5A5752] mt-6 text-center font-mono">
+            Qualified Purchasers · Min. $5,000,000
           </p>
+        </motion.div>
+
+        {/* Mobile stats */}
+        <div className="grid grid-cols-3 border-t border-[#B8956B]/15 pt-6 gap-2">
+          {STATS.map((stat, i) => (
+            <div key={i} className={`${i > 0 ? 'border-l border-[#B8956B]/15 pl-3' : ''}`}>
+              <p className="text-lg font-serif text-[#FAF9F6]">{stat.value}</p>
+              <p className="text-[8px] uppercase tracking-[0.15em] text-[#8B8680] mt-0.5 leading-tight">{stat.label}</p>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
     </section>
   );
 };

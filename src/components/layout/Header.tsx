@@ -1,106 +1,312 @@
-'use client';
+'use client'
 
-import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, User, LogIn, UserPlus } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect, useRef } from 'react'
+import {
+  ChevronDown,
+  LogIn,
+  TrendingUp,
+  Phone,
+  X,
+} from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 
-// Menu data structure - adjust paths as needed
-const MENU_DATA = {
-  properties: [
-    { label: 'Kenya Portfolio', href: '/properties' },
-    { label: 'UK Portfolio', href: '/uk-properties' },
-    { label: 'US Portfolio', href: '/us-properties' },
-    { label: 'Land Parcels', href: '/land-portfolio' },
-    { label: 'Office space To Let', href: '/properties-for-rent' },
-  ],
-  invest: [
-    { label: 'Engage NDA-Murivest', href: '/confidentiality' },
-    { label: 'Underwrite a Deal', href: '/cre-underwriting' },
-    { label: 'Due Diligence', href: '/due-diligence' },
-    { label: 'Institutional Investors', href: '/institutional-investors' },
-  ],
-  insights: [
-    { label: 'Murivest Research', href: '/research' },
-    { label: 'CRE Insights', href: '/insights-cre' },
-    { label: 'Private Invitation', href: '/private' },
-    { label: 'CRE News', href: '/videos' },
-  ],
-  company: [
-    { label: 'The Firm', href: '/about' },
-    { label: 'Advisory Team', href: '/leadership' },
-    { label: 'FAQ', href: '/faq' },
-    { label: 'Submit a Property(Owner)', href: '/sell' },
-    { label: 'Careers', href: '/careers' },
-    { label: 'Private Access', href: '/mandate-access' },
-    { label: 'Contact', href: '/contact' },
-  ],
-};
+const MOBILE_OPEN_EVENT = 'murivest:mobile-open'
 
-// Types for auth state
-interface InvestorPortalProps {
-  isLoggedIn?: boolean;
-  userName?: string;
-  onLogin?: () => void;
-  onLogout?: () => void;
+/* ──────────────────────────────────────────────────────────────
+   MURIVEST — REVISED INSTITUTIONAL HEADER
+   Theme:
+   - Forest Green Header
+   - White Navigation
+   - White Header on Scroll
+   - Black Text on Scroll
+────────────────────────────────────────────────────────────── */
+
+const NAV = {
+  capital: {
+    label: 'Capital Markets',
+    description: 'Institutional advisory and underwriting',
+    items: [
+      {
+        label: 'Underwrite a Deal',
+        href: '/cre-underwriting',
+        description: 'Submit a deal for underwriting review',
+        accent: true,
+      },
+      {
+        label: 'Due Diligence',
+        href: '/due-diligence',
+        description: 'Legal, technical, and investment due diligence',
+      },
+      {
+        label: 'Institutional Partners',
+        href: '/institutional-investors',
+        description: 'Family offices and institutional co-investment',
+      },
+      {
+        label: 'Submit a Property',
+        href: '/sell',
+        description: 'Mandate Murivest as your advisor',
+      },
+    ],
+  },
+
+  portfolio: {
+    label: 'Portfolio',
+    markets: [
+      {
+        region: 'East Africa',
+        flag: '🇰🇪',
+        items: [
+          {
+            label: 'Kenya Portfolio',
+            href: '/properties',
+            sub: 'Nairobi · Coast · Commercial',
+          },
+          {
+            label: 'Land Portfolio',
+            href: '/land-portfolio',
+            sub: 'Strategic land banking',
+          },
+        ],
+      },
+
+      {
+        region: 'United Kingdom',
+        flag: '🇬🇧',
+        items: [
+          {
+            label: 'UK Portfolio',
+            href: '/uk-properties',
+            sub: 'London · Regional Cities',
+          },
+        ],
+      },
+
+      {
+        region: 'United Arab Emirates',
+        flag: '🇦🇪',
+        items: [
+          {
+            label: 'UAE Portfolio',
+            href: '/uae-properties',
+            sub: 'Dubai · Abu Dhabi',
+          },
+        ],
+      },
+
+      {
+        region: 'United States',
+        flag: '🇺🇸',
+        items: [
+          {
+            label: 'US Portfolio',
+            href: '/us-properties',
+            sub: 'Major Metro Markets',
+          },
+        ],
+      },
+    ],
+    quicklinks: [
+      { label: 'Residential', href: '/properties?category=residential' },
+      { label: 'Commercial', href: '/properties?category=commercial' },
+      { label: 'Land', href: '/land-portfolio' },
+      { label: 'International', href: '/international-properties' },
+    ],
+  },
+
+  intelligence: {
+    label: 'Intelligence',
+    description: 'Research and market analytics',
+    items: [
+      {
+        label: 'Research',
+        href: '/research',
+        description: 'Market reports and investment insights',
+      },
+      {
+        label: 'CRE Insights',
+        href: '/insights-cre',
+        description: 'Commercial real estate commentary',
+      },
+      {
+        label: 'Market Data',
+        href: '/market-data',
+        description: 'Pricing and transaction intelligence',
+      },
+      {
+        label: 'CRE News',
+        href: '/videos',
+        description: 'Video market commentary',
+      },
+    ],
+  },
+
+  firm: {
+    label: 'The Firm',
+    description: 'Corporate identity and advisory structure',
+    items: [
+      {
+        label: 'About',
+        href: '/about',
+        description: 'Murivest overview',
+      },
+      {
+        label: 'Leadership',
+        href: '/leadership',
+        description: 'Advisory board and directors',
+      },
+      {
+        label: 'Compliance',
+        href: '/compliance',
+        description: 'Regulatory status',
+      },
+      {
+        label: 'Careers',
+        href: '/careers',
+        description: 'Join the Murivest team',
+      },
+      {
+        label: 'Contact',
+        href: '/contact',
+        description: 'Private office contact',
+      },
+    ],
+  },
 }
 
-// Desktop Mega Menu Component
-const MegaMenu = ({ title, items }: { title: string; items: any[] }) => (
-  <div className="relative group/menu">
-    <button className="flex items-center gap-1.5 text-[11px] tracking-[0.15em] uppercase text-[#C4B59D] hover:text-[#B8956B] py-8 transition-all duration-500 font-medium">
-      {title}
-      <ChevronDown size={10} className="opacity-50 transition-transform duration-500 group-hover/menu:rotate-180" />
-    </button>
-    
-    {/* Dropdown - Club Menu Style */}
-    <div className="absolute left-0 top-[100%] invisible opacity-0 translate-y-4 group-hover/menu:visible group-hover/menu:opacity-100 group-hover/menu:translate-y-0 transition-all duration-500 w-[280px] z-50">
-      <div className="bg-[#F8F7F4] border border-[#E5E2DC] shadow-[0_20px_50px_rgba(0,0,0,0.15)] mt-2 p-8">
-        <div className="mb-4">
-          <p className="text-[9px] tracking-[0.3em] uppercase text-[#8B7355] font-medium border-b border-[#E5E2DC] pb-3 mb-4">
-            Select
-          </p>
-          <ul className="space-y-3">
-            {items.map((item) => (
-              <li key={item.href}>
-                <a 
-                  href={item.href} 
-                  className="group/link flex items-center justify-between py-2 text-[13px] text-[#2C2C2C] hover:text-[#8B7355] transition-colors font-light"
-                >
-                  <span>{item.label}</span>
-                  <div className="h-[1px] w-0 bg-[#8B7355] transition-all duration-500 group-hover/link:w-4" />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+/* ──────────────────────────────────────────────────────────────
+   STANDARD MEGA MENU
+────────────────────────────────────────────────────────────── */
+
+const StandardMegaMenu = ({
+  section,
+  onClose,
+}: {
+  section: any
+  onClose: () => void
+}) => (
+  <div className="absolute left-0 top-[calc(100%+1px)] w-[420px] bg-white border border-neutral-200 shadow-2xl z-50">
+    <div className="p-8">
+      <p className="text-[9px] tracking-[0.3em] uppercase text-neutral-400 mb-2">
+        {section.description}
+      </p>
+
+      <h3 className="text-2xl font-serif text-black mb-6">
+        {section.label}
+      </h3>
+
+      <div className="space-y-1">
+        {section.items.map((item: any) => (
+          <a
+            key={item.href}
+            href={item.href}
+            onClick={onClose}
+            className={`block p-4 transition-all duration-300 hover:bg-neutral-50 border-b border-neutral-100 ${
+              item.accent ? 'bg-[#1B4332]/5' : ''
+            }`}
+          >
+            <div className="flex items-center justify-between">
+              <span
+                className={`text-[14px] ${
+                  item.accent
+                    ? 'font-semibold text-[#1B4332]'
+                    : 'text-black'
+                }`}
+              >
+                {item.label}
+              </span>
+
+              <div className="h-[1px] w-0 bg-[#1B4332] group-hover:w-4 transition-all" />
+            </div>
+
+            <p className="text-[11px] text-neutral-500 mt-1">
+              {item.description}
+            </p>
+          </a>
+        ))}
       </div>
     </div>
   </div>
-);
+)
 
-// Mobile Menu Section Component (Flat Structure)
-const MobileMenuSection = ({ 
-  title, 
-  items, 
-  isOpen, 
-  onToggle 
-}: { 
-  title: string; 
-  items: any[]; 
-  isOpen: boolean; 
+/* ──────────────────────────────────────────────────────────────
+   PORTFOLIO MENU
+────────────────────────────────────────────────────────────── */
+
+const PortfolioMegaMenu = ({
+  onClose,
+}: {
+  onClose: () => void
+}) => (
+  <div className="absolute left-0 top-[calc(100%+1px)] w-[720px] bg-white border border-neutral-200 shadow-2xl z-50">
+    <div className="p-8">
+      <p className="text-[9px] tracking-[0.3em] uppercase text-neutral-400 mb-2">
+        Global Real Estate Mandates
+      </p>
+
+      <h3 className="text-2xl font-serif text-black mb-8">
+        Portfolio
+      </h3>
+
+      <div className="grid grid-cols-2 gap-8">
+        {NAV.portfolio.markets.map((market) => (
+          <div key={market.region}>
+            <div className="flex items-center gap-2 mb-4">
+              <span>{market.flag}</span>
+
+              <span className="text-[10px] uppercase tracking-[0.25em] text-neutral-500">
+                {market.region}
+              </span>
+            </div>
+
+            <div className="space-y-2">
+              {market.items.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={onClose}
+                  className="block p-3 hover:bg-neutral-50 transition-colors"
+                >
+                  <div className="text-[14px] text-black">
+                    {item.label}
+                  </div>
+
+                  <div className="text-[11px] text-neutral-500 mt-1">
+                    {item.sub}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+)
+
+/* ──────────────────────────────────────────────────────────────
+   NAV ITEM
+────────────────────────────────────────────────────────────── */
+
+const MobileSection = ({
+  title,
+  children,
+  isOpen,
+  onToggle,
+}: {
+  title: string;
+  children: React.ReactNode;
+  isOpen: boolean;
   onToggle: () => void;
 }) => (
   <div className="border-b border-[#2D5A45]/30 last:border-b-0">
     <button
-      className="flex justify-between items-center w-full text-left py-5 px-6 transition-colors hover:bg-[#2D5A45]/10"
       onClick={onToggle}
-      style={{ minHeight: '56px' }} // iPhone touch target
+      className="flex justify-between items-center w-full py-5 px-6 hover:bg-[#2D5A45]/10 transition-colors"
+      style={{ minHeight: 56 }}
     >
-      <span className="text-[13px] tracking-[0.2em] uppercase text-[#F8F7F4] font-medium">{title}</span>
-      <ChevronDown 
-        size={16} 
-        className={`text-[#B8956B] transition-transform duration-500 ${isOpen ? 'rotate-180' : ''}`} 
-      />
+      <span className="text-[12px] tracking-[0.2em] uppercase text-[#F8F7F4] font-medium">{title}</span>
+      <ChevronDown size={15} className={`text-[#B8956B] transition-transform duration-400 ${isOpen ? 'rotate-180' : ''}`} />
     </button>
     <AnimatePresence>
       {isOpen && (
@@ -108,133 +314,154 @@ const MobileMenuSection = ({
           initial={{ height: 0, opacity: 0 }}
           animate={{ height: 'auto', opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}
-          transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
-          className="overflow-hidden bg-[#163828]/50"
+          transition={{ duration: 0.28, ease: [0.23, 1, 0.32, 1] }}
+          className="overflow-hidden bg-[#163828]/40"
         >
-          <ul className="py-4 px-6 space-y-1">
-            {items.map((item) => (
-              <li key={item.href}>
-                <a 
-                  href={item.href} 
-                  className="block py-3 px-4 text-[14px] text-[#C4B59D] hover:text-[#F8F7F4] hover:bg-[#2D5A45]/20 transition-all rounded-sm"
-                  style={{ minHeight: '44px', display: 'flex', alignItems: 'center' }} // iPhone touch target
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+          {children}
         </motion.div>
       )}
     </AnimatePresence>
   </div>
 );
 
-// Investor Portal Button Component
-const InvestorPortal = ({ 
-  isLoggedIn, 
-  userName, 
-  onLogin, 
-  scrolled 
-}: InvestorPortalProps & { scrolled: boolean }) => {
-  if (isLoggedIn && userName) {
-    return (
-      <a
-        href="/investor-portal"
-        className={`flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase transition-all duration-500 font-medium ${
-          scrolled 
-            ? 'text-[#1B4332] hover:text-[#B8956B]' 
-            : 'text-[#C4B59D] hover:text-[#F8F7F4]'
-        }`}
-        style={{ minHeight: '44px' }}
-      >
-        <div className={`w-8 h-8 rounded-full flex items-center justify-center border ${
-          scrolled ? 'border-[#B8956B] bg-[#B8956B]/10' : 'border-[#B8956B]/40'
-        }`}>
-          <UserPlus size={14} strokeWidth={1.5} />
-        </div>
-        <span className="hidden lg:inline">{userName}</span>
-      </a>
-    );
-  }
-
-  return (
-    <a
-      href="/investor-portal"
-      onClick={onLogin}
-      className={`flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase transition-all duration-500 font-medium ${
-        scrolled 
-          ? 'text-[#1B4332] hover:text-[#B8956B]' 
-          : 'text-[#C4B59D] hover:text-[#F8F7F4]'
-      }`}
-      style={{ minHeight: '44px' }}
-    >
-      <LogIn size={14} strokeWidth={1.5} />
-      <span className="hidden sm:inline">Investor Portal</span>
-    </a>
+  // ── Mobile link list helper ────────────────────────────────────────────────
+  const MobileLinks = ({ items }: { items: { label: string; href: string; description?: string }[] }) => (
+    <ul className="py-3 px-4 space-y-0.5">
+      {items.map((item) => (
+        <li key={item.href}>
+          <a
+            href={item.href}
+            onClick={() => setMobileOpen(false)}
+            className="block py-3 px-3 text-[13px] text-[#C4B59D] hover:text-[#F8F7F4] hover:bg-[#2D5A45]/20 transition-all rounded-sm"
+            style={{ minHeight: 44, display: 'flex', alignItems: 'center' }}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
   );
-};
 
-export default function Header() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [openSection, setOpenSection] = useState<string | null>(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Manage auth state here or via props
+const NavItem = ({
+  label,
+  children,
+  scrolled,
+}: {
+  label: string
+  children: (close: () => void) => React.ReactNode
+  scrolled: boolean
+}) => {
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
 
-  // Handle scroll with Safari compatibility
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    
-    // Use passive listener for better scroll performance on mobile/Safari
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    // Initial check
-    handleScroll();
-    
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Prevent body scroll when mobile menu is open (Safari compatible)
-  useEffect(() => {
-    if (mobileOpen) {
-      document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed'; // Safari fix for body scroll
-      document.body.style.width = '100%';
-      document.body.style.top = `-${window.scrollY}px`;
-    } else {
-      const scrollY = document.body.style.top;
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
-      document.body.style.top = '';
-      if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    const handler = (e: MouseEvent) => {
+      if (
+        ref.current &&
+        !ref.current.contains(e.target as Node)
+      ) {
+        setOpen(false)
       }
     }
-  }, [mobileOpen]);
 
-  const toggleSection = (section: string) => {
-    setOpenSection(openSection === section ? null : section);
-  };
+    document.addEventListener('mousedown', handler)
+
+    return () =>
+      document.removeEventListener('mousedown', handler)
+  }, [])
+
+  return (
+    <div
+      ref={ref}
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <button
+        onClick={() => setOpen((o) => !o)}
+        className={`flex items-center gap-1 text-[11px] uppercase tracking-[0.16em] transition-colors duration-300 py-8 ${
+          scrolled
+            ? 'text-black hover:text-[#1B4332]'
+            : 'text-white hover:text-neutral-200'
+        }`}
+      >
+        {label}
+
+        <ChevronDown
+          size={11}
+          className={`transition-transform duration-300 ${
+            open ? 'rotate-180' : ''
+          }`}
+        />
+      </button>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 8 }}
+            transition={{ duration: 0.2 }}
+          >
+            {children(() => setOpen(false))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  )
+}
+
+/* ──────────────────────────────────────────────────────────────
+   MAIN HEADER
+────────────────────────────────────────────────────────────── */
+
+export default function Header() {
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const [section, setSection] = useState<string | null>(null)
+
+  const toggleSection = (name: string) => {
+    setSection((prev) => (prev === name ? null : name))
+  }
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40)
+    }
+
+    window.addEventListener('scroll', onScroll)
+
+    return () =>
+      window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    const handler = (event: Event) => {
+      const { detail } = event as CustomEvent<boolean>
+
+      if (typeof detail === 'boolean') {
+        setMobileOpen(detail)
+      }
+    }
+
+    window.addEventListener(MOBILE_OPEN_EVENT, handler)
+
+    return () =>
+      window.removeEventListener(MOBILE_OPEN_EVENT, handler)
+  }, [])
 
   return (
     <>
-      <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled 
-            ? 'bg-[#F8F7F4]/95 border-b border-[#E5E2DC] py-0' 
-            : 'bg-[#1B4332]/95 backdrop-blur-md py-4 md:py-6'
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 p-4 transition-all duration-500 ${
+          scrolled
+            ? 'bg-white border-b border-neutral-200 shadow-sm'
+            : 'bg-[#1B4332]'
         }`}
-        style={{
-          WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'blur(8px)',
-          backdropFilter: scrolled ? 'blur(12px)' : 'blur(8px)',
-        }}
       >
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-          <div className="flex items-center justify-between h-16 md:h-20">
-            
+        <div className="max-w-[1600px] mx-auto px-6 xl:px-12">
+          <div className="flex items-center justify-between">
+            {/* LOGO */}
             {/* BRANDING - Club Letterhead Style */}
             <a href="/" className="flex flex-col min-w-fit group shrink-0">
               <span className={`text-xl md:text-2xl font-serif tracking-[0.1em] transition-colors duration-500 ${
@@ -249,205 +476,265 @@ export default function Header() {
               </span>
             </a>
 
-            {/* NAV - Club Directory Style (Desktop) */}
-            <nav className="hidden xl:flex items-center space-x-8 2xl:space-x-10">
-              <MegaMenu title="Portfolio" items={MENU_DATA.properties} />
-              <MegaMenu title="Invest" items={MENU_DATA.invest} />
-              <MegaMenu title="Intelligence" items={MENU_DATA.insights} />
-              <MegaMenu title="The Firm" items={MENU_DATA.company} />
-              
-              <div className={`h-6 w-[1px] transition-colors duration-500 ${
-                scrolled ? 'bg-[#E5E2DC]' : 'bg-white/20'
-              }`} />
-
-              {/* Investor Portal */}
-              <InvestorPortal 
-                isLoggedIn={isLoggedIn} 
-                userName="My Murivest" 
+            {/* DESKTOP NAV */}
+            <nav className="hidden xl:flex items-center gap-8">
+              <NavItem
+                label="Capital Markets"
                 scrolled={scrolled}
-                onLogin={() => setIsLoggedIn(true)}
+              >
+                {(close) => (
+                  <StandardMegaMenu
+                    section={NAV.capital}
+                    onClose={close}
+                  />
+                )}
+              </NavItem>
+
+              <NavItem
+                label="Portfolio"
+                scrolled={scrolled}
+              >
+                {(close) => (
+                  <PortfolioMegaMenu onClose={close} />
+                )}
+              </NavItem>
+
+              <NavItem
+                label="Intelligence"
+                scrolled={scrolled}
+              >
+                {(close) => (
+                  <StandardMegaMenu
+                    section={NAV.intelligence}
+                    onClose={close}
+                  />
+                )}
+              </NavItem>
+
+              <NavItem
+                label="The Firm"
+                scrolled={scrolled}
+              >
+                {(close) => (
+                  <StandardMegaMenu
+                    section={NAV.firm}
+                    onClose={close}
+                  />
+                )}
+              </NavItem>
+
+              {/* Divider */}
+              <div
+                className={`w-px h-5 ${
+                  scrolled
+                    ? 'bg-neutral-300'
+                    : 'bg-white/20'
+                }`}
               />
 
-              <div className={`h-6 w-[1px] transition-colors duration-500 ${
-                scrolled ? 'bg-[#E5E2DC]' : 'bg-white/20'
-              }`} />
-
-              <a 
-                href="/cre-underwriting" 
-                className={`text-[10px] tracking-[0.2em] uppercase border px-6 py-3 transition-all duration-500 font-medium whitespace-nowrap ${
-                  scrolled 
-                    ? 'border-[#B8956B] text-[#B8956B] hover:bg-[#B8956B] hover:text-[#F8F7F4]' 
-                    : 'border-[#B8956B]/50 text-[#C4B59D] hover:bg-[#B8956B] hover:text-[#1B4332]'
+              {/* Portal */}
+              <a
+                href="/login"
+                className={`flex items-center gap-2 text-[10px] uppercase tracking-[0.16em] transition-colors duration-300 ${
+                  scrolled
+                    ? 'text-black hover:text-[#1B4332]'
+                    : 'text-white hover:text-neutral-200'
                 }`}
-                style={{ minHeight: '44px', display: 'inline-flex', alignItems: 'center' }}
               >
+                <LogIn size={13} />
+
+                Investor Portal
+              </a>
+
+              {/* CTA */}
+              <a
+                href="/cre-underwriting"
+                className={`px-5 py-3 border text-[10px] uppercase tracking-[0.18em] font-semibold transition-all duration-300 inline-flex items-center gap-2 ${
+                  scrolled
+                    ? 'border-black text-black hover:bg-black hover:text-white'
+                    : 'border-white text-white hover:bg-white hover:text-[#1B4332]'
+                }`}
+              >
+                <TrendingUp size={13} />
+
                 Underwrite
               </a>
             </nav>
 
-            {/* Mobile Actions */}
-            <div className="flex items-center gap-4 xl:hidden">
-              {/* Investor Portal Icon Only on Mobile Header */}
-              <InvestorPortal 
-                isLoggedIn={isLoggedIn} 
-                userName="J. Harrington" 
-                scrolled={scrolled}
-                onLogin={() => setIsLoggedIn(true)}
-              />
-
-              {/* Mobile Toggle */}
-              <button 
-                className="p-2 -mr-2" 
-                onClick={() => setMobileOpen(true)}
-                aria-label="Open menu"
-                style={{ minWidth: '44px', minHeight: '44px' }} // iPhone touch target
+            {/* ── Mobile actions ────────────────────────────────── */}
+            <div className="flex items-center gap-3 xl:hidden">
+              <a href="/investor-portal"
+                className={`text-[10px] tracking-[0.15em] uppercase transition-colors ${
+                  scrolled ? 'text-[#1B4332]' : 'text-[#C4B59D]'
+                }`}
+                style={{ minHeight: 44, display: 'flex', alignItems: 'center' }}
               >
-                <div className="space-y-1.5 flex flex-col items-end">
-                  <div className={`w-6 h-[1px] transition-all duration-500 ${scrolled ? 'bg-[#1B4332]' : 'bg-[#F8F7F4]'}`}></div>
-                  <div className={`w-4 h-[1px] transition-all duration-500 ${scrolled ? 'bg-[#1B4332]' : 'bg-[#F8F7F4]'}`}></div>
-                </div>
+                <LogIn size={14} strokeWidth={1.5} />
+              </a>
+ 
+              <button
+                onClick={() => setMobileOpen(true)}
+                className="p-2 -mr-2 flex flex-col items-end gap-1.5"
+                style={{ minWidth: 44, minHeight: 44, justifyContent: 'center' }}
+                aria-label="Open navigation"
+              >
+                <div className={`w-6 h-[1px] transition-colors duration-500 ${scrolled ? 'bg-[#1B4332]' : 'bg-[#F8F7F4]'}`} />
+                <div className={`w-4 h-[1px] transition-colors duration-500 ${scrolled ? 'bg-[#1B4332]' : 'bg-[#F8F7F4]'}`} />
               </button>
             </div>
           </div>
         </div>
       </header>
-
-      {/* MOBILE OVERLAY - Fixed Structure */}
+ 
+      {/* ── MOBILE PANEL ──────────────────────────────────────────────────── */}
       <AnimatePresence>
         {mobileOpen && (
           <>
             {/* Backdrop */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-[#1B4332]/90 z-[60] xl:hidden"
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="fixed inset-0 bg-[#0A1F15]/80 z-[60] xl:hidden"
+              style={{ WebkitBackdropFilter: 'blur(6px)', backdropFilter: 'blur(6px)' }}
               onClick={() => setMobileOpen(false)}
-              style={{ 
-                WebkitBackdropFilter: 'blur(8px)',
-                backdropFilter: 'blur(8px)' 
-              }}
             />
-            
-            {/* Menu Panel */}
+ 
+            {/* Panel */}
             <motion.div
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-              className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-[#1B4332] z-[70] xl:hidden overflow-hidden flex flex-col"
-              style={{
-                paddingTop: 'env(safe-area-inset-top)',
-                paddingBottom: 'env(safe-area-inset-bottom)',
-              }}
+              initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 32, stiffness: 320 }}
+              className="fixed top-0 right-0 bottom-0 w-full max-w-[340px] bg-[#1B4332] z-[70] xl:hidden overflow-hidden flex flex-col"
+              style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}
             >
-              {/* Header */}
-              <div className="flex items-center justify-between px-6 py-4 border-b border-[#2D5A45]/30 shrink-0">
-                <span className="text-[#F8F7F4] font-serif text-lg tracking-[0.1em]">MENU</span>
-                <button 
-                  onClick={() => setMobileOpen(false)} 
-                  className="p-2 text-[#C4B59D] hover:text-[#F8F7F4] transition-colors"
-                  aria-label="Close menu"
-                  style={{ minWidth: '44px', minHeight: '44px' }}
-                >
-                  <X size={24} strokeWidth={1} />
+              {/* Panel header */}
+              <div className="flex items-center justify-between px-6 py-4 border-b border-[#2D5A45]/40 shrink-0">
+                <div>
+                  <p className="text-[#F8F7F4] font-serif text-[15px] tracking-[0.15em] uppercase">Murivest</p>
+                  <p className="text-[#B8956B] text-[9px] tracking-[0.3em] uppercase mt-0.5">Realty · Advisory</p>
+                </div>
+                <button onClick={() => setMobileOpen(false)} className="p-2 text-[#C4B59D] hover:text-white transition-colors" style={{ minWidth: 44, minHeight: 44, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <X size={22} strokeWidth={1} />
                 </button>
               </div>
-
-              {/* Scrollable Content */}
+ 
+              {/* Investor portal banner */}
+              <div className="px-6 py-4 border-b border-[#2D5A45]/30 bg-[#2D5A45]/15 shrink-0">
+                <a href="/investor-portal" onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-3 py-2"
+                >
+                  <div className="w-10 h-10 rounded-full border border-[#B8956B] flex items-center justify-center shrink-0">
+                    <LogIn size={15} strokeWidth={1.5} className="text-[#B8956B]" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] tracking-[0.2em] uppercase text-[#B8956B]">Investor Portal</p>
+                    <p className="text-[13px] text-[#F8F7F4]">Login / Register</p>
+                  </div>
+                  <ChevronDown size={14} className="ml-auto text-[#B8956B] -rotate-90" />
+                </a>
+              </div>
+ 
+              {/* Scrollable nav */}
               <div className="flex-1 overflow-y-auto overscroll-contain">
-                {/* Investor Portal Section (Prominent) */}
-                <div className="p-6 border-b border-[#2D5A45]/30 bg-[#2D5A45]/20">
-                  <a 
-                    href={isLoggedIn ? "/portal" : "/login"}
-                    className="flex items-center gap-3 text-[#F8F7F4] py-3"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    <div className="w-10 h-10 rounded-full border border-[#B8956B] flex items-center justify-center">
-                      <User size={18} strokeWidth={1.5} className="text-[#B8956B]" />
-                    </div>
-                    <div>
-                      <p className="text-[11px] tracking-[0.2em] uppercase text-[#B8956B] mb-1">
-                        Investor Portal
-                      </p>
-                      <p className="text-[14px] text-[#F8F7F4]">
-                        {isLoggedIn ? 'View Dashboard' : 'Login / Register'}
-                      </p>
-                    </div>
-                    <UserPlus size={16} className="ml-auto text-[#B8956B]" />
-                  </a>
-                </div>
-
-                {/* Menu Sections */}
                 <nav className="py-2">
-                  <MobileMenuSection 
-                    title="Portfolio" 
-                    items={MENU_DATA.properties} 
-                    isOpen={openSection === 'portfolio'}
-                    onToggle={() => toggleSection('portfolio')}
-                  />
-                  <MobileMenuSection 
-                    title="Invest" 
-                    items={MENU_DATA.invest} 
-                    isOpen={openSection === 'invest'}
-                    onToggle={() => toggleSection('invest')}
-                  />
-                  <MobileMenuSection 
-                    title="Intelligence" 
-                    items={MENU_DATA.insights} 
-                    isOpen={openSection === 'insights'}
-                    onToggle={() => toggleSection('insights')}
-                  />
-                  <MobileMenuSection 
-                    title="The Firm" 
-                    items={MENU_DATA.company} 
-                    isOpen={openSection === 'company'}
-                    onToggle={() => toggleSection('company')}
-                  />
+                  <MobileSection title="Capital Markets" isOpen={section === 'capital'} onToggle={() => toggleSection('capital')}>
+                    <MobileLinks items={NAV.capital.items} />
+                  </MobileSection>
+ 
+                  <MobileSection title="Portfolio" isOpen={section === 'portfolio'} onToggle={() => toggleSection('portfolio')}>
+                    <div className="py-3 px-4 space-y-4">
+                      {NAV.portfolio.markets.map((market) => (
+                        <div key={market.region}>
+                          <p className="text-[9px] tracking-[0.3em] uppercase text-[#B8956B] px-3 mb-1">
+                            {market.flag} {market.region}
+                          </p>
+                          {market.items.map((item) => (
+                            <a key={item.href} href={item.href} onClick={() => setMobileOpen(false)}
+                              className="block py-3 px-3 text-[13px] text-[#C4B59D] hover:text-[#F8F7F4] hover:bg-[#2D5A45]/20 transition-all rounded-sm"
+                              style={{ minHeight: 44, display: 'flex', alignItems: 'center' }}
+                            >
+                              {item.label}
+                            </a>
+                          ))}
+                        </div>
+                      ))}
+                      <div className="border-t border-[#2D5A45]/30 pt-3">
+                        <p className="text-[9px] tracking-[0.25em] uppercase text-[#B8956B] px-3 mb-2">By Category</p>
+                        <div className="flex flex-wrap gap-2 px-3 pb-2">
+                          {NAV.portfolio.quicklinks.map((ql) => (
+                            <a key={ql.href} href={ql.href} onClick={() => setMobileOpen(false)}
+                              className="px-3 py-1.5 text-[10px] tracking-[0.15em] uppercase border border-[#2D5A45] text-[#C4B59D] hover:border-[#B8956B] hover:text-[#B8956B] transition-colors rounded-none"
+                            >
+                              {ql.label}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </MobileSection>
+ 
+                  <MobileSection title="Intelligence" isOpen={section === 'intelligence'} onToggle={() => toggleSection('intelligence')}>
+                    <MobileLinks items={NAV.intelligence.items} />
+                  </MobileSection>
+ 
+                  <MobileSection title="The Firm" isOpen={section === 'firm'} onToggle={() => toggleSection('firm')}>
+                    <MobileLinks items={NAV.firm.items} />
+                  </MobileSection>
                 </nav>
-
-                {/* Quick Actions */}
-                <div className="p-6 space-y-3 border-t border-[#2D5A45]/30">
-                  <a 
-                    href="/cre-underwriting"
-                    onClick={() => setMobileOpen(false)}
-                    className="flex items-center justify-center w-full py-4 bg-[#B8956B] text-[#1B4332] text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#C4B59D] transition-colors"
-                    style={{ minHeight: '48px' }}
+ 
+                {/* CTA block */}
+                <div className="p-5 space-y-2.5 border-t border-[#2D5A45]/30">
+                  <a href="/cre-underwriting" onClick={() => setMobileOpen(false)}
+                    className="flex items-center justify-center gap-2 w-full py-4 bg-[#B8956B] text-[#1B4332] text-[10px] tracking-[0.2em] uppercase font-bold hover:bg-[#C4B59D] transition-colors"
+                    style={{ minHeight: 48 }}
                   >
+                    <TrendingUp size={13} strokeWidth={2} />
                     Underwrite a Deal
                   </a>
-                  <a 
-                    href="/contact"
-                    onClick={() => setMobileOpen(false)}
-                    className="flex items-center justify-center w-full py-4 border border-[#B8956B] text-[#B8956B] text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#B8956B] hover:text-[#1B4332] transition-colors"
-                    style={{ minHeight: '48px' }}
+                  <a href="/contact" onClick={() => setMobileOpen(false)}
+                    className="flex items-center justify-center gap-2 w-full py-4 border border-[#B8956B] text-[#B8956B] text-[10px] tracking-[0.2em] uppercase font-medium hover:bg-[#B8956B]/10 transition-colors"
+                    style={{ minHeight: 48 }}
                   >
+                    <Phone size={13} strokeWidth={1.5} />
                     Request Consultation
                   </a>
                 </div>
-
-                {/* Footer Info */}
+ 
+                {/* Footer */}
                 <div className="px-6 py-8 text-center">
-                  <div className="flex items-center justify-center gap-3 mb-4">
-                    <div className="w-12 h-[1px] bg-[#B8956B]/30"></div>
-                    <span className="text-[9px] tracking-[0.3em] uppercase text-[#8B8680]">Murivest</span>
-                    <div className="w-12 h-[1px] bg-[#B8956B]/30"></div>
+                  <div className="flex items-center justify-center gap-3 mb-3">
+                    <div className="w-10 h-[1px] bg-[#B8956B]/30" />
+                    <span className="text-[8px] tracking-[0.35em] uppercase text-[#5A7A6A]">Murivest</span>
+                    <div className="w-10 h-[1px] bg-[#B8956B]/30" />
                   </div>
-                  <p className="text-[10px] text-[#5A7A6A] tracking-wide">
-                    Nairobi Private Office
+                  <p className="text-[9px] text-[#5A7A6A] tracking-wide">
+                    Nairobi · Dubai · London
                   </p>
+                  <div className="flex items-center justify-center gap-4 mt-3">
+                    <a href="/compliance" onClick={() => setMobileOpen(false)}
+                      className="text-[8px] tracking-[0.2em] uppercase text-[#5A7A6A] hover:text-[#B8956B] transition-colors"
+                    >
+                      EARB · RERA Regulated
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>
           </>
         )}
       </AnimatePresence>
-
-      {/* Spacer for fixed header */}
-      <div className="h-16 md:h-20 lg:h-24" />
+ 
+      {/* Spacer */}
+      <div className="h-20 md:h-24" />
     </>
-  );
+  )
 }
 
-// Legacy export for backward compatibility
+function setMobileOpen(arg0: boolean): void {
+  if (typeof window === 'undefined') return
+
+  window.dispatchEvent(
+    new CustomEvent<boolean>(MOBILE_OPEN_EVENT, {
+      detail: arg0,
+    }),
+  )
+}

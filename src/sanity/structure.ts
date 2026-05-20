@@ -69,6 +69,9 @@ export const structure: StructureResolver = (S) =>
               S.documentTypeListItem('usProperty')
                 .title('US Portfolio')
                 .icon(() => '🇺🇸'),
+              S.documentTypeListItem('uaeProperty')
+                .title('UAE Portfolio')
+                .icon(() => '🇦🇪'),
             ])
         ),
 
