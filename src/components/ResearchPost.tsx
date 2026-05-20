@@ -92,14 +92,14 @@ const AUTHOR_PROFILES: Record<string, { role: string; bio: string; linkedin?: st
     role: 'Murivest Realty Group',
     bio: "This piece was put together by the Murivest desk — a mix of analysts, advisors, and the occasional opinionated partner who just got back from a site walk. We write what we actually think, not what sounds good in a press release.",
     linkedin: 'https://www.linkedin.com/company/murivest',
-    email: 'hello@murivest.co.ke',
+    email: ' info@murivest.co.ke',
   },
 };
 
 const DEFAULT_AUTHOR = {
   role: 'Murivest Editorial',
   bio: "Written by the Murivest team — analysts, advisors, and deal-doers based in Nairobi. We write from the field, not from a template.",
-  email: 'hello@murivest.co.ke',
+  email: ' info@murivest.co.ke',
 };
 
 // ─── Scroll Progress ──────────────────────────────────────────────────────────
