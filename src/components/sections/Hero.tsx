@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 const STATS = [
   { value: '$1.2B+', label: 'Assets Under Advisory' },
   { value: '8.5–12.5%', label: 'Target Yield Range' },
-  { value: '15+', label: 'Years Active in Market' },
+  { value: '2+', label: 'Years Active in Market' },
 ];
 
 const Hero = () => {
@@ -174,7 +174,7 @@ const Hero = () => {
 
               <div className="mt-8 pt-6 border-t border-[#B8956B]/15">
                 <p className="text-[9px] text-[#5A5752] tracking-wider font-mono">
-                  Est. 2009 · Nairobi, Kenya · $1.2B+ AUP
+                  Est. 2024 · Nairobi, Kenya · $1.2B+ AUP
                 </p>
               </div>
             </div>
