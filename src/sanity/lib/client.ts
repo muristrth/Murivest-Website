@@ -20,3 +20,4 @@ export const writeClient = createClient({
   useCdn: false,
   token: process.env.SANITY_API_TOKEN,
 })
+

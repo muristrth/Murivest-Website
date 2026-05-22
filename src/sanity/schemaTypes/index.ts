@@ -7,9 +7,12 @@ import land from './land'
 import broker from './broker'
 import siteSettings from './siteSettings'
 import uaeProperty from './uaeProperty'
+import propertylet from './schema-property'
+
 
 export const schemaTypes = [
   property,
+  propertylet,
   land,
   usProperty,
   uaeProperty,
