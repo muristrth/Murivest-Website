@@ -1,0 +1,56 @@
+/* leaderboard.module.css */
+.page { display:flex; flex-direction:column; }
+.header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:24px; flex-wrap:wrap; gap:14px; }
+.title  { font-size:clamp(20px,4vw,34px); font-weight:800; color:#fff; font-family:'Cormorant Garamond',serif; margin-bottom:6px; }
+.accent { color:#C9A84C; }
+.sub    { font-size:11px; color:rgba(255,255,255,0.4); }
+.weekBadge { display:flex; flex-direction:column; align-items:center; background:rgba(27,67,50,0.55); border:1px solid rgba(201,168,76,0.18); border-radius:9px; padding:10px 18px; flex-shrink:0; }
+.weekLabel { font-size:9px; text-transform:uppercase; letter-spacing:.15em; color:rgba(255,255,255,0.35); }
+.weekDate  { font-size:15px; font-weight:700; color:#C9A84C; font-family:'Cormorant Garamond',serif; margin-top:3px; }
+
+.sortBar { display:flex; align-items:center; gap:5px; margin-bottom:24px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:9px; padding:5px; flex-wrap:wrap; }
+.sortLabel { font-size:9px; text-transform:uppercase; letter-spacing:.12em; color:rgba(255,255,255,0.3); padding:0 8px; flex-shrink:0; }
+.sortBtn { padding:6px 13px; border-radius:6px; border:1px solid transparent; background:transparent; color:rgba(255,255,255,0.5); font-size:10px; font-weight:600; cursor:pointer; transition:all .18s; text-transform:uppercase; letter-spacing:.06em; }
+.sortBtn:hover { background:rgba(255,255,255,0.06); color:#fff; }
+.sortBtnActive { background:rgba(201,168,76,0.14) !important; color:#C9A84C !important; border-color:rgba(201,168,76,0.28) !important; }
+
+.podium { display:grid; grid-template-columns:1fr 1.1fr 1fr; gap:10px; margin-bottom:32px; }
+.podCard { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); border-radius:12px; padding:22px 16px; display:flex; flex-direction:column; align-items:center; gap:9px; }
+.podFirst { background:linear-gradient(160deg,rgba(201,168,76,0.1),rgba(27,67,50,0.5)); border-color:rgba(201,168,76,0.32) !important; }
+.podMedal  { font-size:26px; }
+.podAvatar { width:52px; height:52px; border-radius:50%; background:linear-gradient(135deg,#1B4332,#2D6A4F); border:2px solid rgba(201,168,76,0.28); display:flex; align-items:center; justify-content:center; font-size:17px; font-weight:700; color:#C9A84C; font-family:'Cormorant Garamond',serif; }
+.podName  { font-size:14px; font-weight:700; color:#fff; text-align:center; font-family:'Cormorant Garamond',serif; }
+.podRole  { font-size:9px; text-transform:uppercase; letter-spacing:.1em; color:rgba(255,255,255,0.35); }
+.podScore { font-size:30px; font-weight:800; color:#C9A84C; font-family:'JetBrains Mono',monospace; line-height:1; }
+.podScore span { font-size:13px; color:rgba(201,168,76,0.4); }
+.podStats { display:flex; gap:10px; font-size:10px; color:rgba(255,255,255,0.4); flex-wrap:wrap; justify-content:center; }
+
+.section { margin-bottom:32px; }
+.tableWrap { overflow-x:auto; border-radius:11px; border:1px solid rgba(255,255,255,0.07); }
+.table { width:100%; border-collapse:collapse; }
+.table thead tr { background:rgba(27,67,50,0.65); }
+.table th { padding:11px 14px; text-align:left; font-size:9px; text-transform:uppercase; letter-spacing:.13em; color:rgba(255,255,255,0.38); font-weight:700; white-space:nowrap; }
+.tableRow { border-top:1px solid rgba(255,255,255,0.045); transition:background .15s; }
+.tableRow:hover { background:rgba(255,255,255,0.025); }
+.table td { padding:13px 14px; vertical-align:middle; }
+.rankCell { text-align:center; font-size:15px; }
+.nameCell { display:flex; align-items:center; gap:10px; }
+.avatar   { width:34px; height:34px; border-radius:50%; background:linear-gradient(135deg,#1B4332,#2D6A4F); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:#C9A84C; flex-shrink:0; font-family:'Cormorant Garamond',serif; }
+.nameText { font-size:12px; font-weight:600; color:#fff; white-space:nowrap; }
+.roleText { font-size:9px; color:rgba(255,255,255,0.3); text-transform:uppercase; letter-spacing:.06em; margin-top:2px; }
+.numCell  { font-size:14px; font-weight:700; font-family:monospace; color:rgba(255,255,255,0.8); text-align:center; }
+
+.teamTotals { display:grid; grid-template-columns:repeat(4,auto) 1fr; gap:0; background:linear-gradient(135deg,rgba(27,67,50,0.7),rgba(10,26,19,0.6)); border:1px solid rgba(201,168,76,0.18); border-radius:12px; padding:24px 28px; align-items:center; overflow:hidden; }
+.totalItem  { display:flex; flex-direction:column; gap:4px; padding-right:28px; border-right:1px solid rgba(255,255,255,0.06); margin-right:28px; }
+.totalNum   { font-size:28px; font-weight:800; color:#C9A84C; font-family:'JetBrains Mono',monospace; line-height:1; }
+.totalLabel { font-size:9px; text-transform:uppercase; letter-spacing:.12em; color:rgba(255,255,255,0.35); }
+.totalQuote { padding-left:4px; }
+.tqText     { font-size:12px; font-style:italic; color:rgba(255,255,255,0.65); font-family:'Cormorant Garamond',serif; line-height:1.55; margin-bottom:5px; }
+.tqAttrib   { font-size:9px; color:#C9A84C; text-transform:uppercase; letter-spacing:.1em; }
+
+@media (max-width:1000px) { .teamTotals { grid-template-columns:repeat(2,1fr); } .totalItem { border-right:none; margin-right:0; padding-right:0; border-bottom:1px solid rgba(255,255,255,0.06); padding-bottom:16px; margin-bottom:16px; } .totalQuote { grid-column:span 2; } }
+@media (max-width:700px)  { .podium { grid-template-columns:1fr; } }
+@media (max-width:600px)  {
+  .table th:nth-child(5), .table td:nth-child(5),
+  .table th:nth-child(6), .table td:nth-child(6) { display:none; }
+}
