@@ -31,7 +31,7 @@ import {
   TrendingUp,
   Layers,
 } from "lucide-react";
-import type { OffMarketProperty } from "../page"; // re-export from server page
+import type { OffMarketProperty } from "@/app/properties/off-market/[slug]/page"; // re-export from server page
 
 // ─── Related Card ───────────────────────────────────────────────────────────
 
