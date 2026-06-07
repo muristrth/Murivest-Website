@@ -212,25 +212,6 @@ export default {
     },
   ],
 
-  preview: {
-    select: {
-      title: 'title',
-      subtitle: 'landCategory',
-      media: 'sitePhotographs.0',
-      acres: 'totalArea.acres',
-      price: 'askingPrice.displayPrice',
-      status: 'availabilityStatus',
-    },
-    prepare({ title, subtitle, media, acres, price, status }: any) {
-      const dot = status === 'Available' ? '🟢' : status === 'Under Offer' ? '🟡' : status === 'Sold' ? '🔴' : '⚪'
-      return {
-        title: `${dot} ${title || 'Untitled Parcel'}`,
-        subtitle: `${subtitle || 'Land'} · ${acres ? acres + ' ac' : '—'} · ${price || 'POR'}`,
-        media,
-      }
-    },
-  },
-
   orderings: [
     {
       title: 'Listing Date, Newest',

@@ -290,9 +290,6 @@ export default {
             },
             { name: 'value', title: 'Value', type: 'string' },
           ],
-          preview: {
-            select: { title: 'label', subtitle: 'value' }
-          }
         },
       ],
     },
@@ -345,20 +342,6 @@ export default {
     },
   ],
   
-  preview: {
-    select: {
-      title: 'title',
-      subtitle: 'propertyType',
-      media: 'images.0',
-    },
-    prepare({ title, subtitle, media }: any) {
-      return {
-        title: title || 'Untitled Property',
-        subtitle: subtitle || 'No type specified',
-        media,
-      };
-    },
-  },
   
   orderings: [
     {

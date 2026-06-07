@@ -386,27 +386,4 @@ export default defineType({
     }),
   ],
 
-  preview: {
-    select: {
-      title:    'title',
-      subtitle: 'community',
-      media:    'coverImage',
-      category: 'category',
-      emirate:  'emirate',
-    },
-    prepare({ title, subtitle, media, category, emirate }) {
-      const cats: Record<string, string> = {
-        'for-sale':         '🏠 For Sale',
-        'for-rent':         '🔑 For Rent',
-        'off-plan':         '🏗 Off-Plan',
-        'commercial-lease': '🏢 Commercial',
-        'portfolio':        '📊 Portfolio',
-      };
-      return {
-        title,
-        subtitle: `${cats[category] || category} · ${emirate} · ${subtitle || ''}`,
-        media,
-      };
-    },
-  },
 });

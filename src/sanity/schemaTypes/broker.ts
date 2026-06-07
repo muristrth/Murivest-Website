@@ -77,25 +77,5 @@ export default {
       initialValue: true,
     },
   ],
-  preview: {
-    select: {
-      title: 'name',
-      subtitle: 'role',
-      media: 'photo',
-    },
-    prepare({ title, subtitle, media }: any) {
-      const roleMap: Record<string, string> = {
-        md: 'Managing Director',
-        advisor: 'Investment Advisor',
-        land: 'Land Specialist',
-        commercial: 'Commercial Broker',
-        research: 'Research Analyst',
-      }
-      return {
-        title,
-        subtitle: roleMap[subtitle] || subtitle,
-        media,
-      }
-    },
-  },
+
 }

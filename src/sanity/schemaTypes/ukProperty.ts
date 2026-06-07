@@ -234,11 +234,5 @@ export default {
       ],
     },
   ],
-  preview: {
-    select: {
-      title: 'title',
-      subtitle: 'location',
-      media: 'mainImage',
-    },
-  },
+
 }

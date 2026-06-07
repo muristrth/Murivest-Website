@@ -98,19 +98,4 @@ export default {
       ],
     },
   ],
-  preview: {
-    select: {
-      title: 'title',
-      author: 'assetClass',
-      media: 'mainImage',
-    },
-    prepare(selection: any) {
-      const { title, author, media } = selection
-      return {
-        title: title,
-        subtitle: `Sector: ${author}`,
-        media: media,
-      }
-    },
-  },
 }

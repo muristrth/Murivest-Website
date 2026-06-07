@@ -1,389 +1,432 @@
+﻿// sanity/schemas/schema-property.ts
+// Document schema for "property" — supports To Let listings on Murivest.
+
 import { defineField, defineType } from "sanity";
 
-export default{
-  name: "propertylet",
-  title: "PropertyLet",
+export default defineType({
+  name: "property",
+  title: "Property",
   type: "document",
+
+  // ── Preview (shown in Sanity Studio list view) ──────────────────────────
+  preview: {
+    select: {
+      title: "title",
+      subtitle: "neighborhood",
+      media: "images.0",
+      status: "availabilityStatus",
+      transactionType: "transactionType",
+    },
+    prepare({ title, subtitle, media, status, transactionType }) {
+      return {
+        title: title ?? "Untitled Property",
+        subtitle: `${transactionType ?? ""} · ${subtitle ?? ""} · ${status ?? ""}`,
+        media,
+      };
+    },
+  },
+
+  // ── Field groups (organise Studio tabs) ────────────────────────────────
   groups: [
-    { name: "basic", title: "Basic Info" },
-    { name: "location", title: "Location" },
-    { name: "pricing", title: "Pricing" },
-    { name: "details", title: "Property Details" },
-    { name: "media", title: "Media" },
-    { name: "seo", title: "SEO" },
-    { name: "analysis", title: "Market Analysis" },
+    { name: "basic",       title: "Basic Info",    default: true },
+    { name: "location",    title: "Location"                      },
+    { name: "pricing",     title: "Pricing & Size"                },
+    { name: "media",       title: "Media"                         },
+    { name: "details",     title: "Details & Features"            },
+    { name: "leasing",     title: "Leasing"                       },
+    { name: "broker",      title: "Broker"                        },
   ],
+
   fields: [
-    // ─── Basic Info ──────────────────────────────────────────────
+    // ── Basic Info ────────────────────────────────────────────────────────
+
     defineField({
       name: "title",
-      title: "Property Title",
+      title: "Title",
       type: "string",
-      validation: (Rule) => Rule.required(),
       group: "basic",
+      description: "Primary listing headline shown on cards and the detail page.",
+      validation: (R) => R.required().min(5).max(120),
     }),
-    defineField({
-      name: "slug",
-      title: "Slug",
-      type: "slug",
-      options: { source: "title", maxLength: 96 },
-      validation: (Rule) => Rule.required(),
-      group: "basic",
-    }),
+
     defineField({
       name: "subtitle",
       title: "Subtitle",
       type: "string",
       group: "basic",
+      description: "Optional secondary headline (e.g. 'Grade A Office Space').",
     }),
+
     defineField({
-      name: "description",
-      title: "Description",
-      type: "text",
-      rows: 6,
-      validation: (Rule) => Rule.required(),
+      name: "slug",
+      title: "Slug",
+      type: "slug",
       group: "basic",
+      options: { source: "title", maxLength: 96 },
+      validation: (R) => R.required(),
     }),
-    defineField({
-      name: "propertyType",
-      title: "Property Type",
-      type: "string",
-      options: {
-        list: [
-          { title: "Office", value: "Office" },
-          { title: "Retail", value: "Retail" },
-          { title: "Industrial", value: "Industrial" },
-          { title: "Warehouse", value: "Warehouse" },
-          { title: "Mixed-Use", value: "Mixed-Use" },
-          { title: "Residential", value: "Residential" },
-          { title: "Land", value: "Land" },
-          { title: "Hotel", value: "Hotel" },
-          { title: "Data Centre", value: "Data Centre" },
-        ],
-      },
-      validation: (Rule) => Rule.required(),
-      group: "basic",
-    }),
-    defineField({
-      name: "category",
-      title: "Category",
-      type: "string",
-      options: {
-        list: [
-          { title: "Commercial", value: "Commercial" },
-          { title: "Residential", value: "Residential" },
-          { title: "Industrial", value: "Industrial" },
-          { title: "Hospitality", value: "Hospitality" },
-        ],
-      },
-      initialValue: "Commercial",
-      validation: (Rule) => Rule.required(),
-      group: "basic",
-    }),
+
     defineField({
       name: "transactionType",
       title: "Transaction Type",
       type: "string",
+      group: "basic",
+      description: "Must be 'To Let' for this listing type.",
       options: {
         list: [
-          { title: "To Let", value: "To Let" },
-          { title: "For Sale", value: "For Sale" },
-          { title: "Sold", value: "Sold" },
-          { title: "Leased", value: "Leased" },
+          { title: "To Let",    value: "To Let"    },
+          { title: "For Sale",  value: "For Sale"  },
+        ],
+        layout: "radio",
+      },
+      initialValue: "To Let",
+      validation: (R) => R.required(),
+    }),
+
+    defineField({
+      name: "propertyType",
+      title: "Property Type",
+      type: "string",
+      group: "basic",
+      options: {
+        list: [
+          { title: "Office",        value: "Office"        },
+          { title: "Retail",        value: "Retail"        },
+          { title: "Industrial",    value: "Industrial"    },
+          { title: "Warehouse",     value: "Warehouse"     },
+          { title: "Residential",   value: "Residential"   },
+          { title: "Mixed Use",     value: "Mixed Use"     },
+          { title: "Land",          value: "Land"          },
+          { title: "Other",         value: "Other"         },
         ],
       },
-      validation: (Rule) => Rule.required(),
-      group: "basic",
+      validation: (R) => R.required(),
     }),
+
+    defineField({
+      name: "category",
+      title: "Category",
+      type: "string",
+      group: "basic",
+      description: "Optional sub-category (e.g. 'Serviced Office', 'Cold Storage').",
+    }),
+
+    defineField({
+      name: "grade",
+      title: "Grade",
+      type: "string",
+      group: "basic",
+      description: "Building grade shown on the card badge.",
+      options: {
+        list: [
+          { title: "Grade A",   value: "Grade A"   },
+          { title: "Grade B",   value: "Grade B"   },
+          { title: "Grade C",   value: "Grade C"   },
+          { title: "Prime",     value: "Prime"     },
+          { title: "Standard",  value: "Standard"  },
+        ],
+      },
+      validation: (R) => R.required(),
+    }),
+
     defineField({
       name: "availabilityStatus",
       title: "Availability Status",
       type: "string",
+      group: "basic",
       options: {
         list: [
-          { title: "Available", value: "Available" },
-          { title: "Under Offer", value: "Under Offer" },
-          { title: "Sold", value: "Sold" },
-          { title: "Withdrawn", value: "Withdrawn" },
+          { title: "Available",     value: "Available"     },
+          { title: "Under Offer",   value: "Under Offer"   },
+          { title: "Let",           value: "Let"           },
+          { title: "Coming Soon",   value: "Coming Soon"   },
         ],
+        layout: "radio",
       },
       initialValue: "Available",
-      group: "basic",
+      validation: (R) => R.required(),
     }),
+
     defineField({
       name: "featured",
-      title: "Featured Property",
+      title: "Featured Listing",
       type: "boolean",
-      initialValue: false,
       group: "basic",
+      description: "Featured listings appear first in search results and on the homepage.",
+      initialValue: false,
     }),
+
     defineField({
       name: "listingDate",
       title: "Listing Date",
       type: "date",
-      initialValue: () => new Date().toISOString().split("T")[0],
       group: "basic",
+      options: { dateFormat: "YYYY-MM-DD" },
+      validation: (R) => R.required(),
     }),
 
-    // ─── Location ──────────────────────────────────────────────────
+    defineField({
+      name: "description",
+      title: "Description",
+      type: "text",
+      group: "basic",
+      rows: 6,
+      description: "Full property description shown on the detail page (first 160 chars used as SEO meta description).",
+    }),
+
+    // ── Location ──────────────────────────────────────────────────────────
+
     defineField({
       name: "country",
       title: "Country",
       type: "string",
-      validation: (Rule) => Rule.required(),
       group: "location",
+      initialValue: "Kenya",
+      validation: (R) => R.required(),
     }),
+
     defineField({
       name: "city",
       title: "City",
       type: "string",
-      validation: (Rule) => Rule.required(),
       group: "location",
+      description: "Used to group related properties (e.g. 'Nairobi', 'Mombasa').",
+      validation: (R) => R.required(),
     }),
+
     defineField({
       name: "neighborhood",
-      title: "Neighborhood / Area",
+      title: "Neighborhood",
       type: "string",
-      validation: (Rule) => Rule.required(),
       group: "location",
+      description: "Shown on the property card alongside city.",
+      validation: (R) => R.required(),
     }),
+
     defineField({
       name: "address",
       title: "Full Address",
       type: "string",
       group: "location",
-    }),
-    defineField({
-      name: "coordinates",
-      title: "Coordinates",
-      type: "object",
-      fields: [
-        defineField({ name: "lat", title: "Latitude", type: "number" }),
-        defineField({ name: "lng", title: "Longitude", type: "number" }),
-      ],
-      group: "location",
+      description: "Optional street address shown on the detail page.",
     }),
 
-    // ─── Pricing ───────────────────────────────────────────────────
+    // ── Pricing & Size ────────────────────────────────────────────────────
+
     defineField({
       name: "price",
-      title: "Pricing",
+      title: "Price",
       type: "object",
+      group: "pricing",
       fields: [
         defineField({
           name: "displayPrice",
           title: "Display Price",
           type: "string",
-          description: "e.g., 'KES 150 per sq ft' or 'USD 1.49 per sq ft'",
-          validation: (Rule) => Rule.required(),
+          description: "Formatted string shown to users, e.g. 'KES 120 /sqft/month' or 'Price on Request'.",
+          validation: (R) => R.required(),
         }),
-        defineField({ name: "kes", title: "KES Amount", type: "string" }),
-        defineField({ name: "usd", title: "USD Amount", type: "string" }),
+        defineField({
+          name: "kes",
+          title: "Price (KES)",
+          type: "string",
+          description: "Raw KES figure for filtering/sorting (optional).",
+        }),
+        defineField({
+          name: "usd",
+          title: "Price (USD)",
+          type: "string",
+          description: "Raw USD figure for filtering/sorting (optional).",
+        }),
       ],
-      group: "pricing",
     }),
+
     defineField({
       name: "sizeRange",
       title: "Size Range",
       type: "object",
+      group: "pricing",
       fields: [
-        defineField({ name: "min", title: "Minimum Size", type: "number" }),
-        defineField({ name: "max", title: "Maximum Size", type: "number" }),
+        defineField({
+          name: "min",
+          title: "Min Size",
+          type: "number",
+          validation: (R) => R.required().min(0),
+        }),
+        defineField({
+          name: "max",
+          title: "Max Size",
+          type: "number",
+          validation: (R) => R.required().min(0),
+        }),
         defineField({
           name: "unit",
           title: "Unit",
           type: "string",
           options: {
             list: [
-              { title: "Square Feet", value: "sqft" },
-              { title: "Square Meters", value: "sqm" },
-              { title: "Acres", value: "acres" },
-              { title: "Hectares", value: "hectares" },
+              { title: "sqft", value: "sqft" },
+              { title: "sqm",  value: "sqm"  },
+              { title: "acres", value: "acres" },
             ],
+            layout: "radio",
           },
           initialValue: "sqft",
+          validation: (R) => R.required(),
         }),
       ],
-      group: "pricing",
     }),
 
-    // ─── Property Details ──────────────────────────────────────────
-    defineField({
-      name: "grade",
-      title: "Property Grade",
-      type: "string",
-      options: {
-        list: [
-          { title: "Grade A", value: "Grade A" },
-          { title: "Grade A+", value: "Grade A+" },
-          { title: "Grade B+", value: "Grade B+" },
-          { title: "Grade B", value: "Grade B" },
-          { title: "Grade C", value: "Grade C" },
-        ],
-      },
-      group: "details",
-    }),
-    defineField({
-      name: "yearBuilt",
-      title: "Year Built",
-      type: "number",
-      group: "details",
-    }),
-    defineField({
-      name: "features",
-      title: "Key Features",
-      type: "array",
-      of: [{ type: "string" }],
-      group: "details",
-    }),
-    defineField({
-      name: "zoning",
-      title: "Zoning",
-      type: "string",
-      group: "details",
-    }),
-    defineField({
-      name: "utilities",
-      title: "Utilities",
-      type: "array",
-      of: [{ type: "string" }],
-      group: "details",
-    }),
-    defineField({
-      name: "planningApprovals",
-      title: "Planning Approvals",
-      type: "array",
-      of: [{ type: "string" }],
-      group: "details",
-    }),
-    defineField({
-      name: "environmentalAssessment",
-      title: "Environmental Assessment",
-      type: "text",
-      group: "details",
-    }),
+    // ── Media ─────────────────────────────────────────────────────────────
 
-    // ─── Media ───────────────────────────────────────────────────
     defineField({
       name: "images",
       title: "Property Images",
       type: "array",
-      of: [{ type: "image", options: { hotspot: true } }],
       group: "media",
+      description: "First image is used as the card thumbnail. Upload multiple for the gallery.",
+      of: [
+        {
+          type: "image",
+          options: { hotspot: true },
+          fields: [
+            defineField({
+              name: "alt",
+              title: "Alt Text",
+              type: "string",
+              description: "Describe the image for accessibility and SEO.",
+            }),
+          ],
+        },
+      ],
+      validation: (R) => R.required().min(1),
     }),
+
     defineField({
-      name: "brochure",
-      title: "Investment Brochure / Memorandum",
-      type: "file",
+      name: "floorPlans",
+      title: "Floor Plans",
+      type: "array",
       group: "media",
+      description: "Floor plan images shown on the detail page.",
+      of: [
+        {
+          type: "image",
+          options: { hotspot: false },
+          fields: [
+            defineField({
+              name: "alt",
+              title: "Alt Text",
+              type: "string",
+            }),
+          ],
+        },
+      ],
     }),
+
     defineField({
-      name: "videoTour",
-      title: "Video Tour URL",
+      name: "brochureUrl",
+      title: "Brochure URL",
       type: "url",
       group: "media",
+      description: "External link or uploaded PDF URL for the property brochure.",
     }),
 
-    // ─── Advisor ─────────────────────────────────────────────────
-    defineField({
-      name: "advisor",
-      title: "Property Advisor",
-      type: "object",
-      fields: [
-        defineField({ name: "name", title: "Name", type: "string", validation: (Rule) => Rule.required() }),
-        defineField({ name: "title", title: "Title", type: "string" }),
-        defineField({ name: "email", title: "Email", type: "string", validation: (Rule) => Rule.required() }),
-        defineField({ name: "phone", title: "Phone", type: "string", validation: (Rule) => Rule.required() }),
-        defineField({ name: "photo", title: "Photo", type: "image", options: { hotspot: true } }),
-      ],
-      group: "basic",
-    }),
+    // ── Details & Features ────────────────────────────────────────────────
 
-    // ─── SEO ───────────────────────────────────────────────────────
     defineField({
-      name: "seo",
-      title: "SEO",
-      type: "object",
-      group: "seo",
-      fields: [
-        defineField({ name: "metaTitle", title: "Meta Title", type: "string" }),
-        defineField({ name: "metaDescription", title: "Meta Description", type: "text", rows: 3 }),
-        defineField({ name: "focusKeyword", title: "Focus Keyword", type: "string" }),
-        defineField({ name: "secondaryKeywords", title: "Secondary Keywords", type: "array", of: [{ type: "string" }] }),
-      ],
-    }),
-
-    // ─── Market Analysis ──────────────────────────────────────────
-    defineField({
-      name: "neighborhoodAnalysis",
-      title: "Neighborhood Analysis",
-      type: "text",
-      rows: 4,
-      group: "analysis",
-    }),
-    defineField({
-      name: "infrastructureDetails",
-      title: "Infrastructure & Accessibility",
-      type: "text",
-      rows: 4,
-      group: "analysis",
-    }),
-    defineField({
-      name: "investmentAngle",
-      title: "Investment Thesis",
-      type: "text",
-      rows: 4,
-      group: "analysis",
-    }),
-    defineField({
-      name: "rentalDemand",
-      title: "Rental Market Demand",
-      type: "text",
-      rows: 4,
-      group: "analysis",
-    }),
-    defineField({
-      name: "appreciationPotential",
-      title: "Appreciation Potential",
-      type: "text",
-      rows: 4,
-      group: "analysis",
-    }),
-    defineField({
-      name: "nearbyLandmarks",
-      title: "Nearby Landmarks & Amenities",
+      name: "features",
+      title: "Features",
       type: "array",
+      group: "details",
+      description: "Key selling points shown as a bullet list on the detail page (e.g. 'Backup Generator', '24/7 Security').",
       of: [{ type: "string" }],
-      group: "analysis",
+    }),
+
+    defineField({
+      name: "details",
+      title: "Property Details",
+      type: "array",
+      group: "details",
+      description: "Structured key-value pairs displayed in the details table (e.g. Label: 'Parking Bays', Value: '50').",
+      of: [
+        {
+          type: "object",
+          name: "detail",
+          title: "Detail",
+          preview: {
+            select: { title: "label", subtitle: "value" },
+          },
+          fields: [
+            defineField({
+              name: "label",
+              title: "Label",
+              type: "string",
+              validation: (R) => R.required(),
+            }),
+            defineField({
+              name: "value",
+              title: "Value",
+              type: "string",
+              validation: (R) => R.required(),
+            }),
+          ],
+        },
+      ],
+    }),
+
+    // ── Leasing ───────────────────────────────────────────────────────────
+
+    defineField({
+      name: "availableFrom",
+      title: "Available From",
+      type: "date",
+      group: "leasing",
+      options: { dateFormat: "YYYY-MM-DD" },
+      description: "Earliest move-in / occupation date.",
+    }),
+
+    defineField({
+      name: "leaseTerm",
+      title: "Lease Term",
+      type: "string",
+      group: "leasing",
+      description: "Describe the lease term, e.g. 'Minimum 1 year', 'Flexible – monthly'.",
+    }),
+
+    // ── Broker ────────────────────────────────────────────────────────────
+
+    defineField({
+      name: "broker",
+      title: "Broker / Agent",
+      type: "object",
+      group: "broker",
+      description: "Contact shown on the detail page enquiry panel.",
+      fields: [
+        defineField({
+          name: "name",
+          title: "Name",
+          type: "string",
+          validation: (R) => R.required(),
+        }),
+        defineField({
+          name: "email",
+          title: "Email",
+          type: "string",
+          validation: (R) => R.required().email(),
+        }),
+        defineField({
+          name: "phone",
+          title: "Phone",
+          type: "string",
+          validation: (R) => R.required(),
+        }),
+        defineField({
+          name: "photo",
+          title: "Photo",
+          type: "image",
+          options: { hotspot: true },
+        }),
+      ],
     }),
   ],
-
-  preview: {
-    select: {
-      title: "title",
-      subtitle: "city",
-      media: "images.0",
-      transactionType: "transactionType",
-      propertyType: "propertyType",
-    },
-    prepare({
-      title,
-      subtitle,
-      media,
-      transactionType,
-      propertyType,
-    }: {
-      title?: string;
-      subtitle?: string;
-      media?: unknown;
-      transactionType?: string;
-      propertyType?: string;
-    }) {
-      return {
-        title: `${title}`,
-        subtitle: `${transactionType} | ${propertyType} | ${subtitle}`,
-        media,
-      };
-    },
-  },
-};
+});
