@@ -142,7 +142,7 @@ export async function POST(request: NextRequest) {
       
       <p>Our research is prepared for investors, developers, occupiers, and institutions monitoring East African real estate markets.</p>
       
-      <a href="https://www.murivest.co.ke/research" class="button">View Latest Research</a>
+      <a href="https://www.murivest.com/research" class="button">View Latest Research</a>
       
       <p class="small" style="margin-top:28px;">This email was sent following a newsletter subscription request submitted through the Murivest website. You may unsubscribe at any time.</p>
     </div>

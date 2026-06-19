@@ -108,7 +108,7 @@ Files Attached: ${attachments.length}
           ` : ''}
 
           <p style="font-size: 12px; color: #B0ADA6; border-top: 1px solid #E5E2DC; padding-top: 16px;">
-            Submitted via murivest.co.ke/broker &middot; ${attachments.length} file(s) attached
+            Submitted via murivest.com/broker &middot; ${attachments.length} file(s) attached
           </p>
         </div>
       `,
@@ -209,7 +209,7 @@ Murivest Capital Markets Team
           <div style="border-top: 1px solid #E5E2DC; margin-top: 32px; padding-top: 16px;">
             <p style="font-size: 11px; color: #B0ADA6; margin: 0;">
               Murivest Realty &middot; 14th Floor, The Lofts, Riverside Drive, Westlands, Nairobi<br/>
-              <a href="https://murivest.co.ke" style="color: #8B7355; text-decoration: none;">murivest.co.ke</a>
+              <a href="https://murivest.com" style="color: #8B7355; text-decoration: none;">murivest.com</a>
             </p>
           </div>
         </div>

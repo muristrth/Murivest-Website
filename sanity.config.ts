@@ -137,10 +137,10 @@ export default defineConfig({
       const { _type, slug } = document
       
       if (_type === 'property' && slug?.current) {
-        return `https://murivest.co.ke/properties/${slug.current}`
+        return `https://murivest.com/properties/${slug.current}`
       }
       if (_type === 'land' && slug?.current) {
-        return `https://murivest.co.ke/land-portfolio/${slug.current}`
+        return `https://murivest.com/land-portfolio/${slug.current}`
       }
       return prev
     },

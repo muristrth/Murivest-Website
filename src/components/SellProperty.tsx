@@ -1204,7 +1204,7 @@ const SellProperty: React.FC = () => {
         <div className="text-center mt-12 pb-8">
           <div className="h-px bg-[#E5E2DC] max-w-xs mx-auto mb-6" />
           <p className="text-[11px] text-[#5A5A5A] font-light tracking-wide">
-            &copy; 2026 Murivest Realty &middot; <a href="https://murivest.co.ke" className="hover:text-[#8B7355] transition-colors">murivest.co.ke</a>
+            &copy; 2026 Murivest Realty &middot; <a href="https://murivest.com" className="hover:text-[#8B7355] transition-colors">murivest.com</a>
             {' &middot; '}<span className="text-[#8B7355]">Institutional Grade &middot; Confidential</span>
           </p>
         </div>

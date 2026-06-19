@@ -107,8 +107,6 @@ const NAV = {
       },
     ],
     quicklinks: [
-      { label: 'Residential', href: '/properties?category=residential' },
-      { label: 'Commercial', href: '/properties?category=commercial' },
       { label: 'Land', href: '/land-portfolio' },
       { label: 'International', href: '/international-properties' },
     ],
@@ -173,6 +171,8 @@ const NAV = {
     ],
   },
 }
+
+
 
 /* ──────────────────────────────────────────────────────────────
    STANDARD MEGA MENU

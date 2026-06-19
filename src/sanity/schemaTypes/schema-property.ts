@@ -4,27 +4,11 @@
 import { defineField, defineType } from "sanity";
 
 export default defineType({
-  name: "property",
-  title: "Property",
+  name: "propertylet",
+  title: "Propertylet",
   type: "document",
 
-  // ── Preview (shown in Sanity Studio list view) ──────────────────────────
-  preview: {
-    select: {
-      title: "title",
-      subtitle: "neighborhood",
-      media: "images.0",
-      status: "availabilityStatus",
-      transactionType: "transactionType",
-    },
-    prepare({ title, subtitle, media, status, transactionType }) {
-      return {
-        title: title ?? "Untitled Property",
-        subtitle: `${transactionType ?? ""} · ${subtitle ?? ""} · ${status ?? ""}`,
-        media,
-      };
-    },
-  },
+
 
   // ── Field groups (organise Studio tabs) ────────────────────────────────
   groups: [
@@ -110,6 +94,49 @@ export default defineType({
       group: "basic",
       description: "Optional sub-category (e.g. 'Serviced Office', 'Cold Storage').",
     }),
+          {
+      name: "country",
+      title: "Country",
+      type: 'string',
+      options: {
+        list: [
+          { title: 'United Kingdom', value: 'united-kingdom' },
+          { title: 'United States', value: 'united-states' },
+          { title: 'Canada', value: 'canada' },
+          { title: 'Kenya', value: 'kenya' },
+          { title: 'South Africa', value: 'south-africa' },
+          { title: 'UAE', value: 'uae' },
+          { title: 'Singapore', value: 'singapore' },
+        ],
+      },
+    },
+    {
+      name: "assetType",
+      title: "Asset Type",
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Office', value: 'office' },
+          { title: 'Hotel', value: 'hotel' },
+          { title: 'Retail', value: 'retail' },
+          { title: 'Industrial', value: 'industrial' },
+          { title: 'Mixed-Use', value: 'mixed-use' },
+          { title: 'Residential', value: 'residential' },
+          { title: 'Commercial', value: 'commercial' },
+        ],
+      },
+    },
+    {
+      name: "listingType",
+      title: "Listing Type",
+      type: 'string',
+      options: {
+        list: [
+          { title: 'For Sale', value: 'for-sale' },
+          { title: 'For Lease', value: 'for-lease' },
+        ],
+      },
+    },
 
     defineField({
       name: "grade",
@@ -174,16 +201,6 @@ export default defineType({
       description: "Full property description shown on the detail page (first 160 chars used as SEO meta description).",
     }),
 
-    // ── Location ──────────────────────────────────────────────────────────
-
-    defineField({
-      name: "country",
-      title: "Country",
-      type: "string",
-      group: "location",
-      initialValue: "Kenya",
-      validation: (R) => R.required(),
-    }),
 
     defineField({
       name: "city",

@@ -514,7 +514,7 @@ export async function POST(request: NextRequest) {
                 <p style="font-size: 18px; margin-bottom: 25px; opacity: 0.9;">Our senior investment consultants will contact you within 24 hours to discuss your portfolio strategy.</p>
                 
                 <div class="cta-buttons">
-                  <a href="https://www.murivest.co.ke/" class="cta-button">Explore Investment Opportunities</a>
+                  <a href="https://www.murivest.com/" class="cta-button">Explore Investment Opportunities</a>
                   <a href="tel:+254787707284" class="cta-button secondary">Schedule Consultation</a>
                 </div>
               </div>
@@ -542,7 +542,7 @@ export async function POST(request: NextRequest) {
                 Westlands Business District, Nairobi, Kenya<br><br>
                 <strong>Direct Line:</strong> +254 787 707 284<br>
                  <strong>Email:</strong> capital@murivest.co.ke<br>
-                <strong>Website:</strong> <a href="https://www.murivest.co.ke/" style="color: #d4af37; text-decoration: none;">www.murivest.co.ke</a>
+                <strong>Website:</strong> <a href="https://www.murivest.com/" style="color: #d4af37; text-decoration: none;">www.murivest.com</a>
               </div>
 
               <div class="social-links">
@@ -574,7 +574,7 @@ export async function POST(request: NextRequest) {
       from: `"Murivest Realty Group" <${process.env.SMTP_USER}>`,
       to: body.email,
       subject: 'Welcome to Murivest Realty Group - Your Premium Investment Journey Begins',
-      text: `Dear ${body.name},\n\nWelcome to Murivest Realty Group - your gateway to premium real estate investment opportunities in Kenya.\n\nOur investment consultants will contact you within 24 hours to discuss your investment goals.\n\nVisit us: https://www.murivest.co.ke/\nCall: +254 787 707 284\n\nBest regards,\nThe Murivest Executive Team`,
+      text: `Dear ${body.name},\n\nWelcome to Murivest Realty Group - your gateway to premium real estate investment opportunities in Kenya.\n\nOur investment consultants will contact you within 24 hours to discuss your investment goals.\n\nVisit us: https://www.murivest.com/\nCall: +254 787 707 284\n\nBest regards,\nThe Murivest Executive Team`,
       html: confirmationHtml,
     });
 

@@ -1,7 +1,7 @@
 // ─── lib/schema/generateBreadcrumbSchema.ts ──────────────────────────────────
 import type { Property } from '@/types/property';
 
-const BASE_URL = 'https://murivest.co.ke';
+const BASE_URL = 'https://murivest.com';
 
 export function generateBreadcrumbSchema(property: Property): Record<string, unknown> {
   const categorySegment = property.propertyType?.toLowerCase() ?? 'commercial';

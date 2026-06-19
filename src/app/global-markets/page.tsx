@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     images: ['/kenya-night.webp'],
   },
   alternates: {
-    canonical: 'https://murivest.co.ke/global-markets',
+    canonical: 'https://murivest.com/markets',
   },
 }
 

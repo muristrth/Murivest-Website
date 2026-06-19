@@ -146,7 +146,7 @@ export default function DueDiligenceFramework() {
 
           <div style={{ marginTop: '80px', textAlign: 'center', borderTop: '1px solid #E2DDD6', paddingTop: '60px' }}>
             <p style={{ fontSize: '18px', color: '#6B6259', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6' }}>
-              For an empirical understanding of how this framework actively protects capital in real-time, we strongly advise principals to <a href="https://murivest.co.ke/insights" className="dd-internal-link">review our institutional market intelligence and yield reports</a>.
+              For an empirical understanding of how this framework actively protects capital in real-time, we strongly advise principals to <a href="https://murivest.com/insights" className="dd-internal-link">review our institutional market intelligence and yield reports</a>.
             </p>
           </div>
         </section>
@@ -158,7 +158,7 @@ export default function DueDiligenceFramework() {
             <p className="dd-cta-text">
               Do not expose generational wealth to unverified structural or legal liabilities. Require Murivest's institutional due diligence on your next commercial acquisition.
             </p>
-            <a href="https://murivest.co.ke/contact" className="dd-btn">
+            <a href="https://murivest.com/contact" className="dd-btn">
               Engage Our Acquisitions Desk <ArrowRight size={18} />
             </a>
           </div>

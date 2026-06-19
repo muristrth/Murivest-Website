@@ -60,7 +60,7 @@ function loiHtml(loiText, propertyName, purchaser) {
           <td style="background:#f8f7f4;border-top:1px solid #e8e2d6;padding:20px 32px;text-align:center;">
             <div style="font-size:12px;color:#9a9589;">
               Murivest Investment Desk · capital@murivest.co.ke<br>
-              <a href="https://murivest.co.ke" style="color:#c8a96e;text-decoration:none;">murivest.co.ke</a>
+              <a href="https://murivest.com" style="color:#c8a96e;text-decoration:none;">murivest.com</a>
             </div>
           </td>
         </tr>
@@ -110,7 +110,7 @@ function confirmHtml(loiText, investorEmail, propertyName) {
                 <li>Our Investment Desk reviews your LOI</li>
                 <li>We will contact you to discuss the offer and next steps</li>
                 <li>Upon agreement, a formal Sale Agreement will be drafted</li>
-                <li>Log in to your <a href="https://murivest.co.ke/dashboard" style="color:#c8a96e;">investor dashboard</a> to track deal progress</li>
+                <li>Log in to your <a href="https://murivest.com/dashboard" style="color:#c8a96e;">investor dashboard</a> to track deal progress</li>
               </ul>
             </div>
             <p style="font-size:11px;color:#b0a898;margin:24px 0 0;line-height:1.7;">
@@ -123,7 +123,7 @@ function confirmHtml(loiText, investorEmail, propertyName) {
           <td style="background:#f8f7f4;border-top:1px solid #e8e2d6;padding:20px 32px;text-align:center;">
             <div style="font-size:12px;color:#9a9589;">
               Murivest Investment Desk · capital@murivest.co.ke<br>
-              <a href="https://murivest.co.ke" style="color:#c8a96e;text-decoration:none;">murivest.co.ke</a>
+              <a href="https://murivest.com" style="color:#c8a96e;text-decoration:none;">murivest.com</a>
             </div>
           </td>
         </tr>

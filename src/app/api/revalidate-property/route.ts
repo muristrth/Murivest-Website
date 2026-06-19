@@ -3,7 +3,7 @@
 //
 // In Sanity Studio:
 //   Dashboard → API → Webhooks → Add webhook
-//   URL: https://murivest.co.ke/api/revalidate-property
+//   URL: https://murivest.com/api/revalidate-property
 //   Secret: same as SANITY_REVALIDATE_SECRET env var
 //   Dataset: production
 //   Trigger on: create, update, delete

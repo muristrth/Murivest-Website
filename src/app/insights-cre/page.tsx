@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_KE',
   },
-  alternates: { canonical: 'https://murivest.co.ke/insights-cre' },
+  alternates: { canonical: 'https://murivest.com/insights-cre' },
 };
 
 const jsonLd = {
@@ -23,17 +23,17 @@ const jsonLd = {
   '@type': 'CollectionPage',
   name: 'Commercial Real Estate Insights | Murivest',
   description: 'Institutional-grade CRE analysis for accredited investors. Nairobi office market reports, yield data, and East Africa capital flow intelligence.',
-  url: 'https://murivest.co.ke/insights-cre',
+  url: 'https://murivest.com/insights-cre',
   publisher: {
     '@type': 'Organization',
     name: 'Murivest Realty Group',
-    url: 'https://murivest.co.ke',
+    url: 'https://murivest.com',
   },
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://murivest.co.ke' },
-      { '@type': 'ListItem', position: 2, name: 'Insights', item: 'https://murivest.co.ke/insights-cre' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://murivest.com' },
+      { '@type': 'ListItem', position: 2, name: 'Insights', item: 'https://murivest.com/insights-cre' },
     ],
   },
 };

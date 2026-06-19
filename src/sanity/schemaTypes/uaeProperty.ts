@@ -143,6 +143,49 @@ export default defineType({
       },
       validation: (R) => R.required(),
     }),
+          {
+      name: "country",
+      title: "Country",
+      type: 'string',
+      options: {
+        list: [
+          { title: 'United Kingdom', value: 'united-kingdom' },
+          { title: 'United States', value: 'united-states' },
+          { title: 'Canada', value: 'canada' },
+          { title: 'Kenya', value: 'kenya' },
+          { title: 'South Africa', value: 'south-africa' },
+          { title: 'UAE', value: 'uae' },
+          { title: 'Singapore', value: 'singapore' },
+        ],
+      },
+    },
+    {
+      name: "assetType",
+      title: "Asset Type",
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Office', value: 'office' },
+          { title: 'Hotel', value: 'hotel' },
+          { title: 'Retail', value: 'retail' },
+          { title: 'Industrial', value: 'industrial' },
+          { title: 'Mixed-Use', value: 'mixed-use' },
+          { title: 'Residential', value: 'residential' },
+          { title: 'Commercial', value: 'commercial' },
+        ],
+      },
+    },
+    {
+      name: "listingType",
+      title: "Listing Type",
+      type: 'string',
+      options: {
+        list: [
+          { title: 'For Sale', value: 'for-sale' },
+          { title: 'For Lease', value: 'for-lease' },
+        ],
+      },
+    },
     defineField({
       name: 'community',
       title: 'Community / District',

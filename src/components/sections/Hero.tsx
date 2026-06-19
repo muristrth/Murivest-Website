@@ -60,32 +60,6 @@ const Hero = () => {
       {/* ── DESKTOP LAYOUT ─────────────────── */}
       <div className="relative z-10 hidden md:flex flex-col justify-between min-h-screen max-w-[1400px] mx-auto px-8 lg:px-16 py-14">
 
-        {/* Top bar */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex items-center justify-between"
-        >
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-[1px] bg-[#B8956B]" />
-            <span className="text-[10px] tracking-[0.5em] uppercase text-[#B8956B] font-mono">
-              Murivest Realty Group
-            </span>
-          </div>
-          <div className="flex items-center gap-8">
-            {['Mandate', 'Properties', 'Research', 'Contact'].map((item) => (
-              <Link
-                key={item}
-                href={`/${item.toLowerCase()}`}
-                className="text-[10px] tracking-[0.3em] uppercase text-[#A8A39D] hover:text-[#B8956B] transition-colors duration-300"
-              >
-                {item}
-              </Link>
-            ))}
-          </div>
-        </motion.div>
-
         {/* Centre content */}
         <div className="grid lg:grid-cols-12 gap-14 items-end">
 

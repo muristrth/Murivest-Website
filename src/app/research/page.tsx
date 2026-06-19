@@ -78,8 +78,8 @@ export default function researchPage() {
     },
     "datePublished": researchPost.datePublished,
     "image": researchPost.image || "/image.webp",
-    "mainEntityOfPage": `https://murivest.co.ke/research/${researchPost.slug}`,
-    "url": `https://murivest.co.ke/research/${researchPost.slug}`
+    "mainEntityOfPage": `https://murivest.com/research/${researchPost.slug}`,
+    "url": `https://murivest.com/research/${researchPost.slug}`
   };
 
   return (

@@ -63,7 +63,7 @@ export async function generateMetadata({
     },
 
     alternates: {
-      canonical: `https://murivest.co.ke/uae-properties/${slug}`,
+      canonical: `https://murivest.com/uae-properties/${slug}`,
     },
   };
 }

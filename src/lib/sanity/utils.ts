@@ -1,4 +1,4 @@
-const BASE_URL = "https://murivest.co.ke";
+const BASE_URL = "https://murivest.com";
 
 export function generateOrganizationSchema() {
   return {

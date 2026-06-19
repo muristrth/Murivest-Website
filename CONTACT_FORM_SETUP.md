@@ -21,7 +21,7 @@ SMTP_HOST="smtp.gmail.com"
 SMTP_PORT=587
 SMTP_USER="your-email@gmail.com"
 SMTP_PASS="your-app-password"
-CONTACT_EMAIL="advisory@ murivest.co.ke"
+CONTACT_EMAIL="advisory@ murivest.com"
 ```
 
 ### 2. Gmail Setup (if using Gmail)

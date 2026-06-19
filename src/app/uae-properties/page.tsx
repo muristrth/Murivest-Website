@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName:    'Murivest',
   },
   alternates: {
-    canonical: 'https://murivest.co.ke/uae-properties',
+    canonical: 'https://murivest.com/uae-properties',
   },
 };
 

@@ -4,7 +4,7 @@
 
 import { client } from '@/sanity/lib/client';
 
-const BASE_URL = 'https://murivest.co.ke';
+const BASE_URL = 'https://murivest.com';
 
 interface SanityPropertyEntry {
   slug:      string;

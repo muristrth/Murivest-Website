@@ -73,8 +73,8 @@ export function ProtectedRouteNotice({
               <p className="font-medium text-[#1B4332] mb-1">Need help?</p>
               <p>Contact our investor relations team for assistance with verification or upgrade options.</p>
               <p className="mt-2">
-                <a href="mailto:investors@ murivest.co.ke" className="text-[#B8956B] hover:text-[#1B4332] underline">
-                  investors@ murivest.co.ke
+                <a href="mailto:investors@ murivest.com" className="text-[#B8956B] hover:text-[#1B4332] underline">
+                  investors@ murivest.com
                 </a>
               </p>
             </div>

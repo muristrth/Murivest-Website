@@ -183,17 +183,17 @@ export async function generateMetadata({
   const image =
     seo.ogImage ||
     property.images?.[0] ||
-    "https://murivest.co.ke/og-default.webp";
+    "https://murivest.com/og-default.webp";
 
   const canonical =
     seo.canonicalUrl ||
-    `https://murivest.co.ke/properties/${property.slug}`;
+    `https://murivest.com/properties/${property.slug}`;
 
   return {
     title,
     description,
 
-    metadataBase: new URL("https://murivest.co.ke"),
+    metadataBase: new URL("https://murivest.com"),
 
     alternates: {
       canonical,

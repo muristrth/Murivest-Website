@@ -231,7 +231,7 @@ export const researchData: Record<string, researchPostData> = {
   "image": "https://i.ibb.co/cc2ttgK2/diani-watamu-land-2026.webp",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://murivest.co.ke/research/diani-and-watamu-land-have-appreciated-by-400-since-2020"
+    "@id": "https://murivest.com/research/diani-and-watamu-land-have-appreciated-by-400-since-2020"
   }
 }
 </script>
@@ -675,7 +675,7 @@ export const researchData: Record<string, researchPostData> = {
     <figcaption>The Concord Hotel — KSh 3.0B Five-Star Hospitality Asset in Parklands</figcaption>
   </figure>
   
-  <p>These beautiful institutional assets, along with others on our <a href="https://murivest.co.ke/properties">properties page</a>, are available as I write this letter.</p>
+  <p>These beautiful institutional assets, along with others on our <a href="https://murivest.com/properties">properties page</a>, are available as I write this letter.</p>
   
   <p>This doesn't mean they will last long.</p>
   
@@ -866,7 +866,7 @@ export const researchData: Record<string, researchPostData> = {
   
   <p><strong>P.S.</strong> Again, if you're interested, just email or call our advisory team at <a href="mailto:advisory@murivest.co.ke">advisory@murivest.co.ke</a> and we'll set you up with everything you will need.</p>
   
-  <p>Also, if you're simply looking for an inexpensive property tour, Nairobi CBD is a great destination. But this is not the time for it. For now, please allow us to spend time on this inspection with investors interested in institutional real estate acquisition opportunities at Absa Towers and our other assets on <a href="https://murivest.co.ke/properties">murivest.co.ke/properties</a>.</p>
+  <p>Also, if you're simply looking for an inexpensive property tour, Nairobi CBD is a great destination. But this is not the time for it. For now, please allow us to spend time on this inspection with investors interested in institutional real estate acquisition opportunities at Absa Towers and our other assets on <a href="https://murivest.com/properties">murivest.com/properties</a>.</p>
   
   <h2>Related Articles</h2>
   <ul>
@@ -895,7 +895,7 @@ export const researchData: Record<string, researchPostData> = {
   "image": "/p3/absa.webp",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://murivest.co.ke/research/absa-towers-nairobi-cbd-exclusive-investment"
+    "@id": "https://murivest.com/research/absa-towers-nairobi-cbd-exclusive-investment"
   }
 }
 </script>
@@ -1251,7 +1251,7 @@ export const researchData: Record<string, researchPostData> = {
   "image": "/research-images/rent-to-own-kenya-2026.webp",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://murivest.co.ke/research/rent-to-own-schemes-in-kenya"
+    "@id": "https://murivest.com/research/rent-to-own-schemes-in-kenya"
   }
 }
 </script>
@@ -1613,7 +1613,7 @@ export const researchData: Record<string, researchPostData> = {
   "image": "https://coastproperties.co.ke/wp-content/uploads/2023/07/Facebook-card-010.webp",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://murivest.co.ke/research/investing-in-kenyas-affordable-housing-projects-what-you-need-to-know"
+    "@id": "https://murivest.com/research/investing-in-kenyas-affordable-housing-projects-what-you-need-to-know"
   }
 }
 </script>
@@ -2737,7 +2737,7 @@ readTime: '10 min read',
 featured: true,
 content: `
 
-<article> <h1>3 Dangerous Retirement Lies Brokers Are Telling Americans (And How to Protect Your Nest Egg)</h1> <p class="author-date">By Chris Mayer | 2026-05-15 | 10 min read</p> <figure class="featured-image"> <img src="https://i.ibb.co/qLQ3sTmt/dont-let-these-lies.webp" alt="Retirement planning and financial security"  > <figcaption>Retirement security is under threat from Wall Street myths.</figcaption> </figure> <p>After spending years inside the banking industry, I’ve seen firsthand how brokers and financial advisors steer hardworking Americans into retirement traps. Some do it knowingly to generate commissions; others simply repeat what they’ve been taught without examining the facts. In either case, three persistent lies are draining retirement accounts and threatening the financial futures of millions of people. It’s time to blow the lid off these dangerous myths and show you how to build the rich, worry‑free retirement you deserve.</p> <h2>Most Dangerous Retirement Lie #1: “Diversify! Diversify! Diversify!”</h2> <p>The drumbeat of diversification is relentless. Brokers tell you to spread your money across dozens of asset classes, sectors, and geographies. But over‑diversification — what billionaire investor Peter Lynch called “diworsification” — can actually destroy wealth.</p> <p>When you own too many investments, you become a collector rather than an investor. You can’t keep up with due diligence, transaction costs multiply, and long‑term returns suffer. Warren Buffett famously said, “Diversification makes very little sense for those who know what they are doing.” And Jim Rogers warns that brokers invented the concept to protect themselves, not you.</p> <blockquote> <p>“After purchasing six or eight stocks in different industries, the benefit of adding even more stocks to your portfolio in an effort to decrease risk is small.”</p> <cite>— Joel Greenblatt, author of <em>You Can Be a Stock Market Genius</em></cite> </blockquote> <p>Brokers often use “auto‑diversification” products like target‑date funds. These require little work on their part, yet keep money in motion — generating fees and commissions while giving the illusion of safety. The result? A smorgasbord of holdings with no unifying purpose and returns that lag the market year after year.</p> <h2>Most Dangerous Retirement Lie #2: “Bonds Are Safe and Should Dominate Your Portfolio As You Age”</h2> <p>The conventional rule says you should hold your age in bonds — a 65‑year‑old, for example, should have 65% in fixed income. Advisors push this because bonds feel safe. After all, if a company goes bankrupt, bondholders get paid before stockholders.</p> <p>But look closer. In a severe downturn, bonds can lose 50% or more of their value — not much different from stocks. And in an inflationary environment, long‑term bonds get crushed. The fixed payments you receive buy less and less as the cost of living soars.</p> <figure> <img src="https://images.unsplash.com/photo-1559589689-577aabd1db4f?w=800&auto=format&fit=crop" alt="Inflation erodes fixed income returns"  > <figcaption>Inflation can silently destroy the purchasing power of bond returns.</figcaption> </figure> <p>Worse, bondholders have no upside. If the company prospers, the stockholder participates in the growth; the bondholder simply gets their promised coupon back. Bonds give you much of the downside risk of stocks without any of the upside potential. In an era of rising inflation and shaky government finances, that’s a recipe for a diminished retirement.</p> <h2>Most Dangerous Retirement Lie #3: “Always Consult a Broker or Financial Advisor Before Investing”</h2> <p>Financial advisors are supposed to have your best interests at heart. In reality, their advice often underperforms the market — and the fees they charge can devastate your nest egg. Academic studies show that the stock recommendations from bank research departments provide no superior performance. Even Jim Cramer’s picks failed to beat the market when rigorously tracked.</p> <p>Consider the long‑term impact of fees on a $2,000 annual investment earning a steady return before costs:</p> <ul> <li>0.02% management fee → $968,249 after 40 years</li> <li>1% fee → $736,584</li> <li>3% fee → $427,219</li> </ul> <p>That’s a staggering $541,000 difference simply because of fees. As Barron’s #1 independent advisor Ric Edelman says, “The retail mutual fund industry is ripping you off. You are incurring greater risks, lower returns, and higher fees than you realize.”</p> <blockquote> <p>“There’s no greater pitfall than the one created by the retail mutual fund industry. They are ripping you off.”</p> <cite>— Ric Edelman, ranked America’s #1 independent financial advisor by Barron’s</cite> </blockquote> <h2>The Owner‑Operator Edge: A Bulletproof Strategy for Building Wealth</h2> <p>If brokers can’t be trusted, where should you turn? One of the most powerful — and overlooked — strategies is to invest in companies run by large, committed owners. When the people managing the business have their own money on the line, they think like owners, not hired guns chasing quarterly bonuses.</p> <p>Wal‑Mart under founder Sam Walton delivered 20.5% annual returns; after his departure, returns dropped to about 9%. IBM under the Watson family outperformed the market by 6.6% annually, then sagged to just 1.7% above the market once they left. Apple with Steve Jobs trounced the market by 28% per year; without him, it lagged by 3.1%. The pattern is undeniable.</p> <p>I’ve identified a little‑known company that has been run by the same family since inception. Barron’s notes “few Wall Street analysts cover it,” yet Forbes calls it a “cash machine.” Over the past two years it returned 114% — more than 12 times the S&P 500. It holds profitable stakes in energy, commodities, insurance, and luxury property, all under one roof. This kind of “owner‑operator” stock can be a cornerstone of an inflation‑proof retirement.</p> <h2>Inflation Fortress #1: Precious Metals</h2> <p>Gold and silver are classic hedges against the destruction of paper money. Gold has risen every single year for a decade and still has room to run as central banks print money at historic rates. Silver even beat gold in 2010, nearly doubling in value. Hedge fund legend Eric Sprott sees gold north of $2,000, while US Global Investors CEO Frank Holmes calculates gold would need to hit $7,993 just to cover outstanding U.S. money supply. Owning physical bullion or select mining stocks can be a low‑risk way to protect your purchasing power.</p> <h2>Inflation Fortress #2: The World’s Best Farmland</h2> <p>No matter how high inflation climbs, people must eat. Quality farmland is becoming scarce — the National Academy of Sciences warns U.S. cropland is being lost at least 10 times faster than it’s being replaced. The UN says the global rate is 10–100 times faster than replacement. At the same time, world population is projected to grow from 6.9 billion to 10 billion by 2050. The result: food prices and farmland values are on a one‑way trip upward.</p> <p>You don’t need to buy a farm to participate. There are innovative ways to invest in agricultural assets that can generate reliable returns while protecting against inflation. This is a strategic asset class that many brokers never mention.</p> <h2>A Simple Path to the Retirement You Deserve</h2> <p>The retirement lies perpetuated by Wall Street aren’t just annoying — they’re expensive. Over‑diversification dilutes your returns. Blind bond allocation exposes you to inflation without upside. And paying high fees for underperforming advice drains hundreds of thousands of dollars from your nest egg over a lifetime.</p> <p>By focusing on owner‑operator companies, adding hard assets like gold and farmland, and taking control of your own investment decisions, you can sidestep these traps and build a retirement that lets you travel, spoil your grandkids, and leave a lasting legacy. You worked hard for your money. It’s time your money worked hard for you.</p> <div class="disclaimer"> <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Realty Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.</em></p> </div> </article><!-- JSON-LD Structured Data (researchPosting) --><script type="application/ld+json"> { "@context": "https://schema.org", "@type": "researchPosting", "headline": "3 Dangerous Retirement Lies Brokers Are Telling Americans (And How to Protect Your Nest Egg)", "description": "Former banking insider Chris Mayer exposes the three most costly retirement myths perpetuated by brokers and financial advisors. Discover the little-known owner-operator strategy and essential inflation hedges that could help you build lasting wealth.", "author": { "@type": "Person", "name": "Chris Mayer" }, "datePublished": "2011-07-15", "dateModified": "2011-07-15", "image": "https://i.ibb.co/GvZh3mC4/3-most-dangerous-retirment-lies.webp", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://murivest.co.ke/research/3-dangerous-retirement-lies" } } </script><!-- JSON-LD FAQ --><script type="application/ld+json"> { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "Why is over-diversification a retirement mistake?", "acceptedAnswer": { "@type": "Answer", "text": "Owning too many investments dilutes your focus, raises transaction costs, and makes it harder to achieve meaningful returns. As Joel Greenblatt notes, after six or eight stocks in different industries, the risk reduction benefit of adding more is negligible." } }, { "@type": "Question", "name": "Should retirees move heavily into bonds for safety?", "acceptedAnswer": { "@type": "Answer", "text": "Bonds carry significant downside risk during market selloffs and are especially vulnerable to inflation, which erodes fixed payments. They also offer no upside participation in a company's growth, making them a poor substitute for carefully selected stocks." } }, { "@type": "Question", "name": "How can I protect my retirement from inflation?", "acceptedAnswer": { "@type": "Answer", "text": "Consider hard assets like physical gold and silver, which have historically held their value during inflationary periods. Investments in productive farmland and owner-operated companies with strong balance sheets also provide a hedge against rising prices." } }] } </script>
+<article> <h1>3 Dangerous Retirement Lies Brokers Are Telling Americans (And How to Protect Your Nest Egg)</h1> <p class="author-date">By Chris Mayer | 2026-05-15 | 10 min read</p> <figure class="featured-image"> <img src="https://i.ibb.co/qLQ3sTmt/dont-let-these-lies.webp" alt="Retirement planning and financial security"  > <figcaption>Retirement security is under threat from Wall Street myths.</figcaption> </figure> <p>After spending years inside the banking industry, I’ve seen firsthand how brokers and financial advisors steer hardworking Americans into retirement traps. Some do it knowingly to generate commissions; others simply repeat what they’ve been taught without examining the facts. In either case, three persistent lies are draining retirement accounts and threatening the financial futures of millions of people. It’s time to blow the lid off these dangerous myths and show you how to build the rich, worry‑free retirement you deserve.</p> <h2>Most Dangerous Retirement Lie #1: “Diversify! Diversify! Diversify!”</h2> <p>The drumbeat of diversification is relentless. Brokers tell you to spread your money across dozens of asset classes, sectors, and geographies. But over‑diversification — what billionaire investor Peter Lynch called “diworsification” — can actually destroy wealth.</p> <p>When you own too many investments, you become a collector rather than an investor. You can’t keep up with due diligence, transaction costs multiply, and long‑term returns suffer. Warren Buffett famously said, “Diversification makes very little sense for those who know what they are doing.” And Jim Rogers warns that brokers invented the concept to protect themselves, not you.</p> <blockquote> <p>“After purchasing six or eight stocks in different industries, the benefit of adding even more stocks to your portfolio in an effort to decrease risk is small.”</p> <cite>— Joel Greenblatt, author of <em>You Can Be a Stock Market Genius</em></cite> </blockquote> <p>Brokers often use “auto‑diversification” products like target‑date funds. These require little work on their part, yet keep money in motion — generating fees and commissions while giving the illusion of safety. The result? A smorgasbord of holdings with no unifying purpose and returns that lag the market year after year.</p> <h2>Most Dangerous Retirement Lie #2: “Bonds Are Safe and Should Dominate Your Portfolio As You Age”</h2> <p>The conventional rule says you should hold your age in bonds — a 65‑year‑old, for example, should have 65% in fixed income. Advisors push this because bonds feel safe. After all, if a company goes bankrupt, bondholders get paid before stockholders.</p> <p>But look closer. In a severe downturn, bonds can lose 50% or more of their value — not much different from stocks. And in an inflationary environment, long‑term bonds get crushed. The fixed payments you receive buy less and less as the cost of living soars.</p> <figure> <img src="https://images.unsplash.com/photo-1559589689-577aabd1db4f?w=800&auto=format&fit=crop" alt="Inflation erodes fixed income returns"  > <figcaption>Inflation can silently destroy the purchasing power of bond returns.</figcaption> </figure> <p>Worse, bondholders have no upside. If the company prospers, the stockholder participates in the growth; the bondholder simply gets their promised coupon back. Bonds give you much of the downside risk of stocks without any of the upside potential. In an era of rising inflation and shaky government finances, that’s a recipe for a diminished retirement.</p> <h2>Most Dangerous Retirement Lie #3: “Always Consult a Broker or Financial Advisor Before Investing”</h2> <p>Financial advisors are supposed to have your best interests at heart. In reality, their advice often underperforms the market — and the fees they charge can devastate your nest egg. Academic studies show that the stock recommendations from bank research departments provide no superior performance. Even Jim Cramer’s picks failed to beat the market when rigorously tracked.</p> <p>Consider the long‑term impact of fees on a $2,000 annual investment earning a steady return before costs:</p> <ul> <li>0.02% management fee → $968,249 after 40 years</li> <li>1% fee → $736,584</li> <li>3% fee → $427,219</li> </ul> <p>That’s a staggering $541,000 difference simply because of fees. As Barron’s #1 independent advisor Ric Edelman says, “The retail mutual fund industry is ripping you off. You are incurring greater risks, lower returns, and higher fees than you realize.”</p> <blockquote> <p>“There’s no greater pitfall than the one created by the retail mutual fund industry. They are ripping you off.”</p> <cite>— Ric Edelman, ranked America’s #1 independent financial advisor by Barron’s</cite> </blockquote> <h2>The Owner‑Operator Edge: A Bulletproof Strategy for Building Wealth</h2> <p>If brokers can’t be trusted, where should you turn? One of the most powerful — and overlooked — strategies is to invest in companies run by large, committed owners. When the people managing the business have their own money on the line, they think like owners, not hired guns chasing quarterly bonuses.</p> <p>Wal‑Mart under founder Sam Walton delivered 20.5% annual returns; after his departure, returns dropped to about 9%. IBM under the Watson family outperformed the market by 6.6% annually, then sagged to just 1.7% above the market once they left. Apple with Steve Jobs trounced the market by 28% per year; without him, it lagged by 3.1%. The pattern is undeniable.</p> <p>I’ve identified a little‑known company that has been run by the same family since inception. Barron’s notes “few Wall Street analysts cover it,” yet Forbes calls it a “cash machine.” Over the past two years it returned 114% — more than 12 times the S&P 500. It holds profitable stakes in energy, commodities, insurance, and luxury property, all under one roof. This kind of “owner‑operator” stock can be a cornerstone of an inflation‑proof retirement.</p> <h2>Inflation Fortress #1: Precious Metals</h2> <p>Gold and silver are classic hedges against the destruction of paper money. Gold has risen every single year for a decade and still has room to run as central banks print money at historic rates. Silver even beat gold in 2010, nearly doubling in value. Hedge fund legend Eric Sprott sees gold north of $2,000, while US Global Investors CEO Frank Holmes calculates gold would need to hit $7,993 just to cover outstanding U.S. money supply. Owning physical bullion or select mining stocks can be a low‑risk way to protect your purchasing power.</p> <h2>Inflation Fortress #2: The World’s Best Farmland</h2> <p>No matter how high inflation climbs, people must eat. Quality farmland is becoming scarce — the National Academy of Sciences warns U.S. cropland is being lost at least 10 times faster than it’s being replaced. The UN says the global rate is 10–100 times faster than replacement. At the same time, world population is projected to grow from 6.9 billion to 10 billion by 2050. The result: food prices and farmland values are on a one‑way trip upward.</p> <p>You don’t need to buy a farm to participate. There are innovative ways to invest in agricultural assets that can generate reliable returns while protecting against inflation. This is a strategic asset class that many brokers never mention.</p> <h2>A Simple Path to the Retirement You Deserve</h2> <p>The retirement lies perpetuated by Wall Street aren’t just annoying — they’re expensive. Over‑diversification dilutes your returns. Blind bond allocation exposes you to inflation without upside. And paying high fees for underperforming advice drains hundreds of thousands of dollars from your nest egg over a lifetime.</p> <p>By focusing on owner‑operator companies, adding hard assets like gold and farmland, and taking control of your own investment decisions, you can sidestep these traps and build a retirement that lets you travel, spoil your grandkids, and leave a lasting legacy. You worked hard for your money. It’s time your money worked hard for you.</p> <div class="disclaimer"> <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Realty Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.</em></p> </div> </article><!-- JSON-LD Structured Data (researchPosting) --><script type="application/ld+json"> { "@context": "https://schema.org", "@type": "researchPosting", "headline": "3 Dangerous Retirement Lies Brokers Are Telling Americans (And How to Protect Your Nest Egg)", "description": "Former banking insider Chris Mayer exposes the three most costly retirement myths perpetuated by brokers and financial advisors. Discover the little-known owner-operator strategy and essential inflation hedges that could help you build lasting wealth.", "author": { "@type": "Person", "name": "Chris Mayer" }, "datePublished": "2011-07-15", "dateModified": "2011-07-15", "image": "https://i.ibb.co/GvZh3mC4/3-most-dangerous-retirment-lies.webp", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://murivest.com/research/3-dangerous-retirement-lies" } } </script><!-- JSON-LD FAQ --><script type="application/ld+json"> { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "Why is over-diversification a retirement mistake?", "acceptedAnswer": { "@type": "Answer", "text": "Owning too many investments dilutes your focus, raises transaction costs, and makes it harder to achieve meaningful returns. As Joel Greenblatt notes, after six or eight stocks in different industries, the risk reduction benefit of adding more is negligible." } }, { "@type": "Question", "name": "Should retirees move heavily into bonds for safety?", "acceptedAnswer": { "@type": "Answer", "text": "Bonds carry significant downside risk during market selloffs and are especially vulnerable to inflation, which erodes fixed payments. They also offer no upside participation in a company's growth, making them a poor substitute for carefully selected stocks." } }, { "@type": "Question", "name": "How can I protect my retirement from inflation?", "acceptedAnswer": { "@type": "Answer", "text": "Consider hard assets like physical gold and silver, which have historically held their value during inflationary periods. Investments in productive farmland and owner-operated companies with strong balance sheets also provide a hedge against rising prices." } }] } </script>
 `
 },
 'murivest-institutional-wealth-preservation-guide': {
@@ -3003,7 +3003,7 @@ content: `
   "image": "https://i.ibb.co/xqv2KrhC/The-Dangerous-wealth-preservation-myths.webp",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://murivest.co.ke/research/murivest-institutional-wealth-preservation-guide"
+    "@id": "https://murivest.com/research/murivest-institutional-wealth-preservation-guide"
   }
 }
 </script>
@@ -3292,7 +3292,7 @@ content: `
   "@type": "Article",
   "headline": "Beyond Nairobi: Emerging Investment Hubs for Affordable Property in Kenya",
   "description": "Discover Kenya’s fastest-growing real estate investment towns beyond Nairobi including Eldoret, Kisumu, Thika, Naivasha and Kitengela.",
-  "image": "https://murivest.co.ke/emerging-affordable-property-hubs.webp",
+  "image": "https://murivest.com/emerging-affordable-property-hubs.webp",
   "author": {
     "@type": "Organization",
     "name": getAuthor(
@@ -3306,14 +3306,14 @@ content: `
     "name": "Murivest",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://murivest.co.ke/logo.webp"
+      "url": "https://murivest.com/logo.webp"
     }
   },
   "datePublished": "2025-05-02",
   "dateModified": "2025-05-02",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://murivest.co.ke/research/emerging-affordable-property-hubs"
+    "@id": "https://murivest.com/research/emerging-affordable-property-hubs"
   }
 }
 `,
@@ -4225,7 +4225,7 @@ content: `
     ],
     metaTitle: 'Distressed Real Estate Kenya: Nakumatt Auction Analysis 2026',
     metaDescription: 'Standard Chartered is auctioning Sh1.9B in Nakumatt-linked Kenyan properties. Institutional analysis of the enforcement mechanics, valuation, and investor opportunity.',
-    canonicalUrl: 'https://murivest.co.ke/research/standard-chartered-nakumatt-auction-distressed-real-estate-kenya-2026',
+    canonicalUrl: 'https://murivest.com/research/standard-chartered-nakumatt-auction-distressed-real-estate-kenya-2026',
     relatedPosts: [
       'standard-chartered-chiromo-headquarters-sale-westlands-nairobi-2026',
       'isOneMillionHousingUnitsTargetRealistic2027',
@@ -4249,10 +4249,10 @@ content: `
       "headline": "Distressed Real Estate in Kenya: The Nakumatt Auction and the Anatomy of Secured Lending Recovery",
       "description": "Standard Chartered Bank Kenya has initiated statutory proceedings to auction Nakumatt-linked properties over Sh1.9 billion in outstanding debt. Institutional analysis of the enforcement mechanics, valuation, and investor opportunity.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-05-03",
       "dateModified": "2026-05-16",
-      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://murivest.co.ke/research/standard-chartered-nakumatt-auction-distressed-real-estate-kenya-2026" }
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://murivest.com/research/standard-chartered-nakumatt-auction-distressed-real-estate-kenya-2026" }
     }),
     faqSchema: JSON.stringify({
       "@context": "https://schema.org",
@@ -4268,9 +4268,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "Distressed Real Estate Kenya — Nakumatt Auction 2026", "item": "https://murivest.co.ke/research/standard-chartered-nakumatt-auction-distressed-real-estate-kenya-2026" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "Distressed Real Estate Kenya — Nakumatt Auction 2026", "item": "https://murivest.com/research/standard-chartered-nakumatt-auction-distressed-real-estate-kenya-2026" }
       ]
     }),
     content: `
@@ -4286,7 +4286,7 @@ content: `
 
       <div class="bg-slate-50 border-l-4 border-emerald-700 p-6 my-8">
         <p class="text-sm font-semibold text-emerald-800 uppercase tracking-wide mb-2">Executive Summary</p>
-        <p class="text-gray-700">The Standard Chartered Nakumatt enforcement action illuminates the distressed real estate opportunity in Kenya's corporate recovery cycle. <a href="https://murivest.co.ke/contact">Murivest's analysis</a> indicates that Sh50+ billion in real estate collateral remains trapped in unresolved corporate insolvencies across Kenya, with recovery timelines averaging 7-12 years from default to asset realization. The statutory notice mechanism—giving 90 days for debt regularization before auction—creates a predictable window for distressed asset investors to position capital. Key insights: (1) Charged land in Kenya carries "super-priority" status under the Land Act 2012, but enforcement requires navigating the Companies Act 2015 insolvency moratorium, the Employment Act retrenchment obligations, and county government rates arrears; (2) Auction prices for distressed commercial real estate typically trade at 40-60% discounts to market value, reflecting buyer illiquidity, title uncertainty, and possession risks; (3) The Nakumatt properties—located in Nairobi (likely Industrial Area or along Mombasa Road corridor), Nakuru (the retail hub of the Rift Valley), and Mombasa (port city logistics)—offer distinct risk/return profiles requiring jurisdiction-specific due diligence. For family offices and private equity funds with 3-5 year hold periods and local legal partnerships, Kenya's distressed property pipeline offers 18-25% IRR potential, but requires acceptance of procedural opacity, political interference risks, and the absence of formal bankruptcy remote SPV structures that protect Western investors.</p>
+        <p class="text-gray-700">The Standard Chartered Nakumatt enforcement action illuminates the distressed real estate opportunity in Kenya's corporate recovery cycle. <a href="https://murivest.com/contact">Murivest's analysis</a> indicates that Sh50+ billion in real estate collateral remains trapped in unresolved corporate insolvencies across Kenya, with recovery timelines averaging 7-12 years from default to asset realization. The statutory notice mechanism—giving 90 days for debt regularization before auction—creates a predictable window for distressed asset investors to position capital. Key insights: (1) Charged land in Kenya carries "super-priority" status under the Land Act 2012, but enforcement requires navigating the Companies Act 2015 insolvency moratorium, the Employment Act retrenchment obligations, and county government rates arrears; (2) Auction prices for distressed commercial real estate typically trade at 40-60% discounts to market value, reflecting buyer illiquidity, title uncertainty, and possession risks; (3) The Nakumatt properties—located in Nairobi (likely Industrial Area or along Mombasa Road corridor), Nakuru (the retail hub of the Rift Valley), and Mombasa (port city logistics)—offer distinct risk/return profiles requiring jurisdiction-specific due diligence. For family offices and private equity funds with 3-5 year hold periods and local legal partnerships, Kenya's distressed property pipeline offers 18-25% IRR potential, but requires acceptance of procedural opacity, political interference risks, and the absence of formal bankruptcy remote SPV structures that protect Western investors.</p>
       </div>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">I. The Nakumatt Collapse: A Chronology of Corporate Distress and Asset Entrapment</h2>
@@ -4334,7 +4334,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        The statutory notice is not merely a formality but a condition precedent to valid exercise of the power of sale. Failure to serve proper notice, or service that is defective in form (wrong debt amount, incorrect property description, failure to specify the 90-day period), renders any subsequent sale voidable at the instance of the chargor. <a href="https://murivest.co.ke/contact">Murivest's legal due diligence</a> for distressed acquisitions includes forensic review of statutory notice compliance, as defective notices create title risks that persist even after auction sale.
+        The statutory notice is not merely a formality but a condition precedent to valid exercise of the power of sale. Failure to serve proper notice, or service that is defective in form (wrong debt amount, incorrect property description, failure to specify the 90-day period), renders any subsequent sale voidable at the instance of the chargor. <a href="https://murivest.com/contact">Murivest's legal due diligence</a> for distressed acquisitions includes forensic review of statutory notice compliance, as defective notices create title risks that persist even after auction sale.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">2.2 The Auction Process: Public Sale and the "Reserve Price" Problem</h3>
@@ -4374,7 +4374,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest's valuation framework</a> for distressed acquisitions applies a "staged" approach: Stage 1: Desktop valuation based on comparable sales, adjusted for distress discount (typically 35-45%); Stage 2: Physical inspection assessing deferred maintenance, environmental contamination (petroleum storage tanks, asbestos), and illegal extensions; Stage 3: Title diligence confirming charge registration, absence of prior unregistered interests, and compliance with county planning approvals; and Stage 4: Financial modeling of "hold vs. flip" scenarios—holding for market recovery (3-5 years) versus immediate resale to strategic buyers.
+        <a href="https://murivest.com/contact">Murivest's valuation framework</a> for distressed acquisitions applies a "staged" approach: Stage 1: Desktop valuation based on comparable sales, adjusted for distress discount (typically 35-45%); Stage 2: Physical inspection assessing deferred maintenance, environmental contamination (petroleum storage tanks, asbestos), and illegal extensions; Stage 3: Title diligence confirming charge registration, absence of prior unregistered interests, and compliance with county planning approvals; and Stage 4: Financial modeling of "hold vs. flip" scenarios—holding for market recovery (3-5 years) versus immediate resale to strategic buyers.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">3.2 Location-Specific Valuation: Nairobi, Nakuru, Mombasa</h3>
@@ -4406,7 +4406,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest's distressed advisory</a> structures "loan-to-own" transactions through Jersey or Mauritius holding companies, providing tax neutrality and creditor protection, with Kenyan SPVs handling local enforcement. This structure protects against currency repatriation risks (the Shilling has depreciated 18% against the dollar over 5 years) and provides governance frameworks acceptable to international limited partners.
+        <a href="https://murivest.com/contact">Murivest's distressed advisory</a> structures "loan-to-own" transactions through Jersey or Mauritius holding companies, providing tax neutrality and creditor protection, with Kenyan SPVs handling local enforcement. This structure protects against currency repatriation risks (the Shilling has depreciated 18% against the dollar over 5 years) and provides governance frameworks acceptable to international limited partners.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">4.2 The Auction Direct Strategy: Buying at the Hammer</h3>
@@ -4490,7 +4490,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest</a> recommends that family offices and private equity funds allocate 5-8% of African real estate exposure to Kenyan distressed assets, targeting Sh500 million+ per transaction to achieve operational scale and legal cost efficiency. The Nakumatt properties—if acquired at forced sale values of Sh800 million-1.2 billion against replacement costs of Sh2.5-4.0 billion—offer the foundational assets for a Kenya-focused value-add strategy. The alternative is to allow this pipeline to pass to local politically-connected buyers, who will consolidate Kenya's commercial real estate into opaque family holdings, denying institutional capital the returns that patience and professionalism deserve.
+        <a href="https://murivest.com/contact">Murivest</a> recommends that family offices and private equity funds allocate 5-8% of African real estate exposure to Kenyan distressed assets, targeting Sh500 million+ per transaction to achieve operational scale and legal cost efficiency. The Nakumatt properties—if acquired at forced sale values of Sh800 million-1.2 billion against replacement costs of Sh2.5-4.0 billion—offer the foundational assets for a Kenya-focused value-add strategy. The alternative is to allow this pipeline to pass to local politically-connected buyers, who will consolidate Kenya's commercial real estate into opaque family holdings, denying institutional capital the returns that patience and professionalism deserve.
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
@@ -4500,13 +4500,13 @@ content: `
       <div class="my-12 p-8 bg-white-900 rounded-xl text-white text-center">
         <p class="text-2xl font-serif font-bold mb-4">Distressed Real Estate Investment Advisory</p>
         <p class="text-emerald-100 mb-6 max-w-2xl mx-auto">Murivest provides specialist distressed asset acquisition, legal enforcement navigation, and conversion management for institutional investors targeting Kenya's corporate recovery pipeline. Our local partnerships and international structuring expertise optimise risk-adjusted returns in complex enforcement environments.</p>
-        <a href="https://murivest.co.ke/contact" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">Distressed Asset Consultation</a>
+        <a href="https://murivest.com/contact" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">Distressed Asset Consultation</a>
         <p class="text-sm text-emerald-200 mt-4">Expert enforcement navigation for secured lending recovery</p>
       </div>
 
       <div class="border-t border-gray-200 pt-8 mt-12">
         <p class="text-sm text-gray-500 mb-2"><strong>Legal and Regulatory Disclosure</strong></p>
-        <p class="text-sm text-gray-600 leading-relaxed">This analysis is based on publicly available information regarding the Standard Chartered Bank Kenya statutory notice dated April 27, 2026, and general principles of Kenyan land and insolvency law. The Nakumatt case involves ongoing litigation and administrative proceedings; specific outcomes may differ from the scenarios presented. Kenyan legal procedures are subject to judicial interpretation and legislative amendment. This analysis does not constitute legal advice; <a href="https://murivest.co.ke/contact">contact Murivest</a> for transaction-specific legal and investment structuring.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">This analysis is based on publicly available information regarding the Standard Chartered Bank Kenya statutory notice dated April 27, 2026, and general principles of Kenyan land and insolvency law. The Nakumatt case involves ongoing litigation and administrative proceedings; specific outcomes may differ from the scenarios presented. Kenyan legal procedures are subject to judicial interpretation and legislative amendment. This analysis does not constitute legal advice; <a href="https://murivest.com/contact">contact Murivest</a> for transaction-specific legal and investment structuring.</p>
         
         <p class="text-sm text-gray-500 mt-6 mb-2"><strong>Market Data Sources</strong></p>
         <p class="text-sm text-gray-600 leading-relaxed">Data courtesy of the Central Bank of Kenya, Kenya National Bureau of Statistics, Ministry of Lands and Physical Planning, Kenya Law Reports, and local property market reporting. Currency data from the Central Bank of Kenya and Bloomberg. Distressed asset analytics from Murivest proprietary research.</p>
@@ -4545,7 +4545,7 @@ content: `
     ],
     metaTitle: 'Chiromo Sale: Westlands Nairobi Grade A Property Signal 2026',
     metaDescription: 'Standard Chartered Kenya is selling its Chiromo HQ at KES 1.41B. Murivest analysis: valuation mechanics, investor entry pathways, and Westlands Grade A market outlook.',
-    canonicalUrl: 'https://murivest.co.ke/research/standard-chartered-chiromo-headquarters-sale-westlands-nairobi-2026',
+    canonicalUrl: 'https://murivest.com/research/standard-chartered-chiromo-headquarters-sale-westlands-nairobi-2026',
     relatedPosts: [
       'standard-chartered-nakumatt-auction-distressed-real-estate-kenya-2026',
       'london-commercial-real-estate-market-report-q2-2026',
@@ -4568,7 +4568,7 @@ content: `
       "headline": "The Chiromo Disposition: Standard Chartered's Exit from Physical Banking and What It Signals for Westlands Commercial Property",
       "description": "Standard Chartered Kenya has reclassified its 1.880-acre Chiromo headquarters at KES 1.41 billion as held for sale. Institutional analysis of valuation mechanics, investor entry pathways, and Westlands Grade A market outlook.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-05-05",
       "dateModified": "2026-05-16"
     }),
@@ -4586,9 +4586,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "Chiromo Disposition — Westlands 2026", "item": "https://murivest.co.ke/research/standard-chartered-chiromo-headquarters-sale-westlands-nairobi-2026" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "Chiromo Disposition — Westlands 2026", "item": "https://murivest.com/research/standard-chartered-chiromo-headquarters-sale-westlands-nairobi-2026" }
       ]
     }),
     content: `
@@ -4599,12 +4599,12 @@ content: `
       </p>
 
       <p class="lead text-xl font-serif leading-relaxed mb-8" style="color: #000000;">
-        This analysis provides the definitive investment framework for the Chiromo disposition and the broader Standard Chartered property portfolio. We examine the asset's valuation mechanics—the KES 196 million annual rental value, the KES 138 million sensitivity to 5% rental movement, and the three-valuation-approach methodology employed by the bank's appointed valuers. We deconstruct the accounting treatment under IFRS 5 (Non-current Assets Held for Sale and Discontinued Operations), the one-year sale deadline imposing June 2026 as the transaction horizon, and the strategic implications of the bank's simultaneous disposal of Treasury Square and Nyeri branch properties. Drawing upon Kenya's land registry data, Westlands commercial comparable transactions, the Central Bank of Kenya's banking sector reports, and <a href="https://murivest.co.ke/contact" style="color: #000000; text-decoration: underline;">Murivest's proprietary Nairobi commercial property analytics</a>, we provide actionable pathways for investors seeking direct exposure to this transaction and the structural tailwinds it represents.
+        This analysis provides the definitive investment framework for the Chiromo disposition and the broader Standard Chartered property portfolio. We examine the asset's valuation mechanics—the KES 196 million annual rental value, the KES 138 million sensitivity to 5% rental movement, and the three-valuation-approach methodology employed by the bank's appointed valuers. We deconstruct the accounting treatment under IFRS 5 (Non-current Assets Held for Sale and Discontinued Operations), the one-year sale deadline imposing June 2026 as the transaction horizon, and the strategic implications of the bank's simultaneous disposal of Treasury Square and Nyeri branch properties. Drawing upon Kenya's land registry data, Westlands commercial comparable transactions, the Central Bank of Kenya's banking sector reports, and <a href="https://murivest.com/contact" style="color: #000000; text-decoration: underline;">Murivest's proprietary Nairobi commercial property analytics</a>, we provide actionable pathways for investors seeking direct exposure to this transaction and the structural tailwinds it represents.
       </p>
 
       <div style="background-color: #F5F5F5; border-left: 4px solid #000000; padding: 24px; margin: 32px 0;">
         <p style="font-size: 0.875rem; font-weight: 600; color: #000000; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Executive Summary for Investment Committees</p>
-        <p style="color: #000000;">Standard Chartered's Chiromo headquarters sale represents a KES 1.41 billion entry point into Nairobi's most liquid commercial submarket. The asset occupies 1.880 acres in Westlands—Kenya's premier commercial district, hosting the headquarters of Safaricom, KCB Group, Barclays Bank of Kenya (Absa), and numerous multinational corporations. At KES 196 million estimated annual rental value and KES 1.41 billion carrying value, the asset implies a 13.9% gross rental yield, though this is distorted by the bank's self-occupancy (no market rent paid). Independent valuation suggests fair market value of KES 2.1-2.8 billion (KES 1.1-1.5 million per acre land value plus replacement cost of improvements), creating a 50-100% upside arbitrage for investors acquiring below replacement cost. <a href="https://murivest.co.ke/contact" style="color: #000000; text-decoration: underline;">Murivest's investment structuring</a> identifies three direct participation pathways: (1) Direct Acquisition: Negotiating purchase from Standard Chartered at KES 1.41-1.6 billion, with immediate leaseback to the bank (2-3 year transition period) generating 8-10% yield while repositioning for multi-tenant commercial or mixed-use redevelopment; (2) Joint Venture Partnership: Contributing capital alongside a local developer for acquisition and conversion to Grade A+ offices with 25,000+ sq ft additional floor area (current building underutilises plot ratio), targeting KES 280-320 million annual rent and 12-15% IRR over 5-year development hold; and (3) Forward Purchase Agreement: Securing exclusive right to acquire upon Standard Chartered's vacating, with 12-18 month due diligence period and deposit escrow structure. The structural tailwind is undeniable: 96% of Standard Chartered's transactions now occur outside branches, every major Kenyan bank is consolidating physical footprints, and Westlands land supply is constrained by the Nairobi River corridor and existing development. The Chiromo sale is the first domino. Minimum recommended allocation: KES 500 million (USD 3.8 million) for direct acquisition efficiency; KES 200 million minimum for JV participation.</p>
+        <p style="color: #000000;">Standard Chartered's Chiromo headquarters sale represents a KES 1.41 billion entry point into Nairobi's most liquid commercial submarket. The asset occupies 1.880 acres in Westlands—Kenya's premier commercial district, hosting the headquarters of Safaricom, KCB Group, Barclays Bank of Kenya (Absa), and numerous multinational corporations. At KES 196 million estimated annual rental value and KES 1.41 billion carrying value, the asset implies a 13.9% gross rental yield, though this is distorted by the bank's self-occupancy (no market rent paid). Independent valuation suggests fair market value of KES 2.1-2.8 billion (KES 1.1-1.5 million per acre land value plus replacement cost of improvements), creating a 50-100% upside arbitrage for investors acquiring below replacement cost. <a href="https://murivest.com/contact" style="color: #000000; text-decoration: underline;">Murivest's investment structuring</a> identifies three direct participation pathways: (1) Direct Acquisition: Negotiating purchase from Standard Chartered at KES 1.41-1.6 billion, with immediate leaseback to the bank (2-3 year transition period) generating 8-10% yield while repositioning for multi-tenant commercial or mixed-use redevelopment; (2) Joint Venture Partnership: Contributing capital alongside a local developer for acquisition and conversion to Grade A+ offices with 25,000+ sq ft additional floor area (current building underutilises plot ratio), targeting KES 280-320 million annual rent and 12-15% IRR over 5-year development hold; and (3) Forward Purchase Agreement: Securing exclusive right to acquire upon Standard Chartered's vacating, with 12-18 month due diligence period and deposit escrow structure. The structural tailwind is undeniable: 96% of Standard Chartered's transactions now occur outside branches, every major Kenyan bank is consolidating physical footprints, and Westlands land supply is constrained by the Nairobi River corridor and existing development. The Chiromo sale is the first domino. Minimum recommended allocation: KES 500 million (USD 3.8 million) for direct acquisition efficiency; KES 200 million minimum for JV participation.</p>
       </div>
 
       <h2 style="font-size: 1.5rem; font-weight: 700; color: #000000; margin-top: 48px; margin-bottom: 24px; font-family: serif;">I. The Asset: Deconstructing the Chiromo Property</h2>
@@ -4743,7 +4743,7 @@ content: `
       <div style="background-color: #ffffff; color: #FFFFFF; padding: 32px; margin: 32px 0; text-align: center;">
         <p style="font-size: 1.5rem; font-family: serif; font-weight: 700; margin-bottom: 16px;">Direct Acquisition Consultation</p>
         <p style="margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto;">Murivest structures direct property acquisitions with institutional-grade leaseback arrangements, legal due diligence, and debt financing coordination. Our Nairobi team maintains relationships with Standard Chartered's property disposal committee.</p>
-        <a href="https://murivest.co.ke/contact" style="display: inline-block; background-color: #000000; color: #228B22; font-weight: 600; padding: 12px 32px; text-decoration: none;">Schedule Acquisition Discussion</a>
+        <a href="https://murivest.com/contact" style="display: inline-block; background-color: #000000; color: #228B22; font-weight: 600; padding: 12px 32px; text-decoration: none;">Schedule Acquisition Discussion</a>
         <p style="font-size: 0.875rem; margin-top: 16px;">Minimum commitment: KES 500 million equity</p>
       </div>
 
@@ -4768,7 +4768,7 @@ content: `
       <div style="background-color: #ffffff; color: #FFFFFF; padding: 32px; margin: 32px 0; text-align: center;">
         <p style="font-size: 1.5rem; font-family: serif; font-weight: 700; margin-bottom: 16px;">Development Joint Venture Partnership</p>
         <p style="margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto;">Murivest sources Kenyan development partners with proven track records, negotiates JV structures with aligned promote mechanics, and provides project management oversight from acquisition to stabilisation.</p>
-        <a href="https://murivest.co.ke/contact" style="display: inline-block; background-color: #FFFFFF; color: #000000; font-weight: 600; padding: 12px 32px; text-decoration: none;">Explore JV Structures</a>
+        <a href="https://murivest.com/contact" style="display: inline-block; background-color: #FFFFFF; color: #000000; font-weight: 600; padding: 12px 32px; text-decoration: none;">Explore JV Structures</a>
         <p style="font-size: 0.875rem; margin-top: 16px;">Minimum commitment: KES 750 million equity</p>
       </div>
 
@@ -4789,7 +4789,7 @@ content: `
       <div style="background-color: #ffffff; color: #FFFFFF; padding: 32px; margin: 32px 0; text-align: center;">
         <p style="font-size: 1.5rem; font-family: serif; font-weight: 700; margin-bottom: 16px;">Forward Purchase Structuring</p>
         <p style="margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto;">Murivest negotiates forward purchase agreements with escrow protection, exclusive rights, and conversion mechanics that minimise capital-at-risk while preserving upside optionality.</p>
-        <a href="https://murivest.co.ke/contact" style="display: inline-block; background-color: #FFFFFF; color: #000000; font-weight: 600; padding: 12px 32px; text-decoration: none;">Discuss Forward Structures</a>
+        <a href="https://murivest.com/contact" style="display: inline-block; background-color: #FFFFFF; color: #000000; font-weight: 600; padding: 12px 32px; text-decoration: none;">Discuss Forward Structures</a>
         <p style="font-size: 0.875rem; margin-top: 16px;">Minimum commitment: KES 150 million deposit</p>
       </div>
 
@@ -4802,7 +4802,7 @@ content: `
       </p>
 
       <p style="color: #000000; line-height: 1.75; margin-bottom: 24px;">
-        <strong>Investment Thesis:</strong> Acquire for conversion to flagship retail (international brand showroom) or premium office (law firm, consulting firm headquarters). The location commands the highest rents in Nairobi—KES 180-220/sq ft for ground-floor retail, KES 140-160/sq ft for upper-floor offices. <a href="https://murivest.co.ke/contact" style="color: #000000; text-decoration: underline;">Murivest's pipeline tracking</a> indicates this asset will be released for sale in Q3-Q4 2026, following Chiromo completion.
+        <strong>Investment Thesis:</strong> Acquire for conversion to flagship retail (international brand showroom) or premium office (law firm, consulting firm headquarters). The location commands the highest rents in Nairobi—KES 180-220/sq ft for ground-floor retail, KES 140-160/sq ft for upper-floor offices. <a href="https://murivest.com/contact" style="color: #000000; text-decoration: underline;">Murivest's pipeline tracking</a> indicates this asset will be released for sale in Q3-Q4 2026, following Chiromo completion.
       </p>
 
       <h3 style="font-size: 1.25rem; font-weight: 600; color: #000000; margin-top: 32px; margin-bottom: 16px;">5.2 The Nanyuki Branch</h3>
@@ -4842,20 +4842,20 @@ content: `
       </p>
 
       <p style="color: #000000; line-height: 1.75; margin-bottom: 24px;">
-        <a href="https://murivest.co.ke/contact" style="color: #000000; text-decoration: underline;">Murivest</a> is actively engaging with Standard Chartered's property disposal advisors, Nairobi County planning officials, and Kenyan banking partners to structure optimal acquisition vehicles for institutional capital. The Chiromo disposition is not merely a property sale—it is the first move in a decade-long consolidation of Nairobi's commercial real estate into institutional hands. The question is not whether to participate, but whether to lead or follow.
+        <a href="https://murivest.com/contact" style="color: #000000; text-decoration: underline;">Murivest</a> is actively engaging with Standard Chartered's property disposal advisors, Nairobi County planning officials, and Kenyan banking partners to structure optimal acquisition vehicles for institutional capital. The Chiromo disposition is not merely a property sale—it is the first move in a decade-long consolidation of Nairobi's commercial real estate into institutional hands. The question is not whether to participate, but whether to lead or follow.
       </p>
 
       <div style="background-color: #ffffff; color: #FFFFFF; padding: 48px; margin: 48px 0; text-align: center;">
         <p style="font-size: 2rem; font-family: serif; font-weight: 700; margin-bottom: 24px;">Acquire Prime Nairobi Real Estate</p>
         <p style="margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto; font-size: 1.125rem;">Murivest provides end-to-end acquisition execution for the Standard Chartered Chiromo disposition and Kenya's broader banking sector real estate pipeline. Our services include: direct vendor negotiation, legal due diligence and title verification, debt financing arrangement, JV partner sourcing, planning and zoning navigation, and post-acquisition asset management.</p>
-        <a href="https://murivest.co.ke/contact" style="display: inline-block; background-color: #FFFFFF; color: #000000; font-weight: 700; padding: 16px 48px; text-decoration: none; font-size: 1.125rem;">Initiate Acquisition Mandate</a>
+        <a href="https://murivest.com/contact" style="display: inline-block; background-color: #FFFFFF; color: #000000; font-weight: 700; padding: 16px 48px; text-decoration: none; font-size: 1.125rem;">Initiate Acquisition Mandate</a>
         <p style="font-size: 1rem; margin-top: 24px;">Contact: capital@murivest.co.ke | +254 20 123 4567</p>
         <p style="font-size: 0.875rem; margin-top: 8px;">Minimum institutional commitment: KES 500 million (USD 3.8 million)</p>
       </div>
 
       <div style="border-top: 2px solid #000000; padding-top: 32px; margin-top: 48px;">
         <p style="font-size: 0.875rem; font-weight: 600; color: #000000; margin-bottom: 8px;">Investment Risk Disclosure</p>
-        <p style="font-size: 0.875rem; color: #000000; line-height: 1.75;">This analysis is based on publicly available information from Standard Chartered Bank Kenya's financial disclosures, Business Daily reporting, and Nairobi commercial property market data. The Chiromo sale is subject to Standard Chartered's internal approval processes and may not complete within the disclosed timeline. Kenyan real estate investment carries currency risk, political risk, planning approval risk, and leasehold tenure risks. Past performance of Nairobi commercial property (12% annual appreciation 2015-2025) does not guarantee future returns. This analysis does not constitute investment advice; <a href="https://murivest.co.ke/contact" style="color: #000000; text-decoration: underline;">contact Murivest</a> for transaction-specific due diligence and structuring.</p>
+        <p style="font-size: 0.875rem; color: #000000; line-height: 1.75;">This analysis is based on publicly available information from Standard Chartered Bank Kenya's financial disclosures, Business Daily reporting, and Nairobi commercial property market data. The Chiromo sale is subject to Standard Chartered's internal approval processes and may not complete within the disclosed timeline. Kenyan real estate investment carries currency risk, political risk, planning approval risk, and leasehold tenure risks. Past performance of Nairobi commercial property (12% annual appreciation 2015-2025) does not guarantee future returns. This analysis does not constitute investment advice; <a href="https://murivest.com/contact" style="color: #000000; text-decoration: underline;">contact Murivest</a> for transaction-specific due diligence and structuring.</p>
         
         <p style="font-size: 0.875rem; font-weight: 600; color: #000000; margin-top: 24px; margin-bottom: 8px;">Data Sources</p>
         <p style="font-size: 0.875rem; color: #000000; line-height: 1.75;">Standard Chartered Bank Kenya Annual Report 2025; Business Daily (Nairobi); Central Bank of Kenya Banking Sector Reports; Nairobi County Land Registry; Knight Frank Kenya Market Reports; HassConsult Property Index; Kenya National Bureau of Statistics; Murivest proprietary research database.</p>
@@ -4893,7 +4893,7 @@ content: `
     ],
     metaTitle: 'Stamp Duty Commercial Property UK: Rates & Reliefs 2026',
     metaDescription: 'SDLT rates, calculation examples, TOGC relief, and mixed-use strategies for UK commercial property acquisitions in 2026. Institutional-grade tax analysis.',
-    canonicalUrl: 'https://murivest.co.ke/research/stamp-duty-commercial-property-rates-reliefs-2026',
+    canonicalUrl: 'https://murivest.com/research/stamp-duty-commercial-property-rates-reliefs-2026',
     relatedPosts: [
       'commercial-property-solicitor-fees-costs-2026',
       'commercial-property-due-diligence-checklist-uk',
@@ -4916,7 +4916,7 @@ content: `
       "headline": "Stamp Duty on UK Commercial Property: Rate Structures, Available Reliefs, and Strategic Calculation for 2026 Acquisitions",
       "description": "SDLT rates, calculation examples, TOGC relief, and mixed-use strategies for UK commercial property acquisitions in 2026.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-04-05",
       "dateModified": "2026-05-16"
     }),
@@ -4934,9 +4934,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "Stamp Duty Commercial Property UK 2026", "item": "https://murivest.co.ke/research/stamp-duty-commercial-property-rates-reliefs-2026" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "Stamp Duty Commercial Property UK 2026", "item": "https://murivest.com/research/stamp-duty-commercial-property-rates-reliefs-2026" }
       ]
     }),
     content: `
@@ -4948,7 +4948,7 @@ content: `
 
       <div class="bg-slate-50 border-l-4 border-emerald-700 p-6 my-8">
         <p class="text-sm font-semibold text-emerald-800 uppercase tracking-wide mb-2">Executive Summary</p>
-        <p class="text-gray-700">SDLT on commercial property operates on a progressive slab system: 0% up to £150,000, 2% on £150,001-£250,000, and 5% above £250,000, creating effective rates of 4.48% on £1 million acquisitions and 4.80% on £5 million. Unlike residential property, commercial transactions escape the 3% surcharge on additional dwellings and the 2% non-resident surcharge, though non-UK entities face 15% Annual Tax on Enveloped Dwellings (ATED) if the property includes residential elements. Available reliefs include Transfer of Going Concern (TOGC) for tenanted assets, Multiple Dwellings Relief (MDR) for mixed-use portfolios, and Group Relief for intra-company transfers. <a href="https://murivest.co.ke/about">Murivest's tax structuring</a> indicates that careful transaction sequencing—such as apportioning mixed-use purchases between residential and commercial elements—can reduce effective SDLT rates by 30-40%. However, HMRC's increasing scrutiny of artificial arrangements, including the recent crackdown on "sub-sales relief" abuse and partnership transaction restatements, demands rigorous compliance. The 2025-26 tax year introduces enhanced reporting requirements for transactions over £1 million and potential alignment of commercial rates with residential top tiers (7% above £2 million under consultation), creating urgency for current acquisitions.</p>
+        <p class="text-gray-700">SDLT on commercial property operates on a progressive slab system: 0% up to £150,000, 2% on £150,001-£250,000, and 5% above £250,000, creating effective rates of 4.48% on £1 million acquisitions and 4.80% on £5 million. Unlike residential property, commercial transactions escape the 3% surcharge on additional dwellings and the 2% non-resident surcharge, though non-UK entities face 15% Annual Tax on Enveloped Dwellings (ATED) if the property includes residential elements. Available reliefs include Transfer of Going Concern (TOGC) for tenanted assets, Multiple Dwellings Relief (MDR) for mixed-use portfolios, and Group Relief for intra-company transfers. <a href="https://murivest.com/about">Murivest's tax structuring</a> indicates that careful transaction sequencing—such as apportioning mixed-use purchases between residential and commercial elements—can reduce effective SDLT rates by 30-40%. However, HMRC's increasing scrutiny of artificial arrangements, including the recent crackdown on "sub-sales relief" abuse and partnership transaction restatements, demands rigorous compliance. The 2025-26 tax year introduces enhanced reporting requirements for transactions over £1 million and potential alignment of commercial rates with residential top tiers (7% above £2 million under consultation), creating urgency for current acquisitions.</p>
       </div>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">I. The SDLT Framework: Rate Structure and Calculation Mechanics</h2>
@@ -4978,7 +4978,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest's lease structuring</a> often negotiates rent-free periods or stepped rents to reduce NPV. A 12-month rent-free period on the above lease reduces NPV to £742,484, saving £4,458 in SDLT. However, HMRC requires "arrangements" to be at arm's length—artificial rent structuring to avoid tax triggers anti-avoidance provisions.
+        <a href="https://murivest.com/contact">Murivest's lease structuring</a> often negotiates rent-free periods or stepped rents to reduce NPV. A 12-month rent-free period on the above lease reduces NPV to £742,484, saving £4,458 in SDLT. However, HMRC requires "arrangements" to be at arm's length—artificial rent structuring to avoid tax triggers anti-avoidance provisions.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">1.3 The Mixed-Use Conundrum</h3>
@@ -5079,7 +5079,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest's structuring advice</a> evaluates the lifetime tax cost—acquisition SDLT, ongoing ATED/corporation tax, and exit stamp duty/SDLT—to determine optimal holding vehicles. For pure commercial property held 10+ years, corporate ownership often minimises overall tax burden despite initial SDLT equivalence.
+        <a href="https://murivest.com/contact">Murivest's structuring advice</a> evaluates the lifetime tax cost—acquisition SDLT, ongoing ATED/corporation tax, and exit stamp duty/SDLT—to determine optimal holding vehicles. For pure commercial property held 10+ years, corporate ownership often minimises overall tax burden despite initial SDLT equivalence.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">4.2 Partnership Structures and Development</h3>
@@ -5189,7 +5189,7 @@ content: `
       <div class="my-12 p-8 bg-emerald-900 rounded-xl text-white text-center">
         <p class="text-2xl font-serif font-bold mb-4">Optimise SDLT on Commercial Acquisitions</p>
         <p class="text-emerald-100 mb-6 max-w-2xl mx-auto">Murivest provides specialist SDLT structuring advice, ensuring legitimate relief claims, accurate calculations, and compliance with anti-avoidance provisions. Our pre-acquisition planning identifies TOGC opportunities, apportionment strategies, and corporate structuring to minimise irrecoverable transaction costs.</p>
-        <a href="https://murivest.co.ke/contact" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">SDLT Structuring Consultation</a>
+        <a href="https://murivest.com/contact" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">SDLT Structuring Consultation</a>
         <p class="text-sm text-emerald-200 mt-4">Transaction tax planning for commercial property acquisitions</p>
       </div>
 
@@ -5208,12 +5208,12 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest</a> integrates SDLT planning into acquisition workflows, ensuring that transaction structures are optimised before exchange and that relief claims are defensible under scrutiny. In an environment of rising rates and enhanced HMRC enforcement, professional tax structuring is not optional but essential to investment performance.
+        <a href="https://murivest.com/contact">Murivest</a> integrates SDLT planning into acquisition workflows, ensuring that transaction structures are optimised before exchange and that relief claims are defensible under scrutiny. In an environment of rising rates and enhanced HMRC enforcement, professional tax structuring is not optional but essential to investment performance.
       </p>
 
       <div class="border-t border-gray-200 pt-8 mt-12">
         <p class="text-sm text-gray-500 mb-2"><strong>Tax Law Note</strong></p>
-        <p class="text-sm text-gray-600 leading-relaxed">SDLT rates and reliefs reflect legislation as of April 2026. The March 2025 Budget proposed 7% commercial rate band above £2 million (consultation ongoing). HMRC guidance and case law evolve; specific transactions require current advice. This analysis does not constitute legal advice; <a href="https://murivest.co.ke/contact">contact Murivest</a> for transaction-specific SDLT planning.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">SDLT rates and reliefs reflect legislation as of April 2026. The March 2025 Budget proposed 7% commercial rate band above £2 million (consultation ongoing). HMRC guidance and case law evolve; specific transactions require current advice. This analysis does not constitute legal advice; <a href="https://murivest.com/contact">contact Murivest</a> for transaction-specific SDLT planning.</p>
         
         <p class="text-sm text-gray-500 mt-6 mb-2"><strong>Compliance Warning</strong></p>
         <p class="text-sm text-gray-600 leading-relaxed">Artificial SDLT avoidance schemes carry penalties up to 100% of tax and potential criminal prosecution for fraud. Only legitimate reliefs and accurate valuations should be claimed. HMRC enquiry powers are extensive; maintain contemporaneous documentation of commercial rationale and professional advice.</p>
@@ -5251,7 +5251,7 @@ content: `
     ],
     metaTitle: 'Petrol Station Investment UK: Yields, Risks & EV Horizon 2026',
     metaDescription: 'Petrol station forecourts yield 5.5–8% on FRI leases. But EV transition creates a structural risk horizon. Murivest analysis of the investment mechanics and repositioning optionality.',
-    canonicalUrl: 'https://murivest.co.ke/research/petrol-station-investment-forecourt-real-estate',
+    canonicalUrl: 'https://murivest.com/research/petrol-station-investment-forecourt-real-estate',
     relatedPosts: [
       'industrial-property-investment-uk-growth-corridors-2026',
       'commercial-property-vs-residential-returns-2026',
@@ -5273,7 +5273,7 @@ content: `
       "headline": "Petrol Station Investment: Forecourt Real Estate Yields, Operator Structures, and the EV Transition Risk Horizon",
       "description": "Petrol stations yield 5.5–8% on FRI leases but face a 10–15 year structural risk from EV transition. Institutional analysis of mechanics, covenant quality, and repositioning.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-03-18",
       "dateModified": "2026-05-16"
     }),
@@ -5290,9 +5290,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "Petrol Station Investment UK", "item": "https://murivest.co.ke/research/petrol-station-investment-forecourt-real-estate" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "Petrol Station Investment UK", "item": "https://murivest.com/research/petrol-station-investment-forecourt-real-estate" }
       ]
     }),
     content: `
@@ -5304,7 +5304,7 @@ content: `
 
       <div class="bg-slate-50 border-l-4 border-emerald-700 p-6 my-8">
         <p class="text-sm font-semibold text-emerald-800 uppercase tracking-wide mb-2">Executive Summary</p>
-        <p class="text-gray-700">The UK forecourt sector comprises approximately 8,400 operational sites, down from 37,000 in 1970, creating supply-constrained scarcity in prime roadside locations. Modern petrol stations generate 60-70% of gross profit from convenience retail and ancillary services (car wash, food-to-go) rather than fuel margins, transforming the asset class from energy infrastructure to retail real estate. Investment yields range from 6.5% (prime motorway locations with major oil company tenants) to 8.5% (secondary urban sites with independent operators), offering 150-250 basis point premiums over equivalent retail warehousing. The regulatory moat is substantial—planning permission for new petrol stations is effectively unavailable in most local authorities due to environmental and road safety policies, while existing sites benefit from grandfather rights for petroleum storage licences. <a href="https://murivest.co.ke/about">Murivest's forecourt analysis</a> indicates that strategic repositioning toward electric vehicle (EV) charging hubs, last-mile logistics depots, or convenience retail destinations offers 20-35% IRR potential for investors with operational expertise, while the terminal value risk from fuel demand decline is mitigated by alternative use potential embedded in strategic roadside land holdings. The sector demands specialised due diligence capabilities—underground tank integrity assessment, Petroleum Enforcement Authority compliance, and hydrocarbon contamination liability frameworks—that exclude generalist investors, creating inefficiency and opportunity for specialists.</p>
+        <p class="text-gray-700">The UK forecourt sector comprises approximately 8,400 operational sites, down from 37,000 in 1970, creating supply-constrained scarcity in prime roadside locations. Modern petrol stations generate 60-70% of gross profit from convenience retail and ancillary services (car wash, food-to-go) rather than fuel margins, transforming the asset class from energy infrastructure to retail real estate. Investment yields range from 6.5% (prime motorway locations with major oil company tenants) to 8.5% (secondary urban sites with independent operators), offering 150-250 basis point premiums over equivalent retail warehousing. The regulatory moat is substantial—planning permission for new petrol stations is effectively unavailable in most local authorities due to environmental and road safety policies, while existing sites benefit from grandfather rights for petroleum storage licences. <a href="https://murivest.com/about">Murivest's forecourt analysis</a> indicates that strategic repositioning toward electric vehicle (EV) charging hubs, last-mile logistics depots, or convenience retail destinations offers 20-35% IRR potential for investors with operational expertise, while the terminal value risk from fuel demand decline is mitigated by alternative use potential embedded in strategic roadside land holdings. The sector demands specialised due diligence capabilities—underground tank integrity assessment, Petroleum Enforcement Authority compliance, and hydrocarbon contamination liability frameworks—that exclude generalist investors, creating inefficiency and opportunity for specialists.</p>
       </div>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">I. The Sector Structure: From Energy Infrastructure to Retail Real Estate</h2>
@@ -5352,7 +5352,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        The technical compliance burden excludes amateur operators. Annual tank integrity testing, line leak detection systems, environmental risk assessments, and emergency response planning require professional management. <a href="https://murivest.co.ke/contact">Our due diligence protocols</a> include forensic review of Petroleum Licence conditions, PEA enforcement history, and tank testing records—documentation that generalist commercial property investors routinely overlook.
+        The technical compliance burden excludes amateur operators. Annual tank integrity testing, line leak detection systems, environmental risk assessments, and emergency response planning require professional management. <a href="https://murivest.com/contact">Our due diligence protocols</a> include forensic review of Petroleum Licence conditions, PEA enforcement history, and tank testing records—documentation that generalist commercial property investors routinely overlook.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">2.3 Environmental Liability: The Contamination Risk</h3>
@@ -5444,7 +5444,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        Revenue models for EV charging include: Energy margin (buying at wholesale, selling at retail—20-30p per kWh margin); Service fee (connection charges, time-based fees); and Captive retail (30-40 minute dwell times driving food and beverage sales). <a href="https://murivest.co.ke/contact">Murivest's analysis</a> suggests that EV-equipped forecourts can maintain 6.0-6.5% yields despite fuel decline, as charging infrastructure adds £40,000-£60,000 annual net income while preserving site utility.
+        Revenue models for EV charging include: Energy margin (buying at wholesale, selling at retail—20-30p per kWh margin); Service fee (connection charges, time-based fees); and Captive retail (30-40 minute dwell times driving food and beverage sales). <a href="https://murivest.com/contact">Murivest's analysis</a> suggests that EV-equipped forecourts can maintain 6.0-6.5% yields despite fuel decline, as charging infrastructure adds £40,000-£60,000 annual net income while preserving site utility.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">5.3 Alternative Use Repurposing</h3>
@@ -5476,7 +5476,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest has structured value-add forecourt mandates</a> targeting 10-15 site portfolios, achieving economies of scale in construction procurement and operational management. The strategy requires petroleum retail expertise—generalist developers struggle with PEA compliance and fuel supply logistics.
+        <a href="https://murivest.com/contact">Murivest has structured value-add forecourt mandates</a> targeting 10-15 site portfolios, achieving economies of scale in construction procurement and operational management. The strategy requires petroleum retail expertise—generalist developers struggle with PEA compliance and fuel supply logistics.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">6.3 Strategic Land Banking</h3>
@@ -5570,7 +5570,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest advised on the planning strategy and operator selection</a>, navigating PEA concerns about increased traffic from convenience retail.
+        <a href="https://murivest.com/contact">Murivest advised on the planning strategy and operator selection</a>, navigating PEA concerns about increased traffic from convenience retail.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">Case Study 3: Contamination Liability (Cautionary)</h3>
@@ -5605,7 +5605,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest</a> provides specialist forecourt investment advisory, combining environmental due diligence expertise, petroleum regulatory knowledge, and fuel retailing operational insight to structure risk-adjusted returns in this overlooked asset class. In an era of yield compression in mainstream sectors, forecourt real estate offers the inefficiencies and complexity premiums that generate outsized returns for knowledgeable investors.
+        <a href="https://murivest.com/contact">Murivest</a> provides specialist forecourt investment advisory, combining environmental due diligence expertise, petroleum regulatory knowledge, and fuel retailing operational insight to structure risk-adjusted returns in this overlooked asset class. In an era of yield compression in mainstream sectors, forecourt real estate offers the inefficiencies and complexity premiums that generate outsized returns for knowledgeable investors.
       </p>
 
       <div class="border-t border-gray-200 pt-8 mt-12">
@@ -5613,7 +5613,7 @@ content: `
         <p class="text-sm text-gray-600 leading-relaxed">Forecourt investment requires specialist legal, environmental, and operational advice. Petroleum storage regulations, contamination liability, and fuel retailing economics are complex and location-specific. This analysis reflects UK regulatory frameworks as of April 2026; EV transition timelines and fuel duty policies may affect future returns. Past performance of forecourt conversions does not guarantee future results. Environmental risks can result in total capital loss.</p>
         
         <p class="text-sm text-gray-500 mt-6 mb-2"><strong>Disclaimer</strong></p>
-        <p class="text-sm text-gray-600 leading-relaxed">Forecourt real estate carries specific risks including environmental contamination, fuel demand decline, and regulatory changes. Investors should obtain specialist petroleum property advice before acquisition. <a href="https://murivest.co.ke/contact">Contact Murivest</a> for mandate-specific forecourt investment strategy and due diligence services.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">Forecourt real estate carries specific risks including environmental contamination, fuel demand decline, and regulatory changes. Investors should obtain specialist petroleum property advice before acquisition. <a href="https://murivest.com/contact">Contact Murivest</a> for mandate-specific forecourt investment strategy and due diligence services.</p>
       </div>
 
     </article>
@@ -5647,7 +5647,7 @@ content: `
     ],
     metaTitle: 'Commercial Property Solicitor Fees UK 2026: Cost Benchmarks',
     metaDescription: 'UK commercial property legal fees range from 0.3% to 1.2% of consideration. Murivest breaks down the cost components, benchmarks, and negotiation levers for institutional buyers.',
-    canonicalUrl: 'https://murivest.co.ke/research/commercial-property-solicitor-fees-costs-2026',
+    canonicalUrl: 'https://murivest.com/research/commercial-property-solicitor-fees-costs-2026',
     relatedPosts: [
       'stamp-duty-commercial-property-rates-reliefs-2026',
       'commercial-property-due-diligence-checklist-uk',
@@ -5668,7 +5668,7 @@ content: `
       "headline": "Commercial Property Solicitor Fees in the UK: What Institutional Buyers Pay and Why Cost Control Matters",
       "description": "UK commercial property legal fees range 0.3–1.2% of consideration. Murivest breaks down the cost components, benchmarks, and negotiation levers for institutional buyers.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-03-22",
       "dateModified": "2026-05-16"
     }),
@@ -5684,9 +5684,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "Commercial Property Solicitor Fees UK 2026", "item": "https://murivest.co.ke/research/commercial-property-solicitor-fees-costs-2026" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "Commercial Property Solicitor Fees UK 2026", "item": "https://murivest.com/research/commercial-property-solicitor-fees-costs-2026" }
       ]
     }),
     content: `
@@ -5698,7 +5698,7 @@ content: `
 
       <div class="bg-slate-50 border-l-4 border-emerald-700 p-6 my-8">
         <p class="text-sm font-semibold text-emerald-800 uppercase tracking-wide mb-2">Executive Summary</p>
-        <p class="text-gray-700">Commercial property solicitor fees typically range from 0.25% to 1.2% of transaction value, with absolute fees spanning £5,000 to £50,000+ for standard acquisitions. Fee structures fall into three categories: hourly billing (£200-£600/hour depending on seniority and location); fixed fees (pre-negotiated lump sums); and capped fees (hourly with maximum limits). <a href="https://murivest.co.ke/contact">Murivest's procurement analysis</a> indicates that fixed-fee arrangements reduce total legal costs by 18-24% compared to hourly billing while maintaining quality outcomes. Critical cost drivers include: title complexity (unregistered land adds 40% to base fees); leasehold assignments (requiring landlord negotiations); and multi-jurisdictional elements (Scottish or Northern Irish assets). Disbursements—external costs passed through by solicitors—add £1,500-£8,000 comprising Land Registry fees, search packs, environmental data, and banking charges. Red flags include: vague "estimate" language without caps; excessive hourly rates for junior staff performing routine tasks; and undisclosed markups on disbursements. Optimal procurement involves competitive tendering between three firms, fixed-fee negotiation with success-based components, and explicit exclusion of aborted-transaction billing.</p>
+        <p class="text-gray-700">Commercial property solicitor fees typically range from 0.25% to 1.2% of transaction value, with absolute fees spanning £5,000 to £50,000+ for standard acquisitions. Fee structures fall into three categories: hourly billing (£200-£600/hour depending on seniority and location); fixed fees (pre-negotiated lump sums); and capped fees (hourly with maximum limits). <a href="https://murivest.com/contact">Murivest's procurement analysis</a> indicates that fixed-fee arrangements reduce total legal costs by 18-24% compared to hourly billing while maintaining quality outcomes. Critical cost drivers include: title complexity (unregistered land adds 40% to base fees); leasehold assignments (requiring landlord negotiations); and multi-jurisdictional elements (Scottish or Northern Irish assets). Disbursements—external costs passed through by solicitors—add £1,500-£8,000 comprising Land Registry fees, search packs, environmental data, and banking charges. Red flags include: vague "estimate" language without caps; excessive hourly rates for junior staff performing routine tasks; and undisclosed markups on disbursements. Optimal procurement involves competitive tendering between three firms, fixed-fee negotiation with success-based components, and explicit exclusion of aborted-transaction billing.</p>
       </div>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">I. The Anatomy of Legal Pricing: Fee Structures Explained</h2>
@@ -5710,7 +5710,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        The temporal model creates inherent agency problems. Solicitors bill in six-minute units (0.1 hours), with inter-firm studies indicating 12-18% of recorded time representing "administrative padding"—internal communications, file reviews, and redundant checks that add marginal client value. A transaction requiring 40 hours of actual productive work routinely generates 50-55 billable hours under hourly structures. <a href="https://murivest.co.ke/about">Murivest's legal spend audits</a> consistently identify "attendance notes" and "file reviews" as cost drivers that contribute minimal transactional progression.
+        The temporal model creates inherent agency problems. Solicitors bill in six-minute units (0.1 hours), with inter-firm studies indicating 12-18% of recorded time representing "administrative padding"—internal communications, file reviews, and redundant checks that add marginal client value. A transaction requiring 40 hours of actual productive work routinely generates 50-55 billable hours under hourly structures. <a href="https://murivest.com/about">Murivest's legal spend audits</a> consistently identify "attendance notes" and "file reviews" as cost drivers that contribute minimal transactional progression.
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
@@ -5742,7 +5742,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest's preferred structure</a> for acquisitions above £10,000,000 combines fixed-fee base components with hourly billing for exceptional complexity, capped at 120% of estimate. This hybrid captures price certainty for standard conveyancing while allowing appropriate resource allocation for unforeseen complications.
+        <a href="https://murivest.com/contact">Murivest's preferred structure</a> for acquisitions above £10,000,000 combines fixed-fee base components with hourly billing for exceptional complexity, capped at 120% of estimate. This hybrid captures price certainty for standard conveyancing while allowing appropriate resource allocation for unforeseen complications.
       </p>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">II. Cost Drivers and Complexity Multipliers</h2>
@@ -5764,7 +5764,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        However, legal competence is not geographically constrained. Regional firms with dedicated commercial property departments (20+ lawyers) routinely handle complex multi-million-pound transactions with equivalent technical proficiency to London practices. <a href="https://murivest.co.ke/contact">Murivest's panel management</a> utilises regional firms for assets outside London, capturing 35-40% cost savings without quality degradation, while reserving City firms for complex cross-border structures or high-stakes litigation-prone acquisitions.
+        However, legal competence is not geographically constrained. Regional firms with dedicated commercial property departments (20+ lawyers) routinely handle complex multi-million-pound transactions with equivalent technical proficiency to London practices. <a href="https://murivest.com/contact">Murivest's panel management</a> utilises regional firms for assets outside London, capturing 35-40% cost savings without quality degradation, while reserving City firms for complex cross-border structures or high-stakes litigation-prone acquisitions.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">2.3 The Leasehold Factor: Assignment Complexity</h3>
@@ -5790,7 +5790,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        Environmental due diligence represents the most variable disbursement. Desktop Phase I Environmental Site Assessments (ESA) cost £400-£800. If intrusive Phase II investigation is required—soil sampling, groundwater monitoring, laboratory analysis—costs escalate to £3,000-£15,000 depending on site size and contamination indicators. <a href="https://murivest.co.ke/contact">Murivest's due diligence protocols</a> require sellers to provide environmental reports where available, avoiding duplicate expenditure.
+        Environmental due diligence represents the most variable disbursement. Desktop Phase I Environmental Site Assessments (ESA) cost £400-£800. If intrusive Phase II investigation is required—soil sampling, groundwater monitoring, laboratory analysis—costs escalate to £3,000-£15,000 depending on site size and contamination indicators. <a href="https://murivest.com/contact">Murivest's due diligence protocols</a> require sellers to provide environmental reports where available, avoiding duplicate expenditure.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">3.2 Land Registry and Official Documentation</h3>
@@ -5810,7 +5810,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        Some firms markup disbursements—a practice that should be explicitly prohibited in engagement letters. <a href="https://murivest.co.ke/contact">Our engagement protocols</a> mandate disbursements be charged at cost with supporting invoices provided, preventing 10-20% hidden premiums common in opaque billing practices.
+        Some firms markup disbursements—a practice that should be explicitly prohibited in engagement letters. <a href="https://murivest.com/contact">Our engagement protocols</a> mandate disbursements be charged at cost with supporting invoices provided, preventing 10-20% hidden premiums common in opaque billing practices.
       </p>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">IV. Strategic Procurement: Optimising the Cost-Quality Matrix</h2>
@@ -5832,7 +5832,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest's volume procurement</a> achieves 20-30% below market rates through pre-negotiated panel arrangements, with firms accepting margin compression for guaranteed instruction flow. Individual purchasers can simulate this effect by engaging solicitors during market downturns when transactional volume decreases and competition for mandates intensifies.
+        <a href="https://murivest.com/contact">Murivest's volume procurement</a> achieves 20-30% below market rates through pre-negotiated panel arrangements, with firms accepting margin compression for guaranteed instruction flow. Individual purchasers can simulate this effect by engaging solicitors during market downturns when transactional volume decreases and competition for mandates intensifies.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">4.3 Red Flags: When Fees Signal Risk</h3>
@@ -5866,7 +5866,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest's UK-wide coverage</a> maintains panels in each jurisdiction, ensuring compliance with local practice while managing costs through volume relationships rather than ad-hoc engagements.
+        <a href="https://murivest.com/contact">Murivest's UK-wide coverage</a> maintains panels in each jurisdiction, ensuring compliance with local practice while managing costs through volume relationships rather than ad-hoc engagements.
       </p>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">VII. Cost Management Strategies for Institutional Portfolios</h2>
@@ -5923,19 +5923,19 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest's legal procurement</a> integrates cost optimisation with quality assurance, maintaining panels of technically excellent firms under strict fee protocols. In commercial property investment, professional fees are not overhead but risk capital—deployed intelligently, they preserve capital value; deployed parsimoniously, they invite catastrophic loss.
+        <a href="https://murivest.com/contact">Murivest's legal procurement</a> integrates cost optimisation with quality assurance, maintaining panels of technically excellent firms under strict fee protocols. In commercial property investment, professional fees are not overhead but risk capital—deployed intelligently, they preserve capital value; deployed parsimoniously, they invite catastrophic loss.
       </p>
 
       <div class="my-12 p-8 bg-white-900 rounded-xl text-white text-center">
         <p class="text-2xl font-serif font-bold mb-4">Optimise Your Legal Spend</p>
         <p class="text-emerald-100 mb-6 max-w-2xl mx-auto">Murivest provides solicitor panel management and fee negotiation services, ensuring institutional-quality legal representation at competitive fixed-fee rates. Our procurement protocols reduce legal costs by 20-30% while maintaining rigorous risk management standards.</p>
-        <a href="https://murivest.co.ke/contact" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">Legal Procurement Consultation</a>
+        <a href="https://murivest.com/contact" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">Legal Procurement Consultation</a>
         <p class="text-sm text-emerald-200 mt-4">Strategic fee management for commercial property acquisitions</p>
       </div>
 
       <div class="border-t border-gray-200 pt-8 mt-12">
         <p class="text-sm text-gray-500 mb-2"><strong>Fee Transparency Note</strong></p>
-        <p class="text-sm text-gray-600 leading-relaxed">Legal fees vary by firm size, location, and transaction complexity. Benchmarks provided reflect market rates as of April 2026 for standard commercial conveyancing. Complex structures (development land, forward funding, cross-border) attract premium pricing requiring specific quotation. This analysis does not constitute legal advice; <a href="https://murivest.co.ke/contact">contact Murivest</a> for transaction-specific fee negotiation.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">Legal fees vary by firm size, location, and transaction complexity. Benchmarks provided reflect market rates as of April 2026 for standard commercial conveyancing. Complex structures (development land, forward funding, cross-border) attract premium pricing requiring specific quotation. This analysis does not constitute legal advice; <a href="https://murivest.com/contact">contact Murivest</a> for transaction-specific fee negotiation.</p>
         
         <p class="text-sm text-gray-500 mt-6 mb-2"><strong>Regulatory Compliance</strong></p>
         <p class="text-sm text-gray-600 leading-relaxed">Solicitors are regulated by the Solicitors Regulation Authority (SRA) under Code of Conduct requirements for fee transparency. Clients retain rights to challenge unreasonable fees through the SRA or Legal Ombudsman. Always obtain written engagement letters specifying fee structures, disbursement policies, and abortive transaction treatment before instructing solicitors.</p>
@@ -5973,7 +5973,7 @@ content: `
     ],
     metaTitle: 'PBSA Investment UK 2026: Yields, Supply Gaps & Policy Risk',
     metaDescription: 'PBSA yields compressed to 4.8–5.5% but structural supply deficits persist across 28 UK university cities. Murivest analysis of demographics, submarket selection, and policy risk.',
-    canonicalUrl: 'https://murivest.co.ke/research/purpose-built-student-accommodation-pbsa-demographics-2026',
+    canonicalUrl: 'https://murivest.com/research/purpose-built-student-accommodation-pbsa-demographics-2026',
     relatedPosts: [
       'student-accommodation-investment-uk-2026',
       'commercial-property-vs-residential-returns-2026',
@@ -5996,7 +5996,7 @@ content: `
       "headline": "PBSA Investment in 2026: Demographic Tailwinds, Supply Gaps, and the Yield Compression Paradox in UK Student Property",
       "description": "PBSA yields compressed to 4.8–5.5% but structural supply deficits persist in 28 UK university cities. Analysis of demographics, submarket selection, and international student policy risk.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-03-28",
       "dateModified": "2026-05-16"
     }),
@@ -6013,9 +6013,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "PBSA Investment UK 2026", "item": "https://murivest.co.ke/research/purpose-built-student-accommodation-pbsa-demographics-2026" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "PBSA Investment UK 2026", "item": "https://murivest.com/research/purpose-built-student-accommodation-pbsa-demographics-2026" }
       ]
     }),
     content: `
@@ -6031,7 +6031,7 @@ content: `
 
       <div class="bg-slate-50 border-l-4 border-emerald-700 p-6 my-8">
         <p class="text-sm font-semibold text-emerald-800 uppercase tracking-wide mb-2">Executive Summary Part I</p>
-        <p class="text-gray-700">The UK PBSA sector is experiencing a bifurcation that will accelerate wealth destruction in traditional student housing while creating fortress-like moats around institutional-grade stock. The demographic cliff—18-year-old UK population declining from 725,000 (2025) to 600,000 (2030)—is being offset by international student growth targets of 600,000 by 2030, creating a "quality substitution" where universities replace three domestic students paying £9,250 fees with one international student paying £28,000-£45,000. <a href="https://murivest.co.ke/contact">Murivest's demographic modeling</a> indicates that Russell Group universities (top 24 research-intensive institutions) will maintain 98% occupancy in PBSA assets despite domestic declines, while post-1992 universities in peripheral towns face 25-40% enrollment volatility. Critical insight: PBSA is no longer correlated with residential housing cycles but with UK higher education export policy and the geopolitical attractiveness of British academic credentials vis-à-vis Australian, Canadian, and American competitors. Part I examines the demand-side destruction and recreation occurring simultaneously.</p>
+        <p class="text-gray-700">The UK PBSA sector is experiencing a bifurcation that will accelerate wealth destruction in traditional student housing while creating fortress-like moats around institutional-grade stock. The demographic cliff—18-year-old UK population declining from 725,000 (2025) to 600,000 (2030)—is being offset by international student growth targets of 600,000 by 2030, creating a "quality substitution" where universities replace three domestic students paying £9,250 fees with one international student paying £28,000-£45,000. <a href="https://murivest.com/contact">Murivest's demographic modeling</a> indicates that Russell Group universities (top 24 research-intensive institutions) will maintain 98% occupancy in PBSA assets despite domestic declines, while post-1992 universities in peripheral towns face 25-40% enrollment volatility. Critical insight: PBSA is no longer correlated with residential housing cycles but with UK higher education export policy and the geopolitical attractiveness of British academic credentials vis-à-vis Australian, Canadian, and American competitors. Part I examines the demand-side destruction and recreation occurring simultaneously.</p>
       </div>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">I. The Demographic Cliff: Quantifying the Domestic Demand Collapse</h2>
@@ -6114,7 +6114,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        However, the yield curve is bifurcating. Secondary PBSA—assets built 1990-2010 with shared bathrooms, no air conditioning, and poor energy efficiency—trades at 6.5-7.5% yields, reflecting obsolescence risk as student preferences shift toward "luxury" studio product. The "mid-market" is disappearing: students either seek premium PBSA with hotel-style services or ultra-cheap traditional housing, with the middle ground—basic en-suite cluster flats—facing functional obsolescence. <a href="https://murivest.co.ke/contact">Murivest's portfolio optimization</a> advises divestment of all PBSA assets with shared bathroom ratios exceeding 1:3 or without 24/7 security and Wi-Fi infrastructure rated at 100Mbps+ per room, as these face terminal value decline regardless of current occupancy.
+        However, the yield curve is bifurcating. Secondary PBSA—assets built 1990-2010 with shared bathrooms, no air conditioning, and poor energy efficiency—trades at 6.5-7.5% yields, reflecting obsolescence risk as student preferences shift toward "luxury" studio product. The "mid-market" is disappearing: students either seek premium PBSA with hotel-style services or ultra-cheap traditional housing, with the middle ground—basic en-suite cluster flats—facing functional obsolescence. <a href="https://murivest.com/contact">Murivest's portfolio optimization</a> advises divestment of all PBSA assets with shared bathroom ratios exceeding 1:3 or without 24/7 security and Wi-Fi infrastructure rated at 100Mbps+ per room, as these face terminal value decline regardless of current occupancy.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">2.3 The ESG Imperative and the Green Premium</h3>
@@ -6151,7 +6151,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        The fee structure in listed PBSA REITs typically involves: (1) Asset management fees of 0.4-0.6% of gross asset value (GAV) annually; (2) Performance fees of 10-15% of NAV growth exceeding hurdle rates (typically 8% IRR); and (3) Development management fees of 3-4% of construction costs for new-build projects. While seemingly modest, these fees compound to extract 25-30% of gross returns over a 7-year hold period. <a href="https://murivest.co.ke/contact">Murivest's capital advisory</a> recommends negotiating "fee holidays" for cornerstone investors committing £50M+ to private PBSA funds, or pursuing direct development with third-party operators (Yugo, Hello Student, or university-managed services) on fixed-fee contracts rather than variable promote structures.
+        The fee structure in listed PBSA REITs typically involves: (1) Asset management fees of 0.4-0.6% of gross asset value (GAV) annually; (2) Performance fees of 10-15% of NAV growth exceeding hurdle rates (typically 8% IRR); and (3) Development management fees of 3-4% of construction costs for new-build projects. While seemingly modest, these fees compound to extract 25-30% of gross returns over a 7-year hold period. <a href="https://murivest.com/contact">Murivest's capital advisory</a> recommends negotiating "fee holidays" for cornerstone investors committing £50M+ to private PBSA funds, or pursuing direct development with third-party operators (Yugo, Hello Student, or university-managed services) on fixed-fee contracts rather than variable promote structures.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">3.2 The University Joint Venture: Alignment Through Ownership</h3>
@@ -6175,7 +6175,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        Performance-based fee structures ("value-add" contracts) attempt to align incentives by tying 30-40% of operator compensation to metrics: occupancy rates (targeting 98%+), net operating income growth (targeting 3% annual same-store growth), and student satisfaction scores (NSS—National Student Survey—ratings above 4.2/5). However, operators game these metrics through "yield management"—accepting lower rents to maintain occupancy, or deferring maintenance capital to boost short-term NOI at the expense of long-term asset condition. <a href="https://murivest.co.ke/contact">Murivest's operator due diligence</a> requires forensic analysis of historical maintenance spend: operators spending less than £450 per bed annually on capital maintenance are cannibalising asset value to inflate fees, rendering the asset unsaleable at term without substantial refurbishment.
+        Performance-based fee structures ("value-add" contracts) attempt to align incentives by tying 30-40% of operator compensation to metrics: occupancy rates (targeting 98%+), net operating income growth (targeting 3% annual same-store growth), and student satisfaction scores (NSS—National Student Survey—ratings above 4.2/5). However, operators game these metrics through "yield management"—accepting lower rents to maintain occupancy, or deferring maintenance capital to boost short-term NOI at the expense of long-term asset condition. <a href="https://murivest.com/contact">Murivest's operator due diligence</a> requires forensic analysis of historical maintenance spend: operators spending less than £450 per bed annually on capital maintenance are cannibalising asset value to inflate fees, rendering the asset unsaleable at term without substantial refurbishment.
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
@@ -6195,7 +6195,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        However, the licence structure faces legal challenge. The 2024 case of *Johnson v. Unite Students* (County Court, Bristol) held that a studio flat with private kitchen and bathroom constituted a "dwelling" under the Housing Act 1988, granting the student AST protection despite the licence agreement. While under appeal, this ruling threatens the sector's legal foundation. Sophisticated operators now structure "shared facilities" (even tokenistic common rooms or shared entrance lobbies) to ensure properties legally constitute "halls of residence" (exempt from AST protection under Schedule 1, Housing Act 1988) rather than self-contained dwellings. <a href="https://murivest.co.ke/contact">Murivest's legal structuring</a> mandates compliance reviews ensuring licence validity, including mandatory "shared kitchen" provisions in cluster flats and retained landlord access rights for welfare checks.
+        However, the licence structure faces legal challenge. The 2024 case of *Johnson v. Unite Students* (County Court, Bristol) held that a studio flat with private kitchen and bathroom constituted a "dwelling" under the Housing Act 1988, granting the student AST protection despite the licence agreement. While under appeal, this ruling threatens the sector's legal foundation. Sophisticated operators now structure "shared facilities" (even tokenistic common rooms or shared entrance lobbies) to ensure properties legally constitute "halls of residence" (exempt from AST protection under Schedule 1, Housing Act 1988) rather than self-contained dwellings. <a href="https://murivest.com/contact">Murivest's legal structuring</a> mandates compliance reviews ensuring licence validity, including mandatory "shared kitchen" provisions in cluster flats and retained landlord access rights for welfare checks.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">4.2 Nomination Agreements: The Covenant Backstop</h3>
@@ -6237,7 +6237,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <em>Reflection and Strategic Analysis:</em> The Edinburgh case illustrates the "infrastructure beta" of PBSA—assets are only as valuable as their connectivity to campus. The 15-minute walk threshold is absolute; beyond this, students prefer cheaper HMOs in traditional areas (Marchmont, Newington) over sterile PBSA on industrial estates. The Kuwaiti investors' loss—estimated at £12 million on a £34 million development—stemmed from reliance on "as the crow flies" distance metrics rather than actual travel time analysis. <a href="https://murivest.co.ke/contact">Murivest's site selection</a> mandates "walkability audits" requiring sub-12 minute actual walking time to main campus entrances, rejecting sites requiring bus dependency regardless of rental discounts. In student housing, micro-location within the "catchment shadow" of campus gates trumps all other factors—view, amenities, or unit quality.
+        <em>Reflection and Strategic Analysis:</em> The Edinburgh case illustrates the "infrastructure beta" of PBSA—assets are only as valuable as their connectivity to campus. The 15-minute walk threshold is absolute; beyond this, students prefer cheaper HMOs in traditional areas (Marchmont, Newington) over sterile PBSA on industrial estates. The Kuwaiti investors' loss—estimated at £12 million on a £34 million development—stemmed from reliance on "as the crow flies" distance metrics rather than actual travel time analysis. <a href="https://murivest.com/contact">Murivest's site selection</a> mandates "walkability audits" requiring sub-12 minute actual walking time to main campus entrances, rejecting sites requiring bus dependency regardless of rental discounts. In student housing, micro-location within the "catchment shadow" of campus gates trumps all other factors—view, amenities, or unit quality.
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
@@ -6295,7 +6295,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <em>Reflection and Strategic Analysis:</em> The Coventry case exposes the "currency mismatch" risk embedded in emerging market-dependent PBSA. While Chinese students historically benefited from Renminbi stability (pegged to a basket with Sterling), Indian and Nigerian currencies exhibit high beta to commodity prices and political instability. My view is that investors must underwrite PBSA assets assuming 30-40% currency depreciation in key source markets over a 5-year hold period—stress-testing that rent levels remain affordable at ₦2,500/£ and ₹130/£ exchange rates. If the maths fails at those levels (as it did in Coventry), the asset is speculative rather than investment-grade. <a href="https://murivest.co.ke/contact">Murivest's currency hedging advisory</a> recommends structuring "dual-currency" lease options allowing students to pay in USD (stable relative to emerging market currencies) at fixed exchange rates, with the operator bearing hedging costs (0.8-1.2% of rent) to secure occupancy.
+        <em>Reflection and Strategic Analysis:</em> The Coventry case exposes the "currency mismatch" risk embedded in emerging market-dependent PBSA. While Chinese students historically benefited from Renminbi stability (pegged to a basket with Sterling), Indian and Nigerian currencies exhibit high beta to commodity prices and political instability. My view is that investors must underwrite PBSA assets assuming 30-40% currency depreciation in key source markets over a 5-year hold period—stress-testing that rent levels remain affordable at ₦2,500/£ and ₹130/£ exchange rates. If the maths fails at those levels (as it did in Coventry), the asset is speculative rather than investment-grade. <a href="https://murivest.com/contact">Murivest's currency hedging advisory</a> recommends structuring "dual-currency" lease options allowing students to pay in USD (stable relative to emerging market currencies) at fixed exchange rates, with the operator bearing hedging costs (0.8-1.2% of rent) to secure occupancy.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">6.3 The Remittance Channel and Capital Control Evasion</h3>
@@ -6367,7 +6367,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest's treasury structuring</a> has implemented USD-quoted leases for a 650-bed PBSA portfolio in Manchester with 65% Global South exposure, achieving 98% occupancy retention during the Naira crisis versus 67% for Sterling-quoted comparables in the same market. The strategy requires FCA regulatory compliance (treating the arrangement as a financial derivative) and transparent communication to avoid accusations of "hidden forex fees," but provides essential protection against currency-driven demand shocks.
+        <a href="https://murivest.com/contact">Murivest's treasury structuring</a> has implemented USD-quoted leases for a 650-bed PBSA portfolio in Manchester with 65% Global South exposure, achieving 98% occupancy retention during the Naira crisis versus 67% for Sterling-quoted comparables in the same market. The strategy requires FCA regulatory compliance (treating the arrangement as a financial derivative) and transparent communication to avoid accusations of "hidden forex fees," but provides essential protection against currency-driven demand shocks.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">8.3 The Crypto Remittance Experiment</h3>
@@ -6404,7 +6404,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        The "moral hazard" is acute: universities encouraged private capital to build PBSA on the promise of market-rate returns (5.5-6.5% yields), then governments impose rent controls that compress yields to 3.5-4.0%, effectively expropriating the yield premium without compensation. <a href="https://murivest.co.ke/contact">Murivest's regulatory risk advisory</a> now applies a "Scottish discount" to all UK PBSA valuations—50 basis points added to exit yields to reflect the probability of rent control extension to England and Wales within a 10-year hold period. This reduces asset values by 8-12% on a mark-to-market basis but more accurately reflects political risk.
+        The "moral hazard" is acute: universities encouraged private capital to build PBSA on the promise of market-rate returns (5.5-6.5% yields), then governments impose rent controls that compress yields to 3.5-4.0%, effectively expropriating the yield premium without compensation. <a href="https://murivest.com/contact">Murivest's regulatory risk advisory</a> now applies a "Scottish discount" to all UK PBSA valuations—50 basis points added to exit yields to reflect the probability of rent control extension to England and Wales within a 10-year hold period. This reduces asset values by 8-12% on a mark-to-market basis but more accurately reflects political risk.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">9.2 The English Renters' Rights Bill: PBSA Inclusion Threat</h3>
@@ -6475,7 +6475,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <em>Reflection:</em> The Vita case demonstrates that "brown discount" due diligence is now as critical as "green" ESG scoring. Investors in 2019-2020 acquired PBSA at 4.5-5.0% yields without adequately pricing remediation liabilities that now consume 3-4 years of rental income. <a href="https://murivest.co.ke/contact">Murivest's technical due diligence</a> now includes "cladding audits" by fire engineers for all pre-2018 assets, with price adjustments of £25,000 per bed for ACM identification. The result is a two-tier market: "Grenfell-compliant" post-2018 assets trade at 3.8-4.2% yields, while "legacy stock" trades at 6.5-7.5% yields that are illusory once remediation costs are netted. Only value-add funds with construction expertise and 3-year hold periods should touch legacy stock; core investors must pay the premium for compliance.
+        <em>Reflection:</em> The Vita case demonstrates that "brown discount" due diligence is now as critical as "green" ESG scoring. Investors in 2019-2020 acquired PBSA at 4.5-5.0% yields without adequately pricing remediation liabilities that now consume 3-4 years of rental income. <a href="https://murivest.com/contact">Murivest's technical due diligence</a> now includes "cladding audits" by fire engineers for all pre-2018 assets, with price adjustments of £25,000 per bed for ACM identification. The result is a two-tier market: "Grenfell-compliant" post-2018 assets trade at 3.8-4.2% yields, while "legacy stock" trades at 6.5-7.5% yields that are illusory once remediation costs are netted. Only value-add funds with construction expertise and 3-year hold periods should touch legacy stock; core investors must pay the premium for compliance.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">11.2 The Waking Watch and Interim Safety Costs</h3>
@@ -6534,7 +6534,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest's allocation framework</a> advocates a "Barbell Strategy" for family offices and endowments: 70% allocation to Fortress Core (defensive, income-dominated, perpetual hold) and 30% to Distressed Opportunity (value-add, capital-gain-dominated, 3-5 year hold for conversion or repositioning). The middle 40% of the risk spectrum—tertiary city PBSA with nominal yields of 5.5-6.0%—must be rigorously avoided, as these assets face simultaneous yield compression (from rising gilt rates) and income decline (from rent controls and voids), creating negative total returns despite superficial "value" pricing.
+        <a href="https://murivest.com/contact">Murivest's allocation framework</a> advocates a "Barbell Strategy" for family offices and endowments: 70% allocation to Fortress Core (defensive, income-dominated, perpetual hold) and 30% to Distressed Opportunity (value-add, capital-gain-dominated, 3-5 year hold for conversion or repositioning). The middle 40% of the risk spectrum—tertiary city PBSA with nominal yields of 5.5-6.0%—must be rigorously avoided, as these assets face simultaneous yield compression (from rising gilt rates) and income decline (from rent controls and voids), creating negative total returns despite superficial "value" pricing.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">13.2 The Fortress Core Criteria</h3>
@@ -6561,7 +6561,7 @@ content: `
 
       <p class="text-gray-700 leading-relaxed mb-6">
         <strong>Case Study: The Sheffield "Hybrid" Transformation</strong>
-        In 2024, a 450-bed PBSA asset in Sheffield's Ecclesall Road corridor, originally developed for University of Sheffield students, faced collapse as Chinese enrolment declined 35% and the asset achieved only 64% occupancy. The operator, working with <a href="https://murivest.co.ke/contact">Murivest's asset management team</a>, executed a "hybrid pivot": converting 40% of units to "Graduate Living" marketed to Sheffield Teaching Hospitals NHS Foundation Trust trainees and Sheffield Hallam postgraduates, while retaining 60% for undergraduate intake.
+        In 2024, a 450-bed PBSA asset in Sheffield's Ecclesall Road corridor, originally developed for University of Sheffield students, faced collapse as Chinese enrolment declined 35% and the asset achieved only 64% occupancy. The operator, working with <a href="https://murivest.com/contact">Murivest's asset management team</a>, executed a "hybrid pivot": converting 40% of units to "Graduate Living" marketed to Sheffield Teaching Hospitals NHS Foundation Trust trainees and Sheffield Hallam postgraduates, while retaining 60% for undergraduate intake.
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
@@ -6643,7 +6643,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest</a> recommends immediate action: divest all Tier 3 exposure (post-1992 university towns), acquire Fortress Core in Tier 1 on 10-year holds, and deploy value-add capital to Tier 2 distress as development pipelines create 2027-2028 buying opportunities. The demographic cliff is real, but the international student—the global elite's children seeking English-language credentials—remains the most reliable tenant in real estate, provided they are housed in assets that meet the exacting standards of the 2026 market.
+        <a href="https://murivest.com/contact">Murivest</a> recommends immediate action: divest all Tier 3 exposure (post-1992 university towns), acquire Fortress Core in Tier 1 on 10-year holds, and deploy value-add capital to Tier 2 distress as development pipelines create 2027-2028 buying opportunities. The demographic cliff is real, but the international student—the global elite's children seeking English-language credentials—remains the most reliable tenant in real estate, provided they are housed in assets that meet the exacting standards of the 2026 market.
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
@@ -6653,13 +6653,13 @@ content: `
       <div class="my-12 p-8 bg-emerald-900 rounded-xl text-white text-center">
         <p class="text-2xl font-serif font-bold mb-4">Student Housing Investment Advisory</p>
         <p class="text-emerald-100 mb-6 max-w-2xl mx-auto">Murivest provides comprehensive PBSA due diligence, operator selection, and regulatory risk management for institutional investors navigating the demographic and policy complexities of UK student housing. Our university covenant analysis and currency hedging structures optimise risk-adjusted returns in this evolving sector.</p>
-        <a href="https://murivest.co.ke/contact" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">PBSA Investment Consultation</a>
+        <a href="https://murivest.com/contact" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">PBSA Investment Consultation</a>
         <p class="text-sm text-emerald-200 mt-4">Defensive allocation strategies for demographic tailwinds</p>
       </div>
 
       <div class="border-t border-gray-200 pt-8 mt-12">
         <p class="text-sm text-gray-500 mb-2"><strong>Series Conclusion and Sources</strong></p>
-        <p class="text-sm text-gray-600 leading-relaxed">This five-part analysis incorporated data from UCAS, Office for National Statistics (ONS), Office for Students (OfS), Home Office visa statistics, Knight Frank Student Property Review 2026, Savills Student Housing Report, Unite Students Annual Reports, BBC Education coverage, Financial Times property desk, and Bloomberg international education analytics. Market data current as of April 2026. Projections assume no change to UK government composition; policy shifts post-2026 general election may materially alter conclusions. <a href="https://murivest.co.ke/contact">Contact Murivest</a> for scenario updates.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">This five-part analysis incorporated data from UCAS, Office for National Statistics (ONS), Office for Students (OfS), Home Office visa statistics, Knight Frank Student Property Review 2026, Savills Student Housing Report, Unite Students Annual Reports, BBC Education coverage, Financial Times property desk, and Bloomberg international education analytics. Market data current as of April 2026. Projections assume no change to UK government composition; policy shifts post-2026 general election may materially alter conclusions. <a href="https://murivest.com/contact">Contact Murivest</a> for scenario updates.</p>
         
         <p class="text-sm text-gray-500 mt-6 mb-2"><strong>Risk Disclosures</strong></p>
         <p class="text-sm text-gray-600 leading-relaxed">PBSA investment carries regulatory risk (rent control, planning permission withdrawal), currency risk (emerging market student funding sources), and operational risk (student welfare liability, building safety remediation). Past performance of student housing (2010-2020 boom) does not predict future returns given the structural demographic and geopolitical shifts outlined in this series. Minimum investment horizons: 7 years for Core, 3 years for Value-Add.</p>
@@ -6697,7 +6697,7 @@ content: `
     ],
     metaTitle: 'Global Real Estate Allocation 2026: De-dollarization Capital Flows',
     metaDescription: 'Institutional capital is rotating away from USD-denominated real estate. Murivest analysis of where it\'s going — Dubai, Singapore, African markets — and the yield implications.',
-    canonicalUrl: 'https://murivest.co.ke/research/global-macro-allocation-commercial-real-estate-dedollarization-2026',
+    canonicalUrl: 'https://murivest.com/research/global-macro-allocation-commercial-real-estate-dedollarization-2026',
     relatedPosts: [
       'standard-chartered-chiromo-headquarters-sale-westlands-nairobi-2026',
       'london-commercial-real-estate-market-report-q2-2026',
@@ -6720,7 +6720,7 @@ content: `
       "headline": "De-dollarization and the Commercial Real Estate Allocation: What Institutional Capital Is Actually Doing in 2026",
       "description": "Global de-dollarization is reshaping commercial real estate pricing in Dubai, Singapore, and African markets. Analysis of capital rotation, yield implications, and multi-market portfolio strategy.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-04-10",
       "dateModified": "2026-05-16"
     }),
@@ -6737,9 +6737,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "Global Macro Real Estate Allocation 2026", "item": "https://murivest.co.ke/research/global-macro-allocation-commercial-real-estate-dedollarization-2026" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "Global Macro Real Estate Allocation 2026", "item": "https://murivest.com/research/global-macro-allocation-commercial-real-estate-dedollarization-2026" }
       ]
     }),
     content: `
@@ -6755,7 +6755,7 @@ content: `
 
       <div class="bg-slate-50 border-l-4 border-emerald-700 p-6 my-8">
         <p class="text-sm font-semibold text-emerald-800 uppercase tracking-wide mb-2">Executive Summary for CIOs and Investment Committees</p>
-        <p class="text-gray-700">The global commercial real estate market is experiencing its most profound structural transformation since the dissolution of the Soviet Union. <a href="https://murivest.co.ke/contact">Murivest's macro analysis</a> identifies three distinct scenario pathways for the 2026-2035 decade: (1) The "Managed Decline" Scenario (55% probability): Gradual de-dollarization reduces US Treasury liquidity, compressing global real estate yields by 50-75 basis points as capital seeks hard assets, with UK and Northern European logistics outperforming due to nearshoring imperatives; (2) The "Trade War Escalation" Scenario (30% probability): Trump's universal tariffs (10-20% on all imports) trigger retaliatory measures, bifurcating the world into US-aligned and China-aligned trade blocs, devastating cross-border logistics volumes but creating arbitrage opportunities in Mexican and Southeast Asian manufacturing real estate; (3) The "Hot War" Scenario (15% probability): Iran conflict expands to include closure of Hormuz and cyberattacks on Western financial infrastructure, triggering 1970s-style stagflation and forcing 40% corrections in non-essential real estate (retail, luxury residential) while defensive assets (healthcare, food logistics, energy infrastructure) trade at negative yields. Immediate tactical recommendations: Reduce allocation to cross-border logistics dependent on Chinese manufacturing (vulnerable to tariff shocks); Increase allocation to "fortress markets" (UK, Japan, Switzerland) with food and energy security; Implement "barbell strategy" with 60% ultra-defensive (healthcare, essential logistics) and 40% idiosyncratic value-add (energy transition, distressed office-to-residential); Establish currency hedging for Sterling, Yen, and Swiss Franc exposure given dollar volatility. Minimum portfolio adjustment: 15% reallocation from traditional core assets to "geopolitical resilience" premium assets by Q3 2026.</p>
+        <p class="text-gray-700">The global commercial real estate market is experiencing its most profound structural transformation since the dissolution of the Soviet Union. <a href="https://murivest.com/contact">Murivest's macro analysis</a> identifies three distinct scenario pathways for the 2026-2035 decade: (1) The "Managed Decline" Scenario (55% probability): Gradual de-dollarization reduces US Treasury liquidity, compressing global real estate yields by 50-75 basis points as capital seeks hard assets, with UK and Northern European logistics outperforming due to nearshoring imperatives; (2) The "Trade War Escalation" Scenario (30% probability): Trump's universal tariffs (10-20% on all imports) trigger retaliatory measures, bifurcating the world into US-aligned and China-aligned trade blocs, devastating cross-border logistics volumes but creating arbitrage opportunities in Mexican and Southeast Asian manufacturing real estate; (3) The "Hot War" Scenario (15% probability): Iran conflict expands to include closure of Hormuz and cyberattacks on Western financial infrastructure, triggering 1970s-style stagflation and forcing 40% corrections in non-essential real estate (retail, luxury residential) while defensive assets (healthcare, food logistics, energy infrastructure) trade at negative yields. Immediate tactical recommendations: Reduce allocation to cross-border logistics dependent on Chinese manufacturing (vulnerable to tariff shocks); Increase allocation to "fortress markets" (UK, Japan, Switzerland) with food and energy security; Implement "barbell strategy" with 60% ultra-defensive (healthcare, essential logistics) and 40% idiosyncratic value-add (energy transition, distressed office-to-residential); Establish currency hedging for Sterling, Yen, and Swiss Franc exposure given dollar volatility. Minimum portfolio adjustment: 15% reallocation from traditional core assets to "geopolitical resilience" premium assets by Q3 2026.</p>
       </div>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">I. The End of Globalization: From Efficiency to Resilience</h2>
@@ -6812,7 +6812,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        The lesson is profound: in an era of energy geopolitics, electrons matter as much as square footage. The 2026 investor must conduct "energy due diligence" as rigorous as title due diligence, assessing not just current costs but supply security, grid resilience, and renewable integration capacity. <a href="https://murivest.co.ke/contact">Murivest's asset analytics</a> now score every acquisition on the "Hormuz Test"—can this asset operate profitably if Middle East oil is embargoed for six months?
+        The lesson is profound: in an era of energy geopolitics, electrons matter as much as square footage. The 2026 investor must conduct "energy due diligence" as rigorous as title due diligence, assessing not just current costs but supply security, grid resilience, and renewable integration capacity. <a href="https://murivest.com/contact">Murivest's asset analytics</a> now score every acquisition on the "Hormuz Test"—can this asset operate profitably if Middle East oil is embargoed for six months?
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
@@ -6962,7 +6962,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        The distress is masked by "extend and pretend"—landlords offering 25% rent-free periods to maintain face rents for loan covenant purposes, while actual effective rents have fallen 45%. <a href="https://murivest.co.ke/contact">Murivest's distressed advisory</a> is actively acquiring select Canary Wharf assets at £400-450 per sq ft for conversion to residential (permitted development rights) and life sciences, capturing 35-40% IRRs on value-add execution, but warning that "core" office exposure remains value-destructive.
+        The distress is masked by "extend and pretend"—landlords offering 25% rent-free periods to maintain face rents for loan covenant purposes, while actual effective rents have fallen 45%. <a href="https://murivest.com/contact">Murivest's distressed advisory</a> is actively acquiring select Canary Wharf assets at £400-450 per sq ft for conversion to residential (permitted development rights) and life sciences, capturing 35-40% IRRs on value-add execution, but warning that "core" office exposure remains value-destructive.
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
@@ -7024,7 +7024,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest's planning intelligence</a> maintains databases of "strategic land" with optionality for rezoning, particularly in UK growth corridors (Oxford-Cambridge Arc, Northern Powerhouse) where political will exists for expansion. This "regulatory alpha"—returns generated from permission uplift rather than market beta—offers 25-35% IRRs uncorrelated with economic cycles, but requires 5-7 year hold periods and local political relationships.
+        <a href="https://murivest.com/contact">Murivest's planning intelligence</a> maintains databases of "strategic land" with optionality for rezoning, particularly in UK growth corridors (Oxford-Cambridge Arc, Northern Powerhouse) where political will exists for expansion. This "regulatory alpha"—returns generated from permission uplift rather than market beta—offers 25-35% IRRs uncorrelated with economic cycles, but requires 5-7 year hold periods and local political relationships.
       </p>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">VII. The Future of the Firm: Structuring for an Age of Chaos</h2>
@@ -7061,7 +7061,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest</a> recommends immediate action to reconfigure portfolios for this new reality: Reduce exposure to cross-border logistics dependent on Chinese manufacturing by 40%; Increase allocation to UK and Northern European "fortress assets" with food and energy security by 35%; Deploy 15% of capital to opportunistic distressed strategies (obsolete office conversion, stranded retail repurposing); and Maintain 10% in liquid reserves (gold, short-dated gilts/Treasuries) for deployment during crisis dislocations.
+        <a href="https://murivest.com/contact">Murivest</a> recommends immediate action to reconfigure portfolios for this new reality: Reduce exposure to cross-border logistics dependent on Chinese manufacturing by 40%; Increase allocation to UK and Northern European "fortress assets" with food and energy security by 35%; Deploy 15% of capital to opportunistic distressed strategies (obsolete office conversion, stranded retail repurposing); and Maintain 10% in liquid reserves (gold, short-dated gilts/Treasuries) for deployment during crisis dislocations.
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
@@ -7071,13 +7071,13 @@ content: `
       <div class="my-12 p-8 bg-white-900 rounded-xl text-white text-center">
         <p class="text-2xl font-serif font-bold mb-4">Global Macro Real Estate Allocation</p>
         <p class="text-emerald-100 mb-6 max-w-2xl mx-auto">Murivest provides sovereign wealth funds and family offices with scenario-based allocation strategies for the post-globalization era. Our geopolitical risk analytics, energy resilience scoring, and cross-border structuring expertise ensure portfolio survival across the polycrisis.</p>
-        <a href="https://murivest.co.ke/contact" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">Strategic Allocation Consultation</a>
+        <a href="https://murivest.com/contact" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">Strategic Allocation Consultation</a>
         <p class="text-sm text-emerald-200 mt-4">Navigating de-dollarization and trade fragmentation</p>
       </div>
 
       <div class="border-t border-gray-200 pt-8 mt-12">
         <p class="text-sm text-gray-500 mb-2"><strong>Geopolitical Risk Disclosure</strong></p>
-        <p class="text-sm text-gray-600 leading-relaxed">This analysis incorporates events reported by BBC News, Bloomberg, Financial Times, and Reuters as of April 2026. The scenarios presented (Managed Decline, Trade War, Hot War) are hypothetical but based on current trajectory analysis. Actual outcomes may differ materially. Past performance of real estate during previous geopolitical crises does not guarantee future resilience. <a href="https://murivest.co.ke/contact">Contact Murivest</a> for real-time strategy updates.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">This analysis incorporates events reported by BBC News, Bloomberg, Financial Times, and Reuters as of April 2026. The scenarios presented (Managed Decline, Trade War, Hot War) are hypothetical but based on current trajectory analysis. Actual outcomes may differ materially. Past performance of real estate during previous geopolitical crises does not guarantee future resilience. <a href="https://murivest.com/contact">Contact Murivest</a> for real-time strategy updates.</p>
         
         <p class="text-sm text-gray-500 mt-6 mb-2"><strong>Data Sources</strong></p>
         <p class="text-sm text-gray-600 leading-relaxed">Market data courtesy of Federal Reserve Financial Stability Reports, BIS Quarterly Reviews, MSCI Real Assets, Knight Frank, Savills, McKinsey Global Institute, and OECD Economic Outlooks. Currency data from Bloomberg and central bank statistical databases.</p>
@@ -7115,7 +7115,7 @@ content: `
     ],
     metaTitle: 'Medical Centre Investment UK: NHS-Backed Healthcare Property 2026',
     metaDescription: 'NHS-backed medical centres yield 4.8–6.5% with effective sovereign covenant quality. Murivest analysis of the UK primary care property investment case and infrastructure deficit.',
-    canonicalUrl: 'https://murivest.co.ke/research/medical-centre-property-investment-healthcare-real-estate-uk-2026',
+    canonicalUrl: 'https://murivest.com/research/medical-centre-property-investment-healthcare-real-estate-uk-2026',
     relatedPosts: [
       'medical-centre-property-investment-healthcare-real-estate-uk-2026',
       'commercial-property-vs-residential-returns-2026',
@@ -7137,7 +7137,7 @@ content: `
       "headline": "Medical Centre Property Investment: NHS-Backed Healthcare Real Estate Yields and the Primary Care Infrastructure Deficit",
       "description": "NHS-backed GP surgery properties yield 4.8–6.5% with effective sovereign covenant. Analysis of the UK primary care infrastructure deficit and healthcare property investment case.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-04-14",
       "dateModified": "2026-05-16"
     }),
@@ -7153,9 +7153,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "Medical Centre Property Investment UK 2026", "item": "https://murivest.co.ke/research/medical-centre-property-investment-healthcare-real-estate-uk-2026" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "Medical Centre Property Investment UK 2026", "item": "https://murivest.com/research/medical-centre-property-investment-healthcare-real-estate-uk-2026" }
       ]
     }),
     content: `
@@ -7171,7 +7171,7 @@ content: `
 
       <div class="bg-slate-50 border-l-4 border-emerald-700 p-6 my-8">
         <p class="text-sm font-semibold text-emerald-800 uppercase tracking-wide mb-2">Executive Summary for Investment Committees</p>
-        <p class="text-gray-700">UK healthcare real estate offers unique risk-return asymmetry: NHS-backed income streams (effectively sovereign credit quality) with 2.5-3.5% annual rental growth (RPI-linked), trading at 4.75-5.5% net initial yields for primary care assets and 5.5-6.5% for secondary care facilities. The sector benefits from irreplaceable demand demographics (aging population), regulatory moats (CQC registration requirements creating tenant stickiness), and inflation protection (NHS reimbursement rates indexed to health sector inflation, historically running 2% above CPI). <a href="https://murivest.co.ke/contact">Murivest's healthcare advisory</a> identifies three distinct allocation strategies: (1) Core-Plus Primary Care: Freehold GP surgeries with 20+ year leases to NHS-contracted practices, offering bond-like stability with 4.8% yields; (2) Value-Add Secondary Care: Converting obsolete office stock to diagnostic centres under the NHS "Community Diagnostic Centre" (CDC) program, capturing 18-22% IRRs through development premiums; (3) Opportunistic Private Healthcare: Specialist mental health facilities and elderly care units catering to the self-pay market, offering 7%+ yields with higher operational intensity. Critical risks include: NHS funding volatility (current real-terms budget constraints), clinical governance liability (CQC enforcement actions), and obsolescence risk (telemedicine reducing physical space requirements). Recommended allocation: 8-12% of defensive real estate allocation, with emphasis on primary care hubs offering multi-disciplinary tenant mix (GP, pharmacy, dentistry) to diversify reimbursement risk.</p>
+        <p class="text-gray-700">UK healthcare real estate offers unique risk-return asymmetry: NHS-backed income streams (effectively sovereign credit quality) with 2.5-3.5% annual rental growth (RPI-linked), trading at 4.75-5.5% net initial yields for primary care assets and 5.5-6.5% for secondary care facilities. The sector benefits from irreplaceable demand demographics (aging population), regulatory moats (CQC registration requirements creating tenant stickiness), and inflation protection (NHS reimbursement rates indexed to health sector inflation, historically running 2% above CPI). <a href="https://murivest.com/contact">Murivest's healthcare advisory</a> identifies three distinct allocation strategies: (1) Core-Plus Primary Care: Freehold GP surgeries with 20+ year leases to NHS-contracted practices, offering bond-like stability with 4.8% yields; (2) Value-Add Secondary Care: Converting obsolete office stock to diagnostic centres under the NHS "Community Diagnostic Centre" (CDC) program, capturing 18-22% IRRs through development premiums; (3) Opportunistic Private Healthcare: Specialist mental health facilities and elderly care units catering to the self-pay market, offering 7%+ yields with higher operational intensity. Critical risks include: NHS funding volatility (current real-terms budget constraints), clinical governance liability (CQC enforcement actions), and obsolescence risk (telemedicine reducing physical space requirements). Recommended allocation: 8-12% of defensive real estate allocation, with emphasis on primary care hubs offering multi-disciplinary tenant mix (GP, pharmacy, dentistry) to diversify reimbursement risk.</p>
       </div>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">I. The Healthcare Real Estate Thesis: Non-Discretionary Demand in an Uncertain World</h2>
@@ -7226,7 +7226,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <strong>Valuation Complexity:</strong> Unlike standard commercial property, GP surgery valuations must account for "notional rent"—the NHS reimbursement rate calculated by District Valuers based on the cost of providing suitable alternative accommodation. This creates a binary outcome: if the District Valuer certifies £250,000 per annum notional rent, the practice can afford £250,000 market rent; if certification falls to £180,000 due to changed NHS formulas, tenant default risk escalates. <a href="https://murivest.co.ke/contact">Murivest's healthcare due diligence</a> includes pre-acquisition District Valuer engagement to "lock in" notional rent agreements, de-risking the income stream.
+        <strong>Valuation Complexity:</strong> Unlike standard commercial property, GP surgery valuations must account for "notional rent"—the NHS reimbursement rate calculated by District Valuers based on the cost of providing suitable alternative accommodation. This creates a binary outcome: if the District Valuer certifies £250,000 per annum notional rent, the practice can afford £250,000 market rent; if certification falls to £180,000 due to changed NHS formulas, tenant default risk escalates. <a href="https://murivest.com/contact">Murivest's healthcare due diligence</a> includes pre-acquisition District Valuer engagement to "lock in" notional rent agreements, de-risking the income stream.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">2.2 Community Diagnostic Centres (CDCs): The NHS Efficiency Drive</h3>
@@ -7271,7 +7271,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        This "CQC risk period"—typically 3-6 months between practical completion and registration approval—requires careful lease structuring. Sophisticated landlords offer "rent-free periods" contingent upon CQC registration, or "turnkey" developments where the landlord retains risk until operational approval. <a href="https://murivest.co.ke/contact">Murivest's development management</a> includes CQC pre-application consultation during the design phase, ensuring premises meet "Outstanding" rating criteria (infection control, privacy, accessibility) from day one, minimizing the risk period.
+        This "CQC risk period"—typically 3-6 months between practical completion and registration approval—requires careful lease structuring. Sophisticated landlords offer "rent-free periods" contingent upon CQC registration, or "turnkey" developments where the landlord retains risk until operational approval. <a href="https://murivest.com/contact">Murivest's development management</a> includes CQC pre-application consultation during the design phase, ensuring premises meet "Outstanding" rating criteria (infection control, privacy, accessibility) from day one, minimizing the risk period.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">3.2 NHS Estate Strategy and the Public Sector Partner</h3>
@@ -7338,19 +7338,19 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        The sector's evolution from "Cinderella asset" (neglected by institutional capital in favor of glitzy offices) to "strategic infrastructure" reflects recognition that healthcare delivery is as critical to national security as energy or defense. <a href="https://murivest.co.ke/contact">Murivest</a> recommends immediate allocation to the sector, targeting 25-year NHS-backed income streams in demographically stable locations, while accepting higher yields for operational intensity in private healthcare and diagnostic subsectors.
+        The sector's evolution from "Cinderella asset" (neglected by institutional capital in favor of glitzy offices) to "strategic infrastructure" reflects recognition that healthcare delivery is as critical to national security as energy or defense. <a href="https://murivest.com/contact">Murivest</a> recommends immediate allocation to the sector, targeting 25-year NHS-backed income streams in demographically stable locations, while accepting higher yields for operational intensity in private healthcare and diagnostic subsectors.
       </p>
 
       <div class="my-12 p-8 bg-emerald-900 rounded-xl text-white text-center">
         <p class="text-2xl font-serif font-bold mb-4">Healthcare Real Estate Investment Advisory</p>
         <p class="text-emerald-100 mb-6 max-w-2xl mx-auto">Murivest provides specialist due diligence, District Valuer negotiation, and NHS lease structuring for medical centre investments. Our demographic analytics and clinical governance expertise ensure portfolio resilience across healthcare subsectors.</p>
-        <a href="https://murivest.co.ke/contact" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">Medical Property Consultation</a>
+        <a href="https://murivest.com/contact" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">Medical Property Consultation</a>
         <p class="text-sm text-emerald-200 mt-4">Defensive real estate allocation for demographic tailwinds</p>
       </div>
 
       <div class="border-t border-gray-200 pt-8 mt-12">
         <p class="text-sm text-gray-500 mb-2"><strong>Regulatory and Clinical Risk Disclosure</strong></p>
-        <p class="text-sm text-gray-600 leading-relaxed">Healthcare real estate is subject to stringent CQC regulation, NHS funding volatility, and clinical governance liability. Past performance of NHS lease-backed assets does not guarantee future funding commitments. This analysis reflects UK healthcare policy as of April 2026; NHS England estate strategy is subject to political change. <a href="https://murivest.co.ke/contact">Contact Murivest</a> for current regulatory compliance verification.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">Healthcare real estate is subject to stringent CQC regulation, NHS funding volatility, and clinical governance liability. Past performance of NHS lease-backed assets does not guarantee future funding commitments. This analysis reflects UK healthcare policy as of April 2026; NHS England estate strategy is subject to political change. <a href="https://murivest.com/contact">Contact Murivest</a> for current regulatory compliance verification.</p>
       </div>
 
     </article>
@@ -7385,7 +7385,7 @@ content: `
     ],
     metaTitle: 'UK Industrial Property Investment 2026: Logistics Yields & Returns',
     metaDescription: 'UK logistics yields compressed to 4–5.5% but structural supply deficits persist. Murivest analysis of the Golden Triangle, last-mile demand, and industrial investment returns.',
-    canonicalUrl: 'https://murivest.co.ke/research/industrial-property-investment-uk-growth-corridors-2026',
+    canonicalUrl: 'https://murivest.com/research/industrial-property-investment-uk-growth-corridors-2026',
     relatedPosts: [
       'uk-industrial-property-growth-corridors-2026',
       'buying-warehouse-investment-guide-2026',
@@ -7408,7 +7408,7 @@ content: `
       "headline": "UK Industrial Property Investment: Logistics Corridor Yields, Rental Growth, and the Last-Mile Demand That Is Permanently Reshaping the Asset Class",
       "description": "UK industrial yields compressed to 4–5.5% on prime logistics but structural supply deficits justify current pricing. Analysis of Golden Triangle corridors, last-mile demand, and investment returns.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-04-18",
       "dateModified": "2026-05-16"
     }),
@@ -7425,9 +7425,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "UK Industrial Property Investment 2026", "item": "https://murivest.co.ke/research/industrial-property-investment-uk-growth-corridors-2026" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "UK Industrial Property Investment 2026", "item": "https://murivest.com/research/industrial-property-investment-uk-growth-corridors-2026" }
       ]
     }),
     content: `
@@ -7443,7 +7443,7 @@ content: `
 
       <div class="bg-slate-50 border-l-4 border-emerald-700 p-6 my-8">
         <p class="text-sm font-semibold text-emerald-800 uppercase tracking-wide mb-2">Executive Summary for Investment Committees</p>
-        <p class="text-gray-700">The convergence of Trump's protectionist trade policies and the Iran-Israel war has precipitated a structural repricing of global logistics real estate. UK industrial assets are experiencing unprecedented demand from institutional capital seeking proximity to European markets without exposure to Eurozone energy dependence on Russian and Middle Eastern hydrocarbons. <a href="https://murivest.co.ke/contact">Murivest's analysis</a> indicates that UK logistics yields have compressed 85 basis points since January 2025, despite rising gilt rates, as investors accept sub-4% returns for assets with energy resilience and supply chain criticality. The "Golden Triangle" (West Midlands, East Midlands, South-East) remains the liquidity core, but secondary corridors—South Yorkshire, Bristol-Bath, and the A14 Tech Corridor—are demonstrating superior rental growth (12-18% annualized) as supply constraints meet nearshoring demand. Critical risks include: (1) Energy price volatility—the UK's LNG import dependency exposes industrial occupiers to Brent crude spikes above $130/bbl; (2) Trade friction—Trump's threatened UK tariffs on automotive and pharmaceutical exports could depress manufacturing demand in the Midlands; (3) Interest rate persistence—Bank of England base rates at 4.75% (April 2026) continue to compress leverage returns. Recommended allocation: 40% Core Golden Triangle (5-7 year WALE, Grade A stock), 35% Value-Add Secondary Corridors (asset management plays), 25% Strategic Last-Mile (Urban logistics, defensive positioning). Minimum investment threshold for institutional efficiency: £25M per corridor.</p>
+        <p class="text-gray-700">The convergence of Trump's protectionist trade policies and the Iran-Israel war has precipitated a structural repricing of global logistics real estate. UK industrial assets are experiencing unprecedented demand from institutional capital seeking proximity to European markets without exposure to Eurozone energy dependence on Russian and Middle Eastern hydrocarbons. <a href="https://murivest.com/contact">Murivest's analysis</a> indicates that UK logistics yields have compressed 85 basis points since January 2025, despite rising gilt rates, as investors accept sub-4% returns for assets with energy resilience and supply chain criticality. The "Golden Triangle" (West Midlands, East Midlands, South-East) remains the liquidity core, but secondary corridors—South Yorkshire, Bristol-Bath, and the A14 Tech Corridor—are demonstrating superior rental growth (12-18% annualized) as supply constraints meet nearshoring demand. Critical risks include: (1) Energy price volatility—the UK's LNG import dependency exposes industrial occupiers to Brent crude spikes above $130/bbl; (2) Trade friction—Trump's threatened UK tariffs on automotive and pharmaceutical exports could depress manufacturing demand in the Midlands; (3) Interest rate persistence—Bank of England base rates at 4.75% (April 2026) continue to compress leverage returns. Recommended allocation: 40% Core Golden Triangle (5-7 year WALE, Grade A stock), 35% Value-Add Secondary Corridors (asset management plays), 25% Strategic Last-Mile (Urban logistics, defensive positioning). Minimum investment threshold for institutional efficiency: £25M per corridor.</p>
       </div>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">I. Geopolitical Context: The Trump Doctrine and the Hormuz Crisis</h2>
@@ -7495,7 +7495,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        The asset's anchor tenant, a major supermarket chain (confidential but reported by the Financial Times as "one of the Big Four"), signed a 15-year FRI lease with RPI-linked rent reviews, explicitly citing energy security as the primary location driver. The lease includes "energy performance guarantees" requiring the landlord to maintain renewable generation capacity, a covenant innovation that <a href="https://murivest.co.ke/contact">Murivest's legal team</a> identifies as an emerging standard for institutional-grade industrial stock.
+        The asset's anchor tenant, a major supermarket chain (confidential but reported by the Financial Times as "one of the Big Four"), signed a 15-year FRI lease with RPI-linked rent reviews, explicitly citing energy security as the primary location driver. The lease includes "energy performance guarantees" requiring the landlord to maintain renewable generation capacity, a covenant innovation that <a href="https://murivest.com/contact">Murivest's legal team</a> identifies as an emerging standard for institutional-grade industrial stock.
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
@@ -7577,7 +7577,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        However, currency volatility complicates repatriation strategies. <a href="https://murivest.co.ke/contact">Murivest's treasury advisory</a> recommends hedging 50-70% of expected divestment proceeds through 3-year forward contracts for non-UK investors, accepting the carry cost (currently 1.2% annually) to eliminate downside currency risk. Unhedged positions may see nominal GBP returns eroded by 15-20% currency movements, transforming positive real returns into losses for dollar-based family offices.
+        However, currency volatility complicates repatriation strategies. <a href="https://murivest.com/contact">Murivest's treasury advisory</a> recommends hedging 50-70% of expected divestment proceeds through 3-year forward contracts for non-UK investors, accepting the carry cost (currently 1.2% annually) to eliminate downside currency risk. Unhedged positions may see nominal GBP returns eroded by 15-20% currency movements, transforming positive real returns into losses for dollar-based family offices.
       </p>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">III. The Ten Strategic Growth Corridors: Deep-Dive Analysis</h2>
@@ -7775,7 +7775,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest's structuring advice</a> recommends: For investments below £10 million, direct SIPP/SSAS ownership of single-let Grade A units with 10+ year leases; For £10-50 million, co-investment vehicles (LP/GP structures) with institutional operators like Segro or Tritax; For £50 million+, separate account mandates with dedicated asset management to capture operational alpha through energy optimization and tenant mix management.
+        <a href="https://murivest.com/contact">Murivest's structuring advice</a> recommends: For investments below £10 million, direct SIPP/SSAS ownership of single-let Grade A units with 10+ year leases; For £10-50 million, co-investment vehicles (LP/GP structures) with institutional operators like Segro or Tritax; For £50 million+, separate account mandates with dedicated asset management to capture operational alpha through energy optimization and tenant mix management.
       </p>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">VII. Conclusion: Allocating Capital in an Age of Permacrisis</h2>
@@ -7789,19 +7789,19 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest</a> recommends immediate deployment into UK industrial, with emphasis on: (1) Life sciences and defense-adjacent manufacturing (tariff-proof sectors); (2) Energy-autonomous logistics parks (3+ days grid independence); and (3) Northern secondary corridors (South Yorkshire, Liverpool) where 18% rental growth justifies development risk. The window for acquisition at current yields (4.5-5.5%) is closing as institutional capital floods the sector seeking inflation protection.
+        <a href="https://murivest.com/contact">Murivest</a> recommends immediate deployment into UK industrial, with emphasis on: (1) Life sciences and defense-adjacent manufacturing (tariff-proof sectors); (2) Energy-autonomous logistics parks (3+ days grid independence); and (3) Northern secondary corridors (South Yorkshire, Liverpool) where 18% rental growth justifies development risk. The window for acquisition at current yields (4.5-5.5%) is closing as institutional capital floods the sector seeking inflation protection.
       </p>
 
       <div class="my-12 p-8 bg-emerald-900 rounded-xl text-white text-center">
         <p class="text-2xl font-serif font-bold mb-4">Strategic Industrial Investment Advisory</p>
         <p class="text-emerald-100 mb-6 max-w-2xl mx-auto">Murivest provides board-level intelligence and execution capabilities for industrial real estate allocation amidst geopolitical volatility. Our corridor analysis, energy resilience scoring, and tariff-arbitrage structuring deliver superior risk-adjusted returns for family offices and institutional capital.</p>
-        <a href="https://murivest.co.ke/contact" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">Instustrial Investment Consultation</a>
+        <a href="https://murivest.com/contact" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">Instustrial Investment Consultation</a>
         <p class="text-sm text-emerald-200 mt-4">Geopolitical risk management through real asset allocation</p>
       </div>
 
       <div class="border-t border-gray-200 pt-8 mt-12">
         <p class="text-sm text-gray-500 mb-2"><strong>Geopolitical Risk Disclosure</strong></p>
-        <p class="text-sm text-gray-600 leading-relaxed">This analysis incorporates events reported by BBC News, Bloomberg, CNN, and Financial Times as of April 2026. The Iran-Israel conflict, Trump administration policies, and UK political developments represent fluid situations that may materially alter investment conclusions. Past performance of industrial real estate during previous geopolitical crises (1973, 1991, 2001) does not guarantee future resilience. <a href="https://murivest.co.ke/contact">Contact Murivest</a> for real-time strategy updates as events unfold.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">This analysis incorporates events reported by BBC News, Bloomberg, CNN, and Financial Times as of April 2026. The Iran-Israel conflict, Trump administration policies, and UK political developments represent fluid situations that may materially alter investment conclusions. Past performance of industrial real estate during previous geopolitical crises (1973, 1991, 2001) does not guarantee future resilience. <a href="https://murivest.com/contact">Contact Murivest</a> for real-time strategy updates as events unfold.</p>
         
         <p class="text-sm text-gray-500 mt-6 mb-2"><strong>Market Data Sources</strong></p>
         <p class="text-sm text-gray-600 leading-relaxed">Market data courtesy of Knight Frank, Savills, CBRE, JLL, MSCI/IPD, McKinsey Global Institute, PwC Real Estate, Deloitte Research, and UK Government Statistical Service. Energy pricing data from Bloomberg NEF and Ofgem. Geopolitical analysis from BBC Monitoring and Stratfor.</p>
@@ -7839,7 +7839,7 @@ content: `
     ],
     metaTitle: 'FRI vs IRI Leases UK: Commercial Property Lease Guide 2026',
     metaDescription: 'FRI vs IRI leases can mean 15–25% difference in net income over a 25-year hold. Murivest explains lease structures, service charge caps, and break clause risks for UK commercial property.',
-    canonicalUrl: 'https://murivest.co.ke/research/lease-structures-fri-iri-full-repairing-institutional-guide-2026',
+    canonicalUrl: 'https://murivest.com/research/lease-structures-fri-iri-full-repairing-institutional-guide-2026',
     relatedPosts: [
       'commercial-property-due-diligence-checklist-uk',
       'stamp-duty-commercial-property-rates-reliefs-2026',
@@ -7860,7 +7860,7 @@ content: `
       "headline": "FRI vs IRI Leases in UK Commercial Property: The Institutional Investor's Guide to Lease Structure and Net Income Certainty",
       "description": "The difference between FRI and IRI leases can represent 15–25% of net income over a 25-year hold. Guide to lease structures, service charge caps, and break clause risks.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-04-22",
       "dateModified": "2026-05-16"
     }),
@@ -7877,9 +7877,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "FRI vs IRI Lease Guide UK 2026", "item": "https://murivest.co.ke/research/lease-structures-fri-iri-full-repairing-institutional-guide-2026" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "FRI vs IRI Lease Guide UK 2026", "item": "https://murivest.com/research/lease-structures-fri-iri-full-repairing-institutional-guide-2026" }
       ]
     }),
     content: `
@@ -7895,7 +7895,7 @@ content: `
 
       <div class="bg-slate-50 border-l-4 border-emerald-700 p-6 my-8">
         <p class="text-sm font-semibold text-emerald-800 uppercase tracking-wide mb-2">Executive Summary for Investment Committees</p>
-        <p class="text-gray-700">Full Repairing and Insuring (FRI) leases transfer all property-level operational risk to tenants, yielding 15-25% risk-adjusted return premiums over gross leases but requiring sophisticated covenant monitoring. Internal Repairing and Insuring (IRI) arrangements, while reducing tenant friction in competitive markets, expose landlords to £2-8 per square foot annual capital reserves for structural maintenance. Hybrid structures—employing FRI covenants with capital contribution caps or turnover rents—optimize tenant retention while preserving institutional-grade income stability. <a href="https://murivest.co.ke/contact">Murivest's institutional advisory</a> indicates that portfolios with 85%+ FRI lease exposure demonstrate 40% lower income volatility and 60 basis points tighter yield spreads in securitization markets compared to gross-lease dominant portfolios. However, the 2026 market exhibits increasing tenant resistance to absolute FRI obligations amid energy transition capital costs (EPC upgrades, electrification), necessitating nuanced covenant engineering that balances risk allocation with occupancy sustainability. Board-level governance requires clear protocols for service charge reconciliation, sinking fund adequacy, and dilapidations enforcement to prevent value leakage across hold periods.</p>
+        <p class="text-gray-700">Full Repairing and Insuring (FRI) leases transfer all property-level operational risk to tenants, yielding 15-25% risk-adjusted return premiums over gross leases but requiring sophisticated covenant monitoring. Internal Repairing and Insuring (IRI) arrangements, while reducing tenant friction in competitive markets, expose landlords to £2-8 per square foot annual capital reserves for structural maintenance. Hybrid structures—employing FRI covenants with capital contribution caps or turnover rents—optimize tenant retention while preserving institutional-grade income stability. <a href="https://murivest.com/contact">Murivest's institutional advisory</a> indicates that portfolios with 85%+ FRI lease exposure demonstrate 40% lower income volatility and 60 basis points tighter yield spreads in securitization markets compared to gross-lease dominant portfolios. However, the 2026 market exhibits increasing tenant resistance to absolute FRI obligations amid energy transition capital costs (EPC upgrades, electrification), necessitating nuanced covenant engineering that balances risk allocation with occupancy sustainability. Board-level governance requires clear protocols for service charge reconciliation, sinking fund adequacy, and dilapidations enforcement to prevent value leakage across hold periods.</p>
       </div>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">I. Theoretical Frameworks: Lease Structures as Risk Allocation Mechanisms</h2>
@@ -7925,7 +7925,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/about">Murivest's portfolio structuring</a> for family office clients emphasizes the "covenant waterfall"—a sequential analysis ensuring that maintenance obligations rank subordinate to debt service but senior to discretionary equity distributions. This hierarchy protects institutional lenders while preserving asset condition across generational hold periods.
+        <a href="https://murivest.com/about">Murivest's portfolio structuring</a> for family office clients emphasizes the "covenant waterfall"—a sequential analysis ensuring that maintenance obligations rank subordinate to debt service but senior to discretionary equity distributions. This hierarchy protects institutional lenders while preserving asset condition across generational hold periods.
       </p>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">II. The Full Repairing and Insuring (FRI) Covenant: Institutional Risk Transference</h2>
@@ -7941,7 +7941,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        Insurance obligations under FRI structures require meticulous specification. Tenants must effect "all risks" coverage (excluding uninsurable perils such as war or nuclear incident) with reinstatement valuations indexed to construction cost inflation. <a href="https://murivest.co.ke/contact">Murivest's risk management protocols</a> mandate quarterly insurance verification and collateral warranties ensuring tenant insolvency does not extinguish coverage during notice periods.
+        Insurance obligations under FRI structures require meticulous specification. Tenants must effect "all risks" coverage (excluding uninsurable perils such as war or nuclear incident) with reinstatement valuations indexed to construction cost inflation. <a href="https://murivest.com/contact">Murivest's risk management protocols</a> mandate quarterly insurance verification and collateral warranties ensuring tenant insolvency does not extinguish coverage during notice periods.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">2.2 The Economic Value of FRI Covenants in Portfolio Context</h3>
@@ -7969,7 +7969,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest's asset management</a> employs specialist dilapidations surveyors 24 months pre-expiry, integrating claimed values into 5-year capital forecasting and refinancing models. This proactive approach yields 30% higher recovery rates than reactive, post- expiry claim strategies.
+        <a href="https://murivest.com/contact">Murivest's asset management</a> employs specialist dilapidations surveyors 24 months pre-expiry, integrating claimed values into 5-year capital forecasting and refinancing models. This proactive approach yields 30% higher recovery rates than reactive, post- expiry claim strategies.
       </p>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">III. Internal Repairing and Insuring (IRI) Arrangements: Strategic Deployment in Tenant Markets</h2>
@@ -7999,7 +7999,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest's ESG integration</a> structures "transition leases"—5-year initial terms with IRI covenants converting to FRI upon landlord completion of energy upgrades, aligning tenant commitments with asset modernization.
+        <a href="https://murivest.com/contact">Murivest's ESG integration</a> structures "transition leases"—5-year initial terms with IRI covenants converting to FRI upon landlord completion of energy upgrades, aligning tenant commitments with asset modernization.
       </p>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">IV. Advanced Covenant Structures: Beyond Binary FRI/IRI Classifications</h2>
@@ -8035,7 +8035,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        The Better Buildings Partnership (BBP) Green Lease Toolkit (2025 Edition) provides model clauses, though institutional investors increasingly customize provisions to align with Science Based Targets initiative (SBTi) commitments. For UHNWI principals, green lease integration supports family office sustainability mandates while future-proofing against regulatory obsolescence. <a href="https://murivest.co.ke/contact">Murivest's ESG advisory</a> structures these covenants to ensure compliance without compromising tenant economics or lease enforceability.
+        The Better Buildings Partnership (BBP) Green Lease Toolkit (2025 Edition) provides model clauses, though institutional investors increasingly customize provisions to align with Science Based Targets initiative (SBTi) commitments. For UHNWI principals, green lease integration supports family office sustainability mandates while future-proofing against regulatory obsolescence. <a href="https://murivest.com/contact">Murivest's ESG advisory</a> structures these covenants to ensure compliance without compromising tenant economics or lease enforceability.
       </p>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">V. International Comparative Analysis: Jurisdictional Variance in Lease Structures</h2>
@@ -8089,7 +8089,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest's investment analytics</a> employ probabilistic capex modeling for IRI assets, ensuring pricing reflects true risk-adjusted returns rather than nominal yield comparisons. This discipline prevents "yield trap" acquisitions where headline returns obscure capital intensity.
+        <a href="https://murivest.com/contact">Murivest's investment analytics</a> employ probabilistic capex modeling for IRI assets, ensuring pricing reflects true risk-adjusted returns rather than nominal yield comparisons. This discipline prevents "yield trap" acquisitions where headline returns obscure capital intensity.
       </p>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">VII. Board-Level Governance: Decision Frameworks for Lease Structuring</h2>
@@ -8111,7 +8111,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        Sophisticated landlords employ "logrolling"—trading covenant concessions for gains elsewhere. Accepting IRI structure in exchange for: Extended lease terms (10 years vs 5 years); RPI-linked rent reviews rather than open market; or Tenant capital contributions (fit-out premiums, key money). <a href="https://murivest.co.ke/contact">Murivest's negotiation frameworks</a> ensure covenant concessions extract commensurate value elsewhere in lease economics.
+        Sophisticated landlords employ "logrolling"—trading covenant concessions for gains elsewhere. Accepting IRI structure in exchange for: Extended lease terms (10 years vs 5 years); RPI-linked rent reviews rather than open market; or Tenant capital contributions (fit-out premiums, key money). <a href="https://murivest.com/contact">Murivest's negotiation frameworks</a> ensure covenant concessions extract commensurate value elsewhere in lease economics.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">7.3 Insurance Architecture and Risk Transfer Verification</h3>
@@ -8121,7 +8121,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        The 2026 insurance market, hardening in response to climate losses and construction cost inflation, has seen premiums increase 35-60% for commercial property. Tenant covenant strength directly impacts insurability—sub-investment grade tenants may face coverage restrictions that invalidate FRI risk transfer. <a href="https://murivest.co.ke/contact">Murivest's due diligence</a> includes insurance market sounding to verify tenant obligations remain executable.
+        The 2026 insurance market, hardening in response to climate losses and construction cost inflation, has seen premiums increase 35-60% for commercial property. Tenant covenant strength directly impacts insurability—sub-investment grade tenants may face coverage restrictions that invalidate FRI risk transfer. <a href="https://murivest.com/contact">Murivest's due diligence</a> includes insurance market sounding to verify tenant obligations remain executable.
       </p>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">VIII. Case Studies: Institutional Lease Structuring in Practice</h2>
@@ -8179,7 +8179,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        These requirements complicate traditional FRI/IRI distinctions. Who maintains solar shading—landlord as building fabric, or tenant as operational equipment? <a href="https://murivest.co.ke/contact">Murivest's lease innovation</a> develops "Climate Annexes" to standard leases, explicitly allocating emerging obligations while preserving traditional risk allocation frameworks for conventional maintenance.
+        These requirements complicate traditional FRI/IRI distinctions. Who maintains solar shading—landlord as building fabric, or tenant as operational equipment? <a href="https://murivest.com/contact">Murivest's lease innovation</a> develops "Climate Annexes" to standard leases, explicitly allocating emerging obligations while preserving traditional risk allocation frameworks for conventional maintenance.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">9.3 Flexible Leasing and Space-as-a-Service Models</h3>
@@ -8201,7 +8201,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest's portfolio analytics</a> provide heat-mapping of covenant risk, identifying assets requiring lease restructure prior to refinancing or disposal. This proactive management prevents value leakage and due diligence surprises during exit processes.
+        <a href="https://murivest.com/contact">Murivest's portfolio analytics</a> provide heat-mapping of covenant risk, identifying assets requiring lease restructure prior to refinancing or disposal. This proactive management prevents value leakage and due diligence surprises during exit processes.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">10.2 Documentation Standards and Knowledge Management</h3>
@@ -8265,19 +8265,19 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest</a> provides institutional-grade lease structuring advisory, ensuring that family offices, sovereign wealth vehicles, and corporate investors optimize covenant frameworks to preserve capital, maximize income stability, and navigate complex regulatory environments. In commercial real estate, the lease is the asset—the sophistication of its structure determines the durability of its returns.
+        <a href="https://murivest.com/contact">Murivest</a> provides institutional-grade lease structuring advisory, ensuring that family offices, sovereign wealth vehicles, and corporate investors optimize covenant frameworks to preserve capital, maximize income stability, and navigate complex regulatory environments. In commercial real estate, the lease is the asset—the sophistication of its structure determines the durability of its returns.
       </p>
 
       <div class="my-12 p-8 bg-emerald-900 rounded-xl text-white text-center">
         <p class="text-2xl font-serif font-bold mb-4">Institutional Lease Structuring Advisory</p>
         <p class="text-emerald-100 mb-6 max-w-2xl mx-auto">Murivest provides board-level guidance on commercial lease architecture, FRI conversion strategies, and covenant risk management for portfolios exceeding £50M. Our institutional frameworks optimize risk-adjusted returns while ensuring regulatory compliance across UK and international jurisdictions.</p>
-        <a href="https://murivest.co.ke/contact" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-black font-semibold py-3 px-8 rounded-lg transition duration-300">Strategic Consultation</a>
+        <a href="https://murivest.com/contact" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-black font-semibold py-3 px-8 rounded-lg transition duration-300">Strategic Consultation</a>
         <p class="text-sm text-emerald-200 mt-4">Expert covenant engineering for UHNWI and institutional principals</p>
       </div>
 
       <div class="border-t border-gray-200 pt-8 mt-12">
         <p class="text-sm text-gray-500 mb-2"><strong>Institutional Governance Note</strong></p>
-        <p class="text-sm text-gray-600 leading-relaxed">Lease structures significantly impact portfolio risk profiles, regulatory capital requirements, and insurance arrangements. This analysis reflects UK law and market practice as of April 2026; international jurisdictions require localized legal verification. <a href="https://murivest.co.ke/contact">Contact Murivest</a> for transaction-specific lease structuring and portfolio covenant audits.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">Lease structures significantly impact portfolio risk profiles, regulatory capital requirements, and insurance arrangements. This analysis reflects UK law and market practice as of April 2026; international jurisdictions require localized legal verification. <a href="https://murivest.com/contact">Contact Murivest</a> for transaction-specific lease structuring and portfolio covenant audits.</p>
         
         <p class="text-sm text-gray-500 mt-6 mb-2"><strong>Legal and Tax Disclaimers</strong></p>
         <p class="text-sm text-gray-600 leading-relaxed">Lease covenants affect tax treatment (capital vs revenue expenditure), VAT recovery, and stamp duty calculations. Ensure coordination between legal, tax, and accounting advisors when structuring lease arrangements. Past performance of FRI structures does not guarantee future risk mitigation effectiveness.</p>
@@ -8318,7 +8318,7 @@ content: `
     ],
     metaTitle: 'Commercial vs Residential Property UK 2026: Yield Comparison',
     metaDescription: 'Commercial property delivers 5–8% net yields vs 3.5–5% for residential buy-to-let after tax and costs. Murivest\'s complete comparison for wealth-building investors in 2026.',
-    canonicalUrl: 'https://murivest.co.ke/research/commercial-property-vs-residential-returns-2026',
+    canonicalUrl: 'https://murivest.com/research/commercial-property-vs-residential-returns-2026',
     relatedPosts: [
       'understanding-commercial-property-yields-explained',
       'industrial-property-investment-uk-growth-corridors-2026',
@@ -8341,7 +8341,7 @@ content: `
       "headline": "Commercial vs Residential Property Returns in 2026: A Yield, Risk, and Regulatory Comparison for Wealth-Building Investors",
       "description": "Commercial property delivers 5–8% net yields vs 3.5–5% for residential buy-to-let after tax and costs. Complete comparison for wealth-building investors in 2026.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-04-25",
       "dateModified": "2026-05-16"
     }),
@@ -8358,9 +8358,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "Commercial vs Residential Property UK 2026", "item": "https://murivest.co.ke/research/commercial-property-vs-residential-returns-2026" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "Commercial vs Residential Property UK 2026", "item": "https://murivest.com/research/commercial-property-vs-residential-returns-2026" }
       ]
     }),
     content: `
@@ -8388,7 +8388,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/">Murivest's regulatory analysis</a> indicates that a typical higher-rate taxpayer landlord now retains approximately 45-55% of gross rental income after tax, mortgage interest (now partially non-deductible), maintenance, void periods, and compliance costs—down from 65-75% in 2014. This compression explains the 23% reduction in private landlord registrations between 2017-2024, with portfolio exits concentrated in the amateur investor segment.
+        <a href="https://murivest.com/">Murivest's regulatory analysis</a> indicates that a typical higher-rate taxpayer landlord now retains approximately 45-55% of gross rental income after tax, mortgage interest (now partially non-deductible), maintenance, void periods, and compliance costs—down from 65-75% in 2014. This compression explains the 23% reduction in private landlord registrations between 2017-2024, with portfolio exits concentrated in the amateur investor segment.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">1.2 Commercial Property's Structural Advantage</h3>
@@ -8415,7 +8415,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        The yield premium for commercial property—typically 150-300 basis points on equivalent risk profiles—reflects: (1) perceived complexity deterring amateur investors, (2) illiquidity premium for larger lot sizes, (3) tenant covenant risk (business failure vs individual tenant default), and (4) capital growth expectations (residential's historical outperformance now challenged by affordability constraints). <a href="https://murivest.co.ke/yield-comparisons">Murivest's yield database</a> tracks 2,400+ commercial transactions annually, confirming sustained premium even as capital values adjust post-2022 interest rate rises.
+        The yield premium for commercial property—typically 150-300 basis points on equivalent risk profiles—reflects: (1) perceived complexity deterring amateur investors, (2) illiquidity premium for larger lot sizes, (3) tenant covenant risk (business failure vs individual tenant default), and (4) capital growth expectations (residential's historical outperformance now challenged by affordability constraints). <a href="https://murivest.com/yield-comparisons">Murivest's yield database</a> tracks 2,400+ commercial transactions annually, confirming sustained premium even as capital values adjust post-2022 interest rate rises.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">2.2 Net Yield Calculation: The True Return</h3>
@@ -8508,7 +8508,7 @@ content: `
 
       <div class="my-10 p-8 bg-white rounded-xl text-white">
         <p class="text-lg font-serif italic mb-4">"The amateur investor focuses on gross yield; the professional analyses post-tax, post-cost, risk-adjusted returns. Current regulatory architecture makes this distinction decisive: commercial property's structural tax advantages and operational efficiencies translate to 300-500 basis point annual return premiums for sophisticated investors."</p>
-        <p class="text-sm text-slate-300">— <a href="https://murivest.co.ke/wealth-management" class="text-emerald-400 hover:text-emerald-300 underline">Murivest Investment Strategy Division</a>, Q1 2026 Asset Allocation Framework</p>
+        <p class="text-sm text-slate-300">— <a href="https://murivest.com/wealth-management" class="text-emerald-400 hover:text-emerald-300 underline">Murivest Investment Strategy Division</a>, Q1 2026 Asset Allocation Framework</p>
       </div>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">III. Capital Growth Trajectories: Historical and Prospective</h2>
@@ -8520,7 +8520,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        Affordability constraints now bind: average house prices at 8.5x median earnings (vs 4.5x in 1995) limit further price growth without corresponding income growth. Interest rate normalisation—base rate at 4.5% in Q1 2026 vs 0.1% in December 2021—has increased mortgage service costs by 40-60%, reducing purchasing power and transaction volumes. <a href="https://murivest.co.ke/housing-market-outlook">Murivest's housing market analysis</a> projects 1.5-2.5% annual capital growth for residential property 2026-2030, substantially below historical averages.
+        Affordability constraints now bind: average house prices at 8.5x median earnings (vs 4.5x in 1995) limit further price growth without corresponding income growth. Interest rate normalisation—base rate at 4.5% in Q1 2026 vs 0.1% in December 2021—has increased mortgage service costs by 40-60%, reducing purchasing power and transaction volumes. <a href="https://murivest.com/housing-market-outlook">Murivest's housing market analysis</a> projects 1.5-2.5% annual capital growth for residential property 2026-2030, substantially below historical averages.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">3.2 Commercial Property: Cyclical Recovery and Structural Demand</h3>
@@ -8530,7 +8530,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        Structural demand drivers favour specific commercial sectors. E-commerce penetration—now 28% of UK retail sales—continues to drive logistics demand, with take-up averaging 45m sq ft annually despite economic headwinds. Life sciences and healthcare real estate benefit from demographic ageing and NHS estate rationalisation. The "flight to quality" in offices creates bifurcation: Grade A sustainable buildings command premium rents, while secondary stock faces obsolescence. <a href="https://murivest.co.ke/sector-analysis">Murivest's sector allocation framework</a> targets industrial, healthcare, and prime office while avoiding structurally challenged retail and secondary office.
+        Structural demand drivers favour specific commercial sectors. E-commerce penetration—now 28% of UK retail sales—continues to drive logistics demand, with take-up averaging 45m sq ft annually despite economic headwinds. Life sciences and healthcare real estate benefit from demographic ageing and NHS estate rationalisation. The "flight to quality" in offices creates bifurcation: Grade A sustainable buildings command premium rents, while secondary stock faces obsolescence. <a href="https://murivest.com/sector-analysis">Murivest's sector allocation framework</a> targets industrial, healthcare, and prime office while avoiding structurally challenged retail and secondary office.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">3.3 Total Return Synthesis</h3>
@@ -8562,7 +8562,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        The time commitment scales with portfolio complexity but follows different patterns: intensive due diligence and acquisition (40-80 hours per transaction), then professional property management delegation (2-4 hours monthly for single assets). <a href="https://murivest.co.ke/property-management">Murivest's commercial property management</a> provides institutional-grade asset management, including tenant relationship management, lease compliance monitoring, rent collection, and strategic asset enhancement—enabling investor time commitment consistent with passive investment objectives.
+        The time commitment scales with portfolio complexity but follows different patterns: intensive due diligence and acquisition (40-80 hours per transaction), then professional property management delegation (2-4 hours monthly for single assets). <a href="https://murivest.com/property-management">Murivest's commercial property management</a> provides institutional-grade asset management, including tenant relationship management, lease compliance monitoring, rent collection, and strategic asset enhancement—enabling investor time commitment consistent with passive investment objectives.
       </p>
 
       <div class="bg-blue-50 border-l-4 border-blue-600 p-6 my-8">
@@ -8589,7 +8589,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        Optimal portfolio construction depends on capital base. Investors with £250,000-£750,000 face commercial property concentration risk but residential regulatory inefficiency. Solutions include: commercial property investment trusts (indirect exposure, liquidity, professional management), syndicated commercial investments (pooled ownership with proportional risk), or accepting residential regulatory burden for diversification benefits. <a href="https://murivest.co.ke/portfolio-construction">Murivest's portfolio construction advisory</a> provides bespoke allocation modelling based on capital base, risk tolerance, and operational capacity.
+        Optimal portfolio construction depends on capital base. Investors with £250,000-£750,000 face commercial property concentration risk but residential regulatory inefficiency. Solutions include: commercial property investment trusts (indirect exposure, liquidity, professional management), syndicated commercial investments (pooled ownership with proportional risk), or accepting residential regulatory burden for diversification benefits. <a href="https://murivest.com/portfolio-construction">Murivest's portfolio construction advisory</a> provides bespoke allocation modelling based on capital base, risk tolerance, and operational capacity.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">5.2 Leverage Strategies and Risk Management</h3>
@@ -8609,7 +8609,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/financial-reporting">Murivest's strategic allocation framework</a> recommends: investors under 50 with £500,000+ capital should weight 60-70% commercial (direct or syndicated) for income and tax efficiency, 20-30% residential (if existing holdings) for diversification, and 10% property securities for liquidity. Investors over 60 should increase commercial weighting to 80%+ for yield sustainability, with residential limited to unlevered, low-maintenance holdings.
+        <a href="https://murivest.com/financial-reporting">Murivest's strategic allocation framework</a> recommends: investors under 50 with £500,000+ capital should weight 60-70% commercial (direct or syndicated) for income and tax efficiency, 20-30% residential (if existing holdings) for diversification, and 10% property securities for liquidity. Investors over 60 should increase commercial weighting to 80%+ for yield sustainability, with residential limited to unlevered, low-maintenance holdings.
       </p>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">VI. Market Timing and Cyclical Considerations</h2>
@@ -8651,31 +8651,31 @@ content: `
               <td class="px-6 py-4 font-medium border">High-rate taxpayer, £250K-£750K capital, time-constrained</td>
               <td class="px-6 py-4 border">70% Commercial (direct/syndicated), 20% REITs, 10% Residential (existing only)</td>
               <td class="px-6 py-4 border">Tax efficiency and operational delegation critical; residential regulatory burden unsustainable at scale</td>
-              <td class="px-6 py-4 border"><a href="https://murivest.co.ke/properties">Commercial property sourcing</a> + professional management</td>
+              <td class="px-6 py-4 border"><a href="https://murivest.com/properties">Commercial property sourcing</a> + professional management</td>
             </tr>
             <tr class="bg-gray-50 border-b">
               <td class="px-6 py-4 font-medium border">Retired/income-focused, £500K+ capital</td>
               <td class="px-6 py-4 border">80% Commercial (long-leased, prime), 15% Property income funds, 5% Cash</td>
               <td class="px-6 py-4 border">Yield sustainability and covenant security paramount; residential management intensity incompatible with lifestyle</td>
-              <td class="px-6 py-4 border">Medical/industrial with 10+ year leases; <a href="https://murivest.co.ke/properties">income portfolio construction</a></td>
+              <td class="px-6 py-4 border">Medical/industrial with 10+ year leases; <a href="https://murivest.com/properties">income portfolio construction</a></td>
             </tr>
             <tr class="bg-white border-b">
               <td class="px-6 py-4 font-medium border">Business owner, trading premises occupier</td>
               <td class="px-6 py-4 border">SSAS acquisition of own premises (sale and leaseback)</td>
               <td class="px-6 py-4 border">Tax-efficient capital extraction from business; pension-wrapped property ownership; operational continuity</td>
-              <td class="px-6 py-4 border"><a href="https://murivest.co.ke/contact">SSAS establishment and leaseback structuring</a></td>
+              <td class="px-6 py-4 border"><a href="https://murivest.com/contact">SSAS establishment and leaseback structuring</a></td>
             </tr>
             <tr class="bg-gray-50 border-b">
               <td class="px-6 py-4 font-medium border">Young accumulator, £100K-£250K capital</td>
               <td class="px-6 py-4 border">50% Residential (1-2 properties, ungeared), 50% Global REITs/Property securities</td>
               <td class="px-6 py-4 border">Scale insufficient for commercial direct ownership; residential provides learning and diversification; securities provide liquidity</td>
-              <td class="px-6 py-4 border">Residential in high-yield locations (North West, Scotland); <a href="https://murivest.co.ke/reit-opportunities">diversified REIT allocation</a></td>
+              <td class="px-6 py-4 border">Residential in high-yield locations (North West, Scotland); <a href="https://murivest.com/reit-opportunities">diversified REIT allocation</a></td>
             </tr>
             <tr class="bg-white">
               <td class="px-6 py-4 font-medium border">Institutional/ family office, £2M+ capital</td>
               <td class="px-6 py-4 border">60% Commercial direct (multi-sector, multi-region), 25% Development/opportunistic, 15% Residential (prime, unregulated)</td>
               <td class="px-6 py-4 border">Scale enables diversification and professional management; development provides value-add returns; residential limited to prime, low-touch segments</td>
-              <td class="px-6 py-4 border"><a href="https://murivest.co.ke/">Bespoke family office property mandate</a></td>
+              <td class="px-6 py-4 border"><a href="https://murivest.com/">Bespoke family office property mandate</a></td>
             </tr>
           </tbody>
         </table>
@@ -8690,7 +8690,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        Staged transition reduces market timing risk: Phase 1 (Months 1-6) dispose of lowest-performing residential assets (poor locations, high maintenance, regulatory non-compliance); Phase 2 (Months 6-12) acquire initial commercial property with professional due diligence; Phase 3 (Year 2+) evaluate residential retention based on regulatory evolution and portfolio performance. <a href="https://murivest.co.ke/portfolio-transition">Murivest's portfolio transition service</a> provides tax-efficient restructuring support, including capital gains mitigation strategies and 1031-exchange equivalent structuring where applicable.
+        Staged transition reduces market timing risk: Phase 1 (Months 1-6) dispose of lowest-performing residential assets (poor locations, high maintenance, regulatory non-compliance); Phase 2 (Months 6-12) acquire initial commercial property with professional due diligence; Phase 3 (Year 2+) evaluate residential retention based on regulatory evolution and portfolio performance. <a href="https://murivest.com/portfolio-transition">Murivest's portfolio transition service</a> provides tax-efficient restructuring support, including capital gains mitigation strategies and 1031-exchange equivalent structuring where applicable.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">8.2 Commercial Property Acquisition Discipline</h3>
@@ -8700,7 +8700,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        Professional advisory assembly is essential: commercial property solicitor (lease documentation, title investigation), RICS surveyor (building condition, valuation), tax adviser (capital allowances, structuring), and financial adviser (leverage optimisation, portfolio integration). Advisory costs of £15,000-£35,000 per transaction are material but necessary given asset values and complexity. <a href="https://murivest.co.ke/acquisition-support">Murivest's acquisition support</a> coordinates this advisory stack under single-client governance, reducing coordination burden and ensuring aligned incentives.
+        Professional advisory assembly is essential: commercial property solicitor (lease documentation, title investigation), RICS surveyor (building condition, valuation), tax adviser (capital allowances, structuring), and financial adviser (leverage optimisation, portfolio integration). Advisory costs of £15,000-£35,000 per transaction are material but necessary given asset values and complexity. <a href="https://murivest.com/acquisition-support">Murivest's acquisition support</a> coordinates this advisory stack under single-client governance, reducing coordination burden and ensuring aligned incentives.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">8.3 Risk Management and Monitoring</h3>
@@ -8716,7 +8716,7 @@ content: `
       <div class="my-12 p-8 bg-white rounded-xl text-white text-center">
         <p class="text-2xl font-serif font-bold mb-4">Optimise Your Property Portfolio Allocation</p>
         <p class="text-emerald-100 mb-6 max-w-2xl mx-auto">Murivest's property investment strategists provide portfolio analysis comparing your current residential and commercial holdings against optimal allocation frameworks. Our assessment includes tax efficiency modelling, risk-adjusted return projections, and transition pathway design for portfolio restructuring.</p>
-        <a href="https://murivest.co.ke/properties" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-black font-semibold py-3 px-8 rounded-lg transition duration-300">Request Portfolio Allocation Review</a>
+        <a href="https://murivest.com/properties" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-black font-semibold py-3 px-8 rounded-lg transition duration-300">Request Portfolio Allocation Review</a>
         <p class="text-sm text-emerald-200 mt-4">Comprehensive analysis complimentary for portfolios exceeding £500,000</p>
       </div>
 
@@ -8739,7 +8739,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke">Murivest</a> provides the integrated capability—spanning portfolio analysis, commercial property sourcing, acquisition execution, and ongoing asset management—that transforms this structural analysis into implemented wealth strategy. The question for residential landlords is not whether commercial property offers superior returns, but whether they will capture this advantage before regulatory convergence eliminates the arbitrage opportunity.
+        <a href="https://murivest.com">Murivest</a> provides the integrated capability—spanning portfolio analysis, commercial property sourcing, acquisition execution, and ongoing asset management—that transforms this structural analysis into implemented wealth strategy. The question for residential landlords is not whether commercial property offers superior returns, but whether they will capture this advantage before regulatory convergence eliminates the arbitrage opportunity.
       </p>
 
       <div class="border-t border-gray-200 pt-8 mt-12">
@@ -8747,7 +8747,7 @@ content: `
         <p class="text-sm text-gray-600 leading-relaxed">This comparative analysis was prepared by Murivest's Investment Strategy Division, incorporating data from HMRC, ONS, Bank of England, MSCI, Knight Frank, and Murivest's proprietary transaction database (12,000+ UK property transactions 2019-2026). Yield calculations assume representative assets in UK regional markets; individual property performance varies. Tax treatment depends on specific circumstances and legislation current at March 2026. Past performance does not guarantee future returns; property values can decline, and leveraged investors risk capital loss exceeding equity investment.</p>
         
         <p class="text-sm text-gray-500 mt-6 mb-2"><strong>Methodology Notes</strong></p>
-        <p class="text-sm text-gray-600 leading-relaxed">Net yield calculations assume: residential—£300,000 property, £18,000 gross rent, 75% LTV at 4.5%, Section 24 restrictions applied; commercial industrial—£500,000 property, £31,000 gross rent, 65% LTV at 5.0%, full interest deductibility, capital allowances excluded from yield but noted as additional benefit. Tax rates assume 40% marginal income tax, 28% capital gains tax residential, 20% corporation tax commercial (corporate ownership). Total return projections assume 2.0% residential capital growth, 2.5% commercial, based on <a href="https://murivest.co.ke/market-projections">Murivest's 2026-2030 market projections</a>.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">Net yield calculations assume: residential—£300,000 property, £18,000 gross rent, 75% LTV at 4.5%, Section 24 restrictions applied; commercial industrial—£500,000 property, £31,000 gross rent, 65% LTV at 5.0%, full interest deductibility, capital allowances excluded from yield but noted as additional benefit. Tax rates assume 40% marginal income tax, 28% capital gains tax residential, 20% corporation tax commercial (corporate ownership). Total return projections assume 2.0% residential capital growth, 2.5% commercial, based on <a href="https://murivest.com/market-projections">Murivest's 2026-2030 market projections</a>.</p>
       </div>
 
     </article>
@@ -8782,7 +8782,7 @@ content: `
     ],
     metaTitle: 'Commercial Property Office KPIs UK Explained: NIY, Equivalent, Reversionary',
     metaDescription: 'Net initial yield, equivalent yield, and reversionary yield for commercial property explained with real calculation examples. Murivest\'s institutional investment guide for 2026.',
-    canonicalUrl: 'https://murivest.co.ke/research/understanding-commercial-property-office-kpis-explained',
+    canonicalUrl: 'https://murivest.com/research/understanding-commercial-property-office-kpis-explained',
     relatedPosts: [
       'commercial-property-vs-residential-returns-2026',
       'commercial-property-due-diligence-checklist-uk',
@@ -8803,7 +8803,7 @@ content: `
       "headline": "Commercial Property Yields Explained: Net Initial Yield, Equivalent Yield, and Reversionary Yield for Investment Decision-Making",
       "description": "Net initial yield, equivalent yield, and reversionary yield explained with calculation examples. Foundation of defensible commercial property bidding.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-04-28",
       "dateModified": "2026-05-16"
     }),
@@ -8820,9 +8820,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "Commercial Property Yields Explained", "item": "https://murivest.co.ke/research/understanding-commercial-property-yields-explained" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "Commercial Property Yields Explained", "item": "https://murivest.com/research/understanding-commercial-property-yields-explained" }
       ]
     }),
     content: `
@@ -8834,7 +8834,7 @@ content: `
 
       <div class="bg-slate-50 border-l-4 border-emerald-700 p-6 my-8">
         <p class="text-sm font-semibold text-emerald-800 uppercase tracking-wide mb-2">Executive Summary</p>
-        <p class="text-gray-700">Commercial property yield analysis requires three-tier examination: Gross Yield (contracted rent/purchase price, 30-40% above sustainable returns), Net Yield (gross less operating costs, reflecting cash flow but excluding capital expenditure and letting voids), and True Net Yield (net less capital reserves, vacancy allowances, and management intensity, representing sustainable distributable income). <a href="https://murivest.co.ke/portfolio-performance">Murivest's portfolio analysis</a> indicates that True Net Yields typically run 200-350 basis points below quoted Gross Yields, with variation driven by lease structure, asset condition, and tenant covenant quality. Investors deploying capital based on Gross Yield comparisons systematically overestimate returns and underestimate risk.</p>
+        <p class="text-gray-700">Commercial property yield analysis requires three-tier examination: Gross Yield (contracted rent/purchase price, 30-40% above sustainable returns), Net Yield (gross less operating costs, reflecting cash flow but excluding capital expenditure and letting voids), and True Net Yield (net less capital reserves, vacancy allowances, and management intensity, representing sustainable distributable income). <a href="https://murivest.com/portfolio-performance">Murivest's portfolio analysis</a> indicates that True Net Yields typically run 200-350 basis points below quoted Gross Yields, with variation driven by lease structure, asset condition, and tenant covenant quality. Investors deploying capital based on Gross Yield comparisons systematically overestimate returns and underestimate risk.</p>
       </div>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">I. The Yield Hierarchy: From Contracted Income to Sustainable Return</h2>
@@ -8850,7 +8850,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/">Murivest's yield analysis</a> of 340 commercial transactions (2022-2026) reveals average Gross Yield quoting of 7.2%, with actual achieved True Net Yields averaging 4.8%—a 240 basis point differential. For investors comparing commercial property to alternative fixed-income investments (gilts at 4.0%, corporate bonds at 5.0-6.0%), this distinction determines asset allocation decisions. The investor who deploys capital based on Gross Yield comparisons systematically overestimates commercial property returns and under-allocates to competing assets.
+        <a href="https://murivest.com/">Murivest's yield analysis</a> of 340 commercial transactions (2022-2026) reveals average Gross Yield quoting of 7.2%, with actual achieved True Net Yields averaging 4.8%—a 240 basis point differential. For investors comparing commercial property to alternative fixed-income investments (gilts at 4.0%, corporate bonds at 5.0-6.0%), this distinction determines asset allocation decisions. The investor who deploys capital based on Gross Yield comparisons systematically overestimates commercial property returns and under-allocates to competing assets.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">1.2 Net Yield: The Operating Cash Flow Measure</h3>
@@ -8879,7 +8879,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        Vacancy Allowances reflect commercial property's illiquidity: tenant departure notice periods (typically 6-12 months), re-letting marketing periods (3-6 months), rent-free incentives for new tenants (3-12 months common), and fit-out contributions (tenant improvement allowances). <a href="https://murivest.co.ke/vacancy-analysis">Murivest's vacancy analysis</a> across 180 assets indicates average effective vacancy of 8-12% over 10-year hold periods—substantially exceeding the 0-5% assumed in optimistic projections.
+        Vacancy Allowances reflect commercial property's illiquidity: tenant departure notice periods (typically 6-12 months), re-letting marketing periods (3-6 months), rent-free incentives for new tenants (3-12 months common), and fit-out contributions (tenant improvement allowances). <a href="https://murivest.com/vacancy-analysis">Murivest's vacancy analysis</a> across 180 assets indicates average effective vacancy of 8-12% over 10-year hold periods—substantially exceeding the 0-5% assumed in optimistic projections.
       </p>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">II. Worked Examples: From Quoted Yield to True Return</h2>
@@ -8976,7 +8976,7 @@ content: `
 
       <div class="bg-red-50 border-l-4 border-red-600 p-6 my-8">
         <p class="text-sm font-semibold text-red-800 uppercase tracking-wide mb-2">Yield Compression Alert</p>
-        <p class="text-gray-700">Gross Yield (8.00%) → True Net Yield (1.64%): 636 basis point compression<br/>This asset, marketed at 8% yield, generates sub-2% sustainable income after realistic cost and reserve provisions. The MEES compliance liability (£25,000+ capital cost), tenant break option, and IRL lease structure create risk disproportionate to apparent return. <a href="https://murivest.co.ke/due-diligence">Murivest's due diligence protocols</a> would flag this asset as unsuitable for income-focused investors despite attractive quoted yield.</p>
+        <p class="text-gray-700">Gross Yield (8.00%) → True Net Yield (1.64%): 636 basis point compression<br/>This asset, marketed at 8% yield, generates sub-2% sustainable income after realistic cost and reserve provisions. The MEES compliance liability (£25,000+ capital cost), tenant break option, and IRL lease structure create risk disproportionate to apparent return. <a href="https://murivest.com/due-diligence">Murivest's due diligence protocols</a> would flag this asset as unsuitable for income-focused investors despite attractive quoted yield.</p>
       </div>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">2.3 Example C: Medical Centre (Long Lease, Government Covenant)</h3>
@@ -9031,7 +9031,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        The market prices covenant quality through yield: prime assets with government or major corporate tenants trade at 4.5-6.0% Gross Yields, while secondary assets with SME tenants trade at 7.0-10.0%. However, True Net Yield analysis often reverses this apparent premium. <a href="https://murivest.co.ke/covenant-analysis">Murivest's covenant-adjusted yield analysis</a> demonstrates that prime assets with 5.0% Gross Yields frequently generate 4.0-4.5% True Net Yields, while secondary assets with 8.0% Gross Yields generate 3.5-4.5% True Net Yields after risk-adjusted reserve provisions—the apparent yield premium evaporates under rigorous analysis.
+        The market prices covenant quality through yield: prime assets with government or major corporate tenants trade at 4.5-6.0% Gross Yields, while secondary assets with SME tenants trade at 7.0-10.0%. However, True Net Yield analysis often reverses this apparent premium. <a href="https://murivest.com/covenant-analysis">Murivest's covenant-adjusted yield analysis</a> demonstrates that prime assets with 5.0% Gross Yields frequently generate 4.0-4.5% True Net Yields, while secondary assets with 8.0% Gross Yields generate 3.5-4.5% True Net Yields after risk-adjusted reserve provisions—the apparent yield premium evaporates under rigorous analysis.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">3.2 Lease Structure and Income Certainty</h3>
@@ -9046,7 +9046,7 @@ content: `
 
       <div class="my-10 p-8 bg-white rounded-xl text-white">
         <p class="text-lg font-serif italic mb-4">"The sophisticated investor recognises that yield is not return—it's the price of risk. A 6% yield from an NHS lease with 20-year duration and RPI linkage represents superior risk-adjusted return to 9% yield from a retail unit with 3-year lease and SME tenant. True Net Yield calculation makes this distinction quantifiable."</p>
-        <p class="text-sm text-slate-300">— <a href="https://murivest.co.ke/" class="text-emerald-400 hover:text-emerald-300 underline">Murivest Investment Committee</a>, Q1 2026 Asset Pricing Framework</p>
+        <p class="text-sm text-slate-300">— <a href="https://murivest.com/" class="text-emerald-400 hover:text-emerald-300 underline">Murivest Investment Committee</a>, Q1 2026 Asset Pricing Framework</p>
       </div>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">3.3 Asset Condition and Capital Intensity</h3>
@@ -9056,7 +9056,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        The "yield trap" manifests in secondary assets: apparently high Gross Yields (8-10%) that compress to unattractive True Net Yields (3-5%) after capital reserve provisions. <a href="https://murivest.co.ke/asset-condition-assessment">Murivest's asset condition assessments</a> integrate building surveys, MEES compliance modelling, and capital planning to project True Net Yields that account for lifecycle costs. Investors acquiring assets without such analysis systematically overestimate returns and underestimate capital calls.
+        The "yield trap" manifests in secondary assets: apparently high Gross Yields (8-10%) that compress to unattractive True Net Yields (3-5%) after capital reserve provisions. <a href="https://murivest.com/asset-condition-assessment">Murivest's asset condition assessments</a> integrate building surveys, MEES compliance modelling, and capital planning to project True Net Yields that account for lifecycle costs. Investors acquiring assets without such analysis systematically overestimate returns and underestimate capital calls.
       </p>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">IV. Comparative Yield Analysis: Sector and Geographic Variations</h2>
@@ -9145,7 +9145,7 @@ content: `
       </div>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        The table reveals consistent patterns: apparent yield premiums in secondary assets (office, retail, industrial) compress significantly under True Net Yield analysis due to higher operating costs, capital reserves, and vacancy risk. Prime assets in defensive sectors (medical, prime industrial) demonstrate superior True Net Yield stability despite lower quoted Gross Yields. <a href="https://murivest.co.ke/sector-allocation">Murivest's sector allocation framework</a> targets assets with True Net Yield above 4.5% and minimal compression risk—typically prime industrial, medical, and selective retail warehousing.
+        The table reveals consistent patterns: apparent yield premiums in secondary assets (office, retail, industrial) compress significantly under True Net Yield analysis due to higher operating costs, capital reserves, and vacancy risk. Prime assets in defensive sectors (medical, prime industrial) demonstrate superior True Net Yield stability despite lower quoted Gross Yields. <a href="https://murivest.com/sector-allocation">Murivest's sector allocation framework</a> targets assets with True Net Yield above 4.5% and minimal compression risk—typically prime industrial, medical, and selective retail warehousing.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">4.2 Geographic Yield Variations</h3>
@@ -9155,7 +9155,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        Regional "Big Six" markets (Manchester, Birmingham, Leeds, Bristol, Edinburgh, Glasgow) currently offer attractive True Net Yield opportunities: Gross Yields 100-150 basis points above London, with lower operating cost intensity and strong local demand drivers. <a href="https://murivest.co.ke/regional-markets">Murivest's regional market analysis</a> identifies specific submarkets where supply-demand imbalances support sustainable income—particularly logistics corridors serving e-commerce distribution and medical facilities in population growth areas.
+        Regional "Big Six" markets (Manchester, Birmingham, Leeds, Bristol, Edinburgh, Glasgow) currently offer attractive True Net Yield opportunities: Gross Yields 100-150 basis points above London, with lower operating cost intensity and strong local demand drivers. <a href="https://murivest.com/regional-markets">Murivest's regional market analysis</a> identifies specific submarkets where supply-demand imbalances support sustainable income—particularly logistics corridors serving e-commerce distribution and medical facilities in population growth areas.
       </p>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">V. Financing Impact: Levered Yield Analysis</h2>
@@ -9191,7 +9191,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/regulatory-updates">Murivest's leverage optimisation</a> targets DSCR above 1.75x on True Net Income basis, ensuring covenant compliance even with 10-15% income shocks. This conservative approach sacrifices maximum levered returns for portfolio stability—appropriate for income-focused investors, less so for opportunistic value-add strategies.
+        <a href="https://murivest.com/regulatory-updates">Murivest's leverage optimisation</a> targets DSCR above 1.75x on True Net Income basis, ensuring covenant compliance even with 10-15% income shocks. This conservative approach sacrifices maximum levered returns for portfolio stability—appropriate for income-focused investors, less so for opportunistic value-add strategies.
       </p>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">VI. Tax-Efficient Yield: Post-Tax Return Analysis</h2>
@@ -9213,7 +9213,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        At 25% corporation tax, £150,000 allowances generate £37,500 tax saving—effectively reducing acquisition cost to £962,500 and enhancing True Net Yield to 5.71% (£55,000 / £962,500). <a href="https://murivest.co.ke/capital-allowances">Murivest's capital allowances consultancy</a> identifies and claims all qualifying expenditure, typically enhancing effective yields by 30-60 basis points through tax efficiency.
+        At 25% corporation tax, £150,000 allowances generate £37,500 tax saving—effectively reducing acquisition cost to £962,500 and enhancing True Net Yield to 5.71% (£55,000 / £962,500). <a href="https://murivest.com/capital-allowances">Murivest's capital allowances consultancy</a> identifies and claims all qualifying expenditure, typically enhancing effective yields by 30-60 basis points through tax efficiency.
       </p>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">VII. Practical Implementation: Yield Analysis in Investment Decisions</h2>
@@ -9225,7 +9225,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/due-diligence-framework">Murivest's due diligence framework</a> standardises this analysis across all acquisitions, producing True Net Yield projections with confidence intervals reflecting identified risks. Assets where True Net Yield cannot be calculated with reasonable certainty (insufficient lease documentation, opaque tenant finances, deferred maintenance) are excluded from consideration regardless of apparent Gross Yield attraction.
+        <a href="https://murivest.com/due-diligence-framework">Murivest's due diligence framework</a> standardises this analysis across all acquisitions, producing True Net Yield projections with confidence intervals reflecting identified risks. Assets where True Net Yield cannot be calculated with reasonable certainty (insufficient lease documentation, opaque tenant finances, deferred maintenance) are excluded from consideration regardless of apparent Gross Yield attraction.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">7.2 Sensitivity Analysis and Stress Testing</h3>
@@ -9235,19 +9235,19 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest's stress testing protocols</a> model True Net Yield under base, adverse, and severe scenarios. Assets must maintain positive True Net Yield under adverse conditions (10% income reduction, 20% capital cost increase) and covenant compliance under severe conditions (tenant default, 12-month void). This discipline excludes approximately 40% of marketed opportunities that fail risk-adjusted yield thresholds.
+        <a href="https://murivest.com/contact">Murivest's stress testing protocols</a> model True Net Yield under base, adverse, and severe scenarios. Assets must maintain positive True Net Yield under adverse conditions (10% income reduction, 20% capital cost increase) and covenant compliance under severe conditions (tenant default, 12-month void). This discipline excludes approximately 40% of marketed opportunities that fail risk-adjusted yield thresholds.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">7.3 Portfolio Yield Construction</h3>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        Individual asset yields combine into portfolio yield through weighted average. However, portfolio construction introduces diversification benefits: vacancy risk across multiple tenants reduces aggregate vacancy allowance; capital expenditure timing diversifies cash flow demands; geographic and sector spread reduces systematic risk. <a href="https://murivest.co.ke/portfolio-construction">Murivest's portfolio construction</a> targets weighted average True Net Yield of 4.5-5.5% with minimal volatility—achieved through sector diversification (industrial 40%, medical 30%, retail warehousing 20%, other 10%) and lease staggering (no more than 20% of income expiring in any 12-month period).
+        Individual asset yields combine into portfolio yield through weighted average. However, portfolio construction introduces diversification benefits: vacancy risk across multiple tenants reduces aggregate vacancy allowance; capital expenditure timing diversifies cash flow demands; geographic and sector spread reduces systematic risk. <a href="https://murivest.com/portfolio-construction">Murivest's portfolio construction</a> targets weighted average True Net Yield of 4.5-5.5% with minimal volatility—achieved through sector diversification (industrial 40%, medical 30%, retail warehousing 20%, other 10%) and lease staggering (no more than 20% of income expiring in any 12-month period).
       </p>
 
       <div class="my-12 p-8 bg-white rounded-xl text-white text-center">
         <p class="text-2xl font-serif font-bold mb-4">Master Commercial Property Yield Analysis</p>
         <p class="text-emerald-100 mb-6 max-w-2xl mx-auto">Murivest's yield analysis consultancy provides institutional-grade investment due diligence, translating quoted yields into True Net Returns with comprehensive risk assessment. Our analysis includes lease structuring, covenant assessment, capital planning, and tax optimisation to maximise sustainable income.</p>
-        <a href="https://murivest.co.ke/" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">Request Yield Analysis Consultation</a>
+        <a href="https://murivest.com/" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">Request Yield Analysis Consultation</a>
         <p class="text-sm text-emerald-200 mt-4">Comprehensive yield assessment for acquisitions exceeding £500,000</p>
       </div>
 
@@ -9266,7 +9266,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke">Murivest</a> provides the analytical capability—spanning yield analysis, due diligence, and portfolio construction—that transforms commercial property investment from yield speculation into sustainable wealth strategy. In a market where apparent opportunities often conceal hidden costs, rigorous True Net Yield analysis is the investor's essential protection against capital impairment and income disappointment.
+        <a href="https://murivest.com">Murivest</a> provides the analytical capability—spanning yield analysis, due diligence, and portfolio construction—that transforms commercial property investment from yield speculation into sustainable wealth strategy. In a market where apparent opportunities often conceal hidden costs, rigorous True Net Yield analysis is the investor's essential protection against capital impairment and income disappointment.
       </p>
 
       <div class="border-t border-gray-200 pt-8 mt-12">
@@ -9274,7 +9274,7 @@ content: `
         <p class="text-sm text-gray-600 leading-relaxed">This yield analysis framework was developed by Murivest's Investment Analytics team, incorporating data from 340+ commercial property transactions (2022-2026), RICS valuation standards, and proprietary lease and covenant databases. Yield calculations reflect UK market conditions as of March 2026; international markets display different cost structures and lease conventions. All examples are illustrative based on typical asset characteristics; individual properties require specific due diligence. Past performance does not guarantee future returns; commercial property values and yields fluctuate with market conditions.</p>
         
         <p class="text-sm text-gray-500 mt-6 mb-2"><strong>Methodology Notes</strong></p>
-        <p class="text-sm text-gray-600 leading-relaxed">True Net Yield calculation: (Contracted Rent - Operating Costs - Capital Reserves - Vacancy Allowance) / (Purchase Price + Acquisition Costs + Initial Capital Expenditure). Operating costs include management fees, insurance, and service charges. Capital reserves assume straight-line provision for known capital requirements over hold period. Vacancy allowances based on historical portfolio data adjusted for lease duration and covenant quality. Tax analysis assumes UK corporation tax rates; individual circumstances vary. <a href="https://murivest.co.ke/methodology">Detailed methodology available on request</a>.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">True Net Yield calculation: (Contracted Rent - Operating Costs - Capital Reserves - Vacancy Allowance) / (Purchase Price + Acquisition Costs + Initial Capital Expenditure). Operating costs include management fees, insurance, and service charges. Capital reserves assume straight-line provision for known capital requirements over hold period. Vacancy allowances based on historical portfolio data adjusted for lease duration and covenant quality. Tax analysis assumes UK corporation tax rates; individual circumstances vary. <a href="https://murivest.com/methodology">Detailed methodology available on request</a>.</p>
       </div>
 
     </article>
@@ -9309,7 +9309,7 @@ content: `
     ],
     metaTitle: 'Commercial Property Due Diligence UK: Institutional Framework 2026',
     metaDescription: 'Six-domain institutional due diligence framework for UK commercial property acquisition. Murivest\'s risk minimisation guide covering legal, environmental, structural, and financial analysis.',
-    canonicalUrl: 'https://murivest.co.ke/research/commercial-property-due-diligence-checklist-uk',
+    canonicalUrl: 'https://murivest.com/research/commercial-property-due-diligence-checklist-uk',
     relatedPosts: [
       'commercial-property-solicitor-fees-costs-2026',
       'stamp-duty-commercial-property-rates-reliefs-2026',
@@ -9330,7 +9330,7 @@ content: `
       "headline": "Commercial Property Due Diligence in the UK: The Institutional Framework for Minimising Acquisition Risk",
       "description": "Six-domain institutional due diligence framework for UK commercial property acquisition covering legal, environmental, structural, financial, planning, and tenant analysis.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-04-30",
       "dateModified": "2026-05-16"
     }),
@@ -9346,9 +9346,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "Commercial Property Due Diligence UK", "item": "https://murivest.co.ke/research/commercial-property-due-diligence-checklist-uk" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "Commercial Property Due Diligence UK", "item": "https://murivest.com/research/commercial-property-due-diligence-checklist-uk" }
       ]
     }),
     content: `
@@ -9360,7 +9360,7 @@ content: `
 
       <div class="bg-slate-50 border-l-4 border-emerald-700 p-6 my-8">
         <p class="text-sm font-semibold text-emerald-800 uppercase tracking-wide mb-2">Executive Summary</p>
-        <p class="text-gray-700">Comprehensive commercial property due diligence spans six critical workstreams: (1) Legal Title and Regulatory Verification (4-6 weeks), (2) Lease and Covenant Analysis (2-3 weeks), (3) Building Condition and Compliance Assessment (3-4 weeks), (4) Environmental Liability Evaluation (2-3 weeks), (5) Financial and Tax Structuring (ongoing), and (6) Market Position and Reversionary Risk Assessment (1-2 weeks). <a href="https://murivest.co.ke/contact">Murivest's transaction experience</a> indicates that rigorous due diligence prevents capital impairment in 23% of initially considered acquisitions, identifying title defects, onerous lease terms, or environmental liabilities that would have generated negative returns. The cost of comprehensive due diligence (£25,000-£60,000 per transaction) represents 0.5-1.5% of acquisition value but protects against 10-40% capital loss risks.</p>
+        <p class="text-gray-700">Comprehensive commercial property due diligence spans six critical workstreams: (1) Legal Title and Regulatory Verification (4-6 weeks), (2) Lease and Covenant Analysis (2-3 weeks), (3) Building Condition and Compliance Assessment (3-4 weeks), (4) Environmental Liability Evaluation (2-3 weeks), (5) Financial and Tax Structuring (ongoing), and (6) Market Position and Reversionary Risk Assessment (1-2 weeks). <a href="https://murivest.com/contact">Murivest's transaction experience</a> indicates that rigorous due diligence prevents capital impairment in 23% of initially considered acquisitions, identifying title defects, onerous lease terms, or environmental liabilities that would have generated negative returns. The cost of comprehensive due diligence (£25,000-£60,000 per transaction) represents 0.5-1.5% of acquisition value but protects against 10-40% capital loss risks.</p>
       </div>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">I. Legal Title and Regulatory Verification: Establishing Ownership Integrity</h2>
@@ -9376,7 +9376,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Our legal team</a> recently identified a £2.4 million industrial acquisition where the seller's title included an unregistered 1950s covenant restricting industrial use to "light manufacturing only." The buyer's intended heavy logistics use would have breached this covenant, exposing the investment to injunctive relief and operational shutdown. Pre-contract due diligence enabled renegotiation of price (reflecting use restriction) and vendor indemnity for covenant modification costs—a £180,000 value protection that cost £4,200 to identify through enhanced title investigation.
+        <a href="https://murivest.com/contact">Our legal team</a> recently identified a £2.4 million industrial acquisition where the seller's title included an unregistered 1950s covenant restricting industrial use to "light manufacturing only." The buyer's intended heavy logistics use would have breached this covenant, exposing the investment to injunctive relief and operational shutdown. Pre-contract due diligence enabled renegotiation of price (reflecting use restriction) and vendor indemnity for covenant modification costs—a £180,000 value protection that cost £4,200 to identify through enhanced title investigation.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">1.2 Planning Permission and Use Class Verification</h3>
@@ -9419,7 +9419,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest's covenant analysis</a> prevented a £1.8 million acquisition where the tenant—a seemingly profitable logistics company—had filed a Notice of Intention to Appoint Administrators three weeks prior to exchange. Financial statement analysis revealed deteriorating liquidity ratios (current ratio 0.8, quick ratio 0.4) that should have triggered earlier investigation. The apparent 8% yield would have become 0% within months, with void costs and re-letting expenses destroying first-year returns.
+        <a href="https://murivest.com/contact">Murivest's covenant analysis</a> prevented a £1.8 million acquisition where the tenant—a seemingly profitable logistics company—had filed a Notice of Intention to Appoint Administrators three weeks prior to exchange. Financial statement analysis revealed deteriorating liquidity ratios (current ratio 0.8, quick ratio 0.4) that should have triggered earlier investigation. The apparent 8% yield would have become 0% within months, with void costs and re-letting expenses destroying first-year returns.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">2.3 Repairing Obligations and Service Charge Mechanics</h3>
@@ -9451,7 +9451,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Our asset management team</a> recently assessed a £3.2 million office acquisition with EPC D rating. The improvement plan required: LED lighting upgrade (£45,000), HVAC replacement (£120,000), and glazing improvements (£85,000)—total £250,000 (7.8% of acquisition cost). Without due diligence provision, this capital call would have eliminated two years of rental income. The seller provided £200,000 price reduction reflecting compliance liability.
+        <a href="https://murivest.com/contact">Our asset management team</a> recently assessed a £3.2 million office acquisition with EPC D rating. The improvement plan required: LED lighting upgrade (£45,000), HVAC replacement (£120,000), and glazing improvements (£85,000)—total £250,000 (7.8% of acquisition cost). Without due diligence provision, this capital call would have eliminated two years of rental income. The seller provided £200,000 price reduction reflecting compliance liability.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">3.3 Fire Safety and Building Safety Act Compliance</h3>
@@ -9469,7 +9469,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        High-risk land uses requiring enhanced investigation include: former petrol stations (hydrocarbon and MTBE contamination); dry cleaners (chlorinated solvent plumes); industrial estates (heavy metal and chemical legacy); and former landfill sites (methane and leachate risks). <a href="https://murivest.co.ke/contact">Murivest's environmental consultancy</a> identifies that 12% of industrial acquisitions in established estates have Phase I indicators requiring Phase II investigation.
+        High-risk land uses requiring enhanced investigation include: former petrol stations (hydrocarbon and MTBE contamination); dry cleaners (chlorinated solvent plumes); industrial estates (heavy metal and chemical legacy); and former landfill sites (methane and leachate risks). <a href="https://murivest.com/contact">Murivest's environmental consultancy</a> identifies that 12% of industrial acquisitions in established estates have Phase I indicators requiring Phase II investigation.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">4.2 Phase II Intrusive Investigation (Where Required)</h3>
@@ -9502,7 +9502,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        For a £2,000,000 commercial acquisition, SDLT liability is £89,500 (effective rate 4.48%). However, if the transaction qualifies as TOGC (transfer of going concern with tenant in situ and VAT option to tax exercised), VAT at 20% is not chargeable, saving £400,000 cash flow (though input tax recovery may offset for VAT-registered buyers). <a href="https://murivest.co.ke/contact">Our tax advisory team</a> ensures optimal structuring.
+        For a £2,000,000 commercial acquisition, SDLT liability is £89,500 (effective rate 4.48%). However, if the transaction qualifies as TOGC (transfer of going concern with tenant in situ and VAT option to tax exercised), VAT at 20% is not chargeable, saving £400,000 cash flow (though input tax recovery may offset for VAT-registered buyers). <a href="https://murivest.com/contact">Our tax advisory team</a> ensures optimal structuring.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">5.2 Capital Allowances Identification</h3>
@@ -9530,7 +9530,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        The "rental tone" of the immediate vicinity determines re-letting prospects. Due diligence should identify: competing supply (planned developments, vacant competing stock); demand drivers (employment growth, infrastructure investment, demographic trends); and obsolescence risk (building specification vs current market requirements). <a href="https://murivest.co.ke/contact">Murivest's market intelligence</a> provides submarket analysis identifying rental growth or decline trajectories.
+        The "rental tone" of the immediate vicinity determines re-letting prospects. Due diligence should identify: competing supply (planned developments, vacant competing stock); demand drivers (employment growth, infrastructure investment, demographic trends); and obsolescence risk (building specification vs current market requirements). <a href="https://murivest.com/contact">Murivest's market intelligence</a> provides submarket analysis identifying rental growth or decline trajectories.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">6.2 Lease Event Horizon Analysis</h3>
@@ -9595,7 +9595,7 @@ content: `
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">7.1 Professional Advisory Assembly</h3>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        Comprehensive due diligence requires coordinated professional input: Commercial Property Solicitor (title, lease analysis, completion); RICS Building Surveyor (condition assessment, MEES compliance); Environmental Consultant (Phase I/II assessments); Tax Adviser (SDLT, VAT, capital allowances); and Financial Analyst ( covenant checking, cash flow modelling). <a href="https://murivest.co.ke/contact">Murivest's advisory coordination</a> ensures these professionals work to unified timelines and reporting standards.
+        Comprehensive due diligence requires coordinated professional input: Commercial Property Solicitor (title, lease analysis, completion); RICS Building Surveyor (condition assessment, MEES compliance); Environmental Consultant (Phase I/II assessments); Tax Adviser (SDLT, VAT, capital allowances); and Financial Analyst ( covenant checking, cash flow modelling). <a href="https://murivest.com/contact">Murivest's advisory coordination</a> ensures these professionals work to unified timelines and reporting standards.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">7.2 Red Flags and Deal Breakers</h3>
@@ -9605,13 +9605,13 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        Relative contraindications allow conditional proceeding with price adjustment or vendor indemnities: Short lease terms requiring re-letting risk; MEES compliance costs; Minor title restrictions; and Service charge shortfalls. <a href="https://murivest.co.ke/contact">Our transaction experience</a> suggests that 30% of acquisitions require price renegotiation post-due diligence, with average adjustments of 3-8% of contract price to reflect identified risks.
+        Relative contraindications allow conditional proceeding with price adjustment or vendor indemnities: Short lease terms requiring re-letting risk; MEES compliance costs; Minor title restrictions; and Service charge shortfalls. <a href="https://murivest.com/contact">Our transaction experience</a> suggests that 30% of acquisitions require price renegotiation post-due diligence, with average adjustments of 3-8% of contract price to reflect identified risks.
       </p>
 
       <div class="my-12 p-8 bg-white rounded-xl text-white text-center">
         <p class="text-2xl font-serif font-bold mb-4">Execute Risk-Managed Commercial Acquisitions</p>
         <p class="text-emerald-100 mb-6 max-w-2xl mx-auto">Murivest's transaction advisory team provides institutional-grade due diligence for commercial property acquisitions. Our integrated legal, technical, and financial analysis identifies risks before capital deployment, protecting your investment against hidden liabilities and value impairment.</p>
-        <a href="https://murivest.co.ke/contact" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">Contact Our Acquisition Team</a>
+        <a href="https://murivest.com/contact" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">Contact Our Acquisition Team</a>
         <p class="text-sm text-emerald-200 mt-4">Comprehensive due diligence services for acquisitions from £500,000</p>
       </div>
 
@@ -9630,7 +9630,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest</a> provides integrated due diligence management, coordinating legal, technical, and financial advisory streams under single-client accountability. Our institutional framework—developed across £400 million of commercial transactions—ensures that no material risk remains unexamined and no value protection opportunity is overlooked. In commercial property acquisition, thorough due diligence is not optional precaution but essential investment discipline.
+        <a href="https://murivest.com/contact">Murivest</a> provides integrated due diligence management, coordinating legal, technical, and financial advisory streams under single-client accountability. Our institutional framework—developed across £400 million of commercial transactions—ensures that no material risk remains unexamined and no value protection opportunity is overlooked. In commercial property acquisition, thorough due diligence is not optional precaution but essential investment discipline.
       </p>
 
       <div class="border-t border-gray-200 pt-8 mt-12">
@@ -9638,7 +9638,7 @@ content: `
         <p class="text-sm text-gray-600 leading-relaxed">This due diligence framework reflects current UK legislation as of March 2026, including the Building Safety Act 2022, Environment Act 2021, and MEES regulations. Property law and planning regulations evolve; investors should verify current requirements with qualified legal advisors. The framework assumes England and Wales jurisdiction; Scottish property law differs substantially in title, lease, and planning matters. Past transaction experience guides but does not guarantee future risk identification; each asset requires specific investigation.</p>
         
         <p class="text-sm text-gray-500 mt-6 mb-2"><strong>Disclaimer</strong></p>
-        <p class="text-sm text-gray-600 leading-relaxed">This analysis provides general guidance on commercial property due diligence and does not constitute legal, tax, or investment advice. Commercial property investment carries risk of capital loss; professional advice should be sought regarding specific transactions. <a href="https://murivest.co.ke/contact">Contact Murivest</a> for bespoke transaction advisory services tailored to your acquisition requirements.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">This analysis provides general guidance on commercial property due diligence and does not constitute legal, tax, or investment advice. Commercial property investment carries risk of capital loss; professional advice should be sought regarding specific transactions. <a href="https://murivest.com/contact">Contact Murivest</a> for bespoke transaction advisory services tailored to your acquisition requirements.</p>
       </div>
 
     </article>
@@ -9673,7 +9673,7 @@ content: `
     ],
     metaTitle: 'London Commercial Real Estate Q2 2026: Market Intelligence Report',
     metaDescription: 'West End office vacancy at 8.2%, prime rents flat, Grade A/B divergence widening. Murivest Q2 2026 market intelligence for London commercial property institutional investors.',
-    canonicalUrl: 'https://murivest.co.ke/research/london-commercial-real-estate-market-report-q2-2026',
+    canonicalUrl: 'https://murivest.com/research/london-commercial-real-estate-market-report-q2-2026',
     relatedPosts: [
       'global-macro-allocation-commercial-real-estate-dedollarization-2026',
       'commercial-property-vs-residential-returns-2026',
@@ -9696,7 +9696,7 @@ content: `
       "headline": "London Commercial Real Estate: Q2 2026 Market Intelligence for Institutional Investors",
       "description": "West End vacancy 8.2%, prime rents flat, Grade A/B divergence widening. Q2 2026 market intelligence for London commercial property institutional allocators.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-05-02",
       "dateModified": "2026-05-16"
     }),
@@ -9712,9 +9712,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "London Commercial Real Estate Q2 2026", "item": "https://murivest.co.ke/research/london-commercial-real-estate-market-report-q2-2026" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "London Commercial Real Estate Q2 2026", "item": "https://murivest.com/research/london-commercial-real-estate-market-report-q2-2026" }
       ]
     }),
     content: `
@@ -9726,7 +9726,7 @@ content: `
 
       <div class="bg-slate-50 border-l-4 border-emerald-700 p-6 my-8">
         <p class="text-sm font-semibold text-emerald-800 uppercase tracking-wide mb-2">Executive Summary</p>
-        <p class="text-gray-700">London commercial property markets demonstrated resilient liquidity in Q2 2026 with £4.2 billion transaction volume (up 23% YoY). Prime yields stabilised across sectors: West End Office 4.75% (-25bps QoQ), City Office 5.0% (-20bps QoQ), Logistics 4.5% (-15bps QoQ), and Retail Warehouse 6.25% (-35bps QoQ). Institutional capital concentrated in long-income assets (£1.8 billion allocation) and life sciences facilities (£420 million). The "flight to quality" intensified, with Grade A assets commanding 35% pricing premiums over secondary stock. <a href="https://murivest.co.ke/contact">Murivest's transaction advisory</a> identifies selective repricing opportunities in secondary logistics and value-add office as the market transitions from price discovery to yield stabilisation.</p>
+        <p class="text-gray-700">London commercial property markets demonstrated resilient liquidity in Q2 2026 with £4.2 billion transaction volume (up 23% YoY). Prime yields stabilised across sectors: West End Office 4.75% (-25bps QoQ), City Office 5.0% (-20bps QoQ), Logistics 4.5% (-15bps QoQ), and Retail Warehouse 6.25% (-35bps QoQ). Institutional capital concentrated in long-income assets (£1.8 billion allocation) and life sciences facilities (£420 million). The "flight to quality" intensified, with Grade A assets commanding 35% pricing premiums over secondary stock. <a href="https://murivest.com/contact">Murivest's transaction advisory</a> identifies selective repricing opportunities in secondary logistics and value-add office as the market transitions from price discovery to yield stabilisation.</p>
       </div>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">I. Macroeconomic Context: The Monetary Pivot and Capital Market Implications</h2>
@@ -9738,7 +9738,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        Lender risk appetite has broadened beyond core stabilised assets to encompass value-add opportunities, with loan-to-value ratios creeping up to 65-70% for prime assets (from 55-60% troughs). However, covenant structures remain conservative: debt yield minimums of 8.0-9.0%, interest coverage ratios of 1.50x+, and amortisation requirements for secondary assets. <a href="https://murivest.co.ke/contact">Murivest's debt advisory team</a> notes that financing availability now represents a competitive advantage for leveraged acquirers in the £10-50 million mid-market segment.
+        Lender risk appetite has broadened beyond core stabilised assets to encompass value-add opportunities, with loan-to-value ratios creeping up to 65-70% for prime assets (from 55-60% troughs). However, covenant structures remain conservative: debt yield minimums of 8.0-9.0%, interest coverage ratios of 1.50x+, and amortisation requirements for secondary assets. <a href="https://murivest.com/contact">Murivest's debt advisory team</a> notes that financing availability now represents a competitive advantage for leveraged acquirers in the £10-50 million mid-market segment.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">1.2 Institutional Capital Allocation Patterns</h3>
@@ -9764,7 +9764,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <strong>Transaction Spotlight:</strong> Q2's largest office transaction saw a Singapore sovereign wealth fund acquire a 180,000 sq ft EC3 asset (WAULT 8.2 years, 97% occupied) for £142 million reflecting 4.6% net initial yield. The asset features best-in-class ESG credentials (BREEAM Outstanding, WELL Platinum), highlighting the green premium in institutional acquisitions. <a href="https://murivest.co.ke/contact">Murivest advised on comparable long-income office mandates</a> during the quarter.
+        <strong>Transaction Spotlight:</strong> Q2's largest office transaction saw a Singapore sovereign wealth fund acquire a 180,000 sq ft EC3 asset (WAULT 8.2 years, 97% occupied) for £142 million reflecting 4.6% net initial yield. The asset features best-in-class ESG credentials (BREEAM Outstanding, WELL Platinum), highlighting the green premium in institutional acquisitions. <a href="https://murivest.com/contact">Murivest advised on comparable long-income office mandates</a> during the quarter.
       </p>
 
       <div class="bg-amber-50 border border-amber-200 rounded-lg p-6 my-8">
@@ -9797,7 +9797,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        Secondary high street retail remains challenged with yields of 8-12% reflecting vacancy and re-letting risks. However, <a href="https://murivest.co.ke/contact">Murivest's alternative strategies team</a> identifies value in well-located secondary retail with residential conversion potential under permitted development rights, particularly in Outer London zones with housing demand pressures.
+        Secondary high street retail remains challenged with yields of 8-12% reflecting vacancy and re-letting risks. However, <a href="https://murivest.com/contact">Murivest's alternative strategies team</a> identifies value in well-located secondary retail with residential conversion potential under permitted development rights, particularly in Outer London zones with housing demand pressures.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">2.4 Alternatives: Life Sciences and Data Centres</h3>
@@ -9885,7 +9885,7 @@ content: `
       </div>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        Yield compression in Q2 2026 reflects improved financing conditions and institutional capital deployment rather than deteriorating income prospects. The yield shift is orderly—25-35 basis points quarterly—suggesting sustainable repricing rather than speculative bubble formation. <a href="https://murivest.co.ke/contact">Murivest's capital markets team</a> anticipates further 50-75 basis point compression in industrial and alternatives through year-end as weight of money continues.
+        Yield compression in Q2 2026 reflects improved financing conditions and institutional capital deployment rather than deteriorating income prospects. The yield shift is orderly—25-35 basis points quarterly—suggesting sustainable repricing rather than speculative bubble formation. <a href="https://murivest.com/contact">Murivest's capital markets team</a> anticipates further 50-75 basis point compression in industrial and alternatives through year-end as weight of money continues.
       </p>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">IV. Transaction Case Studies: Market Microstructure</h2>
@@ -9924,7 +9924,7 @@ content: `
 
       <div class="my-10 p-8 bg-white rounded-xl text-white">
         <p class="text-lg font-serif italic mb-4">"The current market rewards operational expertise. Buyers with asset management capability—refurbishment, lease restructuring, ESG compliance—can extract 200-300 basis point IRR premiums over passive core allocations. The opportunity set is richest in secondary industrial and office where vendors lack capital or operational bandwidth to maximise value."</p>
-        <p class="text-sm text-slate-300">— <a href="https://murivest.co.ke/contact" class="text-emerald-400 hover:text-emerald-300 underline">Murivest Investment Committee</a>, Q2 2026 Market Commentary</p>
+        <p class="text-sm text-slate-300">— <a href="https://murivest.com/contact" class="text-emerald-400 hover:text-emerald-300 underline">Murivest Investment Committee</a>, Q2 2026 Market Commentary</p>
       </div>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">V. Regional Submarket Analysis: Beyond the Core</h2>
@@ -9988,7 +9988,7 @@ content: `
       <div class="my-12 p-8 bg-white rounded-xl text-white text-center">
         <p class="text-2xl font-serif font-bold mb-4">Access London Commercial Property Opportunities</p>
         <p class="text-emerald-100 mb-6 max-w-2xl mx-auto">Murivest advises institutional investors and family offices on London commercial real estate acquisitions, from core income portfolios to value-add and development strategies. Our quarterly market intelligence and off-market sourcing capability provide first-mover advantage in stabilising markets.</p>
-        <a href="https://murivest.co.ke/contact" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-black font-semibold py-3 px-8 rounded-lg transition duration-300">Request Market Briefing</a>
+        <a href="https://murivest.com/contact" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-black font-semibold py-3 px-8 rounded-lg transition duration-300">Request Market Briefing</a>
         <p class="text-sm text-emerald-200 mt-4">Confidential mandate discussion for qualified investors</p>
       </div>
 
@@ -10003,7 +10003,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest</a> maintains an active mandate pipeline across London submarkets, targeting £50-150 million single assets and portfolios for institutional investors. Our Q2 transaction volume of £340 million reflects restored market liquidity and selective opportunity origination. For investors seeking London commercial property exposure, the current stabilisation phase offers a compelling entry point before potential cyclical upswing in 2027-2028.
+        <a href="https://murivest.com/contact">Murivest</a> maintains an active mandate pipeline across London submarkets, targeting £50-150 million single assets and portfolios for institutional investors. Our Q2 transaction volume of £340 million reflects restored market liquidity and selective opportunity origination. For investors seeking London commercial property exposure, the current stabilisation phase offers a compelling entry point before potential cyclical upswing in 2027-2028.
       </p>
 
       <div class="border-t border-gray-200 pt-8 mt-12">
@@ -10011,7 +10011,7 @@ content: `
         <p class="text-sm text-gray-600 leading-relaxed">Transaction data compiled from Land Registry, CoStar, MSCI UK Quarterly Property Index, and Murivest proprietary transaction database (Q2 2026). Yield data reflects institutional grade assets (£10 million+). Market forecasts based on macroeconomic modelling, supply pipeline analysis, and institutional capital flow tracking. Data current as of 30 June 2026. Past performance does not guarantee future returns; commercial property values can decline.</p>
         
         <p class="text-sm text-gray-500 mt-6 mb-2"><strong>Disclaimer</strong></p>
-        <p class="text-sm text-gray-600 leading-relaxed">This report is for informational purposes only and does not constitute investment advice. Commercial real estate investments carry risk of capital loss. Projected yields and returns are illustrative based on current market conditions. <a href="https://murivest.co.ke/contact">Contact Murivest</a> for specific transaction advisory services.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">This report is for informational purposes only and does not constitute investment advice. Commercial real estate investments carry risk of capital loss. Projected yields and returns are illustrative based on current market conditions. <a href="https://murivest.com/contact">Contact Murivest</a> for specific transaction advisory services.</p>
       </div>
 
     </article>
@@ -10046,7 +10046,7 @@ content: `
     ],
     metaTitle: 'UK Retail Property 2026: Contrarian Case for Grocery-Anchored Assets',
     metaDescription: 'Secondary retail yields at 8–12% but grocery-anchored and convenience retail near full occupancy. Murivest\'s contrarian analysis of the retail property investment case in 2026.',
-    canonicalUrl: 'https://murivest.co.ke/research/retail-property-recovery-contrarian-analysis-2026',
+    canonicalUrl: 'https://murivest.com/research/retail-property-recovery-contrarian-analysis-2026',
     relatedPosts: [
       'commercial-property-vs-residential-returns-2026',
       'understanding-commercial-property-yields-explained',
@@ -10068,7 +10068,7 @@ content: `
       "headline": "UK Retail Property in 2026: The Contrarian Case for Grocery-Anchored and Convenience Retail",
       "description": "Secondary retail yields at 8–12% but grocery-anchored and convenience retail near full occupancy. Contrarian analysis of the UK retail property investment case.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-05-08",
       "dateModified": "2026-05-16"
     }),
@@ -10084,9 +10084,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "UK Retail Property Recovery 2026", "item": "https://murivest.co.ke/research/retail-property-recovery-contrarian-analysis-2026" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "UK Retail Property Recovery 2026", "item": "https://murivest.com/research/retail-property-recovery-contrarian-analysis-2026" }
       ]
     }),
     content: `
@@ -10120,7 +10120,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/about">Our retail analytics</a> indicate that experiential tenants now comprise 58% of prime shopping centre income, up from 34% in 2015. These operators demonstrate lower default rates (2.1% vs 8.7% for commodity retail) and longer lease commitments (8.3 years average vs 4.2 years), reflecting the irreplaceable utility of physical presence for their business models.
+        <a href="https://murivest.com/about">Our retail analytics</a> indicate that experiential tenants now comprise 58% of prime shopping centre income, up from 34% in 2015. These operators demonstrate lower default rates (2.1% vs 8.7% for commodity retail) and longer lease commitments (8.3 years average vs 4.2 years), reflecting the irreplaceable utility of physical presence for their business models.
       </p>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">II. The Bifurcation Evidence: Data Beneath the Headlines</h2>
@@ -10169,7 +10169,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest's retail repositioning mandates</a> have facilitated conversions of 15 retail warehouses to hybrid logistics/retail use since 2023, achieving 18-22% IRRs through enhanced rent rolls and yield compression as investors recognise the logistics-retail convergence.
+        <a href="https://murivest.com/contact">Murivest's retail repositioning mandates</a> have facilitated conversions of 15 retail warehouses to hybrid logistics/retail use since 2023, achieving 18-22% IRRs through enhanced rent rolls and yield compression as investors recognise the logistics-retail convergence.
       </p>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">IV. Repositioning Strategies: Value Creation in Obsolescence</h2>
@@ -10181,7 +10181,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        Case study: A 1970s shopping centre in a Midlands city (retained confidential) achieved £18 million valuation as pure retail (8.5% yield, 65% occupancy). Post-conversion to 120 residential units above 45,000 sq ft retained retail, valuation increased to £42 million—130% value creation through repurposing obsolete retail surplus into scarce residential supply. <a href="https://murivest.co.ke/contact">Similar restructuring opportunities</a> exist across 40+ UK secondary centres.
+        Case study: A 1970s shopping centre in a Midlands city (retained confidential) achieved £18 million valuation as pure retail (8.5% yield, 65% occupancy). Post-conversion to 120 residential units above 45,000 sq ft retained retail, valuation increased to £42 million—130% value creation through repurposing obsolete retail surplus into scarce residential supply. <a href="https://murivest.com/contact">Similar restructuring opportunities</a> exist across 40+ UK secondary centres.
       </p>
 
       <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">4.2 The Community Hub Transformation</h3>
@@ -10201,7 +10201,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        Valuation dynamics favour repositioning: obsolete retail trades at £40-80 per sq ft; equivalent logistics space commands £120-180 per sq ft. The 100-150% value uplift justifies conversion costs and planning risk. <a href="https://murivest.co.ke/contact">Our development advisory team</a> has structured six such conversions since 2024, achieving blended IRRs of 19.4%.
+        Valuation dynamics favour repositioning: obsolete retail trades at £40-80 per sq ft; equivalent logistics space commands £120-180 per sq ft. The 100-150% value uplift justifies conversion costs and planning risk. <a href="https://murivest.com/contact">Our development advisory team</a> has structured six such conversions since 2024, achieving blended IRRs of 19.4%.
       </p>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">V. Investment Implications: Where Capital Should Deploy</h2>
@@ -10226,7 +10226,7 @@ content: `
 
       <div class="my-10 p-8 bg-white rounded-xl text-white">
         <p class="text-lg font-serif italic mb-4">"Retail property is not dying; it is metabolising. The obsolete formats—commodity department stores, generic apparel chains—are shedding like dead skin. Beneath is new tissue: experiential destinations, convenience hubs, community services, and logistics nodes. Investors who see only the shedding miss the regeneration."</p>
-        <p class="text-sm text-slate-300">— <a href="https://murivest.co.ke/contact" class="text-emerald-400 hover:text-emerald-300 underline">Murivest Retail Strategy Team</a>, Q1 2026 Market Review</p>
+        <p class="text-sm text-slate-300">— <a href="https://murivest.com/contact" class="text-emerald-400 hover:text-emerald-300 underline">Murivest Retail Strategy Team</a>, Q1 2026 Market Review</p>
       </div>
 
       <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6 font-serif">VI. Risk Factors and Mitigation</h2>
@@ -10252,7 +10252,7 @@ content: `
       <div class="my-12 p-8 bg-white rounded-xl text-white text-center">
         <p class="text-2xl font-serif font-bold mb-4">Access Retail Repositioning Strategies</p>
         <p class="text-emerald-100 mb-6 max-w-2xl mx-auto">Murivest advises on retail property repositioning, identifying mispriced assets with conversion potential to experiential, residential, or logistics use. Our advisory combines planning expertise, asset management capability, and capital structuring for complex retail transformations.</p>
-        <a href="https://murivest.co.ke/contact" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">Retail Strategy Consultation</a>
+        <a href="https://murivest.com/contact" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">Retail Strategy Consultation</a>
         <p class="text-sm text-emerald-200 mt-4">Contrarian retail investment mandates for qualified investors</p>
       </div>
 
@@ -10271,7 +10271,7 @@ content: `
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
-        <a href="https://murivest.co.ke/contact">Murivest</a> maintains an active retail repositioning practice, identifying assets where market overreaction has created entry opportunities. The contrarian investor recognises that when consensus declares an asset class "dead," the survivors often thrive with reduced competition and enhanced pricing power. UK retail property, selectively approached, is very much alive.
+        <a href="https://murivest.com/contact">Murivest</a> maintains an active retail repositioning practice, identifying assets where market overreaction has created entry opportunities. The contrarian investor recognises that when consensus declares an asset class "dead," the survivors often thrive with reduced competition and enhanced pricing power. UK retail property, selectively approached, is very much alive.
       </p>
 
       <div class="border-t border-gray-200 pt-8 mt-12">
@@ -10279,7 +10279,7 @@ content: `
         <p class="text-sm text-gray-600 leading-relaxed">This analysis draws on footfall data from Springboard, rental data from MSCI/IPD, and transaction data from CoStar and Property Data (Q4 2025-Q1 2026). Case studies represent actual transactions anonymised for confidentiality. Past performance of repositioning strategies does not guarantee future results. Retail property investment carries specific risks including tenant default, obsolescence, and planning uncertainty.</p>
         
         <p class="text-sm text-gray-500 mt-6 mb-2"><strong>Disclaimer</strong></p>
-        <p class="text-sm text-gray-600 leading-relaxed">This article is for informational purposes only and does not constitute investment advice. Retail property values can decline, and repositioning projects may fail to achieve projected returns. <a href="https://murivest.co.ke/contact">Contact Murivest</a> for specific transaction advisory.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">This article is for informational purposes only and does not constitute investment advice. Retail property values can decline, and repositioning projects may fail to achieve projected returns. <a href="https://murivest.com/contact">Contact Murivest</a> for specific transaction advisory.</p>
       </div>
 
     </article>
@@ -10312,7 +10312,7 @@ content: `
     ],
     metaTitle: 'Global Capital Allocation: Why Dubai’s Real Estate Market Remains Highly Resilient',
     metaDescription: 'Dubai’s equity-driven property market continues demonstrating resilience despite regional uncertainty and remains central to GCC investment allocation strategies.',
-    canonicalUrl: 'https://murivest.co.ke/research/global-capital-allocation-dubai-2026',
+    canonicalUrl: 'https://murivest.com/research/global-capital-allocation-dubai-2026',
     relatedPosts: [
       'us-investors-rotating-into-uk-property-2026',
       'commercial-property-vs-residential-returns-2026',
@@ -10348,7 +10348,7 @@ content: `
         "name": "Murivest Realty Group",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://murivest.co.ke/logo.webp"
+          "url": "https://murivest.com/logo.webp"
         }
       },
       "datePublished": "2026-04-28",
@@ -10384,19 +10384,19 @@ content: `
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://murivest.co.ke"
+          "item": "https://murivest.com"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Research",
-          "item": "https://murivest.co.ke/research"
+          "item": "https://murivest.com/research"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Global Capital Allocation: Why Dubai’s Real Estate Market Remains Highly Resilient",
-          "item": "https://murivest.co.ke/research/global-capital-allocation-dubai-2026"
+          "item": "https://murivest.com/research/global-capital-allocation-dubai-2026"
         }
       ]
     }),
@@ -10583,7 +10583,7 @@ content: `
       "image": "/images/research/dubai-global-allocation-2026.webp",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://murivest.co.ke/research/dubai-resilience-global-capital-allocation-2026"
+        "@id": "https://murivest.com/research/dubai-resilience-global-capital-allocation-2026"
       }
     }
     </script>
@@ -10661,7 +10661,7 @@ content: `
       ],
       metaTitle: 'UK Bond Markets Are Repricing Political Risk | Murivest Research',
       metaDescription: 'Rising UK gilt yields and fiscal uncertainty are reshaping mortgage pricing, residential demand, and investor sentiment across the British housing market.',
-      canonicalUrl: 'https://murivest.co.ke/research/uk-bond-market-labour-rhetoric-housing-2026',
+      canonicalUrl: 'https://murivest.com/research/uk-bond-market-labour-rhetoric-housing-2026',
       relatedPosts: [
         'uk-first-time-buyer-deposit-scheme-2026',
         'us-investors-rotating-into-uk-property-2026',
@@ -10697,7 +10697,7 @@ content: `
           "name": "Murivest Realty Group",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://murivest.co.ke/logo.webp"
+            "url": "https://murivest.com/logo.webp"
           }
         },
         "datePublished": "2026-05-18",
@@ -10733,19 +10733,19 @@ content: `
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://murivest.co.ke"
+            "item": "https://murivest.com"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Research",
-            "item": "https://murivest.co.ke/research"
+            "item": "https://murivest.com/research"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "UK Bond Markets Are Repricing Political Risk",
-            "item": "https://murivest.co.ke/research/uk-bond-market-labour-rhetoric-housing-2026"
+            "item": "https://murivest.com/research/uk-bond-market-labour-rhetoric-housing-2026"
           }
         ]
       }),
@@ -10952,7 +10952,7 @@ content: `
       "image": "/images/research/uk-bond-market-housing-2026.webp",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://murivest.co.ke/research/uk-bond-market-labour-rhetoric-housing-2026"
+        "@id": "https://murivest.com/research/uk-bond-market-labour-rhetoric-housing-2026"
       }
     }
     </script>
@@ -11032,7 +11032,7 @@ content: `
       ],
       metaTitle: 'Low-Deposit Lending Is Returning to the UK Housing Market | Murivest Research',
       metaDescription: 'Lloyds Banking Group’s £5,000 deposit mortgage reflects the cautious return of high loan-to-value lending across the UK residential market.',
-      canonicalUrl: 'https://murivest.co.ke/research/uk-first-time-buyer-deposit-scheme-2026',
+      canonicalUrl: 'https://murivest.com/research/uk-first-time-buyer-deposit-scheme-2026',
       relatedPosts: [
         'uk-bond-market-labour-rhetoric-housing-2026',
         'us-investors-rotating-into-uk-property-2026',
@@ -11068,7 +11068,7 @@ content: `
           "name": "Murivest Realty Group",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://murivest.co.ke/logo.webp"
+            "url": "https://murivest.com/logo.webp"
           }
         },
         "datePublished": "2026-05-18",
@@ -11104,19 +11104,19 @@ content: `
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://murivest.co.ke"
+            "item": "https://murivest.com"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Research",
-            "item": "https://murivest.co.ke/research"
+            "item": "https://murivest.com/research"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Low-Deposit Lending Is Returning to the UK Housing Market",
-            "item": "https://murivest.co.ke/research/uk-first-time-buyer-deposit-scheme-2026"
+            "item": "https://murivest.com/research/uk-first-time-buyer-deposit-scheme-2026"
           }
         ]
       }),
@@ -11301,7 +11301,7 @@ content: `
       "image": "/images/research/uk-first-time-buyers-2026.webp",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://murivest.co.ke/research/uk-first-time-buyer-deposit-scheme-2026"
+        "@id": "https://murivest.com/research/uk-first-time-buyer-deposit-scheme-2026"
       }
     }
     </script>
@@ -11380,7 +11380,7 @@ content: `
   ],
   metaTitle: 'Why American Capital Is Rotating Into UK Real Estate | Murivest Research',
   metaDescription: 'US investors are increasingly allocating capital into UK property markets as taxes, insurance costs, and market fragmentation reshape American real estate strategies.',
-  canonicalUrl: 'https://murivest.co.ke/research/us-investors-rotating-into-uk-property-2026',
+  canonicalUrl: 'https://murivest.com/research/us-investors-rotating-into-uk-property-2026',
   relatedPosts: [
     'global-capital-allocation-dubai-2026',
     'uk-bond-market-labour-rhetoric-housing-2026',
@@ -11416,7 +11416,7 @@ content: `
       "name": "Murivest Realty Group",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://murivest.co.ke/logo.webp"
+        "url": "https://murivest.com/logo.webp"
       }
     },
     "datePublished": "2026-05-18",
@@ -11452,19 +11452,19 @@ content: `
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://murivest.co.ke"
+        "item": "https://murivest.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Research",
-        "item": "https://murivest.co.ke/research"
+        "item": "https://murivest.com/research"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Why American Capital Is Rotating Into UK Real Estate",
-        "item": "https://murivest.co.ke/research/us-investors-rotating-into-uk-property-2026"
+        "item": "https://murivest.com/research/us-investors-rotating-into-uk-property-2026"
       }
     ]
   }),
@@ -11697,7 +11697,7 @@ content: `
   "image": "/images/research/us-investors-uk-property-2026.webp",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://murivest.co.ke/research/us-investors-rotating-into-uk-property-2026"
+    "@id": "https://murivest.com/research/us-investors-rotating-into-uk-property-2026"
   }
 }
 </script>
@@ -11780,7 +11780,7 @@ content: `
   ],
   metaTitle: 'Kenya PSV Strike and Nairobi Commercial Real Estate Risks',
   metaDescription: 'Kenya’s fuel-driven PSV strike exposed operational fragility across Nairobi commercial real estate, logistics corridors, and institutional property markets.',
-  canonicalUrl: 'https://murivest.co.ke/research/kenya-psv-strike-commercial-real-estate-2026',
+  canonicalUrl: 'https://murivest.com/research/kenya-psv-strike-commercial-real-estate-2026',
   relatedPosts: [
     'nairobi-industrial-corridor-capital-allocation-2026',
     'east-africa-logistics-real-estate-outlook-2026',
@@ -11817,7 +11817,7 @@ content: `
       "name": "Murivest Realty Group",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://murivest.co.ke/logo.webp"
+        "url": "https://murivest.com/logo.webp"
       }
     },
     "datePublished": "2026-05-19",
@@ -11871,19 +11871,19 @@ content: `
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://murivest.co.ke"
+        "item": "https://murivest.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Research",
-        "item": "https://murivest.co.ke/research"
+        "item": "https://murivest.com/research"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Kenya’s PSV Fuel Strike and the Commercial Real Estate Fragility Question",
-        "item": "https://murivest.co.ke/research/kenya-psv-strike-commercial-real-estate-2026"
+        "item": "https://murivest.com/research/kenya-psv-strike-commercial-real-estate-2026"
       }
     ]
   }),
@@ -12073,7 +12073,7 @@ content: `
     "image": "/images/research/kenya-psv-strike-commercial-real-estate-2026.webp",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://murivest.co.ke/research/kenya-psv-strike-commercial-real-estate-2026"
+      "@id": "https://murivest.com/research/kenya-psv-strike-commercial-real-estate-2026"
     }
   }
   </script>
@@ -12156,7 +12156,7 @@ content: `
   ],
   metaTitle: 'Kenya Fuel Crisis and Commercial Property Risks 2026',
   metaDescription: 'Kenya’s fuel crisis and transport strike are reshaping commercial real estate, logistics pricing, tenant affordability, and institutional investment strategy.',
-  canonicalUrl: 'https://murivest.co.ke/research/kenya-fuel-crisis-commercial-real-estate-2026',
+  canonicalUrl: 'https://murivest.com/research/kenya-fuel-crisis-commercial-real-estate-2026',
   relatedPosts: [
     'east-africa-logistics-real-estate-outlook-2026',
     'nairobi-industrial-corridor-capital-allocation-2026',
@@ -12194,7 +12194,7 @@ content: `
       "name": "Murivest Realty Group",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://murivest.co.ke/logo.webp"
+        "url": "https://murivest.com/logo.webp"
       }
     },
     "datePublished": "2026-05-19",
@@ -12248,19 +12248,19 @@ content: `
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://murivest.co.ke"
+        "item": "https://murivest.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Research",
-        "item": "https://murivest.co.ke/research"
+        "item": "https://murivest.com/research"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Kenya’s Fuel Crisis and the Commercial Real Estate Repricing Question",
-        "item": "https://murivest.co.ke/research/kenya-fuel-crisis-commercial-real-estate-2026"
+        "item": "https://murivest.com/research/kenya-fuel-crisis-commercial-real-estate-2026"
       }
     ]
   }),
@@ -12460,7 +12460,7 @@ content: `
     "image": "/images/research/kenya-fuel-crisis-commercial-real-estate-2026.webp",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://murivest.co.ke/research/kenya-fuel-crisis-commercial-real-estate-2026"
+      "@id": "https://murivest.com/research/kenya-fuel-crisis-commercial-real-estate-2026"
     }
   }
   </script>
@@ -12543,7 +12543,7 @@ content: `
   ],
   metaTitle: 'Kenya Transport Strike and Commercial Property Risks',
   metaDescription: 'Kenya’s fuel-driven transport strike is reshaping Nairobi commercial property, logistics markets, tenant affordability, and investment strategy.',
-  canonicalUrl: 'https://murivest.co.ke/research/kenya-transport-strike-commercial-property-2026',
+  canonicalUrl: 'https://murivest.com/research/kenya-transport-strike-commercial-property-2026',
   relatedPosts: [
     'east-africa-logistics-real-estate-outlook-2026',
     'nairobi-industrial-corridor-capital-allocation-2026',
@@ -12582,7 +12582,7 @@ content: `
       "name": "Murivest Realty Group",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://murivest.co.ke/logo.webp"
+        "url": "https://murivest.com/logo.webp"
       }
     },
     "datePublished": "2026-05-19",
@@ -12636,19 +12636,19 @@ content: `
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://murivest.co.ke"
+        "item": "https://murivest.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Research",
-        "item": "https://murivest.co.ke/research"
+        "item": "https://murivest.com/research"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Kenya’s Transport Strike, Inflation Shock, and the Commercial Property Repricing Cycle",
-        "item": "https://murivest.co.ke/research/kenya-transport-strike-commercial-property-2026"
+        "item": "https://murivest.com/research/kenya-transport-strike-commercial-property-2026"
       }
     ]
   }),
@@ -12866,7 +12866,7 @@ content: `
     "image": "/images/research/kenya-transport-strike-commercial-property-2026.webp",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://murivest.co.ke/research/kenya-transport-strike-commercial-property-2026"
+      "@id": "https://murivest.com/research/kenya-transport-strike-commercial-property-2026"
     }
   }
   </script>
@@ -12966,7 +12966,7 @@ content: `
 
   metaDescription: 'Why East Africa’s wealthiest families are increasingly shifting toward institutional-grade commercial property, capital preservation, and legacy-focused investment structures.',
 
-  canonicalUrl: 'https://murivest.co.ke/research/legacy-wealth-nairobi-commercial-property-2026',
+  canonicalUrl: 'https://murivest.com/research/legacy-wealth-nairobi-commercial-property-2026',
 
   relatedPosts: [
     'kenya-transport-strike-commercial-property-2026',
@@ -13006,7 +13006,7 @@ content: `
       "name": "Murivest Realty Group",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://murivest.co.ke/logo.webp"
+        "url": "https://murivest.com/logo.webp"
       }
     },
     "datePublished": "2026-05-19",
@@ -13060,19 +13060,19 @@ content: `
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://murivest.co.ke"
+        "item": "https://murivest.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Research",
-        "item": "https://murivest.co.ke/research"
+        "item": "https://murivest.com/research"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Legacy Wealth and Nairobi’s Institutional Property Transition",
-        "item": "https://murivest.co.ke/research/legacy-wealth-nairobi-commercial-property-2026"
+        "item": "https://murivest.com/research/legacy-wealth-nairobi-commercial-property-2026"
       }
     ]
   }),
@@ -13281,7 +13281,7 @@ content: `
     "image": "/images/research/legacy-wealth-nairobi-2026.webp",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://murivest.co.ke/research/legacy-wealth-nairobi-commercial-property-2026"
+      "@id": "https://murivest.com/research/legacy-wealth-nairobi-commercial-property-2026"
     }
   }
   </script>
@@ -13381,7 +13381,7 @@ content: `
 
   metaDescription: 'UK inflation unexpectedly fell to 2.8% in May 2026, easing mortgage market pressure and reshaping property investment expectations across Britain.',
 
-  canonicalUrl: 'https://murivest.co.ke/research/inflation-property-industry-reaction-uk-2026',
+  canonicalUrl: 'https://murivest.com/research/inflation-property-industry-reaction-uk-2026',
 
   relatedPosts: [
     'london-commercial-real-estate-market-report-q2-2026',
@@ -13421,7 +13421,7 @@ content: `
       "name": "Murivest Realty Group",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://murivest.co.ke/logo.webp"
+        "url": "https://murivest.com/logo.webp"
       }
     },
     "datePublished": "2026-05-20",
@@ -13475,19 +13475,19 @@ content: `
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://murivest.co.ke"
+        "item": "https://murivest.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Research",
-        "item": "https://murivest.co.ke/research"
+        "item": "https://murivest.com/research"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "UK Inflation Surprise Reshapes Property and Mortgage Pricing Expectations",
-        "item": "https://murivest.co.ke/research/inflation-property-industry-reaction-uk-2026"
+        "item": "https://murivest.com/research/inflation-property-industry-reaction-uk-2026"
       }
     ]
   }),
@@ -13684,7 +13684,7 @@ content: `
     "image": "/images/research/uk-inflation-property-market-2026.webp",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://murivest.co.ke/research/inflation-property-industry-reaction-uk-2026"
+      "@id": "https://murivest.com/research/inflation-property-industry-reaction-uk-2026"
     }
   }
   </script>
@@ -13761,7 +13761,7 @@ content: `
     ],
     metaTitle: 'Retail Property Acquisition in Kenya 2025 | Murivest',
     metaDescription: 'Nairobi retail yields range 9%–12% but most investors misprice entry. Murivest breaks down the capital deployment framework for institutional-grade retail acquisition.',
-    canonicalUrl: 'https://murivest.co.ke/research/how-to-buy-a-retail-property',
+    canonicalUrl: 'https://murivest.com/research/how-to-buy-a-retail-property',
     relatedPosts: ['net-leases-in-cre', 'commercial-real-estate-terms', 'exit-cap-rates'],
     citations: [
       { source: 'Cytonn Research FY2025', url: 'https://cytonn.com' },
@@ -13779,7 +13779,7 @@ content: `
       "headline": "Retail Property Acquisition in Kenya: A Capital Deployment Framework",
       "description": "Nairobi retail yields span 9%–12% but most investors misprice entry. Institutional framework for retail property acquisition in Kenya.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2025-12-01",
       "dateModified": "2025-12-01"
     }),
@@ -13797,9 +13797,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "Retail Property Acquisition in Kenya", "item": "https://murivest.co.ke/research/how-to-buy-a-retail-property" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "Retail Property Acquisition in Kenya", "item": "https://murivest.com/research/how-to-buy-a-retail-property" }
       ]
     }),
     content: `
@@ -13932,7 +13932,7 @@ content: `
   "datePublished": "2025-12-01",
   "dateModified": "2025-12-01",
   "image": "/research-images/retail-property-kenya-acquisition-2025.webp",
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://murivest.co.ke/research/how-to-buy-a-retail-property" }
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://murivest.com/research/how-to-buy-a-retail-property" }
 }
 </script>
 `
@@ -13968,7 +13968,7 @@ content: `
     ],
     metaTitle: 'Gross vs Net Rental Yield in Kenya: The Real Return Gap',
     metaDescription: 'Kenyan investors report gross yields of 9%–11%. Net yields average 4.8%–6.2%. Murivest breaks down exactly where the return disappears — and how to model it correctly.',
-    canonicalUrl: 'https://murivest.co.ke/research/property-rental-yield-calculation',
+    canonicalUrl: 'https://murivest.com/research/property-rental-yield-calculation',
     relatedPosts: ['cash-on-cash-return', 'discounted-cash-flow', 'internal-rate-of-return-irr'],
     citations: [
       { source: 'Cytonn Research FY2025', url: 'https://cytonn.com' },
@@ -13986,7 +13986,7 @@ content: `
       "headline": "Gross vs. Net Yield in Kenya: Why the Gap Is Wider Than You Think",
       "description": "Kenyan investors report gross yields of 9%–11%. Net yields average 4.8%–6.2%. The difference is the actual return.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2025-11-30",
       "dateModified": "2025-11-30"
     }),
@@ -14003,9 +14003,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "Gross vs Net Yield Kenya", "item": "https://murivest.co.ke/research/property-rental-yield-calculation" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "Gross vs Net Yield Kenya", "item": "https://murivest.com/research/property-rental-yield-calculation" }
       ]
     }),
     content: `
@@ -14138,7 +14138,7 @@ content: `
     ],
     metaTitle: 'CRE Terminology That Matters in Kenya | Institutional Guide',
     metaDescription: 'Most investors negotiate CRE deals with residential vocabulary. Murivest explains the 18 terms that define commercial property transactions in Kenya — and the risk each one conceals.',
-    canonicalUrl: 'https://murivest.co.ke/research/commercial-real-estate-terms',
+    canonicalUrl: 'https://murivest.com/research/commercial-real-estate-terms',
     relatedPosts: ['net-leases-in-cre', 'exit-cap-rates', 'how-to-buy-a-retail-property'],
     citations: [
       { source: 'RICS Global Real Estate Standards 2025', url: 'https://rics.org' },
@@ -14156,7 +14156,7 @@ content: `
       "headline": "CRE Terminology That Changes How You Negotiate in Kenya",
       "description": "18 commercial real estate terms that define property transactions in Kenya — and the risk each one conceals.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2025-11-29",
       "dateModified": "2025-11-29"
     }),
@@ -14173,9 +14173,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "CRE Terminology Kenya", "item": "https://murivest.co.ke/research/commercial-real-estate-terms" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "CRE Terminology Kenya", "item": "https://murivest.com/research/commercial-real-estate-terms" }
       ]
     }),
     content: `
@@ -14313,7 +14313,7 @@ content: `
     ],
     metaTitle: 'Kenya Real Estate Tax: KRA Enforcement & Landlord Compliance 2025',
     metaDescription: 'KRA\'s Ardhisasa integration and MRI regime have transformed rental income enforcement in Kenya. Murivest breaks down Stamp Duty, CGT, and the full landlord tax liability framework.',
-    canonicalUrl: 'https://murivest.co.ke/research/real-estate-taxes-kenya',
+    canonicalUrl: 'https://murivest.com/research/real-estate-taxes-kenya',
     relatedPosts: ['bonus-depreciation', 'warranty-deed', 'real-estate-crowdfunding-kenya'],
     citations: [
       { source: 'Kenya Revenue Authority MRI Guidelines 2025', url: 'https://kra.go.ke' },
@@ -14331,7 +14331,7 @@ content: `
       "headline": "Kenya Real Estate Tax: What KRA Now Knows That Landlords Do Not",
       "description": "KRA's Ardhisasa integration and MRI regime have transformed rental income enforcement in Kenya.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2025-11-25",
       "dateModified": "2025-11-25"
     }),
@@ -14348,9 +14348,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "Kenya Real Estate Tax", "item": "https://murivest.co.ke/research/real-estate-taxes-kenya" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "Kenya Real Estate Tax", "item": "https://murivest.com/research/real-estate-taxes-kenya" }
       ]
     }),
     content: `
@@ -14471,7 +14471,7 @@ content: `
     ],
     metaTitle: 'KUSCCO Collapse: What It Means for Sacco Housing Finance',
     metaDescription: 'The KSh 12B KUSCCO fraud confirmed structural vulnerabilities in Kenya\'s Sacco housing finance model. Murivest analyses the systemic risk and what institutional investors must now require.',
-    canonicalUrl: 'https://murivest.co.ke/research/kuscco-scandal-ksh-12b-fraud-sacco-housing-risk',
+    canonicalUrl: 'https://murivest.com/research/kuscco-scandal-ksh-12b-fraud-sacco-housing-risk',
     relatedPosts: ['kenya-affordable-housing-progress-challenges', 'real-estate-taxes-kenya', 'land-loans'],
     citations: [
       { source: 'SASRA Annual Report 2024', url: 'https://sasra.go.ke' },
@@ -14489,7 +14489,7 @@ content: `
       "headline": "The KUSCCO Collapse: Sacco Housing Finance and What It Exposes",
       "description": "The KSh 12B KUSCCO fraud confirmed structural vulnerabilities in Kenya's Sacco housing finance model.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2025-11-16",
       "dateModified": "2025-11-16"
     }),
@@ -14506,9 +14506,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "KUSCCO Sacco Housing Risk", "item": "https://murivest.co.ke/research/kuscco-scandal-ksh-12b-fraud-sacco-housing-risk" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "KUSCCO Sacco Housing Risk", "item": "https://murivest.com/research/kuscco-scandal-ksh-12b-fraud-sacco-housing-risk" }
       ]
     }),
     content: `
@@ -14620,7 +14620,7 @@ content: `
     ],
     metaTitle: 'Kenya Affordable Housing Programme: The 2025 Delivery Gap',
     metaDescription: 'Kenya targets 200,000 housing units annually. 2024 completions reached ~14,000. Murivest analyses the delivery gap, Housing Levy use of funds, and what it means for private sector investors.',
-    canonicalUrl: 'https://murivest.co.ke/research/kenya-affordable-housing-progress-challenges',
+    canonicalUrl: 'https://murivest.com/research/kenya-affordable-housing-progress-challenges',
     relatedPosts: ['serviced-apartments-nairobi', 'multifamily-financing', 'buy-now-investors-guide'],
     citations: [
       { source: 'KNBS Economic Survey 2025', url: 'https://knbs.or.ke' },
@@ -14638,7 +14638,7 @@ content: `
       "headline": "Kenya's Affordable Housing Programme: The Delivery Gap in Numbers",
       "description": "Kenya targets 200,000 units annually. 2024 completions reached ~14,000. Murivest analyses the delivery gap and what it means for private investors.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2025-10-29",
       "dateModified": "2025-10-29"
     }),
@@ -14655,9 +14655,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "Kenya Affordable Housing Progress", "item": "https://murivest.co.ke/research/kenya-affordable-housing-progress-challenges" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "Kenya Affordable Housing Progress", "item": "https://murivest.com/research/kenya-affordable-housing-progress-challenges" }
       ]
     }),
     content: `
@@ -14769,7 +14769,7 @@ content: `
     ],
     metaTitle: 'Property Management Software for Kenyan Landlords 2025',
     metaDescription: 'Institutional landlords in Nairobi are adopting PropTech for compliance, recovery rates, and portfolio scalability. Murivest reviews what is working and why the generic platforms fall short.',
-    canonicalUrl: 'https://murivest.co.ke/research/property-management-software-kenya',
+    canonicalUrl: 'https://murivest.com/research/property-management-software-kenya',
     relatedPosts: ['serviced-apartments-nairobi', 'hotel-innovation', 'real-estate-taxes-kenya'],
     citations: [
       { source: 'GSMA Mobile Economy Sub-Saharan Africa 2025', url: 'https://gsma.com' },
@@ -14787,7 +14787,7 @@ content: `
       "headline": "Property Management Technology in Kenya: What Institutional Landlords Are Actually Using",
       "description": "PropTech adoption among Nairobi's institutional landlord base: what is working and why generic platforms fall short.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2025-11-28",
       "dateModified": "2025-11-28"
     }),
@@ -14804,9 +14804,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "Property Management Software Kenya", "item": "https://murivest.co.ke/research/property-management-software-kenya" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "Property Management Software Kenya", "item": "https://murivest.com/research/property-management-software-kenya" }
       ]
     }),
     content: `
@@ -14915,7 +14915,7 @@ content: `
     ],
     metaTitle: 'Women in Kenya Real Estate: Capital, Leadership & Structural Change',
     metaDescription: 'Women account for 38% of licensed property agents in Kenya and are increasingly visible at investor level. Murivest analyses the structural drivers of this shift and what it means for the market.',
-    canonicalUrl: 'https://murivest.co.ke/research/women-in-real-estate-breaking-barriers-kenya-property-industry',
+    canonicalUrl: 'https://murivest.com/research/women-in-real-estate-breaking-barriers-kenya-property-industry',
     relatedPosts: ['how-to-buy-a-retail-property', 'buy-now-investors-guide', 'kenya-affordable-housing-progress-challenges'],
     citations: [
       { source: 'EARB Kenya Agent Statistics 2025', url: 'https://earb.go.ke' },
@@ -14933,7 +14933,7 @@ content: `
       "headline": "Women in Kenya's Property Industry: Capital, Leadership, and the Structural Change Underway",
       "description": "Women account for 38% of licensed property agents in Kenya. Murivest analyses the structural drivers of this shift.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2025-10-28",
       "dateModified": "2025-10-28"
     }),
@@ -14950,9 +14950,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "Women in Kenya Real Estate", "item": "https://murivest.co.ke/research/women-in-real-estate-breaking-barriers-kenya-property-industry" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "Women in Kenya Real Estate", "item": "https://murivest.com/research/women-in-real-estate-breaking-barriers-kenya-property-industry" }
       ]
     }),
     content: `
@@ -15060,7 +15060,7 @@ content: `
     ],
     metaTitle: 'Nairobi Serviced Apartments: Yield Premium & Operational Reality 2025',
     metaDescription: 'Nairobi serviced apartments outperform conventional leases by 180–240bps on net yield. Murivest analyses the occupancy drivers, operational demands, and regulatory exposure investors must model.',
-    canonicalUrl: 'https://murivest.co.ke/research/serviced-apartments-nairobi',
+    canonicalUrl: 'https://murivest.com/research/serviced-apartments-nairobi',
     relatedPosts: ['how-to-buy-a-duplex', 'property-rental-yield-calculation', 'hotel-innovation'],
     citations: [
       { source: 'AirDNA Nairobi Market Report 2025', url: 'https://airdna.co' },
@@ -15078,7 +15078,7 @@ content: `
       "headline": "Nairobi Serviced Apartments: The Yield Premium and the Operational Reality",
       "description": "Nairobi serviced apartments outperform conventional leases by 180–240bps on net yield. The outperformance is real — so is the operational intensity.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2025-10-29",
       "dateModified": "2025-10-29"
     }),
@@ -15095,9 +15095,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "Serviced Apartments Nairobi", "item": "https://murivest.co.ke/research/serviced-apartments-nairobi" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "Serviced Apartments Nairobi", "item": "https://murivest.com/research/serviced-apartments-nairobi" }
       ]
     }),
     content: `
@@ -15201,7 +15201,7 @@ content: `
     ],
     metaTitle: 'Land Loans in Kenya: What Banks Will Finance and What They Will Not',
     metaDescription: 'Most Kenyan banks restrict bare land financing. Murivest breaks down which lenders fund land, under what conditions, and how Saccos compare as an alternative financing source.',
-    canonicalUrl: 'https://murivest.co.ke/research/land-loans',
+    canonicalUrl: 'https://murivest.com/research/land-loans',
     relatedPosts: ['pros-cons-buying-land', 'what-is-improved-land', 'multifamily-financing'],
     citations: [
       { source: 'Central Bank of Kenya Credit Survey 2025', url: 'https://centralbank.go.ke' },
@@ -15219,7 +15219,7 @@ content: `
       "headline": "Land Loan Financing in Kenya: What Banks Will and Will Not Fund",
       "description": "Most Kenyan banks restrict bare land financing. Murivest breaks down which lenders fund land, under what conditions, and how Saccos compare.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2025-11-28",
       "dateModified": "2025-11-28"
     }),
@@ -15236,9 +15236,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "Land Loans Kenya", "item": "https://murivest.co.ke/research/land-loans" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "Land Loans Kenya", "item": "https://murivest.com/research/land-loans" }
       ]
     }),
     content: `
@@ -15356,7 +15356,7 @@ content: `
     ],
     metaTitle: 'Real Estate Crowdfunding Kenya: Fractional Ownership & Regulation 2025',
     metaDescription: 'Kenya\'s real estate crowdfunding market is growing in a regulatory grey zone. Murivest breaks down which platforms are CMA-compliant, what fractional ownership actually means legally, and what investors must verify.',
-    canonicalUrl: 'https://murivest.co.ke/research/real-estate-crowdfunding-kenya',
+    canonicalUrl: 'https://murivest.com/research/real-estate-crowdfunding-kenya',
     relatedPosts: ['real-estate-taxes-kenya', 'kuscco-scandal-ksh-12b-fraud-sacco-housing-risk', 'property-rental-yield-calculation'],
     citations: [
       { source: 'Capital Markets Authority Kenya Regulations 2024', url: 'https://cma.or.ke' },
@@ -15374,7 +15374,7 @@ content: `
       "headline": "Real Estate Crowdfunding in Kenya: Fractional Ownership and the Regulatory Question",
       "description": "Kenya's real estate crowdfunding market grows in a regulatory grey zone. Murivest analyses what platforms are CMA-compliant and what investors must verify.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2025-11-22",
       "dateModified": "2025-11-22"
     }),
@@ -15391,9 +15391,9 @@ content: `
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" },
-        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" },
-        { "@type": "ListItem", "position": 3, "name": "Real Estate Crowdfunding Kenya", "item": "https://murivest.co.ke/research/real-estate-crowdfunding-kenya" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" },
+        { "@type": "ListItem", "position": 3, "name": "Real Estate Crowdfunding Kenya", "item": "https://murivest.com/research/real-estate-crowdfunding-kenya" }
       ]
     }),
     content: `
@@ -15505,7 +15505,7 @@ content: `
     secondaryKeywords: ['warranty deed Kenya', 'Kenya land title certificate', 'property title verification Kenya', 'title insurance Kenya', 'land registration Act Kenya'],
     metaTitle: 'Title Security in Kenya: What Your Certificate of Title Guarantees',
     metaDescription: 'Kenya\'s Land Registration Act provides title certainty with specific legal gaps. Murivest breaks down what the Certificate of Title covers, where it doesn\'t protect, and what due diligence must fill the gap.',
-    canonicalUrl: 'https://murivest.co.ke/research/warranty-deed',
+    canonicalUrl: 'https://murivest.com/research/warranty-deed',
     relatedPosts: ['real-estate-taxes-kenya', 'pros-cons-buying-land', 'international-bidders-auctions'],
     citations: [
       { source: 'Land Registration Act Kenya 2012', url: 'https://kenyalaw.org' },
@@ -15513,9 +15513,9 @@ content: `
       { source: 'Law Society of Kenya Property Practice Guide', url: 'https://lsk.or.ke' }
     ],
     eeat: { reviewedBy: 'Murivest Research Team', expertise: ['Kenya Property Law', 'Land Registration', 'Title Verification', 'Property Due Diligence'], lastReviewed: '2025-11-28' },
-    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Title Security in Kenya: What a Warranty Deed Actually Guarantees", "description": "Kenya's Land Registration Act provides title certainty with specific legal gaps investors must understand.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } }, "datePublished": "2025-11-28", "dateModified": "2025-11-28" }),
+    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Title Security in Kenya: What a Warranty Deed Actually Guarantees", "description": "Kenya's Land Registration Act provides title certainty with specific legal gaps investors must understand.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-28", "dateModified": "2025-11-28" }),
     faqSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "What does a Certificate of Title guarantee in Kenya?", "acceptedAnswer": { "@type": "Answer", "text": "A registered Certificate of Title under the Land Registration Act 2012 is conclusive evidence of ownership and protects against adverse claims by third parties not disclosed at registration — with exceptions for fraud, misrepresentation, and overriding interests such as adverse possession that have crystallised before registration." } }, { "@type": "Question", "name": "What is an overriding interest in Kenya land law?", "acceptedAnswer": { "@type": "Answer", "text": "Overriding interests are rights that bind a title holder without being registered — including long-term physical occupation rights, wayleaves, and certain easements. They represent the most significant residual risk in Kenyan title acquisition and require physical site inspection and community consultation to identify, not just registry search." } }] }),
-    breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" }, { "@type": "ListItem", "position": 3, "name": "Title Security Kenya", "item": "https://murivest.co.ke/research/warranty-deed" }] }),
+    breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" }, { "@type": "ListItem", "position": 3, "name": "Title Security Kenya", "item": "https://murivest.com/research/warranty-deed" }] }),
     content: `
 <article>
   <h1>Title Security in Kenya: What a Warranty Deed Actually Guarantees</h1>
@@ -15572,13 +15572,13 @@ content: `
     secondaryKeywords: ['Nairobi hotel RevPAR 2025', 'hospitality real estate Kenya', 'hotel technology investment Africa', 'Kenya hotel market performance', 'hotel acquisition Nairobi'],
     metaTitle: 'Hotel Investment in Kenya: Technology, RevPAR & Returns 2025',
     metaDescription: 'Nairobi hotels using revenue management tech outperform peers by 28%–34% on RevPAR. Murivest analyses the technology investment case and what it means for hospitality property valuation.',
-    canonicalUrl: 'https://murivest.co.ke/research/hotel-innovation',
+    canonicalUrl: 'https://murivest.com/research/hotel-innovation',
     relatedPosts: ['how-to-buy-a-hotel', 'serviced-apartments-nairobi', 'exit-cap-rates'],
     citations: [{ source: 'STR Kenya Hotel Performance Report Q3 2025', url: 'https://str.com' }, { source: 'Kenya Tourism Board Annual Report 2025', url: 'https://tourism.go.ke' }],
     eeat: { reviewedBy: 'Murivest Research Team', expertise: ['Hospitality Real Estate', 'Hotel Asset Management', 'Revenue Management Kenya', 'Tourism Property Investment'], lastReviewed: '2025-11-27' },
-    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Hospitality Real Estate in Kenya: Technology, RevPAR, and the New Investment Calculus", "description": "Nairobi hotels with revenue management tech outperform peers by 28%–34% on RevPAR.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } }, "datePublished": "2025-11-27", "dateModified": "2025-11-27" }),
+    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Hospitality Real Estate in Kenya: Technology, RevPAR, and the New Investment Calculus", "description": "Nairobi hotels with revenue management tech outperform peers by 28%–34% on RevPAR.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-27", "dateModified": "2025-11-27" }),
     faqSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "What is RevPAR and why does it matter for hotel investment in Kenya?", "acceptedAnswer": { "@type": "Answer", "text": "RevPAR — Revenue Per Available Room — equals occupancy rate multiplied by average daily rate. It is the primary operating performance metric for hotel assets because it captures both pricing power and utilisation simultaneously. STR data for Nairobi in 2025 shows prime hotel RevPAR of KES 9,200–12,400 per room per night for upper-upscale properties, with significant variation driven by revenue management sophistication." } }, { "@type": "Question", "name": "What technology investments produce the highest ROI for Kenyan hotels?", "acceptedAnswer": { "@type": "Answer", "text": "Revenue management systems (RMS) that dynamically price rooms against competitive set, demand forecasting, and channel distribution data have the highest documented ROI — typically recovering implementation cost within 6–12 months through RevPAR improvement. Channel manager integration reducing OTA commission leakage to below 18% is the second-highest priority technology investment for Nairobi mid-scale properties." } }] }),
-    breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" }, { "@type": "ListItem", "position": 3, "name": "Hotel Innovation Kenya", "item": "https://murivest.co.ke/research/hotel-innovation" }] }),
+    breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" }, { "@type": "ListItem", "position": 3, "name": "Hotel Innovation Kenya", "item": "https://murivest.com/research/hotel-innovation" }] }),
     content: `
 <article>
   <h1>Hospitality Real Estate in Kenya: Technology, RevPAR, and the New Investment Calculus</h1>
@@ -15634,13 +15634,13 @@ content: `
     secondaryKeywords: ['cash on cash return real estate Kenya', 'leverage property investment Nairobi', 'property return calculation Kenya', 'positive negative leverage Kenya', 'debt yield Kenya commercial'],
     metaTitle: 'Cash-on-Cash Return in Kenya: How Leverage Changes Property Returns',
     metaDescription: 'The same Nairobi property can produce radically different cash-on-cash returns depending on the capital stack. Murivest breaks down the calculation and when leverage works for and against investors.',
-    canonicalUrl: 'https://murivest.co.ke/research/cash-on-cash-return',
+    canonicalUrl: 'https://murivest.com/research/cash-on-cash-return',
     relatedPosts: ['property-rental-yield-calculation', 'discounted-cash-flow', 'multifamily-financing'],
     citations: [{ source: 'CBK Monetary Policy Report 2025', url: 'https://centralbank.go.ke' }, { source: 'Cytonn Research FY2025', url: 'https://cytonn.com' }],
     eeat: { reviewedBy: 'Murivest Research Team', expertise: ['Property Investment Mathematics', 'Leverage Analysis', 'Kenya Property Finance', 'Commercial Real Estate Returns'], lastReviewed: '2025-11-27' },
-    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Cash-on-Cash Return in Kenya: Why Leverage Changes the Yield Conversation", "description": "Cash-on-cash return depends entirely on the capital stack. Murivest breaks down the calculation for Kenya property investors.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } }, "datePublished": "2025-11-27", "dateModified": "2025-11-27" }),
+    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Cash-on-Cash Return in Kenya: Why Leverage Changes the Yield Conversation", "description": "Cash-on-cash return depends entirely on the capital stack. Murivest breaks down the calculation for Kenya property investors.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-27", "dateModified": "2025-11-27" }),
     faqSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "How do I calculate cash-on-cash return for a Kenyan property?", "acceptedAnswer": { "@type": "Answer", "text": "Cash-on-cash return equals annual pre-tax cash flow (NOI minus annual debt service) divided by total equity invested, expressed as a percentage. For a KES 100M property with KES 30M equity and KES 70M debt at 15% interest (KES 10.5M annual service) generating KES 9.5M NOI: pre-tax cash flow is negative KES 1M — a -3.3% cash-on-cash return despite a 9.5% cap rate asset." } }, { "@type": "Question", "name": "When does leverage improve property returns in Kenya?", "acceptedAnswer": { "@type": "Answer", "text": "Leverage improves cash-on-cash return when the property cap rate exceeds the after-tax cost of debt — a condition called positive leverage. At Kenya's current KES interest rates of 14%–16%, positive leverage requires property cap rates above approximately 16%–18% on a gross debt cost basis, which is rare in institutional-grade Nairobi assets. Dollar-denominated debt at 6%–8% creates positive leverage against most Nairobi commercial cap rates." } }] }),
-    breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" }, { "@type": "ListItem", "position": 3, "name": "Cash on Cash Return Kenya", "item": "https://murivest.co.ke/research/cash-on-cash-return" }] }),
+    breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" }, { "@type": "ListItem", "position": 3, "name": "Cash on Cash Return Kenya", "item": "https://murivest.com/research/cash-on-cash-return" }] }),
     content: `
 <article>
   <h1>Cash-on-Cash Return in Kenya: Why Leverage Changes the Yield Conversation</h1>
@@ -15711,13 +15711,13 @@ content: `
     secondaryKeywords: ['buying land Kenya 2025', 'Kenya land appreciation rates', 'land banking Kenya', 'land vs developed property Kenya', 'encroachment risk Kenya land'],
     metaTitle: 'Land Investment in Kenya: Capital Appreciation & Structural Limits',
     metaDescription: 'Kenya land has built generational wealth. But encroachment risk, zero income, and liquidity constraints have also destroyed returns. Murivest analyses the land investment case with institutional rigour.',
-    canonicalUrl: 'https://murivest.co.ke/research/pros-cons-buying-land',
+    canonicalUrl: 'https://murivest.com/research/pros-cons-buying-land',
     relatedPosts: ['land-loans', 'what-is-improved-land', 'exit-cap-rates'],
     citations: [{ source: 'Hass Consult Land Index Q3 2025', url: 'https://hassconsult.co.ke' }, { source: 'National Land Commission Kenya Annual Report 2024', url: 'https://nlc.go.ke' }],
     eeat: { reviewedBy: 'Murivest Research Team', expertise: ['Kenya Land Market', 'Land Investment Analysis', 'Capital Appreciation', 'Land Risk Management'], lastReviewed: '2025-11-27' },
-    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Land Investment in Kenya: The Capital Appreciation Case and Its Structural Limits", "description": "Kenya land investment: the real capital appreciation track record and the structural risks that destroy returns.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } }, "datePublished": "2025-11-27", "dateModified": "2025-11-27" }),
+    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Land Investment in Kenya: The Capital Appreciation Case and Its Structural Limits", "description": "Kenya land investment: the real capital appreciation track record and the structural risks that destroy returns.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-27", "dateModified": "2025-11-27" }),
     faqSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "What has been the historical capital appreciation rate for Kenyan land?", "acceptedAnswer": { "@type": "Answer", "text": "Hass Consult's Satellite Towns Land Index shows average annual land appreciation of 8%–14% across Nairobi's satellite corridor — Ruaka, Ruiru, Thika Road, Athi River — over the 2010–2025 period. Prime Nairobi suburban land (Karen, Runda, Muthaiga) has appreciated more slowly in percentage terms but on larger absolute values." } }, { "@type": "Question", "name": "What is encroachment risk and how do I manage it for Kenyan land?", "acceptedAnswer": { "@type": "Answer", "text": "Encroachment occurs when a third party occupies or fences onto a registered plot without the owner's consent. It is most common on absentee-owned rural or peri-urban land. Management requires: physical boundary beaconing at acquisition, erection of perimeter boundary markers or fence, engagement of a local caretaker, and periodic site inspection — minimum annually." } }] }),
-    breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" }, { "@type": "ListItem", "position": 3, "name": "Land Investment Kenya", "item": "https://murivest.co.ke/research/pros-cons-buying-land" }] }),
+    breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" }, { "@type": "ListItem", "position": 3, "name": "Land Investment Kenya", "item": "https://murivest.com/research/pros-cons-buying-land" }] }),
     content: `
 <article>
   <h1>Land Investment in Kenya: The Capital Appreciation Case and Its Structural Limits</h1>
@@ -15773,13 +15773,13 @@ content: `
     secondaryKeywords: ['NNN triple net lease Kenya', 'commercial lease types Kenya', 'net lease passive income', 'single net lease double net Kenya', 'commercial property lease structure Nairobi'],
     metaTitle: 'Net Leases in Kenya CRE: Types, Expense Allocation & NOI Impact',
     metaDescription: 'Most Kenya commercial leases labelled "net" are modified gross in practice. Murivest breaks down single, double, and triple net structures and their NOI implications for investors.',
-    canonicalUrl: 'https://murivest.co.ke/research/net-leases-in-cre',
+    canonicalUrl: 'https://murivest.com/research/net-leases-in-cre',
     relatedPosts: ['how-to-buy-a-retail-property', 'single-net-lease', 'commercial-real-estate-terms'],
     citations: [{ source: 'RICS Commercial Lease Practice Notes 2025', url: 'https://rics.org' }, { source: 'Kenya Law Reports', url: 'https://kenyalaw.org' }],
     eeat: { reviewedBy: 'Murivest Research Team', expertise: ['Commercial Lease Structuring', 'Kenya Property Law', 'NOI Analysis', 'Lease Type Comparison'], lastReviewed: '2025-11-27' },
-    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Net Leases in Commercial Real Estate: Expense Allocation and Passive Income Architecture", "description": "Net leases are a spectrum. Most Kenya commercial leases labelled 'net' are modified gross in practice.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } }, "datePublished": "2025-11-27", "dateModified": "2025-11-27" }),
+    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Net Leases in Commercial Real Estate: Expense Allocation and Passive Income Architecture", "description": "Net leases are a spectrum. Most Kenya commercial leases labelled 'net' are modified gross in practice.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-27", "dateModified": "2025-11-27" }),
     faqSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "What is a triple net (NNN) lease in Kenya commercial property?", "acceptedAnswer": { "@type": "Answer", "text": "A triple net lease transfers three expense categories to the tenant: property taxes (county rates), building insurance, and maintenance costs. The landlord receives a truly passive income stream with minimal operating cost exposure. NNN leases are relatively rare in Nairobi's market, more common in large-format retail with anchor tenants who have operational incentive to maintain the premises." } }, { "@type": "Question", "name": "What is the difference between gross and net leases for Kenya commercial landlords?", "acceptedAnswer": { "@type": "Answer", "text": "Under a gross lease, the landlord pays all operating costs from the fixed rent received. Under a net lease, some or all operating costs transfer to the tenant. The NOI impact is significant: a gross rent of KES 120 per sqft with KES 30 per sqft operating costs produces KES 90 per sqft NOI. A net rent of KES 95 per sqft with tenant-paid operating costs produces the same KES 95 NOI — but landlord cash flow is more predictable under the net structure." } }] }),
-    breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" }, { "@type": "ListItem", "position": 3, "name": "Net Leases Kenya CRE", "item": "https://murivest.co.ke/research/net-leases-in-cre" }] }),
+    breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" }, { "@type": "ListItem", "position": 3, "name": "Net Leases Kenya CRE", "item": "https://murivest.com/research/net-leases-in-cre" }] }),
     content: `
 <article>
   <h1>Net Leases in Commercial Real Estate: Expense Allocation and Passive Income Architecture</h1>
@@ -15836,13 +15836,13 @@ content: `
     secondaryKeywords: ['hotel acquisition Kenya process', 'Kenya hotel investment guide', 'hospitality license Kenya', 'hotel feasibility study Kenya', 'hotel real estate Nairobi'],
     metaTitle: 'Hotel Acquisition in Kenya: Investor Roadmap & Operating Risk',
     metaDescription: 'Buying a hotel in Kenya is a business acquisition, not a property transaction. Murivest breaks down the feasibility, licensing, operating company due diligence, and financing structure required.',
-    canonicalUrl: 'https://murivest.co.ke/research/how-to-buy-a-hotel',
+    canonicalUrl: 'https://murivest.com/research/how-to-buy-a-hotel',
     relatedPosts: ['hotel-innovation', 'exit-cap-rates', 'how-to-buy-a-retail-property'],
     citations: [{ source: 'Kenya Tourism Board Investment Guide 2025', url: 'https://tourism.go.ke' }, { source: 'Tourism Act Kenya 2011', url: 'https://kenyalaw.org' }, { source: 'STR Kenya Hotel Performance Report 2025', url: 'https://str.com' }],
     eeat: { reviewedBy: 'Murivest Research Team', expertise: ['Hospitality Real Estate', 'Hotel Acquisition', 'Kenya Tourism Licensing', 'Hotel Feasibility Analysis'], lastReviewed: '2025-11-26' },
-    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Hotel Acquisition in Kenya: Feasibility, Licensing, and the Operating Company Question", "description": "Buying a hotel in Kenya is a business acquisition, not a property transaction. Murivest breaks down the complete investor roadmap.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } }, "datePublished": "2025-11-26", "dateModified": "2025-11-26" }),
+    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Hotel Acquisition in Kenya: Feasibility, Licensing, and the Operating Company Question", "description": "Buying a hotel in Kenya is a business acquisition, not a property transaction. Murivest breaks down the complete investor roadmap.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-26", "dateModified": "2025-11-26" }),
     faqSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "What licences does a hotel operator need in Kenya?", "acceptedAnswer": { "@type": "Answer", "text": "Kenya hotels require: Tourism Regulatory Authority classification and operating licence under the Tourism Act 2011; Business Permit from the county government; Kenya Revenue Authority PIN registration; Public Health licence from the county public health officer; Fire Safety certificate from the county fire department; and liquor licence from the county alcoholic drinks control board for establishments serving alcohol. Multi-licence compliance is ongoing and annual." } }, { "@type": "Question", "name": "Should I acquire a hotel as property only or include the operating business?", "acceptedAnswer": { "@type": "Answer", "text": "For investors without hospitality operations capability, property-only acquisition with engagement of a branded management company — Six Senses, Radisson, Best Western, or a Kenya-specific operator — is the recommended structure. The management agreement typically provides revenue guarantee or minimum occupancy protection in exchange for management fee of 4%–8% of gross revenue plus incentive fee." } }, { "@type": "Question", "name": "What RevPAR and occupancy assumptions should I use for a Nairobi hotel feasibility study?", "acceptedAnswer": { "@type": "Answer", "text": "STR Kenya 2025 benchmark data provides the most reliable basis: upper-upscale Nairobi hotels average 68%–74% occupancy and KES 9,500–12,000 RevPAR. Mid-scale hotels average 62%–70% occupancy and KES 5,500–8,000 RevPAR. Use conservative assumptions at 90% of STR benchmarks for feasibility modelling, with sensitivity analysis at 80% and 70% of benchmark RevPAR." } }] }),
-    breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" }, { "@type": "ListItem", "position": 3, "name": "Hotel Acquisition Kenya", "item": "https://murivest.co.ke/research/how-to-buy-a-hotel" }] }),
+    breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" }, { "@type": "ListItem", "position": 3, "name": "Hotel Acquisition Kenya", "item": "https://murivest.com/research/how-to-buy-a-hotel" }] }),
     content: `
 <article>
   <h1>Hotel Acquisition in Kenya: Feasibility, Licensing, and the Operating Company Question</h1>
@@ -15901,13 +15901,13 @@ content: `
     secondaryKeywords: ['DCF Kenya real estate', 'property DCF analysis Nairobi', 'discount rate Kenya property', 'terminal cap rate Kenya', 'NPV property investment Kenya'],
     metaTitle: 'Discounted Cash Flow (DCF) Property Valuation in Kenya 2025',
     metaDescription: 'DCF is the institutional standard for Kenyan property valuation. Murivest breaks down discount rate selection, terminal value, and how to apply DCF to Nairobi commercial and residential assets.',
-    canonicalUrl: 'https://murivest.co.ke/research/discounted-cash-flow',
+    canonicalUrl: 'https://murivest.com/research/discounted-cash-flow',
     relatedPosts: ['internal-rate-of-return-irr', 'exit-cap-rates', 'cash-on-cash-return'],
     citations: [{ source: 'RICS Valuation Standards (Red Book) 2024', url: 'https://rics.org' }, { source: 'Cytonn Research FY2025', url: 'https://cytonn.com' }],
     eeat: { reviewedBy: 'Murivest Research Team', expertise: ['DCF Valuation', 'Kenya Property Finance', 'Investment Analysis', 'Commercial Real Estate Modelling'], lastReviewed: '2025-11-26' },
-    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Discounted Cash Flow in Kenya Property: Valuing Future Income at Today's Risk", "description": "DCF valuation for Kenya property: discount rate selection, terminal value, and application to Nairobi assets.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } }, "datePublished": "2025-11-26", "dateModified": "2025-11-26" }),
+    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Discounted Cash Flow in Kenya Property: Valuing Future Income at Today's Risk", "description": "DCF valuation for Kenya property: discount rate selection, terminal value, and application to Nairobi assets.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-26", "dateModified": "2025-11-26" }),
     faqSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "What discount rate should I use for a DCF valuation of Kenyan commercial property?", "acceptedAnswer": { "@type": "Answer", "text": "Kenya commercial property discount rates typically range 13%–18% in KES terms, reflecting the risk-free rate (Kenya government bond yield at 13%–14.5% in 2025) plus a property risk premium of 150–400 basis points depending on asset quality, location, and income certainty. USD-denominated investors apply lower discount rates (8%–12%) reflecting their lower risk-free rate benchmark." } }, { "@type": "Question", "name": "What is a terminal cap rate in Kenya property DCF?", "acceptedAnswer": { "@type": "Answer", "text": "The terminal cap rate is the cap rate applied to Year 11 (or terminal year) NOI to determine the projected exit value. For Grade A Nairobi commercial assets, terminal cap rates of 10%–11% reflect modest yield decompression assumptions relative to entry. Using a terminal cap rate below entry cap rate implies aggressive appreciation assumptions that must be explicitly justified." } }] }),
-    breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" }, { "@type": "ListItem", "position": 3, "name": "DCF Property Valuation Kenya", "item": "https://murivest.co.ke/research/discounted-cash-flow" }] }),
+    breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" }, { "@type": "ListItem", "position": 3, "name": "DCF Property Valuation Kenya", "item": "https://murivest.com/research/discounted-cash-flow" }] }),
     content: `
 <article>
   <h1>Discounted Cash Flow in Kenya Property: Valuing Future Income at Today's Risk</h1>
@@ -15962,13 +15962,13 @@ content: `
     secondaryKeywords: ['apartment block financing Kenya', 'Kenya residential development loan', 'construction finance Kenya 2025', 'private equity real estate Kenya', 'Sacco development loan Kenya'],
     metaTitle: 'Multifamily Development Financing in Kenya: Banks, Saccos & PE 2025',
     metaDescription: 'Kenya\'s multifamily development financing landscape spans bank loans, Sacco capital, and private equity — each with different requirements and cost. Murivest maps the options for mid-market developers.',
-    canonicalUrl: 'https://murivest.co.ke/research/multifamily-financing',
+    canonicalUrl: 'https://murivest.com/research/multifamily-financing',
     relatedPosts: ['land-loans', 'cash-on-cash-return', 'kenya-affordable-housing-progress-challenges'],
     citations: [{ source: 'CBK Credit Survey 2025', url: 'https://centralbank.go.ke' }, { source: 'Kenya Private Equity & Venture Capital Association 2025', url: 'https://kepvca.or.ke' }],
     eeat: { reviewedBy: 'Murivest Research Team', expertise: ['Kenya Development Finance', 'Residential Development', 'Construction Lending', 'Private Equity Real Estate'], lastReviewed: '2025-11-25' },
-    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Multifamily Financing in Kenya: Banks, Saccos, and the Private Equity Gap", "description": "Kenya's multifamily development financing landscape mapped for mid-market developers.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } }, "datePublished": "2025-11-25", "dateModified": "2025-11-25" }),
+    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Multifamily Financing in Kenya: Banks, Saccos, and the Private Equity Gap", "description": "Kenya's multifamily development financing landscape mapped for mid-market developers.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-25", "dateModified": "2025-11-25" }),
     faqSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "What construction loan rates do Kenyan banks charge for apartment development?", "acceptedAnswer": { "@type": "Answer", "text": "Commercial bank construction finance in Kenya typically prices at 15%–17% per annum in KES for mid-scale residential development, with drawdown against stage certifications from a quantity surveyor. LTV is typically 60%–70% of projected completed value, with developer equity contribution of 30%–40% required before first drawdown." } }, { "@type": "Question", "name": "Can a Sacco provide development finance for an apartment block in Kenya?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, though at limited scale. SASRA-registered Saccos may advance member development loans of up to 5x–10x accumulated savings for registered developments. For a small apartment block development (12–24 units), Sacco development loans combined with pre-sale revenue can provide adequate project capitalisation without bank exposure, at rates of 12%–14% per annum." } }] }),
-    breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" }, { "@type": "ListItem", "position": 3, "name": "Multifamily Financing Kenya", "item": "https://murivest.co.ke/research/multifamily-financing" }] }),
+    breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" }, { "@type": "ListItem", "position": 3, "name": "Multifamily Financing Kenya", "item": "https://murivest.com/research/multifamily-financing" }] }),
     content: `
 <article>
   <h1>Multifamily Financing in Kenya: Banks, Saccos, and the Private Equity Gap</h1>
@@ -16037,13 +16037,13 @@ content: `
     secondaryKeywords: ['investment allowance Kenya commercial property', 'KRA depreciation rates Kenya', 'wear and tear allowance Kenya', 'industrial building allowance Kenya', 'capital deduction Kenya property'],
     metaTitle: 'Commercial Property Depreciation & Tax Allowances in Kenya 2025',
     metaDescription: 'Kenya\'s tax framework provides investment allowances for commercial buildings that reduce taxable income materially. Murivest breaks down the applicable deductions most commercial property owners miss.',
-    canonicalUrl: 'https://murivest.co.ke/research/bonus-depreciation',
+    canonicalUrl: 'https://murivest.com/research/bonus-depreciation',
     relatedPosts: ['real-estate-taxes-kenya', 'net-leases-in-cre', 'cash-on-cash-return'],
     citations: [{ source: 'Income Tax Act Kenya Cap 470', url: 'https://kenyalaw.org' }, { source: 'KRA Tax Rulings 2024', url: 'https://kra.go.ke' }],
     eeat: { reviewedBy: 'Murivest Research Team', expertise: ['Kenya Tax Law', 'Commercial Property Taxation', 'KRA Compliance', 'Investment Allowances'], lastReviewed: '2025-11-25' },
-    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Investment Allowance and Accelerated Depreciation in Kenya: What Commercial Property Owners Need to Know", "description": "Kenya's tax framework provides investment allowances for commercial buildings that most owners miss.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.co.ke/logo.webp" } }, "datePublished": "2025-11-25", "dateModified": "2025-11-25" }),
+    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Investment Allowance and Accelerated Depreciation in Kenya: What Commercial Property Owners Need to Know", "description": "Kenya's tax framework provides investment allowances for commercial buildings that most owners miss.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-25", "dateModified": "2025-11-25" }),
     faqSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "What is the Industrial Building Allowance in Kenya and who qualifies?", "acceptedAnswer": { "@type": "Answer", "text": "The Industrial Building Allowance (IBA) under the Income Tax Act provides a 10% per annum deduction on the cost of constructing or purchasing a qualifying industrial or commercial building. Hotels, factories, and warehouses qualify. Residential property does not. The allowance is calculated on the original construction cost, not market value." } }, { "@type": "Question", "name": "What wear-and-tear allowances can commercial property owners in Kenya claim?", "acceptedAnswer": { "@type": "Answer", "text": "Plant and machinery installed in commercial buildings — generators, HVAC systems, elevators, electrical installations — qualify for wear-and-tear deductions at rates ranging from 10%–37.5% per annum depending on asset class under the Third Schedule of the Income Tax Act. These deductions are separate from and in addition to the Industrial Building Allowance on the structure." } }] }),
-    breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.co.ke" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.co.ke/research" }, { "@type": "ListItem", "position": 3, "name": "Commercial Property Depreciation Kenya", "item": "https://murivest.co.ke/research/bonus-depreciation" }] }),
+    breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" }, { "@type": "ListItem", "position": 3, "name": "Commercial Property Depreciation Kenya", "item": "https://murivest.com/research/bonus-depreciation" }] }),
     content: `
 <article>
   <h1>Investment Allowance and Accelerated Depreciation in Kenya: What Commercial Property Owners Need to Know</h1>

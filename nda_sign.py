@@ -17,7 +17,7 @@ Environment variables required (.env):
   SMTP_PORT=587
   SMTP_USER=your@gmail.com
   SMTP_PASS=your_app_password          # Gmail App Password (not account password)
-  ADMIN_EMAIL=admin@ murivest.co.ke       # where admin copy is sent
+  ADMIN_EMAIL=admin@ murivest.com       # where admin copy is sent
   COMPANY_NAME=Murivest Realty Ltd
 """
 

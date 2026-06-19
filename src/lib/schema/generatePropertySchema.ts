@@ -1,7 +1,7 @@
 // ─── lib/schema/generatePropertySchema.ts ────────────────────────────────────
 import type { Property } from '@/types/property';
 
-const BASE_URL = 'https://murivest.co.ke';
+const BASE_URL = 'https://murivest.com';
 
 function availabilityUrl(status?: Property['status']): string {
   if (!status || status === 'available') return 'https://schema.org/InStock';

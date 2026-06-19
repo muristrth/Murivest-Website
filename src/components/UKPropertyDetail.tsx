@@ -74,7 +74,7 @@ Located moments from Kensington Gardens and High Street Kensington, this residen
       name: 'James Harrington',
       title: 'Senior Property Consultant',
       phone: '+44 20 7123 4567',
-      email: 'james@ murivest.co.ke'
+      email: 'james@ murivest.com'
     }
   };
 

@@ -107,7 +107,7 @@ export async function POST(req: NextRequest) {
                     <tr>
                       <td style="padding:24px 40px;background:#1B4332;text-align:center;">
                         <p style="margin:0;font-size:11px;color:#FAF9F6/60;font-family:system-ui,sans-serif;letter-spacing:0.05em;">
-                          Murivest Realty Group · <a href="https://murivest.co.ke" style="color:#B8956B;text-decoration:none;">murivest.co.ke</a>
+                          Murivest Realty Group · <a href="https://murivest.com" style="color:#B8956B;text-decoration:none;">murivest.com</a>
                         </p>
                       </td>
                     </tr>

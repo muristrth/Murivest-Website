@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     'Kenya CRE yields 2026',
     'East Africa property investment',
   ].join(', '),
-  alternates: { canonical: 'https://murivest.co.ke/kenya-economic-outlook' },
+  alternates: { canonical: 'https://murivest.com/kenya-economic-outlook' },
   openGraph: {
     title: 'Kenya Economic Outlook 2026 | Nairobi CRE Investment Analysis',
     description:
       'Macro intelligence for institutional investors in Kenyan commercial real estate. GDP, KES, inflation, and sector yield impact.',
     type: 'article',
-    url: 'https://murivest.co.ke/kenya-economic-outlook',
+    url: 'https://murivest.com/kenya-economic-outlook',
     siteName: 'Murivest Realty Group',
   },
   twitter: {
@@ -46,16 +46,16 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'Murivest Research Team',
-    url: 'https://murivest.co.ke',
+    url: 'https://murivest.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'Murivest Realty Group',
-    logo: { '@type': 'ImageObject', url: 'https://murivest.co.ke/logo.webp' },
+    logo: { '@type': 'ImageObject', url: 'https://murivest.com/logo.webp' },
   },
   datePublished: '2026-05-12',
   dateModified: '2026-05-12',
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://murivest.co.ke/kenya-economic-outlook' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://murivest.com/kenya-economic-outlook' },
 };
 
 const faqSchema = {
@@ -109,13 +109,13 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://murivest.co.ke' },
-    { '@type': 'ListItem', position: 2, name: 'Research', item: 'https://murivest.co.ke/research' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://murivest.com' },
+    { '@type': 'ListItem', position: 2, name: 'Research', item: 'https://murivest.com/research' },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Kenya Economic Outlook 2026',
-      item: 'https://murivest.co.ke/kenya-economic-outlook',
+      item: 'https://murivest.com/kenya-economic-outlook',
     },
   ],
 };

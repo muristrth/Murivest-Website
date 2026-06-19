@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     images: ['/kenya-night.webp'],
   },
   alternates: {
-    canonical: 'https://murivest.co.ke/2025-legacy-brief',
+    canonical: 'https://murivest.com/2025-legacy-brief',
   },
 }
 

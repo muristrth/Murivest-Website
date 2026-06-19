@@ -1,75 +1,206 @@
-// middleware.ts
-// FIX: Tightened the isPortalRoute check so that /investor-portal/login
-// is explicitly excluded — preventing the redirect loop where:
-//   /investor-portal/login → redirect('/investor-portal?mode=login')
-//   → middleware blocks /investor-portal → redirect('/investor-portal/login') → ∞
-
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
-export async function middleware(request: NextRequest) {
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+// ─────────────────────────────────────────────────────────────
+// CONFIGURATION
+// ─────────────────────────────────────────────────────────────
 
-  if (!supabaseUrl || !supabaseAnonKey) {
-    return NextResponse.next({ request: { headers: request.headers } })
+const PUBLIC_PATHS = [
+  '/admin/login',
+  '/investor-portal/login',
+  '/investor-portal/access-pending',
+  '/api/auth',           // Supabase auth callback routes
+  '/_next',
+  '/favicon.ico',
+  '/sitemap.xml',
+  '/robots.txt',
+] as const
+
+const ADMIN_PATHS = ['/admin'] as const
+const INVESTOR_PATHS = ['/investor-portal'] as const
+
+const REDIRECT_STATUS = 308 // Permanent Redirect
+
+// ─────────────────────────────────────────────────────────────
+// DOMAIN REDIRECTS
+// ─────────────────────────────────────────────────────────────
+
+function handleDomainRedirect(request: NextRequest): NextResponse | null {
+  const hostname = request.headers.get('host') || ''
+
+  const isLegacyDomain =
+    hostname === 'murivest.com' ||
+    hostname === 'www.murivest.com'
+
+  if (!isLegacyDomain) return null
+
+  const { pathname, search } = request.nextUrl
+  const target = new URL(`https://murivest.com/kenya${pathname}${search}`)
+
+  return NextResponse.redirect(target, REDIRECT_STATUS)
+}
+
+// ─────────────────────────────────────────────────────────────
+// ENVIRONMENT VALIDATION
+// ─────────────────────────────────────────────────────────────
+
+function getSupabaseCredentials() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+
+  if (!url || !key) {
+    console.warn('[Middleware] Supabase credentials missing — skipping auth checks')
   }
 
-  let response = NextResponse.next({ request: { headers: request.headers } })
+  return { url, key }
+}
 
-  const supabase = createServerClient(supabaseUrl, supabaseAnonKey, {
-    cookies: {
-      get(name: string) {
-        return request.cookies.get(name)?.value
-      },
-      set(name: string, value: string, options: CookieOptions) {
-        request.cookies.set({ name, value, ...options })
-        response = NextResponse.next({ request: { headers: request.headers } })
-        response.cookies.set({ name, value, ...options })
-      },
-      remove(name: string, options: CookieOptions) {
-        request.cookies.set({ name, value: '', ...options })
-        response = NextResponse.next({ request: { headers: request.headers } })
-        response.cookies.set({ name, value: '', ...options })
-      },
+// ─────────────────────────────────────────────────────────────
+// COOKIE HANDLERS
+// ─────────────────────────────────────────────────────────────
+
+function createCookieHandlers(request: NextRequest, response: NextResponse) {
+  return {
+    get(name: string) {
+      return request.cookies.get(name)?.value
     },
+
+    set(name: string, value: string, options: CookieOptions) {
+      request.cookies.set({ name, value, ...options })
+      response.cookies.set({ name, value, ...options })
+    },
+
+    remove(name: string, options: CookieOptions) {
+      request.cookies.set({ name, value: '', ...options })
+      response.cookies.set({ name, value: '', ...options })
+    },
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// PATH UTILITIES
+// ─────────────────────────────────────────────────────────────
+
+function isPublicPath(path: string): boolean {
+  return PUBLIC_PATHS.some((p) => path.startsWith(p))
+}
+
+function isAdminPath(path: string): boolean {
+  return ADMIN_PATHS.some((p) => path.startsWith(p))
+}
+
+function isInvestorPath(path: string): boolean {
+  return INVESTOR_PATHS.some((p) => path.startsWith(p))
+}
+
+// ─────────────────────────────────────────────────────────────
+// AUTH GUARDS
+// ─────────────────────────────────────────────────────────────
+
+async function guardAdmin(
+  supabase: ReturnType<typeof createServerClient>,
+  request: NextRequest
+): Promise<NextResponse | null> {
+  const {
+    data: { session },
+    error,
+  } = await supabase.auth.getSession()
+
+  if (error) {
+    console.error('[Middleware] Admin auth error:', error.message)
+  }
+
+  if (!session) {
+    return NextResponse.redirect(new URL('/admin/login', request.url))
+  }
+
+  return null
+}
+
+async function guardInvestor(
+  supabase: ReturnType<typeof createServerClient>,
+  request: NextRequest
+): Promise<NextResponse | null> {
+  const {
+    data: { session },
+    error,
+  } = await supabase.auth.getSession()
+
+  if (error) {
+    console.error('[Middleware] Investor auth error:', error.message)
+  }
+
+  if (!session) {
+    return NextResponse.redirect(new URL('/investor-portal/login', request.url))
+  }
+
+  return null
+}
+
+// ─────────────────────────────────────────────────────────────
+// MAIN MIDDLEWARE
+// ─────────────────────────────────────────────────────────────
+
+export async function middleware(request: NextRequest) {
+  // 1. Domain redirect (highest priority)
+  const domainRedirect = handleDomainRedirect(request)
+  if (domainRedirect) return domainRedirect
+
+  // 2. Initialize response
+  let response = NextResponse.next({
+    request: { headers: request.headers },
   })
+
+  // 3. Security headers (applied to all responses)
+  response.headers.set('X-Frame-Options', 'DENY')
+  response.headers.set('X-Content-Type-Options', 'nosniff')
+  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
 
   const path = request.nextUrl.pathname
 
-  // ── Unprotected routes (always allow through) ────────────────────────
-  const publicPaths = [
-    '/admin/login',
-    '/investor-portal/login',      // FIX: this must be public or login → portal → login loops forever
-    '/investor-portal/access-pending',
-  ]
-  if (publicPaths.some(p => path.startsWith(p))) {
+  // 4. Public paths bypass auth
+  if (isPublicPath(path)) {
     return response
   }
 
-  // ── Admin routes ─────────────────────────────────────────────────────
-  if (path.startsWith('/admin')) {
-    const { data: { session } } = await supabase.auth.getSession()
-    if (!session) {
-      return NextResponse.redirect(new URL('/admin/login', request.url))
-    }
+  // 5. Supabase setup
+  const { url, key } = getSupabaseCredentials()
+
+  if (!url || !key) {
+    return response
   }
 
-  // ── Investor portal routes ───────────────────────────────────────────
-  if (path.startsWith('/investor-portal')) {
-    const { data: { session } } = await supabase.auth.getSession()
-    if (!session) {
-      // Redirect to the LOGIN PAGE (not back to the portal) to avoid loops
-      return NextResponse.redirect(new URL('/investor-portal/login', request.url))
-    }
+  const supabase = createServerClient(url, key, {
+    cookies: createCookieHandlers(request, response),
+  })
+
+  // 6. Route guards
+  if (isAdminPath(path)) {
+    const redirect = await guardAdmin(supabase, request)
+    if (redirect) return redirect
+  }
+
+  if (isInvestorPath(path)) {
+    const redirect = await guardInvestor(supabase, request)
+    if (redirect) return redirect
   }
 
   return response
 }
 
+// ─────────────────────────────────────────────────────────────
+// MATCHER CONFIG
+// ─────────────────────────────────────────────────────────────
+
 export const config = {
   matcher: [
-    '/admin/:path*',
-    '/investor-portal/:path*',
+    /*
+     * Match all request paths except:
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (browser icon)
+     * - public folder files (handled by Next.js automatically)
+     */
+    '/((?!_next/static|_next/image|favicon.ico).*)',
   ],
 }

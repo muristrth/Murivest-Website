@@ -432,8 +432,8 @@ export default function researchPost({ post: postProp, analystSummary: analystSu
   if (!post) return <NotFoundPage />;
 
   const readTime = post.readTime || calcReadTime(post.content);
-  const postUrl = typeof window !== 'undefined' ? window.location.href : `https://murivest.co.ke/research/${id}`;
-  const heroImage = post.image || 'https://murivest.co.ke/default-research-image.webp';
+  const postUrl = typeof window !== 'undefined' ? window.location.href : `https://murivest.com/research/${id}`;
+  const heroImage = post.image || 'https://murivest.com/default-research-image.webp';
   const relatedPosts = getRelatedPosts(id, post.category);
   const processedContent = injectHeadingIds(post.content);
 
@@ -445,9 +445,8 @@ export default function researchPost({ post: postProp, analystSummary: analystSu
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://murivest.co.ke' },
-      { '@type': 'ListItem', position: 2, name: 'Research', item: 'https://murivest.co.ke/research' },
-      { '@type': 'ListItem', position: 3, name: post.category, item: `https://murivest.co.ke/research?category=${encodeURIComponent(post.category)}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://murivest.com' },
+      { '@type': 'ListItem', position: 2, name: 'Research', item: 'https://murivest.com/research' },
       { '@type': 'ListItem', position: 4, name: post.title, item: postUrl },
     ],
   };
@@ -459,7 +458,7 @@ export default function researchPost({ post: postProp, analystSummary: analystSu
     datePublished: post.date,
     dateModified: (post as any).dateModified ?? post.date,
     author: { '@type': 'Organization', name: post.author || 'Murivest' },
-    publisher: { '@type': 'Organization', name: 'Murivest Realty Group', url: 'https://murivest.co.ke' },
+    publisher: { '@type': 'Organization', name: 'Murivest Realty Group', url: 'https://murivest.com' },
     image: heroImage,
     url: postUrl,
   };
@@ -482,8 +481,6 @@ export default function researchPost({ post: postProp, analystSummary: analystSu
               <Link href="/" style={{ color: '#9B8F7E', textDecoration: 'none' }}>Home</Link>
               <ChevronRight style={{ width: '10px', height: '10px' }} />
               <Link href="/research" style={{ color: '#9B8F7E', textDecoration: 'none' }}>Research</Link>
-              <ChevronRight style={{ width: '10px', height: '10px' }} />
-              <Link href={`/research?category=${encodeURIComponent(post.category)}`} style={{ color: '#9B8F7E', textDecoration: 'none' }}>{post.category}</Link>
               <ChevronRight style={{ width: '10px', height: '10px' }} />
               <span style={{ color: '#6B6259', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '180px' }}>{post.title}</span>
             </nav>

@@ -159,10 +159,10 @@ export async function generateMetadata({
     property.seoDescription ||
     `Off-market investment: ${property.title} — ${property.propertyType.toLowerCase()} in ${property.city || "Kenya"}. ${property.sizeRange.max.toLocaleString()} ${property.sizeRange.unit}. ${property.price.displayPrice}. Exclusive mandate through Murivest.`;
 
-  const canonicalUrl = `https://murivest.co.ke/ke-properties/off-market/${property.slug}`;
+  const canonicalUrl = `https://murivest.com/ke-properties/off-market/${property.slug}`;
   const ogImage =
     property.images?.[0] ||
-    "https://murivest.co.ke/images/off-market-default-og.jpg";
+    "https://murivest.com/images/off-market-default-og.jpg";
 
   return {
     title: metaTitle,
@@ -194,7 +194,7 @@ export async function generateMetadata({
       type: "article",
       publishedTime: property.listingDate,
       modifiedTime: property.listingDate,
-      authors: ["https://murivest.co.ke/authors/murivest-research"],
+      authors: ["https://murivest.com/authors/murivest-research"],
       section: "Off-Market Commercial Property",
       tags: [property.propertyType, property.city || "Kenya", "Off-Market", "Private Sale"],
     },
@@ -231,7 +231,7 @@ export async function generateMetadata({
 // ─── JSON-LD Schema ────────────────────────────────────────────────────────
 
 function generatePropertySchema(property: OffMarketProperty) {
-  const baseUrl = "https://murivest.co.ke";
+  const baseUrl = "https://murivest.com";
   const propertyUrl = `${baseUrl}/ke-properties/off-market/${property.slug}`;
 
   return {
@@ -278,7 +278,7 @@ export default async function OffMarketPropertyPage({
   const property = await getProperty(params.slug);
   if (!property) notFound();
 
-  const canonicalUrl = `https://murivest.co.ke/ke-properties/off-market/${property.slug}`;
+  const canonicalUrl = `https://murivest.com/ke-properties/off-market/${property.slug}`;
   const schema = generatePropertySchema(property);
 
   return (

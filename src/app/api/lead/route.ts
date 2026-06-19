@@ -146,7 +146,7 @@ const scoreLabel = getScoreLabel(leadScore).label;
           <p><strong>Timeline:</strong> ${investmentTimeline}</p>
           <p><strong>Referral Source:</strong> ${referralSource}</p>
           <p><strong>Message:</strong> ${message || "None"}</p>
-          <p><strong>View Lead:</strong> <a href="${process.env.NEXT_PUBLIC_SITE_URL || "http://murivest.co.ke"}/admin2/leads/${lead.id}">Open in Admin</a></p>
+          <p><strong>View Lead:</strong> <a href="${process.env.NEXT_PUBLIC_SITE_URL || "http://murivest.com"}/admin2/leads/${lead.id}">Open in Admin</a></p>
         `,
       });
 

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_KE',
   },
-  alternates: { canonical: 'https://murivest.co.ke/commercial-real-estate' },
+  alternates: { canonical: 'https://murivest.com/commercial-real-estate' },
 };
 
 const jsonLd = {
@@ -20,20 +20,20 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'RealEstateAgent',
-      '@id': 'https://murivest.co.ke/#org',
+      '@id': 'https://murivest.com/#org',
       name: 'Murivest Realty Group',
-      url: 'https://murivest.co.ke',
+      url: 'https://murivest.com',
       address: { '@type': 'PostalAddress', addressLocality: 'Nairobi', addressCountry: 'KE' },
     },
     {
       '@type': 'WebPage',
-      url: 'https://murivest.co.ke/commercial-real-estate',
+      url: 'https://murivest.com/commercial-real-estate',
       name: 'Commercial Real Estate Kenya | Office Space Nairobi',
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://murivest.co.ke' },
-          { '@type': 'ListItem', position: 2, name: 'Commercial Real Estate', item: 'https://murivest.co.ke/commercial-real-estate' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://murivest.com' },
+          { '@type': 'ListItem', position: 2, name: 'Commercial Real Estate', item: 'https://murivest.com/commercial-real-estate' },
         ],
       },
     },

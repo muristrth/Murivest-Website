@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     images: ['/murivest_ceo_office.webp'],
   },
   alternates: {
-    canonical: 'https://murivest.co.ke/thought-leadership',
+    canonical: 'https://murivest.com/thought-leadership',
   },
 }
 

@@ -17,7 +17,7 @@
  * EMAIL 2 (Day 5)      Review cheat sheet — 3 questions, 90-second protocol
  * EMAIL 3 (Day 14)     Final loop — opportunity cost, Insider consequence
  *
- * PALETTE (murivest.co.ke brand):
+ * PALETTE (murivest.com brand):
  *   Forest Green  #1B4332   primary
  *   Gold Brown    #C9973A   accent / CTA
  *   Ivory bg      #F8F6F1
@@ -31,7 +31,7 @@ const BOOK_URL = process.env.BOOK_DOWNLOAD_URL ?? "";
 const AMAZON_REVIEW_URL =
   "https://www.amazon.com/review/create-review?asin=B0GXQTMZCK";
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://murivest.co.ke";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://murivest.com";
 
 // ─── Design Tokens ────────────────────────────────────────────────────────────
 
@@ -112,7 +112,7 @@ const shell = (innerHtml: string): string => `
                 color:rgba(248,246,241,0.4);letter-spacing:0.05em;">
                 &copy; ${new Date().getFullYear()} Murivest Realty Group &middot;
                 <a href="${SITE_URL}" style="color:${color.gold};text-decoration:none;">
-                  murivest.co.ke
+                  murivest.com
                 </a>
               </p>
               <p style="margin:6px 0 0;font-family:${font.sans};font-size:10px;

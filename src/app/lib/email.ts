@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 
 const FROM = `"${process.env.SMTP_FROM_NAME || 'Murivest Investment Desk'}" <${process.env.SMTP_USER}>`;
 const DESK_EMAIL = process.env.INVESTMENT_DESK_EMAIL || process.env.SMTP_USER || 'murivestrealty@gmail.com';
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://murivest.co.ke';
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://murivest.com';
 const WA_LINK = `https://wa.me/254729170156`;
 
 const CSS = `

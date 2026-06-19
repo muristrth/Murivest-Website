@@ -10,7 +10,7 @@
  *   Andres Contreras → Certainty + frame control + assumptive close
  *   Grant Cardone  → Urgency + consequence + volume of action
  *
- * DESIGN SYSTEM (murivest.co.ke):
+ * DESIGN SYSTEM (murivest.com):
  *   Forest Green  #1B4332   primary
  *   Dark Forest   #0d2318   footer / deep overlays
  *   Gold Brown    #C9973A   accent / CTA
@@ -835,12 +835,12 @@ export default function BookLandingPage() {
           </div>
           <div className="flex items-center gap-4">
             <a
-              href="https://murivest.co.ke"
+              href="https://murivest.com"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:block text-[11px] uppercase tracking-[0.18em] text-[#2C2C2C]/40 hover:text-[#1B4332] transition-colors font-sans"
             >
-              murivest.co.ke
+              murivest.com
             </a>
             <a
               href="https://www.amazon.com/dp/B0GXQTMZCK"
@@ -1736,7 +1736,7 @@ export default function BookLandingPage() {
           <div className="flex gap-6 text-xs uppercase tracking-wider font-sans">
             <a href="#" className="hover:text-[#C9973A] transition-colors">Privacy</a>
             <a href="#" className="hover:text-[#C9973A] transition-colors">Terms</a>
-            <a href="https://murivest.co.ke" className="hover:text-[#C9973A] transition-colors">murivest.co.ke</a>
+            <a href="https://murivest.com" className="hover:text-[#C9973A] transition-colors">murivest.com</a>
           </div>
         </div>
       </footer>

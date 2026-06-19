@@ -161,7 +161,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "murivest.co.ke",
+        hostname: "murivest.com",
       },
       {
         protocol: "https",
@@ -193,10 +193,10 @@ const nextConfig = {
         has: [
           {
             type: 'host',
-            value: 'www.murivest.co.ke',
+            value: 'www.murivest.com',
           },
         ],
-        destination: 'https://murivest.co.ke/:path*',
+        destination: 'https://murivest.com/:path*',
         permanent: true,
       },
     ]

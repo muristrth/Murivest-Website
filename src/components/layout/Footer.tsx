@@ -14,6 +14,8 @@ import {
   FaYoutube, 
   FaWhatsapp
 } from 'react-icons/fa6';
+import InstitutionalTrustSignals from './InstitutionalTrustSignals';
+
 
 interface FooterProps {
   copyrightYear?: number;
@@ -51,7 +53,9 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
   }, []);
 
   return (
+    
     <footer className="bg-[#1B4332] border-t border-[#B8956B]/20 relative">
+      <InstitutionalTrustSignals />
       {/* Subtle top accent line */}
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#B8956B]/40 to-transparent" />
       
@@ -59,7 +63,6 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
         
         {/* Top Section - Club Letterhead Style */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mb-16 pb-12 border-b border-[#B8956B]/10">
-          
           {/* Brand Column */}
           <div className="lg:col-span-4">
             <div className="mb-6">

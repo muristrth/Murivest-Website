@@ -63,7 +63,7 @@ await transporter.sendMail({
               <!-- CTA Button -->
               <tr>
                 <td style="padding: 0 60px 50px; text-align: center;">
-                  <a href="https://www.murivest.co.ke/Murivest%20Realty%20The%20Nairobi%20Yield%20Report%20Q4%202025.pdf" 
+                  <a href="https://www.murivest.com/Murivest%20Realty%20The%20Nairobi%20Yield%20Report%20Q4%202025.pdf" 
                      style="display: inline-block; padding: 18px 50px; background-color: #d97706; color: #ffffff; text-decoration: none; font-family: Georgia, serif; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid #d97706; transition: all 0.3s;">
                     Access Report
                   </a>

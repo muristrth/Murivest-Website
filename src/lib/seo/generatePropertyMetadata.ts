@@ -2,7 +2,7 @@
 import type { Metadata } from 'next';
 import type { Property } from '@/types/property';
 
-const BASE_URL = 'https://murivest.co.ke';
+const BASE_URL = 'https://murivest.com';
 
 export function generatePropertyMetadata(property: Property): Metadata {
   const canonicalUrl =
