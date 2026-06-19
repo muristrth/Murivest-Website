@@ -4,7 +4,6 @@ import { usePathname } from 'next/navigation';
 import Header from './Header';
 import Footer from './Footer';
 import WhatsAppButton from '../ui/WhatsAppButton';
-import CookieBanner from '@/components/CookieBanner';
 
 export default function AppShell({
   children,
@@ -27,7 +26,6 @@ export default function AppShell({
       {!isInvestorPortal && <Footer />}
       {!isInvestorPortal && <WhatsAppButton />}
 
-      <CookieBanner />
     </div>
   );
 }

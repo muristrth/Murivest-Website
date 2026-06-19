@@ -9,7 +9,7 @@ const PUBLIC_PATHS = [
   '/admin/login',
   '/investor-portal/login',
   '/investor-portal/access-pending',
-  '/api/auth',           // Supabase auth callback routes
+  '/api/auth',
   '/_next',
   '/favicon.ico',
   '/sitemap.xml',
@@ -19,25 +19,49 @@ const PUBLIC_PATHS = [
 const ADMIN_PATHS = ['/admin'] as const
 const INVESTOR_PATHS = ['/investor-portal'] as const
 
-const REDIRECT_STATUS = 308 // Permanent Redirect
+const REDIRECT_STATUS = 308
 
 // ─────────────────────────────────────────────────────────────
-// DOMAIN REDIRECTS
+// DOMAIN ROUTING
 // ─────────────────────────────────────────────────────────────
 
-function handleDomainRedirect(request: NextRequest): NextResponse | null {
+function handleDomainRouting(request: NextRequest): NextResponse | null {
   const hostname = request.headers.get('host') || ''
-
-  const isLegacyDomain =
-    hostname === 'murivest.com' ||
-    hostname === 'www.murivest.com'
-
-  if (!isLegacyDomain) return null
-
   const { pathname, search } = request.nextUrl
-  const target = new URL(`https://murivest.com/kenya${pathname}${search}`)
 
-  return NextResponse.redirect(target, REDIRECT_STATUS)
+  const isComDomain = hostname === 'murivest.com' || hostname === 'www.murivest.com'
+  const isKeDomain = hostname === 'murivest.co.ke' || hostname === 'www.murivest.co.ke'
+
+  // ── murivest.co.ke → redirect to murivest.com/kenya ────────
+  if (isKeDomain) {
+    // Prevent loop: if already on /kenya, don't add another /kenya
+    if (pathname.startsWith('/kenya')) {
+      // Already has /kenya prefix — redirect to same path on .com
+      const target = new URL(`https://murivest.com${pathname}${search}`)
+      return NextResponse.redirect(target, REDIRECT_STATUS)
+    }
+
+    // Add /kenya prefix and redirect to .com
+    const targetPath = pathname === '/' ? '/kenya' : `/kenya${pathname}`
+    const target = new URL(`https://murivest.com${targetPath}${search}`)
+    return NextResponse.redirect(target, REDIRECT_STATUS)
+  }
+
+  // ── murivest.com → serve global site, strip any /kenya ─────
+  if (isComDomain) {
+    if (pathname.startsWith('/kenya')) {
+      // Someone hit murivest.com/kenya/* directly — strip /kenya
+      const cleanPath = pathname.replace(/^\/kenya/, '') || '/'
+      const target = new URL(`https://murivest.com${cleanPath}${search}`)
+      return NextResponse.redirect(target, REDIRECT_STATUS)
+    }
+
+    // Normal global site — no redirect
+    return null
+  }
+
+  // Unknown domain (localhost, previews, etc.) — let through
+  return null
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -142,8 +166,8 @@ async function guardInvestor(
 // ─────────────────────────────────────────────────────────────
 
 export async function middleware(request: NextRequest) {
-  // 1. Domain redirect (highest priority)
-  const domainRedirect = handleDomainRedirect(request)
+  // 1. Domain routing (highest priority)
+  const domainRedirect = handleDomainRouting(request)
   if (domainRedirect) return domainRedirect
 
   // 2. Initialize response
@@ -151,7 +175,7 @@ export async function middleware(request: NextRequest) {
     request: { headers: request.headers },
   })
 
-  // 3. Security headers (applied to all responses)
+  // 3. Security headers
   response.headers.set('X-Frame-Options', 'DENY')
   response.headers.set('X-Content-Type-Options', 'nosniff')
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
@@ -194,13 +218,6 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    /*
-     * Match all request paths except:
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (browser icon)
-     * - public folder files (handled by Next.js automatically)
-     */
     '/((?!_next/static|_next/image|favicon.ico).*)',
   ],
 }

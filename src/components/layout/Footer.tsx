@@ -15,6 +15,7 @@ import {
   FaWhatsapp
 } from 'react-icons/fa6';
 import InstitutionalTrustSignals from './InstitutionalTrustSignals';
+import WhatsAppButton from '../ui/WhatsAppButton';
 
 
 interface FooterProps {
@@ -56,6 +57,7 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
     
     <footer className="bg-[#1B4332] border-t border-[#B8956B]/20 relative">
       <InstitutionalTrustSignals />
+      <WhatsAppButton />
       {/* Subtle top accent line */}
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#B8956B]/40 to-transparent" />
       
