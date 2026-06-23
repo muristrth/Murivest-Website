@@ -397,153 +397,499 @@ function StatusBadge({ status }: { status: Opportunity["status"] }) {
   );
 }
 
-// ─── Globe SVG ──────────────────────────────────────────────────────────────
+// ─── Globe SVG — Ultra Luxury Institutional Data Viz ───────────────────────
+
+const GLOBE_NODE = [
+  { name: "LONDON", x: 46.5, y: 32.5, region: "EMEA" },
+  { name: "DUBAI", x: 58.5, y: 40.0, region: "MENA" },
+  { name: "SINGAPORE", x: 72.0, y: 52.5, region: "APAC" },
+  { name: "NAIROBI", x: 54.0, y: 55.0, region: "AFRICA" },
+  { name: "NEW YORK", x: 26.5, y: 35.0, region: "AMERICAS" },
+  { name: "HONG KONG", x: 75.0, y: 45.0, region: "APAC" },
+  { name: "FRANKFURT", x: 49.0, y: 30.0, region: "EMEA" },
+  { name: "SAO PAULO", x: 32.0, y: 62.5, region: "AMERICAS" },
+];
 
 function GlobeSVG() {
-  const [pulse, setPulse] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [tick, setTick] = useState(0);
 
   useEffect(() => {
-    const t = setInterval(() => setPulse((p) => (p + 1) % GLOBE_NODES.length), 900);
+    const t = setInterval(() => {
+      setActiveIndex((p) => (p + 1) % GLOBE_NODES.length);
+      setTick((p) => p + 1);
+    }, 1200);
     return () => clearInterval(t);
   }, []);
 
+  const cx = 210;
+  const cy = 190;
+  const R = 158;
+
+  // ── Generate 3D sphere wireframe ─────────────────────────────────
+  const generateMeridians = () => {
+    const lines = [];
+    const steps = 64;
+    for (let m = 0; m < 12; m++) {
+      const lon = (m / 12) * Math.PI * 2;
+      const pts = [];
+      for (let s = 0; s <= steps; s++) {
+        const lat = (s / steps) * Math.PI - Math.PI / 2;
+        const x3 = R * Math.cos(lat) * Math.cos(lon);
+        const y3 = R * Math.sin(lat);
+        const z3 = R * Math.cos(lat) * Math.sin(lon);
+        // Isometric-ish projection with depth
+        const px = cx + x3 * 0.92 + z3 * 0.18;
+        const py = cy + y3 - z3 * 0.12;
+        const depth = (z3 + R) / (2 * R);
+        pts.push({ x: px, y: py, depth });
+      }
+      lines.push({ pts, meridian: m });
+    }
+    return lines;
+  };
+
+  const generateParallels = () => {
+    const lines = [];
+    const steps = 80;
+    for (let p = 1; p < 10; p++) {
+      const lat = ((p / 10) * Math.PI) - Math.PI / 2;
+      const rAtLat = R * Math.cos(lat);
+      const y3 = R * Math.sin(lat);
+      const pts = [];
+      for (let s = 0; s <= steps; s++) {
+        const lon = (s / steps) * Math.PI * 2;
+        const x3 = rAtLat * Math.cos(lon);
+        const z3 = rAtLat * Math.sin(lon);
+        const px = cx + x3 * 0.92 + z3 * 0.18;
+        const py = cy + y3 - z3 * 0.12;
+        const depth = (z3 + R) / (2 * R);
+        pts.push({ x: px, y: py, depth });
+      }
+      lines.push({ pts, parallel: p });
+    }
+    return lines;
+  };
+
+  const meridians = generateMeridians();
+  const parallels = generateParallels();
+
+  // ── Bezier connection between nodes ──────────────────────────────
+  const getNodePos = (node: typeof GLOBE_NODES[0]) => {
+    const nx = (node.x / 100) * 420;
+    const ny = (node.y / 100) * 380;
+    return { x: nx, y: ny };
+  };
+
+  const generateArc = (from: typeof GLOBE_NODES[0], to: typeof GLOBE_NODES[0]) => {
+    const f = getNodePos(from);
+    const t = getNodePos(to);
+    const mx = (f.x + t.x) / 2;
+    const my = (f.y + t.y) / 2 - 30; // Arc upward
+    return `M ${f.x} ${f.y} Q ${mx} ${my} ${t.x} ${t.y}`;
+  };
+
+  // Active node for data readout
+  const activeNode = GLOBE_NODE[activeIndex];
+
   return (
-    <svg
-      viewBox="0 0 420 380"
-      style={{ width: "100%", maxWidth: 420 }}
-      aria-label="Interactive globe showing Murivest's global market coverage"
-    >
-      {/* Globe base */}
-      <ellipse cx="210" cy="190" rx="168" ry="168" fill="#0B1F14" stroke="#2D6A4F" strokeWidth="1" />
+    <div style={{ position: "relative", width: "100%", maxWidth: 460 }}>
+      {/* Data readout panel — Bloomberg Terminal aesthetic */}
+      <div
+        style={{
+          position: "absolute",
+          top: -8,
+          right: -8,
+          zIndex: 20,
+          background: "rgba(11,31,20,0.92)",
+          border: "1px solid rgba(45,106,79,0.35)",
+          borderRadius: "2px",
+          padding: "14px 18px",
+          minWidth: 160,
+          backdropFilter: "blur(12px)",
+          fontFamily: "'Montserrat', sans-serif",
+        }}
+      >
+        <div
+          style={{
+            fontSize: "7px",
+            fontWeight: 700,
+            letterSpacing: "0.25em",
+            color: "#4A7C59",
+            textTransform: "uppercase",
+            marginBottom: "8px",
+            display: "flex",
+            alignItems: "center",
+            gap: "6px",
+          }}
+        >
+          <span
+            style={{
+              width: "4px",
+              height: "4px",
+              borderRadius: "50%",
+              background: "#D4AF37",
+              animation: "pulse 1.5s ease-in-out infinite",
+            }}
+          />
+          LIVE MARKET
+        </div>
+        <div
+          style={{
+            fontFamily: "'Playfair Display', serif",
+            fontSize: "20px",
+            fontWeight: 400,
+            color: "#D4AF37",
+            lineHeight: 1,
+            marginBottom: "4px",
+          }}
+        >
+          {activeNode.name}
+        </div>
+        <div
+          style={{
+            fontSize: "8px",
+            fontWeight: 600,
+            letterSpacing: "0.15em",
+            color: "#7A9E8A",
+            textTransform: "uppercase",
+          }}
+        >
+          {activeNode.region}
+        </div>
+        <div
+          style={{
+            marginTop: "10px",
+            paddingTop: "10px",
+            borderTop: "1px solid rgba(45,106,79,0.2)",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <span style={{ fontSize: "8px", color: "#4A7C59", fontWeight: 600 }}>
+            AUM
+          </span>
+          <span style={{ fontSize: "10px", color: "#9BB8A8", fontWeight: 500 }}>
+            ${(Math.random() * 800 + 200).toFixed(0)}M
+          </span>
+        </div>
+      </div>
 
-      {/* Latitude lines */}
-      {[0.25, 0.5, 0.75].map((r, i) => (
-        <ellipse
-          key={i}
-          cx="210"
-          cy="190"
-          rx={168 * r}
-          ry={30 * r}
-          fill="none"
-          stroke="#2D6A4F"
-          strokeWidth="0.5"
-          opacity="0.4"
-        />
-      ))}
+      <svg
+        viewBox="0 0 420 380"
+        style={{ width: "100%", display: "block" }}
+        aria-label="Interactive 3D wireframe globe showing Murivest's global capital markets coverage"
+      >
+        <defs>
+          {/* Gold glow filter */}
+          <filter id="goldGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
 
-      {/* Longitude arcs */}
-      {[0, 45, 90, 135].map((angle, i) => (
-        <ellipse
-          key={i}
-          cx="210"
-          cy="190"
-          rx={20}
-          ry={168}
+          {/* Subtle emerald glow */}
+          <filter id="emeraldGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+
+          {/* Gradient for rim */}
+          <linearGradient id="rimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#2D6A4F" stopOpacity="0.8" />
+            <stop offset="50%" stopColor="#D4AF37" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#2D6A4F" stopOpacity="0.8" />
+          </linearGradient>
+
+          {/* Mask for back-face culling effect */}
+          <radialGradient id="sphereFade" cx="50%" cy="50%" r="50%">
+            <stop offset="60%" stopColor="white" stopOpacity="1" />
+            <stop offset="100%" stopColor="white" stopOpacity="0.3" />
+          </radialGradient>
+
+          <mask id="fadeMask">
+            <rect x="0" y="0" width="420" height="380" fill="url(#sphereFade)" />
+          </mask>
+        </defs>
+
+        {/* Outer decorative ring */}
+        <circle
+          cx={cx}
+          cy={cy}
+          r={R + 18}
           fill="none"
-          stroke="#2D6A4F"
+          stroke="url(#rimGrad)"
           strokeWidth="0.5"
           opacity="0.3"
-          transform={`rotate(${angle} 210 190)`}
+          strokeDasharray="2,8"
         />
-      ))}
 
-      {/* Continent silhouettes — simplified */}
-      {/* Africa */}
-      <path
-        d="M200 145 L215 140 L228 152 L232 170 L228 195 L220 215 L210 222 L202 210 L196 190 L192 168 Z"
-        fill="#1A3D28"
-        opacity="0.8"
-      />
-      {/* Europe */}
-      <path
-        d="M185 118 L200 112 L210 120 L208 135 L196 140 L184 135 Z"
-        fill="#1A3D28"
-        opacity="0.8"
-      />
-      {/* Asia */}
-      <path
-        d="M220 110 L270 105 L295 118 L300 138 L285 152 L260 155 L240 148 L225 135 Z"
-        fill="#1A3D28"
-        opacity="0.8"
-      />
-      {/* North America */}
-      <path
-        d="M90 115 L130 108 L148 125 L145 148 L128 160 L105 155 L88 138 Z"
-        fill="#1A3D28"
-        opacity="0.8"
-      />
-      {/* Australia */}
-      <path
-        d="M295 210 L320 205 L328 220 L320 235 L300 238 L288 225 Z"
-        fill="#1A3D28"
-        opacity="0.8"
-      />
-
-      {/* Connection lines between nodes */}
-      {GLOBE_NODES.map((node, i) => {
-        const next = GLOBE_NODES[(i + 2) % GLOBE_NODES.length];
-        const nx = (node.x / 100) * 420;
-        const ny = (node.y / 100) * 380;
-        const nnx = (next.x / 100) * 420;
-        const nny = (next.y / 100) * 380;
-        return (
-          <line
-            key={i}
-            x1={nx} y1={ny} x2={nnx} y2={nny}
-            stroke="#B8A98A"
-            strokeWidth="0.4"
-            opacity="0.25"
-            strokeDasharray="3,6"
-          />
-        );
-      })}
-
-      {/* Nodes */}
-      {GLOBE_NODES.map((node, i) => {
-        const nx = (node.x / 100) * 420;
-        const ny = (node.y / 100) * 380;
-        const isActive = i === pulse;
-        return (
-          <g key={node.name}>
-            {isActive && (
-              <>
-                <circle cx={nx} cy={ny} r="14" fill="#B8A98A" opacity="0.12" />
-                <circle cx={nx} cy={ny} r="9" fill="#B8A98A" opacity="0.2" />
-              </>
-            )}
-            <circle
-              cx={nx}
-              cy={ny}
-              r={isActive ? 4.5 : 3}
-              fill={isActive ? "#D4AF37" : "#B8A98A"}
-              style={{ transition: "r 0.3s ease, fill 0.3s ease" }}
+        {/* Tick marks on outer ring */}
+        {Array.from({ length: 60 }).map((_, i) => {
+          const angle = (i / 60) * Math.PI * 2;
+          const r1 = R + 14;
+          const r2 = R + 18;
+          const x1 = cx + r1 * Math.cos(angle);
+          const y1 = cy + r1 * Math.sin(angle);
+          const x2 = cx + r2 * Math.cos(angle);
+          const y2 = cy + r2 * Math.sin(angle);
+          return (
+            <line
+              key={`tick-${i}`}
+              x1={x1}
+              y1={y1}
+              x2={x2}
+              y2={y2}
+              stroke="#2D6A4F"
+              strokeWidth={i % 5 === 0 ? "0.8" : "0.3"}
+              opacity={i % 5 === 0 ? "0.5" : "0.2"}
             />
-            <text
-              x={nx}
-              y={ny - 9}
-              textAnchor="middle"
-              fontSize="8"
-              fontFamily="'Montserrat', sans-serif"
-              fontWeight="600"
-              letterSpacing="0.05em"
-              fill={isActive ? "#D4AF37" : "#7A9E8A"}
-              style={{ transition: "fill 0.3s ease" }}
-            >
-              {node.name.toUpperCase()}
-            </text>
-          </g>
-        );
-      })}
+          );
+        })}
 
-      {/* Rim glow */}
-      <ellipse
-        cx="210" cy="190" rx="168" ry="168"
-        fill="none"
-        stroke="#2D6A4F"
-        strokeWidth="2"
-        opacity="0.6"
-      />
-    </svg>
+        {/* 3D Wireframe Sphere — Meridians */}
+        {meridians.map((meridian, mi) => (
+          <g key={`m-${mi}`}>
+            {meridian.pts.slice(0, -1).map((pt, pi) => {
+              const next = meridian.pts[pi + 1];
+              const opacity = 0.08 + pt.depth * 0.18;
+              return (
+                <line
+                  key={`${mi}-${pi}`}
+                  x1={pt.x}
+                  y1={pt.y}
+                  x2={next.x}
+                  y2={next.y}
+                  stroke="#2D6A4F"
+                  strokeWidth="0.4"
+                  opacity={opacity}
+                />
+              );
+            })}
+          </g>
+        ))}
+
+        {/* 3D Wireframe Sphere — Parallels */}
+        {parallels.map((parallel, pi) => (
+          <g key={`p-${pi}`}>
+            {parallel.pts.slice(0, -1).map((pt, pti) => {
+              const next = parallel.pts[pti + 1];
+              const opacity = 0.06 + pt.depth * 0.14;
+              return (
+                <line
+                  key={`${pi}-${pti}`}
+                  x1={pt.x}
+                  y1={pt.y}
+                  x2={next.x}
+                  y2={next.y}
+                  stroke="#2D6A4F"
+                  strokeWidth="0.3"
+                  opacity={opacity}
+                />
+              );
+            })}
+          </g>
+        ))}
+
+        {/* Equator highlight */}
+        <ellipse
+          cx={cx}
+          cy={cy}
+          rx={R * 0.92}
+          ry={R * 0.92}
+          fill="none"
+          stroke="#D4AF37"
+          strokeWidth="0.4"
+          opacity="0.15"
+          strokeDasharray="4,12"
+        />
+
+        {/* Connection arcs between all nodes */}
+        {GLOBE_NODE.map((from, i) => {
+          const to = GLOBE_NODE[(i + 3) % GLOBE_NODE.length];
+          const d = generateArc(from, to);
+          const isActive = i === activeIndex || (i + 3) % GLOBE_NODE.length === activeIndex;
+          return (
+            <path
+              key={`arc-${i}`}
+              d={d}
+              fill="none"
+              stroke={isActive ? "#D4AF37" : "#B8A98A"}
+              strokeWidth={isActive ? "0.6" : "0.3"}
+              opacity={isActive ? "0.35" : "0.12"}
+              strokeDasharray={isActive ? "4,6" : "2,10"}
+              style={{
+                transition: "all 0.8s cubic-bezier(0.22, 1, 0.36, 1)",
+              }}
+            >
+              {isActive && (
+                <animate
+                  attributeName="stroke-dashoffset"
+                  from="0"
+                  to="-20"
+                  dur="1.5s"
+                  repeatCount="indefinite"
+                />
+              )}
+            </path>
+          );
+        })}
+
+        {/* Nodes */}
+        {GLOBE_NODE.map((node, i) => {
+          const pos = getNodePos(node);
+          const isActive = i === activeIndex;
+          return (
+            <g key={node.name}>
+              {/* Outer pulse rings */}
+              {isActive && (
+                <>
+                  <circle
+                    cx={pos.x}
+                    cy={pos.y}
+                    r="22"
+                    fill="none"
+                    stroke="#D4AF37"
+                    strokeWidth="0.3"
+                    opacity="0.15"
+                  >
+                    <animate
+                      attributeName="r"
+                      values="18;26;18"
+                      dur="2s"
+                      repeatCount="indefinite"
+                    />
+                    <animate
+                      attributeName="opacity"
+                      values="0.2;0;0.2"
+                      dur="2s"
+                      repeatCount="indefinite"
+                    />
+                  </circle>
+                  <circle
+                    cx={pos.x}
+                    cy={pos.y}
+                    r="14"
+                    fill="none"
+                    stroke="#D4AF37"
+                    strokeWidth="0.5"
+                    opacity="0.25"
+                  />
+                </>
+              )}
+
+              {/* Node dot */}
+              <circle
+                cx={pos.x}
+                cy={pos.y}
+                r={isActive ? 5 : 3}
+                fill={isActive ? "#D4AF37" : "#4A7C59"}
+                filter={isActive ? "url(#goldGlow)" : undefined}
+                style={{
+                  transition: "all 0.5s cubic-bezier(0.22, 1, 0.36, 1)",
+                }}
+              />
+
+              {/* Inner bright core */}
+              <circle
+                cx={pos.x}
+                cy={pos.y}
+                r={isActive ? 2 : 1}
+                fill="#FFFFFF"
+                opacity={isActive ? "0.9" : "0.5"}
+                style={{
+                  transition: "all 0.5s cubic-bezier(0.22, 1, 0.36, 1)",
+                }}
+              />
+
+              {/* Label */}
+              <text
+                x={pos.x}
+                y={pos.y - (isActive ? 14 : 10)}
+                textAnchor="middle"
+                fontSize={isActive ? "9" : "7"}
+                fontFamily="'Montserrat', sans-serif"
+                fontWeight={isActive ? "700" : "600"}
+                letterSpacing="0.12em"
+                fill={isActive ? "#D4AF37" : "#7A9E8A"}
+                style={{
+                  transition: "all 0.5s cubic-bezier(0.22, 1, 0.36, 1)",
+                }}
+              >
+                {node.name}
+              </text>
+
+              {/* Subtle region tag on active */}
+              {isActive && (
+                <text
+                  x={pos.x}
+                  y={pos.y + 22}
+                  textAnchor="middle"
+                  fontSize="6"
+                  fontFamily="'Montserrat', sans-serif"
+                  fontWeight="600"
+                  letterSpacing="0.2em"
+                  fill="#4A7C59"
+                >
+                  {node.region}
+                </text>
+              )}
+            </g>
+          );
+        })}
+
+        {/* Scanline sweep effect */}
+        <line
+          x1={cx - R}
+          y1={cy}
+          x2={cx + R}
+          y2={cy}
+          stroke="#D4AF37"
+          strokeWidth="0.3"
+          opacity="0.08"
+        >
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            from={`0 ${cx} ${cy}`}
+            to={`360 ${cx} ${cy}`}
+            dur="20s"
+            repeatCount="indefinite"
+          />
+        </line>
+
+        {/* Bottom data strip */}
+        <g transform="translate(0, 355)">
+          <rect x="60" y="0" width="300" height="1" fill="#2D6A4F" opacity="0.2" />
+          <text
+            x="210"
+            y="16"
+            textAnchor="middle"
+            fontSize="7"
+            fontFamily="'Montserrat', sans-serif"
+            fontWeight="600"
+            letterSpacing="0.25em"
+            fill="#4A7C59"
+          >
+            GLOBAL COVERAGE • 8 ACTIVE MARKETS • REAL-TIME DATA
+          </text>
+        </g>
+      </svg>
+
+      {/* CSS keyframes for pulse (injected via style tag in component) */}
+      <style>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.4; transform: scale(0.8); }
+        }
+      `}</style>
+    </div>
   );
 }
 
@@ -752,218 +1098,347 @@ export default function GlobalMarketsPage() {
       `}</style>
 
       {/* ── 1. HERO ───────────────────────────────────────────────────────── */}
-      <section
+<section
+  style={{
+    background: "#0B1F14",
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    padding: "0 64px",
+    position: "relative",
+    overflow: "hidden",
+  }}
+>
+  {/* Background image — ultra luxury institutional CRE skyline */}
+  <div
+    style={{
+      position: "absolute",
+      inset: 0,
+      zIndex: 0,
+    }}
+  >
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhBcTH-v4JWYcn8Frebw0MSDO1jsoP8s3ogsxtebWkKItZq-whuZaOyUI&s=10"
+      alt="Global financial skyline — Manhattan golden hour glass skyscrapers"
+      style={{
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        objectPosition: "center 30%",
+        filter: "brightness(0.35) contrast(1.15) saturate(0.85)",
+      }}
+    />
+    {/* Dark emerald cinematic vignette overlay — heavy on left for typography */}
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        background:
+          "linear-gradient(135deg, rgba(11,31,20,0.94) 0%, rgba(11,31,20,0.78) 38%, rgba(11,31,20,0.35) 62%, rgba(11,31,20,0.6) 100%)",
+        zIndex: 1,
+      }}
+    />
+    {/* Subtle gold light leak from right edge */}
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        background:
+          "radial-gradient(ellipse 55% 85% at 88% 50%, rgba(212,175,55,0.07) 0%, transparent 70%)",
+        zIndex: 2,
+        pointerEvents: "none",
+      }}
+    />
+    {/* Film grain noise overlay — Hasselblad medium format texture */}
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        zIndex: 3,
+        opacity: 0.025,
+        backgroundImage:
+          "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+        pointerEvents: "none",
+      }}
+    />
+  </div>
+
+  {/* Ticker bar */}
+  <div
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      zIndex: 10,
+      borderBottom: "1px solid rgba(45,106,79,0.25)",
+      padding: "12px 64px",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      backdropFilter: "blur(8px)",
+      background: "rgba(11,31,20,0.4)",
+    }}
+  >
+    <span
+      style={{
+        fontFamily: "'Montserrat', sans-serif",
+        fontSize: "11px",
+        fontWeight: 700,
+        letterSpacing: "0.2em",
+        color: "#D4AF37",
+        textTransform: "uppercase",
+      }}
+    >
+      Murivest Realty Group
+    </span>
+    <div style={{ display: "flex", gap: "32px" }}>
+      {["London", "Dubai", "Singapore", "Nairobi"].map((city) => (
+        <span
+          key={city}
+          style={{
+            fontFamily: "'Montserrat', sans-serif",
+            fontSize: "9px",
+            fontWeight: 600,
+            letterSpacing: "0.15em",
+            color: "#7A9E8A",
+            textTransform: "uppercase",
+            display: "flex",
+            alignItems: "center",
+            gap: "6px",
+          }}
+        >
+          <span
+            style={{
+              width: "5px",
+              height: "5px",
+              borderRadius: "50%",
+              background: "#2D6A4F",
+              display: "inline-block",
+            }}
+          />
+          {city}
+        </span>
+      ))}
+    </div>
+    <span
+      style={{
+        fontFamily: "'Montserrat', sans-serif",
+        fontSize: "9px",
+        color: "#4A7C59",
+        letterSpacing: "0.1em",
+        textTransform: "uppercase",
+      }}
+    >
+      GLOBAL CAPITAL MARKETS PLATFORM
+    </span>
+  </div>
+
+  <div
+    style={{
+      position: "relative",
+      zIndex: 5,
+      display: "grid",
+      gridTemplateColumns: "1fr 420px",
+      gap: "80px",
+      alignItems: "center",
+      maxWidth: "1400px",
+      width: "100%",
+      margin: "0 auto",
+    }}
+  >
+    {/* Left — large negative space for typography */}
+    <div>
+      <p
         style={{
-          background: "#0B1F14",
-          minHeight: "100vh",
+          fontFamily: "'Montserrat', sans-serif",
+          fontSize: "10px",
+          fontWeight: 700,
+          letterSpacing: "0.25em",
+          color: "#D4AF37",
+          textTransform: "uppercase",
+          marginBottom: "32px",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          padding: "0 64px",
-          position: "relative",
-          overflow: "hidden",
+          alignItems: "center",
+          gap: "12px",
         }}
       >
-        {/* Ticker bar */}
-        <div
+        <span
           style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            borderBottom: "1px solid #2D6A4F40",
-            padding: "12px 64px",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
+            width: "32px",
+            height: "1px",
+            background: "#D4AF37",
+            opacity: 0.5,
           }}
-        >
-          <span
-            style={{
-              fontFamily: "'Montserrat', sans-serif",
-              fontSize: "11px",
-              fontWeight: 700,
-              letterSpacing: "0.2em",
-              color: "#D4AF37",
-              textTransform: "uppercase",
-            }}
-          >
-            Murivest Realty Group
-          </span>
-          <div style={{ display: "flex", gap: "32px" }}>
-            {["London", "Dubai", "Singapore", "Nairobi"].map((city) => (
-              <span
-                key={city}
-                style={{
-                  fontFamily: "'Montserrat', sans-serif",
-                  fontSize: "9px",
-                  fontWeight: 600,
-                  letterSpacing: "0.15em",
-                  color: "#7A9E8A",
-                  textTransform: "uppercase",
-                }}
-              >
-                ● {city}
-              </span>
-            ))}
-          </div>
-          <span
-            style={{
-              fontFamily: "'Montserrat', sans-serif",
-              fontSize: "9px",
-              color: "#4A7C59",
-              letterSpacing: "0.1em",
-            }}
-          >
-            GLOBAL CAPITAL MARKETS PLATFORM
-          </span>
-        </div>
+        />
+        Global Markets — Institutional CRE Advisory
+      </p>
 
-        <div
+      <h1
+        style={{
+          fontFamily:
+            "'Playfair Display', 'Times New Roman', Georgia, serif",
+          fontSize: "clamp(48px, 6vw, 84px)",
+          fontWeight: 400,
+          lineHeight: 1.08,
+          color: "#FFFFFF",
+          marginBottom: "12px",
+          letterSpacing: "-0.01em",
+        }}
+      >
+        Global Capital.
+      </h1>
+      <h1
+        style={{
+          fontFamily:
+            "'Playfair Display', 'Times New Roman', Georgia, serif",
+          fontSize: "clamp(48px, 6vw, 84px)",
+          fontWeight: 400,
+          lineHeight: 1.08,
+          color: "#FFFFFF",
+          marginBottom: "12px",
+          letterSpacing: "-0.01em",
+          fontStyle: "italic",
+        }}
+      >
+        Local Execution.
+      </h1>
+      <h1
+        style={{
+          fontFamily:
+            "'Playfair Display', 'Times New Roman', Georgia, serif",
+          fontSize: "clamp(32px, 4vw, 52px)",
+          fontWeight: 400,
+          lineHeight: 1.2,
+          color: "#7A9E8A",
+          marginBottom: "40px",
+          letterSpacing: "-0.01em",
+        }}
+      >
+        Institutional Real Estate Across Emerging and Established Markets.
+      </h1>
+
+      <p
+        style={{
+          fontFamily: "'Montserrat', sans-serif",
+          fontSize: "15px",
+          fontWeight: 300,
+          lineHeight: 1.8,
+          color: "#9BB8A8",
+          maxWidth: "520px",
+          marginBottom: "48px",
+        }}
+      >
+        Access office towers, logistics portfolios, retail assets and
+        off-market investment opportunities through Murivest&apos;s global
+        capital markets platform — serving family offices, pension funds,
+        and sovereign investors across 70+ markets.
+      </p>
+
+      <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+        <a
+          href="#markets-grid"
+          className="cta-btn-primary"
           style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 420px",
-            gap: "80px",
+            fontFamily: "'Montserrat', sans-serif",
+            fontSize: "11px",
+            fontWeight: 600,
+            letterSpacing: "0.15em",
+            textTransform: "uppercase",
+            textDecoration: "none",
+            padding: "16px 32px",
+            borderRadius: "2px",
+            background: "#D4AF37",
+            color: "#0B1F14",
+            border: "1px solid #D4AF37",
+            transition: "all 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
+            position: "relative",
+            overflow: "hidden",
+            display: "inline-flex",
             alignItems: "center",
-            maxWidth: "1400px",
-            width: "100%",
-            margin: "0 auto",
+            gap: "8px",
           }}
         >
-          {/* Left */}
-          <div>
+          Explore Markets
+        </a>
+        <a
+          href="/deal-room"
+          className="cta-btn-ghost-light"
+          style={{
+            fontFamily: "'Montserrat', sans-serif",
+            fontSize: "11px",
+            fontWeight: 600,
+            letterSpacing: "0.15em",
+            textTransform: "uppercase",
+            textDecoration: "none",
+            padding: "16px 32px",
+            borderRadius: "2px",
+            background: "transparent",
+            color: "#FFFFFF",
+            border: "1px solid rgba(255,255,255,0.2)",
+            transition: "all 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px",
+          }}
+        >
+          View Investment Pipeline →
+        </a>
+      </div>
+
+      {/* Quick stats */}
+      <div
+        style={{
+          display: "flex",
+          gap: "48px",
+          marginTop: "64px",
+          paddingTop: "32px",
+          borderTop: "1px solid rgba(45,106,79,0.2)",
+        }}
+      >
+        {[
+          { value: "70+", label: "Markets" },
+          { value: "3,900+", label: "Assets" },
+          { value: "9", label: "Asset Classes" },
+          { value: "$1.2B+", label: "Under Advisory" },
+        ].map((stat) => (
+          <div key={stat.label}>
             <p
               style={{
-                fontFamily: "'Montserrat', sans-serif",
-                fontSize: "10px",
-                fontWeight: 700,
-                letterSpacing: "0.25em",
+                fontFamily: "'Playfair Display', serif",
+                fontSize: "28px",
+                fontWeight: 400,
                 color: "#D4AF37",
-                textTransform: "uppercase",
-                marginBottom: "32px",
+                lineHeight: 1,
               }}
             >
-              Global Markets — Institutional CRE Advisory
+              {stat.value}
             </p>
-
-            <h1
-              style={{
-                fontFamily: "'Playfair Display', 'Times New Roman', Georgia, serif",
-                fontSize: "clamp(48px, 6vw, 84px)",
-                fontWeight: 400,
-                lineHeight: 1.08,
-                color: "#FFFFFF",
-                marginBottom: "12px",
-                letterSpacing: "-0.01em",
-              }}
-            >
-              Global Capital.
-            </h1>
-            <h1
-              style={{
-                fontFamily: "'Playfair Display', 'Times New Roman', Georgia, serif",
-                fontSize: "clamp(48px, 6vw, 84px)",
-                fontWeight: 400,
-                lineHeight: 1.08,
-                color: "#FFFFFF",
-                marginBottom: "12px",
-                letterSpacing: "-0.01em",
-                fontStyle: "italic",
-              }}
-            >
-              Local Execution.
-            </h1>
-            <h1
-              style={{
-                fontFamily: "'Playfair Display', 'Times New Roman', Georgia, serif",
-                fontSize: "clamp(32px, 4vw, 52px)",
-                fontWeight: 400,
-                lineHeight: 1.2,
-                color: "#7A9E8A",
-                marginBottom: "40px",
-                letterSpacing: "-0.01em",
-              }}
-            >
-              Institutional Real Estate Across Emerging and Established Markets.
-            </h1>
-
             <p
               style={{
                 fontFamily: "'Montserrat', sans-serif",
-                fontSize: "15px",
-                fontWeight: 300,
-                lineHeight: 1.8,
-                color: "#9BB8A8",
-                maxWidth: "520px",
-                marginBottom: "48px",
+                fontSize: "9px",
+                fontWeight: 600,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "#4A7C59",
+                marginTop: "8px",
               }}
             >
-              Access office towers, logistics portfolios, retail assets and
-              off-market investment opportunities through Murivest's global
-              capital markets platform — serving family offices, pension funds,
-              and sovereign investors across 70+ markets.
+              {stat.label}
             </p>
-
-            <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-              <a href="#markets-grid" className="cta-btn-primary">
-                Explore Markets
-              </a>
-              <a href="/deal-room" className="cta-btn-ghost-light">
-                View Investment Pipeline →
-              </a>
-            </div>
-
-            {/* Quick stats */}
-            <div
-              style={{
-                display: "flex",
-                gap: "48px",
-                marginTop: "64px",
-                paddingTop: "32px",
-                borderTop: "1px solid #2D6A4F30",
-              }}
-            >
-              {[
-                { value: "70+", label: "Markets" },
-                { value: "3,900+", label: "Assets" },
-                { value: "9", label: "Asset Classes" },
-                { value: "$1.2B+", label: "Under Advisory" },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <p
-                    style={{
-                      fontFamily: "'Playfair Display', serif",
-                      fontSize: "28px",
-                      fontWeight: 400,
-                      color: "#D4AF37",
-                    }}
-                  >
-                    {stat.value}
-                  </p>
-                  <p
-                    style={{
-                      fontFamily: "'Montserrat', sans-serif",
-                      fontSize: "9px",
-                      fontWeight: 600,
-                      letterSpacing: "0.18em",
-                      textTransform: "uppercase",
-                      color: "#4A7C59",
-                      marginTop: "4px",
-                    }}
-                  >
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
+        ))}
+      </div>
+    </div>
 
-          {/* Globe */}
-          <div>
-            <GlobeSVG />
-          </div>
-        </div>
-      </section>
+    {/* Globe */}
+    <div style={{ position: "relative", zIndex: 5 }}>
+      <GlobeSVG />
+    </div>
+  </div>
+</section>
 
       <Divider />
 
