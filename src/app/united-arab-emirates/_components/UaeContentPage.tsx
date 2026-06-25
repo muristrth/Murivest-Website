@@ -10,11 +10,79 @@ import {
   ShieldAlert,
   Target,
   TrendingUp,
+  Download,
   Users,
 } from 'lucide-react';
 import { UaeInternalBreadcrumb } from './UaeInternalLinks';
 import { UaeInternalLinks } from './UaeInternalLinks';
 import type { UaePageConfig } from './uae-pages-types';
+
+const researchReports = [
+  {
+    title: 'UAE Office Market Report',
+    subtitle: '2026–2030 Outlook',
+    href: '/united-arab-emirates/research/uae-office-market-report',
+    cover: 'bg-gradient-to-br from-slate-800 to-slate-900',
+  },
+  {
+    title: 'UAE Industrial Market Report',
+    subtitle: 'Supply, Demand & Cap Rates',
+    href: '/united-arab-emirates/research/uae-industrial-market-report',
+    cover: 'bg-gradient-to-br from-stone-800 to-stone-900',
+  },
+  {
+    title: 'GCC Real Estate Outlook',
+    subtitle: 'Cross-Border Capital Flows',
+    href: '/united-arab-emirates/research/gcc-real-estate-outlook',
+    cover: 'bg-gradient-to-br from-zinc-800 to-zinc-900',
+  },
+  {
+    title: 'Fujairah Industrial Outlook',
+    subtitle: 'Port & Logistics Infrastructure',
+    href: '/united-arab-emirates/research/fujairah-industrial-outlook',
+    cover: 'bg-gradient-to-br from-neutral-800 to-neutral-900',
+  },
+]
+
+const keyMarkets = [
+  {
+    city: 'Dubai',
+    label: 'Global Gateway City',
+    href: '/united-arab-emirates/dubai',
+    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80',
+  },
+  {
+    city: 'Abu Dhabi',
+    label: 'Sovereign Capital Hub',
+    href: '/united-arab-emirates/abu-dhabi',
+    image: 'https://images.unsplash.com/photo-1623998021446-45f9b6a2ad98?w=800&q=80',
+  },
+  {
+    city: 'Sharjah',
+    label: 'Industrial & Cultural Heart',
+    href: '/united-arab-emirates/sharjah',
+    image: 'https://images.unsplash.com/photo-1611967164521-ab2a1b3f5a1d?w=800&q=80',
+  },
+  {
+    city: 'Ras Al Khaimah',
+    label: 'Fastest-Growing Economy',
+    href: '/united-arab-emirates/ras-al-khaimah',
+    image: 'https://images.unsplash.com/photo-1598887142787-0cf008e9c15b?w=800&q=80',
+  },
+  {
+    city: 'Ajman',
+    label: 'Value Corridor',
+    href: '/united-arab-emirates/ajman',
+    image: 'https://images.unsplash.com/photo-1580674684081-7617fbf3d745?w=800&q=80',
+  },
+  {
+    city: 'Fujairah',
+    label: 'Strategic Maritime Gateway',
+    href: '/united-arab-emirates/fujairah',
+    image: 'https://images.unsplash.com/photo-1569949381669-ecf31ae8f613?w=800&q=80',
+  },
+]
+
 
 type StructuredData = {
   '@context': string;
@@ -178,64 +246,75 @@ export function UaeContentPage({ config, heroBgImage, extraSections }: { config:
         </div>
       </section>
 
-      <section id="executive-summary" className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-white">
-        <div className="max-w-[1400px] mx-auto">
-          <SectionHeading eyebrow="Executive Summary" title="Investment Committee Summary" description={page.summary} />
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
-            <div className="lg:col-span-7 space-y-5">
-              {page.marketContext.split('\n\n').map((paragraph) => (
-                <p key={paragraph} className="text-sm md:text-base text-[#4A4A4A] leading-relaxed">{paragraph}</p>
-              ))}
-            </div>
-            <div className="lg:col-span-5">
-              <div className="rounded-2xl border border-[#1A1A1A]/5 bg-[#FAF9F6] p-6 md:p-8">
-                <h3 className="font-display text-xl text-[#1A1A1A] mb-5">Capital Allocation Lens</h3>
-                <ul className="space-y-4">
-                  {page.institutionalRelevance.map((item) => (
-                    <li key={item} className="flex gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-[#B8956B] shrink-0 mt-0.5" strokeWidth={1.5} />
-                      <span className="text-sm text-[#4A4A4A] leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="investment-thesis" className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20">
-        <div className="max-w-[1400px] mx-auto">
-          <SectionHeading eyebrow="Investment Thesis" title="Why Sophisticated Capital Allocates Here" />
-          <CardGrid items={page.thesis} icon={Target} />
-        </div>
-      </section>
-
-      <section className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-white">
-        <div className="max-w-[1400px] mx-auto">
-          <SectionHeading eyebrow="Demand Drivers" title="Structural Demand Drivers" />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {page.demandDrivers.map((driver) => (
-              <div key={driver} className="p-6 bg-[#FAF9F6] border border-[#1A1A1A]/5">
-                <TrendingUp className="w-5 h-5 text-[#B8956B] mb-6" strokeWidth={1.5} />
-                <h3 className="font-display text-lg text-[#1A1A1A] mb-3">{driver}</h3>
-                <p className="text-sm text-[#4A4A4A] leading-relaxed">Demand is evaluated through occupancy, covenant quality, rent durability, replacement cost and exit liquidity.</p>
-              </div>
+      {/* ========== KEY MARKETS (MINIMAL) ========== */}
+      <section id="markets" className="py-24 md:py-36 lg:py-48 bg-white">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+          <p className="text-xs font-semibold tracking-[0.25em] uppercase text-[#C9A96E] mb-4">
+            Primary Institutional Gateways
+          </p>
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-[1.15] text-[#111111] mb-12 md:mb-16">
+            UAE Markets
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8 md:gap-10">
+            {keyMarkets.map((market) => (
+              <Link
+                key={market.city}
+                href={market.href}
+                className="group block relative overflow-hidden rounded-2xl"
+              >
+                <div className="aspect-[4/5] relative">
+                  <Image
+                    src={market.image}
+                    alt={market.city}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                    <h3 className="font-serif text-2xl md:text-3xl text-white mb-1">{market.city}</h3>
+                    <p className="text-sm text-white/70 uppercase tracking-wider">{market.label}</p>
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="risk-factors" className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20">
-        <div className="max-w-[1400px] mx-auto">
-          <SectionHeading eyebrow="Risk Factors" title="Institutional Risk Considerations" />
-          <div className="grid md:grid-cols-3 gap-4 md:gap-6">
-            {page.riskFactors.map((risk) => (
-              <div key={risk} className="p-6 bg-white border border-[#1A1A1A]/5">
-                <ShieldAlert className="w-5 h-5 text-[#B8956B] mb-6" strokeWidth={1.5} />
-                <h3 className="font-display text-lg text-[#1A1A1A] mb-3">{risk}</h3>
-                <p className="text-sm text-[#4A4A4A] leading-relaxed">Murivest underwrites this through scenario analysis, lease diligence, counterparty review and exit route mapping.</p>
-              </div>
+      {/* ========== SELECTED RESEARCH ========== */}
+      <section id="research" className="py-24 md:py-36 lg:py-48 bg-[#FAFAFA]">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+          <p className="text-xs font-semibold tracking-[0.25em] uppercase text-[#C9A96E] mb-4">
+            Institutional Research
+          </p>
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-[1.15] text-[#111111] mb-12 md:mb-16">
+            Selected Reports
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {researchReports.map((report) => (
+              <Link
+                key={report.title}
+                href={report.href}
+                className="group block rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow bg-white"
+              >
+                {/* Report cover */}
+                <div className={`aspect-[3/4] ${report.cover} flex flex-col items-center justify-center p-6 text-center relative`}>
+                  <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-6">
+                    <Download className="w-6 h-6 text-[#C9A96E]" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="font-serif text-xl md:text-2xl text-white leading-tight mb-2">
+                    {report.title}
+                  </h3>
+                  <p className="text-xs text-white/50 uppercase tracking-widest">{report.subtitle}</p>
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#C9A96E] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+                </div>
+                <div className="p-4 text-center">
+                  <span className="text-sm text-[#0F172A] font-medium group-hover:text-[#C9A96E] transition-colors">
+                    Download PDF →
+                  </span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>

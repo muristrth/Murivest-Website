@@ -1033,13 +1033,11 @@ export default function RootLayout({
         </noscript>
 
         {/* Client-side React Application */}
-        <AppShell>
           <Suspense fallback={
             <div style={{ minHeight: '100vh', background: '#0B1510' }} />
           }>
             {children}
           </Suspense>
-        </AppShell>
 
         <CookieBanner />
         <AnalyticsTracker />
