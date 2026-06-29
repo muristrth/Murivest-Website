@@ -8,6 +8,7 @@ import broker from './broker'
 import siteSettings from './siteSettings'
 import uaeProperty from './uaeProperty'
 import propertylet from './schema-property'
+import sgProperty from './sgProperty'
 
 
 export const schemaTypes = [
@@ -17,6 +18,7 @@ export const schemaTypes = [
   usProperty,
   uaeProperty,
   ukProperty,
+  sgProperty,
   post,
   insight,
   broker,
