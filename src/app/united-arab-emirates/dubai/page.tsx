@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   keywords: 'Dubai commercial real estate, DIFC investment, Business Bay offices, Downtown Dubai, Jebel Ali industrial, institutional CRE advisory, UAE property investment',
   openGraph: {
     title: 'Dubai Commercial Real Estate | Institutional Investment Advisory',
-    description: 'Premium CRE advisory for institutional capital in Dubai's premier markets',
+    description: 'Premium CRE advisory for institutional capital in Dubai\'s premier markets',
     url: 'https://murivest.com/united-arab-emirates/dubai',
     siteName: 'Murivest Realty Group',
     locale: 'en_AE',
@@ -35,7 +35,7 @@ const dubaiDistricts = [
     id: 'difc',
     name: 'Dubai International Financial Centre',
     slug: 'difc',
-    description: 'The MENA region's leading financial hub. World-class infrastructure, competitive tax regime, and regulatory excellence attracting global financial institutions.',
+    description: 'The MENA region\'s leading financial hub. World-class infrastructure, competitive tax regime, and regulatory excellence attracting global financial institutions.',
     keyFeatures: ['Financial Hub', 'Regulatory Excellence', 'Global Institutions'],
     investmentProfile: 'High-yielding office assets, specialty financials, gateway capital',
     icon: TrendingUp,
@@ -122,7 +122,7 @@ export default function DubaiPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __json: JSON.stringify({
+          __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'LocalBusiness',
             name: 'Murivest Dubai',
