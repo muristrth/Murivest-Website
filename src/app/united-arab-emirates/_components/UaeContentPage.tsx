@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Script from 'next/script';
 import Image from 'next/image';
+import { Suspense } from 'react';
 import {
   ArrowRight,
   ArrowUpRight,
@@ -176,7 +177,9 @@ export function UaeContentPage({ config, heroBgImage, extraSections }: { config:
       <Script id={`schema-${page.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData(page)) }} />
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 pt-24 md:pt-28">
-        <UaeInternalBreadcrumb />
+        <Suspense fallback={<div />}>
+          <UaeInternalBreadcrumb />
+        </Suspense>
       </div>
 
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#FAF9F6]/85 backdrop-blur-md border-b border-[#1A1A1A]/5">
@@ -416,7 +419,9 @@ export function UaeContentPage({ config, heroBgImage, extraSections }: { config:
         </div>
       </section>
 
-      <UaeInternalLinks title="Complete UAE Internal Link Map" />
+      <Suspense fallback={null}>
+        <UaeInternalLinks title="Complete UAE Internal Link Map" />
+      </Suspense>
 
       {extraSections}
 

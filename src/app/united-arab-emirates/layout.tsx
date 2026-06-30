@@ -1032,16 +1032,20 @@ export default function RootLayout({
           </main>
         </noscript>
 
-        {/* Client-side React Application */}
-          <Suspense fallback={
-            <div style={{ minHeight: '100vh', background: '#0B1510' }} />
-          }>
-            {children}
-          </Suspense>
+{/* Client-side React Application */}
+        <Suspense fallback={
+          <div style={{ minHeight: '100vh', background: '#0B1510' }} />
+        }>
+          {children}
+        </Suspense>
 
         <CookieBanner />
-        <AnalyticsTracker />
-        <MetaPixel />
+        <Suspense fallback={null}>
+          <AnalyticsTracker />
+        </Suspense>
+        <Suspense fallback={null}>
+          <MetaPixel />
+        </Suspense>
       </body>
     </html>
   );
