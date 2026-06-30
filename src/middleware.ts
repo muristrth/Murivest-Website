@@ -29,54 +29,17 @@ function handleDomainRouting(request: NextRequest): NextResponse | null {
   const hostname = request.headers.get('host') || ''
   const { pathname, search } = request.nextUrl
 
-  const isComDomain = hostname === 'murivest.com' || hostname === 'www.murivest.com'
   const isKeDomain = hostname === 'murivest.co.ke' || hostname === 'www.murivest.co.ke'
 
-  // ── murivest.co.ke → redirect to murivest.com/kenya ────────
   if (isKeDomain) {
-    // Prevent loop: if already on /kenya, don't add another /kenya
-    if (pathname.startsWith('/kenya')) {
-      // Already has /kenya prefix — redirect to same path on .com
-      const target = new URL(`https://murivest.com${pathname}${search}`)
-      return NextResponse.redirect(target, REDIRECT_STATUS)
-    }
-
-    // Add /kenya prefix and redirect to .com
-    const targetPath = pathname === '/' ? '/kenya' : `/kenya${pathname}`
-    const target = new URL(`https://murivest.com${targetPath}${search}`)
-    return NextResponse.redirect(target, REDIRECT_STATUS)
+    const targetPath = pathname.startsWith('/kenya') ? pathname : `/kenya${pathname}`
+    return NextResponse.redirect(
+      new URL(`https://murivest.com${targetPath}${search}`),
+      REDIRECT_STATUS
+    )
   }
 
-  // ── murivest.com → serve global site, strip any /kenya ─────
-  if (isComDomain) {
-    if (pathname.startsWith('/kenya')) {
-      // Someone hit murivest.com/kenya/* directly — strip /kenya
-      const cleanPath = pathname.replace(/^\/kenya/, '') || '/'
-      const target = new URL(`https://murivest.com${cleanPath}${search}`)
-      return NextResponse.redirect(target, REDIRECT_STATUS)
-    }
-
-    // Normal global site — no redirect
-    return null
-  }
-
-  // Unknown domain (localhost, previews, etc.) — let through
   return null
-}
-
-// ─────────────────────────────────────────────────────────────
-// ENVIRONMENT VALIDATION
-// ─────────────────────────────────────────────────────────────
-
-function getSupabaseCredentials() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
-
-  if (!url || !key) {
-    console.warn('[Middleware] Supabase credentials missing — skipping auth checks')
-  }
-
-  return { url, key }
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -88,12 +51,10 @@ function createCookieHandlers(request: NextRequest, response: NextResponse) {
     get(name: string) {
       return request.cookies.get(name)?.value
     },
-
     set(name: string, value: string, options: CookieOptions) {
       request.cookies.set({ name, value, ...options })
       response.cookies.set({ name, value, ...options })
     },
-
     remove(name: string, options: CookieOptions) {
       request.cookies.set({ name, value: '', ...options })
       response.cookies.set({ name, value: '', ...options })
@@ -118,12 +79,13 @@ function isInvestorPath(path: string): boolean {
 }
 
 // ─────────────────────────────────────────────────────────────
-// AUTH GUARDS
+// AUTH GUARD
 // ─────────────────────────────────────────────────────────────
 
-async function guardAdmin(
+async function guardRoute(
   supabase: ReturnType<typeof createServerClient>,
-  request: NextRequest
+  request: NextRequest,
+  loginPath: string
 ): Promise<NextResponse | null> {
   const {
     data: { session },
@@ -131,31 +93,11 @@ async function guardAdmin(
   } = await supabase.auth.getSession()
 
   if (error) {
-    console.error('[Middleware] Admin auth error:', error.message)
+    console.error('[Middleware] Auth error:', error.message)
   }
 
   if (!session) {
-    return NextResponse.redirect(new URL('/admin/login', request.url))
-  }
-
-  return null
-}
-
-async function guardInvestor(
-  supabase: ReturnType<typeof createServerClient>,
-  request: NextRequest
-): Promise<NextResponse | null> {
-  const {
-    data: { session },
-    error,
-  } = await supabase.auth.getSession()
-
-  if (error) {
-    console.error('[Middleware] Investor auth error:', error.message)
-  }
-
-  if (!session) {
-    return NextResponse.redirect(new URL('/investor-portal/login', request.url))
+    return NextResponse.redirect(new URL(loginPath, request.url))
   }
 
   return null
@@ -188,9 +130,11 @@ export async function middleware(request: NextRequest) {
   }
 
   // 5. Supabase setup
-  const { url, key } = getSupabaseCredentials()
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
 
   if (!url || !key) {
+    console.warn('[Middleware] Supabase credentials missing — skipping auth checks')
     return response
   }
 
@@ -200,12 +144,12 @@ export async function middleware(request: NextRequest) {
 
   // 6. Route guards
   if (isAdminPath(path)) {
-    const redirect = await guardAdmin(supabase, request)
+    const redirect = await guardRoute(supabase, request, '/admin/login')
     if (redirect) return redirect
   }
 
   if (isInvestorPath(path)) {
-    const redirect = await guardInvestor(supabase, request)
+    const redirect = await guardRoute(supabase, request, '/investor-portal/login')
     if (redirect) return redirect
   }
 
