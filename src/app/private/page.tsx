@@ -270,7 +270,7 @@ export default function AssetBriefPage() {
 
                         <div>
                           <label className="block text-[0.6rem] tracking-[0.2em] text-[#B8956B]/60 uppercase mb-2">Organisation / Fund</label>
-                          <input type="text" name="organization" required value={formData.organization} onChange={handleInputChange} className="w-full bg-[#0a0a0a] border border-[#B8956B]/20 px-4 py-3 text-sm text-[#FAF9F6] focus:border-[#B8956B] focus:outline-none transition-colors placeholder:text-[#FAF9F6]/20" placeholder="Insurance Co. / Pension Fund / Family Office" />
+                          <input type="text" name="organization" required value={formData.organization} onChange={handleInputChange} className="w-full bg-[#0a0a0a] border border-[#B8956B]/20 px-4 py-3 text-sm text-[#FAF9F6] focus:border-[#B8956B] focus:outline-none transition-colors placeholder:text-[#FAF9F6]/20" placeholder="Insurance Co ./ Pension Fund / Family Office" />
                         </div>
 
                         <div>
