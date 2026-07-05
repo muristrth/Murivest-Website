@@ -9,7 +9,7 @@ const metrics = [
   { label: 'Grade A Vacancy', value: MARKET_SNAPSHOT.gradeAVacancyRate, suffix: '%', decimals: 1, context: 'Q1 2026 (CBRE)' },
   { label: 'Avg CBD Rent', value: MARKET_SNAPSHOT.averageCBDRent, prefix: 'S$', suffix: '/sf', decimals: 2, context: 'per month' },
   { label: 'Cap Rate Range', value: MARKET_SNAPSHOT.gradeACapRateLow, prefix: '', suffix: '%', decimals: 2, context: 'Core CBD Grade A' },
-  { label: 'GDP Growth 2026', value: SINGAPORE_MACRO.gdp2026, prefix: '', suffix: '', decimals: 0, context: 'MAS Forecast' },
+  { label: 'GDP Growth 2026', value: MARKET_SNAPSHOT.gdpGrowth2026, prefix: '', suffix: '%', decimals: 0, context: 'MAS Forecast' },
 ];
 
 export default function MarketSnapshot() {
