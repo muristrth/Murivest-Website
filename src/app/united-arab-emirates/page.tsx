@@ -79,7 +79,10 @@ const fadeUp = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] },
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
+    },
   },
 };
 
@@ -103,7 +106,10 @@ const lineReveal = {
   hidden: { scaleX: 0 },
   visible: {
     scaleX: 1,
-    transition: { duration: 1.2, ease: [0.65, 0, 0.35, 1] },
+    transition: {
+      duration: 1.2,
+      ease: [0.65, 0, 0.35, 1] as [number, number, number, number],
+    },
   },
 };
 
@@ -112,7 +118,11 @@ const letterReveal = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.03, duration: 0.5, ease: "easeOut" },
+    transition: {
+      delay: i * 0.03,
+      duration: 0.5,
+      ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
+    },
   }),
 };
 
