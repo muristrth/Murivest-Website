@@ -7,6 +7,10 @@ import SectionHeader from '../(components)/shared/SectionHeader';
 import ContactForm from '../(components)/shared/ContactForm';
 import NewsletterSignup from '../(components)/sections/NewsletterSignup';
 import { BreadcrumbSchema } from '../(components)/shared/SchemaMarkup';
+import {
+  serviceSchema,
+  jsonLd,
+} from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: SEO_TEMPLATES.services.title,
@@ -29,6 +33,12 @@ export default function ServicesPage() {
         { name: 'Singapore', url: 'https://murivest.com/singapore' },
         { name: 'Services', url: 'https://murivest.com/singapore/services' },
       ]} />
+      {jsonLd(serviceSchema({
+        name: 'Singapore Commercial Real Estate Advisory',
+        description: 'Institutional-grade advisory services for Singapore commercial real estate: acquisition, disposition, asset management, and portfolio advisory for UHNWI, family offices, and sovereign wealth funds.',
+        url: 'https://murivest.com/singapore/services',
+        providerName: 'Murivest Singapore',
+      }))}
 
       <main>
         {/* Hero */}

@@ -6,6 +6,10 @@ import ScrollReveal from '../(components)/shared/ScrollReveal';
 import SectionHeader from '../(components)/shared/SectionHeader';
 import NewsletterSignup from '../(components)/sections/NewsletterSignup';
 import { BreadcrumbSchema } from '../(components)/shared/SchemaMarkup';
+import {
+  collectionPageSchema,
+  jsonLd,
+} from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: SEO_TEMPLATES.insights.title,
@@ -19,6 +23,12 @@ export default function InsightsPage() {
   const featured = SAMPLE_ARTICLES.filter((a) => a.featured);
   const regular = SAMPLE_ARTICLES.filter((a) => !a.featured);
 
+  const insightsList = [...featured, ...regular].map((article) => ({
+    name: article.title,
+    description: article.excerpt,
+    url: `https://murivest.com/singapore/insights/${article.slug}`,
+  }));
+
   return (
     <>
       <BreadcrumbSchema items={[
@@ -26,6 +36,12 @@ export default function InsightsPage() {
         { name: 'Singapore', url: 'https://murivest.com/singapore' },
         { name: 'Insights', url: 'https://murivest.com/singapore/insights' },
       ]} />
+      {jsonLd(collectionPageSchema({
+        name: 'Singapore Commercial Real Estate Insights & Research',
+        description: 'Institutional-grade Singapore market reports, investment insights, and regulatory updates for commercial real estate investors.',
+        url: 'https://murivest.com/singapore/insights',
+        items: insightsList.slice(0, 10),
+      }))}
 
       <main>
         {/* Header */}

@@ -28,7 +28,6 @@ const C = {
   goldMid:       'rgba(201,169,110,0.40)',
   border:        'rgba(201,169,110,0.10)',
   borderWeak:    'rgba(255,255,255,0.06)',
-  ticker:        '#060D09',
   up:            '#52A87A',
   down:          '#C95252',
   neutral:       'rgba(250,249,246,0.38)',
@@ -37,25 +36,6 @@ const C = {
 /* ═══════════════════════════════════════════════════════════════════
    DATA
 ═══════════════════════════════════════════════════════════════════ */
-
-const TICKER_ITEMS = [
-  { market: 'NBO',  label: 'Prime Office Yield',      value: '7.8%',        dir: 'up' as const,      delta: '+30bps' },
-  { market: 'DIFC', label: 'Grade-A Vacancy',          value: '8.2%',        dir: 'down' as const,    delta: '−110bps' },
-  { market: 'SGP',  label: 'Industrial Cap Rate',      value: '5.4%',        dir: 'neutral' as const, delta: 'STABLE' },
-  { market: 'EA',   label: 'CRE Volume YTD',           value: 'USD 2.1B',    dir: 'up' as const,      delta: '+12.3% YoY' },
-  { market: 'LDN',  label: 'City Office Rents',        value: '£72.50 psf',  dir: 'up' as const,      delta: '+4.2%' },
-  { market: 'KGL',  label: 'Mixed-Use Pipeline',       value: '380K sqm',    dir: 'neutral' as const, delta: 'ACTIVE' },
-  { market: 'AUH',  label: 'Prime Office Yield',       value: '6.1%',        dir: 'down' as const,    delta: '−20bps' },
-  { market: 'DAR',  label: 'Grade-A Take-Up',          value: '28K sqm',     dir: 'up' as const,      delta: '+8.7% QoQ' },
-  { market: 'TYO',  label: 'Logistics Cap Rate',       value: '3.8%',        dir: 'neutral' as const, delta: 'STABLE' },
-  { market: 'NBO',  label: 'Industrial Vacancy',       value: '4.2%',        dir: 'down' as const,    delta: '−90bps' },
-  { market: 'BER',  label: 'Logistics Prime Yield',    value: '4.5%',        dir: 'up' as const,      delta: '+40bps' },
-  { market: 'DXB',  label: 'Hospitality RevPAR',       value: 'AED 720',     dir: 'up' as const,      delta: '+6.3%' },
-  { market: 'KMP',  label: 'Office Absorption',        value: '12K sqm',     dir: 'up' as const,      delta: '+15.2% YoY' },
-  { market: 'SYD',  label: 'CBD Grade-A Yield',        value: '5.7%',        dir: 'neutral' as const, delta: 'STABLE' },
-  { market: 'RUH',  label: 'Grade-A Supply Pipeline',  value: '680K sqm',    dir: 'up' as const,      delta: 'H2 2026' },
-  { market: 'PAR',  label: 'Prime Logistics Yield',    value: '4.1%',        dir: 'neutral' as const, delta: 'STABLE' },
-]
 
 const TRUST_BADGES = [
   { label: 'INREV Member' },
@@ -431,75 +411,7 @@ function AnimatedCounter({ value, prefix, suffix }: { value: number; prefix: str
   return <span ref={ref}>{prefix}0{suffix}</span>
 }
 
-/* ═══════════════════════════════════════════════════════════════════
-   BLOOMBERG TICKER
-═══════════════════════════════════════════════════════════════════ */
-function BloombergTicker() {
-  const doubled = [...TICKER_ITEMS, ...TICKER_ITEMS]
-  const dirColor = (dir: 'up' | 'down' | 'neutral') =>
-    dir === 'up' ? C.up : dir === 'down' ? C.down : C.neutral
-  const dirSymbol = (dir: 'up' | 'down' | 'neutral') =>
-    dir === 'up' ? '▲' : dir === 'down' ? '▼' : '—'
 
-  return (
-    <div className="ticker-container" style={{ position: 'relative', height: '34px', backgroundColor: C.ticker, borderBottom: `1px solid rgba(201,169,110,0.14)`, display: 'flex', alignItems: 'stretch', zIndex: 1000, overflow: 'hidden', width: '100%' }}>
-      <div style={{ flexShrink: 0, padding: '0 1.25rem', borderRight: `1px solid rgba(201,169,110,0.14)`, backgroundColor: C.brand, display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-        <div style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: C.up, boxShadow: `0 0 0 0 ${C.up}`, animation: 'livePulse 2s ease-in-out infinite' }} />
-        <span style={{ fontFamily: 'var(--font-montserrat, Montserrat, sans-serif)', fontSize: '0.48rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: C.gold, fontWeight: 600, whiteSpace: 'nowrap' }}>
-          Murivest Intelligence
-        </span>
-      </div>
-      <div style={{ flexShrink: 0, padding: '0 1rem', borderRight: `1px solid rgba(201,169,110,0.08)`, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-        <span style={{ fontFamily: 'var(--font-montserrat, Montserrat, sans-serif)', fontSize: '0.48rem', letterSpacing: '0.12em', color: 'rgba(250,249,246,0.28)', whiteSpace: 'nowrap' }}>
-          H1 2026
-        </span>
-        <span style={{ fontFamily: 'var(--font-montserrat, Montserrat, sans-serif)', fontSize: '0.44rem', letterSpacing: '0.1em', color: C.gold, backgroundColor: 'rgba(201,169,110,0.12)', padding: '0.1rem 0.4rem', whiteSpace: 'nowrap' }}>
-          EST. 2001
-        </span>
-      </div>
-      <div style={{ flex: 1, overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'center' }}>
-        <div style={{ display: 'flex', alignItems: 'center', whiteSpace: 'nowrap', animation: 'tickerScroll 75s linear infinite', willChange: 'transform' }}>
-          {doubled.map((item, i) => (
-            <div key={i} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', padding: '0 1.75rem', borderRight: `1px solid rgba(201,169,110,0.07)`, height: '34px' }}>
-              <span style={{ fontFamily: 'var(--font-montserrat, Montserrat, sans-serif)', fontSize: '0.55rem', letterSpacing: '0.14em', color: C.gold, fontWeight: 700 }}>{item.market}</span>
-              <span style={{ fontFamily: 'var(--font-montserrat, Montserrat, sans-serif)', fontSize: '0.49rem', letterSpacing: '0.07em', color: 'rgba(250,249,246,0.38)', textTransform: 'uppercase' }}>{item.label}</span>
-              <span style={{ fontFamily: 'var(--font-montserrat, Montserrat, sans-serif)', fontSize: '0.55rem', letterSpacing: '0.05em', color: C.cream, fontWeight: 500 }}>{item.value}</span>
-              <span style={{ fontFamily: 'var(--font-montserrat, Montserrat, sans-serif)', fontSize: '0.49rem', color: dirColor(item.dir), letterSpacing: '0.04em' }}>{dirSymbol(item.dir)}&thinsp;{item.delta}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-}
-
-/* ═══════════════════════════════════════════════════════════════════
-   MOBILE TICKER
-═══════════════════════════════════════════════════════════════════ */
-function MobileTicker() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  useEffect(() => {
-    const interval = setInterval(() => { setCurrentIndex((prev) => (prev + 1) % TICKER_ITEMS.length) }, 3000)
-    return () => clearInterval(interval)
-  }, [])
-  const item = TICKER_ITEMS[currentIndex]
-  const dirColor = item.dir === 'up' ? C.up : item.dir === 'down' ? C.down : C.neutral
-  const dirSymbol = item.dir === 'up' ? '▲' : item.dir === 'down' ? '▼' : '—'
-
-  return (
-    <div style={{ position: 'relative', height: '32px', backgroundColor: C.ticker, borderBottom: `1px solid rgba(201,169,110,0.14)`, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 1rem', zIndex: 1000, overflow: 'hidden' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-        <div style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: C.up, animation: 'livePulse 2s ease-in-out infinite' }} />
-        <span style={{ fontFamily: 'var(--font-montserrat, Montserrat, sans-serif)', fontSize: '0.45rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: C.gold, fontWeight: 600 }}>Murivest · Est. 2001</span>
-      </div>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-        <span style={{ fontFamily: 'var(--font-montserrat, Montserrat, sans-serif)', fontSize: '0.5rem', letterSpacing: '0.1em', color: C.gold, fontWeight: 700 }}>{item.market}</span>
-        <span style={{ fontFamily: 'var(--font-montserrat, Montserrat, sans-serif)', fontSize: '0.48rem', color: C.cream }}>{item.value}</span>
-        <span style={{ fontFamily: 'var(--font-montserrat, Montserrat, sans-serif)', fontSize: '0.45rem', color: dirColor }}>{dirSymbol}&thinsp;{item.delta}</span>
-      </div>
-    </div>
-  )
-}
 
 /* ═══════════════════════════════════════════════════════════════════
    TRUST BAR
@@ -855,9 +767,6 @@ export default function GlobalHomePage() {
         .office-row-hover:hover { background-color: rgba(201,169,110,0.04); }
       `}</style>
 
-      {/* ── Ticker ── */}
-      <div className="desktop-only"><BloombergTicker /></div>
-      <div className="mobile-only"><MobileTicker /></div>
 
       {/* ═══════════════════════════════════════════════════════════
           TRUST BAR — Institutional recognition (desktop only)
