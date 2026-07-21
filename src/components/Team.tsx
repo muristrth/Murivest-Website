@@ -32,8 +32,8 @@ const Team = ({ members = [] }: TeamProps) => {
       title: 'Chief Executive Officer & Founder',
       bio: 'Over two decades of experience in East African commercial real estate. Former Managing Director at a leading property consultancy, with $500M+ in executed transactions.',
       image: '/CEO.Founder.webp',
-      linkedin: '#',
-      email: 'mark@ murivest.com'
+      linkedin: 'https://www.linkedin.com/in/mark-muriithi-343365215/',
+      email: 'mark.muriithi@murivest.com'
     },
     {
       id: '2',
@@ -42,7 +42,7 @@ const Team = ({ members = [] }: TeamProps) => {
       bio: 'PhD Finance, London School of Economics. CFA Charterholder with 15+ years in African capital markets and real estate investment structuring.',
       image: '/p2/profile-placeholder.webp',
       linkedin: '#',
-      email: 'samuel@ murivest.com'
+      email: 'samuel@murivest.com'
     },
     {
       id: '3',
@@ -51,16 +51,34 @@ const Team = ({ members = [] }: TeamProps) => {
       bio: 'MSc Real Estate, University of Reading. RICS Member with 12+ years managing institutional portfolios exceeding $200M across East Africa.',
       image: '/p2/profile-placeholder.webp',
       linkedin: '#',
-      email: 'michael@ murivest.com'
+      email: 'michael@murivest.com'
     },
     {
       id: '4',
+      name: 'Julie Maina',
+      title: 'Head of Marketing',
+      bio: 'MBA, BM. Former Marketing Director with deep network across East African commercial real estate markets.',
+      image: '/p2/profile-placeholder.webp',
+      linkedin: '#',
+      email: 'julie@murivest.com'
+    },
+    {
+      id: '5',
       name: 'Sarah Wanjiku',
       title: 'Head of Origination',
       bio: 'MBA, INSEAD. Former investment banker with deep network across East African commercial real estate markets.',
       image: '/p2/profile-placeholder.webp',
       linkedin: '#',
-      email: 'sarah@ murivest.com'
+      email: 'sarah@murivest.com'
+    },
+    {
+      id: '6',
+      name: 'Danson Moonyoi',
+      title: 'Junior Investment Advisor',
+      bio: 'MBA, INSEAD. Former investment banker with deep network across East African commercial real estate markets.',
+      image: '/images/team/passport_photo.jpg',
+      linkedin: 'https://www.linkedin.com/in/moonyoi-ntagusa-6bb3a2171/',
+      email: 'moonyoi.ntagusa@murivest.com'
     }
   ];
 

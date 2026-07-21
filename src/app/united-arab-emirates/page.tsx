@@ -126,279 +126,151 @@ const letterReveal = {
   }),
 };
 
-// ─────────────────────────────────────────────────────────────
-// SECTION: NAVIGATION
-// ─────────────────────────────────────────────────────────────
-
-function Navigation() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 80);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const navLinks = [
-    { label: "Investment Advisory", href: "#advisory" },
-    { label: "Capital Markets", href: "#capital" },
-    { label: "Research", href: "#research" },
-    { label: "Cross-Border Strategy", href: "#crossborder" },
-  ];
-
-  return (
-    <>
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-stone-50/95 backdrop-blur-md border-b border-stone-200/60"
-            : "bg-transparent"
-        }`}
-      >
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <a href="/" className="flex items-center gap-3 group">
-              <div
-                className={`w-8 h-8 rounded-sm transition-all duration-500 ${
-                  scrolled
-                    ? "bg-forest-800"
-                    : "bg-stone-50/10 border border-stone-50/30"
-                }`}
-              >
-                <svg
-                  viewBox="0 0 32 32"
-                  className={`w-full h-full transition-colors duration-500 ${
-                    scrolled ? "text-gold-400" : "text-stone-50"
-                  }`}
-                  fill="currentColor"
-                >
-                  <rect x="4" y="4" width="10" height="10" rx="1" />
-                  <rect x="18" y="4" width="10" height="10" rx="1" />
-                  <rect x="4" y="18" width="10" height="10" rx="1" />
-                  <rect x="18" y="18" width="10" height="10" rx="1" />
-                </svg>
-              </div>
-              <div className="flex flex-col">
-                <span
-                  className={`font-display text-lg tracking-[0.2em] uppercase transition-colors duration-500 ${
-                    scrolled ? "text-forest-900" : "text-stone-50"
-                  }`}
-                >
-                  Murivest
-                </span>
-                <span
-                  className={`text-[9px] tracking-[0.35em] uppercase transition-colors duration-500 ${
-                    scrolled ? "text-gold-600" : "text-stone-400"
-                  }`}
-                >
-                  United Arab Emirates
-                </span>
-              </div>
-            </a>
-
-            {/* Desktop Nav */}
-            <div className="hidden lg:flex items-center gap-10">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className={`text-[11px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 hover:text-gold-500 ${
-                    scrolled ? "text-stone-600" : "text-stone-300"
-                  }`}
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-
-            {/* CTA */}
-            <div className="hidden lg:flex items-center gap-6">
-              <a
-                href="#contact"
-                className={`text-[11px] tracking-[0.15em] uppercase font-medium transition-all duration-300 px-6 py-2.5 border ${
-                  scrolled
-                    ? "border-forest-800 text-forest-900 hover:bg-forest-900 hover:text-stone-50"
-                    : "border-stone-400/40 text-stone-200 hover:border-gold-400 hover:text-gold-400"
-                }`}
-              >
-                Discuss a Mandate
-              </a>
-            </div>
-
-            {/* Mobile Toggle */}
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className={`lg:hidden p-2 transition-colors ${
-                scrolled ? "text-forest-900" : "text-stone-50"
-              }`}
-            >
-              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-        </div>
-      </motion.nav>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-stone-50 pt-24 px-6"
-          >
-            <div className="flex flex-col gap-6">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-forest-900 text-sm tracking-[0.15em] uppercase font-medium py-3 border-b border-stone-200"
-                >
-                  {link.label}
-                </a>
-              ))}
-              <a
-                href="#contact"
-                onClick={() => setMobileOpen(false)}
-                className="mt-4 text-center text-sm tracking-[0.15em] uppercase font-medium bg-forest-900 text-stone-50 py-4"
-              >
-                Discuss a Mandate
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
-  );
-}
 
 // ─────────────────────────────────────────────────────────────
 // SECTION: HERO
 // ─────────────────────────────────────────────────────────────
 
 function Hero() {
-  const titleWords = "Commercial Real Estate Decisions Begin With Understanding Markets.".split(
-    " "
-  );
-
   return (
-    <section className="relative min-h-screen flex items-end overflow-hidden bg-forest-950">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')",
-          }}
-        />
-        <div className="absolute inset-0 bg-forest-950/80" />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/60 to-transparent" />
-      </div>
+    <section className="relative min-h-screen bg-forest-950 overflow-hidden">
+      {/* Faint paper-grain / vignette texture, no photo wash */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(184,149,80,0.06),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(0,0,0,0.4),transparent_55%)]" />
 
-      {/* Decorative Elements */}
-      <div className="absolute top-1/4 right-12 w-px h-48 bg-gold-500/20 hidden lg:block" />
-      <div className="absolute bottom-32 right-12 text-gold-500/30 text-[10px] tracking-[0.4em] uppercase hidden lg:block rotate-90 origin-bottom-right">
-        Est. 2019
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12 pb-24 pt-40 w-full">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer}
-          className="max-w-4xl"
-        >
-          {/* Overline */}
-          <motion.div
-            variants={fadeUp}
-            className="flex items-center gap-4 mb-10"
-          >
-            <div className="w-12 h-px bg-gold-500/60" />
-            <span className="text-gold-400 text-[10px] tracking-[0.4em] uppercase font-medium">
-              Institutional Advisory
-            </span>
-          </motion.div>
-
-          {/* Title */}
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl xl:text-8xl text-stone-50 leading-[1.1] tracking-tight mb-8">
-            {titleWords.map((word, i) => (
-              <motion.span
-                key={i}
-                custom={i}
-                variants={letterReveal}
-                className="inline-block mr-[0.3em]"
-              >
-                {word}
-              </motion.span>
-            ))}
-          </h1>
-
-          {/* Subtitle */}
-          <motion.p
-            variants={fadeUp}
-            className="text-stone-400 text-base lg:text-lg leading-relaxed max-w-2xl mb-12 font-body"
-          >
-            Murivest advises institutional investors, family offices and
-            long-term capital on commercial real estate strategy across the
-            United Arab Emirates. Our work combines market research, investment
-            advisory and cross-border perspective to support capital allocation
-            decisions across sectors, cities and investment cycles.
-          </motion.p>
-
-          {/* CTAs */}
-          <motion.div
-            variants={fadeUp}
-            className="flex flex-wrap items-center gap-4"
-          >
-            <a
-              href="#contact"
-              className="group inline-flex items-center gap-3 bg-gold-600 text-stone-50 px-8 py-4 text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-gold-500 transition-colors duration-300"
-            >
-              Discuss a Mandate
-              <ArrowRight
-                size={14}
-                className="group-hover:translate-x-1 transition-transform"
-              />
-            </a>
-            <a
-              href="#research"
-              className="group inline-flex items-center gap-3 border border-stone-600 text-stone-300 px-8 py-4 text-[11px] tracking-[0.2em] uppercase font-medium hover:border-gold-500 hover:text-gold-400 transition-colors duration-300"
-            >
-              Explore UAE Research
-              <ArrowUpRight
-                size={14}
-                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-              />
-            </a>
-          </motion.div>
-        </motion.div>
-
-        {/* Scroll Indicator */}
+      <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12">
+        {/* ── Masthead / Dateline strip ───────────────────────── */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-8 left-6 lg:left-12 flex items-center gap-3"
+          transition={{ duration: 0.8 }}
+          className="flex items-center justify-between border-b border-gold-500/15 py-6 mt-8"
         >
-          <div className="w-px h-12 bg-stone-600 animate-pulse" />
-          <span className="text-stone-500 text-[9px] tracking-[0.3em] uppercase">
-            Scroll
+          <div className="flex items-center gap-3">
+            <span className="text-gold-400/80 text-[10px] tracking-[0.35em] uppercase font-medium">
+              Murivest Advisory
+            </span>
+            <span className="text-stone-600 text-[10px]">/</span>
+            <span className="text-stone-500 text-[10px] tracking-[0.35em] uppercase">
+              United Arab Emirates
+            </span>
+          </div>
+          <span className="hidden sm:block text-stone-600 text-[10px] tracking-[0.3em] uppercase">
+            Private Client Briefing
           </span>
         </motion.div>
+
+        {/* ── Main grid: headline column + plate column ───────── */}
+        <div className="grid lg:grid-cols-12 gap-y-16 lg:gap-x-12 pt-20 pb-28 lg:pt-28 lg:pb-32">
+          {/* Headline column */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-7"
+          >
+            <span className="block text-gold-400/90 text-[11px] tracking-[0.3em] uppercase font-medium mb-8">
+              Institutional Real Estate Advisory
+            </span>
+
+            <h1 className="font-display text-stone-50 text-4xl sm:text-5xl lg:text-6xl xl:text-[4.5rem] leading-[1.12] tracking-tight">
+              Capital deployed with
+              <br />
+              <span className="italic text-stone-300">discretion</span>{" "}
+              is capital
+              <br />
+              deployed with foresight.
+            </h1>
+
+            <div className="mt-10 max-w-xl border-l border-gold-500/25 pl-6">
+              <p className="text-stone-400 text-[15px] lg:text-base leading-[1.85] font-body">
+                Murivest advises institutional investors, family offices and
+                private capital on commercial real estate strategy across the
+                United Arab Emirates — market research, transaction advisory
+                and cross-border positioning for principals who allocate
+                quietly and hold for the long term.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-8 mt-14">
+              <a
+                href="#contact"
+                className="group inline-flex items-center gap-3 border border-gold-500/40 text-stone-100 px-8 py-4 text-[11px] tracking-[0.2em] uppercase font-medium hover:border-gold-400 hover:text-gold-300 transition-colors duration-500"
+              >
+                Discuss a Mandate
+                <ArrowRight
+                  size={13}
+                  className="group-hover:translate-x-1 transition-transform duration-500"
+                />
+              </a>
+              <a
+                href="#research"
+                className="group inline-flex items-center gap-2 text-stone-500 hover:text-stone-300 px-1 py-4 text-[11px] tracking-[0.2em] uppercase font-medium transition-colors duration-500"
+              >
+                Explore UAE Research
+                <ArrowUpRight
+                  size={13}
+                  className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-500"
+                />
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Plate column — captioned photograph, HBR-figure style */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="lg:col-span-5 lg:pt-2"
+          >
+            <figure className="border border-gold-500/15">
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <div
+                  className="absolute inset-0 bg-cover bg-center grayscale-[35%] contrast-[1.05]"
+                  style={{
+                    backgroundImage:
+                      "url('/images/mandate-hero.webp')",
+                  }}
+                />
+                <div className="absolute inset-0 bg-forest-950/25" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-gold-500/10" />
+              </div>
+              <figcaption className="flex items-center justify-between px-5 py-4 border-t border-gold-500/15">
+                <span className="text-stone-500 text-[10px] tracking-[0.15em] uppercase">
+                  Fig. 01 — Dubai Skyline, Business Bay
+                </span>
+                <span className="text-stone-600 text-[10px] tracking-[0.15em]">
+                  2026
+                </span>
+              </figcaption>
+            </figure>
+
+            {/* Quiet credibility line beneath the plate */}
+            <div className="flex items-center justify-between mt-8 pt-6 border-t border-gold-500/10">
+              <div>
+                <div className="text-stone-200 text-sm font-display tracking-tight">
+                  Est. 2019
+                </div>
+                <div className="text-stone-600 text-[10px] tracking-[0.2em] uppercase mt-1">
+                  Nairobi · Dubai
+                </div>
+              </div>
+              <div className="w-10 h-px bg-gold-500/30" />
+              <div className="text-right">
+                <div className="text-stone-200 text-sm font-display tracking-tight">
+                  Mandate Basis
+                </div>
+                <div className="text-stone-600 text-[10px] tracking-[0.2em] uppercase mt-1">
+                  Off-Market Access
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
 }
-
 // ─────────────────────────────────────────────────────────────
 // SECTION: QUICK LINKS BAR
 // ─────────────────────────────────────────────────────────────
@@ -1571,7 +1443,6 @@ export default function HomePage() {
         }
       `}</style>
 
-      <Navigation />
       <Hero />
       <QuickLinksBar />
       <ResearchBeforeCapital />
