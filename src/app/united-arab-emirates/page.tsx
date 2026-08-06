@@ -1349,11 +1349,11 @@ function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:info@murivest.com"
+                  href="mailto:  info@murivest.co.ke"
                   className="text-stone-600 text-sm hover:text-gold-500 transition-colors flex items-center gap-2 font-body"
                 >
                   <Mail size={14} />
-                  info@murivest.com
+                    info@murivest.co.ke
                 </a>
               </li>
             </ul>

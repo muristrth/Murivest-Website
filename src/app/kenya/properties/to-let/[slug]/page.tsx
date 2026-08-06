@@ -54,7 +54,7 @@ interface PropertyForRent {
 // ─── Data Fetching ──────────────────────────────────────────────────────────
 
 async function getProperty(slug: string): Promise<PropertyForRent | null> {
-  const query = `*[_type == "property" && slug.current == $slug && transactionType == "To Let" && !(_id in path("drafts.**"))][0] {
+  const query = `*[_type == "propertylet" && slug.current == $slug && transactionType == "To Let" && !(_id in path("drafts.**"))][0] {
     _id, title, subtitle, "slug": slug.current,
     propertyType, category, country, city, neighborhood, address,
     price { displayPrice, kes, usd },
@@ -69,7 +69,7 @@ async function getProperty(slug: string): Promise<PropertyForRent | null> {
     brochureUrl, availableFrom, leaseTerm,
     broker { name, email, phone, "photo": photo.asset->url },
     "relatedProperties": *[
-      _type == "property" &&
+      _type == "propertylet" &&
       transactionType == "To Let" &&
       slug.current != $slug &&
       city == ^.city &&

@@ -1,5 +1,5 @@
 ﻿// sanity/schemas/schema-property.ts
-// Document schema for "property" — supports To Let listings on Murivest.
+// Document schema for "propertylet" — supports To Let listings on Murivest.
 
 import { defineField, defineType } from "sanity";
 

@@ -186,7 +186,7 @@ export default function PropertiesForRentPage() {
   useEffect(() => {
     async function fetchProperties() {
       try {
-        const query = `*[_type == "property" && transactionType == "To Let" && !(_id in path("drafts.**"))] | order(featured desc, listingDate desc) {
+        const query = `*[_type == "propertylet" && transactionType == "To Let" && !(_id in path("drafts.**"))] | order(featured desc, listingDate desc) {
           _id, title, "slug": slug.current, propertyType, category,
           country, city, neighborhood,
           price { displayPrice, kes, usd },
