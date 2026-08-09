@@ -127,7 +127,7 @@ function generateFaqSchema() {
         'Prime Grade A office: AED 150–180/sq ft annually. Secondary office: AED 120–140/sq ft. Standard office: AED 100–120/sq ft. Rents have appreciated 4–6% annually over the past 3 years. Murivest provides rent benchmarks and escalation forecasts by tower and location.',
     },
     {
-      question: 'What makes Business Bay different from DIFC?',
+      question: 'What maKsh Business Bay different from DIFC?',
       answer:
         'Business Bay offers larger scale (20M+ sq ft vs 4M+ in DIFC), more tenant diversity (less financial services concentration), competitive pricing (15–20% lower entry costs), and faster occupancy turnover. DIFC offers higher covenant quality, lower vacancy (sub-5%), and supply constraints. Both are institutional-quality destinations; choice depends on mandate (core vs. core-plus).',
     },
@@ -452,7 +452,7 @@ export default function BusinessBayPage() {
         'Prime Grade A office: AED 150–180/sq ft annually. Secondary office: AED 120–140/sq ft. Standard office: AED 100–120/sq ft. Rents have appreciated 4–6% annually over the past 3 years. Murivest provides rent benchmarks and escalation forecasts by tower and location.',
     },
     {
-      question: 'What makes Business Bay different from DIFC?',
+      question: 'What maKsh Business Bay different from DIFC?',
       answer:
         'Business Bay offers larger scale (20M+ sq ft vs 4M+ in DIFC), more tenant diversity (less financial services concentration), competitive pricing (15–20% lower entry costs), and faster occupancy turnover. DIFC offers higher covenant quality, lower vacancy (sub-5%), and supply constraints. Both are institutional-quality destinations; choice depends on mandate.',
     },

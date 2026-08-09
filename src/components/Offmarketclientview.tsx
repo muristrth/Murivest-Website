@@ -425,7 +425,7 @@ export default function OffMarketClientView({ property }: { property: OffMarketP
                   {property.price?.displayPrice || "By Introduction"}
                 </p>
                 <div className="space-y-1 text-[11px] text-[#8B8680] uppercase tracking-wide">
-                  {property.price?.kes && <p>KES {property.price.kes}</p>}
+                  {property.price?.Ksh && <p>Ksh {property.price.Ksh}</p>}
                   {property.price?.usd && <p>USD {property.price.usd}</p>}
                 </div>
               </div>

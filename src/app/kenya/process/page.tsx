@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import InvestmentProcess from '../../components/sections/InvestmentProcess'
+import InvestmentProcess from '@/components/sections/InvestmentProcess'
 import {
   webPageSchema,
   breadcrumbSchema,

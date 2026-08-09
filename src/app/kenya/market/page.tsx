@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import MarketIntelligence from '../../components/MarketIntelligence'
+import MarketIntelligence from '@/components/MarketIntelligence'
 
 export const metadata: Metadata = {
   title: 'Kenya Real Estate Market Intelligence - Investment Analysis | Murivest',

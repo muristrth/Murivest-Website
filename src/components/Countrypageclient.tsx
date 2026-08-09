@@ -438,7 +438,7 @@ const PropertyDrawer: React.FC<{
                       {property.askingPrice
                         ? currency(
                             property.askingPrice,
-                            property.currency ?? "KES"
+                            property.currency ?? "Ksh"
                           )
                         : "Price on Request"}
                     </p>
@@ -597,7 +597,7 @@ const PropertyDrawer: React.FC<{
                       {property.contactEmail ?? "capital@murivest.co.ke"}
                     </ContactLine>
                     <ContactLine icon={<Phone className="w-3.5 h-3.5" />}>
-                      +254 787 707 284
+                      +254 115 277 610
                     </ContactLine>
                   </div>
                 </div>
@@ -876,7 +876,7 @@ const PropertyCard: React.FC<{
               }}
             >
               {property.askingPrice
-                ? currency(property.askingPrice, property.currency ?? "KES")
+                ? currency(property.askingPrice, property.currency ?? "Ksh")
                 : "Price on Request"}
             </p>
           </div>

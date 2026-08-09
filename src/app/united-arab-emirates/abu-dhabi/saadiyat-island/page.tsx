@@ -51,7 +51,7 @@ const pageConfig: UaePageConfig = {
       "Pair with Abu Dhabi office exposure for diversified emirate allocation"
     ],
     faqs: [
-      { question: "What makes Saadiyat Island unique for CRE investment?", answer: "Saadiyat is home to the Louvre Abu Dhabi, Guggenheim Abu Dhabi and Zayed National Museum, creating a cultural cluster of global significance that drives tourism and lifestyle demand." },
+      { question: "What maKsh Saadiyat Island unique for CRE investment?", answer: "Saadiyat is home to the Louvre Abu Dhabi, Guggenheim Abu Dhabi and Zayed National Museum, creating a cultural cluster of global significance that drives tourism and lifestyle demand." },
       { question: "What types of commercial assets are available on Saadiyat?", answer: "Luxury hospitality assets, premium retail, cultural tourism infrastructure and high-end residential. Commercial assets are primarily tourism and lifestyle focused." },
       { question: "What is the investment outlook for Saadiyat?", answer: "Government commitment to cultural infrastructure, growing tourism numbers and Abu Dhabi's wealth sector expansion support positive long-term fundamentals." }
     ],

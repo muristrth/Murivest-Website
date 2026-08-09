@@ -408,7 +408,7 @@ const faqs = [
   },
   {
     q: "What is Dubai South's industrial investment case?",
-    a: "Dubai South is a 200 km² master-planned development anchored by Al Maktoum International Airport — the future world's largest airport targeting 260M annual passengers at full build-out. The Logistics District and Industrial Area are purpose-built for air cargo, e-commerce fulfilment, and advanced manufacturing. Rents are currently 20–30% below JAFZA, creating a yield premium of 12–15% gross for patient capital. Near-term risk includes pipeline supply delivery in 2025–26. Long-term structural demand — driven by airport cargo growth, Expo City activation, and the aviation MRO cluster — makes Dubai South the strongest capital appreciation argument in UAE industrial over a 7–10 year hold.",
+    a: "Dubai South is a 200 km² master-planned development anchored by Al Maktoum International Airport — the future world's largest airport targeting 260M annual passengers at full build-out. The Logistics District and Industrial Area are purpose-built for air cargo, e-commerce fulfilment, and advanced manufacturing. Rents are currently 20–30% below JAFZA, creating a yield premium of 12–15% gross for patient capital. Near-term risk includes pipeline supply delivery in 2025–26. Long-term structural demand — driven by airport cargo growth, Expo City activation, and the aviation MRO cluster — maKsh Dubai South the strongest capital appreciation argument in UAE industrial over a 7–10 year hold.",
   },
   {
     q: 'Can institutional investors from outside the UAE invest in UAE industrial assets?',

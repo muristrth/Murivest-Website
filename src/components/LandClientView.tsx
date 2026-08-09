@@ -75,7 +75,7 @@ interface LandParcel {
 
   askingPrice?: {
     displayPrice?: string;
-    kes?: string;
+    Ksh?: string;
     usd?: string;
   };
 

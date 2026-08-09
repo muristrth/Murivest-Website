@@ -32,7 +32,7 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
     { name: 'Instagram', href: 'https://www.instagram.com/murivest_realty_group', icon: FaInstagram },
     { name: 'X', href: 'https://twitter.com/murivestrealty', icon: FaXTwitter },
     { name: 'YouTube', href: 'https://www.youtube.com/@murivestrealty', icon: FaYoutube },
-    { name: 'WhatsApp', href: 'https://wa.me/254787707284', icon: FaWhatsapp },
+    { name: 'WhatsApp', href: 'https://wa.me/254115277610', icon: FaWhatsapp },
   ];
 
   useEffect(() => {
@@ -229,8 +229,8 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#1B4332]/10 border border-[#B8956B]/20 mb-12">
           {[{
               label: "Private Line",
-              value: "+254 787 707 284",
-              href: "tel:+254787707284"
+              value: "+254 115 277 610",
+              href: "tel:+254115277610"
             }, {
               label: "Investment Desk",
               value: "capital@murivest.co.ke",

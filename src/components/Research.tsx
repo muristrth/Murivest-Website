@@ -38,7 +38,7 @@ const research: ResearchEntry[] = [
     {
       id: 'standard-chartered-chiromo-headquarters-sale-westlands-nairobi-2026',
       title: "The Chiromo Disposition: Standard Chartered's Exit from Physical Banking and the Institutional Investment Imperative in Nairobi's Prime Commercial Real Estate",
-      excerpt: 'Comprehensive analysis of Standard Chartered Bank Kenya\'s KES 1.41 billion Chiromo headquarters sale, examining the structural retreat from physical banking, Westlands land value dynamics and Grade A commercial property.',
+      excerpt: 'Comprehensive analysis of Standard Chartered Bank Kenya\'s Ksh 1.41 billion Chiromo headquarters sale, examining the structural retreat from physical banking, Westlands land value dynamics and Grade A commercial property.',
       author: getAuthor('investment'),
       image: '/research-images/standard-chartered-chiromo-headquarters-sale-westlands-nairobi-2026.webp',
       category: 'Market Intelligence',
@@ -751,7 +751,7 @@ const research: ResearchEntry[] = [
     },
     {
       id: 'kenya-fuel-crisis-transport-strike-commercial-real-estate-2026',
-      title: 'Kenya Fuel Crisis Latest: How Record Pump Prices and PSV Strikes Are Forcing a Commercial Real Estate Repricing',
+      title: 'Kenya Fuel Crisis Latest: How Record Pump Prices and PSV StriKsh Are Forcing a Commercial Real Estate Repricing',
       excerpt: 'Kenya’s nationwide transport paralysis following record fuel price increases has exposed deeper structural risks within Nairobi’s commercial real estate ecosystem. Rising diesel costs are beginning to influence logistics pricing, tenant affordability, industrial demand patterns, and institutional capital allocation across East Africa.',
       author: getAuthor('investment'),
       image: '/research-images/kenya-fuel-crisis-commercial-real-estate-2026.webp',

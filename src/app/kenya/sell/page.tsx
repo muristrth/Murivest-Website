@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import SellProperty from '../../components/SellProperty'
+import SellProperty from '@/components/SellProperty'
 
 export const metadata: Metadata = {
   title: 'Sell Your Property to Global Investors - Murivest Realty Group Kenya',

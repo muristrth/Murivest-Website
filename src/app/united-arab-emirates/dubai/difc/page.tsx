@@ -98,7 +98,7 @@ function generateFaqSchema() {
         'Yes. DIFC is the world\'s leading international financial centre in the Middle East, with 4,000+ financial and professional services firms. Core office yields: 6–7%. Sub-5% vacancy, 95%+ investment-grade tenants. DIFC common-law jurisdiction ensures contract enforceability and legal certainty unmatched in the region.',
     },
     {
-      question: 'What makes DIFC different from other Dubai office markets?',
+      question: 'What maKsh DIFC different from other Dubai office markets?',
       answer:
         'DIFC operates under common-law jurisdiction (UK-based legal system), not UAE civil law. This provides institutional-grade contract enforceability, dispute resolution clarity, and legal certainty. DIFC tenants are primarily financial services and professional firms (high covenant quality). Supply is constrained (4M+ sq ft vs 20M+ in Business Bay). Rents: AED 180–220/sq ft.',
     },
@@ -392,7 +392,7 @@ export default function DIFCPage() {
         'Yes. DIFC is the world\'s leading international financial centre in the Middle East, with 4,000+ financial and professional services firms. Core office yields: 6–7%. Sub-5% vacancy, 95%+ investment-grade tenants. DIFC common-law jurisdiction ensures contract enforceability and legal certainty unmatched in the region.',
     },
     {
-      question: 'What makes DIFC different from other Dubai office markets?',
+      question: 'What maKsh DIFC different from other Dubai office markets?',
       answer:
         'DIFC operates under common-law jurisdiction (UK-based legal system), not UAE civil law. This provides institutional-grade contract enforceability, dispute resolution clarity, and legal certainty. DIFC tenants are primarily financial services and professional firms (high covenant quality). Supply is constrained (4M+ sq ft vs 20M+ in Business Bay).',
     },

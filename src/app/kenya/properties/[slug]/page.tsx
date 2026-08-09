@@ -307,7 +307,7 @@ export default async function PropertyPage({
       }
       brokerPhone={
         property.broker?.phone ||
-        "+254 787 707 284"
+        "+254 115 277 610"
       }
     />
   );

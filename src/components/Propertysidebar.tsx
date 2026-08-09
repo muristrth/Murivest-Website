@@ -51,7 +51,7 @@ export default function PropertySidebar({
   relatedProperties,
   popularProperties,
   brokerEmail = 'capital@murivest.co.ke',
-  brokerPhone = '+254 787 707 284',
+  brokerPhone = '+254 115 277 610',
 }: Props) {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);

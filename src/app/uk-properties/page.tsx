@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { client } from '@/sanity/lib/client'
 import { defineQuery } from 'next-sanity'
-import UKPropertiesClient from '../../components/UKPropertiesClient'
+import UKPropertiesClient from '@/components/UKPropertiesClient'
 
 // ─── GROQ Query ───────────────────────────────────────────────────────────────
 // All published UK properties, ordered newest-first.

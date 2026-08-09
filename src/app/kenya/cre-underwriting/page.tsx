@@ -1,6 +1,6 @@
 
 import type { Metadata } from 'next'
-import CreUnderwriting from '../../components/CreUnderwriting'
+import CreUnderwriting from '@/components/CreUnderwriting'
 
 export const metadata: Metadata = {
   title: 'Commercial Real Estate Underwriting Murivest Realty Group - Premier Real Estate Investment Consultations',

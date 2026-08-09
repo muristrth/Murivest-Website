@@ -10,7 +10,7 @@ const priceObject = {
   title: 'Pricing',
   type: 'object',
   fields: [
-    { name: 'currency', title: 'Currency', type: 'string', options: { list: ['SGD', 'USD', 'GBP', 'EUR', 'AED', 'KES'] } },
+    { name: 'currency', title: 'Currency', type: 'string', options: { list: ['SGD', 'USD', 'GBP', 'EUR', 'AED', 'Ksh'] } },
     { name: 'amount', title: 'Amount', type: 'number' },
     { name: 'label', title: 'Display Label', type: 'string', description: 'e.g. "Price on Application", "Guide Price"' },
   ],

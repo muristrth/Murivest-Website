@@ -240,14 +240,14 @@ export default defineType({
           name: "displayPrice",
           title: "Display Price",
           type: "string",
-          description: "Formatted string shown to users, e.g. 'KES 120 /sqft/month' or 'Price on Request'.",
+          description: "Formatted string shown to users, e.g. 'Ksh 120 /sqft/month' or 'Price on Request'.",
           validation: (R) => R.required(),
         }),
         defineField({
-          name: "kes",
-          title: "Price (KES)",
+          name: "Ksh",
+          title: "Price (Ksh)",
           type: "string",
-          description: "Raw KES figure for filtering/sorting (optional).",
+          description: "Raw Ksh figure for filtering/sorting (optional).",
         }),
         defineField({
           name: "usd",

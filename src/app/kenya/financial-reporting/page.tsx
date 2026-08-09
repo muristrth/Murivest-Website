@@ -17,7 +17,7 @@ export default function FinancialReportingPage() {
         <div className="relative max-w-7xl mx-auto px-6 py-24">
           <div className="text-center">
             <Link
-              href="/"
+              href="/kenya"
               className="inline-flex items-center text-amber-400 hover:text-amber-300 transition-colors mb-8"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
@@ -124,23 +124,23 @@ export default function FinancialReportingPage() {
               <div className="space-y-4">
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-gray-600">Rental Income:</span>
-                  <span className="font-semibold text-slate-900">KES 2,500,000</span>
+                  <span className="font-semibold text-slate-900">Ksh 2,500,000</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-gray-600">Operating Expenses:</span>
-                  <span className="font-semibold text-slate-900">KES 750,000</span>
+                  <span className="font-semibold text-slate-900">Ksh 750,000</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-gray-600">Net Operating Income:</span>
-                  <span className="font-semibold text-green-600">KES 1,750,000</span>
+                  <span className="font-semibold text-green-600">Ksh 1,750,000</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-gray-600">Debt Service:</span>
-                  <span className="font-semibold text-slate-900">KES 500,000</span>
+                  <span className="font-semibold text-slate-900">Ksh 500,000</span>
                 </div>
                 <div className="flex justify-between items-center py-2">
                   <span className="text-gray-600">Net Cash Flow:</span>
-                  <span className="font-semibold text-green-600">KES 1,250,000</span>
+                  <span className="font-semibold text-green-600">Ksh 1,250,000</span>
                 </div>
               </div>
             </div>
@@ -149,15 +149,15 @@ export default function FinancialReportingPage() {
               <div className="space-y-4">
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-gray-600">Property Value:</span>
-                  <span className="font-semibold text-slate-900">KES 250,000,000</span>
+                  <span className="font-semibold text-slate-900">Ksh 250,000,000</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-gray-600">Mortgage Balance:</span>
-                  <span className="font-semibold text-slate-900">KES 150,000,000</span>
+                  <span className="font-semibold text-slate-900">Ksh 150,000,000</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-gray-600">Equity Position:</span>
-                  <span className="font-semibold text-green-600">KES 100,000,000</span>
+                  <span className="font-semibold text-green-600">Ksh 100,000,000</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-gray-600">Loan-to-Value:</span>

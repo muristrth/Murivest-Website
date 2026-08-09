@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import MurivestFoundation from '../../components/Foundation'
+import MurivestFoundation from '@/components/Foundation'
 
 export const metadata: Metadata = {
   title: 'Murivest Foundation - Corporate Social Responsibility Kenya',

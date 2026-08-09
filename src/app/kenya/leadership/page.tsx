@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import ExecutiveLeadership from '../../components/ExecutiveLeadership'
+import ExecutiveLeadership from '@/components/ExecutiveLeadership'
 
 export const metadata: Metadata = {
   title: 'Executive Leadership Team - Murivest Realty Group Kenya',

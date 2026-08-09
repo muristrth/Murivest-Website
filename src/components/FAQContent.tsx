@@ -183,7 +183,7 @@ const FAQContent = ({ faqData = [] }: FAQContentProps) => {
             <div className="flex flex-wrap justify-center gap-8 mb-10">
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#C4B59D]" strokeWidth={1} />
-                <span className="text-[14px] text-[#A8A39D] font-light">+254 787 707 284</span>
+                <span className="text-[14px] text-[#A8A39D] font-light">+254 115 277 610</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#C4B59D]" strokeWidth={1} />

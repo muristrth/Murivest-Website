@@ -37,7 +37,7 @@
  * - Renders only when localStorage key "murivest_cookie_consent" is absent
  * - Accept  → stores "accepted"  → fires Google Consent Mode v2 grant signals
  * - Decline → stores "declined"  → fires Google Consent Mode v2 denied signals
- *   → disables LinkedIn Insight Tag · revokes Meta Pixel consent
+ *   → disables LinkedIn Insight Tag · revoKsh Meta Pixel consent
  * - Animates out before unmounting (avoids jarring DOM removal)
  *
  * INTEGRATION

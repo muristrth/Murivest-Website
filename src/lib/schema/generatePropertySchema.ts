@@ -29,7 +29,7 @@ export function generatePropertySchema(property: Property): Record<string, unkno
     offers: {
       '@type': 'Offer',
       price: property.priceKsh?.replace(/[^0-9.]/g, '') ?? '',
-      priceCurrency: 'KES',
+      priceCurrency: 'Ksh',
       availability: availabilityUrl(property.status),
       url: pageUrl,
     },

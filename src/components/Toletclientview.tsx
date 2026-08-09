@@ -55,7 +55,7 @@ interface PropertyForRent {
   city: string;
   neighborhood: string;
   address?: string;
-  price: { displayPrice: string; kes?: string; usd?: string };
+  price: { displayPrice: string; Ksh?: string; usd?: string };
   sizeRange: { min: number; max: number; unit: string };
   grade: string;
   images: string[];
@@ -457,7 +457,7 @@ export default function ToLetClientView({ property }: { property: PropertyForRen
                   {property.price?.displayPrice || "Price on Application"}
                 </p>
                 <div className="space-y-1 text-[11px] text-[#8B8680] uppercase tracking-wide">
-                  {property.price?.kes && <p>KES {property.price.kes}</p>}
+                  {property.price?.Ksh && <p>Ksh {property.price.Ksh}</p>}
                   {property.price?.usd && <p>USD {property.price.usd}</p>}
                 </div>
               </div>

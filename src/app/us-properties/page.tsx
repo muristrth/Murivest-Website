@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { client } from "@/sanity/lib/client"
 import { defineQuery } from "next-sanity"
-import USProperties from '../../components/USProperties'
+import USProperties from '@/components/USProperties'
 
 // GROQ query for US properties
 const US_PROPERTIES_QUERY = defineQuery(`*[_type == "usProperty" && !(_id in path('drafts.**'))] | order(_createdAt desc) {

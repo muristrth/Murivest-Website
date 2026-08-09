@@ -149,7 +149,7 @@ export async function POST(request: NextRequest) {
     <div class="footer">
       <p><strong>Murivest Realty Group</strong></p>
       <p>Westlands Business District<br />Nairobi, Kenya</p>
-      <p>+254 787 707 284<br />info@murivest.co.ke</p>
+      <p>+254 115 277 610<br />info@murivest.co.ke</p>
     </div>
   </div>
 </body>
@@ -333,14 +333,14 @@ export async function POST(request: NextRequest) {
       
       <p>Well, for the most part, it has remained the Nairobi CBD's best-kept secret.</p>
       
-      <a href="https://wa.me/254787707284" class="cta-button">Request Investment Memo</a>
+      <a href="https://wa.me/254115277610" class="cta-button">Request Investment Memo</a>
       
       <p style="margin-top:28px; font-size:13px; color:#6a6a6a;">This exclusive research is available only to Murivest Intelligence subscribers. Forward this email to a colleague who should be aware of this opportunity.</p>
     </div>
     <div class="footer">
       <p><strong>Murivest Realty Group</strong></p>
       <p>Westlands Business District, Nairobi, Kenya</p>
-      <p>+254 787 707 284 | info@murivest.co.ke</p>
+      <p>+254 115 277 610 | info@murivest.co.ke</p>
       <p style="margin-top:12px; font-size:10px;">You received this email because you subscribed to Murivest Market Intelligence. To unsubscribe, reply with "Unsubscribe" in the subject line.</p>
     </div>
   </div>

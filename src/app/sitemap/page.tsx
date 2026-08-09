@@ -135,8 +135,8 @@ export default function SitemapPage() {
               <div className="bg-white p-4 rounded-xl shadow-sm border border-amber-100 mb-4">
                 <Phone className="h-8 w-8 text-amber-600 mx-auto mb-2" />
                 <h4 className="font-serif font-medium text-gray-900 mb-1">Call Us</h4>
-                <Link href="tel:+254787707284" className="text-amber-600 hover:text-amber-700 font-serif">
-                  +254 787 707 284
+                <Link href="tel:+254115277610" className="text-amber-600 hover:text-amber-700 font-serif">
+                  +254 115 277 610
                 </Link>
               </div>
             </div>

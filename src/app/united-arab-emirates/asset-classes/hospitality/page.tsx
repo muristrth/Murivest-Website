@@ -146,7 +146,7 @@ const whyUaePoints = [
   {
     title: 'Mega-Events & Conference Economy',
     description:
-      'The F1 Abu Dhabi Grand Prix, Dubai Shopping Festival, GITEX, Cityscape, Art Dubai, and rotating international conferences generate recurring seasonal demand spikes that structurally support ADR premiums unavailable to any other regional hospitality market.',
+      'The F1 Abu Dhabi Grand Prix, Dubai Shopping Festival, GITEX, Cityscape, Art Dubai, and rotating international conferences generate recurring seasonal demand spiKsh that structurally support ADR premiums unavailable to any other regional hospitality market.',
     icon: Calendar,
     gradient: 'from-[#2D1A12]/20 via-[#7A4A2A]/8 to-[#EDE8E0]',
   },
@@ -219,7 +219,7 @@ const expertiseSections = [
   },
   {
     title: 'Investment Opportunities',
-    body: 'Whole-hotel acquisitions (luxury and upper-upscale), serviced apartment complexes, hotel condominium structures (hotel-residence hybrids), development land in Al Marjan Island (RAK) and Dubai South, and management company equity stakes are the principal investment formats active in the current cycle.',
+    body: 'Whole-hotel acquisitions (luxury and upper-upscale), serviced apartment complexes, hotel condominium structures (hotel-residence hybrids), development land in Al Marjan Island (RAK) and Dubai South, and management company equity staKsh are the principal investment formats active in the current cycle.',
   },
   {
     title: 'Risk Considerations',
@@ -289,7 +289,7 @@ const faqs = [
   },
   {
     q: 'What is RevPAR and why does it matter for hotel investment?',
-    a: 'RevPAR (Revenue Per Available Room) is the primary performance metric for hotel investment underwriting. It multiplies occupancy rate by average daily rate (ADR) and serves as a proxy for a hotel\'s revenue-generating efficiency independent of room count. For UAE investment, prime Dubai hotels are averaging AED 800+ RevPAR — significantly above European and Asian comparable markets, which makes the asset class attractive for international institutional capital on a risk-adjusted basis.',
+    a: 'RevPAR (Revenue Per Available Room) is the primary performance metric for hotel investment underwriting. It multiplies occupancy rate by average daily rate (ADR) and serves as a proxy for a hotel\'s revenue-generating efficiency independent of room count. For UAE investment, prime Dubai hotels are averaging AED 800+ RevPAR — significantly above European and Asian comparable markets, which maKsh the asset class attractive for international institutional capital on a risk-adjusted basis.',
   },
   {
     q: 'How does the F1 Abu Dhabi Grand Prix affect hotel investment returns?',
@@ -336,7 +336,7 @@ const faqs = [
     a: 'Murivest maintains direct relationships with major UAE hotel owners — family offices, sovereign-linked entities, and institutional landlords — that enable early visibility of assets before they enter the open market. Approximately 60% of significant UAE hotel transactions complete off-market. Our pipeline is updated continuously and shared exclusively with clients under advisory mandate. We do not publish hotel listings or represent sellers in our advisory capacity.',
   },
   {
-    q: 'What are the most common mistakes foreign investors make when buying UAE hotels?',
+    q: 'What are the most common mistaKsh foreign investors make when buying UAE hotels?',
     a: 'The most common errors include: underestimating FF&E reserve requirements and capital expenditure obligations; accepting HMA terms without independent legal and operational review; overpaying for headline brand without stress-testing occupancy assumptions; ignoring strata management fees and service charge variability; and failing to stress-test exit assumptions in a higher-supply environment. Murivest\'s advisory mandate addresses all of these risks systematically before a client commits capital.',
   },
   {

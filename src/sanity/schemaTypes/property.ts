@@ -215,12 +215,12 @@ export const propertySchema = defineType({
       title: 'Display Price',
       type: 'string',
       group: 'financials',
-      description: 'Primary price display (e.g., "KES 450 Million" or "USD 3.5M")',
+      description: 'Primary price display (e.g., "Ksh 450 Million" or "USD 3.5M")',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'priceKsh',
-      title: 'Price (KES)',
+      title: 'Price (Ksh)',
       type: 'string',
       group: 'financials',
       description: 'Kenyan Shilling amount for local reference',
@@ -257,7 +257,7 @@ export const propertySchema = defineType({
       group: 'financials',
       options: {
         list: [
-          { title: 'KES – Kenyan Shilling', value: 'KES' },
+          { title: 'Ksh – Kenyan Shilling', value: 'Ksh' },
           { title: 'USD – US Dollar', value: 'USD' },
           { title: 'GBP – British Pound', value: 'GBP' },
           { title: 'AED – UAE Dirham', value: 'AED' },

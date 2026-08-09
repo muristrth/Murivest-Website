@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import InstitutionalGateway from '../../components/InstitutionalInvestors'
+import InstitutionalGateway from '@/components/InstitutionalInvestors'
 
 export const metadata: Metadata = {
   title: 'Institutional Real Estate Advisory & Capital Deployment | Murivest',
