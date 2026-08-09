@@ -31,7 +31,7 @@ import {
   TrendingUp,
   Layers,
 } from "lucide-react";
-import type { OffMarketProperty } from "@/app/properties/off-market/[slug]/page"; // re-export from server page
+import type { OffMarketProperty } from "@/app/kenya/properties/off-market/[slug]/page"; // re-export from server page
 
 // ─── Related Card ───────────────────────────────────────────────────────────
 
@@ -425,7 +425,7 @@ export default function OffMarketClientView({ property }: { property: OffMarketP
                   {property.price?.displayPrice || "By Introduction"}
                 </p>
                 <div className="space-y-1 text-[11px] text-[#8B8680] uppercase tracking-wide">
-                  {property.price?.Ksh && <p>Ksh {property.price.Ksh}</p>}
+                  {property.price?.kes && <p>Ksh {property.price.kes}</p>}
                   {property.price?.usd && <p>USD {property.price.usd}</p>}
                 </div>
               </div>
