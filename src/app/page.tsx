@@ -1,21 +1,23 @@
 import type { Metadata } from 'next'
 import { countrySEO, buildHreflang } from '@/lib/seo/countries'
 import GlobalHomePage from '@/components/Globalhomepage'
+import { MURIVEST_SEO } from '@/lib/content/brand'
 
 const seo = countrySEO.global
+const canonicalContent = MURIVEST_SEO
 
 export const metadata: Metadata = {
-  title: seo.title,
-  description: seo.description,
-  keywords: seo.keywords.join(', '),
+  title: canonicalContent.title,
+  description: canonicalContent.description,
+  keywords: canonicalContent.keywords.join(', '),
 
   authors: [{ name: 'Murivest Realty Group' }],
   creator: 'Murivest Realty Group',
   publisher: 'Murivest Realty Group',
 
   openGraph: {
-    title: 'Murivest Global | Institutional Real Estate Capital Advisory',
-    description: seo.description,
+    title: canonicalContent.title,
+    description: canonicalContent.description,
     url: seo.canonical,
     siteName: 'Murivest Global',
     images: [
@@ -32,8 +34,8 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Murivest Global | Institutional Real Estate Capital Advisory',
-    description: seo.description,
+    title: canonicalContent.title,
+    description: canonicalContent.description,
     images: [seo.ogImage],
   },
 

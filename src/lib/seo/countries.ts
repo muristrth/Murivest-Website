@@ -25,10 +25,9 @@ export interface CountrySEOConfig {
 
 export const countrySEO: Record<CountryCode, CountrySEOConfig> = {
   global: {
-    title:
-      'Murivest Global | Institutional Real Estate Capital Advisory',
+    title: 'Murivest | Independent Commercial Real Estate Advisory',
     description:
-      'Murivest is an independent institutional real estate advisory firm. We originate and advise on capital mandates across Africa, Middle East, Asia Pacific, and Europe. Engagements by mandate only.',
+      'Murivest Realty Group is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across selected global markets. Engagements are by mandate only.',
     domain: 'https://murivest.com',
     canonical: 'https://murivest.com',
     locale: 'en_GB',

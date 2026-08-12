@@ -16,6 +16,7 @@ import AnalyticsTracker from '../components/AnalyticsTracker';
 import CookieBanner from '@/components/CookieBanner';
 import MetaPixel from '@/components/MetaPixel';
 import AppShell from '../components/layout/AppShell';
+import { MURIVEST_BRAND, MURIVEST_SEO } from '@/lib/content/brand';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -41,15 +42,13 @@ const montserrat = Montserrat({
 ==================================================== */
 export const metadata: Metadata = {
   title: {
-    default: 'Murivest | Global Institutional Commercial Real Estate',
+    default: MURIVEST_SEO.title,
     template: '%s | Murivest',
   },
 
-  description:
-    'Murivest is an independent institutional commercial real estate advisory firm. We connect global capital with modern urban gateways – investment sales, tenant representation, and development strategy across the Americas, Europe, Asia Pacific, Africa, and the Middle East.',
+  description: MURIVEST_SEO.description,
 
-  keywords:
-    'commercial real estate, institutional real estate, global real estate advisory, capital markets, investment sales, tenant representation, development advisory, Murivest, cross‑border investment, office leasing, industrial real estate, retail property, data centres',
+  keywords: MURIVEST_SEO.keywords.join(', '),
 
   authors: [{ name: 'Murivest' }],
   creator: 'Murivest',
@@ -61,9 +60,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://murivest.com',
-    title: 'Murivest | Global Institutional Commercial Real Estate',
-    description:
-      'Institutional advisory, investment sales, tenant representation, and development strategy – delivered worldwide.',
+    title: MURIVEST_SEO.title,
+    description: MURIVEST_SEO.description,
     siteName: 'Murivest',
     images: [
       {
@@ -77,9 +75,8 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Murivest | Global Institutional Commercial Real Estate',
-    description:
-      'Institutional advisory, investment sales, tenant representation, and development strategy – delivered worldwide.',
+    title: MURIVEST_SEO.title,
+    description: MURIVEST_SEO.description,
     images: ['https://murivest.com/logo.webp'],
   },
 
@@ -109,13 +106,12 @@ export const metadata: Metadata = {
 const globalOrganizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Murivest',
-  alternateName: 'Murivest Global',
+  name: MURIVEST_BRAND.name,
+  alternateName: MURIVEST_BRAND.shortName,
   url: 'https://murivest.com',
   logo: 'https://murivest.com/logo.webp',
   image: 'https://murivest.com/logo.webp',
-  description:
-    'Murivest is an independent institutional commercial real estate advisory firm. We advise on capital markets, investment sales, tenant representation, and development projects across all major global markets.',
+  description: MURIVEST_BRAND.description,
   sameAs: [
     'https://www.linkedin.com/company/murivest-realty-group',
     'https://www.instagram.com/murivest_realty',
@@ -132,10 +128,9 @@ const globalOrganizationSchema = {
 const globalWebsiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Murivest',
-  url: 'https://murivest.com',
-  description:
-    'Global commercial real estate intelligence, capital markets advisory, and property listings.',
+  name: MURIVEST_BRAND.name,
+  url: MURIVEST_BRAND.url,
+  description: MURIVEST_BRAND.description,
   publisher: {
     '@type': 'Organization',
     name: 'Murivest',
