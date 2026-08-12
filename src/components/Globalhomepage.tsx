@@ -94,6 +94,27 @@ const INSIGHTS = [
   },
 ];
 
+const STARTING_POINTS = [
+  {
+    number: '01',
+    title: 'Acquire or source an asset',
+    description: 'Define an acquisition brief, review a market, or begin a discreet sourcing conversation.',
+    href: '/contact?type=acquisition',
+  },
+  {
+    number: '02',
+    title: 'Plan a disposition',
+    description: 'Discuss an asset, a portfolio, or a disposition objective with the appropriate advisory team.',
+    href: '/contact?type=disposition',
+  },
+  {
+    number: '03',
+    title: 'Read research',
+    description: 'Explore market intelligence, sector observations, and the context behind commercial property decisions.',
+    href: '/research',
+  },
+];
+
 const COMMITMENTS = [
   {
     title: 'Our Story',
@@ -255,6 +276,46 @@ export default function GlobalHomePage() {
               >
                 Explore Singapore
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          FIND A STARTING POINT
+          A clear gateway for the first institutional conversation.
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#111C16] border-t border-[rgba(201,169,110,0.08)]">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-24 lg:py-32">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-24">
+            <div className="lg:col-span-4">
+              <p className="text-[10px] tracking-[0.35em] uppercase text-[#C9A96E] font-medium mb-4">
+                Find a Starting Point
+              </p>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-[2.75rem] text-[#FAF9F6] leading-[1.1]">
+                Choose the conversation that fits your mandate.
+              </h2>
+            </div>
+            <div className="lg:col-span-8 grid md:grid-cols-3 gap-px bg-[rgba(201,169,110,0.12)]">
+              {STARTING_POINTS.map((point) => (
+                <Link
+                  key={point.number}
+                  href={point.href}
+                  className="group bg-[#111C16] p-8 lg:p-10 hover:bg-[#0B1510] transition-colors duration-500"
+                >
+                  <span className="text-[10px] tracking-[0.2em] text-[#C9A96E]/70">{point.number}</span>
+                  <h3 className="mt-8 text-[16px] font-semibold tracking-wide text-[#FAF9F6] group-hover:text-[#C9A96E] transition-colors duration-300">
+                    {point.title}
+                  </h3>
+                  <p className="mt-4 text-[13px] leading-[1.75] text-[#FAF9F6]/45 font-light">
+                    {point.description}
+                  </p>
+                  <span className="mt-8 inline-flex items-center gap-3 text-[10px] tracking-[0.2em] uppercase text-[#C9A96E]">
+                    Begin here
+                    <span className="w-5 h-[1px] bg-current group-hover:w-9 transition-all duration-300" />
+                  </span>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
