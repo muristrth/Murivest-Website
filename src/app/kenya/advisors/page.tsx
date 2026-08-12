@@ -6,6 +6,7 @@ import { fetchWeeklyKPIs, fetchTeamMetrics } from '@/lib/api';
 import { CARDONE_QUOTES, WEEKLY_KPI_DEFAULTS, getPerformanceTier } from '@/types/indexs';
 import type { WeeklyPerformance, TeamMetrics } from '@/types/indexs';
 import styles from './dashboard.module.css';
+import OnboardingProcess from '@/components/advisors/OnboardingProcess';
 
 // NOTE: Replace 'EMPLOYEE_ID_FROM_SESSION' with your auth session employee id.
 // When you integrate Supabase Auth, pull the id from the session:
@@ -70,6 +71,7 @@ export default function TeamDashboard() {
       </header>
 
       {error && <ErrorBanner message={error}/>}
+      <OnboardingProcess />
       <QuoteBanner quote={quote}/>
 
       {/* Weekly KPI Rings */}

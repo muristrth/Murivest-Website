@@ -25,6 +25,7 @@ export default function TeamLayout({ children }: { children: React.ReactNode }) 
           <Link href="/advisors/log"         className="nav-link">Log Day</Link>
           <Link href="/advisors/leaderboard" className="nav-link">Leaderboard</Link>
           <Link href="/advisors/admin"       className="nav-link nav-link-admin">Admin</Link>
+          <Link href="/studio"              className="nav-link">Studio</Link>
         </div>
       </nav>
       <main className="team-main">{children}</main>
