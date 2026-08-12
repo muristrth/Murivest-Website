@@ -328,7 +328,7 @@ const MarketsDropdown = ({
               {MARKETS.map((market) => (
                 <a
                   key={market.slug}
-                  href={`/${market.slug}`}
+                  href={getMarketHref(market.slug)}
                   onClick={onClose}
                   className="group flex items-center justify-between py-3 border-b border-[#2D5A45]/5 last:border-b-0 hover:bg-[#1B4332]/[0.02] px-2 -mx-2 rounded-sm transition-colors"
                 >
