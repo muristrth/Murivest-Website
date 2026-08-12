@@ -6,6 +6,8 @@ import {
   Users,
   ListChecks,
   MessageSquare,
+  Compass,
+  Activity,
   Shield,
   ChevronRight,
   LogOut,
@@ -16,8 +18,10 @@ const navItems = [
   { href: '/advisor/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/advisor/mandates', label: 'Mandates', icon: Briefcase },
   { href: '/advisor/investors', label: 'Investors', icon: Users },
+  { href: '/advisor/opportunities', label: 'Opportunities', icon: Compass },
   { href: '/advisor/tasks', label: 'Tasks', icon: ListChecks },
   { href: '/advisor/enquiries', label: 'Enquiries', icon: MessageSquare },
+  { href: '/advisor/activity', label: 'Activity', icon: Activity },
 ]
 
 export default async function AdvisorLayout({

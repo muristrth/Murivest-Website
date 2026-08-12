@@ -1,5 +1,6 @@
 import { createAdminClient } from '@/lib/supabase/admin'
 import AdvisorAssignSelect from '@/components/admin/AdvisorAssignSelect'
+import RoleSelect from '@/components/admin/RoleSelect'
 
 export const dynamic = 'force-dynamic'
 
@@ -50,13 +51,20 @@ export default async function AdminUserDetailPage({
         </div>
       </div>
 
-      <div className="bg-white border border-[#1B4332]/10 p-6 max-w-md">
-        <h2 className="font-serif text-xl text-[#1B4332] mb-4">Advisor Assignment</h2>
-        <AdvisorAssignSelect
-          investorId={user.id}
-          currentAdvisorId={user.assigned_advisor_id}
-          advisors={advisors || []}
-        />
+      <div className="grid md:grid-cols-2 gap-6">
+        <div className="bg-white border border-[#1B4332]/10 p-6">
+          <h2 className="font-serif text-xl text-[#1B4332] mb-4">Platform Role</h2>
+          <RoleSelect userId={user.id} currentRole={user.role || 'investor'} />
+        </div>
+
+        <div className="bg-white border border-[#1B4332]/10 p-6">
+          <h2 className="font-serif text-xl text-[#1B4332] mb-4">Advisor Assignment</h2>
+          <AdvisorAssignSelect
+            investorId={user.id}
+            currentAdvisorId={user.assigned_advisor_id}
+            advisors={advisors || []}
+          />
+        </div>
       </div>
     </div>
   )

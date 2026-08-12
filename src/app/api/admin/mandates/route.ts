@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createAdminClient } from '@/lib/supabase/admin'
 import { verifyAdmin } from '@/lib/auth/requireAdmin'
+import { sendNotification } from '@/lib/notifications'
 
 export async function POST(request: NextRequest) {
   const { authorized, userId, error: authError } = await verifyAdmin()
@@ -49,11 +50,11 @@ export async function POST(request: NextRequest) {
   })
 
   if (advisorId) {
-    await supabase.from('notifications').insert({
-      user_id: advisorId,
-      type: 'mandate_update',
+    await sendNotification({
+      userId: advisorId,
+      type: 'mandate_assigned',
       title: 'New mandate assigned',
-      body: `You have been assigned to the mandate "${title}".`,
+      message: `You have been assigned to the mandate "${title}".`,
       link: '/advisor/mandates',
     })
   }

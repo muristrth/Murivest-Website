@@ -23,6 +23,12 @@ alter table profiles
 create index if not exists idx_profiles_role on profiles(role);
 create index if not exists idx_profiles_assigned_advisor_id on profiles(assigned_advisor_id);
 
+-- Backfill: the platform's existing admin gate checks investor_status = 'admin'.
+-- Keep the new role column consistent with that on rollout so existing admins
+-- immediately get role = 'admin' without a manual data-fix step.
+update profiles set role = 'admin'
+  where investor_status = 'admin' and role = 'investor';
+
 -- ============================================================================
 -- 2. MANDATES (advisor-managed engagements with investors)
 -- ============================================================================
@@ -134,32 +140,28 @@ create index if not exists idx_advisor_tasks_advisor_id on advisor_tasks(advisor
 create index if not exists idx_advisor_tasks_status on advisor_tasks(status);
 
 -- ============================================================================
--- 6. NOTIFICATIONS (in-app notifications for investors, advisors, admins)
+-- 6. NOTIFICATIONS
 -- ============================================================================
-
-do $$
-begin
-  if not exists (select 1 from pg_type where typname = 'notification_type') then
-    create type notification_type as enum (
-      'system', 'mandate_update', 'enquiry_reply', 'task_assigned',
-      'document_shared', 'order_update', 'deal_alert'
-    );
-  end if;
-end $$;
+-- The `notifications` table already exists in this database (created outside
+-- of tracked migrations) and is actively used by src/lib/notifications.ts and
+-- /api/notifications. Its columns are: id, user_id, type (text), title,
+-- message, link, is_read (boolean), created_at. We only create it here as a
+-- fallback for fresh environments where it does not yet exist, matching that
+-- exact shape — we never redefine or add columns to an existing table.
 
 create table if not exists notifications (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null references profiles(id) on delete cascade,
-  type notification_type not null default 'system',
+  type text not null default 'system',
   title text not null,
-  body text,
+  message text,
   link text,
-  read_at timestamptz,
+  is_read boolean not null default false,
   created_at timestamptz not null default now()
 );
 
 create index if not exists idx_notifications_user_id on notifications(user_id);
-create index if not exists idx_notifications_user_id_read_at on notifications(user_id, read_at);
+create index if not exists idx_notifications_user_id_is_read on notifications(user_id, is_read);
 
 -- ============================================================================
 -- 7. DOCUMENTS + DOCUMENT ACCESS (share tracking for briefs/NDAs/reports)

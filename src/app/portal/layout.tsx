@@ -27,7 +27,9 @@ import {
   MessageSquare,
   Fingerprint,
   Eye,
-  EyeOff
+  EyeOff,
+  Target,
+  FolderLock
 } from 'lucide-react'
 
 import NotificationBell from '@/components/NotificationBell'
@@ -66,9 +68,18 @@ const navGroups = [
     ]
   },
   {
+    group: "Advisory",
+    items: [
+      { href: '/portal/criteria', label: 'Acquisition Criteria', icon: Target, mobileLabel: 'Criteria' },
+      { href: '/portal/enquiries', label: 'Enquiries', icon: MessageSquare, mobileLabel: 'Enquiries' },
+      { href: '/portal/documents', label: 'Documents', icon: FolderLock, securityLevel: 'high', mobileLabel: 'Documents' },
+      { href: '/portal/notifications', label: 'Notifications', icon: Bell, mobileLabel: 'Alerts' },
+    ]
+  },
+  {
     group: "Settings",
     items: [
-      { href: '/portal/payments', label: 'Payments', icon: MessageSquare, mobileLabel: 'Payments' },
+      { href: '/portal/payments', label: 'Payments', icon: CreditCard, mobileLabel: 'Payments' },
       { href: '/portal/profile', label: 'Profile', icon: User, mobileLabel: 'Profile' },
     ]
   }
