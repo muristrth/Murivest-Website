@@ -99,7 +99,7 @@ Located moments from Kensington Gardens and High Street Kensington, this residen
         <div className="max-w-[1400px] mx-auto px-4 md:px-12 lg:px-16 py-3 md:py-4">
           <div className="flex items-center justify-between">
             <a 
-              href="/uk-properties"
+              href="/united-kingdom/listings"
               className="group inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-[#8B7355] font-medium hover:text-[#2C2C2C] transition-colors duration-500"
             >
               <ArrowLeft className="w-4 h-4" />

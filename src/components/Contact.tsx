@@ -125,7 +125,7 @@ const Contact = () => {
                   <p className="text-[12px] tracking-[0.15em] uppercase text-[#5A5A5A] mb-2">Telephone</p>
                   <p className="text-[14px] text-[#2C2C2C] font-light">
                     +254 115 277 610 (Nairobi)<br />
-                    +44 20 7123 4567 (London)
+                    +44 7864 855742 (London)
                   </p>
                 </div>
               </div>

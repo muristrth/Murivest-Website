@@ -140,7 +140,7 @@ export const countrySEO: Record<CountryCode, CountrySEOConfig> = {
     region: 'Europe',
     cities: 'London · Paris · Berlin · Amsterdam',
     schemaRegion: 'GB',
-    telephone: '+44-00-0115-277-610 ',
+    telephone: '+44-7864-855742 ',
     keywords: [
       'commercial real estate advisory UK',
       'City of London real estate investment',

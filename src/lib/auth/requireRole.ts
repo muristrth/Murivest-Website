@@ -13,7 +13,7 @@ export async function requireRole(allowed: Role[]): Promise<UserWithProfile> {
   const user = await getUser()
 
   if (!user) {
-    redirect('/portal/login')
+    redirect('/advisor/dashboard')
   }
 
   const role = (user.profile?.role ?? 'investor') as Role
@@ -25,7 +25,7 @@ export async function requireRole(allowed: Role[]): Promise<UserWithProfile> {
     if (role === 'advisor') {
       redirect('/advisor/dashboard')
     }
-    redirect('/portal')
+    redirect('/advisor/dashboard')
   }
 
   return user

@@ -421,7 +421,7 @@ const UKPropertyDetailClient = ({ property }: UKPropertyDetailClientProps) => {
             <div className="flex items-center justify-between gap-4">
               {/* Back link */}
               <a
-                href="/uk-properties"
+                href="/united-kingdom/listings"
                 className="group inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-[#8B7355] font-medium hover:text-[#2C2C2C] transition-colors duration-300"
               >
                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" />
@@ -431,7 +431,7 @@ const UKPropertyDetailClient = ({ property }: UKPropertyDetailClientProps) => {
 
               {/* Breadcrumb – hidden on small screens */}
               <div className="hidden md:flex items-center gap-2 text-[11px] text-[#8B8680]">
-                <span>UK Properties</span>
+                <span>UK Listings</span>
                 <span>/</span>
                 <span className="text-[#2C2C2C] truncate max-w-[200px]">{property.title}</span>
               </div>

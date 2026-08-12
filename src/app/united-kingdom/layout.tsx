@@ -136,14 +136,14 @@ const ukOrganizationSchema = {
   contactPoint: [
     {
       '@type': 'ContactPoint',
-      telephone: '+44-20-7123-4567',   // replace with actual
+      telephone: '+44-7864-855742',   // replace with actual
       contactType: 'sales',
       areaServed: 'GB',
       availableLanguage: ['English'],
     },
     {
       '@type': 'ContactPoint',
-      telephone: '+44-20-7123-4567',
+      telephone: '+44-7864-855742',
       contactType: 'customer service',
       areaServed: 'GB',
       availableLanguage: ['English'],
@@ -177,7 +177,7 @@ const ukLocalBusinessSchema = {
   name: 'Murivest UK',
   image: 'https://murivest.com/logo.webp',
   url: 'https://murivest.com/united-kingdom',
-  telephone: '+44-20-7123-4567',
+  telephone: '+44-7864-855742',
   email: 'uk@murivest.com',
   address: {
     '@type': 'PostalAddress',

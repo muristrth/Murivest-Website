@@ -1,52 +1,83 @@
-import type { Metadata } from 'next'
-import InstitutionalPage from '@/components/marketing/InstitutionalPage'
-import { Landmark, ShieldCheck, Target, Users } from 'lucide-react'
+import type { Metadata } from "next";
+import AboutClient from "./Aboutclient";
 
 export const metadata: Metadata = {
-  title: 'About Murivest | Independent Real Estate Advisory',
-  description: 'Murivest Realty Group is an independent commercial real estate advisory firm based in Nairobi, structuring mandate-based engagements across East Africa and partner markets.',
-}
+  title: "About Murivest | Independent Commercial Real Estate Advisory",
+  description:
+    "Murivest is an independent, Nairobi-founded commercial real estate advisory practice helping owners, investors and occupiers navigate commercial property mandates across selected gateway markets.",
+  alternates: { canonical: "https://murivest.com/about" },
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: "About Murivest | Independent Commercial Real Estate Advisory",
+    description:
+      "Independent commercial real estate advisory across East Africa, the Gulf, Western Europe and Southeast Asia. Founded in 2025.",
+    url: "https://murivest.com/about",
+    siteName: "Murivest",
+    locale: "en_KE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Murivest",
+    description:
+      "Independent commercial real estate advisory. Local intelligence. Institutional discipline.",
+  },
+};
 
 export default function AboutPage() {
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "About Murivest",
+    url: "https://murivest.com/about",
+    description:
+      "Independent commercial real estate advisory practice founded in 2025.",
+    mainEntity: {
+      "@type": "Organization",
+      name: "Murivest Realty Group Ltd",
+      url: "https://murivest.com",
+      foundingDate: "2025",
+      founders: [
+        {
+          "@type": "Person",
+          name: "Mark Muriithi",
+          jobTitle: "Founder & Principal",
+        },
+      ],
+      areaServed: ["Kenya", "United Arab Emirates", "United Kingdom", "Singapore"],
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://murivest.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "About",
+        item: "https://murivest.com/about",
+      },
+    ],
+  };
+
   return (
-    <InstitutionalPage
-      eyebrow="About — Our Story"
-      title="An Independent Advisory Firm, Built on Mandates"
-      subtitle="Murivest Realty Group is an independent commercial real estate advisory firm based in Nairobi. We originate and structure mandate-based engagements for institutional and private capital in East African and partner commercial property markets."
-      sections={[
-        {
-          eyebrow: 'Philosophy',
-          title: 'Advisory, not investment management',
-          body: [
-            'We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors.',
-            'Every engagement is mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and a clearly defined scope. This structure keeps our incentives aligned to the mandate, not to assets under management.',
-          ],
-        },
-        {
-          eyebrow: 'What We Do',
-          title: 'Where Murivest operates',
-          columns: 4,
-          cards: [
-            { icon: Target, title: 'Origination', description: 'Sourcing acquisition and disposal mandates for qualified principals.' },
-            { icon: ShieldCheck, title: 'Diligence', description: 'Institutional-grade underwriting and due diligence discipline.' },
-            { icon: Landmark, title: 'Structuring', description: 'Transaction structuring across advisory, management, and specialist services.' },
-            { icon: Users, title: 'Relationships', description: 'Long-term advisory relationships with vendors, occupiers, and capital.' },
-          ],
-        },
-        {
-          eyebrow: 'Governance',
-          title: 'Compliance is a first-class function, not an afterthought',
-          body: [
-            'Every mandate passes through our compliance framework before engagement begins. We maintain formal KYC/AML processes and document scope explicitly to protect both the principal and the firm.',
-          ],
-        },
-      ]}
-      cta={{
-        title: 'Want to know more about how we work?',
-        body: 'Speak with our advisory team, or explore our leadership and compliance framework.',
-        primary: { label: 'Contact Us', href: '/contact' },
-        secondary: { label: 'Leadership', href: '/leadership' },
-      }}
-    />
-  )
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <AboutClient />
+    </>
+  );
 }
