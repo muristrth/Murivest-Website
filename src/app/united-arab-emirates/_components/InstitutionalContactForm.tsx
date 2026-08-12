@@ -29,7 +29,7 @@ const FORM_FIELDS = [
     kind: 'text' as const,
     type: 'tel',
     label: 'Phone Number',
-    placeholder: '+254 712 345 678',
+    placeholder: '+254 115 277 610 ',
     required: false,
   },
   {

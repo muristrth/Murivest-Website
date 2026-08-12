@@ -6,32 +6,35 @@ import Link from 'next/link';
 import CEOInstitutionalProfile from '@/components/CEOInstitutionalProfile';
 
 export const metadata: Metadata = {
-  title: 'Murivest | Institutional Commercial Real Estate Advisory',
+  title: 'Commercial Real Estate Advisory Kenya | Office, Industrial & Investment | Murivest - Est. 2025',
   description:
-    'Murivest is an independent institutional real estate advisory firm. We originate and advise on capital mandates across Africa, Middle East, Asia Pacific and Europe.',
+    'Murivest Realty Group is a Nairobi-based commercial real estate advisory founded in 2025 by Mark Muriithi. Mandate-based advisory for office, industrial, and investment across Kenya and East Africa.',
   keywords: [
-    'commercial real estate advisory',
-    'institutional real estate',
-    'sovereign wealth fund real estate',
-    'family office property investment',
-    'capital markets advisory',
-    'CBRE alternative',
-    'Knight Frank competitor',
-    'Savills institutional',
+    'commercial real estate advisory Kenya',
+    'Nairobi commercial property',
+    'office space Nairobi',
+    'industrial property Kenya',
+    'investment advisory Kenya',
+    'East Africa real estate',
+    'Murivest Realty Group',
+    'Mark Muriithi',
+    'commercial property underwriting',
+    'exit strategy advisory',
   ],
   openGraph: {
-    title: 'Murivest — Institutional Real Estate Advisory',
+    title: 'Murivest Realty Group | Commercial Real Estate Advisory Kenya',
     description:
-      'Research-led advisory for the world\'s most sophisticated capital. Across 35 markets since 2001.',
+      'Nairobi-based commercial real estate advisory founded in 2025 by Mark Muriithi. Mandate-based advisory for office, industrial, and investment across Kenya and East Africa.',
     url: 'https://murivest.com',
-    siteName: 'Murivest',
-    locale: 'en_US',
+    siteName: 'Murivest Realty Group',
+    locale: 'en_KE',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Murivest | Institutional CRE Advisory',
-    description: 'Global commercial real estate advisory for institutional capital.',
+    title: 'Murivest Realty Group | Commercial Real Estate Advisory Kenya',
+    description:
+      'Nairobi-based commercial real estate advisory founded in 2025 by Mark Muriithi.',
   },
   alternates: { canonical: 'https://murivest.com' },
   robots: {
@@ -46,23 +49,23 @@ export const metadata: Metadata = {
 
 const SERVICES = [
   {
-    title: 'Capital Markets',
-    desc: 'Debt and equity placement, joint venture structuring, and institutional capital sourcing across acquisition and development mandates.',
-    href: '/services/capital-markets',
+    title: 'Commercial Advisory',
+    desc: 'End-to-end advisory for office, industrial, and mixed-use assets. Site selection, lease structuring, and transaction execution aligned with institutional underwriting standards.',
+    href: '/commercial-real-estate',
   },
   {
     title: 'Investment Advisory',
-    desc: 'Discrete acquisition and disposition counsel for commercial property portfolios. Confidentiality and pricing discipline on every mandate.',
-    href: '/services/investment-advisory',
+    desc: 'Acquisition and disposition counsel for commercial property portfolios. Discreet mandate-based engagements with confidentiality and pricing discipline on every transaction.',
+    href: '/process',
   },
   {
-    title: 'Occupier Solutions',
-    desc: 'Site selection, portfolio optimization, and workplace strategy for multinational corporations scaling across frontier and emerging markets.',
-    href: '/services/occupier-solutions',
+    title: 'Exit Strategy & Risk Engineering',
+    desc: 'Structured exit planning, lease reversion analysis, and counterparty risk mitigation. We engineer de-risking pathways before capital is deployed, not after.',
+    href: '/exit-strategy-planning',
   },
   {
-    title: 'Research & Intelligence',
-    desc: 'Independent market analysis and primary data collection across 35 markets. Investment theses that inform allocation decisions.',
+    title: 'Market Intelligence',
+    desc: 'Primary research from Nairobi ground data. Market theses, sector analysis, and allocation briefings drawn from on-the-ground due diligence, not third-party aggregates.',
     href: '/research',
   },
 ];
@@ -71,8 +74,8 @@ const INSIGHTS = [
   {
     category: 'Investment and Wealth',
     date: 'July 2026',
-    title: 'Where are Institutions (Cardone Capital) deploying their capital and funds for investments & income in 2026?',
-    subtitle: 'Global de-dollarization is not an academic debate. It is a capital flow reality reshaping commercial real estate pricing in Dubai, Singapore, and selected African markets.',
+    title: 'Where are Institutions deploying their capital for investments & income in 2026?',
+    subtitle: 'Global de-dollarization is not an academic debate. It is a capital flow reality reshaping commercial real estate pricing in selected African markets.',
     href: '/research/global-macro-allocation-commercial-real-estate-dedollarization-2026',
     image: '/research-images/global-macro-allocation-commercial-real-estate-dedollarization-2026.webp',
   },
@@ -102,7 +105,7 @@ const COMMITMENTS = [
   },
   {
     title: 'Governance',
-    desc: 'We take great pride in our reputation for upholding the highest standards in the way we do business. RICS regulated, INREV member.',
+    desc: 'Formal scope documentation, KYC/AML verification, and transparent fee structures on every mandate. Upholding the highest standards in the way we do business.',
     href: '/governance',
   },
   {
@@ -121,27 +124,51 @@ const FAQS = [
   {
     question: 'What distinguishes Murivest from global brokerage networks like CBRE, JLL, or Knight Frank?',
     answer:
-      'Unlike global brokerage networks such as CBRE, JLL, Knight Frank, Savills, Colliers, and Cushman & Wakefield, Murivest maintains a dedicated on-the-ground presence in frontier and emerging markets with a mandate-based advisory model. We do not operate a franchised network. Every professional is a direct employee, and every mandate is underwritten to institutional standards.',
+      'Unlike global brokerage networks such as CBRE, JLL, Knight Frank, Savills, Colliers, and Cushman & Wakefield, Murivest maintains a dedicated on-the-ground presence in Kenya and East Africa with a mandate-based advisory model. We do not operate a franchised network. Every professional is a direct employee, and every mandate is underwritten to institutional standards.',
   },
   {
-    question: 'Who are Murivest\'s typical institutional clients?',
+    question: 'Who are Murivest\'s typical clients?',
     answer:
-      'We advise sovereign wealth funds, public pension funds, multi-generational family offices, private equity firms, listed REITs, and Fortune 500 occupiers. Our relationships are mandate-based, confidential, and typically initiated through direct institutional referral.',
+      'We advise private capital, family offices, and institutional-minded investors on commercial property acquisitions, dispositions, and strategy across Kenya and East Africa. Our relationships are mandate-based, confidential, and typically initiated through direct referral.',
   },
   {
     question: 'What asset classes does Murivest cover?',
     answer:
-      'Our advisory spans Grade A office, industrial and logistics, data centres, retail and mixed-use, hospitality, and conservation shophouses. We maintain specialist teams for each sector across our four regional platforms.',
+      'Our advisory spans Grade A office, industrial and logistics, retail and mixed-use, and hospitality across Kenya and East Africa. We maintain specialist knowledge for each sector rather than broad, shallow coverage.',
   },
   {
     question: 'How does Murivest verify counterparty compliance?',
     answer:
-      'All engagements require KYC and AML verification, source-of-funds review, and formal scope documentation before commencement. Murivest is a RICS regulated firm, an INREV member, and maintains full professional indemnity coverage in every operating jurisdiction.',
+      'All engagements require KYC and AML verification, source-of-funds review, and formal scope documentation before commencement. Murivest maintains full professional indemnity coverage.',
   },
   {
     question: 'Does Murivest manage capital or operate investment funds?',
     answer:
       'No. Murivest does not operate collective investment schemes, pool investor capital, or offer regulated financial products. All engagements are advisory in nature.',
+  },
+];
+
+const ABOUT_PARAGRAPHS = [
+  `Murivest Realty Group was founded in 2025 in Nairobi, Kenya by Mark Muriithi to address a structural gap in East African commercial real estate markets. Institutional-grade advisory—disciplined underwriting, title risk mitigation, exit planning, and off-market execution—remains scarce in frontier markets. Most operators function as brokers or developers, leaving investors without the rigorous mandate architecture expected in mature markets.`,
+  `Murivest bridges this divide by combining structured advisory, disciplined underwriting, and off-market execution for commercial real estate across Kenya and East Africa. Every mandate is advisory-only. We do not pool capital or operate collective investment schemes. Our model is built on transparency, verifiable ground data, and alignment with institutional expectations—governance, reporting, and risk engineering that withstands scrutiny from private capital, family offices, and institutional-minded investors.`,
+];
+
+const TRUST_METRICS = [
+  {
+    value: '2025',
+    label: 'Established Nairobi',
+  },
+  {
+    value: 'Decades',
+    label: 'Leadership Experience',
+  },
+  {
+    value: 'Mandate-Only',
+    label: 'Advisory Model',
+  },
+  {
+    value: 'East Africa',
+    label: 'Coverage',
   },
 ];
 
@@ -161,33 +188,38 @@ export default function GlobalHomePage() {
               {
                 '@type': 'Organization',
                 '@id': 'https://murivest.com/#organization',
-                name: 'Murivest',
-                alternateName: 'Murivest Realty Group',
+                name: 'Murivest Realty Group',
+                alternateName: 'Murivest',
                 url: 'https://murivest.com',
                 logo: 'https://murivest.com/logo.png',
-                foundingDate: '2001',
+                foundingDate: '2025',
+                founder: {
+                  '@type': 'Person',
+                  name: 'Mark Muriithi',
+                  jobTitle: 'Chief Executive Officer',
+                },
+                address: {
+                  '@type': 'PostalAddress',
+                  addressLocality: 'Nairobi',
+                  addressCountry: 'KE',
+                },
+                foundingLocation: {
+                  '@type': 'City',
+                  name: 'Nairobi',
+                  containedInCountry: {
+                    '@type': 'Country',
+                    name: 'Kenya',
+                  },
+                },
                 description:
-                  'Institutional commercial real estate advisory firm serving sovereign wealth funds, pension funds, family offices, and institutional investors across 35 countries.',
-                sameAs: [
-                  'https://www.linkedin.com/company/murivest',
-                  'https://crunchbase.com/organization/murivest',
-                ],
-                knowsAbout: [
-                  'Commercial Real Estate',
-                  'Investment Sales',
-                  'Capital Markets',
-                  'Grade A Office',
-                  'Industrial Real Estate',
-                  'Logistics Property',
-                  'Data Centre Real Estate',
-                  'Sovereign Wealth Fund Investment',
-                  'Family Office Real Estate',
-                  'Cross-Border Transaction Structuring',
-                ],
+                  'Nairobi-based commercial real estate advisory firm founded in 2025 by Mark Muriithi. Mandate-based advisory for office, industrial, and investment across Kenya and East Africa.',
                 contactPoint: {
                   '@type': 'ContactPoint',
-                  contactType: 'Institutional Enquiries',
-                  email: 'investments@murivest.co.ke',
+                  contactType: 'Advisory Enquiries',
+                  email: 'capital@murivest.co.ke',
+                  telephone: '+254-115-277-610',
+                  areaServed: ['KE', 'RW', 'UG', 'TZ'],
+                  availableLanguage: ['English'],
                 },
               },
               {
@@ -205,14 +237,12 @@ export default function GlobalHomePage() {
 
       {/* ═══════════════════════════════════════════════════════════
           HERO
-          One image. Big words. Generous whitespace. Institutional.
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative min-h-[92vh] flex items-end overflow-hidden">
-        {/* Background */}
         <div className="absolute inset-0">
           <Image
             src="/images/hero.jpeg"
-            alt="Murivest Institutional Advisory — London skyline at dusk"
+            alt="Murivest Institutional Advisory — Nairobi skyline"
             fill
             className="object-cover"
             priority
@@ -224,19 +254,15 @@ export default function GlobalHomePage() {
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 pb-24 md:pb-32 pt-40">
           <div className="max-w-3xl">
             <p className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#C9A96E] font-medium mb-8 animate-fade-up">
-              Institutional Commercial Real Estate Advisory
+              Mandate-Based Commercial Real Estate Advisory
             </p>
 
             <h1 className="font-serif text-[2.8rem] md:text-[4rem] lg:text-[5.5rem] text-[#FAF9F6] leading-[1.02] mb-8 animate-fade-up delay-100">
-              Institutional Commercial<br />
-              <em className="italic text-[#C9A96E] font-light">Real Estate Advisory.</em>
+              Commercial Real Estate Advisory - Nairobi, Kenya | Murivest Realty Group - Founded 2025
             </h1>
 
             <p className="text-[15px] md:text-[17px] text-[#FAF9F6]/60 leading-[1.7] font-light max-w-xl mb-12 animate-fade-up delay-200">
-              Murivest is an independent institutional real estate advisory firm. We originate and advise on capital mandates across Africa, Middle East, Asia Pacific and Europe. 
-              We advise sovereign wealth funds, pension funds, and family offices on 
-              acquisition, disposition, and strategy across Africa, the Middle East, 
-              Asia Pacific, and Europe.
+              Murivest is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across Kenya and East Africa—confidential, mandate-based engagements for private capital, family offices, and institutional-minded investors.
             </p>
 
             <div className="flex flex-wrap gap-4 animate-fade-up delay-300">
@@ -250,10 +276,10 @@ export default function GlobalHomePage() {
                 </svg>
               </Link>
               <Link
-                href="/singapore"
+                href="/research"
                 className="inline-flex items-center gap-2 px-8 py-4 border border-[#FAF9F6]/20 text-[#FAF9F6]/80 text-[11px] tracking-[0.2em] uppercase font-medium hover:border-[#C9A96E]/50 hover:text-[#FAF9F6] transition-all duration-500"
               >
-                Explore Singapore
+                View Research
               </Link>
             </div>
           </div>
@@ -261,18 +287,69 @@ export default function GlobalHomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          WHAT WE DO
-          Clean four-column grid. CBRE-style. No icons. Just type.
+          TRUST / POSITIONING STRIP
+          Founder credentials. No fake firm metrics.
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#FAF9F6] text-[#1A1A1A] border-t border-[#E5E2DC]">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-16 lg:py-20">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            {TRUST_METRICS.map((metric) => (
+              <div key={metric.label} className="text-center lg:text-left">
+                <p className="text-3xl md:text-4xl font-serif text-[#1B4332] mb-2">
+                  {metric.value}
+                </p>
+                <p className="text-[11px] tracking-[0.2em] uppercase text-[#5A5A5A] font-medium">
+                  {metric.label}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 pt-8 border-t border-[#E5E2DC]">
+            <p className="text-[13px] leading-[1.8] text-[#5A5A5A] font-light max-w-3xl">
+              Murivest Realty Group is led by Mark Muriithi, whose career spans commercial real estate, distribution, and technology leadership across East Africa. The firm was established in 2025 to deliver the mandate architecture, underwriting discipline, and off-market execution that frontier markets require—built on decades of leadership experience, not decades of firm history.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          INSTITUTIONAL NARRATIVE
+          Why 2025. The gap in the market.
       ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#FAF9F6] text-[#1A1A1A]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-24 lg:py-36">
           <div className="grid lg:grid-cols-12 gap-16 lg:gap-24">
             <div className="lg:col-span-4">
               <p className="text-[10px] tracking-[0.35em] uppercase text-[#8B7355] font-medium mb-4">
-                What We Do
+                Our Foundation
               </p>
               <h2 className="font-serif text-3xl md:text-4xl lg:text-[2.75rem] text-[#1A1A1A] leading-[1.1]">
-                Create the real estate solutions of tomorrow.
+                Built for the market as it is, not as others imagine it.
+              </h2>
+            </div>
+            <div className="lg:col-span-8">
+              {ABOUT_PARAGRAPHS.map((p, i) => (
+                <p key={i} className="text-[14px] leading-[1.9] text-[#5A5A5A] font-light mb-6">
+                  {p}
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          WHAT WE DO
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#FAF9F6] text-[#1A1A1A]">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-24 lg:py-36">
+          <div className="grid lg:grid-cols-12 gap-16 lg:gap-24">
+            <div className="lg:col-span-4">
+              <p className="text-[10px] tracking-[0.35em] uppercase text-[#8B7355] font-medium mb-4">
+                Advisory Services
+              </p>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-[2.75rem] text-[#1A1A1A] leading-[1.1]">
+                Structured advisory for institutional execution.
               </h2>
             </div>
 
@@ -301,17 +378,16 @@ export default function GlobalHomePage() {
 
       {/* ═══════════════════════════════════════════════════════════
           INSIGHTS & RESEARCH
-          Editorial cards. Linked articles. CBRE-style.
       ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#0B1510] border-t border-[rgba(201,169,110,0.08)]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-24 lg:py-36">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
               <p className="text-[10px] tracking-[0.35em] uppercase text-[#C9A96E] font-medium mb-4">
-                Insights & Research
+                Research & Intelligence
               </p>
               <h2 className="font-serif text-3xl md:text-4xl lg:text-[2.75rem] text-[#FAF9F6] leading-[1.1]">
-                Latest Insights
+                Primary research from Nairobi ground data
               </h2>
             </div>
             <Link
@@ -356,13 +432,11 @@ export default function GlobalHomePage() {
 
       {/* ═══════════════════════════════════════════════════════════
           LEADERSHIP
-          The human layer. Your CEO component.
       ═══════════════════════════════════════════════════════════ */}
       <CEOInstitutionalProfile />
 
       {/* ═══════════════════════════════════════════════════════════
           OUR COMMITMENT
-          Values carousel. CBRE-style. Clean cards.
       ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#111C16] border-t border-[rgba(201,169,110,0.08)]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-24 lg:py-36">
@@ -399,7 +473,6 @@ export default function GlobalHomePage() {
 
       {/* ═══════════════════════════════════════════════════════════
           NEWSLETTER
-          "Our Take" equivalent. Clean, editorial.
       ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#0B1510] border-t border-[rgba(201,169,110,0.08)]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-24 lg:py-36">
@@ -444,7 +517,6 @@ export default function GlobalHomePage() {
 
       {/* ═══════════════════════════════════════════════════════════
           FAQ
-          Hidden in design, visible to LLMs and Google.
       ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#111C16] border-t border-[rgba(201,169,110,0.08)]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-24 lg:py-36">
@@ -457,8 +529,7 @@ export default function GlobalHomePage() {
                 Frequently Asked Questions
               </h2>
               <p className="text-[14px] leading-[1.8] text-[#FAF9F6]/50 font-light">
-                Answers to common questions from sovereign wealth funds, pension boards, 
-                family offices, and institutional allocators.
+                Answers to common questions from private capital, family offices, and institutional allocators.
               </p>
             </div>
 

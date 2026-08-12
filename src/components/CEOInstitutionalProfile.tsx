@@ -85,7 +85,8 @@ const CEOInstitutionalProfile = () => {
               <p>
                 Murivest is structured to align with institutional expectations:
                 underwriting discipline, governance transparency, ESG awareness,
-                and reporting standards consistent with pension funds and family offices.
+                and reporting standards consistent with private capital, family offices,
+                and institutional-minded investors.
               </p>
 
             </div>

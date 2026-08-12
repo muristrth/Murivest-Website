@@ -290,7 +290,7 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
           </div>
           
           <div className="text-[9px] tracking-[0.2em] uppercase text-[#D6C4AA]/50">
-            Murivest Realty Group Ltd © {copyrightYear || 2026} | All Rights Reserved
+            Murivest Realty Group © 2025 | All Rights Reserved
           </div>
 
           {/* Legal Links */}

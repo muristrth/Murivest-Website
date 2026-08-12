@@ -735,7 +735,7 @@ export default function VisitPage() {
                     <div className="grid sm:grid-cols-2 gap-x-8 gap-y-8">
                       <FormField label="Full Name" name="fullName" value={formData.fullName} onChange={handleChange} placeholder="e.g. Jonathan Muriithi" icon={User} />
                       <FormField label="Email Address" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="principal@firm.com" icon={Mail} />
-                      <FormField label="Telephone" name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="+254 712 345 678" icon={Phone} />
+                      <FormField label="Telephone" name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="+254 115 277 610 " icon={Phone} />
                       {isBuyer && (
                         <FormField label="Investment Budget (Ksh)" name="budget" value={formData.budget} onChange={handleChange} placeholder="e.g. 45,000,000" icon={Wallet} helper="Indicative range for acquisition." />
                       )}
