@@ -3,6 +3,7 @@
 import { usePathname } from 'next/navigation';
 import Header from './Header';
 import Footer from './Footer';
+import { PublicHeader, PublicFooter } from '@/components/public/PublicSite';
 import WhatsAppButton from '../ui/WhatsAppButton';
 
 export default function AppShell({
@@ -11,21 +12,18 @@ export default function AppShell({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const isInvestorPortal = pathname.startsWith('/investor-portal');
+  const isPrivate = pathname.startsWith('/admin') || pathname.startsWith('/admin2') || pathname.startsWith('/studio') || pathname.startsWith('/api') || pathname.includes('/investor-portal');
 
   return (
     <div className="min-h-screen">
-      {!isInvestorPortal && (
-        <>
-          <Header />
-        </>
-      )}
+      {!isPrivate && <PublicHeader />}
+      {isPrivate && !pathname.includes('/investor-portal') && <Header />}
 
       <main>{children}</main>
 
-      {!isInvestorPortal && <Footer />}
-      {!isInvestorPortal && <WhatsAppButton />}
-
+      {!isPrivate && <PublicFooter />}
+      {isPrivate && !pathname.includes('/investor-portal') && <Footer />}
+      {!isPrivate && <WhatsAppButton />}
     </div>
   );
 }

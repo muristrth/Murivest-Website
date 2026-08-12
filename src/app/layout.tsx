@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from 'next';
-import Script from 'next/script';
 import { Playfair_Display, Montserrat, Inter } from 'next/font/google';
 import { Suspense } from 'react';
 
@@ -46,7 +45,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    'Murivest is an independent institutional commercial real estate advisory firm. We connect global capital with modern urban gateways – investment sales, tenant representation, and development strategy across the Americas, Europe, Asia Pacific, Africa, and the Middle East.',
+    'Murivest is a Nairobi-founded, independent commercial real estate advisory practice. We support defined mandates across selected markets through local intelligence and disciplined process.',
 
   keywords:
     'commercial real estate, institutional real estate, global real estate advisory, capital markets, investment sales, tenant representation, development advisory, Murivest, cross‑border investment, office leasing, industrial real estate, retail property, data centres',
@@ -157,7 +156,6 @@ export const viewport: Viewport = {
   themeColor: '#1B4332',
 };
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? 'G-TQF6VT5RR3';
 
 export default function RootLayout({
   children,
@@ -168,7 +166,7 @@ export default function RootLayout({
     <html
       data-scroll-behavior="smooth"
       lang="en"
-      className={`${inter.variable} ${playfair.variable} ${montserrat.variable} font-sans`}
+      className={`${inter.variable} ${playfair.variable} ${montserrat.variable} font-sans bg-[var(--mv-cream)]`}
     >
       <head>
         <link rel="icon" type="image/png" href="/logo.webp" sizes="192x192" />
@@ -183,80 +181,17 @@ export default function RootLayout({
         <meta name="format-detection" content="telephone=yes" />
 
         {/* Global structured data – always present */}
-        <Script
+        <script
           id="global-organization"
           type="application/ld+json"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(globalOrganizationSchema),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(globalOrganizationSchema) }}
         />
-        <Script
+        <script
           id="global-website"
           type="application/ld+json"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(globalWebsiteSchema),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(globalWebsiteSchema) }}
         />
 
-        {/* Google Consent Default */}
-        <Script id="google-consent-default" strategy="beforeInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('consent', 'default', {
-              analytics_storage: 'denied',
-              ad_storage: 'denied',
-              ad_user_data: 'denied',
-              ad_personalization: 'denied',
-              functionality_storage: 'denied',
-              personalization_storage: 'denied',
-              wait_for_update: 2000,
-            });
-            gtag('js', new Date());
-          `}
-        </Script>
-
-        {/* Google Analytics */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('config', '${GA_ID}', {
-              send_page_view: false,
-            });
-          `}
-        </Script>
-
-        {/* LinkedIn Insight Tag */}
-        <Script id="linkedin-insight" strategy="afterInteractive">
-          {`
-            _linkedin_partner_id = "1234567";
-            window._linkedin_data_partner_ids =
-              window._linkedin_data_partner_ids || [];
-            window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-            (function(l) {
-              if (!l) {
-                window.lintrk = function(a,b){
-                  window.lintrk.q.push([a,b]);
-                };
-                window.lintrk.q = [];
-              }
-              var s = document.getElementsByTagName("script")[0];
-              var b = document.createElement("script");
-              b.type = "text/javascript";
-              b.async = true;
-              b.src =
-                "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-              s.parentNode.insertBefore(b, s);
-            })(window.lintrk);
-          `}
-        </Script>
       </head>
 
       <body
