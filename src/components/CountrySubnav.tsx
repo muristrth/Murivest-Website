@@ -3,6 +3,7 @@
 // ──────────────────────────────────────────────────────────────
 // MURIVEST — COUNTRY SUBNAVIGATION
 // Dropdowns render via fixed positioning to escape all clipping contexts
+// Kept as a shared source module so every country layout resolves consistently in production.
 // z-index: 100 ensures above hero, carousels, and all page content
 // ──────────────────────────────────────────────────────────────
 
