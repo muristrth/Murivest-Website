@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { getMarketHref } from "@/lib/markets";
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 
@@ -1363,7 +1364,7 @@ export default function GlobalMarketsPage() {
           Explore Markets
         </a>
         <a
-          href="/deal-room"
+          href="/portal"
           className="cta-btn-ghost-light"
           style={{
             fontFamily: "'Montserrat', sans-serif",
@@ -1591,7 +1592,7 @@ export default function GlobalMarketsPage() {
                     </p>
                   </div>
                   <a
-                    href={`/markets/${market.slug}`}
+                    href={getMarketHref(market.slug)}
                     style={{
                       fontFamily: "'Montserrat', sans-serif",
                       fontSize: "10px",
@@ -1993,9 +1994,12 @@ export default function GlobalMarketsPage() {
             }}
           >
             {ASSET_CLASSES.map((ac) => (
+              // Asset-class listings are scoped per market (there is no
+              // global, country-agnostic catalogue), so this links back to
+              // the market grid above rather than to a non-existent route.
               <a
                 key={ac.slug}
-                href={`/${ac.slug}`}
+                href="#markets-grid"
                 className="asset-btn"
               >
                 <div style={{ fontSize: "24px", marginBottom: "12px" }}>
@@ -2055,7 +2059,7 @@ export default function GlobalMarketsPage() {
               Active Investment Pipeline
             </h2>
             <a
-              href="/deal-room"
+              href="/portal"
               style={{
                 fontFamily: "'Montserrat', sans-serif",
                 fontSize: "10px",
@@ -2160,7 +2164,7 @@ export default function GlobalMarketsPage() {
                     </p>
                   </div>
                   <a
-                    href="/deal-room"
+                    href="/portal"
                     style={{
                       fontFamily: "'Montserrat', sans-serif",
                       fontSize: "10px",
@@ -2394,10 +2398,10 @@ export default function GlobalMarketsPage() {
           </p>
 
           <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="/deal-room" className="cta-btn-primary">
+            <a href="/portal" className="cta-btn-primary">
               Enter Deal Room
             </a>
-            <a href="/investment-pipeline" className="cta-btn-ghost-light">
+            <a href="/portal/off-market" className="cta-btn-ghost-light">
               View Investment Pipeline
             </a>
           </div>

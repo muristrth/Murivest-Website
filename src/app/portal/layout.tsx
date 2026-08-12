@@ -103,6 +103,13 @@ export default function InvestorPortalLayout({
     sessionExpiry: new Date(Date.now() + 3600000), // 1 hour
     auditLog: []
   })
+  // Generated client-side only after mount — Math.random() during SSR would
+  // render different text on the server vs. the client and trigger a
+  // hydration mismatch on every page load.
+  const [sessionId, setSessionId] = useState('')
+  useEffect(() => {
+    setSessionId(Math.random().toString(36).substring(7).toUpperCase())
+  }, [])
 
   // Session timeout warning
   useEffect(() => {
@@ -405,7 +412,7 @@ export default function InvestorPortalLayout({
             </div>
             <div className="mt-8 pt-6 border-t border-[#B8956B]/10 flex items-center justify-between text-[10px] uppercase tracking-wider text-[#FAF9F6]/40">
               <span>© 2026 Murivest Private Wealth Systems. All rights reserved.</span>
-              <span>Session ID: {Math.random().toString(36).substring(7).toUpperCase()}</span>
+              <span>Session ID: {sessionId || '—'}</span>
             </div>
           </div>
         </footer>

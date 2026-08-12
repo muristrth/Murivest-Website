@@ -11,11 +11,18 @@ export default function AppShell({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const isInvestorPortal = pathname.startsWith('/portal');
+  // /portal, /advisor, and /admin are authenticated dashboard trees that
+  // each render their own dedicated header/nav/footer chrome. Wrapping them
+  // in the public marketing Header/Footer/WhatsApp widget would double up
+  // the page chrome, so all three are excluded here.
+  const isDashboardTree =
+    pathname.startsWith('/portal') ||
+    pathname.startsWith('/advisor') ||
+    pathname.startsWith('/admin');
 
   return (
     <div className="min-h-screen">
-      {!isInvestorPortal && (
+      {!isDashboardTree && (
         <>
           <Header />
         </>
@@ -23,8 +30,8 @@ export default function AppShell({
 
       <main>{children}</main>
 
-      {!isInvestorPortal && <Footer />}
-      {!isInvestorPortal && <WhatsAppButton />}
+      {!isDashboardTree && <Footer />}
+      {!isDashboardTree && <WhatsAppButton />}
 
     </div>
   );

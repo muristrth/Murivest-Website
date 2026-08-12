@@ -24,6 +24,7 @@ import {
   Phone,
 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { getMarketHref } from '@/lib/markets'
 
 /* ═══════════════════════════════════════════════════════════════
    DESIGN TOKENS
