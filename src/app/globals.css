@@ -3,7 +3,7 @@
 /* =================================
    GOOGLE FONTS
 ================================= */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 /* =================================
    TAILWIND
@@ -16,9 +16,9 @@
    ROOT VARIABLES
 ================================= */
 :root {
-  --font-inter: 'DM Sans', sans-serif;
-  --font-playfair: 'Libre Baskerville', serif;
-  --font-cormorant: 'Libre Baskerville', serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+  --font-cormorant: 'Cormorant Garamond', serif;
 
   /* Old Money Aesthetic */
   --color-forest: #1B4332;
@@ -34,16 +34,6 @@
   --color-stone: #8B8680;
 
   --color-border: #E8E6E1;
-
-  --mv-forest: #173d31;
-  --mv-forest-light: #285947;
-  --mv-brass: #ad8550;
-  --mv-brass-light: #d0b078;
-  --mv-cream: #f6f3ec;
-  --mv-paper: #eeebe3;
-  --mv-ink: #1d2722;
-  --mv-muted: #6b756f;
-  --mv-line: #d9d5ca;
 }
 
 /* =================================
