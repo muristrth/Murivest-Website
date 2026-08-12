@@ -40,7 +40,7 @@ const montserrat = Montserrat({
 ==================================================== */
 export const metadata: Metadata = {
   title: {
-    default: 'Murivest | Global Institutional Commercial Real Estate',
+    default: 'Murivest | Commercial Property Advisory',
     template: '%s | Murivest',
   },
 
@@ -60,25 +60,25 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://murivest.com',
-    title: 'Murivest | Global Institutional Commercial Real Estate',
+    title: 'Murivest | Commercial Property Advisory',
     description:
-      'Institutional advisory, investment sales, tenant representation, and development strategy – delivered worldwide.',
+      'Independent commercial real estate advisory from Nairobi, supporting defined mandates across selected gateway markets.',
     siteName: 'Murivest',
     images: [
       {
         url: 'https://murivest.com/logo.webp',
         width: 1200,
         height: 630,
-        alt: 'Murivest – Global Institutional Real Estate',
+        alt: 'Murivest – Commercial Property Advisory',
       },
     ],
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Murivest | Global Institutional Commercial Real Estate',
+    title: 'Murivest | Commercial Property Advisory',
     description:
-      'Institutional advisory, investment sales, tenant representation, and development strategy – delivered worldwide.',
+      'Independent commercial real estate advisory from Nairobi, supporting defined mandates across selected gateway markets.',
     images: ['https://murivest.com/logo.webp'],
   },
 
@@ -94,11 +94,6 @@ export const metadata: Metadata = {
     },
   },
 
-  verification: {
-    // ⚠️ Replace with your murivest.com Search Console verification codes
-    google: 'ADD_YOUR_MURIVEST_COM_VERIFICATION_CODE',
-    yandex: 'ADD_YOUR_YANDEX_CODE',
-  },
 };
 
 /* ====================================================
