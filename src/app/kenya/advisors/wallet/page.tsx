@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 
-export default function AdvisorLogsPage() {
+export default function AdvisorWalletPage() {
   return (
     <section style={{ maxWidth: 980, margin: '0 auto' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 20, flexWrap: 'wrap', marginBottom: 24 }}>
