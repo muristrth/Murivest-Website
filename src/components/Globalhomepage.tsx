@@ -258,7 +258,7 @@ export default function GlobalHomePage() {
             </p>
 
             <h1 className="font-serif text-[2.8rem] md:text-[4rem] lg:text-[5.5rem] text-[#FAF9F6] leading-[1.02] mb-8 animate-fade-up delay-100">
-              Commercial Real Estate Advisory - Nairobi, Kenya | Murivest Realty Group - Founded 2025
+              Commercial Real Estate Advisory
             </h1>
 
             <p className="text-[15px] md:text-[17px] text-[#FAF9F6]/60 leading-[1.7] font-light max-w-xl mb-12 animate-fade-up delay-200">
