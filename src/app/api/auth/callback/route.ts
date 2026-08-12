@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server'
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url)
   const code = searchParams.get('code')
-  const next = searchParams.get('next') ?? '/investor-portal'
+  const next = searchParams.get('next') ?? '/portal'
 
   if (code) {
     const supabase = await createClient()
@@ -20,5 +20,5 @@ export async function GET(request: Request) {
   }
 
   // Return the user to an error page or login with an error state
-  return NextResponse.redirect(`${origin}/investor-portal?error=auth-failed`)
+  return NextResponse.redirect(`${origin}/portal?error=auth-failed`)
 }

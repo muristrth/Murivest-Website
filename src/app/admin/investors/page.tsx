@@ -189,7 +189,7 @@ export default async function AdminInvestorsPage() {
                 </td>
                 <td className="py-4 px-4 text-right">
                   <Link 
-                    href={`/admin/investors/${investor.id}`}
+                    href={`/admin/users/${investor.id}`}
                     className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.1em] text-[#B8956B] hover:text-[#1B4332] transition-colors"
                   >
                     Manage

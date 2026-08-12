@@ -11,18 +11,22 @@ import {
   Settings,
   Shield,
   ChevronRight,
-  LogOut
+  LogOut,
+  Briefcase,
+  History
 } from 'lucide-react'
 
 const navItems = [
   { href: '/admin', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/admin/investors', label: 'Investor Management', icon: Users },
+  { href: '/admin/mandates', label: 'Mandates', icon: Briefcase },
   { href: '/admin/verifications', label: 'Verifications', icon: Shield },
   { href: '/admin/publications', label: 'Publications', icon: BookOpen },
   { href: '/admin/briefs', label: 'Investment Briefs', icon: FileText },
   { href: '/admin/off-market', label: 'Off-Market Deals', icon: Lock },
   { href: '/admin/orders', label: 'Orders', icon: ShoppingCart },
   { href: '/admin/payments', label: 'Payments', icon: CreditCard },
+  { href: '/admin/audit-log', label: 'Audit Log', icon: History },
   { href: '/admin/settings', label: 'Settings', icon: Settings },
 ]
 

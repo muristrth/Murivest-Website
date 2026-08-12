@@ -88,14 +88,14 @@ export default function InvestorPortalPrompt() {
 
         <div className="border-t border-[#D4AF37]/15 px-4 py-4 md:px-5 flex flex-col sm:flex-row gap-3">
           <Link
-            href="/investor-portal?mode=register"
+            href="/portal?mode=register"
             className="inline-flex items-center justify-center bg-[#D4AF37] text-[#0B1426] px-5 py-3 text-xs tracking-[0.18em] uppercase font-semibold hover:bg-[#B8941F] transition-colors"
           >
             Register
           </Link>
 
           <Link
-            href="/investor-portal?mode=login"
+            href="/portal?mode=login"
             className="inline-flex items-center justify-center border border-[#D4AF37]/35 text-[#D4AF37] px-5 py-3 text-xs tracking-[0.18em] uppercase font-semibold hover:bg-[#D4AF37]/10 transition-colors"
           >
             Sign In

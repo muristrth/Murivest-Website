@@ -51,13 +51,13 @@ export function ProtectedRouteNotice({
         {/* Actions */}
         {showUpgradeButton && (
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/investor-portal/profile">
+            <Link href="/portal/profile">
               <Button className="w-full sm:w-auto">
                 View My Profile
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
-            <Link href="/investor-portal?upgrade=true">
+            <Link href="/portal?upgrade=true">
               <Button variant="outline" className="w-full sm:w-auto">
                 Upgrade Access
               </Button>
@@ -130,14 +130,14 @@ export function AuthenticationRequired({ returnUrl }: AuthenticationRequiredProp
           </p>
           <div className="flex gap-3">
             <Link
-              href={`/investor-portal?mode=login${returnUrl ? `&redirect=${encodeURIComponent(returnUrl)}` : ''}`}
+              href={`/portal?mode=login${returnUrl ? `&redirect=${encodeURIComponent(returnUrl)}` : ''}`}
             >
               <button className="bg-[#1B4332] text-white px-4 py-2 text-xs uppercase tracking-wider hover:bg-[#2D5A47] transition-colors">
                 Sign In
               </button>
             </Link>
             <Link
-              href={`/investor-portal?mode=register${returnUrl ? `&redirect=${encodeURIComponent(returnUrl)}` : ''}`}
+              href={`/portal?mode=register${returnUrl ? `&redirect=${encodeURIComponent(returnUrl)}` : ''}`}
             >
               <button className="border border-[#1B4332] text-[#1B4332] px-4 py-2 text-xs uppercase tracking-wider hover:bg-[#1B4332] hover:text-white transition-all">
                 Create Account

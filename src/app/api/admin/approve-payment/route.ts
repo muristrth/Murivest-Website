@@ -69,7 +69,7 @@ export async function POST(request: NextRequest) {
         type: 'payment_confirmed',
         title: 'Payment Confirmed',
         message: `Your payment of KES ${payment.amount?.toLocaleString() || '2,000'} has been verified and confirmed. Your order is now being processed.`,
-        link: '/investor-portal/orders',
+        link: '/portal/orders',
       });
     } else if (decision === 'declined') {
       // Create notification for declined payment
@@ -78,7 +78,7 @@ export async function POST(request: NextRequest) {
         type: 'payment_declined',
         title: 'Payment Declined',
         message: 'Your payment could not be verified. Please contact support or try again.',
-        link: '/investor-portal/payments',
+        link: '/portal/payments',
       });
     }
 

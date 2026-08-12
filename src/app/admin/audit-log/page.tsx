@@ -1,126 +1,83 @@
-'use client';
+import { createAdminClient } from '@/lib/supabase/admin'
+import { History } from 'lucide-react'
 
-import { useState, useEffect } from 'react';
-import { AdminHeader } from '@/components/admin/AdminHeader';
-import { AdminSidebar } from '@/components/admin/AdminSidebar';
-import { DataTable } from '@/components/admin/DataTable';
-import { Badge } from '@/components/ui/Badge';
-import { Loader } from '@/components/ui/Loader';
+export const dynamic = 'force-dynamic'
 
-interface AuditLog {
-  id: string;
-  action: string;
-  entity_type: string;
-  entity_id: string;
-  user_name: string;
-  details: Record<string, any>;
-  created_at: string;
-}
+export default async function AuditLogPage() {
+  const supabase = createAdminClient()
 
-export default function AuditLogPage() {
-  const [logs, setLogs] = useState<AuditLog[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchLogs();
-  }, []);
-
-  const fetchLogs = async () => {
-    try {
-      // Simulated API call
-      await new Promise(resolve => setTimeout(resolve, 500));
-      setLogs([
-        {
-          id: '1',
-          action: 'user_verified',
-          entity_type: 'user',
-          entity_id: 'user_123',
-          user_name: 'Admin User',
-          details: { previous_status: 'pending' },
-          created_at: new Date().toISOString(),
-        },
-        {
-          id: '2',
-          action: 'payment_approved',
-          entity_type: 'payment',
-          entity_id: 'pay_456',
-          user_name: 'Admin User',
-          details: { amount: 5000 },
-          created_at: new Date().toISOString(),
-        },
-      ]);
-    } catch (error) {
-      console.error('Failed to fetch audit logs:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const columns = [
-    { 
-      key: 'action', 
-      header: 'Action', 
-      width: '25%',
-      render: (row: AuditLog) => (
-        <Badge variant="info" className="capitalize">
-          {row.action.replace('_', ' ')}
-        </Badge>
-      )
-    },
-    { key: 'entity_type', header: 'Entity Type', width: '15%' },
-    { key: 'user_name', header: 'Performed By', width: '20%' },
-    { 
-      key: 'details', 
-      header: 'Details', 
-      width: '25%',
-      render: (row: AuditLog) => (
-        <span className="text-sm text-[#8B8680]">
-          {JSON.stringify(row.details).slice(0, 50)}...
-        </span>
-      )
-    },
-    { 
-      key: 'created_at', 
-      header: 'Timestamp', 
-      width: '15%',
-      render: (row: AuditLog) => new Date(row.created_at).toLocaleString()
-    },
-  ];
-
-  if (loading) return <Loader fullScreen />;
+  const { data: logs, error } = await supabase
+    .from('audit_log')
+    .select('*, actor:actor_id(full_name, email)')
+    .order('created_at', { ascending: false })
+    .limit(200)
 
   return (
-    <div className="min-h-screen bg-[#FAF9F6]">
-      <AdminSidebar />
-      <div className="ml-64">
-        <AdminHeader title="Audit Log" />
-        
-        <main className="p-8">
-          <div className="flex gap-4 mb-6">
-            <input 
-              type="text" 
-              placeholder="Search logs..." 
-              className="px-4 py-2 border border-[#E8E6E1] rounded-lg bg-white text-[#2C2C2C] w-80"
-            />
-            <select className="px-4 py-2 border border-[#E8E6E1] rounded-lg bg-white text-[#2C2C2C]">
-              <option value="">All Actions</option>
-              <option value="user_verified">User Verified</option>
-              <option value="payment_approved">Payment Approved</option>
-              <option value="order_fulfilled">Order Fulfilled</option>
-            </select>
-            <input 
-              type="date" 
-              className="px-4 py-2 border border-[#E8E6E1] rounded-lg bg-white text-[#2C2C2C]"
-            />
-          </div>
-
-          <DataTable
-            columns={columns}
-            data={logs}
-            keyExtractor={(row: AuditLog) => row.id}
-          />
-        </main>
+    <div className="space-y-8">
+      <div>
+        <p className="text-[10px] tracking-[0.28em] uppercase text-[#B8956B] mb-2">Compliance</p>
+        <h1 className="font-serif text-4xl text-[#1B4332]">Audit Log</h1>
+        <p className="text-sm text-[#2C3E35]/70 mt-2">
+          Append-only record of privileged actions across the platform (advisor assignments, mandate changes,
+          payment approvals, and more).
+        </p>
       </div>
+
+      {error && (
+        <div className="bg-red-50 border border-red-200 p-4 text-sm text-red-700">
+          Could not load audit log: {error.message}
+        </div>
+      )}
+
+      {!error && (!logs || logs.length === 0) && (
+        <div className="bg-white border border-[#1B4332]/10 p-12 text-center">
+          <History className="h-10 w-10 text-[#1B4332]/20 mx-auto mb-4" />
+          <p className="text-sm text-[#2C3E35]/60">No audit events recorded yet.</p>
+        </div>
+      )}
+
+      {logs && logs.length > 0 && (
+        <div className="bg-white border border-[#1B4332]/10 overflow-hidden">
+          <table className="w-full">
+            <thead>
+              <tr className="border-b border-[#1B4332]/10 bg-[#FAF9F6]">
+                <th className="text-left py-3 px-4 text-[10px] uppercase tracking-[0.15em] text-[#1B4332]/50 font-medium">Action</th>
+                <th className="text-left py-3 px-4 text-[10px] uppercase tracking-[0.15em] text-[#1B4332]/50 font-medium">Entity</th>
+                <th className="text-left py-3 px-4 text-[10px] uppercase tracking-[0.15em] text-[#1B4332]/50 font-medium">Actor</th>
+                <th className="text-left py-3 px-4 text-[10px] uppercase tracking-[0.15em] text-[#1B4332]/50 font-medium">Details</th>
+                <th className="text-left py-3 px-4 text-[10px] uppercase tracking-[0.15em] text-[#1B4332]/50 font-medium">Timestamp</th>
+              </tr>
+            </thead>
+            <tbody>
+              {logs.map((log: any) => (
+                <tr key={log.id} className="border-b border-[#1B4332]/5 hover:bg-[#FAF9F6] transition-colors">
+                  <td className="py-3 px-4">
+                    <span className="inline-flex text-[10px] uppercase tracking-wider px-2 py-1 bg-[#1B4332]/5 text-[#1B4332]">
+                      {log.action.replace(/[._]/g, ' ')}
+                    </span>
+                  </td>
+                  <td className="py-3 px-4 text-sm text-[#2C3E35]/80">{log.entity_type}</td>
+                  <td className="py-3 px-4 text-sm text-[#2C3E35]/80">
+                    {log.actor?.full_name || log.actor?.email || 'System'}
+                  </td>
+                  <td className="py-3 px-4 text-xs text-[#2C3E35]/60 max-w-xs truncate">
+                    {JSON.stringify(log.metadata)}
+                  </td>
+                  <td className="py-3 px-4 text-sm text-[#2C3E35]/80">
+                    {new Date(log.created_at).toLocaleString('en-GB', {
+                      day: '2-digit',
+                      month: 'short',
+                      year: 'numeric',
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    })}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
-  );
+  )
 }

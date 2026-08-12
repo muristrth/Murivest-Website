@@ -11,7 +11,7 @@ export default function AppShell({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const isInvestorPortal = pathname.startsWith('/investor-portal');
+  const isInvestorPortal = pathname.startsWith('/portal');
 
   return (
     <div className="min-h-screen">
