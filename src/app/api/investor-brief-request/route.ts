@@ -148,7 +148,7 @@ export async function POST(req: Request) {
       message: orderType === 'digital' 
         ? `Your digital Investment Brief has been requested and is being processed.`
         : `Your hard copy order (KES 2,000) has been created. Please complete payment to confirm.`,
-      link: '/investor-portal/orders',
+      link: '/portal/orders',
     })
 
     return NextResponse.json({

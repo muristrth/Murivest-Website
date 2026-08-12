@@ -7,8 +7,8 @@ import { NextResponse, type NextRequest } from 'next/server'
 
 const PUBLIC_PATHS = [
   '/admin/login',
-  '/investor-portal/login',
-  '/investor-portal/access-pending',
+  '/portal/login',
+  '/portal/access-pending',
   '/api/auth',
   '/_next',
   '/favicon.ico',
@@ -17,7 +17,8 @@ const PUBLIC_PATHS = [
 ] as const
 
 const ADMIN_PATHS = ['/admin'] as const
-const INVESTOR_PATHS = ['/investor-portal'] as const
+const ADVISOR_PATHS = ['/advisor'] as const
+const INVESTOR_PATHS = ['/portal'] as const
 
 const REDIRECT_STATUS = 308
 
@@ -74,6 +75,10 @@ function isAdminPath(path: string): boolean {
   return ADMIN_PATHS.some((p) => path.startsWith(p))
 }
 
+function isAdvisorPath(path: string): boolean {
+  return ADVISOR_PATHS.some((p) => path.startsWith(p))
+}
+
 function isInvestorPath(path: string): boolean {
   return INVESTOR_PATHS.some((p) => path.startsWith(p))
 }
@@ -124,6 +129,11 @@ export async function middleware(request: NextRequest) {
 
   const path = request.nextUrl.pathname
 
+  // Authenticated trees should never be indexed by search engines.
+  if (isAdminPath(path) || isAdvisorPath(path) || isInvestorPath(path)) {
+    response.headers.set('X-Robots-Tag', 'noindex, nofollow')
+  }
+
   // 4. Public paths bypass auth
   if (isPublicPath(path)) {
     return response
@@ -148,8 +158,15 @@ export async function middleware(request: NextRequest) {
     if (redirect) return redirect
   }
 
+  if (isAdvisorPath(path)) {
+    // Advisors authenticate through the shared portal login; the /advisor
+    // layout enforces the role check server-side via requireAdvisor().
+    const redirect = await guardRoute(supabase, request, '/portal/login')
+    if (redirect) return redirect
+  }
+
   if (isInvestorPath(path)) {
-    const redirect = await guardRoute(supabase, request, '/investor-portal/login')
+    const redirect = await guardRoute(supabase, request, '/portal/login')
     if (redirect) return redirect
   }
 

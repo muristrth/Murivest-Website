@@ -10,11 +10,11 @@ export async function requireAdmin() {
   const user = await getUser()
   
   if (!user) {
-    redirect('/investor-portal?mode=login')
+    redirect('/portal?mode=login')
   }
   
   if (!user.profile || user.profile.investor_status !== 'admin') {
-    redirect('/investor-portal')
+    redirect('/portal')
   }
   
   return user

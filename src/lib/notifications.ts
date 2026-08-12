@@ -11,6 +11,9 @@ export type NotificationType =
   | 'new_off_market'
   | 'profile_updated'
   | 'verification_complete'
+  | 'mandate_assigned'
+  | 'task_assigned'
+  | 'enquiry_reply'
 
 interface CreateNotificationParams {
   userId: string

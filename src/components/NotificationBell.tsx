@@ -271,7 +271,7 @@ export default function NotificationBell() {
           {notifications.length > 0 && (
             <div className="bg-[#F8F7F4] px-4 py-3 border-t border-[#E5E2DC]">
               <Link 
-                href="/investor-portal/notifications"
+                href="/portal/notifications"
                 onClick={() => setIsOpen(false)}
                 className="flex items-center justify-center gap-2 text-xs text-[#B8956B] hover:text-[#8B7355] transition-colors"
               >

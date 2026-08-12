@@ -66,7 +66,7 @@ export async function POST(request: NextRequest) {
       type: 'order_fulfilled',
       title: 'Order Fulfilled',
       message: 'Your order has been fulfilled and is being dispatched. You will receive tracking information shortly.',
-      link: '/investor-portal/orders',
+      link: '/portal/orders',
     })
 
     return NextResponse.json({ success: true, order });

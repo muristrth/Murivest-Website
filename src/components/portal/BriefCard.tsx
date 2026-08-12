@@ -144,14 +144,14 @@ export function BriefCard({ brief, userAccessLevel = 'registered' }: BriefCardPr
         <div className="mt-4">
           {canAccess ? (
             <Link
-              href={`/investor-portal/briefs/${brief.slug}`}
+              href={`/portal/briefs/${brief.slug}`}
               className="block w-full text-center bg-[#1B4332] text-white py-2.5 text-xs uppercase tracking-[0.1em] hover:bg-[#2D5A47] transition-colors"
             >
               View Brief
             </Link>
           ) : (
             <Link
-              href={`/investor-portal?upgrade=${brief.access_level}`}
+              href={`/portal?upgrade=${brief.access_level}`}
               className="block w-full text-center border border-[#1B4332] text-[#1B4332] py-2.5 text-xs uppercase tracking-[0.1em] hover:bg-[#1B4332] hover:text-white transition-all"
             >
               Upgrade Access

@@ -589,7 +589,7 @@ export default function NDAPage() {
             </p>
 
             <div className="nda-complete-actions">
-              <Link href="/investor-portal" className="nda-btn nda-btn--gold">
+              <Link href="/portal" className="nda-btn nda-btn--gold">
                 Enter Investor Portal →
               </Link>
             </div>

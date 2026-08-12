@@ -9,7 +9,7 @@ export async function requireUser() {
   const user = await getUser()
   
   if (!user) {
-    redirect('/investor-portal?mode=login')
+    redirect('/portal?mode=login')
   }
   
   return user
@@ -31,11 +31,11 @@ export async function requireInvestorStatus(statuses: ('registered' | 'verified'
   const user = await getUser()
   
   if (!user) {
-    redirect('/investor-portal?mode=login')
+    redirect('/portal?mode=login')
   }
   
   if (!user.profile || !statuses.includes(user.profile.investor_status)) {
-    redirect('/investor-portal?upgrade=true')
+    redirect('/portal?upgrade=true')
   }
   
   return user

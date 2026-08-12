@@ -24,6 +24,7 @@ import {
   Phone,
 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { getMarketHref } from '@/lib/markets'
 
 /* ═══════════════════════════════════════════════════════════════
    DESIGN TOKENS
@@ -327,7 +328,7 @@ const MarketsDropdown = ({
               {MARKETS.map((market) => (
                 <a
                   key={market.slug}
-                  href={`/${market.slug}`}
+                  href={getMarketHref(market.slug)}
                   onClick={onClose}
                   className="group flex items-center justify-between py-3 border-b border-[#2D5A45]/5 last:border-b-0 hover:bg-[#1B4332]/[0.02] px-2 -mx-2 rounded-sm transition-colors"
                 >
@@ -566,7 +567,7 @@ const FullScreenMenu = ({
               <div className="px-6 xl:px-10 py-8 border-t border-[#2D5A45]/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div className="flex items-center gap-6">
                   <a
-                    href="/investor-portal"
+                    href="/portal"
                     onClick={onClose}
                     className="flex items-center gap-2 text-[10px] uppercase tracking-[0.14em] text-[#C4B59D] hover:text-[#FAF9F6] transition-colors"
                   >
@@ -648,7 +649,7 @@ export default function GlobalHeader() {
             <div className="flex items-center gap-4 sm:gap-6">
               {/* Investor Portal */}
               <a
-                href="/investor-portal"
+                href="/portal"
                 className="hidden sm:flex items-center gap-2 text-[10px] uppercase tracking-[0.14em] text-[#1A1A1A] hover:text-[#1B4332] transition-colors"
               >
                 <LogIn size={13} strokeWidth={1.5} />

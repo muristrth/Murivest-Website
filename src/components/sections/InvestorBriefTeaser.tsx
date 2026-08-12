@@ -69,7 +69,7 @@ export default function InvestorBriefTeaser() {
           {/* RIGHT */}
           <div className="flex flex-col items-end gap-3">
 
-            <Link href="/investor-portal">
+            <Link href="/portal">
               <button className="inline-flex items-center gap-2 bg-[#B8956B] text-[#1B4332] px-5 py-3 text-[11px] uppercase tracking-[0.18em] hover:bg-[#A78661] transition">
                 Investor Access
                 <ArrowRight className="h-4 w-4" />
@@ -127,7 +127,7 @@ export default function InvestorBriefTeaser() {
           </p>
 
           {/* CTA */}
-          <Link href="/investor-portal">
+          <Link href="/portal">
             <button className="w-full bg-[#B8956B] text-[#1B4332] py-3 text-[11px] uppercase tracking-[0.2em] flex items-center justify-center gap-2">
               Investor Access
               <ArrowRight className="h-4 w-4" />

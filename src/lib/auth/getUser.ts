@@ -27,6 +27,8 @@ export interface Profile {
   aum: string | null
   investment_focus: string | null
   investor_status: 'registered' | 'verified' | 'premium' | 'admin'
+  role?: 'investor' | 'advisor' | 'admin' | 'super_admin'
+  assigned_advisor_id?: string | null
   portfolio_value?: number
   created_at: string
   updated_at: string

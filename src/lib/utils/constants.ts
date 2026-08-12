@@ -163,7 +163,7 @@ export const ROUTES = {
   HOME: '/',
   ABOUT: '/about',
   CONTACT: '/contact',
-  INVESTOR_PORTAL: '/investor-portal',
+  INVESTOR_PORTAL: '/portal',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_INVESTORS: '/admin/investors',

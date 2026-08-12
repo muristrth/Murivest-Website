@@ -114,7 +114,7 @@ export async function POST(req: Request) {
       type: 'payment_received',
       title: 'Payment Confirmation Submitted',
       message: 'Your M-Pesa payment confirmation has been submitted and is pending verification. You will be notified once verified.',
-      link: '/investor-portal/payments',
+      link: '/portal/payments',
     })
 
     return NextResponse.json({ success: true })

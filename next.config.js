@@ -199,6 +199,28 @@ const nextConfig = {
         destination: 'https://murivest.com/:path*',
         permanent: true,
       },
+      // The investor portal moved from the Kenya-only path to a global
+      // /portal route. Preserve old bookmarks/links with a permanent redirect.
+      {
+        source: '/kenya/investor-portal',
+        destination: '/portal',
+        permanent: true,
+      },
+      {
+        source: '/kenya/investor-portal/:path*',
+        destination: '/portal/:path*',
+        permanent: true,
+      },
+      {
+        source: '/investor-portal',
+        destination: '/portal',
+        permanent: true,
+      },
+      {
+        source: '/investor-portal/:path*',
+        destination: '/portal/:path*',
+        permanent: true,
+      },
     ]
   },
 

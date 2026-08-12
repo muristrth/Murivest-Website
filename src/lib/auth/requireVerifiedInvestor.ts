@@ -12,17 +12,17 @@ export async function requireVerifiedInvestor() {
   const user = await getUser()
   
   if (!user) {
-    redirect('/investor-portal?mode=login')
+    redirect('/portal?mode=login')
   }
   
   if (!user.profile) {
-    redirect('/investor-portal/profile')
+    redirect('/portal/profile')
   }
   
   const validStatuses: RequiredStatus[] = ['verified', 'premium', 'admin']
   
   if (!validStatuses.includes(user.profile.investor_status)) {
-    redirect('/investor-portal?verify=true')
+    redirect('/portal?verify=true')
   }
   
   return user
@@ -35,17 +35,17 @@ export async function requirePremiumInvestor() {
   const user = await getUser()
   
   if (!user) {
-    redirect('/investor-portal?mode=login')
+    redirect('/portal?mode=login')
   }
   
   if (!user.profile) {
-    redirect('/investor-portal/profile')
+    redirect('/portal/profile')
   }
   
   const validStatuses: RequiredStatus[] = ['premium', 'admin']
   
   if (!validStatuses.includes(user.profile.investor_status)) {
-    redirect('/investor-portal?upgrade=premium')
+    redirect('/portal?upgrade=premium')
   }
   
   return user

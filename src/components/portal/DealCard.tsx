@@ -163,14 +163,14 @@ export function DealCard({ deal, userAccessLevel = 'registered' }: DealCardProps
         <div className="mt-4 flex gap-2">
           {canAccess ? (
             <Link
-              href={`/investor-portal/off-market/${deal.slug}`}
+              href={`/portal/off-market/${deal.slug}`}
               className="flex-1 block text-center bg-[#1B4332] text-white py-2.5 text-xs uppercase tracking-[0.1em] hover:bg-[#2D5A47] transition-colors"
             >
               View Details
             </Link>
           ) : (
             <Link
-              href={`/investor-portal?upgrade=${deal.access_level}`}
+              href={`/portal?upgrade=${deal.access_level}`}
               className="flex-1 block text-center border border-[#1B4332] text-[#1B4332] py-2.5 text-xs uppercase tracking-[0.1em] hover:bg-[#1B4332] hover:text-white transition-all"
             >
               Upgrade Access
