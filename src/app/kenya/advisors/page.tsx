@@ -14,7 +14,7 @@ import OnboardingProcess from '@/components/advisors/OnboardingProcess';
 const CURRENT_EMPLOYEE_ID = process.env.NEXT_PUBLIC_DEFAULT_EMPLOYEE_ID || '';
 
 export default function TeamDashboard() {
-  const [quote]                 = useState(() => CARDONE_QUOTES[Math.floor(Math.random() * CARDONE_QUOTES.length)]);
+  const [quote, setQuote]       = useState(CARDONE_QUOTES[0]);
   const [weekly, setWeekly]     = useState<WeeklyPerformance | null>(null);
   const [metrics, setMetrics]   = useState<TeamMetrics | null>(null);
   const [loading, setLoading]   = useState(true);
@@ -37,6 +37,7 @@ export default function TeamDashboard() {
   }, []);
 
   useEffect(() => { load(); }, [load]);
+  useEffect(() => { setQuote(CARDONE_QUOTES[Math.floor(Math.random() * CARDONE_QUOTES.length)]); }, []);
 
   const today = new Date().toLocaleDateString('en-KE', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
   const score = weekly?.performance_score ?? 0;
