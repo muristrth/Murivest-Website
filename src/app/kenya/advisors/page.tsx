@@ -64,8 +64,8 @@ export default function TeamDashboard() {
           </div>
         </div>
         <div className={styles.headerActions}>
-          <Link href="/advisors/log"         className={styles.btnPrimary}>+ Log Today</Link>
-          <Link href="/advisors/leaderboard" className={styles.btnSecondary}>Leaderboard</Link>
+          <Link href="/kenya/advisors/log"         className={styles.btnPrimary}>+ Log Today</Link>
+          <Link href="/kenya/advisors/leaderboard" className={styles.btnSecondary}>Leaderboard</Link>
         </div>
       </header>
 

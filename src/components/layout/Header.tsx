@@ -2,7 +2,7 @@
 
 // ──────────────────────────────────────────────────────────────
 // MURIVEST — REVISED GLOBAL HEADER
-// Universal Menu · Country Switcher · Modern Menu Button
+// Accordion Menu · Direct Careers Link · Path-Verified Navigation
 // Forest Green #1B4332 · Brass #B8956B · Cream #FAF9F6
 // ──────────────────────────────────────────────────────────────
 
@@ -56,7 +56,7 @@ type NavItem = {
   href?: string
   description: string
   icon: React.ComponentType<{ size?: number; strokeWidth?: number; className?: string }>
-  columns: NavColumn[]
+  columns?: NavColumn[]
 }
 
 const GLOBAL_NAV: NavItem[] = [
@@ -189,26 +189,9 @@ const GLOBAL_NAV: NavItem[] = [
   },
   {
     label: 'Careers',
+    href: '/careers',
     description: 'Join the Murivest advisory team',
     icon: FileText,
-    columns: [
-      {
-        title: 'Opportunities',
-        links: [
-          { label: 'Open Positions', href: '/careers', sub: 'Current vacancies' },
-          { label: 'Graduate Programme', href: '/careers/graduate', sub: 'Analyst track' },
-          { label: 'Experienced Hire', href: '/careers/experienced', sub: 'Lateral recruitment' },
-        ],
-      },
-      {
-        title: 'Culture',
-        links: [
-          { label: 'Our Values', href: '/careers/culture', sub: 'Values & environment' },
-          { label: 'Benefits', href: '/careers/benefits', sub: 'Compensation' },
-          { label: 'Diversity', href: '/careers/diversity', sub: 'Inclusion' },
-        ],
-      },
-    ],
   },
   {
     label: 'Contact',
@@ -356,7 +339,7 @@ const MarketsDropdown = ({
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   FULL-SCREEN MENU OVERLAY
+   FULL-SCREEN MENU OVERLAY — ACCORDION PATTERN
    ═══════════════════════════════════════════════════════════════ */
 
 const FullScreenMenu = ({
@@ -366,9 +349,16 @@ const FullScreenMenu = ({
   open: boolean
   onClose: () => void
 }) => {
-  const [activeItem, setActiveItem] = useState<string | null>(GLOBAL_NAV[0]?.label ?? null)
+  const [activeItem, setActiveItem] = useState<string | null>(null)
 
-  const activeNav = GLOBAL_NAV.find((n) => n.label === activeItem)
+  const toggleItem = useCallback((label: string) => {
+    setActiveItem((prev) => (prev === label ? null : label))
+  }, [])
+
+  // Reset accordion when menu closes
+  useEffect(() => {
+    if (!open) setActiveItem(null)
+  }, [open])
 
   return (
     <AnimatePresence>
@@ -413,59 +403,86 @@ const FullScreenMenu = ({
               </button>
             </div>
 
-            {/* Content */}
+            {/* Content — Accordion Layout */}
             <div className="flex-1 overflow-y-auto overscroll-contain">
-              <div className="flex flex-col lg:flex-row min-h-full">
-                {/* Left — Main nav items */}
-                <div className="lg:w-[45%] xl:w-[40%] p-6 xl:p-10 lg:border-r border-[#2D5A45]/20">
-                  <nav className="space-y-0">
-                    {GLOBAL_NAV.map((item, i) => {
-                      const Icon = item.icon
-                      const isActive = activeItem === item.label
+              <div className="max-w-[1100px] mx-auto px-6 xl:px-10 py-6 lg:py-10">
+                <nav className="space-y-0">
+                  {GLOBAL_NAV.map((item, i) => {
+                    const Icon = item.icon
+                    const isActive = activeItem === item.label
+                    const hasColumns = item.columns && item.columns.length > 0
+                    const isDirectLink = !!item.href && !hasColumns
 
+                    // Direct link (e.g., Careers)
+                    if (isDirectLink) {
                       return (
-                        <button
+                        <a
                           key={item.label}
-                          onClick={() => setActiveItem(item.label)}
-                          onMouseEnter={() => setActiveItem(item.label)}
-                          className={`group w-full text-left py-5 lg:py-6 border-b border-[#2D5A45]/15 transition-colors duration-300 ${
+                          href={item.href}
+                          onClick={onClose}
+                          className="group flex items-center gap-4 py-5 lg:py-6 border-b border-[#2D5A45]/15 hover:bg-[#2D5A45]/5 px-2 -mx-2 rounded-sm transition-colors duration-300"
+                        >
+                          <span className="text-[#5A7A6A] text-[10px] font-mono mt-0.5">
+                            {String(i + 1).padStart(2, '0')}
+                          </span>
+                          <Icon
+                            size={14}
+                            strokeWidth={1.5}
+                            className="text-[#5A7A6A] group-hover:text-[#B8956B] transition-colors duration-300"
+                          />
+                          <span className="font-display text-xl lg:text-2xl text-[#C4B59D] group-hover:text-[#FAF9F6] transition-colors duration-300">
+                            {item.label}
+                          </span>
+                          <ArrowUpRight
+                            size={14}
+                            strokeWidth={1.5}
+                            className="text-[#B8956B] opacity-0 group-hover:opacity-100 transition-opacity ml-auto"
+                          />
+                        </a>
+                      )
+                    }
+
+                    // Accordion item
+                    return (
+                      <div key={item.label} className="border-b border-[#2D5A45]/15">
+                        <button
+                          onClick={() => toggleItem(item.label)}
+                          className={`group w-full text-left py-5 lg:py-6 transition-colors duration-300 px-2 -mx-2 rounded-sm ${
                             isActive ? 'bg-[#2D5A45]/10' : 'hover:bg-[#2D5A45]/5'
                           }`}
                         >
-                          <div className="flex items-start gap-4 px-2">
-                            <span className="text-[#5A7A6A] text-[10px] font-mono mt-1.5">
+                          <div className="flex items-center gap-4">
+                            <span className="text-[#5A7A6A] text-[10px] font-mono mt-0.5">
                               {String(i + 1).padStart(2, '0')}
                             </span>
+                            <Icon
+                              size={14}
+                              strokeWidth={1.5}
+                              className={`transition-colors duration-300 ${
+                                isActive ? 'text-[#B8956B]' : 'text-[#5A7A6A]'
+                              }`}
+                            />
                             <div className="flex-1">
                               <div className="flex items-center justify-between">
-                                <div className="flex items-center gap-3">
-                                  <Icon
-                                    size={14}
-                                    strokeWidth={1.5}
-                                    className={`transition-colors duration-300 ${
-                                      isActive ? 'text-[#B8956B]' : 'text-[#5A7A6A]'
-                                    }`}
-                                  />
-                                  <span
-                                    className={`font-display text-xl lg:text-2xl transition-colors duration-300 ${
-                                      isActive ? 'text-[#FAF9F6]' : 'text-[#C4B59D]'
-                                    }`}
-                                  >
-                                    {item.label}
-                                  </span>
-                                </div>
-                                <ArrowUpRight
+                                <span
+                                  className={`font-display text-xl lg:text-2xl transition-colors duration-300 ${
+                                    isActive ? 'text-[#FAF9F6]' : 'text-[#C4B59D]'
+                                  }`}
+                                >
+                                  {item.label}
+                                </span>
+                                <ChevronDown
                                   size={14}
                                   strokeWidth={1.5}
                                   className={`transition-all duration-300 ${
                                     isActive
-                                      ? 'text-[#B8956B] opacity-100'
+                                      ? 'text-[#B8956B] rotate-180'
                                       : 'text-[#5A7A6A] opacity-0 group-hover:opacity-50'
                                   }`}
                                 />
                               </div>
                               <p
-                                className={`text-[11px] mt-1.5 leading-relaxed max-w-sm transition-colors duration-300 ${
+                                className={`text-[11px] mt-1 leading-relaxed max-w-sm transition-colors duration-300 ${
                                   isActive ? 'text-[#8A8A8A]' : 'text-[#5A7A6A]'
                                 }`}
                               >
@@ -474,92 +491,91 @@ const FullScreenMenu = ({
                             </div>
                           </div>
                         </button>
-                      )
-                    })}
-                  </nav>
-                </div>
 
-                {/* Right — Active item sub-links */}
-                <div className="lg:w-[55%] xl:w-[60%] p-6 xl:p-10 bg-[#163828]/30">
-                  <AnimatePresence mode="wait">
-                    {activeNav && (
-                      <motion.div
-                        key={activeNav.label}
-                        initial={{ opacity: 0, x: 12 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -12 }}
-                        transition={{ duration: 0.25 }}
-                      >
-                        <div className="flex items-center gap-2.5 mb-8">
-                          <activeNav.icon
-                            size={15}
-                            strokeWidth={1.5}
-                            className="text-[#B8956B]"
-                          />
-                          <p className="text-[9px] tracking-[0.3em] uppercase text-[#5A7A6A] font-medium">
-                            {activeNav.description}
-                          </p>
-                        </div>
+                        <AnimatePresence initial={false}>
+                          {isActive && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
+                              className="overflow-hidden"
+                            >
+                              <div className="pb-8 pt-2 lg:pl-12">
+                                <div className="flex items-center gap-2.5 mb-6">
+                                  <Icon
+                                    size={15}
+                                    strokeWidth={1.5}
+                                    className="text-[#B8956B]"
+                                  />
+                                  <p className="text-[9px] tracking-[0.3em] uppercase text-[#5A7A6A] font-medium">
+                                    {item.description}
+                                  </p>
+                                </div>
 
-                        <div
-                          className="grid gap-x-8 gap-y-8"
-                          style={{
-                            gridTemplateColumns: `repeat(${Math.min(
-                              activeNav.columns.length,
-                              3
-                            )}, minmax(160px, 1fr))`,
-                          }}
-                        >
-                          {activeNav.columns.map((col) => (
-                            <div key={col.title}>
-                              <p className="text-[9px] tracking-[0.25em] uppercase text-[#B8956B] font-medium mb-4 pb-2 border-b border-[#2D5A45]/20">
-                                {col.title}
-                              </p>
-                              <ul className="space-y-0">
-                                {col.links.map((link) => (
-                                  <li key={link.href}>
-                                    <a
-                                      href={link.href}
-                                      onClick={onClose}
-                                      className="group flex items-start justify-between py-3 border-b border-[#2D5A45]/10 last:border-b-0 hover:bg-[#FAF9F6]/[0.03] px-2 -mx-2 rounded-sm transition-colors"
-                                    >
-                                      <div>
-                                        <span className="text-[13px] text-[#FAF9F6] group-hover:text-[#B8956B] transition-colors block">
-                                          {link.label}
-                                        </span>
-                                        {link.sub && (
-                                          <span className="text-[10px] text-[#5A7A6A] mt-0.5 block leading-relaxed">
-                                            {link.sub}
-                                          </span>
-                                        )}
-                                      </div>
-                                      <ArrowUpRight
-                                        size={11}
-                                        strokeWidth={1.5}
-                                        className="text-[#B8956B] opacity-0 group-hover:opacity-100 transition-opacity shrink-0 mt-0.5"
-                                      />
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          ))}
-                        </div>
+                                <div
+                                  className="grid gap-x-8 gap-y-8"
+                                  style={{
+                                    gridTemplateColumns: `repeat(${Math.min(
+                                      item.columns!.length,
+                                      3
+                                    )}, minmax(180px, 1fr))`,
+                                  }}
+                                >
+                                  {item.columns!.map((col) => (
+                                    <div key={col.title}>
+                                      <p className="text-[9px] tracking-[0.25em] uppercase text-[#B8956B] font-medium mb-4 pb-2 border-b border-[#2D5A45]/20">
+                                        {col.title}
+                                      </p>
+                                      <ul className="space-y-0">
+                                        {col.links.map((link) => (
+                                          <li key={link.href}>
+                                            <a
+                                              href={link.href}
+                                              onClick={onClose}
+                                              className="group flex items-start justify-between py-3 border-b border-[#2D5A45]/10 last:border-b-0 hover:bg-[#FAF9F6]/[0.03] px-2 -mx-2 rounded-sm transition-colors"
+                                            >
+                                              <div>
+                                                <span className="text-[13px] text-[#FAF9F6] group-hover:text-[#B8956B] transition-colors block">
+                                                  {link.label}
+                                                </span>
+                                                {link.sub && (
+                                                  <span className="text-[10px] text-[#5A7A6A] mt-0.5 block leading-relaxed">
+                                                    {link.sub}
+                                                  </span>
+                                                )}
+                                              </div>
+                                              <ArrowUpRight
+                                                size={11}
+                                                strokeWidth={1.5}
+                                                className="text-[#B8956B] opacity-0 group-hover:opacity-100 transition-opacity shrink-0 mt-0.5"
+                                              />
+                                            </a>
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                  ))}
+                                </div>
 
-                        {activeNav.href && (
-                          <a
-                            href={activeNav.href}
-                            onClick={onClose}
-                            className="inline-flex items-center gap-2 mt-10 px-5 py-2.5 border border-[#B8956B]/30 text-[#B8956B] text-[10px] tracking-[0.18em] uppercase font-medium hover:bg-[#B8956B]/10 transition-colors"
-                          >
-                            See All {activeNav.label}
-                            <ArrowUpRight size={11} strokeWidth={1.5} />
-                          </a>
-                        )}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
+                                {item.href && (
+                                  <a
+                                    href={item.href}
+                                    onClick={onClose}
+                                    className="inline-flex items-center gap-2 mt-8 px-5 py-2.5 border border-[#B8956B]/30 text-[#B8956B] text-[10px] tracking-[0.18em] uppercase font-medium hover:bg-[#B8956B]/10 transition-colors"
+                                  >
+                                    See All {item.label}
+                                    <ArrowUpRight size={11} strokeWidth={1.5} />
+                                  </a>
+                                )}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    )
+                  })}
+                </nav>
               </div>
 
               {/* Bottom bar */}

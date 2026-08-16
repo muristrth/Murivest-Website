@@ -21,10 +21,10 @@ export default function TeamLayout({ children }: { children: React.ReactNode }) 
           <span className="nav-portal-label">Team Portal</span>
         </div>
         <div className="nav-links">
-          <Link href="/advisors"             className="nav-link">Dashboard</Link>
-          <Link href="/advisors/log"         className="nav-link">Log Day</Link>
-          <Link href="/advisors/leaderboard" className="nav-link">Leaderboard</Link>
-          <Link href="/advisors/admin"       className="nav-link nav-link-admin">Admin</Link>
+          <Link href="/kenya/advisors"             className="nav-link">Dashboard</Link>
+          <Link href="/kenya/advisors/log"         className="nav-link">Log Day</Link>
+          <Link href="/kenya/advisors/leaderboard" className="nav-link">Leaderboard</Link>
+          <Link href="/kenya/advisors/admin"       className="nav-link nav-link-admin">Admin</Link>
         </div>
       </nav>
       <main className="team-main">{children}</main>
