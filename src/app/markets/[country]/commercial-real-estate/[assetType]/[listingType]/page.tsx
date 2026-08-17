@@ -66,7 +66,7 @@ export async function generateMetadata({
 
   return {
     title: `${assetType} ${listingType} in ${country} | Murivest Commercial Real Estate`,
-    description: `Browse institutional-grade ${assetType.toLowerCase()} properties ${listingType.toLowerCase()} in ${country}. Murivest Realty Group presents curated commercial assets for qualified investors.`,
+    description: `Browse institutional-grade ${assetType.toLowerCase()} properties ${listingType.toLowerCase()} in ${country}. Murivest Group Ltd presents curated commercial assets for qualified investors.`,
   };
 }
 

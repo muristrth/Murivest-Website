@@ -16,14 +16,14 @@ interface researchPost {
 const researchPost: researchPost = {
   title: "Property Insights: Global Real Estate Market Trends 2026",
   description: "Get expert analysis of Global's real estate market, including REITs, residential and commercial property investment insights.",
-  author: "Murivest Realty Group",
+  author: "Murivest Group Ltd",
   datePublished: "2026-05-11T08:00:00Z",
   slug: "nairobi-real-estate-trends-2026",
   image: "/default-research-image.webp",
 };
 
 export const metadata: Metadata = {
-  title: researchPost.title + ' | Murivest Realty Group',
+  title: researchPost.title + ' | Murivest Group Ltd',
   description: researchPost.description,
   keywords: [
     'real estate research Kenya',
@@ -70,7 +70,7 @@ export default function researchPage() {
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Murivest Realty Group",
+      "name": "Murivest Group Ltd",
       "logo": {
         "@type": "ImageObject",
         "url": "/logo.webp"

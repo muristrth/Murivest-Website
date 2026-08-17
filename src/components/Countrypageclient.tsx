@@ -591,7 +591,7 @@ const PropertyDrawer: React.FC<{
                         color: T.ink,
                       }}
                     >
-                      Murivest Realty Group
+                      Murivest Group Ltd
                     </p>
                     <ContactLine icon={<Mail className="w-3.5 h-3.5" />}>
                       {property.contactEmail ?? "capital@murivest.co.ke"}
@@ -1250,7 +1250,7 @@ export function CountryPageClient({
       value: assetClassEntries.reduce((s, e) => s + e.forLease, 0),
     },
     { label: "Market", value: countryLabel },
-    { label: "Mandate Advisory", value: "Murivest Realty Group" },
+    { label: "Mandate Advisory", value: "Murivest Group Ltd" },
     ...assetClassEntries.slice(0, 4).map((e) => ({
       label: fmt(e.assetType),
       value: `${e.count} listings`,
@@ -1896,7 +1896,7 @@ export function CountryPageClient({
             All properties are subject to availability and require qualified
             investor verification. Full due diligence materials provided under
             NDA. Past performance is not indicative of future returns.
-            Murivest Realty Group Ltd · murivest.com
+            Murivest Group Ltd Ltd · murivest.com
           </p>
         </div>
       </footer>

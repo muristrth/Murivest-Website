@@ -888,7 +888,7 @@ export default function AboutClient() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <p className="text-[12px] tracking-[0.15em] uppercase text-[#5A5A5A] mb-2">
-                Murivest Realty Group Ltd
+                Murivest Group Ltd Ltd
               </p>
               <p className="text-[13px] text-[#5A5A5A] font-light">
                 Westlands · Nairobi · Kenya · Founded 2025

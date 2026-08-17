@@ -8,7 +8,7 @@ import CEOInstitutionalProfile from '@/components/CEOInstitutionalProfile';
 export const metadata: Metadata = {
   title: 'Commercial Real Estate Advisory Kenya | Office, Industrial & Investment | Murivest - Est. 2025',
   description:
-    'Murivest Realty Group is a Nairobi-based commercial real estate advisory founded in 2025 by Mark Muriithi. Mandate-based advisory for office, industrial, and investment across Kenya and East Africa.',
+    'Murivest Group Ltd is a Nairobi-based commercial real estate advisory founded in 2025 by Mark Muriithi. Mandate-based advisory for office, industrial, and investment across Kenya and East Africa.',
   keywords: [
     'commercial real estate advisory Kenya',
     'Nairobi commercial property',
@@ -16,23 +16,23 @@ export const metadata: Metadata = {
     'industrial property Kenya',
     'investment advisory Kenya',
     'East Africa real estate',
-    'Murivest Realty Group',
+    'Murivest Group Ltd',
     'Mark Muriithi',
     'commercial property underwriting',
     'exit strategy advisory',
   ],
   openGraph: {
-    title: 'Murivest Realty Group | Commercial Real Estate Advisory Kenya',
+    title: 'Murivest Group Ltd | Commercial Real Estate Advisory Kenya',
     description:
       'Nairobi-based commercial real estate advisory founded in 2025 by Mark Muriithi. Mandate-based advisory for office, industrial, and investment across Kenya and East Africa.',
     url: 'https://murivest.com',
-    siteName: 'Murivest Realty Group',
+    siteName: 'Murivest Group Ltd',
     locale: 'en_KE',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Murivest Realty Group | Commercial Real Estate Advisory Kenya',
+    title: 'Murivest Group Ltd | Commercial Real Estate Advisory Kenya',
     description:
       'Nairobi-based commercial real estate advisory founded in 2025 by Mark Muriithi.',
   },
@@ -149,7 +149,7 @@ const FAQS = [
 ];
 
 const ABOUT_PARAGRAPHS = [
-  `Murivest Realty Group was founded in 2025 in Nairobi, Kenya by Mark Muriithi to address a structural gap in East African commercial real estate markets. Institutional-grade advisory—disciplined underwriting, title risk mitigation, exit planning, and off-market execution—remains scarce in frontier markets. Most operators function as brokers or developers, leaving investors without the rigorous mandate architecture expected in mature markets.`,
+  `Murivest Group Ltd was founded in 2025 in Nairobi, Kenya by Mark Muriithi to address a structural gap in East African commercial real estate markets. Institutional-grade advisory—disciplined underwriting, title risk mitigation, exit planning, and off-market execution—remains scarce in frontier markets. Most operators function as brokers or developers, leaving investors without the rigorous mandate architecture expected in mature markets.`,
   `Murivest bridges this divide by combining structured advisory, disciplined underwriting, and off-market execution for commercial real estate across Kenya and East Africa. Every mandate is advisory-only. We do not pool capital or operate collective investment schemes. Our model is built on transparency, verifiable ground data, and alignment with institutional expectations—governance, reporting, and risk engineering that withstands scrutiny from private capital, family offices, and institutional-minded investors.`,
 ];
 
@@ -167,7 +167,7 @@ const TRUST_METRICS = [
     label: 'Advisory Model',
   },
   {
-    value: 'East Africa',
+    value: 'Global',
     label: 'Coverage',
   },
 ];
@@ -188,7 +188,7 @@ export default function GlobalHomePage() {
               {
                 '@type': 'Organization',
                 '@id': 'https://murivest.com/#organization',
-                name: 'Murivest Realty Group',
+                name: 'Murivest Group Ltd',
                 alternateName: 'Murivest',
                 url: 'https://murivest.com',
                 logo: 'https://murivest.com/logo.png',
@@ -258,11 +258,11 @@ export default function GlobalHomePage() {
             </p>
 
             <h1 className="font-serif text-[2.8rem] md:text-[4rem] lg:text-[5.5rem] text-[#FAF9F6] leading-[1.02] mb-8 animate-fade-up delay-100">
-              Commercial Real Estate Advisory
+              Institutional Real Estate Advisory
             </h1>
 
             <p className="text-[15px] md:text-[17px] text-[#FAF9F6]/60 leading-[1.7] font-light max-w-xl mb-12 animate-fade-up delay-200">
-              Murivest is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across Kenya and East Africa—confidential, mandate-based engagements for private capital, family offices, and institutional-minded investors.
+              Murivest Group is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across Kenya and East Africa—confidential, mandate-based engagements for private capital, family offices, and institutional-minded investors.
             </p>
 
             <div className="flex flex-wrap gap-4 animate-fade-up delay-300">
@@ -306,7 +306,7 @@ export default function GlobalHomePage() {
           </div>
           <div className="mt-10 pt-8 border-t border-[#E5E2DC]">
             <p className="text-[13px] leading-[1.8] text-[#5A5A5A] font-light max-w-3xl">
-              Murivest Realty Group is led by Mark Muriithi, whose career spans commercial real estate, distribution, and technology leadership across East Africa. The firm was established in 2025 to deliver the mandate architecture, underwriting discipline, and off-market execution that frontier markets require—built on decades of leadership experience, not decades of firm history.
+              Murivest Group Ltd is led by Mark Muriithi, whose career spans commercial real estate, distribution, and technology leadership across East Africa. The firm was established in 2025 to deliver the mandate architecture, underwriting discipline, and off-market execution that frontier markets require—built on decades of leadership experience, not decades of firm history.
             </p>
           </div>
         </div>

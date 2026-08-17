@@ -790,7 +790,7 @@ export default function ToLetClientView({ property }: { property: PropertyForRen
           <p className="text-[11px] text-[#8B8680] leading-relaxed max-w-3xl mx-auto text-center font-light">
             All information contained herein is provided for informational purposes only and should
             not be construed as leasing advice. Subject to formal heads of terms and availability.
-            Murivest Realty Ltd is a licensed real estate agency regulated by the Estate Agents
+            Murivest Group Ltd is a licensed real estate agency regulated by the Estate Agents
             Registration Board of Kenya.
           </p>
         </div>

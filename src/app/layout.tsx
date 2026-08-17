@@ -41,15 +41,15 @@ const montserrat = Montserrat({
 ==================================================== */
 export const metadata: Metadata = {
   title: {
-    default: 'Murivest Realty Group | Commercial Real Estate Advisory Kenya',
+    default: 'Murivest Group Ltd | Commercial Real Estate Advisory Kenya',
     template: '%s | Murivest',
   },
 
   description:
-    'Murivest Realty Group is a Nairobi-based commercial real estate advisory founded in 2025 by Mark Muriithi. Mandate-based advisory for office, industrial, and investment across Kenya and East Africa.',
+    'Murivest Group Ltd is a Nairobi-based commercial real estate advisory founded in 2025 by Mark Muriithi. Mandate-based advisory for office, industrial, and investment across Kenya and East Africa.',
 
   keywords:
-    'commercial real estate advisory Kenya, Nairobi commercial property, office space Nairobi, industrial property Kenya, investment advisory Kenya, East Africa real estate, Murivest Realty Group, Mark Muriithi, commercial property underwriting, exit strategy advisory',
+    'commercial real estate advisory Kenya, Nairobi commercial property, office space Nairobi, industrial property Kenya, investment advisory Kenya, East Africa real estate, Murivest Group Ltd, Mark Muriithi, commercial property underwriting, exit strategy advisory',
 
   authors: [{ name: 'Murivest' }],
   creator: 'Murivest',
@@ -61,23 +61,23 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_KE',
     url: 'https://murivest.com',
-    title: 'Murivest Realty Group | Commercial Real Estate Advisory Kenya',
+    title: 'Murivest Group Ltd | Commercial Real Estate Advisory Kenya',
     description:
       'Nairobi-based commercial real estate advisory founded in 2025 by Mark Muriithi. Mandate-based advisory for office, industrial, and investment across Kenya and East Africa.',
-    siteName: 'Murivest Realty Group',
+    siteName: 'Murivest Group Ltd',
     images: [
       {
         url: 'https://murivest.com/logo.webp',
         width: 1200,
         height: 630,
-        alt: 'Murivest Realty Group – Commercial Real Estate Advisory Kenya',
+        alt: 'Murivest Group Ltd – Commercial Real Estate Advisory Kenya',
       },
     ],
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Murivest Realty Group | Commercial Real Estate Advisory Kenya',
+    title: 'Murivest Group Ltd | Commercial Real Estate Advisory Kenya',
     description:
       'Nairobi-based commercial real estate advisory founded in 2025 by Mark Muriithi.',
     images: ['https://murivest.com/logo.webp'],
@@ -109,7 +109,7 @@ export const metadata: Metadata = {
 const globalOrganizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Murivest Realty Group',
+  name: 'Murivest Group Ltd',
   alternateName: 'Murivest',
   url: 'https://murivest.com',
   logo: 'https://murivest.com/logo.webp',
@@ -135,7 +135,7 @@ const globalOrganizationSchema = {
     },
   },
   description:
-    'Murivest Realty Group is a Nairobi-based commercial real estate advisory firm founded in 2025 by Mark Muriithi. Mandate-based advisory for office, industrial, and investment across Kenya and East Africa.',
+    'Murivest Group Ltd is a Nairobi-based commercial real estate advisory firm founded in 2025 by Mark Muriithi. Mandate-based advisory for office, industrial, and investment across Kenya and East Africa.',
   sameAs: [
     'https://www.linkedin.com/company/murivest-realty-group',
     'https://www.instagram.com/murivest_realty',

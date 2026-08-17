@@ -1192,7 +1192,7 @@ export default function GlobalMarketsPage() {
         textTransform: "uppercase",
       }}
     >
-      Murivest Realty Group
+      Murivest Group Ltd
     </span>
     <div style={{ display: "flex", gap: "32px" }}>
       {["London", "Dubai", "Singapore", "Nairobi"].map((city) => (
@@ -2416,7 +2416,7 @@ export default function GlobalMarketsPage() {
               letterSpacing: "0.05em",
             }}
           >
-            Murivest Realty Group Ltd — Nairobi, Kenya · murivest.com ·{" "}
+            Murivest Group Ltd Ltd — Nairobi, Kenya · murivest.com ·{" "}
             capital@murivest.co.ke
           </p>
         </div>

@@ -70,14 +70,14 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
             <div className="mb-6">
               <Image 
                 src="/logo.webp" 
-                alt="Murivest Realty Group Ltd" 
+                alt="Murivest Group Ltd Ltd" 
                 width={140} 
                 height={44} 
                 className="h-12 w-auto brightness-110"
               />
             </div>
             <h3 className="text-xl font-serif italic text-white mb-4">
-              Murivest Realty Group Ltd
+              Murivest Group Ltd Ltd
             </h3>
             <p className="text-[13px] text-[#D6C4AA]/80 font-light leading-relaxed mb-6 max-w-sm">
               An independent commercial real estate advisory firm based in Nairobi. We originate and structure mandate-based engagements for institutional capital in East African commercial property markets.
@@ -273,7 +273,7 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
         {/* Main Disclaimer - refined with gold borders */}
         <div className="mb-12 p-6 bg-[#1B4332] border border-[#B8956B]/20">
           <p className="text-[11px] leading-relaxed text-[#D6C4AA]/70 text-center max-w-4xl mx-auto">
-            <strong className="text-white">Important Notice:</strong> Murivest Realty Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.
+            <strong className="text-white">Important Notice:</strong> Murivest Group Ltd Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.
           </p>
         </div>
 
@@ -290,7 +290,7 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
           </div>
           
           <div className="text-[9px] tracking-[0.2em] uppercase text-[#D6C4AA]/50">
-            Murivest Realty Group © 2025 | All Rights Reserved
+            Murivest Group Ltd © 2025 | All Rights Reserved
           </div>
 
           {/* Legal Links */}

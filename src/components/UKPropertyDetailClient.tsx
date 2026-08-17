@@ -198,7 +198,7 @@ const EnquiryDrawer = ({ open, onClose, property }: DrawerProps) => {
             {/* Drawer header */}
             <div className="flex items-center justify-between px-6 py-5 border-b border-[#E5E2DC] bg-white">
               <div>
-                <p className="text-[10px] tracking-[0.25em] uppercase text-[#8B7355] font-medium">Murivest Realty</p>
+                <p className="text-[10px] tracking-[0.25em] uppercase text-[#8B7355] font-medium">Murivest Group</p>
                 <h2 className="text-lg font-serif text-[#2C2C2C] mt-0.5">Request Information</h2>
               </div>
               <button

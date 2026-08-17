@@ -99,7 +99,7 @@ const InstitutionalPlatforms = () => {
           <div className="lg:col-span-5 flex items-end">
 
             <p className="text-[13px] leading-[1.9] text-[#505050] max-w-[420px]">
-              Murivest Realty Group advises across selected commercial real estate sectors
+              Murivest Group Ltd advises across selected commercial real estate sectors
               aligned with urbanisation, infrastructure expansion, and institutional demand trends.
             </p>
 

@@ -89,7 +89,7 @@ function formatDate(dateStr: string): string {
 // ─── Author profiles ──────────────────────────────────────────────────────────
 const AUTHOR_PROFILES: Record<string, { role: string; bio: string; linkedin?: string; email?: string }> = {
   'Murivest': {
-    role: 'Murivest Realty Group',
+    role: 'Murivest Group Ltd',
     bio: "This piece was put together by the Murivest desk — a mix of analysts, advisors, and the occasional opinionated partner who just got back from a site walk. We write what we actually think, not what sounds good in a press release.",
     linkedin: 'https://www.linkedin.com/company/murivest',
     email: ' info@murivest.co.ke',
@@ -458,7 +458,7 @@ export default function researchPost({ post: postProp, analystSummary: analystSu
     datePublished: post.date,
     dateModified: (post as any).dateModified ?? post.date,
     author: { '@type': 'Organization', name: post.author || 'Murivest' },
-    publisher: { '@type': 'Organization', name: 'Murivest Realty Group', url: 'https://murivest.com' },
+    publisher: { '@type': 'Organization', name: 'Murivest Group Ltd', url: 'https://murivest.com' },
     image: heroImage,
     url: postUrl,
   };

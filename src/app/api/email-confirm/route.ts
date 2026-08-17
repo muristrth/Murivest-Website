@@ -80,7 +80,7 @@ function clientEmailTemplate(data: {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site Visit Confirmed · Murivest Realty</title>
+  <title>Site Visit Confirmed · Murivest Group</title>
 </head>
 <body style="margin:0;padding:0;background-color:#FAF9F6;font-family:Georgia,'Times New Roman',serif;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -89,7 +89,7 @@ function clientEmailTemplate(data: {
         <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #E5E2DC;border-radius:8px;overflow:hidden;">
           <tr>
             <td style="background:#1B4332;padding:40px 40px 32px;text-align:center;">
-              <div style="color:#D4B896;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;">Murivest Realty</div>
+              <div style="color:#D4B896;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;">Murivest Group</div>
               <h1 style="color:#ffffff;font-size:24px;font-weight:400;margin:0;letter-spacing:-0.5px;">Site Visit Confirmed</h1>
               <p style="color:rgba(255,255,255,0.6);font-size:14px;margin:12px 0 0;font-family:Arial,sans-serif;">Your appointment has been scheduled and verified.</p>
             </td>
@@ -144,7 +144,7 @@ function clientEmailTemplate(data: {
           <tr>
             <td style="background:#F5F4F0;padding:24px 40px;text-align:center;border-top:1px solid #E5E2DC;">
               <p style="color:#9CA3AF;font-size:11px;margin:0;font-family:Arial,sans-serif;letter-spacing:1px;">
-                MURIVEST REALTY · NAIROBI, KENYA
+                Murivest Group · NAIROBI, KENYA
               </p>
             </td>
           </tr>
@@ -279,7 +279,7 @@ export async function POST(req: Request) {
     await transporter.sendMail({
       from: process.env.SMTP_FROM,
       to: email,
-      subject: 'Site Visit Confirmed · Murivest Realty',
+      subject: 'Site Visit Confirmed · Murivest Group',
       html: clientEmailTemplate({
         fullName,
         viewingType,

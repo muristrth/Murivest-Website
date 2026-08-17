@@ -104,7 +104,7 @@ export async function generateMetadata({
     title: `${property.title} | ${formatLabel(property.assetType)} ${formatLabel(property.listingType)} in ${location} | Murivest`,
     description:
       property.description ??
-      `${property.title} — a ${formatLabel(property.assetType)} asset available ${formatLabel(property.listingType)} in ${location}. Institutional-grade opportunity presented by Murivest Realty Group.`,
+      `${property.title} — a ${formatLabel(property.assetType)} asset available ${formatLabel(property.listingType)} in ${location}. Institutional-grade opportunity presented by Murivest Group Ltd.`,
     openGraph: {
       title: property.title,
       description: property.description,
@@ -314,7 +314,7 @@ export default async function PropertyPage({
                 Presented by
               </p>
               <p className="font-serif text-lg text-[#1A1A1A]">
-                Murivest Realty Group
+                Murivest Group Ltd
               </p>
               <p className="text-xs text-[#6B6B6B] mt-1">
                 Institutional Commercial Real Estate Advisory

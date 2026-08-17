@@ -56,13 +56,13 @@ export async function generateMetadata({
 
   if (!property) {
     return {
-      title: 'Property Not Found | Murivest Realty',
+      title: 'Property Not Found | Murivest Group',
       description: 'This property does not exist.',
     }
   }
 
   return {
-    title: `${property.title} | UK Property | Murivest Realty`,
+    title: `${property.title} | UK Property | Murivest Group`,
     description: property.subtitle || property.description || '',
     openGraph: {
       title: property.title,

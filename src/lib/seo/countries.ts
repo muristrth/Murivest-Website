@@ -28,7 +28,7 @@ export const countrySEO: Record<CountryCode, CountrySEOConfig> = {
     title:
       'Commercial Real Estate Advisory Kenya | Office, Industrial & Investment | Murivest - Est. 2025',
     description:
-      'Murivest Realty Group is a Nairobi-based commercial real estate advisory founded in 2025 by Mark Muriithi. Mandate-based advisory for office, industrial, and investment across Kenya and East Africa.',
+      'Murivest Group Ltd is a Nairobi-based commercial real estate advisory founded in 2025 by Mark Muriithi. Mandate-based advisory for office, industrial, and investment across Kenya and East Africa.',
     domain: 'https://murivest.com',
     canonical: 'https://murivest.com',
     locale: 'en_KE',
@@ -44,7 +44,7 @@ export const countrySEO: Record<CountryCode, CountrySEOConfig> = {
       'industrial property Kenya',
       'investment advisory Kenya',
       'East Africa real estate',
-      'Murivest Realty Group',
+      'Murivest Group Ltd',
       'Mark Muriithi',
       'commercial property underwriting',
       'exit strategy advisory',
@@ -53,9 +53,9 @@ export const countrySEO: Record<CountryCode, CountrySEOConfig> = {
 
   ke: {
     title:
-      'Murivest Realty Group | Institutional Real Estate Advisory Kenya',
+      'Murivest Group Ltd | Institutional Real Estate Advisory Kenya',
     description:
-      'Murivest Realty Group is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.',
+      'Murivest Group Ltd is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.',
     domain: 'https://murivest.com',
     canonical: 'https://murivest.com',
     locale: 'en_KE',
@@ -69,7 +69,7 @@ export const countrySEO: Record<CountryCode, CountrySEOConfig> = {
       'Nairobi commercial property',
       'institutional real estate Kenya',
       'commercial property investment Kenya',
-      'Murivest Realty Group',
+      'Murivest Group Ltd',
       'Kenya real estate 2026',
       'office space Nairobi',
       'warehouse Kenya',

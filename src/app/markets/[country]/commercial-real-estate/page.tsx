@@ -38,7 +38,7 @@ export async function generateMetadata({
   const country = formatLabel(params.country);
   return {
     title: `Commercial Real Estate in ${country} | Murivest`,
-    description: `Institutional commercial real estate opportunities in ${country}. Office, retail, logistics, hospitality, and mixed-use assets presented by Murivest Realty Group.`,
+    description: `Institutional commercial real estate opportunities in ${country}. Office, retail, logistics, hospitality, and mixed-use assets presented by Murivest Group Ltd.`,
   };
 }
 
@@ -79,7 +79,7 @@ export default async function CREPage({ params }: { params: CREParams }) {
             Commercial Real Estate
           </h1>
           <p className="text-[#6B6B6B] text-lg max-w-2xl">
-            Murivest Realty Group presents institutional-grade commercial assets across{" "}
+            Murivest Group Ltd presents institutional-grade commercial assets across{" "}
             {country} — curated on a mandate basis for qualified investors, family
             offices, and pension funds.
           </p>

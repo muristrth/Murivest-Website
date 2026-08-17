@@ -83,7 +83,7 @@ export function generatePropertySchema(property: Property): Record<string, unkno
 
     publisher: {
       '@type': 'Organization',
-      name: 'Murivest Realty Ltd',
+      name: 'Murivest Group Ltd',
       url: BASE_URL,
       logo: `${BASE_URL}/murivest-logo.webp`,
     },

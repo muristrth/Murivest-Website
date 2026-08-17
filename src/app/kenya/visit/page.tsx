@@ -643,7 +643,7 @@ export default function VisitPage() {
             <div className="flex items-center gap-3 mb-8">
               <div className="w-8 h-px bg-[#B8956B]" />
               <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#B8956B]">
-                Murivest Realty
+                Murivest Group
               </span>
             </div>
             <h1
@@ -1263,7 +1263,7 @@ export default function VisitPage() {
           <div className="flex items-center gap-2">
             <div className="w-6 h-px bg-[#B8956B]" />
             <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8A8A8A]">
-              Murivest Realty
+              Murivest Group
             </span>
           </div>
           <div className="flex items-center gap-8 text-[10px] uppercase tracking-[0.15em] text-[#9CA3AF]">

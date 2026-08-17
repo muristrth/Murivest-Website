@@ -48,7 +48,7 @@ const UK_PROPERTIES_QUERY = defineQuery(`
 // ─── Metadata ─────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: 'UK Commercial Properties | London Office Buildings | Murivest Realty',
+  title: 'UK Commercial Properties | London Office Buildings | Murivest Group',
   description:
     'Premium UK commercial property investments. London office buildings, regional retail centres, and hospitality assets with institutional-grade returns for international investors.',
   keywords:

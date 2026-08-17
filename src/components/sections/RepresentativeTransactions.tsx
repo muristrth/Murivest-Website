@@ -219,7 +219,7 @@ const RepresentativeTransactions = () => {
         >
           <div className="w-1 h-1 rounded-full bg-[#8B7355] mt-2.5 flex-shrink-0" />
           <p>
-            Engagements referenced above are representative examples of advisory mandates executed by Murivest Realty Group.
+            Engagements referenced above are representative examples of advisory mandates executed by Murivest Group Ltd.
             In accordance with confidentiality obligations, client identities and transaction metrics have been anonymised.
             Full documentation available to qualified institutional investors under formally executed non-disclosure agreements.
           </p>

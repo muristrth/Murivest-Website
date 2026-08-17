@@ -862,7 +862,7 @@ export default function OffMarketClientView({ property }: { property: OffMarketP
             All information is provided for informational purposes only and should not be construed
             as investment advice. Past performance is not indicative of future returns. Available
             exclusively to mandated partners and qualified institutional investors under NDA.
-            Murivest Realty Ltd is a licensed real estate agency regulated by the Estate Agents
+            Murivest Group Ltd is a licensed real estate agency regulated by the Estate Agents
             Registration Board of Kenya.
           </p>
         </div>

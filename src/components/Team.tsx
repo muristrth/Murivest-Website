@@ -31,18 +31,18 @@ const Team = ({ members = [] }: TeamProps) => {
       name: 'Mark Muriithi',
       title: 'Chief Executive Officer & Founder',
       bio: 'Over two decades of experience in East African commercial real estate. Former Managing Director at a leading property consultancy, with $500M+ in executed transactions.',
-      image: '/CEO.Founder.webp',
+      image: '/ceo.webp',
       linkedin: 'https://www.linkedin.com/in/mark-muriithi-343365215/',
-      email: 'mark.muriithi@murivest.com'
+      email: 'md@murivest.com'
     },
     {
       id: '2',
-      name: 'Dr. Samuel Ochieng',
-      title: 'Chief Investment Officer',
-      bio: 'PhD Finance, London School of Economics. CFA Charterholder with 15+ years in African capital markets and real estate investment structuring.',
-      image: '/p2/profile-placeholder.webp',
-      linkedin: '#',
-      email: 'samuel@murivest.com'
+      name: 'Moonyoi Ntagusa',
+      title: 'Associate Capital Advisor',
+      bio: 'Advises private investors and institutional clients on commercial real estate acquisitions, capital structuring, and investment opportunities across key African markets.',
+      image: '/images/team/Moonyoi_Ntagusa.png',
+      linkedin: 'https://www.linkedin.com/in/moonyoi-ntagusa-6bb3a2171',
+      email: 'moonyoi@murivest.com'
     },
     {
       id: '3',
@@ -71,15 +71,7 @@ const Team = ({ members = [] }: TeamProps) => {
       linkedin: '#',
       email: 'sarah@murivest.com'
     },
-    {
-      id: '6',
-      name: 'Danson Moonyoi',
-      title: 'Junior Investment Advisor',
-      bio: 'MBA, INSEAD. Former investment banker with deep network across East African commercial real estate markets.',
-      image: '/images/team/passport_photo.jpg',
-      linkedin: 'https://www.linkedin.com/in/moonyoi-ntagusa-6bb3a2171/',
-      email: 'moonyoi.ntagusa@murivest.com'
-    }
+
   ];
 
   const displayMembers = members.length > 0 ? members : defaultMembers;

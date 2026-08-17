@@ -18,7 +18,7 @@ import {
 
 export const structure: StructureResolver = (S) =>
   S.list()
-    .title('Murivest Realty')
+    .title('Murivest Group')
     .items([
       
       // ═══════════════════════════════════════════════════════════════

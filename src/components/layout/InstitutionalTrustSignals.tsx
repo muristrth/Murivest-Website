@@ -193,7 +193,7 @@ const InstitutionalTrustSignals = () => {
           className="mt-12 pt-8 border-t border-[#8B7355]/15 text-center"
         >
           <p className="text-[10px] text-[#A8A39D] leading-[1.8] max-w-2xl mx-auto font-light">
-            Murivest Realty Group Ltd is an independent commercial real estate advisory platform.
+            Murivest Group Ltd Ltd is an independent commercial real estate advisory platform.
             All engagements are subject to formal mandate agreements, independent due diligence,
             and regulatory compliance frameworks applicable in Kenya and international jurisdictions.
           </p>

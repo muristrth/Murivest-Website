@@ -86,7 +86,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-[16px] leading-[1.95] text-[#C2B9AE] max-w-xl font-light mb-12">
-              Murivest Realty Group structures mandate-based engagements for institutional
+              Murivest Group Ltd structures mandate-based engagements for institutional
               investors seeking risk-adjusted exposure to East African commercial property markets.
             </p>
 

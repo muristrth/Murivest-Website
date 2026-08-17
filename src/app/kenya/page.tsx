@@ -11,10 +11,10 @@ import InvestorBriefTeaser from '@/components/sections/InvestorBriefTeaser'
 
 export const metadata: Metadata = {
   // 1. STRATEGIC TITLE (Max 60 chars recommended for SEO)
-  title: 'Murivest Realty Group | Institutional Real Estate Advisory Kenya',
+  title: 'Murivest Group Ltd | Institutional Real Estate Advisory Kenya',
 
   // 2. AUTHORITATIVE DESCRIPTION
-  description: 'Murivest Realty Group is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.',
+  description: 'Murivest Group Ltd is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.',
 
   // 3. TARGETED KEYWORDS (Curated for High-Net-Worth intent)
   keywords: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     'investment',
     'reits',
     'investments',
-    'Murivest Realty Group',
+    'Murivest Group Ltd',
     'office space',
     'reits investments',
     'data warehouse',
@@ -50,16 +50,16 @@ export const metadata: Metadata = {
 
   // 4. OPEN GRAPH (Social Sharing)
   openGraph: {
-    title: 'Murivest Realty Group | Commercial Real Estate Advisory',
-    description: 'Murivest Realty Group is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.',
+    title: 'Murivest Group Ltd | Commercial Real Estate Advisory',
+    description: 'Murivest Group Ltd is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.',
     url: 'https://murivest.com',
-    siteName: 'Murivest Realty Group Ltd',
+    siteName: 'Murivest Group Ltd Ltd',
     images: [
       {
         url: '/logo.webp',
         width: 1200,
         height: 630,
-        alt: 'Murivest Realty Group Ltd - Commercial Real Estate Advisory',
+        alt: 'Murivest Group Ltd Ltd - Commercial Real Estate Advisory',
       },
     ],
     locale: 'en_GB',
@@ -69,8 +69,8 @@ export const metadata: Metadata = {
   // 5. TWITTER CARD
   twitter: {
     card: 'summary_large_image',
-    title: 'Murivest Realty Group | Commercial Real Estate Advisory',
-    description: 'Murivest Realty Group is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.',
+    title: 'Murivest Group Ltd | Commercial Real Estate Advisory',
+    description: 'Murivest Group Ltd is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.',
     images: ['/logo.webp'],
   },
 
