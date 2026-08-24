@@ -19,7 +19,7 @@ export default function MarketSnapshot() {
         <SectionHeader
           kicker="Market Intelligence"
           title="Singapore Q2 2026 Snapshot"
-          subtitle="Real-time market data from CBRE, Savills, URA, and MAS — updated quarterly for institutional decision-making."
+          subtitle="Market data from CBRE, Savills, URA, and MAS — updated quarterly for institutional decision-making."
           align="center"
           className="mb-16"
         />
@@ -27,21 +27,21 @@ export default function MarketSnapshot() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {metrics.map((metric, i) => (
             <ScrollReveal key={metric.label} delay={i * 0.1}>
-              <div className="bg-white border border-[#E8E6E1] p-8 hover:shadow-lg hover:border-[#B8956B]/30 transition-all duration-500 group">
-                <p className="text-[9px] tracking-[0.25em] uppercase text-[#8B8680] mb-4 font-medium">
+              <div className="bg-white border border-[#E5E2DC] p-8 hover:shadow-md hover:border-[#8B7355]/40 transition-all duration-500 group">
+                <p className="text-[9px] tracking-[0.25em] uppercase text-[#5A5A5A] mb-4 font-medium">
                   {metric.label}
                 </p>
-                <div className="font-mono text-3xl md:text-4xl text-[#1B4332] mb-2">
-                  {metric.prefix && <span className="text-lg text-[#B8956B]">{metric.prefix}</span>}
+                <div className="font-mono text-3xl md:text-4xl text-[#2C2C2C] mb-2">
+                  {metric.prefix && <span className="text-lg text-[#8B7355]">{metric.prefix}</span>}
                   <AnimatedCounter
                     target={metric.value}
                     decimals={metric.decimals}
                     duration={2000}
                   />
-                  {metric.suffix && <span className="text-lg text-[#8B8680]">{metric.suffix}</span>}
+                  {metric.suffix && <span className="text-lg text-[#5A5A5A]">{metric.suffix}</span>}
                 </div>
-                <p className="text-[11px] text-[#8B8680] italic">{metric.context}</p>
-                <div className="mt-4 h-px bg-[#E8E6E1] group-hover:bg-[#B8956B]/30 transition-colors" />
+                <p className="text-[11px] text-[#5A5A5A] italic">{metric.context}</p>
+                <div className="mt-4 h-px bg-[#E5E2DC] group-hover:bg-[#8B7355]/40 transition-colors" />
               </div>
             </ScrollReveal>
           ))}
@@ -49,14 +49,14 @@ export default function MarketSnapshot() {
 
         {/* Full data table */}
         <ScrollReveal delay={0.4}>
-          <div className="mt-12 bg-white border border-[#E8E6E1] overflow-hidden">
-            <div className="px-6 md:px-8 py-4 bg-[#1B4332] flex items-center justify-between">
-              <p className="text-[10px] tracking-[0.25em] uppercase text-[#B8956B] font-medium">
+          <div className="mt-12 bg-white border border-[#E5E2DC] overflow-hidden">
+            <div className="px-6 md:px-8 py-4 bg-[#2C2C2C] flex items-center justify-between">
+              <p className="text-[10px] tracking-[0.25em] uppercase text-[#8B7355] font-medium">
                 Comprehensive Market Data
               </p>
               <p className="text-[9px] text-white/50">Source: CBRE, Savills, URA, MAS | Q2 2026</p>
             </div>
-            <div className="divide-y divide-[#E8E6E1]">
+            <div className="divide-y divide-[#E5E2DC]">
               {[
                 ['Investment Volume YoY (Q1 2026)', '+364%', 'CBRE Asia Pacific Cap Rate Survey'],
                 ['S-REIT Market Capitalisation', 'S$100 Billion', 'SGX (March 2026)'],
@@ -71,12 +71,12 @@ export default function MarketSnapshot() {
                 ['Singapore Sovereign Rating', 'AAA (All Agencies)', "S&P, Moody's, Fitch"],
                 ['Net Office Absorption (Q2 2025)', '245,000 sq ft', 'Savills Research'],
               ].map(([label, value, source]) => (
-                <div key={label} className="flex items-center justify-between px-6 md:px-8 py-4 hover:bg-[#FAF9F6] transition-colors">
+                <div key={label} className="flex items-center justify-between px-6 md:px-8 py-4 hover:bg-[#F8F7F4] transition-colors">
                   <div>
                     <p className="text-sm text-[#2C2C2C] font-medium">{label}</p>
-                    <p className="text-[10px] text-[#8B8680] mt-0.5">{source}</p>
+                    <p className="text-[10px] text-[#5A5A5A] mt-0.5">{source}</p>
                   </div>
-                  <p className="font-mono text-sm text-[#1B4332] font-semibold">{value}</p>
+                  <p className="font-mono text-sm text-[#2C2C2C] font-semibold">{value}</p>
                 </div>
               ))}
             </div>

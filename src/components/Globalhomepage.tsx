@@ -46,7 +46,6 @@ export const metadata: Metadata = {
 };
 
 /* ─── DATA ────────────────────────────────────────────────────── */
-
 const SERVICES = [
   {
     title: 'Commercial Advisory',
@@ -176,8 +175,8 @@ const TRUST_METRICS = [
 
 export default function GlobalHomePage() {
   return (
-    <main className="bg-[#0B1510] text-[#FAF9F6] antialiased selection:bg-[#C9A96E]/30">
-      
+    <main className="bg-[#F8F7F4] text-[#2C2C2C] antialiased selection:bg-[#8B7355]/20">
+
       {/* SCHEMA.ORG */}
       <script
         type="application/ld+json"
@@ -238,7 +237,7 @@ export default function GlobalHomePage() {
       {/* ═══════════════════════════════════════════════════════════
           HERO
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative min-h-[92vh] flex items-end overflow-hidden">
+      <section className="relative min-h-[92vh] flex items-end overflow-hidden bg-[#2C2C2C]">
         <div className="absolute inset-0">
           <Image
             src="/images/hero.jpeg"
@@ -247,28 +246,33 @@ export default function GlobalHomePage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1510] via-[#0B1510]/70 to-[#0B1510]/30" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#2C2C2C] via-[#2C2C2C]/70 to-[#2C2C2C]/25" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#2C2C2C]/80 to-transparent" />
         </div>
 
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 pb-24 md:pb-32 pt-40">
           <div className="max-w-3xl">
-            <p className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#C9A96E] font-medium mb-8 animate-fade-up">
-              Mandate-Based Commercial Real Estate Advisory
-            </p>
+            <div className="flex items-center gap-3 mb-8 animate-fade-up">
+              <span className="w-8 h-[1px] bg-[#8B7355]" />
+              <p className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#8B7355] font-medium">
+                Mandate-Based Commercial Real Estate Advisory
+              </p>
+            </div>
 
-            <h1 className="font-serif text-[2.8rem] md:text-[4rem] lg:text-[5.5rem] text-[#FAF9F6] leading-[1.02] mb-8 animate-fade-up delay-100">
-              Institutional Real Estate Advisory
+            <h1 className="font-serif text-[2.8rem] md:text-[4rem] lg:text-[5.5rem] text-[#F8F7F4] leading-[1.02] mb-8 animate-fade-up delay-100">
+              Institutional Real Estate <span className="italic font-light text-[#8B7355]">Advisory</span>
             </h1>
 
-            <p className="text-[15px] md:text-[17px] text-[#FAF9F6]/60 leading-[1.7] font-light max-w-xl mb-12 animate-fade-up delay-200">
+            <div className="w-16 h-[1px] bg-[#F8F7F4]/20 mb-8 animate-fade-up delay-200" />
+
+            <p className="text-[15px] md:text-[17px] text-[#F8F7F4]/65 leading-[1.7] font-light max-w-xl mb-12 animate-fade-up delay-200">
               Murivest Group is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across Kenya and East Africa—confidential, mandate-based engagements for private capital, family offices, and institutional-minded investors.
             </p>
 
             <div className="flex flex-wrap gap-4 animate-fade-up delay-300">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-[#C9A96E] text-[#0B1510] text-[11px] tracking-[0.2em] uppercase font-semibold hover:bg-[#D4B87E] transition-colors duration-500"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-[#F8F7F4] text-[#2C2C2C] text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] hover:text-[#F8F7F4] transition-colors duration-500"
               >
                 Arrange a Briefing
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -277,7 +281,7 @@ export default function GlobalHomePage() {
               </Link>
               <Link
                 href="/research"
-                className="inline-flex items-center gap-2 px-8 py-4 border border-[#FAF9F6]/20 text-[#FAF9F6]/80 text-[11px] tracking-[0.2em] uppercase font-medium hover:border-[#C9A96E]/50 hover:text-[#FAF9F6] transition-all duration-500"
+                className="inline-flex items-center gap-2 px-8 py-4 border border-[#F8F7F4]/25 text-[#F8F7F4]/85 text-[11px] tracking-[0.2em] uppercase font-medium hover:border-[#8B7355] hover:text-[#F8F7F4] transition-all duration-500"
               >
                 View Research
               </Link>
@@ -290,12 +294,12 @@ export default function GlobalHomePage() {
           TRUST / POSITIONING STRIP
           Founder credentials. No fake firm metrics.
       ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#FAF9F6] text-[#1A1A1A] border-t border-[#E5E2DC]">
+      <section className="bg-[#F8F7F4] text-[#2C2C2C] border-b border-[#E5E2DC]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-16 lg:py-20">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {TRUST_METRICS.map((metric) => (
-              <div key={metric.label} className="text-center lg:text-left">
-                <p className="text-3xl md:text-4xl font-serif text-[#1B4332] mb-2">
+              <div key={metric.label} className="text-center lg:text-left lg:border-l lg:border-[#E5E2DC] lg:pl-8 lg:first:border-l-0 lg:first:pl-0">
+                <p className="text-3xl md:text-4xl font-serif text-[#2C2C2C] mb-2">
                   {metric.value}
                 </p>
                 <p className="text-[11px] tracking-[0.2em] uppercase text-[#5A5A5A] font-medium">
@@ -316,18 +320,22 @@ export default function GlobalHomePage() {
           INSTITUTIONAL NARRATIVE
           Why 2025. The gap in the market.
       ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#FAF9F6] text-[#1A1A1A]">
+      <section className="bg-[#F8F7F4] text-[#2C2C2C]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-24 lg:py-36">
           <div className="grid lg:grid-cols-12 gap-16 lg:gap-24">
             <div className="lg:col-span-4">
-              <p className="text-[10px] tracking-[0.35em] uppercase text-[#8B7355] font-medium mb-4">
-                Our Foundation
-              </p>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-[2.75rem] text-[#1A1A1A] leading-[1.1]">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="w-8 h-[1px] bg-[#8B7355]" />
+                <p className="text-[10px] tracking-[0.35em] uppercase text-[#8B7355] font-medium">
+                  Our Foundation
+                </p>
+              </div>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-[2.75rem] text-[#2C2C2C] leading-[1.1]">
                 Built for the market as it is, not as others imagine it.
               </h2>
+              <div className="w-16 h-[1px] bg-[#E5E2DC] mt-8 hidden lg:block" />
             </div>
-            <div className="lg:col-span-8">
+            <div className="lg:col-span-8 lg:border-l lg:border-[#E5E2DC] lg:pl-16">
               {ABOUT_PARAGRAPHS.map((p, i) => (
                 <p key={i} className="text-[14px] leading-[1.9] text-[#5A5A5A] font-light mb-6">
                   {p}
@@ -341,22 +349,29 @@ export default function GlobalHomePage() {
       {/* ═══════════════════════════════════════════════════════════
           WHAT WE DO
       ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#FAF9F6] text-[#1A1A1A]">
+      <section className="bg-[#F8F7F4] text-[#2C2C2C] border-t border-[#E5E2DC]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-24 lg:py-36">
           <div className="grid lg:grid-cols-12 gap-16 lg:gap-24">
             <div className="lg:col-span-4">
-              <p className="text-[10px] tracking-[0.35em] uppercase text-[#8B7355] font-medium mb-4">
-                Advisory Services
-              </p>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-[2.75rem] text-[#1A1A1A] leading-[1.1]">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="w-8 h-[1px] bg-[#8B7355]" />
+                <p className="text-[10px] tracking-[0.35em] uppercase text-[#8B7355] font-medium">
+                  Advisory Services
+                </p>
+              </div>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-[2.75rem] text-[#2C2C2C] leading-[1.1]">
                 Structured advisory for institutional execution.
               </h2>
+              <div className="w-16 h-[1px] bg-[#E5E2DC] mt-8 hidden lg:block" />
             </div>
 
-            <div className="lg:col-span-8 grid sm:grid-cols-2 gap-x-12 gap-y-16">
-              {SERVICES.map((s) => (
-                <div key={s.title} className="group">
-                  <h3 className="text-[15px] font-semibold tracking-wide text-[#1A1A1A] mb-3 group-hover:text-[#8B7355] transition-colors duration-300">
+            <div className="lg:col-span-8 grid sm:grid-cols-2 gap-x-12 gap-y-0">
+              {SERVICES.map((s, i) => (
+                <div key={s.title} className="group border-t border-[#E5E2DC] py-10">
+                  <p className="text-[11px] tracking-[0.2em] text-[#8B7355] font-medium mb-4">
+                    {String(i + 1).padStart(2, '0')}
+                  </p>
+                  <h3 className="text-[15px] font-semibold tracking-wide text-[#2C2C2C] mb-3 group-hover:text-[#8B7355] transition-colors duration-300">
                     {s.title}
                   </h3>
                   <p className="text-[14px] leading-[1.75] text-[#5A5A5A] font-light mb-5">
@@ -364,7 +379,7 @@ export default function GlobalHomePage() {
                   </p>
                   <Link
                     href={s.href}
-                    className="inline-flex items-center gap-3 text-[11px] tracking-[0.2em] uppercase text-[#8B7355] font-medium group-hover:text-[#1A1A1A] transition-colors duration-300"
+                    className="inline-flex items-center gap-3 text-[11px] tracking-[0.2em] uppercase text-[#8B7355] font-medium group-hover:text-[#2C2C2C] transition-colors duration-300"
                   >
                     <span>Learn More</span>
                     <span className="w-6 h-[1px] bg-current group-hover:w-10 transition-all duration-300" />
@@ -379,49 +394,51 @@ export default function GlobalHomePage() {
       {/* ═══════════════════════════════════════════════════════════
           INSIGHTS & RESEARCH
       ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#0B1510] border-t border-[rgba(201,169,110,0.08)]">
+      <section className="bg-white border-t border-[#E5E2DC]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-24 lg:py-36">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
-              <p className="text-[10px] tracking-[0.35em] uppercase text-[#C9A96E] font-medium mb-4">
-                Research & Intelligence
-              </p>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-[2.75rem] text-[#FAF9F6] leading-[1.1]">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="w-8 h-[1px] bg-[#8B7355]" />
+                <p className="text-[10px] tracking-[0.35em] uppercase text-[#8B7355] font-medium">
+                  Research & Intelligence
+                </p>
+              </div>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-[2.75rem] text-[#2C2C2C] leading-[1.1]">
                 Primary research from Nairobi ground data
               </h2>
             </div>
             <Link
               href="/research"
-              className="group inline-flex items-center gap-3 text-[11px] tracking-[0.2em] uppercase text-[#C9A96E] font-medium shrink-0"
+              className="group inline-flex items-center gap-3 text-[11px] tracking-[0.2em] uppercase text-[#8B7355] font-medium shrink-0 hover:text-[#2C2C2C] transition-colors duration-300"
             >
               <span>Explore All Research</span>
               <span className="w-6 h-[1px] bg-current group-hover:w-10 transition-all duration-300" />
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
             {INSIGHTS.map((item) => (
               <Link key={item.title} href={item.href} className="group block">
-                <div className="relative aspect-[16/10] mb-6 overflow-hidden border border-[rgba(201,169,110,0.10)]">
+                <div className="relative aspect-[16/10] mb-6 overflow-hidden border border-[#E5E2DC]">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1510]/60 to-transparent" />
                 </div>
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="text-[10px] tracking-[0.2em] uppercase text-[#C9A96E]">
+                  <span className="text-[10px] tracking-[0.2em] uppercase text-[#8B7355] font-medium">
                     {item.category}
                   </span>
-                  <span className="w-1 h-1 rounded-full bg-[#FAF9F6]/20" />
-                  <span className="text-[11px] text-[#FAF9F6]/30">{item.date}</span>
+                  <span className="w-3 h-[1px] bg-[#E5E2DC]" />
+                  <span className="text-[11px] text-[#5A5A5A]/70">{item.date}</span>
                 </div>
-                <h3 className="text-[17px] font-medium text-[#FAF9F6] leading-[1.4] mb-2 group-hover:text-[#C9A96E] transition-colors duration-300">
+                <h3 className="font-serif text-[19px] text-[#2C2C2C] leading-[1.35] mb-3 group-hover:text-[#8B7355] transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-[13px] leading-[1.65] text-[#FAF9F6]/45 font-light">
+                <p className="text-[13px] leading-[1.65] text-[#5A5A5A] font-light">
                   {item.subtitle}
                 </p>
               </Link>
@@ -438,29 +455,33 @@ export default function GlobalHomePage() {
       {/* ═══════════════════════════════════════════════════════════
           OUR COMMITMENT
       ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#111C16] border-t border-[rgba(201,169,110,0.08)]">
+      <section className="bg-[#F8F7F4] border-t border-[#E5E2DC]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-24 lg:py-36">
           <div className="text-center mb-16">
-            <p className="text-[10px] tracking-[0.35em] uppercase text-[#C9A96E] font-medium mb-4">
-              Our Commitment
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-[2.75rem] text-[#FAF9F6] leading-[1.1]">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <span className="w-8 h-[1px] bg-[#8B7355]" />
+              <p className="text-[10px] tracking-[0.35em] uppercase text-[#8B7355] font-medium">
+                Our Commitment
+              </p>
+              <span className="w-8 h-[1px] bg-[#8B7355]" />
+            </div>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-[2.75rem] text-[#2C2C2C] leading-[1.1]">
               Principles That Govern Our Practice
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[rgba(201,169,110,0.10)]">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#E5E2DC] border border-[#E5E2DC]">
             {COMMITMENTS.map((c) => (
-              <div key={c.title} className="bg-[#111C16] p-8 lg:p-10 group hover:bg-[#0B1510] transition-colors duration-500">
-                <h3 className="text-[14px] font-semibold tracking-wide text-[#FAF9F6] mb-4 group-hover:text-[#C9A96E] transition-colors duration-300">
+              <div key={c.title} className="bg-white p-8 lg:p-10 group hover:bg-[#F8F7F4] transition-colors duration-500">
+                <h3 className="text-[14px] font-semibold tracking-wide text-[#2C2C2C] mb-4 group-hover:text-[#8B7355] transition-colors duration-300">
                   {c.title}
                 </h3>
-                <p className="text-[13px] leading-[1.75] text-[#FAF9F6]/45 font-light mb-6">
+                <p className="text-[13px] leading-[1.75] text-[#5A5A5A] font-light mb-6">
                   {c.desc}
                 </p>
                 <Link
                   href={c.href}
-                  className="inline-flex items-center gap-3 text-[10px] tracking-[0.2em] uppercase text-[#C9A96E]/70 font-medium group-hover:text-[#C9A96E] transition-colors duration-300"
+                  className="inline-flex items-center gap-3 text-[10px] tracking-[0.2em] uppercase text-[#8B7355]/80 font-medium group-hover:text-[#8B7355] transition-colors duration-300"
                 >
                   <span>Read More</span>
                   <span className="w-4 h-[1px] bg-current group-hover:w-8 transition-all duration-300" />
@@ -474,40 +495,43 @@ export default function GlobalHomePage() {
       {/* ═══════════════════════════════════════════════════════════
           NEWSLETTER
       ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#0B1510] border-t border-[rgba(201,169,110,0.08)]">
+      <section className="bg-white border-t border-[#E5E2DC]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-24 lg:py-36">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-center">
             <div className="lg:col-span-5">
-              <p className="text-[10px] tracking-[0.35em] uppercase text-[#C9A96E] font-medium mb-4">
-                Murivest Perspectives
-              </p>
-              <h2 className="font-serif text-3xl md:text-4xl text-[#FAF9F6] leading-[1.1] mb-6">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="w-8 h-[1px] bg-[#8B7355]" />
+                <p className="text-[10px] tracking-[0.35em] uppercase text-[#8B7355] font-medium">
+                  Murivest Perspectives
+                </p>
+              </div>
+              <h2 className="font-serif text-3xl md:text-4xl text-[#2C2C2C] leading-[1.1] mb-6">
                 Expert perspectives on what matters most in commercial real estate.
               </h2>
-              <p className="text-[14px] leading-[1.8] text-[#FAF9F6]/50 font-light">
-                Quarterly market intelligence, sector theses, and allocation strategy 
+              <p className="text-[14px] leading-[1.8] text-[#5A5A5A] font-light">
+                Quarterly market intelligence, sector theses, and allocation strategy
                 briefings delivered directly to institutional inboxes.
               </p>
             </div>
 
             <div className="lg:col-span-7">
-              <form className="flex flex-col sm:flex-row gap-4" action="/api/subscribe" method="POST">
+              <form className="flex flex-col sm:flex-row gap-6 sm:gap-8 sm:items-end" action="/api/subscribe" method="POST">
                 <input
                   type="email"
                   name="email"
                   placeholder="Institutional email address"
                   required
-                  className="flex-1 px-6 py-4 bg-transparent border border-[rgba(250,249,246,0.15)] text-[#FAF9F6] text-[14px] placeholder:text-[#FAF9F6]/25 focus:outline-none focus:border-[#C9A96E]/50 transition-colors duration-300"
+                  className="flex-1 px-1 py-4 bg-transparent border-b border-[#E5E2DC] text-[#2C2C2C] text-[14px] font-light placeholder:text-[#5A5A5A]/50 focus:outline-none focus:border-[#8B7355] transition-colors duration-300"
                 />
                 <button
                   type="submit"
-                  className="px-8 py-4 bg-[#C9A96E] text-[#0B1510] text-[11px] tracking-[0.2em] uppercase font-semibold hover:bg-[#D4B87E] transition-colors duration-500 shrink-0"
+                  className="px-8 py-4 bg-[#2C2C2C] text-[#F8F7F4] text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors duration-500 shrink-0"
                 >
                   Subscribe
                 </button>
               </form>
-              <p className="text-[11px] text-[#FAF9F6]/25 mt-4">
-                By subscribing, you agree to receive institutional research communications. 
+              <p className="text-[11px] text-[#5A5A5A]/70 mt-4 italic">
+                By subscribing, you agree to receive institutional research communications.
                 You may unsubscribe at any time.
               </p>
             </div>
@@ -518,17 +542,20 @@ export default function GlobalHomePage() {
       {/* ═══════════════════════════════════════════════════════════
           FAQ
       ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#111C16] border-t border-[rgba(201,169,110,0.08)]">
+      <section className="bg-[#F8F7F4] border-t border-[#E5E2DC]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-24 lg:py-36">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-24">
             <div className="lg:col-span-4">
-              <p className="text-[10px] tracking-[0.35em] uppercase text-[#C9A96E] font-medium mb-4">
-                Institutional Enquiries
-              </p>
-              <h2 className="font-serif text-3xl md:text-4xl text-[#FAF9F6] leading-[1.1] mb-6">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="w-8 h-[1px] bg-[#8B7355]" />
+                <p className="text-[10px] tracking-[0.35em] uppercase text-[#8B7355] font-medium">
+                  Institutional Enquiries
+                </p>
+              </div>
+              <h2 className="font-serif text-3xl md:text-4xl text-[#2C2C2C] leading-[1.1] mb-6">
                 Frequently Asked Questions
               </h2>
-              <p className="text-[14px] leading-[1.8] text-[#FAF9F6]/50 font-light">
+              <p className="text-[14px] leading-[1.8] text-[#5A5A5A] font-light">
                 Answers to common questions from private capital, family offices, and institutional allocators.
               </p>
             </div>
@@ -537,17 +564,17 @@ export default function GlobalHomePage() {
               {FAQS.map((faq, i) => (
                 <details
                   key={i}
-                  className="group border-b border-[rgba(250,249,246,0.06)] py-6 cursor-pointer"
+                  className="group border-b border-[#E5E2DC] py-6 cursor-pointer"
                 >
                   <summary className="list-none flex items-start justify-between gap-4">
-                    <span className="text-[14px] md:text-[15px] text-[#FAF9F6]/80 font-medium leading-relaxed">
+                    <span className="text-[14px] md:text-[15px] text-[#2C2C2C] font-medium leading-relaxed group-hover:text-[#8B7355] transition-colors duration-300">
                       {faq.question}
                     </span>
-                    <span className="text-[#C9A96E] text-lg leading-none mt-0.5 group-open:rotate-45 transition-transform duration-300">
+                    <span className="text-[#8B7355] text-lg leading-none mt-0.5 font-light group-open:rotate-45 transition-transform duration-300">
                       +
                     </span>
                   </summary>
-                  <p className="text-[14px] leading-[1.8] text-[#FAF9F6]/50 font-light mt-4 max-w-2xl">
+                  <p className="text-[14px] leading-[1.8] text-[#5A5A5A] font-light mt-4 max-w-2xl">
                     {faq.answer}
                   </p>
                 </details>

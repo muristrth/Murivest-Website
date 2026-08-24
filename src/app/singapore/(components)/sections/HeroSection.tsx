@@ -7,8 +7,7 @@ import { ANIMATION } from '../data/singapore-market-data';
 /* ─────────────────────────────────────────────────────────────
    MURIVEST SINGAPORE — HERO SECTION
    Institutional-grade landing for UHNWI, family offices, and
-   sovereign capital. Designed for LLM entity extraction and
-   search authority parity with tier-1 brokerages.
+   sovereign capital. Ivory / Charcoal / Brass system.
    ───────────────────────────────────────────────────────────── */
 
 const EASING = [0.23, 1, 0.32, 1] as const;
@@ -16,19 +15,18 @@ const EASING = [0.23, 1, 0.32, 1] as const;
 export default function HeroSection() {
   return (
     <section
-      className="relative min-h-[92vh] flex items-end overflow-hidden bg-[#0F1E16]"
+      className="relative min-h-[92vh] flex items-end overflow-hidden bg-[#1F1E1C]"
       aria-label="Singapore Commercial Real Estate Advisory"
     >
-      {/* ── Atmospheric depth layers ── */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1B4332]/90 via-[#163828]/80 to-[#0A1510]/95" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(184,149,107,0.06),_transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(27,67,50,0.4),_transparent_50%)]" />
+      {/* ── Atmospheric depth — restrained, no green tint ── */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#2C2C2C]/70 via-[#1F1E1C]/85 to-[#141312]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(139,115,85,0.05),_transparent_60%)]" />
 
-      {/* Subtle grid — architectural drafting feel */}
+      {/* Subtle architectural grid */}
       <div
         className="absolute inset-0 opacity-[0.025]"
         style={{
-          backgroundImage: `linear-gradient(rgba(250,249,246,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(250,249,246,0.15) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(rgba(248,247,244,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(248,247,244,0.15) 1px, transparent 1px)`,
           backgroundSize: '80px 80px',
         }}
       />
@@ -36,7 +34,7 @@ export default function HeroSection() {
       {/* ── Primary content container ── */}
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 pb-20 md:pb-28 pt-40">
         <div className="max-w-3xl">
-          
+
           {/* Dateline — HBR editorial convention */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -44,43 +42,43 @@ export default function HeroSection() {
             transition={{ duration: 0.9, ease: EASING }}
           >
             <div className="flex items-center gap-4 mb-8">
-              <span className="w-8 h-px bg-[#B8956B]/60" />
-              <p className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#B8956B] font-medium">
+              <span className="w-8 h-px bg-[#8B7355]/60" />
+              <p className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#8B7355] font-medium">
                 Singapore · Capital Markets Advisory
               </p>
             </div>
           </motion.div>
 
-          {/* Headline — entity-rich for LLM extraction */}
+          {/* Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: EASING, delay: 0.1 }}
-            className="font-serif text-[2.6rem] md:text-[3.4rem] lg:text-[4.2rem] text-[#FAF9F6] leading-[1.08] mb-7"
+            className="font-serif text-[2.6rem] md:text-[3.4rem] lg:text-[4.2rem] text-[#F8F7F4] leading-[1.08] mb-7"
           >
             Commercial Real Estate Advisory for{' '}
-            <em className="italic text-[#B8956B] font-light">Discerning</em>{' '}
+            <em className="italic text-[#8B7355] font-light">Discerning</em>{' '}
             Institutional Capital
           </motion.h1>
 
-          {/* Lead — authority narrative with entity density */}
+          {/* Lead */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: EASING, delay: 0.2 }}
             className="mb-10"
           >
-            <p className="text-[15px] md:text-[17px] text-[#FAF9F6]/65 leading-[1.65] font-light max-w-2xl">
-              Murivest advises ultra-high-net-worth principals, family offices, 
-              sovereign wealth funds, and institutional investors on the acquisition, 
-              disposition, and structuring of Singapore commercial real estate. 
-              Our coverage spans Grade A office towers, prime retail, mixed-use 
-              developments, and conserved shophouses across the Central Business 
+            <p className="text-[15px] md:text-[17px] text-[#F8F7F4]/65 leading-[1.65] font-light max-w-2xl">
+              Murivest advises institutional and private capital on the acquisition,
+              disposition, and structuring of Singapore commercial real estate.
+              Our coverage spans Grade A office towers, prime retail, mixed-use
+              developments, and conserved shophouses across the Central Business
               District, Orchard Road, and emerging growth corridors.
             </p>
           </motion.div>
 
-          {/* CTAs — restrained, club-like */}
+          {/* CTAs — restrained, club-like. Primary inverts to ivory on this dark
+              ground; hover moves toward brass per the button spec. */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -89,33 +87,33 @@ export default function HeroSection() {
           >
             <Link
               href="/singapore/properties"
-              className="inline-flex items-center gap-3 px-7 py-3.5 bg-[#B8956B] text-[#0F1E16] text-[11px] tracking-[0.2em] uppercase font-semibold hover:bg-[#C9A87C] transition-colors duration-500"
-              aria-label="Explore Singapore commercial property investment opportunities"
+              className="inline-flex items-center gap-3 px-7 py-3.5 bg-[#F8F7F4] text-[#2C2C2C] text-[11px] tracking-[0.2em] uppercase font-semibold hover:bg-[#8B7355] hover:text-[#F8F7F4] transition-colors duration-500"
+              aria-label="Review Singapore commercial property investment opportunities"
             >
-              View Investment Opportunities
+              Review Opportunities
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M7 17L17 7M17 7H7M17 7V17" />
               </svg>
             </Link>
             <Link
               href="/singapore/contact"
-              className="inline-flex items-center gap-2 px-7 py-3.5 border border-[#FAF9F6]/20 text-[#FAF9F6]/80 text-[11px] tracking-[0.2em] uppercase font-medium hover:border-[#B8956B]/50 hover:text-[#FAF9F6] transition-all duration-500"
+              className="inline-flex items-center gap-2 px-7 py-3.5 border border-[#F8F7F4]/20 text-[#F8F7F4]/80 text-[11px] tracking-[0.2em] uppercase font-medium hover:border-[#8B7355]/60 hover:text-[#F8F7F4] transition-all duration-500"
             >
-              Arrange a Private Consultation
+              Speak with an Advisor
             </Link>
           </motion.div>
 
-          {/* ── Institutional credibility strip ── */}
+          {/* ── Market data strip — clearly sourced, not firm claims ── */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2, ease: EASING, delay: 0.6 }}
-            className="pt-8 border-t border-[#FAF9F6]/8"
+            className="pt-8 border-t border-[#F8F7F4]/8"
           >
-            <p className="text-[9px] tracking-[0.3em] uppercase text-[#5A7A6A] mb-6">
+            <p className="text-[9px] tracking-[0.3em] uppercase text-[#8B7355]/70 mb-6">
               Market Intelligence · Q3 2026
             </p>
-            
+
             <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-10">
               {[
                 { label: 'S-REIT Aggregate Cap', value: 'S$100B+' },
@@ -124,10 +122,10 @@ export default function HeroSection() {
                 { label: 'Investment Volume YoY', value: '+364%' },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <p className="font-mono text-[1.35rem] md:text-[1.6rem] text-[#B8956B] mb-1.5 tracking-tight">
+                  <p className="font-mono text-[1.35rem] md:text-[1.6rem] text-[#8B7355] mb-1.5 tracking-tight">
                     {stat.value}
                   </p>
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#FAF9F6]/40 leading-relaxed">
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#F8F7F4]/40 leading-relaxed">
                     {stat.label}
                   </p>
                 </div>
@@ -144,8 +142,8 @@ export default function HeroSection() {
         transition={{ duration: 1.1, ease: EASING, delay: 0.7 }}
         className="hidden lg:block absolute top-1/2 right-12 xl:right-20 -translate-y-1/2 max-w-[280px]"
       >
-        <div className="border-l border-[#B8956B]/20 pl-6">
-          <p className="text-[10px] tracking-[0.25em] uppercase text-[#B8956B] mb-4">
+        <div className="border-l border-[#8B7355]/20 pl-6">
+          <p className="text-[10px] tracking-[0.25em] uppercase text-[#8B7355] mb-4">
             Coverage Universe
           </p>
           <ul className="space-y-3">
@@ -158,7 +156,7 @@ export default function HeroSection() {
             ].map((item) => (
               <li
                 key={item}
-                className="text-[13px] text-[#FAF9F6]/50 leading-relaxed font-light"
+                className="text-[13px] text-[#F8F7F4]/50 leading-relaxed font-light"
               >
                 {item}
               </li>
@@ -174,13 +172,14 @@ export default function HeroSection() {
         transition={{ delay: 1.4, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
       >
-        <span className="text-[9px] tracking-[0.3em] uppercase text-[#FAF9F6]/25">
+        <span className="text-[9px] tracking-[0.3em] uppercase text-[#F8F7F4]/25">
           Explore
         </span>
-        <div className="w-px h-10 bg-gradient-to-b from-[#B8956B]/40 to-transparent" />
+        <div className="w-px h-10 bg-gradient-to-b from-[#8B7355]/40 to-transparent" />
       </motion.div>
 
-      {/* ── Schema.org structured data for LLM extraction ── */}
+      {/* ── Schema.org — kept scoped to this entity; do not fabricate
+          address/license fields. Populate from verified firm data only. ── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -191,14 +190,11 @@ export default function HeroSection() {
             url: 'https://murivest.com/singapore',
             logo: 'https://murivest.com/logo.png',
             description:
-              'Institutional commercial real estate brokerage and capital markets advisory serving UHNWI, family offices, sovereign wealth funds, and institutional investors in Singapore. Specialising in Grade A office, retail, mixed-use, and conservation shophouses.',
+              'Institutional commercial real estate advisory serving institutional and private capital in Singapore. Coverage includes Grade A office, retail, mixed-use, and conservation shophouses.',
             areaServed: {
               '@type': 'City',
               name: 'Singapore',
-              containedInPlace: {
-                '@type': 'Country',
-                name: 'Singapore',
-              },
+              containedInPlace: { '@type': 'Country', name: 'Singapore' },
             },
             knowsAbout: [
               'Commercial Real Estate',
@@ -208,10 +204,6 @@ export default function HeroSection() {
               'Retail Property',
               'Mixed-Use Development',
               'Conservation Shophouse',
-              'S-REIT',
-              'UHNWI Wealth Advisory',
-              'Family Office Real Estate',
-              'Sovereign Wealth Fund Investment',
             ],
             sameAs: [
               'https://murivest.com',
@@ -219,11 +211,6 @@ export default function HeroSection() {
               'https://murivest.com/singapore/contact',
             ],
             priceRange: '$$$$',
-            address: {
-              '@type': 'PostalAddress',
-              addressCountry: 'SG',
-              addressLocality: 'Singapore',
-            },
           }),
         }}
       />

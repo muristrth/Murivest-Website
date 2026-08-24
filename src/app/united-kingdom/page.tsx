@@ -3,36 +3,35 @@ import Image from "next/image";
 import Link from "next/link";
 import InteractiveButton from "@/components/InteractiveButton";
 
-// ─── Colour Tokens (CSS Variables) ─────────────────────────────
+// ─── Colour Tokens (Genesis Palette) ───────────────────────────
 const STYLE_BLOCK = `
   :root {
-    --forest: #1B4332;
-    --forest-light: #2D5A45;
-    --brass: #B8956B;
-    --brass-light: #C9A97D;
-    --cream: #FAF9F6;
-    --cream-dark: #F5F4F0;
-    --charcoal: #1A1A1A;
-    --slate: #4A4A4A;
-    --border: rgba(27, 67, 50, 0.12);
-    --border-light: rgba(27, 67, 50, 0.06);
+    --charcoal: #2C2C2C;
+    --ivory: #F8F7F4;
+    --brass: #8B7355;
+    --grey: #5A5A5A;
+    --hairline: #E5E2DC;
+    --white: #FFFFFF;
   }
-  .m-forest { color: var(--forest); }
-  .m-forest-bg { background-color: var(--forest); }
+  .m-charcoal { color: var(--charcoal); }
+  .m-charcoal-bg { background-color: var(--charcoal); }
   .m-brass { color: var(--brass); }
   .m-brass-bg { background-color: var(--brass); }
-  .m-cream { color: var(--cream); }
-  .m-cream-bg { background-color: var(--cream); }
-  .m-cream-dark-bg { background-color: var(--cream-dark); }
-  .m-slate { color: var(--slate); }
-  .m-border { border-color: var(--border); }
-  .m-border-light { border-color: var(--border-light); }
+  .m-ivory { color: var(--ivory); }
+  .m-ivory-bg { background-color: var(--ivory); }
+  .m-cream-dark-bg { background-color: #F5F4F0; }
+  .m-grey { color: var(--grey); }
+  .m-hairline { border-color: var(--hairline); }
 
-  .font-serif { font-family: 'Times New Roman', Georgia, serif; }
-  .font-sans { font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .font-serif {
+    font-family: 'Playfair Display', 'Cormorant Garamond', 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+  }
+  .font-sans {
+    font-family: 'Montserrat', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  }
 
   .eyebrow {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Montserrat', 'Inter', 'Helvetica Neue', Arial, sans-serif;
     font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 0.2em;
@@ -43,25 +42,27 @@ const STYLE_BLOCK = `
   }
 
   .hover-lift {
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    transition: box-shadow 0.4s ease, transform 0.4s ease, border-color 0.4s ease;
   }
   .hover-lift:hover {
-    box-shadow: 0 12px 40px rgba(27, 67, 50, 0.08);
-    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(44, 44, 44, 0.06);
+    transform: translateY(-3px);
+    border-color: var(--brass);
   }
 
   .market-cell {
     transition: background-color 0.3s ease;
   }
   .market-cell:hover {
-    background-color: var(--forest-light);
+    background-color: rgba(255, 255, 255, 0.04);
   }
 
   .investor-cell {
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
   }
   .investor-cell:hover {
-    background-color: rgba(250, 249, 246, 0.08);
+    background-color: rgba(248, 247, 244, 0.04);
+    border-color: rgba(139, 115, 85, 0.4);
   }
 
   .link-hover {
@@ -72,21 +73,22 @@ const STYLE_BLOCK = `
   }
 
   .footer-link {
-    color: rgba(250, 249, 246, 0.6);
+    color: rgba(248, 247, 244, 0.6);
     transition: color 0.3s ease;
     text-decoration: none;
     font-size: 0.8rem;
   }
   .footer-link:hover {
-    color: var(--cream);
+    color: var(--ivory);
   }
 
   .leadership-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
   }
   .leadership-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(27, 67, 50, 0.08);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 48px rgba(44, 44, 44, 0.06);
+    border-color: var(--brass);
   }
 `;
 
@@ -311,25 +313,23 @@ export default function MurivestUKHomepage() {
       <SchemaWebPage />
       <style>{STYLE_BLOCK}</style>
 
-      <main className="m-cream-bg">
+      <main className="m-ivory-bg">
         {/* ═════════════════════════════════════════════════════════
-            1. HERO (with next/image architectural visual)
+            1. HERO
         ═════════════════════════════════════════════════════════ */}
-        <section className="relative m-forest-bg overflow-hidden">
-          {/* Architectural background image */}
+        <section className="relative m-charcoal-bg overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
               src="/images/hero-london-skyline.jpg"
               alt="Grade A Prime Commercial Real Estate City of London skyline at dusk"
               fill
               priority
-              className="object-cover opacity-20"
+              className="object-cover opacity-[0.12]"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-[#1B4332]/80" />
+            <div className="absolute inset-0 bg-[#2C2C2C]/90" />
           </div>
 
-          {/* Texture overlay */}
           <div
             className="absolute inset-0 z-0 opacity-[0.03]"
             style={{
@@ -337,17 +337,18 @@ export default function MurivestUKHomepage() {
             }}
           />
 
-          <div className="relative z-10 max-w-[1280px] mx-auto px-8 py-32 md:py-40">
+          <div className="relative z-10 max-w-[1280px] mx-auto px-8 py-32 md:py-44">
             <div className="max-w-[800px]">
-              <span className="eyebrow">Institutional Commercial Real Estate</span>
-              <h1 className="font-serif text-[clamp(2.5rem,5vw,4rem)] font-normal leading-[1.1] text-[#FAF9F6] mb-6 tracking-tight">
-                UK Commercial Real Estate Investment & Capital Markets Advisory
+              <span className="eyebrow">United Kingdom Capital Markets</span>
+              <h1 className="font-serif text-[clamp(2.5rem,5.5vw,4.5rem)] font-normal leading-[1.08] text-[#F8F7F4] mb-8 tracking-tight">
+                Commercial Real Estate<br />
+                Investment & <em className="text-[#8B7355] not-italic">Capital Markets.</em>
               </h1>
-              <p className="font-sans text-lg leading-relaxed text-[rgba(250,249,246,0.85)] font-light max-w-[640px] mb-10">
+              <p className="font-sans text-lg leading-relaxed text-[rgba(248,247,244,0.8)] font-light max-w-[640px] mb-12">
                 Institutional-grade advisory for investors acquiring, repositioning and disposing of
                 income-producing commercial real estate across the United Kingdom.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-5">
                 <InteractiveButton href="/invest/submit-mandate" variant="primary">
                   Submit an Acquisition Mandate
                 </InteractiveButton>
@@ -362,13 +363,13 @@ export default function MurivestUKHomepage() {
         {/* ═════════════════════════════════════════════════════════
             2. TRUST / POSITIONING STRIP
         ═════════════════════════════════════════════════════════ */}
-        <section className="m-cream-dark-bg border-b m-border">
-          <div className="max-w-[1280px] mx-auto px-8 py-12 text-center">
+        <section className="m-cream-dark-bg border-b m-hairline">
+          <div className="max-w-[1280px] mx-auto px-8 py-14 text-center">
             <span className="eyebrow">The Concierge of Capital</span>
-            <h2 className="font-serif text-[clamp(1.25rem,2.5vw,1.75rem)] font-normal text-[#1B4332] mb-4 leading-snug">
+            <h2 className="font-serif text-[clamp(1.25rem,2.5vw,1.85rem)] font-normal text-[#2C2C2C] mb-5 leading-snug">
               Commercial Real Estate. Investment Intelligence. Capital Access.
             </h2>
-            <p className="font-sans text-base leading-relaxed font-light text-[#4A4A4A] max-w-[720px] mx-auto">
+            <p className="font-sans text-base leading-relaxed font-light text-[#5A5A5A] max-w-[720px] mx-auto">
               Murivest provides a private, investment-led approach to commercial real estate acquisition
               and advisory, connecting qualified capital with carefully selected opportunities across the
               markets we serve.
@@ -379,29 +380,29 @@ export default function MurivestUKHomepage() {
         {/* ═════════════════════════════════════════════════════════
             3. RESEARCH & MARKET INTELLIGENCE STRIP
         ═════════════════════════════════════════════════════════ */}
-        <section className="m-cream-bg border-b m-border">
-          <div className="max-w-[1280px] mx-auto px-8 py-12">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-center">
+        <section className="m-ivory-bg border-b m-hairline">
+          <div className="max-w-[1280px] mx-auto px-8 py-14">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 items-start">
               <div>
                 <span className="eyebrow">Latest UK CRE Intelligence</span>
-                <h3 className="font-serif text-xl text-[#1B4332] mb-2">
+                <h3 className="font-serif text-[1.35rem] text-[#2C2C2C] mb-3 leading-snug">
                   UK Commercial Real Estate Outlook 2026
                 </h3>
-                <Link href="/research/uk-cre-outlook-2026" className="link-hover font-sans text-xs font-semibold tracking-widest uppercase text-[#1B4332] inline-flex items-center gap-2">
+                <Link href="/research/uk-cre-outlook-2026" className="link-hover font-sans text-xs font-semibold tracking-[0.15em] uppercase text-[#2C2C2C] inline-flex items-center gap-2">
                   Read the Report <span className="text-base">→</span>
                 </Link>
               </div>
-              <div className="border-l-2 border-[#B8956B] pl-5">
-                <p className="font-sans text-[0.7rem] font-medium tracking-[0.15em] uppercase text-[#4A4A4A] mb-2">Markets Covered</p>
-                <p className="font-serif text-[1.1rem] text-[#1B4332]">London · Birmingham · Manchester · Leeds · Edinburgh · Glasgow</p>
+              <div className="border-l border-[#8B7355] pl-6">
+                <p className="font-sans text-[0.7rem] font-medium tracking-[0.15em] uppercase text-[#5A5A5A] mb-2">Markets Covered</p>
+                <p className="font-serif text-[1.05rem] text-[#2C2C2C] leading-snug">London · Birmingham · Manchester · Leeds · Edinburgh · Glasgow</p>
               </div>
-              <div className="border-l-2 border-[#B8956B] pl-5">
-                <p className="font-sans text-[0.7rem] font-medium tracking-[0.15em] uppercase text-[#4A4A4A] mb-2">Sectors</p>
-                <p className="font-serif text-[1.1rem] text-[#1B4332]">Offices · Industrial · Logistics · Retail · Healthcare · Alternatives</p>
+              <div className="border-l border-[#8B7355] pl-6">
+                <p className="font-sans text-[0.7rem] font-medium tracking-[0.15em] uppercase text-[#5A5A5A] mb-2">Sectors</p>
+                <p className="font-serif text-[1.05rem] text-[#2C2C2C] leading-snug">Offices · Industrial · Logistics · Retail · Healthcare · Alternatives</p>
               </div>
-              <div className="border-l-2 border-[#B8956B] pl-5">
-                <p className="font-sans text-[0.7rem] font-medium tracking-[0.15em] uppercase text-[#4A4A4A] mb-2">Investor Focus</p>
-                <p className="font-serif text-[1.1rem] text-[#1B4332]">Private · Institutional · Cross-Border</p>
+              <div className="border-l border-[#8B7355] pl-6">
+                <p className="font-sans text-[0.7rem] font-medium tracking-[0.15em] uppercase text-[#5A5A5A] mb-2">Investor Focus</p>
+                <p className="font-serif text-[1.05rem] text-[#2C2C2C] leading-snug">Private · Institutional · Cross-Border</p>
               </div>
             </div>
           </div>
@@ -410,22 +411,22 @@ export default function MurivestUKHomepage() {
         {/* ═════════════════════════════════════════════════════════
             4. INVEST & ACQUIRE
         ═════════════════════════════════════════════════════════ */}
-        <section className="m-cream-bg py-24">
+        <section className="m-ivory-bg py-24 md:py-32">
           <div className="max-w-[1280px] mx-auto px-8">
             <div className="text-center mb-16">
               <span className="eyebrow">Invest & Acquire</span>
-              <h2 className="font-serif text-[clamp(1.75rem,3vw,2.5rem)] font-normal text-[#1B4332] leading-snug">
+              <h2 className="font-serif text-[clamp(1.75rem,3.5vw,2.75rem)] font-normal text-[#2C2C2C] leading-snug">
                 UK Investment & Capital Markets
               </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px] bg-[rgba(27,67,50,0.12)]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-[#E5E2DC]">
               {INVEST_PILLARS.map((p) => (
-                <div key={p.title} className="m-cream-bg p-10 flex flex-col justify-between min-h-[340px]">
+                <div key={p.title} className="m-ivory-bg p-10 md:p-12 flex flex-col justify-between min-h-[360px]">
                   <div>
-                    <h3 className="font-serif text-[1.35rem] font-normal text-[#1B4332] mb-4 leading-tight">{p.title}</h3>
-                    <p className="font-sans text-[0.95rem] leading-relaxed text-[#4A4A4A] font-light">{p.body}</p>
+                    <h3 className="font-serif text-[1.4rem] font-normal text-[#2C2C2C] mb-5 leading-tight">{p.title}</h3>
+                    <p className="font-sans text-[0.95rem] leading-[1.7] text-[#5A5A5A] font-light">{p.body}</p>
                   </div>
-                  <Link href={p.href} className="link-hover font-sans text-xs font-semibold tracking-[0.12em] uppercase text-[#1B4332] inline-flex items-center gap-2 mt-8">
+                  <Link href={p.href} className="link-hover font-sans text-xs font-semibold tracking-[0.12em] uppercase text-[#2C2C2C] inline-flex items-center gap-2 mt-10">
                     {p.cta} <span className="text-base">→</span>
                   </Link>
                 </div>
@@ -437,41 +438,41 @@ export default function MurivestUKHomepage() {
         {/* ═════════════════════════════════════════════════════════
             5. INVESTMENT OPPORTUNITIES
         ═════════════════════════════════════════════════════════ */}
-        <section className="m-cream-dark-bg py-24">
+        <section className="bg-white py-24 md:py-32 border-y m-hairline">
           <div className="max-w-[1280px] mx-auto px-8">
-            <div className="mb-12">
+            <div className="mb-14">
               <span className="eyebrow">Investment Opportunities</span>
-              <h2 className="font-serif text-[clamp(1.75rem,3vw,2.5rem)] font-normal text-[#1B4332] mb-4 leading-snug">
+              <h2 className="font-serif text-[clamp(1.75rem,3.5vw,2.75rem)] font-normal text-[#2C2C2C] mb-5 leading-snug">
                 Selected UK Investment Opportunities
               </h2>
-              <p className="font-sans text-base leading-relaxed font-light text-[#4A4A4A] max-w-[720px]">
+              <p className="font-sans text-base leading-relaxed font-light text-[#5A5A5A] max-w-[720px]">
                 Representative opportunities across our coverage. All subject to mandate, confidentiality
                 and appropriate due diligence.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-14">
               {[
                 { asset: "Industrial & Logistics", location: "Manchester", detail: "£XXm · XX% net initial yield", type: "Public Opportunity" },
                 { asset: "Office", location: "London", detail: "£XXm · XX-year WAULT", type: "Private / Off-Market" },
                 { asset: "Retail", location: "Birmingham", detail: "£XXm · XX% passing yield", type: "Public Opportunity" },
               ].map((opp) => (
-                <div key={opp.asset} className="hover-lift border m-border p-8 m-cream-bg cursor-pointer">
-                  <span className="inline-block font-sans text-[0.65rem] font-semibold tracking-[0.15em] uppercase text-[#B8956B] border border-[#B8956B] px-3 py-1 mb-5">
+                <div key={opp.asset} className="hover-lift border m-hairline p-10 bg-white cursor-pointer">
+                  <span className="inline-block font-sans text-[0.65rem] font-semibold tracking-[0.15em] uppercase text-[#8B7355] border border-[#8B7355] px-3 py-1 mb-6">
                     {opp.type}
                   </span>
-                  <h3 className="font-serif text-[1.15rem] font-normal text-[#1B4332] mb-2">{opp.asset}</h3>
-                  <p className="font-serif text-[1.05rem] text-[#1B4332] mb-2">{opp.location}</p>
-                  <p className="font-sans text-[0.85rem] text-[#4A4A4A] font-light">{opp.detail}</p>
+                  <h3 className="font-serif text-[1.2rem] font-normal text-[#2C2C2C] mb-2">{opp.asset}</h3>
+                  <p className="font-serif text-base text-[#2C2C2C] mb-3">{opp.location}</p>
+                  <p className="font-sans text-[0.85rem] text-[#5A5A5A] font-light">{opp.detail}</p>
                 </div>
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-wrap gap-6 items-center">
               <InteractiveButton href="/invest/opportunities" variant="dark">
                 Access Full Opportunity Set
               </InteractiveButton>
-              <Link href="/invest/off-market" className="link-hover font-sans text-xs font-semibold tracking-[0.12em] uppercase text-[#1B4332] inline-flex items-center gap-2 py-4">
+              <Link href="/invest/off-market" className="link-hover font-sans text-xs font-semibold tracking-[0.12em] uppercase text-[#2C2C2C] inline-flex items-center gap-2 py-4">
                 Discuss Off-Market Access <span className="text-base">→</span>
               </Link>
             </div>
@@ -479,29 +480,29 @@ export default function MurivestUKHomepage() {
         </section>
 
         {/* ═════════════════════════════════════════════════════════
-            6. SECTORS (with architectural imagery)
+            6. SECTORS
         ═════════════════════════════════════════════════════════ */}
-        <section className="m-cream-bg py-24">
+        <section className="m-ivory-bg py-24 md:py-32">
           <div className="max-w-[1280px] mx-auto px-8">
             <div className="text-center mb-16">
               <span className="eyebrow">Sectors</span>
-              <h2 className="font-serif text-[clamp(1.75rem,3vw,2.5rem)] font-normal text-[#1B4332] leading-snug">
+              <h2 className="font-serif text-[clamp(1.75rem,3.5vw,2.75rem)] font-normal text-[#2C2C2C] leading-snug">
                 Our UK Commercial Real Estate Coverage
               </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {SECTORS.map((sector) => (
-                <div key={sector.title} className="hover-lift border m-border p-10 m-cream-bg cursor-pointer">
-                  <span className="inline-block font-sans text-[0.65rem] font-semibold tracking-[0.15em] uppercase text-[#B8956B] border border-[#B8956B] px-3 py-1 mb-5">
+                <div key={sector.title} className="hover-lift border m-hairline p-10 bg-white cursor-pointer">
+                  <span className="inline-block font-sans text-[0.65rem] font-semibold tracking-[0.15em] uppercase text-[#8B7355] border border-[#8B7355] px-3 py-1 mb-6">
                     {sector.tag}
                   </span>
-                  <h3 className="font-serif text-[1.25rem] font-normal text-[#1B4332] mb-3">{sector.title}</h3>
-                  <p className="font-sans text-[0.9rem] leading-relaxed text-[#4A4A4A] font-light">{sector.desc}</p>
+                  <h3 className="font-serif text-[1.25rem] font-normal text-[#2C2C2C] mb-4">{sector.title}</h3>
+                  <p className="font-sans text-[0.9rem] leading-[1.7] text-[#5A5A5A] font-light">{sector.desc}</p>
                 </div>
               ))}
             </div>
-            <div className="text-center mt-12">
-              <Link href="/sectors" className="link-hover font-sans text-xs font-semibold tracking-[0.12em] uppercase text-[#1B4332] inline-flex items-center gap-2">
+            <div className="text-center mt-14">
+              <Link href="/sectors" className="link-hover font-sans text-xs font-semibold tracking-[0.12em] uppercase text-[#2C2C2C] inline-flex items-center gap-2">
                 Explore UK Sectors <span className="text-base">→</span>
               </Link>
             </div>
@@ -511,29 +512,29 @@ export default function MurivestUKHomepage() {
         {/* ═════════════════════════════════════════════════════════
             7. UK MARKETS
         ═════════════════════════════════════════════════════════ */}
-        <section className="m-forest-bg text-[#FAF9F6] py-24">
+        <section className="m-charcoal-bg text-[#F8F7F4] py-24 md:py-32">
           <div className="max-w-[1280px] mx-auto px-8">
-            <div className="text-center mb-12">
+            <div className="text-center mb-14">
               <span className="eyebrow">Markets</span>
-              <h2 className="font-serif text-[clamp(1.75rem,3vw,2.5rem)] font-normal text-[#FAF9F6] mb-6 leading-snug">
+              <h2 className="font-serif text-[clamp(1.75rem,3.5vw,2.75rem)] font-normal text-[#F8F7F4] mb-6 leading-snug">
                 UK Commercial Real Estate Markets
               </h2>
-              <p className="font-sans text-base leading-relaxed font-light text-[rgba(250,249,246,0.75)] max-w-[720px] mx-auto">
+              <p className="font-sans text-base leading-relaxed font-light text-[rgba(248,247,244,0.75)] max-w-[720px] mx-auto">
                 Murivest provides commercial real estate investment and acquisition advisory across
-                London's principal investment markets and the UK's major regional commercial centres.
+                London&apos;s principal investment markets and the UK&apos;s major regional commercial centres.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-[rgba(250,249,246,0.1)]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-[rgba(248,247,244,0.12)]">
               {MARKETS.map((m) => (
-                <div key={m.city} className="market-cell p-8 m-forest-bg cursor-pointer">
-                  <h3 className="font-serif text-[1.25rem] font-normal text-[#FAF9F6] mb-2">{m.city}</h3>
-                  <p className="font-sans text-[0.85rem] leading-relaxed text-[rgba(250,249,246,0.7)] font-light">{m.desc}</p>
+                <div key={m.city} className="market-cell p-8 m-charcoal-bg cursor-pointer">
+                  <h3 className="font-serif text-[1.25rem] font-normal text-[#F8F7F4] mb-3">{m.city}</h3>
+                  <p className="font-sans text-[0.85rem] leading-[1.7] text-[rgba(248,247,244,0.7)] font-light">{m.desc}</p>
                 </div>
               ))}
             </div>
 
-            <div className="text-center mt-12">
+            <div className="text-center mt-14">
               <InteractiveButton href="/markets" variant="secondary">
                 Explore UK Markets
               </InteractiveButton>
@@ -544,24 +545,24 @@ export default function MurivestUKHomepage() {
         {/* ═════════════════════════════════════════════════════════
             8. INVESTMENT METHODOLOGY
         ═════════════════════════════════════════════════════════ */}
-        <section className="m-cream-bg py-24">
+        <section className="m-ivory-bg py-24 md:py-32">
           <div className="max-w-[1280px] mx-auto px-8">
             <div className="text-center mb-16">
               <span className="eyebrow">Our Approach</span>
-              <h2 className="font-serif text-[clamp(1.75rem,3vw,2.5rem)] font-normal text-[#1B4332] leading-snug">
+              <h2 className="font-serif text-[clamp(1.75rem,3.5vw,2.75rem)] font-normal text-[#2C2C2C] leading-snug">
                 How We Assess an Investment
               </h2>
-              <p className="font-sans text-base leading-relaxed font-light text-[#4A4A4A] max-w-[640px] mx-auto mt-4">
+              <p className="font-sans text-base leading-relaxed font-light text-[#5A5A5A] max-w-[640px] mx-auto mt-5">
                 Evidence-led. Mandate-driven. Disciplined.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {METHODOLOGY.map((m) => (
-                <div key={m.step} className="hover-lift border m-border p-10 m-cream-bg">
-                  <p className="font-serif text-[2.5rem] font-normal text-[#B8956B] leading-none mb-4">{m.step}</p>
-                  <h3 className="font-serif text-[1.15rem] font-normal text-[#1B4332] mb-3">{m.title}</h3>
-                  <p className="font-sans text-[0.9rem] leading-relaxed text-[#4A4A4A] font-light">{m.desc}</p>
+                <div key={m.step} className="hover-lift border m-hairline p-10 bg-white">
+                  <p className="font-serif text-[2.75rem] font-normal text-[#8B7355] leading-none mb-5">{m.step}</p>
+                  <h3 className="font-serif text-[1.2rem] font-normal text-[#2C2C2C] mb-4">{m.title}</h3>
+                  <p className="font-sans text-[0.9rem] leading-[1.7] text-[#5A5A5A] font-light">{m.desc}</p>
                 </div>
               ))}
             </div>
@@ -571,16 +572,16 @@ export default function MurivestUKHomepage() {
         {/* ═════════════════════════════════════════════════════════
             9. INSTITUTIONAL NARRATIVE
         ═════════════════════════════════════════════════════════ */}
-        <section className="m-cream-dark-bg py-24 border-t m-border">
+        <section className="m-cream-dark-bg py-24 md:py-32 border-y m-hairline">
           <div className="max-w-[960px] mx-auto px-8 text-center">
             <span className="eyebrow">Our Approach</span>
-            <h2 className="font-serif text-[clamp(1.5rem,3vw,2.25rem)] font-normal text-[#1B4332] mb-8 leading-snug">
+            <h2 className="font-serif text-[clamp(1.5rem,3vw,2.25rem)] font-normal text-[#2C2C2C] mb-10 leading-snug">
               From initial asset identification and technical due diligence to structured capital
               sourcing and final execution under Transfer of a Going Concern (TOGC) or asset-share
               structures, our advisory team ensures seamless transaction processing aligned with UK
               regulatory frameworks.
             </h2>
-            <p className="font-sans text-base leading-relaxed font-light text-[#4A4A4A]">
+            <p className="font-sans text-base leading-[1.8] font-light text-[#5A5A5A]">
               Murivest provides institutional investors, private equity funds, and family offices with
               bespoke acquisition, disposition, and asset management advisory across the United
               Kingdom&apos;s primary commercial corridors. By combining rigorous quantitative underwriting
@@ -593,11 +594,11 @@ export default function MurivestUKHomepage() {
         {/* ═════════════════════════════════════════════════════════
             10. WHY MURIVEST
         ═════════════════════════════════════════════════════════ */}
-        <section className="m-cream-bg py-24">
+        <section className="m-ivory-bg py-24 md:py-32">
           <div className="max-w-[1280px] mx-auto px-8">
             <div className="text-center mb-16">
               <span className="eyebrow">Why Murivest</span>
-              <h2 className="font-serif text-[clamp(1.75rem,3vw,2.5rem)] font-normal text-[#1B4332] leading-snug">
+              <h2 className="font-serif text-[clamp(1.75rem,3.5vw,2.75rem)] font-normal text-[#2C2C2C] leading-snug">
                 Built for Private and Institutional Capital
               </h2>
             </div>
@@ -608,9 +609,9 @@ export default function MurivestUKHomepage() {
                 { title: "Research-Led", body: "Our investment perspective is informed by market intelligence, asset-level analysis and sector research—not presentation alone." },
                 { title: "Cross-Border", body: "We support investors evaluating UK real estate from international markets, providing market access and acquisition coordination." },
               ].map((w) => (
-                <div key={w.title} className="p-8 border-l-2 border-[#B8956B]">
-                  <h3 className="font-serif text-[1.15rem] font-normal text-[#1B4332] mb-3">{w.title}</h3>
-                  <p className="font-sans text-[0.9rem] leading-relaxed text-[#4A4A4A] font-light">{w.body}</p>
+                <div key={w.title} className="p-8 border-l-2 border-[#8B7355]">
+                  <h3 className="font-serif text-[1.15rem] font-normal text-[#2C2C2C] mb-4">{w.title}</h3>
+                  <p className="font-sans text-[0.9rem] leading-[1.7] text-[#5A5A5A] font-light">{w.body}</p>
                 </div>
               ))}
             </div>
@@ -618,16 +619,16 @@ export default function MurivestUKHomepage() {
         </section>
 
         {/* ═════════════════════════════════════════════════════════
-            11. RESEARCH & INSIGHTS (Gated)
+            11. RESEARCH & INSIGHTS
         ═════════════════════════════════════════════════════════ */}
-        <section className="m-cream-dark-bg py-24">
+        <section className="m-cream-dark-bg py-24 md:py-32">
           <div className="max-w-[1280px] mx-auto px-8">
-            <div className="mb-12">
+            <div className="mb-14">
               <span className="eyebrow">Research & Investment Intelligence</span>
-              <h2 className="font-serif text-[clamp(1.75rem,3vw,2.5rem)] font-normal text-[#1B4332] mb-4 leading-snug">
+              <h2 className="font-serif text-[clamp(1.75rem,3.5vw,2.75rem)] font-normal text-[#2C2C2C] mb-5 leading-snug">
                 Independent Thinking for Better Capital Allocation
               </h2>
-              <p className="font-sans text-base leading-relaxed font-light text-[#4A4A4A] max-w-[720px]">
+              <p className="font-sans text-base leading-relaxed font-light text-[#5A5A5A] max-w-[720px]">
                 Our research examines the forces shaping UK commercial real estate markets, including
                 capital flows, investment yields, occupational demand, rental growth, financing
                 conditions, development pipelines and changing investor preferences.
@@ -636,12 +637,12 @@ export default function MurivestUKHomepage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {RESEARCH.map((r) => (
-                <div key={r.title} className="hover-lift border m-border p-10 m-cream-bg">
-                  <span className="block font-sans text-[0.65rem] font-semibold tracking-[0.15em] uppercase text-[#B8956B] mb-4">
+                <div key={r.title} className="hover-lift border m-hairline p-10 bg-white flex flex-col">
+                  <span className="block font-sans text-[0.65rem] font-semibold tracking-[0.15em] uppercase text-[#8B7355] mb-5">
                     {r.category}
                   </span>
-                  <h3 className="font-serif text-[1.15rem] font-normal text-[#1B4332] mb-3">{r.title}</h3>
-                  <p className="font-sans text-[0.9rem] leading-relaxed text-[#4A4A4A] font-light mb-6">{r.desc}</p>
+                  <h3 className="font-serif text-[1.15rem] font-normal text-[#2C2C2C] mb-4 leading-snug">{r.title}</h3>
+                  <p className="font-sans text-[0.9rem] leading-[1.7] text-[#5A5A5A] font-light mb-8 flex-grow">{r.desc}</p>
                   <InteractiveButton href="/research/download" variant="outline-dark" className="w-full text-center">
                     Download Report
                   </InteractiveButton>
@@ -650,7 +651,7 @@ export default function MurivestUKHomepage() {
             </div>
 
             <div className="mt-12">
-              <Link href="/research" className="link-hover font-sans text-xs font-semibold tracking-[0.12em] uppercase text-[#1B4332] inline-flex items-center gap-2">
+              <Link href="/research" className="link-hover font-sans text-xs font-semibold tracking-[0.12em] uppercase text-[#2C2C2C] inline-flex items-center gap-2">
                 Explore Research & Insights <span className="text-base">→</span>
               </Link>
             </div>
@@ -658,16 +659,16 @@ export default function MurivestUKHomepage() {
         </section>
 
         {/* ═════════════════════════════════════════════════════════
-            12. LEADERSHIP / DEAL TEAM (E-E-A-T)
+            12. LEADERSHIP / DEAL TEAM
         ═════════════════════════════════════════════════════════ */}
-        <section className="m-cream-bg py-24 border-t m-border">
+        <section className="m-ivory-bg py-24 md:py-32 border-t m-hairline">
           <div className="max-w-[1280px] mx-auto px-8">
             <div className="text-center mb-16">
               <span className="eyebrow">Leadership</span>
-              <h2 className="font-serif text-[clamp(1.75rem,3vw,2.5rem)] font-normal text-[#1B4332] leading-snug">
+              <h2 className="font-serif text-[clamp(1.75rem,3.5vw,2.75rem)] font-normal text-[#2C2C2C] leading-snug">
                 UK Investment Leadership
               </h2>
-              <p className="font-sans text-base leading-relaxed font-light text-[#4A4A4A] max-w-[640px] mx-auto mt-4">
+              <p className="font-sans text-base leading-relaxed font-light text-[#5A5A5A] max-w-[640px] mx-auto mt-5">
                 Institutional capital invests in people, not just brands. Our senior partners bring
                 decades of cross-border transaction and advisory experience.
               </p>
@@ -675,7 +676,7 @@ export default function MurivestUKHomepage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
               {LEADERSHIP.map((person) => (
-                <div key={person.name} className="leadership-card border m-border m-cream-bg overflow-hidden">
+                <div key={person.name} className="leadership-card border m-hairline bg-white overflow-hidden">
                   <div className="relative h-80 w-full bg-[#F5F4F0]">
                     <Image
                       src={person.image}
@@ -686,18 +687,18 @@ export default function MurivestUKHomepage() {
                     />
                   </div>
                   <div className="p-8">
-                    <h3 className="font-serif text-[1.25rem] font-normal text-[#1B4332] mb-1">{person.name}</h3>
-                    <p className="font-sans text-[0.75rem] font-semibold tracking-[0.15em] uppercase text-[#B8956B] mb-4">
+                    <h3 className="font-serif text-[1.25rem] font-normal text-[#2C2C2C] mb-1">{person.name}</h3>
+                    <p className="font-sans text-[0.75rem] font-semibold tracking-[0.15em] uppercase text-[#8B7355] mb-5">
                       {person.role}
                     </p>
-                    <p className="font-sans text-[0.9rem] leading-relaxed text-[#4A4A4A] font-light mb-6">
+                    <p className="font-sans text-[0.9rem] leading-[1.7] text-[#5A5A5A] font-light mb-6">
                       {person.bio}
                     </p>
                     <a
                       href={person.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="link-hover font-sans text-xs font-semibold tracking-[0.12em] uppercase text-[#1B4332] inline-flex items-center gap-2"
+                      className="link-hover font-sans text-xs font-semibold tracking-[0.12em] uppercase text-[#2C2C2C] inline-flex items-center gap-2"
                     >
                       LinkedIn Profile <span className="text-base">→</span>
                     </a>
@@ -711,29 +712,29 @@ export default function MurivestUKHomepage() {
         {/* ═════════════════════════════════════════════════════════
             13. CASE STUDIES / SELECTED MANDATES
         ═════════════════════════════════════════════════════════ */}
-        <section className="m-cream-bg py-24">
+        <section className="m-ivory-bg py-24 md:py-32">
           <div className="max-w-[1280px] mx-auto px-8">
-            <div className="mb-12">
+            <div className="mb-14">
               <span className="eyebrow">Track Record</span>
-              <h2 className="font-serif text-[clamp(1.75rem,3vw,2.5rem)] font-normal text-[#1B4332] mb-4 leading-snug">
+              <h2 className="font-serif text-[clamp(1.75rem,3.5vw,2.75rem)] font-normal text-[#2C2C2C] mb-5 leading-snug">
                 Selected Transactions & Investment Cases
               </h2>
-              <p className="font-sans text-base leading-relaxed font-light text-[#4A4A4A] max-w-[720px]">
+              <p className="font-sans text-base leading-relaxed font-light text-[#5A5A5A] max-w-[720px]">
                 Representative mandates and advisory engagements across our UK coverage.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {CASES.map((c) => (
-                <div key={c.title} className="hover-lift border m-border p-10 m-cream-bg">
-                  <span className="inline-block font-sans text-[0.65rem] font-semibold tracking-[0.15em] uppercase text-[#B8956B] border border-[#B8956B] px-3 py-1 mb-5">
+                <div key={c.title} className="hover-lift border m-hairline p-10 bg-white">
+                  <span className="inline-block font-sans text-[0.65rem] font-semibold tracking-[0.15em] uppercase text-[#8B7355] border border-[#8B7355] px-3 py-1 mb-6">
                     {c.status}
                   </span>
-                  <h3 className="font-serif text-[1.15rem] font-normal text-[#1B4332] mb-2">{c.title}</h3>
-                  <p className="font-serif text-base text-[#1B4332] mb-4">{c.location}</p>
+                  <h3 className="font-serif text-[1.2rem] font-normal text-[#2C2C2C] mb-2">{c.title}</h3>
+                  <p className="font-serif text-base text-[#2C2C2C] mb-5">{c.location}</p>
                   <div className="flex flex-wrap gap-2">
                     {c.tags.map((tag) => (
-                      <span key={tag} className="font-sans text-[0.7rem] text-[#4A4A4A] bg-[#F5F4F0] px-2 py-1 rounded-sm">
+                      <span key={tag} className="font-sans text-[0.7rem] text-[#5A5A5A] bg-[#F5F4F0] px-2 py-1">
                         {tag}
                       </span>
                     ))}
@@ -747,20 +748,20 @@ export default function MurivestUKHomepage() {
         {/* ═════════════════════════════════════════════════════════
             14. INVESTOR TYPES
         ═════════════════════════════════════════════════════════ */}
-        <section className="m-forest-bg text-[#FAF9F6] py-24">
+        <section className="m-charcoal-bg text-[#F8F7F4] py-24 md:py-32">
           <div className="max-w-[1280px] mx-auto px-8">
             <div className="text-center mb-16">
               <span className="eyebrow">Capital We Advise</span>
-              <h2 className="font-serif text-[clamp(1.75rem,3vw,2.5rem)] font-normal text-[#FAF9F6] leading-snug">
+              <h2 className="font-serif text-[clamp(1.75rem,3.5vw,2.75rem)] font-normal text-[#F8F7F4] leading-snug">
                 Investors We Serve
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
               {INVESTOR_TYPES.map((i) => (
-                <div key={i.title} className="investor-cell p-8 border border-[rgba(250,249,246,0.15)] bg-[rgba(250,249,246,0.03)]">
-                  <h3 className="font-serif text-[1.15rem] font-normal text-[#FAF9F6] mb-3">{i.title}</h3>
-                  <p className="font-sans text-[0.85rem] leading-relaxed text-[rgba(250,249,246,0.7)] font-light">{i.desc}</p>
+                <div key={i.title} className="investor-cell p-8 border border-[rgba(248,247,244,0.12)] bg-[rgba(248,247,244,0.02)]">
+                  <h3 className="font-serif text-[1.15rem] font-normal text-[#F8F7F4] mb-4">{i.title}</h3>
+                  <p className="font-sans text-[0.85rem] leading-[1.7] text-[rgba(248,247,244,0.7)] font-light">{i.desc}</p>
                 </div>
               ))}
             </div>
@@ -770,34 +771,14 @@ export default function MurivestUKHomepage() {
         {/* ═════════════════════════════════════════════════════════
             15. TRUST & REGULATION STRIP
         ═════════════════════════════════════════════════════════ */}
-        <section className="m-cream-dark-bg py-16 border-y m-border">
+        <section className="m-cream-dark-bg py-16 border-y m-hairline">
           <div className="max-w-[1280px] mx-auto px-8 text-center">
-            <span className="eyebrow">Regulated & Compliant</span>
-            <div className="flex flex-wrap justify-center items-center gap-12 mt-8 opacity-60 grayscale">
-              {/* Replace these divs with actual logo images when available */}
-              <div className="flex flex-col items-center gap-2">
-                <div className="w-24 h-12 bg-[#1B4332] rounded-sm flex items-center justify-center">
-                  <span className="font-serif text-[#FAF9F6] text-xs tracking-widest uppercase">RICS</span>
-                </div>
-                <span className="font-sans text-[0.65rem] tracking-widest uppercase text-[#4A4A4A]">Royal Institution of Chartered Surveyors</span>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <div className="w-24 h-12 bg-[#1B4332] rounded-sm flex items-center justify-center">
-                  <span className="font-serif text-[#FAF9F6] text-xs tracking-widest uppercase">AML</span>
-                </div>
-                <span className="font-sans text-[0.65rem] tracking-widest uppercase text-[#4A4A4A]">Anti-Money Laundering</span>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <div className="w-24 h-12 bg-[#1B4332] rounded-sm flex items-center justify-center">
-                  <span className="font-serif text-[#FAF9F6] text-xs tracking-widest uppercase">GDPR</span>
-                </div>
-                <span className="font-sans text-[0.65rem] tracking-widest uppercase text-[#4A4A4A]">Data Protection</span>
-              </div>
-            </div>
-            <p className="font-sans text-[0.75rem] text-[#4A4A4A] font-light mt-8 max-w-[640px] mx-auto">
+            <span className="eyebrow">Professional Standards</span>
+            <p className="font-sans text-[0.85rem] leading-[1.8] text-[#5A5A5A] font-light mt-6 max-w-[720px] mx-auto">
               Murivest maintains strict professional and regulatory standards across all UK advisory
               activities. All transactions are subject to appropriate legal review, due diligence and
-              compliance protocols.
+              compliance protocols. We do not provide regulated investment advice or carry out
+              reserved instrument activities.
             </p>
           </div>
         </section>
@@ -805,13 +786,13 @@ export default function MurivestUKHomepage() {
         {/* ═════════════════════════════════════════════════════════
             16. ACQUISITION MANDATE CTA
         ═════════════════════════════════════════════════════════ */}
-        <section className="m-cream-dark-bg py-20 border-t m-border">
-          <div className="max-w-[1280px] mx-auto px-8 flex flex-wrap justify-between items-center gap-8">
+        <section className="m-cream-dark-bg py-20 border-t m-hairline">
+          <div className="max-w-[1280px] mx-auto px-8 flex flex-wrap justify-between items-center gap-10">
             <div className="max-w-[640px]">
-              <h3 className="font-serif text-[clamp(1.25rem,2.5vw,1.75rem)] font-normal text-[#1B4332] mb-3 leading-snug">
+              <h3 className="font-serif text-[clamp(1.25rem,2.5vw,1.75rem)] font-normal text-[#2C2C2C] mb-4 leading-snug">
                 Discuss your UK acquisition mandate
               </h3>
-              <p className="font-sans text-[0.95rem] leading-relaxed text-[#4A4A4A] font-light">
+              <p className="font-sans text-[0.95rem] leading-[1.7] text-[#5A5A5A] font-light">
                 Private advisory for institutional capital deployment. Submit your investment
                 criteria and our team will respond subject to confidentiality.
               </p>
@@ -825,68 +806,63 @@ export default function MurivestUKHomepage() {
         {/* ═════════════════════════════════════════════════════════
             17. FOOTER
         ═════════════════════════════════════════════════════════ */}
-        <footer className="m-forest-bg text-[rgba(250,249,246,0.6)] py-20 pb-8">
+        <footer className="m-charcoal-bg text-[rgba(248,247,244,0.6)] py-20 pb-10">
           <div className="max-w-[1280px] mx-auto px-8">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 mb-16">
-              {/* Brand */}
               <div className="col-span-2 md:col-span-1">
-                <p className="font-serif text-[1.25rem] text-[#FAF9F6] mb-4 tracking-widest uppercase">Murivest</p>
-                <p className="font-sans text-[0.8rem] leading-relaxed font-light">
+                <p className="font-serif text-[1.25rem] text-[#F8F7F4] mb-4 tracking-[0.15em] uppercase">Murivest</p>
+                <p className="font-sans text-[0.8rem] leading-[1.7] font-light">
                   Institutional commercial real estate advisory and capital markets.
                   Operating across UK commercial real estate markets.
                 </p>
               </div>
 
-              {/* Investment */}
               <div>
-                <p className="font-sans text-[0.7rem] font-semibold tracking-[0.15em] uppercase text-[#B8956B] mb-4">Investment</p>
+                <p className="font-sans text-[0.7rem] font-semibold tracking-[0.15em] uppercase text-[#8B7355] mb-5">Investment</p>
                 <ul className="list-none p-0 m-0">
                   {["Investment Opportunities", "Acquisition Advisory", "Capital Markets", "Off-Market Opportunities", "Portfolio Advisory"].map((item) => (
-                    <li key={item} className="mb-2">
+                    <li key={item} className="mb-2.5">
                       <Link href={`/${slugify(item)}`} className="footer-link">{item}</Link>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Sectors */}
               <div>
-                <p className="font-sans text-[0.7rem] font-semibold tracking-[0.15em] uppercase text-[#B8956B] mb-4">Sectors</p>
+                <p className="font-sans text-[0.7rem] font-semibold tracking-[0.15em] uppercase text-[#8B7355] mb-5">Sectors</p>
                 <ul className="list-none p-0 m-0">
                   {["Offices", "Industrial & Logistics", "Retail", "Hotels & Hospitality", "Healthcare", "Life Sciences", "Alternatives"].map((item) => (
-                    <li key={item} className="mb-2">
+                    <li key={item} className="mb-2.5">
                       <Link href={`/sectors/${slugify(item)}`} className="footer-link">{item}</Link>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Markets */}
               <div>
-                <p className="font-sans text-[0.7rem] font-semibold tracking-[0.15em] uppercase text-[#B8956B] mb-4">Markets</p>
+                <p className="font-sans text-[0.7rem] font-semibold tracking-[0.15em] uppercase text-[#8B7355] mb-5">Markets</p>
                 <ul className="list-none p-0 m-0">
                   {["London", "Birmingham", "Manchester", "Leeds", "Liverpool", "Bristol", "Edinburgh", "Glasgow"].map((item) => (
-                    <li key={item} className="mb-2">
+                    <li key={item} className="mb-2.5">
                       <Link href={`/markets/${slugify(item)}`} className="footer-link">{item}</Link>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Intelligence & Legal */}
               <div>
-                <p className="font-sans text-[0.7rem] font-semibold tracking-[0.15em] uppercase text-[#B8956B] mb-4">Intelligence</p>
-                <ul className="list-none p-0 m-0 mb-6">
+                <p className="font-sans text-[0.7rem] font-semibold tracking-[0.15em] uppercase text-[#8B7355] mb-5">Intelligence</p>
+                <ul className="list-none p-0 m-0 mb-8">
                   {["Research & Insights", "Market Outlook", "Investment Reports", "Yield Intelligence"].map((item) => (
-                    <li key={item} className="mb-2">
+                    <li key={item} className="mb-2.5">
                       <Link href={`/${slugify(item)}`} className="footer-link">{item}</Link>
                     </li>
                   ))}
                 </ul>
-                <p className="font-sans text-[0.7rem] font-semibold tracking-[0.15em] uppercase text-[#B8956B] mb-4">Legal</p>
+                <p className="font-sans text-[0.7rem] font-semibold tracking-[0.15em] uppercase text-[#8B7355] mb-5">Legal</p>
                 <ul className="list-none p-0 m-0">
                   {["Privacy Policy", "Cookie Policy", "Terms of Use", "Regulatory Information", "Website Disclaimer"].map((item) => (
-                    <li key={item} className="mb-2">
+                    <li key={item} className="mb-2.5">
                       <Link href={`/${slugify(item)}`} className="footer-link">{item}</Link>
                     </li>
                   ))}
@@ -894,11 +870,11 @@ export default function MurivestUKHomepage() {
               </div>
             </div>
 
-            <div className="border-t border-[rgba(250,249,246,0.1)] pt-8 flex flex-wrap justify-between items-center gap-4">
+            <div className="border-t border-[rgba(248,247,244,0.1)] pt-8 flex flex-wrap justify-between items-center gap-4">
               <p className="font-sans text-[0.7rem] font-light">© {new Date().getFullYear()} Murivest. All rights reserved.</p>
               <div className="flex gap-6">
                 {["Privacy Policy", "Terms of Use", "Cookie Policy", "Client Portal"].map((link) => (
-                  <Link key={link} href={`/${slugify(link)}`} className="footer-link text-[0.7rem] text-[rgba(250,249,246,0.5)]">
+                  <Link key={link} href={`/${slugify(link)}`} className="footer-link text-[0.7rem] text-[rgba(248,247,244,0.5)]">
                     {link}
                   </Link>
                 ))}
