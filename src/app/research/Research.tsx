@@ -32,6 +32,18 @@ const research: ResearchEntry[] = [
     readTime: '12 min read',
     featured: true,
   },
+  {
+    id: 'murivest-2026-east-africa-capital-markets-report',
+    title: '2026 East Africa Capital Markets Report',
+    excerpt:
+      'Where Institutional Capital Should Own Commercial Real Estate — Nairobi, Kenya, East Africa. A proprietary assessment of the commercial real estate assets, markets and investment themes most relevant to private capital, family offices, institutional investors and UHNW investors in 2026.',
+    author: getAuthor('murivest-research'),
+    category: 'East Africa Commercial Real Estate',
+    date: '2026-08-26',
+    readTime: '45 min read',
+    featured: true,
+    image: '/research-images/africa-report-2026-cover.webp',
+  },
 
 ];
 
