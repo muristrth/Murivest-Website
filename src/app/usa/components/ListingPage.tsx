@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { ArrowRight, Building2 } from "lucide-react";
-import { Section, SectionHeading, Eyebrow } from "@/components/Section";
-import CTABanner from "@/components/CTABanner";
-import PropertyCard from "@/components/PropertyCard";
-import { supabase } from "@/lib/supabase";
-import type { PropertyListing } from "@/lib/types";
-import { PROPERTY_TYPES, propertyTypeLabel } from "@/lib/site";
+import { Section, SectionHeading, Eyebrow } from "../components/Section";
+import CTABanner from "../components/CTABanner";
+import PropertyCard from "../components/PropertyCard";
+import { supabase } from "../lib/supabase";
+import type { PropertyListing } from "../lib/types";
+import { PROPERTY_TYPES, propertyTypeLabel } from "../lib/site";
 
 interface ListingPageData {
   typeSlug: string;
