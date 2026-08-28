@@ -1,5 +1,6 @@
 // app/usa/layout.tsx
 import { ReactNode } from "react";
+import "./usa-theme.css";
 
 export const metadata = {
   title: {
@@ -9,5 +10,5 @@ export const metadata = {
 };
 
 export default function USALayout({ children }: { children: ReactNode }) {
-  return <>{children}</>;
+  return <div className="font-sans">{children}</div>;
 }
