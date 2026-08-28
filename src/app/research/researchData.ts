@@ -73,7 +73,7 @@ export const researchData: Record<string, researchPostData> = {
         <section>
           <h2>Important Notices</h2>
           <p>
-            This publication has been prepared by{' '}
+            This publication has been prepared by Murivest Research Team.
             <a href="https://murivest.com">Murivest Group</a> for informational
             purposes only. It does not constitute an offer, solicitation, or
             recommendation to buy or sell any security, property, or financial
