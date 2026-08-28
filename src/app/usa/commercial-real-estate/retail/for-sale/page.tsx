@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import ListingPage from "@/components/ListingPage";
-import { SITE } from "@/lib/site";
+import ListingPage from "../../../components/ListingPage";
+import { SITE } from "../../../lib/site";
 
 export const metadata: Metadata = {
   title: "Retail For Sale — USA Commercial Real Estate",

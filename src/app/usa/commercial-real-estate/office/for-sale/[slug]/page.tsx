@@ -1,4 +1,4 @@
-import PropertyDetailPage, { generatePropertyMetadata } from "@/components/PropertyDetailPage";
+import PropertyDetailPage, { generatePropertyMetadata } from "../../../../components/PropertyDetailPage";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
