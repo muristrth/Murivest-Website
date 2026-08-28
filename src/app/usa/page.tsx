@@ -7,20 +7,31 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import Link from "next/link";
 import Image from "next/image";
+import {
+  Building2,
+  Warehouse,
+  Building,
+  ShoppingCart,
+  Hotel,
+  FlaskConical,
+  ArrowRight,
+} from "lucide-react";
 
 // ─── Design Tokens ───
+// Aligned to the site-wide Murivest "Forest & Brass" system defined in
+// tailwind.config.js / globals.css — forest, brass, cream, charcoal, stone.
 const COLORS = {
   forest: "#1B4332",
-  forestLight: "#2D6A4F",
-  forestDark: "#081C15",
+  forestLight: "#2D5A45",
+  forestDark: "#0E241A",
   brass: "#B8956B",
-  brassLight: "#D4B896",
-  cream: "#F8F7F4",
-  creamWarm: "#FAF9F6",
-  ink: "#1A1A1A",
-  inkLight: "#4A4A4A",
-  stone: "#8C8C8C",
-  border: "rgba(27, 67, 50, 0.12)",
+  brassLight: "#C9A87C",
+  cream: "#FAF9F6",
+  creamWarm: "#F5F4F0",
+  ink: "#2C2C2C",
+  inkLight: "#5A564F",
+  stone: "#8B8680",
+  border: "#E8E6E1",
 };
 
 // ─── Types ───
@@ -32,7 +43,7 @@ interface MarketMetric {
 }
 
 interface Sector {
-  icon: string;
+  icon: React.ElementType;
   title: string;
   description: string;
   volume: string;
@@ -72,7 +83,7 @@ const MARKET_METRICS: MarketMetric[] = [
 
 const SECTORS: Sector[] = [
   {
-    icon: "🏢",
+    icon: Building2,
     title: "Office",
     description: "Class-A CBD and suburban office assets in gateway markets with credit-tenant profiles and value-add repositioning potential.",
     volume: "$142B",
@@ -80,7 +91,7 @@ const SECTORS: Sector[] = [
     href: "/usa/office",
   },
   {
-    icon: "🏭",
+    icon: Warehouse,
     title: "Industrial & Logistics",
     description: "Last-mile distribution, cold storage, and bulk industrial in high-barrier infill markets with e-commerce tailwinds.",
     volume: "$198B",
@@ -88,7 +99,7 @@ const SECTORS: Sector[] = [
     href: "/usa/industrial",
   },
   {
-    icon: "🏘️",
+    icon: Building,
     title: "Multifamily",
     description: "Garden-style and mid-rise workforce housing in supply-constrained metros with demographic rent growth fundamentals.",
     volume: "$187B",
@@ -96,7 +107,7 @@ const SECTORS: Sector[] = [
     href: "/usa/multifamily",
   },
   {
-    icon: "🛒",
+    icon: ShoppingCart,
     title: "Retail & Necessity",
     description: "Grocery-anchored neighborhood centres, single-tenant net-lease, and experiential retail in dominant trade areas.",
     volume: "$89B",
@@ -104,7 +115,7 @@ const SECTORS: Sector[] = [
     href: "/usa/retail",
   },
   {
-    icon: "🏨",
+    icon: Hotel,
     title: "Hospitality",
     description: "Select-service and extended-stay hotels in top-25 MSAs with RevPAR recovery trajectories above national averages.",
     volume: "$56B",
@@ -112,7 +123,7 @@ const SECTORS: Sector[] = [
     href: "/usa/hospitality",
   },
   {
-    icon: "🧬",
+    icon: FlaskConical,
     title: "Life Sciences & Medical",
     description: "Wet-lab, R&D, and MOB assets in innovation clusters with university and NIH proximity advantages.",
     volume: "$34B",
@@ -240,12 +251,9 @@ export const viewport: Viewport = {
 
 function HeroSection() {
   return (
-    <section
-      className="relative min-h-[92vh] flex items-center overflow-hidden"
-      style={{ backgroundColor: COLORS.forestDark }}
-    >
+    <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-[#0E241A]">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.03]">
+      <div className="absolute inset-0 opacity-[0.04]">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
@@ -259,33 +267,20 @@ function HeroSection() {
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 py-24 w-full">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
-            <div
-              className="inline-flex items-center gap-2 px-4 py-2 text-xs tracking-[0.2em] uppercase font-medium border"
-              style={{
-                color: COLORS.brass,
-                borderColor: `${COLORS.brass}40`,
-                backgroundColor: `${COLORS.brass}08`,
-              }}
-            >
+            <div className="inline-flex items-center gap-2 px-4 py-2 text-xs tracking-[0.2em] uppercase font-medium border border-brass/40 bg-brass/10 text-brass">
               <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
               United States Platform
             </div>
 
-            <h1
-              className="text-4xl md:text-5xl lg:text-6xl font-light leading-[1.1] tracking-tight"
-              style={{ color: COLORS.cream, fontFamily: "'Times New Roman', Georgia, serif" }}
-            >
+            <h1 className="font-luxury text-4xl md:text-5xl lg:text-6xl font-light leading-[1.1] tracking-tight text-cream">
               Institutional-Grade
               <br />
-              <span style={{ color: COLORS.brass }}>Commercial Real Estate</span>
+              <span className="text-brass">Commercial Real Estate</span>
               <br />
               Across the United States
             </h1>
 
-            <p
-              className="text-lg md:text-xl leading-relaxed max-w-xl font-light"
-              style={{ color: `${COLORS.cream}90` }}
-            >
+            <p className="text-lg md:text-xl leading-relaxed max-w-xl font-light text-cream/85">
               Murivest Group connects sovereign wealth, family offices, and institutional capital
               with curated commercial property opportunities in gateway markets, Sun Belt growth
               corridors, and strategic secondary cities.
@@ -294,24 +289,14 @@ function HeroSection() {
             <div className="flex flex-wrap gap-4 pt-4">
               <Link
                 href="/usa/opportunities"
-                className="inline-flex items-center gap-3 px-8 py-4 text-sm tracking-[0.15em] uppercase font-medium transition-all duration-300 hover:gap-5"
-                style={{
-                  backgroundColor: COLORS.brass,
-                  color: COLORS.forestDark,
-                }}
+                className="inline-flex items-center gap-3 px-8 py-4 text-sm tracking-[0.15em] uppercase font-medium bg-brass text-[#0E241A] transition-all duration-300 hover:gap-5 hover:brightness-105"
               >
                 View Opportunities
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" />
-                </svg>
+                <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-3 px-8 py-4 text-sm tracking-[0.15em] uppercase font-medium border transition-all duration-300 hover:bg-white/5"
-                style={{
-                  color: COLORS.cream,
-                  borderColor: `${COLORS.cream}30`,
-                }}
+                className="inline-flex items-center gap-3 px-8 py-4 text-sm tracking-[0.15em] uppercase font-medium border border-cream/30 text-cream transition-all duration-300 hover:bg-white/5"
               >
                 Advisory Consultation
               </Link>
@@ -319,56 +304,36 @@ function HeroSection() {
           </div>
 
           <div className="relative hidden lg:block">
-            <div
-              className="absolute -inset-4 rounded-sm opacity-20"
-              style={{ border: `1px solid ${COLORS.brass}` }}
-            />
+            <div className="absolute -inset-4 rounded-sm border border-brass/20" />
             <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
-              <div
-                className="absolute inset-0 flex items-center justify-center text-6xl"
-                style={{ backgroundColor: COLORS.forest, color: `${COLORS.brass}30` }}
-              >
-                🏙️
-              </div>
-              {/* Placeholder for aerial city imagery */}
+              <Image
+                src="/assets/usa/hero-skyline.png"
+                alt="American downtown commercial skyline at dusk"
+                fill
+                sizes="(max-width: 1024px) 0px, 45vw"
+                className="object-cover"
+                priority
+              />
               <div
                 className="absolute inset-0"
                 style={{
-                  background: `linear-gradient(135deg, ${COLORS.forest}80 0%, transparent 60%)`,
+                  background: `linear-gradient(135deg, ${COLORS.forest}55 0%, transparent 65%)`,
                 }}
               />
             </div>
 
             {/* Floating stat card */}
-            <div
-              className="absolute -bottom-8 -left-8 p-6 border backdrop-blur-sm"
-              style={{
-                backgroundColor: `${COLORS.cream}95`,
-                borderColor: COLORS.border,
-                color: COLORS.ink,
-              }}
-            >
-              <div className="text-xs tracking-[0.2em] uppercase mb-2" style={{ color: COLORS.stone }}>
-                Active Pipeline
-              </div>
-              <div className="text-3xl font-light" style={{ fontFamily: "Georgia, serif" }}>
-                $2.4B
-              </div>
-              <div className="text-sm mt-1" style={{ color: COLORS.forest }}>
-                Across 14 states
-              </div>
+            <div className="absolute -bottom-8 -left-8 p-6 border border-cream-dim bg-cream/95 text-charcoal backdrop-blur-sm">
+              <div className="text-xs tracking-[0.2em] uppercase mb-2 text-stone">Active Pipeline</div>
+              <div className="font-luxury text-3xl font-light">$2.4B</div>
+              <div className="text-sm mt-1 text-forest">Across 14 states</div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Bottom fade */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-32"
-        style={{
-          background: `linear-gradient(to top, ${COLORS.cream}, transparent)`,
-        }}
-      />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-cream to-transparent" />
     </section>
   );
 }
