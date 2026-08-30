@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+﻿import { ReactNode } from "react";
 
 interface SectionProps {
   children: ReactNode;
@@ -49,11 +49,11 @@ export function SectionHeading({
       className={`${align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"} ${className}`}
     >
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-      <h2 className="mt-3 text-3xl font-semibold leading-tight text-ink-900 sm:text-4xl">
+      <h2 className="mt-3 text-3xl font-semibold leading-tight text-[#2C2C2C] sm:text-4xl">
         {title}
       </h2>
       {description && (
-        <p className="mt-4 text-lg leading-relaxed text-ink-500 text-pretty">
+        <p className="mt-4 text-lg leading-relaxed text-[#8B8680] text-pretty">
           {description}
         </p>
       )}

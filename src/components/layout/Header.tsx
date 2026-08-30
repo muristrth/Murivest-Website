@@ -72,6 +72,7 @@ const GLOBAL_NAV: NavItem[] = [
           { label: 'Underwriting', href: '/cre-underwriting', sub: 'Institutional review' },
           { label: 'Due Diligence', href: '/due-diligence', sub: 'Technical validation' },
           { label: 'Valuation', href: '/services/valuation', sub: 'Appraisal & advisory' },
+          { label: 'Calculators', href: '/tools', sub: 'CRE Calculators'}
         ],
       },
       {
@@ -197,35 +198,19 @@ const GLOBAL_NAV: NavItem[] = [
     label: 'Contact',
     description: 'Private office and advisory inquiries',
     icon: Mail,
-    columns: [
-      {
-        title: 'Inquiries',
-        links: [
-          { label: 'General Enquiry', href: '/contact', sub: 'info@murivest.co.ke' },
-          { label: 'Investment Mandate', href: '/sell', sub: 'Submit a property' },
-          { label: 'Media', href: '/contact/media', sub: 'Press' },
-        ],
-      },
-      {
-        title: 'Offices',
-        links: [
-          { label: 'Nairobi', href: '/contact/nairobi', sub: 'Private office' },
-          { label: 'Dubai', href: '/contact/dubai', sub: 'DIFC Gate Village' },
-          { label: 'Schedule a Call', href: '/contact/schedule', sub: 'Book session' },
-        ],
-      },
-    ],
+    href: '/contact'
   },
 ]
 
 const MARKETS = [
+  { slug: 'usa', label: 'United States', flag: '🇺🇸', sub: 'New York Office' },
   { slug: 'kenya', label: 'Kenya', flag: '🇰🇪', sub: 'Nairobi Office' },
   { slug: 'united-arab-emirates', label: 'UAE', flag: '🇦🇪', sub: 'Dubai Office' },
   { slug: 'united-kingdom', label: 'United Kingdom', flag: '🇬🇧', sub: 'London Office' },
   { slug: 'singapore', label: 'Singapore', flag: '🇸🇬', sub: 'Singapore Office' },
   { slug: 'south-africa', label: 'South Africa', flag: '🇿🇦', sub: 'Johannesburg Office' },
   { slug: 'thailand', label: 'Thailand', flag: '🇹🇭', sub: 'Bangkok Office' },
-  { slug: 'united-states', label: 'United States', flag: '🇺🇸', sub: 'New York Office' },
+  
 ]
 
 /* ═══════════════════════════════════════════════════════════════

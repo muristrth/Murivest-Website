@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ArrowRight, Building2 } from "lucide-react";
 import { Section, SectionHeading, Eyebrow } from "../components/Section";
 import CTABanner from "../components/CTABanner";
@@ -28,7 +28,7 @@ export default function PropertyTypePage({
 }: PropertyTypePageProps) {
   return (
     <>
-      <section className="relative overflow-hidden bg-ink-950 py-24">
+      <section className="relative overflow-hidden bg-[#1B4332] py-24">
         <div className="absolute inset-0">
           <img
             src={heroImage}
@@ -45,14 +45,14 @@ export default function PropertyTypePage({
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl text-balance">
               {type.label} advisory and opportunities
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-ink-200">
+            <p className="mt-6 text-lg leading-relaxed text-white">
               {type.description}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               {type.transactionTypes.includes("sale") && (
                 <Link
                   href={`/usa/commercial-real-estate/${type.slug}/for-sale`}
-                  className="group flex items-center gap-2 rounded-lg bg-gold-400 px-6 py-3 text-sm font-semibold text-ink-950 transition-all hover:bg-gold-300"
+                  className="group flex items-center gap-2 rounded-lg bg-gold-400 px-6 py-3 text-sm font-semibold text-[#0F2E22] transition-all hover:bg-[#C9A87C]"
                 >
                   {type.label} For Sale
                   <ArrowRight
@@ -64,7 +64,7 @@ export default function PropertyTypePage({
               {type.transactionTypes.includes("lease") && (
                 <Link
                   href={`/usa/commercial-real-estate/${type.slug}/for-lease`}
-                  className="flex items-center justify-center rounded-lg border border-ink-600 px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-ink-800"
+                  className="flex items-center justify-center rounded-lg border border-[#C9A87C] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
                 >
                   {type.label} For Lease
                 </Link>
@@ -81,18 +81,18 @@ export default function PropertyTypePage({
               eyebrow="Market Context"
               title={`${type.label} market dynamics`}
             />
-            <p className="mt-6 text-lg leading-relaxed text-ink-500">
+            <p className="mt-6 text-lg leading-relaxed text-[#8B8680]">
               {sectorDetails.marketContext}
             </p>
             <div className="mt-8">
-              <h3 className="font-serif text-lg font-semibold text-ink-900">
+              <h3 className="font-serif text-lg font-semibold text-[#2C2C2C]">
                 Key market drivers
               </h3>
               <ul className="mt-4 space-y-3">
                 {sectorDetails.keyDrivers.map((driver) => (
                   <li
                     key={driver}
-                    className="flex items-start gap-3 text-base text-ink-600"
+                    className="flex items-start gap-3 text-base text-[#C9A87C]"
                   >
                     <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-gold-400" />
                     {driver}
@@ -102,24 +102,24 @@ export default function PropertyTypePage({
             </div>
           </div>
 
-          <div className="rounded-2xl border border-ink-100 bg-ink-50 p-8">
-            <h3 className="font-serif text-lg font-semibold text-ink-900">
+          <div className="rounded-2xl border border-[#E8E6E1] bg-[#FAF9F6] p-8">
+            <h3 className="font-serif text-lg font-semibold text-[#2C2C2C]">
               Advisory scope
             </h3>
             <ul className="mt-4 space-y-3">
               {sectorDetails.advisoryScope.map((scope) => (
                 <li
                   key={scope}
-                  className="flex items-start gap-2.5 text-sm text-ink-600"
+                  className="flex items-start gap-2.5 text-sm text-[#C9A87C]"
                 >
-                  <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-navy-500" />
+                  <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#FAF9F6]0" />
                   {scope}
                 </li>
               ))}
             </ul>
             <Link
               href="/usa/contact"
-              className="mt-6 flex items-center gap-2 text-sm font-medium text-navy-700 hover:text-navy-600 transition-colors"
+              className="mt-6 flex items-center gap-2 text-sm font-medium text-[#B8956B] hover:text-[#C9A87C] transition-colors"
             >
               Discuss a {type.label.toLowerCase()} mandate
               <ArrowRight size={16} />
@@ -154,22 +154,22 @@ async function PropertyTypeListings({ typeSlug }: { typeSlug: string }) {
 
   if (properties.length === 0) {
     return (
-      <Section className="py-20 bg-ink-50">
+      <Section className="py-20 bg-[#FAF9F6]">
         <SectionHeading
           eyebrow="Current Opportunities"
           title="Active mandate offerings"
           description={`Murivest's current ${typeSlug.replace(/_/g, " ")} opportunities are available to qualified investors on a confidential basis. Contact us to discuss active and off-market engagements.`}
         />
-        <div className="mt-8 flex items-center justify-center rounded-2xl border border-ink-100 bg-white py-16">
+        <div className="mt-8 flex items-center justify-center rounded-2xl border border-[#E8E6E1] bg-white py-16">
           <div className="text-center">
-            <Building2 size={40} className="mx-auto text-ink-300" />
-            <p className="mt-4 text-ink-500">
+            <Building2 size={40} className="mx-auto text-[#FAF9F6]" />
+            <p className="mt-4 text-[#8B8680]">
               No public listings currently available. Contact us for active
               and off-market opportunities.
             </p>
             <Link
               href="/usa/contact"
-              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-navy-700 hover:text-navy-600 transition-colors"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#B8956B] hover:text-[#C9A87C] transition-colors"
             >
               Inquire about opportunities
               <ArrowRight size={16} />
@@ -181,7 +181,7 @@ async function PropertyTypeListings({ typeSlug }: { typeSlug: string }) {
   }
 
   return (
-    <Section className="py-20 bg-ink-50">
+    <Section className="py-20 bg-[#FAF9F6]">
       <SectionHeading
         eyebrow="Current Opportunities"
         title="Active mandate offerings"

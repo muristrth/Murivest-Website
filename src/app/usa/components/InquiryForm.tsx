@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { supabase } from "../lib/supabase";
@@ -65,7 +65,7 @@ export default function InquiryForm({
 
   const containerClass =
     variant === "card"
-      ? "rounded-2xl border border-ink-100 bg-white p-8 shadow-sm"
+      ? "rounded-2xl border border-[#E8E6E1] bg-white p-8 shadow-sm"
       : "";
 
   if (status === "success") {
@@ -73,10 +73,10 @@ export default function InquiryForm({
       <div className={containerClass}>
         <div className="flex flex-col items-center py-12 text-center">
           <CheckCircle2 size={48} className="text-success-500" />
-          <h3 className="mt-4 font-serif text-2xl font-semibold text-ink-900">
+          <h3 className="mt-4 font-serif text-2xl font-semibold text-[#2C2C2C]">
             Thank you for reaching out
           </h3>
-          <p className="mt-2 max-w-md text-ink-500">
+          <p className="mt-2 max-w-md text-[#8B8680]">
             Your inquiry has been received. A member of the Murivest capital
             markets team will respond within one business day.
           </p>
@@ -92,7 +92,7 @@ export default function InquiryForm({
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium text-ink-700"
+              className="block text-sm font-medium text-[#B8956B]"
             >
               Full name <span className="text-error-500">*</span>
             </label>
@@ -101,14 +101,14 @@ export default function InquiryForm({
               name="name"
               type="text"
               required
-              className="mt-1.5 block w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-ink-900 placeholder:text-ink-300 focus:border-navy-500 focus:ring-2 focus:ring-navy-500/20 focus:outline-none transition-colors"
+              className="mt-1.5 block w-full rounded-lg border border-[#E8E6E1] bg-white px-4 py-2.5 text-[#2C2C2C] placeholder:text-[#FAF9F6] focus:border-[#B8956B] focus:ring-2 focus:ring-[#B8956B]/20 focus:outline-none transition-colors"
               placeholder="Jane Doe"
             />
           </div>
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-ink-700"
+              className="block text-sm font-medium text-[#B8956B]"
             >
               Email <span className="text-error-500">*</span>
             </label>
@@ -117,7 +117,7 @@ export default function InquiryForm({
               name="email"
               type="email"
               required
-              className="mt-1.5 block w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-ink-900 placeholder:text-ink-300 focus:border-navy-500 focus:ring-2 focus:ring-navy-500/20 focus:outline-none transition-colors"
+              className="mt-1.5 block w-full rounded-lg border border-[#E8E6E1] bg-white px-4 py-2.5 text-[#2C2C2C] placeholder:text-[#FAF9F6] focus:border-[#B8956B] focus:ring-2 focus:ring-[#B8956B]/20 focus:outline-none transition-colors"
               placeholder="jane@firm.com"
             />
           </div>
@@ -127,7 +127,7 @@ export default function InquiryForm({
           <div>
             <label
               htmlFor="company"
-              className="block text-sm font-medium text-ink-700"
+              className="block text-sm font-medium text-[#B8956B]"
             >
               Company / Firm
             </label>
@@ -135,14 +135,14 @@ export default function InquiryForm({
               id="company"
               name="company"
               type="text"
-              className="mt-1.5 block w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-ink-900 placeholder:text-ink-300 focus:border-navy-500 focus:ring-2 focus:ring-navy-500/20 focus:outline-none transition-colors"
+              className="mt-1.5 block w-full rounded-lg border border-[#E8E6E1] bg-white px-4 py-2.5 text-[#2C2C2C] placeholder:text-[#FAF9F6] focus:border-[#B8956B] focus:ring-2 focus:ring-[#B8956B]/20 focus:outline-none transition-colors"
               placeholder="Acme Capital"
             />
           </div>
           <div>
             <label
               htmlFor="phone"
-              className="block text-sm font-medium text-ink-700"
+              className="block text-sm font-medium text-[#B8956B]"
             >
               Phone
             </label>
@@ -150,7 +150,7 @@ export default function InquiryForm({
               id="phone"
               name="phone"
               type="tel"
-              className="mt-1.5 block w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-ink-900 placeholder:text-ink-300 focus:border-navy-500 focus:ring-2 focus:ring-navy-500/20 focus:outline-none transition-colors"
+              className="mt-1.5 block w-full rounded-lg border border-[#E8E6E1] bg-white px-4 py-2.5 text-[#2C2C2C] placeholder:text-[#FAF9F6] focus:border-[#B8956B] focus:ring-2 focus:ring-[#B8956B]/20 focus:outline-none transition-colors"
               placeholder="+1 (555) 000-0000"
             />
           </div>
@@ -159,7 +159,7 @@ export default function InquiryForm({
         <div>
           <label
             htmlFor="inquiry_type"
-            className="block text-sm font-medium text-ink-700"
+            className="block text-sm font-medium text-[#B8956B]"
           >
             Inquiry type
           </label>
@@ -167,7 +167,7 @@ export default function InquiryForm({
             id="inquiry_type"
             name="inquiry_type"
             defaultValue={defaultType}
-            className="mt-1.5 block w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-ink-900 focus:border-navy-500 focus:ring-2 focus:ring-navy-500/20 focus:outline-none transition-colors"
+            className="mt-1.5 block w-full rounded-lg border border-[#E8E6E1] bg-white px-4 py-2.5 text-[#2C2C2C] focus:border-[#B8956B] focus:ring-2 focus:ring-[#B8956B]/20 focus:outline-none transition-colors"
           >
             {INQUIRY_TYPES.map((t) => (
               <option key={t.value} value={t.value}>
@@ -180,7 +180,7 @@ export default function InquiryForm({
         <div>
           <label
             htmlFor="message"
-            className="block text-sm font-medium text-ink-700"
+            className="block text-sm font-medium text-[#B8956B]"
           >
             Message <span className="text-error-500">*</span>
           </label>
@@ -189,7 +189,7 @@ export default function InquiryForm({
             name="message"
             required
             rows={4}
-            className="mt-1.5 block w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-ink-900 placeholder:text-ink-300 focus:border-navy-500 focus:ring-2 focus:ring-navy-500/20 focus:outline-none transition-colors resize-none"
+            className="mt-1.5 block w-full rounded-lg border border-[#E8E6E1] bg-white px-4 py-2.5 text-[#2C2C2C] placeholder:text-[#FAF9F6] focus:border-[#B8956B] focus:ring-2 focus:ring-[#B8956B]/20 focus:outline-none transition-colors resize-none"
             placeholder="Tell us about your investment objectives, property requirements, or the mandate you'd like to discuss."
           />
         </div>
@@ -204,7 +204,7 @@ export default function InquiryForm({
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="flex w-full items-center justify-center gap-2 rounded-lg bg-navy-700 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-navy-600 disabled:cursor-not-allowed disabled:opacity-60"
+          className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#B8956B] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[#C9A87C] disabled:cursor-not-allowed disabled:opacity-60"
         >
           {status === "submitting" && (
             <Loader2 size={18} className="animate-spin" />
@@ -212,7 +212,7 @@ export default function InquiryForm({
           {status === "submitting" ? "Sending..." : "Submit Inquiry"}
         </button>
 
-        <p className="text-center text-xs text-ink-400">
+        <p className="text-center text-xs text-[#8B8680]/70">
           Your information is kept confidential and is never shared with third
           parties.
         </p>

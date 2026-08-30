@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 interface CTABannerProps {
@@ -19,7 +19,7 @@ export default function CTABanner({
   secondaryHref,
 }: CTABannerProps) {
   return (
-    <section className="bg-navy-900">
+    <section className="bg-[#1B4332]">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="flex flex-col items-center gap-6 text-center lg:flex-row lg:justify-between lg:text-left">
           <div className="max-w-2xl">
@@ -27,7 +27,7 @@ export default function CTABanner({
               {title}
             </h2>
             {description && (
-              <p className="mt-3 text-lg leading-relaxed text-navy-200">
+              <p className="mt-3 text-lg leading-relaxed text-[#C9A87C]">
                 {description}
               </p>
             )}
@@ -35,7 +35,7 @@ export default function CTABanner({
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link
               href={primaryHref}
-              className="group flex items-center justify-center gap-2 rounded-lg bg-gold-400 px-6 py-3 text-sm font-semibold text-ink-950 transition-all hover:bg-gold-300"
+              className="group flex items-center justify-center gap-2 rounded-lg bg-gold-400 px-6 py-3 text-sm font-semibold text-[#0F2E22] transition-all hover:bg-[#C9A87C]"
             >
               {primaryLabel}
               <ArrowRight
@@ -46,7 +46,7 @@ export default function CTABanner({
             {secondaryLabel && secondaryHref && (
               <Link
                 href={secondaryHref}
-                className="flex items-center justify-center gap-2 rounded-lg border border-navy-600 px-6 py-3 text-sm font-semibold text-white transition-all hover:border-navy-400 hover:bg-navy-800"
+                className="flex items-center justify-center gap-2 rounded-lg border border-navy-600 px-6 py-3 text-sm font-semibold text-white transition-all hover:border-navy-400 hover:bg-[#2D5A45]"
               >
                 {secondaryLabel}
               </Link>

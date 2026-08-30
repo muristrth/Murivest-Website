@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import type { Metadata } from "next";
 import {
   ArrowRight,
@@ -160,7 +160,7 @@ export default async function USAHomePage() {
       />
 
       {/* Hero */}
-      <section className="relative flex min-h-[600px] items-center overflow-hidden bg-ink-950">
+      <section className="relative flex min-h-[600px] items-center overflow-hidden bg-[#1B4332]">
         <div className="absolute inset-0">
           <img
             src={HERO_IMAGE}
@@ -175,7 +175,7 @@ export default async function USAHomePage() {
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl text-balance">
               Institutional advisory for U.S. commercial real estate investors
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-200 text-pretty">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white text-pretty">
               Murivest Group is an independent advisory firm representing
               institutional investors, private capital, and principals across
               U.S. office, industrial, logistics, multifamily, retail, and data
@@ -184,7 +184,7 @@ export default async function USAHomePage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/usa/contact"
-                className="group flex items-center justify-center gap-2 rounded-lg bg-gold-400 px-6 py-3 text-sm font-semibold text-ink-950 transition-all hover:bg-gold-300"
+                className="group flex items-center justify-center gap-2 rounded-lg bg-gold-400 px-6 py-3 text-sm font-semibold text-[#0F2E22] transition-all hover:bg-[#C9A87C]"
               >
                 Request a Mandate
                 <ArrowRight
@@ -194,7 +194,7 @@ export default async function USAHomePage() {
               </Link>
               <Link
                 href="/usa/investment-sales"
-                className="flex items-center justify-center gap-2 rounded-lg border border-ink-600 px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-ink-800"
+                className="flex items-center justify-center gap-2 rounded-lg border border-[#C9A87C] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
               >
                 Explore Investment Sales
               </Link>
@@ -204,22 +204,22 @@ export default async function USAHomePage() {
       </section>
 
       {/* Trust bar */}
-      <Section className="border-b border-ink-100 bg-ink-50 py-8">
+      <Section className="border-b border-[#E8E6E1] bg-[#FAF9F6] py-8">
         <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 text-center">
-          <span className="text-sm font-medium text-ink-500">
+          <span className="text-sm font-medium text-[#8B8680]">
             Serving clients across U.S. commercial real estate markets
           </span>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs font-semibold uppercase tracking-wider text-ink-400">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs font-semibold uppercase tracking-wider text-[#8B8680]/70">
             <span>Office</span>
-            <span className="text-ink-200">•</span>
+            <span className="text-white">•</span>
             <span>Industrial</span>
-            <span className="text-ink-200">•</span>
+            <span className="text-white">•</span>
             <span>Logistics</span>
-            <span className="text-ink-200">•</span>
+            <span className="text-white">•</span>
             <span>Multifamily</span>
-            <span className="text-ink-200">•</span>
+            <span className="text-white">•</span>
             <span>Retail</span>
-            <span className="text-ink-200">•</span>
+            <span className="text-white">•</span>
             <span>Data Centers</span>
           </div>
         </div>
@@ -230,10 +230,10 @@ export default async function USAHomePage() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <Eyebrow>Why Murivest</Eyebrow>
-            <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight text-ink-900 sm:text-4xl">
+            <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight text-[#2C2C2C] sm:text-4xl">
               An independent intermediary built for institutional-quality execution
             </h2>
-            <div className="mt-6 space-y-4 text-lg leading-relaxed text-ink-500">
+            <div className="mt-6 space-y-4 text-lg leading-relaxed text-[#8B8680]">
               <p>
                 Murivest Group was founded to address a gap in the U.S.
                 commercial real estate market: institutional-quality advisory
@@ -255,7 +255,7 @@ export default async function USAHomePage() {
                 conflict.
               </p>
             </div>
-            <div className="mt-8 flex items-center gap-2 text-sm font-medium text-navy-700">
+            <div className="mt-8 flex items-center gap-2 text-sm font-medium text-[#B8956B]">
               <ShieldCheck size={18} className="text-gold-500" />
               <span>Independent. Conflict-free. Mandate-driven.</span>
             </div>
@@ -269,12 +269,12 @@ export default async function USAHomePage() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="rounded-xl border border-ink-100 bg-white p-6 transition-shadow hover:shadow-md"
+                className="rounded-xl border border-[#E8E6E1] bg-white p-6 transition-shadow hover:shadow-md"
               >
-                <div className="font-serif text-4xl font-semibold text-navy-700">
+                <div className="font-serif text-4xl font-semibold text-[#B8956B]">
                   {item.stat}
                 </div>
-                <div className="mt-2 text-sm text-ink-500">{item.label}</div>
+                <div className="mt-2 text-sm text-[#8B8680]">{item.label}</div>
               </div>
             ))}
           </div>
@@ -282,7 +282,7 @@ export default async function USAHomePage() {
       </Section>
 
       {/* Services */}
-      <Section className="py-20 bg-ink-50">
+      <Section className="py-20 bg-[#FAF9F6]">
         <SectionHeading
           eyebrow="What We Do"
           title="Advisory services across the commercial real estate lifecycle"
@@ -292,15 +292,15 @@ export default async function USAHomePage() {
           {SERVICES.map((service) => (
             <div
               key={service.title}
-              className="group rounded-xl border border-ink-100 bg-white p-6 transition-all hover:border-navy-300 hover:shadow-lg hover:shadow-ink-900/5"
+              className="group rounded-xl border border-[#E8E6E1] bg-white p-6 transition-all hover:border-[#B8956B] hover:shadow-lg hover:shadow-ink-900/5"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-navy-900 text-gold-400 transition-colors group-hover:bg-navy-700">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#1B4332] text-gold-400 transition-colors group-hover:bg-[#B8956B]">
                 <service.icon size={22} />
               </div>
-              <h3 className="mt-4 font-serif text-xl font-semibold text-ink-900">
+              <h3 className="mt-4 font-serif text-xl font-semibold text-[#2C2C2C]">
                 {service.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-500">
+              <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
                 {service.description}
               </p>
             </div>
@@ -322,28 +322,28 @@ export default async function USAHomePage() {
               <Link
                 key={type.slug}
                 href={`/usa/commercial-real-estate/${type.slug}`}
-                className="group flex flex-col rounded-xl border border-ink-100 bg-white p-6 transition-all hover:border-navy-300 hover:shadow-lg hover:shadow-ink-900/5"
+                className="group flex flex-col rounded-xl border border-[#E8E6E1] bg-white p-6 transition-all hover:border-[#B8956B] hover:shadow-lg hover:shadow-ink-900/5"
               >
                 <div className="flex items-center justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-navy-900 text-gold-400 transition-colors group-hover:bg-navy-700">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#1B4332] text-gold-400 transition-colors group-hover:bg-[#B8956B]">
                     <Icon size={22} />
                   </div>
                   <ArrowRight
                     size={18}
-                    className="text-ink-300 transition-all group-hover:translate-x-1 group-hover:text-navy-600"
+                    className="text-[#FAF9F6] transition-all group-hover:translate-x-1 group-hover:text-[#C9A87C]"
                   />
                 </div>
-                <h3 className="mt-4 font-serif text-xl font-semibold text-ink-900 group-hover:text-navy-700 transition-colors">
+                <h3 className="mt-4 font-serif text-xl font-semibold text-[#2C2C2C] group-hover:text-[#B8956B] transition-colors">
                   {type.label}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-500">
+                <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
                   {type.description}
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {type.transactionTypes.map((tt) => (
                     <span
                       key={tt}
-                      className="rounded-full bg-ink-50 px-3 py-1 text-xs font-medium text-ink-500"
+                      className="rounded-full bg-[#FAF9F6] px-3 py-1 text-xs font-medium text-[#8B8680]"
                     >
                       {tt === "sale" ? "For Sale" : "For Lease"}
                     </span>
@@ -356,13 +356,13 @@ export default async function USAHomePage() {
       </Section>
 
       {/* Who we serve */}
-      <Section className="py-20 bg-navy-950">
+      <Section className="py-20 bg-[#0F2E22]">
         <div className="max-w-3xl">
           <Eyebrow className="text-gold-400">Who We Serve</Eyebrow>
           <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight text-white sm:text-4xl">
             Built for investors who expect institutional-quality execution
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-navy-200">
+          <p className="mt-4 text-lg leading-relaxed text-[#C9A87C]">
             Murivest serves a focused client base across the institutional and
             private capital spectrum.
           </p>
@@ -371,13 +371,13 @@ export default async function USAHomePage() {
           {WHO_WE_SERVE.map((item) => (
             <div
               key={item.title}
-              className="rounded-xl border border-navy-700 bg-navy-900/50 p-6"
+              className="rounded-xl border border-navy-700 bg-[#1B4332]/50 p-6"
             >
               <item.icon size={28} className="text-gold-400" />
               <h3 className="mt-4 font-serif text-xl font-semibold text-white">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-navy-200">
+              <p className="mt-2 text-sm leading-relaxed text-[#C9A87C]">
                 {item.description}
               </p>
             </div>
@@ -395,13 +395,13 @@ export default async function USAHomePage() {
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {PROCESS_STEPS.map((step) => (
             <div key={step.number} className="relative">
-              <div className="font-serif text-5xl font-semibold text-ink-100">
+              <div className="font-serif text-5xl font-semibold text-[#FAF9F6]">
                 {step.number}
               </div>
-              <h3 className="mt-3 font-serif text-xl font-semibold text-ink-900">
+              <h3 className="mt-3 font-serif text-xl font-semibold text-[#2C2C2C]">
                 {step.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-500">
+              <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
                 {step.description}
               </p>
             </div>
@@ -411,7 +411,7 @@ export default async function USAHomePage() {
 
       {/* Featured properties */}
       {featuredProperties.length > 0 && (
-        <Section className="py-20 bg-ink-50">
+        <Section className="py-20 bg-[#FAF9F6]">
           <div className="flex items-end justify-between">
             <SectionHeading
               eyebrow="Current Opportunities"
@@ -420,7 +420,7 @@ export default async function USAHomePage() {
             />
             <Link
               href="/usa/commercial-real-estate"
-              className="hidden shrink-0 items-center gap-1.5 text-sm font-medium text-navy-700 hover:text-navy-600 transition-colors sm:flex"
+              className="hidden shrink-0 items-center gap-1.5 text-sm font-medium text-[#B8956B] hover:text-[#C9A87C] transition-colors sm:flex"
             >
               View all property types
               <ArrowRight size={16} />
@@ -445,7 +445,7 @@ export default async function USAHomePage() {
             />
             <Link
               href="/usa/insights"
-              className="hidden shrink-0 items-center gap-1.5 text-sm font-medium text-navy-700 hover:text-navy-600 transition-colors sm:flex"
+              className="hidden shrink-0 items-center gap-1.5 text-sm font-medium text-[#B8956B] hover:text-[#C9A87C] transition-colors sm:flex"
             >
               All insights
               <ArrowRight size={16} />
@@ -456,23 +456,23 @@ export default async function USAHomePage() {
               <Link
                 key={article.id}
                 href={`/usa/insights#${article.slug}`}
-                className="group flex flex-col rounded-xl border border-ink-100 bg-white p-6 transition-all hover:border-navy-300 hover:shadow-lg hover:shadow-ink-900/5"
+                className="group flex flex-col rounded-xl border border-[#E8E6E1] bg-white p-6 transition-all hover:border-[#B8956B] hover:shadow-lg hover:shadow-ink-900/5"
               >
                 <div className="flex items-center gap-2 text-xs">
-                  <span className="rounded-full bg-navy-50 px-3 py-1 font-medium uppercase tracking-wide text-navy-600">
+                  <span className="rounded-full bg-[#FAF9F6] px-3 py-1 font-medium uppercase tracking-wide text-[#C9A87C]">
                     {article.category.replace(/_/g, " ")}
                   </span>
                   {article.sector && (
-                    <span className="text-ink-400">{article.sector}</span>
+                    <span className="text-[#8B8680]/70">{article.sector}</span>
                   )}
                 </div>
-                <h3 className="mt-4 font-serif text-lg font-semibold leading-snug text-ink-900 group-hover:text-navy-700 transition-colors">
+                <h3 className="mt-4 font-serif text-lg font-semibold leading-snug text-[#2C2C2C] group-hover:text-[#B8956B] transition-colors">
                   {article.title}
                 </h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-500">
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-[#8B8680]">
                   {article.summary}
                 </p>
-                <div className="mt-4 flex items-center gap-2 text-xs text-ink-400">
+                <div className="mt-4 flex items-center gap-2 text-xs text-[#8B8680]/70">
                   <FileText size={14} />
                   <span>
                     {new Date(article.published_at).toLocaleDateString("en-US", {

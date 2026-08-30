@@ -5,11 +5,63 @@ import SectionHeader from '../(components)/shared/SectionHeader';
 import NewsletterSignup from '../(components)/sections/NewsletterSignup';
 import { BreadcrumbSchema } from '../(components)/shared/SchemaMarkup';
 import { SEO_TEMPLATES, SINGAPORE_MACRO } from '../(components)/data/singapore-market-data';
+import { realEstateAgentSchema, webPageSchema, jsonLd } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: SEO_TEMPLATES.about.title,
+  metadataBase: new URL('https://murivest.com'),
+  title: {
+    default: SEO_TEMPLATES.about.title,
+    template: '%s | Murivest Singapore',
+  },
   description: SEO_TEMPLATES.about.description,
   keywords: SEO_TEMPLATES.about.keywords,
+  alternates: {
+    canonical: '/singapore/about',
+    languages: {
+      'en-SG': '/singapore/about',
+      'en': '/singapore',
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_SG',
+    url: '/singapore/about',
+    siteName: 'Murivest',
+    title: SEO_TEMPLATES.about.title,
+    description: SEO_TEMPLATES.about.description,
+    images: [
+      {
+        url: '/og-singapore.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Murivest Singapore — About Us',
+      },
+    ],
+    countryName: 'Singapore',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@Murivest',
+    creator: '@Murivest',
+    title: SEO_TEMPLATES.about.title,
+    description: SEO_TEMPLATES.about.description,
+    images: ['/og-singapore.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
+    'max-snippet': -1,
+    'max-video-preview': -1,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  other: {
+    'format-detection': 'telephone=no',
+    'theme-color': '#1B4332',
+  },
 };
 
 const values = [
@@ -41,11 +93,41 @@ export default function AboutPage() {
         { name: 'Singapore', url: 'https://murivest.com/singapore' },
         { name: 'About', url: 'https://murivest.com/singapore/about' },
       ]} />
+      {jsonLd(realEstateAgentSchema({
+        '@id': 'https://murivest.com/singapore/about/#realestateagent',
+        url: 'https://murivest.com/singapore/about',
+        telephone: '+65-6123-4567',
+        email: 'singapore@murivest.com',
+        address: {
+          '@type': 'PostalAddress',
+          addressCountry: 'SG',
+          addressLocality: 'Singapore',
+          streetAddress: '1 Raffles Place',
+          postalCode: '048616',
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 1.2834,
+          longitude: 103.8572,
+        },
+        areaServed: { '@type': 'Country', name: 'Singapore' },
+      }))}
+      {jsonLd(webPageSchema({
+        '@id': 'https://murivest.com/singapore/about/#webpage',
+        url: 'https://murivest.com/singapore/about',
+        name: SEO_TEMPLATES.about.title,
+        description: SEO_TEMPLATES.about.description,
+        inLanguage: 'en-SG',
+        isPartOf: { '@type': 'WebSite', '@id': 'https://murivest.com/#website' },
+        about: { '@id': 'https://murivest.com/singapore/#organization' },
+        spatialCoverage: { '@type': 'Country', name: 'Singapore' },
+        breadcrumb: { '@id': 'https://murivest.com/singapore/about/#breadcrumb' },
+      }))}
 
       <main>
         {/* Hero */}
         <section className="pt-32 pb-20 bg-[#1B4332]">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
+          <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16">
             <ScrollReveal>
               <p className="text-[10px] tracking-[0.3em] uppercase text-[#B8956B] mb-4 font-medium">About Murivest</p>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] max-w-3xl mb-6">
@@ -62,14 +144,14 @@ export default function AboutPage() {
 
         {/* Origin Story */}
         <section className="py-20 md:py-32 bg-[#F8F7F4]">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
+          <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               <ScrollReveal>
                 <p className="text-[10px] tracking-[0.25em] uppercase text-[#B8956B] mb-4 font-medium">Our Origin</p>
                 <h2 className="font-serif text-3xl md:text-4xl text-[#2C2C2C] leading-tight mb-6">
                   Built for Investors Who Demand More Than Brochures
                 </h2>
-                <div className="space-y-4 text-[15px] text-[#5A5A5A] leading-[1.8] font-light">
+                <div className="space-y-4 text-[15px] text-[#8B8680] leading-[1.8] font-light">
                   <p>
                     Murivest was founded on a simple observation: the commercial real estate advisory industry 
                     had become transactional. Most brokers were selling properties. Few were advising on capital allocation.
@@ -125,7 +207,7 @@ export default function AboutPage() {
 
         {/* Values */}
         <section className="py-20 md:py-32 bg-[#FAF9F6]">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
+          <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16">
             <SectionHeader
               kicker="Principles"
               title="Our Investment Philosophy"
@@ -141,7 +223,7 @@ export default function AboutPage() {
                       {v.icon}
                     </div>
                     <h3 className="font-serif text-xl text-[#2C2C2C] mb-3">{v.title}</h3>
-                    <p className="text-sm text-[#5A5A5A] leading-relaxed font-light">{v.description}</p>
+                    <p className="text-sm text-[#8B8680] leading-relaxed font-light">{v.description}</p>
                   </div>
                 </ScrollReveal>
               ))}
@@ -151,7 +233,7 @@ export default function AboutPage() {
 
         {/* Leadership */}
         <section className="py-20 md:py-32 bg-[#F8F7F4]">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
+          <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16">
             <SectionHeader
               kicker="Leadership"
               title="Singapore Advisory Team"
@@ -166,7 +248,7 @@ export default function AboutPage() {
                     <div className="w-20 h-20 bg-[#1B4332] mb-6" />
                     <h3 className="font-serif text-xl text-[#2C2C2C] mb-1">{person.name}</h3>
                     <p className="text-[10px] tracking-[0.2em] uppercase text-[#B8956B] mb-4 font-medium">{person.role}</p>
-                    <p className="text-sm text-[#5A5A5A] leading-relaxed font-light">{person.bio}</p>
+                    <p className="text-sm text-[#8B8680] leading-relaxed font-light">{person.bio}</p>
                   </div>
                 </ScrollReveal>
               ))}
@@ -176,7 +258,7 @@ export default function AboutPage() {
 
         {/* Track Record */}
         <section className="py-20 md:py-32 bg-[#1B4332]">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
+          <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16">
             <ScrollReveal>
               <div className="text-center mb-16">
                 <p className="text-[10px] tracking-[0.3em] uppercase text-[#B8956B] mb-4 font-medium">Track Record</p>

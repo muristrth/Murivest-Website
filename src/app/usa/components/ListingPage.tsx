@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ArrowRight, Building2 } from "lucide-react";
 import { Section, SectionHeading, Eyebrow } from "../components/Section";
 import CTABanner from "../components/CTABanner";
@@ -30,7 +30,7 @@ export default async function ListingPage({ typeSlug, transactionType }: Listing
 
   return (
     <>
-      <section className="bg-navy-950 py-16">
+      <section className="bg-[#0F2E22] py-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <nav className="flex items-center gap-2 text-sm text-navy-300">
             <Link href="/usa" className="hover:text-white transition-colors">
@@ -60,7 +60,7 @@ export default async function ListingPage({ typeSlug, transactionType }: Listing
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl">
               {label} {transactionLabel.toLowerCase()} — U.S. opportunities
             </h1>
-            <p className="mt-4 text-lg leading-relaxed text-navy-200">
+            <p className="mt-4 text-lg leading-relaxed text-[#C9A87C]">
               {isSale
                 ? `Current ${label.toLowerCase()} disposition mandates and acquisition opportunities available through Murivest. Additional off-market opportunities are available to qualified investors on a confidential basis.`
                 : `Current ${label.toLowerCase()} leasing opportunities available through Murivest. Contact us for additional lease availabilities and tenant representation services.`}
@@ -71,19 +71,19 @@ export default async function ListingPage({ typeSlug, transactionType }: Listing
 
       <Section className="py-20">
         {properties.length === 0 ? (
-          <div className="flex flex-col items-center rounded-2xl border border-ink-100 bg-ink-50 py-20 text-center">
-            <Building2 size={48} className="text-ink-300" />
-            <h2 className="mt-4 font-serif text-2xl font-semibold text-ink-900">
+          <div className="flex flex-col items-center rounded-2xl border border-[#E8E6E1] bg-[#FAF9F6] py-20 text-center">
+            <Building2 size={48} className="text-[#FAF9F6]" />
+            <h2 className="mt-4 font-serif text-2xl font-semibold text-[#2C2C2C]">
               No public {transactionLabel.toLowerCase()} listings currently available
             </h2>
-            <p className="mx-auto mt-2 max-w-md text-ink-500">
+            <p className="mx-auto mt-2 max-w-md text-[#8B8680]">
               {isSale
                 ? `Murivest's current ${label.toLowerCase()} opportunities are available to qualified investors on a confidential basis. Contact us to discuss active and off-market engagements.`
                 : `Murivest's current ${label.toLowerCase()} lease availabilities are available through our leasing team. Contact us for current and upcoming lease opportunities.`}
             </p>
             <Link
               href="/usa/contact"
-              className="mt-6 inline-flex items-center gap-2 rounded-lg bg-navy-700 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-navy-600"
+              className="mt-6 inline-flex items-center gap-2 rounded-lg bg-[#B8956B] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[#C9A87C]"
             >
               Inquire about opportunities
               <ArrowRight size={16} />

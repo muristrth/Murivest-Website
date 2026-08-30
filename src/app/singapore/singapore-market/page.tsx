@@ -6,11 +6,63 @@ import ScrollReveal from '../(components)/shared/ScrollReveal';
 import SectionHeader from '../(components)/shared/SectionHeader';
 import NewsletterSignup from '../(components)/sections/NewsletterSignup';
 import { BreadcrumbSchema } from '../(components)/shared/SchemaMarkup';
+import { realEstateAgentSchema, webPageSchema, jsonLd } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: SEO_TEMPLATES.market.title,
+  metadataBase: new URL('https://murivest.com'),
+  title: {
+    default: SEO_TEMPLATES.market.title,
+    template: '%s | Murivest Singapore',
+  },
   description: SEO_TEMPLATES.market.description,
   keywords: SEO_TEMPLATES.market.keywords,
+  alternates: {
+    canonical: '/singapore/singapore-market',
+    languages: {
+      'en-SG': '/singapore/singapore-market',
+      'en': '/singapore',
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_SG',
+    url: '/singapore/singapore-market',
+    siteName: 'Murivest',
+    title: SEO_TEMPLATES.market.title,
+    description: SEO_TEMPLATES.market.description,
+    images: [
+      {
+        url: '/og-singapore.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Murivest Singapore — Market Overview',
+      },
+    ],
+    countryName: 'Singapore',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@Murivest',
+    creator: '@Murivest',
+    title: SEO_TEMPLATES.market.title,
+    description: SEO_TEMPLATES.market.description,
+    images: ['/og-singapore.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
+    'max-snippet': -1,
+    'max-video-preview': -1,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  other: {
+    'format-detection': 'telephone=no',
+    'theme-color': '#1B4332',
+  },
 };
 
 export default function SingaporeMarketPage() {
@@ -25,11 +77,41 @@ export default function SingaporeMarketPage() {
         { name: 'Singapore', url: 'https://murivest.com/singapore' },
         { name: 'Singapore Market', url: 'https://murivest.com/singapore/singapore-market' },
       ]} />
+      {jsonLd(realEstateAgentSchema({
+        '@id': 'https://murivest.com/singapore/singapore-market/#realestateagent',
+        url: 'https://murivest.com/singapore/singapore-market',
+        telephone: '+65-6123-4567',
+        email: 'singapore@murivest.com',
+        address: {
+          '@type': 'PostalAddress',
+          addressCountry: 'SG',
+          addressLocality: 'Singapore',
+          streetAddress: '1 Raffles Place',
+          postalCode: '048616',
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 1.2834,
+          longitude: 103.8572,
+        },
+        areaServed: { '@type': 'Country', name: 'Singapore' },
+      }))}
+      {jsonLd(webPageSchema({
+        '@id': 'https://murivest.com/singapore/singapore-market/#webpage',
+        url: 'https://murivest.com/singapore/singapore-market',
+        name: SEO_TEMPLATES.market.title,
+        description: SEO_TEMPLATES.market.description,
+        inLanguage: 'en-SG',
+        isPartOf: { '@type': 'WebSite', '@id': 'https://murivest.com/#website' },
+        about: { '@id': 'https://murivest.com/singapore/#organization' },
+        spatialCoverage: { '@type': 'Country', name: 'Singapore' },
+        breadcrumb: { '@id': 'https://murivest.com/singapore/singapore-market/#breadcrumb' },
+      }))}
 
       <main>
         {/* Hero */}
         <section className="pt-32 pb-20 bg-[#1B4332]">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
+          <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16">
             <ScrollReveal>
               <p className="text-[10px] tracking-[0.3em] uppercase text-[#B8956B] mb-4 font-medium">Market Intelligence</p>
               <h1 className="font-serif text-4xl md:text-5xl text-white leading-[1.05] mb-6">
@@ -45,7 +127,7 @@ export default function SingaporeMarketPage() {
 
         {/* Macro Overview */}
         <section className="py-16 bg-[#F8F7F4] border-b border-[#E8E6E1]">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
+          <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
                 { label: 'Grade A CBD Rent', value: `S$${MARKET_SNAPSHOT.averageCBDRent}`, context: 'per sqft/month' },
@@ -65,7 +147,7 @@ export default function SingaporeMarketPage() {
 
         {/* District Cards */}
         <section className="py-20 md:py-32 bg-[#F8F7F4]">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
+          <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16">
             {/* Tier 1 */}
             <div className="mb-16">
               <div className="flex items-center gap-3 mb-8">
@@ -115,7 +197,7 @@ export default function SingaporeMarketPage() {
 
         {/* URA Master Plan */}
         <section className="py-20 md:py-32 bg-[#FAF9F6]">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
+          <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16">
             <SectionHeader
               kicker="Regulatory Framework"
               title="URA Master Plan 2025"
@@ -133,7 +215,7 @@ export default function SingaporeMarketPage() {
                       </span>
                     </div>
                     <h3 className="font-serif text-lg text-[#2C2C2C] mb-3">{item.title}</h3>
-                    <p className="text-sm text-[#5A5A5A] font-light leading-relaxed mb-4">{item.description}</p>
+                    <p className="text-sm text-[#8B8680] font-light leading-relaxed mb-4">{item.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {item.districts.map((d) => (
                         <span key={d} className="text-[9px] tracking-wider uppercase bg-[#1B4332]/5 text-[#1B4332] px-2 py-1">{d}</span>
@@ -148,7 +230,7 @@ export default function SingaporeMarketPage() {
 
         {/* Download CTA */}
         <section className="py-20 bg-[#1B4332]">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 text-center">
+          <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16 text-center">
             <ScrollReveal>
               <h2 className="font-serif text-3xl text-white mb-4">Download the Full Market Report</h2>
               <p className="text-sm text-white/60 max-w-xl mx-auto font-light mb-8">
@@ -191,7 +273,7 @@ function DistrictCard({ district }: { district: typeof DISTRICTS[0] }) {
           {district.name}
         </h3>
         <p className="text-[11px] text-[#8B8680] italic mb-4">{district.tagline}</p>
-        <p className="text-sm text-[#5A5A5A] leading-relaxed font-light mb-6 line-clamp-3">
+        <p className="text-sm text-[#8B8680] leading-relaxed font-light mb-6 line-clamp-3">
           {district.description}
         </p>
         <div className="space-y-2 pt-4 border-t border-[#E8E6E1]">

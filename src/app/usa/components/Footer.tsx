@@ -1,26 +1,26 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Mail, MapPin } from "lucide-react";
 import { SITE, PROPERTY_TYPES } from "../lib/site";
 
 export default function Footer() {
   return (
-    <footer className="bg-ink-950 text-ink-300">
+    <footer className="bg-[#1B4332] text-[#FAF9F6]">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
             <h3 className="font-serif text-lg font-semibold text-white">
               {SITE.name}
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-ink-400">
+            <p className="mt-3 text-sm leading-relaxed text-[#8B8680]/70">
               {SITE.description}
             </p>
-            <p className="mt-4 text-xs text-ink-500">
+            <p className="mt-4 text-xs text-[#8B8680]">
               © {new Date().getFullYear()} {SITE.legalName}. All rights reserved.
             </p>
           </div>
 
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-ink-400">
+            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#8B8680]/70">
               Platform
             </h4>
             <ul className="mt-4 space-y-2.5 text-sm">
@@ -65,7 +65,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-ink-400">
+            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#8B8680]/70">
               Property Types
             </h4>
             <ul className="mt-4 space-y-2.5 text-sm">
@@ -83,7 +83,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-ink-400">
+            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#8B8680]/70">
               Contact
             </h4>
             <ul className="mt-4 space-y-3 text-sm">
@@ -103,15 +103,15 @@ export default function Footer() {
             </ul>
             <Link
               href="/usa/contact"
-              className="mt-5 inline-block rounded-md border border-ink-700 px-4 py-2 text-sm font-medium text-white transition-colors hover:border-gold-400 hover:text-gold-300"
+              className="mt-5 inline-block rounded-md border border-[#B8956B] px-4 py-2 text-sm font-medium text-white transition-colors hover:border-gold-400 hover:text-gold-300"
             >
               Start a Conversation
             </Link>
           </div>
         </div>
 
-        <div className="mt-12 border-t border-ink-800 pt-6">
-          <p className="text-xs leading-relaxed text-ink-500">
+        <div className="mt-12 border-t border-[#2D5A45] pt-6">
+          <p className="text-xs leading-relaxed text-[#8B8680]">
             Murivest Group acts as an intermediary and advisor in commercial real
             estate transactions. This website is for informational purposes only
             and does not constitute an offer to sell or a solicitation of an

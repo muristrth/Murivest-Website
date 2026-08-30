@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Search, FileSearch, Handshake, TrendingUp } from "lucide-react";
 import { Section, SectionHeading, Eyebrow } from "../components/Section";
@@ -65,7 +65,7 @@ const CAPABILITIES = [
 export default function InvestmentSalesPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-ink-950 py-24">
+      <section className="relative overflow-hidden bg-[#1B4332] py-24">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-ink-950 to-ink-900" />
         </div>
@@ -75,7 +75,7 @@ export default function InvestmentSalesPage() {
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl text-balance">
               Disposition and acquisition advisory for institutional-grade U.S. commercial real estate
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-ink-200">
+            <p className="mt-6 text-lg leading-relaxed text-white">
               Murivest's investment sales practice represents institutional
               investors, private capital, and principals in the sale and
               acquisition of commercial properties — executed on a
@@ -84,7 +84,7 @@ export default function InvestmentSalesPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/usa/contact"
-                className="group flex items-center justify-center gap-2 rounded-lg bg-gold-400 px-6 py-3 text-sm font-semibold text-ink-950 transition-all hover:bg-gold-300"
+                className="group flex items-center justify-center gap-2 rounded-lg bg-gold-400 px-6 py-3 text-sm font-semibold text-[#0F2E22] transition-all hover:bg-[#C9A87C]"
               >
                 Engage Murivest
                 <ArrowRight
@@ -94,7 +94,7 @@ export default function InvestmentSalesPage() {
               </Link>
               <Link
                 href="/usa/commercial-real-estate"
-                className="flex items-center justify-center rounded-lg border border-ink-600 px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-ink-800"
+                className="flex items-center justify-center rounded-lg border border-[#C9A87C] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
               >
                 View Property Types
               </Link>
@@ -113,13 +113,13 @@ export default function InvestmentSalesPage() {
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {PROCESS.map((step) => (
             <div key={step.title}>
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-navy-900 text-gold-400">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#1B4332] text-gold-400">
                 <step.icon size={22} />
               </div>
-              <h3 className="mt-4 font-serif text-xl font-semibold text-ink-900">
+              <h3 className="mt-4 font-serif text-xl font-semibold text-[#2C2C2C]">
                 {step.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-500">
+              <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
                 {step.description}
               </p>
             </div>
@@ -128,7 +128,7 @@ export default function InvestmentSalesPage() {
       </Section>
 
       {/* Capabilities */}
-      <Section className="py-20 bg-ink-50">
+      <Section className="py-20 bg-[#FAF9F6]">
         <SectionHeading
           eyebrow="Capabilities"
           title="Full-cycle investment sales advisory"
@@ -138,12 +138,12 @@ export default function InvestmentSalesPage() {
           {CAPABILITIES.map((cap) => (
             <div
               key={cap.title}
-              className="rounded-xl border border-ink-100 bg-white p-6"
+              className="rounded-xl border border-[#E8E6E1] bg-white p-6"
             >
-              <h3 className="font-serif text-xl font-semibold text-ink-900">
+              <h3 className="font-serif text-xl font-semibold text-[#2C2C2C]">
                 {cap.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-ink-500">
+              <p className="mt-3 text-sm leading-relaxed text-[#8B8680]">
                 {cap.description}
               </p>
             </div>
@@ -170,14 +170,14 @@ export default function InvestmentSalesPage() {
             <Link
               key={item.href}
               href={item.href}
-              className="group flex items-center justify-between rounded-xl border border-ink-100 bg-white p-5 transition-all hover:border-navy-300 hover:shadow-md"
+              className="group flex items-center justify-between rounded-xl border border-[#E8E6E1] bg-white p-5 transition-all hover:border-[#B8956B] hover:shadow-md"
             >
-              <span className="font-serif text-lg font-semibold text-ink-900 group-hover:text-navy-700 transition-colors">
+              <span className="font-serif text-lg font-semibold text-[#2C2C2C] group-hover:text-[#B8956B] transition-colors">
                 {item.label}
               </span>
               <ArrowRight
                 size={18}
-                className="text-ink-300 transition-all group-hover:translate-x-1 group-hover:text-navy-600"
+                className="text-[#FAF9F6] transition-all group-hover:translate-x-1 group-hover:text-[#C9A87C]"
               />
             </Link>
           ))}
