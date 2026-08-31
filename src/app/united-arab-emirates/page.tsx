@@ -1,9 +1,9 @@
 'use client'
 
 // ──────────────────────────────────────────────────────────────
-// MURIVEST UAE — REVISED HOMEPAGE
+// MURIVEST UAE — HOMEPAGE
 // Old Money · Institutional · UHNWI-Facing
-// Forest Green #1B4332 · Brass/Gold #B8956B · Cream #FAF9F6
+// Genesis Palette — Charcoal #2C2C2C · Brass #8B7355 · Ivory #F8F7F4
 // Target: Family Offices, Sovereign Adjacent Capital, PE Principals,
 //         UHNWI Counsel, Private Bankers, Dynastic Wealth
 // ──────────────────────────────────────────────────────────────
@@ -17,28 +17,6 @@ import {
   Plus,
   Mail,
 } from 'lucide-react'
-
-/* ═══════════════════════════════════════════════════════════════
-   DESIGN TOKENS
-   ═══════════════════════════════════════════════════════════════ */
-
-const colors = {
-  forest: {
-    50: '#f2f7f4', 100: '#e0ece4', 200: '#c2d9c9', 300: '#94bfa0',
-    400: '#5e9f71', 500: '#3a7d4f', 600: '#2a6340', 700: '#1e4f32',
-    800: '#163f28', 900: '#0d2e1c', 950: '#071f12',
-  },
-  gold: {
-    50: '#fdf9f0', 100: '#f9eed0', 200: '#f2dba3', 300: '#e8c26d',
-    400: '#d4a843', 500: '#b88a2e', 600: '#9a6d22', 700: '#7a521c',
-    800: '#5c3e18', 900: '#3d2a10', 950: '#241808',
-  },
-  stone: {
-    50: '#fafaf9', 100: '#f5f5f4', 200: '#e7e5e4', 300: '#d6d3d1',
-    400: '#a8a29e', 500: '#78716c', 600: '#57534e', 700: '#44403c',
-    800: '#292524', 900: '#1c1917', 950: '#0c0a09',
-  },
-}
 
 /* ═══════════════════════════════════════════════════════════════
    ANIMATION VARIANTS
@@ -66,7 +44,7 @@ const staggerContainer = {
 
 function Hero() {
   return (
-    <section className="relative min-h-screen bg-forest-950 overflow-hidden">
+    <section className="relative min-h-screen bg-[#2C2C2C] overflow-hidden">
       {/* Atmospheric layers — no photo wash, architectural suggestion */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(184,149,80,0.08),transparent_60%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(0,0,0,0.5),transparent_55%)]" />
@@ -78,18 +56,18 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="flex items-center justify-between border-b border-gold-500/15 py-6 mt-8"
+          className="flex items-center justify-between border-b border-[#8B7355]/15 py-6 mt-8"
         >
           <div className="flex items-center gap-3">
-            <span className="text-gold-400/80 text-[10px] tracking-[0.35em] uppercase font-medium">
+            <span className="text-[#8B7355]/80 text-[10px] tracking-[0.35em] uppercase font-medium">
               Murivest Private Office
             </span>
-            <span className="text-stone-600 text-[10px]">/</span>
-            <span className="text-stone-500 text-[10px] tracking-[0.35em] uppercase">
+            <span className="text-[rgba(248,247,244,0.4)] text-[10px]">/</span>
+            <span className="text-[rgba(248,247,244,0.55)] text-[10px] tracking-[0.35em] uppercase">
               Dubai · Abu Dhabi
             </span>
           </div>
-          <span className="hidden sm:block text-stone-600 text-[10px] tracking-[0.3em] uppercase">
+          <span className="hidden sm:block text-[rgba(248,247,244,0.4)] text-[10px] tracking-[0.3em] uppercase">
             By Appointment Only
           </span>
         </motion.div>
@@ -103,20 +81,20 @@ function Hero() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-7"
           >
-            <span className="block text-gold-400/90 text-[11px] tracking-[0.3em] uppercase font-medium mb-8">
+            <span className="block text-[#8B7355]/90 text-[11px] tracking-[0.3em] uppercase font-medium mb-8">
               Institutional Real Estate Advisory — Gulf &amp; Levant
             </span>
 
-            <h1 className="font-display text-stone-50 text-4xl sm:text-5xl lg:text-6xl xl:text-[4.5rem] leading-[1.12] tracking-tight">
+            <h1 className="font-serif text-[#F8F7F4] text-4xl sm:text-5xl lg:text-6xl xl:text-[4.5rem] leading-[1.12] tracking-tight">
               Capital is not deployed.
               <br />
-              It is <span className="italic text-stone-300">stewarded</span>
+              It is <span className="italic text-[#8B7355]">stewarded</span>
               <br />
               across generations.
             </h1>
 
-            <div className="mt-10 max-w-xl border-l border-gold-500/25 pl-6">
-              <p className="text-stone-400 text-[15px] lg:text-base leading-[1.85] font-body">
+            <div className="mt-10 max-w-xl border-l border-[#8B7355]/25 pl-6">
+              <p className="text-[rgba(248,247,244,0.65)] text-[15px] lg:text-base leading-[1.85] font-sans">
                 Murivest advises dynastic families, sovereign-adjacent pools,
                 and private equity principals on commercial real estate
                 allocation across the United Arab Emirates. We do not market
@@ -127,14 +105,14 @@ function Hero() {
             <div className="flex flex-wrap items-center gap-8 mt-14">
               <a
                 href="#contact"
-                className="group inline-flex items-center gap-3 border border-gold-500/40 text-stone-100 px-8 py-4 text-[11px] tracking-[0.2em] uppercase font-medium hover:border-gold-400 hover:text-gold-300 transition-colors duration-500"
+                className="group inline-flex items-center gap-3 border border-[#8B7355]/40 text-[#F5F4F0] px-8 py-4 text-[11px] tracking-[0.2em] uppercase font-medium hover:border-[#8B7355] hover:text-[#8B7355] transition-colors duration-500"
               >
                 Arrange a Private Briefing
                 <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-500" />
               </a>
               <a
                 href="#research"
-                className="group inline-flex items-center gap-2 text-stone-500 hover:text-stone-300 px-1 py-4 text-[11px] tracking-[0.2em] uppercase font-medium transition-colors duration-500"
+                className="group inline-flex items-center gap-2 text-[rgba(248,247,244,0.55)] hover:text-[rgba(248,247,244,0.85)] px-1 py-4 text-[11px] tracking-[0.2em] uppercase font-medium transition-colors duration-500"
               >
                 Explore the UAE Platform
                 <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-500" />
@@ -149,43 +127,43 @@ function Hero() {
             transition={{ duration: 1, delay: 0.3 }}
             className="lg:col-span-5 lg:pt-2"
           >
-            <figure className="border border-gold-500/15">
+            <figure className="border border-[#8B7355]/15">
               <div className="relative aspect-[4/5] overflow-hidden">
                 <div
                   className="absolute inset-0 bg-cover bg-center grayscale-[25%] contrast-[1.05]"
                   style={{ backgroundImage: "url('/images/uae-hero-architecture.webp')" }}
                 />
-                <div className="absolute inset-0 bg-forest-950/20" />
-                <div className="absolute inset-0 ring-1 ring-inset ring-gold-500/10" />
+                <div className="absolute inset-0 bg-[#2C2C2C]/20" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-[#8B7355]/10" />
                 {/* Gold corner accents */}
-                <div className="absolute top-4 left-4 w-8 h-8 border-t border-l border-gold-500/30" />
-                <div className="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-gold-500/30" />
+                <div className="absolute top-4 left-4 w-8 h-8 border-t border-l border-[#8B7355]/30" />
+                <div className="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-[#8B7355]/30" />
               </div>
-              <figcaption className="flex items-center justify-between px-5 py-4 border-t border-gold-500/15">
-                <span className="text-stone-500 text-[10px] tracking-[0.15em] uppercase">
+              <figcaption className="flex items-center justify-between px-5 py-4 border-t border-[#8B7355]/15">
+                <span className="text-[rgba(248,247,244,0.55)] text-[10px] tracking-[0.15em] uppercase">
                   Fig. 01 — DIFC Gate District, Dubai
                 </span>
-                <span className="text-stone-600 text-[10px] tracking-[0.15em]">
+                <span className="text-[rgba(248,247,244,0.4)] text-[10px] tracking-[0.15em]">
                   2026
                 </span>
               </figcaption>
             </figure>
 
-            <div className="flex items-center justify-between mt-8 pt-6 border-t border-gold-500/10">
+            <div className="flex items-center justify-between mt-8 pt-6 border-t border-[#8B7355]/10">
               <div>
-                <div className="text-stone-200 text-sm font-display tracking-tight">
+                <div className="text-[#E5E2DC] text-sm font-serif tracking-tight">
                   RERA · DLD Regulated
                 </div>
-                <div className="text-stone-600 text-[10px] tracking-[0.2em] uppercase mt-1">
+                <div className="text-[rgba(248,247,244,0.4)] text-[10px] tracking-[0.2em] uppercase mt-1">
                   DIFC · ADGM Advisory
                 </div>
               </div>
-              <div className="w-10 h-px bg-gold-500/30" />
+              <div className="w-10 h-px bg-[#8B7355]/30" />
               <div className="text-right">
-                <div className="text-stone-200 text-sm font-display tracking-tight">
+                <div className="text-[#E5E2DC] text-sm font-serif tracking-tight">
                   Principals Only
                 </div>
-                <div className="text-stone-600 text-[10px] tracking-[0.2em] uppercase mt-1">
+                <div className="text-[rgba(248,247,244,0.4)] text-[10px] tracking-[0.2em] uppercase mt-1">
                   Qualified Investor Access
                 </div>
               </div>
@@ -210,14 +188,14 @@ function QuickLinksBar() {
   ]
 
   return (
-    <section className="bg-stone-100 border-b border-stone-200">
+    <section className="bg-[#F5F4F0] border-b border-[#E5E2DC]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="flex flex-wrap items-center gap-0">
           {links.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="group flex items-center gap-3 py-5 px-6 lg:px-8 text-[10px] tracking-[0.2em] uppercase text-stone-500 hover:text-forest-800 transition-colors duration-300 border-r border-stone-200 last:border-r-0"
+              className="group flex items-center gap-3 py-5 px-6 lg:px-8 text-[10px] tracking-[0.2em] uppercase text-[#5A5A5A] hover:text-[#2C2C2C] transition-colors duration-300 border-r border-[#E5E2DC] last:border-r-0"
             >
               {link.label}
               <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -238,7 +216,7 @@ function ResearchBeforeCapital() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section ref={ref} className="py-32 lg:py-40 bg-stone-50">
+    <section ref={ref} className="py-32 lg:py-40 bg-[#F8F7F4]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-24">
           {/* Left */}
@@ -249,22 +227,22 @@ function ResearchBeforeCapital() {
             className="lg:col-span-5"
           >
             <motion.div variants={fadeUp} className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-px bg-gold-500" />
-              <span className="text-gold-600 text-[10px] tracking-[0.4em] uppercase font-medium">
+              <div className="w-12 h-px bg-[#8B7355]" />
+              <span className="text-[#8B7355] text-[10px] tracking-[0.4em] uppercase font-medium">
                 Our Philosophy
               </span>
             </motion.div>
 
             <motion.h2
               variants={fadeUp}
-              className="font-display text-3xl lg:text-5xl text-forest-900 leading-[1.15] mb-8"
+              className="font-serif text-3xl lg:text-5xl text-[#2C2C2C] leading-[1.15] mb-8"
             >
               Patrimony is not built on speculation.
             </motion.h2>
 
             <motion.p
               variants={fadeUp}
-              className="text-stone-600 text-base leading-[1.8] mb-6 font-body"
+              className="text-[#5A5A5A] text-base leading-[1.8] mb-6 font-sans"
             >
               The families and institutions we serve do not trade real estate.
               They accumulate it. They hold it through cycles. They pass it to
@@ -274,7 +252,7 @@ function ResearchBeforeCapital() {
 
             <motion.p
               variants={fadeUp}
-              className="text-stone-500 text-sm leading-[1.8] font-body"
+              className="text-[#5A5A5A] text-sm leading-[1.8] font-sans"
             >
               Our advisory begins with understanding the principal's capital
               architecture — currency exposure, Sharia compliance requirements,
@@ -284,7 +262,7 @@ function ResearchBeforeCapital() {
 
             <motion.p
               variants={fadeUp}
-              className="text-stone-500 text-sm leading-[1.8] mt-4 font-body"
+              className="text-[#5A5A5A] text-sm leading-[1.8] mt-4 font-sans"
             >
               We believe that disciplined research, local intelligence and
               long-term thinking produce superior outcomes to momentum-driven
@@ -301,10 +279,10 @@ function ResearchBeforeCapital() {
             className="lg:col-span-7"
           >
             <motion.div variants={fadeUp} className="mb-10">
-              <span className="text-forest-800 text-[10px] tracking-[0.3em] uppercase font-medium">
+              <span className="text-[#2C2C2C] text-[10px] tracking-[0.3em] uppercase font-medium">
                 How We Think
               </span>
-              <h3 className="font-display text-2xl lg:text-3xl text-forest-900 mt-3">
+              <h3 className="font-serif text-2xl lg:text-3xl text-[#2C2C2C] mt-3">
                 A Framework for Dynastic Capital Allocation
               </h3>
             </motion.div>
@@ -331,21 +309,21 @@ function ResearchBeforeCapital() {
                 <motion.div
                   key={item.title}
                   variants={fadeUp}
-                  className="group py-8 border-t border-stone-200 first:border-t-0 hover:bg-stone-100/50 transition-colors duration-300 px-4 -mx-4"
+                  className="group py-8 border-t border-[#E5E2DC] first:border-t-0 hover:bg-[#F5F4F0]/50 transition-colors duration-300 px-4 -mx-4"
                 >
                   <div className="flex items-start gap-6">
-                    <div className="w-10 h-10 flex items-center justify-center border border-stone-300 group-hover:border-gold-500 group-hover:bg-gold-500/5 transition-all duration-300 shrink-0">
-                      <span className="text-stone-400 group-hover:text-gold-600 text-xs font-mono transition-colors">
+                    <div className="w-10 h-10 flex items-center justify-center border border-[#E5E2DC] group-hover:border-[#8B7355] group-hover:bg-[#8B7355]/5 transition-all duration-300 shrink-0">
+                      <span className="text-[#5A5A5A] group-hover:text-[#8B7355] text-xs font-mono transition-colors">
                         0{i + 1}
                       </span>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-display text-lg text-forest-900">
+                        <h4 className="font-serif text-lg text-[#2C2C2C]">
                           {item.title}
                         </h4>
                       </div>
-                      <p className="text-stone-500 text-sm leading-relaxed font-body">
+                      <p className="text-[#5A5A5A] text-sm leading-relaxed font-sans">
                         {item.desc}
                       </p>
                     </div>
@@ -362,7 +340,7 @@ function ResearchBeforeCapital() {
 
 /* ═══════════════════════════════════════════════════════════════
    SECTION: THE UAE PLATFORM — Emirate Cards
-   ═══════════════════════════════════════════════════════════════ */
+   ═══════��═══════════════════════════════════════════════════════ */
 
 function UAEPlatform() {
   const ref = useRef(null)
@@ -408,7 +386,7 @@ function UAEPlatform() {
   ]
 
   return (
-    <section ref={ref} className="py-32 lg:py-40 bg-forest-950">
+    <section ref={ref} className="py-32 lg:py-40 bg-[#2C2C2C]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <motion.div
           initial="hidden"
@@ -417,22 +395,22 @@ function UAEPlatform() {
           className="max-w-3xl mb-20"
         >
           <motion.div variants={fadeUp} className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-px bg-gold-500" />
-            <span className="text-gold-400 text-[10px] tracking-[0.4em] uppercase font-medium">
+            <div className="w-12 h-px bg-[#8B7355]" />
+            <span className="text-[#8B7355] text-[10px] tracking-[0.4em] uppercase font-medium">
               The UAE Platform
             </span>
           </motion.div>
 
           <motion.h2
             variants={fadeUp}
-            className="font-display text-3xl lg:text-5xl text-stone-50 leading-[1.15] mb-6"
+            className="font-serif text-3xl lg:text-5xl text-[#F8F7F4] leading-[1.15] mb-6"
           >
             One Federation. Six Economies. Distinct Risk Profiles.
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
-            className="text-stone-400 text-base leading-[1.8] font-body"
+            className="text-[rgba(248,247,244,0.65)] text-base leading-[1.8] font-sans"
           >
             The UAE presents itself as a single investment destination, yet each
             emirate operates with different economic drivers, planning
@@ -442,7 +420,7 @@ function UAEPlatform() {
           </motion.p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-forest-900/50">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[rgba(248,247,244,0.08)]">
           {emirates.map((emirate, i) => (
             <EmirateCard key={emirate.name} emirate={emirate} index={i} isInView={isInView} />
           ))}
@@ -468,35 +446,35 @@ function EmirateCard({
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: index * 0.1, duration: 0.6, ease: 'easeOut' }}
-      className="bg-forest-950 p-8 lg:p-10 group hover:bg-forest-900/80 transition-colors duration-500 cursor-pointer"
+      className="bg-[#2C2C2C] p-8 lg:p-10 group hover:bg-[rgba(255,255,255,0.04)] transition-colors duration-500 cursor-pointer"
       onClick={() => setExpanded(!expanded)}
     >
       <div className="flex items-center justify-between mb-6">
-        <h3 className="font-display text-xl text-stone-50">{emirate.name}</h3>
-        <div className="w-8 h-8 flex items-center justify-center border border-stone-700 group-hover:border-gold-500/50 transition-colors">
+        <h3 className="font-serif text-xl text-[#F8F7F4]">{emirate.name}</h3>
+        <div className="w-8 h-8 flex items-center justify-center border border-[rgba(248,247,244,0.25)] group-hover:border-[#8B7355]/50 transition-colors">
           {expanded ? (
-            <Minus size={14} className="text-stone-500" />
+            <Minus size={14} className="text-[rgba(248,247,244,0.55)]" />
           ) : (
-            <Plus size={14} className="text-stone-500" />
+            <Plus size={14} className="text-[rgba(248,247,244,0.55)]" />
           )}
         </div>
       </div>
 
       <div className="space-y-5">
         <div>
-          <span className="text-gold-500/70 text-[9px] tracking-[0.3em] uppercase block mb-2">
+          <span className="text-[#8B7355]/70 text-[9px] tracking-[0.3em] uppercase block mb-2">
             Economic Driver
           </span>
-          <p className="text-stone-400 text-sm leading-relaxed font-body">
+          <p className="text-[rgba(248,247,244,0.65)] text-sm leading-relaxed font-sans">
             {emirate.driver}
           </p>
         </div>
 
         <div>
-          <span className="text-gold-500/70 text-[9px] tracking-[0.3em] uppercase block mb-2">
+          <span className="text-[#8B7355]/70 text-[9px] tracking-[0.3em] uppercase block mb-2">
             Why Capital Allocates Here
           </span>
-          <p className="text-stone-400 text-sm leading-relaxed font-body">
+          <p className="text-[rgba(248,247,244,0.65)] text-sm leading-relaxed font-sans">
             {emirate.capital}
           </p>
         </div>
@@ -511,17 +489,17 @@ function EmirateCard({
               className="overflow-hidden"
             >
               <div>
-                <span className="text-gold-500/70 text-[9px] tracking-[0.3em] uppercase block mb-2">
+                <span className="text-[#8B7355]/70 text-[9px] tracking-[0.3em] uppercase block mb-2">
                   Dominant Sectors
                 </span>
-                <p className="text-stone-400 text-sm leading-relaxed font-body">
+                <p className="text-[rgba(248,247,244,0.65)] text-sm leading-relaxed font-sans">
                   {emirate.sectors}
                 </p>
               </div>
-              <div className="mt-6 pt-6 border-t border-stone-800">
+              <div className="mt-6 pt-6 border-t border-[rgba(248,247,244,0.3)]">
                 <a
                   href={`/united-arab-emirates/${emirate.name.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="inline-flex items-center gap-2 text-gold-400 text-[10px] tracking-[0.2em] uppercase hover:text-gold-300 transition-colors"
+                  className="inline-flex items-center gap-2 text-[#8B7355] text-[10px] tracking-[0.2em] uppercase hover:text-[#8B7355] transition-colors"
                 >
                   View Market Intelligence
                   <ArrowRight size={12} />
@@ -532,8 +510,8 @@ function EmirateCard({
         </AnimatePresence>
 
         {!expanded && (
-          <div className="pt-4 border-t border-stone-800/50">
-            <span className="text-stone-600 text-[10px] tracking-[0.15em] uppercase">
+          <div className="pt-4 border-t border-[rgba(248,247,244,0.3)]/50">
+            <span className="text-[rgba(248,247,244,0.4)] text-[10px] tracking-[0.15em] uppercase">
               Click to expand
             </span>
           </div>
@@ -567,7 +545,7 @@ function Sectors() {
   ]
 
   return (
-    <section ref={ref} className="py-32 lg:py-40 bg-stone-50">
+    <section ref={ref} className="py-32 lg:py-40 bg-[#F8F7F4]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <motion.div
           initial="hidden"
@@ -576,30 +554,30 @@ function Sectors() {
           className="mb-16"
         >
           <motion.div variants={fadeUp} className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-px bg-gold-500" />
-            <span className="text-gold-600 text-[10px] tracking-[0.4em] uppercase font-medium">
+            <div className="w-12 h-px bg-[#8B7355]" />
+            <span className="text-[#8B7355] text-[10px] tracking-[0.4em] uppercase font-medium">
               Coverage
             </span>
           </motion.div>
 
           <motion.h2
             variants={fadeUp}
-            className="font-display text-3xl lg:text-5xl text-forest-900 leading-[1.15]"
+            className="font-serif text-3xl lg:text-5xl text-[#2C2C2C] leading-[1.15]"
           >
             Institutional-Grade Sectors for Discerning Capital
           </motion.h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-stone-200">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-[#E5E2DC]">
           {sectors.map((sector, i) => (
             <motion.div
               key={sector}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.05, duration: 0.5 }}
-              className="bg-stone-50 p-6 lg:p-8 group hover:bg-forest-900 transition-colors duration-500 cursor-default"
+              className="bg-[#F8F7F4] p-6 lg:p-8 group hover:bg-[#2C2C2C] transition-colors duration-500 cursor-default"
             >
-              <span className="text-stone-700 group-hover:text-stone-50 text-sm font-medium tracking-wide transition-colors duration-300 font-body">
+              <span className="text-[#5A5A5A] group-hover:text-[#F8F7F4] text-sm font-medium tracking-wide transition-colors duration-300 font-sans">
                 {sector}
               </span>
             </motion.div>
@@ -641,7 +619,7 @@ function Research() {
   ]
 
   return (
-    <section ref={ref} id="research" className="py-32 lg:py-40 bg-stone-100">
+    <section ref={ref} id="research" className="py-32 lg:py-40 bg-[#F5F4F0]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-24">
           {/* Left */}
@@ -652,22 +630,22 @@ function Research() {
             className="lg:col-span-5"
           >
             <motion.div variants={fadeUp} className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-px bg-gold-500" />
-              <span className="text-gold-600 text-[10px] tracking-[0.4em] uppercase font-medium">
+              <div className="w-12 h-px bg-[#8B7355]" />
+              <span className="text-[#8B7355] text-[10px] tracking-[0.4em] uppercase font-medium">
                 Research
               </span>
             </motion.div>
 
             <motion.h2
               variants={fadeUp}
-              className="font-display text-3xl lg:text-5xl text-forest-900 leading-[1.15] mb-8"
+              className="font-serif text-3xl lg:text-5xl text-[#2C2C2C] leading-[1.15] mb-8"
             >
               Intelligence That Precedes Allocation.
             </motion.h2>
 
             <motion.p
               variants={fadeUp}
-              className="text-stone-600 text-base leading-[1.8] mb-6 font-body"
+              className="text-[#5A5A5A] text-base leading-[1.8] mb-6 font-sans"
             >
               Our research function exists to improve investment decisions, not
               to generate marketing content. Every report is developed from
@@ -681,14 +659,14 @@ function Research() {
                 <a
                   key={type}
                   href={`/united-arab-emirates/research/${type.toLowerCase().replace(/\s+/g, '-').replace(/—/g, '')}`}
-                  className="flex items-center justify-between py-3 border-b border-stone-200 group hover:border-gold-500 transition-colors duration-300"
+                  className="flex items-center justify-between py-3 border-b border-[#E5E2DC] group hover:border-[#8B7355] transition-colors duration-300"
                 >
-                  <span className="text-stone-700 text-sm group-hover:text-forest-900 transition-colors font-body">
+                  <span className="text-[#5A5A5A] text-sm group-hover:text-[#2C2C2C] transition-colors font-sans">
                     {type}
                   </span>
                   <ArrowRight
                     size={14}
-                    className="text-stone-400 group-hover:text-gold-600 transition-colors"
+                    className="text-[#5A5A5A] group-hover:text-[#8B7355] transition-colors"
                   />
                 </a>
               ))}
@@ -697,7 +675,7 @@ function Research() {
             <motion.div variants={fadeUp} className="mt-10">
               <a
                 href="/dashboard"
-                className="inline-flex items-center gap-3 text-forest-900 text-[11px] tracking-[0.2em] uppercase font-medium hover:text-gold-600 transition-colors"
+                className="inline-flex items-center gap-3 text-[#2C2C2C] text-[11px] tracking-[0.2em] uppercase font-medium hover:text-[#8B7355] transition-colors"
               >
                 Access the Principal Dashboard
                 <ArrowUpRight size={14} />
@@ -713,23 +691,23 @@ function Research() {
             className="lg:col-span-7"
           >
             <motion.div variants={fadeUp} className="mb-10">
-              <span className="text-forest-800 text-[10px] tracking-[0.3em] uppercase font-medium">
+              <span className="text-[#2C2C2C] text-[10px] tracking-[0.3em] uppercase font-medium">
                 Current Market Indicators — Q3 2026
               </span>
             </motion.div>
 
-            <div className="grid grid-cols-2 gap-px bg-stone-200">
+            <div className="grid grid-cols-2 gap-px bg-[#E5E2DC]">
               {indicators.map((ind) => (
                 <motion.div
                   key={ind.label}
                   variants={fadeUp}
-                  className="bg-stone-100 p-6 lg:p-8 group hover:bg-stone-50 transition-colors duration-300"
+                  className="bg-[#F5F4F0] p-6 lg:p-8 group hover:bg-[#F8F7F4] transition-colors duration-300"
                 >
-                  <span className="text-stone-400 text-[9px] tracking-[0.25em] uppercase block mb-3">
+                  <span className="text-[#5A5A5A] text-[9px] tracking-[0.25em] uppercase block mb-3">
                     {ind.label}
                   </span>
                   <div className="flex items-baseline gap-2">
-                    <span className="font-mono text-xl lg:text-2xl text-forest-900">
+                    <span className="font-mono text-xl lg:text-2xl text-[#2C2C2C]">
                       {ind.value}
                     </span>
                   </div>
@@ -795,7 +773,7 @@ function InvestmentThemes() {
   ]
 
   return (
-    <section ref={ref} className="py-32 lg:py-40 bg-forest-950">
+    <section ref={ref} className="py-32 lg:py-40 bg-[#2C2C2C]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <motion.div
           initial="hidden"
@@ -804,38 +782,38 @@ function InvestmentThemes() {
           className="mb-20"
         >
           <motion.div variants={fadeUp} className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-px bg-gold-500" />
-            <span className="text-gold-400 text-[10px] tracking-[0.4em] uppercase font-medium">
+            <div className="w-12 h-px bg-[#8B7355]" />
+            <span className="text-[#8B7355] text-[10px] tracking-[0.4em] uppercase font-medium">
               Investment Themes
             </span>
           </motion.div>
 
           <motion.h2
             variants={fadeUp}
-            className="font-display text-3xl lg:text-5xl text-stone-50 leading-[1.15] max-w-3xl"
+            className="font-serif text-3xl lg:text-5xl text-[#F8F7F4] leading-[1.15] max-w-3xl"
           >
             Structural Trends Shaping Generational Allocation
           </motion.h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-px bg-forest-900/50">
+        <div className="grid md:grid-cols-2 gap-px bg-[rgba(248,247,244,0.08)]">
           {themes.map((theme, i) => (
             <motion.div
               key={theme.title}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.06, duration: 0.5 }}
-              className="bg-forest-950 p-8 lg:p-10 group hover:bg-forest-900/80 transition-colors duration-500"
+              className="bg-[#2C2C2C] p-8 lg:p-10 group hover:bg-[rgba(255,255,255,0.04)] transition-colors duration-500"
             >
               <div className="flex items-start gap-6">
-                <span className="text-gold-500/40 text-xs font-mono mt-1 shrink-0">
+                <span className="text-[#8B7355]/40 text-xs font-mono mt-1 shrink-0">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <div>
-                  <h3 className="font-display text-lg text-stone-50 mb-3 group-hover:text-gold-400 transition-colors duration-300">
+                  <h3 className="font-serif text-lg text-[#F8F7F4] mb-3 group-hover:text-[#8B7355] transition-colors duration-300">
                     {theme.title}
                   </h3>
-                  <p className="text-stone-500 text-sm leading-[1.8] font-body">
+                  <p className="text-[rgba(248,247,244,0.55)] text-sm leading-[1.8] font-sans">
                     {theme.desc}
                   </p>
                 </div>
@@ -892,7 +870,7 @@ function HowWeAdvise() {
   ]
 
   return (
-    <section ref={ref} id="advisory" className="py-32 lg:py-40 bg-stone-50">
+    <section ref={ref} id="advisory" className="py-32 lg:py-40 bg-[#F8F7F4]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <motion.div
           initial="hidden"
@@ -901,38 +879,38 @@ function HowWeAdvise() {
           className="mb-20"
         >
           <motion.div variants={fadeUp} className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-px bg-gold-500" />
-            <span className="text-gold-600 text-[10px] tracking-[0.4em] uppercase font-medium">
+            <div className="w-12 h-px bg-[#8B7355]" />
+            <span className="text-[#8B7355] text-[10px] tracking-[0.4em] uppercase font-medium">
               How We Advise
             </span>
           </motion.div>
 
           <motion.h2
             variants={fadeUp}
-            className="font-display text-3xl lg:text-5xl text-forest-900 leading-[1.15] max-w-3xl"
+            className="font-serif text-3xl lg:text-5xl text-[#2C2C2C] leading-[1.15] max-w-3xl"
           >
             Advisory Calibrated to Principal-Level Expectations
           </motion.h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-px bg-stone-200">
+        <div className="grid md:grid-cols-2 gap-px bg-[#E5E2DC]">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.06, duration: 0.5 }}
-              className="bg-stone-50 p-8 lg:p-10 group hover:bg-stone-100 transition-colors duration-500"
+              className="bg-[#F8F7F4] p-8 lg:p-10 group hover:bg-[#F5F4F0] transition-colors duration-500"
             >
               <div className="flex items-start gap-6">
-                <span className="text-gold-500/50 text-xs font-mono mt-1 shrink-0">
+                <span className="text-[#8B7355]/50 text-xs font-mono mt-1 shrink-0">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <div>
-                  <h3 className="font-display text-lg text-forest-900 mb-3 group-hover:text-gold-700 transition-colors duration-300">
+                  <h3 className="font-serif text-lg text-[#2C2C2C] mb-3 group-hover:text-[#8B7355] transition-colors duration-300">
                     {service.title}
                   </h3>
-                  <p className="text-stone-500 text-sm leading-[1.8] font-body">
+                  <p className="text-[#5A5A5A] text-sm leading-[1.8] font-sans">
                     {service.desc}
                   </p>
                 </div>
@@ -954,7 +932,7 @@ function Perspective() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section ref={ref} className="py-32 lg:py-40 bg-forest-900">
+    <section ref={ref} className="py-32 lg:py-40 bg-[#2C2C2C]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-24">
           <motion.div
@@ -964,15 +942,15 @@ function Perspective() {
             className="lg:col-span-5"
           >
             <motion.div variants={fadeUp} className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-px bg-gold-500" />
-              <span className="text-gold-400 text-[10px] tracking-[0.4em] uppercase font-medium">
+              <div className="w-12 h-px bg-[#8B7355]" />
+              <span className="text-[#8B7355] text-[10px] tracking-[0.4em] uppercase font-medium">
                 Perspective
               </span>
             </motion.div>
 
             <motion.h2
               variants={fadeUp}
-              className="font-display text-3xl lg:text-5xl text-stone-50 leading-[1.15] mb-8"
+              className="font-serif text-3xl lg:text-5xl text-[#F8F7F4] leading-[1.15] mb-8"
             >
               Dubai is where capital meets conviction.
             </motion.h2>
@@ -986,7 +964,7 @@ function Perspective() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-stone-400 text-base leading-[1.8] mb-6 font-body"
+              className="text-[rgba(248,247,244,0.65)] text-base leading-[1.8] mb-6 font-sans"
             >
               Murivest operates across the Gulf and East Africa from offices in
               Dubai, Abu Dhabi, Nairobi and London. That perspective informs how
@@ -996,7 +974,7 @@ function Perspective() {
 
             <motion.p
               variants={fadeUp}
-              className="text-stone-400 text-base leading-[1.8] mb-6 font-body"
+              className="text-[rgba(248,247,244,0.65)] text-base leading-[1.8] mb-6 font-sans"
             >
               For the families and institutions we serve, the UAE is not merely
               a destination for capital — it is a jurisdiction of trust,
@@ -1005,7 +983,7 @@ function Perspective() {
 
             <motion.p
               variants={fadeUp}
-              className="text-stone-400 text-base leading-[1.8] font-body"
+              className="text-[rgba(248,247,244,0.65)] text-base leading-[1.8] font-sans"
             >
               Our role is to provide independent advice grounded in research,
               executed with discretion, and delivered with the gravitas that
@@ -1034,7 +1012,7 @@ function Insights() {
   ]
 
   return (
-    <section ref={ref} className="py-32 lg:py-40 bg-stone-50">
+    <section ref={ref} className="py-32 lg:py-40 bg-[#F8F7F4]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <motion.div
           initial="hidden"
@@ -1043,15 +1021,15 @@ function Insights() {
           className="mb-16"
         >
           <motion.div variants={fadeUp} className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-px bg-gold-500" />
-            <span className="text-gold-600 text-[10px] tracking-[0.4em] uppercase font-medium">
+            <div className="w-12 h-px bg-[#8B7355]" />
+            <span className="text-[#8B7355] text-[10px] tracking-[0.4em] uppercase font-medium">
               Insights
             </span>
           </motion.div>
 
           <motion.h2
             variants={fadeUp}
-            className="font-display text-3xl lg:text-5xl text-forest-900 leading-[1.15]"
+            className="font-serif text-3xl lg:text-5xl text-[#2C2C2C] leading-[1.15]"
           >
             Research, Reports and Principal Briefings
           </motion.h2>
@@ -1061,23 +1039,23 @@ function Insights() {
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
           variants={staggerContainer}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-stone-200"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#E5E2DC]"
         >
           {insights.map((insight) => (
             <motion.a
               key={insight.label}
               variants={fadeUp}
               href={insight.href}
-              className="bg-stone-50 p-8 lg:p-10 group hover:bg-forest-900 transition-colors duration-500 block"
+              className="bg-[#F8F7F4] p-8 lg:p-10 group hover:bg-[#2C2C2C] transition-colors duration-500 block"
             >
-              <span className="text-stone-700 group-hover:text-stone-50 text-sm font-medium tracking-wide transition-colors duration-300 block mb-4 font-body">
+              <span className="text-[#5A5A5A] group-hover:text-[#F8F7F4] text-sm font-medium tracking-wide transition-colors duration-300 block mb-4 font-sans">
                 {insight.label}
               </span>
               <div className="flex items-center gap-2">
-                <div className="w-6 h-px bg-stone-300 group-hover:bg-gold-500 transition-colors" />
+                <div className="w-6 h-px bg-[#E5E2DC] group-hover:bg-[#8B7355] transition-colors" />
                 <ArrowRight
                   size={14}
-                  className="text-stone-400 group-hover:text-gold-400 transition-colors"
+                  className="text-[#5A5A5A] group-hover:text-[#8B7355] transition-colors"
                 />
               </div>
             </motion.a>
@@ -1097,7 +1075,7 @@ function CTA() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section ref={ref} id="contact" className="py-32 lg:py-40 bg-forest-950">
+    <section ref={ref} id="contact" className="py-32 lg:py-40 bg-[#2C2C2C]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <motion.div
           initial="hidden"
@@ -1106,22 +1084,22 @@ function CTA() {
           className="max-w-4xl"
         >
           <motion.div variants={fadeUp} className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-px bg-gold-500" />
-            <span className="text-gold-400 text-[10px] tracking-[0.4em] uppercase font-medium">
+            <div className="w-12 h-px bg-[#8B7355]" />
+            <span className="text-[#8B7355] text-[10px] tracking-[0.4em] uppercase font-medium">
               Private Office
             </span>
           </motion.div>
 
           <motion.h2
             variants={fadeUp}
-            className="font-display text-3xl lg:text-5xl xl:text-6xl text-stone-50 leading-[1.15] mb-8"
+            className="font-serif text-3xl lg:text-5xl xl:text-6xl text-[#F8F7F4] leading-[1.15] mb-8"
           >
             The Conversation Precedes the Transaction.
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
-            className="text-stone-400 text-base lg:text-lg leading-[1.8] mb-12 max-w-2xl font-body"
+            className="text-[rgba(248,247,244,0.65)] text-base lg:text-lg leading-[1.8] mb-12 max-w-2xl font-sans"
           >
             Institutional real estate decisions are rarely defined by a single
             asset. They begin with understanding markets, objectives and
@@ -1132,7 +1110,7 @@ function CTA() {
 
           <motion.p
             variants={fadeUp}
-            className="text-stone-500 text-sm leading-[1.8] mb-12 max-w-2xl font-body"
+            className="text-[rgba(248,247,244,0.55)] text-sm leading-[1.8] mb-12 max-w-2xl font-sans"
           >
             We meet principals by appointment only. Initial consultations are
             conducted in person at our DIFC office, via secure video
@@ -1142,7 +1120,7 @@ function CTA() {
           <motion.div variants={fadeUp}>
             <a
               href="/united-arab-emirates/contact"
-              className="group inline-flex items-center gap-3 bg-gold-600 text-stone-50 px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-gold-500 transition-colors duration-300"
+              className="group inline-flex items-center gap-3 bg-[#8B7355] text-[#F8F7F4] px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors duration-300"
             >
               Request a Private Briefing
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
@@ -1156,18 +1134,18 @@ function CTA() {
 
 /* ═══════════════════════════════════════════════════════════════
    SECTION: FOOTER
-   ═══════════════════════════════════════════════════════════════ */
+   ═══════════════════════════════════���═══════════════════════════ */
 
 function Footer() {
   return (
-    <footer className="bg-stone-950 py-20 lg:py-24">
+    <footer className="bg-[#2C2C2C] py-20 lg:py-24">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="grid md:grid-cols-12 gap-12 lg:gap-16 mb-20">
           {/* Brand */}
           <div className="md:col-span-4">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 bg-gold-600 rounded-sm flex items-center justify-center">
-                <svg viewBox="0 0 32 32" className="w-5 h-5 text-stone-50" fill="currentColor">
+              <div className="w-8 h-8 bg-[#8B7355] rounded-sm flex items-center justify-center">
+                <svg viewBox="0 0 32 32" className="w-5 h-5 text-[#F8F7F4]" fill="currentColor">
                   <rect x="4" y="4" width="10" height="10" rx="1" />
                   <rect x="18" y="4" width="10" height="10" rx="1" />
                   <rect x="4" y="18" width="10" height="10" rx="1" />
@@ -1175,15 +1153,15 @@ function Footer() {
                 </svg>
               </div>
               <div>
-                <span className="font-display text-lg tracking-[0.2em] uppercase text-stone-50">
+                <span className="font-serif text-lg tracking-[0.2em] uppercase text-[#F8F7F4]">
                   Murivest
                 </span>
-                <span className="block text-[9px] tracking-[0.35em] uppercase text-gold-600">
+                <span className="block text-[9px] tracking-[0.35em] uppercase text-[#8B7355]">
                   United Arab Emirates
                 </span>
               </div>
             </div>
-            <p className="text-stone-500 text-sm leading-relaxed font-body max-w-xs">
+            <p className="text-[rgba(248,247,244,0.55)] text-sm leading-relaxed font-sans max-w-xs">
               Advising dynastic families, sovereign-adjacent capital and
               institutional investors on commercial real estate strategy
               across the United Arab Emirates.
@@ -1192,7 +1170,7 @@ function Footer() {
 
           {/* Navigation */}
           <div className="md:col-span-2">
-            <h4 className="text-stone-400 text-[10px] tracking-[0.3em] uppercase mb-6">
+            <h4 className="text-[rgba(248,247,244,0.4)] text-[10px] tracking-[0.3em] uppercase mb-6">
               Advisory
             </h4>
             <ul className="space-y-3">
@@ -1207,7 +1185,7 @@ function Footer() {
                 <li key={item}>
                   <a
                     href={`/united-arab-emirates/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="text-stone-600 text-sm hover:text-gold-500 transition-colors font-body"
+                    className="text-[rgba(248,247,244,0.55)] text-sm hover:text-[#8B7355] transition-colors font-sans"
                   >
                     {item}
                   </a>
@@ -1217,7 +1195,7 @@ function Footer() {
           </div>
 
           <div className="md:col-span-2">
-            <h4 className="text-stone-400 text-[10px] tracking-[0.3em] uppercase mb-6">
+            <h4 className="text-[rgba(248,247,244,0.4)] text-[10px] tracking-[0.3em] uppercase mb-6">
               Markets
             </h4>
             <ul className="space-y-3">
@@ -1226,7 +1204,7 @@ function Footer() {
                   <li key={item}>
                     <a
                       href={`/united-arab-emirates/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="text-stone-600 text-sm hover:text-gold-500 transition-colors font-body"
+                      className="text-[rgba(248,247,244,0.55)] text-sm hover:text-[#8B7355] transition-colors font-sans"
                     >
                       {item}
                     </a>
@@ -1237,7 +1215,7 @@ function Footer() {
           </div>
 
           <div className="md:col-span-2">
-            <h4 className="text-stone-400 text-[10px] tracking-[0.3em] uppercase mb-6">
+            <h4 className="text-[rgba(248,247,244,0.4)] text-[10px] tracking-[0.3em] uppercase mb-6">
               Intelligence
             </h4>
             <ul className="space-y-3">
@@ -1251,7 +1229,7 @@ function Footer() {
                 <li key={item}>
                   <a
                     href={`/united-arab-emirates/research/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="text-stone-600 text-sm hover:text-gold-500 transition-colors font-body"
+                    className="text-[rgba(248,247,244,0.55)] text-sm hover:text-[#8B7355] transition-colors font-sans"
                   >
                     {item}
                   </a>
@@ -1261,14 +1239,14 @@ function Footer() {
           </div>
 
           <div className="md:col-span-2">
-            <h4 className="text-stone-400 text-[10px] tracking-[0.3em] uppercase mb-6">
+            <h4 className="text-[rgba(248,247,244,0.4)] text-[10px] tracking-[0.3em] uppercase mb-6">
               Contact
             </h4>
             <ul className="space-y-3">
               <li>
                 <a
                   href="mailto:info@murivest.co.ke"
-                  className="text-stone-600 text-sm hover:text-gold-500 transition-colors flex items-center gap-2 font-body"
+                  className="text-[rgba(248,247,244,0.55)] text-sm hover:text-[#8B7355] transition-colors flex items-center gap-2 font-sans"
                 >
                   <Mail size={14} />
                   info@murivest.co.ke
@@ -1277,7 +1255,7 @@ function Footer() {
               <li>
                 <a
                   href="/united-arab-emirates/contact"
-                  className="text-stone-600 text-sm hover:text-gold-500 transition-colors font-body"
+                  className="text-[rgba(248,247,244,0.55)] text-sm hover:text-[#8B7355] transition-colors font-sans"
                 >
                   Private Office — DIFC
                 </a>
@@ -1285,7 +1263,7 @@ function Footer() {
               <li>
                 <a
                   href="/united-arab-emirates/contact"
-                  className="text-stone-600 text-sm hover:text-gold-500 transition-colors font-body"
+                  className="text-[rgba(248,247,244,0.55)] text-sm hover:text-[#8B7355] transition-colors font-sans"
                 >
                   Abu Dhabi — ADGM
                 </a>
@@ -1295,24 +1273,24 @@ function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 border-t border-stone-900 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-stone-700 text-[10px] tracking-[0.15em] uppercase">
+        <div className="pt-8 border-t border-[rgba(248,247,244,0.12)] flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-[rgba(248,247,244,0.35)] text-[10px] tracking-[0.15em] uppercase">
             &copy; {new Date().getFullYear()} Murivest. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <a
               href="/privacy"
-              className="text-stone-700 text-[10px] tracking-[0.15em] uppercase hover:text-stone-500 transition-colors"
+              className="text-[rgba(248,247,244,0.35)] text-[10px] tracking-[0.15em] uppercase hover:text-[rgba(248,247,244,0.6)] transition-colors"
             >
               Privacy Policy
             </a>
             <a
               href="/terms"
-              className="text-stone-700 text-[10px] tracking-[0.15em] uppercase hover:text-stone-500 transition-colors"
+              className="text-[rgba(248,247,244,0.35)] text-[10px] tracking-[0.15em] uppercase hover:text-[rgba(248,247,244,0.6)] transition-colors"
             >
               Terms of Use
             </a>
-            <span className="text-stone-800 text-[10px] tracking-[0.15em] uppercase">
+            <span className="text-[rgba(248,247,244,0.3)] text-[10px] tracking-[0.15em] uppercase">
               RERA · DLD · DIFC · ADGM
             </span>
           </div>
@@ -1328,32 +1306,28 @@ function Footer() {
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-stone-50">
+    <main className="min-h-screen bg-[#F8F7F4]">
       <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&display=swap');
-
-        :root {
-          --font-display: 'Playfair Display', Georgia, serif;
-          --font-body: 'Inter', system-ui, sans-serif;
-          --font-accent: 'Cormorant Garamond', Georgia, serif;
-          --font-mono: 'JetBrains Mono', monospace;
+        .font-serif {
+          font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+        }
+        .font-sans {
+          font-family: 'Montserrat', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+        }
+        .font-mono {
+          font-family: 'JetBrains Mono', 'Courier New', monospace;
         }
 
-        .font-display { font-family: var(--font-display); }
-        .font-body { font-family: var(--font-body); }
-        .font-accent { font-family: var(--font-accent); }
-        .font-mono { font-family: var(--font-mono); }
-
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #f5f5f4; }
-        ::-webkit-scrollbar-thumb { background: #a8a29e; border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: #78716c; }
+        ::-webkit-scrollbar-track { background: #F5F4F0; }
+        ::-webkit-scrollbar-thumb { background: #E5E2DC; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #8B7355; }
 
         html { scroll-behavior: smooth; }
 
         ::selection {
-          background: rgba(58, 125, 79, 0.2);
-          color: #0d2e1c;
+          background: rgba(139, 115, 85, 0.2);
+          color: #2C2C2C;
         }
       `}</style>
 
