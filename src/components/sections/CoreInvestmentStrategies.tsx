@@ -49,7 +49,7 @@ const CoreInvestmentStrategies = () => {
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[url('/murivest_secretary.webp')] bg-cover bg-center opacity-[0.22] scale-105" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#F8F7F4]/90 via-[#F8F7F4]/92 to-[#F8F7F4]/98" />
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#C4B59D]/10 blur-[120px] rounded-full" />
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#8B7355]/10 blur-[120px] rounded-full" />
       </div>
 
       {/* ── HEADER ─────────────────────────── */}
@@ -65,7 +65,7 @@ const CoreInvestmentStrategies = () => {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-6 h-px bg-[#8B7355]" />
-              <p className="text-[10px] tracking-[0.4em] uppercase text-[#8B7355] font-mono">
+              <p className="text-[10px] tracking-[0.35em] uppercase text-[#8B7355]">
                 Investment System
               </p>
             </div>
@@ -86,7 +86,7 @@ const CoreInvestmentStrategies = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="hidden lg:block lg:col-span-6"
           >
-            <p className="text-[15px] leading-[1.9] text-[#5A5A5A] font-light border-l border-[#C4B59D] pl-6">
+            <p className="text-[15px] leading-[1.9] text-[#5A5A5A] font-light border-l border-[#8B7355] pl-6">
               Murivest structures disciplined, mandate-based real estate strategies across three
               commercial asset classes — each selected for income durability, institutional
               governance, and risk-adjusted return profiles across East African cycles.
@@ -111,10 +111,10 @@ const CoreInvestmentStrategies = () => {
 
                 {/* Strategy ID & Icon */}
                 <div className="flex items-start justify-between mb-10">
-                  <span className="text-[10px] tracking-[0.3em] uppercase text-[#C4B59D] font-mono">
+                  <span className="text-[10px] tracking-[0.3em] uppercase text-[#8B7355]">
                     {item.id}
                   </span>
-                  <div className="w-11 h-11 rounded-full border border-[#C4B59D] group-hover:border-[#8B7355] flex items-center justify-center transition-colors duration-500">
+                  <div className="w-11 h-11 rounded-full border border-[#8B7355] group-hover:border-[#8B7355] flex items-center justify-center transition-colors duration-500">
                     <item.icon className="h-4 w-4 text-[#8B7355]" strokeWidth={1.5} />
                   </div>
                 </div>
@@ -172,7 +172,7 @@ const CoreInvestmentStrategies = () => {
             className="border border-[#E5E2DC] bg-white p-5"
           >
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 flex items-center justify-center border border-[#C4B59D] rounded-full flex-shrink-0">
+              <div className="w-10 h-10 flex items-center justify-center border border-[#8B7355] rounded-full flex-shrink-0">
                 <item.icon className="h-4 w-4 text-[#8B7355]" strokeWidth={1.5} />
               </div>
               <div className="flex-1">
@@ -180,7 +180,7 @@ const CoreInvestmentStrategies = () => {
                 <h3 className="text-[15px] font-serif mb-2">{item.title}</h3>
                 <p className="text-[12px] text-[#5A5A5A] leading-relaxed mb-4">{item.desc}</p>
                 <div className="flex gap-4 text-[10px]">
-                  <span className="text-[#8B7355] font-mono">{item.yieldRange}</span>
+                  <span className="text-[#8B7355]">{item.yieldRange}</span>
                   <span className="text-[#A9A39A]">·</span>
                   <span className="text-[#A9A39A]">{item.holdHorizon}</span>
                 </div>

@@ -55,7 +55,7 @@ const ESGFrameworkSection = () => {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-6 h-px bg-[#8B7355]" />
-              <p className="text-[10px] tracking-[0.4em] uppercase text-[#8B7355] font-mono">
+              <p className="text-[10px] tracking-[0.35em] uppercase text-[#8B7355]">
                 Environmental · Social · Governance
               </p>
             </div>
@@ -76,7 +76,7 @@ const ESGFrameworkSection = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="lg:col-span-7 lg:pt-10"
           >
-            <p className="text-[14px] sm:text-[15px] leading-[1.9] text-[#5A5A5A] font-light border-l border-[#C4B59D] pl-6 mb-6">
+            <p className="text-[14px] sm:text-[15px] leading-[1.9] text-[#5A5A5A] font-light border-l border-[#8B7355] pl-6 mb-6">
               ESG at Murivest is not a reporting function — it is a capital protection filter.
               It determines what is investable, what is bankable, and what is institutionally
               acceptable before capital is deployed into East African real estate markets.
@@ -113,10 +113,10 @@ const ESGFrameworkSection = () => {
 
                 {/* ID + Icon row */}
                 <div className="flex items-start justify-between mb-8">
-                  <span className="text-[10px] tracking-[0.3em] uppercase text-[#C4B59D] font-mono">
+                  <span className="text-[10px] tracking-[0.3em] uppercase text-[#8B7355]">
                     {item.id}
                   </span>
-                  <div className="w-11 h-11 rounded-full border border-[#C4B59D] group-hover:border-[#8B7355] flex items-center justify-center transition-colors duration-500">
+                  <div className="w-11 h-11 rounded-full border border-[#8B7355] group-hover:border-[#8B7355] flex items-center justify-center transition-colors duration-500">
                     <item.icon className="h-4 w-4 text-[#8B7355]" strokeWidth={1.5} />
                   </div>
                 </div>

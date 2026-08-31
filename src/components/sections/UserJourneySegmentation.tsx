@@ -83,7 +83,7 @@ export default function InvestmentFramework() {
           </div>
 
           <div className="lg:col-span-7">
-            <p className="text-[14px] sm:text-[15px] leading-[1.8] text-[#5A5A5A] font-light border-l border-[#C4B59D] pl-5">
+            <p className="text-[14px] sm:text-[15px] leading-[1.8] text-[#5A5A5A] font-light border-l border-[#8B7355] pl-5">
               Capital in this market is rotating faster than at any point in the last decade.
               The question is not whether it moves — but whether it moves into structure or exposure.
             </p>
@@ -109,7 +109,7 @@ export default function InvestmentFramework() {
             <div className="lg:hidden p-6 space-y-4">
 
               <div className="flex justify-between items-start">
-                <span className="text-[10px] tracking-[0.25em] text-[#C4B59D]">
+                <span className="text-[10px] tracking-[0.25em] text-[#8B7355]">
                   {p.number} · {p.tag}
                 </span>
 
@@ -126,7 +126,7 @@ export default function InvestmentFramework() {
                 {p.body}
               </p>
 
-              <p className="text-[10px] text-[#C4B59D] uppercase tracking-wider">
+              <p className="text-[10px] text-[#8B7355] uppercase tracking-wider">
                 {p.source}
               </p>
             </div>
@@ -136,7 +136,7 @@ export default function InvestmentFramework() {
 
               {/* LEFT STRIP */}
               <div className="col-span-1 bg-[#F8F7F4] flex items-center justify-center border-r border-[#E5E2DC]">
-                <span className="text-[10px] tracking-[0.2em] text-[#C4B59D]">
+                <span className="text-[10px] tracking-[0.2em] text-[#8B7355]">
                   {p.number}
                 </span>
               </div>

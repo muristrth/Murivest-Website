@@ -8,8 +8,8 @@ interface SectionProps {
 
 export function Section({ children, className = "", id }: SectionProps) {
   return (
-    <section id={id} className={`px-6 lg:px-8 ${className}`}>
-      <div className="mx-auto max-w-7xl">{children}</div>
+    <section id={id} className={`px-6 md:px-12 lg:px-16 ${className}`}>
+      <div className="mx-auto max-w-[1400px]">{children}</div>
     </section>
   );
 }
@@ -21,10 +21,11 @@ interface EyebrowProps {
 
 export function Eyebrow({ children, className = "" }: EyebrowProps) {
   return (
-    <span
-      className={`inline-block text-xs font-semibold uppercase tracking-[0.18em] text-gold-500 ${className}`}
-    >
-      {children}
+    <span className={`inline-flex items-center gap-3 ${className}`}>
+      <span className="w-8 h-[1px] bg-[#8B7355]" />
+      <span className="text-[10px] tracking-[0.35em] uppercase text-[#8B7355] font-medium">
+        {children}
+      </span>
     </span>
   );
 }
@@ -49,11 +50,11 @@ export function SectionHeading({
       className={`${align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"} ${className}`}
     >
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-      <h2 className="mt-3 text-3xl font-semibold leading-tight text-[#2C2C2C] sm:text-4xl">
+      <h2 className="mt-6 font-serif text-3xl md:text-4xl lg:text-[2.75rem] leading-[1.1] text-[#2C2C2C]">
         {title}
       </h2>
       {description && (
-        <p className="mt-4 text-lg leading-relaxed text-[#8B8680] text-pretty">
+        <p className="mt-4 text-[14px] leading-[1.8] text-[#5A5A5A] font-light text-pretty">
           {description}
         </p>
       )}
