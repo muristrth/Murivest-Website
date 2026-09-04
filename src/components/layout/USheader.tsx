@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect, useRef, useCallback } from "react";
 import {
   Menu,
@@ -8,7 +9,7 @@ import {
   ArrowUpRight,
   TrendingUp,
   Phone,
-  Mail
+  Mail,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 

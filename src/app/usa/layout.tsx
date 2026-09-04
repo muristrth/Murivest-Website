@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import USAHeader from "./components/USAHeader";
+import USAHeader from "@/components/layout/USheader";
 import { SITE, PROPERTY_TYPES } from "./lib/site";
 
 export const metadata: Metadata = {

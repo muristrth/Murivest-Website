@@ -625,7 +625,7 @@ const PropertyDrawer: React.FC<{
                   }
                 >
                   <FileText className="w-4 h-4" />
-                  View Full Prospectus
+                  View Asset
                 </a>
                 <a
                   href={`mailto:${

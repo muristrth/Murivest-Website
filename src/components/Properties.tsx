@@ -735,10 +735,10 @@ const PropertyCard: React.FC<{
             Quick View
           </button>
           <NextLink
-            href={`/properties/${property.slug}`}
+            href={`/kenya/properties/${property.slug}`}
             className="border border-white text-white px-6 py-3 text-[10px] tracking-[0.2em] uppercase font-medium hover:bg-white hover:text-[#1B4332] transition-colors"
           >
-            Prospectus
+            View Details
           </NextLink>
         </div>
       </div>

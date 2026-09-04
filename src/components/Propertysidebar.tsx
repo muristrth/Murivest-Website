@@ -169,10 +169,10 @@ export default function PropertySidebar({
           {/* View all */}
           <div className="px-5 py-4 border-t border-[#E8E6E1]">
             <Link
-              href="/properties"
+              href="/kenya/properties"
               className="flex items-center justify-between text-[10px] tracking-[0.2em] uppercase text-[#8B8680] hover:text-[#1B4332] transition-colors group"
             >
-              <span>View Full Portfolio</span>
+              <span>View Asset</span>
               <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" strokeWidth={1.5} />
             </Link>
           </div>
