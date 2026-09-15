@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState, useEffect, useRef, useCallback } from "react";
 import {
   Menu,
@@ -10,28 +9,8 @@ import {
   TrendingUp,
   Phone,
   Mail,
-  Building2,
-  Factory,
-  Warehouse,
-  Home,
-  Store,
-  Server,
-  Handshake,
-  ShieldCheck,
-  LineChart,
-  FileText,
-  Users,
-  Landmark,
-  ArrowRightLeft,
-  Globe,
-  Target,
-  Briefcase,
-  Search,
-  BarChart3,
-  PieChart,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { SITE, PROPERTY_TYPES } from "../lib/site";
 
 /* ═══════════════════════════════════════════════════════════════
    NAVIGATION CONFIGURATION — USA (7 primary items + More)

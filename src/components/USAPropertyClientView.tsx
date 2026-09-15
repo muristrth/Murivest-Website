@@ -1,0 +1,755 @@
+'use client';
+
+// ─── components/usa/PropertyClientView.tsx ───────────────────────────────────
+// US property detail view — USD denomination, US regulatory language.
+
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  ArrowLeft, Heart, Share2, MapPin, Download,
+  TrendingUp, Building2, Shield, X,
+  ChevronLeft, ChevronRight, FileText,
+  ArrowUpRight, Check, Maximize2, Printer, Scale
+} from 'lucide-react';
+
+// ─── Types ─────────────────────────────────────────────────────────────────
+
+interface Attribute {
+  _type?: string;
+  label: string;
+  value: string | null;
+}
+
+interface Property {
+  title: string;
+  subtitle?: string;
+  location?: { lat?: number | null; lng?: number | null; area?: string } | string | null;
+  city?: string;
+  state?: string;
+  zipCode?: string;
+  propertyType?: string;
+  type?: string;
+  listingType?: string;
+  status?: string;
+  price?: string | null;
+  yield?: string | null;
+  images: string[];
+  features?: string[];
+  description?: string;
+  brochureUrl?: string;
+  details?: Attribute[];
+  investment?: {
+    monthlyIncome?: string | null;
+    annualIncome?: string | null;
+    appreciationRate?: string | null;
+    totalROI?: string | null;
+  };
+  regulatory?: {
+    zoning?: string | null;
+    tenancy?: string | null;
+    listingSource?: string | null;
+    researchStatus?: string | null;
+    principalAdvisor?: string | null;
+  };
+  sqft?: string | null;
+}
+
+// ─── Color Palette (Old Money Aesthetic) ───────────────────────────────────
+
+const COLORS = {
+  forest: '#1B4332',
+  forestLight: '#2D5A45',
+  cream: '#FAF9F6',
+  creamDark: '#F5F4F0',
+  brass: '#B8956B',
+  brassLight: '#C9A87C',
+  charcoal: '#2C2C2C',
+  stone: '#8B8680',
+  paper: '#FFFFFF',
+  border: '#E8E6E1',
+};
+
+// ─── Component ──────────────────────────────────────────────────────────────
+
+export default function PropertyClientView({
+  property,
+  sidebar,
+}: {
+  property: Property;
+  sidebar?: React.ReactNode;
+}) {
+  const [isLiked, setIsLiked] = useState(false);
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [showShareToast, setShowShareToast] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 100);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  if (!property) return null;
+
+  const locationLabel =
+    (typeof property.location === 'string' && property.location) ||
+    (typeof property.location === 'object' && property.location?.area) ||
+    [property.city, property.state, property.zipCode].filter(Boolean).join(', ');
+
+  const handleDownload = async () => {
+    if (property.brochureUrl) {
+      try {
+        const response = await fetch(property.brochureUrl);
+        if (!response.ok) throw new Error('Download failed');
+        const blob = await response.blob();
+        const blobUrl = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = blobUrl;
+        const fileName = `${property.title.replace(/\s+/g, '_')}_Prospectus.pdf`;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(blobUrl);
+      } catch (error) {
+        console.error("Download Error:", error);
+        alert("Failed to download prospectus. Please try again.");
+      }
+    } else {
+      alert("Investment prospectus currently being finalized for this asset.");
+    }
+  };
+
+  const handleShare = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setShowShareToast(true);
+      setTimeout(() => setShowShareToast(false), 2000);
+    } catch {
+      // Fallback
+    }
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex(i => i < property.images.length - 1 ? i + 1 : 0);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex(i => i > 0 ? i - 1 : property.images.length - 1);
+  };
+
+  const displayType = property.propertyType || property.type || 'Residential';
+
+  const visibleDetails = (property.details || []).filter(
+    (d) => d.value !== null && d.value !== undefined && d.value !== ''
+  );
+
+  return (
+    <div className="min-h-screen bg-[#FAF9F6] text-[#2C2C2C] selection:bg-[#B8956B]/20">
+
+      {/* ── Navigation ─────────────────────────────────────────────── */}
+      <nav className="bg-[#1B4332] border-b border-[#E8E6E1] z-40">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-5">
+          <div className="flex items-center justify-between">
+            <Link
+              href="/usa/properties"
+              className="group flex items-center gap-3 hover:opacity-70 transition-opacity"
+            >
+              <div
+                className={`w-10 h-10 border flex items-center justify-center transition-colors ${
+                  isScrolled
+                    ? 'border-[#E8E6E1] group-hover:border-[#1B4332]'
+                    : 'border-white/30 group-hover:border-white'
+                }`}
+              >
+                <ArrowLeft
+                  size={16}
+                  className={isScrolled ? 'text-[#2C2C2C]' : 'text-white'}
+                  strokeWidth={1.5}
+                />
+              </div>
+              <span
+                className={`hidden md:inline text-[10px] tracking-[0.3em] uppercase transition-colors ${
+                  isScrolled
+                    ? 'text-[#8B8680] group-hover:text-[#1B4332]'
+                    : 'text-white/80 group-hover:text-white'
+                }`}
+              >
+                Return to US Portfolio
+              </span>
+            </Link>
+
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setIsLiked(!isLiked)}
+                className={`w-10 h-10 border flex items-center justify-center transition-all ${
+                  isScrolled ? 'border-[#E8E6E1]' : 'border-white/30'
+                } ${isLiked ? 'bg-[#1B4332] border-[#1B4332]' : ''}`}
+              >
+                <Heart
+                  size={16}
+                  className={isLiked ? 'fill-white text-white' : isScrolled ? 'text-[#2C2C2C]' : 'text-white'}
+                  strokeWidth={1.5}
+                />
+              </button>
+              <button
+                onClick={handleShare}
+                className={`w-10 h-10 border flex items-center justify-center transition-colors ${
+                  isScrolled ? 'border-[#E8E6E1]' : 'border-white/30'
+                }`}
+              >
+                <Share2
+                  size={16}
+                  className={isScrolled ? 'text-[#2C2C2C]' : 'text-white'}
+                  strokeWidth={1.5}
+                />
+              </button>
+              <button
+                onClick={() => window.print()}
+                className={`w-10 h-10 border flex items-center justify-center transition-colors hidden md:flex ${
+                  isScrolled ? 'border-[#E8E6E1]' : 'border-white/30'
+                }`}
+              >
+                <Printer
+                  size={16}
+                  className={isScrolled ? 'text-[#2C2C2C]' : 'text-white'}
+                  strokeWidth={1.5}
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* ── Share Toast ─────────────────────────────────────────────── */}
+      <AnimatePresence>
+        {showShareToast && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed left-1/2 -translate-x-1/2 z-[60] bg-[#1B4332] text-white px-6 py-3 text-[11px] tracking-[0.2em] uppercase"
+          >
+            Link copied
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ── Hero ────────────────────────────────────────────────────── */}
+      <section className="relative h-[70vh] min-h-[500px] overflow-hidden bg-[#1B4332]">
+        <div className="absolute inset-0">
+          {property.images?.[0] ? (
+            <img
+              src={property.images[0]}
+              alt={property.title}
+              className="w-full h-full object-cover opacity-60"
+            />
+          ) : (
+            <div className="w-full h-full bg-[#2D5A45]" />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1B4332] via-[#1B4332]/50 to-transparent" />
+        </div>
+
+        <div className="relative z-10 h-full flex items-end pb-16 lg:pb-24">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+            >
+              <div className="flex items-center gap-4 mb-6 flex-wrap">
+                <span className="text-[10px] tracking-[0.3em] uppercase text-[#B8956B] font-medium bg-[#B8956B]/10 px-3 py-1.5">
+                  {displayType}
+                </span>
+                <span className="w-1 h-1 rounded-full bg-[#B8956B]" />
+                <span className="text-[10px] tracking-[0.2em] uppercase text-white/80">
+                  {property.listingType || 'For Sale'}
+                </span>
+                {property.status && (
+                  <>
+                    <span className="w-1 h-1 rounded-full bg-white/40" />
+                    <span className="text-[10px] tracking-[0.2em] uppercase text-white/80">
+                      {property.status}
+                    </span>
+                  </>
+                )}
+              </div>
+
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-4 leading-[1.1] max-w-4xl">
+                {property.title}
+                {property.subtitle && (
+                  <span className="block italic text-[#B8956B] font-light text-lg md:text-xl lg:text-2xl mt-3">
+                    {property.subtitle}
+                  </span>
+                )}
+              </h1>
+
+              <div className="flex items-center gap-2 text-white/70 mt-6">
+                <MapPin size={16} className="text-[#B8956B]" strokeWidth={1.5} />
+                <span className="text-[12px] tracking-wide">
+                  {locationLabel}
+                </span>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Thumbnail Strip */}
+        {property.images && property.images.length > 1 && (
+          <div className="absolute bottom-6 right-6 lg:right-12 hidden lg:flex gap-2">
+            {property.images.slice(0, 4).map((img, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  setCurrentImageIndex(idx);
+                  setIsImageModalOpen(true);
+                }}
+                className={`w-20 h-20 border-2 overflow-hidden transition-all ${
+                  idx === 0 ? 'border-[#B8956B]' : 'border-white/30 hover:border-white'
+                }`}
+              >
+                <img src={img} className="w-full h-full object-cover" alt="" />
+              </button>
+            ))}
+            {property.images.length > 4 && (
+              <button
+                onClick={() => setIsImageModalOpen(true)}
+                className="w-20 h-20 border border-white/30 flex items-center justify-center text-white text-xs tracking-wide hover:border-white transition-colors"
+              >
+                +{property.images.length - 4}
+              </button>
+            )}
+          </div>
+        )}
+      </section>
+
+      {/* ── Main Content ────────────────────────────────────────────── */}
+      <main className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16 lg:py-24">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
+
+          {/* ── Left Column — Investment Details ─────────────────────── */}
+          <div className="lg:col-span-7 space-y-12">
+
+            {/* Value Strip */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#E8E6E1] border border-[#E8E6E1]"
+            >
+              <div className="bg-white p-8 lg:p-10">
+                <p className="text-[9px] tracking-[0.25em] uppercase text-[#B8956B] mb-3 font-medium">
+                  Indicative Value (USD)
+                </p>
+                <p className="text-[30px] font-serif text-[#2C2C2C] mb-4">
+                  {property.price || 'Price on Request'}
+                </p>
+                <p className="text-[11px] text-[#8B8680] uppercase tracking-wide">
+                  USD
+                </p>
+              </div>
+
+              <div className="bg-[#1B4332] text-white p-8 lg:p-10 flex flex-col justify-between">
+                <div className="text-right">
+                  <p className="text-[10px] tracking-[0.25em] uppercase text-[#B8956B] mb-3 font-medium">
+                    Net Yield
+                  </p>
+                  <p className="text-4xl lg:text-6xl font-serif text-white">
+                    {property.yield || 'N/A'}
+                  </p>
+                </div>
+                <p className="text-[10px] text-white/60 mt-4 text-right italic">
+                  Institutional Grade US Asset
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Investment Matrix */}
+            {property.investment && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+              >
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 bg-[#1B4332] flex items-center justify-center">
+                    <TrendingUp size={18} className="text-white" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-[11px] tracking-[0.25em] uppercase text-[#2C2C2C] font-medium">
+                    Investment Returns Analysis
+                  </h3>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#E8E6E1] border border-[#E8E6E1]">
+                  {property.investment.monthlyIncome && (
+                    <div className="bg-white p-6">
+                      <span className="text-[9px] tracking-[0.15em] uppercase text-[#8B8680] block mb-2">
+                        Monthly Income
+                      </span>
+                      <span className="text-lg font-medium text-[#2C2C2C]">
+                        {property.investment.monthlyIncome}
+                      </span>
+                    </div>
+                  )}
+                  {property.investment.annualIncome && (
+                    <div className="bg-white p-6">
+                      <span className="text-[9px] tracking-[0.15em] uppercase text-[#8B8680] block mb-2">
+                        Annual Income
+                      </span>
+                      <span className="text-lg font-medium text-[#2C2C2C]">
+                        {property.investment.annualIncome}
+                      </span>
+                    </div>
+                  )}
+                  {property.investment.appreciationRate && (
+                    <div className="bg-white p-6">
+                      <span className="text-[9px] tracking-[0.15em] uppercase text-[#8B8680] block mb-2">
+                        Appreciation
+                      </span>
+                      <span className="text-lg font-medium text-[#2C2C2C]">
+                        {property.investment.appreciationRate}
+                      </span>
+                    </div>
+                  )}
+                  {property.investment.totalROI && (
+                    <div className="bg-[#B8956B] text-white p-6">
+                      <span className="text-[9px] tracking-[0.15em] uppercase text-white/80 block mb-2">
+                        Target ROI
+                      </span>
+                      <span className="text-xl font-serif">
+                        {property.investment.totalROI}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            )}
+
+            {/* Executive Summary */}
+            {property.description && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                <h3 className="text-[11px] tracking-[0.25em] uppercase text-[#2C2C2C] font-medium mb-6 flex items-center gap-3">
+                  <div className="w-10 h-10 bg-[#F5F4F0] flex items-center justify-center">
+                    <FileText size={18} className="text-[#1B4332]" strokeWidth={1.5} />
+                  </div>
+                  Executive Summary
+                </h3>
+                <div className="prose prose-stone max-w-none">
+                  <p className="text-[15px] text-[#5A5A5A] leading-[1.8] font-light">
+                    {property.description}
+                  </p>
+                </div>
+              </motion.div>
+            )}
+
+            {/* Key Attributes */}
+            {property.features && property.features.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+              >
+                <h3 className="text-[11px] tracking-[0.25em] uppercase text-[#2C2C2C] font-medium mb-6 flex items-center gap-3">
+                  <div className="w-10 h-10 bg-[#F5F4F0] flex items-center justify-center">
+                    <Shield size={18} className="text-[#1B4332]" strokeWidth={1.5} />
+                  </div>
+                  Key Investment Attributes
+                </h3>
+                <div className="grid md:grid-cols-2 gap-3">
+                  {property.features.map((feature, i) => (
+                    <div key={i} className="flex items-start gap-3 bg-white border border-[#E8E6E1] p-4">
+                      <Check size={16} className="text-[#B8956B] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                      <span className="text-[13px] text-[#2C2C2C] leading-relaxed">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+
+            {/* Specifications */}
+            {visibleDetails.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+              >
+                <h3 className="text-[11px] tracking-[0.25em] uppercase text-[#2C2C2C] font-medium mb-6 flex items-center gap-3">
+                  <div className="w-10 h-10 bg-[#F5F4F0] flex items-center justify-center">
+                    <Building2 size={18} className="text-[#1B4332]" strokeWidth={1.5} />
+                  </div>
+                  Asset Specifications
+                </h3>
+                <div className="bg-white border border-[#E8E6E1]">
+                  {visibleDetails.map((detail, i) => (
+                    <div
+                      key={i}
+                      className={`flex justify-between items-center p-5 ${
+                        i !== visibleDetails.length - 1 ? 'border-b border-[#E8E6E1]' : ''
+                      }`}
+                    >
+                      <span className="text-[11px] uppercase tracking-wide text-[#8B8680]">
+                        {detail.label}
+                      </span>
+                      <span className="text-[14px] text-[#2C2C2C] font-medium text-right">
+                        {detail.value}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+
+            {/* Regulatory & Advisory (US) */}
+            {property.regulatory && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.45 }}
+              >
+                <h3 className="text-[11px] tracking-[0.25em] uppercase text-[#2C2C2C] font-medium mb-6 flex items-center gap-3">
+                  <div className="w-10 h-10 bg-[#F5F4F0] flex items-center justify-center">
+                    <Scale size={18} className="text-[#1B4332]" strokeWidth={1.5} />
+                  </div>
+                  Regulatory & Advisory
+                </h3>
+                <div className="bg-white border border-[#E8E6E1] p-6 space-y-3">
+                  {property.regulatory.listingSource && (
+                    <div className="flex justify-between gap-4 text-[13px]">
+                      <span className="text-[#8B8680] uppercase tracking-wide text-[11px]">Listing Source</span>
+                      <span className="text-[#2C2C2C] text-right">{property.regulatory.listingSource}</span>
+                    </div>
+                  )}
+                  {property.regulatory.zoning && (
+                    <div className="flex justify-between gap-4 text-[13px]">
+                      <span className="text-[#8B8680] uppercase tracking-wide text-[11px]">Zoning</span>
+                      <span className="text-[#2C2C2C] text-right">{property.regulatory.zoning}</span>
+                    </div>
+                  )}
+                  {property.regulatory.tenancy && (
+                    <div className="flex justify-between gap-4 text-[13px]">
+                      <span className="text-[#8B8680] uppercase tracking-wide text-[11px]">Tenancy</span>
+                      <span className="text-[#2C2C2C] text-right">{property.regulatory.tenancy}</span>
+                    </div>
+                  )}
+                  {property.regulatory.researchStatus && (
+                    <div className="flex justify-between gap-4 text-[13px]">
+                      <span className="text-[#8B8680] uppercase tracking-wide text-[11px]">Research Status</span>
+                      <span className="text-[#2C2C2C] text-right">{property.regulatory.researchStatus}</span>
+                    </div>
+                  )}
+                  {property.regulatory.principalAdvisor && (
+                    <div className="flex justify-between gap-4 text-[13px] pt-3 border-t border-[#E8E6E1]">
+                      <span className="text-[#8B8680] uppercase tracking-wide text-[11px]">Principal Advisor</span>
+                      <span className="text-[#2C2C2C] font-medium text-right">{property.regulatory.principalAdvisor}</span>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            )}
+
+            {/* Gallery Preview */}
+            {property.images && property.images.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-[11px] tracking-[0.25em] uppercase text-[#2C2C2C] font-medium mb-6">
+                  Visual Documentation
+                </h3>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                  {property.images.slice(0, 6).map((img, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => {
+                        setCurrentImageIndex(idx);
+                        setIsImageModalOpen(true);
+                      }}
+                      className="relative aspect-square overflow-hidden group"
+                    >
+                      <img
+                        src={img}
+                        alt={`${property.title} - ${idx + 1}`}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-[#1B4332]/0 group-hover:bg-[#1B4332]/20 transition-colors" />
+                    </button>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </div>
+
+          {/* ── Right Column — Action Sidebar + Discovery Sidebar ────── */}
+          <div className="lg:col-span-4">
+
+            {/* Sticky action cards */}
+            <div className="top-28 space-y-6">
+
+              {/* Mandate Badge */}
+              <div className="bg-[#1B4332] text-white p-6 flex items-center gap-4">
+                <Shield size={24} className="text-[#B8956B]" strokeWidth={1.5} />
+                <div>
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#B8956B] font-medium">
+                    Exclusive Mandate
+                  </p>
+                  <p className="text-[13px] text-white/90 mt-1">
+                    Direct representation by Murivest US Platform
+                  </p>
+                </div>
+              </div>
+
+              {/* Size Card */}
+              <div className="bg-white border border-[#E8E6E1] p-6 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-[#F5F4F0] flex items-center justify-center">
+                    <Maximize2 size={20} className="text-[#1B4332]" strokeWidth={1.5} />
+                  </div>
+                  <div>
+                    <p className="text-[9px] tracking-[0.2em] uppercase text-[#8B8680]">Total Area</p>
+                    <p className="text-lg font-medium text-[#2C2C2C]">
+                      {property.sqft || '—'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="space-y-3">
+                <button
+                  onClick={handleDownload}
+                  className="w-full bg-[#1B4332] hover:bg-[#2D5A45] text-white py-4 text-[11px] tracking-[0.25em] uppercase flex items-center justify-between px-6 transition-colors duration-300 group"
+                >
+                  <span>Download Prospectus</span>
+                  <Download
+                    size={18}
+                    className="group-hover:translate-y-0.5 transition-transform"
+                    strokeWidth={1.5}
+                  />
+                </button>
+
+                <a
+                  href={`mailto:capital@murivest.co.ke?subject=Investment Inquiry: ${property.title}`}
+                  className="w-full block border border-[#1B4332] text-[#1B4332] hover:bg-[#1B4332] hover:text-white py-4 text-[11px] tracking-[0.25em] uppercase text-center transition-colors"
+                >
+                  Schedule Consultation
+                </a>
+              </div>
+
+              {/* Confidentiality Notice */}
+              <div className="bg-[#F5F4F0] border border-[#E8E6E1] p-5">
+                <div className="flex items-start gap-3">
+                  <Shield size={16} className="text-[#B8956B] mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                  <p className="text-[11px] text-[#8B8680] leading-relaxed">
+                    This memorandum is confidential and provided for qualified investors only (KYC/AML
+                    verification required). All figures are indicative and subject to final due diligence.
+                    US investors should consult independent tax counsel regarding structuring,
+                    including potential 1031 like-kind exchange treatment.
+                  </p>
+                </div>
+              </div>
+
+            </div>{/* end sticky */}
+
+            {/* Discovery sidebar — related, popular, subscribe, contact */}
+            {sidebar && (
+              <div className="mt-8">
+                {sidebar}
+              </div>
+            )}
+
+          </div>{/* end right column */}
+
+        </div>
+      </main>
+
+      {/* ── Full Screen Image Modal ─────────────────────────────────── */}
+      <AnimatePresence>
+        {isImageModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-[#1B4332]/98 z-[100] flex items-center justify-center"
+            onClick={() => setIsImageModalOpen(false)}
+          >
+            <button
+              className="absolute top-6 right-6 text-white/60 hover:text-white transition-colors"
+              onClick={() => setIsImageModalOpen(false)}
+            >
+              <X size={32} strokeWidth={1} />
+            </button>
+
+            <button
+              className="absolute left-6 top-1/2 -translate-y-1/2 text-white/60 hover:text-white transition-colors p-4"
+              onClick={(e) => { e.stopPropagation(); prevImage(); }}
+            >
+              <ChevronLeft size={40} strokeWidth={1} />
+            </button>
+
+            <motion.img
+              key={currentImageIndex}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.3 }}
+              src={property.images?.[currentImageIndex]}
+              className="max-h-[85vh] max-w-[90vw] object-contain shadow-2xl"
+              alt={`${property.title} - ${currentImageIndex + 1}`}
+              onClick={(e) => e.stopPropagation()}
+            />
+
+            <button
+              className="absolute right-6 top-1/2 -translate-y-1/2 text-white/60 hover:text-white transition-colors p-4"
+              onClick={(e) => { e.stopPropagation(); nextImage(); }}
+            >
+              <ChevronRight size={40} strokeWidth={1} />
+            </button>
+
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-6 bg-white/10 backdrop-blur-sm px-6 py-3 border border-white/20">
+              <span className="text-[11px] tracking-[0.3em] uppercase text-white">
+                {currentImageIndex + 1} / {property.images?.length || 0}
+              </span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ── Footer Disclaimer ───────────────────────────────────────── */}
+      <footer className="border-t border-[#E8E6E1] bg-white py-12 mt-16">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Shield className="w-4 h-4 text-[#B8956B]" strokeWidth={1.5} />
+            <span className="text-[10px] tracking-[0.3em] uppercase text-[#8B8680]">
+              Mandated Advisory
+            </span>
+          </div>
+          <p className="text-[11px] text-[#8B8680] leading-relaxed max-w-3xl mx-auto text-center font-light">
+            All information contained herein is provided for informational purposes only and should
+            not be construed as investment, legal, or tax advice. Past performance is not indicative
+            of future returns. Available exclusively to mandated partners and qualified investors
+            under NDA, subject to KYC/AML verification. Murivest Group Ltd is an independent
+            commercial real estate advisory firm; it does not act as a licensed investment advisor,
+            does not operate collective investment schemes, and does not pool investor capital.
+            All US transactions are subject to formal mandate agreements and independent due
+            diligence. Transactions in US real estate may involve additional regulatory, tax, and
+            securities considerations; prospective investors should obtain independent US legal
+            and tax counsel.
+          </p>
+        </div>
+      </footer>
+
+    </div>
+  );
+}
