@@ -60,7 +60,7 @@ const PropertyCard: React.FC<{
     >
       <Link
         href={`/ke-properties/off-market/${property.slug}`}
-        className="group block bg-white border border-[#E8E6E1] hover:border-[#B8956B] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-500"
+        className="group block bg-white border border-[#E5E2DC] hover:border-[#8B7355] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-500"
       >
         {/* Image */}
         <div className="relative h-[260px] overflow-hidden bg-[#F5F4F0]">
@@ -79,16 +79,16 @@ const PropertyCard: React.FC<{
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
           {/* Off-Market frosted overlay hint */}
-          <div className="absolute inset-0 bg-[#1B4332]/10 group-hover:bg-transparent transition-colors duration-500" />
+          <div className="absolute inset-0 bg-[#2C2C2C]/10 group-hover:bg-transparent transition-colors duration-500" />
 
           {/* Badges */}
           <div className="absolute top-4 left-4 flex flex-col gap-2">
-            <span className="bg-[#1B4332] text-white text-[9px] tracking-[0.2em] uppercase px-3 py-1.5 font-medium flex items-center gap-1.5">
+            <span className="bg-[#2C2C2C] text-white text-[9px] tracking-[0.2em] uppercase px-3 py-1.5 font-medium flex items-center gap-1.5">
               <Lock className="w-2.5 h-2.5" strokeWidth={2} />
               Off-Market
             </span>
             {property.featured && (
-              <span className="bg-[#B8956B] text-white text-[9px] tracking-[0.2em] uppercase px-3 py-1.5 font-medium">
+              <span className="bg-[#8B7355] text-white text-[9px] tracking-[0.2em] uppercase px-3 py-1.5 font-medium">
                 Priority
               </span>
             )}
@@ -105,7 +105,7 @@ const PropertyCard: React.FC<{
           {/* Quick-view hint */}
           <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="w-9 h-9 bg-white/90 flex items-center justify-center">
-              <ArrowUpRight className="w-4 h-4 text-[#1B4332]" strokeWidth={1.5} />
+              <ArrowUpRight className="w-4 h-4 text-[#2C2C2C]" strokeWidth={1.5} />
             </div>
           </div>
         </div>
@@ -114,12 +114,12 @@ const PropertyCard: React.FC<{
         <div className="p-6 space-y-4">
           <div>
             <h3
-              className="text-base text-[#2C2C2C] leading-snug mb-1 group-hover:text-[#1B4332] transition-colors"
+              className="text-base text-[#2C2C2C] leading-snug mb-1 group-hover:text-[#2C2C2C] transition-colors"
               style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 500 }}
             >
               {property.title}
             </h3>
-            <div className="flex items-center gap-1.5 text-[#8B8680]">
+            <div className="flex items-center gap-1.5 text-[#5A5A5A]">
               <MapPin className="w-3.5 h-3.5 flex-shrink-0" strokeWidth={1.5} />
               <span className="text-[12px] tracking-wide">
                 {property.neighborhood}, {property.city}
@@ -128,16 +128,16 @@ const PropertyCard: React.FC<{
           </div>
 
           {property.investmentAngle && (
-            <p className="text-[12px] text-[#8B8680] leading-relaxed font-light line-clamp-2">
+            <p className="text-[12px] text-[#5A5A5A] leading-relaxed font-light line-clamp-2">
               {property.investmentAngle}
             </p>
           )}
 
-          <div className="h-px bg-[#E8E6E1]" />
+          <div className="h-px bg-[#E5E2DC]" />
 
           <div className="flex items-end justify-between">
             <div>
-              <p className="text-[9px] tracking-[0.2em] uppercase text-[#B8956B] font-medium mb-1">
+              <p className="text-[9px] tracking-[0.2em] uppercase text-[#8B7355] font-medium mb-1">
                 Indicative Value
               </p>
               <p
@@ -149,7 +149,7 @@ const PropertyCard: React.FC<{
             </div>
             {property.grade && (
               <div className="text-right">
-                <p className="text-[9px] tracking-[0.2em] uppercase text-[#8B8680] font-medium mb-1">
+                <p className="text-[9px] tracking-[0.2em] uppercase text-[#5A5A5A] font-medium mb-1">
                   Grade
                 </p>
                 <p className="text-[12px] text-[#2C2C2C]">{property.grade}</p>
@@ -158,7 +158,7 @@ const PropertyCard: React.FC<{
           </div>
 
           {sizeLabel && (
-            <p className="text-[11px] text-[#8B8680] tracking-wide">{sizeLabel}</p>
+            <p className="text-[11px] text-[#5A5A5A] tracking-wide">{sizeLabel}</p>
           )}
         </div>
       </Link>
@@ -241,16 +241,16 @@ export default function OffMarketPage() {
     selectedType !== "All" || selectedCity !== "All" || selectedGrade !== "All" || searchTerm;
 
   return (
-    <div className="min-h-screen bg-[#FAF9F6]" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen bg-[#F8F7F4]" style={{ fontFamily: "'Inter', sans-serif" }}>
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="bg-[#1B4332] pt-20 pb-16 px-6 lg:px-12">
+      <section className="bg-[#2C2C2C] pt-20 pb-16 px-6 lg:px-12">
         <div className="max-w-[1600px] mx-auto">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div>
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-px h-4 bg-[#B8956B]" />
-                <p className="text-[10px] tracking-[0.35em] uppercase text-[#B8956B] font-medium">
+                <div className="w-px h-4 bg-[#8B7355]" />
+                <p className="text-[10px] tracking-[0.35em] uppercase text-[#8B7355] font-medium">
                   Private Portfolio · Kenya
                 </p>
               </div>
@@ -268,9 +268,9 @@ export default function OffMarketPage() {
 
             {/* NDA notice */}
             <div className="flex items-start gap-3 bg-white/5 border border-white/10 p-5 max-w-xs">
-              <Lock className="w-4 h-4 text-[#B8956B] flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+              <Lock className="w-4 h-4 text-[#8B7355] flex-shrink-0 mt-0.5" strokeWidth={1.5} />
               <div>
-                <p className="text-[10px] tracking-[0.2em] uppercase text-[#B8956B] font-medium mb-1">
+                <p className="text-[10px] tracking-[0.2em] uppercase text-[#8B7355] font-medium mb-1">
                   Confidential Access
                 </p>
                 <p className="text-[11px] text-white/50 leading-relaxed font-light">
@@ -283,13 +283,13 @@ export default function OffMarketPage() {
       </section>
 
       {/* ── Filter Bar ───────────────────────────────────────────────── */}
-      <div className="bg-white border-b border-[#E8E6E1] py-5 px-6 lg:px-12 sticky top-0 z-30">
+      <div className="bg-white border-b border-[#E5E2DC] py-5 px-6 lg:px-12 sticky top-0 z-30">
         <div className="max-w-[1600px] mx-auto flex flex-wrap items-center gap-3 lg:gap-6">
 
           {/* Search */}
           <div className="relative flex-1 min-w-[200px] max-w-sm">
             <Search
-              className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-[#8B8680]"
+              className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-[#5A5A5A]"
               strokeWidth={1.5}
             />
             <input
@@ -297,16 +297,16 @@ export default function OffMarketPage() {
               placeholder="Search assets by location or type..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full bg-transparent border-b border-[#E8E6E1] focus:border-[#1B4332] pl-7 pr-7 py-2.5 text-[13px] text-[#2C2C2C] placeholder:text-[#8B8680]/60 outline-none transition-colors font-light tracking-wide"
+              className="w-full bg-transparent border-b border-[#E5E2DC] focus:border-[#2C2C2C] pl-7 pr-7 py-2.5 text-[13px] text-[#2C2C2C] placeholder:text-[#5A5A5A]/60 outline-none transition-colors font-light tracking-wide"
             />
             {searchTerm && (
               <button onClick={() => setSearchTerm("")}>
-                <X className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-[#8B8680] hover:text-[#1B4332] transition-colors" />
+                <X className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-[#5A5A5A] hover:text-[#2C2C2C] transition-colors" />
               </button>
             )}
           </div>
 
-          <div className="w-px h-6 bg-[#E8E6E1] hidden lg:block" />
+          <div className="w-px h-6 bg-[#E5E2DC] hidden lg:block" />
 
           {/* Property Type */}
           <FilterDropdown
@@ -338,10 +338,10 @@ export default function OffMarketPage() {
             onSelect={(v) => { setSelectedGrade(v); setIsGradeOpen(false); }}
           />
 
-          <div className="w-px h-6 bg-[#E8E6E1] hidden lg:block" />
+          <div className="w-px h-6 bg-[#E5E2DC] hidden lg:block" />
 
           {/* Count */}
-          <span className="text-[11px] text-[#8B8680] tracking-wide hidden md:block">
+          <span className="text-[11px] text-[#5A5A5A] tracking-wide hidden md:block">
             {loading ? "—" : `${filteredProperties.length} ${filteredProperties.length === 1 ? "Asset" : "Assets"}`}
           </span>
 
@@ -349,7 +349,7 @@ export default function OffMarketPage() {
           {hasActiveFilters && (
             <button
               onClick={clearFilters}
-              className="flex items-center gap-1.5 text-[10px] tracking-[0.15em] uppercase text-[#B8956B] hover:text-[#1B4332] transition-colors"
+              className="flex items-center gap-1.5 text-[10px] tracking-[0.15em] uppercase text-[#8B7355] hover:text-[#2C2C2C] transition-colors"
             >
               <X className="w-3 h-3" />
               Clear
@@ -362,22 +362,22 @@ export default function OffMarketPage() {
       <section className="max-w-[1600px] mx-auto px-6 lg:px-12 py-16">
         {loading ? (
           <div className="text-center py-32">
-            <div className="w-8 h-8 border border-[#1B4332] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-            <p className="text-[11px] tracking-[0.2em] uppercase text-[#8B8680]">
+            <div className="w-8 h-8 border border-[#2C2C2C] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+            <p className="text-[11px] tracking-[0.2em] uppercase text-[#5A5A5A]">
               Retrieving portfolio…
             </p>
           </div>
         ) : filteredProperties.length === 0 ? (
           <div className="text-center py-32">
             <p
-              className="text-xl text-[#8B8680] italic mb-6"
+              className="text-xl text-[#5A5A5A] italic mb-6"
               style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
             >
               No assets match your current criteria.
             </p>
             <button
               onClick={clearFilters}
-              className="text-[11px] tracking-[0.2em] uppercase text-[#1B4332] border border-[#1B4332] px-6 py-3 hover:bg-[#1B4332] hover:text-white transition-colors"
+              className="text-[11px] tracking-[0.2em] uppercase text-[#2C2C2C] border border-[#2C2C2C] px-6 py-3 hover:bg-[#2C2C2C] hover:text-white transition-colors"
             >
               Clear Filters
             </button>
@@ -392,14 +392,14 @@ export default function OffMarketPage() {
       </section>
 
       {/* ── Editorial / SEO Section ──────────────────────────────────── */}
-      <section className="bg-white border-t border-[#E8E6E1] py-20 px-6 lg:px-12">
+      <section className="bg-white border-t border-[#E5E2DC] py-20 px-6 lg:px-12">
         <div className="max-w-[1600px] mx-auto">
           <div className="grid lg:grid-cols-12 gap-12">
 
             {/* Main copy */}
             <div className="lg:col-span-7 space-y-8">
               <div>
-                <p className="text-[10px] tracking-[0.3em] uppercase text-[#B8956B] font-medium mb-4">
+                <p className="text-[10px] tracking-[0.3em] uppercase text-[#8B7355] font-medium mb-4">
                   Market Intelligence · 2026
                 </p>
                 <h2
@@ -426,11 +426,11 @@ export default function OffMarketPage() {
               <div>
                 <h3 className="text-[11px] tracking-[0.25em] uppercase text-[#2C2C2C] font-medium mb-6 flex items-center gap-3">
                   <div className="w-8 h-8 bg-[#F5F4F0] flex items-center justify-center">
-                    <Eye className="w-3.5 h-3.5 text-[#1B4332]" strokeWidth={1.5} />
+                    <Eye className="w-3.5 h-3.5 text-[#2C2C2C]" strokeWidth={1.5} />
                   </div>
                   Why Invest in Kenyan Commercial Real Estate
                 </h3>
-                <div className="bg-white border border-[#E8E6E1]">
+                <div className="bg-white border border-[#E5E2DC]">
                   {[
                     "Stable GDP growth and macroeconomic stabilisation",
                     "Regional hub for multinational corporations and diplomatic missions",
@@ -441,9 +441,9 @@ export default function OffMarketPage() {
                   ].map((point, i, arr) => (
                     <div
                       key={i}
-                      className={`flex items-start gap-4 p-5 ${i !== arr.length - 1 ? "border-b border-[#E8E6E1]" : ""}`}
+                      className={`flex items-start gap-4 p-5 ${i !== arr.length - 1 ? "border-b border-[#E5E2DC]" : ""}`}
                     >
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#B8956B] mt-2 flex-shrink-0" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#8B7355] mt-2 flex-shrink-0" />
                       <span className="text-[13px] text-[#5A5A5A] leading-relaxed font-light">{point}</span>
                     </div>
                   ))}
@@ -454,9 +454,9 @@ export default function OffMarketPage() {
             {/* Access panel */}
             <div className="lg:col-span-5 space-y-6">
               {/* NDA / Access card */}
-              <div className="bg-[#1B4332] text-white p-8">
-                <Lock className="w-6 h-6 text-[#B8956B] mb-4" strokeWidth={1.5} />
-                <p className="text-[10px] tracking-[0.3em] uppercase text-[#B8956B] font-medium mb-3">
+              <div className="bg-[#2C2C2C] text-white p-8">
+                <Lock className="w-6 h-6 text-[#8B7355] mb-4" strokeWidth={1.5} />
+                <p className="text-[10px] tracking-[0.3em] uppercase text-[#8B7355] font-medium mb-3">
                   Qualified Access Only
                 </p>
                 <p
@@ -471,16 +471,16 @@ export default function OffMarketPage() {
                 </p>
                 <a
                   href="mailto:capital@murivest.co.ke?subject=Off-Market Portfolio Access Request"
-                  className="flex items-center justify-between w-full py-4 px-5 border border-white/20 hover:border-[#B8956B] text-[10px] tracking-[0.25em] uppercase text-white/80 hover:text-white transition-all group"
+                  className="flex items-center justify-between w-full py-4 px-5 border border-white/20 hover:border-[#8B7355] text-[10px] tracking-[0.25em] uppercase text-white/80 hover:text-white transition-all group"
                 >
                   <span>Request Portfolio Access</span>
-                  <ArrowUpRight className="w-4 h-4 group-hover:text-[#B8956B] transition-colors" strokeWidth={1.5} />
+                  <ArrowUpRight className="w-4 h-4 group-hover:text-[#8B7355] transition-colors" strokeWidth={1.5} />
                 </a>
               </div>
 
               {/* Keyword tags */}
-              <div className="bg-[#F5F4F0] border border-[#E8E6E1] p-7">
-                <p className="text-[10px] tracking-[0.25em] uppercase text-[#8B8680] font-medium mb-5">
+              <div className="bg-[#F5F4F0] border border-[#E5E2DC] p-7">
+                <p className="text-[10px] tracking-[0.25em] uppercase text-[#5A5A5A] font-medium mb-5">
                   Most Searched
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -503,7 +503,7 @@ export default function OffMarketPage() {
                   ].map((kw) => (
                     <span
                       key={kw}
-                      className="bg-white border border-[#E8E6E1] text-[#8B8680] text-[11px] px-3 py-1.5 tracking-wide"
+                      className="bg-white border border-[#E5E2DC] text-[#5A5A5A] text-[11px] px-3 py-1.5 tracking-wide"
                     >
                       {kw}
                     </span>
@@ -517,15 +517,15 @@ export default function OffMarketPage() {
       </section>
 
       {/* ── Footer ───────────────────────────────────────────────────── */}
-      <footer className="border-t border-[#E8E6E1] bg-white py-12 px-6 lg:px-12">
+      <footer className="border-t border-[#E5E2DC] bg-white py-12 px-6 lg:px-12">
         <div className="max-w-[1600px] mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Shield className="w-4 h-4 text-[#B8956B]" strokeWidth={1.5} />
-            <span className="text-[10px] tracking-[0.3em] uppercase text-[#8B8680]">
+            <Shield className="w-4 h-4 text-[#8B7355]" strokeWidth={1.5} />
+            <span className="text-[10px] tracking-[0.3em] uppercase text-[#5A5A5A]">
               Mandated Advisory
             </span>
           </div>
-          <p className="text-[11px] text-[#8B8680] leading-relaxed max-w-2xl mx-auto font-light">
+          <p className="text-[11px] text-[#5A5A5A] leading-relaxed max-w-2xl mx-auto font-light">
             All properties are subject to availability and require qualified investor verification.
             Full due diligence materials provided under NDA. Past performance is not indicative of
             future returns. Murivest Realty Ltd is a licensed real estate agency regulated by the
@@ -566,7 +566,7 @@ function FilterDropdown({
     <div className="relative z-30">
       <button
         onClick={onToggle}
-        className="flex items-center gap-2 px-4 py-2 text-[10px] tracking-[0.15em] uppercase border border-[#E8E6E1] hover:border-[#1B4332] hover:text-[#1B4332] transition-colors text-[#8B8680]"
+        className="flex items-center gap-2 px-4 py-2 text-[10px] tracking-[0.15em] uppercase border border-[#E5E2DC] hover:border-[#2C2C2C] hover:text-[#2C2C2C] transition-colors text-[#5A5A5A]"
       >
         <SlidersHorizontal className="w-3 h-3" />
         {value === "All" ? label : value}
@@ -579,7 +579,7 @@ function FilterDropdown({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 4 }}
             transition={{ duration: 0.15 }}
-            className="absolute top-full left-0 mt-1 bg-white border border-[#E8E6E1] shadow-xl z-50 min-w-[180px]"
+            className="absolute top-full left-0 mt-1 bg-white border border-[#E5E2DC] shadow-xl z-50 min-w-[180px]"
           >
             {options.map((opt) => (
               <button
@@ -587,8 +587,8 @@ function FilterDropdown({
                 onClick={() => onSelect(opt)}
                 className={`w-full text-left px-4 py-3 text-[11px] tracking-[0.1em] uppercase transition-colors ${
                   value === opt
-                    ? "bg-[#F5F4F0] text-[#1B4332] font-medium"
-                    : "hover:bg-[#FAF9F6] text-[#8B8680]"
+                    ? "bg-[#F5F4F0] text-[#2C2C2C] font-medium"
+                    : "hover:bg-[#F8F7F4] text-[#5A5A5A]"
                 }`}
               >
                 {opt}

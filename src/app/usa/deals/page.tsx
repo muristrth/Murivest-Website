@@ -13,13 +13,13 @@ export const metadata: Metadata = {
 export default function DealsPage() {
   return (
     <>
-      <section className="bg-[#0F2E22] py-20">
+      <section className="bg-[#2C2C2C] py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <Eyebrow className="text-gold-400">Opportunities</Eyebrow>
+          <Eyebrow className="text-[#8B7355]">Opportunities</Eyebrow>
           <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl">
             Current Mandate Offerings
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[#C9A87C]">
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[#8B7355]">
             Murivest represents select commercial real estate opportunities on a
             confidential, mandate-driven basis. Each engagement is structured
             around a clearly defined investment objective and executed with the
@@ -30,49 +30,49 @@ export default function DealsPage() {
 
       <Section className="py-20">
         <div className="grid gap-8 lg:grid-cols-3">
-          <div className="rounded-2xl border border-[#E8E6E1] bg-white p-8">
+          <div className="rounded-2xl border border-[#E5E2DC] bg-white p-8">
             <h3 className="font-serif text-xl font-semibold text-[#2C2C2C]">
               Off-Market
             </h3>
-            <p className="mt-3 text-[#8B8680]">
+            <p className="mt-3 text-[#5A5A5A]">
               Pre-market and off-market opportunities sourced through Murivest&apos;s
               institutional relationships, available exclusively to qualified
               investors before broader market exposure.
             </p>
             <a
               href="/usa/deals/off-market"
-              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#B8956B] hover:text-[#C9A87C]"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#8B7355] hover:text-[#8B7355]"
             >
               View off-market offerings <span aria-hidden="true">→</span>
             </a>
           </div>
-          <div className="rounded-2xl border border-[#E8E6E1] bg-white p-8">
+          <div className="rounded-2xl border border-[#E5E2DC] bg-white p-8">
             <h3 className="font-serif text-xl font-semibold text-[#2C2C2C]">
               Institutional
             </h3>
-            <p className="mt-3 text-[#8B8680]">
+            <p className="mt-3 text-[#5A5A5A]">
               Large-scale, institutional-quality assets and portfolio
               transactions requiring significant equity commitments and
               sophisticated underwriting.
             </p>
             <a
               href="/usa/deals/institutional"
-              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#B8956B] hover:text-[#C9A87C]"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#8B7355] hover:text-[#8B7355]"
             >
               View institutional offerings <span aria-hidden="true">→</span>
             </a>
           </div>
-          <div className="rounded-2xl border border-[#E8E6E1] bg-white p-8">
+          <div className="rounded-2xl border border-[#E5E2DC] bg-white p-8">
             <h3 className="font-serif text-xl font-semibold text-[#2C2C2C]">
               Private
             </h3>
-            <p className="mt-3 text-[#8B8680]">
+            <p className="mt-3 text-[#5A5A5A]">
               Privately negotiated transactions and single-asset mandates
               tailored to specific investor requirements and risk parameters.
             </p>
             <a
               href="/usa/deals/private"
-              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#B8956B] hover:text-[#C9A87C]"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#8B7355] hover:text-[#8B7355]"
             >
               View private offerings <span aria-hidden="true">→</span>
             </a>
@@ -80,7 +80,7 @@ export default function DealsPage() {
         </div>
       </Section>
 
-      <Section className="py-20 bg-[#FAF9F6]">
+      <Section className="py-20 bg-[#F8F7F4]">
         <SectionHeading
           eyebrow="Engagement Model"
           title="Confidential, mandate-driven execution"
@@ -109,14 +109,14 @@ export default function DealsPage() {
               text: "We manage the full transaction process — from LOI through due diligence and closing — protecting your interests at every stage.",
             },
           ].map((item) => (
-            <div key={item.step} className="rounded-xl border border-[#E8E6E1] bg-white p-6">
-              <div className="font-serif text-4xl font-semibold text-[#B8956B]">
+            <div key={item.step} className="rounded-xl border border-[#E5E2DC] bg-white p-6">
+              <div className="font-serif text-4xl font-semibold text-[#8B7355]">
                 {item.step}
               </div>
               <h3 className="mt-3 font-serif text-lg font-semibold text-[#2C2C2C]">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+              <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
                 {item.text}
               </p>
             </div>

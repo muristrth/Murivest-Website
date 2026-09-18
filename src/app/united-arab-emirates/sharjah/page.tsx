@@ -115,7 +115,7 @@ const schemaOrg = {
 
 function SectionLabel({ text }: { text: string }) {
   return (
-    <p className="font-body text-[10px] sm:text-[11px] font-semibold tracking-[0.25em] uppercase text-[#B8956B] mb-4 md:mb-5">
+    <p className="font-body text-[10px] sm:text-[11px] font-semibold tracking-[0.25em] uppercase text-[#8B7355] mb-4 md:mb-5">
       {text}
     </p>
   )
@@ -269,33 +269,33 @@ const advisoryServices = [
 
 export default function SharjahPage() {
   return (
-    <main className="bg-[#0E0B08] text-[#EDE6D9] font-body antialiased selection:bg-[#B8956B] selection:text-[#0E0B08] overflow-x-hidden">
+    <main className="bg-[#0E0B08] text-[#EDE6D9] font-body antialiased selection:bg-[#8B7355] selection:text-[#0E0B08] overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
       />
 
       {/* ── Fixed Navigation ─────────────────────────────────────────────── */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#0E0B08]/90 backdrop-blur-md border-b border-[#B8956B]/10">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#0E0B08]/90 backdrop-blur-md border-b border-[#8B7355]/10">
         <div className="max-w-[1400px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 h-16 md:h-20 flex items-center justify-between">
           <Link href="/" className="font-display text-lg sm:text-xl md:text-2xl text-[#EDE6D9] tracking-tight">
             Murivest
           </Link>
           <nav className="hidden md:flex items-center gap-6 lg:gap-10 text-sm text-[#B5AC9C]">
-            <Link href="/united-arab-emirates" className="hover:text-[#B8956B] transition-colors">UAE</Link>
-            <Link href="/united-arab-emirates/asset-classes" className="hover:text-[#B8956B] transition-colors">Asset Classes</Link>
-            <Link href="#districts" className="hover:text-[#B8956B] transition-colors">Districts</Link>
-            <Link href="#intelligence" className="hover:text-[#B8956B] transition-colors">Market Intelligence</Link>
+            <Link href="/united-arab-emirates" className="hover:text-[#8B7355] transition-colors">UAE</Link>
+            <Link href="/united-arab-emirates/asset-classes" className="hover:text-[#8B7355] transition-colors">Asset Classes</Link>
+            <Link href="#districts" className="hover:text-[#8B7355] transition-colors">Districts</Link>
+            <Link href="#intelligence" className="hover:text-[#8B7355] transition-colors">Market Intelligence</Link>
             <Link
               href="/united-arab-emirates/contact"
-              className="px-5 py-2.5 bg-[#B8956B] text-[#0E0B08] text-sm font-medium hover:bg-[#C9A87D] transition-colors"
+              className="px-5 py-2.5 bg-[#8B7355] text-[#0E0B08] text-sm font-medium hover:bg-[#C9A87D] transition-colors"
             >
               Contact
             </Link>
           </nav>
           <Link
             href="/united-arab-emirates/contact"
-            className="md:hidden px-4 py-2 bg-[#B8956B] text-[#0E0B08] text-xs font-medium tracking-wide"
+            className="md:hidden px-4 py-2 bg-[#8B7355] text-[#0E0B08] text-xs font-medium tracking-wide"
           >
             Contact
           </Link>
@@ -305,11 +305,11 @@ export default function SharjahPage() {
       {/* ── Breadcrumb ───────────────────────────────────────────────────── */}
       <div className="max-w-[1400px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 pt-24 md:pt-28">
         <nav className="flex flex-wrap items-center gap-1.5 text-xs text-[#8A8275]" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-[#B8956B] transition-colors">Home</Link>
+          <Link href="/" className="hover:text-[#8B7355] transition-colors">Home</Link>
           <span>/</span>
-          <Link href="/united-arab-emirates" className="hover:text-[#B8956B] transition-colors">UAE</Link>
+          <Link href="/united-arab-emirates" className="hover:text-[#8B7355] transition-colors">UAE</Link>
           <span>/</span>
-          <span className="text-[#B8956B]">Sharjah</span>
+          <span className="text-[#8B7355]">Sharjah</span>
         </nav>
       </div>
 
@@ -328,14 +328,14 @@ export default function SharjahPage() {
         {/* Soft brass radial accent */}
         <div
           className="absolute inset-0 opacity-[0.10]"
-          style={{ backgroundImage: 'radial-gradient(ellipse at 75% 30%, #B8956B 0%, transparent 55%)' }}
+          style={{ backgroundImage: 'radial-gradient(ellipse at 75% 30%, #8B7355 0%, transparent 55%)' }}
         />
 
         <div className="relative max-w-[1400px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 pt-16 sm:pt-20 md:pt-24 pb-16 sm:pb-20 md:pb-28">
           <div className="max-w-3xl">
             <SectionLabel text="United Arab Emirates — Cultural & Industrial Capital" />
             <h1 className="font-display text-[34px] xs:text-[38px] sm:text-[48px] md:text-[58px] lg:text-[68px] leading-[1.05] text-[#F5F0E4] mb-6 md:mb-8">
-              Sharjah <span className="text-[#B8956B]">Commercial</span> Markets
+              Sharjah <span className="text-[#8B7355]">Commercial</span> Markets
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-[#B5AC9C] leading-relaxed max-w-2xl mb-8 sm:mb-10 md:mb-12">
               Institutional real estate advisory across the UAE&apos;s most diversified industrial base and its
@@ -345,7 +345,7 @@ export default function SharjahPage() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
                 href="/united-arab-emirates/contact"
-                className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 bg-[#B8956B] text-[#0E0B08] text-sm font-medium tracking-wide hover:bg-[#C9A87D] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 bg-[#8B7355] text-[#0E0B08] text-sm font-medium tracking-wide hover:bg-[#C9A87D] transition-colors"
                 style={{ minHeight: 48 }}
               >
                 Request Market Brief
@@ -353,7 +353,7 @@ export default function SharjahPage() {
               </Link>
               <Link
                 href="/united-arab-emirates/listings"
-                className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 border border-[#EDE6D9]/20 text-[#EDE6D9] text-sm font-medium tracking-wide hover:border-[#B8956B]/60 hover:text-[#B8956B] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 border border-[#EDE6D9]/20 text-[#EDE6D9] text-sm font-medium tracking-wide hover:border-[#8B7355]/60 hover:text-[#8B7355] transition-colors"
                 style={{ minHeight: 48 }}
               >
                 View Listings
@@ -364,9 +364,9 @@ export default function SharjahPage() {
         </div>
 
         {/* Stats strip */}
-        <div className="relative border-t border-[#B8956B]/10 bg-[#0E0B08]/60 backdrop-blur-sm">
+        <div className="relative border-t border-[#8B7355]/10 bg-[#0E0B08]/60 backdrop-blur-sm">
           <div className="max-w-[1400px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20">
-            <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-[#B8956B]/10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-[#8B7355]/10">
               {heroStats.map((stat) => (
                 <div key={stat.label} className="py-5 sm:py-6 md:py-7 px-4 sm:px-6 md:px-8 first:pl-0 odd:pl-0 sm:odd:pl-6 md:odd:pl-8">
                   <p className="font-display text-lg sm:text-xl md:text-2xl text-[#F5F0E4] mb-1 leading-tight">
@@ -400,10 +400,10 @@ export default function SharjahPage() {
               return (
                 <div
                   key={point.title}
-                  className="group flex gap-4 sm:gap-5 p-5 sm:p-6 md:p-7 bg-[#1B150D] border border-[#B8956B]/10 hover:border-[#B8956B]/30 transition-all duration-300"
+                  className="group flex gap-4 sm:gap-5 p-5 sm:p-6 md:p-7 bg-[#1B150D] border border-[#8B7355]/10 hover:border-[#8B7355]/30 transition-all duration-300"
                 >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#B8956B]/10 flex items-center justify-center shrink-0">
-                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#B8956B]" strokeWidth={1.5} />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#8B7355]/10 flex items-center justify-center shrink-0">
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#8B7355]" strokeWidth={1.5} />
                   </div>
                   <div>
                     <h3 className="font-display text-base sm:text-lg text-[#F5F0E4] mb-2">{point.title}</h3>
@@ -435,23 +435,23 @@ export default function SharjahPage() {
                 <Link
                   key={district.id}
                   href={`/united-arab-emirates/sharjah/${district.slug}`}
-                  className="group relative bg-[#161009] border border-[#B8956B]/15 hover:border-[#B8956B]/40 transition-all duration-300 flex flex-col h-full"
+                  className="group relative bg-[#161009] border border-[#8B7355]/15 hover:border-[#8B7355]/40 transition-all duration-300 flex flex-col h-full"
                 >
                   {/* Hover accent wash */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#B8956B]/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#8B7355]/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   <div className="relative z-10 p-6 sm:p-7 flex flex-col flex-1">
                     {/* Icon + mandate badge */}
                     <div className="flex items-start justify-between mb-5 sm:mb-6">
-                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-[#B8956B]/10 flex items-center justify-center group-hover:bg-[#B8956B]/15 transition-colors duration-300">
-                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#B8956B]" strokeWidth={1.5} />
+                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-[#8B7355]/10 flex items-center justify-center group-hover:bg-[#8B7355]/15 transition-colors duration-300">
+                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#8B7355]" strokeWidth={1.5} />
                       </div>
                       <span
                         className={`text-[9px] sm:text-[10px] font-medium px-2 sm:px-2.5 py-1 uppercase tracking-wider border whitespace-nowrap ${
                           district.mandate === 'Core'
-                            ? 'bg-[#1B4332]/15 text-[#7FA88E] border-[#1B4332]/30'
+                            ? 'bg-[#2C2C2C]/15 text-[#7FA88E] border-[#2C2C2C]/30'
                             : district.mandate === 'Core+'
-                            ? 'bg-[#B8956B]/10 text-[#B8956B] border-[#B8956B]/25'
+                            ? 'bg-[#8B7355]/10 text-[#8B7355] border-[#8B7355]/25'
                             : 'bg-[#6A3A20]/15 text-[#C98F5C] border-[#6A3A20]/30'
                         }`}
                       >
@@ -460,7 +460,7 @@ export default function SharjahPage() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="font-display text-lg sm:text-xl text-[#F5F0E4] mb-2 sm:mb-3 group-hover:text-[#B8956B] transition-colors duration-300">
+                    <h3 className="font-display text-lg sm:text-xl text-[#F5F0E4] mb-2 sm:mb-3 group-hover:text-[#8B7355] transition-colors duration-300">
                       {district.name}
                     </h3>
 
@@ -473,22 +473,22 @@ export default function SharjahPage() {
                     <div className="mb-5 sm:mb-6 space-y-1.5 sm:space-y-2">
                       {district.keyFeatures.map((feature) => (
                         <div key={feature} className="flex items-start gap-2">
-                          <span className="text-[#B8956B] mt-1 text-[10px] sm:text-xs shrink-0">•</span>
+                          <span className="text-[#8B7355] mt-1 text-[10px] sm:text-xs shrink-0">•</span>
                           <span className="text-[11px] sm:text-xs text-[#9C9384]">{feature}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* Investment profile */}
-                    <div className="mt-auto pt-4 sm:pt-5 border-t border-[#B8956B]/10">
-                      <p className="text-[9px] sm:text-[10px] text-[#B8956B] uppercase tracking-[0.15em] mb-2">
+                    <div className="mt-auto pt-4 sm:pt-5 border-t border-[#8B7355]/10">
+                      <p className="text-[9px] sm:text-[10px] text-[#8B7355] uppercase tracking-[0.15em] mb-2">
                         Investment Profile
                       </p>
                       <p className="text-xs sm:text-sm text-[#EDE6D9] font-light leading-relaxed mb-5 sm:mb-6">
                         {district.investmentProfile}
                       </p>
 
-                      <div className="flex items-center gap-2 text-[#B8956B] group-hover:gap-3 transition-all duration-300">
+                      <div className="flex items-center gap-2 text-[#8B7355] group-hover:gap-3 transition-all duration-300">
                         <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-wide">
                           Explore Market
                         </span>
@@ -516,8 +516,8 @@ export default function SharjahPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
             {Object.entries(marketIntelligence).map(([key, val]) => (
-              <div key={key} className="bg-[#1B150D] border border-[#B8956B]/10 p-5 sm:p-6">
-                <p className="font-display text-xl sm:text-2xl text-[#B8956B] mb-1 leading-tight">{val}</p>
+              <div key={key} className="bg-[#1B150D] border border-[#8B7355]/10 p-5 sm:p-6">
+                <p className="font-display text-xl sm:text-2xl text-[#8B7355] mb-1 leading-tight">{val}</p>
                 <p className="text-[9px] sm:text-[10px] uppercase tracking-[0.16em] text-[#8A8275] leading-relaxed">
                   {key.replace(/([A-Z])/g, ' $1').replace(/^./, (s) => s.toUpperCase())}
                 </p>
@@ -547,7 +547,7 @@ export default function SharjahPage() {
               </p>
               <Link
                 href="/united-arab-emirates/contact"
-                className="inline-flex items-center gap-2 text-sm text-[#B8956B] border border-[#B8956B]/25 px-5 py-3 hover:bg-[#B8956B] hover:text-[#0E0B08] transition-all"
+                className="inline-flex items-center gap-2 text-sm text-[#8B7355] border border-[#8B7355]/25 px-5 py-3 hover:bg-[#8B7355] hover:text-[#0E0B08] transition-all"
               >
                 Arrange a Consultation
                 <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
@@ -558,9 +558,9 @@ export default function SharjahPage() {
               {advisoryServices.map((service) => (
                 <div
                   key={service.title}
-                  className="flex gap-4 p-5 bg-[#161009] border border-[#B8956B]/10 hover:border-[#B8956B]/25 transition-colors"
+                  className="flex gap-4 p-5 bg-[#161009] border border-[#8B7355]/10 hover:border-[#8B7355]/25 transition-colors"
                 >
-                  <span className="text-[#B8956B] mt-0.5 shrink-0 text-sm">◆</span>
+                  <span className="text-[#8B7355] mt-0.5 shrink-0 text-sm">◆</span>
                   <div>
                     <h3 className="text-sm font-medium text-[#F5F0E4] mb-1">{service.title}</h3>
                     <p className="text-xs text-[#B5AC9C] leading-relaxed">{service.desc}</p>
@@ -573,7 +573,7 @@ export default function SharjahPage() {
       </section>
 
       {/* ═══════════════════════════ CTA ════════════════════════════════════ */}
-      <section className="py-16 sm:py-24 md:py-32 lg:py-40 px-5 sm:px-8 md:px-12 lg:px-20 bg-gradient-to-br from-[#1B150D] to-[#0E0B08] border-y border-[#B8956B]/10">
+      <section className="py-16 sm:py-24 md:py-32 lg:py-40 px-5 sm:px-8 md:px-12 lg:px-20 bg-gradient-to-br from-[#1B150D] to-[#0E0B08] border-y border-[#8B7355]/10">
         <div className="max-w-[1000px] mx-auto text-center">
           <SectionLabel text="Private Advisory" />
           <h2 className="font-display text-[28px] sm:text-[36px] md:text-[46px] lg:text-[52px] leading-[1.08] text-[#F5F0E4] mb-5 sm:mb-6">
@@ -587,7 +587,7 @@ export default function SharjahPage() {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Link
               href="/united-arab-emirates/contact"
-              className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 bg-[#B8956B] text-[#0E0B08] text-sm font-medium tracking-wide hover:bg-[#C9A87D] transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 bg-[#8B7355] text-[#0E0B08] text-sm font-medium tracking-wide hover:bg-[#C9A87D] transition-colors"
               style={{ minHeight: 48 }}
             >
               Request Market Brief
@@ -595,7 +595,7 @@ export default function SharjahPage() {
             </Link>
             <Link
               href="/united-arab-emirates/contact?type=submit-property"
-              className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 border border-[#EDE6D9]/20 text-[#EDE6D9] text-sm font-medium tracking-wide hover:border-[#B8956B]/60 hover:text-[#B8956B] transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 border border-[#EDE6D9]/20 text-[#EDE6D9] text-sm font-medium tracking-wide hover:border-[#8B7355]/60 hover:text-[#8B7355] transition-colors"
               style={{ minHeight: 48 }}
             >
               Submit a Property
@@ -606,7 +606,7 @@ export default function SharjahPage() {
       </section>
 
       {/* ─── Related Pages ────────────────────────────────────────────────── */}
-      <section className="py-12 sm:py-16 md:py-20 px-5 sm:px-8 md:px-12 lg:px-20 border-t border-[#B8956B]/10">
+      <section className="py-12 sm:py-16 md:py-20 px-5 sm:px-8 md:px-12 lg:px-20 border-t border-[#8B7355]/10">
         <div className="max-w-[1400px] mx-auto">
           <p className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-[#8A8275] mb-5 sm:mb-6">
             Related Advisory
@@ -624,7 +624,7 @@ export default function SharjahPage() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-xs text-[#B5AC9C] border border-[#B8956B]/15 px-3.5 sm:px-4 py-2 hover:border-[#B8956B]/50 hover:text-[#B8956B] transition-colors"
+                className="text-xs text-[#B5AC9C] border border-[#8B7355]/15 px-3.5 sm:px-4 py-2 hover:border-[#8B7355]/50 hover:text-[#8B7355] transition-colors"
               >
                 {link.label}
               </Link>
@@ -634,7 +634,7 @@ export default function SharjahPage() {
       </section>
 
       {/* ─── Footer ────────────────────────────────────────────────────────── */}
-      <section className="px-5 sm:px-8 py-12 sm:py-16 border-t border-[#B8956B]/10 text-center">
+      <section className="px-5 sm:px-8 py-12 sm:py-16 border-t border-[#8B7355]/10 text-center">
         <p className="text-xs sm:text-sm text-[#B5AC9C] mb-3 sm:mb-4">
           Murivest Dubai — Institutional Commercial Real Estate Advisory
         </p>

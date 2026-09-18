@@ -102,18 +102,18 @@ export default function InvestorsHubPage() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#1B4332] py-24">
+      <section className="relative overflow-hidden bg-[#2C2C2C] py-24">
         <div className="absolute inset-0">
           <img
             src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1920"
             alt="Investment capital and commercial real estate"
             className="h-full w-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/85 to-ink-950/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#2C2C2C] via-[#2C2C2C]/85 to-[#2C2C2C]/50" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <Eyebrow className="text-gold-400">Investor Solutions</Eyebrow>
+            <Eyebrow className="text-[#8B7355]">Investor Solutions</Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl text-balance">
               Capital-aligned advisory for every investor profile
             </h1>
@@ -126,7 +126,7 @@ export default function InvestorsHubPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/usa/contact"
-                className="group flex items-center justify-center gap-2 rounded-lg bg-gold-400 px-6 py-3 text-sm font-semibold text-[#0F2E22] transition-all hover:bg-[#C9A87C]"
+                className="group flex items-center justify-center gap-2 rounded-lg bg-[#8B7355] px-6 py-3 text-sm font-semibold text-[#2C2C2C] transition-all hover:bg-[#8B7355]"
               >
                 Request a Consultation
                 <ArrowRight
@@ -136,7 +136,7 @@ export default function InvestorsHubPage() {
               </Link>
               <Link
                 href="/usa/properties"
-                className="flex items-center justify-center gap-2 rounded-lg border border-[#C9A87C] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
+                className="flex items-center justify-center gap-2 rounded-lg border border-[#8B7355] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
               >
                 View Property Types
               </Link>
@@ -157,21 +157,21 @@ export default function InvestorsHubPage() {
             <Link
               key={inv.slug}
               href={inv.href}
-              className="group flex flex-col rounded-xl border border-[#E8E6E1] bg-white p-6 transition-all hover:border-[#B8956B] hover:shadow-lg hover:shadow-ink-900/5"
+              className="group flex flex-col rounded-xl border border-[#E5E2DC] bg-white p-6 transition-all hover:border-[#8B7355] hover:shadow-lg hover:shadow-[#2C2C2C]/5"
             >
               <div className="flex items-center justify-between">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#1B4332] text-gold-400 transition-colors group-hover:bg-[#B8956B]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#2C2C2C] text-[#8B7355] transition-colors group-hover:bg-[#8B7355]">
                   <inv.icon size={22} />
                 </div>
                 <ArrowRight
                   size={18}
-                  className="text-[#FAF9F6] transition-all group-hover:translate-x-1 group-hover:text-[#C9A87C]"
+                  className="text-[#F8F7F4] transition-all group-hover:translate-x-1 group-hover:text-[#8B7355]"
                 />
               </div>
-              <h3 className="mt-4 font-serif text-xl font-semibold text-[#2C2C2C] group-hover:text-[#B8956B] transition-colors">
+              <h3 className="mt-4 font-serif text-xl font-semibold text-[#2C2C2C] group-hover:text-[#8B7355] transition-colors">
                 {inv.label}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+              <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
                 {inv.description}
               </p>
             </Link>
@@ -180,7 +180,7 @@ export default function InvestorsHubPage() {
       </Section>
 
       {/* Why investor segmentation */}
-      <Section className="py-20 bg-[#FAF9F6]">
+      <Section className="py-20 bg-[#F8F7F4]">
         <SectionHeading
           eyebrow="Our Approach"
           title="Outcome-first, mandate-driven, capital-aligned"
@@ -209,15 +209,15 @@ export default function InvestorsHubPage() {
           ].map((item) => (
             <div
               key={item.title}
-              className="rounded-xl border border-[#E8E6E1] bg-white p-6 transition-shadow hover:shadow-md"
+              className="rounded-xl border border-[#E5E2DC] bg-white p-6 transition-shadow hover:shadow-md"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#1B4332] text-gold-400">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#2C2C2C] text-[#8B7355]">
                 <item.icon size={22} />
               </div>
               <h3 className="mt-4 font-serif text-xl font-semibold text-[#2C2C2C]">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+              <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
                 {item.description}
               </p>
             </div>

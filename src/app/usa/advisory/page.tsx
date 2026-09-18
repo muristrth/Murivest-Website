@@ -13,13 +13,13 @@ export const metadata: Metadata = {
 export default function AdvisoryPage() {
   return (
     <>
-      <section className="bg-[#0F2E22] py-20">
+      <section className="bg-[#2C2C2C] py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <Eyebrow className="text-gold-400">Advisory</Eyebrow>
+          <Eyebrow className="text-[#8B7355]">Advisory</Eyebrow>
           <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl">
             Commercial Real Estate Advisory
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[#C9A87C]">
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[#8B7355]">
             Murivest acts as an independent adviser across the commercial real
             estate lifecycle — from acquisition and portfolio strategy to
             disposition and valuation. Every engagement is structured around a
@@ -32,69 +32,69 @@ export default function AdvisoryPage() {
         <div className="grid gap-8 lg:grid-cols-2">
           <a
             href="/usa/advisory/acquisition"
-            className="group rounded-2xl border border-[#E8E6E1] bg-white p-8 transition-all hover:border-[#B8956B] hover:shadow-lg"
+            className="group rounded-2xl border border-[#E5E2DC] bg-white p-8 transition-all hover:border-[#8B7355] hover:shadow-lg"
           >
-            <h3 className="font-serif text-2xl font-semibold text-[#2C2C2C] group-hover:text-[#B8956B]">
+            <h3 className="font-serif text-2xl font-semibold text-[#2C2C2C] group-hover:text-[#8B7355]">
               Acquisition Advisory
             </h3>
-            <p className="mt-3 text-[#8B8680]">
+            <p className="mt-3 text-[#5A5A5A]">
               End-to-end acquisition support — from mandate definition and
               sourcing through underwriting, negotiation, and closing.
             </p>
-            <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#B8956B]">
+            <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#8B7355]">
               Learn more <span aria-hidden="true">→</span>
             </span>
           </a>
           <a
             href="/usa/advisory/disposition"
-            className="group rounded-2xl border border-[#E8E6E1] bg-white p-8 transition-all hover:border-[#B8956B] hover:shadow-lg"
+            className="group rounded-2xl border border-[#E5E2DC] bg-white p-8 transition-all hover:border-[#8B7355] hover:shadow-lg"
           >
-            <h3 className="font-serif text-2xl font-semibold text-[#2C2C2C] group-hover:text-[#B8956B]">
+            <h3 className="font-serif text-2xl font-semibold text-[#2C2C2C] group-hover:text-[#8B7355]">
               Disposition Advisory
             </h3>
-            <p className="mt-3 text-[#8B8680]">
+            <p className="mt-3 text-[#5A5A5A]">
               Strategic disposition advisory — positioning, buyer identification,
               marketing, and negotiation to maximize outcomes for sellers.
             </p>
-            <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#B8956B]">
+            <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#8B7355]">
               Learn more <span aria-hidden="true">→</span>
             </span>
           </a>
           <a
             href="/usa/advisory/portfolio"
-            className="group rounded-2xl border border-[#E8E6E1] bg-white p-8 transition-all hover:border-[#B8956B] hover:shadow-lg"
+            className="group rounded-2xl border border-[#E5E2DC] bg-white p-8 transition-all hover:border-[#8B7355] hover:shadow-lg"
           >
-            <h3 className="font-serif text-2xl font-semibold text-[#2C2C2C] group-hover:text-[#B8956B]">
+            <h3 className="font-serif text-2xl font-semibold text-[#2C2C2C] group-hover:text-[#8B7355]">
               Portfolio Advisory
             </h3>
-            <p className="mt-3 text-[#8B8680]">
+            <p className="mt-3 text-[#5A5A5A]">
               Portfolio-level strategy — acquisition and disposition sequencing,
               asset allocation, and portfolio optimization for institutional
               owners.
             </p>
-            <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#B8956B]">
+            <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#8B7355]">
               Learn more <span aria-hidden="true">→</span>
             </span>
           </a>
           <a
             href="/usa/advisory/strategy"
-            className="group rounded-2xl border border-[#E8E6E1] bg-white p-8 transition-all hover:border-[#B8956B] hover:shadow-lg"
+            className="group rounded-2xl border border-[#E5E2DC] bg-white p-8 transition-all hover:border-[#8B7355] hover:shadow-lg"
           >
-            <h3 className="font-serif text-2xl font-semibold text-[#2C2C2C] group-hover:text-[#B8956B]">
+            <h3 className="font-serif text-2xl font-semibold text-[#2C2C2C] group-hover:text-[#8B7355]">
               Strategy
             </h3>
-            <p className="mt-3 text-[#8B8680]">
+            <p className="mt-3 text-[#5A5A5A]">
               Market entry, expansion, and strategic positioning — helping
               investors and owners define and execute their U.S. CRE strategy.
             </p>
-            <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#B8956B]">
+            <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#8B7355]">
               Learn more <span aria-hidden="true">→</span>
             </span>
           </a>
         </div>
       </Section>
 
-      <Section className="py-20 bg-[#FAF9F6]">
+      <Section className="py-20 bg-[#F8F7F4]">
         <SectionHeading
           eyebrow="Valuation"
           title="Independent valuation and underwriting"
@@ -103,7 +103,7 @@ export default function AdvisoryPage() {
         <div className="mt-8">
           <a
             href="/usa/advisory/valuation"
-            className="inline-flex items-center gap-2 rounded-lg bg-[#1B4332] px-6 py-3 text-sm font-semibold text-white hover:bg-[#B8956B]"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#2C2C2C] px-6 py-3 text-sm font-semibold text-white hover:bg-[#8B7355]"
           >
             Valuation Advisory <span aria-hidden="true">→</span>
           </a>

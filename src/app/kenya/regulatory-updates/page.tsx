@@ -181,7 +181,7 @@ export default function RegulatoryUpdatesPage() {
       <div className="min-h-screen" style={{ backgroundColor: '#F8F7F4', color: '#2C2C2C' }}>
 
         {/* ── HERO ─────────────────────────────────────────────────────────── */}
-        <section className="relative overflow-hidden" style={{ backgroundColor: '#1B4332' }}>
+        <section className="relative overflow-hidden" style={{ backgroundColor: '#2C2C2C' }}>
           <div
             className="absolute inset-0 pointer-events-none"
             style={{ background: 'radial-gradient(ellipse 60% 70% at 80% 30%, rgba(217,119,6,0.05), transparent 65%)' }}
@@ -423,7 +423,7 @@ export default function RegulatoryUpdatesPage() {
 
             {/* Sidebar */}
             <aside className="lg:col-span-4 space-y-8 mt-12 lg:mt-0">
-              <div className="p-8 sticky top-8" style={{ backgroundColor: '#1B4332' }}>
+              <div className="p-8 sticky top-8" style={{ backgroundColor: '#2C2C2C' }}>
                 <p className="text-[11px] font-medium tracking-[0.4em] uppercase mb-4" style={{ color: '#8B7355' }}>
                   Advisory Services
                 </p>
@@ -487,7 +487,7 @@ export default function RegulatoryUpdatesPage() {
         </article>
 
         {/* ── CTA ──────────────────────────────────────────────────────────── */}
-        <section className="relative py-20 md:py-28" style={{ backgroundColor: '#1B4332' }}>
+        <section className="relative py-20 md:py-28" style={{ backgroundColor: '#2C2C2C' }}>
           <div className="absolute top-0 left-0 w-full h-px" style={{ backgroundColor: '#3F3F3F' }} />
           <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 text-center">
             <p className="text-[11px] font-medium tracking-[0.4em] uppercase mb-4" style={{ color: '#8B7355' }}>Engage Murivest</p>

@@ -47,10 +47,10 @@ export default async function InsightsPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <div className="min-h-screen bg-[#1B4332] text-[#2C2C2C]">
+      <div className="min-h-screen bg-[#2C2C2C] text-[#2C2C2C]">
 
         {/* ── Hero ── */}
-        <section className="relative bg-amber-200/90 text-[#1B4332] overflow-hidden pt-32 pb-28 px-6 md:px-12 lg:px-16">
+        <section className="relative bg-amber-200/90 text-[#2C2C2C] overflow-hidden pt-32 pb-28 px-6 md:px-12 lg:px-16">
           <div className="absolute top-0 left-1/2 w-[600px] h-[400px] bg-amber-600/5 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
           <div className="max-w-[1400px] mx-auto relative z-10">
             <Link href="/" className="inline-flex items-center gap-2 text-[11px] tracking-[0.35em] uppercase text-[#8B7355] hover:text-amber-400 transition-colors mb-12">
@@ -58,7 +58,7 @@ export default async function InsightsPage() {
             </Link>
             <div className="flex items-center gap-3 mb-8">
               <div className="h-px w-8 bg-amber-500" />
-              <span className="text-[10px] font-bold tracking-[0.45em] uppercase text-[#1B4332]">Market Intelligence Unit</span>
+              <span className="text-[10px] font-bold tracking-[0.45em] uppercase text-[#2C2C2C]">Market Intelligence Unit</span>
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif leading-tight mb-8">
               Commercial<br /><span className="italic text-black">Insights</span>

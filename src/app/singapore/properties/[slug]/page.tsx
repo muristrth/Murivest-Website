@@ -38,7 +38,7 @@ export default async function PropertyDetailPage({ params }: Props) {
 
       <main>
         {/* Navigation Bar */}
-        <div className="bg-[#1B4332] border-b border-white/10">
+        <div className="bg-[#2C2C2C] border-b border-white/10">
           <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-4">
             <Link
               href="/singapore/properties"
@@ -51,11 +51,11 @@ export default async function PropertyDetailPage({ params }: Props) {
         </div>
 
         {/* Hero */}
-        <section className="relative h-[50vh] min-h-[400px] bg-[#1B4332] flex items-end">
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0D1F17] via-[#1B4332]/80 to-[#1B4332]/40" />
+        <section className="relative h-[50vh] min-h-[400px] bg-[#2C2C2C] flex items-end">
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0D1F17] via-[#2C2C2C]/80 to-[#2C2C2C]/40" />
           <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-12 w-full">
             <div className="flex flex-wrap gap-3 mb-4">
-              <span className="bg-[#B8956B] text-white text-[9px] tracking-[0.2em] uppercase px-3 py-1.5 font-medium">
+              <span className="bg-[#8B7355] text-white text-[9px] tracking-[0.2em] uppercase px-3 py-1.5 font-medium">
                 {property.propertyType.replace(/-/g, ' ')}
               </span>
               <span className="bg-white/10 text-white text-[9px] tracking-[0.2em] uppercase px-3 py-1.5">
@@ -66,16 +66,16 @@ export default async function PropertyDetailPage({ params }: Props) {
               {property.title}
             </h1>
             <div className="flex items-center gap-2 text-white/60">
-              <MapPin className="w-4 h-4 text-[#B8956B]" strokeWidth={1.5} />
+              <MapPin className="w-4 h-4 text-[#8B7355]" strokeWidth={1.5} />
               <span className="text-sm">{property.address}</span>
             </div>
           </div>
         </section>
 
         {/* Key Metrics Bar */}
-        <section className="bg-white border-b border-[#E8E6E1]">
+        <section className="bg-white border-b border-[#E5E2DC]">
           <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
-            <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-[#E8E6E1]">
+            <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-[#E5E2DC]">
               {[
                 { label: 'Price', value: property.price },
                 { label: 'PSF', value: `S$${property.psf.toLocaleString()}` },
@@ -83,8 +83,8 @@ export default async function PropertyDetailPage({ params }: Props) {
                 { label: 'Cap Rate', value: `${property.capRate}%` },
               ].map((metric) => (
                 <div key={metric.label} className="py-6 px-4 text-center">
-                  <p className="text-[9px] tracking-[0.25em] uppercase text-[#8B8680] mb-1">{metric.label}</p>
-                  <p className="font-mono text-lg text-[#1B4332] font-medium">{metric.value}</p>
+                  <p className="text-[9px] tracking-[0.25em] uppercase text-[#5A5A5A] mb-1">{metric.label}</p>
+                  <p className="font-mono text-lg text-[#2C2C2C] font-medium">{metric.value}</p>
                 </div>
               ))}
             </div>
@@ -99,10 +99,10 @@ export default async function PropertyDetailPage({ params }: Props) {
               <div className="lg:col-span-2 space-y-10">
                 {/* Description */}
                 <ScrollReveal>
-                  <div className="bg-white border border-[#E8E6E1] p-8">
+                  <div className="bg-white border border-[#E5E2DC] p-8">
                     <h2 className="text-[11px] tracking-[0.25em] uppercase text-[#5A5A5A] mb-6 flex items-center gap-3">
                       <div className="w-8 h-8 bg-[#F5F4F0] flex items-center justify-center">
-                        <Building2 className="w-4 h-4 text-[#1B4332]" strokeWidth={1.5} />
+                        <Building2 className="w-4 h-4 text-[#2C2C2C]" strokeWidth={1.5} />
                       </div>
                       Executive Summary
                     </h2>
@@ -112,17 +112,17 @@ export default async function PropertyDetailPage({ params }: Props) {
 
                 {/* Highlights */}
                 <ScrollReveal>
-                  <div className="bg-white border border-[#E8E6E1] p-8">
+                  <div className="bg-white border border-[#E5E2DC] p-8">
                     <h2 className="text-[11px] tracking-[0.25em] uppercase text-[#5A5A5A] mb-6 flex items-center gap-3">
                       <div className="w-8 h-8 bg-[#F5F4F0] flex items-center justify-center">
-                        <TrendingUp className="w-4 h-4 text-[#1B4332]" strokeWidth={1.5} />
+                        <TrendingUp className="w-4 h-4 text-[#2C2C2C]" strokeWidth={1.5} />
                       </div>
                       Investment Highlights
                     </h2>
                     <ul className="space-y-3">
                       {property.highlights.map((h, i) => (
                         <li key={i} className="flex items-start gap-3 text-sm text-[#2C2C2C]">
-                          <div className="w-1.5 h-1.5 rounded-full bg-[#B8956B] mt-2 shrink-0" />
+                          <div className="w-1.5 h-1.5 rounded-full bg-[#8B7355] mt-2 shrink-0" />
                           {h}
                         </li>
                       ))}
@@ -132,12 +132,12 @@ export default async function PropertyDetailPage({ params }: Props) {
 
                 {/* Features */}
                 <ScrollReveal>
-                  <div className="bg-white border border-[#E8E6E1] p-8">
+                  <div className="bg-white border border-[#E5E2DC] p-8">
                     <h2 className="text-[11px] tracking-[0.25em] uppercase text-[#5A5A5A] mb-6">Asset Specifications</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {property.features.map((f, i) => (
-                        <div key={i} className="flex items-start gap-3 p-4 bg-[#FAF9F6] border border-[#E8E6E1]">
-                          <Shield className="w-4 h-4 text-[#B8956B] mt-0.5 shrink-0" strokeWidth={1.5} />
+                        <div key={i} className="flex items-start gap-3 p-4 bg-[#F8F7F4] border border-[#E5E2DC]">
+                          <Shield className="w-4 h-4 text-[#8B7355] mt-0.5 shrink-0" strokeWidth={1.5} />
                           <span className="text-[13px] text-[#2C2C2C]">{f}</span>
                         </div>
                       ))}
@@ -147,9 +147,9 @@ export default async function PropertyDetailPage({ params }: Props) {
 
                 {/* Financials Table */}
                 <ScrollReveal>
-                  <div className="bg-white border border-[#E8E6E1] p-8">
+                  <div className="bg-white border border-[#E5E2DC] p-8">
                     <h2 className="text-[11px] tracking-[0.25em] uppercase text-[#5A5A5A] mb-6">Financial Summary</h2>
-                    <div className="divide-y divide-[#E8E6E1]">
+                    <div className="divide-y divide-[#E5E2DC]">
                       {[
                         ['Asking Price', property.price],
                         ['Price per sqft', `S$${property.psf.toLocaleString()}`],
@@ -162,7 +162,7 @@ export default async function PropertyDetailPage({ params }: Props) {
                         ['Last Refurbished', `${property.lastRefurbished}`],
                       ].map(([label, value]) => (
                         <div key={label} className="flex justify-between items-center py-3">
-                          <span className="text-[12px] text-[#8B8680] uppercase tracking-wide">{label}</span>
+                          <span className="text-[12px] text-[#5A5A5A] uppercase tracking-wide">{label}</span>
                           <span className="text-[14px] text-[#2C2C2C] font-medium">{value}</span>
                         </div>
                       ))}
@@ -172,14 +172,14 @@ export default async function PropertyDetailPage({ params }: Props) {
 
                 {/* Location */}
                 <ScrollReveal>
-                  <div className="bg-white border border-[#E8E6E1] p-8">
+                  <div className="bg-white border border-[#E5E2DC] p-8">
                     <h2 className="text-[11px] tracking-[0.25em] uppercase text-[#5A5A5A] mb-6">Location</h2>
-                    <div className="h-[300px] bg-[#E8E6E1] mb-4 flex items-center justify-center">
-                      <span className="text-sm text-[#8B8680]">Map — {property.coordinates.lat}, {property.coordinates.lng}</span>
+                    <div className="h-[300px] bg-[#E5E2DC] mb-4 flex items-center justify-center">
+                      <span className="text-sm text-[#5A5A5A]">Map — {property.coordinates.lat}, {property.coordinates.lng}</span>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {property.nearbyMRT.map((mrt) => (
-                        <span key={mrt} className="text-[10px] tracking-wider uppercase bg-[#1B4332] text-white px-3 py-1.5">
+                        <span key={mrt} className="text-[10px] tracking-wider uppercase bg-[#2C2C2C] text-white px-3 py-1.5">
                           {mrt}
                         </span>
                       ))}
@@ -191,38 +191,38 @@ export default async function PropertyDetailPage({ params }: Props) {
               {/* Right Column — Sidebar */}
               <div className="space-y-6">
                 {/* Mandate Badge */}
-                <div className="bg-[#1B4332] text-white p-6 flex items-center gap-4">
-                  <Shield className="w-6 h-6 text-[#B8956B]" strokeWidth={1.5} />
+                <div className="bg-[#2C2C2C] text-white p-6 flex items-center gap-4">
+                  <Shield className="w-6 h-6 text-[#8B7355]" strokeWidth={1.5} />
                   <div>
-                    <p className="text-[10px] tracking-[0.2em] uppercase text-[#B8956B] font-medium">Exclusive Mandate</p>
+                    <p className="text-[10px] tracking-[0.2em] uppercase text-[#8B7355] font-medium">Exclusive Mandate</p>
                     <p className="text-[13px] text-white/90 mt-1">Direct representation by Murivest</p>
                   </div>
                 </div>
 
                 {/* Size Card */}
-                <div className="bg-white border border-[#E8E6E1] p-6 flex items-center justify-between">
+                <div className="bg-white border border-[#E5E2DC] p-6 flex items-center justify-between">
                   <div>
-                    <p className="text-[9px] tracking-[0.2em] uppercase text-[#8B8680]">Total Area</p>
+                    <p className="text-[9px] tracking-[0.2em] uppercase text-[#5A5A5A]">Total Area</p>
                     <p className="text-lg font-medium text-[#2C2C2C]">{property.sizeSqft.toLocaleString()} sqft</p>
                   </div>
-                  <Maximize2 className="w-5 h-5 text-[#8B8680]" strokeWidth={1.5} />
+                  <Maximize2 className="w-5 h-5 text-[#5A5A5A]" strokeWidth={1.5} />
                 </div>
 
                 {/* Documents */}
-                <div className="bg-white border border-[#E8E6E1] p-6">
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#8B8680] mb-4 font-medium">Documents</p>
+                <div className="bg-white border border-[#E5E2DC] p-6">
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#5A5A5A] mb-4 font-medium">Documents</p>
                   <div className="space-y-2">
                     {property.documents.map((doc) => (
                       <button
                         key={doc.name}
-                        className="w-full flex items-center justify-between p-3 border border-[#E8E6E1] hover:border-[#B8956B] transition-colors text-left"
+                        className="w-full flex items-center justify-between p-3 border border-[#E5E2DC] hover:border-[#8B7355] transition-colors text-left"
                       >
                         <div className="flex items-center gap-2">
-                          <Download className="w-3.5 h-3.5 text-[#8B8680]" strokeWidth={1.5} />
+                          <Download className="w-3.5 h-3.5 text-[#5A5A5A]" strokeWidth={1.5} />
                           <span className="text-[12px] text-[#2C2C2C]">{doc.name}</span>
                         </div>
                         {doc.gated && (
-                          <span className="text-[9px] tracking-wider uppercase bg-[#1B4332]/10 text-[#1B4332] px-2 py-0.5">Portal</span>
+                          <span className="text-[9px] tracking-wider uppercase bg-[#2C2C2C]/10 text-[#2C2C2C] px-2 py-0.5">Portal</span>
                         )}
                       </button>
                     ))}
@@ -230,15 +230,15 @@ export default async function PropertyDetailPage({ params }: Props) {
                 </div>
 
                 {/* Broker */}
-                <div className="bg-white border border-[#E8E6E1] p-6">
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#8B8680] mb-4 font-medium">Mandated Advisor</p>
+                <div className="bg-white border border-[#E5E2DC] p-6">
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#5A5A5A] mb-4 font-medium">Mandated Advisor</p>
                   <div className="space-y-3">
                     <p className="font-serif text-base text-[#2C2C2C]">{property.brokerName}</p>
-                    <div className="flex items-center gap-2 text-xs text-[#8B8680]">
+                    <div className="flex items-center gap-2 text-xs text-[#5A5A5A]">
                       <Mail className="w-3.5 h-3.5" />
                       {property.brokerEmail}
                     </div>
-                    <div className="flex items-center gap-2 text-xs text-[#8B8680]">
+                    <div className="flex items-center gap-2 text-xs text-[#5A5A5A]">
                       <Phone className="w-3.5 h-3.5" />
                       {property.brokerPhone}
                     </div>
@@ -248,14 +248,14 @@ export default async function PropertyDetailPage({ params }: Props) {
                 {/* CTA */}
                 <a
                   href={`mailto:${property.brokerEmail}?subject=Investment Inquiry: ${property.title}`}
-                  className="block w-full bg-[#1B4332] text-white py-4 text-center text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#2D5A45] transition-colors"
+                  className="block w-full bg-[#2C2C2C] text-white py-4 text-center text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#2D5A45] transition-colors"
                 >
                   Arrange Private Viewing
                 </a>
 
                 <a
                   href={`mailto:${property.brokerEmail}?subject=Information Request: ${property.title}`}
-                  className="block w-full border border-[#1B4332] text-[#1B4332] py-4 text-center text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#1B4332] hover:text-white transition-colors"
+                  className="block w-full border border-[#2C2C2C] text-[#2C2C2C] py-4 text-center text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#2C2C2C] hover:text-white transition-colors"
                 >
                   Request Full Details
                 </a>
@@ -265,9 +265,9 @@ export default async function PropertyDetailPage({ params }: Props) {
         </section>
 
         {/* Disclaimer */}
-        <section className="py-8 bg-white border-t border-[#E8E6E1]">
+        <section className="py-8 bg-white border-t border-[#E5E2DC]">
           <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
-            <p className="text-[10px] text-[#8B8680] leading-relaxed text-center max-w-3xl mx-auto">
+            <p className="text-[10px] text-[#5A5A5A] leading-relaxed text-center max-w-3xl mx-auto">
               All information is confidential and provided for qualified investors only. 
               Past performance is not indicative of future returns. All figures are indicative and subject to final due diligence.
               Murivest Realty Pte Ltd — Licensed Real Estate Agency.

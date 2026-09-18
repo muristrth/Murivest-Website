@@ -61,18 +61,18 @@ export default function NorthCarolinaMarketPage() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#1B4332] py-24">
+      <section className="relative overflow-hidden bg-[#2C2C2C] py-24">
         <div className="absolute inset-0">
           <img
             src="https://images.pexels.com/photos/2190283/pexels-photo-2190283.jpeg?auto=compress&cs=tinysrgb&w=1920"
             alt="North Carolina cityscape"
             className="h-full w-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/85 to-ink-950/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#2C2C2C] via-[#2C2C2C]/85 to-[#2C2C2C]/50" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <Eyebrow className="text-gold-400">
+            <Eyebrow className="text-[#8B7355]">
               North Carolina — USA Markets
             </Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl text-balance">
@@ -86,7 +86,7 @@ export default function NorthCarolinaMarketPage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/usa/contact"
-                className="group flex items-center gap-2 rounded-lg bg-gold-400 px-6 py-3 text-sm font-semibold text-[#0F2E22] transition-all hover:bg-[#C9A87C]"
+                className="group flex items-center gap-2 rounded-lg bg-[#8B7355] px-6 py-3 text-sm font-semibold text-[#2C2C2C] transition-all hover:bg-[#8B7355]"
               >
                 Discuss a North Carolina Mandate
                 <ArrowRight
@@ -96,7 +96,7 @@ export default function NorthCarolinaMarketPage() {
               </Link>
               <Link
                 href="/usa/markets"
-                className="flex items-center justify-center rounded-lg border border-[#C9A87C] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
+                className="flex items-center justify-center rounded-lg border border-[#8B7355] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
               >
                 All Markets
               </Link>
@@ -113,7 +113,7 @@ export default function NorthCarolinaMarketPage() {
               eyebrow="Market Context"
               title="North Carolina is a life sciences and financial services hub"
             />
-            <p className="mt-6 text-lg leading-relaxed text-[#8B8680]">
+            <p className="mt-6 text-lg leading-relaxed text-[#5A5A5A]">
               {MARKET_CONTEXT}
             </p>
             <div className="mt-8">
@@ -124,9 +124,9 @@ export default function NorthCarolinaMarketPage() {
                 {KEY_DRIVERS.map((driver) => (
                   <li
                     key={driver}
-                    className="flex items-start gap-3 text-base text-[#C9A87C]"
+                    className="flex items-start gap-3 text-base text-[#8B7355]"
                   >
-                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-gold-400" />
+                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#8B7355]" />
                     {driver}
                   </li>
                 ))}
@@ -134,7 +134,7 @@ export default function NorthCarolinaMarketPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-[#E8E6E1] bg-[#FAF9F6] p-8">
+          <div className="rounded-2xl border border-[#E5E2DC] bg-[#F8F7F4] p-8">
             <h3 className="font-serif text-lg font-semibold text-[#2C2C2C]">
               Property types we cover in North Carolina
             </h3>
@@ -142,12 +142,12 @@ export default function NorthCarolinaMarketPage() {
               {RELATED_PROPERTIES.map((pt) => (
                 <li
                   key={pt.label}
-                  className="flex items-start gap-2.5 text-sm text-[#C9A87C]"
+                  className="flex items-start gap-2.5 text-sm text-[#8B7355]"
                 >
-                  <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#FAF9F6]0" />
+                  <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#F8F7F4]0" />
                   <Link
                     href={pt.href}
-                    className="text-[#C9A87C] hover:text-[#B8956B] transition-colors"
+                    className="text-[#8B7355] hover:text-[#8B7355] transition-colors"
                   >
                     {pt.label}
                   </Link>
@@ -156,7 +156,7 @@ export default function NorthCarolinaMarketPage() {
             </ul>
             <Link
               href="/usa/contact"
-              className="mt-6 flex items-center gap-2 text-sm font-medium text-[#B8956B] hover:text-[#C9A87C] transition-colors"
+              className="mt-6 flex items-center gap-2 text-sm font-medium text-[#8B7355] hover:text-[#8B7355] transition-colors"
             >
               Discuss North Carolina opportunities
               <ArrowRight size={16} />

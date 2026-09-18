@@ -60,28 +60,28 @@ export default function AuthorityToSellPage() {
     }
   }
 
-  const inputClasses = "w-full bg-white border border-[#E8E6E1] rounded-none p-4 text-[#2C2C2C] outline-none focus:border-[#B8956B] transition-all text-[15px] placeholder:text-[#2C2C2C]/40 focus:ring-1 focus:ring-[#B8956B]/20 font-light";
+  const inputClasses = "w-full bg-white border border-[#E5E2DC] rounded-none p-4 text-[#2C2C2C] outline-none focus:border-[#8B7355] transition-all text-[15px] placeholder:text-[#2C2C2C]/40 focus:ring-1 focus:ring-[#8B7355]/20 font-light";
 
   return (
-    <main className="min-h-screen bg-[#FAF9F6] text-[#2C2C2C] pt-[64px]">
+    <main className="min-h-screen bg-[#F8F7F4] text-[#2C2C2C] pt-[64px]">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 py-16 md:py-24 space-y-16">
 
         {/* Editorial Header */}
-        <header className="space-y-8 border-b border-[#E8E6E1] pb-16">
+        <header className="space-y-8 border-b border-[#E5E2DC] pb-16">
           <div className="flex items-center gap-4">
-            <div className="w-16 h-[1px] bg-[#B8956B]" />
-            <span className="text-[11px] tracking-[0.3em] uppercase text-[#B8956B] font-medium">
+            <div className="w-16 h-[1px] bg-[#8B7355]" />
+            <span className="text-[11px] tracking-[0.3em] uppercase text-[#8B7355] font-medium">
               Mandate Documentation
             </span>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 items-end">
             <div className="space-y-4">
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1B4332] leading-[1.1]">
-                Authority to <span className="italic text-[#B8956B] font-light">Sell</span>
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#2C2C2C] leading-[1.1]">
+                Authority to <span className="italic text-[#8B7355] font-light">Sell</span>
               </h1>
             </div>
-            <p className="text-[#2C2C2C]/70 font-light leading-relaxed text-lg md:text-right border-l-0 md:border-l border-[#E8E6E1] md:pl-8">
+            <p className="text-[#2C2C2C]/70 font-light leading-relaxed text-lg md:text-right border-l-0 md:border-l border-[#E5E2DC] md:pl-8">
               This instrument constitutes a formal mandate authorizing Murivest Realty 
               to market and procure a bona fide purchaser for the herein described property.
             </p>
@@ -104,10 +104,10 @@ export default function AuthorityToSellPage() {
             { icon: Scale, title: 'Transparent', desc: 'Protected fee structure' },
             { icon: FileText, title: 'Documentation', desc: 'Complete legal record' },
           ].map((item, i) => (
-            <div key={i} className="border-t-2 border-[#E8E6E1] pt-6 bg-white/50 p-6 hover:border-[#B8956B] transition-colors duration-500">
+            <div key={i} className="border-t-2 border-[#E5E2DC] pt-6 bg-white/50 p-6 hover:border-[#8B7355] transition-colors duration-500">
               <div className="flex items-center gap-3 mb-4">
-                <item.icon className="h-5 w-5 text-[#B8956B]" strokeWidth={1.5} />
-                <h3 className="font-serif text-lg text-[#1B4332]">{item.title}</h3>
+                <item.icon className="h-5 w-5 text-[#8B7355]" strokeWidth={1.5} />
+                <h3 className="font-serif text-lg text-[#2C2C2C]">{item.title}</h3>
               </div>
               <p className="text-sm text-[#2C2C2C]/60 font-light leading-relaxed">{item.desc}</p>
             </div>
@@ -116,13 +116,13 @@ export default function AuthorityToSellPage() {
 
         {/* Form */}
         {!showModal && (
-          <form onSubmit={handleSubmit} className="space-y-16 bg-white border border-[#E8E6E1] p-8 md:p-12 lg:p-16">
+          <form onSubmit={handleSubmit} className="space-y-16 bg-white border border-[#E5E2DC] p-8 md:p-12 lg:p-16">
             
             {/* Section 1 */}
             <section className="space-y-8">
-              <div className="flex items-center gap-4 pb-4 border-b border-[#E8E6E1]">
-                <span className="font-serif text-2xl text-[#B8956B]">01</span>
-                <h2 className="font-serif text-2xl text-[#1B4332]">Vendor Particulars</h2>
+              <div className="flex items-center gap-4 pb-4 border-b border-[#E5E2DC]">
+                <span className="font-serif text-2xl text-[#8B7355]">01</span>
+                <h2 className="font-serif text-2xl text-[#2C2C2C]">Vendor Particulars</h2>
               </div>
               
               <div className="grid md:grid-cols-2 gap-x-8 gap-y-6">
@@ -147,9 +147,9 @@ export default function AuthorityToSellPage() {
 
             {/* Section 2 */}
             <section className="space-y-8">
-              <div className="flex items-center gap-4 pb-4 border-b border-[#E8E6E1]">
-                <span className="font-serif text-2xl text-[#B8956B]">02</span>
-                <h2 className="font-serif text-2xl text-[#1B4332]">Property & Transaction</h2>
+              <div className="flex items-center gap-4 pb-4 border-b border-[#E5E2DC]">
+                <span className="font-serif text-2xl text-[#8B7355]">02</span>
+                <h2 className="font-serif text-2xl text-[#2C2C2C]">Property & Transaction</h2>
               </div>
               
               <div className="grid md:grid-cols-2 gap-x-8 gap-y-6">
@@ -173,7 +173,7 @@ export default function AuthorityToSellPage() {
             </section>
 
             {/* Submit */}
-            <div className="pt-8 border-t border-[#E8E6E1] flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="pt-8 border-t border-[#E5E2DC] flex flex-col md:flex-row items-center justify-between gap-6">
               <p className="text-xs text-[#2C2C2C]/50 font-light italic max-w-md">
                 By executing this mandate, you confirm legal authority to dispose of the aforementioned property.
               </p>
@@ -181,7 +181,7 @@ export default function AuthorityToSellPage() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="bg-[#1B4332] text-[#FAF9F6] font-medium px-12 py-4 hover:bg-[#2D5A45] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-3 text-[11px] tracking-[0.2em] uppercase shadow-lg shadow-[#1B4332]/10"
+                className="bg-[#2C2C2C] text-[#F8F7F4] font-medium px-12 py-4 hover:bg-[#2D5A45] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-3 text-[11px] tracking-[0.2em] uppercase shadow-lg shadow-[#2C2C2C]/10"
               >
                 {submitting ? <Loader2 className="w-4 h-4 animate-spin" /> : <ShieldCheck className="w-4 h-4" />}
                 <span>{submitting ? 'Processing...' : 'Execute Mandate'}</span>
@@ -193,20 +193,20 @@ export default function AuthorityToSellPage() {
 
       {/* Success Modal */}
       {showModal && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-[#1B4332]/20 backdrop-blur-sm">
-          <div className="relative bg-[#FAF9F6] border border-[#E8E6E1] p-12 md:p-16 max-w-lg w-full text-center space-y-8 shadow-2xl">
-            <div className="w-16 h-16 bg-[#1B4332] rounded-full flex items-center justify-center mx-auto">
-              <CheckCircle2 className="w-8 h-8 text-[#B8956B]" />
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-[#2C2C2C]/20 backdrop-blur-sm">
+          <div className="relative bg-[#F8F7F4] border border-[#E5E2DC] p-12 md:p-16 max-w-lg w-full text-center space-y-8 shadow-2xl">
+            <div className="w-16 h-16 bg-[#2C2C2C] rounded-full flex items-center justify-center mx-auto">
+              <CheckCircle2 className="w-8 h-8 text-[#8B7355]" />
             </div>
             
             <div className="space-y-2">
-              <h2 className="font-serif text-3xl text-[#1B4332]">Mandate Executed</h2>
+              <h2 className="font-serif text-3xl text-[#2C2C2C]">Mandate Executed</h2>
               <p className="text-[#2C2C2C]/60 font-light">Your formal authority has been recorded.</p>
             </div>
             
-            <div className="bg-white border border-[#E8E6E1] p-6">
+            <div className="bg-white border border-[#E5E2DC] p-6">
               <p className="text-[10px] tracking-[0.2em] uppercase text-[#2C2C2C]/50 mb-2">Reference Number</p>
-              <p className="text-[#B8956B] font-mono text-xl tracking-widest font-medium">{mandateRef}</p>
+              <p className="text-[#8B7355] font-mono text-xl tracking-widest font-medium">{mandateRef}</p>
             </div>
             
             <p className="text-sm text-[#2C2C2C]/70 font-light leading-relaxed">
@@ -217,13 +217,13 @@ export default function AuthorityToSellPage() {
             <div className="flex flex-col gap-3 pt-4">
               <button 
                 onClick={() => window.location.reload()} 
-                className="w-full bg-[#1B4332] text-[#FAF9F6] py-4 font-medium text-[11px] tracking-[0.2em] uppercase hover:bg-[#2D5A45] transition-colors"
+                className="w-full bg-[#2C2C2C] text-[#F8F7F4] py-4 font-medium text-[11px] tracking-[0.2em] uppercase hover:bg-[#2D5A45] transition-colors"
               >
                 Submit New Mandate
               </button>
               <button 
                 onClick={() => setShowModal(false)} 
-                className="w-full border border-[#E8E6E1] text-[#2C2C2C] py-4 font-medium text-[11px] tracking-[0.2em] uppercase hover:bg-[#E8E6E1] transition-colors"
+                className="w-full border border-[#E5E2DC] text-[#2C2C2C] py-4 font-medium text-[11px] tracking-[0.2em] uppercase hover:bg-[#E5E2DC] transition-colors"
               >
                 Close
               </button>

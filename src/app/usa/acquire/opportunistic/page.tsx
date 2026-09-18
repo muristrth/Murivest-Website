@@ -68,13 +68,13 @@ export default function OpportunisticPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="relative overflow-hidden bg-[#1B4332] py-24">
+      <section className="relative overflow-hidden bg-[#2C2C2C] py-24">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-ink-950 to-ink-900" />
+          <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-[#2C2C2C] to-[#2C2C2C]" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <Eyebrow className="text-gold-400">
+            <Eyebrow className="text-[#8B7355]">
               Acquire · Opportunistic
             </Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl text-balance">
@@ -90,7 +90,7 @@ export default function OpportunisticPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/usa/contact"
-                className="group flex items-center justify-center gap-2 rounded-lg bg-gold-400 px-6 py-3 text-sm font-semibold text-[#0F2E22] transition-all hover:bg-[#C9A87C]"
+                className="group flex items-center justify-center gap-2 rounded-lg bg-[#8B7355] px-6 py-3 text-sm font-semibold text-[#2C2C2C] transition-all hover:bg-[#8B7355]"
               >
                 Discuss an Opportunistic Mandate
                 <ArrowRight
@@ -100,7 +100,7 @@ export default function OpportunisticPage() {
               </Link>
               <Link
                 href="/usa/acquire"
-                className="flex items-center justify-center rounded-lg border border-[#C9A87C] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
+                className="flex items-center justify-center rounded-lg border border-[#8B7355] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
               >
                 All Acquisition Strategies
               </Link>
@@ -119,15 +119,15 @@ export default function OpportunisticPage() {
           {EDGE.map((item) => (
             <div
               key={item.title}
-              className="rounded-xl border border-[#E8E6E1] bg-white p-6"
+              className="rounded-xl border border-[#E5E2DC] bg-white p-6"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#1B4332] text-gold-400">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#2C2C2C] text-[#8B7355]">
                 <item.icon size={22} />
               </div>
               <h3 className="mt-4 font-serif text-lg font-semibold text-[#2C2C2C]">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+              <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
                 {item.description}
               </p>
             </div>
@@ -135,52 +135,52 @@ export default function OpportunisticPage() {
         </div>
       </Section>
 
-      <Section className="py-20 bg-[#FAF9F6]">
+      <Section className="py-20 bg-[#F8F7F4]">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <Eyebrow>How We Operate</Eyebrow>
             <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight text-[#2C2C2C] sm:text-4xl">
               Discipline is what makes aggression safe
             </h2>
-            <p className="mt-6 text-lg leading-relaxed text-[#8B8680]">
+            <p className="mt-6 text-lg leading-relaxed text-[#5A5A5A]">
               Opportunistic does not mean indiscriminate. The highest-return
               situations are also the most capable of destroying capital when
               underwritten loosely. We bring the same downside-first culture to
               opportunistic deals that we bring to core — applied with the speed
               and structuring creativity the situation demands.
             </p>
-            <p className="mt-4 text-lg leading-relaxed text-[#8B8680]">
+            <p className="mt-4 text-lg leading-relaxed text-[#5A5A5A]">
               Capital readiness is the differentiator. We coordinate with our
               capital introduction and equity practices so that when a situation
               appears, the capital is pre-positioned rather than still being
               sourced.
             </p>
           </div>
-          <div className="rounded-xl border border-[#E8E6E1] bg-white p-8">
+          <div className="rounded-xl border border-[#E5E2DC] bg-white p-8">
             <h3 className="font-serif text-xl font-semibold text-[#2C2C2C]">
               Situations we pursue
             </h3>
-            <ul className="mt-4 space-y-3 text-sm leading-relaxed text-[#8B8680]">
+            <ul className="mt-4 space-y-3 text-sm leading-relaxed text-[#5A5A5A]">
               <li className="flex gap-3">
-                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-400" />
+                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#8B7355]" />
                 Time-sensitive sales and negotiated resolutions.
               </li>
               <li className="flex gap-3">
-                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-400" />
+                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#8B7355]" />
                 Structurally complex ownership or capital stacks.
               </li>
               <li className="flex gap-3">
-                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-400" />
+                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#8B7355]" />
                 Assets requiring recapitalization or repositioning capital.
               </li>
               <li className="flex gap-3">
-                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-400" />
+                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#8B7355]" />
                 Mispriced assets in dislocated or transitional submarkets.
               </li>
             </ul>
             <Link
               href="/usa/capital/capital-introduction"
-              className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-[#B8956B] transition-colors hover:text-[#C9A87C]"
+              className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-[#8B7355] transition-colors hover:text-[#8B7355]"
             >
               Pre-position your capital
               <ArrowRight size={16} />
@@ -204,14 +204,14 @@ export default function OpportunisticPage() {
             <Link
               key={item.href}
               href={item.href}
-              className="group flex items-center justify-between rounded-xl border border-[#E8E6E1] bg-white p-5 transition-all hover:border-[#B8956B] hover:shadow-md"
+              className="group flex items-center justify-between rounded-xl border border-[#E5E2DC] bg-white p-5 transition-all hover:border-[#8B7355] hover:shadow-md"
             >
-              <span className="font-serif text-lg font-semibold text-[#2C2C2C] group-hover:text-[#B8956B] transition-colors">
+              <span className="font-serif text-lg font-semibold text-[#2C2C2C] group-hover:text-[#8B7355] transition-colors">
                 {item.label}
               </span>
               <ArrowRight
                 size={18}
-                className="text-[#FAF9F6] transition-all group-hover:translate-x-1 group-hover:text-[#C9A87C]"
+                className="text-[#F8F7F4] transition-all group-hover:translate-x-1 group-hover:text-[#8B7355]"
               />
             </Link>
           ))}

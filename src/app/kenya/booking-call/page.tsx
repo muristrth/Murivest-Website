@@ -36,16 +36,16 @@ const SchedulePage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#FAF9F6] text-[#2C2C2C] pt-[64px]">
+    <div className="min-h-screen bg-[#F8F7F4] text-[#2C2C2C] pt-[64px]">
       
       {/* Brass rule */}
-      <div className="w-full h-[2px] bg-[#B8956B]" />
+      <div className="w-full h-[2px] bg-[#8B7355]" />
 
       {/* HERO */}
-      <section className="max-w-[1200px] mx-auto px-5 md:px-12 lg:px-16 pt-14 md:pt-20 pb-10 md:pb-14 border-b border-[#1B4332]/8">
+      <section className="max-w-[1200px] mx-auto px-5 md:px-12 lg:px-16 pt-14 md:pt-20 pb-10 md:pb-14 border-b border-[#2C2C2C]/8">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-8 h-[1px] bg-[#B8956B]" />
-          <span className="text-[10px] tracking-[0.35em] uppercase text-[#B8956B] font-medium">
+          <div className="w-8 h-[1px] bg-[#8B7355]" />
+          <span className="text-[10px] tracking-[0.35em] uppercase text-[#8B7355] font-medium">
             Private Office
           </span>
         </div>
@@ -57,8 +57,8 @@ const SchedulePage = () => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-8"
           >
-            <h1 className="font-serif text-[32px] md:text-[48px] lg:text-[56px] text-[#1B4332] leading-[1.05] tracking-tight">
-              Advisory <span className="italic text-[#B8956B] font-light">Calendar</span>
+            <h1 className="font-serif text-[32px] md:text-[48px] lg:text-[56px] text-[#2C2C2C] leading-[1.05] tracking-tight">
+              Advisory <span className="italic text-[#8B7355] font-light">Calendar</span>
             </h1>
             <p className="mt-5 text-[15px] md:text-[17px] text-[#2C2C2C]/65 font-light leading-[1.6] max-w-[580px]">
               Private consultations for principals and family offices. 
@@ -67,8 +67,8 @@ const SchedulePage = () => {
           </motion.div>
 
           <div className="lg:col-span-4 lg:text-right">
-            <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase text-[#1B4332]/50">
-              <span className="w-1.5 h-1.5 bg-[#1B4332] rounded-full" />
+            <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase text-[#2C2C2C]/50">
+              <span className="w-1.5 h-1.5 bg-[#2C2C2C] rounded-full" />
               Accepting Appointments
             </div>
           </div>
@@ -84,7 +84,7 @@ const SchedulePage = () => {
 
             {/* Protocol */}
             <div className="space-y-6">
-              <h2 className="text-[10px] tracking-[0.3em] uppercase text-[#1B4332]/45 font-semibold pb-3 border-b border-[#E8E6E1]">
+              <h2 className="text-[10px] tracking-[0.3em] uppercase text-[#2C2C2C]/45 font-semibold pb-3 border-b border-[#E5E2DC]">
                 Scheduling Protocol
               </h2>
 
@@ -96,12 +96,12 @@ const SchedulePage = () => {
                 ].map((item, i) => (
                   <div key={i}>
                     <div className="flex items-center gap-2.5 mb-1.5">
-                      <item.icon size={13} className="text-[#B8956B]" />
-                      <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8956B] font-medium">
+                      <item.icon size={13} className="text-[#8B7355]" />
+                      <span className="text-[10px] tracking-[0.2em] uppercase text-[#8B7355] font-medium">
                         {item.label}
                       </span>
                     </div>
-                    <p className="font-serif text-[18px] text-[#1B4332]">{item.value}</p>
+                    <p className="font-serif text-[18px] text-[#2C2C2C]">{item.value}</p>
                     <p className="text-[13px] text-[#2C2C2C]/55">{item.sub}</p>
                   </div>
                 ))}
@@ -109,8 +109,8 @@ const SchedulePage = () => {
             </div>
 
             {/* Assurance */}
-            <div className="bg-white border border-[#E8E6E1] p-6 space-y-5">
-              <div className="flex items-center gap-2.5 text-[#1B4332]">
+            <div className="bg-white border border-[#E5E2DC] p-6 space-y-5">
+              <div className="flex items-center gap-2.5 text-[#2C2C2C]">
                 <ShieldCheck size={16} />
                 <span className="text-[10px] tracking-[0.2em] uppercase">Client Assurance</span>
               </div>
@@ -123,8 +123,8 @@ const SchedulePage = () => {
             </div>
 
             {/* Contact */}
-            <div className="bg-[#1B4332] p-6 space-y-4">
-              <p className="text-[10px] tracking-[0.3em] uppercase text-[#B8956B]">
+            <div className="bg-[#2C2C2C] p-6 space-y-4">
+              <p className="text-[10px] tracking-[0.3em] uppercase text-[#8B7355]">
                 Direct Contact
               </p>
 
@@ -152,7 +152,7 @@ const SchedulePage = () => {
                   href="https://calendly.com/murivestrealty"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-3 w-full bg-[#1B4332] text-white py-4"
+                  className="flex items-center justify-center gap-3 w-full bg-[#2C2C2C] text-white py-4"
                 >
                   <Calendar size={18} />
                   Open Booking Calendar
@@ -162,9 +162,9 @@ const SchedulePage = () => {
             )}
 
             {/* Calendly */}
-            <div className="bg-white border border-[#E8E6E1] shadow-sm overflow-hidden">
+            <div className="bg-white border border-[#E5E2DC] shadow-sm overflow-hidden">
               
-              <div className="bg-[#1B4332] px-5 py-3 flex justify-between text-white text-xs">
+              <div className="bg-[#2C2C2C] px-5 py-3 flex justify-between text-white text-xs">
                 <span>Select an Available Time</span>
                 <span>EAT (UTC+3)</span>
               </div>
@@ -187,7 +187,7 @@ const SchedulePage = () => {
             </div>
 
             <div className="hidden lg:flex justify-end mt-4">
-              <a href="https://calendly.com/murivestrealty" target="_blank" className="text-xs text-[#B8956B] flex items-center gap-1">
+              <a href="https://calendly.com/murivestrealty" target="_blank" className="text-xs text-[#8B7355] flex items-center gap-1">
                 Open full calendar <ArrowUpRight size={11} />
               </a>
             </div>

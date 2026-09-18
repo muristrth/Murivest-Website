@@ -91,11 +91,11 @@ export default function StrategiesPage() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#1B4332] py-24">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-ink-950 to-ink-900" />
+      <section className="relative overflow-hidden bg-[#2C2C2C] py-24">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-[#2C2C2C] to-[#2C2C2C]" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <Eyebrow className="text-gold-400">Investment Strategies</Eyebrow>
+            <Eyebrow className="text-[#8B7355]">Investment Strategies</Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl text-balance">
               Mandate-driven strategies aligned to specific return and risk objectives
             </h1>
@@ -108,7 +108,7 @@ export default function StrategiesPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/usa/invest/mandates"
-                className="group flex items-center justify-center gap-2 rounded-lg bg-gold-400 px-6 py-3 text-sm font-semibold text-[#0F2E22] transition-all hover:bg-[#C9A87C]"
+                className="group flex items-center justify-center gap-2 rounded-lg bg-[#8B7355] px-6 py-3 text-sm font-semibold text-[#2C2C2C] transition-all hover:bg-[#8B7355]"
               >
                 Engage Murivest
                 <ArrowRight
@@ -118,7 +118,7 @@ export default function StrategiesPage() {
               </Link>
               <Link
                 href="/usa/invest/criteria"
-                className="flex items-center justify-center rounded-lg border border-[#C9A87C] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
+                className="flex items-center justify-center rounded-lg border border-[#8B7355] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
               >
                 View Criteria
               </Link>
@@ -138,7 +138,7 @@ export default function StrategiesPage() {
           {STRATEGIES.map((strategy) => (
             <div
               key={strategy.slug}
-              className="rounded-xl border border-[#E8E6E1] bg-white p-6 transition-all hover:border-[#B8956B] hover:shadow-lg hover:shadow-ink-900/5"
+              className="rounded-xl border border-[#E5E2DC] bg-white p-6 transition-all hover:border-[#8B7355] hover:shadow-lg hover:shadow-[#2C2C2C]/5"
             >
               <div className="flex items-start justify-between">
                 <h3 className="font-serif text-2xl font-semibold text-[#2C2C2C]">
@@ -156,10 +156,10 @@ export default function StrategiesPage() {
                   {strategy.riskProfile} risk
                 </span>
               </div>
-              <p className="mt-4 text-sm leading-relaxed text-[#8B8680]">
+              <p className="mt-4 text-sm leading-relaxed text-[#5A5A5A]">
                 {strategy.summary}
               </p>
-              <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-[#8B8680]/70">
+              <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-[#5A5A5A]/70">
                 <span className="font-medium uppercase tracking-wider">
                   Typical hold: {strategy.typicalHold}
                 </span>
@@ -174,14 +174,14 @@ export default function StrategiesPage() {
       </Section>
 
       {/* How strategies connect to criteria */}
-      <Section className="py-20 bg-[#FAF9F6]">
+      <Section className="py-20 bg-[#F8F7F4]">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <Eyebrow>Strategy to Criteria</Eyebrow>
             <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight text-[#2C2C2C] sm:text-4xl">
               From strategic intent to deal-level underwriting
             </h2>
-            <div className="mt-6 space-y-4 text-lg leading-relaxed text-[#8B8680]">
+            <div className="mt-6 space-y-4 text-lg leading-relaxed text-[#5A5A5A]">
               <p>
                 A strategy without criteria is merely a thesis. Murivest
                 translates strategic intent into granular investment criteria —
@@ -197,7 +197,7 @@ export default function StrategiesPage() {
             </div>
             <Link
               href="/usa/invest/criteria"
-              className="mt-6 inline-flex items-center gap-2 rounded-lg bg-[#B8956B] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[#C9A87C]"
+              className="mt-6 inline-flex items-center gap-2 rounded-lg bg-[#8B7355] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[#8B7355]"
             >
               View Investment Criteria
               <ArrowRight size={16} />
@@ -209,15 +209,15 @@ export default function StrategiesPage() {
               return (
                 <div
                   key={type.slug}
-                  className="rounded-xl border border-[#E8E6E1] bg-white p-5"
+                  className="rounded-xl border border-[#E5E2DC] bg-white p-5"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#1B4332] text-gold-400">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#2C2C2C] text-[#8B7355]">
                     <Icon size={20} />
                   </div>
                   <div className="mt-3 font-serif text-lg font-semibold text-[#2C2C2C]">
                     {type.label}
                   </div>
-                  <p className="mt-1 text-xs leading-relaxed text-[#8B8680]">
+                  <p className="mt-1 text-xs leading-relaxed text-[#5A5A5A]">
                     {type.description}
                   </p>
                 </div>
@@ -235,38 +235,38 @@ export default function StrategiesPage() {
           description="Murivest's mandate model provides clarity, discipline, and alignment throughout the investment lifecycle."
         />
         <div className="mt-12 grid gap-8 md:grid-cols-3">
-          <div className="rounded-xl border border-[#E8E6E1] bg-white p-6">
-            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-500">
+          <div className="rounded-xl border border-[#E5E2DC] bg-white p-6">
+            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8B7355]">
               Phase 01
             </div>
             <h3 className="mt-2 font-serif text-xl font-semibold text-[#2C2C2C]">
               Mandate Definition
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+            <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
               A confidential consultation to define strategy, risk tolerance,
               return expectations, and success metrics.
             </p>
           </div>
-          <div className="rounded-xl border border-[#E8E6E1] bg-white p-6">
-            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-500">
+          <div className="rounded-xl border border-[#E5E2DC] bg-white p-6">
+            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8B7355]">
               Phase 02
             </div>
             <h3 className="mt-2 font-serif text-xl font-semibold text-[#2C2C2C]">
               Sourcing & Underwriting
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+            <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
               Targeted sourcing, due diligence, and institutional-grade
               underwriting aligned to your strategic criteria.
             </p>
           </div>
-          <div className="rounded-xl border border-[#E8E6E1] bg-white p-6">
-            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-500">
+          <div className="rounded-xl border border-[#E5E2DC] bg-white p-6">
+            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8B7355]">
               Phase 03
             </div>
             <h3 className="mt-2 font-serif text-xl font-semibold text-[#2C2C2C]">
               Execution & Reporting
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+            <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
               Negotiation, closing, and ongoing asset management reporting
               with full transparency and fiduciary discipline.
             </p>

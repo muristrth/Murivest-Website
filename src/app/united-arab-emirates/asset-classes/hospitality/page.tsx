@@ -121,7 +121,7 @@ const schemaOrg = {
 
 function SectionLabel({ text }: { text: string }) {
   return (
-    <p className="font-body text-[11px] font-semibold tracking-[0.25em] uppercase text-[#B8956B] mb-4 md:mb-5">
+    <p className="font-body text-[11px] font-semibold tracking-[0.25em] uppercase text-[#8B7355] mb-4 md:mb-5">
       {text}
     </p>
   )
@@ -365,7 +365,7 @@ const faqs = [
 
 export default function HospitalityPage() {
   return (
-    <main className="bg-[#FAF9F6] text-[#1A1A1A] font-body antialiased selection:bg-[#1B4332] selection:text-white overflow-x-hidden">
+    <main className="bg-[#F8F7F4] text-[#1A1A1A] font-body antialiased selection:bg-[#2C2C2C] selection:text-white overflow-x-hidden">
       <Script
         id="schema-hospitality"
         type="application/ld+json"
@@ -373,20 +373,20 @@ export default function HospitalityPage() {
       />
 
       {/* ── Fixed Navigation ─────────────────────────────────────────────── */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#FAF9F6]/90 backdrop-blur-md border-b border-[#1A1A1A]/5">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#F8F7F4]/90 backdrop-blur-md border-b border-[#1A1A1A]/5">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 h-16 md:h-20 flex items-center justify-between">
-          <Link href="/" className="font-display text-xl md:text-2xl text-[#1B4332] tracking-tight">
+          <Link href="/" className="font-display text-xl md:text-2xl text-[#2C2C2C] tracking-tight">
             Murivest
           </Link>
           <nav className="hidden md:flex items-center gap-6 lg:gap-10 text-sm text-[#4A4A4A]">
-            <Link href="/united-arab-emirates" className="hover:text-[#1B4332] transition-colors">UAE</Link>
-            <Link href="/united-arab-emirates/asset-classes" className="hover:text-[#1B4332] transition-colors">Asset Classes</Link>
-            <Link href="#expertise" className="hover:text-[#1B4332] transition-colors">Expertise</Link>
-            <Link href="#opportunities" className="hover:text-[#1B4332] transition-colors">Opportunities</Link>
-            <Link href="#faq" className="hover:text-[#1B4332] transition-colors">FAQ</Link>
+            <Link href="/united-arab-emirates" className="hover:text-[#2C2C2C] transition-colors">UAE</Link>
+            <Link href="/united-arab-emirates/asset-classes" className="hover:text-[#2C2C2C] transition-colors">Asset Classes</Link>
+            <Link href="#expertise" className="hover:text-[#2C2C2C] transition-colors">Expertise</Link>
+            <Link href="#opportunities" className="hover:text-[#2C2C2C] transition-colors">Opportunities</Link>
+            <Link href="#faq" className="hover:text-[#2C2C2C] transition-colors">FAQ</Link>
             <Link
               href="/united-arab-emirates/contact"
-              className="px-5 py-2.5 bg-[#1B4332] text-white text-sm hover:bg-[#142d23] transition-colors"
+              className="px-5 py-2.5 bg-[#2C2C2C] text-white text-sm hover:bg-[#142d23] transition-colors"
             >
               Contact
             </Link>
@@ -394,7 +394,7 @@ export default function HospitalityPage() {
           {/* Mobile menu button */}
           <Link
             href="/united-arab-emirates/contact"
-            className="md:hidden px-4 py-2 bg-[#1B4332] text-white text-xs tracking-wide"
+            className="md:hidden px-4 py-2 bg-[#2C2C2C] text-white text-xs tracking-wide"
           >
             Contact
           </Link>
@@ -404,32 +404,32 @@ export default function HospitalityPage() {
       {/* ── Breadcrumb ───────────────────────────────────────────────────── */}
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 pt-24 md:pt-28">
         <nav className="flex flex-wrap items-center text-xs text-[#8A8A8A] gap-1.5" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-[#1B4332] transition-colors">Home</Link>
+          <Link href="/" className="hover:text-[#2C2C2C] transition-colors">Home</Link>
           <span>/</span>
-          <Link href="/united-arab-emirates" className="hover:text-[#1B4332] transition-colors">UAE</Link>
+          <Link href="/united-arab-emirates" className="hover:text-[#2C2C2C] transition-colors">UAE</Link>
           <span>/</span>
-          <Link href="/united-arab-emirates/asset-classes" className="hover:text-[#1B4332] transition-colors">Asset Classes</Link>
+          <Link href="/united-arab-emirates/asset-classes" className="hover:text-[#2C2C2C] transition-colors">Asset Classes</Link>
           <span>/</span>
-          <span className="text-[#1B4332]">Hospitality</span>
+          <span className="text-[#2C2C2C]">Hospitality</span>
         </nav>
       </div>
 
       {/* ══════════════════════════════ HERO ════════════════════════════════ */}
       <section className="relative min-h-[88vh] md:min-h-screen flex flex-col justify-end overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0D1A0F] via-[#102318] to-[#1B4332]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0D1A0F] via-[#102318] to-[#2C2C2C]" />
         {/* Subtle grid texture */}
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage:
-              'repeating-linear-gradient(0deg, transparent, transparent 79px, #FAF9F6 79px, #FAF9F6 80px), repeating-linear-gradient(90deg, transparent, transparent 79px, #FAF9F6 79px, #FAF9F6 80px)',
+              'repeating-linear-gradient(0deg, transparent, transparent 79px, #F8F7F4 79px, #F8F7F4 80px), repeating-linear-gradient(90deg, transparent, transparent 79px, #F8F7F4 79px, #F8F7F4 80px)',
           }}
         />
         {/* Soft radial accent */}
         <div
           className="absolute inset-0 opacity-10"
-          style={{ backgroundImage: 'radial-gradient(ellipse at 70% 40%, #B8956B 0%, transparent 60%)' }}
+          style={{ backgroundImage: 'radial-gradient(ellipse at 70% 40%, #8B7355 0%, transparent 60%)' }}
         />
 
         <div className="relative max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 pt-36 pb-0 w-full">
@@ -444,7 +444,7 @@ export default function HospitalityPage() {
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
               <Link
                 href="#opportunities"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#1B4332] text-sm font-medium tracking-wide hover:bg-[#FAF9F6] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#2C2C2C] text-sm font-medium tracking-wide hover:bg-[#F8F7F4] transition-colors"
                 style={{ minHeight: 48 }}
               >
                 Explore Opportunities
@@ -493,11 +493,11 @@ export default function HospitalityPage() {
               return (
                 <div
                   key={point.title}
-                  className="group flex flex-col bg-white border border-[#1A1A1A]/6 hover:border-[#1B4332]/25 hover:shadow-xl transition-all duration-300"
+                  className="group flex flex-col bg-white border border-[#1A1A1A]/6 hover:border-[#2C2C2C]/25 hover:shadow-xl transition-all duration-300"
                 >
                   <div className={`h-36 bg-gradient-to-br ${point.gradient} flex items-center justify-center`}>
                     <Icon
-                      className="w-10 h-10 text-[#1A1A1A]/20 group-hover:text-[#1B4332]/30 transition-colors"
+                      className="w-10 h-10 text-[#1A1A1A]/20 group-hover:text-[#2C2C2C]/30 transition-colors"
                       strokeWidth={1}
                     />
                   </div>
@@ -529,7 +529,7 @@ export default function HospitalityPage() {
             </p>
             <Link
               href="/united-arab-emirates/contact"
-              className="inline-flex items-center gap-2 text-sm text-[#1B4332] border border-[#1B4332]/20 px-5 py-3 hover:bg-[#1B4332] hover:text-white hover:border-[#1B4332] transition-all"
+              className="inline-flex items-center gap-2 text-sm text-[#2C2C2C] border border-[#2C2C2C]/20 px-5 py-3 hover:bg-[#2C2C2C] hover:text-white hover:border-[#2C2C2C] transition-all"
             >
               Request Hospitality Research
               <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
@@ -541,9 +541,9 @@ export default function HospitalityPage() {
             {investmentCase.map((item) => {
               const Icon = item.icon
               return (
-                <div key={item.title} className="p-5 md:p-6 bg-white border border-[#1A1A1A]/6 hover:border-[#1B4332]/20 transition-colors">
-                  <div className="w-10 h-10 rounded-full bg-[#1B4332]/10 flex items-center justify-center mb-5">
-                    <Icon className="w-5 h-5 text-[#1B4332]" strokeWidth={1.5} />
+                <div key={item.title} className="p-5 md:p-6 bg-white border border-[#1A1A1A]/6 hover:border-[#2C2C2C]/20 transition-colors">
+                  <div className="w-10 h-10 rounded-full bg-[#2C2C2C]/10 flex items-center justify-center mb-5">
+                    <Icon className="w-5 h-5 text-[#2C2C2C]" strokeWidth={1.5} />
                   </div>
                   <h3 className="font-display text-lg text-[#1A1A1A] mb-2">{item.title}</h3>
                   <p className="text-sm text-[#4A4A4A] leading-relaxed">{item.detail}</p>
@@ -567,8 +567,8 @@ export default function HospitalityPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 mb-6">
             {Object.entries(marketIntelligence).map(([key, val]) => (
-              <div key={key} className="bg-[#FAF9F6] border border-[#1A1A1A]/6 p-5 md:p-6">
-                <p className="font-display text-2xl md:text-3xl text-[#1B4332] mb-1">{val}</p>
+              <div key={key} className="bg-[#F8F7F4] border border-[#1A1A1A]/6 p-5 md:p-6">
+                <p className="font-display text-2xl md:text-3xl text-[#2C2C2C] mb-1">{val}</p>
                 <p className="text-[10px] uppercase tracking-[0.18em] text-[#8A8A8A]">
                   {key
                     .replace(/([A-Z])/g, ' $1')
@@ -606,13 +606,13 @@ export default function HospitalityPage() {
                 mandate: 'Core+ / Value-Add',
               },
             ].map((row) => (
-              <div key={row.market} className="bg-[#FAF9F6] border border-[#1A1A1A]/6 p-6">
+              <div key={row.market} className="bg-[#F8F7F4] border border-[#1A1A1A]/6 p-6">
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="font-display text-lg text-[#1A1A1A]">{row.market}</h3>
                     <p className="text-xs text-[#8A8A8A] mt-0.5">{row.locations}</p>
                   </div>
-                  <span className="text-[10px] font-medium px-2.5 py-1 bg-[#1B4332]/10 text-[#1B4332] border border-[#1B4332]/15 uppercase tracking-wider whitespace-nowrap">
+                  <span className="text-[10px] font-medium px-2.5 py-1 bg-[#2C2C2C]/10 text-[#2C2C2C] border border-[#2C2C2C]/15 uppercase tracking-wider whitespace-nowrap">
                     {row.mandate}
                   </span>
                 </div>
@@ -624,7 +624,7 @@ export default function HospitalityPage() {
                   ].map((m) => (
                     <div key={m.label} className="flex justify-between text-sm">
                       <span className="text-[#8A8A8A]">{m.label}</span>
-                      <span className="text-[#1B4332] font-medium">{m.val}</span>
+                      <span className="text-[#2C2C2C] font-medium">{m.val}</span>
                     </div>
                   ))}
                 </div>
@@ -652,7 +652,7 @@ export default function HospitalityPage() {
             {expertiseSections.map((item) => (
               <div key={item.title} className="flex gap-5">
                 <Building2
-                  className="w-5 h-5 text-[#B8956B] mt-1 shrink-0"
+                  className="w-5 h-5 text-[#8B7355] mt-1 shrink-0"
                   strokeWidth={1.5}
                 />
                 <div>
@@ -677,7 +677,7 @@ export default function HospitalityPage() {
             </div>
             <Link
               href="/united-arab-emirates/listings/off-market"
-              className="inline-flex items-center gap-2 text-sm text-[#4A4A4A] border border-[#1A1A1A]/10 px-5 py-3 hover:border-[#1B4332] hover:text-[#1B4332] transition-colors shrink-0"
+              className="inline-flex items-center gap-2 text-sm text-[#4A4A4A] border border-[#1A1A1A]/10 px-5 py-3 hover:border-[#2C2C2C] hover:text-[#2C2C2C] transition-colors shrink-0"
             >
               View Off-Market Pipeline
               <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
@@ -688,37 +688,37 @@ export default function HospitalityPage() {
             {opportunities.map((opp) => (
               <div
                 key={opp.location}
-                className="group flex flex-col bg-[#FAF9F6] border border-[#1A1A1A]/6 hover:border-[#1B4332]/25 hover:shadow-xl transition-all"
+                className="group flex flex-col bg-[#F8F7F4] border border-[#1A1A1A]/6 hover:border-[#2C2C2C]/25 hover:shadow-xl transition-all"
               >
                 {/* Visual placeholder */}
-                <div className="h-44 bg-gradient-to-br from-[#0D1F17]/30 via-[#1B4332]/15 to-[#D0E0D5] flex items-center justify-center relative">
+                <div className="h-44 bg-gradient-to-br from-[#0D1F17]/30 via-[#2C2C2C]/15 to-[#D0E0D5] flex items-center justify-center relative">
                   <Building2
-                    className="w-14 h-14 text-[#1A1A1A]/10 group-hover:text-[#1B4332]/25 transition"
+                    className="w-14 h-14 text-[#1A1A1A]/10 group-hover:text-[#2C2C2C]/25 transition"
                     strokeWidth={1}
                   />
-                  <span className="absolute top-4 left-4 text-[9px] uppercase tracking-[0.18em] bg-[#1B4332] text-white px-2.5 py-1.5">
+                  <span className="absolute top-4 left-4 text-[9px] uppercase tracking-[0.18em] bg-[#2C2C2C] text-white px-2.5 py-1.5">
                     {opp.type}
                   </span>
-                  <span className="absolute top-4 right-4 text-[9px] uppercase tracking-[0.15em] bg-[#B8956B] text-white px-2.5 py-1.5">
+                  <span className="absolute top-4 right-4 text-[9px] uppercase tracking-[0.15em] bg-[#8B7355] text-white px-2.5 py-1.5">
                     {opp.mandate}
                   </span>
                 </div>
 
                 <div className="p-5 md:p-6 flex flex-col flex-1">
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-[#B8956B] mb-3">{opp.location}</p>
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-[#8B7355] mb-3">{opp.location}</p>
                   <ul className="text-sm text-[#4A4A4A] space-y-2 mb-5 flex-1">
                     {opp.highlights.map((h) => (
                       <li key={h} className="flex items-start gap-2">
-                        <span className="text-[#B8956B] mt-1 text-xs">•</span>
+                        <span className="text-[#8B7355] mt-1 text-xs">•</span>
                         <span>{h}</span>
                       </li>
                     ))}
                   </ul>
                   <div className="flex items-center justify-between pt-5 border-t border-[#1A1A1A]/5">
-                    <span className="text-xs text-[#1B4332] font-medium">{opp.yieldNote}</span>
+                    <span className="text-xs text-[#2C2C2C] font-medium">{opp.yieldNote}</span>
                     <Link
                       href="/united-arab-emirates/contact"
-                      className="text-xs text-[#1B4332] border border-[#1B4332]/20 px-3 py-1.5 hover:bg-[#1B4332] hover:text-white transition-colors"
+                      className="text-xs text-[#2C2C2C] border border-[#2C2C2C]/20 px-3 py-1.5 hover:bg-[#2C2C2C] hover:text-white transition-colors"
                     >
                       Request Memo
                     </Link>
@@ -728,7 +728,7 @@ export default function HospitalityPage() {
             ))}
           </div>
 
-          <div className="mt-8 p-5 bg-[#FAF9F6] border border-[#1A1A1A]/6">
+          <div className="mt-8 p-5 bg-[#F8F7F4] border border-[#1A1A1A]/6">
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">
               <div className="flex-1">
                 <p className="text-sm font-medium text-[#1A1A1A] mb-1">Off-Market Hospitality Pipeline</p>
@@ -739,7 +739,7 @@ export default function HospitalityPage() {
               </div>
               <Link
                 href="/united-arab-emirates/contact"
-                className="inline-flex items-center justify-center gap-2 text-sm text-[#1B4332] border border-[#1B4332]/30 px-6 py-3 hover:bg-[#1B4332] hover:text-white transition-colors whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 text-sm text-[#2C2C2C] border border-[#2C2C2C]/30 px-6 py-3 hover:bg-[#2C2C2C] hover:text-white transition-colors whitespace-nowrap"
               >
                 Access Pipeline
                 <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
@@ -766,7 +766,7 @@ export default function HospitalityPage() {
               </p>
               <Link
                 href="/united-arab-emirates/contact"
-                className="inline-flex items-center gap-2 text-sm text-[#1B4332] border border-[#1B4332]/20 px-5 py-3 hover:bg-[#1B4332] hover:text-white hover:border-[#1B4332] transition-all"
+                className="inline-flex items-center gap-2 text-sm text-[#2C2C2C] border border-[#2C2C2C]/20 px-5 py-3 hover:bg-[#2C2C2C] hover:text-white hover:border-[#2C2C2C] transition-all"
               >
                 Arrange a Consultation
                 <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
@@ -782,8 +782,8 @@ export default function HospitalityPage() {
                 { title: 'Investment Committee Support', desc: 'Sector allocations memoranda, comparative market analysis, and forward-looking RevPAR models prepared to institutional investment committee standard.' },
                 { title: 'Cross-Border Capital Introduction', desc: 'For Asian, European, and US capital seeking UAE hospitality exposure — structuring, jurisdiction advisory, and co-investment facilitation with UAE-based partners.' },
               ].map((service) => (
-                <div key={service.title} className="flex gap-4 p-5 bg-white border border-[#1A1A1A]/6 hover:border-[#1B4332]/20 transition-colors">
-                  <span className="text-[#B8956B] mt-0.5 shrink-0 text-sm">◆</span>
+                <div key={service.title} className="flex gap-4 p-5 bg-white border border-[#1A1A1A]/6 hover:border-[#2C2C2C]/20 transition-colors">
+                  <span className="text-[#8B7355] mt-0.5 shrink-0 text-sm">◆</span>
                   <div>
                     <h3 className="text-sm font-medium text-[#1A1A1A] mb-1">{service.title}</h3>
                     <p className="text-xs text-[#4A4A4A] leading-relaxed">{service.desc}</p>
@@ -810,10 +810,10 @@ export default function HospitalityPage() {
             {faqs.map((item, idx) => (
               <details key={idx} className="group py-6">
                 <summary className="flex items-start justify-between cursor-pointer list-none gap-4">
-                  <span className="font-display text-lg text-[#1A1A1A] group-open:text-[#1B4332] transition-colors leading-snug pr-4">
+                  <span className="font-display text-lg text-[#1A1A1A] group-open:text-[#2C2C2C] transition-colors leading-snug pr-4">
                     {item.q}
                   </span>
-                  <span className="text-2xl text-[#B8956B] group-open:rotate-45 transition-transform origin-center shrink-0 leading-none mt-0.5">
+                  <span className="text-2xl text-[#8B7355] group-open:rotate-45 transition-transform origin-center shrink-0 leading-none mt-0.5">
                     +
                   </span>
                 </summary>
@@ -825,7 +825,7 @@ export default function HospitalityPage() {
       </section>
 
       {/* ═══════════════════════════ CTA ════════════════════════════════════ */}
-      <section className="py-24 md:py-36 lg:py-44 px-6 md:px-12 lg:px-20 bg-[#1B4332] text-white">
+      <section className="py-24 md:py-36 lg:py-44 px-6 md:px-12 lg:px-20 bg-[#2C2C2C] text-white">
         <div className="max-w-[1400px] mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           <div className="lg:col-span-7">
             <p className="text-[10px] uppercase tracking-[0.25em] text-white/50 mb-4">Private Advisory</p>
@@ -838,7 +838,7 @@ export default function HospitalityPage() {
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
               <Link
                 href="/united-arab-emirates/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#1B4332] text-sm font-medium tracking-wide hover:bg-[#FAF9F6] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#2C2C2C] text-sm font-medium tracking-wide hover:bg-[#F8F7F4] transition-colors"
                 style={{ minHeight: 48 }}
               >
                 Request a Private Consultation
@@ -865,7 +865,7 @@ export default function HospitalityPage() {
                 { label: 'Jurisdictions', value: 'UAE (all Emirates), UK, Singapore, Kenya, US' },
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-4 p-4 bg-white/5 border border-white/8">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#B8956B] mt-2 shrink-0" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#8B7355] mt-2 shrink-0" />
                   <div>
                     <p className="text-[10px] uppercase tracking-[0.2em] text-white/45 mb-0.5">{item.label}</p>
                     <p className="text-sm text-white/75">{item.value}</p>
@@ -878,7 +878,7 @@ export default function HospitalityPage() {
       </section>
 
       {/* ─── Related Pages ────────────────────────────────────────────────── */}
-      <section className="py-16 md:py-20 px-6 md:px-12 lg:px-20 bg-[#FAF9F6] border-t border-[#1A1A1A]/6">
+      <section className="py-16 md:py-20 px-6 md:px-12 lg:px-20 bg-[#F8F7F4] border-t border-[#1A1A1A]/6">
         <div className="max-w-[1400px] mx-auto">
           <p className="text-[10px] uppercase tracking-[0.2em] text-[#8A8A8A] mb-6">Related Advisory</p>
           <div className="flex flex-wrap gap-3">
@@ -895,7 +895,7 @@ export default function HospitalityPage() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-xs text-[#4A4A4A] border border-[#1A1A1A]/10 px-4 py-2 hover:border-[#1B4332] hover:text-[#1B4332] transition-colors"
+                className="text-xs text-[#4A4A4A] border border-[#1A1A1A]/10 px-4 py-2 hover:border-[#2C2C2C] hover:text-[#2C2C2C] transition-colors"
               >
                 {link.label}
               </Link>

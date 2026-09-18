@@ -106,13 +106,13 @@ export default function AnalysisPage() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#1B4332] py-24">
+      <section className="relative overflow-hidden bg-[#2C2C2C] py-24">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-ink-950 to-ink-900" />
+          <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-[#2C2C2C] to-[#2C2C2C]" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <Eyebrow className="text-gold-400">Analysis</Eyebrow>
+            <Eyebrow className="text-[#8B7355]">Analysis</Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl text-balance">
               Data-driven analysis of U.S. commercial real estate
             </h1>
@@ -124,7 +124,7 @@ export default function AnalysisPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/usa/insights"
-                className="group flex items-center justify-center gap-2 rounded-lg border border-[#C9A87C] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
+                className="group flex items-center justify-center gap-2 rounded-lg border border-[#8B7355] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
               >
                 All Insights
                 <ArrowRight
@@ -134,7 +134,7 @@ export default function AnalysisPage() {
               </Link>
               <Link
                 href="/usa/research/sector-research"
-                className="group flex items-center justify-center gap-2 rounded-lg border border-[#C9A87C] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
+                className="group flex items-center justify-center gap-2 rounded-lg border border-[#8B7355] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
               >
                 Sector Research
                 <ArrowRight
@@ -158,15 +158,15 @@ export default function AnalysisPage() {
           {ANALYSIS_PILLARS.map((pillar) => (
             <div
               key={pillar.title}
-              className="rounded-xl border border-[#E8E6E1] bg-white p-6"
+              className="rounded-xl border border-[#E5E2DC] bg-white p-6"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#1B4332] text-gold-400">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#2C2C2C] text-[#8B7355]">
                 <pillar.icon size={22} />
               </div>
               <h3 className="mt-4 font-serif text-xl font-semibold text-[#2C2C2C]">
                 {pillar.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+              <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
                 {pillar.description}
               </p>
             </div>
@@ -175,39 +175,39 @@ export default function AnalysisPage() {
       </Section>
 
       {/* Methodology */}
-      <Section className="py-20 bg-[#FAF9F6]">
+      <Section className="py-20 bg-[#F8F7F4]">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <div>
             <Eyebrow>Approach</Eyebrow>
             <h2 className="mt-3 font-serif text-3xl font-semibold text-[#2C2C2C] sm:text-4xl">
               A repeatable analytical framework
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-[#8B8680]">
+            <p className="mt-4 text-lg leading-relaxed text-[#5A5A5A]">
               We layer proprietary transaction data, public-market signals, and
               operator-level fundamentals to build forward-looking views of U.S.
               commercial real estate. The goal is not more data — it is the
               right data, framed by the questions that matter at decision time.
             </p>
           </div>
-          <div className="rounded-2xl border border-[#E8E6E1] bg-white p-8">
+          <div className="rounded-2xl border border-[#E5E2DC] bg-white p-8">
             <h3 className="font-serif text-lg font-semibold text-[#2C2C2C]">
               Core inputs
             </h3>
-            <ul className="mt-4 space-y-3 text-sm text-[#C9A87C]">
+            <ul className="mt-4 space-y-3 text-sm text-[#8B7355]">
               <li className="flex items-start gap-2.5">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-400" />
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#8B7355]" />
                 <span>
                   Proprietary deal-flow and pricing data from active engagements
                 </span>
               </li>
               <li className="flex items-start gap-2.5">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-400" />
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#8B7355]" />
                 <span>
                   Public REIT multiples, CMBS spreads, and treasury curves
                 </span>
               </li>
               <li className="flex items-start gap-2.5">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-400" />
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#8B7355]" />
                 <span>
                   Operator and tenant-level fundamentals across metros
                 </span>

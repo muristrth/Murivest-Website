@@ -215,7 +215,7 @@ function SectionHeading({
 }) {
   return (
     <div className="mb-10 md:mb-14 max-w-3xl">
-      <p className="font-body text-[11px] md:text-xs font-semibold tracking-[0.25em] uppercase text-[#B8956B] block mb-4 md:mb-5">
+      <p className="font-body text-[11px] md:text-xs font-semibold tracking-[0.25em] uppercase text-[#8B7355] block mb-4 md:mb-5">
         {eyebrow}
       </p>
       <h2 className="font-display text-[28px] md:text-[36px] lg:text-[40px] leading-[1.1] text-[#1A1A1A] mb-4">
@@ -484,7 +484,7 @@ export default function BusinessBayPage() {
   ];
 
   return (
-    <main className="bg-[#FAF9F6] text-[#1A1A1A] font-sans antialiased selection:bg-[#1B4332] selection:text-white overflow-x-hidden">
+    <main className="bg-[#F8F7F4] text-[#1A1A1A] font-sans antialiased selection:bg-[#2C2C2C] selection:text-white overflow-x-hidden">
       {/* ====== STRUCTURED DATA ====== */}
       <Script
         id="schema-local-business"
@@ -518,7 +518,7 @@ export default function BusinessBayPage() {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#1A1A1A]/80 via-[#1A1A1A]/60 to-[#1A1A1A]/50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#FAF9F6]/20 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#F8F7F4]/20 via-transparent to-transparent" />
 
         <div className="relative max-w-[1400px] mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           <motion.div
@@ -527,13 +527,13 @@ export default function BusinessBayPage() {
             transition={{ duration: 0.8 }}
             className="lg:col-span-7"
           >
-            <p className="font-body text-[11px] md:text-xs font-semibold tracking-[0.25em] uppercase text-[#B8956B] block mb-4 md:mb-5">
+            <p className="font-body text-[11px] md:text-xs font-semibold tracking-[0.25em] uppercase text-[#8B7355] block mb-4 md:mb-5">
               Dubai's Largest Commercial District
             </p>
             <h1 className="font-display text-[40px] md:text-[56px] lg:text-[64px] leading-[1.05] mb-6 md:mb-8 max-w-4xl text-white">
               Business Bay Dubai
               <br />
-              <span className="text-[#B8956B]">The Centre of Commerce</span>
+              <span className="text-[#8B7355]">The Centre of Commerce</span>
             </h1>
             <p className="text-base md:text-lg leading-relaxed max-w-3xl text-white/80 mb-8 md:mb-10">
               Investment opportunities, luxury residences, Grade A offices and mixed-use developments within
@@ -543,7 +543,7 @@ export default function BusinessBayPage() {
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
               <Link
                 href="#opportunities"
-                className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 bg-white text-[#1A1A1A] text-sm font-medium tracking-wide hover:bg-[#FAF9F6] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 bg-white text-[#1A1A1A] text-sm font-medium tracking-wide hover:bg-[#F8F7F4] transition-colors"
                 style={{ minHeight: 48 }}
               >
                 Explore Opportunities
@@ -603,9 +603,9 @@ export default function BusinessBayPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="p-6 md:p-8 bg-[#FAF9F6] border border-[#1A1A1A]/5 hover:border-[#B8956B] transition-colors"
+                className="p-6 md:p-8 bg-[#F8F7F4] border border-[#1A1A1A]/5 hover:border-[#8B7355] transition-colors"
               >
-                <p className="font-display text-3xl md:text-4xl text-[#1B4332] mb-2">{stat.number}</p>
+                <p className="font-display text-3xl md:text-4xl text-[#2C2C2C] mb-2">{stat.number}</p>
                 <h3 className="font-display text-lg text-[#1A1A1A] mb-2">{stat.label}</h3>
                 <p className="text-sm text-[#4A4A4A] leading-relaxed">{stat.description}</p>
               </motion.div>
@@ -617,10 +617,10 @@ export default function BusinessBayPage() {
             {investorFocus.map((focus) => (
               <div
                 key={focus.title}
-                className="p-8 bg-white border border-[#1A1A1A]/5 rounded-lg hover:border-[#B8956B] transition-colors"
+                className="p-8 bg-white border border-[#1A1A1A]/5 rounded-lg hover:border-[#8B7355] transition-colors"
               >
-                <div className="inline-block mb-4 px-3 py-1 bg-[#B8956B]/10 rounded-full">
-                  <p className="text-xs font-semibold text-[#B8956B] uppercase tracking-wider">
+                <div className="inline-block mb-4 px-3 py-1 bg-[#8B7355]/10 rounded-full">
+                  <p className="text-xs font-semibold text-[#8B7355] uppercase tracking-wider">
                     {focus.mandate}
                   </p>
                 </div>
@@ -633,7 +633,7 @@ export default function BusinessBayPage() {
       </section>
 
       {/* ====== MARKET INTELLIGENCE ====== */}
-      <section className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-[#FAF9F6]">
+      <section className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-[#F8F7F4]">
         <div className="max-w-[1400px] mx-auto">
           <SectionHeading
             eyebrow="Market Data"
@@ -655,7 +655,7 @@ export default function BusinessBayPage() {
                   {intel.metric}
                 </p>
                 <p className="font-display text-2xl md:text-3xl text-[#1A1A1A] mb-1">{intel.value}</p>
-                <p className="text-xs text-[#B8956B] font-semibold mb-3">{intel.trend}</p>
+                <p className="text-xs text-[#8B7355] font-semibold mb-3">{intel.trend}</p>
                 <p className="text-xs text-[#4A4A4A]">{intel.detail}</p>
               </motion.div>
             ))}
@@ -673,7 +673,7 @@ export default function BusinessBayPage() {
                 {majorTenants.map((tenant) => (
                   <div
                     key={tenant}
-                    className="p-4 bg-[#FAF9F6] border border-[#1A1A1A]/5 rounded-lg text-sm text-[#1A1A1A] font-medium hover:border-[#B8956B] transition-colors"
+                    className="p-4 bg-[#F8F7F4] border border-[#1A1A1A]/5 rounded-lg text-sm text-[#1A1A1A] font-medium hover:border-[#8B7355] transition-colors"
                   >
                     {tenant}
                   </div>
@@ -687,7 +687,7 @@ export default function BusinessBayPage() {
                 {principalDevelopers.map((developer) => (
                   <div
                     key={developer}
-                    className="p-4 bg-[#FAF9F6] border border-[#1A1A1A]/5 rounded-lg text-sm text-[#1A1A1A] font-medium hover:border-[#B8956B] transition-colors"
+                    className="p-4 bg-[#F8F7F4] border border-[#1A1A1A]/5 rounded-lg text-sm text-[#1A1A1A] font-medium hover:border-[#8B7355] transition-colors"
                   >
                     {developer}
                   </div>
@@ -699,7 +699,7 @@ export default function BusinessBayPage() {
       </section>
 
       {/* ====== FEATURED OPPORTUNITIES ====== */}
-      <section id="opportunities" className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-[#FAF9F6]">
+      <section id="opportunities" className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-[#F8F7F4]">
         <div className="max-w-[1400px] mx-auto">
           <SectionHeading
             eyebrow="Investment Opportunities"
@@ -715,19 +715,19 @@ export default function BusinessBayPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="group relative rounded-xl overflow-hidden border border-[#1A1A1A]/5 bg-white hover:border-[#B8956B] hover:shadow-xl transition-all duration-300"
+                className="group relative rounded-xl overflow-hidden border border-[#1A1A1A]/5 bg-white hover:border-[#8B7355] hover:shadow-xl transition-all duration-300"
               >
-                <div className="absolute top-0 left-0 w-2 h-12 bg-[#B8956B]" />
+                <div className="absolute top-0 left-0 w-2 h-12 bg-[#8B7355]" />
 
                 <div className="p-8">
                   <div className="flex items-start justify-between gap-4 mb-6">
                     <div>
-                      <p className="text-xs uppercase tracking-wider text-[#B8956B] font-semibold mb-2">
+                      <p className="text-xs uppercase tracking-wider text-[#8B7355] font-semibold mb-2">
                         {opp.type}
                       </p>
                       <h3 className="font-display text-xl text-[#1A1A1A] mb-1">{opp.title}</h3>
                       <p className="text-sm text-[#4A4A4A] flex items-center gap-2">
-                        <MapPin className="w-4 h-4 text-[#B8956B]" />
+                        <MapPin className="w-4 h-4 text-[#8B7355]" />
                         {opp.location}
                       </p>
                     </div>
@@ -735,14 +735,14 @@ export default function BusinessBayPage() {
                       <p className="text-[10px] uppercase tracking-wider text-[#8A8A8A] mb-1">
                         Net Yield
                       </p>
-                      <p className="font-display text-lg text-[#1B4332]">{opp.yield}</p>
+                      <p className="font-display text-lg text-[#2C2C2C]">{opp.yield}</p>
                     </div>
                   </div>
 
                   <ul className="space-y-3 mb-6 pb-6 border-b border-[#1A1A1A]/5">
                     {opp.highlights.map((highlight) => (
                       <li key={highlight} className="flex gap-3 text-sm text-[#4A4A4A]">
-                        <CheckCircle2 className="w-4 h-4 text-[#B8956B] shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-[#8B7355] shrink-0 mt-0.5" />
                         {highlight}
                       </li>
                     ))}
@@ -753,7 +753,7 @@ export default function BusinessBayPage() {
                     <p className="font-display text-lg text-[#1A1A1A]">{opp.price}</p>
                   </div>
 
-                  <button className="w-full mt-6 px-6 py-3 bg-[#1B4332] text-white text-sm font-semibold hover:bg-[#142d23] transition-colors">
+                  <button className="w-full mt-6 px-6 py-3 bg-[#2C2C2C] text-white text-sm font-semibold hover:bg-[#142d23] transition-colors">
                     Request Investment Memorandum
                   </button>
                 </div>
@@ -780,13 +780,13 @@ export default function BusinessBayPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="p-8 bg-[#FAF9F6] border border-[#1A1A1A]/5 rounded-lg hover:border-[#B8956B] transition-colors"
+                className="p-8 bg-[#F8F7F4] border border-[#1A1A1A]/5 rounded-lg hover:border-[#8B7355] transition-colors"
               >
                 <h3 className="font-display text-lg text-[#1A1A1A] mb-5">{section.category}</h3>
                 <ul className="space-y-3">
                   {section.items.map((item) => (
                     <li key={item} className="flex gap-3 text-sm text-[#4A4A4A]">
-                      <Zap className="w-4 h-4 text-[#B8956B] shrink-0 mt-0.5" strokeWidth={1.5} />
+                      <Zap className="w-4 h-4 text-[#8B7355] shrink-0 mt-0.5" strokeWidth={1.5} />
                       {item}
                     </li>
                   ))}
@@ -798,7 +798,7 @@ export default function BusinessBayPage() {
       </section>
 
       {/* ====== MURIVEST ADVISORY ====== */}
-      <section className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-[#FAF9F6]">
+      <section className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-[#F8F7F4]">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             <motion.div
@@ -821,7 +821,7 @@ export default function BusinessBayPage() {
                   'Average deal cycle: 30–45 days from LOI to close',
                 ].map((item) => (
                   <li key={item} className="flex gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[#B8956B] shrink-0 mt-0.5" strokeWidth={1.5} />
+                    <CheckCircle2 className="w-5 h-5 text-[#8B7355] shrink-0 mt-0.5" strokeWidth={1.5} />
                     <span className="text-sm md:text-base text-[#4A4A4A] leading-relaxed">{item}</span>
                   </li>
                 ))}
@@ -835,8 +835,8 @@ export default function BusinessBayPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="p-8 md:p-12 bg-white border border-[#1A1A1A]/5 rounded-lg"
             >
-              <div className="mb-6 p-4 bg-[#B8956B]/10 rounded-lg border-l-4 border-[#B8956B]">
-                <p className="text-xs uppercase tracking-wider text-[#B8956B] font-semibold mb-1">
+              <div className="mb-6 p-4 bg-[#8B7355]/10 rounded-lg border-l-4 border-[#8B7355]">
+                <p className="text-xs uppercase tracking-wider text-[#8B7355] font-semibold mb-1">
                   Services
                 </p>
                 <p className="text-sm text-[#1A1A1A] font-medium">
@@ -855,7 +855,7 @@ export default function BusinessBayPage() {
 
               <Link
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1B4332] text-white text-sm font-semibold hover:bg-[#142d23] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#2C2C2C] text-white text-sm font-semibold hover:bg-[#142d23] transition-colors"
               >
                 Schedule Advisory Call
                 <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
@@ -874,9 +874,9 @@ export default function BusinessBayPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="p-8 md:p-12 bg-[#FAF9F6] border border-[#1A1A1A]/5 rounded-lg"
+              className="p-8 md:p-12 bg-[#F8F7F4] border border-[#1A1A1A]/5 rounded-lg"
             >
-              <Download className="w-8 h-8 text-[#B8956B] mb-4" />
+              <Download className="w-8 h-8 text-[#8B7355] mb-4" />
               <h3 className="font-display text-2xl text-[#1A1A1A] mb-3">
                 Business Bay Investment Report 2024–2026
               </h3>
@@ -885,7 +885,7 @@ export default function BusinessBayPage() {
                 demand, yield trends, and capital deployment strategy. Includes Murivest proprietary pricing
                 data, lease comparables, and investment underwriting frameworks.
               </p>
-              <button className="inline-flex items-center gap-2 px-6 py-3 bg-[#1B4332] text-white text-sm font-semibold hover:bg-[#142d23] transition-colors">
+              <button className="inline-flex items-center gap-2 px-6 py-3 bg-[#2C2C2C] text-white text-sm font-semibold hover:bg-[#142d23] transition-colors">
                 Download Report (PDF)
                 <ArrowRight className="w-4 h-4" />
               </button>
@@ -899,9 +899,9 @@ export default function BusinessBayPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="p-8 md:p-12 bg-[#1B4332] text-white border border-[#1B4332] rounded-lg"
+              className="p-8 md:p-12 bg-[#2C2C2C] text-white border border-[#2C2C2C] rounded-lg"
             >
-              <Phone className="w-8 h-8 text-[#B8956B] mb-4" />
+              <Phone className="w-8 h-8 text-[#8B7355] mb-4" />
               <h3 className="font-display text-2xl mb-3">Speak with Our Dubai Team</h3>
               <p className="text-sm md:text-base text-white/70 leading-relaxed mb-6">
                 Schedule a 30-minute discovery call with a Murivest Business Bay specialist. We'll discuss
@@ -910,7 +910,7 @@ export default function BusinessBayPage() {
               <div className="flex flex-col gap-3">
                 <Link
                   href="tel:+97144xxxxxx"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#1B4332] text-sm font-semibold hover:bg-[#FAF9F6] transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#2C2C2C] text-sm font-semibold hover:bg-[#F8F7F4] transition-colors"
                 >
                   <Phone className="w-4 h-4" />
                   Call Dubai Office
@@ -930,7 +930,7 @@ export default function BusinessBayPage() {
       </section>
 
       {/* ====== RESEARCH ====== */}
-      <section className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-[#FAF9F6]">
+      <section className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-[#F8F7F4]">
         <div className="max-w-[1400px] mx-auto">
           <SectionHeading eyebrow="Research & Reports" title="Market Intelligence & Analysis" />
           <div className="grid sm:grid-cols-2 gap-3">
@@ -938,7 +938,7 @@ export default function BusinessBayPage() {
               <Link
                 key={report.link}
                 href={report.link}
-                className="group flex items-center justify-between gap-3 rounded-xl border border-[#1A1A1A]/5 bg-white p-4 text-sm text-[#4A4A4A] hover:border-[#1B4332] hover:text-[#1B4332] transition-colors"
+                className="group flex items-center justify-between gap-3 rounded-xl border border-[#1A1A1A]/5 bg-white p-4 text-sm text-[#4A4A4A] hover:border-[#2C2C2C] hover:text-[#2C2C2C] transition-colors"
               >
                 <span>{report.title}</span>
                 <ArrowUpRight className="w-3.5 h-3.5 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -956,7 +956,7 @@ export default function BusinessBayPage() {
             {faqs.map((faq) => (
               <details
                 key={faq.question}
-                className="group p-6 bg-[#FAF9F6] border border-[#1A1A1A]/5 cursor-pointer rounded-lg"
+                className="group p-6 bg-[#F8F7F4] border border-[#1A1A1A]/5 cursor-pointer rounded-lg"
               >
                 <summary className="list-none font-display text-base md:text-lg text-[#1A1A1A] pr-8 font-semibold">
                   {faq.question}
@@ -969,7 +969,7 @@ export default function BusinessBayPage() {
       </section>
 
       {/* ====== FINAL CTA ====== */}
-      <section className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-[#1B4332] text-white">
+      <section className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-[#2C2C2C] text-white">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-[10px] uppercase tracking-[0.25em] text-white/60 mb-4">
             Commercial Real Estate Advisory
@@ -984,7 +984,7 @@ export default function BusinessBayPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
             <Link
               href="mailto:dubai@murivest.com"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#1B4332] text-sm font-medium tracking-wide hover:bg-[#FAF9F6] transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#2C2C2C] text-sm font-medium tracking-wide hover:bg-[#F8F7F4] transition-colors"
               style={{ minHeight: 48 }}
             >
               Start Your Investment Discussion

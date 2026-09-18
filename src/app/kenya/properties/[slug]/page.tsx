@@ -364,7 +364,7 @@ export default async function PropertyPage({
       {/* ─── Main Layout ─────────────────────────────────────── */}
 
       <main
-        className="bg-[#FAF9F6] min-h-screen"
+        className="bg-[#F8F7F4] min-h-screen"
         itemScope
         itemType="https://schema.org/RealEstateListing"
       >

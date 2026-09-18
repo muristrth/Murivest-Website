@@ -87,7 +87,7 @@ export default async function LandBankingPage() {
   const landData = await client.fetch(LAND_QUERY)
 
   return (
-    <main className="bg-[#FAF9F6] min-h-screen">
+    <main className="bg-[#F8F7F4] min-h-screen">
       <LandBanking initialData={landData} />
     </main>
   )

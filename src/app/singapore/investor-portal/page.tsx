@@ -38,15 +38,15 @@ export default function InvestorPortalPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-[#1B4332]">
+      <section className="pt-32 pb-20 bg-[#2C2C2C]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
           <ScrollReveal>
             <div className="flex items-center gap-3 mb-4">
-              <Lock className="w-4 h-4 text-[#B8956B]" strokeWidth={1.5} />
-              <p className="text-[10px] tracking-[0.3em] uppercase text-[#B8956B] font-medium">Gated Access</p>
+              <Lock className="w-4 h-4 text-[#8B7355]" strokeWidth={1.5} />
+              <p className="text-[10px] tracking-[0.3em] uppercase text-[#8B7355] font-medium">Gated Access</p>
             </div>
             <h1 className="font-serif text-4xl md:text-5xl text-white leading-[1.05] mb-6">
-              Investor <span className="italic text-[#B8956B] font-light">Portal</span>
+              Investor <span className="italic text-[#8B7355] font-light">Portal</span>
             </h1>
             <p className="text-base text-white/60 max-w-2xl leading-relaxed font-light">
               Exclusive access to off-market opportunities, deal documents, portfolio analytics, 
@@ -70,8 +70,8 @@ export default function InvestorPortalPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {benefits.map((b, i) => (
               <ScrollReveal key={b.title} delay={i * 0.1}>
-                <div className="bg-white border border-[#E8E6E1] p-8 flex gap-6 hover:shadow-lg transition-all duration-500">
-                  <div className="w-12 h-12 border border-[#B8956B]/30 flex items-center justify-center text-[#B8956B] shrink-0">
+                <div className="bg-white border border-[#E5E2DC] p-8 flex gap-6 hover:shadow-lg transition-all duration-500">
+                  <div className="w-12 h-12 border border-[#8B7355]/30 flex items-center justify-center text-[#8B7355] shrink-0">
                     {b.icon}
                   </div>
                   <div>
@@ -86,11 +86,11 @@ export default function InvestorPortalPage() {
       </section>
 
       {/* NDA & Eligibility */}
-      <section className="py-16 bg-[#FAF9F6] border-y border-[#E8E6E1]">
+      <section className="py-16 bg-[#F8F7F4] border-y border-[#E5E2DC]">
         <div className="max-w-[800px] mx-auto px-6 md:px-12 text-center">
           <ScrollReveal>
-            <div className="w-16 h-16 border border-[#B8956B]/30 flex items-center justify-center mx-auto mb-6">
-              <Shield className="w-6 h-6 text-[#B8956B]" strokeWidth={1.2} />
+            <div className="w-16 h-16 border border-[#8B7355]/30 flex items-center justify-center mx-auto mb-6">
+              <Shield className="w-6 h-6 text-[#8B7355]" strokeWidth={1.2} />
             </div>
             <h2 className="font-serif text-2xl text-[#2C2C2C] mb-4">Confidentiality & Eligibility</h2>
             <p className="text-sm text-[#5A5A5A] font-light leading-relaxed mb-6">
@@ -98,17 +98,17 @@ export default function InvestorPortalPage() {
               verification of qualified investor status. All documents and deal information 
               are tracked and watermarked to protect confidentiality.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-4 text-[11px] text-[#8B8680]">
+            <div className="flex flex-wrap items-center justify-center gap-4 text-[11px] text-[#5A5A5A]">
               <span className="flex items-center gap-1.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#B8956B]" />
+                <div className="w-1.5 h-1.5 rounded-full bg-[#8B7355]" />
                 NDA Required
               </span>
               <span className="flex items-center gap-1.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#B8956B]" />
+                <div className="w-1.5 h-1.5 rounded-full bg-[#8B7355]" />
                 Accredited Investors Only
               </span>
               <span className="flex items-center gap-1.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#B8956B]" />
+                <div className="w-1.5 h-1.5 rounded-full bg-[#8B7355]" />
                 24-48 Hour Approval
               </span>
             </div>
@@ -117,7 +117,7 @@ export default function InvestorPortalPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-[#1B4332]">
+      <section className="py-20 bg-[#2C2C2C]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 text-center">
           <ScrollReveal>
             <h2 className="font-serif text-3xl text-white mb-4">Apply for Portal Access</h2>
@@ -128,7 +128,7 @@ export default function InvestorPortalPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/singapore/investor-portal/login"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#B8956B] text-white text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#C9A87C] transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#8B7355] text-white text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors"
               >
                 Sign In
               </Link>

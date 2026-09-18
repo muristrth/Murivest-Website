@@ -18,7 +18,7 @@ export default function InvestorBrief() {
 
       {/* Hero Section */}
       <main className="max-w-4xl mx-auto px-6 pt-20 pb-32 text-center">
-        <span className="text-gold-500 text-sm uppercase tracking-[0.3em] text-[#c5a059] mb-4 block">
+        <span className="text-[#8B7355] text-sm uppercase tracking-[0.3em] text-[#c5a059] mb-4 block">
           Private Placement Memorandum
         </span>
         <h1 className="text-4xl md:text-6xl font-light mb-8 leading-tight">

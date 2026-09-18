@@ -106,13 +106,13 @@ export default function ArticlesPage() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#1B4332] py-24">
+      <section className="relative overflow-hidden bg-[#2C2C2C] py-24">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-ink-950 to-ink-900" />
+          <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-[#2C2C2C] to-[#2C2C2C]" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <Eyebrow className="text-gold-400">Articles</Eyebrow>
+            <Eyebrow className="text-[#8B7355]">Articles</Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl text-balance">
               U.S. CRE investment frameworks and market analysis
             </h1>
@@ -124,7 +124,7 @@ export default function ArticlesPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/usa/insights"
-                className="group flex items-center justify-center gap-2 rounded-lg border border-[#C9A87C] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
+                className="group flex items-center justify-center gap-2 rounded-lg border border-[#8B7355] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
               >
                 All Insights
                 <ArrowRight
@@ -134,7 +134,7 @@ export default function ArticlesPage() {
               </Link>
               <Link
                 href="/usa/research"
-                className="group flex items-center justify-center gap-2 rounded-lg border border-[#C9A87C] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
+                className="group flex items-center justify-center gap-2 rounded-lg border border-[#8B7355] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
               >
                 Murivest Research
                 <ArrowRight
@@ -158,15 +158,15 @@ export default function ArticlesPage() {
           {ARTICLE_THEMES.map((theme) => (
             <div
               key={theme.title}
-              className="rounded-xl border border-[#E8E6E1] bg-white p-6"
+              className="rounded-xl border border-[#E5E2DC] bg-white p-6"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#1B4332] text-gold-400">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#2C2C2C] text-[#8B7355]">
                 <theme.icon size={22} />
               </div>
               <h3 className="mt-4 font-serif text-xl font-semibold text-[#2C2C2C]">
                 {theme.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+              <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
                 {theme.description}
               </p>
             </div>
@@ -175,13 +175,13 @@ export default function ArticlesPage() {
       </Section>
 
       {/* Access */}
-      <Section className="py-20 bg-[#FAF9F6]">
+      <Section className="py-20 bg-[#F8F7F4]">
         <div className="mx-auto max-w-3xl text-center">
           <Eyebrow>Distribution</Eyebrow>
           <h2 className="mt-3 font-serif text-3xl font-semibold text-[#2C2C2C] sm:text-4xl">
             Confidential, targeted distribution
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-[#8B8680]">
+          <p className="mt-4 text-lg leading-relaxed text-[#5A5A5A]">
             Articles are distributed to select institutional clients and
             publication subscribers. A subset is made available through
             Murivest Research. For subscription access, contact our research

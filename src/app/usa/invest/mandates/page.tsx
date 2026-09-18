@@ -97,11 +97,11 @@ export default function MandatesPage() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#1B4332] py-24">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-ink-950 to-ink-900" />
+      <section className="relative overflow-hidden bg-[#2C2C2C] py-24">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-[#2C2C2C] to-[#2C2C2C]" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <Eyebrow className="text-gold-400">Investor Mandates</Eyebrow>
+            <Eyebrow className="text-[#8B7355]">Investor Mandates</Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl text-balance">
               Confidential, structured engagements for institutional investors
             </h1>
@@ -113,7 +113,7 @@ export default function MandatesPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/usa/contact"
-                className="group flex items-center justify-center gap-2 rounded-lg bg-gold-400 px-6 py-3 text-sm font-semibold text-[#0F2E22] transition-all hover:bg-[#C9A87C]"
+                className="group flex items-center justify-center gap-2 rounded-lg bg-[#8B7355] px-6 py-3 text-sm font-semibold text-[#2C2C2C] transition-all hover:bg-[#8B7355]"
               >
                 Start a Mandate
                 <ArrowRight
@@ -123,7 +123,7 @@ export default function MandatesPage() {
               </Link>
               <Link
                 href="/usa/invest/criteria"
-                className="flex items-center justify-center rounded-lg border border-[#C9A87C] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
+                className="flex items-center justify-center rounded-lg border border-[#8B7355] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
               >
                 View Criteria
               </Link>
@@ -143,15 +143,15 @@ export default function MandatesPage() {
           {MANDATE_TYPES.map((mandate) => (
             <div
               key={mandate.title}
-              className="rounded-xl border border-[#E8E6E1] bg-white p-6 transition-all hover:border-[#B8956B] hover:shadow-lg hover:shadow-ink-900/5"
+              className="rounded-xl border border-[#E5E2DC] bg-white p-6 transition-all hover:border-[#8B7355] hover:shadow-lg hover:shadow-[#2C2C2C]/5"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#1B4332] text-gold-400">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#2C2C2C] text-[#8B7355]">
                 <mandate.icon size={22} />
               </div>
               <h3 className="mt-4 font-serif text-xl font-semibold text-[#2C2C2C]">
                 {mandate.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+              <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
                 {mandate.description}
               </p>
             </div>
@@ -160,7 +160,7 @@ export default function MandatesPage() {
       </Section>
 
       {/* Engagement model */}
-      <Section className="py-20 bg-[#FAF9F6]">
+      <Section className="py-20 bg-[#F8F7F4]">
         <SectionHeading
           eyebrow="Engagement Model"
           title="How mandates work at Murivest"
@@ -169,13 +169,13 @@ export default function MandatesPage() {
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {ENGAGEMENT_STEPS.map((step) => (
             <div key={step.number} className="relative">
-              <div className="font-serif text-5xl font-semibold text-[#FAF9F6]">
+              <div className="font-serif text-5xl font-semibold text-[#F8F7F4]">
                 {step.number}
               </div>
               <h3 className="mt-3 font-serif text-xl font-semibold text-[#2C2C2C]">
                 {step.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+              <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
                 {step.description}
               </p>
             </div>
@@ -191,7 +191,7 @@ export default function MandatesPage() {
             <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight text-[#2C2C2C] sm:text-4xl">
               Alignment without conflict
             </h2>
-            <div className="mt-6 space-y-4 text-lg leading-relaxed text-[#8B8680]">
+            <div className="mt-6 space-y-4 text-lg leading-relaxed text-[#5A5A5A]">
               <p>
                 The mandate model exists to eliminate the principal-agent
                 problems that plague traditional brokerage and advisory
@@ -206,41 +206,41 @@ export default function MandatesPage() {
                 institutional-grade rigor.
               </p>
             </div>
-            <div className="mt-8 flex items-center gap-2 text-sm font-medium text-[#B8956B]">
-              <ShieldCheck size={18} className="text-gold-500" />
+            <div className="mt-8 flex items-center gap-2 text-sm font-medium text-[#8B7355]">
+              <ShieldCheck size={18} className="text-[#8B7355]" />
               <span>Independent. Conflict-free. Mandate-driven.</span>
             </div>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-xl border border-[#E8E6E1] bg-white p-6">
-              <div className="font-serif text-4xl font-semibold text-[#B8956B]">
+            <div className="rounded-xl border border-[#E5E2DC] bg-white p-6">
+              <div className="font-serif text-4xl font-semibold text-[#8B7355]">
                 100%
               </div>
-              <div className="mt-2 text-sm text-[#8B8680]">
+              <div className="mt-2 text-sm text-[#5A5A5A]">
                 Mandate-based engagements
               </div>
             </div>
-            <div className="rounded-xl border border-[#E8E6E1] bg-white p-6">
-              <div className="font-serif text-4xl font-semibold text-[#B8956B]">
+            <div className="rounded-xl border border-[#E5E2DC] bg-white p-6">
+              <div className="font-serif text-4xl font-semibold text-[#8B7355]">
                 0
               </div>
-              <div className="mt-2 text-sm text-[#8B8680]">
+              <div className="mt-2 text-sm text-[#5A5A5A]">
                 Proprietary fund conflicts
               </div>
             </div>
-            <div className="rounded-xl border border-[#E8E6E1] bg-white p-6">
-              <div className="font-serif text-4xl font-semibold text-[#B8956B]">
+            <div className="rounded-xl border border-[#E5E2DC] bg-white p-6">
+              <div className="font-serif text-4xl font-semibold text-[#8B7355]">
                 40+
               </div>
-              <div className="mt-2 text-sm text-[#8B8680]">
+              <div className="mt-2 text-sm text-[#5A5A5A]">
                 U.S. markets covered
               </div>
             </div>
-            <div className="rounded-xl border border-[#E8E6E1] bg-white p-6">
-              <div className="font-serif text-4xl font-semibold text-[#B8956B]">
+            <div className="rounded-xl border border-[#E5E2DC] bg-white p-6">
+              <div className="font-serif text-4xl font-semibold text-[#8B7355]">
                 6
               </div>
-              <div className="mt-2 text-sm text-[#8B8680]">
+              <div className="mt-2 text-sm text-[#5A5A5A]">
                 Property type specializations
               </div>
             </div>
@@ -258,39 +258,39 @@ export default function MandatesPage() {
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           <Link
             href="/usa/invest/strategies"
-            className="group flex flex-col rounded-xl border border-[#E8E6E1] bg-white p-6 transition-all hover:border-[#B8956B] hover:shadow-lg"
+            className="group flex flex-col rounded-xl border border-[#E5E2DC] bg-white p-6 transition-all hover:border-[#8B7355] hover:shadow-lg"
           >
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-500">
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8B7355]">
               Strategy
             </span>
-            <h3 className="mt-2 font-serif text-2xl font-semibold text-[#2C2C2C] group-hover:text-[#B8956B] transition-colors">
+            <h3 className="mt-2 font-serif text-2xl font-semibold text-[#2C2C2C] group-hover:text-[#8B7355] transition-colors">
               Investment Strategies
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+            <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
               Core-plus, value-add, opportunistic, and development strategies
               tailored to specific return, risk, and hold-period objectives.
             </p>
-            <span className="mt-4 flex items-center gap-1.5 text-sm font-medium text-[#B8956B]">
+            <span className="mt-4 flex items-center gap-1.5 text-sm font-medium text-[#8B7355]">
               View strategies
               <ArrowRight size={16} className="transition-all group-hover:translate-x-1" />
             </span>
           </Link>
           <Link
             href="/usa/invest/opportunities"
-            className="group flex flex-col rounded-xl border border-[#E8E6E1] bg-white p-6 transition-all hover:border-[#B8956B] hover:shadow-lg"
+            className="group flex flex-col rounded-xl border border-[#E5E2DC] bg-white p-6 transition-all hover:border-[#8B7355] hover:shadow-lg"
           >
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-500">
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8B7355]">
               Opportunities
             </span>
-            <h3 className="mt-2 font-serif text-2xl font-semibold text-[#2C2C2C] group-hover:text-[#B8956B] transition-colors">
+            <h3 className="mt-2 font-serif text-2xl font-semibold text-[#2C2C2C] group-hover:text-[#8B7355] transition-colors">
               Current Opportunities
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+            <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
               A curated view of mandates and opportunities currently being
               executed or sourced. Accessible to qualified investors on a
               confidential basis.
             </p>
-            <span className="mt-4 flex items-center gap-1.5 text-sm font-medium text-[#B8956B]">
+            <span className="mt-4 flex items-center gap-1.5 text-sm font-medium text-[#8B7355]">
               View opportunities
               <ArrowRight size={16} className="transition-all group-hover:translate-x-1" />
             </span>

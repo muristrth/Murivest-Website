@@ -78,18 +78,18 @@ export default function InstitutionalPage() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#1B4332] py-24">
+      <section className="relative overflow-hidden bg-[#2C2C2C] py-24">
         <div className="absolute inset-0">
           <img
             src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1920"
             alt="Institutional investment and capital markets"
             className="h-full w-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/85 to-ink-950/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#2C2C2C] via-[#2C2C2C]/85 to-[#2C2C2C]/50" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <Eyebrow className="text-gold-400">
+            <Eyebrow className="text-[#8B7355]">
               Institutional — Investor Solutions
             </Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl text-balance">
@@ -103,7 +103,7 @@ export default function InstitutionalPage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/usa/contact"
-                className="group flex items-center gap-2 rounded-lg bg-gold-400 px-6 py-3 text-sm font-semibold text-[#0F2E22] transition-all hover:bg-[#C9A87C]"
+                className="group flex items-center gap-2 rounded-lg bg-[#8B7355] px-6 py-3 text-sm font-semibold text-[#2C2C2C] transition-all hover:bg-[#8B7355]"
               >
                 Engage Murivest
                 <ArrowRight
@@ -113,7 +113,7 @@ export default function InstitutionalPage() {
               </Link>
               <Link
                 href="/usa/investors"
-                className="flex items-center justify-center rounded-lg border border-[#C9A87C] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
+                className="flex items-center justify-center rounded-lg border border-[#8B7355] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
               >
                 All Investor Types
               </Link>
@@ -130,7 +130,7 @@ export default function InstitutionalPage() {
               eyebrow="Who We Serve"
               title="The institutional capital spectrum"
             />
-            <p className="mt-6 text-lg leading-relaxed text-[#8B8680]">
+            <p className="mt-6 text-lg leading-relaxed text-[#5A5A5A]">
               {MARKET_CONTEXT}
             </p>
           </div>
@@ -138,12 +138,12 @@ export default function InstitutionalPage() {
             {WHO_WE_SERVE.map((entity) => (
               <div
                 key={entity.type}
-                className="rounded-xl border border-[#E8E6E1] bg-[#FAF9F6] p-6"
+                className="rounded-xl border border-[#E5E2DC] bg-[#F8F7F4] p-6"
               >
                 <h3 className="font-serif text-lg font-semibold text-[#2C2C2C]">
                   {entity.type}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+                <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
                   {entity.needs}
                 </p>
               </div>
@@ -153,7 +153,7 @@ export default function InstitutionalPage() {
       </Section>
 
       {/* How we advise */}
-      <Section className="py-20 bg-[#FAF9F6]">
+      <Section className="py-20 bg-[#F8F7F4]">
         <SectionHeading
           eyebrow="Advisory Scope"
           title="Institutional-grade execution across the transaction lifecycle"
@@ -163,9 +163,9 @@ export default function InstitutionalPage() {
           {HOW_WE_ADVISE.map((item) => (
             <div
               key={item}
-              className="rounded-xl border border-[#E8E6E1] bg-white p-6"
+              className="rounded-xl border border-[#E5E2DC] bg-white p-6"
             >
-              <p className="text-sm leading-relaxed text-[#C9A87C]">{item}</p>
+              <p className="text-sm leading-relaxed text-[#8B7355]">{item}</p>
             </div>
           ))}
         </div>
@@ -182,12 +182,12 @@ export default function InstitutionalPage() {
           {NEXT_STEPS.map((step, idx) => (
             <div
               key={step}
-              className="flex items-start gap-4 rounded-xl border border-[#E8E6E1] bg-white p-6"
+              className="flex items-start gap-4 rounded-xl border border-[#E5E2DC] bg-white p-6"
             >
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#1B4332] text-sm font-semibold text-gold-400">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#2C2C2C] text-sm font-semibold text-[#8B7355]">
                 {String(idx + 1).padStart(2, "0")}
               </div>
-              <p className="text-sm leading-relaxed text-[#C9A87C]">{step}</p>
+              <p className="text-sm leading-relaxed text-[#8B7355]">{step}</p>
             </div>
           ))}
         </div>

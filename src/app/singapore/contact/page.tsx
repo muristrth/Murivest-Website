@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   other: {
     'format-detection': 'telephone=yes',
-    'theme-color': '#1B4332',
+    'theme-color': '#2C2C2C',
   },
 };
 
@@ -104,12 +104,12 @@ export default function ContactPage() {
 
       <main>
         {/* Hero */}
-        <section className="pt-32 pb-12 bg-[#1B4332]">
+        <section className="pt-32 pb-12 bg-[#2C2C2C]">
           <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16">
             <ScrollReveal>
-              <p className="text-[10px] tracking-[0.3em] uppercase text-[#B8956B] mb-4 font-medium">Contact</p>
+              <p className="text-[10px] tracking-[0.3em] uppercase text-[#8B7355] mb-4 font-medium">Contact</p>
               <h1 className="font-serif text-4xl md:text-5xl text-white leading-[1.05] mb-4">
-                Speak to an <span className="italic text-[#B8956B] font-light">Advisor</span>
+                Speak to an <span className="italic text-[#8B7355] font-light">Advisor</span>
               </h1>
               <p className="text-base text-white/60 max-w-2xl leading-relaxed font-light">
                 Schedule a private consultation with our Singapore investment advisory team. 

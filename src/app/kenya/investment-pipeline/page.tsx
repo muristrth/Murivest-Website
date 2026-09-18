@@ -207,16 +207,16 @@ export default function InvestmentPipelinePage() {
     <div className="min-h-screen bg-[#0B1F14] text-[#F0EDE6]">
 
       {/* ── MASTHEAD ── */}
-      <section className="border-b border-[#B8956B]/20">
+      <section className="border-b border-[#8B7355]/20">
         <div className="px-6 lg:px-20 pt-24 pb-16 max-w-screen-2xl mx-auto">
 
           {/* Breadcrumb */}
           <div className="flex items-center gap-3 mb-12">
-            <span className="text-[9px] tracking-[0.5em] uppercase text-[#B8956B] font-mono">
+            <span className="text-[9px] tracking-[0.5em] uppercase text-[#8B7355] font-mono">
               Murivest Capital Markets
             </span>
-            <span className="w-12 h-px bg-[#B8956B]/40" />
-            <span className="text-[9px] tracking-[0.5em] uppercase text-[#8B8680] font-mono">
+            <span className="w-12 h-px bg-[#8B7355]/40" />
+            <span className="text-[9px] tracking-[0.5em] uppercase text-[#5A5A5A] font-mono">
               Investment Pipeline
             </span>
           </div>
@@ -231,7 +231,7 @@ export default function InvestmentPipelinePage() {
               >
                 Global
                 <br />
-                <span className="text-[#B8956B] italic">Capital</span>
+                <span className="text-[#8B7355] italic">Capital</span>
                 <br />
                 Architecture
               </motion.h1>
@@ -255,13 +255,13 @@ export default function InvestmentPipelinePage() {
               >
                 <Link
                   href="/deal-room"
-                  className="px-7 py-3.5 bg-[#B8956B] text-[#0B1F14] text-[11px] uppercase tracking-[0.18em] font-semibold hover:bg-[#CDA97C] transition-colors"
+                  className="px-7 py-3.5 bg-[#8B7355] text-[#0B1F14] text-[11px] uppercase tracking-[0.18em] font-semibold hover:bg-[#CDA97C] transition-colors"
                 >
                   Enter Deal Room
                 </Link>
                 <Link
                   href="/contact"
-                  className="px-7 py-3.5 border border-[#B8956B]/50 text-[11px] uppercase tracking-[0.18em] hover:border-[#B8956B] transition-colors"
+                  className="px-7 py-3.5 border border-[#8B7355]/50 text-[11px] uppercase tracking-[0.18em] hover:border-[#8B7355] transition-colors"
                 >
                   Request Access
                 </Link>
@@ -273,12 +273,12 @@ export default function InvestmentPipelinePage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.7 }}
-              className="grid grid-cols-2 gap-px bg-[#B8956B]/15"
+              className="grid grid-cols-2 gap-px bg-[#8B7355]/15"
             >
               {CAPITAL_MARKETS_STATS.map((s) => (
                 <div key={s.label} className="bg-[#0B1F14] p-8">
-                  <p className="text-[36px] font-serif text-[#B8956B] leading-none">{s.value}</p>
-                  <p className="text-[11px] uppercase tracking-[0.2em] text-[#8B8680] mt-3">{s.label}</p>
+                  <p className="text-[36px] font-serif text-[#8B7355] leading-none">{s.value}</p>
+                  <p className="text-[11px] uppercase tracking-[0.2em] text-[#5A5A5A] mt-3">{s.label}</p>
                 </div>
               ))}
             </motion.div>
@@ -287,24 +287,24 @@ export default function InvestmentPipelinePage() {
       </section>
 
       {/* ── INVESTMENT STRATEGIES ── */}
-      <section className="border-b border-[#B8956B]/20">
+      <section className="border-b border-[#8B7355]/20">
         <div className="px-6 lg:px-20 py-20 max-w-screen-2xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-4 mb-12">
-              <span className="text-[9px] tracking-[0.5em] uppercase text-[#B8956B] font-mono">01</span>
-              <span className="w-8 h-px bg-[#B8956B]/40" />
-              <span className="text-[9px] tracking-[0.5em] uppercase text-[#8B8680] font-mono">
+              <span className="text-[9px] tracking-[0.5em] uppercase text-[#8B7355] font-mono">01</span>
+              <span className="w-8 h-px bg-[#8B7355]/40" />
+              <span className="text-[9px] tracking-[0.5em] uppercase text-[#5A5A5A] font-mono">
                 Investment Strategies
               </span>
             </div>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#B8956B]/15">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#8B7355]/15">
             {STRATEGIES.map((s, i) => (
               <FadeIn key={s.code} delay={i * 0.08}>
                 <div className="bg-[#0B1F14] p-8 h-full flex flex-col group hover:bg-[#0F2818] transition-colors">
                   <div className="flex justify-between items-start mb-8">
-                    <span className="text-[11px] text-[#B8956B]/50 font-mono">{s.code}</span>
+                    <span className="text-[11px] text-[#8B7355]/50 font-mono">{s.code}</span>
                     <span className={`text-[9px] uppercase tracking-widest px-2 py-1 border ${
                       s.risk === 'Low' ? 'border-emerald-700/40 text-emerald-500/70' :
                       s.risk === 'Moderate' ? 'border-amber-700/40 text-amber-500/70' :
@@ -315,14 +315,14 @@ export default function InvestmentPipelinePage() {
                   </div>
 
                   <h3 className="text-xl font-serif leading-tight">{s.title}</h3>
-                  <p className="text-[11px] uppercase tracking-widest text-[#B8956B] mt-1">{s.subtitle}</p>
+                  <p className="text-[11px] uppercase tracking-widest text-[#8B7355] mt-1">{s.subtitle}</p>
 
-                  <p className="text-[13px] text-[#8B8680] leading-relaxed mt-5 flex-1">{s.desc}</p>
+                  <p className="text-[13px] text-[#5A5A5A] leading-relaxed mt-5 flex-1">{s.desc}</p>
 
-                  <div className="mt-8 pt-6 border-t border-[#B8956B]/15 flex justify-between items-center">
+                  <div className="mt-8 pt-6 border-t border-[#8B7355]/15 flex justify-between items-center">
                     <div>
                       <p className="text-[10px] uppercase tracking-widest text-[#5A5450] mb-1">Target Yield</p>
-                      <p className="text-[#B8956B] font-serif text-lg">{s.yield}</p>
+                      <p className="text-[#8B7355] font-serif text-lg">{s.yield}</p>
                     </div>
                   </div>
                 </div>
@@ -333,13 +333,13 @@ export default function InvestmentPipelinePage() {
       </section>
 
       {/* ── CAPITAL ORIGIN MARKETS ── */}
-      <section className="border-b border-[#B8956B]/20">
+      <section className="border-b border-[#8B7355]/20">
         <div className="px-6 lg:px-20 py-20 max-w-screen-2xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-4 mb-4">
-              <span className="text-[9px] tracking-[0.5em] uppercase text-[#B8956B] font-mono">02</span>
-              <span className="w-8 h-px bg-[#B8956B]/40" />
-              <span className="text-[9px] tracking-[0.5em] uppercase text-[#8B8680] font-mono">
+              <span className="text-[9px] tracking-[0.5em] uppercase text-[#8B7355] font-mono">02</span>
+              <span className="w-8 h-px bg-[#8B7355]/40" />
+              <span className="text-[9px] tracking-[0.5em] uppercase text-[#5A5A5A] font-mono">
                 Capital Origin Markets
               </span>
             </div>
@@ -352,13 +352,13 @@ export default function InvestmentPipelinePage() {
           {/* Kenya — featured primary market */}
           <FadeIn>
             <Link href="/kenya-commercial-real-estate" className="block mb-px group">
-              <div className="bg-[#112B1A] border border-[#B8956B]/30 hover:border-[#B8956B]/70 transition-colors p-10 grid lg:grid-cols-3 gap-8 items-center">
+              <div className="bg-[#112B1A] border border-[#8B7355]/30 hover:border-[#8B7355]/70 transition-colors p-10 grid lg:grid-cols-3 gap-8 items-center">
                 <div className="flex items-start gap-6">
-                  <span className="text-[48px] font-serif text-[#B8956B]/30 leading-none font-light">KE</span>
+                  <span className="text-[48px] font-serif text-[#8B7355]/30 leading-none font-light">KE</span>
                   <div>
-                    <span className="text-[9px] uppercase tracking-[0.4em] text-[#B8956B] font-mono">Core Market · Primary Deployment</span>
+                    <span className="text-[9px] uppercase tracking-[0.4em] text-[#8B7355] font-mono">Core Market · Primary Deployment</span>
                     <h3 className="text-2xl font-serif mt-2">Kenya</h3>
-                    <p className="text-[12px] text-[#8B8680] mt-1">Nairobi · Mombasa · Kisumu</p>
+                    <p className="text-[12px] text-[#5A5A5A] mt-1">Nairobi · Mombasa · Kisumu</p>
                   </div>
                 </div>
                 <p className="text-[13px] text-[#A8A09A] leading-relaxed lg:col-span-1">
@@ -366,7 +366,7 @@ export default function InvestmentPipelinePage() {
                   corridor, and institutional ownership base positioned for REIT aggregation.
                 </p>
                 <div className="flex justify-end">
-                  <span className="text-[11px] uppercase tracking-widest text-[#B8956B] group-hover:gap-4 transition-all">
+                  <span className="text-[11px] uppercase tracking-widest text-[#8B7355] group-hover:gap-4 transition-all">
                     View Kenya Portfolio →
                   </span>
                 </div>
@@ -375,13 +375,13 @@ export default function InvestmentPipelinePage() {
           </FadeIn>
 
           {/* Other capital markets */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#B8956B]/10 mt-px">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#8B7355]/10 mt-px">
             {COUNTRIES.filter(c => c.code !== 'KE').map((c, i) => (
               <FadeIn key={c.code} delay={i * 0.06}>
                 <Link href={c.href} className="block h-full group">
                   <div className="bg-[#0B1F14] hover:bg-[#0F2818] transition-colors p-7 h-full flex flex-col">
                     <div className="flex justify-between items-start mb-6">
-                      <span className="text-[32px] font-serif text-[#B8956B]/20 leading-none">{c.code}</span>
+                      <span className="text-[32px] font-serif text-[#8B7355]/20 leading-none">{c.code}</span>
                       <span className="text-[8px] uppercase tracking-widest text-[#5A5450] font-mono border border-[#5A5450]/30 px-2 py-0.5">
                         {c.role}
                       </span>
@@ -390,9 +390,9 @@ export default function InvestmentPipelinePage() {
                     <h3 className="text-base font-serif">{c.name}</h3>
                     <p className="text-[11px] text-[#5A5450] mt-1">{c.city}</p>
 
-                    <p className="text-[12px] text-[#8B8680] mt-4 flex-1 leading-relaxed">{c.focus}</p>
+                    <p className="text-[12px] text-[#5A5A5A] mt-4 flex-1 leading-relaxed">{c.focus}</p>
 
-                    <p className="text-[10px] uppercase tracking-widest text-[#B8956B]/50 mt-6 group-hover:text-[#B8956B] transition-colors">
+                    <p className="text-[10px] uppercase tracking-widest text-[#8B7355]/50 mt-6 group-hover:text-[#8B7355] transition-colors">
                       View market →
                     </p>
                   </div>
@@ -404,13 +404,13 @@ export default function InvestmentPipelinePage() {
       </section>
 
       {/* ── ASSET CLASS COVERAGE ── */}
-      <section className="border-b border-[#B8956B]/20">
+      <section className="border-b border-[#8B7355]/20">
         <div className="px-6 lg:px-20 py-20 max-w-screen-2xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-4 mb-4">
-              <span className="text-[9px] tracking-[0.5em] uppercase text-[#B8956B] font-mono">03</span>
-              <span className="w-8 h-px bg-[#B8956B]/40" />
-              <span className="text-[9px] tracking-[0.5em] uppercase text-[#8B8680] font-mono">
+              <span className="text-[9px] tracking-[0.5em] uppercase text-[#8B7355] font-mono">03</span>
+              <span className="w-8 h-px bg-[#8B7355]/40" />
+              <span className="text-[9px] tracking-[0.5em] uppercase text-[#5A5A5A] font-mono">
                 Asset Class Coverage
               </span>
             </div>
@@ -419,24 +419,24 @@ export default function InvestmentPipelinePage() {
             </p>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#B8956B]/10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#8B7355]/10">
             {ASSET_CLASSES.map((a, i) => (
               <FadeIn key={a.code} delay={i * 0.07}>
                 <Link href={a.href} className="block h-full group">
                   <div className="bg-[#0B1F14] hover:bg-[#0F2818] transition-colors p-8 h-full flex flex-col">
                     <div className="flex justify-between items-start mb-8">
-                      <span className="text-[11px] font-mono text-[#B8956B]/40">{a.code}</span>
+                      <span className="text-[11px] font-mono text-[#8B7355]/40">{a.code}</span>
                       {a.flag && (
-                        <span className="text-[8px] uppercase tracking-widest border border-[#B8956B]/30 text-[#B8956B]/60 px-2 py-0.5">
+                        <span className="text-[8px] uppercase tracking-widest border border-[#8B7355]/30 text-[#8B7355]/60 px-2 py-0.5">
                           {a.flag}
                         </span>
                       )}
                     </div>
 
                     <h3 className="text-lg font-serif leading-tight">{a.name}</h3>
-                    <p className="text-[13px] text-[#8B8680] leading-relaxed mt-4 flex-1">{a.desc}</p>
+                    <p className="text-[13px] text-[#5A5A5A] leading-relaxed mt-4 flex-1">{a.desc}</p>
 
-                    <div className="mt-6 pt-6 border-t border-[#B8956B]/10 flex flex-wrap gap-2">
+                    <div className="mt-6 pt-6 border-t border-[#8B7355]/10 flex flex-wrap gap-2">
                       {a.metrics.map((m) => (
                         <span key={m} className="text-[10px] text-[#5A5450] border border-[#5A5450]/30 px-2 py-1">
                           {m}
@@ -444,7 +444,7 @@ export default function InvestmentPipelinePage() {
                       ))}
                     </div>
 
-                    <p className="text-[10px] uppercase tracking-widest text-[#B8956B]/40 mt-5 group-hover:text-[#B8956B] transition-colors">
+                    <p className="text-[10px] uppercase tracking-widest text-[#8B7355]/40 mt-5 group-hover:text-[#8B7355] transition-colors">
                       View deal flow →
                     </p>
                   </div>
@@ -456,13 +456,13 @@ export default function InvestmentPipelinePage() {
       </section>
 
       {/* ── INVESTOR SEGMENTS ── */}
-      <section className="border-b border-[#B8956B]/20">
+      <section className="border-b border-[#8B7355]/20">
         <div className="px-6 lg:px-20 py-20 max-w-screen-2xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-4 mb-4">
-              <span className="text-[9px] tracking-[0.5em] uppercase text-[#B8956B] font-mono">04</span>
-              <span className="w-8 h-px bg-[#B8956B]/40" />
-              <span className="text-[9px] tracking-[0.5em] uppercase text-[#8B8680] font-mono">
+              <span className="text-[9px] tracking-[0.5em] uppercase text-[#8B7355] font-mono">04</span>
+              <span className="w-8 h-px bg-[#8B7355]/40" />
+              <span className="text-[9px] tracking-[0.5em] uppercase text-[#5A5A5A] font-mono">
                 Capital Segments Served
               </span>
             </div>
@@ -476,14 +476,14 @@ export default function InvestmentPipelinePage() {
             {INVESTOR_SEGMENTS.map((seg, i) => (
               <FadeIn key={seg.type} delay={i * 0.07}>
                 <Link href={seg.href} className="block group">
-                  <div className="bg-[#0B1F14] hover:bg-[#0F2818] transition-colors px-8 py-7 grid lg:grid-cols-3 gap-4 items-center border-b border-[#B8956B]/10">
+                  <div className="bg-[#0B1F14] hover:bg-[#0F2818] transition-colors px-8 py-7 grid lg:grid-cols-3 gap-4 items-center border-b border-[#8B7355]/10">
                     <h3 className="font-serif text-lg">{seg.type}</h3>
                     <div className="flex items-center gap-3">
-                      <span className="text-[9px] uppercase tracking-widest text-[#B8956B] font-mono">{seg.flag}</span>
+                      <span className="text-[9px] uppercase tracking-widest text-[#8B7355] font-mono">{seg.flag}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <p className="text-[12px] text-[#8B8680]">{seg.focus}</p>
-                      <span className="text-[10px] uppercase tracking-widest text-[#B8956B]/40 group-hover:text-[#B8956B] transition-colors ml-6">
+                      <p className="text-[12px] text-[#5A5A5A]">{seg.focus}</p>
+                      <span className="text-[10px] uppercase tracking-widest text-[#8B7355]/40 group-hover:text-[#8B7355] transition-colors ml-6">
                         →
                       </span>
                     </div>
@@ -499,9 +499,9 @@ export default function InvestmentPipelinePage() {
       <section>
         <div className="px-6 lg:px-20 py-20 max-w-screen-2xl mx-auto">
           <FadeIn>
-            <div className="grid lg:grid-cols-2 gap-px bg-[#B8956B]/20">
+            <div className="grid lg:grid-cols-2 gap-px bg-[#8B7355]/20">
               <div className="bg-[#112B1A] p-12">
-                <p className="text-[9px] tracking-[0.5em] uppercase text-[#B8956B] font-mono mb-6">
+                <p className="text-[9px] tracking-[0.5em] uppercase text-[#8B7355] font-mono mb-6">
                   Deal Room Access
                 </p>
                 <h2 className="text-3xl font-serif leading-tight">
@@ -509,20 +509,20 @@ export default function InvestmentPipelinePage() {
                   <br />
                   Mandates
                 </h2>
-                <p className="text-[13px] text-[#8B8680] mt-5 leading-relaxed max-w-sm">
+                <p className="text-[13px] text-[#5A5A5A] mt-5 leading-relaxed max-w-sm">
                   Off-market commercial real estate transactions. Access requires
                   NDA execution and capital qualification.
                 </p>
                 <Link
                   href="/deal-room"
-                  className="mt-8 inline-block px-7 py-3.5 bg-[#B8956B] text-[#0B1F14] text-[11px] uppercase tracking-[0.18em] font-semibold hover:bg-[#CDA97C] transition-colors"
+                  className="mt-8 inline-block px-7 py-3.5 bg-[#8B7355] text-[#0B1F14] text-[11px] uppercase tracking-[0.18em] font-semibold hover:bg-[#CDA97C] transition-colors"
                 >
                   Enter Deal Room
                 </Link>
               </div>
 
               <div className="bg-[#0B1F14] p-12">
-                <p className="text-[9px] tracking-[0.5em] uppercase text-[#B8956B] font-mono mb-6">
+                <p className="text-[9px] tracking-[0.5em] uppercase text-[#8B7355] font-mono mb-6">
                   Capital Introductions
                 </p>
                 <h2 className="text-3xl font-serif leading-tight">
@@ -530,13 +530,13 @@ export default function InvestmentPipelinePage() {
                   <br />
                   Advisory Enquiries
                 </h2>
-                <p className="text-[13px] text-[#8B8680] mt-5 leading-relaxed max-w-sm">
+                <p className="text-[13px] text-[#5A5A5A] mt-5 leading-relaxed max-w-sm">
                   Investment mandates, capital introductions, and cross-border
                   advisory mandates by appointment.
                 </p>
                 <Link
                   href="/contact"
-                  className="mt-8 inline-block px-7 py-3.5 border border-[#B8956B]/50 text-[11px] uppercase tracking-[0.18em] hover:border-[#B8956B] transition-colors"
+                  className="mt-8 inline-block px-7 py-3.5 border border-[#8B7355]/50 text-[11px] uppercase tracking-[0.18em] hover:border-[#8B7355] transition-colors"
                 >
                   Request Consultation
                 </Link>

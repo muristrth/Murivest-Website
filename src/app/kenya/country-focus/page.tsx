@@ -387,9 +387,9 @@ export default function CountryFocusPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-[#FAF9F6]">
+    <div className="min-h-screen bg-[#F8F7F4]">
       {/* Navigation Breadcrumb */}
-      <div className="bg-[#1B4332] text-[#B8956B] py-3 border-b border-[#B8956B]/20">
+      <div className="bg-[#2C2C2C] text-[#8B7355] py-3 border-b border-[#8B7355]/20">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center text-sm tracking-wider">
           <Link href="/" className="hover:text-white transition-colors">MURIVEST</Link>
           <ChevronRight className="h-4 w-4 mx-2" />
@@ -400,17 +400,17 @@ export default function CountryFocusPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative bg-[#1B4332] text-[#FAF9F6] py-20 lg:py-32 overflow-hidden">
+      <section className="relative bg-[#2C2C2C] text-[#F8F7F4] py-20 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1B4332] via-[#1B4332]/95 to-[#2D5A47]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2C2C2C] via-[#2C2C2C]/95 to-[#2D5A47]" />
         
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
           <div className="max-w-4xl">
             <div className="flex items-center mb-8">
-              <div className="h-px w-12 bg-[#B8956B] mr-4" />
-              <span className="text-[#B8956B] font-serif text-lg tracking-widest uppercase">African Market Intelligence</span>
+              <div className="h-px w-12 bg-[#8B7355] mr-4" />
+              <span className="text-[#8B7355] font-serif text-lg tracking-widest uppercase">African Market Intelligence</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight">
@@ -418,7 +418,7 @@ export default function CountryFocusPage() {
               <span className="block font-medium text-white mt-2">Investment Atlas</span>
             </h1>
             
-            <p className="text-xl text-[#FAF9F6]/80 mb-12 leading-relaxed font-light max-w-3xl">
+            <p className="text-xl text-[#F8F7F4]/80 mb-12 leading-relaxed font-light max-w-3xl">
               Institutional-grade market intelligence across twelve African nations. Synthesizing data from 
               Knight Frank, Kenya Bureau of Statistics, McKinsey, PwC, Deloitte, and Harvard Business Review 
               to guide UHNWI capital deployment decisions.
@@ -428,26 +428,26 @@ export default function CountryFocusPage() {
               {marketOverview.map((metric, index) => (
                 <div
                   key={index}
-                  className="bg-white/5 backdrop-blur-sm border border-[#B8956B]/20 rounded-lg p-6 hover:border-[#B8956B]/40 transition-all duration-500"
+                  className="bg-white/5 backdrop-blur-sm border border-[#8B7355]/20 rounded-lg p-6 hover:border-[#8B7355]/40 transition-all duration-500"
                 >
                   <div className="text-3xl font-light text-white mb-2">{metric.value}</div>
-                  <div className="text-sm text-[#B8956B] mb-1 uppercase tracking-wider">{metric.label}</div>
-                  <div className="text-xs text-[#FAF9F6]/60">{metric.trend}</div>
-                  <div className="text-xs text-[#FAF9F6]/40 mt-2 italic">{metric.source}</div>
+                  <div className="text-sm text-[#8B7355] mb-1 uppercase tracking-wider">{metric.label}</div>
+                  <div className="text-xs text-[#F8F7F4]/60">{metric.trend}</div>
+                  <div className="text-xs text-[#F8F7F4]/40 mt-2 italic">{metric.source}</div>
                 </div>
               ))}
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
-                <button className="bg-[#B8956B] hover:bg-[#9A7B5A] text-[#1B4332] px-8 py-4 font-medium text-lg transition-all duration-300 flex items-center justify-center group shadow-xl">
+                <button className="bg-[#8B7355] hover:bg-[#9A7B5A] text-[#2C2C2C] px-8 py-4 font-medium text-lg transition-all duration-300 flex items-center justify-center group shadow-xl">
                   <Briefcase className="mr-3 h-5 w-5" />
                   Schedule Sovereign Consultation
                   <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </Link>
               <Link href="/research">
-                <button className="border-2 border-[#B8956B]/50 hover:border-[#B8956B] text-[#B8956B] px-8 py-4 font-medium text-lg transition-all duration-300 flex items-center justify-center">
+                <button className="border-2 border-[#8B7355]/50 hover:border-[#8B7355] text-[#8B7355] px-8 py-4 font-medium text-lg transition-all duration-300 flex items-center justify-center">
                   <Download className="mr-3 h-5 w-5" />
                   Download Full Atlas
                 </button>
@@ -458,16 +458,16 @@ export default function CountryFocusPage() {
       </section>
 
       {/* Executive Summary */}
-      <section className="py-20 bg-white border-b border-[#1B4332]/10">
+      <section className="py-20 bg-white border-b border-[#2C2C2C]/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
               <div className="flex items-center mb-6">
-                <FileText className="h-6 w-6 text-[#B8956B] mr-3" />
-                <span className="text-[#1B4332] font-serif text-sm tracking-widest uppercase">Executive Summary</span>
+                <FileText className="h-6 w-6 text-[#8B7355] mr-3" />
+                <span className="text-[#2C2C2C] font-serif text-sm tracking-widest uppercase">Executive Summary</span>
               </div>
               
-              <h2 className="text-3xl md:text-4xl font-light text-[#1B4332] mb-8 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-light text-[#2C2C2C] mb-8 leading-tight">
                 The Institutional Case for African Real Estate Allocation
               </h2>
               
@@ -489,8 +489,8 @@ export default function CountryFocusPage() {
                 </p>
               </div>
 
-              <div className="mt-8 p-6 bg-[#1B4332]/5 border-l-4 border-[#B8956B]">
-                <p className="text-[#1B4332] font-medium italic">
+              <div className="mt-8 p-6 bg-[#2C2C2C]/5 border-l-4 border-[#8B7355]">
+                <p className="text-[#2C2C2C] font-medium italic">
                   "The convergence of demographic tailwinds, infrastructure development, and institutional market maturation creates a generational opportunity for patient capital. The question is not whether to allocate to African real estate, but how to structure that allocation for optimal risk-adjusted returns."
                 </p>
                 <p className="text-sm text-[#2C3E35]/60 mt-2">— Murivest Investment Committee, 2025</p>
@@ -498,28 +498,28 @@ export default function CountryFocusPage() {
             </div>
 
             <div className="lg:col-span-1">
-              <div className="bg-[#1B4332] text-[#FAF9F6] p-8 rounded-lg sticky top-8">
-                <h3 className="text-xl font-medium mb-6 text-[#B8956B]">Strategic Allocation Framework</h3>
+              <div className="bg-[#2C2C2C] text-[#F8F7F4] p-8 rounded-lg sticky top-8">
+                <h3 className="text-xl font-medium mb-6 text-[#8B7355]">Strategic Allocation Framework</h3>
                 <div className="space-y-6">
-                  <div className="border-b border-[#B8956B]/20 pb-4">
+                  <div className="border-b border-[#8B7355]/20 pb-4">
                     <div className="text-3xl font-light text-white mb-1">40%</div>
-                    <div className="text-sm text-[#B8956B] uppercase tracking-wider mb-2">Core-Plus</div>
-                    <div className="text-sm text-[#FAF9F6]/70">South Africa, Botswana — Stable income, ESG compliance, liquidity</div>
+                    <div className="text-sm text-[#8B7355] uppercase tracking-wider mb-2">Core-Plus</div>
+                    <div className="text-sm text-[#F8F7F4]/70">South Africa, Botswana — Stable income, ESG compliance, liquidity</div>
                   </div>
-                  <div className="border-b border-[#B8956B]/20 pb-4">
+                  <div className="border-b border-[#8B7355]/20 pb-4">
                     <div className="text-3xl font-light text-white mb-1">40%</div>
-                    <div className="text-sm text-[#B8956B] uppercase tracking-wider mb-2">Value-Add</div>
-                    <div className="text-sm text-[#FAF9F6]/70">Kenya, Nigeria, Ghana — Growth markets, yield enhancement</div>
+                    <div className="text-sm text-[#8B7355] uppercase tracking-wider mb-2">Value-Add</div>
+                    <div className="text-sm text-[#F8F7F4]/70">Kenya, Nigeria, Ghana — Growth markets, yield enhancement</div>
                   </div>
                   <div>
                     <div className="text-3xl font-light text-white mb-1">20%</div>
-                    <div className="text-sm text-[#B8956B] uppercase tracking-wider mb-2">Opportunistic</div>
-                    <div className="text-sm text-[#FAF9F6]/70">Rwanda, Tanzania, Zambia — Frontier returns, active management</div>
+                    <div className="text-sm text-[#8B7355] uppercase tracking-wider mb-2">Opportunistic</div>
+                    <div className="text-sm text-[#F8F7F4]/70">Rwanda, Tanzania, Zambia — Frontier returns, active management</div>
                   </div>
                 </div>
 
                 <Link href="/contact">
-                  <button className="w-full mt-8 bg-[#B8956B] hover:bg-[#9A7B5A] text-[#1B4332] py-3 font-medium transition-all duration-300">
+                  <button className="w-full mt-8 bg-[#8B7355] hover:bg-[#9A7B5A] text-[#2C2C2C] py-3 font-medium transition-all duration-300">
                     Discuss Your Allocation
                   </button>
                 </Link>
@@ -530,15 +530,15 @@ export default function CountryFocusPage() {
       </section>
 
       {/* Macro Trends Section */}
-      <section className="py-24 bg-[#FAF9F6]">
+      <section className="py-24 bg-[#F8F7F4]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-6">
-              <div className="h-px w-12 bg-[#B8956B] mr-4" />
-              <span className="text-[#B8956B] font-serif text-sm tracking-widest uppercase">Institutional Intelligence</span>
-              <div className="h-px w-12 bg-[#B8956B] ml-4" />
+              <div className="h-px w-12 bg-[#8B7355] mr-4" />
+              <span className="text-[#8B7355] font-serif text-sm tracking-widest uppercase">Institutional Intelligence</span>
+              <div className="h-px w-12 bg-[#8B7355] ml-4" />
             </div>
-            <h2 className="text-4xl md:text-5xl font-light text-[#1B4332] mb-6">
+            <h2 className="text-4xl md:text-5xl font-light text-[#2C2C2C] mb-6">
               Macro Trends Shaping African Real Estate
             </h2>
             <p className="text-xl text-[#2C3E35]/70 max-w-3xl mx-auto font-light">
@@ -548,15 +548,15 @@ export default function CountryFocusPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {macroTrends.map((trend, index) => (
-              <div key={index} className="bg-white p-8 rounded-lg shadow-sm border border-[#1B4332]/10 hover:shadow-md transition-shadow duration-300">
+              <div key={index} className="bg-white p-8 rounded-lg shadow-sm border border-[#2C2C2C]/10 hover:shadow-md transition-shadow duration-300">
                 <div className="flex items-center mb-4">
-                  <BarChart3 className="h-5 w-5 text-[#B8956B] mr-2" />
-                  <span className="text-xs text-[#B8956B] uppercase tracking-wider">{trend.source}</span>
+                  <BarChart3 className="h-5 w-5 text-[#8B7355] mr-2" />
+                  <span className="text-xs text-[#8B7355] uppercase tracking-wider">{trend.source}</span>
                 </div>
-                <h3 className="text-xl font-medium text-[#1B4332] mb-4 leading-tight">{trend.title}</h3>
+                <h3 className="text-xl font-medium text-[#2C2C2C] mb-4 leading-tight">{trend.title}</h3>
                 <p className="text-[#2C3E35]/80 text-sm leading-relaxed mb-4">{trend.insight}</p>
-                <div className="pt-4 border-t border-[#1B4332]/10">
-                  <p className="text-xs text-[#1B4332] font-medium uppercase tracking-wider mb-1">Strategic Implication</p>
+                <div className="pt-4 border-t border-[#2C2C2C]/10">
+                  <p className="text-xs text-[#2C2C2C] font-medium uppercase tracking-wider mb-1">Strategic Implication</p>
                   <p className="text-sm text-[#2C3E35]/70 italic">{trend.implication}</p>
                 </div>
               </div>
@@ -566,24 +566,24 @@ export default function CountryFocusPage() {
       </section>
 
       {/* CTA Section 1 */}
-      <section className="py-16 bg-[#1B4332] text-[#FAF9F6]">
+      <section className="py-16 bg-[#2C2C2C] text-[#F8F7F4]">
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
           <h2 className="text-3xl md:text-4xl font-light mb-6">
             Access Proprietary Market Intelligence
           </h2>
-          <p className="text-lg text-[#FAF9F6]/80 mb-8 leading-relaxed">
+          <p className="text-lg text-[#F8F7F4]/80 mb-8 leading-relaxed">
             Murivest clients receive quarterly sovereign risk assessments, yield tracking across 12 markets, 
             and early access to off-market institutional opportunities. Our research synthesizes Knight Frank, 
             KNBS, McKinsey, and primary market data unavailable in public reports.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <button className="bg-[#B8956B] hover:bg-[#9A7B5A] text-[#1B4332] px-8 py-4 font-medium text-lg transition-all duration-300">
+              <button className="bg-[#8B7355] hover:bg-[#9A7B5A] text-[#2C2C2C] px-8 py-4 font-medium text-lg transition-all duration-300">
                 Join Our Intelligence Network
               </button>
             </Link>
             <Link href="/research">
-              <button className="border-2 border-[#B8956B]/50 hover:border-[#B8956B] text-[#B8956B] px-8 py-4 font-medium text-lg transition-all duration-300">
+              <button className="border-2 border-[#8B7355]/50 hover:border-[#8B7355] text-[#8B7355] px-8 py-4 font-medium text-lg transition-all duration-300">
                 View Sample Report
               </button>
             </Link>
@@ -596,10 +596,10 @@ export default function CountryFocusPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-6">
-              <Globe className="h-6 w-6 text-[#B8956B] mr-3" />
-              <span className="text-[#B8956B] font-serif text-sm tracking-widest uppercase">Country Analysis</span>
+              <Globe className="h-6 w-6 text-[#8B7355] mr-3" />
+              <span className="text-[#8B7355] font-serif text-sm tracking-widest uppercase">Country Analysis</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-light text-[#1B4332] mb-6">
+            <h2 className="text-4xl md:text-5xl font-light text-[#2C2C2C] mb-6">
               Sovereign Market Snapshots
             </h2>
             <p className="text-xl text-[#2C3E35]/70 max-w-3xl mx-auto font-light">
@@ -609,44 +609,44 @@ export default function CountryFocusPage() {
 
           <div className="space-y-12">
             {countries.map((country, index) => (
-              <div key={index} className="bg-[#FAF9F6] rounded-2xl overflow-hidden border border-[#1B4332]/10 hover:border-[#B8956B]/30 transition-all duration-500">
+              <div key={index} className="bg-[#F8F7F4] rounded-2xl overflow-hidden border border-[#2C2C2C]/10 hover:border-[#8B7355]/30 transition-all duration-500">
                 {/* Country Header */}
-                <div className="bg-[#1B4332] text-[#FAF9F6] p-8">
+                <div className="bg-[#2C2C2C] text-[#F8F7F4] p-8">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                     <div className="flex items-center mb-4 md:mb-0">
                       <span className="text-5xl mr-4">{country.flag}</span>
                       <div>
                         <h3 className="text-3xl font-light text-white">{country.name}</h3>
-                        <span className="text-[#B8956B] text-sm uppercase tracking-wider">{country.region}</span>
+                        <span className="text-[#8B7355] text-sm uppercase tracking-wider">{country.region}</span>
                       </div>
                     </div>
                     <div className="flex items-center space-x-6">
                       <div className="text-right">
-                        <div className="text-2xl font-light text-[#B8956B]">{country.primeYields}</div>
-                        <div className="text-xs text-[#FAF9F6]/60 uppercase tracking-wider">Prime Yields</div>
+                        <div className="text-2xl font-light text-[#8B7355]">{country.primeYields}</div>
+                        <div className="text-xs text-[#F8F7F4]/60 uppercase tracking-wider">Prime Yields</div>
                       </div>
                       <div className="text-right">
                         <div className="text-2xl font-light text-white">{country.gdp}</div>
-                        <div className="text-xs text-[#FAF9F6]/60 uppercase tracking-wider">GDP Growth</div>
+                        <div className="text-xs text-[#F8F7F4]/60 uppercase tracking-wider">GDP Growth</div>
                       </div>
                     </div>
                   </div>
                   
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                     <div className="bg-white/10 rounded p-3">
-                      <span className="text-[#B8956B] block text-xs uppercase tracking-wider mb-1">Inflation</span>
+                      <span className="text-[#8B7355] block text-xs uppercase tracking-wider mb-1">Inflation</span>
                       <span className="text-white font-medium">{country.inflation}</span>
                     </div>
                     <div className="bg-white/10 rounded p-3">
-                      <span className="text-[#B8956B] block text-xs uppercase tracking-wider mb-1">GDP/Capita</span>
+                      <span className="text-[#8B7355] block text-xs uppercase tracking-wider mb-1">GDP/Capita</span>
                       <span className="text-white font-medium">{country.gdpPerCapita}</span>
                     </div>
                     <div className="bg-white/10 rounded p-3">
-                      <span className="text-[#B8956B] block text-xs uppercase tracking-wider mb-1">Market Size</span>
+                      <span className="text-[#8B7355] block text-xs uppercase tracking-wider mb-1">Market Size</span>
                       <span className="text-white font-medium">{country.marketSize}</span>
                     </div>
                     <div className="bg-white/10 rounded p-3">
-                      <span className="text-[#B8956B] block text-xs uppercase tracking-wider mb-1">Institutional Demand</span>
+                      <span className="text-[#8B7355] block text-xs uppercase tracking-wider mb-1">Institutional Demand</span>
                       <span className="text-white font-medium text-xs">{country.institutionalDemand}</span>
                     </div>
                   </div>
@@ -658,23 +658,23 @@ export default function CountryFocusPage() {
                     {/* Investment Thesis */}
                     <div className="lg:col-span-2 space-y-6">
                       <div>
-                        <h4 className="text-lg font-medium text-[#1B4332] mb-3 flex items-center">
-                          <Target className="h-5 w-5 text-[#B8956B] mr-2" />
+                        <h4 className="text-lg font-medium text-[#2C2C2C] mb-3 flex items-center">
+                          <Target className="h-5 w-5 text-[#8B7355] mr-2" />
                           Investment Thesis
                         </h4>
                         <p className="text-[#2C3E35]/80 leading-relaxed text-sm">{country.investmentThesis}</p>
                       </div>
 
                       <div className="grid md:grid-cols-2 gap-6">
-                        <div className="bg-white p-5 rounded-lg border border-[#1B4332]/10">
-                          <h5 className="text-sm font-medium text-[#1B4332] mb-2 flex items-center">
+                        <div className="bg-white p-5 rounded-lg border border-[#2C2C2C]/10">
+                          <h5 className="text-sm font-medium text-[#2C2C2C] mb-2 flex items-center">
                             <TrendingUp className="h-4 w-4 text-green-600 mr-2" />
                             Key Opportunities
                           </h5>
                           <p className="text-sm text-[#2C3E35]/70 leading-relaxed">{country.opportunities}</p>
                         </div>
-                        <div className="bg-white p-5 rounded-lg border border-[#1B4332]/10">
-                          <h5 className="text-sm font-medium text-[#1B4332] mb-2 flex items-center">
+                        <div className="bg-white p-5 rounded-lg border border-[#2C2C2C]/10">
+                          <h5 className="text-sm font-medium text-[#2C2C2C] mb-2 flex items-center">
                             <Shield className="h-4 w-4 text-amber-600 mr-2" />
                             Risk Factors
                           </h5>
@@ -684,14 +684,14 @@ export default function CountryFocusPage() {
 
                       {/* Sector Analysis */}
                       <div>
-                        <h4 className="text-lg font-medium text-[#1B4332] mb-4 flex items-center">
-                          <Building className="h-5 w-5 text-[#B8956B] mr-2" />
+                        <h4 className="text-lg font-medium text-[#2C2C2C] mb-4 flex items-center">
+                          <Building className="h-5 w-5 text-[#8B7355] mr-2" />
                           Sector Analysis
                         </h4>
                         <div className="grid sm:grid-cols-2 gap-4">
                           {Object.entries(country.sectorAnalysis).map(([sector, analysis]) => (
-                            <div key={sector} className="bg-white p-4 rounded-lg border border-[#1B4332]/10">
-                              <span className="text-xs text-[#B8956B] uppercase tracking-wider font-medium block mb-2">
+                            <div key={sector} className="bg-white p-4 rounded-lg border border-[#2C2C2C]/10">
+                              <span className="text-xs text-[#8B7355] uppercase tracking-wider font-medium block mb-2">
                                 {sector.charAt(0).toUpperCase() + sector.slice(1)}
                               </span>
                               <p className="text-sm text-[#2C3E35]/80 leading-relaxed">{analysis}</p>
@@ -701,9 +701,9 @@ export default function CountryFocusPage() {
                       </div>
 
                       {/* Legal Framework */}
-                      <div className="bg-[#1B4332]/5 p-5 rounded-lg border-l-4 border-[#B8956B]">
-                        <h5 className="text-sm font-medium text-[#1B4332] mb-2 flex items-center">
-                          <Landmark className="h-4 w-4 text-[#B8956B] mr-2" />
+                      <div className="bg-[#2C2C2C]/5 p-5 rounded-lg border-l-4 border-[#8B7355]">
+                        <h5 className="text-sm font-medium text-[#2C2C2C] mb-2 flex items-center">
+                          <Landmark className="h-4 w-4 text-[#8B7355] mr-2" />
                           Legal & Regulatory Framework
                         </h5>
                         <p className="text-sm text-[#2C3E35]/70 leading-relaxed">{country.legalFramework}</p>
@@ -712,35 +712,35 @@ export default function CountryFocusPage() {
 
                     {/* Featured Project Sidebar */}
                     <div className="lg:col-span-1">
-                      <div className="bg-[#1B4332] text-[#FAF9F6] p-6 rounded-lg sticky top-8">
+                      <div className="bg-[#2C2C2C] text-[#F8F7F4] p-6 rounded-lg sticky top-8">
                         <div className="flex items-center mb-4">
-                          <Award className="h-5 w-5 text-[#B8956B] mr-2" />
-                          <span className="text-[#B8956B] text-xs uppercase tracking-wider">Featured Opportunity</span>
+                          <Award className="h-5 w-5 text-[#8B7355] mr-2" />
+                          <span className="text-[#8B7355] text-xs uppercase tracking-wider">Featured Opportunity</span>
                         </div>
                         <h4 className="text-lg font-medium text-white mb-4 leading-tight">
                           {country.featuredProject.split(':')[0]}
                         </h4>
-                        <p className="text-sm text-[#FAF9F6]/80 leading-relaxed mb-6">
+                        <p className="text-sm text-[#F8F7F4]/80 leading-relaxed mb-6">
                           {country.featuredProject.split(':')[1] || country.featuredProject}
                         </p>
                         
                         <div className="space-y-3 mb-6">
                           <div className="flex justify-between text-sm">
-                            <span className="text-[#FAF9F6]/60">Target IRR</span>
-                            <span className="text-[#B8956B] font-medium">12-18%</span>
+                            <span className="text-[#F8F7F4]/60">Target IRR</span>
+                            <span className="text-[#8B7355] font-medium">12-18%</span>
                           </div>
                           <div className="flex justify-between text-sm">
-                            <span className="text-[#FAF9F6]/60">Investment Horizon</span>
+                            <span className="text-[#F8F7F4]/60">Investment Horizon</span>
                             <span className="text-white">5-7 Years</span>
                           </div>
                           <div className="flex justify-between text-sm">
-                            <span className="text-[#FAF9F6]/60">Minimum Ticket</span>
+                            <span className="text-[#F8F7F4]/60">Minimum Ticket</span>
                             <span className="text-white">$2.5M</span>
                           </div>
                         </div>
 
                         <Link href="/contact">
-                          <button className="w-full bg-[#B8956B] hover:bg-[#9A7B5A] text-[#1B4332] py-3 font-medium transition-all duration-300 text-sm">
+                          <button className="w-full bg-[#8B7355] hover:bg-[#9A7B5A] text-[#2C2C2C] py-3 font-medium transition-all duration-300 text-sm">
                             Request Investment Memorandum
                           </button>
                         </Link>
@@ -755,29 +755,29 @@ export default function CountryFocusPage() {
       </section>
 
       {/* Strategic Frameworks */}
-      <section className="py-24 bg-[#1B4332] text-[#FAF9F6]">
+      <section className="py-24 bg-[#2C2C2C] text-[#F8F7F4]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-6">
-              <div className="h-px w-12 bg-[#B8956B] mr-4" />
-              <span className="text-[#B8956B] font-serif text-sm tracking-widest uppercase">Portfolio Construction</span>
-              <div className="h-px w-12 bg-[#B8956B] ml-4" />
+              <div className="h-px w-12 bg-[#8B7355] mr-4" />
+              <span className="text-[#8B7355] font-serif text-sm tracking-widest uppercase">Portfolio Construction</span>
+              <div className="h-px w-12 bg-[#8B7355] ml-4" />
             </div>
             <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
               Strategic Allocation Frameworks
             </h2>
-            <p className="text-xl text-[#FAF9F6]/70 max-w-3xl mx-auto font-light">
+            <p className="text-xl text-[#F8F7F4]/70 max-w-3xl mx-auto font-light">
               Three proven approaches to African real estate portfolio construction based on risk tolerance and return objectives.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {strategicFrameworks.map((framework, index) => (
-              <div key={index} className="bg-white/5 backdrop-blur-sm border border-[#B8956B]/20 rounded-lg p-8 hover:bg-white/10 transition-all duration-300">
-                <h3 className="text-2xl font-light text-[#B8956B] mb-4">{framework.title}</h3>
-                <p className="text-[#FAF9F6]/80 leading-relaxed mb-6 text-sm">{framework.description}</p>
-                <div className="pt-6 border-t border-[#B8956B]/20">
-                  <p className="text-xs text-[#B8956B] uppercase tracking-wider mb-3">Recommended Allocation</p>
+              <div key={index} className="bg-white/5 backdrop-blur-sm border border-[#8B7355]/20 rounded-lg p-8 hover:bg-white/10 transition-all duration-300">
+                <h3 className="text-2xl font-light text-[#8B7355] mb-4">{framework.title}</h3>
+                <p className="text-[#F8F7F4]/80 leading-relaxed mb-6 text-sm">{framework.description}</p>
+                <div className="pt-6 border-t border-[#8B7355]/20">
+                  <p className="text-xs text-[#8B7355] uppercase tracking-wider mb-3">Recommended Allocation</p>
                   <p className="text-sm text-white">{framework.allocation}</p>
                 </div>
               </div>
@@ -786,7 +786,7 @@ export default function CountryFocusPage() {
 
           <div className="mt-12 text-center">
             <Link href="/contact">
-              <button className="bg-[#B8956B] hover:bg-[#9A7B5A] text-[#1B4332] px-10 py-4 font-medium text-lg transition-all duration-300 inline-flex items-center group">
+              <button className="bg-[#8B7355] hover:bg-[#9A7B5A] text-[#2C2C2C] px-10 py-4 font-medium text-lg transition-all duration-300 inline-flex items-center group">
                 <Users className="mr-3 h-5 w-5" />
                 Discuss Your Strategic Allocation
                 <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -802,19 +802,19 @@ export default function CountryFocusPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="flex items-center mb-6">
-                <Clock className="h-6 w-6 text-[#B8956B] mr-3" />
-                <span className="text-[#B8956B] font-serif text-sm tracking-widest uppercase">Implementation</span>
+                <Clock className="h-6 w-6 text-[#8B7355] mr-3" />
+                <span className="text-[#8B7355] font-serif text-sm tracking-widest uppercase">Implementation</span>
               </div>
               
-              <h2 className="text-4xl font-light text-[#1B4332] mb-8 leading-tight">
+              <h2 className="text-4xl font-light text-[#2C2C2C] mb-8 leading-tight">
                 The Murivest Execution Protocol
               </h2>
               
               <div className="space-y-8">
                 <div className="flex">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#1B4332] text-[#B8956B] rounded-full flex items-center justify-center font-medium text-lg mr-6">1</div>
+                  <div className="flex-shrink-0 w-12 h-12 bg-[#2C2C2C] text-[#8B7355] rounded-full flex items-center justify-center font-medium text-lg mr-6">1</div>
                   <div>
-                    <h4 className="text-lg font-medium text-[#1B4332] mb-2">Sovereign Risk Assessment</h4>
+                    <h4 className="text-lg font-medium text-[#2C2C2C] mb-2">Sovereign Risk Assessment</h4>
                     <p className="text-[#2C3E35]/70 leading-relaxed">
                       Comprehensive due diligence spanning political stability, currency convertibility, land tenure systems, and regulatory enforcement. We engage local legal counsel and sovereign risk insurers to quantify and mitigate jurisdictional exposure.
                     </p>
@@ -822,9 +822,9 @@ export default function CountryFocusPage() {
                 </div>
                 
                 <div className="flex">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#1B4332] text-[#B8956B] rounded-full flex items-center justify-center font-medium text-lg mr-6">2</div>
+                  <div className="flex-shrink-0 w-12 h-12 bg-[#2C2C2C] text-[#8B7355] rounded-full flex items-center justify-center font-medium text-lg mr-6">2</div>
                   <div>
-                    <h4 className="text-lg font-medium text-[#1B4332] mb-2">Asset Identification & Validation</h4>
+                    <h4 className="text-lg font-medium text-[#2C2C2C] mb-2">Asset Identification & Validation</h4>
                     <p className="text-[#2C3E35]/70 leading-relaxed">
                       Access to off-market opportunities through our network of developers, distressed sellers, and government privatization programs. Independent valuation using both comparable transactions and discounted cash flow methodologies.
                     </p>
@@ -832,9 +832,9 @@ export default function CountryFocusPage() {
                 </div>
                 
                 <div className="flex">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#1B4332] text-[#B8956B] rounded-full flex items-center justify-center font-medium text-lg mr-6">3</div>
+                  <div className="flex-shrink-0 w-12 h-12 bg-[#2C2C2C] text-[#8B7355] rounded-full flex items-center justify-center font-medium text-lg mr-6">3</div>
                   <div>
-                    <h4 className="text-lg font-medium text-[#1B4332] mb-2">Structure & Capital Stack Optimization</h4>
+                    <h4 className="text-lg font-medium text-[#2C2C2C] mb-2">Structure & Capital Stack Optimization</h4>
                     <p className="text-[#2C3E35]/70 leading-relaxed">
                       Tailored investment structures optimizing tax efficiency, repatriation pathways, and governance rights. Local currency vs. hard currency denomination based on asset cash flow characteristics and investor hedging requirements.
                     </p>
@@ -842,9 +842,9 @@ export default function CountryFocusPage() {
                 </div>
                 
                 <div className="flex">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#1B4332] text-[#B8956B] rounded-full flex items-center justify-center font-medium text-lg mr-6">4</div>
+                  <div className="flex-shrink-0 w-12 h-12 bg-[#2C2C2C] text-[#8B7355] rounded-full flex items-center justify-center font-medium text-lg mr-6">4</div>
                   <div>
-                    <h4 className="text-lg font-medium text-[#1B4332] mb-2">Active Asset Management</h4>
+                    <h4 className="text-lg font-medium text-[#2C2C2C] mb-2">Active Asset Management</h4>
                     <p className="text-[#2C3E35]/70 leading-relaxed">
                       On-ground property management ensuring ESG compliance, tenant retention, and value-add execution. Quarterly reporting with Knight Frank benchmark comparisons and macroeconomic scenario analysis.
                     </p>
@@ -853,55 +853,55 @@ export default function CountryFocusPage() {
               </div>
             </div>
 
-            <div className="bg-[#FAF9F6] p-8 rounded-2xl border border-[#1B4332]/10">
-              <h3 className="text-2xl font-light text-[#1B4332] mb-6">Why Institutional Investors Choose Murivest</h3>
+            <div className="bg-[#F8F7F4] p-8 rounded-2xl border border-[#2C2C2C]/10">
+              <h3 className="text-2xl font-light text-[#2C2C2C] mb-6">Why Institutional Investors Choose Murivest</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-2 h-2 bg-[#B8956B] rounded-full mt-2 mr-4" />
+                  <div className="flex-shrink-0 w-2 h-2 bg-[#8B7355] rounded-full mt-2 mr-4" />
                   <div>
-                    <h4 className="font-medium text-[#1B4332] mb-1">Proprietary Market Intelligence</h4>
+                    <h4 className="font-medium text-[#2C2C2C] mb-1">Proprietary Market Intelligence</h4>
                     <p className="text-sm text-[#2C3E35]/70">Direct data partnerships with Knight Frank, Kenya Bureau of Statistics, and local land registries provide transaction evidence unavailable to generalist investors.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-2 h-2 bg-[#B8956B] rounded-full mt-2 mr-4" />
+                  <div className="flex-shrink-0 w-2 h-2 bg-[#8B7355] rounded-full mt-2 mr-4" />
                   <div>
-                    <h4 className="font-medium text-[#1B4332] mb-1">Local Operating Partners</h4>
+                    <h4 className="font-medium text-[#2C2C2C] mb-1">Local Operating Partners</h4>
                     <p className="text-sm text-[#2C3E35]/70">Vetted property managers, legal counsel, and construction supervisors in each target market ensuring execution capability without the overhead of owned operations.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-2 h-2 bg-[#B8956B] rounded-full mt-2 mr-4" />
+                  <div className="flex-shrink-0 w-2 h-2 bg-[#8B7355] rounded-full mt-2 mr-4" />
                   <div>
-                    <h4 className="font-medium text-[#1B4332] mb-1">Institutional Governance</h4>
+                    <h4 className="font-medium text-[#2C2C2C] mb-1">Institutional Governance</h4>
                     <p className="text-sm text-[#2C3E35]/70">Independent investment committee, quarterly valuation by Big Four auditors, and compliance with IFC Performance Standards on ESG.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-2 h-2 bg-[#B8956B] rounded-full mt-2 mr-4" />
+                  <div className="flex-shrink-0 w-2 h-2 bg-[#8B7355] rounded-full mt-2 mr-4" />
                   <div>
-                    <h4 className="font-medium text-[#1B4332] mb-1">Alignment of Interests</h4>
+                    <h4 className="font-medium text-[#2C2C2C] mb-1">Alignment of Interests</h4>
                     <p className="text-sm text-[#2C3E35]/70">Significant co-investment by Murivest principals on every transaction. No deal fees—compensation solely through performance-based carried interest.</p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8 pt-8 border-t border-[#1B4332]/10">
+              <div className="mt-8 pt-8 border-t border-[#2C2C2C]/10">
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-sm text-[#2C3E35]/60">Assets Under Advisory</span>
-                  <span className="text-2xl font-light text-[#1B4332]">$340M</span>
+                  <span className="text-2xl font-light text-[#2C2C2C]">$340M</span>
                 </div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-sm text-[#2C3E35]/60">Average Gross IRR</span>
-                  <span className="text-2xl font-light text-[#1B4332]">16.4%</span>
+                  <span className="text-2xl font-light text-[#2C2C2C]">16.4%</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-[#2C3E35]/60">Investor Retention</span>
-                  <span className="text-2xl font-light text-[#1B4332]">94%</span>
+                  <span className="text-2xl font-light text-[#2C2C2C]">94%</span>
                 </div>
               </div>
             </div>
@@ -910,24 +910,24 @@ export default function CountryFocusPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-[#1B4332] text-[#FAF9F6] relative overflow-hidden">
+      <section className="py-24 bg-[#2C2C2C] text-[#F8F7F4] relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center" />
         </div>
         
         <div className="relative max-w-4xl mx-auto px-6 lg:px-12 text-center">
           <div className="flex items-center justify-center mb-8">
-            <div className="h-px w-16 bg-[#B8956B] mr-4" />
-            <span className="text-[#B8956B] font-serif text-lg tracking-widest uppercase">Begin Your African Allocation</span>
-            <div className="h-px w-16 bg-[#B8956B] ml-4" />
+            <div className="h-px w-16 bg-[#8B7355] mr-4" />
+            <span className="text-[#8B7355] font-serif text-lg tracking-widest uppercase">Begin Your African Allocation</span>
+            <div className="h-px w-16 bg-[#8B7355] ml-4" />
           </div>
           
           <h2 className="text-4xl md:text-5xl font-light mb-8 leading-tight">
             The Time for African Real Estate
-            <span className="block text-[#B8956B] mt-2">Is Now</span>
+            <span className="block text-[#8B7355] mt-2">Is Now</span>
           </h2>
           
-          <p className="text-xl text-[#FAF9F6]/80 mb-12 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl text-[#F8F7F4]/80 mb-12 leading-relaxed max-w-3xl mx-auto">
             The convergence of demographic tailwinds, infrastructure development, and institutional market maturation 
             creates a generational opportunity. Murivest provides the intelligence, access, and execution capability 
             to deploy capital with confidence across the continent's most compelling markets.
@@ -935,38 +935,38 @@ export default function CountryFocusPage() {
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
             <Link href="/contact">
-              <button className="bg-[#B8956B] hover:bg-[#9A7B5A] text-[#1B4332] px-10 py-5 font-medium text-lg transition-all duration-300 flex items-center justify-center group shadow-2xl">
+              <button className="bg-[#8B7355] hover:bg-[#9A7B5A] text-[#2C2C2C] px-10 py-5 font-medium text-lg transition-all duration-300 flex items-center justify-center group shadow-2xl">
                 <Briefcase className="mr-3 h-6 w-6" />
                 Schedule Confidential Consultation
                 <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
             <Link href="/research">
-              <button className="border-2 border-[#B8956B] hover:bg-[#B8956B] hover:text-[#1B4332] text-[#B8956B] px-10 py-5 font-medium text-lg transition-all duration-300">
+              <button className="border-2 border-[#8B7355] hover:bg-[#8B7355] hover:text-[#2C2C2C] text-[#8B7355] px-10 py-5 font-medium text-lg transition-all duration-300">
                 Download Complete Atlas
               </button>
             </Link>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-8 text-sm border-t border-[#B8956B]/20 pt-12">
+          <div className="grid sm:grid-cols-3 gap-8 text-sm border-t border-[#8B7355]/20 pt-12">
             <div>
-              <div className="text-[#B8956B] mb-2 uppercase tracking-wider text-xs">Nairobi</div>
+              <div className="text-[#8B7355] mb-2 uppercase tracking-wider text-xs">Nairobi</div>
               <div className="text-white">Westlands Business Park</div>
-              <div className="text-[#FAF9F6]/60">5th Floor, Wing A</div>
+              <div className="text-[#F8F7F4]/60">5th Floor, Wing A</div>
             </div>
             <div>
-              <div className="text-[#B8956B] mb-2 uppercase tracking-wider text-xs">London</div>
+              <div className="text-[#8B7355] mb-2 uppercase tracking-wider text-xs">London</div>
               <div className="text-white">Mayfair Office</div>
-              <div className="text-[#FAF9F6]/60">By appointment only</div>
+              <div className="text-[#F8F7F4]/60">By appointment only</div>
             </div>
             <div>
-              <div className="text-[#B8956B] mb-2 uppercase tracking-wider text-xs">Dubai</div>
+              <div className="text-[#8B7355] mb-2 uppercase tracking-wider text-xs">Dubai</div>
               <div className="text-white">DIFC Representative Office</div>
-              <div className="text-[#FAF9F6]/60">Gate Village</div>
+              <div className="text-[#F8F7F4]/60">Gate Village</div>
             </div>
           </div>
 
-          <div className="mt-12 text-xs text-[#FAF9F6]/40 max-w-2xl mx-auto">
+          <div className="mt-12 text-xs text-[#F8F7F4]/40 max-w-2xl mx-auto">
             <p className="mb-4">
               Disclaimer: This document is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any securities or investment products. Past performance is not indicative of future results. Investments in African real estate involve significant risks including currency fluctuation, political instability, and liquidity constraints. Please consult with qualified legal, tax, and financial advisors before making any investment decisions.
             </p>

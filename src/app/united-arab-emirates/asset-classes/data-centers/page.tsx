@@ -53,7 +53,7 @@ const schemaOrg = {
 
 function SectionLabel({ text }: { text: string }) {
   return (
-    <p className="font-body text-[11px] font-semibold tracking-[0.25em] uppercase text-[#B8956B] mb-4 md:mb-5">
+    <p className="font-body text-[11px] font-semibold tracking-[0.25em] uppercase text-[#8B7355] mb-4 md:mb-5">
       {text}
     </p>
   );
@@ -73,7 +73,7 @@ const whyUaePoints = [
     description:
       'Subsea cable landings in Fujairah, global cloud regions (AWS, Azure, Google Cloud) and the lowest latency corridor between Asia, Europe and Africa position the UAE as the regional interconnection nexus.',
     icon: Cloud,
-    gradient: 'from-[#0D1F17]/30 via-[#1B4332]/10 to-[#E0EDE6]',
+    gradient: 'from-[#0D1F17]/30 via-[#2C2C2C]/10 to-[#E0EDE6]',
   },
   {
     title: 'Government & Sovereign Support',
@@ -221,7 +221,7 @@ const opportunities = [
 
 export default function DataCentersPage() {
   return (
-    <main className="bg-[#FAF9F6] text-[#1A1A1A] font-body antialiased selection:bg-[#1B4332] selection:text-white overflow-x-hidden">
+    <main className="bg-[#F8F7F4] text-[#1A1A1A] font-body antialiased selection:bg-[#2C2C2C] selection:text-white overflow-x-hidden">
       <Script
         id="schema-data-centers"
         type="application/ld+json"
@@ -229,20 +229,20 @@ export default function DataCentersPage() {
       />
 
       {/* Fixed navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#FAF9F6]/90 backdrop-blur-md border-b border-[#1A1A1A]/5">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#F8F7F4]/90 backdrop-blur-md border-b border-[#1A1A1A]/5">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 h-16 md:h-20 flex items-center justify-between">
-          <Link href="/" className="font-display text-xl md:text-2xl text-[#1B4332] tracking-tight">
+          <Link href="/" className="font-display text-xl md:text-2xl text-[#2C2C2C] tracking-tight">
             Murivest
           </Link>
           <nav className="hidden md:flex items-center gap-6 lg:gap-10 text-sm text-[#4A4A4A]">
-            <Link href="/united-arab-emirates" className="hover:text-[#1B4332] transition-colors">UAE</Link>
-            <Link href="/united-arab-emirates/asset-classes" className="hover:text-[#1B4332] transition-colors">Asset Classes</Link>
-            <Link href="#expertise" className="hover:text-[#1B4332] transition-colors">Expertise</Link>
-            <Link href="#opportunities" className="hover:text-[#1B4332] transition-colors">Opportunities</Link>
-            <Link href="#faq" className="hover:text-[#1B4332] transition-colors">FAQ</Link>
+            <Link href="/united-arab-emirates" className="hover:text-[#2C2C2C] transition-colors">UAE</Link>
+            <Link href="/united-arab-emirates/asset-classes" className="hover:text-[#2C2C2C] transition-colors">Asset Classes</Link>
+            <Link href="#expertise" className="hover:text-[#2C2C2C] transition-colors">Expertise</Link>
+            <Link href="#opportunities" className="hover:text-[#2C2C2C] transition-colors">Opportunities</Link>
+            <Link href="#faq" className="hover:text-[#2C2C2C] transition-colors">FAQ</Link>
             <Link
               href="/united-arab-emirates/contact"
-              className="px-5 py-2.5 bg-[#1B4332] text-white text-sm hover:bg-[#142d23] transition-colors"
+              className="px-5 py-2.5 bg-[#2C2C2C] text-white text-sm hover:bg-[#142d23] transition-colors"
             >
               Contact
             </Link>
@@ -253,20 +253,20 @@ export default function DataCentersPage() {
       {/* Breadcrumb */}
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 pt-24 md:pt-28">
         <nav className="flex text-xs text-[#8A8A8A] space-x-2" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-[#1B4332] transition-colors">Home</Link>
+          <Link href="/" className="hover:text-[#2C2C2C] transition-colors">Home</Link>
           <span>/</span>
-          <Link href="/united-arab-emirates" className="hover:text-[#1B4332] transition-colors">UAE</Link>
+          <Link href="/united-arab-emirates" className="hover:text-[#2C2C2C] transition-colors">UAE</Link>
           <span>/</span>
-          <Link href="/united-arab-emirates/asset-classes" className="hover:text-[#1B4332] transition-colors">Asset Classes</Link>
+          <Link href="/united-arab-emirates/asset-classes" className="hover:text-[#2C2C2C] transition-colors">Asset Classes</Link>
           <span>/</span>
-          <span className="text-[#1B4332]">Data Centres</span>
+          <span className="text-[#2C2C2C]">Data Centres</span>
         </nav>
       </div>
 
       {/* ═══════════════════════════════ HERO ═══════════════════════════════ */}
       <section className="relative min-h-[85vh] md:min-h-screen flex flex-col justify-end overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#091A10] via-[#0F2C1C] to-[#1B4332]" />
-        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 79px, #FAF9F6 79px, #FAF9F6 80px), repeating-linear-gradient(90deg, transparent, transparent 79px, #FAF9F6 79px, #FAF9F6 80px)' }} />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#091A10] via-[#0F2C1C] to-[#2C2C2C]" />
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 79px, #F8F7F4 79px, #F8F7F4 80px), repeating-linear-gradient(90deg, transparent, transparent 79px, #F8F7F4 79px, #F8F7F4 80px)' }} />
         
         <div className="relative max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 pt-36 pb-0 w-full">
           <div className="max-w-4xl pb-16 md:pb-24">
@@ -280,7 +280,7 @@ export default function DataCentersPage() {
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
               <Link
                 href="#opportunities"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#1B4332] text-sm font-medium tracking-wide hover:bg-[#FAF9F6] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#2C2C2C] text-sm font-medium tracking-wide hover:bg-[#F8F7F4] transition-colors"
                 style={{ minHeight: 48 }}
               >
                 Explore Opportunities
@@ -324,9 +324,9 @@ export default function DataCentersPage() {
             {whyUaePoints.map((point) => {
               const Icon = point.icon;
               return (
-                <div key={point.title} className="group flex flex-col bg-white border border-[#1A1A1A]/6 hover:border-[#1B4332]/25 hover:shadow-xl transition-all duration-300">
+                <div key={point.title} className="group flex flex-col bg-white border border-[#1A1A1A]/6 hover:border-[#2C2C2C]/25 hover:shadow-xl transition-all duration-300">
                   <div className={`h-36 bg-gradient-to-br ${point.gradient} flex items-center justify-center`}>
-                    <Icon className="w-10 h-10 text-[#1A1A1A]/20 group-hover:text-[#1B4332]/30 transition-colors" strokeWidth={1} />
+                    <Icon className="w-10 h-10 text-[#1A1A1A]/20 group-hover:text-[#2C2C2C]/30 transition-colors" strokeWidth={1} />
                   </div>
                   <div className="p-5 md:p-6">
                     <h3 className="font-display text-lg text-[#1A1A1A] mb-2">{point.title}</h3>
@@ -352,7 +352,7 @@ export default function DataCentersPage() {
             </p>
             <Link
               href="/united-arab-emirates/research/data-centre-investment"
-              className="inline-flex items-center gap-2 text-sm text-[#1B4332] border border-[#1B4332]/20 px-5 py-3 hover:bg-[#1B4332] hover:text-white hover:border-[#1B4332] transition-all"
+              className="inline-flex items-center gap-2 text-sm text-[#2C2C2C] border border-[#2C2C2C]/20 px-5 py-3 hover:bg-[#2C2C2C] hover:text-white hover:border-[#2C2C2C] transition-all"
             >
               Read Full Research
               <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
@@ -361,8 +361,8 @@ export default function DataCentersPage() {
           <div className="lg:col-span-7 grid sm:grid-cols-2 gap-4">
             {investmentCase.map((item) => (
               <div key={item.title} className="p-5 md:p-6 bg-white border border-[#1A1A1A]/6">
-                <div className="w-10 h-10 rounded-full bg-[#1B4332]/10 flex items-center justify-center mb-5">
-                  <TrendingUp className="w-5 h-5 text-[#1B4332]" strokeWidth={1.5} />
+                <div className="w-10 h-10 rounded-full bg-[#2C2C2C]/10 flex items-center justify-center mb-5">
+                  <TrendingUp className="w-5 h-5 text-[#2C2C2C]" strokeWidth={1.5} />
                 </div>
                 <h3 className="font-display text-lg text-[#1A1A1A] mb-2">{item.title}</h3>
                 <p className="text-sm text-[#4A4A4A] leading-relaxed">{item.detail}</p>
@@ -381,8 +381,8 @@ export default function DataCentersPage() {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
             {Object.entries(marketIntelligence).map(([key, val]) => (
-              <div key={key} className="bg-[#FAF9F6] border border-[#1A1A1A]/6 p-5 md:p-6">
-                <p className="font-display text-2xl text-[#1B4332] mb-1">{val}</p>
+              <div key={key} className="bg-[#F8F7F4] border border-[#1A1A1A]/6 p-5 md:p-6">
+                <p className="font-display text-2xl text-[#2C2C2C] mb-1">{val}</p>
                 <p className="text-[10px] uppercase tracking-[0.18em] text-[#8A8A8A]">
                   {key.replace(/([A-Z])/g, ' $1').replace(/^./, s => s.toUpperCase())}
                 </p>
@@ -403,7 +403,7 @@ export default function DataCentersPage() {
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             {expertiseSections.map((item) => (
               <div key={item.title} className="flex gap-5">
-                <Database className="w-5 h-5 text-[#B8956B] mt-1 shrink-0" strokeWidth={1.5} />
+                <Database className="w-5 h-5 text-[#8B7355] mt-1 shrink-0" strokeWidth={1.5} />
                 <div>
                   <h3 className="font-display text-xl text-[#1A1A1A] mb-3">{item.title}</h3>
                   <p className="text-sm text-[#4A4A4A] leading-relaxed">{item.body}</p>
@@ -426,7 +426,7 @@ export default function DataCentersPage() {
             </div>
             <Link
               href="/properties?assetClass=data-centers"
-              className="inline-flex items-center gap-2 text-sm text-[#4A4A4A] border border-[#1A1A1A]/10 px-5 py-3 hover:border-[#1B4332] hover:text-[#1B4332] transition-colors shrink-0"
+              className="inline-flex items-center gap-2 text-sm text-[#4A4A4A] border border-[#1A1A1A]/10 px-5 py-3 hover:border-[#2C2C2C] hover:text-[#2C2C2C] transition-colors shrink-0"
             >
               View All Data Centre Assets
               <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
@@ -435,26 +435,26 @@ export default function DataCentersPage() {
 
           <div className="grid md:grid-cols-2 gap-4 md:gap-5">
             {opportunities.map((opp) => (
-              <div key={opp.location} className="group flex flex-col bg-[#FAF9F6] border border-[#1A1A1A]/6 hover:border-[#1B4332]/25 hover:shadow-xl transition-all">
-                <div className="h-48 bg-gradient-to-br from-[#0D1F17]/25 via-[#1B4332]/10 to-[#E0EDE6] flex items-center justify-center relative">
-                  <Database className="w-14 h-14 text-[#1A1A1A]/10 group-hover:text-[#1B4332]/20 transition" strokeWidth={1} />
-                  <span className="absolute top-4 left-4 text-[9px] uppercase tracking-[0.18em] bg-[#1B4332] text-white px-2.5 py-1.5">{opp.type}</span>
+              <div key={opp.location} className="group flex flex-col bg-[#F8F7F4] border border-[#1A1A1A]/6 hover:border-[#2C2C2C]/25 hover:shadow-xl transition-all">
+                <div className="h-48 bg-gradient-to-br from-[#0D1F17]/25 via-[#2C2C2C]/10 to-[#E0EDE6] flex items-center justify-center relative">
+                  <Database className="w-14 h-14 text-[#1A1A1A]/10 group-hover:text-[#2C2C2C]/20 transition" strokeWidth={1} />
+                  <span className="absolute top-4 left-4 text-[9px] uppercase tracking-[0.18em] bg-[#2C2C2C] text-white px-2.5 py-1.5">{opp.type}</span>
                 </div>
                 <div className="p-5 md:p-6 flex flex-col flex-1">
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-[#B8956B] mb-2">{opp.location}</p>
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-[#8B7355] mb-2">{opp.location}</p>
                   <ul className="text-sm text-[#4A4A4A] space-y-1.5 mb-5">
                     {opp.highlights.map((h) => (
                       <li key={h} className="flex items-start gap-2">
-                        <span className="text-[#B8956B] mt-1 text-xs">•</span>
+                        <span className="text-[#8B7355] mt-1 text-xs">•</span>
                         <span>{h}</span>
                       </li>
                     ))}
                   </ul>
                   <div className="mt-auto flex items-center justify-between pt-5 border-t border-[#1A1A1A]/5">
-                    <span className="text-xs text-[#1B4332] font-medium">{opp.yieldNote}</span>
+                    <span className="text-xs text-[#2C2C2C] font-medium">{opp.yieldNote}</span>
                     <Link
                       href="/united-arab-emirates/contact"
-                      className="text-xs text-[#1B4332] border border-[#1B4332]/20 px-3 py-1.5 hover:bg-[#1B4332] hover:text-white transition-colors"
+                      className="text-xs text-[#2C2C2C] border border-[#2C2C2C]/20 px-3 py-1.5 hover:bg-[#2C2C2C] hover:text-white transition-colors"
                     >
                       Request Memorandum
                     </Link>
@@ -477,8 +477,8 @@ export default function DataCentersPage() {
             {faqs.map((item, idx) => (
               <details key={idx} className="group border-b border-[#1A1A1A]/10 pb-6">
                 <summary className="flex items-start justify-between cursor-pointer list-none gap-4">
-                  <span className="text-lg font-display text-[#1A1A1A] group-open:text-[#1B4332] transition-colors">{item.q}</span>
-                  <span className="text-2xl text-[#B8956B] group-open:rotate-45 transition-transform">+</span>
+                  <span className="text-lg font-display text-[#1A1A1A] group-open:text-[#2C2C2C] transition-colors">{item.q}</span>
+                  <span className="text-2xl text-[#8B7355] group-open:rotate-45 transition-transform">+</span>
                 </summary>
                 <p className="mt-4 text-sm text-[#4A4A4A] leading-relaxed">{item.a}</p>
               </details>
@@ -488,7 +488,7 @@ export default function DataCentersPage() {
       </section>
 
       {/* ═══════════════════ SECTION 7 — CTA ═══════════════════════════════ */}
-      <section className="py-24 md:py-36 lg:py-44 px-6 md:px-12 lg:px-20 bg-[#1B4332] text-white">
+      <section className="py-24 md:py-36 lg:py-44 px-6 md:px-12 lg:px-20 bg-[#2C2C2C] text-white">
         <div className="max-w-[1400px] mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           <div className="lg:col-span-7">
             <p className="text-[10px] uppercase tracking-[0.25em] text-white/50 mb-4">Private Advisory</p>
@@ -501,7 +501,7 @@ export default function DataCentersPage() {
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
               <Link
                 href="/united-arab-emirates/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#1B4332] text-sm font-medium tracking-wide hover:bg-[#FAF9F6] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#2C2C2C] text-sm font-medium tracking-wide hover:bg-[#F8F7F4] transition-colors"
                 style={{ minHeight: 48 }}
               >
                 Request a Private Consultation
@@ -526,7 +526,7 @@ export default function DataCentersPage() {
                 { label: 'Jurisdictions', value: 'UAE, Singapore, UK, US and Kenya' },
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-4 p-4 bg-white/5 border border-white/8">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#B8956B] mt-2 shrink-0" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#8B7355] mt-2 shrink-0" />
                   <div>
                     <p className="text-[10px] uppercase tracking-[0.2em] text-white/45 mb-0.5">{item.label}</p>
                     <p className="text-sm text-white/75">{item.value}</p>

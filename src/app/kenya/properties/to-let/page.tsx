@@ -40,14 +40,14 @@ interface PropertyForRent {
 // ─── Color Palette (Old Money Aesthetic) ───────────────────────────────────
 
 const COLORS = {
-  forest: "#1B4332",
+  forest: "#2C2C2C",
   forestLight: "#2D5A45",
-  cream: "#FAF9F6",
+  cream: "#F8F7F4",
   creamDark: "#F5F4F0",
-  brass: "#B8956B",
+  brass: "#8B7355",
   charcoal: "#2C2C2C",
-  stone: "#8B8680",
-  border: "#E8E6E1",
+  stone: "#5A5A5A",
+  border: "#E5E2DC",
 };
 
 // ─── Property Card ──────────────────────────────────────────────────────────
@@ -69,7 +69,7 @@ const PropertyCard: React.FC<{
     >
       <Link
         href={`/ke-properties/for-rent/${property.slug}`}
-        className="group block bg-white border border-[#E8E6E1] hover:border-[#B8956B] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-500"
+        className="group block bg-white border border-[#E5E2DC] hover:border-[#8B7355] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-500"
       >
         {/* Image */}
         <div className="relative h-[260px] overflow-hidden bg-[#F5F4F0]">
@@ -90,11 +90,11 @@ const PropertyCard: React.FC<{
           {/* Badges */}
           <div className="absolute top-4 left-4 flex flex-col gap-2">
             {property.featured && (
-              <span className="bg-[#B8956B] text-white text-[9px] tracking-[0.2em] uppercase px-3 py-1.5 font-medium">
+              <span className="bg-[#8B7355] text-white text-[9px] tracking-[0.2em] uppercase px-3 py-1.5 font-medium">
                 Featured
               </span>
             )}
-            <span className="bg-[#1B4332] text-white text-[9px] tracking-[0.2em] uppercase px-3 py-1.5 font-medium">
+            <span className="bg-[#2C2C2C] text-white text-[9px] tracking-[0.2em] uppercase px-3 py-1.5 font-medium">
               {property.propertyType}
             </span>
           </div>
@@ -110,7 +110,7 @@ const PropertyCard: React.FC<{
           {/* Quick view hint */}
           <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="w-9 h-9 bg-white/90 flex items-center justify-center">
-              <ArrowUpRight className="w-4 h-4 text-[#1B4332]" strokeWidth={1.5} />
+              <ArrowUpRight className="w-4 h-4 text-[#2C2C2C]" strokeWidth={1.5} />
             </div>
           </div>
         </div>
@@ -118,10 +118,10 @@ const PropertyCard: React.FC<{
         {/* Content */}
         <div className="p-6 space-y-4">
           <div>
-            <h3 className="text-base font-serif text-[#2C2C2C] leading-snug mb-1 group-hover:text-[#1B4332] transition-colors">
+            <h3 className="text-base font-serif text-[#2C2C2C] leading-snug mb-1 group-hover:text-[#2C2C2C] transition-colors">
               {property.title}
             </h3>
-            <div className="flex items-center gap-1.5 text-[#8B8680]">
+            <div className="flex items-center gap-1.5 text-[#5A5A5A]">
               <MapPin className="w-3.5 h-3.5 flex-shrink-0" strokeWidth={1.5} />
               <span className="text-[12px] tracking-wide">
                 {property.neighborhood}, {property.city}
@@ -129,11 +129,11 @@ const PropertyCard: React.FC<{
             </div>
           </div>
 
-          <div className="h-px bg-[#E8E6E1]" />
+          <div className="h-px bg-[#E5E2DC]" />
 
           <div className="flex items-end justify-between">
             <div>
-              <p className="text-[9px] tracking-[0.2em] uppercase text-[#B8956B] font-medium mb-1">
+              <p className="text-[9px] tracking-[0.2em] uppercase text-[#8B7355] font-medium mb-1">
                 Asking Rent
               </p>
               <p className="text-lg font-serif text-[#2C2C2C]">
@@ -142,7 +142,7 @@ const PropertyCard: React.FC<{
             </div>
             {sizeLabel && (
               <div className="text-right">
-                <p className="text-[9px] tracking-[0.2em] uppercase text-[#8B8680] font-medium mb-1">
+                <p className="text-[9px] tracking-[0.2em] uppercase text-[#5A5A5A] font-medium mb-1">
                   Size Range
                 </p>
                 <p className="text-[12px] text-[#2C2C2C]">{sizeLabel}</p>
@@ -155,11 +155,11 @@ const PropertyCard: React.FC<{
               <span
                 className={`w-1.5 h-1.5 rounded-full ${
                   property.availabilityStatus.toLowerCase().includes("available")
-                    ? "bg-[#1B4332]"
-                    : "bg-[#B8956B]"
+                    ? "bg-[#2C2C2C]"
+                    : "bg-[#8B7355]"
                 }`}
               />
-              <span className="text-[10px] tracking-[0.1em] uppercase text-[#8B8680]">
+              <span className="text-[10px] tracking-[0.1em] uppercase text-[#5A5A5A]">
                 {property.availabilityStatus}
               </span>
             </div>
@@ -244,14 +244,14 @@ export default function PropertiesForRentPage() {
     selectedType !== "All" || selectedCity !== "All" || selectedGrade !== "All" || searchTerm;
 
   return (
-    <div className="min-h-screen bg-[#FAF9F6]" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen bg-[#F8F7F4]" style={{ fontFamily: "'Inter', sans-serif" }}>
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="bg-[#1B4332] pt-20 pb-16 px-6 lg:px-12">
+      <section className="bg-[#2C2C2C] pt-20 pb-16 px-6 lg:px-12">
         <div className="max-w-[1600px] mx-auto">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div>
-              <p className="text-[10px] tracking-[0.35em] uppercase text-[#B8956B] font-medium mb-5">
+              <p className="text-[10px] tracking-[0.35em] uppercase text-[#8B7355] font-medium mb-5">
                 Commercial Portfolio · Kenya
               </p>
               <h1
@@ -265,9 +265,9 @@ export default function PropertiesForRentPage() {
                 Grade A facilities in Nairobi's foremost business corridors.
               </p>
             </div>
-            <div className="flex items-center gap-2 text-[#B8956B]">
+            <div className="flex items-center gap-2 text-[#8B7355]">
               <Shield className="w-4 h-4" strokeWidth={1.5} />
-              <span className="text-[10px] tracking-[0.3em] uppercase text-[#B8956B]/80">
+              <span className="text-[10px] tracking-[0.3em] uppercase text-[#8B7355]/80">
                 Mandated Advisory
               </span>
             </div>
@@ -276,13 +276,13 @@ export default function PropertiesForRentPage() {
       </section>
 
       {/* ── Filter Bar ───────────────────────────────────────────────── */}
-      <div className="bg-white border-b border-[#E8E6E1] py-5 px-6 lg:px-12 sticky top-0 z-30">
+      <div className="bg-white border-b border-[#E5E2DC] py-5 px-6 lg:px-12 sticky top-0 z-30">
         <div className="max-w-[1600px] mx-auto flex flex-wrap items-center gap-3 lg:gap-6">
 
           {/* Search */}
           <div className="relative flex-1 min-w-[200px] max-w-sm">
             <Search
-              className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-[#8B8680]"
+              className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-[#5A5A5A]"
               strokeWidth={1.5}
             />
             <input
@@ -290,19 +290,19 @@ export default function PropertiesForRentPage() {
               placeholder="Search by location or asset name..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full bg-transparent border-b border-[#E8E6E1] focus:border-[#1B4332] pl-7 pr-7 py-2.5 text-[13px] text-[#2C2C2C] placeholder:text-[#8B8680]/60 outline-none transition-colors font-light tracking-wide"
+              className="w-full bg-transparent border-b border-[#E5E2DC] focus:border-[#2C2C2C] pl-7 pr-7 py-2.5 text-[13px] text-[#2C2C2C] placeholder:text-[#5A5A5A]/60 outline-none transition-colors font-light tracking-wide"
             />
             {searchTerm && (
               <button
                 onClick={() => setSearchTerm("")}
                 className="absolute right-0 top-1/2 -translate-y-1/2"
               >
-                <X className="w-4 h-4 text-[#8B8680] hover:text-[#1B4332] transition-colors" />
+                <X className="w-4 h-4 text-[#5A5A5A] hover:text-[#2C2C2C] transition-colors" />
               </button>
             )}
           </div>
 
-          <div className="w-px h-6 bg-[#E8E6E1] hidden lg:block" />
+          <div className="w-px h-6 bg-[#E5E2DC] hidden lg:block" />
 
           {/* Property Type Dropdown */}
           <FilterDropdown
@@ -334,10 +334,10 @@ export default function PropertiesForRentPage() {
             onSelect={(v) => { setSelectedGrade(v); setIsGradeOpen(false); }}
           />
 
-          <div className="w-px h-6 bg-[#E8E6E1] hidden lg:block" />
+          <div className="w-px h-6 bg-[#E5E2DC] hidden lg:block" />
 
           {/* Count */}
-          <span className="text-[11px] text-[#8B8680] tracking-wide hidden md:block">
+          <span className="text-[11px] text-[#5A5A5A] tracking-wide hidden md:block">
             {loading ? "—" : `${filteredProperties.length} ${filteredProperties.length === 1 ? "Asset" : "Assets"}`}
           </span>
 
@@ -345,7 +345,7 @@ export default function PropertiesForRentPage() {
           {hasActiveFilters && (
             <button
               onClick={clearFilters}
-              className="flex items-center gap-1.5 text-[10px] tracking-[0.15em] uppercase text-[#B8956B] hover:text-[#1B4332] transition-colors"
+              className="flex items-center gap-1.5 text-[10px] tracking-[0.15em] uppercase text-[#8B7355] hover:text-[#2C2C2C] transition-colors"
             >
               <X className="w-3 h-3" />
               Clear
@@ -358,19 +358,19 @@ export default function PropertiesForRentPage() {
       <section className="max-w-[1600px] mx-auto px-6 lg:px-12 py-16">
         {loading ? (
           <div className="text-center py-32">
-            <div className="w-8 h-8 border border-[#1B4332] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-            <p className="text-[11px] tracking-[0.2em] uppercase text-[#8B8680]">
+            <div className="w-8 h-8 border border-[#2C2C2C] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+            <p className="text-[11px] tracking-[0.2em] uppercase text-[#5A5A5A]">
               Retrieving portfolio…
             </p>
           </div>
         ) : filteredProperties.length === 0 ? (
           <div className="text-center py-32">
-            <p className="text-xl font-serif text-[#8B8680] italic mb-6">
+            <p className="text-xl font-serif text-[#5A5A5A] italic mb-6">
               No assets match your current criteria.
             </p>
             <button
               onClick={clearFilters}
-              className="text-[11px] tracking-[0.2em] uppercase text-[#1B4332] border border-[#1B4332] px-6 py-3 hover:bg-[#1B4332] hover:text-white transition-colors"
+              className="text-[11px] tracking-[0.2em] uppercase text-[#2C2C2C] border border-[#2C2C2C] px-6 py-3 hover:bg-[#2C2C2C] hover:text-white transition-colors"
             >
               Clear Filters
             </button>
@@ -385,14 +385,14 @@ export default function PropertiesForRentPage() {
       </section>
 
       {/* ── SEO / Editorial Content ───────────────────────────────────── */}
-      <section className="bg-white border-t border-[#E8E6E1] py-20 px-6 lg:px-12">
+      <section className="bg-white border-t border-[#E5E2DC] py-20 px-6 lg:px-12">
         <div className="max-w-[1600px] mx-auto">
           <div className="grid lg:grid-cols-12 gap-12">
 
             {/* Main copy */}
             <div className="lg:col-span-7 space-y-8">
               <div>
-                <p className="text-[10px] tracking-[0.3em] uppercase text-[#B8956B] font-medium mb-4">
+                <p className="text-[10px] tracking-[0.3em] uppercase text-[#8B7355] font-medium mb-4">
                   Market Intelligence · 2026
                 </p>
                 <h2
@@ -419,11 +419,11 @@ export default function PropertiesForRentPage() {
               <div>
                 <h3 className="text-[11px] tracking-[0.25em] uppercase text-[#2C2C2C] font-medium mb-6 flex items-center gap-3">
                   <div className="w-8 h-8 bg-[#F5F4F0] flex items-center justify-center">
-                    <MapPin className="w-3.5 h-3.5 text-[#1B4332]" strokeWidth={1.5} />
+                    <MapPin className="w-3.5 h-3.5 text-[#2C2C2C]" strokeWidth={1.5} />
                   </div>
                   Key Office Locations
                 </h3>
-                <div className="grid md:grid-cols-2 gap-px bg-[#E8E6E1] border border-[#E8E6E1]">
+                <div className="grid md:grid-cols-2 gap-px bg-[#E5E2DC] border border-[#E5E2DC]">
                   {[
                     {
                       name: "Westlands",
@@ -446,7 +446,7 @@ export default function PropertiesForRentPage() {
                       <h4 className="text-[11px] tracking-[0.15em] uppercase text-[#2C2C2C] font-medium">
                         {loc.name}
                       </h4>
-                      <p className="text-[13px] text-[#8B8680] leading-relaxed font-light">
+                      <p className="text-[13px] text-[#5A5A5A] leading-relaxed font-light">
                         {loc.desc}
                       </p>
                     </div>
@@ -457,9 +457,9 @@ export default function PropertiesForRentPage() {
 
             {/* Keyword sidebar */}
             <div className="lg:col-span-5">
-              <div className="bg-[#F5F4F0] border border-[#E8E6E1] p-8">
+              <div className="bg-[#F5F4F0] border border-[#E5E2DC] p-8">
                 <div className="flex items-center gap-2 mb-6">
-                  <Layers className="w-4 h-4 text-[#B8956B]" strokeWidth={1.5} />
+                  <Layers className="w-4 h-4 text-[#8B7355]" strokeWidth={1.5} />
                   <h3 className="text-[10px] tracking-[0.25em] uppercase text-[#2C2C2C] font-medium">
                     Most Searched
                   </h3>
@@ -489,7 +489,7 @@ export default function PropertiesForRentPage() {
                   ].map((kw) => (
                     <span
                       key={kw}
-                      className="bg-white border border-[#E8E6E1] text-[#8B8680] text-[11px] px-3 py-1.5 tracking-wide"
+                      className="bg-white border border-[#E5E2DC] text-[#5A5A5A] text-[11px] px-3 py-1.5 tracking-wide"
                     >
                       {kw}
                     </span>
@@ -503,15 +503,15 @@ export default function PropertiesForRentPage() {
       </section>
 
       {/* ── Footer ───────────────────────────────────────────────────── */}
-      <footer className="border-t border-[#E8E6E1] bg-white py-12 px-6 lg:px-12">
+      <footer className="border-t border-[#E5E2DC] bg-white py-12 px-6 lg:px-12">
         <div className="max-w-[1600px] mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Shield className="w-4 h-4 text-[#B8956B]" strokeWidth={1.5} />
-            <span className="text-[10px] tracking-[0.3em] uppercase text-[#8B8680]">
+            <Shield className="w-4 h-4 text-[#8B7355]" strokeWidth={1.5} />
+            <span className="text-[10px] tracking-[0.3em] uppercase text-[#5A5A5A]">
               Mandated Advisory
             </span>
           </div>
-          <p className="text-[11px] text-[#8B8680] leading-relaxed max-w-2xl mx-auto font-light">
+          <p className="text-[11px] text-[#5A5A5A] leading-relaxed max-w-2xl mx-auto font-light">
             All properties are subject to availability and require qualified tenant verification.
             Full due diligence materials provided upon request. Murivest Realty Ltd is a licensed
             real estate agency regulated by the Estate Agents Registration Board of Kenya.
@@ -551,7 +551,7 @@ function FilterDropdown({
     <div className="relative z-30">
       <button
         onClick={onToggle}
-        className="flex items-center gap-2 px-4 py-2 text-[10px] tracking-[0.15em] uppercase border border-[#E8E6E1] hover:border-[#1B4332] hover:text-[#1B4332] transition-colors text-[#8B8680]"
+        className="flex items-center gap-2 px-4 py-2 text-[10px] tracking-[0.15em] uppercase border border-[#E5E2DC] hover:border-[#2C2C2C] hover:text-[#2C2C2C] transition-colors text-[#5A5A5A]"
       >
         <SlidersHorizontal className="w-3 h-3" />
         {value === "All" ? label : value}
@@ -564,7 +564,7 @@ function FilterDropdown({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 4 }}
             transition={{ duration: 0.15 }}
-            className="absolute top-full left-0 mt-1 bg-white border border-[#E8E6E1] shadow-xl z-50 min-w-[180px]"
+            className="absolute top-full left-0 mt-1 bg-white border border-[#E5E2DC] shadow-xl z-50 min-w-[180px]"
           >
             {options.map((opt) => (
               <button
@@ -572,8 +572,8 @@ function FilterDropdown({
                 onClick={() => onSelect(opt)}
                 className={`w-full text-left px-4 py-3 text-[11px] tracking-[0.1em] uppercase transition-colors ${
                   value === opt
-                    ? "bg-[#F5F4F0] text-[#1B4332] font-medium"
-                    : "hover:bg-[#FAF9F6] text-[#8B8680]"
+                    ? "bg-[#F5F4F0] text-[#2C2C2C] font-medium"
+                    : "hover:bg-[#F8F7F4] text-[#5A5A5A]"
                 }`}
               >
                 {opt}

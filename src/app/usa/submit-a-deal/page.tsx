@@ -13,13 +13,13 @@ export const metadata: Metadata = {
 export default function SubmitADealPage() {
   return (
     <>
-      <section className="bg-[#0F2E22] py-20">
+      <section className="bg-[#2C2C2C] py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <Eyebrow className="text-gold-400">Submit a Deal</Eyebrow>
+          <Eyebrow className="text-[#8B7355]">Submit a Deal</Eyebrow>
           <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl">
             Submit an Opportunity
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[#C9A87C]">
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[#8B7355]">
             Owners, developers, brokers, and intermediaries may submit commercial
             real estate opportunities for Murivest&apos;s consideration. All
             submissions are treated with strict confidentiality.
@@ -38,11 +38,11 @@ export default function SubmitADealPage() {
           </div>
 
           <div className="lg:col-span-2">
-            <div className="rounded-2xl border border-[#E8E6E1] bg-[#FAF9F6] p-8">
+            <div className="rounded-2xl border border-[#E5E2DC] bg-[#F8F7F4] p-8">
               <h3 className="font-serif text-xl font-semibold text-[#2C2C2C]">
                 What happens next
               </h3>
-              <ol className="mt-4 space-y-3 text-sm text-[#8B8680] list-decimal list-inside">
+              <ol className="mt-4 space-y-3 text-sm text-[#5A5A5A] list-decimal list-inside">
                 <li>Our team reviews the submission for mandate alignment.</li>
                 <li>
                   If the opportunity fits our current focus, we will reach out to

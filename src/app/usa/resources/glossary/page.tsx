@@ -13,13 +13,13 @@ export const metadata: Metadata = {
 export default function GlossaryPage() {
   return (
     <>
-      <section className="bg-[#0F2E22] py-20">
+      <section className="bg-[#2C2C2C] py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <Eyebrow className="text-gold-400">Resources</Eyebrow>
+          <Eyebrow className="text-[#8B7355]">Resources</Eyebrow>
           <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl">
             CRE Glossary
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[#C9A87C]">
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[#8B7355]">
             A reference guide to commercial real estate terms, metrics, and
             concepts — from cap rates and NOI to lease structures and
             underwriting frameworks. Written for institutional capital and
@@ -29,11 +29,11 @@ export default function GlossaryPage() {
       </section>
 
       <Section className="py-20">
-        <div className="rounded-2xl border border-[#E8E6E1] bg-[#FAF9F6] p-12 text-center">
-          <p className="font-serif text-2xl text-[#B8956B]">
+        <div className="rounded-2xl border border-[#E5E2DC] bg-[#F8F7F4] p-12 text-center">
+          <p className="font-serif text-2xl text-[#8B7355]">
             The CRE glossary will be published here as it becomes available.
           </p>
-          <p className="mt-4 text-[#8B8680]">
+          <p className="mt-4 text-[#5A5A5A]">
             Murivest Research maintains a comprehensive glossary of commercial
             real estate terms and concepts. To receive notifications when new
             entries are published, please request a research subscription.
@@ -41,13 +41,13 @@ export default function GlossaryPage() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
             <a
               href="/usa/invest/criteria"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#1B4332] px-6 py-3 text-sm font-semibold text-white hover:bg-[#B8956B]"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#2C2C2C] px-6 py-3 text-sm font-semibold text-white hover:bg-[#8B7355]"
             >
               Define Your Criteria
             </a>
             <a
               href="/usa/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#E8E6E1] px-6 py-3 text-sm font-semibold text-[#B8956B] hover:border-[#B8956B]"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#E5E2DC] px-6 py-3 text-sm font-semibold text-[#8B7355] hover:border-[#8B7355]"
             >
               Contact Research Team
             </a>

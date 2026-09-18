@@ -13,13 +13,13 @@ export const metadata: Metadata = {
 export default function DevelopersPage() {
   return (
     <>
-      <section className="bg-[#0F2E22] py-20">
+      <section className="bg-[#2C2C2C] py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <Eyebrow className="text-gold-400">Developers</Eyebrow>
+          <Eyebrow className="text-[#8B7355]">Developers</Eyebrow>
           <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl">
             Developer Support & Capital
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[#C9A87C]">
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[#8B7355]">
             Murivest supports commercial real estate developers with capital
             sourcing, land acquisition, joint venture structuring, and exit
             strategies. We act as an intermediary between developers and the
@@ -32,46 +32,46 @@ export default function DevelopersPage() {
         <div className="grid gap-8 lg:grid-cols-3">
           <a
             href="/usa/developers/development-sites"
-            className="group rounded-2xl border border-[#E8E6E1] bg-white p-8 transition-all hover:border-[#B8956B] hover:shadow-lg"
+            className="group rounded-2xl border border-[#E5E2DC] bg-white p-8 transition-all hover:border-[#8B7355] hover:shadow-lg"
           >
-            <h3 className="font-serif text-2xl font-semibold text-[#2C2C2C] group-hover:text-[#B8956B]">
+            <h3 className="font-serif text-2xl font-semibold text-[#2C2C2C] group-hover:text-[#8B7355]">
               Development Sites
             </h3>
-            <p className="mt-3 text-[#8B8680]">
+            <p className="mt-3 text-[#5A5A5A]">
               Site sourcing and entitlement support for ground-up commercial
               development across the United States.
             </p>
-            <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#B8956B]">
+            <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#8B7355]">
               Learn more <span aria-hidden="true">→</span>
             </span>
           </a>
           <a
             href="/usa/developers/land"
-            className="group rounded-2xl border border-[#E8E6E1] bg-white p-8 transition-all hover:border-[#B8956B] hover:shadow-lg"
+            className="group rounded-2xl border border-[#E5E2DC] bg-white p-8 transition-all hover:border-[#8B7355] hover:shadow-lg"
           >
-            <h3 className="font-serif text-2xl font-semibold text-[#2C2C2C] group-hover:text-[#B8956B]">
+            <h3 className="font-serif text-2xl font-semibold text-[#2C2C2C] group-hover:text-[#8B7355]">
               Land Acquisition
             </h3>
-            <p className="mt-3 text-[#8B8680]">
+            <p className="mt-3 text-[#5A5A5A]">
               Land banking and acquisition support for developers seeking
               entitled and entitled-to-be sites in growth markets.
             </p>
-            <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#B8956B]">
+            <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#8B7355]">
               Learn more <span aria-hidden="true">→</span>
             </span>
           </a>
           <a
             href="/usa/developers/joint-ventures"
-            className="group rounded-2xl border border-[#E8E6E1] bg-white p-8 transition-all hover:border-[#B8956B] hover:shadow-lg"
+            className="group rounded-2xl border border-[#E5E2DC] bg-white p-8 transition-all hover:border-[#8B7355] hover:shadow-lg"
           >
-            <h3 className="font-serif text-2xl font-semibold text-[#2C2C2C] group-hover:text-[#B8956B]">
+            <h3 className="font-serif text-2xl font-semibold text-[#2C2C2C] group-hover:text-[#8B7355]">
               Joint Ventures
             </h3>
-            <p className="mt-3 text-[#8B8680]">
+            <p className="mt-3 text-[#5A5A5A]">
               Joint venture structuring and capital partner introductions for
               development projects requiring equity, debt, or both.
             </p>
-            <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#B8956B]">
+            <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#8B7355]">
               Learn more <span aria-hidden="true">→</span>
             </span>
           </a>

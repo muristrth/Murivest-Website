@@ -13,13 +13,14 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-[#0F2E22] py-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <Eyebrow className="text-gold-400">About</Eyebrow>
-          <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl">
-            The Concierge of Capital
+      <section className="bg-[#2C2C2C] py-24 lg:py-32">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-12 lg:px-16">
+          <Eyebrow>About</Eyebrow>
+          <h1 className="mt-6 font-serif text-4xl leading-tight text-[#F8F7F4] sm:text-5xl lg:text-6xl">
+            The <span className="italic font-light text-[#8B7355]">Concierge</span> of Capital
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[#C9A87C]">
+          <div className="mt-8 h-px w-16 bg-[#F8F7F4]/20" />
+          <p className="mt-8 max-w-3xl text-[15px] leading-[1.8] text-[#F8F7F4]/65 font-light">
             Murivest is an independent commercial real estate advisory firm
             representing institutional investors, private capital, and principals
             across U.S. office, industrial, logistics, multifamily, retail, and
@@ -28,14 +29,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <Section className="py-20">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+      <Section className="py-24 lg:py-36">
+        <div className="grid gap-16 lg:grid-cols-12 lg:items-center">
           <div>
             <Eyebrow>Our Philosophy</Eyebrow>
-            <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight text-[#2C2C2C] sm:text-4xl">
+            <h2 className="mt-6 font-serif text-3xl leading-[1.1] text-[#2C2C2C] sm:text-4xl lg:text-[2.75rem]">
               Built for investors who demand institutional-quality execution
             </h2>
-            <div className="mt-6 space-y-4 text-lg leading-relaxed text-[#8B8680]">
+            <div className="mt-8 space-y-5 text-[14px] leading-[1.9] text-[#5A5A5A] font-light">
               <p>
                 Murivest was founded to address a gap in the U.S. commercial real
                 estate market: institutional-quality advisory delivered with the
@@ -57,28 +58,23 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-px border border-[#E5E2DC] bg-[#E5E2DC] sm:grid-cols-2 lg:col-span-5">
             {[
               { stat: "6", label: "Property type specializations" },
               { stat: "40+", label: "U.S. metro markets covered" },
               { stat: "100%", label: "Mandate-based engagements" },
               { stat: "0", label: "Proprietary fund conflicts" },
             ].map((item) => (
-              <div
-                key={item.label}
-                className="rounded-xl border border-[#E8E6E1] bg-white p-6"
-              >
-                <div className="font-serif text-4xl font-semibold text-[#B8956B]">
-                  {item.stat}
-                </div>
-                <div className="mt-2 text-sm text-[#8B8680]">{item.label}</div>
+              <div key={item.label} className="bg-white p-8">
+                <div className="font-serif text-3xl text-[#2C2C2C]">{item.stat}</div>
+                <div className="mt-2 text-[11px] tracking-[0.15em] uppercase text-[#5A5A5A]">{item.label}</div>
               </div>
             ))}
           </div>
         </div>
       </Section>
 
-      <Section className="py-20 bg-[#FAF9F6]">
+      <Section className="py-20 bg-[#F8F7F4]">
         <SectionHeading
           eyebrow="How We Work"
           title="A disciplined, transparent engagement model"
@@ -108,13 +104,13 @@ export default function AboutPage() {
             },
           ].map((step) => (
             <div key={step.number} className="relative">
-              <div className="font-serif text-5xl font-semibold text-[#FAF9F6]">
+              <div className="font-serif text-5xl font-semibold text-[#F8F7F4]">
                 {step.number}
               </div>
               <h3 className="mt-3 font-serif text-xl font-semibold text-[#2C2C2C]">
                 {step.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+              <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
                 {step.text}
               </p>
             </div>

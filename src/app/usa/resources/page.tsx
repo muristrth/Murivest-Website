@@ -104,13 +104,13 @@ export default function ResourcesPage() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#1B4332] py-24">
+      <section className="relative overflow-hidden bg-[#2C2C2C] py-24">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-ink-950 to-ink-900" />
+          <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-[#2C2C2C] to-[#2C2C2C]" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <Eyebrow className="text-gold-400">Resources</Eyebrow>
+            <Eyebrow className="text-[#8B7355]">Resources</Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl text-balance">
               Institutional knowledge for U.S. commercial real estate
             </h1>
@@ -135,20 +135,20 @@ export default function ResourcesPage() {
             <Link
               key={cat.title}
               href={cat.href}
-              className="group flex flex-col rounded-xl border border-[#E8E6E1] bg-white p-6 transition-all hover:border-[#B8956B] hover:shadow-lg hover:shadow-ink-900/5"
+              className="group flex flex-col rounded-xl border border-[#E5E2DC] bg-white p-6 transition-all hover:border-[#8B7355] hover:shadow-lg hover:shadow-[#2C2C2C]/5"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#1B4332] text-gold-400 transition-colors group-hover:bg-[#B8956B]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#2C2C2C] text-[#8B7355] transition-colors group-hover:bg-[#8B7355]">
                 <cat.icon size={22} />
               </div>
-              <h3 className="mt-4 font-serif text-xl font-semibold text-[#2C2C2C] group-hover:text-[#B8956B] transition-colors">
+              <h3 className="mt-4 font-serif text-xl font-semibold text-[#2C2C2C] group-hover:text-[#8B7355] transition-colors">
                 {cat.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+              <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
                 {cat.description}
               </p>
               <ArrowRight
                 size={18}
-                className="mt-5 self-start text-[#FAF9F6] transition-all group-hover:translate-x-1 group-hover:text-[#C9A87C]"
+                className="mt-5 self-start text-[#F8F7F4] transition-all group-hover:translate-x-1 group-hover:text-[#8B7355]"
               />
             </Link>
           ))}
@@ -156,7 +156,7 @@ export default function ResourcesPage() {
       </Section>
 
       {/* Cross-links */}
-      <Section className="py-20 bg-[#FAF9F6]">
+      <Section className="py-20 bg-[#F8F7F4]">
         <div className="grid gap-12 md:grid-cols-2">
           <div>
             <SectionHeading
@@ -166,7 +166,7 @@ export default function ResourcesPage() {
             />
             <Link
               href="/usa/research"
-              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#B8956B] hover:text-[#C9A87C] transition-colors"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#8B7355] hover:text-[#8B7355] transition-colors"
             >
               Browse research
               <ArrowRight size={16} />
@@ -180,7 +180,7 @@ export default function ResourcesPage() {
             />
             <Link
               href="/usa/submit-a-deal"
-              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#B8956B] hover:text-[#C9A87C] transition-colors"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#8B7355] hover:text-[#8B7355] transition-colors"
             >
               Submit a deal
               <ArrowRight size={16} />

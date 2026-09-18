@@ -178,30 +178,30 @@ function DealCard({ deal, index }: { deal: typeof ACTIVE_DEALS[0]; index: number
     <FadeIn delay={index * 0.06}>
       <div className={`h-full flex flex-col border transition-colors group ${
         deal.featured
-          ? 'border-[#B8956B]/40 hover:border-[#B8956B]/80'
-          : 'border-[#B8956B]/15 hover:border-[#B8956B]/50'
+          ? 'border-[#8B7355]/40 hover:border-[#8B7355]/80'
+          : 'border-[#8B7355]/15 hover:border-[#8B7355]/50'
       } bg-[#0B1F14] hover:bg-[#0F2818]`}>
 
         {/* Card header */}
-        <div className="px-7 pt-7 pb-5 border-b border-[#B8956B]/10">
+        <div className="px-7 pt-7 pb-5 border-b border-[#8B7355]/10">
           <div className="flex justify-between items-start gap-3 mb-4">
             <span className="text-[10px] font-mono text-[#5A5450]">{deal.id}</span>
             <StatusBadge status={deal.status} color={deal.statusColor} />
           </div>
-          <p className="text-[10px] uppercase tracking-widest text-[#8B8680] mb-2">{deal.type}</p>
+          <p className="text-[10px] uppercase tracking-widest text-[#5A5A5A] mb-2">{deal.type}</p>
           <h3 className="font-serif text-xl leading-tight">{deal.title}</h3>
           <p className="text-[12px] text-[#5A5450] mt-1">{deal.location}</p>
         </div>
 
         {/* Key metrics */}
-        <div className="px-7 py-5 grid grid-cols-2 gap-4 border-b border-[#B8956B]/10">
+        <div className="px-7 py-5 grid grid-cols-2 gap-4 border-b border-[#8B7355]/10">
           <div>
             <p className="text-[9px] uppercase tracking-widest text-[#5A5450] mb-1">Yield</p>
-            <p className="text-[#B8956B] font-serif text-2xl">{deal.yield}</p>
+            <p className="text-[#8B7355] font-serif text-2xl">{deal.yield}</p>
           </div>
           <div>
             <p className="text-[9px] uppercase tracking-widest text-[#5A5450] mb-1">Cap Rate</p>
-            <p className="text-[#B8956B] font-serif text-2xl">{deal.capRate}</p>
+            <p className="text-[#8B7355] font-serif text-2xl">{deal.capRate}</p>
           </div>
           <div>
             <p className="text-[9px] uppercase tracking-widest text-[#5A5450] mb-1">Occupancy</p>
@@ -231,11 +231,11 @@ function DealCard({ deal, index }: { deal: typeof ACTIVE_DEALS[0]; index: number
         </div>
 
         {/* CTA */}
-        <div className="px-7 pb-7 pt-4 border-t border-[#B8956B]/10 flex justify-between items-center">
+        <div className="px-7 pb-7 pt-4 border-t border-[#8B7355]/10 flex justify-between items-center">
           <span className="text-[9px] text-[#5A5450]">{deal.access}</span>
           <Link
             href="/cim-request"
-            className="text-[10px] uppercase tracking-widest text-[#B8956B]/50 group-hover:text-[#B8956B] transition-colors"
+            className="text-[10px] uppercase tracking-widest text-[#8B7355]/50 group-hover:text-[#8B7355] transition-colors"
           >
             Request CIM →
           </Link>
@@ -260,15 +260,15 @@ export default function DealRoomPage() {
     <div className="min-h-screen bg-[#0B1F14] text-[#F0EDE6]">
 
       {/* ── MASTHEAD ── */}
-      <section className="border-b border-[#B8956B]/20">
+      <section className="border-b border-[#8B7355]/20">
         <div className="px-6 lg:px-20 pt-24 pb-16 max-w-screen-2xl mx-auto">
 
           <div className="flex items-center gap-3 mb-12">
-            <span className="text-[9px] tracking-[0.5em] uppercase text-[#B8956B] font-mono">
+            <span className="text-[9px] tracking-[0.5em] uppercase text-[#8B7355] font-mono">
               Murivest Capital Markets
             </span>
-            <span className="w-12 h-px bg-[#B8956B]/40" />
-            <span className="text-[9px] tracking-[0.5em] uppercase text-[#8B8680] font-mono">
+            <span className="w-12 h-px bg-[#8B7355]/40" />
+            <span className="text-[9px] tracking-[0.5em] uppercase text-[#5A5A5A] font-mono">
               Institutional Deal Room
             </span>
           </div>
@@ -283,7 +283,7 @@ export default function DealRoomPage() {
               >
                 Off-Market
                 <br />
-                <span className="text-[#B8956B] italic">Deal Access</span>
+                <span className="text-[#8B7355] italic">Deal Access</span>
               </motion.h1>
 
               <motion.p
@@ -303,13 +303,13 @@ export default function DealRoomPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.7 }}
-              className="border border-[#B8956B]/30 p-8"
+              className="border border-[#8B7355]/30 p-8"
             >
-              <p className="text-[9px] tracking-[0.5em] uppercase text-[#B8956B] font-mono mb-1">
+              <p className="text-[9px] tracking-[0.5em] uppercase text-[#8B7355] font-mono mb-1">
                 Access Control
               </p>
               <h2 className="font-serif text-xl mt-3">Restricted to Qualified Investors</h2>
-              <p className="text-[12px] text-[#8B8680] mt-3 leading-relaxed">
+              <p className="text-[12px] text-[#5A5A5A] mt-3 leading-relaxed">
                 This deal room serves institutional investors, sovereign wealth funds, licensed
                 REITs, pension funds, and UHNW private capital. Full financial disclosure is
                 unlocked after NDA execution and capital verification.
@@ -318,13 +318,13 @@ export default function DealRoomPage() {
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
                 <Link
                   href="/compliance"
-                  className="px-6 py-3 bg-[#B8956B] text-[#0B1F14] text-[11px] uppercase tracking-[0.18em] font-semibold hover:bg-[#CDA97C] transition-colors text-center"
+                  className="px-6 py-3 bg-[#8B7355] text-[#0B1F14] text-[11px] uppercase tracking-[0.18em] font-semibold hover:bg-[#CDA97C] transition-colors text-center"
                 >
                   Verify Investor Status
                 </Link>
                 <Link
                   href="/cim-request"
-                  className="px-6 py-3 border border-[#B8956B]/50 text-[11px] uppercase tracking-[0.18em] hover:border-[#B8956B] transition-colors text-center"
+                  className="px-6 py-3 border border-[#8B7355]/50 text-[11px] uppercase tracking-[0.18em] hover:border-[#8B7355] transition-colors text-center"
                 >
                   Request CIM Access
                 </Link>
@@ -332,7 +332,7 @@ export default function DealRoomPage() {
 
               <button
                 onClick={() => setAccessExpanded(!accessExpanded)}
-                className="mt-4 text-[10px] uppercase tracking-widest text-[#5A5450] hover:text-[#8B8680] transition-colors"
+                className="mt-4 text-[10px] uppercase tracking-widest text-[#5A5450] hover:text-[#5A5A5A] transition-colors"
               >
                 {accessExpanded ? '– Collapse' : '+ Eligible Investor Types'}
               </button>
@@ -345,8 +345,8 @@ export default function DealRoomPage() {
                 >
                   {['REITs (listed or private)', 'Sovereign Wealth Funds', 'Pension Funds', 'Licensed Family Offices', 'Private Equity Real Estate Funds', 'UHNW Individuals (>$10M investable)'].map((t) => (
                     <div key={t} className="flex items-center gap-3">
-                      <span className="w-1 h-1 rounded-full bg-[#B8956B]/50 flex-shrink-0" />
-                      <span className="text-[11px] text-[#8B8680]">{t}</span>
+                      <span className="w-1 h-1 rounded-full bg-[#8B7355]/50 flex-shrink-0" />
+                      <span className="text-[11px] text-[#5A5A5A]">{t}</span>
                     </div>
                   ))}
                 </motion.div>
@@ -357,23 +357,23 @@ export default function DealRoomPage() {
       </section>
 
       {/* ── PROCESS ── */}
-      <section className="border-b border-[#B8956B]/20">
+      <section className="border-b border-[#8B7355]/20">
         <div className="px-6 lg:px-20 py-16 max-w-screen-2xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-4 mb-10">
-              <span className="text-[9px] tracking-[0.5em] uppercase text-[#B8956B] font-mono">Access Protocol</span>
-              <span className="w-8 h-px bg-[#B8956B]/40" />
-              <span className="text-[9px] tracking-[0.5em] uppercase text-[#8B8680] font-mono">Four-Step Clearance</span>
+              <span className="text-[9px] tracking-[0.5em] uppercase text-[#8B7355] font-mono">Access Protocol</span>
+              <span className="w-8 h-px bg-[#8B7355]/40" />
+              <span className="text-[9px] tracking-[0.5em] uppercase text-[#5A5A5A] font-mono">Four-Step Clearance</span>
             </div>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#B8956B]/10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#8B7355]/10">
             {PROCESS_STEPS.map((s, i) => (
               <FadeIn key={s.step} delay={i * 0.08}>
                 <div className="bg-[#0B1F14] p-8 h-full">
-                  <p className="text-[32px] font-serif text-[#B8956B]/20 leading-none mb-6">{s.step}</p>
+                  <p className="text-[32px] font-serif text-[#8B7355]/20 leading-none mb-6">{s.step}</p>
                   <h3 className="text-sm font-semibold uppercase tracking-wide text-[#F0EDE6]">{s.title}</h3>
-                  <p className="text-[12px] text-[#8B8680] leading-relaxed mt-3">{s.desc}</p>
+                  <p className="text-[12px] text-[#5A5A5A] leading-relaxed mt-3">{s.desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -388,9 +388,9 @@ export default function DealRoomPage() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
               <div>
                 <div className="flex items-center gap-4 mb-4">
-                  <span className="text-[9px] tracking-[0.5em] uppercase text-[#B8956B] font-mono">Active Mandates</span>
-                  <span className="w-8 h-px bg-[#B8956B]/40" />
-                  <span className="text-[9px] tracking-[0.5em] uppercase text-[#8B8680] font-mono">
+                  <span className="text-[9px] tracking-[0.5em] uppercase text-[#8B7355] font-mono">Active Mandates</span>
+                  <span className="w-8 h-px bg-[#8B7355]/40" />
+                  <span className="text-[9px] tracking-[0.5em] uppercase text-[#5A5A5A] font-mono">
                     {ACTIVE_DEALS.length} Transactions
                   </span>
                 </div>
@@ -408,8 +408,8 @@ export default function DealRoomPage() {
                     onClick={() => setActiveFilter(f)}
                     className={`text-[10px] uppercase tracking-widest px-4 py-2 border transition-colors ${
                       activeFilter === f
-                        ? 'border-[#B8956B] text-[#B8956B]'
-                        : 'border-[#5A5450]/30 text-[#5A5450] hover:border-[#8B8680] hover:text-[#8B8680]'
+                        ? 'border-[#8B7355] text-[#8B7355]'
+                        : 'border-[#5A5450]/30 text-[#5A5450] hover:border-[#5A5A5A] hover:text-[#5A5A5A]'
                     }`}
                   >
                     {f}
@@ -420,7 +420,7 @@ export default function DealRoomPage() {
           </FadeIn>
 
           {/* Featured deals (larger) */}
-          <div className="grid lg:grid-cols-2 gap-px bg-[#B8956B]/10 mb-px">
+          <div className="grid lg:grid-cols-2 gap-px bg-[#8B7355]/10 mb-px">
             {filteredDeals.filter((d) => d.featured).map((deal, i) => (
               <DealCard key={deal.id} deal={deal} index={i} />
             ))}
@@ -428,7 +428,7 @@ export default function DealRoomPage() {
 
           {/* Standard deals (3 col) */}
           {filteredDeals.filter((d) => !d.featured).length > 0 && (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#B8956B]/10 mt-px">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#8B7355]/10 mt-px">
               {filteredDeals.filter((d) => !d.featured).map((deal, i) => (
                 <DealCard key={deal.id} deal={deal} index={i + 2} />
               ))}
@@ -444,31 +444,31 @@ export default function DealRoomPage() {
       </section>
 
       {/* ── CIM CTA STRIP ── */}
-      <section className="border-t border-[#B8956B]/20">
+      <section className="border-t border-[#8B7355]/20">
         <div className="px-6 lg:px-20 py-16 max-w-screen-2xl mx-auto">
           <FadeIn>
-            <div className="grid lg:grid-cols-3 gap-px bg-[#B8956B]/15">
+            <div className="grid lg:grid-cols-3 gap-px bg-[#8B7355]/15">
               <div className="bg-[#112B1A] p-10 lg:col-span-2">
-                <p className="text-[9px] tracking-[0.5em] uppercase text-[#B8956B] font-mono mb-6">
+                <p className="text-[9px] tracking-[0.5em] uppercase text-[#8B7355] font-mono mb-6">
                   Confidential Information Memorandum
                 </p>
                 <h2 className="text-2xl font-serif leading-tight max-w-md">
                   Full financial disclosure unlocked post-NDA for qualified capital
                 </h2>
-                <p className="text-[13px] text-[#8B8680] mt-4 max-w-md leading-relaxed">
+                <p className="text-[13px] text-[#5A5A5A] mt-4 max-w-md leading-relaxed">
                   Each CIM includes audited income statements, full tenancy schedule,
                   capital expenditure history, valuation report, and structured exit analysis.
                 </p>
                 <div className="mt-8 flex gap-4">
                   <Link
                     href="/cim-request"
-                    className="px-7 py-3.5 bg-[#B8956B] text-[#0B1F14] text-[11px] uppercase tracking-[0.18em] font-semibold hover:bg-[#CDA97C] transition-colors"
+                    className="px-7 py-3.5 bg-[#8B7355] text-[#0B1F14] text-[11px] uppercase tracking-[0.18em] font-semibold hover:bg-[#CDA97C] transition-colors"
                   >
                     Request Confidential CIM
                   </Link>
                   <Link
                     href="/investment-pipeline"
-                    className="px-7 py-3.5 border border-[#B8956B]/50 text-[11px] uppercase tracking-[0.18em] hover:border-[#B8956B] transition-colors"
+                    className="px-7 py-3.5 border border-[#8B7355]/50 text-[11px] uppercase tracking-[0.18em] hover:border-[#8B7355] transition-colors"
                   >
                     View Pipeline
                   </Link>
@@ -476,7 +476,7 @@ export default function DealRoomPage() {
               </div>
 
               <div className="bg-[#0B1F14] p-10">
-                <p className="text-[9px] tracking-[0.5em] uppercase text-[#B8956B] font-mono mb-6">
+                <p className="text-[9px] tracking-[0.5em] uppercase text-[#8B7355] font-mono mb-6">
                   Transaction Scope
                 </p>
                 <div className="space-y-4">
@@ -488,15 +488,15 @@ export default function DealRoomPage() {
                     'Phuket, Thailand',
                   ].map((market) => (
                     <div key={market} className="flex items-center gap-3">
-                      <span className="w-1 h-1 rounded-full bg-[#B8956B]/50 flex-shrink-0" />
-                      <span className="text-[12px] text-[#8B8680]">{market}</span>
+                      <span className="w-1 h-1 rounded-full bg-[#8B7355]/50 flex-shrink-0" />
+                      <span className="text-[12px] text-[#5A5A5A]">{market}</span>
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-10 pt-8 border-t border-[#B8956B]/10">
+                <div className="mt-10 pt-8 border-t border-[#8B7355]/10">
                   <p className="text-[9px] uppercase tracking-widest text-[#5A5450]">Mandate enquiries</p>
-                  <p className="text-[#B8956B] text-sm mt-1">mandates@murivest.co.ke</p>
+                  <p className="text-[#8B7355] text-sm mt-1">mandates@murivest.co.ke</p>
                 </div>
               </div>
             </div>

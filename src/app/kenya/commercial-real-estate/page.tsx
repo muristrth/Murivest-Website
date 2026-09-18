@@ -130,8 +130,8 @@ export default function CommercialRealEstatePage() {
 
             {/* Asset Class Marker – delicate gold line */}
             <div className="flex items-center gap-3 mb-8">
-              <div className="h-px w-8 bg-[#B8956B]" />
-              <span className="text-[9px] font-medium tracking-[0.45em] uppercase text-[#B8956B]">
+              <div className="h-px w-8 bg-[#8B7355]" />
+              <span className="text-[9px] font-medium tracking-[0.45em] uppercase text-[#8B7355]">
                 Asset Class Overview
               </span>
             </div>
@@ -139,11 +139,11 @@ export default function CommercialRealEstatePage() {
             {/* Main Headline – serif + italic for luxury */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif leading-[1.15] mb-8 text-black">
               Commercial<br />
-              <span className="italic text-[#B8956B] font-serif">Real Estate</span>
+              <span className="italic text-[#8B7355] font-serif">Real Estate</span>
             </h1>
 
             {/* Stat-driven value prop – clean, borderless, light */}
-            <p className="max-w-2xl text-[#2C2C2C] text-base md:text-lg font-light leading-relaxed border-l border-[#B8956B]/40 pl-6">
+            <p className="max-w-2xl text-[#2C2C2C] text-base md:text-lg font-light leading-relaxed border-l border-[#8B7355]/40 pl-6">
               Nairobi's Grade A office market offers a 400–600 basis point yield premium over equivalent
               London assets — with dollar-denominated leases that transfer currency risk to the tenant.
             </p>
@@ -311,17 +311,17 @@ export default function CommercialRealEstatePage() {
         </section>
 
         {/* ── CTA – Institutional Mandate ── */}
-        <section className="relative bg-[#1B4332] text-white">
+        <section className="relative bg-[#2C2C2C] text-white">
           {/* Subtle gold glow from top right */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#B8956B]/5 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#8B7355]/5 blur-[120px] rounded-full pointer-events-none" />
           
           <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
             <div className="grid lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-7">
                 {/* Gold accent line + marker */}
                 <div className="flex items-center gap-3 mb-8">
-                  <div className="w-8 h-px bg-[#B8956B]" />
-                  <p className="text-[10px] tracking-[0.4em] uppercase text-[#B8956B] font-mono font-medium">
+                  <div className="w-8 h-px bg-[#8B7355]" />
+                  <p className="text-[10px] tracking-[0.4em] uppercase text-[#8B7355] font-mono font-medium">
                     Next Step
                   </p>
                 </div>
@@ -329,7 +329,7 @@ export default function CommercialRealEstatePage() {
                 {/* Headline – elegant serif with gold italic */}
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif leading-[1.15] mb-6 text-white">
                   Begin Your<br />
-                  <span className="italic text-[#B8956B] font-light">Mandate Discussion</span>
+                  <span className="italic text-[#8B7355] font-light">Mandate Discussion</span>
                 </h2>
 
                 {/* Supporting text – soft off-white */}
@@ -339,7 +339,7 @@ export default function CommercialRealEstatePage() {
                 </p>
 
                 {/* Additional institutional cue – minimum threshold */}
-                <p className="text-[9px] uppercase tracking-[0.2em] text-[#B8956B]/60 mt-6 font-mono">
+                <p className="text-[9px] uppercase tracking-[0.2em] text-[#8B7355]/60 mt-6 font-mono">
                   Minimum Allocation: $5,000,000 · KYC Required
                 </p>
               </div>
@@ -348,14 +348,14 @@ export default function CommercialRealEstatePage() {
               <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col gap-4">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center justify-center gap-3 px-10 py-4 bg-[#B8956B] text-[#0A0A0A] text-[11px] tracking-[0.25em] uppercase font-semibold hover:bg-[#C8A47E] transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-3 px-10 py-4 bg-[#8B7355] text-[#0A0A0A] text-[11px] tracking-[0.25em] uppercase font-semibold hover:bg-[#C8A47E] transition-all duration-300"
                 >
                   Schedule Consultation
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="/our-portfolio"
-                  className="group inline-flex items-center justify-center gap-3 px-10 py-4 border border-[#B8956B]/40 text-[#B8956B] text-[11px] tracking-[0.25em] uppercase font-semibold hover:bg-[#B8956B]/10 hover:border-[#B8956B] transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-3 px-10 py-4 border border-[#8B7355]/40 text-[#8B7355] text-[11px] tracking-[0.25em] uppercase font-semibold hover:bg-[#8B7355]/10 hover:border-[#8B7355] transition-all duration-300"
                 >
                   View Portfolio
                 </Link>

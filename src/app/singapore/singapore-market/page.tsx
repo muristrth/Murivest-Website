@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   },
   other: {
     'format-detection': 'telephone=no',
-    'theme-color': '#1B4332',
+    'theme-color': '#2C2C2C',
   },
 };
 
@@ -110,12 +110,12 @@ export default function SingaporeMarketPage() {
 
       <main>
         {/* Hero */}
-        <section className="pt-32 pb-20 bg-[#1B4332]">
+        <section className="pt-32 pb-20 bg-[#2C2C2C]">
           <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16">
             <ScrollReveal>
-              <p className="text-[10px] tracking-[0.3em] uppercase text-[#B8956B] mb-4 font-medium">Market Intelligence</p>
+              <p className="text-[10px] tracking-[0.3em] uppercase text-[#8B7355] mb-4 font-medium">Market Intelligence</p>
               <h1 className="font-serif text-4xl md:text-5xl text-white leading-[1.05] mb-6">
-                Singapore <span className="italic text-[#B8956B] font-light">Market</span> Overview
+                Singapore <span className="italic text-[#8B7355] font-light">Market</span> Overview
               </h1>
               <p className="text-base text-white/60 max-w-2xl leading-relaxed font-light">
                 Comprehensive district-by-district analysis of Singapore&apos;s commercial real estate market. 
@@ -126,7 +126,7 @@ export default function SingaporeMarketPage() {
         </section>
 
         {/* Macro Overview */}
-        <section className="py-16 bg-[#F8F7F4] border-b border-[#E8E6E1]">
+        <section className="py-16 bg-[#F8F7F4] border-b border-[#E5E2DC]">
           <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
@@ -136,9 +136,9 @@ export default function SingaporeMarketPage() {
                 { label: 'S-REIT Market Cap', value: 'S$100B+', context: 'SGX March 2026' },
               ].map((metric) => (
                 <div key={metric.label} className="text-center">
-                  <p className="font-mono text-2xl md:text-3xl text-[#1B4332] mb-1">{metric.value}</p>
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#8B8680]">{metric.label}</p>
-                  <p className="text-[10px] text-[#B8956B] mt-0.5">{metric.context}</p>
+                  <p className="font-mono text-2xl md:text-3xl text-[#2C2C2C] mb-1">{metric.value}</p>
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#5A5A5A]">{metric.label}</p>
+                  <p className="text-[10px] text-[#8B7355] mt-0.5">{metric.context}</p>
                 </div>
               ))}
             </div>
@@ -151,8 +151,8 @@ export default function SingaporeMarketPage() {
             {/* Tier 1 */}
             <div className="mb-16">
               <div className="flex items-center gap-3 mb-8">
-                <span className="w-2 h-2 bg-[#B8956B]" />
-                <p className="text-[10px] tracking-[0.25em] uppercase text-[#B8956B] font-medium">Tier 1 — Core CBD</p>
+                <span className="w-2 h-2 bg-[#8B7355]" />
+                <p className="text-[10px] tracking-[0.25em] uppercase text-[#8B7355] font-medium">Tier 1 — Core CBD</p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {tier1.map((district, i) => (
@@ -166,8 +166,8 @@ export default function SingaporeMarketPage() {
             {/* Tier 2 */}
             <div className="mb-16">
               <div className="flex items-center gap-3 mb-8">
-                <span className="w-2 h-2 bg-[#8B8680]" />
-                <p className="text-[10px] tracking-[0.25em] uppercase text-[#8B8680] font-medium">Tier 2 — Prime Fringe</p>
+                <span className="w-2 h-2 bg-[#5A5A5A]" />
+                <p className="text-[10px] tracking-[0.25em] uppercase text-[#5A5A5A] font-medium">Tier 2 — Prime Fringe</p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {tier2.map((district, i) => (
@@ -181,8 +181,8 @@ export default function SingaporeMarketPage() {
             {/* Tier 3 */}
             <div>
               <div className="flex items-center gap-3 mb-8">
-                <span className="w-2 h-2 bg-[#E8E6E1]" />
-                <p className="text-[10px] tracking-[0.25em] uppercase text-[#E8E6E1] font-medium">Tier 3 — Emerging</p>
+                <span className="w-2 h-2 bg-[#E5E2DC]" />
+                <p className="text-[10px] tracking-[0.25em] uppercase text-[#E5E2DC] font-medium">Tier 3 — Emerging</p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {tier3.map((district, i) => (
@@ -196,7 +196,7 @@ export default function SingaporeMarketPage() {
         </section>
 
         {/* URA Master Plan */}
-        <section className="py-20 md:py-32 bg-[#FAF9F6]">
+        <section className="py-20 md:py-32 bg-[#F8F7F4]">
           <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16">
             <SectionHeader
               kicker="Regulatory Framework"
@@ -208,17 +208,17 @@ export default function SingaporeMarketPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {URA_MASTER_PLAN_2025.map((item, i) => (
                 <ScrollReveal key={item.title} delay={i * 0.1}>
-                  <div className="bg-white border border-[#E8E6E1] p-6 md:p-8 h-full hover:shadow-lg transition-all duration-500">
+                  <div className="bg-white border border-[#E5E2DC] p-6 md:p-8 h-full hover:shadow-lg transition-all duration-500">
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-[9px] tracking-[0.2em] uppercase text-[#B8956B] font-medium">
+                      <span className="text-[9px] tracking-[0.2em] uppercase text-[#8B7355] font-medium">
                         Impact: {item.impact}
                       </span>
                     </div>
                     <h3 className="font-serif text-lg text-[#2C2C2C] mb-3">{item.title}</h3>
-                    <p className="text-sm text-[#8B8680] font-light leading-relaxed mb-4">{item.description}</p>
+                    <p className="text-sm text-[#5A5A5A] font-light leading-relaxed mb-4">{item.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {item.districts.map((d) => (
-                        <span key={d} className="text-[9px] tracking-wider uppercase bg-[#1B4332]/5 text-[#1B4332] px-2 py-1">{d}</span>
+                        <span key={d} className="text-[9px] tracking-wider uppercase bg-[#2C2C2C]/5 text-[#2C2C2C] px-2 py-1">{d}</span>
                       ))}
                     </div>
                   </div>
@@ -229,7 +229,7 @@ export default function SingaporeMarketPage() {
         </section>
 
         {/* Download CTA */}
-        <section className="py-20 bg-[#1B4332]">
+        <section className="py-20 bg-[#2C2C2C]">
           <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16 text-center">
             <ScrollReveal>
               <h2 className="font-serif text-3xl text-white mb-4">Download the Full Market Report</h2>
@@ -239,7 +239,7 @@ export default function SingaporeMarketPage() {
               </p>
               <Link
                 href="/singapore/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#B8956B] text-white text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#C9A87C] transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#8B7355] text-white text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors"
               >
                 <Download className="w-4 h-4" strokeWidth={1.5} />
                 Request Market Report
@@ -260,31 +260,31 @@ function DistrictCard({ district }: { district: typeof DISTRICTS[0] }) {
   return (
     <Link
       href={`/singapore/singapore-market/${district.slug}`}
-      className="group block bg-white border border-[#E8E6E1] hover:shadow-lg hover:border-[#B8956B]/20 transition-all duration-500 h-full"
+      className="group block bg-white border border-[#E5E2DC] hover:shadow-lg hover:border-[#8B7355]/20 transition-all duration-500 h-full"
     >
       <div className="p-6 md:p-8">
         <div className="flex items-center justify-between mb-4">
-          <span className="text-[9px] tracking-[0.2em] uppercase bg-[#1B4332] text-white px-2.5 py-1 font-medium">
+          <span className="text-[9px] tracking-[0.2em] uppercase bg-[#2C2C2C] text-white px-2.5 py-1 font-medium">
             {tierLabels[district.tier]}
           </span>
-          <TrendingUp className="w-4 h-4 text-[#B8956B]" strokeWidth={1.5} />
+          <TrendingUp className="w-4 h-4 text-[#8B7355]" strokeWidth={1.5} />
         </div>
-        <h3 className="font-serif text-xl text-[#2C2C2C] group-hover:text-[#1B4332] transition-colors leading-tight mb-2">
+        <h3 className="font-serif text-xl text-[#2C2C2C] group-hover:text-[#2C2C2C] transition-colors leading-tight mb-2">
           {district.name}
         </h3>
-        <p className="text-[11px] text-[#8B8680] italic mb-4">{district.tagline}</p>
-        <p className="text-sm text-[#8B8680] leading-relaxed font-light mb-6 line-clamp-3">
+        <p className="text-[11px] text-[#5A5A5A] italic mb-4">{district.tagline}</p>
+        <p className="text-sm text-[#5A5A5A] leading-relaxed font-light mb-6 line-clamp-3">
           {district.description}
         </p>
-        <div className="space-y-2 pt-4 border-t border-[#E8E6E1]">
+        <div className="space-y-2 pt-4 border-t border-[#E5E2DC]">
           {district.keyStats.slice(0, 3).map((stat) => (
             <div key={stat.label} className="flex items-center justify-between">
-              <span className="text-[10px] tracking-wider uppercase text-[#8B8680]">{stat.label}</span>
-              <span className="font-mono text-[12px] text-[#1B4332]">{stat.value}</span>
+              <span className="text-[10px] tracking-wider uppercase text-[#5A5A5A]">{stat.label}</span>
+              <span className="font-mono text-[12px] text-[#2C2C2C]">{stat.value}</span>
             </div>
           ))}
         </div>
-        <div className="flex items-center gap-1.5 mt-4 text-[#B8956B]">
+        <div className="flex items-center gap-1.5 mt-4 text-[#8B7355]">
           <span className="text-[10px] tracking-[0.15em] uppercase font-medium">View District Report</span>
           <ArrowUpRight className="w-3.5 h-3.5" strokeWidth={1.5} />
         </div>

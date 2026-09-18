@@ -18,10 +18,10 @@ export default function PrivacyPage() {
 
       <main>
         {/* Hero */}
-        <section className="pt-32 pb-12 bg-[#1B4332]">
+        <section className="pt-32 pb-12 bg-[#2C2C2C]">
           <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
             <ScrollReveal>
-              <p className="text-[10px] tracking-[0.3em] uppercase text-[#B8956B] mb-4 font-medium">Legal</p>
+              <p className="text-[10px] tracking-[0.3em] uppercase text-[#8B7355] mb-4 font-medium">Legal</p>
               <h1 className="font-serif text-4xl md:text-5xl text-white leading-[1.05]">
                 Privacy Policy
               </h1>
@@ -33,13 +33,13 @@ export default function PrivacyPage() {
         <section className="py-16 md:py-24 bg-[#F8F7F4]">
           <div className="max-w-[800px] mx-auto px-6 md:px-12">
             <ScrollReveal>
-              <div className="bg-white border border-[#E8E6E1] p-8 md:p-12 space-y-8">
+              <div className="bg-white border border-[#E5E2DC] p-8 md:p-12 space-y-8">
                 <div>
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#B8956B] mb-3 font-medium">Effective Date</p>
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#8B7355] mb-3 font-medium">Effective Date</p>
                   <p className="text-sm text-[#5A5A5A] font-light">This Privacy Policy is effective as of 1 January 2026 and applies to all services provided by Murivest Realty Pte Ltd in Singapore.</p>
                 </div>
 
-                <div className="h-px bg-[#E8E6E1]" />
+                <div className="h-px bg-[#E5E2DC]" />
 
                 <div>
                   <h2 className="font-serif text-xl text-[#2C2C2C] mb-3">1. Introduction</h2>
@@ -65,7 +65,7 @@ export default function PrivacyPage() {
                       'Usage Data: Pages visited, time spent, documents downloaded, search queries',
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-3 text-sm text-[#5A5A5A] font-light">
-                        <div className="w-1 h-1 rounded-full bg-[#B8956B] mt-2 shrink-0" />
+                        <div className="w-1 h-1 rounded-full bg-[#8B7355] mt-2 shrink-0" />
                         {item}
                       </li>
                     ))}
@@ -87,7 +87,7 @@ export default function PrivacyPage() {
                       'To protect our rights, property, and safety, and that of our clients',
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-3 text-sm text-[#5A5A5A] font-light">
-                        <div className="w-1 h-1 rounded-full bg-[#B8956B] mt-2 shrink-0" />
+                        <div className="w-1 h-1 rounded-full bg-[#8B7355] mt-2 shrink-0" />
                         {item}
                       </li>
                     ))}
@@ -108,7 +108,7 @@ export default function PrivacyPage() {
                       'Partners in our research network (on an anonymised basis)',
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-3 text-sm text-[#5A5A5A] font-light">
-                        <div className="w-1 h-1 rounded-full bg-[#B8956B] mt-2 shrink-0" />
+                        <div className="w-1 h-1 rounded-full bg-[#8B7355] mt-2 shrink-0" />
                         {item}
                       </li>
                     ))}
@@ -148,7 +148,7 @@ export default function PrivacyPage() {
                       'Lodge a complaint with the Personal Data Protection Commission (PDPC)',
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-3 text-sm text-[#5A5A5A] font-light">
-                        <div className="w-1 h-1 rounded-full bg-[#B8956B] mt-2 shrink-0" />
+                        <div className="w-1 h-1 rounded-full bg-[#8B7355] mt-2 shrink-0" />
                         {item}
                       </li>
                     ))}
@@ -161,14 +161,14 @@ export default function PrivacyPage() {
                     If you have any questions about this Privacy Policy or wish to exercise your rights, please contact our Data Protection Officer:
                   </p>
                   <div className="mt-4 space-y-2 text-sm">
-                    <p className="text-[#2C2C2C]"><span className="text-[#8B8680]">Email:</span> dpo@murivest.com</p>
-                    <p className="text-[#2C2C2C]"><span className="text-[#8B8680]">Address:</span> 1 Raffles Place, #24-01, Singapore 048616</p>
-                    <p className="text-[#2C2C2C]"><span className="text-[#8B8680]">Phone:</span> +65 6123 4567</p>
+                    <p className="text-[#2C2C2C]"><span className="text-[#5A5A5A]">Email:</span> dpo@murivest.com</p>
+                    <p className="text-[#2C2C2C]"><span className="text-[#5A5A5A]">Address:</span> 1 Raffles Place, #24-01, Singapore 048616</p>
+                    <p className="text-[#2C2C2C]"><span className="text-[#5A5A5A]">Phone:</span> +65 6123 4567</p>
                   </div>
                 </div>
 
-                <div className="pt-6 border-t border-[#E8E6E1]">
-                  <p className="text-[11px] text-[#8B8680] font-light">
+                <div className="pt-6 border-t border-[#E5E2DC]">
+                  <p className="text-[11px] text-[#5A5A5A] font-light">
                     This Privacy Policy was last updated on 1 January 2026. We may update this policy from time to time. 
                     Any changes will be posted on this page with an updated effective date.
                   </p>

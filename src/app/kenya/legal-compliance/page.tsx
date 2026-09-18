@@ -197,7 +197,7 @@ export default function LegalCompliancePage() {
       <div className="min-h-screen bg-[#F8F7F4] text-[#2C2C2C]">
 
         {/* ── Hero ── */}
-        <section className="relative bg-[#1B4332] text-white overflow-hidden pt-32 pb-28 px-6 md:px-12 lg:px-16">
+        <section className="relative bg-[#2C2C2C] text-white overflow-hidden pt-32 pb-28 px-6 md:px-12 lg:px-16">
           <div className="absolute top-0 left-1/2 w-[600px] h-[400px] bg-amber-600/5 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
           <div className="max-w-[1400px] mx-auto relative z-10">
             <Link href="/" className="inline-flex items-center gap-2 text-[11px] tracking-[0.35em] uppercase text-[#8B7355] hover:text-amber-400 transition-colors mb-12">
@@ -473,7 +473,7 @@ export default function LegalCompliancePage() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="relative bg-[#1B4332] text-white">
+        <section className="relative bg-[#2C2C2C] text-white">
           <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
             <div className="grid lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-7">

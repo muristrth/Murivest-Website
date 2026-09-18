@@ -130,13 +130,13 @@ export default function AcquirePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="relative overflow-hidden bg-[#1B4332] py-24">
+      <section className="relative overflow-hidden bg-[#2C2C2C] py-24">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-ink-950 to-ink-900" />
+          <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-[#2C2C2C] to-[#2C2C2C]" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <Eyebrow className="text-gold-400">
+            <Eyebrow className="text-[#8B7355]">
               Acquire · The Concierge of Capital
             </Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl text-balance">
@@ -152,7 +152,7 @@ export default function AcquirePage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/usa/contact"
-                className="group flex items-center justify-center gap-2 rounded-lg bg-gold-400 px-6 py-3 text-sm font-semibold text-[#0F2E22] transition-all hover:bg-[#C9A87C]"
+                className="group flex items-center justify-center gap-2 rounded-lg bg-[#8B7355] px-6 py-3 text-sm font-semibold text-[#2C2C2C] transition-all hover:bg-[#8B7355]"
               >
                 Outline an Acquisition Mandate
                 <ArrowRight
@@ -162,7 +162,7 @@ export default function AcquirePage() {
               </Link>
               <Link
                 href="/usa/capital"
-                className="flex items-center justify-center rounded-lg border border-[#C9A87C] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
+                className="flex items-center justify-center rounded-lg border border-[#8B7355] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
               >
                 Pair with Capital Advisory
               </Link>
@@ -182,15 +182,15 @@ export default function AcquirePage() {
             <Link
               key={strategy.href}
               href={strategy.href}
-              className="group flex flex-col rounded-xl border border-[#E8E6E1] bg-white p-6 transition-all hover:border-[#B8956B] hover:shadow-lg hover:shadow-ink-900/5"
+              className="group flex flex-col rounded-xl border border-[#E5E2DC] bg-white p-6 transition-all hover:border-[#8B7355] hover:shadow-lg hover:shadow-[#2C2C2C]/5"
             >
-              <h3 className="font-serif text-xl font-semibold text-[#2C2C2C] group-hover:text-[#B8956B] transition-colors">
+              <h3 className="font-serif text-xl font-semibold text-[#2C2C2C] group-hover:text-[#8B7355] transition-colors">
                 {strategy.title}
               </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-[#8B8680]">
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-[#5A5A5A]">
                 {strategy.description}
               </p>
-              <span className="mt-4 flex items-center gap-1.5 text-sm font-medium text-[#B8956B] transition-colors group-hover:text-[#C9A87C]">
+              <span className="mt-4 flex items-center gap-1.5 text-sm font-medium text-[#8B7355] transition-colors group-hover:text-[#8B7355]">
                 Explore strategy
                 <ArrowRight
                   size={16}
@@ -202,14 +202,14 @@ export default function AcquirePage() {
         </div>
       </Section>
 
-      <Section className="py-20 bg-[#FAF9F6]">
+      <Section className="py-20 bg-[#F8F7F4]">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <Eyebrow>The Murivest Method</Eyebrow>
             <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight text-[#2C2C2C] sm:text-4xl">
               Sourced through relationships. Underwritten with discipline.
             </h2>
-            <p className="mt-6 text-lg leading-relaxed text-[#8B8680]">
+            <p className="mt-6 text-lg leading-relaxed text-[#5A5A5A]">
               The best acquisitions are rarely the ones everyone can see. Our
               edge is a sourcing network built over years of principal-level
               relationships, combined with an underwriting culture that protects
@@ -221,15 +221,15 @@ export default function AcquirePage() {
             {SOURCING.map((item) => (
               <div
                 key={item.title}
-                className="rounded-xl border border-[#E8E6E1] bg-white p-6"
+                className="rounded-xl border border-[#E5E2DC] bg-white p-6"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#1B4332] text-gold-400">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#2C2C2C] text-[#8B7355]">
                   <item.icon size={22} />
                 </div>
                 <h3 className="mt-4 font-serif text-lg font-semibold text-[#2C2C2C]">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+                <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
                   {item.description}
                 </p>
               </div>
@@ -251,17 +251,17 @@ export default function AcquirePage() {
               <Link
                 key={type.slug}
                 href={`/usa/commercial-real-estate/${type.slug}`}
-                className="group flex items-center justify-between rounded-xl border border-[#E8E6E1] bg-white p-5 transition-all hover:border-[#B8956B] hover:shadow-md"
+                className="group flex items-center justify-between rounded-xl border border-[#E5E2DC] bg-white p-5 transition-all hover:border-[#8B7355] hover:shadow-md"
               >
                 <span className="flex items-center gap-3">
-                  <Icon size={20} className="text-[#B8956B]" />
-                  <span className="font-serif text-lg font-semibold text-[#2C2C2C] group-hover:text-[#B8956B] transition-colors">
+                  <Icon size={20} className="text-[#8B7355]" />
+                  <span className="font-serif text-lg font-semibold text-[#2C2C2C] group-hover:text-[#8B7355] transition-colors">
                     {type.label}
                   </span>
                 </span>
                 <ArrowRight
                   size={18}
-                  className="text-[#FAF9F6] transition-all group-hover:translate-x-1 group-hover:text-[#C9A87C]"
+                  className="text-[#F8F7F4] transition-all group-hover:translate-x-1 group-hover:text-[#8B7355]"
                 />
               </Link>
             );
@@ -269,13 +269,13 @@ export default function AcquirePage() {
         </div>
       </Section>
 
-      <Section className="py-20 bg-[#0F2E22]">
+      <Section className="py-20 bg-[#2C2C2C]">
         <div className="max-w-3xl">
-          <Eyebrow className="text-gold-400">Who We Acquire For</Eyebrow>
+          <Eyebrow className="text-[#8B7355]">Who We Acquire For</Eyebrow>
           <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight text-white sm:text-4xl">
             Built for buyers who cannot afford to compromise on basis or process
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-[#C9A87C]">
+          <p className="mt-4 text-lg leading-relaxed text-[#8B7355]">
             We represent institutions, family offices, and private equity
             sponsors whose mandates demand discretion, speed, and analytical
             conviction — not a generic deal feed.
@@ -301,12 +301,12 @@ export default function AcquirePage() {
           ].map((item) => (
             <div
               key={item.title}
-              className="rounded-xl border border-navy-700 bg-[#1B4332]/50 p-6"
+              className="rounded-xl border border-[rgba(44,44,44,0.15)] bg-[#2C2C2C]/50 p-6"
             >
               <h3 className="font-serif text-xl font-semibold text-white">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#C9A87C]">
+              <p className="mt-2 text-sm leading-relaxed text-[#8B7355]">
                 {item.description}
               </p>
             </div>
@@ -323,36 +323,36 @@ export default function AcquirePage() {
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           <Link
             href="/usa/capital"
-            className="group flex items-center justify-between rounded-xl border border-[#E8E6E1] bg-white p-6 transition-all hover:border-[#B8956B] hover:shadow-md"
+            className="group flex items-center justify-between rounded-xl border border-[#E5E2DC] bg-white p-6 transition-all hover:border-[#8B7355] hover:shadow-md"
           >
             <div>
-              <h3 className="font-serif text-xl font-semibold text-[#2C2C2C] group-hover:text-[#B8956B] transition-colors">
+              <h3 className="font-serif text-xl font-semibold text-[#2C2C2C] group-hover:text-[#8B7355] transition-colors">
                 Capital Advisory
               </h3>
-              <p className="mt-1 text-sm text-[#8B8680]">
+              <p className="mt-1 text-sm text-[#5A5A5A]">
                 Equity and debt to fund the acquisition you are underwriting.
               </p>
             </div>
             <ArrowRight
               size={18}
-              className="text-[#FAF9F6] transition-all group-hover:translate-x-1 group-hover:text-[#C9A87C]"
+              className="text-[#F8F7F4] transition-all group-hover:translate-x-1 group-hover:text-[#8B7355]"
             />
           </Link>
           <Link
             href="/usa/sell"
-            className="group flex items-center justify-between rounded-xl border border-[#E8E6E1] bg-white p-6 transition-all hover:border-[#B8956B] hover:shadow-md"
+            className="group flex items-center justify-between rounded-xl border border-[#E5E2DC] bg-white p-6 transition-all hover:border-[#8B7355] hover:shadow-md"
           >
             <div>
-              <h3 className="font-serif text-xl font-semibold text-[#2C2C2C] group-hover:text-[#B8956B] transition-colors">
+              <h3 className="font-serif text-xl font-semibold text-[#2C2C2C] group-hover:text-[#8B7355] transition-colors">
                 Sell & Disposition
               </h3>
-              <p className="mt-1 text-sm text-[#8B8680]">
+              <p className="mt-1 text-sm text-[#5A5A5A]">
                 The exit discipline that frames how we underwrite the entry.
               </p>
             </div>
             <ArrowRight
               size={18}
-              className="text-[#FAF9F6] transition-all group-hover:translate-x-1 group-hover:text-[#C9A87C]"
+              className="text-[#F8F7F4] transition-all group-hover:translate-x-1 group-hover:text-[#8B7355]"
             />
           </Link>
         </div>

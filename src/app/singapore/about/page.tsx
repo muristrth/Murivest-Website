@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   },
   other: {
     'format-detection': 'telephone=no',
-    'theme-color': '#1B4332',
+    'theme-color': '#2C2C2C',
   },
 };
 
@@ -126,12 +126,12 @@ export default function AboutPage() {
 
       <main>
         {/* Hero */}
-        <section className="pt-32 pb-20 bg-[#1B4332]">
+        <section className="pt-32 pb-20 bg-[#2C2C2C]">
           <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16">
             <ScrollReveal>
-              <p className="text-[10px] tracking-[0.3em] uppercase text-[#B8956B] mb-4 font-medium">About Murivest</p>
+              <p className="text-[10px] tracking-[0.3em] uppercase text-[#8B7355] mb-4 font-medium">About Murivest</p>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] max-w-3xl mb-6">
-                The Standard by Which <span className="italic text-[#B8956B] font-light">Institutional</span> Real Estate is Measured
+                The Standard by Which <span className="italic text-[#8B7355] font-light">Institutional</span> Real Estate is Measured
               </h1>
               <p className="text-base text-white/60 max-w-2xl leading-relaxed font-light">
                 Murivest is Singapore&apos;s premier institutional commercial real estate advisory. 
@@ -147,11 +147,11 @@ export default function AboutPage() {
           <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               <ScrollReveal>
-                <p className="text-[10px] tracking-[0.25em] uppercase text-[#B8956B] mb-4 font-medium">Our Origin</p>
+                <p className="text-[10px] tracking-[0.25em] uppercase text-[#8B7355] mb-4 font-medium">Our Origin</p>
                 <h2 className="font-serif text-3xl md:text-4xl text-[#2C2C2C] leading-tight mb-6">
                   Built for Investors Who Demand More Than Brochures
                 </h2>
-                <div className="space-y-4 text-[15px] text-[#8B8680] leading-[1.8] font-light">
+                <div className="space-y-4 text-[15px] text-[#5A5A5A] leading-[1.8] font-light">
                   <p>
                     Murivest was founded on a simple observation: the commercial real estate advisory industry 
                     had become transactional. Most brokers were selling properties. Few were advising on capital allocation.
@@ -178,8 +178,8 @@ export default function AboutPage() {
               </ScrollReveal>
 
               <ScrollReveal delay={0.2}>
-                <div className="bg-white border border-[#E8E6E1] p-8 md:p-10">
-                  <p className="text-[10px] tracking-[0.25em] uppercase text-[#B8956B] mb-6 font-medium">
+                <div className="bg-white border border-[#E5E2DC] p-8 md:p-10">
+                  <p className="text-[10px] tracking-[0.25em] uppercase text-[#8B7355] mb-6 font-medium">
                     Singapore at a Glance
                   </p>
                   <div className="space-y-5">
@@ -193,9 +193,9 @@ export default function AboutPage() {
                       { label: 'SORA (Q2 2026)', value: `${SINGAPORE_MACRO.sora}%` },
                       { label: 'CPI Inflation', value: `${SINGAPORE_MACRO.cpiInflation}%` },
                     ].map((item) => (
-                      <div key={item.label} className="flex items-center justify-between py-3 border-b border-[#E8E6E1] last:border-0">
-                        <span className="text-[11px] tracking-wider uppercase text-[#8B8680]">{item.label}</span>
-                        <span className="font-mono text-sm text-[#1B4332] font-medium">{item.value}</span>
+                      <div key={item.label} className="flex items-center justify-between py-3 border-b border-[#E5E2DC] last:border-0">
+                        <span className="text-[11px] tracking-wider uppercase text-[#5A5A5A]">{item.label}</span>
+                        <span className="font-mono text-sm text-[#2C2C2C] font-medium">{item.value}</span>
                       </div>
                     ))}
                   </div>
@@ -206,7 +206,7 @@ export default function AboutPage() {
         </section>
 
         {/* Values */}
-        <section className="py-20 md:py-32 bg-[#FAF9F6]">
+        <section className="py-20 md:py-32 bg-[#F8F7F4]">
           <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16">
             <SectionHeader
               kicker="Principles"
@@ -218,12 +218,12 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {values.map((v, i) => (
                 <ScrollReveal key={v.title} delay={i * 0.1}>
-                  <div className="bg-white border border-[#E8E6E1] p-8 h-full hover:shadow-lg transition-all duration-500">
-                    <div className="w-12 h-12 border border-[#B8956B]/30 flex items-center justify-center text-[#B8956B] mb-6">
+                  <div className="bg-white border border-[#E5E2DC] p-8 h-full hover:shadow-lg transition-all duration-500">
+                    <div className="w-12 h-12 border border-[#8B7355]/30 flex items-center justify-center text-[#8B7355] mb-6">
                       {v.icon}
                     </div>
                     <h3 className="font-serif text-xl text-[#2C2C2C] mb-3">{v.title}</h3>
-                    <p className="text-sm text-[#8B8680] leading-relaxed font-light">{v.description}</p>
+                    <p className="text-sm text-[#5A5A5A] leading-relaxed font-light">{v.description}</p>
                   </div>
                 </ScrollReveal>
               ))}
@@ -244,11 +244,11 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {leadership.map((person, i) => (
                 <ScrollReveal key={person.name} delay={i * 0.1}>
-                  <div className="bg-white border border-[#E8E6E1] p-8">
-                    <div className="w-20 h-20 bg-[#1B4332] mb-6" />
+                  <div className="bg-white border border-[#E5E2DC] p-8">
+                    <div className="w-20 h-20 bg-[#2C2C2C] mb-6" />
                     <h3 className="font-serif text-xl text-[#2C2C2C] mb-1">{person.name}</h3>
-                    <p className="text-[10px] tracking-[0.2em] uppercase text-[#B8956B] mb-4 font-medium">{person.role}</p>
-                    <p className="text-sm text-[#8B8680] leading-relaxed font-light">{person.bio}</p>
+                    <p className="text-[10px] tracking-[0.2em] uppercase text-[#8B7355] mb-4 font-medium">{person.role}</p>
+                    <p className="text-sm text-[#5A5A5A] leading-relaxed font-light">{person.bio}</p>
                   </div>
                 </ScrollReveal>
               ))}
@@ -257,11 +257,11 @@ export default function AboutPage() {
         </section>
 
         {/* Track Record */}
-        <section className="py-20 md:py-32 bg-[#1B4332]">
+        <section className="py-20 md:py-32 bg-[#2C2C2C]">
           <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16">
             <ScrollReveal>
               <div className="text-center mb-16">
-                <p className="text-[10px] tracking-[0.3em] uppercase text-[#B8956B] mb-4 font-medium">Track Record</p>
+                <p className="text-[10px] tracking-[0.3em] uppercase text-[#8B7355] mb-4 font-medium">Track Record</p>
                 <h2 className="font-serif text-3xl md:text-4xl text-white mb-4">A Decade of Institutional Transactions</h2>
                 <p className="text-sm text-white/60 max-w-2xl mx-auto font-light">Key milestones in our Singapore journey.</p>
               </div>
@@ -271,7 +271,7 @@ export default function AboutPage() {
               {trackRecord.map((item, i) => (
                 <ScrollReveal key={item.year} delay={i * 0.1}>
                   <div className="flex gap-8 py-6 border-b border-white/10 last:border-0">
-                    <span className="font-mono text-lg text-[#B8956B] shrink-0 w-16">{item.year}</span>
+                    <span className="font-mono text-lg text-[#8B7355] shrink-0 w-16">{item.year}</span>
                     <p className="text-sm text-white/70 font-light">{item.milestone}</p>
                   </div>
                 </ScrollReveal>

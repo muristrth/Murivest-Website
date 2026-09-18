@@ -16,16 +16,16 @@ export default function LoginPage() {
       <div className="w-full max-w-md px-6">
         <ScrollReveal>
           <div className="text-center mb-10">
-            <div className="w-16 h-16 border border-[#B8956B]/30 flex items-center justify-center mx-auto mb-6">
-              <Lock className="w-6 h-6 text-[#B8956B]" strokeWidth={1.5} />
+            <div className="w-16 h-16 border border-[#8B7355]/30 flex items-center justify-center mx-auto mb-6">
+              <Lock className="w-6 h-6 text-[#8B7355]" strokeWidth={1.5} />
             </div>
             <h1 className="font-serif text-2xl text-[#2C2C2C] mb-2">Investor Portal</h1>
-            <p className="text-[12px] text-[#8B8680] font-light">
+            <p className="text-[12px] text-[#5A5A5A] font-light">
               {mode === 'login' ? 'Sign in with your credentials' : 'Request a magic link to sign in'}
             </p>
           </div>
 
-          <div className="bg-white border border-[#E8E6E1] p-8">
+          <div className="bg-white border border-[#E5E2DC] p-8">
             {mode === 'login' ? (
               <form className="space-y-5">
                 <div>
@@ -50,14 +50,14 @@ export default function LoginPage() {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-0 top-8 text-[#8B8680] hover:text-[#5A5A5A]"
+                    className="absolute right-0 top-8 text-[#5A5A5A] hover:text-[#5A5A5A]"
                   >
                     {showPassword ? <EyeOff className="w-4 h-4" strokeWidth={1.5} /> : <Eye className="w-4 h-4" strokeWidth={1.5} />}
                   </button>
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-[#1B4332] text-white py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#2D5A45] transition-colors"
+                  className="w-full bg-[#2C2C2C] text-white py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#2D5A45] transition-colors"
                 >
                   Sign In
                 </button>
@@ -76,17 +76,17 @@ export default function LoginPage() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-[#1B4332] text-white py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#2D5A45] transition-colors"
+                  className="w-full bg-[#2C2C2C] text-white py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#2D5A45] transition-colors"
                 >
                   Send Magic Link
                 </button>
               </form>
             )}
 
-            <div className="mt-6 pt-6 border-t border-[#E8E6E1] text-center">
+            <div className="mt-6 pt-6 border-t border-[#E5E2DC] text-center">
               <button
                 onClick={() => setMode(mode === 'login' ? 'magic' : 'login')}
-                className="text-[11px] tracking-wider text-[#B8956B] hover:text-[#1B4332] transition-colors"
+                className="text-[11px] tracking-wider text-[#8B7355] hover:text-[#2C2C2C] transition-colors"
               >
                 {mode === 'login' ? 'Use Magic Link Instead' : 'Use Password Instead'}
               </button>
@@ -94,16 +94,16 @@ export default function LoginPage() {
           </div>
 
           <div className="mt-8 text-center">
-            <p className="text-[11px] text-[#8B8680]">
+            <p className="text-[11px] text-[#5A5A5A]">
               Don&apos;t have access?{' '}
-              <Link href="/singapore/contact" className="text-[#B8956B] hover:text-[#1B4332] transition-colors">
+              <Link href="/singapore/contact" className="text-[#8B7355] hover:text-[#2C2C2C] transition-colors">
                 Request Portal Access
               </Link>
             </p>
           </div>
 
           <div className="mt-4 text-center">
-            <Link href="/singapore" className="text-[10px] tracking-wider text-[#8B8680] hover:text-[#2C2C2C] transition-colors">
+            <Link href="/singapore" className="text-[10px] tracking-wider text-[#5A5A5A] hover:text-[#2C2C2C] transition-colors">
               ← Back to Singapore
             </Link>
           </div>

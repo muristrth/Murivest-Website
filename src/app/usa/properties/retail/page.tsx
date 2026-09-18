@@ -69,18 +69,18 @@ export default function RetailPage() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#1B4332] py-24">
+      <section className="relative overflow-hidden bg-[#2C2C2C] py-24">
         <div className="absolute inset-0">
           <img
             src="https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=1920"
             alt="Retail shopping center"
             className="h-full w-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/85 to-ink-950/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#2C2C2C] via-[#2C2C2C]/85 to-[#2C2C2C]/50" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <Eyebrow className="text-gold-400">
+            <Eyebrow className="text-[#8B7355]">
               Retail — U.S. Commercial Real Estate
             </Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl text-balance">
@@ -94,7 +94,7 @@ export default function RetailPage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/usa/contact"
-                className="group flex items-center gap-2 rounded-lg bg-gold-400 px-6 py-3 text-sm font-semibold text-[#0F2E22] transition-all hover:bg-[#C9A87C]"
+                className="group flex items-center gap-2 rounded-lg bg-[#8B7355] px-6 py-3 text-sm font-semibold text-[#2C2C2C] transition-all hover:bg-[#8B7355]"
               >
                 Discuss a Retail Mandate
                 <ArrowRight
@@ -104,7 +104,7 @@ export default function RetailPage() {
               </Link>
               <Link
                 href="/usa/properties"
-                className="flex items-center justify-center rounded-lg border border-[#C9A87C] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
+                className="flex items-center justify-center rounded-lg border border-[#8B7355] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
               >
                 All Property Types
               </Link>
@@ -121,7 +121,7 @@ export default function RetailPage() {
               eyebrow="Market Context"
               title="Retail is bifurcating between necessity and discretionary"
             />
-            <p className="mt-6 text-lg leading-relaxed text-[#8B8680]">
+            <p className="mt-6 text-lg leading-relaxed text-[#5A5A5A]">
               {MARKET_CONTEXT}
             </p>
             <div className="mt-8">
@@ -132,9 +132,9 @@ export default function RetailPage() {
                 {KEY_DRIVERS.map((driver) => (
                   <li
                     key={driver}
-                    className="flex items-start gap-3 text-base text-[#C9A87C]"
+                    className="flex items-start gap-3 text-base text-[#8B7355]"
                   >
-                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-gold-400" />
+                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#8B7355]" />
                     {driver}
                   </li>
                 ))}
@@ -142,7 +142,7 @@ export default function RetailPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-[#E8E6E1] bg-[#FAF9F6] p-8">
+          <div className="rounded-2xl border border-[#E5E2DC] bg-[#F8F7F4] p-8">
             <h3 className="font-serif text-lg font-semibold text-[#2C2C2C]">
               Advisory scope
             </h3>
@@ -150,16 +150,16 @@ export default function RetailPage() {
               {ADVISORY_SCOPE.map((scope) => (
                 <li
                   key={scope}
-                  className="flex items-start gap-2.5 text-sm text-[#C9A87C]"
+                  className="flex items-start gap-2.5 text-sm text-[#8B7355]"
                 >
-                  <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#FAF9F6]0" />
+                  <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#F8F7F4]0" />
                   {scope}
                 </li>
               ))}
             </ul>
             <Link
               href="/usa/contact"
-              className="mt-6 flex items-center gap-2 text-sm font-medium text-[#B8956B] hover:text-[#C9A87C] transition-colors"
+              className="mt-6 flex items-center gap-2 text-sm font-medium text-[#8B7355] hover:text-[#8B7355] transition-colors"
             >
               Discuss a retail mandate
               <ArrowRight size={16} />
@@ -169,7 +169,7 @@ export default function RetailPage() {
       </Section>
 
       {/* Related markets */}
-      <Section className="py-20 bg-[#FAF9F6]">
+      <Section className="py-20 bg-[#F8F7F4]">
         <SectionHeading
           eyebrow="Markets"
           title="Key retail markets"
@@ -180,17 +180,17 @@ export default function RetailPage() {
             <Link
               key={m.name}
               href={m.href}
-              className="group flex items-center justify-between rounded-xl border border-[#E8E6E1] bg-white p-5 transition-all hover:border-[#B8956B] hover:shadow-md"
+              className="group flex items-center justify-between rounded-xl border border-[#E5E2DC] bg-white p-5 transition-all hover:border-[#8B7355] hover:shadow-md"
             >
               <div className="flex items-center gap-3">
-                <MapPin size={18} className="text-[#C9A87C]" />
-                <span className="font-serif text-lg font-semibold text-[#2C2C2C] group-hover:text-[#B8956B] transition-colors">
+                <MapPin size={18} className="text-[#8B7355]" />
+                <span className="font-serif text-lg font-semibold text-[#2C2C2C] group-hover:text-[#8B7355] transition-colors">
                   {m.name}
                 </span>
               </div>
               <ArrowRight
                 size={18}
-                className="text-[#FAF9F6] transition-all group-hover:translate-x-1 group-hover:text-[#C9A87C]"
+                className="text-[#F8F7F4] transition-all group-hover:translate-x-1 group-hover:text-[#8B7355]"
               />
             </Link>
           ))}

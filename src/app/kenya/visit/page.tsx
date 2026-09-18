@@ -88,13 +88,13 @@ const isValidBookingDate = (dateStr: string): boolean => {
 // ═════════════════════════════════════════════════════════════════
 
 const D = {
-  forest: '#1B4332',
+  forest: '#2C2C2C',
   forestSoft: '#234B3A',
-  brass: '#B8956B',
-  cream: '#FAF9F6',
+  brass: '#8B7355',
+  cream: '#F8F7F4',
   ink: '#1A1A1A',
   slate: '#6B6B6B',
-  hairline: '#E8E6E1',
+  hairline: '#E5E2DC',
   error: '#9B2C2C',
   errorBg: '#FDF2F2',
 }
@@ -141,7 +141,7 @@ function SectionTitle({ children, subtitle }: { children: React.ReactNode; subti
         {children}
       </h2>
       {subtitle && <p className="mt-3 text-[#6B6B6B] text-sm leading-relaxed max-w-lg">{subtitle}</p>}
-      <div className="mt-5 w-12 h-px bg-[#B8956B]" />
+      <div className="mt-5 w-12 h-px bg-[#8B7355]" />
     </div>
   )
 }
@@ -163,7 +163,7 @@ function StepIndicator({ step }: { step: number }) {
             <div className="flex flex-col items-center gap-2 min-w-[80px] sm:min-w-[100px]">
               <span
                 className={`text-[10px] sm:text-[11px] font-medium uppercase tracking-[0.15em] transition-colors duration-500 ${
-                  active || done ? 'text-[#1B4332]' : 'text-[#B0ADA7]'
+                  active || done ? 'text-[#2C2C2C]' : 'text-[#B0ADA7]'
                 }`}
               >
                 {label}
@@ -171,13 +171,13 @@ function StepIndicator({ step }: { step: number }) {
               <div className="flex items-center gap-2">
                 <div
                   className={`w-2 h-2 rounded-full transition-all duration-500 ${
-                    active ? 'bg-[#1B4332] scale-125' : done ? 'bg-[#1B4332]' : 'bg-[#E5E2DC]'
+                    active ? 'bg-[#2C2C2C] scale-125' : done ? 'bg-[#2C2C2C]' : 'bg-[#E5E2DC]'
                   }`}
                 />
                 {i < 2 && (
                   <div
                     className={`w-8 sm:w-20 h-px transition-colors duration-500 ${
-                      done ? 'bg-[#1B4332]' : 'bg-[#E5E2DC]'
+                      done ? 'bg-[#2C2C2C]' : 'bg-[#E5E2DC]'
                     }`}
                   />
                 )}
@@ -210,22 +210,22 @@ function ViewingCard({
       onClick={onSelect}
       className={`group relative w-full text-left p-8 sm:p-10 rounded-none border transition-all duration-500 ${
         selected
-          ? 'border-[#1B4332] bg-[#FAF9F6]'
-          : 'border-[#E8E6E1] bg-white hover:border-[#B8956B]/60'
+          ? 'border-[#2C2C2C] bg-[#F8F7F4]'
+          : 'border-[#E5E2DC] bg-white hover:border-[#8B7355]/60'
       }`}
     >
-      {selected && <div className="absolute top-0 left-0 w-full h-1 bg-[#1B4332]" />}
+      {selected && <div className="absolute top-0 left-0 w-full h-1 bg-[#2C2C2C]" />}
       <div className="flex items-start justify-between mb-8">
         <div
           className={`w-12 h-12 flex items-center justify-center border transition-colors duration-300 ${
-            selected ? 'border-[#1B4332] text-[#1B4332]' : 'border-[#E8E6E1] text-[#8A8A8A] group-hover:border-[#B8956B]/40 group-hover:text-[#B8956B]'
+            selected ? 'border-[#2C2C2C] text-[#2C2C2C]' : 'border-[#E5E2DC] text-[#8A8A8A] group-hover:border-[#8B7355]/40 group-hover:text-[#8B7355]'
           }`}
         >
           <Icon size={22} strokeWidth={1.2} />
         </div>
         {selected && (
           <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.15 }}>
-            <CheckCircle2 size={18} className="text-[#1B4332]" strokeWidth={1.5} />
+            <CheckCircle2 size={18} className="text-[#2C2C2C]" strokeWidth={1.5} />
           </motion.div>
         )}
       </div>
@@ -249,7 +249,7 @@ function ViewingCard({
         </span>
         <span
           className={`text-2xl font-light tracking-tight ${
-            selected ? 'text-[#1B4332]' : 'text-[#1A1A1A]'
+            selected ? 'text-[#2C2C2C]' : 'text-[#1A1A1A]'
           }`}
         >
           Ksh {fee.toLocaleString()}
@@ -286,7 +286,7 @@ function FormField({
     <div className="space-y-2.5">
       <label className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-[#8A8A8A]">
         {label}
-        {required && <span className="text-[#B8956B] ml-1">·</span>}
+        {required && <span className="text-[#8B7355] ml-1">·</span>}
       </label>
       <div className="relative">
         {Icon && (
@@ -302,7 +302,7 @@ function FormField({
           placeholder={placeholder}
           required={required}
           min={min}
-          className={`w-full bg-transparent border-0 border-b border-[#E8E6E1] py-3 text-[15px] text-[#1A1A1A] placeholder:text-[#B0ADA7] focus:outline-none focus:border-[#1B4332] transition-colors duration-300 ${
+          className={`w-full bg-transparent border-0 border-b border-[#E5E2DC] py-3 text-[15px] text-[#1A1A1A] placeholder:text-[#B0ADA7] focus:outline-none focus:border-[#2C2C2C] transition-colors duration-300 ${
             Icon ? 'pl-7' : ''
           }`}
         />
@@ -335,7 +335,7 @@ function SelectField({
     <div className="space-y-2.5">
       <label className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-[#8A8A8A]">
         {label}
-        {required && <span className="text-[#B8956B] ml-1">·</span>}
+        {required && <span className="text-[#8B7355] ml-1">·</span>}
       </label>
       <div className="relative">
         {Icon && (
@@ -348,7 +348,7 @@ function SelectField({
           value={value}
           onChange={onChange}
           required={required}
-          className={`w-full bg-transparent border-0 border-b border-[#E8E6E1] py-3 text-[15px] text-[#1A1A1A] appearance-none focus:outline-none focus:border-[#1B4332] transition-colors duration-300 cursor-pointer ${
+          className={`w-full bg-transparent border-0 border-b border-[#E5E2DC] py-3 text-[15px] text-[#1A1A1A] appearance-none focus:outline-none focus:border-[#2C2C2C] transition-colors duration-300 cursor-pointer ${
             Icon ? 'pl-7' : ''
           } ${!value ? 'text-[#B0ADA7]' : ''}`}
         >
@@ -372,13 +372,13 @@ function SelectField({
 
 function PolicyPanel({ type }: { type: ViewingType | null }) {
   return (
-    <div className="border-l-2 border-[#B8956B] pl-6 py-1 mb-12">
-      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B8956B] mb-4">
+    <div className="border-l-2 border-[#8B7355] pl-6 py-1 mb-12">
+      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8B7355] mb-4">
         Advisory Protocol
       </p>
       <ul className="space-y-3 text-[13px] text-[#6B6B6B] leading-[1.8]">
         <li className="flex items-start gap-3">
-          <span className="w-1 h-1 rounded-full bg-[#B8956B] mt-2 shrink-0" />
+          <span className="w-1 h-1 rounded-full bg-[#8B7355] mt-2 shrink-0" />
           <span>
             Viewing fee of{' '}
             <strong className="text-[#1A1A1A] font-medium">
@@ -388,7 +388,7 @@ function PolicyPanel({ type }: { type: ViewingType | null }) {
           </span>
         </li>
         <li className="flex items-start gap-3">
-          <span className="w-1 h-1 rounded-full bg-[#B8956B] mt-2 shrink-0" />
+          <span className="w-1 h-1 rounded-full bg-[#8B7355] mt-2 shrink-0" />
           <span>
             All viewings require{' '}
             <strong className="text-[#1A1A1A] font-medium">24-hour advance notice</strong>.
@@ -396,14 +396,14 @@ function PolicyPanel({ type }: { type: ViewingType | null }) {
           </span>
         </li>
         <li className="flex items-start gap-3">
-          <span className="w-1 h-1 rounded-full bg-[#B8956B] mt-2 shrink-0" />
+          <span className="w-1 h-1 rounded-full bg-[#8B7355] mt-2 shrink-0" />
           <span>
             Morning sessions only:{' '}
             <strong className="text-[#1A1A1A] font-medium">08:00 — 10:00 AM</strong>.
           </span>
         </li>
         <li className="flex items-start gap-3">
-          <span className="w-1 h-1 rounded-full bg-[#B8956B] mt-2 shrink-0" />
+          <span className="w-1 h-1 rounded-full bg-[#8B7355] mt-2 shrink-0" />
           <span>
             Confirmation is final only upon{' '}
             <strong className="text-[#1A1A1A] font-medium">fee settlement</strong> and mutual agreement of appointment time.
@@ -637,12 +637,12 @@ export default function VisitPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* ═══════ HERO ═══════ */}
-      <section className="relative bg-[#FAF9F6]">
+      <section className="relative bg-[#F8F7F4]">
         <div className="max-w-5xl mx-auto px-6 sm:px-12 pt-20 sm:pt-32 pb-16 sm:pb-24">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: easeOut }}>
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-8 h-px bg-[#B8956B]" />
-              <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#B8956B]">
+              <div className="w-8 h-px bg-[#8B7355]" />
+              <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#8B7355]">
                 Murivest Group
               </span>
             </div>
@@ -699,7 +699,7 @@ export default function VisitPage() {
                   disabled={!canProceedStep2}
                   className={`group inline-flex items-center gap-3 px-10 py-4 text-sm font-medium tracking-wide uppercase transition-all duration-300 shadow-sm ${
                     canProceedStep2
-                      ? 'bg-[#1B4332] text-white hover:bg-[#234B3A] hover:shadow-md'
+                      ? 'bg-[#2C2C2C] text-white hover:bg-[#234B3A] hover:shadow-md'
                       : 'bg-[#E5E2DC] text-[#9CA3AF] cursor-not-allowed'
                   }`}
                 >
@@ -806,30 +806,30 @@ export default function VisitPage() {
                 {/* ── Sidebar Summary ── */}
                 <motion.div variants={fadeUp} className="hidden lg:block">
                   <div className="sticky top-24">
-                    <div className="border border-[#E8E6E1] bg-[#FAF9F6] p-8">
+                    <div className="border border-[#E5E2DC] bg-[#F8F7F4] p-8">
                       <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8A8A8A] mb-6">
                         Engagement Summary
                       </p>
                       <div className="space-y-5">
-                        <div className="flex justify-between items-baseline pb-4 border-b border-[#E8E6E1]">
+                        <div className="flex justify-between items-baseline pb-4 border-b border-[#E5E2DC]">
                           <span className="text-[13px] text-[#6B6B6B]">Engagement</span>
                           <span className="text-[13px] font-medium text-[#1A1A1A] capitalize">
                             {formData.viewingType || '—'}
                           </span>
                         </div>
-                        <div className="flex justify-between items-baseline pb-4 border-b border-[#E8E6E1]">
+                        <div className="flex justify-between items-baseline pb-4 border-b border-[#E5E2DC]">
                           <span className="text-[13px] text-[#6B6B6B]">Property</span>
                           <span className="text-[13px] font-medium text-[#1A1A1A] text-right max-w-[140px] truncate">
                             {formData.propertyName || formData.propertyLocation || '—'}
                           </span>
                         </div>
-                        <div className="flex justify-between items-baseline pb-4 border-b border-[#E8E6E1]">
+                        <div className="flex justify-between items-baseline pb-4 border-b border-[#E5E2DC]">
                           <span className="text-[13px] text-[#6B6B6B]">Date</span>
                           <span className="text-[13px] font-medium text-[#1A1A1A]">
                             {formatDate(formData.preferredDate) || '—'}
                           </span>
                         </div>
-                        <div className="flex justify-between items-baseline pb-4 border-b border-[#E8E6E1]">
+                        <div className="flex justify-between items-baseline pb-4 border-b border-[#E5E2DC]">
                           <span className="text-[13px] text-[#6B6B6B]">Time</span>
                           <span className="text-[13px] font-medium text-[#1A1A1A]">
                             {formData.preferredTime || '—'}
@@ -837,7 +837,7 @@ export default function VisitPage() {
                         </div>
                         <div className="flex justify-between items-baseline pt-2">
                           <span className="text-[13px] text-[#6B6B6B]">Engagement Fee</span>
-                          <span className="text-xl font-light text-[#1B4332]">
+                          <span className="text-xl font-light text-[#2C2C2C]">
                             Ksh {formData.viewingType ? VIEWING_FEES[formData.viewingType].toLocaleString() : '—'}
                           </span>
                         </div>
@@ -848,7 +848,7 @@ export default function VisitPage() {
                       <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="mt-4 p-6 border border-[#1B4332]/10 bg-[#1B4332]/[0.02]"
+                        className="mt-4 p-6 border border-[#2C2C2C]/10 bg-[#2C2C2C]/[0.02]"
                       >
                         <p className="text-[11px] text-[#6B6B6B] leading-relaxed">
                           Your advisory session is ready for confirmation. Please review the particulars above before proceeding to settlement.
@@ -864,7 +864,7 @@ export default function VisitPage() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="lg:hidden mt-12 p-6 border border-[#E8E6E1] bg-[#FAF9F6]"
+                  className="lg:hidden mt-12 p-6 border border-[#E5E2DC] bg-[#F8F7F4]"
                 >
                   <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8A8A8A] mb-4">
                     Engagement Summary
@@ -876,7 +876,7 @@ export default function VisitPage() {
                     </div>
                     <div>
                       <span className="block text-xs text-[#8A8A8A] mb-1">Fee</span>
-                      <span className="font-medium text-[#1B4332]">
+                      <span className="font-medium text-[#2C2C2C]">
                         Ksh {formData.viewingType ? VIEWING_FEES[formData.viewingType].toLocaleString() : '—'}
                       </span>
                     </div>
@@ -903,7 +903,7 @@ export default function VisitPage() {
                   disabled={!canProceedStep3}
                   className={`inline-flex items-center gap-3 px-10 py-4 text-sm font-medium tracking-wide uppercase transition-all duration-300 shadow-sm ${
                     canProceedStep3
-                      ? 'bg-[#1B4332] text-white hover:bg-[#234B3A] hover:shadow-md'
+                      ? 'bg-[#2C2C2C] text-white hover:bg-[#234B3A] hover:shadow-md'
                       : 'bg-[#E5E2DC] text-[#9CA3AF] cursor-not-allowed'
                   }`}
                 >
@@ -934,10 +934,10 @@ export default function VisitPage() {
                   <div className="grid lg:grid-cols-[1fr_380px] gap-16">
                     {/* ── Left: Instructions ── */}
                     <motion.div variants={fadeUp} className="space-y-12">
-                      <div className="border border-[#E8E6E1] p-8 sm:p-10">
+                      <div className="border border-[#E5E2DC] p-8 sm:p-10">
                         <div className="flex items-center gap-4 mb-8">
-                          <div className="w-12 h-12 border border-[#E8E6E1] flex items-center justify-center">
-                            <CreditCard size={20} strokeWidth={1.2} className="text-[#1B4332]" />
+                          <div className="w-12 h-12 border border-[#E5E2DC] flex items-center justify-center">
+                            <CreditCard size={20} strokeWidth={1.2} className="text-[#2C2C2C]" />
                           </div>
                           <div>
                             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8A8A8A]">
@@ -968,7 +968,7 @@ export default function VisitPage() {
                             <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8A8A8A] block mb-2">
                               Amount Due
                             </span>
-                            <span className="text-2xl font-light text-[#1B4332] tracking-tight">
+                            <span className="text-2xl font-light text-[#2C2C2C] tracking-tight">
                               Ksh {formData.viewingType ? VIEWING_FEES[formData.viewingType].toLocaleString() : '—'}
                             </span>
                           </div>
@@ -987,7 +987,7 @@ export default function VisitPage() {
                             `Enter amount Ksh ${formData.viewingType ? VIEWING_FEES[formData.viewingType].toLocaleString() : '—'} and confirm with your PIN.`,
                           ].map((item, i) => (
                             <li key={i} className="flex items-start gap-4 text-[14px] text-[#6B6B6B] leading-[1.7]">
-                              <span className="w-5 h-5 border border-[#E8E6E1] flex items-center justify-center text-[10px] font-semibold text-[#8A8A8A] shrink-0 mt-0.5">
+                              <span className="w-5 h-5 border border-[#E5E2DC] flex items-center justify-center text-[10px] font-semibold text-[#8A8A8A] shrink-0 mt-0.5">
                                 {i + 1}
                               </span>
                               {item}
@@ -996,7 +996,7 @@ export default function VisitPage() {
                         </ol>
                       </div>
 
-                      <div className="border-l-2 border-[#B8956B] pl-6 py-1">
+                      <div className="border-l-2 border-[#8B7355] pl-6 py-1">
                         <p className="text-[13px] text-[#6B6B6B] leading-[1.8]">
                           <strong className="text-[#1A1A1A] font-medium">Notice:</strong> Settlement must be completed before the advisory session is formally confirmed. Upon verification, you and our advisory desk will receive immediate confirmation via email.
                         </p>
@@ -1005,26 +1005,26 @@ export default function VisitPage() {
 
                     {/* ── Right: Appointment Card ── */}
                     <motion.div variants={fadeUp}>
-                      <div className="sticky top-24 border border-[#E8E6E1] bg-[#FAF9F6] p-8">
+                      <div className="sticky top-24 border border-[#E5E2DC] bg-[#F8F7F4] p-8">
                         <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8A8A8A] mb-6">
                           Appointment Particulars
                         </p>
                         <div className="space-y-4">
-                          <div className="pb-4 border-b border-[#E8E6E1]">
+                          <div className="pb-4 border-b border-[#E5E2DC]">
                             <span className="text-[11px] text-[#8A8A8A] uppercase tracking-wider">Principal</span>
                             <p className="text-[15px] text-[#1A1A1A] mt-1 font-medium">{formData.fullName}</p>
                           </div>
-                          <div className="pb-4 border-b border-[#E8E6E1]">
+                          <div className="pb-4 border-b border-[#E5E2DC]">
                             <span className="text-[11px] text-[#8A8A8A] uppercase tracking-wider">Engagement</span>
                             <p className="text-[15px] text-[#1A1A1A] mt-1 font-medium capitalize">{formData.viewingType}</p>
                           </div>
-                          <div className="pb-4 border-b border-[#E8E6E1]">
+                          <div className="pb-4 border-b border-[#E5E2DC]">
                             <span className="text-[11px] text-[#8A8A8A] uppercase tracking-wider">Property</span>
                             <p className="text-[15px] text-[#1A1A1A] mt-1 font-medium">
                               {formData.propertyName || formData.propertyLocation}
                             </p>
                           </div>
-                          <div className="pb-4 border-b border-[#E8E6E1]">
+                          <div className="pb-4 border-b border-[#E5E2DC]">
                             <span className="text-[11px] text-[#8A8A8A] uppercase tracking-wider">Schedule</span>
                             <p className="text-[15px] text-[#1A1A1A] mt-1 font-medium">
                               {formatDate(formData.preferredDate)} at {formData.preferredTime}
@@ -1032,7 +1032,7 @@ export default function VisitPage() {
                           </div>
                           <div className="pt-2">
                             <span className="text-[11px] text-[#8A8A8A] uppercase tracking-wider">Fee</span>
-                            <p className="text-2xl font-light text-[#1B4332] mt-1">
+                            <p className="text-2xl font-light text-[#2C2C2C] mt-1">
                               Ksh {formData.viewingType ? VIEWING_FEES[formData.viewingType].toLocaleString() : '—'}
                             </p>
                           </div>
@@ -1051,7 +1051,7 @@ export default function VisitPage() {
                     </button>
                     <button
                       onClick={() => setShowVerification(true)}
-                      className="inline-flex items-center gap-3 px-10 py-4 text-sm font-medium tracking-wide uppercase bg-[#1B4332] text-white hover:bg-[#234B3A] shadow-sm hover:shadow-md transition-all duration-300"
+                      className="inline-flex items-center gap-3 px-10 py-4 text-sm font-medium tracking-wide uppercase bg-[#2C2C2C] text-white hover:bg-[#234B3A] shadow-sm hover:shadow-md transition-all duration-300"
                     >
                       <CheckCircle2 size={14} strokeWidth={1.5} />
                       I Have Completed Payment
@@ -1068,7 +1068,7 @@ export default function VisitPage() {
                   </motion.div>
 
                   <div className="max-w-2xl">
-                    <motion.div variants={fadeUp} className="mb-10 p-6 bg-[#FAF9F6] border border-[#E8E6E1]">
+                    <motion.div variants={fadeUp} className="mb-10 p-6 bg-[#F8F7F4] border border-[#E5E2DC]">
                       <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8A8A8A] mb-4">
                         Principal Details
                       </p>
@@ -1091,7 +1091,7 @@ export default function VisitPage() {
                     <motion.div variants={fadeUp} className="mb-8">
                       <label className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-[#8A8A8A] mb-3">
                         M-Pesa Confirmation Message
-                        <span className="text-[#B8956B] ml-1">·</span>
+                        <span className="text-[#8B7355] ml-1">·</span>
                       </label>
                       <textarea
                         name="mpesaMessage"
@@ -1100,12 +1100,12 @@ export default function VisitPage() {
                         placeholder={`QGH82P7L5 Confirmed. Ksh ${formData.viewingType ? VIEWING_FEES[formData.viewingType].toLocaleString() : '10,000'}.00 sent to ${RECIPIENT_NAME} for account ${ACCOUNT_NUMBER} on 9 August 2026 at 2:35 PM. New M-PESA balance is Ksh X,XXX.00.`}
                         required
                         rows={6}
-                        className={`w-full bg-[#FAF9F6] border p-5 text-[14px] text-[#1A1A1A] placeholder:text-[#B0ADA7] leading-relaxed focus:outline-none focus:ring-1 transition-all duration-200 resize-none ${
+                        className={`w-full bg-[#F8F7F4] border p-5 text-[14px] text-[#1A1A1A] placeholder:text-[#B0ADA7] leading-relaxed focus:outline-none focus:ring-1 transition-all duration-200 resize-none ${
                           verificationStatus === 'error'
                             ? 'border-[#9B2C2C] focus:ring-[#9B2C2C]/10'
                             : verificationStatus === 'success'
-                              ? 'border-[#1B4332] focus:ring-[#1B4332]/10'
-                              : 'border-[#E8E6E1] focus:border-[#1B4332] focus:ring-[#1B4332]/10'
+                              ? 'border-[#2C2C2C] focus:ring-[#2C2C2C]/10'
+                              : 'border-[#E5E2DC] focus:border-[#2C2C2C] focus:ring-[#2C2C2C]/10'
                         }`}
                       />
 
@@ -1135,13 +1135,13 @@ export default function VisitPage() {
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: 'auto' }}
                             exit={{ opacity: 0, height: 0 }}
-                            className="mt-4 p-4 bg-[#1B4332]/[0.03] border border-[#1B4332]/20"
+                            className="mt-4 p-4 bg-[#2C2C2C]/[0.03] border border-[#2C2C2C]/20"
                           >
                             <div className="flex items-start gap-3">
-                              <CheckCircle2 size={16} className="text-[#1B4332] shrink-0 mt-0.5" />
+                              <CheckCircle2 size={16} className="text-[#2C2C2C] shrink-0 mt-0.5" />
                               <div>
-                                <p className="text-sm font-medium text-[#1B4332]">Settlement Verified</p>
-                                <p className="text-sm text-[#1B4332]/70 mt-1">
+                                <p className="text-sm font-medium text-[#2C2C2C]">Settlement Verified</p>
+                                <p className="text-sm text-[#2C2C2C]/70 mt-1">
                                   Your transaction has passed validation. Submit to finalize the advisory appointment.
                                 </p>
                               </div>
@@ -1156,10 +1156,10 @@ export default function VisitPage() {
                         initial={{ opacity: 0, scale: 0.98 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, ease: easeOut }}
-                        className="text-center py-20 border border-[#1B4332]/10 bg-[#1B4332]/[0.02]"
+                        className="text-center py-20 border border-[#2C2C2C]/10 bg-[#2C2C2C]/[0.02]"
                       >
-                        <div className="w-16 h-16 border border-[#1B4332] flex items-center justify-center mx-auto mb-8">
-                          <CheckCircle2 size={28} className="text-[#1B4332]" strokeWidth={1.2} />
+                        <div className="w-16 h-16 border border-[#2C2C2C] flex items-center justify-center mx-auto mb-8">
+                          <CheckCircle2 size={28} className="text-[#2C2C2C]" strokeWidth={1.2} />
                         </div>
                         <h3
                           className="text-2xl sm:text-3xl font-normal text-[#1A1A1A] mb-4"
@@ -1171,7 +1171,7 @@ export default function VisitPage() {
                           Your advisory session is confirmed for{' '}
                           <strong className="text-[#1A1A1A]">{formatDate(formData.preferredDate)}</strong> at{' '}
                           <strong className="text-[#1A1A1A]">{formData.preferredTime}</strong>. Confirmation has been dispatched to{' '}
-                          <span className="text-[#1B4332]">{formData.email}</span>.
+                          <span className="text-[#2C2C2C]">{formData.email}</span>.
                         </p>
                         <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.15em] text-[#8A8A8A]">
                           <Mail size={13} strokeWidth={1.5} />
@@ -1199,8 +1199,8 @@ export default function VisitPage() {
                               disabled={!formData.mpesaMessage.trim() || verificationStatus === 'verifying'}
                               className={`inline-flex items-center gap-2 px-8 py-3.5 text-sm font-medium tracking-wide uppercase border transition-all duration-300 ${
                                 formData.mpesaMessage.trim() && verificationStatus !== 'verifying'
-                                  ? 'border-[#1B4332] text-[#1B4332] hover:bg-[#1B4332] hover:text-white'
-                                  : 'border-[#E8E6E1] text-[#B0ADA7] cursor-not-allowed'
+                                  ? 'border-[#2C2C2C] text-[#2C2C2C] hover:bg-[#2C2C2C] hover:text-white'
+                                  : 'border-[#E5E2DC] text-[#B0ADA7] cursor-not-allowed'
                               }`}
                             >
                               {verificationStatus === 'verifying' ? (
@@ -1224,7 +1224,7 @@ export default function VisitPage() {
                               className={`inline-flex items-center gap-3 px-10 py-4 text-sm font-medium tracking-wide uppercase transition-all duration-300 shadow-sm ${
                                 submitStatus === 'submitting'
                                   ? 'bg-[#234B3A] text-white cursor-wait'
-                                  : 'bg-[#1B4332] text-white hover:bg-[#234B3A] hover:shadow-md'
+                                  : 'bg-[#2C2C2C] text-white hover:bg-[#234B3A] hover:shadow-md'
                               }`}
                             >
                               {submitStatus === 'submitting' ? (
@@ -1258,10 +1258,10 @@ export default function VisitPage() {
       </section>
 
       {/* ═══════ FOOTER ═══════ */}
-      <footer className="border-t border-[#E8E6E1] bg-[#FAF9F6]">
+      <footer className="border-t border-[#E5E2DC] bg-[#F8F7F4]">
         <div className="max-w-5xl mx-auto px-6 sm:px-12 py-12 flex flex-wrap items-center justify-between gap-6">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-px bg-[#B8956B]" />
+            <div className="w-6 h-px bg-[#8B7355]" />
             <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8A8A8A]">
               Murivest Group
             </span>

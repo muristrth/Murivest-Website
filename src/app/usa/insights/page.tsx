@@ -38,14 +38,14 @@ export default async function InsightsPage() {
 
   return (
     <>
-      <section className="bg-[#0F2E22] py-20">
+      <section className="bg-[#2C2C2C] py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <Eyebrow className="text-gold-400">Market Intelligence</Eyebrow>
+            <Eyebrow className="text-[#8B7355]">Market Intelligence</Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl">
               Murivest Research
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-[#C9A87C]">
+            <p className="mt-6 text-lg leading-relaxed text-[#8B7355]">
               Proprietary analysis of U.S. commercial real estate market
               conditions, cap rate trends, sector dynamics, and macroeconomic
               factors affecting institutional investors.
@@ -56,19 +56,19 @@ export default async function InsightsPage() {
 
       <Section className="py-20">
         {articles.length === 0 ? (
-          <div className="rounded-2xl border border-[#E8E6E1] bg-[#FAF9F6] py-20 text-center">
-            <FileText size={48} className="mx-auto text-[#FAF9F6]" />
+          <div className="rounded-2xl border border-[#E5E2DC] bg-[#F8F7F4] py-20 text-center">
+            <FileText size={48} className="mx-auto text-[#F8F7F4]" />
             <h2 className="mt-4 font-serif text-2xl font-semibold text-[#2C2C2C]">
               Research publications coming soon
             </h2>
-            <p className="mx-auto mt-2 max-w-md text-[#8B8680]">
+            <p className="mx-auto mt-2 max-w-md text-[#5A5A5A]">
               Our research team is preparing the first installment of Murivest
               market intelligence. Please check back or subscribe via our
               contact form to be notified when new analysis is published.
             </p>
             <Link
               href="/usa/contact"
-              className="mt-6 inline-flex items-center gap-2 rounded-lg bg-[#B8956B] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[#C9A87C]"
+              className="mt-6 inline-flex items-center gap-2 rounded-lg bg-[#8B7355] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[#8B7355]"
             >
               Get in touch
               <ArrowRight size={16} />
@@ -81,7 +81,7 @@ export default async function InsightsPage() {
                 {categories.map((cat) => (
                   <span
                     key={cat}
-                    className="rounded-full border border-[#E8E6E1] bg-white px-4 py-1.5 text-sm font-medium text-[#C9A87C]"
+                    className="rounded-full border border-[#E5E2DC] bg-white px-4 py-1.5 text-sm font-medium text-[#8B7355]"
                   >
                     {CATEGORY_LABELS[cat] || cat}
                   </span>
@@ -93,23 +93,23 @@ export default async function InsightsPage() {
                 <Link
                   key={article.id}
                   href={`/usa/insights/${article.slug}`}
-                  className="group flex flex-col rounded-xl border border-[#E8E6E1] bg-white p-6 transition-all hover:border-[#B8956B] hover:shadow-lg hover:shadow-ink-900/5"
+                  className="group flex flex-col rounded-xl border border-[#E5E2DC] bg-white p-6 transition-all hover:border-[#8B7355] hover:shadow-lg hover:shadow-[#2C2C2C]/5"
                 >
                   <div className="flex items-center gap-2 text-xs">
-                    <span className="rounded-full bg-[#FAF9F6] px-3 py-1 font-medium uppercase tracking-wide text-[#C9A87C]">
+                    <span className="rounded-full bg-[#F8F7F4] px-3 py-1 font-medium uppercase tracking-wide text-[#8B7355]">
                       {CATEGORY_LABELS[article.category] || article.category}
                     </span>
                     {article.sector && (
-                      <span className="text-[#8B8680]/70">{article.sector}</span>
+                      <span className="text-[#5A5A5A]/70">{article.sector}</span>
                     )}
                   </div>
-                  <h3 className="mt-4 font-serif text-lg font-semibold leading-snug text-[#2C2C2C] group-hover:text-[#B8956B] transition-colors">
+                  <h3 className="mt-4 font-serif text-lg font-semibold leading-snug text-[#2C2C2C] group-hover:text-[#8B7355] transition-colors">
                     {article.title}
                   </h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-[#8B8680]">
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-[#5A5A5A]">
                     {article.summary}
                   </p>
-                  <div className="mt-4 flex items-center justify-between text-xs text-[#8B8680]/70">
+                  <div className="mt-4 flex items-center justify-between text-xs text-[#5A5A5A]/70">
                     <span>
                       {new Date(article.published_at).toLocaleDateString(
                         "en-US",

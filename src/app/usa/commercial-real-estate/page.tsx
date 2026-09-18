@@ -95,7 +95,7 @@ export default function CREHubPage() {
       <section className="bg-navy-950 py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <Eyebrow className="text-gold-400">Commercial Real Estate</Eyebrow>
+            <Eyebrow className="text-[#8B7355]">Commercial Real Estate</Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl text-balance">
               Sector-specific expertise across U.S. commercial real estate
             </h1>
@@ -124,10 +124,10 @@ export default function CREHubPage() {
                 }`}
               >
                 <div className={isReversed ? "lg:col-start-2" : ""}>
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-navy-900 text-gold-400">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-navy-900 text-[#8B7355]">
                     <Icon size={26} />
                   </div>
-                  <h2 className="mt-5 font-serif text-3xl font-semibold text-ink-900">
+                  <h2 className="mt-5 font-serif text-3xl font-semibold text-[#2C2C2C]">
                     {type.label}
                   </h2>
                   <p className="mt-3 text-lg leading-relaxed text-ink-500">
@@ -144,7 +144,7 @@ export default function CREHubPage() {
                             key={driver}
                             className="flex items-start gap-2 text-sm text-ink-600"
                           >
-                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-400" />
+                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#8B7355]" />
                             {driver}
                           </li>
                         ))}
@@ -154,7 +154,7 @@ export default function CREHubPage() {
                   <div className="mt-6 flex flex-wrap gap-3">
                     <Link
                       href={`/usa/commercial-real-estate/${type.slug}`}
-                      className="flex items-center gap-1.5 rounded-lg bg-navy-700 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-navy-600"
+                      className="flex items-center gap-1.5 rounded-lg bg-[rgba(44,44,44,0.15)] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-navy-600"
                     >
                       Explore {type.label}
                       <ArrowRight size={16} />
@@ -162,7 +162,7 @@ export default function CREHubPage() {
                     {type.transactionTypes.includes("sale") && (
                       <Link
                         href={`/usa/commercial-real-estate/${type.slug}/for-sale`}
-                        className="flex items-center gap-1.5 rounded-lg border border-ink-200 px-5 py-2.5 text-sm font-semibold text-ink-700 transition-all hover:border-navy-300 hover:text-navy-700"
+                        className="flex items-center gap-1.5 rounded-lg border border-ink-200 px-5 py-2.5 text-sm font-semibold text-ink-700 transition-all hover:border-navy-300 hover:text-[rgba(44,44,44,0.15)]"
                       >
                         For Sale
                       </Link>
@@ -170,7 +170,7 @@ export default function CREHubPage() {
                     {type.transactionTypes.includes("lease") && (
                       <Link
                         href={`/usa/commercial-real-estate/${type.slug}/for-lease`}
-                        className="flex items-center gap-1.5 rounded-lg border border-ink-200 px-5 py-2.5 text-sm font-semibold text-ink-700 transition-all hover:border-navy-300 hover:text-navy-700"
+                        className="flex items-center gap-1.5 rounded-lg border border-ink-200 px-5 py-2.5 text-sm font-semibold text-ink-700 transition-all hover:border-navy-300 hover:text-[rgba(44,44,44,0.15)]"
                       >
                         For Lease
                       </Link>
@@ -183,7 +183,7 @@ export default function CREHubPage() {
                     isReversed ? "lg:col-start-1 lg:row-start-1" : ""
                   }`}
                 >
-                  <h3 className="font-serif text-lg font-semibold text-ink-900">
+                  <h3 className="font-serif text-lg font-semibold text-[#2C2C2C]">
                     {type.label} — What we advise on
                   </h3>
                   <div className="mt-4 space-y-3">
@@ -199,7 +199,7 @@ export default function CREHubPage() {
                         </span>
                         <Link
                           href={`/usa/commercial-real-estate/${type.slug}/${tt === "sale" ? "for-sale" : "for-lease"}`}
-                          className="flex items-center gap-1 text-sm font-medium text-navy-600 hover:text-navy-700 transition-colors"
+                          className="flex items-center gap-1 text-sm font-medium text-navy-600 hover:text-[rgba(44,44,44,0.15)] transition-colors"
                         >
                           View
                           <ArrowRight size={14} />
@@ -212,7 +212,7 @@ export default function CREHubPage() {
                       </span>
                       <Link
                         href="/usa/contact"
-                        className="flex items-center gap-1 text-sm font-medium text-navy-600 hover:text-navy-700 transition-colors"
+                        className="flex items-center gap-1 text-sm font-medium text-navy-600 hover:text-[rgba(44,44,44,0.15)] transition-colors"
                       >
                         Inquire
                         <ArrowRight size={14} />

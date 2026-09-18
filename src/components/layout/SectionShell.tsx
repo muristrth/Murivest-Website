@@ -4,7 +4,7 @@ interface SectionShellProps {
   children: React.ReactNode;
   className?: string;
   id?: string;
-  background?: 'white' | 'cream' | 'forest';
+  background?: 'white' | 'cream' | 'charcoal';
 }
 
 export function SectionShell({ 
@@ -15,8 +15,8 @@ export function SectionShell({
 }: SectionShellProps) {
   const bgClasses = {
     white: 'bg-white',
-    cream: 'bg-[#FAF9F6]',
-    forest: 'bg-[#1B4332] text-white',
+    cream: 'bg-[#F8F7F4]',
+    charcoal: 'bg-[#2C2C2C] text-white',
   };
 
   return (

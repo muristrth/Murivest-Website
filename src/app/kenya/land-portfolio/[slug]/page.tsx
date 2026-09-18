@@ -146,7 +146,7 @@ export default async function LandParcelPage(
   }
 
   return (
-    <main className="bg-[#FAF9F6] min-h-screen">
+    <main className="bg-[#F8F7F4] min-h-screen">
       <LandClientView land={land} />
     </main>
   );

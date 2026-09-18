@@ -40,7 +40,7 @@ export default async function DistrictPage({ params }: Props) {
 
       <main>
         {/* Navigation */}
-        <div className="bg-[#1B4332] border-b border-white/10">
+        <div className="bg-[#2C2C2C] border-b border-white/10">
           <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-4">
             <Link href="/singapore/singapore-market" className="inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-white/70 hover:text-white transition-colors">
               <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
@@ -50,11 +50,11 @@ export default async function DistrictPage({ params }: Props) {
         </div>
 
         {/* Hero */}
-        <section className="relative bg-[#1B4332] py-16 md:py-24">
+        <section className="relative bg-[#2C2C2C] py-16 md:py-24">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0D1F17]/60" />
           <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
             <div className="flex flex-wrap gap-3 mb-4">
-              <span className="bg-[#B8956B] text-white text-[9px] tracking-[0.2em] uppercase px-3 py-1.5">
+              <span className="bg-[#8B7355] text-white text-[9px] tracking-[0.2em] uppercase px-3 py-1.5">
                 {tierLabels[district.tier]}
               </span>
             </div>
@@ -66,13 +66,13 @@ export default async function DistrictPage({ params }: Props) {
         </section>
 
         {/* Key Stats Bar */}
-        <section className="bg-white border-b border-[#E8E6E1]">
+        <section className="bg-white border-b border-[#E5E2DC]">
           <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
-            <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-[#E8E6E1]">
+            <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-[#E5E2DC]">
               {district.keyStats.map((stat) => (
                 <div key={stat.label} className="py-6 px-4 text-center">
-                  <p className="text-[9px] tracking-[0.25em] uppercase text-[#8B8680] mb-1">{stat.label}</p>
-                  <p className="font-mono text-lg text-[#1B4332] font-medium">{stat.value}</p>
+                  <p className="text-[9px] tracking-[0.25em] uppercase text-[#5A5A5A] mb-1">{stat.label}</p>
+                  <p className="font-mono text-lg text-[#2C2C2C] font-medium">{stat.value}</p>
                 </div>
               ))}
             </div>
@@ -87,10 +87,10 @@ export default async function DistrictPage({ params }: Props) {
               <div className="lg:col-span-2 space-y-10">
                 {/* Description */}
                 <ScrollReveal>
-                  <div className="bg-white border border-[#E8E6E1] p-8">
+                  <div className="bg-white border border-[#E5E2DC] p-8">
                     <h2 className="text-[11px] tracking-[0.25em] uppercase text-[#5A5A5A] mb-6 flex items-center gap-3">
                       <div className="w-8 h-8 bg-[#F5F4F0] flex items-center justify-center">
-                        <MapPin className="w-4 h-4 text-[#1B4332]" strokeWidth={1.5} />
+                        <MapPin className="w-4 h-4 text-[#2C2C2C]" strokeWidth={1.5} />
                       </div>
                       District Overview
                     </h2>
@@ -100,12 +100,12 @@ export default async function DistrictPage({ params }: Props) {
 
                 {/* URA Highlights */}
                 <ScrollReveal>
-                  <div className="bg-white border border-[#E8E6E1] p-8">
+                  <div className="bg-white border border-[#E5E2DC] p-8">
                     <h2 className="text-[11px] tracking-[0.25em] uppercase text-[#5A5A5A] mb-6">URA Master Plan Highlights</h2>
                     <ul className="space-y-3">
                       {district.uraHighlights.map((h, i) => (
                         <li key={i} className="flex items-start gap-3 text-sm text-[#2C2C2C]">
-                          <CheckCircle className="w-4 h-4 text-[#B8956B] mt-0.5 shrink-0" strokeWidth={1.5} />
+                          <CheckCircle className="w-4 h-4 text-[#8B7355] mt-0.5 shrink-0" strokeWidth={1.5} />
                           {h}
                         </li>
                       ))}
@@ -115,8 +115,8 @@ export default async function DistrictPage({ params }: Props) {
 
                 {/* Investment Thesis */}
                 <ScrollReveal>
-                  <div className="bg-[#1B4332] p-8">
-                    <h2 className="text-[11px] tracking-[0.25em] uppercase text-[#B8956B] mb-6 flex items-center gap-3">
+                  <div className="bg-[#2C2C2C] p-8">
+                    <h2 className="text-[11px] tracking-[0.25em] uppercase text-[#8B7355] mb-6 flex items-center gap-3">
                       <TrendingUp className="w-4 h-4" strokeWidth={1.5} />
                       Investment Thesis
                     </h2>
@@ -146,23 +146,23 @@ export default async function DistrictPage({ params }: Props) {
               {/* Right Column */}
               <div className="space-y-6">
                 {/* Map placeholder */}
-                <div className="bg-white border border-[#E8E6E1] p-6">
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#8B8680] mb-4">Location</p>
-                  <div className="h-[200px] bg-[#E8E6E1] flex items-center justify-center">
-                    <span className="text-sm text-[#8B8680]">
+                <div className="bg-white border border-[#E5E2DC] p-6">
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#5A5A5A] mb-4">Location</p>
+                  <div className="h-[200px] bg-[#E5E2DC] flex items-center justify-center">
+                    <span className="text-sm text-[#5A5A5A]">
                       {district.coordinates.lat}, {district.coordinates.lng}
                     </span>
                   </div>
                 </div>
 
                 {/* Key Stats */}
-                <div className="bg-white border border-[#E8E6E1] p-6">
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#8B8680] mb-4 font-medium">Key Statistics</p>
+                <div className="bg-white border border-[#E5E2DC] p-6">
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#5A5A5A] mb-4 font-medium">Key Statistics</p>
                   <div className="space-y-3">
                     {district.keyStats.map((stat) => (
-                      <div key={stat.label} className="flex items-center justify-between py-2 border-b border-[#E8E6E1] last:border-0">
-                        <span className="text-[11px] tracking-wider uppercase text-[#8B8680]">{stat.label}</span>
-                        <span className="font-mono text-[12px] text-[#1B4332]">{stat.value}</span>
+                      <div key={stat.label} className="flex items-center justify-between py-2 border-b border-[#E5E2DC] last:border-0">
+                        <span className="text-[11px] tracking-wider uppercase text-[#5A5A5A]">{stat.label}</span>
+                        <span className="font-mono text-[12px] text-[#2C2C2C]">{stat.value}</span>
                       </div>
                     ))}
                   </div>
@@ -171,7 +171,7 @@ export default async function DistrictPage({ params }: Props) {
                 {/* Download CTA */}
                 <Link
                   href="/singapore/contact"
-                  className="block w-full bg-[#B8956B] text-white py-4 text-center text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#C9A87C] transition-colors"
+                  className="block w-full bg-[#8B7355] text-white py-4 text-center text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors"
                 >
                   <Download className="w-4 h-4 inline-block mr-2 -mt-0.5" strokeWidth={1.5} />
                   Download District Report

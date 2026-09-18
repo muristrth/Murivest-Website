@@ -79,11 +79,11 @@ export default function OpportunitiesPage() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#1B4332] py-24">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-ink-950 to-ink-900" />
+      <section className="relative overflow-hidden bg-[#2C2C2C] py-24">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-[#2C2C2C] to-[#2C2C2C]" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <Eyebrow className="text-gold-400">Investment Opportunities</Eyebrow>
+            <Eyebrow className="text-[#8B7355]">Investment Opportunities</Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl text-balance">
               Confidential access to structured mandates
             </h1>
@@ -96,7 +96,7 @@ export default function OpportunitiesPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/usa/contact"
-                className="group flex items-center justify-center gap-2 rounded-lg bg-gold-400 px-6 py-3 text-sm font-semibold text-[#0F2E22] transition-all hover:bg-[#C9A87C]"
+                className="group flex items-center justify-center gap-2 rounded-lg bg-[#8B7355] px-6 py-3 text-sm font-semibold text-[#2C2C2C] transition-all hover:bg-[#8B7355]"
               >
                 Request Access
                 <ArrowRight
@@ -106,7 +106,7 @@ export default function OpportunitiesPage() {
               </Link>
               <Link
                 href="/usa/invest/mandates"
-                className="flex items-center justify-center rounded-lg border border-[#C9A87C] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
+                className="flex items-center justify-center rounded-lg border border-[#8B7355] px-6 py-3 text-sm font-semibold text-white transition-all hover:border-ink-400 hover:bg-[#2D5A45]"
               >
                 How Mandates Work
               </Link>
@@ -123,30 +123,30 @@ export default function OpportunitiesPage() {
           description="Opportunities at Murivest are not listed on a public portal. They are curated, underwritten, and presented confidentially to qualified investors whose criteria and strategy align with the mandate."
         />
         <div className="mt-12 grid gap-8 lg:grid-cols-3">
-          <div className="rounded-xl border border-[#E8E6E1] bg-white p-6">
+          <div className="rounded-xl border border-[#E5E2DC] bg-white p-6">
             <h3 className="font-serif text-xl font-semibold text-[#2C2C2C]">
               Pre-Vetted Mandates
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+            <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
               Every opportunity has been sourced, underwritten, and
               structured to meet institutional standards before it reaches
               qualified investors.
             </p>
           </div>
-          <div className="rounded-xl border border-[#E8E6E1] bg-white p-6">
+          <div className="rounded-xl border border-[#E5E2DC] bg-white p-6">
             <h3 className="font-serif text-xl font-semibold text-[#2C2C2C]">
               Confidential Presentation
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+            <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
               Opportunities are presented directly and confidentially — no
               public listings, no mass marketing, no competing investor pools.
             </p>
           </div>
-          <div className="rounded-xl border border-[#E8E6E1] bg-white p-6">
+          <div className="rounded-xl border border-[#E5E2DC] bg-white p-6">
             <h3 className="font-serif text-xl font-semibold text-[#2C2C2C]">
               Structured Engagement
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+            <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
               Each opportunity is presented within a structured mandate
               framework, with clear scope, fees, and alignment of interests.
             </p>
@@ -155,7 +155,7 @@ export default function OpportunitiesPage() {
       </Section>
 
       {/* Demo opportunities */}
-      <Section className="py-20 bg-[#FAF9F6]">
+      <Section className="py-20 bg-[#F8F7F4]">
         <SectionHeading
           eyebrow="Sample Format"
           title="Opportunity format (DEMO DATA)"
@@ -167,7 +167,7 @@ export default function OpportunitiesPage() {
             return (
               <div
                 key={opp.id}
-                className="rounded-xl border border-[#E8E6E1] bg-white p-6"
+                className="rounded-xl border border-[#E5E2DC] bg-white p-6"
               >
                 <div className="flex items-center justify-between">
                   <span
@@ -183,17 +183,17 @@ export default function OpportunitiesPage() {
                   >
                     {opp.strategy}
                   </span>
-                  <span className="text-xs font-medium text-[#8B8680]/70">
+                  <span className="text-xs font-medium text-[#5A5A5A]/70">
                     {opp.sector}
                   </span>
                 </div>
                 <h3 className="mt-4 font-serif text-lg font-semibold text-[#2C2C2C]">
                   {opp.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+                <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
                   {opp.summary}
                 </p>
-                <div className="mt-4 flex items-center gap-2 text-xs text-[#8B8680]/70">
+                <div className="mt-4 flex items-center gap-2 text-xs text-[#5A5A5A]/70">
                   <Target size={14} />
                   <span>Confidential mandate opportunity</span>
                 </div>
@@ -211,11 +211,11 @@ export default function OpportunitiesPage() {
           description="Qualified investors gain access to Murivest's curated opportunity pipeline through a structured mandate engagement."
         />
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
-          <div className="rounded-xl border border-[#E8E6E1] bg-white p-6">
+          <div className="rounded-xl border border-[#E5E2DC] bg-white p-6">
             <h3 className="font-serif text-xl font-semibold text-[#2C2C2C]">
               For Accredited & Institutional Investors
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+            <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
               If you represent an institutional investor, family office,
               private equity fund, or qualified individual investor, we
               welcome a confidential conversation to understand your mandate
@@ -223,17 +223,17 @@ export default function OpportunitiesPage() {
             </p>
             <Link
               href="/usa/contact"
-              className="mt-4 inline-flex items-center gap-2 rounded-lg bg-[#B8956B] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[#C9A87C]"
+              className="mt-4 inline-flex items-center gap-2 rounded-lg bg-[#8B7355] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[#8B7355]"
             >
               Request Access
               <ArrowRight size={16} />
             </Link>
           </div>
-          <div className="rounded-xl border border-[#E8E6E1] bg-white p-6">
+          <div className="rounded-xl border border-[#E5E2DC] bg-white p-6">
             <h3 className="font-serif text-xl font-semibold text-[#2C2C2C]">
               For Sponsors & Principals
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-[#8B8680]">
+            <p className="mt-2 text-sm leading-relaxed text-[#5A5A5A]">
               If you are a developer, sponsor, or principal seeking
               institutional capital partners for your project or portfolio,
               we welcome a confidential conversation to understand your
@@ -241,7 +241,7 @@ export default function OpportunitiesPage() {
             </p>
             <Link
               href="/usa/submit-a-deal"
-              className="mt-4 inline-flex items-center gap-2 rounded-lg bg-[#B8956B] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[#C9A87C]"
+              className="mt-4 inline-flex items-center gap-2 rounded-lg bg-[#8B7355] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[#8B7355]"
             >
               Submit a Deal
               <ArrowRight size={16} />
@@ -251,13 +251,13 @@ export default function OpportunitiesPage() {
       </Section>
 
       {/* Sector coverage */}
-      <Section className="py-20 bg-[#0F2E22]">
+      <Section className="py-20 bg-[#2C2C2C]">
         <div className="max-w-3xl">
-          <Eyebrow className="text-gold-400">Sector Coverage</Eyebrow>
+          <Eyebrow className="text-[#8B7355]">Sector Coverage</Eyebrow>
           <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight text-white sm:text-4xl">
             Opportunities across all major U.S. CRE sectors
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-[#C9A87C]">
+          <p className="mt-4 text-lg leading-relaxed text-[#8B7355]">
             Murivest maintains dedicated sector expertise and underwrites
             opportunities across every major U.S. commercial real estate
             sector.
@@ -270,15 +270,15 @@ export default function OpportunitiesPage() {
               <Link
                 key={type.slug}
                 href={`/usa/commercial-real-estate/${type.slug}`}
-                className="group flex flex-col rounded-xl border border-navy-700 bg-[#1B4332]/50 p-6 transition-all hover:border-navy-500 hover:bg-[#1B4332]"
+                className="group flex flex-col rounded-xl border border-[rgba(44,44,44,0.15)] bg-[#2C2C2C]/50 p-6 transition-all hover:border-navy-500 hover:bg-[#2C2C2C]"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#2D5A45] text-gold-400">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#2D5A45] text-[#8B7355]">
                   <Icon size={20} />
                 </div>
-                <h3 className="mt-3 font-serif text-lg font-semibold text-white group-hover:text-gold-400 transition-colors">
+                <h3 className="mt-3 font-serif text-lg font-semibold text-white group-hover:text-[#8B7355] transition-colors">
                   {type.label}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#C9A87C]">
+                <p className="mt-2 text-sm leading-relaxed text-[#8B7355]">
                   {type.description}
                 </p>
               </Link>

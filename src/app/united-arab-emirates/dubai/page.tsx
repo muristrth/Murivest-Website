@@ -3,7 +3,7 @@
 // ──────────────────────────────────────────────────────────────
 // MURIVEST DUBAI — EMIRATE HOMEPAGE (REVISED)
 // Old Money · Institutional · UHNWI / Family Office / PE Principal Facing
-// Forest Green #1B4332 · Brass/Gold #B8956B · Cream #FAF9F6
+// Forest Green #2C2C2C · Brass/Gold #8B7355 · Cream #F8F7F4
 // Target: Family Offices, Sovereign-Adjacent Capital, PE Principals, Private Client Counsel
 // ──────────────────────────────────────────────────────────────
 // NOTE: Export metadata from a parallel server layout.tsx:
@@ -68,7 +68,7 @@ function GoldEyebrow({ label }: { label: string }) {
   return (
     <div className="flex items-center gap-4 mb-8">
       <div className="w-12 h-px bg-gradient-to-r from-gold-500 to-gold-500/20" />
-      <span className="text-gold-500/90 text-[10px] tracking-[0.4em] uppercase font-medium">
+      <span className="text-[#8B7355]/90 text-[10px] tracking-[0.4em] uppercase font-medium">
         {label}
       </span>
     </div>
@@ -81,7 +81,7 @@ function GoldEyebrow({ label }: { label: string }) {
 
 function Hero() {
   return (
-    <section className="relative min-h-screen bg-forest-950 overflow-hidden">
+    <section className="relative min-h-screen bg-[#2C2C2C] overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(184,149,80,0.10),transparent_60%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(0,0,0,0.55),transparent_55%)]" />
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] opacity-[0.03]" />
@@ -95,7 +95,7 @@ function Hero() {
           className="flex items-center justify-between border-b border-gold-500/15 py-6 mt-8"
         >
           <div className="flex items-center gap-3">
-            <span className="text-gold-400/80 text-[10px] tracking-[0.35em] uppercase font-medium">
+            <span className="text-[#8B7355]/80 text-[10px] tracking-[0.35em] uppercase font-medium">
               Murivest Private Office
             </span>
             <span className="text-stone-600 text-[10px]">/</span>
@@ -117,7 +117,7 @@ function Hero() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-7"
           >
-            <span className="block text-gold-400/90 text-[11px] tracking-[0.3em] uppercase font-medium mb-8">
+            <span className="block text-[#8B7355]/90 text-[11px] tracking-[0.3em] uppercase font-medium mb-8">
               Institutional Real Estate Advisory — Dubai
             </span>
 
@@ -170,7 +170,7 @@ function Hero() {
                   className="absolute inset-0 bg-cover bg-center grayscale-[25%] contrast-[1.05]"
                   style={{ backgroundImage: "url('/images/dubai-difc-skyline.webp')" }}
                 />
-                <div className="absolute inset-0 bg-forest-950/20" />
+                <div className="absolute inset-0 bg-[#2C2C2C]/20" />
                 <div className="absolute inset-0 ring-1 ring-inset ring-gold-500/10" />
                 <div className="absolute top-4 left-4 w-8 h-8 border-t border-l border-gold-500/40" />
                 <div className="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-gold-500/40" />
@@ -194,7 +194,7 @@ function Hero() {
                   DIFC-Registered Advisory
                 </div>
               </div>
-              <div className="w-10 h-px bg-gold-500/30" />
+              <div className="w-10 h-px bg-[#8B7355]/30" />
               <div className="text-right">
                 <div className="text-stone-200 text-sm font-display tracking-tight">
                   Principals Only
@@ -349,7 +349,7 @@ function EditorialIntro() {
                   className="group py-8 border-t border-stone-200 first:border-t-0 hover:bg-stone-100/50 transition-colors duration-300 px-4 -mx-4"
                 >
                   <div className="flex items-start gap-6">
-                    <div className="w-10 h-10 flex items-center justify-center border border-stone-300 group-hover:border-gold-500 group-hover:bg-gold-500/5 transition-all duration-300 shrink-0">
+                    <div className="w-10 h-10 flex items-center justify-center border border-stone-300 group-hover:border-gold-500 group-hover:bg-[#8B7355]/5 transition-all duration-300 shrink-0">
                       <span className="text-stone-400 group-hover:text-gold-600 text-xs font-mono transition-colors">
                         0{i + 1}
                       </span>
@@ -387,14 +387,14 @@ function Provenance() {
   ]
 
   return (
-    <section className="bg-forest-900 border-y border-gold-500/15 py-10">
+    <section className="bg-[#2C2C2C] border-y border-gold-500/15 py-10">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
           {marks.map((m) => {
             const Icon = m.icon
             return (
               <div key={m.label} className="flex items-center gap-3">
-                <Icon size={16} strokeWidth={1.5} className="text-gold-400/70 shrink-0" />
+                <Icon size={16} strokeWidth={1.5} className="text-[#8B7355]/70 shrink-0" />
                 <span className="text-stone-300 text-[11px] tracking-[0.1em] uppercase font-body">
                   {m.label}
                 </span>
@@ -479,7 +479,7 @@ function Districts() {
   ]
 
   return (
-    <section ref={ref} id="districts" className="py-32 lg:py-40 bg-forest-950">
+    <section ref={ref} id="districts" className="py-32 lg:py-40 bg-[#2C2C2C]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <motion.div
           initial="hidden"
@@ -509,7 +509,7 @@ function Districts() {
           </motion.p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-forest-900/50">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#2C2C2C]/50">
           {districts.map((district, i) => (
             <DistrictCard key={district.id} district={district} index={i} isInView={isInView} />
           ))}
@@ -535,7 +535,7 @@ function DistrictCard({
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: index * 0.1, duration: 0.6, ease: 'easeOut' }}
-      className="bg-forest-950 p-8 lg:p-10 group hover:bg-forest-900/80 transition-colors duration-500 cursor-pointer"
+      className="bg-[#2C2C2C] p-8 lg:p-10 group hover:bg-[#2C2C2C]/80 transition-colors duration-500 cursor-pointer"
       onClick={() => setExpanded(!expanded)}
     >
       <div className="flex items-center justify-between mb-2">
@@ -549,13 +549,13 @@ function DistrictCard({
         </div>
       </div>
 
-      <p className="text-gold-500/70 text-[10px] tracking-[0.25em] uppercase mb-6">
+      <p className="text-[#8B7355]/70 text-[10px] tracking-[0.25em] uppercase mb-6">
         {district.tagline}
       </p>
 
       <div className="space-y-5">
         <div>
-          <span className="text-gold-500/70 text-[9px] tracking-[0.3em] uppercase block mb-2">
+          <span className="text-[#8B7355]/70 text-[9px] tracking-[0.3em] uppercase block mb-2">
             Economic Driver
           </span>
           <p className="text-stone-400 text-sm leading-relaxed font-body">
@@ -564,7 +564,7 @@ function DistrictCard({
         </div>
 
         <div>
-          <span className="text-gold-500/70 text-[9px] tracking-[0.3em] uppercase block mb-2">
+          <span className="text-[#8B7355]/70 text-[9px] tracking-[0.3em] uppercase block mb-2">
             Investment Thesis
           </span>
           <p className="text-stone-400 text-sm leading-relaxed font-body">
@@ -582,7 +582,7 @@ function DistrictCard({
               className="overflow-hidden"
             >
               <div>
-                <span className="text-gold-500/70 text-[9px] tracking-[0.3em] uppercase block mb-2">
+                <span className="text-[#8B7355]/70 text-[9px] tracking-[0.3em] uppercase block mb-2">
                   Dominant Sectors
                 </span>
                 <p className="text-stone-400 text-sm leading-relaxed font-body">
@@ -590,7 +590,7 @@ function DistrictCard({
                 </p>
               </div>
               <div className="mt-4">
-                <span className="text-gold-500/70 text-[9px] tracking-[0.3em] uppercase block mb-2">
+                <span className="text-[#8B7355]/70 text-[9px] tracking-[0.3em] uppercase block mb-2">
                   Target Yield Range
                 </span>
                 <p className="text-stone-200 text-sm font-mono">{district.yield}</p>
@@ -598,7 +598,7 @@ function DistrictCard({
               <div className="mt-6 pt-6 border-t border-stone-800">
                 <a
                   href={district.href}
-                  className="inline-flex items-center gap-2 text-gold-400 text-[10px] tracking-[0.2em] uppercase hover:text-gold-300 transition-colors"
+                  className="inline-flex items-center gap-2 text-[#8B7355] text-[10px] tracking-[0.2em] uppercase hover:text-gold-300 transition-colors"
                 >
                   View Market Intelligence
                   <ArrowRight size={12} />
@@ -649,7 +649,7 @@ function SignaturePlate() {
             <div className="absolute inset-6 ring-1 ring-inset ring-gold-500/15" />
             <div className="absolute bottom-8 left-8 right-8 flex items-end justify-between">
               <div>
-                <span className="text-gold-400 text-[10px] tracking-[0.3em] uppercase block mb-2">
+                <span className="text-[#8B7355] text-[10px] tracking-[0.3em] uppercase block mb-2">
                   Fig. 02 — Sheikh Zayed Road Corridor, at Dusk
                 </span>
                 <p className="font-accent italic text-stone-100 text-xl lg:text-2xl max-w-xl">
@@ -715,12 +715,12 @@ function AssetClasses() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.06, duration: 0.5 }}
-                className="bg-stone-50 p-8 lg:p-10 group hover:bg-forest-900 transition-colors duration-500"
+                className="bg-stone-50 p-8 lg:p-10 group hover:bg-[#2C2C2C] transition-colors duration-500"
               >
                 <Icon
                   size={18}
                   strokeWidth={1.5}
-                  className="text-gold-500/60 group-hover:text-gold-400 mb-4 transition-colors"
+                  className="text-[#8B7355]/60 group-hover:text-[#8B7355] mb-4 transition-colors"
                 />
                 <h3 className="text-stone-800 group-hover:text-stone-50 text-lg font-display mb-2 transition-colors duration-300">
                   {asset.label}
@@ -773,7 +773,7 @@ function InvestmentThesis() {
   ]
 
   return (
-    <section ref={ref} className="py-32 lg:py-40 bg-forest-950">
+    <section ref={ref} className="py-32 lg:py-40 bg-[#2C2C2C]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <motion.div
           initial="hidden"
@@ -793,21 +793,21 @@ function InvestmentThesis() {
           </motion.h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-px bg-forest-900/50">
+        <div className="grid md:grid-cols-2 gap-px bg-[#2C2C2C]/50">
           {theses.map((thesis, i) => (
             <motion.div
               key={thesis.title}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.06, duration: 0.5 }}
-              className="bg-forest-950 p-8 lg:p-10 group hover:bg-forest-900/80 transition-colors duration-500"
+              className="bg-[#2C2C2C] p-8 lg:p-10 group hover:bg-[#2C2C2C]/80 transition-colors duration-500"
             >
               <div className="flex items-start gap-6">
-                <span className="text-gold-500/40 text-xs font-mono mt-1 shrink-0">
+                <span className="text-[#8B7355]/40 text-xs font-mono mt-1 shrink-0">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <div>
-                  <h3 className="font-display text-lg text-stone-50 mb-3 group-hover:text-gold-400 transition-colors duration-300">
+                  <h3 className="font-display text-lg text-stone-50 mb-3 group-hover:text-[#8B7355] transition-colors duration-300">
                     {thesis.title}
                   </h3>
                   <p className="text-stone-500 text-sm leading-[1.8] font-body">
@@ -980,7 +980,7 @@ function CTA() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section ref={ref} id="contact" className="py-32 lg:py-40 bg-forest-950">
+    <section ref={ref} id="contact" className="py-32 lg:py-40 bg-[#2C2C2C]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <motion.div
           initial="hidden"
@@ -1024,14 +1024,14 @@ function CTA() {
           <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-6">
             <a
               href="/united-arab-emirates/dubai/contact"
-              className="group inline-flex items-center gap-3 bg-gold-600 text-stone-50 px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-gold-500 transition-colors duration-300"
+              className="group inline-flex items-center gap-3 bg-gold-600 text-stone-50 px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors duration-300"
             >
               Request a Private Briefing
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a
               href="mailto:info@murivest.co.ke"
-              className="group inline-flex items-center gap-2 text-stone-400 hover:text-gold-400 text-[11px] tracking-[0.2em] uppercase font-medium transition-colors duration-300"
+              className="group inline-flex items-center gap-2 text-stone-400 hover:text-[#8B7355] text-[11px] tracking-[0.2em] uppercase font-medium transition-colors duration-300"
             >
               <Mail size={13} strokeWidth={1.5} />
               info@murivest.co.ke
@@ -1087,7 +1087,7 @@ function Footer() {
                 <li key={item}>
                   <a
                     href={`/united-arab-emirates/dubai/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="text-stone-600 text-sm hover:text-gold-500 transition-colors font-body"
+                    className="text-stone-600 text-sm hover:text-[#8B7355] transition-colors font-body"
                   >
                     {item}
                   </a>
@@ -1105,7 +1105,7 @@ function Footer() {
                 <li key={item}>
                   <a
                     href={`/united-arab-emirates/dubai/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="text-stone-600 text-sm hover:text-gold-500 transition-colors font-body"
+                    className="text-stone-600 text-sm hover:text-[#8B7355] transition-colors font-body"
                   >
                     {item}
                   </a>
@@ -1123,7 +1123,7 @@ function Footer() {
                 <li key={item}>
                   <a
                     href={`/united-arab-emirates/dubai/research/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="text-stone-600 text-sm hover:text-gold-500 transition-colors font-body"
+                    className="text-stone-600 text-sm hover:text-[#8B7355] transition-colors font-body"
                   >
                     {item}
                   </a>
@@ -1138,13 +1138,13 @@ function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href="mailto:info@murivest.co.ke" className="text-stone-600 text-sm hover:text-gold-500 transition-colors flex items-center gap-2 font-body">
+                <a href="mailto:info@murivest.co.ke" className="text-stone-600 text-sm hover:text-[#8B7355] transition-colors flex items-center gap-2 font-body">
                   <Mail size={14} />
                   info@murivest.co.ke
                 </a>
               </li>
               <li>
-                <a href="/united-arab-emirates/dubai/contact" className="text-stone-600 text-sm hover:text-gold-500 transition-colors font-body">
+                <a href="/united-arab-emirates/dubai/contact" className="text-stone-600 text-sm hover:text-[#8B7355] transition-colors font-body">
                   DIFC Gate Village
                 </a>
               </li>

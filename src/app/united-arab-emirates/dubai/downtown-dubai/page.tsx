@@ -207,7 +207,7 @@ function SectionHeading({
 }) {
   return (
     <div className="mb-10 md:mb-14 max-w-3xl">
-      <p className="font-body text-[11px] md:text-xs font-semibold tracking-[0.25em] uppercase text-[#B8956B] block mb-4 md:mb-5">
+      <p className="font-body text-[11px] md:text-xs font-semibold tracking-[0.25em] uppercase text-[#8B7355] block mb-4 md:mb-5">
         {eyebrow}
       </p>
       <h2 className="font-display text-[28px] md:text-[36px] lg:text-[40px] leading-[1.1] text-[#1A1A1A] mb-4">
@@ -500,7 +500,7 @@ export default function DowntownDubaiPage() {
   ];
 
   return (
-    <main className="bg-[#FAF9F6] text-[#1A1A1A] font-sans antialiased selection:bg-[#1B4332] selection:text-white overflow-x-hidden">
+    <main className="bg-[#F8F7F4] text-[#1A1A1A] font-sans antialiased selection:bg-[#2C2C2C] selection:text-white overflow-x-hidden">
       {/* ====== STRUCTURED DATA ====== */}
       <Script
         id="schema-local-business"
@@ -534,7 +534,7 @@ export default function DowntownDubaiPage() {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#1A1A1A]/75 via-[#1A1A1A]/55 to-[#1A1A1A]/45" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#FAF9F6]/15 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#F8F7F4]/15 via-transparent to-transparent" />
 
         <div className="relative max-w-[1400px] mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-center w-full">
           <motion.div
@@ -543,13 +543,13 @@ export default function DowntownDubaiPage() {
             transition={{ duration: 0.9, ease: 'easeOut' }}
             className="lg:col-span-8"
           >
-            <p className="font-body text-[11px] md:text-xs font-semibold tracking-[0.25em] uppercase text-[#B8956B] block mb-4 md:mb-6">
+            <p className="font-body text-[11px] md:text-xs font-semibold tracking-[0.25em] uppercase text-[#8B7355] block mb-4 md:mb-6">
               World's Most Iconic Destination
             </p>
             <h1 className="font-display text-[44px] md:text-[64px] lg:text-[72px] leading-[1.05] mb-6 md:mb-8 max-w-5xl text-white">
               Downtown Dubai
               <br />
-              <span className="text-[#B8956B]">Global Luxury & Investment</span>
+              <span className="text-[#8B7355]">Global Luxury & Investment</span>
             </h1>
             <p className="text-base md:text-lg leading-relaxed max-w-3xl text-white/80 mb-8 md:mb-10">
               Home to iconic landmarks, luxury residences, global brands and some of the region's most prestigious
@@ -559,7 +559,7 @@ export default function DowntownDubaiPage() {
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
               <Link
                 href="#opportunities"
-                className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 bg-white text-[#1A1A1A] text-sm font-medium tracking-wide hover:bg-[#FAF9F6] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 bg-white text-[#1A1A1A] text-sm font-medium tracking-wide hover:bg-[#F8F7F4] transition-colors"
                 style={{ minHeight: 48 }}
               >
                 Explore Opportunities
@@ -620,9 +620,9 @@ export default function DowntownDubaiPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="p-6 md:p-8 bg-[#FAF9F6] border border-[#1A1A1A]/5 hover:border-[#B8956B] transition-colors text-center"
+                className="p-6 md:p-8 bg-[#F8F7F4] border border-[#1A1A1A]/5 hover:border-[#8B7355] transition-colors text-center"
               >
-                <p className="font-display text-2xl md:text-3xl text-[#1B4332] mb-3">{stat.number}</p>
+                <p className="font-display text-2xl md:text-3xl text-[#2C2C2C] mb-3">{stat.number}</p>
                 <h3 className="font-display text-lg text-[#1A1A1A] mb-2">{stat.label}</h3>
                 <p className="text-sm text-[#4A4A4A] leading-relaxed">{stat.description}</p>
               </motion.div>
@@ -638,18 +638,18 @@ export default function DowntownDubaiPage() {
               {investmentSegments.map((segment) => (
                 <div
                   key={segment.title}
-                  className="p-8 bg-gradient-to-br from-white to-[#FAF9F6] border border-[#1A1A1A]/5 rounded-lg hover:border-[#B8956B] transition-colors"
+                  className="p-8 bg-gradient-to-br from-white to-[#F8F7F4] border border-[#1A1A1A]/5 rounded-lg hover:border-[#8B7355] transition-colors"
                 >
                   <h3 className="font-display text-lg text-[#1A1A1A] mb-3">{segment.title}</h3>
                   <p className="text-sm text-[#4A4A4A] leading-relaxed mb-5">{segment.description}</p>
                   <div className="flex gap-6 pt-5 border-t border-[#1A1A1A]/5">
                     <div>
                       <p className="text-[10px] uppercase tracking-wider text-[#8A8A8A] mb-1">Yield</p>
-                      <p className="font-display text-lg text-[#1B4332]">{segment.yield}</p>
+                      <p className="font-display text-lg text-[#2C2C2C]">{segment.yield}</p>
                     </div>
                     <div>
                       <p className="text-[10px] uppercase tracking-wider text-[#8A8A8A] mb-1">Appreciation</p>
-                      <p className="font-display text-lg text-[#1B4332]">{segment.appreciation}</p>
+                      <p className="font-display text-lg text-[#2C2C2C]">{segment.appreciation}</p>
                     </div>
                   </div>
                 </div>
@@ -660,7 +660,7 @@ export default function DowntownDubaiPage() {
       </section>
 
       {/* ====== MARKET INTELLIGENCE ====== */}
-      <section className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-[#FAF9F6]">
+      <section className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-[#F8F7F4]">
         <div className="max-w-[1400px] mx-auto">
           <SectionHeading
             eyebrow="Market Data"
@@ -682,7 +682,7 @@ export default function DowntownDubaiPage() {
                   {intel.metric}
                 </p>
                 <p className="font-display text-2xl md:text-3xl text-[#1A1A1A] mb-1">{intel.value}</p>
-                <p className="text-xs text-[#B8956B] font-semibold mb-3">{intel.trend}</p>
+                <p className="text-xs text-[#8B7355] font-semibold mb-3">{intel.trend}</p>
                 <p className="text-xs text-[#4A4A4A]">{intel.detail}</p>
               </motion.div>
             ))}
@@ -707,14 +707,14 @@ export default function DowntownDubaiPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="relative p-8 bg-gradient-to-br from-[#FAF9F6] to-white border border-[#1A1A1A]/5 rounded-lg hover:border-[#B8956B] transition-colors group"
+                className="relative p-8 bg-gradient-to-br from-[#F8F7F4] to-white border border-[#1A1A1A]/5 rounded-lg hover:border-[#8B7355] transition-colors group"
               >
-                <div className="absolute top-0 right-0 w-12 h-12 bg-[#B8956B]/10 rounded-bl-lg group-hover:bg-[#B8956B]/20 transition-colors" />
+                <div className="absolute top-0 right-0 w-12 h-12 bg-[#8B7355]/10 rounded-bl-lg group-hover:bg-[#8B7355]/20 transition-colors" />
 
-                <Star className="w-5 h-5 text-[#B8956B] mb-4" strokeWidth={1.5} />
+                <Star className="w-5 h-5 text-[#8B7355] mb-4" strokeWidth={1.5} />
 
                 <h3 className="font-display text-lg text-[#1A1A1A] mb-2">{prop.name}</h3>
-                <p className="text-xs uppercase tracking-wider text-[#B8956B] font-semibold mb-4">
+                <p className="text-xs uppercase tracking-wider text-[#8B7355] font-semibold mb-4">
                   {prop.type}
                 </p>
 
@@ -737,7 +737,7 @@ export default function DowntownDubaiPage() {
       </section>
 
       {/* ====== LUXURY BRANDS & AMENITIES ====== */}
-      <section className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-[#FAF9F6]">
+      <section className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-[#F8F7F4]">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-16">
             <div>
@@ -746,7 +746,7 @@ export default function DowntownDubaiPage() {
                 {luxuryBrands.map((brand) => (
                   <div
                     key={brand}
-                    className="p-6 bg-white border border-[#1A1A1A]/5 rounded-lg text-sm text-[#1A1A1A] font-medium text-center hover:border-[#B8956B] transition-colors"
+                    className="p-6 bg-white border border-[#1A1A1A]/5 rounded-lg text-sm text-[#1A1A1A] font-medium text-center hover:border-[#8B7355] transition-colors"
                   >
                     {brand}
                   </div>
@@ -770,7 +770,7 @@ export default function DowntownDubaiPage() {
               <ul className="space-y-3">
                 {['Professional property management', 'Global marketing reach', 'International guest access', 'Revenue optimization'].map((item) => (
                   <li key={item} className="flex gap-3 text-sm text-[#4A4A4A]">
-                    <CheckCircle2 className="w-4 h-4 text-[#B8956B] shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#8B7355] shrink-0 mt-0.5" />
                     {item}
                   </li>
                 ))}
@@ -788,13 +788,13 @@ export default function DowntownDubaiPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="p-8 bg-white border border-[#1A1A1A]/5 rounded-lg hover:border-[#B8956B] transition-colors"
+                className="p-8 bg-white border border-[#1A1A1A]/5 rounded-lg hover:border-[#8B7355] transition-colors"
               >
                 <h3 className="font-display text-lg text-[#1A1A1A] mb-5">{section.category}</h3>
                 <ul className="space-y-3">
                   {section.items.map((item) => (
                     <li key={item} className="flex gap-3 text-sm text-[#4A4A4A]">
-                      <Star className="w-4 h-4 text-[#B8956B] shrink-0 mt-0.5" strokeWidth={1.5} />
+                      <Star className="w-4 h-4 text-[#8B7355] shrink-0 mt-0.5" strokeWidth={1.5} />
                       {item}
                     </li>
                   ))}
@@ -822,19 +822,19 @@ export default function DowntownDubaiPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="group relative rounded-xl overflow-hidden border border-[#1A1A1A]/5 bg-gradient-to-br from-white to-[#FAF9F6] hover:border-[#B8956B] hover:shadow-xl transition-all duration-300"
+                className="group relative rounded-xl overflow-hidden border border-[#1A1A1A]/5 bg-gradient-to-br from-white to-[#F8F7F4] hover:border-[#8B7355] hover:shadow-xl transition-all duration-300"
               >
-                <div className="absolute top-0 left-0 w-2 h-16 bg-gradient-to-b from-[#B8956B] to-[#B8956B]/50" />
+                <div className="absolute top-0 left-0 w-2 h-16 bg-gradient-to-b from-[#8B7355] to-[#8B7355]/50" />
 
                 <div className="p-8 md:p-10">
                   <div className="flex items-start justify-between gap-4 mb-6">
                     <div>
-                      <p className="text-xs uppercase tracking-wider text-[#B8956B] font-semibold mb-2">
+                      <p className="text-xs uppercase tracking-wider text-[#8B7355] font-semibold mb-2">
                         {opp.type}
                       </p>
                       <h3 className="font-display text-xl text-[#1A1A1A] mb-1">{opp.title}</h3>
                       <p className="text-sm text-[#4A4A4A] flex items-center gap-2">
-                        <MapPin className="w-4 h-4 text-[#B8956B]" />
+                        <MapPin className="w-4 h-4 text-[#8B7355]" />
                         Downtown Dubai
                       </p>
                     </div>
@@ -842,18 +842,18 @@ export default function DowntownDubaiPage() {
                       <p className="text-[10px] uppercase tracking-wider text-[#8A8A8A] mb-1">
                         Rental Yield
                       </p>
-                      <p className="font-display text-lg text-[#1B4332]">{opp.yield}</p>
+                      <p className="font-display text-lg text-[#2C2C2C]">{opp.yield}</p>
                     </div>
                   </div>
 
-                  <div className="mb-6 p-4 bg-[#B8956B]/5 rounded-lg border-l-4 border-[#B8956B]">
+                  <div className="mb-6 p-4 bg-[#8B7355]/5 rounded-lg border-l-4 border-[#8B7355]">
                     <p className="text-xs uppercase tracking-wider text-[#8A8A8A] mb-1">{opp.bedrooms}</p>
                   </div>
 
                   <ul className="space-y-3 mb-6 pb-6 border-b border-[#1A1A1A]/5">
                     {opp.highlights.map((highlight) => (
                       <li key={highlight} className="flex gap-3 text-sm text-[#4A4A4A]">
-                        <CheckCircle2 className="w-4 h-4 text-[#B8956B] shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-[#8B7355] shrink-0 mt-0.5" />
                         {highlight}
                       </li>
                     ))}
@@ -864,7 +864,7 @@ export default function DowntownDubaiPage() {
                     <p className="font-display text-lg text-[#1A1A1A]">{opp.price}</p>
                   </div>
 
-                  <button className="w-full px-6 py-3 bg-[#1B4332] text-white text-sm font-semibold hover:bg-[#142d23] transition-colors">
+                  <button className="w-full px-6 py-3 bg-[#2C2C2C] text-white text-sm font-semibold hover:bg-[#142d23] transition-colors">
                     Request Investment Brief
                   </button>
                 </div>
@@ -875,7 +875,7 @@ export default function DowntownDubaiPage() {
       </section>
 
       {/* ====== MURIVEST ADVISORY ====== */}
-      <section className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-[#FAF9F6]">
+      <section className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-[#F8F7F4]">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             <motion.div
@@ -898,7 +898,7 @@ export default function DowntownDubaiPage() {
                   'End-to-end advisory: sourcing, underwriting, transaction, portfolio management',
                 ].map((item) => (
                   <li key={item} className="flex gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[#B8956B] shrink-0 mt-0.5" strokeWidth={1.5} />
+                    <CheckCircle2 className="w-5 h-5 text-[#8B7355] shrink-0 mt-0.5" strokeWidth={1.5} />
                     <span className="text-sm md:text-base text-[#4A4A4A] leading-relaxed">{item}</span>
                   </li>
                 ))}
@@ -912,8 +912,8 @@ export default function DowntownDubaiPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="p-8 md:p-12 bg-white border border-[#1A1A1A]/5 rounded-lg"
             >
-              <div className="mb-6 p-4 bg-[#B8956B]/10 rounded-lg border-l-4 border-[#B8956B]">
-                <p className="text-xs uppercase tracking-wider text-[#B8956B] font-semibold mb-1">Services</p>
+              <div className="mb-6 p-4 bg-[#8B7355]/10 rounded-lg border-l-4 border-[#8B7355]">
+                <p className="text-xs uppercase tracking-wider text-[#8B7355] font-semibold mb-1">Services</p>
                 <p className="text-sm text-[#1A1A1A] font-medium">
                   Investment Advisory • Luxury Asset Sourcing • Hospitality Investment • Portfolio Strategy
                 </p>
@@ -930,7 +930,7 @@ export default function DowntownDubaiPage() {
 
               <Link
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1B4332] text-white text-sm font-semibold hover:bg-[#142d23] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#2C2C2C] text-white text-sm font-semibold hover:bg-[#142d23] transition-colors"
               >
                 Schedule Luxury Advisory Call
                 <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
@@ -949,9 +949,9 @@ export default function DowntownDubaiPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="p-8 md:p-12 bg-[#FAF9F6] border border-[#1A1A1A]/5 rounded-lg"
+              className="p-8 md:p-12 bg-[#F8F7F4] border border-[#1A1A1A]/5 rounded-lg"
             >
-              <Download className="w-8 h-8 text-[#B8956B] mb-4" />
+              <Download className="w-8 h-8 text-[#8B7355] mb-4" />
               <h3 className="font-display text-2xl text-[#1A1A1A] mb-3">
                 Downtown Dubai Luxury Market Report 2024–2026
               </h3>
@@ -960,7 +960,7 @@ export default function DowntownDubaiPage() {
                 opportunities, yield trends, and capital appreciation strategy. Includes Murivest proprietary
                 pricing data, developer intelligence, and investment underwriting frameworks.
               </p>
-              <button className="inline-flex items-center gap-2 px-6 py-3 bg-[#1B4332] text-white text-sm font-semibold hover:bg-[#142d23] transition-colors">
+              <button className="inline-flex items-center gap-2 px-6 py-3 bg-[#2C2C2C] text-white text-sm font-semibold hover:bg-[#142d23] transition-colors">
                 Download Report (PDF)
                 <ArrowRight className="w-4 h-4" />
               </button>
@@ -974,9 +974,9 @@ export default function DowntownDubaiPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="p-8 md:p-12 bg-[#1B4332] text-white border border-[#1B4332] rounded-lg"
+              className="p-8 md:p-12 bg-[#2C2C2C] text-white border border-[#2C2C2C] rounded-lg"
             >
-              <Phone className="w-8 h-8 text-[#B8956B] mb-4" />
+              <Phone className="w-8 h-8 text-[#8B7355] mb-4" />
               <h3 className="font-display text-2xl mb-3">Speak with Our Luxury Advisors</h3>
               <p className="text-sm md:text-base text-white/70 leading-relaxed mb-6">
                 Schedule a 45-minute luxury investment consultation with a Murivest specialist. We'll discuss
@@ -985,7 +985,7 @@ export default function DowntownDubaiPage() {
               <div className="flex flex-col gap-3">
                 <Link
                   href="tel:+97144xxxxxx"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#1B4332] text-sm font-semibold hover:bg-[#FAF9F6] transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#2C2C2C] text-sm font-semibold hover:bg-[#F8F7F4] transition-colors"
                 >
                   <Phone className="w-4 h-4" />
                   Call Dubai Office
@@ -1005,7 +1005,7 @@ export default function DowntownDubaiPage() {
       </section>
 
       {/* ====== RESEARCH ====== */}
-      <section className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-[#FAF9F6]">
+      <section className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-[#F8F7F4]">
         <div className="max-w-[1400px] mx-auto">
           <SectionHeading eyebrow="Research & Reports" title="Market Intelligence & Analysis" />
           <div className="grid sm:grid-cols-2 gap-3">
@@ -1013,7 +1013,7 @@ export default function DowntownDubaiPage() {
               <Link
                 key={report.link}
                 href={report.link}
-                className="group flex items-center justify-between gap-3 rounded-xl border border-[#1A1A1A]/5 bg-white p-4 text-sm text-[#4A4A4A] hover:border-[#1B4332] hover:text-[#1B4332] transition-colors"
+                className="group flex items-center justify-between gap-3 rounded-xl border border-[#1A1A1A]/5 bg-white p-4 text-sm text-[#4A4A4A] hover:border-[#2C2C2C] hover:text-[#2C2C2C] transition-colors"
               >
                 <span>{report.title}</span>
                 <ArrowUpRight className="w-3.5 h-3.5 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -1031,7 +1031,7 @@ export default function DowntownDubaiPage() {
             {faqs.map((faq) => (
               <details
                 key={faq.question}
-                className="group p-6 bg-[#FAF9F6] border border-[#1A1A1A]/5 cursor-pointer rounded-lg"
+                className="group p-6 bg-[#F8F7F4] border border-[#1A1A1A]/5 cursor-pointer rounded-lg"
               >
                 <summary className="list-none font-display text-base md:text-lg text-[#1A1A1A] pr-8 font-semibold">
                   {faq.question}
@@ -1044,7 +1044,7 @@ export default function DowntownDubaiPage() {
       </section>
 
       {/* ====== FINAL CTA ====== */}
-      <section className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-[#1B4332] text-white">
+      <section className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-[#2C2C2C] text-white">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-[10px] uppercase tracking-[0.25em] text-white/60 mb-4">
             Luxury Real Estate Advisory
@@ -1059,7 +1059,7 @@ export default function DowntownDubaiPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
             <Link
               href="mailto:dubai@murivest.com"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#1B4332] text-sm font-medium tracking-wide hover:bg-[#FAF9F6] transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#2C2C2C] text-sm font-medium tracking-wide hover:bg-[#F8F7F4] transition-colors"
               style={{ minHeight: 48 }}
             >
               Start Your Luxury Investment Journey

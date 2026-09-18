@@ -11,10 +11,10 @@
  *   Grant Cardone  → Urgency + consequence + volume of action
  *
  * DESIGN SYSTEM (murivest.com):
- *   Forest Green  #1B4332   primary
+ *   Forest Green  #2C2C2C   primary
  *   Dark Forest   #0d2318   footer / deep overlays
  *   Gold Brown    #C9973A   accent / CTA
- *   Ivory         #FAF9F6   base bg
+ *   Ivory         #F8F7F4   base bg
  *   Off-white     #F5F4F0   alternate sections
  *   Body text     #2C2C2C
  *
@@ -116,8 +116,8 @@ const staggerContainer = {
 
 // --- Custom Gold Check ---
 const GoldCheck = () => (
-  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#B8956B]/10 border border-[#B8956B]/30 flex items-center justify-center mt-1">
-    <Check className="w-3.5 h-3.5 text-[#B8956B]" strokeWidth={3} />
+  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#8B7355]/10 border border-[#8B7355]/30 flex items-center justify-center mt-1">
+    <Check className="w-3.5 h-3.5 text-[#8B7355]" strokeWidth={3} />
   </div>
 );
 
@@ -158,7 +158,7 @@ const SignatureBlock = ({
             className="absolute inset-0 flex items-center font-['Dancing_Script',cursive] text-2xl italic leading-none select-none"
             style={{
               fontFamily: "'Dancing Script', cursive, Georgia, serif",
-              color: theme === "light" ? "#1B4332" : "#1B4332",
+              color: theme === "light" ? "#2C2C2C" : "#2C2C2C",
             }}
           >
             Mark Muriithi
@@ -168,7 +168,7 @@ const SignatureBlock = ({
       {showTitle && (
         <p
           className={`mt-1 text-[10px] tracking-[0.2em] uppercase font-sans ${
-            theme === "light" ? "text-[#C9973A]/70" : "text-[#1B4332]/40"
+            theme === "light" ? "text-[#C9973A]/70" : "text-[#2C2C2C]/40"
           }`}
         >
           Founder & CEO · Murivest Realty Group
@@ -233,7 +233,7 @@ const Book3D = () => {
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
           className="absolute -top-5 -right-5 w-16 h-16 bg-[#C9973A] rounded-full flex items-center justify-center shadow-lg"
         >
-          <span className="text-[#1B4332] font-serif font-bold text-[9px] text-center leading-tight px-1">
+          <span className="text-[#2C2C2C] font-serif font-bold text-[9px] text-center leading-tight px-1">
             NO
             <br />
             UPFRONT
@@ -374,19 +374,19 @@ const ClaimModal = ({
         animate={{ scale: 1, opacity: 1, y: 0 }}
         exit={{ scale: 0.92, opacity: 0, y: 24 }}
         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-        className="relative w-full max-w-lg bg-[#FAF9F6] shadow-2xl overflow-hidden max-h-[95vh] overflow-y-auto"
+        className="relative w-full max-w-lg bg-[#F8F7F4] shadow-2xl overflow-hidden max-h-[95vh] overflow-y-auto"
         style={{ borderRadius: "2px" }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Forest green top bar */}
-        <div className="w-full h-[4px] bg-[#1B4332]" />
+        <div className="w-full h-[4px] bg-[#2C2C2C]" />
         {/* Gold accent line */}
         <div className="w-full h-[2px] bg-[#C9973A]" />
 
         {/* Progress bar */}
-        <div className="w-full h-[2px] bg-[#1B4332]/6">
+        <div className="w-full h-[2px] bg-[#2C2C2C]/6">
           <motion.div
-            className="h-full bg-[#1B4332]"
+            className="h-full bg-[#2C2C2C]"
             animate={{ width: step === "form" ? "50%" : "100%" }}
             transition={{ duration: 0.5 }}
           />
@@ -396,7 +396,7 @@ const ClaimModal = ({
         <button
           onClick={onClose}
           aria-label="Close"
-          className="absolute top-5 right-5 text-[#2C2C2C]/30 hover:text-[#1B4332] transition-colors z-10 p-1"
+          className="absolute top-5 right-5 text-[#2C2C2C]/30 hover:text-[#2C2C2C] transition-colors z-10 p-1"
         >
           <X className="w-5 h-5" />
         </button>
@@ -414,7 +414,7 @@ const ClaimModal = ({
                 <p className="text-[#C9973A] text-[11px] tracking-[0.3em] uppercase font-sans font-semibold mb-3">
                   Access Granted Under Pledge
                 </p>
-                <h3 className="font-serif text-[28px] text-[#1B4332] leading-tight mb-3">
+                <h3 className="font-serif text-[28px] text-[#2C2C2C] leading-tight mb-3">
                   Accept the Terms & Receive the Blueprint
                 </h3>
 
@@ -439,20 +439,20 @@ const ClaimModal = ({
                     className={`w-full flex items-start gap-4 p-4 border text-left transition-all duration-200 ${
                       checks.check1
                         ? "border-[#C9973A] bg-[#C9973A]/6"
-                        : "border-[#1B4332]/12 bg-white hover:border-[#1B4332]/25"
+                        : "border-[#2C2C2C]/12 bg-white hover:border-[#2C2C2C]/25"
                     }`}
                   >
                     <div
                       className={`w-5 h-5 flex-shrink-0 mt-0.5 border flex items-center justify-center transition-all ${
                         checks.check1
                           ? "bg-[#C9973A] border-[#C9973A]"
-                          : "border-[#1B4332]/25 bg-white"
+                          : "border-[#2C2C2C]/25 bg-white"
                       }`}
                     >
-                      {checks.check1 && <Check className="w-3 h-3 text-[#1B4332]" strokeWidth={3} />}
+                      {checks.check1 && <Check className="w-3 h-3 text-[#2C2C2C]" strokeWidth={3} />}
                     </div>
                     <p className="text-sm text-[#2C2C2C]/80 font-sans leading-relaxed">
-                      <strong className="text-[#1B4332]">I understand</strong> this is a professional exchange of value, not a free giveaway. I am receiving a complete 26-chapter wealth system in exchange for my honest assessment.
+                      <strong className="text-[#2C2C2C]">I understand</strong> this is a professional exchange of value, not a free giveaway. I am receiving a complete 26-chapter wealth system in exchange for my honest assessment.
                     </p>
                   </button>
 
@@ -461,21 +461,21 @@ const ClaimModal = ({
                     onClick={() => setChecks((c) => ({ ...c, check2: !c.check2 }))}
                     className={`w-full flex items-start gap-4 p-4 border text-left transition-all duration-200 ${
                       checks.check2
-                        ? "border-[#1B4332] bg-[#1B4332]/4"
-                        : "border-[#1B4332]/12 bg-white hover:border-[#1B4332]/25"
+                        ? "border-[#2C2C2C] bg-[#2C2C2C]/4"
+                        : "border-[#2C2C2C]/12 bg-white hover:border-[#2C2C2C]/25"
                     }`}
                   >
                     <div
                       className={`w-5 h-5 flex-shrink-0 mt-0.5 border flex items-center justify-center transition-all ${
                         checks.check2
-                          ? "bg-[#1B4332] border-[#1B4332]"
-                          : "border-[#1B4332]/25 bg-white"
+                          ? "bg-[#2C2C2C] border-[#2C2C2C]"
+                          : "border-[#2C2C2C]/25 bg-white"
                       }`}
                     >
-                      {checks.check2 && <Check className="w-3 h-3 text-[#FAF9F6]" strokeWidth={3} />}
+                      {checks.check2 && <Check className="w-3 h-3 text-[#F8F7F4]" strokeWidth={3} />}
                     </div>
                     <p className="text-sm text-[#2C2C2C]/80 font-sans leading-relaxed">
-                      <strong className="text-[#1B4332]">My word is my bond.</strong> I commit to leaving an honest Amazon review of the Murivest framework within 14 days of completing the book. I execute what I commit to.
+                      <strong className="text-[#2C2C2C]">My word is my bond.</strong> I commit to leaving an honest Amazon review of the Murivest framework within 14 days of completing the book. I execute what I commit to.
                     </p>
                   </button>
                 </div>
@@ -484,7 +484,7 @@ const ClaimModal = ({
                   <div>
                     <label
                       htmlFor="modal-name"
-                      className="block text-[10px] uppercase tracking-[0.2em] text-[#1B4332]/45 font-sans font-semibold mb-2"
+                      className="block text-[10px] uppercase tracking-[0.2em] text-[#2C2C2C]/45 font-sans font-semibold mb-2"
                     >
                       Full Name
                     </label>
@@ -498,7 +498,7 @@ const ClaimModal = ({
                         autoComplete="name"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full pl-11 pr-4 py-3.5 bg-white border border-[#1B4332]/10 text-[#2C2C2C] placeholder:text-[#2C2C2C]/25 focus:outline-none focus:border-[#C9973A] transition-colors font-sans text-sm"
+                        className="w-full pl-11 pr-4 py-3.5 bg-white border border-[#2C2C2C]/10 text-[#2C2C2C] placeholder:text-[#2C2C2C]/25 focus:outline-none focus:border-[#C9973A] transition-colors font-sans text-sm"
                         style={{ borderRadius: "2px" }}
                         placeholder="Your full name"
                       />
@@ -508,7 +508,7 @@ const ClaimModal = ({
                   <div>
                     <label
                       htmlFor="modal-email"
-                      className="block text-[10px] uppercase tracking-[0.2em] text-[#1B4332]/45 font-sans font-semibold mb-2"
+                      className="block text-[10px] uppercase tracking-[0.2em] text-[#2C2C2C]/45 font-sans font-semibold mb-2"
                     >
                       Email Address
                     </label>
@@ -521,7 +521,7 @@ const ClaimModal = ({
                         autoComplete="email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full pl-11 pr-4 py-3.5 bg-white border border-[#1B4332]/10 text-[#2C2C2C] placeholder:text-[#2C2C2C]/25 focus:outline-none focus:border-[#C9973A] transition-colors font-sans text-sm"
+                        className="w-full pl-11 pr-4 py-3.5 bg-white border border-[#2C2C2C]/10 text-[#2C2C2C] placeholder:text-[#2C2C2C]/25 focus:outline-none focus:border-[#C9973A] transition-colors font-sans text-sm"
                         style={{ borderRadius: "2px" }}
                         placeholder="your@email.com"
                       />
@@ -543,8 +543,8 @@ const ClaimModal = ({
                     disabled={isSubmitting || !bothChecked}
                     className={`w-full py-4 font-sans text-[12px] tracking-[0.22em] uppercase font-bold flex items-center justify-center gap-3 transition-all duration-300 mt-2 ${
                       bothChecked
-                        ? "bg-[#1B4332] text-[#FAF9F6] hover:bg-[#0d2318] hover:shadow-[0_0_40px_rgba(27,58,45,0.35)] cursor-pointer"
-                        : "bg-[#1B4332]/30 text-[#1B4332]/40 cursor-not-allowed"
+                        ? "bg-[#2C2C2C] text-[#F8F7F4] hover:bg-[#0d2318] hover:shadow-[0_0_40px_rgba(27,58,45,0.35)] cursor-pointer"
+                        : "bg-[#2C2C2C]/30 text-[#2C2C2C]/40 cursor-not-allowed"
                     }`}
                     style={{ borderRadius: "2px" }}
                   >
@@ -552,7 +552,7 @@ const ClaimModal = ({
                       <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-                        className="w-5 h-5 border-2 border-[#FAF9F6]/30 border-t-[#FAF9F6] rounded-full"
+                        className="w-5 h-5 border-2 border-[#F8F7F4]/30 border-t-[#F8F7F4] rounded-full"
                         aria-label="Sending…"
                       />
                     ) : (
@@ -570,7 +570,7 @@ const ClaimModal = ({
                       href="https://www.amazon.com/dp/B0GXQTMZCK"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#C9973A] underline hover:text-[#1B4332] transition-colors"
+                      className="text-[#C9973A] underline hover:text-[#2C2C2C] transition-colors"
                     >
                       Buy on Amazon ($4.99)
                     </a>
@@ -580,7 +580,7 @@ const ClaimModal = ({
                     href="https://www.amazon.com/dp/B0GXQTMZCK"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full py-3.5 border border-[#1B4332]/20 text-[#2C2C2C]/55 text-center font-sans text-[11px] tracking-[0.18em] uppercase hover:border-[#1B4332]/40 hover:text-[#1B4332] transition-all"
+                    className="block w-full py-3.5 border border-[#2C2C2C]/20 text-[#2C2C2C]/55 text-center font-sans text-[11px] tracking-[0.18em] uppercase hover:border-[#2C2C2C]/40 hover:text-[#2C2C2C] transition-all"
                     style={{ borderRadius: "2px" }}
                   >
                     Skip pledge — Buy on Amazon ($4.99)
@@ -591,8 +591,8 @@ const ClaimModal = ({
                   The market doesn't wait. Operators who understand institutional frameworks before the next cycle gain an asymmetric advantage.
                 </p>
 
-                <div className="mt-6 pt-6 border-t border-[#1B4332]/8 flex items-center gap-4">
-                  <div className="w-8 h-8 bg-[#1B4332] flex items-center justify-center flex-shrink-0">
+                <div className="mt-6 pt-6 border-t border-[#2C2C2C]/8 flex items-center gap-4">
+                  <div className="w-8 h-8 bg-[#2C2C2C] flex items-center justify-center flex-shrink-0">
                     <span className="text-[#C9973A] font-serif font-bold text-sm">M</span>
                   </div>
                   <SignatureBlock theme="dark" showTitle={false} />
@@ -608,34 +608,34 @@ const ClaimModal = ({
                 transition={{ duration: 0.35 }}
                 className="py-4"
               >
-                <div className="w-20 h-20 bg-[#1B4332]/8 border border-[#1B4332]/20 flex items-center justify-center mx-auto mb-6">
-                  <Check className="w-10 h-10 text-[#1B4332]" strokeWidth={2} />
+                <div className="w-20 h-20 bg-[#2C2C2C]/8 border border-[#2C2C2C]/20 flex items-center justify-center mx-auto mb-6">
+                  <Check className="w-10 h-10 text-[#2C2C2C]" strokeWidth={2} />
                 </div>
                 <p className="text-[#C9973A] text-[11px] tracking-[0.3em] uppercase font-sans font-semibold mb-3 text-center">
                   Pledge Recorded
                 </p>
-                <h3 className="font-serif text-[28px] text-[#1B4332] mb-4 leading-tight text-center">
+                <h3 className="font-serif text-[28px] text-[#2C2C2C] mb-4 leading-tight text-center">
                   Your word has been recorded.
                 </h3>
                 <p className="text-[#2C2C2C]/60 leading-relaxed text-sm font-sans max-w-xs mx-auto mb-6 text-center">
-                  Check <strong className="text-[#1B4332]">{formData.email}</strong> now.
+                  Check <strong className="text-[#2C2C2C]">{formData.email}</strong> now.
                   Start with Chapter 23 — The Westlands Deal. It rewires how you evaluate every asset from this point forward.
                 </p>
 
                 {/* Immediate gratification: Direct download */}
-                <div className="bg-[#1B4332] p-5 mb-6 text-left">
+                <div className="bg-[#2C2C2C] p-5 mb-6 text-left">
                   <p className="text-[10px] uppercase tracking-[0.2em] text-[#C9973A] font-sans font-semibold mb-3">
                     Instant Access — No Wait Required
                   </p>
                   <a
                     href={`/api/download-book?email=${encodeURIComponent(formData.email)}&token=${claimId}`}
-                    className="inline-flex items-center gap-3 bg-[#C9973A] text-[#1B4332] px-5 py-3 font-sans text-[11px] tracking-[0.15em] uppercase font-bold hover:bg-[#b8853a] transition-colors mb-3"
+                    className="inline-flex items-center gap-3 bg-[#C9973A] text-[#2C2C2C] px-5 py-3 font-sans text-[11px] tracking-[0.15em] uppercase font-bold hover:bg-[#b8853a] transition-colors mb-3"
                     style={{ borderRadius: "2px" }}
                   >
                     <Download className="w-4 h-4" />
                     Download .MOBI / EPUB Now
                   </a>
-                  <p className="text-[#FAF9F6]/40 text-[10px] font-sans mt-2">
+                  <p className="text-[#F8F7F4]/40 text-[10px] font-sans mt-2">
                     A copy is also on its way to your inbox. Start Chapter 23 today.
                   </p>
                 </div>
@@ -646,17 +646,17 @@ const ClaimModal = ({
                     <p className="text-[10px] uppercase tracking-[0.2em] text-[#C9973A] font-sans font-semibold mb-1">
                       Your Review Commitment
                     </p>
-                    <p className="text-[#1B4332] text-sm font-sans">
+                    <p className="text-[#2C2C2C] text-sm font-sans">
                       Review expected by: <span className="font-bold text-[#C9973A]">{reviewDeadline}</span>
                     </p>
-                    <p className="text-[#1B4332]/40 text-[10px] font-sans mt-1 italic">
+                    <p className="text-[#2C2C2C]/40 text-[10px] font-sans mt-1 italic">
                       A 90-second cheat sheet arrives on Day 5. Three questions. No essay required.
                     </p>
                   </div>
                 )}
 
-                <div className="bg-white border border-[#1B4332]/6 p-5 mb-8 text-left">
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-[#1B4332]/40 font-sans font-semibold mb-4">
+                <div className="bg-white border border-[#2C2C2C]/6 p-5 mb-8 text-left">
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-[#2C2C2C]/40 font-sans font-semibold mb-4">
                     What arrives next
                   </p>
                   <div className="space-y-3 text-xs text-[#2C2C2C]/65 font-sans">
@@ -666,7 +666,7 @@ const ClaimModal = ({
                       { dot: "forest", text: "Week 3: Murivest Insider deal analysis — live commercial property breakdown" },
                     ].map(({ dot, text }, i) => (
                       <div key={i} className="flex items-start gap-3">
-                        <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 mt-1.5 ${dot === "gold" ? "bg-[#C9973A]" : "bg-[#1B4332]/30"}`} />
+                        <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 mt-1.5 ${dot === "gold" ? "bg-[#C9973A]" : "bg-[#2C2C2C]/30"}`} />
                         <span>{text}</span>
                       </div>
                     ))}
@@ -675,7 +675,7 @@ const ClaimModal = ({
 
                 <button
                   onClick={onClose}
-                  className="w-full bg-[#1B4332] text-[#FAF9F6] py-3.5 font-sans text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-[#0d2318] transition-colors"
+                  className="w-full bg-[#2C2C2C] text-[#F8F7F4] py-3.5 font-sans text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-[#0d2318] transition-colors"
                   style={{ borderRadius: "2px" }}
                 >
                   Understood
@@ -721,13 +721,13 @@ const faqs = [
 const FAQItem = ({ q, a }: { q: string; a: string }) => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-[#1B4332]/8 last:border-0">
+    <div className="border-b border-[#2C2C2C]/8 last:border-0">
       <button
         onClick={() => setOpen(!open)}
         aria-expanded={open}
         className="w-full flex items-center justify-between py-5 text-left gap-4"
       >
-        <span className="font-serif text-[16px] text-[#1B4332] leading-snug">{q}</span>
+        <span className="font-serif text-[16px] text-[#2C2C2C] leading-snug">{q}</span>
         <motion.div animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.25 }}>
           <ChevronDown className="w-4 h-4 text-[#C9973A] flex-shrink-0" aria-hidden="true" />
         </motion.div>
@@ -757,10 +757,10 @@ const BeforeAfterBlock = () => (
     whileInView="visible"
     viewport={{ once: true, margin: "-80px" }}
     variants={stagger}
-    className="grid md:grid-cols-2 gap-0 border border-[#1B4332]/10 mt-12"
+    className="grid md:grid-cols-2 gap-0 border border-[#2C2C2C]/10 mt-12"
   >
-    <motion.div variants={fadeUp} className="bg-[#FAF9F6] p-8 border-r border-[#1B4332]/10">
-      <p className="text-[#1B4332]/35 text-[10px] tracking-[0.3em] uppercase font-sans font-bold mb-5">
+    <motion.div variants={fadeUp} className="bg-[#F8F7F4] p-8 border-r border-[#2C2C2C]/10">
+      <p className="text-[#2C2C2C]/35 text-[10px] tracking-[0.3em] uppercase font-sans font-bold mb-5">
         Before Reading
       </p>
       <div className="space-y-4">
@@ -771,13 +771,13 @@ const BeforeAfterBlock = () => (
           "How do I know it will cash-flow?",
         ].map((q, i) => (
           <div key={i} className="flex items-start gap-3">
-            <X className="w-3.5 h-3.5 text-[#1B4332]/20 flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-            <p className="text-[#1B4332]/55 text-sm font-sans italic">{q}</p>
+            <X className="w-3.5 h-3.5 text-[#2C2C2C]/20 flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+            <p className="text-[#2C2C2C]/55 text-sm font-sans italic">{q}</p>
           </div>
         ))}
       </div>
     </motion.div>
-    <motion.div variants={fadeUp} className="bg-[#1B4332] p-8">
+    <motion.div variants={fadeUp} className="bg-[#2C2C2C] p-8">
       <p className="text-[#C9973A] text-[10px] tracking-[0.3em] uppercase font-sans font-bold mb-5">
         After Reading
       </p>
@@ -790,7 +790,7 @@ const BeforeAfterBlock = () => (
         ].map((q, i) => (
           <div key={i} className="flex items-start gap-3">
             <Check className="w-3.5 h-3.5 text-[#C9973A] flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-            <p className="text-[#FAF9F6]/80 text-sm font-sans">{q}</p>
+            <p className="text-[#F8F7F4]/80 text-sm font-sans">{q}</p>
           </div>
         ))}
       </div>
@@ -810,7 +810,7 @@ export default function BookLandingPage() {
 
   return (
     <main
-      className="min-h-screen bg-[#FAF9F6] text-[#2C2C2C] selection:bg-[#C9973A]/30"
+      className="min-h-screen bg-[#F8F7F4] text-[#2C2C2C] selection:bg-[#C9973A]/30"
       style={{ fontFamily: "'DM Sans', system-ui, sans-serif" }}
     >
       {/* Google Fonts */}
@@ -827,10 +827,10 @@ export default function BookLandingPage() {
         initial={{ y: -80 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="fixed top-0 left-0 right-0 z-40 bg-[#FAF9F6]/90 backdrop-blur-md border-b border-[#1B4332]/8"
+        className="fixed top-0 left-0 right-0 z-40 bg-[#F8F7F4]/90 backdrop-blur-md border-b border-[#2C2C2C]/8"
       >
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="font-serif text-[20px] text-[#1B4332] tracking-wide">
+          <div className="font-serif text-[20px] text-[#2C2C2C] tracking-wide">
             Muriithi<span className="text-[#C9973A]">.</span>
           </div>
           <div className="flex items-center gap-4">
@@ -838,7 +838,7 @@ export default function BookLandingPage() {
               href="https://murivest.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:block text-[11px] uppercase tracking-[0.18em] text-[#2C2C2C]/40 hover:text-[#1B4332] transition-colors font-sans"
+              className="hidden md:block text-[11px] uppercase tracking-[0.18em] text-[#2C2C2C]/40 hover:text-[#2C2C2C] transition-colors font-sans"
             >
               murivest.com
             </a>
@@ -846,14 +846,14 @@ export default function BookLandingPage() {
               href="https://www.amazon.com/dp/B0GXQTMZCK"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:block text-[11px] uppercase tracking-[0.18em] text-[#2C2C2C]/40 hover:text-[#1B4332] transition-colors font-sans border border-[#1B4332]/15 px-4 py-2 hover:border-[#1B4332]/30"
+              className="hidden md:block text-[11px] uppercase tracking-[0.18em] text-[#2C2C2C]/40 hover:text-[#2C2C2C] transition-colors font-sans border border-[#2C2C2C]/15 px-4 py-2 hover:border-[#2C2C2C]/30"
               style={{ borderRadius: "2px" }}
             >
               Buy Amazon $4.99
             </a>
             <button
               onClick={openModal}
-              className="bg-[#1B4332] text-[#FAF9F6] px-5 py-2.5 text-[11px] tracking-[0.18em] uppercase font-bold hover:bg-[#0d2318] transition-colors font-sans"
+              className="bg-[#2C2C2C] text-[#F8F7F4] px-5 py-2.5 text-[11px] tracking-[0.18em] uppercase font-bold hover:bg-[#0d2318] transition-colors font-sans"
               style={{ borderRadius: "2px" }}
             >
               get your copy
@@ -880,10 +880,10 @@ export default function BookLandingPage() {
       </div>
 
       {/* Primary forest green overlay (VISIBLE but still elegant) */}
-      <div className="absolute inset-0 z-10 bg-[#1B4332]/90" />
+      <div className="absolute inset-0 z-10 bg-[#2C2C2C]/90" />
 
       {/* Soft gradient depth (adds richness, not noise) */}
-      <div className="absolute inset-0 z-20 bg-gradient-to-br from-[#1B4332]/60 via-[#1B4332]/20 to-transparent" />
+      <div className="absolute inset-0 z-20 bg-gradient-to-br from-[#2C2C2C]/60 via-[#2C2C2C]/20 to-transparent" />
 
       {/* Optional gold blend for premium feel */}
       <div className="absolute inset-0 z-20 bg-[#C9973A]/10 mix-blend-overlay pointer-events-none" />
@@ -909,7 +909,7 @@ export default function BookLandingPage() {
             {/* JASON CAPITAL: Pattern interrupt headline */}
             <motion.h1
               variants={fadeUp}
-              className="font-serif text-[48px] md:text-[56px] lg:text-[60px] text-[#FAF9F6] leading-[1.05] mb-6"
+              className="font-serif text-[48px] md:text-[56px] lg:text-[60px] text-[#F8F7F4] leading-[1.05] mb-6"
             >
               Most Books Talk
               <br />
@@ -922,14 +922,14 @@ export default function BookLandingPage() {
 
             {/* Pattern interrupt subhead */}
             <motion.div variants={fadeUp} className="border-l-2 border-[#C9973A] pl-5 mb-4">
-              <p className="text-[#FAF9F6]/70 text-sm font-sans leading-relaxed italic">
+              <p className="text-[#F8F7F4]/70 text-sm font-sans leading-relaxed italic">
                 "Most investors in Nairobi never cross KES 50M. Not because of capital — but because they never learn how to structure deals. This book solves that."
               </p>
             </motion.div>
 
             {/* ── FIX 1 & 2: Raw human empathy line + emotional tension ── */}
             <motion.div variants={fadeUp} className="mb-6">
-              <p className="text-[#FAF9F6]/55 text-sm font-sans leading-relaxed italic">
+              <p className="text-[#F8F7F4]/55 text-sm font-sans leading-relaxed italic">
                 If you've ever looked at a deal and felt like you're guessing — you're not alone. Most investors in this market are operating without a framework, and they don't even know it.
               </p>
               <p className="text-[#C9973A]/70 text-sm font-sans leading-relaxed italic mt-2">
@@ -939,7 +939,7 @@ export default function BookLandingPage() {
 
             <motion.p
               variants={fadeUp}
-              className="text-[#FAF9F6]/60 text-base font-sans leading-relaxed mb-3 max-w-lg"
+              className="text-[#F8F7F4]/60 text-base font-sans leading-relaxed mb-3 max-w-lg"
             >
               A 26-Chapter Wealth Framework Built Inside Murivest Realty Group — Including the Westlands Deal Teardown, The 10-Year Rule, and a complete KES 500M Portfolio Roadmap.
             </motion.p>
@@ -959,7 +959,7 @@ export default function BookLandingPage() {
                 {/* PRIMARY: Ownership / Access */}
                 <button
                   onClick={openModal}
-                  className="group relative overflow-hidden bg-[#C9973A] text-[#1B4332] px-7 py-3 font-sans text-[11px] tracking-[0.18em] uppercase font-semibold transition-all hover:shadow-[0_0_30px_rgba(201,151,58,0.4)]"
+                  className="group relative overflow-hidden bg-[#C9973A] text-[#2C2C2C] px-7 py-3 font-sans text-[11px] tracking-[0.18em] uppercase font-semibold transition-all hover:shadow-[0_0_30px_rgba(201,151,58,0.4)]"
                   style={{ borderRadius: "2px" }}
                 >
                   <span className="relative z-10 flex items-center gap-2">
@@ -974,7 +974,7 @@ export default function BookLandingPage() {
                   href="https://www.amazon.com/dp/B0GXQTMZCK"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative overflow-hidden border border-[#C9973A]/40 bg-[#0d2318] text-[#FAF9F6] px-6 py-3 font-sans text-[11px] tracking-[0.18em] uppercase font-semibold hover:bg-[#C9973A] hover:text-[#1B4332] transition-all"
+                  className="group relative overflow-hidden border border-[#C9973A]/40 bg-[#0d2318] text-[#F8F7F4] px-6 py-3 font-sans text-[11px] tracking-[0.18em] uppercase font-semibold hover:bg-[#C9973A] hover:text-[#2C2C2C] transition-all"
                   style={{ borderRadius: "2px" }}
                 >
                   <span className="flex items-center gap-2">
@@ -991,19 +991,19 @@ export default function BookLandingPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.4 }}
-              className="inline-flex items-center gap-3 bg-[#FAF9F6]/8 border border-[#FAF9F6]/12 px-5 py-3 mt-6"
+              className="inline-flex items-center gap-3 bg-[#F8F7F4]/8 border border-[#F8F7F4]/12 px-5 py-3 mt-6"
               style={{ borderRadius: "2px" }}
             >
               <div className="flex -space-x-1.5">
-                {["#1B4332", "#C9973A", "#0d2318"].map((c, i) => (
-                  <div key={i} className="w-7 h-7 rounded-full border-2 border-[#FAF9F6] flex items-center justify-center" style={{ background: c }}>
+                {["#2C2C2C", "#C9973A", "#0d2318"].map((c, i) => (
+                  <div key={i} className="w-7 h-7 rounded-full border-2 border-[#F8F7F4] flex items-center justify-center" style={{ background: c }}>
                     <span className="text-white text-[8px] font-bold">M</span>
                   </div>
                 ))}
               </div>
               <div>
-                <span className="text-[#FAF9F6] font-bold font-sans text-sm">Founding Reader Edition</span>
-                <span className="text-[#FAF9F6]/45 font-sans text-xs block">Built from live Murivest acquisition frameworks · Active Nairobi portfolio</span>
+                <span className="text-[#F8F7F4] font-bold font-sans text-sm">Founding Reader Edition</span>
+                <span className="text-[#F8F7F4]/45 font-sans text-xs block">Built from live Murivest acquisition frameworks · Active Nairobi portfolio</span>
               </div>
             </motion.div>
           </motion.div>
@@ -1016,7 +1016,7 @@ export default function BookLandingPage() {
               href="https://www.amazon.com/dp/B0GXQTMZCK"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative overflow-hidden bg-[#0d2318] text-[#FAF9F6] px-6 py-3 font-sans text-[11px] tracking-[0.18em] uppercase font-semibold hover:bg-[#C9973A] hover:text-[#1B4332] transition-all"
+              className="group relative overflow-hidden bg-[#0d2318] text-[#F8F7F4] px-6 py-3 font-sans text-[11px] tracking-[0.18em] uppercase font-semibold hover:bg-[#C9973A] hover:text-[#2C2C2C] transition-all"
               style={{ borderRadius: "2px" }}
             >
               <span className="flex items-center gap-2">
@@ -1026,7 +1026,7 @@ export default function BookLandingPage() {
             </a>
 
             {/* High-ticket framing line */}
-            <span className="text-[#FAF9F6]/40 text-[10px] tracking-[0.12em] uppercase text-center max-w-[220px]">
+            <span className="text-[#F8F7F4]/40 text-[10px] tracking-[0.12em] uppercase text-center max-w-[220px]">
               One decision. Years of missed deals — or control.
             </span>
           </div>
@@ -1037,7 +1037,7 @@ export default function BookLandingPage() {
           ── SECTION 2: COST OF ADMISSION
           Grant Cardone: You don't pay with money. You pay with your word.
       ═══════════════════════════════════════════════════ */}
-      <section className="py-24 md:py-32 bg-[#1B4332]">
+      <section className="py-24 md:py-32 bg-[#2C2C2C]">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -1049,7 +1049,7 @@ export default function BookLandingPage() {
               The Cost of Admission
             </motion.span>
 
-            <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl text-[#FAF9F6] leading-tight mb-10">
+            <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl text-[#F8F7F4] leading-tight mb-10">
               You Don't Pay with Money.
               <br />
               <em>You Pay with Your Word.</em>
@@ -1072,25 +1072,25 @@ export default function BookLandingPage() {
                       <div className="w-4 h-4 bg-[#C9973A]/20 border border-[#C9973A]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <Check className="w-2.5 h-2.5 text-[#C9973A]" strokeWidth={3} />
                       </div>
-                      <p className="text-[#FAF9F6]/70 text-sm font-sans leading-relaxed">{item}</p>
+                      <p className="text-[#F8F7F4]/70 text-sm font-sans leading-relaxed">{item}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div>
-                <p className="text-[#FAF9F6]/40 text-[11px] tracking-[0.25em] uppercase font-sans font-semibold mb-5">You Give</p>
-                <div className="border border-[#FAF9F6]/8 p-6">
+                <p className="text-[#F8F7F4]/40 text-[11px] tracking-[0.25em] uppercase font-sans font-semibold mb-5">You Give</p>
+                <div className="border border-[#F8F7F4]/8 p-6">
                   {/* ── FIX 4: "Free" replaced with "No upfront cost" framing ── */}
-                  <p className="text-[#FAF9F6] font-serif text-2xl mb-4">$0.00 upfront. Access under pledge.</p>
-                  <p className="text-[#FAF9F6]/65 text-sm font-sans leading-relaxed mb-4">
+                  <p className="text-[#F8F7F4] font-serif text-2xl mb-4">$0.00 upfront. Access under pledge.</p>
+                  <p className="text-[#F8F7F4]/65 text-sm font-sans leading-relaxed mb-4">
                     One honest Amazon review — written after you've read the book and tested the frameworks in your own context.
                   </p>
-                  <p className="text-[#FAF9F6]/40 text-xs font-sans leading-relaxed italic">
+                  <p className="text-[#F8F7F4]/40 text-xs font-sans leading-relaxed italic">
                     Not before. After. That distinction is everything.
                   </p>
-                  <div className="mt-4 pt-4 border-t border-[#FAF9F6]/8">
-                    <p className="text-[#FAF9F6]/30 text-[10px] font-sans italic">
+                  <div className="mt-4 pt-4 border-t border-[#F8F7F4]/8">
+                    <p className="text-[#F8F7F4]/30 text-[10px] font-sans italic">
                       If after reading you don't find it valuable, you're under no obligation to leave a review. The commitment is to honest assessment — not a flattering one.
                     </p>
                   </div>
@@ -1101,16 +1101,16 @@ export default function BookLandingPage() {
             {/* Market Reality quote */}
             <motion.div variants={fadeUp} className="bg-[#C9973A]/8 border border-[#C9973A]/20 p-6 mb-10">
               <p className="text-[#C9973A] text-[10px] tracking-[0.25em] uppercase font-sans font-semibold mb-2">Market Reality</p>
-              <p className="text-[#FAF9F6]/70 text-sm font-sans leading-relaxed italic">
+              <p className="text-[#F8F7F4]/70 text-sm font-sans leading-relaxed italic">
                 "The market is cyclical. The gap between operators who understand institutional frameworks and those who don't compounds with every cycle. Waiting costs more than most people calculate."
               </p>
-              <p className="text-[#FAF9F6]/35 text-xs font-sans mt-2">— Review the Westlands Deal today, or pay for the lesson in the next market correction.</p>
+              <p className="text-[#F8F7F4]/35 text-xs font-sans mt-2">— Review the Westlands Deal today, or pay for the lesson in the next market correction.</p>
             </motion.div>
 
             <motion.div variants={fadeUp}>
               <button
                 onClick={openModal}
-                className="group relative overflow-hidden bg-[#C9973A] text-[#1B4332] px-8 py-4 font-sans text-[12px] tracking-[0.2em] uppercase font-bold hover:shadow-[0_0_40px_rgba(201,151,58,0.45)] transition-shadow flex items-center gap-3"
+                className="group relative overflow-hidden bg-[#C9973A] text-[#2C2C2C] px-8 py-4 font-sans text-[12px] tracking-[0.2em] uppercase font-bold hover:shadow-[0_0_40px_rgba(201,151,58,0.45)] transition-shadow flex items-center gap-3"
                 style={{ borderRadius: "2px" }}
               >
                 <span className="relative z-10 flex items-center gap-3">
@@ -1140,7 +1140,7 @@ export default function BookLandingPage() {
               <motion.span variants={fadeUp} className="text-[#C9973A] text-[11px] tracking-[0.35em] uppercase font-sans font-semibold block mb-4">
                 This Is Not a Book. It's an Operating System.
               </motion.span>
-              <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl text-[#1B4332] leading-tight mb-4">
+              <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl text-[#2C2C2C] leading-tight mb-4">
                 Every Chapter Solves a Specific Wealth Problem.
               </motion.h2>
               <motion.p variants={fadeUp} className="text-[#2C2C2C]/50 font-sans text-base max-w-2xl leading-relaxed">
@@ -1150,7 +1150,7 @@ export default function BookLandingPage() {
               <BeforeAfterBlock />
             </div>
 
-            <motion.div variants={stagger} className="divide-y divide-[#1B4332]/6 mt-12">
+            <motion.div variants={stagger} className="divide-y divide-[#2C2C2C]/6 mt-12">
               {[
                 { ch: "Ch. 1–4", title: "Cognitive Engineering & Structured Thinking", value: "The Decision Journal method. How to underwrite a deal before you have all the data. The mindset architecture that separates capital allocators from capital consumers." },
                 { ch: "Ch. 6", title: "Kenya-Specific Economic Logic", value: "The numbers that actually matter: inflation, capital flow velocity, and how money moves through Nairobi's commercial corridors. Not theory — market reality." },
@@ -1164,23 +1164,23 @@ export default function BookLandingPage() {
                 { ch: "Ch. 26", title: "KES 500 Million Portfolio Roadmap", value: "Years 1–3: First asset. Years 3–7: Portfolio foundation. Years 7–12: Institutional positioning. Asset class recommendations and financing strategies for the Kenyan market." },
                 { ch: "App. A–D", title: "Market Data, Blueprints & Glossary", value: "Hard numbers: Nairobi cap rates, vacancy rates, commercial yields. Plus a personal wealth structuring blueprint to take to your lawyer or CFO." },
               ].map((ch, i) => (
-                <motion.div key={i} variants={fadeUp} className="grid grid-cols-[80px_1fr] border-b border-[#1B4332]/6 last:border-0 group">
+                <motion.div key={i} variants={fadeUp} className="grid grid-cols-[80px_1fr] border-b border-[#2C2C2C]/6 last:border-0 group">
                   <div className="py-4 pr-4 flex-shrink-0">
                     <span className="text-[#C9973A] text-[11px] tracking-[0.2em] font-sans font-bold uppercase">{ch.ch}</span>
                   </div>
                   <div className="py-4 grid md:grid-cols-2 gap-4">
-                    <p className="text-[#1B4332] font-serif text-[15px] leading-snug">{ch.title}</p>
+                    <p className="text-[#2C2C2C] font-serif text-[15px] leading-snug">{ch.title}</p>
                     <p className="text-[#2C2C2C]/50 text-xs font-sans leading-relaxed">{ch.value}</p>
                   </div>
                 </motion.div>
               ))}
             </motion.div>
 
-            <motion.div variants={fadeUp} className="mt-10 p-6 bg-[#1B4332] text-[#FAF9F6]">
+            <motion.div variants={fadeUp} className="mt-10 p-6 bg-[#2C2C2C] text-[#F8F7F4]">
               <p className="font-serif text-lg mb-2">
                 You are not reading theory. You are inheriting tested decisions.
               </p>
-              <p className="text-[#FAF9F6]/50 text-xs font-sans">
+              <p className="text-[#F8F7F4]/50 text-xs font-sans">
                 Every chapter was written from inside an active Nairobi commercial portfolio — not from a classroom.
               </p>
             </motion.div>
@@ -1188,7 +1188,7 @@ export default function BookLandingPage() {
             <motion.div variants={fadeUp} className="mt-10">
               <button
                 onClick={openModal}
-                className="group relative overflow-hidden bg-[#1B4332] text-[#FAF9F6] px-8 py-4 font-sans text-[12px] tracking-[0.2em] uppercase font-bold hover:shadow-[0_0_40px_rgba(27,58,45,0.35)] transition-shadow flex items-center gap-3"
+                className="group relative overflow-hidden bg-[#2C2C2C] text-[#F8F7F4] px-8 py-4 font-sans text-[12px] tracking-[0.2em] uppercase font-bold hover:shadow-[0_0_40px_rgba(27,58,45,0.35)] transition-shadow flex items-center gap-3"
                 style={{ borderRadius: "2px" }}
               >
                 <span className="relative z-10 flex items-center gap-3">
@@ -1217,8 +1217,8 @@ export default function BookLandingPage() {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="aspect-[4/5] relative rounded-sm overflow-hidden bg-[#1B4332]">
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1B4332] via-transparent to-transparent z-10" />
+              <div className="aspect-[4/5] relative rounded-sm overflow-hidden bg-[#2C2C2C]">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2C2C2C] via-transparent to-transparent z-10" />
                 <Image
                   src="/CEO.Founder.webp"
                   alt="Mark Muriithi"
@@ -1226,12 +1226,12 @@ export default function BookLandingPage() {
                   className="object-cover opacity-90"
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
-                  <p className="font-serif text-2xl text-[#FAF9F6]">Mark Muriithi</p>
-                  <p className="text-[#B8956B] text-sm tracking-wider uppercase mt-1">Founder, Murivest Realty Group</p>
+                  <p className="font-serif text-2xl text-[#F8F7F4]">Mark Muriithi</p>
+                  <p className="text-[#8B7355] text-sm tracking-wider uppercase mt-1">Founder, Murivest Realty Group</p>
                 </div>
               </div>
               {/* Decorative Frame */}
-              <div className="absolute -top-4 -left-4 w-full h-full border border-[#B8956B]/30 rounded-sm -z-10" />
+              <div className="absolute -top-4 -left-4 w-full h-full border border-[#8B7355]/30 rounded-sm -z-10" />
             </motion.div>
 
             {/* Bio Text */}
@@ -1243,14 +1243,14 @@ export default function BookLandingPage() {
             >
               <motion.span 
                 variants={fadeInUp}
-                className="text-[#B8956B] text-xs tracking-[0.3em] uppercase font-sans font-semibold"
+                className="text-[#8B7355] text-xs tracking-[0.3em] uppercase font-sans font-semibold"
               >
                 The Author
               </motion.span>
               
               <motion.h2 
                 variants={fadeInUp}
-                className="font-serif text-4xl md:text-5xl text-[#1B4332] mt-4 mb-8 leading-tight"
+                className="font-serif text-4xl md:text-5xl text-[#2C2C2C] mt-4 mb-8 leading-tight"
               >
                 I didn't learn wealth from a textbook.
               </motion.h2>
@@ -1263,16 +1263,16 @@ export default function BookLandingPage() {
                   I discovered that trial and error isn't a sign of failure. It is the exact scientific method elite operators use to turn uncertainty into a massive competitive advantage.
                 </p>
                 <p>
-                  That is exactly why I wrote <span className="text-[#1B4332] font-semibold">Trial & Error To Wealth Creation</span>. This isn't a memoir or a collection of motivational quotes. It is a brutal, step-by-step blueprint for building wealth deliberately and systematically.
+                  That is exactly why I wrote <span className="text-[#2C2C2C] font-semibold">Trial & Error To Wealth Creation</span>. This isn't a memoir or a collection of motivational quotes. It is a brutal, step-by-step blueprint for building wealth deliberately and systematically.
                 </p>
               </motion.div>
 
               {/* Signature */}
               <motion.div variants={fadeInUp} className="mt-8">
-                <p className="font-serif text-3xl text-[#1B4332] italic opacity-60">
+                <p className="font-serif text-3xl text-[#2C2C2C] italic opacity-60">
                   Mark Muriithi
                 </p>
-                <div className="w-16 h-0.5 bg-[#B8956B] mt-4" />
+                <div className="w-16 h-0.5 bg-[#8B7355] mt-4" />
               </motion.div>
             </motion.div>
           </div>
@@ -1280,7 +1280,7 @@ export default function BookLandingPage() {
       </section>
 
       {/* Section 4: The Fascination Bullets */}
-    <section className="py-24 md:py-32 bg-[#FAF9F6]">
+    <section className="py-24 md:py-32 bg-[#F8F7F4]">
       <div className="max-w-4xl mx-auto px-6">
 
         {/* Inline Section Header */}
@@ -1293,14 +1293,14 @@ export default function BookLandingPage() {
         >
           <motion.span 
             variants={fadeInUp}
-            className="inline-block text-[#B8956B] text-xs tracking-[0.3em] uppercase font-sans font-semibold mb-4"
+            className="inline-block text-[#8B7355] text-xs tracking-[0.3em] uppercase font-sans font-semibold mb-4"
           >
             Inside the Book
           </motion.span>
 
           <motion.h2 
             variants={fadeInUp}
-            className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1B4332] leading-[1.1] max-w-4xl mx-auto"
+            className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#2C2C2C] leading-[1.1] max-w-4xl mx-auto"
           >
             What You Will Learn to See Before Everyone Else
           </motion.h2>
@@ -1339,11 +1339,11 @@ export default function BookLandingPage() {
             <motion.div 
               key={i}
               variants={fadeInUp}
-              className="flex gap-6 p-6 rounded-sm bg-white border border-[#1B4332]/5 hover:border-[#B8956B]/30 hover:shadow-lg hover:shadow-[#B8956B]/5 transition-all duration-500 group"
+              className="flex gap-6 p-6 rounded-sm bg-white border border-[#2C2C2C]/5 hover:border-[#8B7355]/30 hover:shadow-lg hover:shadow-[#8B7355]/5 transition-all duration-500 group"
             >
               <GoldCheck />
               <div>
-                <h3 className="font-serif text-xl text-[#1B4332] mb-2 group-hover:text-[#B8956B] transition-colors">
+                <h3 className="font-serif text-xl text-[#2C2C2C] mb-2 group-hover:text-[#8B7355] transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-[#2C2C2C]/70 leading-relaxed">
@@ -1360,7 +1360,7 @@ export default function BookLandingPage() {
           ── SECTION 4: IDENTITY FILTER
           Andres Contreras: "This is not for everyone."
       ═══════════════════════════════════════════════════ */}
-      <section className="py-24 bg-[#FAF9F6]">
+      <section className="py-24 bg-[#F8F7F4]">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -1369,13 +1369,13 @@ export default function BookLandingPage() {
             variants={stagger}
           >
             <motion.div variants={fadeUp} className="border-l-4 border-[#C9973A] pl-6 py-2 mb-10">
-              <p className="font-serif text-2xl md:text-3xl text-[#1B4332] italic leading-relaxed mb-2">
+              <p className="font-serif text-2xl md:text-3xl text-[#2C2C2C] italic leading-relaxed mb-2">
                 "If you cannot commit to a two-minute review after receiving a KES 500M roadmap at no upfront cost, you are not yet operating at the level this book is written for. And that's fine — the system will show you exactly where you are."
               </p>
-              <p className="text-[#1B4332]/40 text-xs font-sans uppercase tracking-wider">— Your commitments reveal your level</p>
+              <p className="text-[#2C2C2C]/40 text-xs font-sans uppercase tracking-wider">— Your commitments reveal your level</p>
             </motion.div>
 
-            <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl text-[#1B4332] leading-tight mb-8">
+            <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl text-[#2C2C2C] leading-tight mb-8">
               This is Not for Everyone.
             </motion.h2>
 
@@ -1384,8 +1384,8 @@ export default function BookLandingPage() {
             </motion.p>
 
             <motion.div variants={fadeUp} className="grid md:grid-cols-2 gap-6 mb-10">
-              <div className="bg-white border border-[#1B4332]/6 p-6">
-                <p className="text-[#1B4332]/40 text-[10px] uppercase tracking-[0.2em] font-sans font-bold mb-4">This is NOT for you if:</p>
+              <div className="bg-white border border-[#2C2C2C]/6 p-6">
+                <p className="text-[#2C2C2C]/40 text-[10px] uppercase tracking-[0.2em] font-sans font-bold mb-4">This is NOT for you if:</p>
                 <div className="space-y-3">
                   {[
                     "You're looking for motivation or feel-good stories",
@@ -1394,13 +1394,13 @@ export default function BookLandingPage() {
                     "You collect information but rarely apply it",
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <X className="w-3.5 h-3.5 text-[#1B4332]/20 flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                      <X className="w-3.5 h-3.5 text-[#2C2C2C]/20 flex-shrink-0 mt-0.5" strokeWidth={2.5} />
                       <p className="text-[#2C2C2C]/55 text-sm font-sans">{item}</p>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="bg-[#1B4332] p-6">
+              <div className="bg-[#2C2C2C] p-6">
                 <p className="text-[#C9973A] text-[10px] uppercase tracking-[0.2em] font-sans font-bold mb-4">This IS for you if:</p>
                 <div className="space-y-3">
                   {[
@@ -1411,7 +1411,7 @@ export default function BookLandingPage() {
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <Check className="w-3.5 h-3.5 text-[#C9973A] flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                      <p className="text-[#FAF9F6]/80 text-sm font-sans">{item}</p>
+                      <p className="text-[#F8F7F4]/80 text-sm font-sans">{item}</p>
                     </div>
                   ))}
                 </div>
@@ -1419,12 +1419,12 @@ export default function BookLandingPage() {
             </motion.div>
 
             {/* Proof of Work — Constructed credibility */}
-            <motion.div variants={fadeUp} className="bg-[#1B4332] p-8 mb-6">
+            <motion.div variants={fadeUp} className="bg-[#2C2C2C] p-8 mb-6">
               <p className="text-[#C9973A] text-[10px] tracking-[0.25em] uppercase font-sans font-semibold mb-4">Built from Live Portfolio Decisions</p>
-              <p className="text-[#FAF9F6] font-serif text-lg italic mb-4 leading-relaxed">
+              <p className="text-[#F8F7F4] font-serif text-lg italic mb-4 leading-relaxed">
                 "The frameworks in this book were not written from theory. They were extracted from active Murivest acquisitions — including the Westlands commercial deal documented in Chapter 23 with real IRR models and three scenario analyses. This is the operating logic of a live Nairobi portfolio."
               </p>
-              <div className="flex items-center gap-4 mt-6 pt-4 border-t border-[#FAF9F6]/10">
+              <div className="flex items-center gap-4 mt-6 pt-4 border-t border-[#F8F7F4]/10">
                 <div className="w-12 h-12 relative rounded-full overflow-hidden flex-shrink-0 border border-[#C9973A]/30">
                   <Image
                     src="/ceo.webp"
@@ -1446,9 +1446,9 @@ export default function BookLandingPage() {
                 { label: "Chapter 23", outcome: "readers typically re-underwrite existing properties using the same IRR logic before finishing the book" },
                 { label: "The 10-Year Rule", outcome: "changes how readers evaluate deal velocity vs. hold-period returns — permanently" },
               ].map((item, i) => (
-                <div key={i} className="bg-[#1B4332]/4 border border-[#1B4332]/8 p-5">
+                <div key={i} className="bg-[#2C2C2C]/4 border border-[#2C2C2C]/8 p-5">
                   <p className="text-[#C9973A] text-[10px] uppercase tracking-wider font-sans font-bold mb-2">{item.label}</p>
-                  <p className="text-[#1B4332]/70 text-xs font-sans leading-relaxed italic">{item.outcome}</p>
+                  <p className="text-[#2C2C2C]/70 text-xs font-sans leading-relaxed italic">{item.outcome}</p>
                 </div>
               ))}
             </motion.div>
@@ -1471,7 +1471,7 @@ export default function BookLandingPage() {
             <motion.span variants={fadeUp} className="text-[#C9973A] text-[11px] tracking-[0.35em] uppercase font-sans font-semibold block mb-4">
               The Honor Loop
             </motion.span>
-            <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl text-[#1B4332] leading-tight mb-8">
+            <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl text-[#2C2C2C] leading-tight mb-8">
               I Trust You.
               <br />
               The System Verifies You.
@@ -1499,21 +1499,21 @@ export default function BookLandingPage() {
                   desc: "Pledge-keepers receive quarterly deal memos and Insider alerts. We focus our attention on operators who execute.",
                 },
               ].map((item, i) => (
-                <motion.div key={i} variants={fadeUp} className="bg-[#FAF9F6] border border-[#1B4332]/6 p-6 relative">
+                <motion.div key={i} variants={fadeUp} className="bg-[#F8F7F4] border border-[#2C2C2C]/6 p-6 relative">
                   <span className="text-[#C9973A] text-[11px] tracking-[0.2em] font-sans font-bold uppercase block mb-4">{item.step}</span>
-                  <h3 className="font-serif text-[16px] text-[#1B4332] mb-3 leading-snug">{item.title}</h3>
+                  <h3 className="font-serif text-[16px] text-[#2C2C2C] mb-3 leading-snug">{item.title}</h3>
                   <p className="text-[#2C2C2C]/50 text-xs font-sans leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </motion.div>
 
             {/* Grant Cardone consequence reframe */}
-            <motion.div variants={fadeUp} className="bg-[#1B4332] p-8 mb-10">
+            <motion.div variants={fadeUp} className="bg-[#2C2C2C] p-8 mb-10">
               <p className="text-[#C9973A] text-[10px] tracking-[0.25em] uppercase font-sans font-semibold mb-4">The Cost of Inaction</p>
-              <p className="text-[#FAF9F6] font-serif text-lg italic mb-4 leading-relaxed">
+              <p className="text-[#F8F7F4] font-serif text-lg italic mb-4 leading-relaxed">
                 "Every year you operate without a structured framework, you lose time, capital, and opportunities you will not see again. The market does not wait for you to get ready. It rewards those who are already structured."
               </p>
-              <p className="text-[#FAF9F6]/40 text-xs font-sans">
+              <p className="text-[#F8F7F4]/40 text-xs font-sans">
                 — Grant Cardone Principle: Speed & Structure Beat Perfection
               </p>
             </motion.div>
@@ -1521,7 +1521,7 @@ export default function BookLandingPage() {
             <motion.div variants={fadeUp}>
               <button
                 onClick={openModal}
-                className="group relative overflow-hidden bg-[#1B4332] text-[#FAF9F6] px-8 py-4 font-sans text-[12px] tracking-[0.2em] uppercase font-bold hover:shadow-[0_0_40px_rgba(27,58,45,0.35)] transition-shadow flex items-center gap-3"
+                className="group relative overflow-hidden bg-[#2C2C2C] text-[#F8F7F4] px-8 py-4 font-sans text-[12px] tracking-[0.2em] uppercase font-bold hover:shadow-[0_0_40px_rgba(27,58,45,0.35)] transition-shadow flex items-center gap-3"
                 style={{ borderRadius: "2px" }}
               >
                 <span className="relative z-10 flex items-center gap-3">
@@ -1542,7 +1542,7 @@ export default function BookLandingPage() {
           ── SECTION 6: OFFER STACK COMPARISON
           Decision forcing
       ═══════════════════════════════════════════════════ */}
-      <section className="py-24 bg-[#FAF9F6]">
+      <section className="py-24 bg-[#F8F7F4]">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -1554,21 +1554,21 @@ export default function BookLandingPage() {
               <motion.span variants={fadeUp} className="text-[#C9973A] text-[11px] tracking-[0.35em] uppercase font-sans font-semibold block mb-4">
                 Two Paths. Choose Your Standard.
               </motion.span>
-              <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl text-[#1B4332]">
+              <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl text-[#2C2C2C]">
                 Free Edition vs. Buy on Amazon
               </motion.h2>
             </div>
 
             <motion.div variants={fadeUp} className="grid md:grid-cols-2 gap-6">
               {/* Pledge Edition */}
-              <div className="border-2 border-[#1B4332] p-8 relative">
-                <div className="absolute -top-3 left-6 bg-[#1B4332] text-[#FAF9F6] px-4 py-0.5 text-[10px] tracking-[0.2em] uppercase font-bold font-sans">
+              <div className="border-2 border-[#2C2C2C] p-8 relative">
+                <div className="absolute -top-3 left-6 bg-[#2C2C2C] text-[#F8F7F4] px-4 py-0.5 text-[10px] tracking-[0.2em] uppercase font-bold font-sans">
                   Recommended — Investor Readers
                 </div>
                 <p className="text-[#C9973A] text-[11px] tracking-[0.25em] uppercase font-sans font-bold mb-2">GET YOUR FREE COPY</p>
                 {/* ── FIX 4: Price label reframed ── */}
-                <p className="font-serif text-4xl text-[#1B4332] mb-1">DIGITAL EDITION</p>
-                <p className="text-[#1B4332]/40 text-xs font-sans italic mb-6">GET YOUR FREE COPY</p>
+                <p className="font-serif text-4xl text-[#2C2C2C] mb-1">DIGITAL EDITION</p>
+                <p className="text-[#2C2C2C]/40 text-xs font-sans italic mb-6">GET YOUR FREE COPY</p>
                 <div className="space-y-3 mb-8">
                   {[
                     "Complete 26-chapter Kindle Edition",
@@ -1580,7 +1580,7 @@ export default function BookLandingPage() {
                     "Access to the Insider quarterly distribution list",
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
-                      <Check className="w-4 h-4 text-[#1B4332] flex-shrink-0" strokeWidth={3} />
+                      <Check className="w-4 h-4 text-[#2C2C2C] flex-shrink-0" strokeWidth={3} />
                       <span className="text-[#2C2C2C]/70 text-sm font-sans">{item}</span>
                     </div>
                   ))}
@@ -1588,7 +1588,7 @@ export default function BookLandingPage() {
                 <div className="flex flex-col gap-3">
                   <button
                     onClick={openModal}
-                    className="w-full bg-[#1B4332] text-[#FAF9F6] py-4 font-sans text-[12px] tracking-[0.2em] uppercase font-bold hover:bg-[#0d2318] transition-colors flex items-center justify-center gap-2"
+                    className="w-full bg-[#2C2C2C] text-[#F8F7F4] py-4 font-sans text-[12px] tracking-[0.2em] uppercase font-bold hover:bg-[#0d2318] transition-colors flex items-center justify-center gap-2"
                     style={{ borderRadius: "2px" }}
                   >
                     Make the Pledge <ArrowRight className="w-4 h-4" />
@@ -1600,9 +1600,9 @@ export default function BookLandingPage() {
               </div>
 
               {/* Amazon Route */}
-              <div className="border border-[#1B4332]/12 p-8">
+              <div className="border border-[#2C2C2C]/12 p-8">
                 <p className="text-[#2C2C2C]/40 text-[11px] tracking-[0.25em] uppercase font-sans font-bold mb-2">Amazon Route</p>
-                <p className="font-serif text-4xl text-[#1B4332] mb-6">$4.99 <span className="text-xl text-[#1B4332]/35">Kindle</span></p>
+                <p className="font-serif text-4xl text-[#2C2C2C] mb-6">$4.99 <span className="text-xl text-[#2C2C2C]/35">Kindle</span></p>
                 <div className="space-y-3 mb-8">
                   {[
                     { text: "Complete 26-chapter Kindle Edition", yes: true },
@@ -1615,9 +1615,9 @@ export default function BookLandingPage() {
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
                       {item.yes ? (
-                        <Check className="w-4 h-4 text-[#1B4332]/40 flex-shrink-0" strokeWidth={2} />
+                        <Check className="w-4 h-4 text-[#2C2C2C]/40 flex-shrink-0" strokeWidth={2} />
                       ) : (
-                        <X className="w-4 h-4 text-[#1B4332]/15 flex-shrink-0" strokeWidth={2} />
+                        <X className="w-4 h-4 text-[#2C2C2C]/15 flex-shrink-0" strokeWidth={2} />
                       )}
                       <span className={`text-sm font-sans ${item.yes ? "text-[#2C2C2C]/70" : "text-[#2C2C2C]/30"}`}>{item.text}</span>
                     </div>
@@ -1627,7 +1627,7 @@ export default function BookLandingPage() {
                   href="https://www.amazon.com/dp/B0GXQTMZCK"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full border border-[#1B4332]/20 text-[#2C2C2C]/55 py-4 font-sans text-[12px] tracking-[0.2em] uppercase text-center hover:border-[#1B4332]/35 hover:text-[#1B4332] transition-all"
+                  className="block w-full border border-[#2C2C2C]/20 text-[#2C2C2C]/55 py-4 font-sans text-[12px] tracking-[0.2em] uppercase text-center hover:border-[#2C2C2C]/35 hover:text-[#2C2C2C] transition-all"
                   style={{ borderRadius: "2px" }}
                 >
                   Buy on Amazon
@@ -1659,12 +1659,12 @@ export default function BookLandingPage() {
               <motion.span variants={fadeUp} className="text-[#C9973A] text-[11px] tracking-[0.35em] uppercase font-sans font-semibold block mb-4">
                 Questions
               </motion.span>
-              <motion.h2 variants={fadeUp} className="font-serif text-4xl text-[#1B4332]">
+              <motion.h2 variants={fadeUp} className="font-serif text-4xl text-[#2C2C2C]">
                 What Serious Investors Are Asking
               </motion.h2>
             </div>
 
-            <motion.div variants={fadeUp} className="bg-white border border-[#1B4332]/6 px-8" style={{ borderRadius: "2px" }}>
+            <motion.div variants={fadeUp} className="bg-white border border-[#2C2C2C]/6 px-8" style={{ borderRadius: "2px" }}>
               {faqs.map((faq, i) => (
                 <FAQItem key={i} q={faq.q} a={faq.a} />
               ))}
@@ -1677,7 +1677,7 @@ export default function BookLandingPage() {
           ── SECTION 8: FINAL CTA STRIP
           Grant Cardone: Consequence + urgency + action
       ═══════════════════════════════════════════════════ */}
-      <section className="py-24 bg-[#1B4332] text-center relative overflow-hidden">
+      <section className="py-24 bg-[#2C2C2C] text-center relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#C9973A]" />
         <div
           className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -1694,18 +1694,18 @@ export default function BookLandingPage() {
             viewport={{ once: true }}
             variants={stagger}
           >
-            <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl text-[#FAF9F6] mb-6 leading-tight">
+            <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl text-[#F8F7F4] mb-6 leading-tight">
               The system works.
               <br />
               <em className="text-[#C9973A]">Let's build.</em>
             </motion.h2>
-            <motion.p variants={fadeUp} className="text-[#FAF9F6]/45 font-sans mb-10 text-sm">
+            <motion.p variants={fadeUp} className="text-[#F8F7F4]/45 font-sans mb-10 text-sm">
               Immediate access. Honor-based exchange. No friction for operators who execute.
             </motion.p>
             <motion.div variants={fadeUp} className="flex justify-center">
               <button
                 onClick={openModal}
-                className="group relative overflow-hidden bg-[#C9973A] text-[#1B4332] px-10 py-4 font-sans text-[12px] tracking-[0.2em] uppercase font-bold hover:shadow-[0_0_40px_rgba(201,151,58,0.45)] transition-shadow flex items-center gap-3"
+                className="group relative overflow-hidden bg-[#C9973A] text-[#2C2C2C] px-10 py-4 font-sans text-[12px] tracking-[0.2em] uppercase font-bold hover:shadow-[0_0_40px_rgba(201,151,58,0.45)] transition-shadow flex items-center gap-3"
                 style={{ borderRadius: "2px" }}
               >
                 <span className="relative z-10 flex items-center gap-3">
@@ -1715,7 +1715,7 @@ export default function BookLandingPage() {
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/15 to-transparent" />
               </button>
             </motion.div>
-            <p className="mt-5 text-[11px] text-[#FAF9F6]/30 font-sans">
+            <p className="mt-5 text-[11px] text-[#F8F7F4]/30 font-sans">
               Or keep evaluating deals the same way — and stay where you are.
             </p>
 
@@ -1727,9 +1727,9 @@ export default function BookLandingPage() {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="bg-[#0d2318] text-[#FAF9F6]/25 py-10 border-t border-[#FAF9F6]/4">
+      <footer className="bg-[#0d2318] text-[#F8F7F4]/25 py-10 border-t border-[#F8F7F4]/4">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="font-serif text-xl text-[#FAF9F6]/60">
+          <div className="font-serif text-xl text-[#F8F7F4]/60">
             Muriithi<span className="text-[#C9973A]">.</span>
           </div>
           <p className="text-xs font-sans">© {new Date().getFullYear()} Murivest Realty Group. All rights reserved.</p>

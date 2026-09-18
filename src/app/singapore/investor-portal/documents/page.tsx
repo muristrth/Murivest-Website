@@ -33,16 +33,16 @@ export default function DocumentsPage() {
   return (
     <main className="min-h-screen bg-[#F8F7F4]">
       {/* Top Navigation */}
-      <header className="bg-white border-b border-[#E8E6E1] sticky top-0 z-30">
+      <header className="bg-white border-b border-[#E5E2DC] sticky top-0 z-30">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <span className="font-serif text-lg text-[#1B4332]">Murivest</span>
-            <span className="text-[#E8E6E1]">|</span>
-            <span className="text-[11px] tracking-wider uppercase text-[#8B8680]">Document Vault</span>
+            <span className="font-serif text-lg text-[#2C2C2C]">Murivest</span>
+            <span className="text-[#E5E2DC]">|</span>
+            <span className="text-[11px] tracking-wider uppercase text-[#5A5A5A]">Document Vault</span>
           </div>
           <Link 
             href="/singapore/investor-portal/dashboard" 
-            className="text-[10px] tracking-wider uppercase text-[#B8956B] hover:text-[#1B4332] transition-colors"
+            className="text-[10px] tracking-wider uppercase text-[#8B7355] hover:text-[#2C2C2C] transition-colors"
           >
             ← Back to Dashboard
           </Link>
@@ -53,11 +53,11 @@ export default function DocumentsPage() {
         <ScrollReveal>
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-4">
-              <Lock className="w-4 h-4 text-[#B8956B]" strokeWidth={1.5} />
-              <span className="text-[10px] tracking-[0.2em] uppercase text-[#B8956B] font-medium">Secure Access</span>
+              <Lock className="w-4 h-4 text-[#8B7355]" strokeWidth={1.5} />
+              <span className="text-[10px] tracking-[0.2em] uppercase text-[#8B7355] font-medium">Secure Access</span>
             </div>
             <h1 className="font-serif text-3xl text-[#2C2C2C] mb-2">Document Vault</h1>
-            <p className="text-sm text-[#8B8680] font-light">
+            <p className="text-sm text-[#5A5A5A] font-light">
               All downloads are tracked and watermarked. Do not share these documents without written consent.
             </p>
           </div>
@@ -65,15 +65,15 @@ export default function DocumentsPage() {
 
         {/* Search & Filter */}
         <ScrollReveal>
-          <div className="bg-white border border-[#E8E6E1] p-4 mb-6 flex flex-col md:flex-row gap-4">
+          <div className="bg-white border border-[#E5E2DC] p-4 mb-6 flex flex-col md:flex-row gap-4">
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#8B8680]" strokeWidth={1.5} />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#5A5A5A]" strokeWidth={1.5} />
               <input
                 type="text"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search documents..."
-                className="w-full pl-10 pr-4 py-2.5 bg-[#FAF9F6] border border-[#E8E6E1] text-[13px] text-[#2C2C2C] outline-none focus:border-[#B8956B] transition-colors"
+                className="w-full pl-10 pr-4 py-2.5 bg-[#F8F7F4] border border-[#E5E2DC] text-[13px] text-[#2C2C2C] outline-none focus:border-[#8B7355] transition-colors"
               />
             </div>
             <div className="flex flex-wrap gap-2">
@@ -83,8 +83,8 @@ export default function DocumentsPage() {
                   onClick={() => setFilter(type)}
                   className={`text-[10px] tracking-wider uppercase px-3 py-2 border transition-colors ${
                     filter === type
-                      ? 'bg-[#1B4332] text-white border-[#1B4332]'
-                      : 'bg-white text-[#5A5A5A] border-[#E8E6E1] hover:border-[#B8956B]'
+                      ? 'bg-[#2C2C2C] text-white border-[#2C2C2C]'
+                      : 'bg-white text-[#5A5A5A] border-[#E5E2DC] hover:border-[#8B7355]'
                   }`}
                 >
                   {type}
@@ -95,30 +95,30 @@ export default function DocumentsPage() {
         </ScrollReveal>
 
         {/* Document List */}
-        <div className="bg-white border border-[#E8E6E1]">
-          <div className="grid grid-cols-12 gap-4 px-6 py-3 border-b border-[#E8E6E1] bg-[#FAF9F6]">
-            <span className="col-span-5 text-[9px] tracking-[0.2em] uppercase text-[#8B8680] font-medium">Document</span>
-            <span className="col-span-2 text-[9px] tracking-[0.2em] uppercase text-[#8B8680] font-medium">Type</span>
-            <span className="col-span-2 text-[9px] tracking-[0.2em] uppercase text-[#8B8680] font-medium">Date</span>
-            <span className="col-span-1 text-[9px] tracking-[0.2em] uppercase text-[#8B8680] font-medium">Size</span>
-            <span className="col-span-2 text-[9px] tracking-[0.2em] uppercase text-[#8B8680] font-medium text-right">Action</span>
+        <div className="bg-white border border-[#E5E2DC]">
+          <div className="grid grid-cols-12 gap-4 px-6 py-3 border-b border-[#E5E2DC] bg-[#F8F7F4]">
+            <span className="col-span-5 text-[9px] tracking-[0.2em] uppercase text-[#5A5A5A] font-medium">Document</span>
+            <span className="col-span-2 text-[9px] tracking-[0.2em] uppercase text-[#5A5A5A] font-medium">Type</span>
+            <span className="col-span-2 text-[9px] tracking-[0.2em] uppercase text-[#5A5A5A] font-medium">Date</span>
+            <span className="col-span-1 text-[9px] tracking-[0.2em] uppercase text-[#5A5A5A] font-medium">Size</span>
+            <span className="col-span-2 text-[9px] tracking-[0.2em] uppercase text-[#5A5A5A] font-medium text-right">Action</span>
           </div>
           {filtered.map((doc) => (
-            <div key={doc.id} className="grid grid-cols-12 gap-4 px-6 py-4 border-b border-[#E8E6E1] last:border-0 hover:bg-[#FAF9F6] transition-colors items-center">
+            <div key={doc.id} className="grid grid-cols-12 gap-4 px-6 py-4 border-b border-[#E5E2DC] last:border-0 hover:bg-[#F8F7F4] transition-colors items-center">
               <div className="col-span-5 flex items-center gap-3">
-                <FileText className="w-4 h-4 text-[#8B8680] shrink-0" strokeWidth={1.5} />
+                <FileText className="w-4 h-4 text-[#5A5A5A] shrink-0" strokeWidth={1.5} />
                 <div>
                   <p className="text-[13px] text-[#2C2C2C]">{doc.name}</p>
                   {doc.gated && (
-                    <span className="text-[9px] tracking-wider uppercase text-[#B8956B] bg-[#B8956B]/10 px-1.5 py-0.5">NDA Required</span>
+                    <span className="text-[9px] tracking-wider uppercase text-[#8B7355] bg-[#8B7355]/10 px-1.5 py-0.5">NDA Required</span>
                   )}
                 </div>
               </div>
               <span className="col-span-2 text-[11px] text-[#5A5A5A]">{doc.type}</span>
-              <span className="col-span-2 text-[11px] text-[#8B8680]">{doc.date}</span>
-              <span className="col-span-1 text-[11px] text-[#8B8680] font-mono">{doc.size}</span>
+              <span className="col-span-2 text-[11px] text-[#5A5A5A]">{doc.date}</span>
+              <span className="col-span-1 text-[11px] text-[#5A5A5A] font-mono">{doc.size}</span>
               <div className="col-span-2 text-right">
-                <button className="inline-flex items-center gap-1 text-[10px] tracking-wider uppercase text-[#B8956B] hover:text-[#1B4332] transition-colors border border-[#B8956B]/30 px-3 py-1.5 hover:border-[#1B4332]">
+                <button className="inline-flex items-center gap-1 text-[10px] tracking-wider uppercase text-[#8B7355] hover:text-[#2C2C2C] transition-colors border border-[#8B7355]/30 px-3 py-1.5 hover:border-[#2C2C2C]">
                   <Download className="w-3 h-3" strokeWidth={1.5} />
                   Download
                 </button>

@@ -61,7 +61,7 @@ export default async function PropertiesPage() {
   const propertyData = await client.fetch(PROPERTIES_QUERY);
   
   return (
-    <main className="bg-[#FAF9F6]">
+    <main className="bg-[#F8F7F4]">
       <Properties initialData={propertyData} />
     </main>
   )

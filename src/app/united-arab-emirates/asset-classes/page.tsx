@@ -59,7 +59,7 @@ const schemaOrg = {
 
 function SectionLabel({ text }: { text: string }) {
   return (
-    <p className="font-body text-[11px] font-semibold tracking-[0.25em] uppercase text-[#B8956B] mb-4 md:mb-5">
+    <p className="font-body text-[11px] font-semibold tracking-[0.25em] uppercase text-[#8B7355] mb-4 md:mb-5">
       {text}
     </p>
   );
@@ -71,7 +71,7 @@ function RatingDots({ score, max = 5 }: { score: number; max?: number }) {
       {Array.from({ length: max }).map((_, i) => (
         <div
           key={i}
-          className={`w-2 h-2 rounded-full ${i < score ? 'bg-[#B8956B]' : 'bg-[#1A1A1A]/12'}`}
+          className={`w-2 h-2 rounded-full ${i < score ? 'bg-[#8B7355]' : 'bg-[#1A1A1A]/12'}`}
         />
       ))}
     </div>
@@ -81,12 +81,12 @@ function RatingDots({ score, max = 5 }: { score: number; max?: number }) {
 // ─── Sector palette ─── each sector gets a unique but on-brand gradient base
 // These make card image placeholders visually distinct without needing photos.
 const sectorGradient: Record<string, string> = {
-  office: 'from-[#1B4332]/20 via-[#1B4332]/8 to-[#E8E6E1]',
+  office: 'from-[#2C2C2C]/20 via-[#2C2C2C]/8 to-[#E5E2DC]',
   industrial: 'from-[#3D2B1A]/18 via-[#6B4C2A]/8 to-[#EDE9E2]',
   logistics: 'from-[#1A2E3D]/20 via-[#2A4A60]/8 to-[#E4EAF0]',
   retail: 'from-[#3D1A1A]/15 via-[#B85C3A]/8 to-[#EDE5E0]',
   hospitality: 'from-[#2D1A3D]/18 via-[#5A3A7A]/8 to-[#EAE4F0]',
-  'data-centers': 'from-[#0D1F17]/25 via-[#1B4332]/10 to-[#E0EDE6]',
+  'data-centers': 'from-[#0D1F17]/25 via-[#2C2C2C]/10 to-[#E0EDE6]',
   'mixed-use': 'from-[#1A2A1A]/18 via-[#3A5A3A]/8 to-[#E4EDE4]',
   land: 'from-[#2A2010]/18 via-[#6B5A2A]/8 to-[#EDE8DA]',
 };
@@ -100,7 +100,7 @@ const assetClasses = [
     icon: Building2,
     role: 'Core Income',
     riskLabel: 'Core — Core-Plus',
-    riskColor: 'bg-[#1B4332]/10 text-[#1B4332]',
+    riskColor: 'bg-[#2C2C2C]/10 text-[#2C2C2C]',
     incomeNote:
       'Long-duration leases with institutional-grade covenants. Predictable, contractual cash flow anchored by financial services, legal and technology occupiers in DIFC and ADGM.',
     appreciationNote:
@@ -151,7 +151,7 @@ const assetClasses = [
     icon: ShoppingBag,
     role: 'Income',
     riskLabel: 'Core — Value-Add',
-    riskColor: 'bg-[#1B4332]/10 text-[#1B4332]',
+    riskColor: 'bg-[#2C2C2C]/10 text-[#2C2C2C]',
     incomeNote:
       'Variable lease structures with turnover-linked components. Tourism, population growth and domestic consumption support prime retail income. Secondary retail faces structural headwinds.',
     appreciationNote:
@@ -239,7 +239,7 @@ const featuredOpportunities = [
     summary:
       'Grade A multi-tenanted core office with institutional covenant profile. Long WAULT with indexed rental escalation and active asset management upside.',
     href: '/properties?assetClass=office',
-    accentColor: 'bg-[#1B4332]',
+    accentColor: 'bg-[#2C2C2C]',
   },
   {
     sector: 'Logistics',
@@ -271,7 +271,7 @@ const featuredOpportunities = [
 
 export default function UaeAssetClassesPage() {
   return (
-    <main className="bg-[#FAF9F6] text-[#1A1A1A] font-body antialiased selection:bg-[#1B4332] selection:text-white overflow-x-hidden">
+    <main className="bg-[#F8F7F4] text-[#1A1A1A] font-body antialiased selection:bg-[#2C2C2C] selection:text-white overflow-x-hidden">
       <Script
         id="schema-uae-asset-classes"
         type="application/ld+json"
@@ -279,20 +279,20 @@ export default function UaeAssetClassesPage() {
       />
 
       {/* ── Fixed navigation ──────────────────────────────────────────────── */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#FAF9F6]/90 backdrop-blur-md border-b border-[#1A1A1A]/5">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#F8F7F4]/90 backdrop-blur-md border-b border-[#1A1A1A]/5">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 h-16 md:h-20 flex items-center justify-between">
-          <Link href="/" className="font-display text-xl md:text-2xl text-[#1B4332] tracking-tight">
+          <Link href="/" className="font-display text-xl md:text-2xl text-[#2C2C2C] tracking-tight">
             Murivest
           </Link>
           <nav className="hidden md:flex items-center gap-6 lg:gap-10 text-sm text-[#4A4A4A]">
-            <Link href="/united-arab-emirates" className="hover:text-[#1B4332] transition-colors">UAE</Link>
-            <Link href="#framework" className="hover:text-[#1B4332] transition-colors">Framework</Link>
-            <Link href="#asset-classes" className="hover:text-[#1B4332] transition-colors">Sectors</Link>
-            <Link href="#comparison" className="hover:text-[#1B4332] transition-colors">Compare</Link>
-            <Link href="#opportunities" className="hover:text-[#1B4332] transition-colors">Opportunities</Link>
+            <Link href="/united-arab-emirates" className="hover:text-[#2C2C2C] transition-colors">UAE</Link>
+            <Link href="#framework" className="hover:text-[#2C2C2C] transition-colors">Framework</Link>
+            <Link href="#asset-classes" className="hover:text-[#2C2C2C] transition-colors">Sectors</Link>
+            <Link href="#comparison" className="hover:text-[#2C2C2C] transition-colors">Compare</Link>
+            <Link href="#opportunities" className="hover:text-[#2C2C2C] transition-colors">Opportunities</Link>
             <Link
               href="/united-arab-emirates/contact"
-              className="px-5 py-2.5 bg-[#1B4332] text-white text-sm hover:bg-[#142d23] transition-colors"
+              className="px-5 py-2.5 bg-[#2C2C2C] text-white text-sm hover:bg-[#142d23] transition-colors"
             >
               Contact
             </Link>
@@ -310,14 +310,14 @@ export default function UaeAssetClassesPage() {
       ════════════════════════════════════════════════════════════════════ */}
       <section className="relative min-h-[88vh] md:min-h-screen flex flex-col justify-end overflow-hidden">
         {/* Cinematic dark-green gradient base — swap for real aerial image via next/image below */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#091A10] via-[#0F2C1C] to-[#1B4332]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#091A10] via-[#0F2C1C] to-[#2C2C2C]" />
 
         {/* Subtle grid texture overlay */}
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage:
-              'repeating-linear-gradient(0deg, transparent, transparent 79px, #FAF9F6 79px, #FAF9F6 80px), repeating-linear-gradient(90deg, transparent, transparent 79px, #FAF9F6 79px, #FAF9F6 80px)',
+              'repeating-linear-gradient(0deg, transparent, transparent 79px, #F8F7F4 79px, #F8F7F4 80px), repeating-linear-gradient(90deg, transparent, transparent 79px, #F8F7F4 79px, #F8F7F4 80px)',
           }}
         />
 
@@ -337,7 +337,7 @@ export default function UaeAssetClassesPage() {
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
               <Link
                 href="#asset-classes"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#1B4332] text-sm font-medium tracking-wide hover:bg-[#FAF9F6] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#2C2C2C] text-sm font-medium tracking-wide hover:bg-[#F8F7F4] transition-colors"
                 style={{ minHeight: 48 }}
               >
                 Explore Asset Classes
@@ -402,7 +402,7 @@ export default function UaeAssetClassesPage() {
               </p>
 
               {/* Pull-quote card */}
-              <div className="rounded-none bg-[#1B4332] text-white p-6 md:p-8 border-l-2 border-[#B8956B]">
+              <div className="rounded-none bg-[#2C2C2C] text-white p-6 md:p-8 border-l-2 border-[#8B7355]">
                 <p className="text-[10px] uppercase tracking-[0.25em] text-white/50 mb-3">
                   Investment Committee Principle
                 </p>
@@ -463,11 +463,11 @@ export default function UaeAssetClassesPage() {
                 ].map((item) => (
                   <div
                     key={item.name}
-                    className="p-5 md:p-6 border border-[#1A1A1A]/6 bg-[#FAF9F6] hover:border-[#1B4332]/20 transition-colors"
+                    className="p-5 md:p-6 border border-[#1A1A1A]/6 bg-[#F8F7F4] hover:border-[#2C2C2C]/20 transition-colors"
                   >
                     <div className="flex items-start justify-between mb-3 gap-3">
                       <h3 className="font-display text-lg text-[#1A1A1A]">{item.name}</h3>
-                      <span className="text-[9px] uppercase tracking-[0.18em] text-[#B8956B] bg-[#B8956B]/10 px-2 py-1.5 whitespace-nowrap shrink-0">
+                      <span className="text-[9px] uppercase tracking-[0.18em] text-[#8B7355] bg-[#8B7355]/10 px-2 py-1.5 whitespace-nowrap shrink-0">
                         {item.tag}
                       </span>
                     </div>
@@ -495,7 +495,7 @@ export default function UaeAssetClassesPage() {
             </div>
             <Link
               href="/properties"
-              className="inline-flex items-center gap-2 text-sm text-[#4A4A4A] border border-[#1A1A1A]/10 px-5 py-3 hover:border-[#1B4332] hover:text-[#1B4332] transition-colors shrink-0"
+              className="inline-flex items-center gap-2 text-sm text-[#4A4A4A] border border-[#1A1A1A]/10 px-5 py-3 hover:border-[#2C2C2C] hover:text-[#2C2C2C] transition-colors shrink-0"
             >
               View All Opportunities
               <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
@@ -505,17 +505,17 @@ export default function UaeAssetClassesPage() {
           <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-5">
             {assetClasses.map((ac) => {
               const Icon = ac.icon;
-              const gradient = sectorGradient[ac.slug] ?? 'from-[#E8E6E1] to-[#D8D6D0]';
+              const gradient = sectorGradient[ac.slug] ?? 'from-[#E5E2DC] to-[#D8D6D0]';
 
               return (
                 <article
                   key={ac.slug}
-                  className="group flex flex-col bg-white border border-[#1A1A1A]/6 hover:border-[#1B4332]/25 hover:shadow-xl transition-all duration-300 overflow-hidden"
+                  className="group flex flex-col bg-white border border-[#1A1A1A]/6 hover:border-[#2C2C2C]/25 hover:shadow-xl transition-all duration-300 overflow-hidden"
                 >
                   {/* Visual header */}
                   <div className={`relative h-44 bg-gradient-to-br ${gradient} overflow-hidden flex items-center justify-center`}>
                     <Icon
-                      className="w-14 h-14 text-[#1A1A1A]/10 group-hover:text-[#1B4332]/20 transition-colors duration-300"
+                      className="w-14 h-14 text-[#1A1A1A]/10 group-hover:text-[#2C2C2C]/20 transition-colors duration-300"
                       strokeWidth={0.75}
                     />
                     {/* Risk badge */}
@@ -530,9 +530,9 @@ export default function UaeAssetClassesPage() {
                   <div className="flex flex-col flex-1 p-5 md:p-6">
                     <div className="flex items-start justify-between mb-1 gap-2">
                       <h3 className="font-display text-xl text-[#1A1A1A]">{ac.name}</h3>
-                      <Icon className="w-4 h-4 text-[#B8956B] shrink-0 mt-1" strokeWidth={1.5} />
+                      <Icon className="w-4 h-4 text-[#8B7355] shrink-0 mt-1" strokeWidth={1.5} />
                     </div>
-                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#B8956B] mb-4">
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#8B7355] mb-4">
                       {ac.role}
                     </p>
 
@@ -555,7 +555,7 @@ export default function UaeAssetClassesPage() {
                     </p>
 
                     <details className="group/detail mb-5">
-                      <summary className="cursor-pointer list-none text-xs text-[#8A8A8A] hover:text-[#1B4332] transition-colors select-none">
+                      <summary className="cursor-pointer list-none text-xs text-[#8A8A8A] hover:text-[#2C2C2C] transition-colors select-none">
                         Appreciation outlook ↓
                       </summary>
                       <p className="mt-2 text-xs text-[#4A4A4A] leading-relaxed">
@@ -565,7 +565,7 @@ export default function UaeAssetClassesPage() {
 
                     <Link
                       href={`/properties?assetClass=${ac.slug}`}
-                      className="flex items-center justify-between gap-2 text-sm text-[#1B4332] border border-[#1B4332]/20 px-4 py-3 hover:bg-[#1B4332] hover:text-white hover:border-[#1B4332] transition-all"
+                      className="flex items-center justify-between gap-2 text-sm text-[#2C2C2C] border border-[#2C2C2C]/20 px-4 py-3 hover:bg-[#2C2C2C] hover:text-white hover:border-[#2C2C2C] transition-all"
                     >
                       <span>View Opportunities</span>
                       <ArrowRight className="w-3.5 h-3.5" strokeWidth={1.5} />
@@ -602,7 +602,7 @@ export default function UaeAssetClassesPage() {
               </p>
               <Link
                 href="/united-arab-emirates/contact"
-                className="inline-flex items-center gap-2 text-sm text-[#1B4332] border border-[#1B4332]/20 px-5 py-3 hover:bg-[#1B4332] hover:text-white hover:border-[#1B4332] transition-all"
+                className="inline-flex items-center gap-2 text-sm text-[#2C2C2C] border border-[#2C2C2C]/20 px-5 py-3 hover:bg-[#2C2C2C] hover:text-white hover:border-[#2C2C2C] transition-all"
               >
                 Discuss Allocation Strategy
                 <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
@@ -612,13 +612,13 @@ export default function UaeAssetClassesPage() {
             <div className="lg:col-span-8 space-y-5">
 
               {/* Tier I */}
-              <div className="p-6 md:p-8 border border-[#1A1A1A]/6 bg-[#FAF9F6]">
+              <div className="p-6 md:p-8 border border-[#1A1A1A]/6 bg-[#F8F7F4]">
                 <div className="flex items-start justify-between gap-4 mb-5">
                   <div>
-                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#B8956B] mb-1">Wealth Tier I</p>
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#8B7355] mb-1">Wealth Tier I</p>
                     <h3 className="font-display text-xl text-[#1A1A1A]">USD 10M – 50M</h3>
                   </div>
-                  <span className="text-[9px] uppercase tracking-wider bg-[#1B4332]/8 text-[#1B4332] px-3 py-2 shrink-0">
+                  <span className="text-[9px] uppercase tracking-wider bg-[#2C2C2C]/8 text-[#2C2C2C] px-3 py-2 shrink-0">
                     Foundation
                   </span>
                 </div>
@@ -634,7 +634,7 @@ export default function UaeAssetClassesPage() {
                     { sector: 'Industrial', pct: '10–20%', role: 'Growth' },
                   ].map((item) => (
                     <div key={item.sector} className="bg-white p-4 border border-[#1A1A1A]/5">
-                      <p className="font-display text-xl text-[#1B4332] mb-1">{item.pct}</p>
+                      <p className="font-display text-xl text-[#2C2C2C] mb-1">{item.pct}</p>
                       <p className="text-xs font-medium text-[#1A1A1A] mb-0.5">{item.sector}</p>
                       <p className="text-[10px] text-[#8A8A8A] uppercase tracking-wider">{item.role}</p>
                     </div>
@@ -643,13 +643,13 @@ export default function UaeAssetClassesPage() {
               </div>
 
               {/* Tier II */}
-              <div className="p-6 md:p-8 border border-[#1A1A1A]/6 bg-[#FAF9F6]">
+              <div className="p-6 md:p-8 border border-[#1A1A1A]/6 bg-[#F8F7F4]">
                 <div className="flex items-start justify-between gap-4 mb-5">
                   <div>
-                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#B8956B] mb-1">Wealth Tier II</p>
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#8B7355] mb-1">Wealth Tier II</p>
                     <h3 className="font-display text-xl text-[#1A1A1A]">USD 50M – 500M</h3>
                   </div>
-                  <span className="text-[9px] uppercase tracking-wider bg-[#B8956B]/10 text-[#8A6440] px-3 py-2 shrink-0">
+                  <span className="text-[9px] uppercase tracking-wider bg-[#8B7355]/10 text-[#8A6440] px-3 py-2 shrink-0">
                     Diversified
                   </span>
                 </div>
@@ -665,7 +665,7 @@ export default function UaeAssetClassesPage() {
                     { sector: 'Hospitality + Land', pct: '20–30%', role: 'Appreciation' },
                   ].map((item) => (
                     <div key={item.sector} className="bg-white p-4 border border-[#1A1A1A]/5">
-                      <p className="font-display text-xl text-[#1B4332] mb-1">{item.pct}</p>
+                      <p className="font-display text-xl text-[#2C2C2C] mb-1">{item.pct}</p>
                       <p className="text-xs font-medium text-[#1A1A1A] mb-0.5">{item.sector}</p>
                       <p className="text-[10px] text-[#8A8A8A] uppercase tracking-wider">{item.role}</p>
                     </div>
@@ -674,7 +674,7 @@ export default function UaeAssetClassesPage() {
               </div>
 
               {/* Tier III */}
-              <div className="p-6 md:p-8 bg-[#1B4332] text-white border border-[#1B4332]">
+              <div className="p-6 md:p-8 bg-[#2C2C2C] text-white border border-[#2C2C2C]">
                 <div className="flex items-start justify-between gap-4 mb-5">
                   <div>
                     <p className="text-[10px] uppercase tracking-[0.2em] text-white/55 mb-1">Wealth Tier III</p>
@@ -750,13 +750,13 @@ export default function UaeAssetClassesPage() {
                   const Icon = item.icon;
                   return (
                     <div key={item.trend} className="p-5 md:p-6 bg-white border border-[#1A1A1A]/6">
-                      <Icon className="w-5 h-5 text-[#B8956B] mb-5" strokeWidth={1.5} />
+                      <Icon className="w-5 h-5 text-[#8B7355] mb-5" strokeWidth={1.5} />
                       <h3 className="font-display text-lg text-[#1A1A1A] mb-2.5">{item.trend}</h3>
                       <div className="flex gap-1.5 mb-4 flex-wrap">
                         {item.sectors.map((s) => (
                           <span
                             key={s}
-                            className="text-[9px] uppercase tracking-[0.18em] bg-[#1B4332]/8 text-[#1B4332] px-2 py-1.5"
+                            className="text-[9px] uppercase tracking-[0.18em] bg-[#2C2C2C]/8 text-[#2C2C2C] px-2 py-1.5"
                           >
                             {s}
                           </span>
@@ -788,7 +788,7 @@ export default function UaeAssetClassesPage() {
               </p>
               <Link
                 href="/united-arab-emirates/market-outlook"
-                className="inline-flex items-center gap-2 text-sm text-[#1B4332] border border-[#1B4332]/20 px-5 py-3 hover:bg-[#1B4332] hover:text-white hover:border-[#1B4332] transition-all"
+                className="inline-flex items-center gap-2 text-sm text-[#2C2C2C] border border-[#2C2C2C]/20 px-5 py-3 hover:bg-[#2C2C2C] hover:text-white hover:border-[#2C2C2C] transition-all"
               >
                 Read UAE Market Outlook
                 <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
@@ -818,7 +818,7 @@ export default function UaeAssetClassesPage() {
           <div className="overflow-x-auto border border-[#1A1A1A]/8">
             <table className="w-full text-left min-w-[720px]">
               <thead>
-                <tr className="border-b border-[#1A1A1A]/8 bg-[#FAF9F6]">
+                <tr className="border-b border-[#1A1A1A]/8 bg-[#F8F7F4]">
                   <th className="p-4 md:p-5 text-[10px] uppercase tracking-[0.2em] text-[#8A8A8A] font-medium w-40">
                     Asset Class
                   </th>
@@ -836,10 +836,10 @@ export default function UaeAssetClassesPage() {
               </thead>
               <tbody className="divide-y divide-[#1A1A1A]/5">
                 {assetClasses.map((ac) => (
-                  <tr key={ac.slug} className="hover:bg-[#FAF9F6]/60 transition-colors">
+                  <tr key={ac.slug} className="hover:bg-[#F8F7F4]/60 transition-colors">
                     <td className="p-4 md:p-5">
                       <p className="font-display text-base text-[#1A1A1A]">{ac.name}</p>
-                      <p className="text-[9px] uppercase tracking-[0.18em] text-[#B8956B] mt-0.5">{ac.role}</p>
+                      <p className="text-[9px] uppercase tracking-[0.18em] text-[#8B7355] mt-0.5">{ac.role}</p>
                     </td>
                     <td className="p-4 md:p-5"><RatingDots score={ac.incomeRating} /></td>
                     <td className="p-4 md:p-5"><RatingDots score={ac.growthRating} /></td>
@@ -849,7 +849,7 @@ export default function UaeAssetClassesPage() {
                     <td className="p-4 md:p-5">
                       <Link
                         href={`/properties?assetClass=${ac.slug}`}
-                        className="inline-flex items-center gap-1.5 text-xs text-[#1B4332] hover:underline"
+                        className="inline-flex items-center gap-1.5 text-xs text-[#2C2C2C] hover:underline"
                       >
                         Opportunities
                         <ArrowUpRight className="w-3 h-3" strokeWidth={1.5} />
@@ -859,7 +859,7 @@ export default function UaeAssetClassesPage() {
                 ))}
               </tbody>
             </table>
-            <div className="px-5 py-3 border-t border-[#1A1A1A]/5 bg-[#FAF9F6]">
+            <div className="px-5 py-3 border-t border-[#1A1A1A]/5 bg-[#F8F7F4]">
               <p className="text-[11px] text-[#8A8A8A]">
                 Ratings reflect structural sector characteristics scored 1–5. Based on Murivest
                 assessment of UAE market conditions, 2025–2026. Not investment advice.
@@ -883,7 +883,7 @@ export default function UaeAssetClassesPage() {
             </div>
             <Link
               href="/properties"
-              className="inline-flex items-center gap-2 text-sm text-[#4A4A4A] border border-[#1A1A1A]/10 px-5 py-3 hover:border-[#1B4332] hover:text-[#1B4332] transition-colors shrink-0"
+              className="inline-flex items-center gap-2 text-sm text-[#4A4A4A] border border-[#1A1A1A]/10 px-5 py-3 hover:border-[#2C2C2C] hover:text-[#2C2C2C] transition-colors shrink-0"
             >
               View All Properties
               <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
@@ -895,10 +895,10 @@ export default function UaeAssetClassesPage() {
               <Link
                 key={opp.location}
                 href={opp.href}
-                className="group flex flex-col bg-white border border-[#1A1A1A]/6 hover:border-[#1B4332]/25 hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="group flex flex-col bg-white border border-[#1A1A1A]/6 hover:border-[#2C2C2C]/25 hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
                 {/* Visual placeholder */}
-                <div className="relative h-48 bg-[#E8E6E1] overflow-hidden">
+                <div className="relative h-48 bg-[#E5E2DC] overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#1A1A1A]/8 to-transparent group-hover:from-[#1A1A1A]/15 transition-all duration-500" />
                   <div className="absolute top-4 left-4">
                     <span className={`text-[9px] uppercase tracking-[0.18em] ${opp.accentColor} text-white px-2.5 py-1.5`}>
@@ -906,16 +906,16 @@ export default function UaeAssetClassesPage() {
                     </span>
                   </div>
                   <div className="absolute bottom-4 right-4 translate-y-1 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                    <ArrowUpRight className="w-5 h-5 text-[#1B4332]" strokeWidth={1.5} />
+                    <ArrowUpRight className="w-5 h-5 text-[#2C2C2C]" strokeWidth={1.5} />
                   </div>
                 </div>
 
                 <div className="p-5 md:p-6 flex flex-col flex-1">
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-[#B8956B] mb-2.5">
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-[#8B7355] mb-2.5">
                     {opp.location}
                   </p>
                   <p className="text-sm text-[#4A4A4A] leading-relaxed flex-1">{opp.summary}</p>
-                  <div className="mt-5 flex items-center gap-2 text-sm text-[#1B4332] font-medium">
+                  <div className="mt-5 flex items-center gap-2 text-sm text-[#2C2C2C] font-medium">
                     <span>View Asset</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" strokeWidth={1.5} />
                   </div>
@@ -925,7 +925,7 @@ export default function UaeAssetClassesPage() {
           </div>
 
           {/* Off-market access callout */}
-          <div className="mt-8 md:mt-10 p-5 md:p-7 bg-[#FAF9F6] border border-[#1A1A1A]/6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+          <div className="mt-8 md:mt-10 p-5 md:p-7 bg-[#F8F7F4] border border-[#1A1A1A]/6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
             <p className="text-sm text-[#4A4A4A] leading-relaxed max-w-xl">
               Murivest maintains access to off-market opportunities across all UAE commercial sectors.
               Curated opportunities are shared privately with registered institutional counterparties
@@ -933,7 +933,7 @@ export default function UaeAssetClassesPage() {
             </p>
             <Link
               href="/united-arab-emirates/contact"
-              className="inline-flex items-center gap-2 text-sm text-[#1B4332] border border-[#1B4332]/20 px-5 py-3 hover:bg-[#1B4332] hover:text-white hover:border-[#1B4332] transition-all shrink-0 whitespace-nowrap"
+              className="inline-flex items-center gap-2 text-sm text-[#2C2C2C] border border-[#2C2C2C]/20 px-5 py-3 hover:bg-[#2C2C2C] hover:text-white hover:border-[#2C2C2C] transition-all shrink-0 whitespace-nowrap"
             >
               Register for Off-Market Access
               <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
@@ -966,7 +966,7 @@ export default function UaeAssetClassesPage() {
               </p>
               <Link
                 href="/united-arab-emirates/contact"
-                className="inline-flex items-center gap-2 text-sm text-[#1B4332] border border-[#1B4332]/20 px-5 py-3 hover:bg-[#1B4332] hover:text-white hover:border-[#1B4332] transition-all"
+                className="inline-flex items-center gap-2 text-sm text-[#2C2C2C] border border-[#2C2C2C]/20 px-5 py-3 hover:bg-[#2C2C2C] hover:text-white hover:border-[#2C2C2C] transition-all"
               >
                 Discuss Advisory Services
                 <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
@@ -1001,8 +1001,8 @@ export default function UaeAssetClassesPage() {
                     body: 'Multi-sector allocation frameworks tailored to mandate duration, liquidity requirements, income targets and capital preservation constraints across different wealth tiers.',
                   },
                 ].map((item) => (
-                  <div key={item.capability} className="p-5 md:p-6 bg-[#FAF9F6] border border-[#1A1A1A]/6">
-                    <CheckCircle2 className="w-5 h-5 text-[#B8956B] mb-4" strokeWidth={1.5} />
+                  <div key={item.capability} className="p-5 md:p-6 bg-[#F8F7F4] border border-[#1A1A1A]/6">
+                    <CheckCircle2 className="w-5 h-5 text-[#8B7355] mb-4" strokeWidth={1.5} />
                     <h3 className="font-display text-base md:text-lg text-[#1A1A1A] mb-2">
                       {item.capability}
                     </h3>
@@ -1039,7 +1039,7 @@ export default function UaeAssetClassesPage() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="group flex items-center justify-between gap-3 border border-[#1A1A1A]/6 bg-[#FAF9F6] p-4 text-sm text-[#4A4A4A] hover:border-[#1B4332] hover:text-[#1B4332] transition-colors"
+                className="group flex items-center justify-between gap-3 border border-[#1A1A1A]/6 bg-[#F8F7F4] p-4 text-sm text-[#4A4A4A] hover:border-[#2C2C2C] hover:text-[#2C2C2C] transition-colors"
               >
                 <span>{link.label}</span>
                 <ArrowUpRight className="w-3.5 h-3.5 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" strokeWidth={1.5} />
@@ -1057,7 +1057,7 @@ export default function UaeAssetClassesPage() {
       {/* ════════════════════════════════════════════════════════════════════
           SECTION 8 — Private Allocation Consultation (CTA)
       ════════════════════════════════════════════════════════════════════ */}
-      <section className="py-24 md:py-36 lg:py-44 px-6 md:px-12 lg:px-20 bg-[#1B4332] text-white">
+      <section className="py-24 md:py-36 lg:py-44 px-6 md:px-12 lg:px-20 bg-[#2C2C2C] text-white">
         <div className="max-w-[1400px] mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
 
           <div className="lg:col-span-7">
@@ -1074,7 +1074,7 @@ export default function UaeAssetClassesPage() {
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
               <Link
                 href="/united-arab-emirates/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#1B4332] text-sm font-medium tracking-wide hover:bg-[#FAF9F6] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#2C2C2C] text-sm font-medium tracking-wide hover:bg-[#F8F7F4] transition-colors"
                 style={{ minHeight: 48 }}
               >
                 Request a Private Consultation
@@ -1105,7 +1105,7 @@ export default function UaeAssetClassesPage() {
                   key={item.label}
                   className="flex items-start gap-4 p-4 bg-white/5 border border-white/8"
                 >
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#B8956B] mt-2 shrink-0" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#8B7355] mt-2 shrink-0" />
                   <div>
                     <p className="text-[10px] uppercase tracking-[0.2em] text-white/45 mb-0.5">
                       {item.label}

@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   },
   other: {
     'format-detection': 'telephone=no',
-    'theme-color': '#1B4332',
+    'theme-color': '#2C2C2C',
   },
 };
 
@@ -125,12 +125,12 @@ export default function ServicesPage() {
 
       <main>
         {/* Hero */}
-        <section className="pt-32 pb-20 bg-[#1B4332]">
+        <section className="pt-32 pb-20 bg-[#2C2C2C]">
           <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16">
             <ScrollReveal>
-              <p className="text-[10px] tracking-[0.3em] uppercase text-[#B8956B] mb-4 font-medium">Advisory Services</p>
+              <p className="text-[10px] tracking-[0.3em] uppercase text-[#8B7355] mb-4 font-medium">Advisory Services</p>
               <h1 className="font-serif text-4xl md:text-5xl text-white leading-[1.05] mb-6">
-                Institutional <span className="italic text-[#B8956B] font-light">Services</span>
+                Institutional <span className="italic text-[#8B7355] font-light">Services</span>
               </h1>
               <p className="text-base text-white/60 max-w-2xl leading-relaxed font-light">
                 End-to-end advisory for institutional investors deploying capital into 
@@ -154,32 +154,32 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {SERVICES.map((service, i) => (
                 <ScrollReveal key={service.slug} delay={i * 0.1}>
-                  <div className="bg-white border border-[#E8E6E1] p-8 md:p-10 hover:shadow-xl hover:border-[#B8956B]/20 transition-all duration-500 group h-full">
-                    <div className="w-14 h-14 border border-[#B8956B]/30 flex items-center justify-center text-[#B8956B] mb-6 group-hover:bg-[#B8956B]/10 transition-colors">
+                  <div className="bg-white border border-[#E5E2DC] p-8 md:p-10 hover:shadow-xl hover:border-[#8B7355]/20 transition-all duration-500 group h-full">
+                    <div className="w-14 h-14 border border-[#8B7355]/30 flex items-center justify-center text-[#8B7355] mb-6 group-hover:bg-[#8B7355]/10 transition-colors">
                       {iconMap[service.slug]}
                     </div>
 
                     <h3 className="font-serif text-2xl text-[#2C2C2C] mb-2">{service.title}</h3>
-                    <p className="text-[11px] tracking-[0.15em] uppercase text-[#B8956B] mb-4">{service.tagline}</p>
-                    <p className="text-sm text-[#8B8680] leading-relaxed font-light mb-8">{service.description}</p>
+                    <p className="text-[11px] tracking-[0.15em] uppercase text-[#8B7355] mb-4">{service.tagline}</p>
+                    <p className="text-sm text-[#5A5A5A] leading-relaxed font-light mb-8">{service.description}</p>
 
                     <div className="space-y-2 mb-8">
                       {service.features.map((f) => (
                         <div key={f} className="flex items-start gap-3">
-                          <div className="w-1 h-1 rounded-full bg-[#B8956B] mt-2 shrink-0" />
+                          <div className="w-1 h-1 rounded-full bg-[#8B7355] mt-2 shrink-0" />
                           <span className="text-[13px] text-[#2C2C2C]">{f}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* Process */}
-                    <div className="pt-6 border-t border-[#E8E6E1]">
-                      <p className="text-[9px] tracking-[0.2em] uppercase text-[#8B8680] mb-3">Our Process</p>
+                    <div className="pt-6 border-t border-[#E5E2DC]">
+                      <p className="text-[9px] tracking-[0.2em] uppercase text-[#5A5A5A] mb-3">Our Process</p>
                       <div className="flex flex-wrap gap-2">
                         {service.process.map((step, j) => (
-                          <span key={step} className="flex items-center gap-1.5 text-[10px] text-[#8B8680]">
-                            {j > 0 && <ArrowRight className="w-3 h-3 text-[#E8E6E1]" />}
-                            <span className="px-2 py-1 bg-[#F5F4F0] border border-[#E8E6E1]">{step}</span>
+                          <span key={step} className="flex items-center gap-1.5 text-[10px] text-[#5A5A5A]">
+                            {j > 0 && <ArrowRight className="w-3 h-3 text-[#E5E2DC]" />}
+                            <span className="px-2 py-1 bg-[#F5F4F0] border border-[#E5E2DC]">{step}</span>
                           </span>
                         ))}
                       </div>
@@ -192,7 +192,7 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-[#1B4332]">
+        <section className="py-20 bg-[#2C2C2C]">
           <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-16 text-center">
             <ScrollReveal>
               <h2 className="font-serif text-3xl text-white mb-4">Ready to Discuss Your Mandate?</h2>
@@ -202,7 +202,7 @@ export default function ServicesPage() {
               </p>
               <Link
                 href="/singapore/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#B8956B] text-white text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#C9A87C] transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#8B7355] text-white text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors"
               >
                 Schedule Consultation
                 <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
