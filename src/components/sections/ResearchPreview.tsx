@@ -75,7 +75,7 @@ export default function ResearchPreview() {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-6 h-px bg-[#8B7355]" />
-              <p className="text-[10px] tracking-[0.4em] uppercase text-[#8B7355] font-mono">
+              <p className="text-[10px] tracking-[0.35em] uppercase text-[#8B7355]">
                 Market Intelligence · Q2 2026
               </p>
             </div>
@@ -96,7 +96,7 @@ export default function ResearchPreview() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="lg:col-span-7"
           >
-            <p className="text-[14px] md:text-[15px] text-[#5A5A5A] leading-[1.85] font-light border-l border-[#C4B59D] pl-6">
+            <p className="text-[14px] md:text-[15px] text-[#5A5A5A] leading-[1.85] font-light border-l border-[#8B7355] pl-6">
               Nairobi's commercial market is undergoing structural rebalancing. Capital is
               concentrating in Grade A office, logistics, and mixed-use corridors, while
               secondary stock continues to dilute pricing power and occupancy across the metro area.
@@ -108,7 +108,7 @@ export default function ResearchPreview() {
         <div className="hidden md:block border border-[#E5E2DC] bg-white shadow-sm">
 
           {/* Table header */}
-          <div className="grid grid-cols-12 px-6 py-4 text-[9px] uppercase tracking-[0.3em] text-[#A9A39A] border-b border-[#E5E2DC] bg-[#F8F7F4] font-mono">
+          <div className="grid grid-cols-12 px-6 py-4 text-[9px] uppercase tracking-[0.3em] text-[#A9A39A] border-b border-[#E5E2DC] bg-[#F8F7F4]">
             <div className="col-span-4">Asset Class</div>
             <div className="col-span-1 text-right">Yield</div>
             <div className="col-span-2 text-right">Vacancy</div>
@@ -149,7 +149,7 @@ export default function ResearchPreview() {
               </div>
 
               <div className="col-span-1 text-right">
-                <span className={`text-[9px] uppercase tracking-[0.15em] font-mono px-2 py-1 ${allocationColor[item.allocation]}`}>
+                <span className={`text-[9px] uppercase tracking-[0.15em] px-2 py-1 ${allocationColor[item.allocation]}`}>
                   {item.allocation}
                 </span>
               </div>
@@ -170,7 +170,7 @@ export default function ResearchPreview() {
                   <p className="font-serif text-[#2C2C2C] text-[15px] mb-0.5">{item.category}</p>
                   <p className="text-[10px] text-[#A9A39A]">{item.subtext}</p>
                 </div>
-                <span className={`text-[8px] uppercase tracking-[0.15em] font-mono px-2 py-1 flex-shrink-0 ml-2 ${allocationColor[item.allocation]}`}>
+                <span className={`text-[8px] uppercase tracking-[0.15em] px-2 py-1 flex-shrink-0 ml-2 ${allocationColor[item.allocation]}`}>
                   {item.allocation}
                 </span>
               </div>
@@ -198,7 +198,7 @@ export default function ResearchPreview() {
         </div>
 
         {/* ── INSIGHT CALLOUT ────────────────── */}
-        <div className="mt-12 border-l border-[#C4B59D] pl-5 sm:pl-6">
+        <div className="mt-12 border-l border-[#8B7355] pl-5 sm:pl-6">
           <p className="text-[14px] md:text-[15px] leading-[1.85] text-[#5A5A5A] font-light">
             Grade A assets continue to outperform across Westlands, Gigiri, and Karen, driven
             by tenant consolidation and flight-to-quality dynamics. Industrial logistics remains
@@ -209,7 +209,7 @@ export default function ResearchPreview() {
 
         {/* ── CTA ────────────────────────────── */}
         <div className="mt-14 pt-10 border-t border-[#E5E2DC] flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-          <p className="text-[10px] uppercase tracking-wider text-[#A9A39A] font-mono">
+          <p className="text-[10px] uppercase tracking-wider text-[#A9A39A]">
             Mandated intelligence only · KYC required · Q2 2026
           </p>
           <Link

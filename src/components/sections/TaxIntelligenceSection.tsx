@@ -72,7 +72,7 @@ const TaxIntelligenceSection = () => {
             viewport={{ once: true }}
             className="lg:col-span-7"
           >
-            <p className="text-[14px] md:text-[15px] leading-[1.8] text-[#5A5A5A] font-light border-l border-[#C4B59D] pl-5 md:pl-6">
+            <p className="text-[14px] md:text-[15px] leading-[1.8] text-[#5A5A5A] font-light border-l border-[#8B7355] pl-5 md:pl-6">
               In Kenyan commercial real estate, losses rarely come from market cycles —
               they come from structural failures: title defects, poor exit planning,
               and regulatory exposure. Murivest structures the exit before acquisition,
@@ -96,7 +96,7 @@ const TaxIntelligenceSection = () => {
 
               {/* Icon */}
               <div className="mb-5 md:mb-6">
-                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-[#C4B59D] flex items-center justify-center">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-[#8B7355] flex items-center justify-center">
                   <item.icon className="h-5 w-5 md:h-6 md:w-6 text-[#8B7355]" strokeWidth={1.5} />
                 </div>
               </div>
@@ -123,7 +123,7 @@ const TaxIntelligenceSection = () => {
 
               {/* Footnote */}
               <div className="mt-6 md:mt-8 pt-5 border-t border-[#E5E2DC]">
-                <p className="text-[10px] tracking-[0.2em] uppercase text-[#C4B59D]">
+                <p className="text-[10px] tracking-[0.2em] uppercase text-[#8B7355]">
                   {item.footnote}
                 </p>
               </div>
