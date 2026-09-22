@@ -186,7 +186,7 @@ const singaporeRealEstateAgentSchema = {
   image: 'https://murivest.com/logo.webp',
   url: 'https://murivest.com/singapore',
   telephone: '+65-6123-4567',
-  email: 'singapore@murivest.com',
+  email: 'capital@murivest.com',
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'SG',

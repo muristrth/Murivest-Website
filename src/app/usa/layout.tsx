@@ -118,7 +118,7 @@ const usaOrganizationSchema = {
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+1-XXX-XXX-XXXX",
+    telephone: "+254-115-277610",
     contactType: "sales",
     areaServed: "US",
     availableLanguage: ["English"],
@@ -152,8 +152,8 @@ const usaLocalBusinessSchema = {
   name: "Murivest USA",
   image: "https://murivest.com/logo.webp",
   url: "https://murivest.com/usa",
-  telephone: "+1-XXX-XXX-XXXX",
-  email: "capitalmarkets@murivest.com",
+  telephone: "+254-115-277610",
+  email: "capital@murivest.com",
   address: {
     "@type": "PostalAddress",
     addressCountry: "US",

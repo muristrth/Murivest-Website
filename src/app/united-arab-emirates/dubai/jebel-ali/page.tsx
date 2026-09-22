@@ -38,8 +38,8 @@ function generateLocalBusinessSchema() {
     description:
       'Leading institutional real estate advisor for Jebel Ali industrial, logistics, and port-adjacent property. Specializing in warehousing, fulfilment centres, cold storage, and port-facing industrial assets.',
     url: 'https://murivest.com/united-arab-emirates/dubai/jebel-ali',
-    telephone: '+971 4 XXX XXXX',
-    email: 'dubai@murivest.com',
+    telephone: '+254 115 277 610',
+    email: 'capital@murivest.com',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Jebel Ali, Dubai, UAE',
@@ -829,14 +829,14 @@ export default function JebelAliPage() {
               </p>
               <div className="flex flex-col gap-3">
                 <Link
-                  href="tel:+97144xxxxxx"
+                  href="tel:+254115277610"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#1B4332] text-sm font-semibold hover:bg-[#FAF9F6] transition-colors"
                 >
                   <Phone className="w-4 h-4" />
                   Call Dubai Office
                 </Link>
                 <Link
-                  href="https://wa.me/971xxxxxxxxx"
+                  href="https://wa.me/254115277610"
                   target="_blank"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/30 text-white text-sm font-semibold hover:border-white transition-colors"
                 >
@@ -902,7 +902,7 @@ export default function JebelAliPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
             <Link
-              href="mailto:dubai@murivest.com"
+              href="mailto:capital@murivest.com"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#1B4332] text-sm font-medium tracking-wide hover:bg-[#FAF9F6] transition-colors"
               style={{ minHeight: 48 }}
             >

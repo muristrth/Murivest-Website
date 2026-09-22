@@ -29,9 +29,9 @@ export async function POST(request: NextRequest) {
     const mailOptions = {
       from: {
         name: process.env.SMTP_FROM_NAME || 'Murivest Investment Desk',
-        address: process.env.SMTP_FROM || 'capital@murivest.co.ke',
+        address: process.env.SMTP_FROM || 'capital@murivest.com',
       },
-      to: process.env.INVESTMENT_DESK_EMAIL || 'capital@murivest.co.ke',
+      to: process.env.INVESTMENT_DESK_EMAIL || 'capital@murivest.com',
       replyTo: email,
       subject: `New Advisory Inquiry — ${organization || 'Individual'} (${mandateType || 'Unspecified'})`,
       text: `
@@ -120,7 +120,7 @@ Received: ${new Date().toLocaleString('en-KE', { timeZone: 'Africa/Nairobi' })}
       await transporter.sendMail({
         from: {
           name: process.env.SMTP_FROM_NAME || 'Murivest Investment Desk',
-          address: process.env.SMTP_FROM || 'capital@murivest.co.ke',
+          address: process.env.SMTP_FROM || 'capital@murivest.com',
         },
         to: email,
         subject: 'Your inquiry has been received — Murivest Advisory',
@@ -131,7 +131,7 @@ Thank you for reaching out to the Murivest Investment Desk.
 
 We have received your inquiry and a member of our advisory team will respond directly within one business day. Every detail you have shared remains strictly confidential.
 
-If your matter is urgent, please contact us directly at capital@murivest.co.ke.
+If your matter is urgent, please contact us directly at capital@murivest.com.
 
 Warm regards,
 Murivest Investment Desk
@@ -160,7 +160,7 @@ Murivest Investment Desk
       <p>Dear ${name || 'Valued Contact'},</p>
       <p>Thank you for reaching out to the Murivest Investment Desk.</p>
       <p>We have received your inquiry and a member of our advisory team will respond directly within one business day. Every detail you have shared remains strictly confidential.</p>
-      <p>If your matter is urgent, please contact us directly at <a href="mailto:capital@murivest.co.ke" style="color: #A67C52; text-decoration: none;">capital@murivest.co.ke</a>.</p>
+      <p>If your matter is urgent, please contact us directly at <a href="mailto:capital@murivest.com" style="color: #A67C52; text-decoration: none;">capital@murivest.com</a>.</p>
       <div class="signature">
         <p>Warm regards,<br><strong style="color: #111111;">Murivest Investment Desk</strong></p>
       </div>

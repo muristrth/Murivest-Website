@@ -120,7 +120,7 @@ export default async function ListingTypePage({
               No listings currently available in this category.
             </p>
             <a
-              href={`mailto:capital@murivest.co.ke?subject=Off-Market Enquiry: ${assetType} ${listingType} in ${country}`}
+              href={`mailto:capital@murivest.com?subject=Off-Market Enquiry: ${assetType} ${listingType} in ${country}`}
               className="mt-6 inline-block text-sm text-[#2D6A4F] underline underline-offset-4"
             >
               Enquire about off-market opportunities

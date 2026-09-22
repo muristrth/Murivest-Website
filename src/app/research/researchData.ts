@@ -2565,7 +2565,7 @@ export const researchData: Record<string, researchPostData> = {
           <p>
             Murivest maintains a confidential database of vetted acquisition
             opportunities for qualified investors. Contact{' '}
-            <a href="mailto:invest@murivest.com">invest@murivest.com</a> for
+            <a href="mailto:capital@murivest.com">capital@murivest.com</a> for
             more information.
           </p>
 
@@ -2790,7 +2790,7 @@ export const researchData: Record<string, researchPostData> = {
           <p>
             For more information, visit{' '}
             <a href="https://murivest.com">murivest.com</a> or contact us at{' '}
-            <a href="mailto:info@murivest.com">info@murivest.com</a>.
+            <a href="mailto:capital@murivest.com">capital@murivest.com</a>.
           </p>
         </section>
 
@@ -2924,7 +2924,7 @@ export const researchData: Record<string, researchPostData> = {
             <br />
             <a href="https://murivest.com">murivest.com</a>
             <br />
-            <a href="mailto:info@murivest.com">info@murivest.com</a>
+            <a href="mailto:capital@murivest.com">capital@murivest.com</a>
           </p>
         </section>
 

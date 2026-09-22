@@ -189,7 +189,7 @@ const kenyaLocalBusinessSchema = {
   image: 'https://murivest.com/logo.webp',
   url: 'https://murivest.com/kenya',
   telephone: '+254-20-1234567',
-  email: 'kenya@murivest.com',          // if applicable
+  email: 'capital@murivest.com',          // if applicable
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'KE',

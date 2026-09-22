@@ -144,7 +144,7 @@ const globalOrganizationSchema = {
     '@type': 'ContactPoint',
     telephone: '+254-115-277-610',
     contactType: 'Advisory Enquiries',
-    email: 'capital@murivest.co.ke',
+    email: 'capital@murivest.com',
     areaServed: ['KE', 'RW', 'UG', 'TZ'],
     availableLanguage: ['English'],
   },

@@ -165,7 +165,7 @@ export default function UAEDLDCalculator() {
                 </code>
               </div>
               <p className="text-[11px] text-[#5A5A5A] italic">
-                Contact capital@murivest.co.ke for embed terms.
+                Contact capital@murivest.com for embed terms.
               </p>
             </div>
           </motion.div>

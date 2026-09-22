@@ -301,7 +301,7 @@ export default async function PropertyPage({
               )}
 
               <a
-                href={`mailto:${property.contactEmail ?? "capital@murivest.co.ke"}?subject=Enquiry: ${encodeURIComponent(property.title)}`}
+                href={`mailto:${property.contactEmail ?? "capital@murivest.com"}?subject=Enquiry: ${encodeURIComponent(property.title)}`}
                 className="mt-6 block w-full text-center bg-[#2D6A4F] text-white py-3 text-sm font-mono uppercase tracking-widest hover:bg-[#1F4D38] transition-colors"
               >
                 Request Information

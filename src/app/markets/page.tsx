@@ -2417,7 +2417,7 @@ export default function GlobalMarketsPage() {
             }}
           >
             Murivest Group Ltd Ltd — Nairobi, Kenya · murivest.com ·{" "}
-            capital@murivest.co.ke
+            capital@murivest.com
           </p>
         </div>
       </section>

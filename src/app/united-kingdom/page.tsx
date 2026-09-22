@@ -453,9 +453,9 @@ export default function MurivestUKHomepage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-14">
               {[
-                { asset: "Industrial & Logistics", location: "Manchester", detail: "£XXm · XX% net initial yield", type: "Public Opportunity" },
-                { asset: "Office", location: "London", detail: "£XXm · XX-year WAULT", type: "Private / Off-Market" },
-                { asset: "Retail", location: "Birmingham", detail: "£XXm · XX% passing yield", type: "Public Opportunity" },
+                { asset: "Industrial & Logistics", location: "Manchester", detail: "£100m · 8% net initial yield", type: "Public Opportunity" },
+                { asset: "Office", location: "London", detail: "£100m · 10-year WAULT", type: "Private / Off-Market" },
+                { asset: "Retail", location: "Birmingham", detail: "£100m · 8% passing yield", type: "Public Opportunity" },
               ].map((opp) => (
                 <div key={opp.asset} className="hover-lift border m-hairline p-10 bg-white cursor-pointer">
                   <span className="inline-block font-sans text-[0.65rem] font-semibold tracking-[0.15em] uppercase text-[#8B7355] border border-[#8B7355] px-3 py-1 mb-6">

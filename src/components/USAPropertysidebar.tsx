@@ -53,7 +53,7 @@ function toRoman(n: number): string {
 export default function PropertySidebar({
   relatedProperties,
   popularProperties,
-  brokerEmail = 'capital@murivest.co.ke',
+  brokerEmail = 'capital@murivest.com',
   brokerPhone = '+254 115 277 610',
 }: Props) {
   const [email, setEmail] = useState('');

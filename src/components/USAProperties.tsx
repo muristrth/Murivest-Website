@@ -558,7 +558,7 @@ const PropertyDrawer: React.FC<{
                   <p className="text-base font-serif text-[#2C2C2C]">Murivest Group Ltd — US Platform</p>
                   <div className="flex items-center gap-2 text-xs text-[#8B8680]">
                     <Mail className="w-3.5 h-3.5" />
-                    <span>capital@murivest.co.ke</span>
+                    <span>capital@murivest.com</span>
                   </div>
                   <div className="flex items-center gap-2 text-xs text-[#8B8680]">
                     <Phone className="w-3.5 h-3.5" />
@@ -591,7 +591,7 @@ const PropertyDrawer: React.FC<{
                 )}
 
                 <a
-                  href={`mailto:capital@murivest.co.ke?subject=Investment Inquiry: ${property.title}`}
+                  href={`mailto:capital@murivest.com?subject=Investment Inquiry: ${property.title}`}
                   className="flex items-center justify-center gap-2 w-full h-12 border border-[#E8E6E1] hover:border-[#B8956B] hover:text-[#B8956B] transition-colors text-[11px] tracking-[0.2em] uppercase font-medium text-[#2C2C2C]"
                 >
                   <Calendar className="w-4 h-4" />

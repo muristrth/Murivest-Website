@@ -233,8 +233,8 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
               href: "tel:+254115277610"
             }, {
               label: "Investment Desk",
-              value: "capital@murivest.co.ke",
-              href: "mailto:capital@murivest.co.ke"
+              value: "capital@murivest.com",
+              href: "mailto:capital@murivest.com"
             }, {
               label: "Nairobi HQ",
               value: "Westlands Business District",

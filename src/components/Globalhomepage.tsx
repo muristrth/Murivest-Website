@@ -215,7 +215,7 @@ export default function GlobalHomePage() {
                 contactPoint: {
                   '@type': 'ContactPoint',
                   contactType: 'Advisory Enquiries',
-                  email: 'capital@murivest.co.ke',
+                  email: 'capital@murivest.com',
                   telephone: '+254-115-277-610',
                   areaServed: ['KE', 'RW', 'UG', 'TZ'],
                   availableLanguage: ['English'],

@@ -485,7 +485,7 @@ export default function CareersPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-transparent border-b border-[#E5E2DC] text-[#2C2C2C] font-light focus:border-[#8B7355] focus:outline-none transition-colors duration-300"
-                        placeholder="+254 XXX XXX XXX"
+                        placeholder="+254 115 277 610"
                       />
                     </div>
 

@@ -293,7 +293,7 @@ export default async function USAPropertyPage({
       relatedProperties={(related || []) as SidebarProperty[]}
       popularProperties={(popular || []) as SidebarProperty[]}
       brokerEmail={
-        "capital@murivest.co.ke"
+        "capital@murivest.com"
       }
       brokerPhone={
         "+254 115 277 610"

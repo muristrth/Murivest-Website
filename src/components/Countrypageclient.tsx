@@ -594,7 +594,7 @@ const PropertyDrawer: React.FC<{
                       Murivest Group Ltd
                     </p>
                     <ContactLine icon={<Mail className="w-3.5 h-3.5" />}>
-                      {property.contactEmail ?? "capital@murivest.co.ke"}
+                      {property.contactEmail ?? "capital@murivest.com"}
                     </ContactLine>
                     <ContactLine icon={<Phone className="w-3.5 h-3.5" />}>
                       +254 115 277 610
@@ -629,7 +629,7 @@ const PropertyDrawer: React.FC<{
                 </a>
                 <a
                   href={`mailto:${
-                    property.contactEmail ?? "capital@murivest.co.ke"
+                    property.contactEmail ?? "capital@murivest.com"
                   }?subject=Investment Inquiry: ${encodeURIComponent(
                     property.title
                   )}`}

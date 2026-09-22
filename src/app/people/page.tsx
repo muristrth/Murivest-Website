@@ -81,7 +81,7 @@ const teamMembers: TeamMemberData[] = [
   {
     id: '1',
     name: 'Mark Muriithi',
-    title: 'Chief Executive Officer & Founder',
+    title: 'Managing Director',
     bio: 'Over two decades of experience in East African commercial real estate. Former Managing Director at a leading property consultancy, with $500M+ in executed transactions.',
     image: 'https://murivest.com/CEO.Founder.webp',
     linkedin: 'https://www.linkedin.com/in/mark-muriithi-343365215/',
@@ -96,14 +96,14 @@ const teamMembers: TeamMemberData[] = [
     linkedin: 'https://www.linkedin.com/in/moonyoi-ntagusa-6bb3a2171',
     email: 'moonyoi@murivest.com',
   },
-  {
+    {
     id: '3',
-    name: 'Michael Chang',
-    title: 'Head of Asset Management',
-    bio: 'MSc Real Estate, University of Reading. RICS Member with 12+ years managing institutional portfolios exceeding $200M across East Africa.',
+    name: 'Albright Lukale',
+    title: 'Executive Secretary & Client Relations Officer',
+    bio: 'Responsible for executive coordination, client relations, stakeholder engagement, and supporting the delivery of a professional and seamless client experience at Murivest Group Ltd.',
     image: 'https://murivest.com/p2/profile-placeholder.webp',
     linkedin: '#',
-    email: 'michael@murivest.com',
+    email: 'albright.lukale@murivest.com',
   },
   {
     id: '4',
@@ -123,15 +123,7 @@ const teamMembers: TeamMemberData[] = [
     linkedin: '#',
     email: 'sarah@murivest.com',
   },
-  {
-    id: '6',
-    name: 'Danson Moonyoi',
-    title: 'Junior Investment Advisor',
-    bio: 'MBA, INSEAD. Former investment banker with deep network across East African commercial real estate markets.',
-    image: 'https://murivest.com/images/team/passport_photo.jpg',
-    linkedin: 'https://www.linkedin.com/in/moonyoi-ntagusa-6bb3a2171/',
-    email: 'moonyoi.ntagusa@murivest.com',
-  },
+
 ];
 
 function buildSchemaJson(origin: string) {
@@ -154,7 +146,7 @@ function buildSchemaJson(origin: string) {
     ],
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+254-XXX-XXXXXX',
+      telephone: '+254-115-277610',
       contactType: 'Investment Advisory',
       areaServed: ['KE', 'UG', 'TZ', 'RW', 'SS', 'ET', 'GB', 'AE', 'ZA', 'TH'],
       availableLanguage: ['English'],
@@ -306,8 +298,8 @@ export default async function TeamPage() {
                 id="team-hero-heading"
                 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-[1.05] mb-8"
               >
-                Advisors Curated to{' '}
-                <span className="italic text-[#B8956B] font-light">Advise</span>
+                Meet the{' '}
+                <span className="italic text-[#B8956B] font-light">Team</span>
               </h1>
 
               <p className="text-[15px] md:text-[17px] leading-[1.8] text-[#FAF9F6]/80 font-light max-w-2xl mb-10">
@@ -409,13 +401,13 @@ export default async function TeamPage() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="mailto:investments@murivest.co.ke"
+                href="mailto:capital@murivest.com"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-[#B8956B] text-[#1B4332] text-[12px] tracking-[0.2em] uppercase font-medium hover:bg-[#FAF9F6] transition-colors duration-500"
               >
                 Schedule Private Consultation
               </a>
               <a
-                href="/properties"
+                href="/kenya/properties"
                 className="inline-flex items-center gap-2 px-8 py-4 border border-[#B8956B]/40 text-[#FAF9F6] text-[12px] tracking-[0.2em] uppercase font-medium hover:border-[#B8956B] hover:bg-[#B8956B]/10 transition-all duration-500"
               >
                 View Current Opportunities

@@ -188,7 +188,7 @@ const uaeLocalBusinessSchema = {
   image: 'https://murivest.com/logo.webp',
   url: 'https://murivest.com/united-arab-emirates',
   telephone: '+971-4-123-4567',
-  email: 'uae@murivest.com',          // if applicable
+  email: 'capital@murivest.com',          // if applicable
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'AE',

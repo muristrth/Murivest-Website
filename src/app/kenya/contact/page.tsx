@@ -26,7 +26,7 @@ const contactSchema = professionalServiceSchema({
   description:
     'Schedule a private consultation with Murivest\'s investment advisory team. Mandate-based engagements for institutional investors, family offices, and UHNWI.',
   telephone: '+254-115-277-610',
-  email: 'capital@murivest.co.ke',
+  email: 'capital@murivest.com',
 })
 
 export default function ContactPage() {

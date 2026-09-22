@@ -203,7 +203,7 @@ const DiscoverySidebar: React.FC<{
         pre-market opportunities.
       </p>
       <a
-        href="mailto:leasing@murivest.co.ke?subject=Off-Market Enquiry"
+        href="mailto:capital@murivest.com?subject=Off-Market Enquiry"
         className="mt-4 block text-center text-[10px] tracking-[0.2em] uppercase border border-white/30 hover:border-white py-2.5 text-white/80 hover:text-white transition-colors"
       >
         Contact Leasing Desk
@@ -687,14 +687,14 @@ export default function ToLetClientView({ property }: { property: PropertyForRen
                 </button>
 
                 <a
-                  href={`mailto:${property.broker?.email || "leasing@murivest.co.ke"}?subject=Leasing Enquiry: ${property.title}`}
+                  href={`mailto:${property.broker?.email || "capital@murivest.com"}?subject=Leasing Enquiry: ${property.title}`}
                   className="w-full block border border-[#1B4332] text-[#1B4332] hover:bg-[#1B4332] hover:text-white py-4 text-[11px] tracking-[0.25em] uppercase text-center transition-colors"
                 >
                   Schedule a Viewing
                 </a>
 
                 <a
-                  href={`mailto:leasing@murivest.co.ke?subject=General Leasing Enquiry`}
+                  href={`mailto:capital@murivest.com?subject=General Leasing Enquiry`}
                   className="w-full block border border-[#E8E6E1] hover:border-[#B8956B] hover:text-[#B8956B] py-4 text-[11px] tracking-[0.25em] uppercase text-center transition-colors text-[#8B8680]"
                 >
                   Contact Leasing Desk

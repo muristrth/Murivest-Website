@@ -163,7 +163,7 @@ const DiscoverySidebar: React.FC<{
         to mandated partners and qualified institutional investors.
       </p>
       <a
-        href="mailto:capital@murivest.co.ke?subject=Off-Market NDA Request"
+        href="mailto:capital@murivest.com?subject=Off-Market NDA Request"
         className="mt-4 block text-center text-[10px] tracking-[0.2em] uppercase border border-white/20 hover:border-[#B8956B] py-2.5 text-white/70 hover:text-white transition-all"
       >
         Request NDA & Full Memorandum
@@ -758,14 +758,14 @@ export default function OffMarketClientView({ property }: { property: OffMarketP
                 </button>
 
                 <a
-                  href={`mailto:${property.advisor?.email || "capital@murivest.co.ke"}?subject=Off-Market Investment Inquiry: ${property.title}`}
+                  href={`mailto:${property.advisor?.email || "capital@murivest.com"}?subject=Off-Market Investment Inquiry: ${property.title}`}
                   className="w-full block border border-[#1B4332] text-[#1B4332] hover:bg-[#1B4332] hover:text-white py-4 text-[11px] tracking-[0.25em] uppercase text-center transition-colors"
                 >
                   Schedule Consultation
                 </a>
 
                 <a
-                  href="mailto:capital@murivest.co.ke?subject=NDA Request — Off-Market Portfolio"
+                  href="mailto:capital@murivest.com?subject=NDA Request — Off-Market Portfolio"
                   className="w-full block border border-[#E8E6E1] hover:border-[#B8956B] hover:text-[#B8956B] py-4 text-[11px] tracking-[0.25em] uppercase text-center transition-colors text-[#8B8680]"
                 >
                   Request NDA & Full Memorandum

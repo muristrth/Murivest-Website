@@ -178,7 +178,7 @@ const ukLocalBusinessSchema = {
   image: 'https://murivest.com/logo.webp',
   url: 'https://murivest.com/united-kingdom',
   telephone: '+44-7864-855742',
-  email: 'uk@murivest.com',
+  email: 'capital@murivest.com',
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'GB',

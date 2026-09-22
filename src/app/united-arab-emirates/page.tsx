@@ -1245,11 +1245,11 @@ function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:info@murivest.co.ke"
+                  href="mailto:capital@murivest.com"
                   className="text-[rgba(248,247,244,0.55)] text-sm hover:text-[#8B7355] transition-colors flex items-center gap-2 font-sans"
                 >
                   <Mail size={14} />
-                  info@murivest.co.ke
+                  capital@murivest.com
                 </a>
               </li>
               <li>

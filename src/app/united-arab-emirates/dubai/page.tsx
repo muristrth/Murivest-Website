@@ -1030,11 +1030,11 @@ function CTA() {
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a
-              href="mailto:info@murivest.co.ke"
+              href="mailto:capital@murivest.com"
               className="group inline-flex items-center gap-2 text-stone-400 hover:text-gold-400 text-[11px] tracking-[0.2em] uppercase font-medium transition-colors duration-300"
             >
               <Mail size={13} strokeWidth={1.5} />
-              info@murivest.co.ke
+              capital@murivest.com
             </a>
           </motion.div>
         </motion.div>
@@ -1138,9 +1138,9 @@ function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href="mailto:info@murivest.co.ke" className="text-stone-600 text-sm hover:text-gold-500 transition-colors flex items-center gap-2 font-body">
+                <a href="mailto:capital@murivest.com" className="text-stone-600 text-sm hover:text-gold-500 transition-colors flex items-center gap-2 font-body">
                   <Mail size={14} />
-                  info@murivest.co.ke
+                  capital@murivest.com
                 </a>
               </li>
               <li>
