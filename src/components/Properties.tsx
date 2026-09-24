@@ -344,7 +344,7 @@ const PropertyDrawer: React.FC<{
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-[#2C2C2C]/20 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-[#0B3D2E]/20 backdrop-blur-sm z-50"
             onClick={onClose}
           />
 

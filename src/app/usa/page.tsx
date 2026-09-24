@@ -160,7 +160,7 @@ export default async function USAHomePage() {
       />
 
       {/* Hero */}
-      <section className="relative min-h-[92vh] flex items-end overflow-hidden bg-[#2C2C2C]">
+      <section className="relative min-h-[92vh] flex items-end overflow-hidden bg-[#0B3D2E]">
         <div className="absolute inset-0">
           <img
             src={HERO_IMAGE}
@@ -360,7 +360,7 @@ export default async function USAHomePage() {
       </Section>
 
       {/* Who we serve */}
-      <Section className="py-24 lg:py-36 bg-[#2C2C2C]">
+      <Section className="py-24 lg:py-36 bg-[#0B3D2E]">
         <div className="max-w-3xl">
           <Eyebrow>Who We Serve</Eyebrow>
           <h2 className="mt-6 font-serif text-3xl md:text-4xl lg:text-[2.75rem] leading-[1.1] text-[#F8F7F4]">
@@ -373,7 +373,7 @@ export default async function USAHomePage() {
         </div>
         <div className="mt-16 grid gap-px border border-[#F8F7F4]/10 bg-[#F8F7F4]/10 md:grid-cols-3">
           {WHO_WE_SERVE.map((item) => (
-            <div key={item.title} className="bg-[#2C2C2C] p-8 lg:p-10">
+            <div key={item.title} className="bg-[#0B3D2E] p-8 lg:p-10">
               <item.icon size={22} strokeWidth={1.5} className="text-[#8B7355]" />
               <h3 className="mt-6 font-serif text-lg text-[#F8F7F4]">
                 {item.title}

@@ -154,7 +154,7 @@ Located moments from Kensington Gardens and High Street Kensington, this residen
           </button>
 
           {/* Image counter */}
-          <div className="absolute bottom-4 right-4 bg-[#2C2C2C]/80 px-4 py-2">
+          <div className="absolute bottom-4 right-4 bg-[#0B3D2E]/80 px-4 py-2">
             <span className="text-[12px] text-[#F8F7F4]">
               {currentImage + 1} / {images.length}
             </span>
@@ -272,7 +272,7 @@ Located moments from Kensington Gardens and High Street Kensington, this residen
                 </div>
                 <a 
                   href="/contact"
-                  className="w-full py-4 bg-[#2C2C2C] text-[#F8F7F4] text-[12px] tracking-[0.2em] uppercase font-medium text-center block hover:bg-[#8B7355] transition-colors duration-500"
+                  className="w-full py-4 bg-[#0B3D2E] text-[#F8F7F4] text-[12px] tracking-[0.2em] uppercase font-medium text-center block hover:bg-[#8B7355] transition-colors duration-500"
                 >
                   Request Viewing
                 </a>

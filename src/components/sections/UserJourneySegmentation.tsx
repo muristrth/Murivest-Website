@@ -194,7 +194,7 @@ export default function InvestmentFramework() {
 
           <Link
             href="/contact"
-            className="text-[11px] tracking-[0.25em] uppercase border border-[#2C2C2C] px-6 py-4 hover:bg-[#2C2C2C] hover:text-white transition"
+            className="text-[11px] tracking-[0.25em] uppercase border border-[#2C2C2C] px-6 py-4 hover:bg-[#0B3D2E] hover:text-white transition"
           >
             Request Access
           </Link>

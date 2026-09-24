@@ -44,7 +44,7 @@ const staggerContainer = {
 
 function Hero() {
   return (
-    <section className="relative min-h-screen bg-[#2C2C2C] overflow-hidden">
+    <section className="relative min-h-screen bg-[#0B3D2E] overflow-hidden">
       {/* Atmospheric layers — no photo wash, architectural suggestion */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(184,149,80,0.08),transparent_60%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(0,0,0,0.5),transparent_55%)]" />
@@ -133,7 +133,7 @@ function Hero() {
                   className="absolute inset-0 bg-cover bg-center grayscale-[25%] contrast-[1.05]"
                   style={{ backgroundImage: "url('/images/uae-hero-architecture.webp')" }}
                 />
-                <div className="absolute inset-0 bg-[#2C2C2C]/20" />
+                <div className="absolute inset-0 bg-[#0B3D2E]/20" />
                 <div className="absolute inset-0 ring-1 ring-inset ring-[#8B7355]/10" />
                 {/* Gold corner accents */}
                 <div className="absolute top-4 left-4 w-8 h-8 border-t border-l border-[#8B7355]/30" />
@@ -386,7 +386,7 @@ function UAEPlatform() {
   ]
 
   return (
-    <section ref={ref} className="py-32 lg:py-40 bg-[#2C2C2C]">
+    <section ref={ref} className="py-32 lg:py-40 bg-[#0B3D2E]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <motion.div
           initial="hidden"
@@ -446,7 +446,7 @@ function EmirateCard({
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: index * 0.1, duration: 0.6, ease: 'easeOut' }}
-      className="bg-[#2C2C2C] p-8 lg:p-10 group hover:bg-[rgba(255,255,255,0.04)] transition-colors duration-500 cursor-pointer"
+      className="bg-[#0B3D2E] p-8 lg:p-10 group hover:bg-[rgba(255,255,255,0.04)] transition-colors duration-500 cursor-pointer"
       onClick={() => setExpanded(!expanded)}
     >
       <div className="flex items-center justify-between mb-6">
@@ -575,7 +575,7 @@ function Sectors() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.05, duration: 0.5 }}
-              className="bg-[#F8F7F4] p-6 lg:p-8 group hover:bg-[#2C2C2C] transition-colors duration-500 cursor-default"
+              className="bg-[#F8F7F4] p-6 lg:p-8 group hover:bg-[#0B3D2E] transition-colors duration-500 cursor-default"
             >
               <span className="text-[#5A5A5A] group-hover:text-[#F8F7F4] text-sm font-medium tracking-wide transition-colors duration-300 font-sans">
                 {sector}
@@ -773,7 +773,7 @@ function InvestmentThemes() {
   ]
 
   return (
-    <section ref={ref} className="py-32 lg:py-40 bg-[#2C2C2C]">
+    <section ref={ref} className="py-32 lg:py-40 bg-[#0B3D2E]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <motion.div
           initial="hidden"
@@ -803,7 +803,7 @@ function InvestmentThemes() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.06, duration: 0.5 }}
-              className="bg-[#2C2C2C] p-8 lg:p-10 group hover:bg-[rgba(255,255,255,0.04)] transition-colors duration-500"
+              className="bg-[#0B3D2E] p-8 lg:p-10 group hover:bg-[rgba(255,255,255,0.04)] transition-colors duration-500"
             >
               <div className="flex items-start gap-6">
                 <span className="text-[#8B7355]/40 text-xs font-mono mt-1 shrink-0">
@@ -932,7 +932,7 @@ function Perspective() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section ref={ref} className="py-32 lg:py-40 bg-[#2C2C2C]">
+    <section ref={ref} className="py-32 lg:py-40 bg-[#0B3D2E]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-24">
           <motion.div
@@ -1046,7 +1046,7 @@ function Insights() {
               key={insight.label}
               variants={fadeUp}
               href={insight.href}
-              className="bg-[#F8F7F4] p-8 lg:p-10 group hover:bg-[#2C2C2C] transition-colors duration-500 block"
+              className="bg-[#F8F7F4] p-8 lg:p-10 group hover:bg-[#0B3D2E] transition-colors duration-500 block"
             >
               <span className="text-[#5A5A5A] group-hover:text-[#F8F7F4] text-sm font-medium tracking-wide transition-colors duration-300 block mb-4 font-sans">
                 {insight.label}
@@ -1075,7 +1075,7 @@ function CTA() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section ref={ref} id="contact" className="py-32 lg:py-40 bg-[#2C2C2C]">
+    <section ref={ref} id="contact" className="py-32 lg:py-40 bg-[#0B3D2E]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <motion.div
           initial="hidden"
@@ -1138,7 +1138,7 @@ function CTA() {
 
 function Footer() {
   return (
-    <footer className="bg-[#2C2C2C] py-20 lg:py-24">
+    <footer className="bg-[#0B3D2E] py-20 lg:py-24">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="grid md:grid-cols-12 gap-12 lg:gap-16 mb-20">
           {/* Brand */}

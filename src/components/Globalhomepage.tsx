@@ -237,7 +237,7 @@ export default function GlobalHomePage() {
       {/* ═══════════════════════════════════════════════════════════
           HERO
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative min-h-[92vh] flex items-end overflow-hidden bg-[#2C2C2C]">
+      <section className="relative min-h-[92vh] flex items-end overflow-hidden bg-[#0B3D2E]">
         <div className="absolute inset-0">
           <Image
             src="/images/hero.jpeg"
@@ -525,7 +525,7 @@ export default function GlobalHomePage() {
                 />
                 <button
                   type="submit"
-                  className="px-8 py-4 bg-[#2C2C2C] text-[#F8F7F4] text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors duration-500 shrink-0"
+                  className="px-8 py-4 bg-[#0B3D2E] text-[#F8F7F4] text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors duration-500 shrink-0"
                 >
                   Subscribe
                 </button>

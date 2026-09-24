@@ -259,7 +259,7 @@ const Contact = () => {
                     <button
                       type="submit"
                       disabled={isLoading}
-                      className="w-full md:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 bg-[#2C2C2C] text-[#F8F7F4] text-[12px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors duration-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full md:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 bg-[#0B3D2E] text-[#F8F7F4] text-[12px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors duration-500 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <span>{isLoading ? 'Sending...' : 'Send Inquiry'}</span>
                       <Send className="w-4 h-4" />

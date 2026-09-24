@@ -49,7 +49,7 @@ export default function InvestorBriefTeaser() {
           <div className="flex flex-col items-end gap-3">
             <Link
               href="/portal"
-              className="inline-flex items-center gap-3 px-6 py-3 bg-[#2C2C2C] text-[#F8F7F4] text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors duration-500"
+              className="inline-flex items-center gap-3 px-6 py-3 bg-[#0B3D2E] text-[#F8F7F4] text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors duration-500"
             >
               Investor Access
               <ArrowRight className="h-4 w-4" />
@@ -93,7 +93,7 @@ export default function InvestorBriefTeaser() {
 
           <Link
             href="/portal"
-            className="w-full inline-flex items-center justify-center gap-2 bg-[#2C2C2C] text-[#F8F7F4] py-3 text-[11px] tracking-[0.2em] uppercase font-medium"
+            className="w-full inline-flex items-center justify-center gap-2 bg-[#0B3D2E] text-[#F8F7F4] py-3 text-[11px] tracking-[0.2em] uppercase font-medium"
           >
             Investor Access
             <ArrowRight className="h-4 w-4" />

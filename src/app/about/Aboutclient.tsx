@@ -279,7 +279,7 @@ export default function AboutClient() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#1B4332] text-[#FAF9F6] text-[12px] tracking-[0.2em] uppercase font-medium hover:bg-[#2C2C2C] transition-colors duration-500"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#1B4332] text-[#FAF9F6] text-[12px] tracking-[0.2em] uppercase font-medium hover:bg-[#0B3D2E] transition-colors duration-500"
               >
                 Begin a private enquiry
                 <ArrowRight className="w-4 h-4" />

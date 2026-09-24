@@ -11,7 +11,7 @@ const STATS = [
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[92vh] flex items-end overflow-hidden bg-[#2C2C2C]">
+    <section className="relative min-h-[92vh] flex items-end overflow-hidden bg-[#0B3D2E]">
       <div className="absolute inset-0">
         <Image
           src="/images/hero.jpeg"
@@ -69,7 +69,7 @@ const Hero = () => {
       </div>
 
       {/* Trust metrics strip, integrated into hero base like Global */}
-      <div className="relative z-10 w-full border-t border-[#F8F7F4]/10 bg-[#2C2C2C]/40">
+      <div className="relative z-10 w-full border-t border-[#F8F7F4]/10 bg-[#0B3D2E]/40">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-8">
           <div className="grid grid-cols-3 gap-8">
             {STATS.map((stat, i) => (

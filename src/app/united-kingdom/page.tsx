@@ -14,7 +14,7 @@ const STYLE_BLOCK = `
     --white: #FFFFFF;
   }
   .m-charcoal { color: var(--charcoal); }
-  .m-charcoal-bg { background-color: var(--charcoal); }
+  .bg-[#0B3D2E] { background-color: var(--charcoal); }
   .m-brass { color: var(--brass); }
   .m-brass-bg { background-color: var(--brass); }
   .m-ivory { color: var(--ivory); }
@@ -317,7 +317,7 @@ export default function MurivestUKHomepage() {
         {/* ═════════════════════════════════════════════════════════
             1. HERO
         ═════════════════════════════════════════════════════════ */}
-        <section className="relative m-charcoal-bg overflow-hidden">
+        <section className="relative bg-[#0B3D2E] overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
               src="/images/hero-london-skyline.jpg"
@@ -327,13 +327,13 @@ export default function MurivestUKHomepage() {
               className="object-cover opacity-[0.12]"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-[#2C2C2C]/90" />
+            <div className="absolute inset-0 bg-[#0B3D2E]/90" />
           </div>
 
           <div
-            className="absolute inset-0 z-0 opacity-[0.03]"
+            className="absolute inset-0 z-0 opacity-[0.3] bg-no-repeat bg-center bg-cover"
             style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              backgroundImage: `url("https://media.istockphoto.com/id/2158963864/photo/aerial-view-of-finance-district-in-london.jpg?s=612x612&w=0&k=20&c=rci0quMZuxaVrS9qp0DZ3w2AtxPC2TCdqWjAocdjYW0=")`,
             }}
           />
 
@@ -512,7 +512,7 @@ export default function MurivestUKHomepage() {
         {/* ═════════════════════════════════════════════════════════
             7. UK MARKETS
         ═════════════════════════════════════════════════════════ */}
-        <section className="m-charcoal-bg text-[#F8F7F4] py-24 md:py-32">
+        <section className="bg-[#0B3D2E] text-[#F8F7F4] py-24 md:py-32">
           <div className="max-w-[1280px] mx-auto px-8">
             <div className="text-center mb-14">
               <span className="eyebrow">Markets</span>
@@ -527,7 +527,7 @@ export default function MurivestUKHomepage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-[rgba(248,247,244,0.12)]">
               {MARKETS.map((m) => (
-                <div key={m.city} className="market-cell p-8 m-charcoal-bg cursor-pointer">
+                <div key={m.city} className="market-cell p-8 bg-[#0B3D2E] cursor-pointer">
                   <h3 className="font-serif text-[1.25rem] font-normal text-[#F8F7F4] mb-3">{m.city}</h3>
                   <p className="font-sans text-[0.85rem] leading-[1.7] text-[rgba(248,247,244,0.7)] font-light">{m.desc}</p>
                 </div>
@@ -748,7 +748,7 @@ export default function MurivestUKHomepage() {
         {/* ═════════════════════════════════════════════════════════
             14. INVESTOR TYPES
         ═════════════════════════════════════════════════════════ */}
-        <section className="m-charcoal-bg text-[#F8F7F4] py-24 md:py-32">
+        <section className="bg-[#0B3D2E] text-[#F8F7F4] py-24 md:py-32">
           <div className="max-w-[1280px] mx-auto px-8">
             <div className="text-center mb-16">
               <span className="eyebrow">Capital We Advise</span>
@@ -806,7 +806,7 @@ export default function MurivestUKHomepage() {
         {/* ═════════════════════════════════════════════════════════
             17. FOOTER
         ═════════════════════════════════════════════════════════ */}
-        <footer className="m-charcoal-bg text-[rgba(248,247,244,0.6)] py-20 pb-10">
+        <footer className="bg-[#0B3D2E] text-[rgba(248,247,244,0.6)] py-20 pb-10">
           <div className="max-w-[1280px] mx-auto px-8">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 mb-16">
               <div className="col-span-2 md:col-span-1">

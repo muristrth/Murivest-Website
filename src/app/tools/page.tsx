@@ -75,7 +75,7 @@ const tiers: Tier[] = [
           "Stamp Duty Land Tax computation for commercial, mixed-use, and leasehold acquisitions across England & Northern Ireland.",
         inputs: "Price, Leasehold / Freehold, Mixed-use flag",
         icon: Landmark,
-        badgeColor: "bg-[#2C2C2C] text-[#FAF9F6]",
+        badgeColor: "bg-[#0B3D2E] text-[#FAF9F6]",
       },
       {
         slug: "/tools/uae-dld-calculator",
@@ -123,7 +123,7 @@ const tiers: Tier[] = [
           "Debt scheduling across KES, AED, GBP, and SGD. Monthly instalment, total interest cost, and amortisation profile.",
         inputs: "Loan amount, Interest rate, Tenor, Currency",
         icon: BarChart3,
-        badgeColor: "bg-[#2C2C2C] text-[#FAF9F6]",
+        badgeColor: "bg-[#0B3D2E] text-[#FAF9F6]",
       },
       {
         slug: "/tools/rent-escalation-calculator",
@@ -133,7 +133,7 @@ const tiers: Tier[] = [
           "Normalise headline rents into effective rents over the lease term, accounting for stepped escalations and rent-free periods.",
         inputs: "Base rent, Escalation %, Lease term, Rent-free months",
         icon: TrendingUp,
-        badgeColor: "bg-[#2C2C2C] text-[#FAF9F6]",
+        badgeColor: "bg-[#0B3D2E] text-[#FAF9F6]",
       },
       {
         slug: "/tools/lease-vs-buy-calculator",
@@ -143,7 +143,7 @@ const tiers: Tier[] = [
           "Net present value comparison of occupancy costs over a ten-year horizon with configurable discount rates.",
         inputs: "Purchase cost, Lease cost, Discount rate, Hold period",
         icon: Briefcase,
-        badgeColor: "bg-[#2C2C2C] text-[#FAF9F6]",
+        badgeColor: "bg-[#0B3D2E] text-[#FAF9F6]",
       },
     ],
   },
@@ -161,7 +161,7 @@ const tiers: Tier[] = [
           "Unlevered and levered IRR, NPV, and equity multiple from Year 0 to exit. Export-ready for pitch decks and IC memos.",
         inputs: "Cashflows Year 0–10, Exit yield, Discount rate",
         icon: PieChart,
-        badgeColor: "bg-[#2C2C2C] text-[#FAF9F6]",
+        badgeColor: "bg-[#0B3D2E] text-[#FAF9F6]",
       },
       {
         slug: "/tools/break-even-occupancy",
@@ -171,7 +171,7 @@ const tiers: Tier[] = [
           "Determine the occupancy threshold required to cover fixed operating costs in retail, industrial, and hospitality assets.",
         inputs: "Fixed costs, Rent per unit, Operating expenses",
         icon: Calculator,
-        badgeColor: "bg-[#2C2C2C] text-[#FAF9F6]",
+        badgeColor: "bg-[#0B3D2E] text-[#FAF9F6]",
       },
       {
         slug: "/tools/fit-out-calculator",
@@ -181,7 +181,7 @@ const tiers: Tier[] = [
           "CAPEX estimates for tenant improvements by city, grade specification, and asset class. Benchmarked per square metre.",
         inputs: "Area, Spec (Grade A / B), City",
         icon: HardHat,
-        badgeColor: "bg-[#2C2C2C] text-[#FAF9F6]",
+        badgeColor: "bg-[#0B3D2E] text-[#FAF9F6]",
       },
     ],
   },

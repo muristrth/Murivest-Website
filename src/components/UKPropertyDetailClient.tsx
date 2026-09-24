@@ -211,7 +211,7 @@ const EnquiryDrawer = ({ open, onClose, property }: DrawerProps) => {
             </div>
 
             {/* Property snapshot */}
-            <div className="px-6 py-4 bg-[#2C2C2C] text-[#F8F7F4]">
+            <div className="px-6 py-4 bg-[#0B3D2E] text-[#F8F7F4]">
               <p className="text-[10px] tracking-[0.2em] uppercase text-[#C4B59D] mb-1">Selected Property</p>
               <p className="font-serif text-base leading-snug">{property.title}</p>
               {property.location && (
@@ -235,7 +235,7 @@ const EnquiryDrawer = ({ open, onClose, property }: DrawerProps) => {
                   </p>
                   <button
                     onClick={() => { setSent(false); onClose(); }}
-                    className="mt-4 px-6 py-3 bg-[#2C2C2C] text-[#F8F7F4] text-[11px] tracking-[0.2em] uppercase hover:bg-[#8B7355] transition-colors"
+                    className="mt-4 px-6 py-3 bg-[#0B3D2E] text-[#F8F7F4] text-[11px] tracking-[0.2em] uppercase hover:bg-[#8B7355] transition-colors"
                   >
                     Close
                   </button>
@@ -288,7 +288,7 @@ const EnquiryDrawer = ({ open, onClose, property }: DrawerProps) => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 bg-[#2C2C2C] text-[#F8F7F4] text-[12px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors duration-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full py-4 bg-[#0B3D2E] text-[#F8F7F4] text-[12px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors duration-500 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? 'Submitting…' : 'Submit Enquiry'}
                   </button>
@@ -451,7 +451,7 @@ const UKPropertyDetailClient = ({ property }: UKPropertyDetailClientProps) => {
                 </button>
                 <button
                   onClick={() => setDrawerOpen(true)}
-                  className="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-[#2C2C2C] text-[#F8F7F4] text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors duration-300"
+                  className="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-[#0B3D2E] text-[#F8F7F4] text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors duration-300"
                 >
                   Enquire
                 </button>
@@ -566,7 +566,7 @@ const UKPropertyDetailClient = ({ property }: UKPropertyDetailClientProps) => {
                   sizes="80px"
                 />
                 {index === 0 && (
-                  <span className="absolute bottom-0 left-0 right-0 text-center bg-[#2C2C2C]/70 text-[8px] text-white tracking-widest py-0.5">
+                  <span className="absolute bottom-0 left-0 right-0 text-center bg-[#0B3D2E]/70 text-[8px] text-white tracking-widest py-0.5">
                     MAIN
                   </span>
                 )}
@@ -595,7 +595,7 @@ const UKPropertyDetailClient = ({ property }: UKPropertyDetailClientProps) => {
                     </span>
                   </div>
                   {property.type && (
-                    <span className="px-2.5 py-1 bg-[#2C2C2C] text-[9px] tracking-[0.2em] uppercase text-white">
+                    <span className="px-2.5 py-1 bg-[#0B3D2E] text-[9px] tracking-[0.2em] uppercase text-white">
                       {property.type}
                     </span>
                   )}
@@ -894,13 +894,13 @@ const UKPropertyDetailClient = ({ property }: UKPropertyDetailClientProps) => {
                   <div className="space-y-3">
                     <button
                       onClick={() => setDrawerOpen(true)}
-                      className="w-full py-3.5 bg-[#2C2C2C] text-[#F8F7F4] text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors duration-500"
+                      className="w-full py-3.5 bg-[#0B3D2E] text-[#F8F7F4] text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors duration-500"
                     >
                       Request Viewing
                     </button>
                     <button
                       onClick={() => setDrawerOpen(true)}
-                      className="w-full py-3.5 border border-[#2C2C2C] text-[#2C2C2C] text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#2C2C2C] hover:text-white transition-colors duration-500"
+                      className="w-full py-3.5 border border-[#2C2C2C] text-[#2C2C2C] text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#0B3D2E] hover:text-white transition-colors duration-500"
                     >
                       Make Enquiry
                     </button>
@@ -1023,7 +1023,7 @@ const UKPropertyDetailClient = ({ property }: UKPropertyDetailClientProps) => {
         </div>
 
         {/* ── CTA Section ──────────────────────────────────────────────────── */}
-        <section className="py-14 md:py-20 bg-[#2C2C2C] text-[#F8F7F4]">
+        <section className="py-14 md:py-20 bg-[#0B3D2E] text-[#F8F7F4]">
           <div className="max-w-[900px] mx-auto px-6 md:px-10 text-center">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif mb-5 leading-snug">
               Interested in this{' '}

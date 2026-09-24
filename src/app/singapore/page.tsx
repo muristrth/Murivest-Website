@@ -209,7 +209,7 @@ export default function SingaporePage() {
         </nav>
 
         {/* HERO - Forest Deep, no black, no image LCP killer */}
-        <section className="relative overflow-hidden bg-[#2C2C2C] mt-6" aria-label="Singapore Commercial Real Estate Advisory">
+        <section className="relative overflow-hidden bg-[#0B3D2E] mt-6" aria-label="Singapore Commercial Real Estate Advisory">
           <div className="absolute inset-0 bg-gradient-to-br from-[#2C2C2C]/90 via-[#2C2C2C] to-[#2C2C2C]" />
           <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: `linear-gradient(${C.gold} 1px, transparent 1px), linear-gradient(90deg, ${C.gold} 1px, transparent 1px)`, backgroundSize: '80px 80px' }} />
           <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 pt-28 pb-24">
@@ -248,7 +248,7 @@ export default function SingaporePage() {
         </section>
 
         {/* WHY SINGAPORE - Forest */}
-        <section className="py-20 md:py-32 bg-[#2C2C2C] relative overflow-hidden">
+        <section className="py-20 md:py-32 bg-[#0B3D2E] relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #8B7355 1px, transparent 0)', backgroundSize: '40px 40px' }} />
           <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
             <div className="text-center mb-16">
@@ -259,7 +259,7 @@ export default function SingaporePage() {
               {THESIS_PILLARS.map((pillar) => {
                 const Icon = pillar.icon;
                 return (
-                  <div key={pillar.title} className="border border-[#8B7355]/20 p-8 md:p-10 hover:border-[#8B7355]/40 transition-colors duration-500 bg-[#2C2C2C]/40">
+                  <div key={pillar.title} className="border border-[#8B7355]/20 p-8 md:p-10 hover:border-[#8B7355]/40 transition-colors duration-500 bg-[#0B3D2E]/40">
                     <div className="w-14 h-14 border border-[#8B7355]/30 flex items-center justify-center text-[#8B7355] mb-6"><Icon className="w-6 h-6" strokeWidth={1.25} /></div>
                     <h3 className="font-serif text-2xl text-white mb-4 leading-tight">{pillar.title}</h3>
                     <p className="text-sm text-white/70 leading-relaxed font-light">{pillar.body}</p>
@@ -336,7 +336,7 @@ export default function SingaporePage() {
         </section>
 
         {/* ENQUIRY */}
-        <section id="request-introduction" className="py-20 md:py-32 bg-[#2C2C2C]">
+        <section id="request-introduction" className="py-20 md:py-32 bg-[#0B3D2E]">
           <div className="max-w-[1400px] mx-auto px-6 md:px-12 text-center">
             <div className="flex items-center gap-4 mb-8 justify-center"><div className="flex-1 h-px max-w-[60px] bg-[#8B7355]/30" /><span className="text-[10px] tracking-[0.3em] uppercase text-[#8B7355]">Confidential Enquiry</span><div className="flex-1 h-px max-w-[60px] bg-[#8B7355]/30" /></div>
             <h2 className="font-serif text-3xl md:text-4xl text-white mb-4">Request an Introduction</h2>

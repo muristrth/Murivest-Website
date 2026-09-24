@@ -1,310 +1,596 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { ArrowLeft, Building, Users, Wrench, FileText, Shield, TrendingUp, ArrowRight } from 'lucide-react';
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import InteractiveButton from "@/components/InteractiveButton";
 
+// ─── Genesis Design Tokens ─────────────────────────────────────
+const STYLE_BLOCK = `
+  :root {
+    --charcoal: #2C2C2C;
+    --ivory: #F8F7F4;
+    --brass: #8B7355;
+    --grey: #5A5A5A;
+    --hairline: #E5E2DC;
+    --white: #FFFFFF;
+  }
+  .m-charcoal { color: var(--charcoal); }
+  .m-charcoal-bg { background-color: var(--charcoal); }
+  .m-brass { color: var(--brass); }
+  .m-brass-bg { background-color: var(--brass); }
+  .m-ivory { color: var(--ivory); }
+  .m-ivory-bg { background-color: var(--ivory); }
+  .m-cream-dark-bg { background-color: #F5F4F0; }
+  .m-grey { color: var(--grey); }
+  .m-hairline { border-color: var(--hairline); }
+
+  .font-serif {
+    font-family: 'Playfair Display', 'Cormorant Garamond', 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+  }
+  .font-sans {
+    font-family: 'Montserrat', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  .eyebrow {
+    font-family: 'Montserrat', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 1.25rem;
+    display: block;
+  }
+
+  .hover-lift {
+    transition: box-shadow 0.5s ease, transform 0.5s ease, border-color 0.4s ease;
+  }
+  .hover-lift:hover {
+    box-shadow: 0 20px 56px rgba(44, 44, 44, 0.05);
+    transform: translateY(-3px);
+    border-color: var(--brass);
+  }
+
+  .link-hover {
+    transition: color 0.3s ease;
+  }
+  .link-hover:hover {
+    color: var(--brass);
+  }
+
+  .footer-link {
+    color: rgba(248, 247, 244, 0.55);
+    transition: color 0.3s ease;
+    text-decoration: none;
+    font-size: 0.78rem;
+  }
+  .footer-link:hover {
+    color: var(--ivory);
+  }
+
+  .service-card {
+    transition: all 0.4s ease;
+  }
+  .service-card:hover {
+    border-color: var(--brass);
+  }
+
+  .metric-number {
+    font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+    font-variant-numeric: tabular-nums;
+  }
+`;
+
+// ─── Metadata ──────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: 'Property Management Kenya | Professional Property Services | Murivest',
-  description: 'Comprehensive property management services in Kenya. Tenant management, maintenance, financial reporting, and regulatory compliance for commercial and residential properties.',
-  keywords: 'property management Kenya, property services Nairobi, tenant management Kenya, property maintenance services, commercial property management',
+  title: "Institutional Property Management | Asset Performance & Occupancy | Murivest",
+  description:
+    "Murivest manages institutional-grade commercial and residential assets for HNWI, family offices and sovereign capital. Occupancy-first asset management across Kenya, UK, Dubai and select global markets.",
+  keywords: [
+    "institutional property management",
+    "luxury asset management Kenya",
+    "commercial property management HNWI",
+    "property management family office",
+    "institutional real estate management",
+    "asset performance management",
+    "luxury property management Nairobi",
+  ],
+  robots: "index, follow",
+  authors: [{ name: "Murivest" }],
+  openGraph: {
+    type: "website",
+    url: "https://murivest.co.ke/property-management",
+    title: "Institutional Property Management | Asset Performance & Occupancy | Murivest",
+    description:
+      "We do not manage properties. We protect income, engineer occupancy, and compound asset value for institutional capital.",
+    siteName: "Murivest",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Institutional Property Management | Murivest",
+    description:
+      "We do not manage properties. We protect income, engineer occupancy, and compound asset value for institutional capital.",
+  },
+  alternates: { canonical: "https://murivest.co.ke/property-management" },
 };
 
+// ─── Helpers ───────────────────────────────────────────────────
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^\w\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .trim();
+}
+
+// ─── Schema ────────────────────────────────────────────────────
+function SchemaOrg() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "Murivest Property Management",
+    legalName: "Murivest",
+    url: "https://murivest.co.ke/property-management",
+    logo: "https://murivest.co.ke/logo.png",
+    sameAs: ["https://www.linkedin.com/company/murivest"],
+    description:
+      "Institutional property and asset management for HNWI, family offices and sovereign capital. Occupancy-first management across premium commercial and residential real estate.",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Riverside Drive",
+      addressLocality: "Nairobi",
+      addressCountry: "KE",
+    },
+    telephone: "+254-712-345-678",
+    email: "management@murivest.co.ke",
+    areaServed: [
+      { "@type": "Country", name: "Kenya" },
+      { "@type": "Country", name: "United Kingdom" },
+      { "@type": "Country", name: "United Arab Emirates" },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Institutional Property Management",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Asset Performance Management" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Institutional Tenant Acquisition" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "NOI Optimisation" } },
+      ],
+    },
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+// ─── Data ──────────────────────────────────────────────────────
+const DIFFERENTIATORS = [
+  {
+    title: "Occupancy Engineering",
+    body: "Most managers react to vacancy. We architect demand before it is needed. Through precision marketing, persuasion architecture, and tenant psychology, your asset does not wait to be found. It commands attention.",
+  },
+  {
+    title: "Income Protection",
+    body: "We view every square metre as a revenue unit. Lease structures, rental escalations, covenant enforcement, and expense control are not administrative tasks. They are capital preservation mechanisms.",
+  },
+  {
+    title: "Institutional Discipline",
+    body: "We do not manage retail portfolios. We serve HNWI, family offices, and sovereign-adjacent capital. Our reporting, compliance, and communication standards match the institutions you already trust.",
+  },
+  {
+    title: "Legacy Positioning",
+    body: "A managed asset is a depreciating liability. A positioned asset is an appreciating institution. We curate every touchpoint—tenant mix, brand presence, physical condition—to compound long-term value.",
+  },
+];
+
+const SERVICES = [
+  {
+    title: "Strategic Asset Positioning",
+    desc: "Market repositioning, competitive differentiation, and brand architecture designed to attract premium tenants and justify premium rents.",
+  },
+  {
+    title: "Tenant Curation & Acquisition",
+    desc: "Not tenant placement. Tenant curation. We identify, persuade, and secure occupants aligned with the asset's income profile and investor mandate.",
+  },
+  {
+    title: "NOI Optimisation",
+    desc: "Rental growth engineering, operating expense rationalisation, and capital expenditure planning to maximise net operating income.",
+  },
+  {
+    title: "Lease Architecture",
+    desc: "Structuring leases that protect upside, minimise downside, and create contractual income durability. Break options, rent reviews, and covenant design.",
+  },
+  {
+    title: "Asset Intelligence",
+    desc: "Monthly performance dashboards, occupancy analytics, market benchmarking, and forward-looking risk assessment for investment committees.",
+  },
+  {
+    title: "Discretion & Compliance",
+    desc: "Strict confidentiality protocols, regulatory adherence, and institutional-grade documentation standards across all jurisdictions.",
+  },
+];
+
+const ASSET_CLASSES = [
+  { title: "Prime Commercial", desc: "Grade A offices, mixed-use towers, and corporate headquarters in Nairobi, London, and Dubai." },
+  { title: "Luxury Residential", desc: "Penthouse collections, serviced residences, and private villa estates for HNWI tenancy." },
+  { title: "Hospitality Assets", desc: "Boutique hotels, serviced apartments, and experiential hospitality with operational real estate fundamentals." },
+  { title: "Industrial & Logistics", desc: "Last-mile distribution, cold storage, and trade-counter facilities with institutional tenancy." },
+];
+
+const METRICS = [
+  { value: "97%", label: "Occupancy Rate", context: "Across managed institutional portfolio" },
+  { value: "48hrs", label: "Tenant Response", context: "Maximum turnaround on critical issues" },
+  { value: "12%", label: "Rental Uplift", context: "Average annual growth on repositioned assets" },
+  { value: "0", label: "Vacancy Tolerance", context: "We do not accept empty space as normal" },
+];
+
+const PROCESS = [
+  { step: "01", title: "Audit", desc: "Asset condition, income profile, tenant mix, and competitive position. We find the gaps others ignore." },
+  { step: "02", title: "Position", desc: "Strategic repositioning, marketing architecture, and tenant targeting aligned with your investment thesis." },
+  { step: "03", title: "Fill", desc: "Persuasion-driven tenant acquisition. NEPQ-informed engagement. We do not list. We convert." },
+  { step: "04", title: "Optimise", desc: "Continuous NOI improvement, lease engineering, and asset performance monitoring." },
+  { step: "05", title: "Report", desc: "Institutional-grade reporting. No vanity metrics. Only capital-relevant intelligence." },
+];
+
+// ─── Main Page ─────────────────────────────────────────────────
 export default function PropertyManagementPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative max-w-7xl mx-auto px-6 py-24">
-          <div className="text-center">
-            <Link
-              href="/"
-              className="inline-flex items-center text-amber-400 hover:text-amber-300 transition-colors mb-8"
-            >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Home
-            </Link>
-            <h1 className="text-4xl md:text-6xl font-light text-white mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
-              Property Management
-            </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Comprehensive property management services ensuring optimal performance,
-              tenant satisfaction, and maximum returns on your real estate investments.
+    <>
+      <SchemaOrg />
+      <style>{STYLE_BLOCK}</style>
+
+      <main className="m-ivory-bg">
+        {/* ═════════════════════════════════════════════════════════
+            1. HERO
+        ═════════════════════════════════════════════════════════ */}
+        <section className="relative m-charcoal-bg overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/mall.avif"
+              alt="Institutional commercial property aerial view Nairobi"
+              fill
+              priority
+              className="object-cover opacity-[0.1]"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-[#2C2C2C]/92" />
+          </div>
+
+          <div className="relative z-10 max-w-[1280px] mx-auto px-8 py-32 md:py-48">
+            <div className="max-w-[780px]">
+              <span className="eyebrow">Institutional Asset Management</span>
+              <h1 className="font-serif text-[clamp(2.5rem,5.5vw,4.5rem)] font-normal leading-[1.06] text-[#F8F7F4] mb-8 tracking-tight">
+                We Do Not Manage<br />
+                Properties.<br />
+                We <em className="text-[#8B7355] not-italic">Protect Capital.</em>
+              </h1>
+              <p className="font-sans text-lg leading-[1.7] text-[rgba(248,247,244,0.75)] font-light max-w-[600px] mb-12">
+                Most property managers fix leaks. We fix income. 
+                Institutional-grade asset management for HNWI, family offices, and serious capital 
+                who refuse to accept vacancy as a cost of doing business.
+              </p>
+              <div className="flex flex-wrap gap-5">
+                <InteractiveButton href="/property-management/mandate" variant="primary">
+                  Submit a Management Mandate
+                </InteractiveButton>
+                <InteractiveButton href="/property-management/performance" variant="secondary">
+                  View Asset Performance
+                </InteractiveButton>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ═════════════════════════════════════════════════════════
+            2. THE PATTERN INTERRUPT
+        ═════════════════════════════════════════════════════════ */}
+        <section className="m-ivory-bg py-24 md:py-32 border-b m-hairline">
+          <div className="max-w-[960px] mx-auto px-8 text-center">
+            <span className="eyebrow">The Problem</span>
+            <h2 className="font-serif text-[clamp(1.5rem,3vw,2.25rem)] font-normal text-[#2C2C2C] mb-10 leading-snug">
+              Your property manager is costing you more than vacancy ever could.
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
+              <div className="border-l-2 border-[#8B7355] pl-6">
+                <p className="font-sans text-[0.9rem] leading-[1.7] text-[#5A5A5A] font-light">
+                  They focus on maintenance. We focus on <strong className="text-[#2C2C2C] font-medium">monetisation</strong>. 
+                  A well-maintained empty building is still a liability.
+                </p>
+              </div>
+              <div className="border-l-2 border-[#8B7355] pl-6">
+                <p className="font-sans text-[0.9rem] leading-[1.7] text-[#5A5A5A] font-light">
+                  They list and wait. We <strong className="text-[#2C2C2C] font-medium">persuade and convert</strong>. 
+                  Marketing without persuasion is just expensive hope.
+                </p>
+              </div>
+              <div className="border-l-2 border-[#8B7355] pl-6">
+                <p className="font-sans text-[0.9rem] leading-[1.7] text-[#5A5A5A] font-light">
+                  They report activity. We report <strong className="text-[#2C2C2C] font-medium">alpha</strong>. 
+                  Your investment committee does not care about work orders.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ═════════════════════════════════════════════════════════
+            3. THE MURIVEST STANDARD
+        ═════════════════════════════════════════════════════════ */}
+        <section className="bg-white py-24 md:py-32 border-b m-hairline">
+          <div className="max-w-[1280px] mx-auto px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <span className="eyebrow">The Standard</span>
+                <h2 className="font-serif text-[clamp(1.75rem,3.5vw,2.5rem)] font-normal text-[#2C2C2C] mb-8 leading-snug">
+                  We Manage Assets the Way You Would—If You Had the Time.
+                </h2>
+                <p className="font-sans text-base leading-[1.8] text-[#5A5A5A] font-light mb-8">
+                  Murivest Property Management was built for investors who have already won. 
+                  You did not accumulate capital to babysit contractors or chase rent arrears. 
+                  You deployed capital to acquire real assets that produce income, appreciate in value, 
+                  and compound your legacy.
+                </p>
+                <p className="font-sans text-base leading-[1.8] text-[#5A5A5A] font-light mb-10">
+                  We treat your asset as if it were our own—because in many cases, it is. 
+                  Our principals co-invest. Our fees align with performance. 
+                  And our reputation depends on your NOI.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <InteractiveButton href="/property-management/approach" variant="dark">
+                    Explore Our Approach
+                  </InteractiveButton>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-[1px] bg-[#E5E2DC]">
+                {DIFFERENTIATORS.map((d) => (
+                  <div key={d.title} className="bg-white p-8 md:p-10">
+                    <h3 className="font-serif text-[1.15rem] font-normal text-[#2C2C2C] mb-4">{d.title}</h3>
+                    <p className="font-sans text-[0.85rem] leading-[1.7] text-[#5A5A5A] font-light">{d.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ═════════════════════════════════════════════════════════
+            4. SERVICES
+        ═════════════════════════════════════════════════════════ */}
+        <section className="m-ivory-bg py-24 md:py-32">
+          <div className="max-w-[1280px] mx-auto px-8">
+            <div className="text-center mb-16">
+              <span className="eyebrow">Capabilities</span>
+              <h2 className="font-serif text-[clamp(1.75rem,3.5vw,2.5rem)] font-normal text-[#2C2C2C] leading-snug">
+                What We Actually Do
+              </h2>
+              <p className="font-sans text-base leading-[1.7] font-light text-[#5A5A5A] max-w-[640px] mx-auto mt-5">
+                Every service is engineered around one question: does this protect or grow the investor's capital?
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-[#E5E2DC]">
+              {SERVICES.map((s) => (
+                <div key={s.title} className="service-card bg-white p-10 md:p-12">
+                  <h3 className="font-serif text-[1.2rem] font-normal text-[#2C2C2C] mb-4">{s.title}</h3>
+                  <p className="font-sans text-[0.9rem] leading-[1.7] text-[#5A5A5A] font-light">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═════════════════════════════════════════════════════════
+            5. THE OCCUPANCY ENGINE
+        ═════════════════════════════════════════════════════════ */}
+        <section className="m-charcoal-bg text-[#F8F7F4] py-24 md:py-32">
+          <div className="max-w-[1280px] mx-auto px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div className="order-2 lg:order-1">
+                <div className="border border-[rgba(248,247,244,0.12)] p-10 md:p-14">
+                  <p className="font-serif text-[1.35rem] font-normal text-[#F8F7F4] leading-[1.5] mb-6">
+                    "Most property managers understand real estate. 
+                    Very few understand <em className="text-[#8B7355] not-italic">people</em>."
+                  </p>
+                  <p className="font-sans text-[0.9rem] leading-[1.7] text-[rgba(248,247,244,0.65)] font-light">
+                    Our background is not traditional property management. 
+                    It is marketing, persuasion, and neuro-emotional conversion. 
+                    We know how to make a tenant <em>want</em> your space before they have seen it. 
+                    That is not luck. That is engineering.
+                  </p>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2">
+                <span className="eyebrow">The Occupancy Engine</span>
+                <h2 className="font-serif text-[clamp(1.75rem,3.5vw,2.5rem)] font-normal text-[#F8F7F4] mb-8 leading-snug">
+                  Vacancy Is a Choice.<br />
+                  We Choose Otherwise.
+                </h2>
+                <div className="space-y-6">
+                  <div className="flex gap-5">
+                    <div className="w-8 h-8 border border-[#8B7355] flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="font-serif text-[#8B7355] text-sm">1</span>
+                    </div>
+                    <div>
+                      <h4 className="font-sans text-sm font-semibold tracking-[0.1em] uppercase text-[#F8F7F4] mb-2">Persuasion Architecture</h4>
+                      <p className="font-sans text-[0.85rem] leading-[1.7] text-[rgba(248,247,244,0.65)] font-light">
+                        NEPQ-informed tenant engagement. We do not pitch space. We engineer desire.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex gap-5">
+                    <div className="w-8 h-8 border border-[#8B7355] flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="font-serif text-[#8B7355] text-sm">2</span>
+                    </div>
+                    <div>
+                      <h4 className="font-sans text-sm font-semibold tracking-[0.1em] uppercase text-[#F8F7F4] mb-2">Precision Marketing</h4>
+                      <p className="font-sans text-[0.85rem] leading-[1.7] text-[rgba(248,247,244,0.65)] font-light">
+                        Copywriting that converts. Visual storytelling that commands attention. 
+                        Distribution to qualified audiences only.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex gap-5">
+                    <div className="w-8 h-8 border border-[#8B7355] flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="font-serif text-[#8B7355] text-sm">3</span>
+                    </div>
+                    <div>
+                      <h4 className="font-sans text-sm font-semibold tracking-[0.1em] uppercase text-[#F8F7F4] mb-2">Tenant Curation</h4>
+                      <p className="font-sans text-[0.85rem] leading-[1.7] text-[rgba(248,247,244,0.65)] font-light">
+                        We do not fill space. We select occupants who enhance the asset's value, 
+                        stability, and income durability.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ═════════════════════════════════════════════════════════
+            6. ASSET CLASSES
+        ═════════════════════════════════════════════════════════ */}
+        <section className="m-ivory-bg py-24 md:py-32 border-b m-hairline">
+          <div className="max-w-[1280px] mx-auto px-8">
+            <div className="mb-14">
+              <span className="eyebrow">Asset Coverage</span>
+              <h2 className="font-serif text-[clamp(1.75rem,3.5vw,2.5rem)] font-normal text-[#2C2C2C] mb-5 leading-snug">
+                Institutional Assets Only
+              </h2>
+              <p className="font-sans text-base leading-[1.7] font-light text-[#5A5A5A] max-w-[640px]">
+                We do not manage retail rental stock. We serve assets with institutional DNA— 
+                premium locations, serious capital, and investors who measure performance in basis points.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-[#E5E2DC]">
+              {ASSET_CLASSES.map((a) => (
+                <div key={a.title} className="hover-lift bg-white p-10 md:p-12 cursor-pointer">
+                  <h3 className="font-serif text-[1.25rem] font-normal text-[#2C2C2C] mb-4">{a.title}</h3>
+                  <p className="font-sans text-[0.9rem] leading-[1.7] text-[#5A5A5A] font-light">{a.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═════════════════════════════════════════════════════════
+            7. PERFORMANCE METRICS
+        ═════════════════════════════════════════════════════════ */}
+        <section className="bg-white py-24 md:py-32">
+          <div className="max-w-[1280px] mx-auto px-8">
+            <div className="text-center mb-16">
+              <span className="eyebrow">Performance</span>
+              <h2 className="font-serif text-[clamp(1.75rem,3.5vw,2.5rem)] font-normal text-[#2C2C2C] leading-snug">
+                Numbers That Matter
+              </h2>
+              <p className="font-sans text-base leading-[1.7] font-light text-[#5A5A5A] max-w-[560px] mx-auto mt-5">
+                We do not report vanity metrics. We report the numbers your investment committee cares about.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {METRICS.map((m) => (
+                <div key={m.label} className="border m-hairline p-10 text-center">
+                  <p className="metric-number text-[3rem] font-normal text-[#8B7355] leading-none mb-4">{m.value}</p>
+                  <h3 className="font-sans text-sm font-semibold tracking-[0.1em] uppercase text-[#2C2C2C] mb-2">{m.label}</h3>
+                  <p className="font-sans text-[0.8rem] text-[#5A5A5A] font-light">{m.context}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═════════════════════════════════════════════════════════
+            8. THE PROCESS
+        ═════════════════════════════════════════════════════════ */}
+        <section className="m-cream-dark-bg py-24 md:py-32 border-y m-hairline">
+          <div className="max-w-[1280px] mx-auto px-8">
+            <div className="text-center mb-16">
+              <span className="eyebrow">Our Process</span>
+              <h2 className="font-serif text-[clamp(1.75rem,3.5vw,2.5rem)] font-normal text-[#2C2C2C] leading-snug">
+                From Handover to Outperformance
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+              {PROCESS.map((p, idx) => (
+                <div key={p.step} className="relative">
+                  {idx < PROCESS.length - 1 && (
+                    <div className="hidden md:block absolute top-8 left-full w-full h-[1px] bg-[#E5E2DC] z-0" />
+                  )}
+                  <div className="relative z-10">
+                    <p className="font-serif text-[2.5rem] font-normal text-[#8B7355] leading-none mb-5">{p.step}</p>
+                    <h3 className="font-serif text-[1.1rem] font-normal text-[#2C2C2C] mb-3">{p.title}</h3>
+                    <p className="font-sans text-[0.85rem] leading-[1.7] text-[#5A5A5A] font-light">{p.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═════════════════════════════════════════════════════════
+            9. INSTITUTIONAL NARRATIVE
+        ═════════════════════════════════════════════════════════ */}
+        <section className="m-ivory-bg py-24 md:py-32">
+          <div className="max-w-[800px] mx-auto px-8 text-center">
+            <span className="eyebrow">Philosophy</span>
+            <h2 className="font-serif text-[clamp(1.5rem,3vw,2.25rem)] font-normal text-[#2C2C2C] mb-10 leading-snug">
+              Your asset is not a building. It is a capital allocation decision 
+              that happens to be housed in steel and glass.
+            </h2>
+            <p className="font-sans text-base leading-[1.8] text-[#5A5A5A] font-light">
+              We manage it accordingly. Every lease negotiation is a financing decision. 
+              Every tenant selection is a risk assessment. Every maintenance call is a capital preservation event. 
+              And every month of full occupancy is proof that the asset is performing exactly as underwritten.
             </p>
           </div>
-        </div>
-      </div>
+        </section>
 
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        {/* Core Services */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-light text-slate-900 text-center mb-12" style={{ fontFamily: 'Playfair Display, serif' }}>
-            Comprehensive Property Management Services
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
-                <Users className="h-6 w-6 text-amber-600" />
-              </div>
-              <h3 className="text-xl font-medium text-slate-900 mb-3">Tenant Management</h3>
-              <p className="text-gray-600">Complete tenant lifecycle management from screening to lease termination.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
-                <Wrench className="h-6 w-6 text-amber-600" />
-              </div>
-              <h3 className="text-xl font-medium text-slate-900 mb-3">Maintenance & Repairs</h3>
-              <p className="text-gray-600">24/7 maintenance coordination and preventive maintenance programs.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
-                <FileText className="h-6 w-6 text-amber-600" />
-              </div>
-              <h3 className="text-xl font-medium text-slate-900 mb-3">Financial Management</h3>
-              <p className="text-gray-600">Rent collection, expense management, and detailed financial reporting.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
-                <Shield className="h-6 w-6 text-amber-600" />
-              </div>
-              <h3 className="text-xl font-medium text-slate-900 mb-3">Legal Compliance</h3>
-              <p className="text-gray-600">Regulatory compliance, lease administration, and legal documentation.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
-                <TrendingUp className="h-6 w-6 text-amber-600" />
-              </div>
-              <h3 className="text-xl font-medium text-slate-900 mb-3">Asset Optimization</h3>
-              <p className="text-gray-600">Value enhancement strategies and market positioning optimization.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
-                <Building className="h-6 w-6 text-amber-600" />
-              </div>
-              <h3 className="text-xl font-medium text-slate-900 mb-3">Property Marketing</h3>
-              <p className="text-gray-600">Tenant attraction and retention through targeted marketing strategies.</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Service Process */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-light text-slate-900 text-center mb-12" style={{ fontFamily: 'Playfair Display, serif' }}>
-            Our Management Process
-          </h2>
-          <div className="bg-gradient-to-r from-amber-50 to-slate-50 p-8 rounded-lg">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-xl">1</span>
+        {/* ═════════════════════════════════════════════════════════
+            10. CTA
+        ═════════════════════════════════════════════════════════ */}
+        <section className="m-charcoal-bg text-[#F8F7F4] py-24 md:py-32">
+          <div className="max-w-[1280px] mx-auto px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <span className="eyebrow">Engagement</span>
+                <h2 className="font-serif text-[clamp(1.75rem,3.5vw,2.5rem)] font-normal text-[#F8F7F4] mb-8 leading-snug">
+                  We Do Not Compete on Price.<br />
+                  We Compete on Performance.
+                </h2>
+                <p className="font-sans text-base leading-[1.7] text-[rgba(248,247,244,0.7)] font-light mb-10">
+                  If you are looking for the cheapest property manager in Nairobi, we are not that. 
+                  If you are looking for the manager who will extract the maximum income, 
+                  protect the maximum value, and report with institutional precision—submit your mandate.
+                </p>
+                <div className="flex flex-wrap gap-5">
+                  <InteractiveButton href="/property-management/mandate" variant="primary">
+                    Submit a Management Mandate
+                  </InteractiveButton>
+                  <InteractiveButton href="/contact" variant="secondary">
+                    Speak with an Asset Director
+                  </InteractiveButton>
                 </div>
-                <h3 className="text-lg font-medium text-slate-900 mb-2">Property Assessment</h3>
-                <p className="text-gray-600 text-sm">Comprehensive property evaluation and management plan development</p>
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-xl">2</span>
-                </div>
-                <h3 className="text-lg font-medium text-slate-900 mb-2">Tenant Acquisition</h3>
-                <p className="text-gray-600 text-sm">Marketing, screening, and lease execution for quality tenants</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-xl">3</span>
-                </div>
-                <h3 className="text-lg font-medium text-slate-900 mb-2">Ongoing Management</h3>
-                <p className="text-gray-600 text-sm">Daily operations, maintenance, and tenant relationship management</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-xl">4</span>
-                </div>
-                <h3 className="text-lg font-medium text-slate-900 mb-2">Performance Reporting</h3>
-                <p className="text-gray-600 text-sm">Regular financial and operational reporting with optimization recommendations</p>
+              <div className="border border-[rgba(248,247,244,0.1)] p-10 md:p-14">
+                <p className="font-serif text-[1.15rem] font-normal text-[#F8F7F4] leading-[1.6] mb-6">
+                  "The question is not whether you can afford institutional management. 
+                  The question is whether you can afford <em className="text-[#8B7355] not-italic">not</em> to have it."
+                </p>
+                <p className="font-sans text-[0.8rem] tracking-[0.15em] uppercase text-[rgba(248,247,244,0.5)]">
+                  — Murivest Asset Management Principle
+                </p>
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Property Types */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-light text-slate-900 text-center mb-12" style={{ fontFamily: 'Playfair Display, serif' }}>
-            Property Types Managed
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-lg border border-gray-100">
-              <h3 className="text-2xl font-light text-slate-900 mb-6">Commercial Properties</h3>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>
-                  <span className="text-gray-700">Office buildings and business centers</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>
-                  <span className="text-gray-700">Retail shopping centers</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>
-                  <span className="text-gray-700">Industrial warehouses and logistics facilities</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>
-                  <span className="text-gray-700">Mixed-use developments</span>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white p-8 rounded-lg border border-gray-100">
-              <h3 className="text-2xl font-light text-slate-900 mb-6">Residential Properties</h3>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>
-                  <span className="text-gray-700">Multi-family residential buildings</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>
-                  <span className="text-gray-700">Serviced apartments</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>
-                  <span className="text-gray-700">Student housing</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>
-                  <span className="text-gray-700">Luxury residential complexes</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Technology & Systems */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-light text-slate-900 text-center mb-12" style={{ fontFamily: 'Playfair Display, serif' }}>
-            Technology & Systems
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-lg border border-gray-100 text-center">
-              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FileText className="h-8 w-8 text-amber-600" />
-              </div>
-              <h3 className="text-xl font-medium text-slate-900 mb-3">Property Management Software</h3>
-              <p className="text-gray-600">Integrated PMS for tenant management, work orders, and financial tracking</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg border border-gray-100 text-center">
-              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="h-8 w-8 text-amber-600" />
-              </div>
-              <h3 className="text-xl font-medium text-slate-900 mb-3">Online Portals</h3>
-              <p className="text-gray-600">Owner and tenant portals for 24/7 access to property information</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg border border-gray-100 text-center">
-              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="h-8 w-8 text-amber-600" />
-              </div>
-              <h3 className="text-xl font-medium text-slate-900 mb-3">Security Systems</h3>
-              <p className="text-gray-600">Advanced security monitoring and access control systems</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Performance Metrics */}
-        <div className="mb-16">
-          <div className="bg-gradient-to-r from-slate-50 to-amber-50 p-8 rounded-lg">
-            <h2 className="text-3xl font-light text-slate-900 text-center mb-8" style={{ fontFamily: 'Playfair Display, serif' }}>
-              Performance Metrics
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="text-4xl font-light text-amber-600 mb-2">98%</div>
-                <div className="text-gray-600">Occupancy Rate</div>
-                <div className="text-sm text-gray-500 mt-2">Industry leading</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-light text-amber-600 mb-2">24hrs</div>
-                <div className="text-gray-600">Response Time</div>
-                <div className="text-sm text-gray-500 mt-2">Maintenance requests</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-light text-amber-600 mb-2">95%</div>
-                <div className="text-gray-600">Tenant Satisfaction</div>
-                <div className="text-sm text-gray-500 mt-2">Annual survey</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-light text-amber-600 mb-2">$2.5M</div>
-                <div className="text-gray-600">Assets Under Management</div>
-                <div className="text-sm text-gray-500 mt-2">Commercial portfolio</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Why Choose Us */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-light text-slate-900 text-center mb-12" style={{ fontFamily: 'Playfair Display, serif' }}>
-            Why Choose Murivest Property Management
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="space-y-6">
-              <div className="bg-white p-6 rounded-lg border border-gray-100">
-                <Users className="h-8 w-8 text-amber-600 mb-4" />
-                <h3 className="text-xl font-medium text-slate-900 mb-3">Local Expertise</h3>
-                <p className="text-gray-600">Deep understanding of Kenyan property market, tenant expectations, and regulatory requirements.</p>
-              </div>
-              <div className="bg-white p-6 rounded-lg border border-gray-100">
-                <Shield className="h-8 w-8 text-amber-600 mb-4" />
-                <h3 className="text-xl font-medium text-slate-900 mb-3">Risk Management</h3>
-                <p className="text-gray-600">Comprehensive insurance coverage and risk mitigation strategies to protect your investment.</p>
-              </div>
-            </div>
-            <div className="space-y-6">
-              <div className="bg-white p-6 rounded-lg border border-gray-100">
-                <TrendingUp className="h-8 w-8 text-amber-600 mb-4" />
-                <h3 className="text-xl font-medium text-slate-900 mb-3">Value Enhancement</h3>
-                <p className="text-gray-600">Active strategies to increase property value and optimize rental income streams.</p>
-              </div>
-              <div className="bg-white p-6 rounded-lg border border-gray-100">
-                <FileText className="h-8 w-8 text-amber-600 mb-4" />
-                <h3 className="text-xl font-medium text-slate-900 mb-3">Transparent Reporting</h3>
-                <p className="text-gray-600">Detailed monthly reports with financial statements, market updates, and performance metrics.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* CTA Section */}
-        <div className="bg-gradient-to-r from-slate-900 to-slate-800 text-white rounded-lg p-8 text-center">
-          <h2 className="text-3xl font-light mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
-            Professional Property Management
-          </h2>
-          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-            Maximize your property's potential with our comprehensive management services and local market expertise.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <Link
-              href="/contact"
-              className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
-            >
-              Start Property Management
-            </Link>
-            <Link
-              href="/tenant-screening"
-              className="border border-amber-600 text-amber-400 hover:bg-amber-600 hover:text-white px-8 py-3 rounded-lg font-medium transition-all"
-            >
-              View Tenant Services
-            </Link>
-          </div>
-          <div className="border-t border-gray-600 pt-6">
-            <p className="text-gray-400 mb-4">Experience the future of property management</p>
-            <Link
-              href="/it-project-management"
-              className="inline-flex items-center bg-white text-slate-900 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium transition-all duration-300 group"
-            >
-              Discover IT Property Management
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
+        </section>
+      </main>
+    </>
   );
 }

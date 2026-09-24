@@ -141,7 +141,7 @@ const TaxIntelligenceSection = () => {
 
           <a
             href="/exit-strategy-planning"
-            className="inline-flex items-center gap-2 text-[11px] tracking-[0.25em] uppercase text-[#2C2C2C] border border-[#2C2C2C] px-6 py-3 hover:bg-[#2C2C2C] hover:text-[#F8F7F4] transition whitespace-nowrap"
+            className="inline-flex items-center gap-2 text-[11px] tracking-[0.25em] uppercase text-[#2C2C2C] border border-[#2C2C2C] px-6 py-3 hover:bg-[#0B3D2E] hover:text-[#F8F7F4] transition whitespace-nowrap"
           >
             Request Exit Brief
           </a>
