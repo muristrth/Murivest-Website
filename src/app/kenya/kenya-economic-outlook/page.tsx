@@ -26,7 +26,7 @@ export const metadata: Metadata = {
       'Macro intelligence for institutional investors in Kenyan commercial real estate. GDP, KES, inflation, and sector yield impact.',
     type: 'article',
     url: 'https://murivest.com/kenya-economic-outlook',
-    siteName: 'Murivest Realty Group',
+    siteName: 'Murivest Group Ltd',
   },
   twitter: {
     card: 'summary_large_image',
@@ -50,7 +50,7 @@ const articleSchema = {
   },
   publisher: {
     '@type': 'Organization',
-    name: 'Murivest Realty Group',
+    name: 'Murivest Group Ltd',
     logo: { '@type': 'ImageObject', url: 'https://murivest.com/logo.webp' },
   },
   datePublished: '2026-05-12',
@@ -448,7 +448,7 @@ export default function KenyaEconomicOutlookPage() {
                   For investors with a USD basis, a 6–8 year hold tolerance, and access to credible local structuring, Nairobi's industrial corridor and true Grade-A office represent the most compelling risk-adjusted yield premium over developed-market equivalents currently available in Sub-Saharan Africa. The window is open. It will not remain so indefinitely.
                 </p>
                 <p className="text-[11px] font-light mt-4" style={{ color: '#8B7355' }}>
-                  This analysis is for informational purposes only and does not constitute investment advice. Murivest Realty Group does not guarantee any specific returns or outcomes.
+                  This analysis is for informational purposes only and does not constitute investment advice. Murivest Group Ltd does not guarantee any specific returns or outcomes.
                 </p>
               </section>
 

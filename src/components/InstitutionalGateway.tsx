@@ -319,7 +319,7 @@ const InstitutionalGateway = () => {
             </div>
 
             <p className="text-[10px] text-[#5A5A5A] text-center leading-relaxed">
-              By submitting this form, you acknowledge that Murivest Realty Group operates under strict confidentiality protocols. 
+              By submitting this form, you acknowledge that Murivest Group Ltd operates under strict confidentiality protocols. 
               Your information will be handled in accordance with our institutional data protection policy.
             </p>
           </motion.form>

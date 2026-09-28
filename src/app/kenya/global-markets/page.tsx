@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { Globe, TrendingUp, Building, MapPin, ArrowRight, Crown, Shield, Award } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Global Markets & Expansion - Murivest Realty Group',
+  title: 'Global Markets & Expansion - Murivest Group Ltd',
   description: 'Institutional-grade commercial real estate opportunities across Africa, Middle East, Europe, Asia-Pacific, and Americas. Global expansion strategy for discerning investors.',
-  keywords: 'global real estate investment, international property markets, commercial real estate expansion, institutional real estate opportunities, cross-border investments, Murivest Realty Group',
+  keywords: 'global real estate investment, international property markets, commercial real estate expansion, institutional real estate opportunities, cross-border investments, Murivest Group Ltd',
   openGraph: {
-    title: 'Global Markets & Expansion - Murivest Realty Group',
+    title: 'Global Markets & Expansion - Murivest Group Ltd',
     description: 'Institutional-grade commercial real estate opportunities across Africa, Middle East, Europe, Asia-Pacific, and Americas.',
     images: ['/kenya-night.webp'],
   },

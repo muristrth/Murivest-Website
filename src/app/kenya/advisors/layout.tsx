@@ -4,8 +4,8 @@ import Link from 'next/link';
 import './team-layout.css';
 
 export const metadata: Metadata = {
-  title: 'Team Portal — Murivest Realty Group',
-  description: 'Associate performance tracking and KPI dashboard — Murivest Realty Group',
+  title: 'Team Portal — Murivest Group Ltd',
+  description: 'Associate performance tracking and KPI dashboard — Murivest Group Ltd',
 };
 
 export default function TeamLayout({ children }: { children: React.ReactNode }) {

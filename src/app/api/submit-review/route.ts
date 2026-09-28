@@ -69,7 +69,7 @@ export async function POST(req: NextRequest) {
           <div style="background:#F5F4F0;padding:16px;border-left:3px solid #B8956B;margin:20px 0;">
             <p style="margin:0;font-size:14px;"><strong>Review URL:</strong> <a href="${reviewUrl}" style="color:#B8956B;">${reviewUrl}</a></p>
           </div>
-          <p style="font-size:12px;color:#666;margin-top:40px;">— Mark Muriithi, Murivest Realty Group</p>
+          <p style="font-size:12px;color:#666;margin-top:40px;">— Mark Muriithi, Murivest Group Ltd</p>
         </div>
       `
     });

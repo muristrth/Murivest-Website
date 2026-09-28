@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowLeft, Building, DollarSign, PieChart, Shield, Users } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'African REIT Investment Opportunities | Real Estate Investment Trusts Kenya | Murivest Realty Group',
+  title: 'African REIT Investment Opportunities | Real Estate Investment Trusts Kenya | Murivest Group Ltd',
   description: 'Invest in African REIT opportunities and real estate investment trusts in Kenya. Diversified property portfolios with regular dividends, professional management, and institutional-grade investment solutions for UK and Kenyan investors.',
   keywords: 'African REIT investment opportunities, real estate investment trusts Kenya, REIT Kenya, property REIT investment, dividend yielding investments Kenya, REIT returns, institutional asset managers Nairobi, emerging markets real estate opportunities Africa, discreet real estate investment advisory, family office investment opportunities Africa, legacy real estate investments, capital preservation real estate strategies, old money real estate investments, Africa private wealth real estate deal',
 };

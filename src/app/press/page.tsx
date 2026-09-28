@@ -3,7 +3,7 @@ import { Newspaper, Mail, Download } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Press | Murivest Advisory',
-  description: 'Media resources, press releases, and press contact information for Murivest Realty Group.',
+  description: 'Media resources, press releases, and press contact information for Murivest Group Ltd.',
 }
 
 const releases = [
@@ -35,7 +35,7 @@ export default function PressPage() {
           Press & Media
         </h1>
         <p className="font-sans text-base md:text-lg text-white/70 leading-relaxed mt-6 max-w-2xl mx-auto text-pretty">
-          Press releases, media resources, and press contact information for Murivest Realty Group.
+          Press releases, media resources, and press contact information for Murivest Group Ltd.
         </p>
       </section>
 

@@ -327,7 +327,7 @@ export default function About() {
             fontFamily: "'Libre Baskerville', Georgia, serif",
             fontSize: '0.58rem', letterSpacing: '0.3em',
             textTransform: 'uppercase', color: '#1C2B1E',
-          }}>Murivest Realty Group</span>
+          }}>Murivest Group Ltd</span>
         </div>
       </div>
 
@@ -358,7 +358,7 @@ export default function About() {
             borderTop: '1px solid #C4B49A', paddingTop: '3rem',
           }}>
             <div className="prose-block">
-              <p>Murivest Realty Group was founded in Nairobi in 2024 with a single purpose: to build the institutional infrastructure that East African commercial real estate has historically lacked — structured underwriting, disciplined capital allocation, and fiduciary standards aligned with international investor expectations.</p>
+              <p>Murivest Group Ltd was founded in Nairobi in 2024 with a single purpose: to build the institutional infrastructure that East African commercial real estate has historically lacked — structured underwriting, disciplined capital allocation, and fiduciary standards aligned with international investor expectations.</p>
               <p>We are an early-stage platform. We do not pretend otherwise. What we bring is not a fabricated track record — it is a framework, a network, and a commitment to executing the first mandate with the same rigour we intend to apply to the hundredth.</p>
             </div>
             <div className="prose-block">
@@ -586,7 +586,7 @@ export default function About() {
           padding: '2.5rem 0', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         }}>
           <span style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: '1.05rem', fontStyle: 'italic', color: '#3D3328' }}>
-            Murivest Realty Group Ltd. — Westlands, Nairobi
+            Murivest Group Ltd. — Westlands, Nairobi
           </span>
           <span style={{ fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: '0.58rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: '#8B6C2A' }}>
             KEREA · Engagements by Mandate Only

@@ -3,7 +3,7 @@ import Team from '@/components/Team'
 
 export const metadata: Metadata = {
   title: 'Leadership | Murivest Advisory',
-  description: 'Meet the executive leadership directing Murivest Realty Group.',
+  description: 'Meet the executive leadership directing Murivest Group Ltd.',
 }
 
 const executiveLeadership = [

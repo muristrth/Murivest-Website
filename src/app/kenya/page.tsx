@@ -53,13 +53,13 @@ export const metadata: Metadata = {
     title: 'Murivest Group Ltd | Commercial Real Estate Advisory',
     description: 'Murivest Group Ltd is an independent commercial real estate advisory firm based in Nairobi. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.',
     url: 'https://murivest.com',
-    siteName: 'Murivest Group Ltd Ltd',
+    siteName: 'Murivest Group Ltd',
     images: [
       {
         url: '/logo.webp',
         width: 1200,
         height: 630,
-        alt: 'Murivest Group Ltd Ltd - Commercial Real Estate Advisory',
+        alt: 'Murivest Group Ltd - Commercial Real Estate Advisory',
       },
     ],
     locale: 'en_GB',

@@ -47,7 +47,7 @@ export default function AdminDashboard() {
         <div>
           <div className={styles.adminBadge}>ADMIN CONSOLE</div>
           <h1 className={styles.title}>Team <span className={styles.accent}>Command Center</span></h1>
-          <p className={styles.sub}>Murivest Realty Group · Full Team Intelligence</p>
+          <p className={styles.sub}>Murivest Group Ltd · Full Team Intelligence</p>
         </div>
         <div className={styles.headerRight}>
           <div className={styles.liveBadge}>

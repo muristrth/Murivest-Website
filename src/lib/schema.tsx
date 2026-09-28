@@ -130,7 +130,7 @@ export function realEstateAgentSchema(data: Record<string, any> = {}) {
   return {
     '@context': 'https://schema.org',
     '@type': 'RealEstateAgent',
-    name: 'Murivest Realty Group',
+    name: 'Murivest Group Ltd',
     alternateName: 'Murivest',
     url: 'https://murivest.com',
     logo: 'https://murivest.com/logo.webp',

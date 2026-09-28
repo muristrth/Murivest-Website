@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description: 'Active Nairobi CRE deal pipeline: office, industrial, and mixed-use assets. Verified yields, clean titles, institutional access.',
     type: 'website',
     url: 'https://murivest.com/our-portfolio',
-    siteName: 'Murivest Realty Group',
+    siteName: 'Murivest Group Ltd',
   },
   twitter: {
     card: 'summary_large_image',
@@ -43,7 +43,7 @@ const webPageSchema = {
   url: 'https://murivest.com/our-portfolio',
   publisher: {
     '@type': 'Organization',
-    name: 'Murivest Realty Group',
+    name: 'Murivest Group Ltd',
     logo: { '@type': 'ImageObject', url: 'https://murivest.com/logo.webp' },
   },
 };
@@ -51,7 +51,7 @@ const webPageSchema = {
 const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'RealEstateAgent',
-  name: 'Murivest Realty Group',
+  name: 'Murivest Group Ltd',
   url: 'https://murivest.com',
   description: 'Institutional commercial real estate advisory and transaction services across Nairobi, London, Dubai, and Southeast Asia.',
   areaServed: ['Nairobi', 'Kenya', 'London', 'Dubai', 'Bangkok', 'Bali'],
@@ -313,7 +313,7 @@ export default function OurPortfolioPage() {
 
           <div className="mt-4 p-6" style={{ backgroundColor: '#F8F7F4', border: '1px solid #E5E2DC' }}>
             <p className="text-[12px] font-light" style={{ color: '#8B7355' }}>
-              Transaction details are indicative and subject to verification. Pricing and yield figures are based on current market conditions and are not guaranteed. All transactions are subject to due diligence, legal review, and formal sale agreement. Murivest Realty Group acts as advisor and facilitator — not principal — in all transactions listed. This information does not constitute an offer or solicitation. This page is for informational purposes only and does not constitute investment advice.
+              Transaction details are indicative and subject to verification. Pricing and yield figures are based on current market conditions and are not guaranteed. All transactions are subject to due diligence, legal review, and formal sale agreement. Murivest Group Ltd acts as advisor and facilitator — not principal — in all transactions listed. This information does not constitute an offer or solicitation. This page is for informational purposes only and does not constitute investment advice.
             </p>
           </div>
         </section>

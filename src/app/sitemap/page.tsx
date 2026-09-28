@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { Building, FileText, Users, TrendingUp, Calculator, Phone, Mail, MapPin, Globe, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Sitemap - Murivest Realty Group',
-  description: 'Complete sitemap of Murivest Realty Group website. Find all pages, sections, and resources for commercial real estate investment in Kenya.',
-  keywords: 'sitemap, navigation, Murivest Realty Group, Kenya real estate, commercial property investment',
+  title: 'Sitemap - Murivest Group Ltd',
+  description: 'Complete sitemap of Murivest Group Ltd website. Find all pages, sections, and resources for commercial real estate investment in Kenya.',
+  keywords: 'sitemap, navigation, Murivest Group Ltd, Kenya real estate, commercial property investment',
   robots: {
     index: true,
     follow: true,
@@ -17,7 +17,7 @@ const sitemapSections = [
     title: "Main Pages",
     icon: Building,
     pages: [
-      { href: "/", label: "Home", description: "Welcome to Murivest Realty Group" },
+      { href: "/", label: "Home", description: "Welcome to Murivest Group Ltd" },
       { href: "/about", label: "About Us", description: "Our heritage and investment philosophy" },
       { href: "/properties", label: "Investment Portfolio", description: "Curated commercial properties" },
       { href: "/contact", label: "Contact Us", description: "Get in touch with our team" }
@@ -61,7 +61,7 @@ export default function SitemapPage() {
             Website Sitemap
           </h1>
           <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
-            Navigate through all sections and pages of Murivest Realty Group.
+            Navigate through all sections and pages of Murivest Group Ltd.
             Find the information and resources you need for your commercial real estate investment journey.
           </p>
         </div>
@@ -181,7 +181,7 @@ export default function SitemapPage() {
             </Link>
           </div>
           <p className="mt-6 text-gray-500 font-light text-sm">
-            © 2025 Murivest Realty Group. All rights reserved.
+            © 2025 Murivest Group Ltd. All rights reserved.
           </p>
         </div>
       </div>

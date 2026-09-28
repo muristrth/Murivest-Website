@@ -1896,7 +1896,7 @@ export function CountryPageClient({
             All properties are subject to availability and require qualified
             investor verification. Full due diligence materials provided under
             NDA. Past performance is not indicative of future returns.
-            Murivest Group Ltd Ltd · murivest.com
+            Murivest Group Ltd · murivest.com
           </p>
         </div>
       </footer>

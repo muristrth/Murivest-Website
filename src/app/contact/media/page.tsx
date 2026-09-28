@@ -3,7 +3,7 @@ import { redirect } from 'next/navigation'
 
 export const metadata: Metadata = {
   title: 'Media Contact | Murivest Advisory',
-  description: 'Press and media contact information for Murivest Realty Group.',
+  description: 'Press and media contact information for Murivest Group Ltd.',
 }
 
 export default function ContactMediaPage() {

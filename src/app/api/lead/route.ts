@@ -156,7 +156,7 @@ const scoreLabel = getScoreLabel(leadScore).label;
         html: `
           <p>Dear ${firstName},</p>
 
-          <p>Thank you for submitting your Mandate Access Application to Murivest Realty Group.</p>
+          <p>Thank you for submitting your Mandate Access Application to Murivest Group Ltd.</p>
 
           <p>Our Investment Desk has received your details and will review your profile before granting access to suitable commercial real estate opportunities.</p>
 

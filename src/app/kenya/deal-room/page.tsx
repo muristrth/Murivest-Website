@@ -504,7 +504,7 @@ export default function DealRoomPage() {
 
           <FadeIn delay={0.15}>
             <p className="text-[11px] text-[#3D3A37] mt-8 text-center">
-              Murivest Realty Group Ltd · All transactions subject to NDA, KYC/AML verification, and proof of funds ·
+              Murivest Group Ltd · All transactions subject to NDA, KYC/AML verification, and proof of funds ·
               Not a public offer · Institutional counterparties only
             </p>
           </FadeIn>

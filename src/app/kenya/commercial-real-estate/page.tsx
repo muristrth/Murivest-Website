@@ -5,7 +5,7 @@ import { ArrowLeft, Building2, Award, Users, ArrowRight } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Commercial Real Estate Kenya | Office Space Nairobi | Grade A Office | Murivest',
   description: 'Institutional-grade commercial real estate in Nairobi. Grade A office space, retail properties, and industrial facilities delivering 8.5–13% yields. Dollar-denominated leases. Minimum $1M USD.',
-  keywords: 'commercial real estate Kenya, office space Nairobi, office for rent Nairobi CBD, Grade A office Westlands, commercial property Kenya, office buildings Nairobi, retail property Kenya, industrial real estate Mombasa Road, commercial real estate investment Africa, institutional real estate Kenya, Murivest Realty Group',
+  keywords: 'commercial real estate Kenya, office space Nairobi, office for rent Nairobi CBD, Grade A office Westlands, commercial property Kenya, office buildings Nairobi, retail property Kenya, industrial real estate Mombasa Road, commercial real estate investment Africa, institutional real estate Kenya, Murivest Group Ltd',
   openGraph: {
     title: 'Commercial Real Estate Kenya | Office Space Nairobi | Murivest',
     description: 'Grade A office space and commercial investment properties in Nairobi. 8.5–13% yields. Dollar-denominated leases.',
@@ -21,7 +21,7 @@ const jsonLd = {
     {
       '@type': 'RealEstateAgent',
       '@id': 'https://murivest.com/#org',
-      name: 'Murivest Realty Group',
+      name: 'Murivest Group Ltd',
       url: 'https://murivest.com',
       address: { '@type': 'PostalAddress', addressLocality: 'Nairobi', addressCountry: 'KE' },
     },

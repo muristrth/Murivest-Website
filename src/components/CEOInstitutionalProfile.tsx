@@ -68,7 +68,7 @@ const CEOInstitutionalProfile = () => {
             <div className="space-y-6 text-[14px] leading-[1.9] text-[#5A5A5A] font-light">
 
               <p>
-                Mark Muriithi founded Murivest Realty Group in 2025 to bridge institutional
+                Mark Muriithi founded Murivest Group Ltd in 2025 to bridge institutional
                 capital and Kenya’s commercial real estate market through structured advisory,
                 disciplined underwriting, and off-market execution.
               </p>

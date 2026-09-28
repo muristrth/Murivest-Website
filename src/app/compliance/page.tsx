@@ -12,7 +12,7 @@ export default function CompliancePage() {
     <InstitutionalPage
       eyebrow="About — Governance"
       title="Regulatory Compliance Framework"
-      subtitle="Murivest Realty Group is an independent real estate advisory firm. We are not a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors."
+      subtitle="Murivest Group Ltd is an independent real estate advisory firm. We are not a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors."
       sections={[
         {
           eyebrow: 'Our Standard',

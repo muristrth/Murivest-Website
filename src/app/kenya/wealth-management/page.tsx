@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowLeft, TrendingUp, Shield, Users, PieChart, Target } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Wealth Management Kenya | Investment Advisory & Portfolio Management | Murivest Realty Group',
+  title: 'Wealth Management Kenya | Investment Advisory & Portfolio Management | Murivest Group Ltd',
   description: 'Professional wealth management services in Kenya including investment advisory, portfolio management, risk assessment, estate planning, and tax optimization for high-net-worth individuals and families.',
   keywords: 'wealth management Kenya, investment advisory Nairobi, portfolio management Kenya, wealth preservation, real estate wealth management, estate planning Kenya, tax optimization, family office services, UHNW wealth management',
 };

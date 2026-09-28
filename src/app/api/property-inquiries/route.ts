@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
       <html>
         <head>
           <meta charset="utf-8">
-          <title>New Property Disposition Inquiry - Murivest Realty Group</title>
+          <title>New Property Disposition Inquiry - Murivest Group Ltd</title>
           <style>
             @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap');
 
@@ -153,7 +153,7 @@ export async function POST(request: NextRequest) {
           <div class="container">
             <div class="header">
               <div class="logo">
-                <img src="/logo.webp" alt="Murivest Realty Group" />
+                <img src="/logo.webp" alt="Murivest Group Ltd" />
               </div>
               <h1>High-Priority Asset Disposition Inquiry</h1>
               <p>Institutional Property Mandate</p>

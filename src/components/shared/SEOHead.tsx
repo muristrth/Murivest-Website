@@ -13,9 +13,9 @@ interface SEOHeadProps {
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({
-  title = "Commercial Real Estate Investment Kenya - Murivest Realty Group",
-  description = "Murivest Realty Group is an independent commercial real estate advisory practice based in Nairobi, Kenya. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.",
-  keywords = "commercial real estate Kenya, property investment Nairobi, real estate investment firm Kenya, commercial property Nairobi, investment properties Kenya, property management Kenya, real estate returns Kenya, Murivest Realty Group, passive income properties Kenya",
+  title = "Commercial Real Estate Investment Kenya - Murivest Group Ltd",
+  description = "Murivest Group Ltd is an independent commercial real estate advisory practice based in Nairobi, Kenya. We originate and advise on institutional-grade mandates across East African commercial property markets. Engagements by mandate only.",
+  keywords = "commercial real estate Kenya, property investment Nairobi, real estate investment firm Kenya, commercial property Nairobi, investment properties Kenya, property management Kenya, real estate returns Kenya, Murivest Group Ltd, passive income properties Kenya",
   image = "https://murivest.com/image.webp",
   url = "https://murivest.com",
   type = "website",
@@ -23,7 +23,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   structuredData
 }) => {
   const siteUrl = "https://murivest.com";
-  const siteName = "Murivest Realty Group";
+  const siteName = "Murivest Group Ltd";
   
   return (
     <Helmet>

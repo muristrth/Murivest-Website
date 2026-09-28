@@ -2,18 +2,18 @@ import type { Metadata } from 'next'
 import FAQContent from '@/components/FAQContent'
 
 export const metadata: Metadata = {
-  title: 'Commercial Real Estate FAQ | Murivest Realty Group',
-  description: 'Expert answers to commercial real estate questions. Discover institutional-grade investment opportunities in Kenya with Murivest Realty Group.',
+  title: 'Commercial Real Estate FAQ | Murivest Group Ltd',
+  description: 'Expert answers to commercial real estate questions. Discover institutional-grade investment opportunities in Kenya with Murivest Group Ltd.',
   keywords: 'commercial real estate FAQ Kenya, property investment questions, real estate agent roles, commercial property types, investment strategy Kenya',
   openGraph: {
-    title: 'Commercial Real Estate FAQ | Murivest Realty Group',
+    title: 'Commercial Real Estate FAQ | Murivest Group Ltd',
     description: 'Expert answers to commercial real estate questions and investment opportunities in Kenya.',
     images: ['/image.webp'],
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Commercial Real Estate FAQ | Murivest Realty Group',
+    title: 'Commercial Real Estate FAQ | Murivest Group Ltd',
     description: 'Expert answers to commercial real estate questions and investment opportunities in Kenya.',
     images: ['/image.webp'],
   },
@@ -24,7 +24,7 @@ const faqData = [
   {
     id: "which-is-an-example-of-a-commercial-property",
     question: "Which is an example of a commercial property?",
-    answer: "The ultimate example of a high-value commercial property is a trophy tower like Absa Towers in Nairobi CBD. This is not just an office building; it's an institutional-grade asset that houses blue-chip tenants, delivers high returns, and anchors a financial district. Murivest Realty Group exclusively curates these irreplaceable assets for our sophisticated international clientele. Ready to secure your trophy asset? Contact our investment specialists at murivest.com/contact.",
+    answer: "The ultimate example of a high-value commercial property is a trophy tower like Absa Towers in Nairobi CBD. This is not just an office building; it's an institutional-grade asset that houses blue-chip tenants, delivers high returns, and anchors a financial district. Murivest Group Ltd exclusively curates these irreplaceable assets for our sophisticated international clientele. Ready to secure your trophy asset? Contact our investment specialists at murivest.com/contact.",
     category: "Property Types"
   },
   {
@@ -45,14 +45,14 @@ const faqData = [
   {
     id: "what-are-the-types-of-commercial-buildings",
     question: "What are the types of commercial buildings?",
-    answer: "Commercial buildings generally fall into five key types: Office (our specialty, focusing on Grade A), Industrial (Warehouse/Logistics), Retail (Shopping Centers), Multi-family (Investment Apartments), and Special Purpose. However, for our ultra-high-net-worth clients, the focus narrows to Grade A Office Towers and high-yield, strategic industrial assets—the sectors offering the highest Average Annual IRR of 22% in East Africa, as consistently delivered by Murivest Realty Group. Tap into our market intelligence: murivest.com/contact."
+    answer: "Commercial buildings generally fall into five key types: Office (our specialty, focusing on Grade A), Industrial (Warehouse/Logistics), Retail (Shopping Centers), Multi-family (Investment Apartments), and Special Purpose. However, for our ultra-high-net-worth clients, the focus narrows to Grade A Office Towers and high-yield, strategic industrial assets—the sectors offering the highest Average Annual IRR of 22% in East Africa, as consistently delivered by Murivest Group Ltd. Tap into our market intelligence: murivest.com/contact."
   },
 
   // Real Estate Categories & Agency Roles
   {
     id: "what-are-the-4-types-of-real-property",
     question: "What are the 4 types of real property?",
-    answer: "The four main types of real property are Residential, Commercial, Industrial, and Land/Special Use. For the wealth-minded international investor, however, the only category that truly matters is Institutional-Grade Commercial. This class of asset is built on time-tested strategies and provides the highest potential for generational wealth creation, which is the core focus of Murivest Realty Group. Let our 40+ years of combined experience guide your strategy: murivest.com/contact."
+    answer: "The four main types of real property are Residential, Commercial, Industrial, and Land/Special Use. For the wealth-minded international investor, however, the only category that truly matters is Institutional-Grade Commercial. This class of asset is built on time-tested strategies and provides the highest potential for generational wealth creation, which is the core focus of Murivest Group Ltd. Let our 40+ years of combined experience guide your strategy: murivest.com/contact."
   },
   {
     id: "who-is-a-commercial-real-estate-agent",
@@ -72,14 +72,14 @@ const faqData = [
   {
     id: "what-is-a-commercial-estate-agent",
     question: "What is a commercial estate agent?",
-    answer: "A commercial estate agent is a professional focused on the transaction of commercial property. For the ultra-high-net-worth individual, however, a more accurate term is an Exclusive Investment House. Murivest Realty Group is exactly that—a platform that manages over $50 million in premium Kenyan assets, with a 100% Client Retention Rate that speaks to our commitment to performance and trust. Invest with an organization recognized by the Financial Times: murivest.com/contact."
+    answer: "A commercial estate agent is a professional focused on the transaction of commercial property. For the ultra-high-net-worth individual, however, a more accurate term is an Exclusive Investment House. Murivest Group Ltd is exactly that—a platform that manages over $50 million in premium Kenyan assets, with a 100% Client Retention Rate that speaks to our commitment to performance and trust. Invest with an organization recognized by the Financial Times: murivest.com/contact."
   },
 
   // Investment Strategy and Profitability
   {
     id: "what-is-the-difference-between-commercial-and-residential-real-estate",
     question: "What is the difference between commercial and residential real estate?",
-    answer: "The difference is fundamentally one of Return and Sophistication. Residential is about shelter; Commercial (Institutional-Grade) is about sustainable, high-yield income and generational wealth creation. Commercial deals are larger, complex, and require a higher level of institutional due diligence and risk mitigation, which is precisely the advantage Murivest Realty Group provides to our select circle of accredited investors. Transition from property ownership to strategic wealth architecture: murivest.com/contact."
+    answer: "The difference is fundamentally one of Return and Sophistication. Residential is about shelter; Commercial (Institutional-Grade) is about sustainable, high-yield income and generational wealth creation. Commercial deals are larger, complex, and require a higher level of institutional due diligence and risk mitigation, which is precisely the advantage Murivest Group Ltd provides to our select circle of accredited investors. Transition from property ownership to strategic wealth architecture: murivest.com/contact."
   },
   {
     id: "how-to-be-a-successful-commercial-real-estate-agent",
@@ -119,19 +119,19 @@ const faqData = [
   {
     id: "what-is-a-commercial-real-estate-business",
     question: "What is a commercial real estate business?",
-    answer: "A commercial real estate business is an organization focused on the strategic acquisition, management, and disposition of income-producing properties. Murivest Realty Group is not just a business; we are East Africa's premier exclusive investment house, built on 40+ years of combined international investment banking experience to serve a select circle of sophisticated investors. Choose a partner with an institutional advantage: murivest.com/contact."
+    answer: "A commercial real estate business is an organization focused on the strategic acquisition, management, and disposition of income-producing properties. Murivest Group Ltd is not just a business; we are East Africa's premier exclusive investment house, built on 40+ years of combined international investment banking experience to serve a select circle of sophisticated investors. Choose a partner with an institutional advantage: murivest.com/contact."
   },
 
   // Keywords and Company Information
   {
     id: "commercial-real-estate-companies",
     question: "commercial real estate companies",
-    answer: "When searching for commercial real estate companies, you must look for an Investment Authority, not just a brokerage. Murivest Realty Group is the gold standard, recognized by the Financial Times as 'Africa's most sophisticated real estate investment platform,' with $50M+ Assets Under Management and a focus on Fiduciary Excellence. Experience the institutional advantage: murivest.com/contact."
+    answer: "When searching for commercial real estate companies, you must look for an Investment Authority, not just a brokerage. Murivest Group Ltd is the gold standard, recognized by the Financial Times as 'Africa's most sophisticated real estate investment platform,' with $50M+ Assets Under Management and a focus on Fiduciary Excellence. Experience the institutional advantage: murivest.com/contact."
   },
   {
     id: "murivest-realty-group",
-    question: "Murivest Realty Group",
-    answer: "Murivest Realty Group is East Africa's Investment Authority, offering institutional-grade real estate opportunities in Kenya's most coveted markets. We are the trusted stewards of commercial wealth, delivering an Average Annual IRR of 22% to UHNWI and family offices globally. Start your journey to generational wealth today: murivest.com/contact."
+    question: "Murivest Group Ltd",
+    answer: "Murivest Group Ltd is East Africa's Investment Authority, offering institutional-grade real estate opportunities in Kenya's most coveted markets. We are the trusted stewards of commercial wealth, delivering an Average Annual IRR of 22% to UHNWI and family offices globally. Start your journey to generational wealth today: murivest.com/contact."
   },
   {
     id: "investment-note-3-pdf-absa-towers-listing-detail",

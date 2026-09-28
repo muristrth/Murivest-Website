@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { Crown, TrendingUp, Award, BookOpen, Users, Globe } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Thought Leadership - Murivest Realty Group',
+  title: 'Thought Leadership - Murivest Group Ltd',
   description: 'Institutional insights, market intelligence, and strategic analysis from Africa\'s premier commercial real estate advisory firm. Expert perspectives on global real estate investment.',
-  keywords: 'real estate thought leadership, institutional investment insights, commercial real estate analysis, African property market intelligence, investment strategy, Murivest Realty Group',
+  keywords: 'real estate thought leadership, institutional investment insights, commercial real estate analysis, African property market intelligence, investment strategy, Murivest Group Ltd',
   openGraph: {
-    title: 'Thought Leadership - Murivest Realty Group',
+    title: 'Thought Leadership - Murivest Group Ltd',
     description: 'Institutional insights and strategic analysis from Africa\'s premier commercial real estate advisory firm.',
     images: ['/murivest_ceo_office.webp'],
   },

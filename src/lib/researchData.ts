@@ -764,7 +764,7 @@ export const researchData: Record<string, researchPostData> = {
   
   <p>My name, by the way, is the Murivest Advisory Director.</p>
   
-  <p>I'm director of <strong>Murivest Realty Group Ltd</strong> and will be the host of this upcoming <strong>Private Site Inspection.</strong></p>
+  <p>I'm director of <strong>Murivest Group Ltd</strong> and will be the host of this upcoming <strong>Private Site Inspection.</strong></p>
   
   <p>Before I show you the <em>only</em> step you need to take to lock yourself in and join me...</p>
   
@@ -861,7 +861,7 @@ export const researchData: Record<string, researchPostData> = {
   <p>Regards,</p>
   
   <p><strong>Murivest Advisory Director</strong><br>
-  Director, Murivest Realty Group Ltd<br>
+  Director, Murivest Group Ltd<br>
   May 2026</p>
   
   <p><strong>P.S.</strong> Again, if you're interested, just email or call our advisory team at <a href="mailto:advisory@murivest.co.ke">advisory@murivest.co.ke</a> and we'll set you up with everything you will need.</p>
@@ -876,7 +876,7 @@ export const researchData: Record<string, researchPostData> = {
   </ul>
   
   <div class="disclaimer">
-    <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Realty Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.</em></p>
+    <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.</em></p>
   </div>
 </article>
 
@@ -2737,7 +2737,7 @@ readTime: '10 min read',
 featured: true,
 content: `
 
-<article> <h1>3 Dangerous Retirement Lies Brokers Are Telling Americans (And How to Protect Your Nest Egg)</h1> <p class="author-date">By Chris Mayer | 2026-05-15 | 10 min read</p> <figure class="featured-image"> <img src="https://i.ibb.co/qLQ3sTmt/dont-let-these-lies.webp" alt="Retirement planning and financial security"  > <figcaption>Retirement security is under threat from Wall Street myths.</figcaption> </figure> <p>After spending years inside the banking industry, I’ve seen firsthand how brokers and financial advisors steer hardworking Americans into retirement traps. Some do it knowingly to generate commissions; others simply repeat what they’ve been taught without examining the facts. In either case, three persistent lies are draining retirement accounts and threatening the financial futures of millions of people. It’s time to blow the lid off these dangerous myths and show you how to build the rich, worry‑free retirement you deserve.</p> <h2>Most Dangerous Retirement Lie #1: “Diversify! Diversify! Diversify!”</h2> <p>The drumbeat of diversification is relentless. Brokers tell you to spread your money across dozens of asset classes, sectors, and geographies. But over‑diversification — what billionaire investor Peter Lynch called “diworsification” — can actually destroy wealth.</p> <p>When you own too many investments, you become a collector rather than an investor. You can’t keep up with due diligence, transaction costs multiply, and long‑term returns suffer. Warren Buffett famously said, “Diversification makes very little sense for those who know what they are doing.” And Jim Rogers warns that brokers invented the concept to protect themselves, not you.</p> <blockquote> <p>“After purchasing six or eight stocks in different industries, the benefit of adding even more stocks to your portfolio in an effort to decrease risk is small.”</p> <cite>— Joel Greenblatt, author of <em>You Can Be a Stock Market Genius</em></cite> </blockquote> <p>Brokers often use “auto‑diversification” products like target‑date funds. These require little work on their part, yet keep money in motion — generating fees and commissions while giving the illusion of safety. The result? A smorgasbord of holdings with no unifying purpose and returns that lag the market year after year.</p> <h2>Most Dangerous Retirement Lie #2: “Bonds Are Safe and Should Dominate Your Portfolio As You Age”</h2> <p>The conventional rule says you should hold your age in bonds — a 65‑year‑old, for example, should have 65% in fixed income. Advisors push this because bonds feel safe. After all, if a company goes bankrupt, bondholders get paid before stockholders.</p> <p>But look closer. In a severe downturn, bonds can lose 50% or more of their value — not much different from stocks. And in an inflationary environment, long‑term bonds get crushed. The fixed payments you receive buy less and less as the cost of living soars.</p> <figure> <img src="https://images.unsplash.com/photo-1559589689-577aabd1db4f?w=800&auto=format&fit=crop" alt="Inflation erodes fixed income returns"  > <figcaption>Inflation can silently destroy the purchasing power of bond returns.</figcaption> </figure> <p>Worse, bondholders have no upside. If the company prospers, the stockholder participates in the growth; the bondholder simply gets their promised coupon back. Bonds give you much of the downside risk of stocks without any of the upside potential. In an era of rising inflation and shaky government finances, that’s a recipe for a diminished retirement.</p> <h2>Most Dangerous Retirement Lie #3: “Always Consult a Broker or Financial Advisor Before Investing”</h2> <p>Financial advisors are supposed to have your best interests at heart. In reality, their advice often underperforms the market — and the fees they charge can devastate your nest egg. Academic studies show that the stock recommendations from bank research departments provide no superior performance. Even Jim Cramer’s picks failed to beat the market when rigorously tracked.</p> <p>Consider the long‑term impact of fees on a $2,000 annual investment earning a steady return before costs:</p> <ul> <li>0.02% management fee → $968,249 after 40 years</li> <li>1% fee → $736,584</li> <li>3% fee → $427,219</li> </ul> <p>That’s a staggering $541,000 difference simply because of fees. As Barron’s #1 independent advisor Ric Edelman says, “The retail mutual fund industry is ripping you off. You are incurring greater risks, lower returns, and higher fees than you realize.”</p> <blockquote> <p>“There’s no greater pitfall than the one created by the retail mutual fund industry. They are ripping you off.”</p> <cite>— Ric Edelman, ranked America’s #1 independent financial advisor by Barron’s</cite> </blockquote> <h2>The Owner‑Operator Edge: A Bulletproof Strategy for Building Wealth</h2> <p>If brokers can’t be trusted, where should you turn? One of the most powerful — and overlooked — strategies is to invest in companies run by large, committed owners. When the people managing the business have their own money on the line, they think like owners, not hired guns chasing quarterly bonuses.</p> <p>Wal‑Mart under founder Sam Walton delivered 20.5% annual returns; after his departure, returns dropped to about 9%. IBM under the Watson family outperformed the market by 6.6% annually, then sagged to just 1.7% above the market once they left. Apple with Steve Jobs trounced the market by 28% per year; without him, it lagged by 3.1%. The pattern is undeniable.</p> <p>I’ve identified a little‑known company that has been run by the same family since inception. Barron’s notes “few Wall Street analysts cover it,” yet Forbes calls it a “cash machine.” Over the past two years it returned 114% — more than 12 times the S&P 500. It holds profitable stakes in energy, commodities, insurance, and luxury property, all under one roof. This kind of “owner‑operator” stock can be a cornerstone of an inflation‑proof retirement.</p> <h2>Inflation Fortress #1: Precious Metals</h2> <p>Gold and silver are classic hedges against the destruction of paper money. Gold has risen every single year for a decade and still has room to run as central banks print money at historic rates. Silver even beat gold in 2010, nearly doubling in value. Hedge fund legend Eric Sprott sees gold north of $2,000, while US Global Investors CEO Frank Holmes calculates gold would need to hit $7,993 just to cover outstanding U.S. money supply. Owning physical bullion or select mining stocks can be a low‑risk way to protect your purchasing power.</p> <h2>Inflation Fortress #2: The World’s Best Farmland</h2> <p>No matter how high inflation climbs, people must eat. Quality farmland is becoming scarce — the National Academy of Sciences warns U.S. cropland is being lost at least 10 times faster than it’s being replaced. The UN says the global rate is 10–100 times faster than replacement. At the same time, world population is projected to grow from 6.9 billion to 10 billion by 2050. The result: food prices and farmland values are on a one‑way trip upward.</p> <p>You don’t need to buy a farm to participate. There are innovative ways to invest in agricultural assets that can generate reliable returns while protecting against inflation. This is a strategic asset class that many brokers never mention.</p> <h2>A Simple Path to the Retirement You Deserve</h2> <p>The retirement lies perpetuated by Wall Street aren’t just annoying — they’re expensive. Over‑diversification dilutes your returns. Blind bond allocation exposes you to inflation without upside. And paying high fees for underperforming advice drains hundreds of thousands of dollars from your nest egg over a lifetime.</p> <p>By focusing on owner‑operator companies, adding hard assets like gold and farmland, and taking control of your own investment decisions, you can sidestep these traps and build a retirement that lets you travel, spoil your grandkids, and leave a lasting legacy. You worked hard for your money. It’s time your money worked hard for you.</p> <div class="disclaimer"> <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Realty Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.</em></p> </div> </article><!-- JSON-LD Structured Data (researchPosting) --><script type="application/ld+json"> { "@context": "https://schema.org", "@type": "researchPosting", "headline": "3 Dangerous Retirement Lies Brokers Are Telling Americans (And How to Protect Your Nest Egg)", "description": "Former banking insider Chris Mayer exposes the three most costly retirement myths perpetuated by brokers and financial advisors. Discover the little-known owner-operator strategy and essential inflation hedges that could help you build lasting wealth.", "author": { "@type": "Person", "name": "Chris Mayer" }, "datePublished": "2011-07-15", "dateModified": "2011-07-15", "image": "https://i.ibb.co/GvZh3mC4/3-most-dangerous-retirment-lies.webp", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://murivest.com/research/3-dangerous-retirement-lies" } } </script><!-- JSON-LD FAQ --><script type="application/ld+json"> { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "Why is over-diversification a retirement mistake?", "acceptedAnswer": { "@type": "Answer", "text": "Owning too many investments dilutes your focus, raises transaction costs, and makes it harder to achieve meaningful returns. As Joel Greenblatt notes, after six or eight stocks in different industries, the risk reduction benefit of adding more is negligible." } }, { "@type": "Question", "name": "Should retirees move heavily into bonds for safety?", "acceptedAnswer": { "@type": "Answer", "text": "Bonds carry significant downside risk during market selloffs and are especially vulnerable to inflation, which erodes fixed payments. They also offer no upside participation in a company's growth, making them a poor substitute for carefully selected stocks." } }, { "@type": "Question", "name": "How can I protect my retirement from inflation?", "acceptedAnswer": { "@type": "Answer", "text": "Consider hard assets like physical gold and silver, which have historically held their value during inflationary periods. Investments in productive farmland and owner-operated companies with strong balance sheets also provide a hedge against rising prices." } }] } </script>
+<article> <h1>3 Dangerous Retirement Lies Brokers Are Telling Americans (And How to Protect Your Nest Egg)</h1> <p class="author-date">By Chris Mayer | 2026-05-15 | 10 min read</p> <figure class="featured-image"> <img src="https://i.ibb.co/qLQ3sTmt/dont-let-these-lies.webp" alt="Retirement planning and financial security"  > <figcaption>Retirement security is under threat from Wall Street myths.</figcaption> </figure> <p>After spending years inside the banking industry, I’ve seen firsthand how brokers and financial advisors steer hardworking Americans into retirement traps. Some do it knowingly to generate commissions; others simply repeat what they’ve been taught without examining the facts. In either case, three persistent lies are draining retirement accounts and threatening the financial futures of millions of people. It’s time to blow the lid off these dangerous myths and show you how to build the rich, worry‑free retirement you deserve.</p> <h2>Most Dangerous Retirement Lie #1: “Diversify! Diversify! Diversify!”</h2> <p>The drumbeat of diversification is relentless. Brokers tell you to spread your money across dozens of asset classes, sectors, and geographies. But over‑diversification — what billionaire investor Peter Lynch called “diworsification” — can actually destroy wealth.</p> <p>When you own too many investments, you become a collector rather than an investor. You can’t keep up with due diligence, transaction costs multiply, and long‑term returns suffer. Warren Buffett famously said, “Diversification makes very little sense for those who know what they are doing.” And Jim Rogers warns that brokers invented the concept to protect themselves, not you.</p> <blockquote> <p>“After purchasing six or eight stocks in different industries, the benefit of adding even more stocks to your portfolio in an effort to decrease risk is small.”</p> <cite>— Joel Greenblatt, author of <em>You Can Be a Stock Market Genius</em></cite> </blockquote> <p>Brokers often use “auto‑diversification” products like target‑date funds. These require little work on their part, yet keep money in motion — generating fees and commissions while giving the illusion of safety. The result? A smorgasbord of holdings with no unifying purpose and returns that lag the market year after year.</p> <h2>Most Dangerous Retirement Lie #2: “Bonds Are Safe and Should Dominate Your Portfolio As You Age”</h2> <p>The conventional rule says you should hold your age in bonds — a 65‑year‑old, for example, should have 65% in fixed income. Advisors push this because bonds feel safe. After all, if a company goes bankrupt, bondholders get paid before stockholders.</p> <p>But look closer. In a severe downturn, bonds can lose 50% or more of their value — not much different from stocks. And in an inflationary environment, long‑term bonds get crushed. The fixed payments you receive buy less and less as the cost of living soars.</p> <figure> <img src="https://images.unsplash.com/photo-1559589689-577aabd1db4f?w=800&auto=format&fit=crop" alt="Inflation erodes fixed income returns"  > <figcaption>Inflation can silently destroy the purchasing power of bond returns.</figcaption> </figure> <p>Worse, bondholders have no upside. If the company prospers, the stockholder participates in the growth; the bondholder simply gets their promised coupon back. Bonds give you much of the downside risk of stocks without any of the upside potential. In an era of rising inflation and shaky government finances, that’s a recipe for a diminished retirement.</p> <h2>Most Dangerous Retirement Lie #3: “Always Consult a Broker or Financial Advisor Before Investing”</h2> <p>Financial advisors are supposed to have your best interests at heart. In reality, their advice often underperforms the market — and the fees they charge can devastate your nest egg. Academic studies show that the stock recommendations from bank research departments provide no superior performance. Even Jim Cramer’s picks failed to beat the market when rigorously tracked.</p> <p>Consider the long‑term impact of fees on a $2,000 annual investment earning a steady return before costs:</p> <ul> <li>0.02% management fee → $968,249 after 40 years</li> <li>1% fee → $736,584</li> <li>3% fee → $427,219</li> </ul> <p>That’s a staggering $541,000 difference simply because of fees. As Barron’s #1 independent advisor Ric Edelman says, “The retail mutual fund industry is ripping you off. You are incurring greater risks, lower returns, and higher fees than you realize.”</p> <blockquote> <p>“There’s no greater pitfall than the one created by the retail mutual fund industry. They are ripping you off.”</p> <cite>— Ric Edelman, ranked America’s #1 independent financial advisor by Barron’s</cite> </blockquote> <h2>The Owner‑Operator Edge: A Bulletproof Strategy for Building Wealth</h2> <p>If brokers can’t be trusted, where should you turn? One of the most powerful — and overlooked — strategies is to invest in companies run by large, committed owners. When the people managing the business have their own money on the line, they think like owners, not hired guns chasing quarterly bonuses.</p> <p>Wal‑Mart under founder Sam Walton delivered 20.5% annual returns; after his departure, returns dropped to about 9%. IBM under the Watson family outperformed the market by 6.6% annually, then sagged to just 1.7% above the market once they left. Apple with Steve Jobs trounced the market by 28% per year; without him, it lagged by 3.1%. The pattern is undeniable.</p> <p>I’ve identified a little‑known company that has been run by the same family since inception. Barron’s notes “few Wall Street analysts cover it,” yet Forbes calls it a “cash machine.” Over the past two years it returned 114% — more than 12 times the S&P 500. It holds profitable stakes in energy, commodities, insurance, and luxury property, all under one roof. This kind of “owner‑operator” stock can be a cornerstone of an inflation‑proof retirement.</p> <h2>Inflation Fortress #1: Precious Metals</h2> <p>Gold and silver are classic hedges against the destruction of paper money. Gold has risen every single year for a decade and still has room to run as central banks print money at historic rates. Silver even beat gold in 2010, nearly doubling in value. Hedge fund legend Eric Sprott sees gold north of $2,000, while US Global Investors CEO Frank Holmes calculates gold would need to hit $7,993 just to cover outstanding U.S. money supply. Owning physical bullion or select mining stocks can be a low‑risk way to protect your purchasing power.</p> <h2>Inflation Fortress #2: The World’s Best Farmland</h2> <p>No matter how high inflation climbs, people must eat. Quality farmland is becoming scarce — the National Academy of Sciences warns U.S. cropland is being lost at least 10 times faster than it’s being replaced. The UN says the global rate is 10–100 times faster than replacement. At the same time, world population is projected to grow from 6.9 billion to 10 billion by 2050. The result: food prices and farmland values are on a one‑way trip upward.</p> <p>You don’t need to buy a farm to participate. There are innovative ways to invest in agricultural assets that can generate reliable returns while protecting against inflation. This is a strategic asset class that many brokers never mention.</p> <h2>A Simple Path to the Retirement You Deserve</h2> <p>The retirement lies perpetuated by Wall Street aren’t just annoying — they’re expensive. Over‑diversification dilutes your returns. Blind bond allocation exposes you to inflation without upside. And paying high fees for underperforming advice drains hundreds of thousands of dollars from your nest egg over a lifetime.</p> <p>By focusing on owner‑operator companies, adding hard assets like gold and farmland, and taking control of your own investment decisions, you can sidestep these traps and build a retirement that lets you travel, spoil your grandkids, and leave a lasting legacy. You worked hard for your money. It’s time your money worked hard for you.</p> <div class="disclaimer"> <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.</em></p> </div> </article><!-- JSON-LD Structured Data (researchPosting) --><script type="application/ld+json"> { "@context": "https://schema.org", "@type": "researchPosting", "headline": "3 Dangerous Retirement Lies Brokers Are Telling Americans (And How to Protect Your Nest Egg)", "description": "Former banking insider Chris Mayer exposes the three most costly retirement myths perpetuated by brokers and financial advisors. Discover the little-known owner-operator strategy and essential inflation hedges that could help you build lasting wealth.", "author": { "@type": "Person", "name": "Chris Mayer" }, "datePublished": "2011-07-15", "dateModified": "2011-07-15", "image": "https://i.ibb.co/GvZh3mC4/3-most-dangerous-retirment-lies.webp", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://murivest.com/research/3-dangerous-retirement-lies" } } </script><!-- JSON-LD FAQ --><script type="application/ld+json"> { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "Why is over-diversification a retirement mistake?", "acceptedAnswer": { "@type": "Answer", "text": "Owning too many investments dilutes your focus, raises transaction costs, and makes it harder to achieve meaningful returns. As Joel Greenblatt notes, after six or eight stocks in different industries, the risk reduction benefit of adding more is negligible." } }, { "@type": "Question", "name": "Should retirees move heavily into bonds for safety?", "acceptedAnswer": { "@type": "Answer", "text": "Bonds carry significant downside risk during market selloffs and are especially vulnerable to inflation, which erodes fixed payments. They also offer no upside participation in a company's growth, making them a poor substitute for carefully selected stocks." } }, { "@type": "Question", "name": "How can I protect my retirement from inflation?", "acceptedAnswer": { "@type": "Answer", "text": "Consider hard assets like physical gold and silver, which have historically held their value during inflationary periods. Investments in productive farmland and owner-operated companies with strong balance sheets also provide a hedge against rising prices." } }] } </script>
 `
 },
 'murivest-institutional-wealth-preservation-guide': {
@@ -2777,7 +2777,7 @@ content: `
   </p>
 
   <p>
-    At Murivest Realty Group Ltd, we believe investors deserve better.
+    At Murivest Group Ltd, we believe investors deserve better.
   </p>
 
   <p>
@@ -2912,7 +2912,7 @@ content: `
   <h2>Beyond Conventional Real Estate Brokerage</h2>
 
   <p>
-    Murivest Realty Group Ltd operates as an independent commercial real estate advisory and acquisition platform focused on strategic opportunities across emerging and institutional markets.
+    Murivest Group Ltd operates as an independent commercial real estate advisory and acquisition platform focused on strategic opportunities across emerging and institutional markets.
   </p>
 
   <p>
@@ -2969,20 +2969,20 @@ content: `
   </p>
 
   <p>
-    At Murivest Realty Group Ltd, we remain committed to helping clients navigate this transition through disciplined advisory, institutional research, and strategic commercial real estate acquisition support.
+    At Murivest Group Ltd, we remain committed to helping clients navigate this transition through disciplined advisory, institutional research, and strategic commercial real estate acquisition support.
   </p>
 
   <blockquote>
     <p>
       "The objective is not short-term speculation. The objective is long-term capital resilience."
     </p>
-    <cite>— Murivest Realty Group Ltd</cite>
+    <cite>— Murivest Group Ltd</cite>
   </blockquote>
 
   <div class="disclaimer">
     <p>
       <em>
-        Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Realty Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.
+        Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.
       </em>
     </p>
   </div>
@@ -3025,7 +3025,7 @@ content: `
     "name": "What makes Murivest different from traditional brokerage firms?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Murivest Realty Group Ltd operates as an independent commercial real estate advisory platform focused on strategic acquisition, institutional-grade due diligence, market intelligence, and long-term wealth preservation principles."
+      "text": "Murivest Group Ltd operates as an independent commercial real estate advisory platform focused on strategic acquisition, institutional-grade due diligence, market intelligence, and long-term wealth preservation principles."
     }
   }]
 }
@@ -4249,7 +4249,7 @@ content: `
       "headline": "Distressed Real Estate in Kenya: The Nakumatt Auction and the Anatomy of Secured Lending Recovery",
       "description": "Standard Chartered Bank Kenya has initiated statutory proceedings to auction Nakumatt-linked properties over Sh1.9 billion in outstanding debt. Institutional analysis of the enforcement mechanics, valuation, and investor opportunity.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-05-03",
       "dateModified": "2026-05-16",
       "mainEntityOfPage": { "@type": "WebPage", "@id": "https://murivest.com/research/standard-chartered-nakumatt-auction-distressed-real-estate-kenya-2026" }
@@ -4568,7 +4568,7 @@ content: `
       "headline": "The Chiromo Disposition: Standard Chartered's Exit from Physical Banking and What It Signals for Westlands Commercial Property",
       "description": "Standard Chartered Kenya has reclassified its 1.880-acre Chiromo headquarters at KES 1.41 billion as held for sale. Institutional analysis of valuation mechanics, investor entry pathways, and Westlands Grade A market outlook.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-05-05",
       "dateModified": "2026-05-16"
     }),
@@ -4916,7 +4916,7 @@ content: `
       "headline": "Stamp Duty on UK Commercial Property: Rate Structures, Available Reliefs, and Strategic Calculation for 2026 Acquisitions",
       "description": "SDLT rates, calculation examples, TOGC relief, and mixed-use strategies for UK commercial property acquisitions in 2026.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-04-05",
       "dateModified": "2026-05-16"
     }),
@@ -5273,7 +5273,7 @@ content: `
       "headline": "Petrol Station Investment: Forecourt Real Estate Yields, Operator Structures, and the EV Transition Risk Horizon",
       "description": "Petrol stations yield 5.5–8% on FRI leases but face a 10–15 year structural risk from EV transition. Institutional analysis of mechanics, covenant quality, and repositioning.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-03-18",
       "dateModified": "2026-05-16"
     }),
@@ -5668,7 +5668,7 @@ content: `
       "headline": "Commercial Property Solicitor Fees in the UK: What Institutional Buyers Pay and Why Cost Control Matters",
       "description": "UK commercial property legal fees range 0.3–1.2% of consideration. Murivest breaks down the cost components, benchmarks, and negotiation levers for institutional buyers.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-03-22",
       "dateModified": "2026-05-16"
     }),
@@ -5996,7 +5996,7 @@ content: `
       "headline": "PBSA Investment in 2026: Demographic Tailwinds, Supply Gaps, and the Yield Compression Paradox in UK Student Property",
       "description": "PBSA yields compressed to 4.8–5.5% but structural supply deficits persist in 28 UK university cities. Analysis of demographics, submarket selection, and international student policy risk.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-03-28",
       "dateModified": "2026-05-16"
     }),
@@ -6720,7 +6720,7 @@ content: `
       "headline": "De-dollarization and the Commercial Real Estate Allocation: What Institutional Capital Is Actually Doing in 2026",
       "description": "Global de-dollarization is reshaping commercial real estate pricing in Dubai, Singapore, and African markets. Analysis of capital rotation, yield implications, and multi-market portfolio strategy.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-04-10",
       "dateModified": "2026-05-16"
     }),
@@ -7137,7 +7137,7 @@ content: `
       "headline": "Medical Centre Property Investment: NHS-Backed Healthcare Real Estate Yields and the Primary Care Infrastructure Deficit",
       "description": "NHS-backed GP surgery properties yield 4.8–6.5% with effective sovereign covenant. Analysis of the UK primary care infrastructure deficit and healthcare property investment case.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-04-14",
       "dateModified": "2026-05-16"
     }),
@@ -7408,7 +7408,7 @@ content: `
       "headline": "UK Industrial Property Investment: Logistics Corridor Yields, Rental Growth, and the Last-Mile Demand That Is Permanently Reshaping the Asset Class",
       "description": "UK industrial yields compressed to 4–5.5% on prime logistics but structural supply deficits justify current pricing. Analysis of Golden Triangle corridors, last-mile demand, and investment returns.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-04-18",
       "dateModified": "2026-05-16"
     }),
@@ -7860,7 +7860,7 @@ content: `
       "headline": "FRI vs IRI Leases in UK Commercial Property: The Institutional Investor's Guide to Lease Structure and Net Income Certainty",
       "description": "The difference between FRI and IRI leases can represent 15–25% of net income over a 25-year hold. Guide to lease structures, service charge caps, and break clause risks.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-04-22",
       "dateModified": "2026-05-16"
     }),
@@ -8341,7 +8341,7 @@ content: `
       "headline": "Commercial vs Residential Property Returns in 2026: A Yield, Risk, and Regulatory Comparison for Wealth-Building Investors",
       "description": "Commercial property delivers 5–8% net yields vs 3.5–5% for residential buy-to-let after tax and costs. Complete comparison for wealth-building investors in 2026.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-04-25",
       "dateModified": "2026-05-16"
     }),
@@ -8803,7 +8803,7 @@ content: `
       "headline": "Commercial Property Yields Explained: Net Initial Yield, Equivalent Yield, and Reversionary Yield for Investment Decision-Making",
       "description": "Net initial yield, equivalent yield, and reversionary yield explained with calculation examples. Foundation of defensible commercial property bidding.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-04-28",
       "dateModified": "2026-05-16"
     }),
@@ -9330,7 +9330,7 @@ content: `
       "headline": "Commercial Property Due Diligence in the UK: The Institutional Framework for Minimising Acquisition Risk",
       "description": "Six-domain institutional due diligence framework for UK commercial property acquisition covering legal, environmental, structural, financial, planning, and tenant analysis.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-04-30",
       "dateModified": "2026-05-16"
     }),
@@ -9696,7 +9696,7 @@ content: `
       "headline": "London Commercial Real Estate: Q2 2026 Market Intelligence for Institutional Investors",
       "description": "West End vacancy 8.2%, prime rents flat, Grade A/B divergence widening. Q2 2026 market intelligence for London commercial property institutional allocators.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-05-02",
       "dateModified": "2026-05-16"
     }),
@@ -10068,7 +10068,7 @@ content: `
       "headline": "UK Retail Property in 2026: The Contrarian Case for Grocery-Anchored and Convenience Retail",
       "description": "Secondary retail yields at 8–12% but grocery-anchored and convenience retail near full occupancy. Contrarian analysis of the UK retail property investment case.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2026-05-08",
       "dateModified": "2026-05-16"
     }),
@@ -10345,7 +10345,7 @@ content: `
       },
       "publisher": {
         "@type": "Organization",
-        "name": "Murivest Realty Group",
+        "name": "Murivest Group Ltd",
         "logo": {
           "@type": "ImageObject",
           "url": "https://murivest.com/logo.webp"
@@ -10564,7 +10564,7 @@ content: `
       </p>
 
       <div class="disclaimer">
-        <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Realty Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.</em></p>
+        <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.</em></p>
       </div>
     </article>
 
@@ -10694,7 +10694,7 @@ content: `
         },
         "publisher": {
           "@type": "Organization",
-          "name": "Murivest Realty Group",
+          "name": "Murivest Group Ltd",
           "logo": {
             "@type": "ImageObject",
             "url": "https://murivest.com/logo.webp"
@@ -10933,7 +10933,7 @@ content: `
       </p>
 
       <div class="disclaimer">
-        <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Realty Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.</em></p>
+        <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.</em></p>
       </div>
     </article>
 
@@ -11065,7 +11065,7 @@ content: `
         },
         "publisher": {
           "@type": "Organization",
-          "name": "Murivest Realty Group",
+          "name": "Murivest Group Ltd",
           "logo": {
             "@type": "ImageObject",
             "url": "https://murivest.com/logo.webp"
@@ -11282,7 +11282,7 @@ content: `
       </p>
 
       <div class="disclaimer">
-        <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Realty Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.</em></p>
+        <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.</em></p>
       </div>
     </article>
 
@@ -11413,7 +11413,7 @@ content: `
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Murivest Realty Group",
+      "name": "Murivest Group Ltd",
       "logo": {
         "@type": "ImageObject",
         "url": "https://murivest.com/logo.webp"
@@ -11678,7 +11678,7 @@ content: `
   </p>
 
   <div class="disclaimer">
-    <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Realty Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.</em></p>
+    <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.</em></p>
   </div>
 </article>
 
@@ -11814,7 +11814,7 @@ content: `
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Murivest Realty Group",
+      "name": "Murivest Group Ltd",
       "logo": {
         "@type": "ImageObject",
         "url": "https://murivest.com/logo.webp"
@@ -12053,7 +12053,7 @@ content: `
     </p>
 
     <div class="disclaimer">
-      <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Realty Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.</em></p>
+      <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.</em></p>
     </div>
 
   </article>
@@ -12191,7 +12191,7 @@ content: `
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Murivest Realty Group",
+      "name": "Murivest Group Ltd",
       "logo": {
         "@type": "ImageObject",
         "url": "https://murivest.com/logo.webp"
@@ -12440,7 +12440,7 @@ content: `
     </p>
 
     <div class="disclaimer">
-      <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Realty Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.</em></p>
+      <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.</em></p>
     </div>
 
   </article>
@@ -12579,7 +12579,7 @@ content: `
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Murivest Realty Group",
+      "name": "Murivest Group Ltd",
       "logo": {
         "@type": "ImageObject",
         "url": "https://murivest.com/logo.webp"
@@ -12846,7 +12846,7 @@ content: `
     </p>
 
     <div class="disclaimer">
-      <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Realty Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.</em></p>
+      <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.</em></p>
     </div>
 
   </article>
@@ -13003,7 +13003,7 @@ content: `
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Murivest Realty Group",
+      "name": "Murivest Group Ltd",
       "logo": {
         "@type": "ImageObject",
         "url": "https://murivest.com/logo.webp"
@@ -13261,7 +13261,7 @@ content: `
     </p>
 
     <div class="disclaimer">
-      <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Realty Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.</em></p>
+      <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. All commercial real estate acquisition decisions should be made with independent professional guidance. Murivest Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. No investment decisions should be made based on information contained in our materials without independent verification, professional legal counsel, and comprehensive due diligence. Past advisory outcomes do not guarantee future results. All investments carry inherent risks, including potential capital loss.</em></p>
     </div>
 
   </article>
@@ -13418,7 +13418,7 @@ content: `
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Murivest Realty Group",
+      "name": "Murivest Group Ltd",
       "logo": {
         "@type": "ImageObject",
         "url": "https://murivest.com/logo.webp"
@@ -13664,7 +13664,7 @@ content: `
     </p>
 
     <div class="disclaimer">
-      <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. Murivest Realty Group Ltd is an independent real estate advisory and research firm. We do not offer regulated financial products or collective investment schemes. All market commentary reflects publicly available information, macroeconomic interpretation, and institutional property analysis at the time of publication. Investors should undertake independent legal, financial, and commercial due diligence before making acquisition or allocation decisions. Property markets involve risk, including potential capital loss, financing exposure, and macroeconomic volatility.</em></p>
+      <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. Murivest Group Ltd is an independent real estate advisory and research firm. We do not offer regulated financial products or collective investment schemes. All market commentary reflects publicly available information, macroeconomic interpretation, and institutional property analysis at the time of publication. Investors should undertake independent legal, financial, and commercial due diligence before making acquisition or allocation decisions. Property markets involve risk, including potential capital loss, financing exposure, and macroeconomic volatility.</em></p>
     </div>
 
   </article>
@@ -13779,7 +13779,7 @@ content: `
       "headline": "Retail Property Acquisition in Kenya: A Capital Deployment Framework",
       "description": "Nairobi retail yields span 9%–12% but most investors misprice entry. Institutional framework for retail property acquisition in Kenya.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2025-12-01",
       "dateModified": "2025-12-01"
     }),
@@ -13917,7 +13917,7 @@ content: `
   </p>
 
   <div class="disclaimer">
-    <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. Murivest Realty Group Ltd is an independent real estate advisory and research firm. All market commentary reflects publicly available information and institutional property analysis at the time of publication. Investors should undertake independent legal, financial, and commercial due diligence before making acquisition or allocation decisions.</em></p>
+    <p><em>Disclaimer: This article is for informational purposes only and does not constitute investment advice. Murivest Group Ltd is an independent real estate advisory and research firm. All market commentary reflects publicly available information and institutional property analysis at the time of publication. Investors should undertake independent legal, financial, and commercial due diligence before making acquisition or allocation decisions.</em></p>
   </div>
 
 </article>
@@ -13986,7 +13986,7 @@ content: `
       "headline": "Gross vs. Net Yield in Kenya: Why the Gap Is Wider Than You Think",
       "description": "Kenyan investors report gross yields of 9%–11%. Net yields average 4.8%–6.2%. The difference is the actual return.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2025-11-30",
       "dateModified": "2025-11-30"
     }),
@@ -14156,7 +14156,7 @@ content: `
       "headline": "CRE Terminology That Changes How You Negotiate in Kenya",
       "description": "18 commercial real estate terms that define property transactions in Kenya — and the risk each one conceals.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2025-11-29",
       "dateModified": "2025-11-29"
     }),
@@ -14331,7 +14331,7 @@ content: `
       "headline": "Kenya Real Estate Tax: What KRA Now Knows That Landlords Do Not",
       "description": "KRA's Ardhisasa integration and MRI regime have transformed rental income enforcement in Kenya.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2025-11-25",
       "dateModified": "2025-11-25"
     }),
@@ -14489,7 +14489,7 @@ content: `
       "headline": "The KUSCCO Collapse: Sacco Housing Finance and What It Exposes",
       "description": "The KSh 12B KUSCCO fraud confirmed structural vulnerabilities in Kenya's Sacco housing finance model.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2025-11-16",
       "dateModified": "2025-11-16"
     }),
@@ -14638,7 +14638,7 @@ content: `
       "headline": "Kenya's Affordable Housing Programme: The Delivery Gap in Numbers",
       "description": "Kenya targets 200,000 units annually. 2024 completions reached ~14,000. Murivest analyses the delivery gap and what it means for private investors.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2025-10-29",
       "dateModified": "2025-10-29"
     }),
@@ -14787,7 +14787,7 @@ content: `
       "headline": "Property Management Technology in Kenya: What Institutional Landlords Are Actually Using",
       "description": "PropTech adoption among Nairobi's institutional landlord base: what is working and why generic platforms fall short.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2025-11-28",
       "dateModified": "2025-11-28"
     }),
@@ -14933,7 +14933,7 @@ content: `
       "headline": "Women in Kenya's Property Industry: Capital, Leadership, and the Structural Change Underway",
       "description": "Women account for 38% of licensed property agents in Kenya. Murivest analyses the structural drivers of this shift.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2025-10-28",
       "dateModified": "2025-10-28"
     }),
@@ -15078,7 +15078,7 @@ content: `
       "headline": "Nairobi Serviced Apartments: The Yield Premium and the Operational Reality",
       "description": "Nairobi serviced apartments outperform conventional leases by 180–240bps on net yield. The outperformance is real — so is the operational intensity.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2025-10-29",
       "dateModified": "2025-10-29"
     }),
@@ -15219,7 +15219,7 @@ content: `
       "headline": "Land Loan Financing in Kenya: What Banks Will and Will Not Fund",
       "description": "Most Kenyan banks restrict bare land financing. Murivest breaks down which lenders fund land, under what conditions, and how Saccos compare.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2025-11-28",
       "dateModified": "2025-11-28"
     }),
@@ -15374,7 +15374,7 @@ content: `
       "headline": "Real Estate Crowdfunding in Kenya: Fractional Ownership and the Regulatory Question",
       "description": "Kenya's real estate crowdfunding market grows in a regulatory grey zone. Murivest analyses what platforms are CMA-compliant and what investors must verify.",
       "author": { "@type": "Organization", "name": "Murivest Research Team" },
-      "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
+      "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } },
       "datePublished": "2025-11-22",
       "dateModified": "2025-11-22"
     }),
@@ -15513,7 +15513,7 @@ content: `
       { source: 'Law Society of Kenya Property Practice Guide', url: 'https://lsk.or.ke' }
     ],
     eeat: { reviewedBy: 'Murivest Research Team', expertise: ['Kenya Property Law', 'Land Registration', 'Title Verification', 'Property Due Diligence'], lastReviewed: '2025-11-28' },
-    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Title Security in Kenya: What a Warranty Deed Actually Guarantees", "description": "Kenya's Land Registration Act provides title certainty with specific legal gaps investors must understand.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-28", "dateModified": "2025-11-28" }),
+    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Title Security in Kenya: What a Warranty Deed Actually Guarantees", "description": "Kenya's Land Registration Act provides title certainty with specific legal gaps investors must understand.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-28", "dateModified": "2025-11-28" }),
     faqSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "What does a Certificate of Title guarantee in Kenya?", "acceptedAnswer": { "@type": "Answer", "text": "A registered Certificate of Title under the Land Registration Act 2012 is conclusive evidence of ownership and protects against adverse claims by third parties not disclosed at registration — with exceptions for fraud, misrepresentation, and overriding interests such as adverse possession that have crystallised before registration." } }, { "@type": "Question", "name": "What is an overriding interest in Kenya land law?", "acceptedAnswer": { "@type": "Answer", "text": "Overriding interests are rights that bind a title holder without being registered — including long-term physical occupation rights, wayleaves, and certain easements. They represent the most significant residual risk in Kenyan title acquisition and require physical site inspection and community consultation to identify, not just registry search." } }] }),
     breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" }, { "@type": "ListItem", "position": 3, "name": "Title Security Kenya", "item": "https://murivest.com/research/warranty-deed" }] }),
     content: `
@@ -15576,7 +15576,7 @@ content: `
     relatedPosts: ['how-to-buy-a-hotel', 'serviced-apartments-nairobi', 'exit-cap-rates'],
     citations: [{ source: 'STR Kenya Hotel Performance Report Q3 2025', url: 'https://str.com' }, { source: 'Kenya Tourism Board Annual Report 2025', url: 'https://tourism.go.ke' }],
     eeat: { reviewedBy: 'Murivest Research Team', expertise: ['Hospitality Real Estate', 'Hotel Asset Management', 'Revenue Management Kenya', 'Tourism Property Investment'], lastReviewed: '2025-11-27' },
-    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Hospitality Real Estate in Kenya: Technology, RevPAR, and the New Investment Calculus", "description": "Nairobi hotels with revenue management tech outperform peers by 28%–34% on RevPAR.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-27", "dateModified": "2025-11-27" }),
+    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Hospitality Real Estate in Kenya: Technology, RevPAR, and the New Investment Calculus", "description": "Nairobi hotels with revenue management tech outperform peers by 28%–34% on RevPAR.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-27", "dateModified": "2025-11-27" }),
     faqSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "What is RevPAR and why does it matter for hotel investment in Kenya?", "acceptedAnswer": { "@type": "Answer", "text": "RevPAR — Revenue Per Available Room — equals occupancy rate multiplied by average daily rate. It is the primary operating performance metric for hotel assets because it captures both pricing power and utilisation simultaneously. STR data for Nairobi in 2025 shows prime hotel RevPAR of KES 9,200–12,400 per room per night for upper-upscale properties, with significant variation driven by revenue management sophistication." } }, { "@type": "Question", "name": "What technology investments produce the highest ROI for Kenyan hotels?", "acceptedAnswer": { "@type": "Answer", "text": "Revenue management systems (RMS) that dynamically price rooms against competitive set, demand forecasting, and channel distribution data have the highest documented ROI — typically recovering implementation cost within 6–12 months through RevPAR improvement. Channel manager integration reducing OTA commission leakage to below 18% is the second-highest priority technology investment for Nairobi mid-scale properties." } }] }),
     breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" }, { "@type": "ListItem", "position": 3, "name": "Hotel Innovation Kenya", "item": "https://murivest.com/research/hotel-innovation" }] }),
     content: `
@@ -15638,7 +15638,7 @@ content: `
     relatedPosts: ['property-rental-yield-calculation', 'discounted-cash-flow', 'multifamily-financing'],
     citations: [{ source: 'CBK Monetary Policy Report 2025', url: 'https://centralbank.go.ke' }, { source: 'Cytonn Research FY2025', url: 'https://cytonn.com' }],
     eeat: { reviewedBy: 'Murivest Research Team', expertise: ['Property Investment Mathematics', 'Leverage Analysis', 'Kenya Property Finance', 'Commercial Real Estate Returns'], lastReviewed: '2025-11-27' },
-    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Cash-on-Cash Return in Kenya: Why Leverage Changes the Yield Conversation", "description": "Cash-on-cash return depends entirely on the capital stack. Murivest breaks down the calculation for Kenya property investors.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-27", "dateModified": "2025-11-27" }),
+    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Cash-on-Cash Return in Kenya: Why Leverage Changes the Yield Conversation", "description": "Cash-on-cash return depends entirely on the capital stack. Murivest breaks down the calculation for Kenya property investors.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-27", "dateModified": "2025-11-27" }),
     faqSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "How do I calculate cash-on-cash return for a Kenyan property?", "acceptedAnswer": { "@type": "Answer", "text": "Cash-on-cash return equals annual pre-tax cash flow (NOI minus annual debt service) divided by total equity invested, expressed as a percentage. For a KES 100M property with KES 30M equity and KES 70M debt at 15% interest (KES 10.5M annual service) generating KES 9.5M NOI: pre-tax cash flow is negative KES 1M — a -3.3% cash-on-cash return despite a 9.5% cap rate asset." } }, { "@type": "Question", "name": "When does leverage improve property returns in Kenya?", "acceptedAnswer": { "@type": "Answer", "text": "Leverage improves cash-on-cash return when the property cap rate exceeds the after-tax cost of debt — a condition called positive leverage. At Kenya's current KES interest rates of 14%–16%, positive leverage requires property cap rates above approximately 16%–18% on a gross debt cost basis, which is rare in institutional-grade Nairobi assets. Dollar-denominated debt at 6%–8% creates positive leverage against most Nairobi commercial cap rates." } }] }),
     breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" }, { "@type": "ListItem", "position": 3, "name": "Cash on Cash Return Kenya", "item": "https://murivest.com/research/cash-on-cash-return" }] }),
     content: `
@@ -15715,7 +15715,7 @@ content: `
     relatedPosts: ['land-loans', 'what-is-improved-land', 'exit-cap-rates'],
     citations: [{ source: 'Hass Consult Land Index Q3 2025', url: 'https://hassconsult.co.ke' }, { source: 'National Land Commission Kenya Annual Report 2024', url: 'https://nlc.go.ke' }],
     eeat: { reviewedBy: 'Murivest Research Team', expertise: ['Kenya Land Market', 'Land Investment Analysis', 'Capital Appreciation', 'Land Risk Management'], lastReviewed: '2025-11-27' },
-    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Land Investment in Kenya: The Capital Appreciation Case and Its Structural Limits", "description": "Kenya land investment: the real capital appreciation track record and the structural risks that destroy returns.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-27", "dateModified": "2025-11-27" }),
+    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Land Investment in Kenya: The Capital Appreciation Case and Its Structural Limits", "description": "Kenya land investment: the real capital appreciation track record and the structural risks that destroy returns.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-27", "dateModified": "2025-11-27" }),
     faqSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "What has been the historical capital appreciation rate for Kenyan land?", "acceptedAnswer": { "@type": "Answer", "text": "Hass Consult's Satellite Towns Land Index shows average annual land appreciation of 8%–14% across Nairobi's satellite corridor — Ruaka, Ruiru, Thika Road, Athi River — over the 2010–2025 period. Prime Nairobi suburban land (Karen, Runda, Muthaiga) has appreciated more slowly in percentage terms but on larger absolute values." } }, { "@type": "Question", "name": "What is encroachment risk and how do I manage it for Kenyan land?", "acceptedAnswer": { "@type": "Answer", "text": "Encroachment occurs when a third party occupies or fences onto a registered plot without the owner's consent. It is most common on absentee-owned rural or peri-urban land. Management requires: physical boundary beaconing at acquisition, erection of perimeter boundary markers or fence, engagement of a local caretaker, and periodic site inspection — minimum annually." } }] }),
     breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" }, { "@type": "ListItem", "position": 3, "name": "Land Investment Kenya", "item": "https://murivest.com/research/pros-cons-buying-land" }] }),
     content: `
@@ -15777,7 +15777,7 @@ content: `
     relatedPosts: ['how-to-buy-a-retail-property', 'single-net-lease', 'commercial-real-estate-terms'],
     citations: [{ source: 'RICS Commercial Lease Practice Notes 2025', url: 'https://rics.org' }, { source: 'Kenya Law Reports', url: 'https://kenyalaw.org' }],
     eeat: { reviewedBy: 'Murivest Research Team', expertise: ['Commercial Lease Structuring', 'Kenya Property Law', 'NOI Analysis', 'Lease Type Comparison'], lastReviewed: '2025-11-27' },
-    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Net Leases in Commercial Real Estate: Expense Allocation and Passive Income Architecture", "description": "Net leases are a spectrum. Most Kenya commercial leases labelled 'net' are modified gross in practice.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-27", "dateModified": "2025-11-27" }),
+    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Net Leases in Commercial Real Estate: Expense Allocation and Passive Income Architecture", "description": "Net leases are a spectrum. Most Kenya commercial leases labelled 'net' are modified gross in practice.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-27", "dateModified": "2025-11-27" }),
     faqSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "What is a triple net (NNN) lease in Kenya commercial property?", "acceptedAnswer": { "@type": "Answer", "text": "A triple net lease transfers three expense categories to the tenant: property taxes (county rates), building insurance, and maintenance costs. The landlord receives a truly passive income stream with minimal operating cost exposure. NNN leases are relatively rare in Nairobi's market, more common in large-format retail with anchor tenants who have operational incentive to maintain the premises." } }, { "@type": "Question", "name": "What is the difference between gross and net leases for Kenya commercial landlords?", "acceptedAnswer": { "@type": "Answer", "text": "Under a gross lease, the landlord pays all operating costs from the fixed rent received. Under a net lease, some or all operating costs transfer to the tenant. The NOI impact is significant: a gross rent of KES 120 per sqft with KES 30 per sqft operating costs produces KES 90 per sqft NOI. A net rent of KES 95 per sqft with tenant-paid operating costs produces the same KES 95 NOI — but landlord cash flow is more predictable under the net structure." } }] }),
     breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" }, { "@type": "ListItem", "position": 3, "name": "Net Leases Kenya CRE", "item": "https://murivest.com/research/net-leases-in-cre" }] }),
     content: `
@@ -15840,7 +15840,7 @@ content: `
     relatedPosts: ['hotel-innovation', 'exit-cap-rates', 'how-to-buy-a-retail-property'],
     citations: [{ source: 'Kenya Tourism Board Investment Guide 2025', url: 'https://tourism.go.ke' }, { source: 'Tourism Act Kenya 2011', url: 'https://kenyalaw.org' }, { source: 'STR Kenya Hotel Performance Report 2025', url: 'https://str.com' }],
     eeat: { reviewedBy: 'Murivest Research Team', expertise: ['Hospitality Real Estate', 'Hotel Acquisition', 'Kenya Tourism Licensing', 'Hotel Feasibility Analysis'], lastReviewed: '2025-11-26' },
-    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Hotel Acquisition in Kenya: Feasibility, Licensing, and the Operating Company Question", "description": "Buying a hotel in Kenya is a business acquisition, not a property transaction. Murivest breaks down the complete investor roadmap.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-26", "dateModified": "2025-11-26" }),
+    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Hotel Acquisition in Kenya: Feasibility, Licensing, and the Operating Company Question", "description": "Buying a hotel in Kenya is a business acquisition, not a property transaction. Murivest breaks down the complete investor roadmap.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-26", "dateModified": "2025-11-26" }),
     faqSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "What licences does a hotel operator need in Kenya?", "acceptedAnswer": { "@type": "Answer", "text": "Kenya hotels require: Tourism Regulatory Authority classification and operating licence under the Tourism Act 2011; Business Permit from the county government; Kenya Revenue Authority PIN registration; Public Health licence from the county public health officer; Fire Safety certificate from the county fire department; and liquor licence from the county alcoholic drinks control board for establishments serving alcohol. Multi-licence compliance is ongoing and annual." } }, { "@type": "Question", "name": "Should I acquire a hotel as property only or include the operating business?", "acceptedAnswer": { "@type": "Answer", "text": "For investors without hospitality operations capability, property-only acquisition with engagement of a branded management company — Six Senses, Radisson, Best Western, or a Kenya-specific operator — is the recommended structure. The management agreement typically provides revenue guarantee or minimum occupancy protection in exchange for management fee of 4%–8% of gross revenue plus incentive fee." } }, { "@type": "Question", "name": "What RevPAR and occupancy assumptions should I use for a Nairobi hotel feasibility study?", "acceptedAnswer": { "@type": "Answer", "text": "STR Kenya 2025 benchmark data provides the most reliable basis: upper-upscale Nairobi hotels average 68%–74% occupancy and KES 9,500–12,000 RevPAR. Mid-scale hotels average 62%–70% occupancy and KES 5,500–8,000 RevPAR. Use conservative assumptions at 90% of STR benchmarks for feasibility modelling, with sensitivity analysis at 80% and 70% of benchmark RevPAR." } }] }),
     breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" }, { "@type": "ListItem", "position": 3, "name": "Hotel Acquisition Kenya", "item": "https://murivest.com/research/how-to-buy-a-hotel" }] }),
     content: `
@@ -15905,7 +15905,7 @@ content: `
     relatedPosts: ['internal-rate-of-return-irr', 'exit-cap-rates', 'cash-on-cash-return'],
     citations: [{ source: 'RICS Valuation Standards (Red Book) 2024', url: 'https://rics.org' }, { source: 'Cytonn Research FY2025', url: 'https://cytonn.com' }],
     eeat: { reviewedBy: 'Murivest Research Team', expertise: ['DCF Valuation', 'Kenya Property Finance', 'Investment Analysis', 'Commercial Real Estate Modelling'], lastReviewed: '2025-11-26' },
-    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Discounted Cash Flow in Kenya Property: Valuing Future Income at Today's Risk", "description": "DCF valuation for Kenya property: discount rate selection, terminal value, and application to Nairobi assets.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-26", "dateModified": "2025-11-26" }),
+    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Discounted Cash Flow in Kenya Property: Valuing Future Income at Today's Risk", "description": "DCF valuation for Kenya property: discount rate selection, terminal value, and application to Nairobi assets.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-26", "dateModified": "2025-11-26" }),
     faqSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "What discount rate should I use for a DCF valuation of Kenyan commercial property?", "acceptedAnswer": { "@type": "Answer", "text": "Kenya commercial property discount rates typically range 13%–18% in KES terms, reflecting the risk-free rate (Kenya government bond yield at 13%–14.5% in 2025) plus a property risk premium of 150–400 basis points depending on asset quality, location, and income certainty. USD-denominated investors apply lower discount rates (8%–12%) reflecting their lower risk-free rate benchmark." } }, { "@type": "Question", "name": "What is a terminal cap rate in Kenya property DCF?", "acceptedAnswer": { "@type": "Answer", "text": "The terminal cap rate is the cap rate applied to Year 11 (or terminal year) NOI to determine the projected exit value. For Grade A Nairobi commercial assets, terminal cap rates of 10%–11% reflect modest yield decompression assumptions relative to entry. Using a terminal cap rate below entry cap rate implies aggressive appreciation assumptions that must be explicitly justified." } }] }),
     breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" }, { "@type": "ListItem", "position": 3, "name": "DCF Property Valuation Kenya", "item": "https://murivest.com/research/discounted-cash-flow" }] }),
     content: `
@@ -15966,7 +15966,7 @@ content: `
     relatedPosts: ['land-loans', 'cash-on-cash-return', 'kenya-affordable-housing-progress-challenges'],
     citations: [{ source: 'CBK Credit Survey 2025', url: 'https://centralbank.go.ke' }, { source: 'Kenya Private Equity & Venture Capital Association 2025', url: 'https://kepvca.or.ke' }],
     eeat: { reviewedBy: 'Murivest Research Team', expertise: ['Kenya Development Finance', 'Residential Development', 'Construction Lending', 'Private Equity Real Estate'], lastReviewed: '2025-11-25' },
-    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Multifamily Financing in Kenya: Banks, Saccos, and the Private Equity Gap", "description": "Kenya's multifamily development financing landscape mapped for mid-market developers.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-25", "dateModified": "2025-11-25" }),
+    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Multifamily Financing in Kenya: Banks, Saccos, and the Private Equity Gap", "description": "Kenya's multifamily development financing landscape mapped for mid-market developers.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-25", "dateModified": "2025-11-25" }),
     faqSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "What construction loan rates do Kenyan banks charge for apartment development?", "acceptedAnswer": { "@type": "Answer", "text": "Commercial bank construction finance in Kenya typically prices at 15%–17% per annum in KES for mid-scale residential development, with drawdown against stage certifications from a quantity surveyor. LTV is typically 60%–70% of projected completed value, with developer equity contribution of 30%–40% required before first drawdown." } }, { "@type": "Question", "name": "Can a Sacco provide development finance for an apartment block in Kenya?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, though at limited scale. SASRA-registered Saccos may advance member development loans of up to 5x–10x accumulated savings for registered developments. For a small apartment block development (12–24 units), Sacco development loans combined with pre-sale revenue can provide adequate project capitalisation without bank exposure, at rates of 12%–14% per annum." } }] }),
     breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" }, { "@type": "ListItem", "position": 3, "name": "Multifamily Financing Kenya", "item": "https://murivest.com/research/multifamily-financing" }] }),
     content: `
@@ -16041,7 +16041,7 @@ content: `
     relatedPosts: ['real-estate-taxes-kenya', 'net-leases-in-cre', 'cash-on-cash-return'],
     citations: [{ source: 'Income Tax Act Kenya Cap 470', url: 'https://kenyalaw.org' }, { source: 'KRA Tax Rulings 2024', url: 'https://kra.go.ke' }],
     eeat: { reviewedBy: 'Murivest Research Team', expertise: ['Kenya Tax Law', 'Commercial Property Taxation', 'KRA Compliance', 'Investment Allowances'], lastReviewed: '2025-11-25' },
-    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Investment Allowance and Accelerated Depreciation in Kenya: What Commercial Property Owners Need to Know", "description": "Kenya's tax framework provides investment allowances for commercial buildings that most owners miss.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Realty Group", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-25", "dateModified": "2025-11-25" }),
+    articleSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": "Investment Allowance and Accelerated Depreciation in Kenya: What Commercial Property Owners Need to Know", "description": "Kenya's tax framework provides investment allowances for commercial buildings that most owners miss.", "author": { "@type": "Organization", "name": "Murivest Research Team" }, "publisher": { "@type": "Organization", "name": "Murivest Group Ltd", "logo": { "@type": "ImageObject", "url": "https://murivest.com/logo.webp" } }, "datePublished": "2025-11-25", "dateModified": "2025-11-25" }),
     faqSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "What is the Industrial Building Allowance in Kenya and who qualifies?", "acceptedAnswer": { "@type": "Answer", "text": "The Industrial Building Allowance (IBA) under the Income Tax Act provides a 10% per annum deduction on the cost of constructing or purchasing a qualifying industrial or commercial building. Hotels, factories, and warehouses qualify. Residential property does not. The allowance is calculated on the original construction cost, not market value." } }, { "@type": "Question", "name": "What wear-and-tear allowances can commercial property owners in Kenya claim?", "acceptedAnswer": { "@type": "Answer", "text": "Plant and machinery installed in commercial buildings — generators, HVAC systems, elevators, electrical installations — qualify for wear-and-tear deductions at rates ranging from 10%–37.5% per annum depending on asset class under the Third Schedule of the Income Tax Act. These deductions are separate from and in addition to the Industrial Building Allowance on the structure." } }] }),
     breadcrumbSchema: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murivest.com" }, { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://murivest.com/research" }, { "@type": "ListItem", "position": 3, "name": "Commercial Property Depreciation Kenya", "item": "https://murivest.com/research/bonus-depreciation" }] }),
     content: `

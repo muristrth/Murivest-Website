@@ -85,7 +85,7 @@ export async function POST(request: NextRequest) {
       </div>
     </div>
     <div class="footer">
-      <strong>Murivest Realty Group</strong> – Institutional Commercial Real Estate<br />
+      <strong>Murivest Group Ltd</strong> – Institutional Commercial Real Estate<br />
       Westlands Business District, Nairobi, Kenya
     </div>
   </div>
@@ -95,7 +95,7 @@ export async function POST(request: NextRequest) {
 
     // 2. Welcome email (institutional style)
     await transporter.sendMail({
-      from: `"Murivest Realty Group" <${process.env.SMTP_USER}>`,
+      from: `"Murivest Group Ltd" <${process.env.SMTP_USER}>`,
       to: email,
       subject: 'Welcome to Murivest Market Intelligence',
       html: `<!DOCTYPE html>
@@ -147,7 +147,7 @@ export async function POST(request: NextRequest) {
       <p class="small" style="margin-top:28px;">This email was sent following a newsletter subscription request submitted through the Murivest website. You may unsubscribe at any time.</p>
     </div>
     <div class="footer">
-      <p><strong>Murivest Realty Group</strong></p>
+      <p><strong>Murivest Group Ltd</strong></p>
       <p>Westlands Business District<br />Nairobi, Kenya</p>
       <p>+254 115 277 610<br />info@murivest.co.ke</p>
     </div>
@@ -338,7 +338,7 @@ export async function POST(request: NextRequest) {
       <p style="margin-top:28px; font-size:13px; color:#6a6a6a;">This exclusive research is available only to Murivest Intelligence subscribers. Forward this email to a colleague who should be aware of this opportunity.</p>
     </div>
     <div class="footer">
-      <p><strong>Murivest Realty Group</strong></p>
+      <p><strong>Murivest Group Ltd</strong></p>
       <p>Westlands Business District, Nairobi, Kenya</p>
       <p>+254 115 277 610 | info@murivest.co.ke</p>
       <p style="margin-top:12px; font-size:10px;">You received this email because you subscribed to Murivest Market Intelligence. To unsubscribe, reply with "Unsubscribe" in the subject line.</p>

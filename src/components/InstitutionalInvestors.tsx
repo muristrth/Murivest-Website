@@ -110,7 +110,7 @@ const InstitutionalInvestors = () => {
             <div>
               <h3 className="text-xl font-serif mb-6 text-[#8B7355]">Executive Summary</h3>
               <p className="text-[14px] leading-[1.8] text-[#5A5A5A] font-light mb-6">
-                Murivest Realty Group provides institutional investors with diversified exposure to East African commercial real estate markets,
+                Murivest Group Ltd provides institutional investors with diversified exposure to East African commercial real estate markets,
                 emphasizing stable income generation and capital preservation.
               </p>
               <p className="text-[14px] leading-[1.8] text-[#5A5A5A] font-light mb-6">

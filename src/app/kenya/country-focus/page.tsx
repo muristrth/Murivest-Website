@@ -21,11 +21,11 @@ import {
 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Country Focus: Institutional Intelligence on African Real Estate Markets | Murivest Realty Group',
+  title: 'Country Focus: Institutional Intelligence on African Real Estate Markets | Murivest Group Ltd',
   description: 'Comprehensive sovereign risk assessments and market intelligence for institutional investors across 12 African nations. Knight Frank, Kenya Bureau of Statistics, McKinsey, PwC, Deloitte, and Harvard Business Review data-driven analysis for UHNWI and family offices.',
   keywords: 'African real estate investment, Kenya property market analysis, Nigeria commercial real estate yields, South Africa institutional property, Ghana real estate investment, Rwanda Kigali development, Uganda Kampala market, Botswana Gaborone property, Egypt Cairo real estate, Morocco Casablanca investment, Tanzania Dar es Salaam, Zambia Lusaka commercial, Zimbabwe Harare property, UHNWI Africa investment, family office real estate Africa',
   openGraph: {
-    title: 'Country Focus: Institutional Intelligence on African Real Estate Markets | Murivest Realty Group',
+    title: 'Country Focus: Institutional Intelligence on African Real Estate Markets | Murivest Group Ltd',
     description: 'Sovereign-grade market intelligence for institutional capital deployment across Sub-Saharan Africa. Knight Frank, KNBS, McKinsey, PwC, Deloitte, and HBR data synthesis.',
     images: ['/kenya-night.webp'],
   },

@@ -34,7 +34,7 @@ export default function AboutPage() {
       "Independent commercial real estate advisory practice founded in 2025.",
     mainEntity: {
       "@type": "Organization",
-      name: "Murivest Group Ltd Ltd",
+      name: "Murivest Group Ltd",
       url: "https://murivest.com",
       foundingDate: "2025",
       founders: [

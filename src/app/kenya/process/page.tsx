@@ -34,7 +34,7 @@ export default function ProcessPage() {
         name: 'Investment Advisory Process',
         description: 'End-to-end commercial real estate investment advisory process including mandate origination, market research, target identification, due diligence, negotiation and closing support.',
         url: 'https://murivest.com/process',
-        providerName: 'Murivest Realty Group',
+        providerName: 'Murivest Group Ltd',
       }))}
       <InvestmentProcess />
     </>

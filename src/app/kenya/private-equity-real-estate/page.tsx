@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowLeft, TrendingUp, Target, Users, BarChart3, Shield } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Private Real Estate Investment Firms Kenya | Institutional Asset Managers Nairobi | Murivest Realty Group',
+  title: 'Private Real Estate Investment Firms Kenya | Institutional Asset Managers Nairobi | Murivest Group Ltd',
   description: 'Leading private real estate investment firms in Kenya. Institutional asset management in Nairobi with direct property ownership, active management, and value creation strategies for UK and Kenyan executives and family offices.',
   keywords: 'private real estate investment firms Kenya, institutional asset managers Nairobi, private equity real estate Kenya, direct property investment Nairobi, private equity property funds, real estate private equity Kenya, discreet real estate investment advisory, family office investment opportunities Africa, legacy real estate investments, capital preservation real estate strategies, old money real estate investments, Africa private wealth real estate deal',
 };

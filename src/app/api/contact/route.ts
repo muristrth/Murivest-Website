@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
       <html>
         <head>
           <meta charset="utf-8">
-          <title>New Investment Inquiry - Murivest Realty Group</title>
+          <title>New Investment Inquiry - Murivest Group Ltd</title>
           <style>
             @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap');
             
@@ -151,7 +151,7 @@ export async function POST(request: NextRequest) {
           <div class="container">
             <div class="header">
               <div class="logo">
-                <img src="/logo.webp" alt="Murivest Realty Group" />
+                <img src="/logo.webp" alt="Murivest Group Ltd" />
               </div>
               <h1>High-Priority Investment Inquiry</h1>
               <p>Strategic Partnership Opportunity</p>
@@ -227,7 +227,7 @@ export async function POST(request: NextRequest) {
       <html>
         <head>
           <meta charset="utf-8">
-          <title>Welcome to Murivest Realty Group - Premium Investment Opportunities</title>
+          <title>Welcome to Murivest Group Ltd - Premium Investment Opportunities</title>
           <style>
             @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap');
             
@@ -460,9 +460,9 @@ export async function POST(request: NextRequest) {
           <div class="container">
             <div class="header">
               <div class="logo">
-                <img src="/logo.webp" alt="Murivest Realty Group" />
+                <img src="/logo.webp" alt="Murivest Group Ltd" />
               </div>
-              <h1>MURIVEST REALTY GROUP</h1>
+              <h1>Murivest Group Ltd</h1>
               <p class="tagline">Exclusive Investment Partners</p>
             </div>
 
@@ -475,7 +475,7 @@ export async function POST(request: NextRequest) {
                 Dear <strong>${body.name}</strong>,
               </div>
 
-              <p>Thank you for your distinguished interest in Murivest Realty Group. As a strategic partner to high-net-worth individuals and institutional investors, we recognize the caliber of investor who seeks our exclusive opportunities.</p>
+              <p>Thank you for your distinguished interest in Murivest Group Ltd. As a strategic partner to high-net-worth individuals and institutional investors, we recognize the caliber of investor who seeks our exclusive opportunities.</p>
 
               <div class="exclusive-badge">
                 Exclusive Partnership Invitation
@@ -534,11 +534,11 @@ export async function POST(request: NextRequest) {
 
             <div class="footer">
               <div class="footer-logo">
-                <img src="/logo.webp" alt="Murivest Realty Group" style="max-height: 50px;" />
+                <img src="/logo.webp" alt="Murivest Group Ltd" style="max-height: 50px;" />
               </div>
               
               <div class="contact-info">
-                <strong>MURIVEST REALTY GROUP</strong><br>
+                <strong>Murivest Group Ltd</strong><br>
                 Westlands Business District, Nairobi, Kenya<br><br>
                 <strong>Direct Line:</strong> +254 115 277 610<br>
                  <strong>Email:</strong> capital@murivest.co.ke<br>
@@ -571,10 +571,10 @@ export async function POST(request: NextRequest) {
 
     // Send confirmation email to investor
     await transporter.sendMail({
-      from: `"Murivest Realty Group" <${process.env.SMTP_USER}>`,
+      from: `"Murivest Group Ltd" <${process.env.SMTP_USER}>`,
       to: body.email,
-      subject: 'Welcome to Murivest Realty Group - Your Premium Investment Journey Begins',
-      text: `Dear ${body.name},\n\nWelcome to Murivest Realty Group - your gateway to premium real estate investment opportunities in Kenya.\n\nOur investment consultants will contact you within 24 hours to discuss your investment goals.\n\nVisit us: https://www.murivest.com/\nCall: +254 115 277 610\n\nBest regards,\nThe Murivest Executive Team`,
+      subject: 'Welcome to Murivest Group Ltd - Your Premium Investment Journey Begins',
+      text: `Dear ${body.name},\n\nWelcome to Murivest Group Ltd - your gateway to premium real estate investment opportunities in Kenya.\n\nOur investment consultants will contact you within 24 hours to discuss your investment goals.\n\nVisit us: https://www.murivest.com/\nCall: +254 115 277 610\n\nBest regards,\nThe Murivest Executive Team`,
       html: confirmationHtml,
     });
 

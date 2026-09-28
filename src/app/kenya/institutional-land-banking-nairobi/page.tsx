@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Institutional Land Banking Nairobi | Murivest Realty Group',
+  title: 'Institutional Land Banking Nairobi | Murivest Group Ltd',
   description: 'Strategic land banking advisory services in Nairobi and key Kenyan markets. Acquire development-ready land for future commercial, industrial, and mixed-use projects with institutional-grade due diligence.',
   keywords: 'institutional land banking Nairobi, Kenya land banking advisory, development land investment Nairobi, land acquisition strategy Kenya, commercial land banking East Africa',
 }

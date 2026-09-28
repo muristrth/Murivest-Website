@@ -546,7 +546,7 @@ export default function InvestmentPipelinePage() {
 
           <FadeIn delay={0.15}>
             <p className="text-[11px] text-[#3D3A37] mt-8 text-center">
-              Murivest Realty Group Ltd · Institutional mandate only · All transactions subject to NDA, KYC/AML verification, and proof of capital
+              Murivest Group Ltd · Institutional mandate only · All transactions subject to NDA, KYC/AML verification, and proof of capital
             </p>
           </FadeIn>
         </div>

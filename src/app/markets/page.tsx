@@ -2416,7 +2416,7 @@ export default function GlobalMarketsPage() {
               letterSpacing: "0.05em",
             }}
           >
-            Murivest Group Ltd Ltd — Nairobi, Kenya · murivest.com ·{" "}
+            Murivest Group Ltd — Nairobi, Kenya · murivest.com ·{" "}
             capital@murivest.com
           </p>
         </div>

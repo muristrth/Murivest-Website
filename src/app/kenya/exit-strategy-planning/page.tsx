@@ -61,7 +61,7 @@ import { ArrowRight, ArrowLeft, Timer, ShieldAlert, FileCheck, TrendingUp, Scale
  */
 
 export const metadata: Metadata = {
-  title: 'Exit Strategy & Risk Mitigation | Murivest Realty Group',
+  title: 'Exit Strategy & Risk Mitigation | Murivest Group Ltd',
   description:
     'Institutional-grade exit strategy and risk mitigation for Kenya commercial real estate. Forensic title audit, CGT compliance, capital repatriation structuring, and three documented exit pathways for UHNWI and family office capital.',
   keywords:

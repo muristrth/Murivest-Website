@@ -2,7 +2,7 @@
  * emails/sequence.ts
  * ─────────────────────────────────────────────────────────────────────────────
  * EMAIL SEQUENCE — VALUE-FIRST FUNNEL
- * Trial & Error To Wealth Creation by Mark Muriithi / Murivest Realty Group
+ * Trial & Error To Wealth Creation by Mark Muriithi / Murivest Group Ltd
  *
  * Model: Book delivered instantly → review is a privilege, not a condition
  *
@@ -94,7 +94,7 @@ const shell = (innerHtml: string): string => `
                     <p style="margin:0;font-family:${font.sans};font-size:10px;
                       letter-spacing:0.2em;text-transform:uppercase;
                       color:${color.gold};font-weight:700;">
-                      Murivest Realty Group
+                      Murivest Group Ltd
                     </p>
                   </td>
                 </tr>
@@ -110,7 +110,7 @@ const shell = (innerHtml: string): string => `
             <td style="padding:24px 40px;background:${color.forestDark};">
               <p style="margin:0;font-family:${font.sans};font-size:11px;
                 color:rgba(248,246,241,0.4);letter-spacing:0.05em;">
-                &copy; ${new Date().getFullYear()} Murivest Realty Group &middot;
+                &copy; ${new Date().getFullYear()} Murivest Group Ltd &middot;
                 <a href="${SITE_URL}" style="color:${color.gold};text-decoration:none;">
                   murivest.com
                 </a>
@@ -181,7 +181,7 @@ const signOff = (closing: string, ps?: string): string => `
       color:${color.forest};font-weight:600;">— Mark Muriithi</p>
     <p style="margin:0;font-family:${font.sans};font-size:11px;
       color:${color.muted};letter-spacing:0.05em;">
-      Founder &amp; CEO, Murivest Realty Group
+      Founder &amp; CEO, Murivest Group Ltd
     </p>
     ${
       ps

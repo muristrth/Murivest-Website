@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Kenya Sale-Leaseback Transactions | Murivest Realty Group',
+  title: 'Kenya Sale-Leaseback Transactions | Murivest Group Ltd',
   description: 'Specialized sale-leaseback advisory services in Kenya. Unlock capital from your commercial property while maintaining operational continuity. Expert structuring for corporate and institutional clients.',
   keywords: 'Kenya sale leaseback transactions, commercial property sale leaseback Kenya, corporate real estate sale leaseback, sale leaseback advisory Nairobi, unlock property capital Kenya',
 }

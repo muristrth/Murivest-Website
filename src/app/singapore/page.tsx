@@ -67,7 +67,7 @@ function StructuredData() {
       {
         '@type': 'Organization',
         '@id': `${SITE_URL}/#organization`,
-        name: 'Murivest Realty Group Ltd',
+        name: 'Murivest Group Ltd',
         alternateName: 'Murivest',
         url: SITE_URL,
         logo: `${SITE_URL}/logo.png`,
@@ -93,7 +93,7 @@ function StructuredData() {
         name: 'Mark Muriithi',
         jobTitle: 'Founder & Chief Executive Officer',
         worksFor: { '@id': `${SITE_URL}/#organization` },
-        description: 'Founder of Murivest Realty Group Ltd in Nairobi in 2025. Independent mandate-based commercial real estate advisory across Kenya, UAE, UK and Singapore coverage from 2026.',
+        description: 'Founder of Murivest Group Ltd in Nairobi in 2025. Independent mandate-based commercial real estate advisory across Kenya, UAE, UK and Singapore coverage from 2026.',
         sameAs: ['https://www.instagram.com/murivest_realty_group'],
       },
       {
@@ -311,7 +311,7 @@ export default function SingaporePage() {
           <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 text-center border border-[#8B7355]/15 p-8 md:p-10 bg-[#F8F7F4]/40">
             <p className="text-[11px] tracking-[0.25em] uppercase text-[#8B7355] mb-3">Regulatory & Engagement</p>
             <p className="text-[13px] text-[#2C2C2C]/70 leading-relaxed font-light max-w-3xl mx-auto">
-              Murivest Realty Group Ltd was founded in Nairobi, Kenya in 2025 by Mark Muriithi. Singapore coverage is established from 2026. All engagements are mandate-based, subject to NDA and KYC. Murivest does not operate collective investment schemes, pool investor capital, or offer regulated financial products. Where a transaction requires representation by a Council for Estate Agencies (CEA) licensed estate agent in Singapore, engagement is via an appropriately licensed partner and all Singapore regulatory compliance is handled by that partner. No CEA license number, RICS firm number, or regulatory badge is published here unless it is a verified, issued number.
+              Murivest Group Ltd was founded in Nairobi, Kenya in 2025 by Mark Muriithi. Singapore coverage is established from 2026. All engagements are mandate-based, subject to NDA and KYC. Murivest does not operate collective investment schemes, pool investor capital, or offer regulated financial products. Where a transaction requires representation by a Council for Estate Agencies (CEA) licensed estate agent in Singapore, engagement is via an appropriately licensed partner and all Singapore regulatory compliance is handled by that partner. No CEA license number, RICS firm number, or regulatory badge is published here unless it is a verified, issued number.
             </p>
           </div>
         </section>

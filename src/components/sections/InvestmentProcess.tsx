@@ -153,7 +153,7 @@ const InvestmentProcess = () => {
           </div>
           
           <p className="text-[11px] text-[#A8A39D] leading-relaxed">
-            Murivest Realty Group Ltd does not offer regulated financial products or unlicensed investment advice. 
+            Murivest Group Ltd does not offer regulated financial products or unlicensed investment advice. 
             All services provided within our licensed commercial real estate advisory scope. Fees disclosed in 
             formal mandate documentation only.
           </p>

@@ -171,7 +171,7 @@ const SignatureBlock = ({
             theme === "light" ? "text-[#C9973A]/70" : "text-[#1B4332]/40"
           }`}
         >
-          Founder & CEO · Murivest Realty Group
+          Founder & CEO · Murivest Group Ltd
         </p>
       )}
     </div>
@@ -941,7 +941,7 @@ export default function BookLandingPage() {
               variants={fadeUp}
               className="text-[#FAF9F6]/60 text-base font-sans leading-relaxed mb-3 max-w-lg"
             >
-              A 26-Chapter Wealth Framework Built Inside Murivest Realty Group — Including the Westlands Deal Teardown, The 10-Year Rule, and a complete KES 500M Portfolio Roadmap.
+              A 26-Chapter Wealth Framework Built Inside Murivest Group Ltd — Including the Westlands Deal Teardown, The 10-Year Rule, and a complete KES 500M Portfolio Roadmap.
             </motion.p>
 
             {/* ── FIX 4: "Free" reframed → "Access granted under pledge" ── */}
@@ -1227,7 +1227,7 @@ export default function BookLandingPage() {
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
                   <p className="font-serif text-2xl text-[#FAF9F6]">Mark Muriithi</p>
-                  <p className="text-[#B8956B] text-sm tracking-wider uppercase mt-1">Founder, Murivest Realty Group</p>
+                  <p className="text-[#B8956B] text-sm tracking-wider uppercase mt-1">Founder, Murivest Group Ltd</p>
                 </div>
               </div>
               {/* Decorative Frame */}
@@ -1732,7 +1732,7 @@ export default function BookLandingPage() {
           <div className="font-serif text-xl text-[#FAF9F6]/60">
             Muriithi<span className="text-[#C9973A]">.</span>
           </div>
-          <p className="text-xs font-sans">© {new Date().getFullYear()} Murivest Realty Group. All rights reserved.</p>
+          <p className="text-xs font-sans">© {new Date().getFullYear()} Murivest Group Ltd. All rights reserved.</p>
           <div className="flex gap-6 text-xs uppercase tracking-wider font-sans">
             <a href="#" className="hover:text-[#C9973A] transition-colors">Privacy</a>
             <a href="#" className="hover:text-[#C9973A] transition-colors">Terms</a>

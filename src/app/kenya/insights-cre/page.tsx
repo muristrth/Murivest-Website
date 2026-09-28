@@ -26,7 +26,7 @@ const jsonLd = {
   url: 'https://murivest.com/insights-cre',
   publisher: {
     '@type': 'Organization',
-    name: 'Murivest Realty Group',
+    name: 'Murivest Group Ltd',
     url: 'https://murivest.com',
   },
   breadcrumb: {

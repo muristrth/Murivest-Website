@@ -52,7 +52,7 @@ export default function GovernanceCompliancePage() {
               <h2 className="text-[10px] tracking-[0.4em] uppercase text-amber-500 font-bold mb-8">Regulatory Positioning</h2>
               <h3 className="text-4xl font-serif italic mb-8">Independent Advisory vs. Fund Management</h3>
               <p className="text-slate-400 leading-relaxed mb-6">
-                Murivest Realty Group is primarily an **Independent Real Estate Investment Advisory and Transaction Origination firm**. 
+                Murivest Group Ltd is primarily an **Independent Real Estate Investment Advisory and Transaction Origination firm**. 
                 We do not operate as a collective investment scheme or pool public capital unless under a specific, 
                 regulated mandate approved by the relevant authorities.
               </p>
@@ -235,7 +235,7 @@ export default function GovernanceCompliancePage() {
           <div className="text-[10px] text-slate-500 font-mono uppercase tracking-widest leading-relaxed">
             <p className="mb-4 font-bold text-slate-400">Institutional Disclaimer:</p>
             <p>
-              Murivest Realty Group is not a licensed bank, deposit-taking institution, or investment fund manager. 
+              Murivest Group Ltd is not a licensed bank, deposit-taking institution, or investment fund manager. 
               Our advisory services are intended for professional, sophisticated, and institutional investors as defined 
               under the relevant securities laws. Real estate investments involve a high degree of risk, and 
               past performance is not indicative of future results. All engagements are subject to a formal 

@@ -16,7 +16,7 @@ export default function EmbedPage() {
             <p style={{ fontSize: '11px', color: '#5A5A5A', margin: 0 }}>
               Powered by{' '}
               <a href="https://murivest.com/tools/uk-sdlt-calculator" style={{ color: '#8B7355', textDecoration: 'none' }}>
-                Murivest Realty Group
+                Murivest Group Ltd
               </a>
               {' '}— Nairobi-based commercial real estate advisory founded 2025.
             </p>

@@ -4,11 +4,11 @@ import Link from 'next/link'
 import { Shield, TrendingUp, Building, ArrowRight, Euro } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Europe Real Estate Investment - Murivest Realty Group',
+  title: 'Europe Real Estate Investment - Murivest Group Ltd',
   description: 'Europe as a mature, stable market for cross-border investments. Compare yield compression in Frankfurt, London, and Amsterdam to frontier growth in Nairobi and Accra.',
-  keywords: 'Europe real estate investment, Frankfurt commercial property, London office market, Amsterdam investment, European real estate diversification, cross-border investments, Murivest Realty Group',
+  keywords: 'Europe real estate investment, Frankfurt commercial property, London office market, Amsterdam investment, European real estate diversification, cross-border investments, Murivest Group Ltd',
   openGraph: {
-    title: 'Europe Real Estate Investment - Murivest Realty Group',
+    title: 'Europe Real Estate Investment - Murivest Group Ltd',
     description: 'Europe as a mature, stable market for cross-border investments.',
     images: ['/kenya-night.webp'],
   },

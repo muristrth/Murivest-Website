@@ -172,7 +172,7 @@ export default function TransactionsClient() {
               <p className="text-[11px] tracking-[0.4em] uppercase text-[#8B7355] font-medium">Investment Committee Disclaimer</p>
             </div>
             <div className="space-y-4 text-[13px] text-[#5A5A5A] font-light leading-[1.9]">
-              <p>The transactions listed are representative examples of mandates executed by Murivest Realty Group and its principals. In accordance with confidentiality obligations, client names and specific asset identifiers have been anonymised.</p>
+              <p>The transactions listed are representative examples of mandates executed by Murivest Group Ltd and its principals. In accordance with confidentiality obligations, client names and specific asset identifiers have been anonymised.</p>
               <p>Historical yields and IRR figures are based on internal valuations and third-party appraisals as of the date of reporting. Past performance is not indicative of future results. All investments carry risk, including loss of capital.</p>
               <p>This track record does not constitute an offer to sell or a solicitation to buy any securities or investment products. Full performance data and case studies are available to qualified institutional investors under NDA.</p>
             </div>

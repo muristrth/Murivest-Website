@@ -3,7 +3,7 @@ import React from 'react';
 
 export const metadata: Metadata = {
   title: 'Institutional Investor Portal | Secure Access | Murivest',
-  description: 'Confidential reporting and performance analytics for qualified institutional partners of Murivest Realty Group.',
+  description: 'Confidential reporting and performance analytics for qualified institutional partners of Murivest Group Ltd.',
   robots: 'noindex, nofollow',
 }
 

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description: 'Office, industrial, retail, and serviced apartment sectors — comparative yield and absorption analysis for Nairobi CRE investors. Q2 2026.',
     type: 'article',
     url: 'https://murivest.com/sector-performance',
-    siteName: 'Murivest Realty Group',
+    siteName: 'Murivest Group Ltd',
   },
   twitter: {
     card: 'summary_large_image',
@@ -43,7 +43,7 @@ const articleSchema = {
   author: { '@type': 'Organization', name: 'Murivest Research Team', url: 'https://murivest.com' },
   publisher: {
     '@type': 'Organization',
-    name: 'Murivest Realty Group',
+    name: 'Murivest Group Ltd',
     logo: { '@type': 'ImageObject', url: 'https://murivest.com/logo.webp' },
   },
   datePublished: '2026-05-12',

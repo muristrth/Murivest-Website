@@ -712,7 +712,7 @@ export default function MandateAccessPage() {
                     <div>
                       <p className="text-[13px] text-[#1B4332] font-medium mb-1" style={{ fontFamily: "'Jost', sans-serif" }}>Important Notice</p>
                       <p className="text-[13px] text-[#6B6B6B] leading-relaxed" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 300 }}>
-                        Murivest Realty Group is an independent advisory firm. We do not offer unlicensed financial products or pool capital from the general public. All engagements are mandate-only and subject to rigorous KYC/AML verification. This form does not constitute an offer to sell or a solicitation to buy any security.
+                        Murivest Group Ltd is an independent advisory firm. We do not offer unlicensed financial products or pool capital from the general public. All engagements are mandate-only and subject to rigorous KYC/AML verification. This form does not constitute an offer to sell or a solicitation to buy any security.
                       </p>
                     </div>
                   </div>
@@ -855,8 +855,8 @@ export default function MandateAccessPage() {
             </div>
           </div>
           <div className="border-t border-[#333] pt-8 text-xs text-center" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 300 }}>
-            <p>Murivest Realty Group Ltd. — NBO · London · Dubai · Uganda · South Africa</p>
-            <p className="mt-2 max-w-2xl mx-auto">Murivest Realty Group is an independent advisory firm. We do not offer unlicensed financial products or pool capital from the general public. All engagements are by mandate only.</p>
+            <p>Murivest Group Ltd. — NBO · London · Dubai · Uganda · South Africa</p>
+            <p className="mt-2 max-w-2xl mx-auto">Murivest Group Ltd is an independent advisory firm. We do not offer unlicensed financial products or pool capital from the general public. All engagements are by mandate only.</p>
           </div>
         </div>
       </footer>

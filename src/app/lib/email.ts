@@ -45,7 +45,7 @@ const CSS = `
 `;
 
 function baseTemplate(content: string): string {
-  return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>${CSS}</style></head><body><div class="wrap">${content}<div class="ftr"><p>Murivest Realty Group Ltd. · Westlands, Nairobi</p><p>NBO · London · Dubai · Uganda · South Africa</p><p style="margin-top:14px;"><a href="${APP_URL}/privacy">Privacy Policy</a> · <a href="${APP_URL}/terms">Terms of Engagement</a></p><p class="disclaimer">Murivest Realty Group is an independent real estate advisory firm. We do not offer unlicensed financial products or pool capital from the general public. All engagements are mandate-only and subject to KYC/AML verification.</p></div></div></body></html>`;
+  return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>${CSS}</style></head><body><div class="wrap">${content}<div class="ftr"><p>Murivest Group Ltd. · Westlands, Nairobi</p><p>NBO · London · Dubai · Uganda · South Africa</p><p style="margin-top:14px;"><a href="${APP_URL}/privacy">Privacy Policy</a> · <a href="${APP_URL}/terms">Terms of Engagement</a></p><p class="disclaimer">Murivest Group Ltd is an independent real estate advisory firm. We do not offer unlicensed financial products or pool capital from the general public. All engagements are mandate-only and subject to KYC/AML verification.</p></div></div></body></html>`;
 }
 
 export type SequenceStep = 'welcome' | 'mandate_brief' | 'follow_up_1' | 'follow_up_2' | 'final_call' | 'newsletter' | 'manual';
@@ -57,7 +57,7 @@ function welcomeEmail(lead: Lead): EmailPayload {
     subject: 'Your Mandate Access Request — Murivest Investment Desk',
     text: `Dear ${lead.first_name} ${lead.last_name},\n\nThank you for your mandate access request. The Investment Desk will respond within 48 hours.\n\nWhatsApp: ${WA_LINK}\nEmail: ${DESK_EMAIL}`,
     html: baseTemplate(`
-      <div class="hdr"><p class="hdr-eyebrow">Murivest Realty Group</p><h1>Mandate Access Request Received</h1></div>
+      <div class="hdr"><p class="hdr-eyebrow">Murivest Group Ltd</p><h1>Mandate Access Request Received</h1></div>
       <div class="body">
         <p class="greeting">Dear ${lead.first_name} ${lead.last_name},</p>
         <p>Thank you for your interest in Murivest's mandate-only commercial real estate opportunities. Your inquiry has been logged by the Investment Desk and is under review.</p>

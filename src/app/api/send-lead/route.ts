@@ -19,7 +19,7 @@ export async function POST(request: Request) {
 
 // Refined Email to High Net Worth Investors
 await transporter.sendMail({
-  from: `"Murivest Realty Group" <${process.env.SMTP_USER}>`,
+  from: `"Murivest Group Ltd" <${process.env.SMTP_USER}>`,
   to: email,
   subject: '2025 Nairobi Prime Commercial Real Estate Report',
   html: `
@@ -40,7 +40,7 @@ await transporter.sendMail({
                 <td style="padding: 50px 60px 40px; text-align: center;">
                   <div style="height: 1px; width: 60px; background: linear-gradient(to right, transparent, #d97706, transparent); margin: 0 auto 30px;"></div>
                   <p style="margin: 0; font-family: Georgia, serif; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #d97706;">
-                    Murivest Realty Group
+                    Murivest Group Ltd
                   </p>
                 </td>
               </tr>
@@ -87,7 +87,7 @@ await transporter.sendMail({
                     Mark Muriithi
                   </p>
                   <p style="margin: 0; font-family: Georgia, serif; font-size: 13px; font-weight: 300; color: #94a3b8;">
-                    Principal, Murivest Realty Group
+                    Principal, Murivest Group Ltd
                   </p>
                 </td>
               </tr>
@@ -97,7 +97,7 @@ await transporter.sendMail({
                 <td style="padding: 30px 60px 50px; text-align: center;">
                   <div style="height: 1px; width: 40px; background: #d97706; margin: 0 auto 25px;"></div>
                   <p style="margin: 0; font-family: Georgia, serif; font-size: 11px; color: #64748b; line-height: 1.6;">
-                    Murivest Realty Group Ltd.<br>
+                    Murivest Group Ltd.<br>
                     Nairobi, Kenya
                   </p>
                 </td>

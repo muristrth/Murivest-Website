@@ -26,7 +26,7 @@ export const metadata: Metadata = {
       'Land registration, EARB, CGT, zoning, and foreign ownership. What changed in 2026 and what it means for CRE investors in Nairobi.',
     type: 'article',
     url: 'https://murivest.com/regulatory-updates',
-    siteName: 'Murivest Realty Group',
+    siteName: 'Murivest Group Ltd',
   },
   twitter: {
     card: 'summary_large_image',
@@ -50,7 +50,7 @@ const articleSchema = {
   },
   publisher: {
     '@type': 'Organization',
-    name: 'Murivest Realty Group',
+    name: 'Murivest Group Ltd',
     logo: { '@type': 'ImageObject', url: 'https://murivest.com/logo.webp' },
   },
   datePublished: '2026-05-12',
@@ -415,7 +415,7 @@ export default function RegulatoryUpdatesPage() {
                   Kenya's regulatory framework rewards investors who engage with it precisely — not those who assume it mirrors more mature jurisdictions. The land title issues, tax enforcement changes, and agency regulations are navigable. The investors who fail in this market are overwhelmingly those who underinvested in local legal and compliance infrastructure. The structural return opportunity does not disappear when you price the complexity correctly. It narrows, but it remains.
                 </p>
                 <p className="text-[11px] font-light mt-4" style={{ color: '#8B7355' }}>
-                  This analysis is for informational purposes only and does not constitute legal or investment advice. Murivest Realty Group recommends engaging qualified Kenyan legal counsel for all property transactions.
+                  This analysis is for informational purposes only and does not constitute legal or investment advice. Murivest Group Ltd recommends engaging qualified Kenyan legal counsel for all property transactions.
                 </p>
               </section>
 

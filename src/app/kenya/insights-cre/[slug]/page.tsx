@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!insight) return {};
   return {
     title: `${insight.title} | Murivest Market Intelligence`,
-    description: insight.excerpt || 'Institutional CRE analysis from Murivest Realty Group.',
+    description: insight.excerpt || 'Institutional CRE analysis from Murivest Group Ltd.',
     openGraph: {
       title: insight.title,
       description: insight.excerpt,
@@ -104,7 +104,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
     headline: insight.title,
     description: insight.excerpt,
     datePublished: insight.publishedAt,
-    publisher: { '@type': 'Organization', name: 'Murivest Realty Group', url: 'https://murivest.com' },
+    publisher: { '@type': 'Organization', name: 'Murivest Group Ltd', url: 'https://murivest.com' },
     url: `https://murivest.com/insights-cre/${slug}`,
     image: insight.mainImage ? urlFor(insight.mainImage).width(1200).url() : undefined,
     breadcrumb: {
