@@ -36,21 +36,11 @@ export const metadata: Metadata = {
     'UK property yield analysis',
   ],
 
-  alternates: {
-    canonical: '/united-kingdom',
-    languages: {
-      'en-GB': '/united-kingdom',
-      'en-US': '/usa',
-      'en-AE': '/united-arab-emirates',
-      'en': '/',
-      'x-default': '/',
-    },
-  },
+
 
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: '/united-kingdom',
     siteName: 'Murivest',
     title: 'Murivest UK | Institutional Commercial Real Estate Advisory & Capital Markets',
     description:

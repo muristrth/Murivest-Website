@@ -37,23 +37,12 @@ export const metadata: Metadata = {
     'CRE Kenya',
   ],
 
-  // Canonical & hreflang (assuming you have other country pages – adjust as needed)
-  alternates: {
-    canonical: '/kenya',
-    languages: {
-      'en-KE': '/kenya',
-      'en-US': '/usa',            // adjust to your US page path
-      'en-GB': '/uk',             // adjust to your UK page path
-      'en': '/',                  // global/fallback English page
-      'x-default': '/',
-    },
-  },
+
 
   // Open Graph – enriched for social sharing and rich pins
   openGraph: {
     type: 'website',
     locale: 'en_KE',
-    url: '/kenya',
     siteName: 'Murivest',
     title: 'Murivest Kenya | Institutional Commercial Real Estate Advisory',
     description:

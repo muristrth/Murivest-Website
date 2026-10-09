@@ -33,22 +33,9 @@ export const metadata: Metadata = {
     "family office real estate USA",
     "private equity real estate USA",
   ],
-  alternates: {
-    canonical: "/usa",
-    languages: {
-      "en-US": "/usa",
-      "en-KE": "/kenya",
-      "en-GB": "/united-kingdom",
-      "en-AE": "/united-arab-emirates",
-      "en-SG": "/singapore",
-      "en": "/",
-      "x-default": "/",
-    },
-  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "/usa",
     siteName: "Murivest",
     title: "Murivest USA | Institutional Commercial Real Estate Advisory",
     description:

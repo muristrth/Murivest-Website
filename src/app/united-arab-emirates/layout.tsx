@@ -36,23 +36,11 @@ export const metadata: Metadata = {
     'Sharjah industrial land',
   ],
 
-  // Canonical & hreflang – adjust to your actual language/country paths
-  alternates: {
-    canonical: '/united-arab-emirates',
-    languages: {
-      'en-AE': '/united-arab-emirates',
-      'en-US': '/usa',
-      'en-GB': '/uk',
-      'en': '/',               // global English
-      'x-default': '/',
-    },
-  },
 
   // Open Graph – enriched for social sharing and rich pins
   openGraph: {
     type: 'website',
     locale: 'en_AE',
-    url: '/united-arab-emirates',
     siteName: 'Murivest',
     title: 'Murivest UAE | Institutional Commercial Real Estate Advisory',
     description:

@@ -40,24 +40,11 @@ export const metadata: Metadata = {
     'Singapore real estate underwriting',
   ],
 
-  // Canonical & hreflang
-  alternates: {
-    canonical: '/singapore',
-    languages: {
-      'en-SG': '/singapore',
-      'en-KE': '/kenya',
-      'en-AE': '/united-arab-emirates',
-      'en-GB': '/united-kingdom',
-      'en': '/',
-      'x-default': '/',
-    },
-  },
 
   // Open Graph – enriched for social sharing
   openGraph: {
     type: 'website',
     locale: 'en_SG',
-    url: '/singapore',
     siteName: 'Murivest',
     title: 'Murivest Singapore | Institutional Commercial Real Estate Advisory',
     description:
