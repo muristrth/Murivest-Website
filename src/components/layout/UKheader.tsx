@@ -54,40 +54,7 @@ const UK_NAV: NavSection[] = [
     description: 'Direct investment opportunities across the UK',
     columns: [
       [
-        { label: 'Investment Opportunities', href: '/united-kingdom/investments', sub: 'All active mandates' },
-        { label: 'Off-Market Opportunities', href: '/united-kingdom/off-market', sub: 'Private treaty access' },
-        { label: 'Income-Producing Assets', href: '/united-kingdom/income-assets', sub: 'Yield-focused acquisitions' },
-        { label: 'Development Opportunities', href: '/united-kingdom/development', sub: 'Ground-up & repositioning' },
-        { label: 'Land Banking', href: '/united-kingdom/land-portfolio', sub: 'Strategic land acquisition' },
-        { label: 'Sale & Leaseback', href: '/united-kingdom/sale-leaseback', sub: 'Corporate real estate' },
-      ],
-    ],
-  },
-  {
-    label: 'Advisory',
-    description: 'Institutional advisory and capital markets',
-    columns: [
-      [
-        { label: 'Capital Markets', href: '/united-kingdom/capital-markets', sub: 'Debt & equity placement' },
-        { label: 'Acquisition Advisory', href: '/united-kingdom/acquisition', sub: 'Buy-side representation' },
-        { label: 'Disposition Advisory', href: '/united-kingdom/disposition', sub: 'Sell-side representation' },
-        { label: 'Valuation & Underwriting', href: '/united-kingdom/valuation', sub: 'Institutional-grade analysis' },
-        { label: 'Asset Management', href: '/united-kingdom/asset-management', sub: 'Portfolio optimization' },
-        { label: 'Property Management', href: '/united-kingdom/property-management', sub: 'Operational excellence' },
-      ],
-    ],
-  },
-  {
-    label: 'Property',
-    description: 'Commercial real estate by sector',
-    columns: [
-      [
-        { label: 'Office', href: '/united-kingdom/properties/office', sub: 'Prime & Grade A stock', icon: Building2 },
-        { label: 'Industrial', href: '/united-kingdom/properties/industrial', sub: 'Logistics & warehousing', icon: Warehouse },
-        { label: 'Retail', href: '/united-kingdom/properties/retail', sub: 'High street & shopping centres', icon: Store },
-        { label: 'Hospitality', href: '/united-kingdom/properties/hospitality', sub: 'Hotels & serviced apartments', icon: Hotel },
-        { label: 'Residential', href: '/united-kingdom/properties/residential', sub: 'Build-to-rent & multifamily', icon: Home },
-        { label: 'Development Land', href: '/united-kingdom/land-portfolio', sub: 'Strategic parcels', icon: LandPlot },
+        { label: 'Investment Opportunities', href: '/united-kingdom/listings', sub: 'UK property listings' },
       ],
     ],
   },
@@ -97,26 +64,8 @@ const UK_NAV: NavSection[] = [
     columns: [
       [
         { label: 'UK Research', href: '/united-kingdom/research', sub: 'Macro overview & outlook' },
-        { label: 'London Office Market', href: '/united-kingdom/research/london-office', sub: 'Vacancy & rent trends' },
-        { label: 'Regional Markets', href: '/united-kingdom/research/regional', sub: 'Manchester, Birmingham, Edinburgh' },
-        { label: 'Investment Yields', href: '/united-kingdom/research/yields', sub: 'Return benchmarks' },
-        { label: 'Market Reports', href: '/united-kingdom/research/reports', sub: 'Quarterly publications' },
-        { label: 'Insights', href: '/united-kingdom/insights', sub: 'Executive commentary' },
-      ],
-    ],
-  },
-  {
-    label: 'Markets',
-    description: 'Coverage across the United Kingdom',
-    href: '/united-kingdom/markets',
-    columns: [
-      [
-        { label: 'London', href: '/united-kingdom/london', sub: 'Prime & West End' },
-        { label: 'Manchester', href: '/united-kingdom/manchester', sub: 'Northern powerhouse' },
-        { label: 'Birmingham', href: '/united-kingdom/birmingham', sub: 'Midlands engine' },
-        { label: 'Edinburgh', href: '/united-kingdom/edinburgh', sub: 'Scottish capital' },
-        { label: 'Glasgow', href: '/united-kingdom/glasgow', sub: 'Central belt' },
-        { label: 'Bristol', href: '/united-kingdom/bristol', sub: 'South West corridor' },
+        { label: 'London Market Report Q2 2026', href: '/united-kingdom/research/london-commercial-real-estate-market-report-q2-2026', sub: 'Commercial real estate report' },
+        { label: 'UK Industrial Growth Corridors', href: '/united-kingdom/research/industrial-property-investment-uk-growth-corridors-2026', sub: 'Industrial investment analysis' },
       ],
     ],
   },
@@ -126,9 +75,9 @@ const UK_NAV: NavSection[] = [
     columns: [
       [
         { label: 'About Murivest UK', href: '/united-kingdom/about', sub: 'Heritage & philosophy' },
-        { label: 'Leadership', href: '/united-kingdom/leadership', sub: 'Advisory team' },
+        { label: 'Leadership', href: '/leadership', sub: 'Executive leadership' },
         { label: 'Contact', href: '/united-kingdom/contact', sub: 'Private office inquiry' },
-        { label: 'Compliance', href: '/united-kingdom/compliance', sub: 'Regulatory information' },
+        { label: 'Compliance', href: '/compliance', sub: 'Regulatory information' },
       ],
     ],
   },
