@@ -69,7 +69,7 @@ const GLOBAL_NAV: NavItem[] = [
         title: 'Advisory',
         links: [
           { label: 'Investment Sales', href: '/services/investment-sales', sub: 'Capital placement' },
-          { label: 'Underwriting', href: '/cre-underwriting', sub: 'Institutional review' },
+          { label: 'Underwriting', href: '/underwriting', sub: 'Institutional review' },
           { label: 'Due Diligence', href: '/due-diligence', sub: 'Technical validation' },
           { label: 'Valuation', href: '/services/valuation', sub: 'Appraisal & advisory' },
           { label: 'Calculators', href: '/tools', sub: 'CRE Calculators'}
@@ -575,7 +575,7 @@ const FullScreenMenu = ({
                     Investor Portal
                   </a>
                   <a
-                    href="/cre-underwriting"
+                    href="/underwriting"
                     onClick={onClose}
                     className="flex items-center gap-2 text-[10px] uppercase tracking-[0.14em] text-[#C4B59D] hover:text-[#FAF9F6] transition-colors"
                   >

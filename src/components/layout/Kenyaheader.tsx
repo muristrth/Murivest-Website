@@ -56,12 +56,12 @@ const KENYA_NAV: NavSection[] = [
     description: 'Direct investment opportunities across Kenya',
     columns: [
       [
-        { label: 'Investment Opportunities', href: '/kenya/investments', sub: 'All active mandates' },
-        { label: 'Off-Market Opportunities', href: '/kenya/off-market', sub: 'Private treaty access' },
+        { label: 'Investment Opportunities', href: '/kenya/investment-pipeline', sub: 'All active mandates' },
+        { label: 'Off-Market Opportunities', href: '/kenya/properties/off-market', sub: 'Private treaty access' },
         { label: 'Income-Producing Assets', href: '/kenya/income-assets', sub: 'Yield-focused acquisitions' },
         { label: 'Development Opportunities', href: '/kenya/development', sub: 'Ground-up & repositioning' },
         { label: 'Land Banking', href: '/kenya/land-portfolio', sub: 'Strategic land acquisition' },
-        { label: 'Sale & Leaseback', href: '/kenya/sale-leaseback', sub: 'Corporate real estate' },
+        { label: 'Sale & Leaseback', href: '/kenya/kenya-sale-leaseback-transactions', sub: 'Corporate real estate' },
       ],
     ],
   },
@@ -72,7 +72,7 @@ const KENYA_NAV: NavSection[] = [
       [
         { label: 'Capital Markets', href: '/kenya/capital-markets', sub: 'Debt & equity placement' },
         { label: 'Acquisition Advisory', href: '/kenya/acquisition', sub: 'Buy-side representation' },
-        { label: 'Disposition Advisory', href: '/kenya/disposition', sub: 'Sell-side representation' },
+        { label: 'Disposition Advisory', href: '/kenya/sell', sub: 'Sell-side representation' },
         { label: 'Valuation & Underwriting', href: '/kenya/valuation', sub: 'Institutional-grade analysis' },
         { label: 'Asset Management', href: '/kenya/asset-management', sub: 'Portfolio optimization' },
         { label: 'Property Management', href: '/kenya/property-management', sub: 'Operational excellence' },
@@ -103,14 +103,14 @@ const KENYA_NAV: NavSection[] = [
         { label: 'Industrial Market', href: '/kenya/research/industrial', sub: 'Supply chain & yields' },
         { label: 'Investment Yields', href: '/kenya/research/yields', sub: 'Return benchmarks' },
         { label: 'Market Reports', href: '/kenya/research/reports', sub: 'Quarterly publications' },
-        { label: 'Insights', href: '/kenya/insights', sub: 'Executive commentary' },
+        { label: 'Insights', href: '/kenya/insights-cre', sub: 'Executive commentary' },
       ],
     ],
   },
   {
     label: 'Markets',
     description: 'Regional coverage and market access',
-    href: '/kenya/markets',
+    href: '/kenya/market',
     columns: [
       [
         { label: 'Nairobi', href: '/kenya/nairobi', sub: 'Capital region' },
@@ -128,7 +128,7 @@ const KENYA_NAV: NavSection[] = [
         { label: 'About Murivest Kenya', href: '/kenya/about', sub: 'Heritage & philosophy' },
         { label: 'Leadership', href: '/kenya/leadership', sub: 'Advisory team' },
         { label: 'Contact', href: '/kenya/contact', sub: 'Private office inquiry' },
-        { label: 'Compliance', href: '/kenya/compliance', sub: 'Licences & regulation' },
+        { label: 'Compliance', href: '/kenya/governance-compliance', sub: 'Licences & regulation' },
       ],
     ],
   },
@@ -455,7 +455,7 @@ export default function KenyaHeader() {
               </a>
 
               <a
-                href="/cre-underwriting"
+                href="/kenya/cre-underwriting"
                 className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#1B4332] text-[#FAF9F6] text-[9px] uppercase tracking-[0.16em] font-medium hover:bg-[#2D5A45] transition-colors"
               >
                 <TrendingUp size={10} strokeWidth={1.5} />
@@ -518,7 +518,7 @@ export default function KenyaHeader() {
               {/* Mobile CTA */}
               <div className="p-5 border-t border-[#2D5A45]/10 space-y-2.5">
                 <a
-                  href="/cre-underwriting"
+                  href="/kenya/cre-underwriting"
                   onClick={closeAll}
                   className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#1B4332] text-[#FAF9F6] text-[10px] tracking-[0.18em] uppercase font-semibold hover:bg-[#2D5A45] transition-colors"
                 >

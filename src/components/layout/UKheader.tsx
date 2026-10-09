@@ -128,7 +128,7 @@ const UK_NAV: NavSection[] = [
         { label: 'About Murivest UK', href: '/united-kingdom/about', sub: 'Heritage & philosophy' },
         { label: 'Leadership', href: '/united-kingdom/leadership', sub: 'Advisory team' },
         { label: 'Contact', href: '/united-kingdom/contact', sub: 'Private office inquiry' },
-        { label: 'Compliance', href: '/united-kingdom/compliance', sub: 'FCA & RICS regulated' },
+        { label: 'Compliance', href: '/united-kingdom/compliance', sub: 'Regulatory information' },
       ],
     ],
   },
@@ -440,7 +440,7 @@ export default function UKHeader() {
               </a>
 
               <a
-                href="/cre-underwriting"
+                href="/underwriting"
                 className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#1B4332] text-[#FAF9F6] text-[9px] uppercase tracking-[0.16em] font-medium hover:bg-[#2D5A45] transition-colors"
               >
                 <TrendingUp size={10} strokeWidth={1.5} />
@@ -502,7 +502,7 @@ export default function UKHeader() {
 
               <div className="p-5 border-t border-[#2D5A45]/10 space-y-2.5">
                 <a
-                  href="/cre-underwriting"
+                  href="/underwriting"
                   onClick={closeAll}
                   className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#1B4332] text-[#FAF9F6] text-[10px] tracking-[0.18em] uppercase font-semibold hover:bg-[#2D5A45] transition-colors"
                 >

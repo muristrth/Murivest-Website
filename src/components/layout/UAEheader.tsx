@@ -61,7 +61,7 @@ const UAE_NAV: NavSection[] = [
         { label: 'Off-Market', href: '/united-arab-emirates/off-market', sub: 'Private treaty access' },
         { label: 'Investment Guides', href: '/united-arab-emirates/investment-guides', sub: 'Sector & emirate primers' },
         { label: 'Asset Classes', href: '/united-arab-emirates/asset-classes', sub: 'Office · Industrial · Retail · Residential' },
-        { label: 'Sale & Leaseback', href: '/united-arab-emirates/sale-leaseback', sub: 'Corporate real estate solutions' },
+        { label: 'Sale & Leaseback', href: '/united-arab-emirates/capital-markets/sale-leaseback', sub: 'Corporate real estate solutions' },
       ],
     ],
   },
@@ -71,7 +71,7 @@ const UAE_NAV: NavSection[] = [
     columns: [
       [
         { label: 'Capital Markets', href: '/united-arab-emirates/capital-markets', sub: 'Debt & equity placement' },
-        { label: 'Acquisition Advisory', href: '/united-arab-emirates/acquisition', sub: 'Buy-side representation' },
+        { label: 'Acquisition Advisory', href: '/united-arab-emirates/capital-markets/institutional-acquisitions', sub: 'Buy-side representation' },
         { label: 'Disposition Advisory', href: '/united-arab-emirates/disposition', sub: 'Sell-side representation' },
         { label: 'Valuation & Underwriting', href: '/united-arab-emirates/valuation', sub: 'Institutional-grade analysis' },
         { label: 'Asset Management', href: '/united-arab-emirates/asset-management', sub: 'Portfolio optimization' },
@@ -100,8 +100,8 @@ const UAE_NAV: NavSection[] = [
         { label: 'UAE Research', href: '/united-arab-emirates/research', sub: 'Macro overview & outlook' },
         { label: 'Dubai Market', href: '/united-arab-emirates/research/dubai-market', sub: 'Transaction & vacancy trends' },
         { label: 'Abu Dhabi Market', href: '/united-arab-emirates/research/abu-dhabi-market', sub: 'Supply & absorption analysis' },
-        { label: 'Investment Yields', href: '/united-arab-emirates/research/yields', sub: 'Return benchmarks by sector' },
-        { label: 'Market Reports', href: '/united-arab-emirates/research/reports', sub: 'Quarterly publications' },
+        { label: 'Investment Yields', href: '/united-arab-emirates/research/uae-cap-rates', sub: 'Return benchmarks by sector' },
+        { label: 'Market Reports', href: '/united-arab-emirates/research', sub: 'Quarterly publications' },
         { label: 'Insights', href: '/united-arab-emirates/insights', sub: 'Executive commentary' },
       ],
     ],
@@ -113,7 +113,7 @@ const UAE_NAV: NavSection[] = [
       [
         { label: 'Developer Network', href: '/united-arab-emirates/developers', sub: 'Strategic partnerships' },
         { label: 'New Developments', href: '/united-arab-emirates/developers/new-developments', sub: 'Off-plan & pipeline stock' },
-        { label: 'Joint Ventures', href: '/united-arab-emirates/developers/joint-ventures', sub: 'Co-investment structures' },
+        { label: 'Joint Ventures', href: '/united-arab-emirates/capital-markets/joint-ventures', sub: 'Co-investment structures' },
         { label: 'Master Plans', href: '/united-arab-emirates/developers/master-plans', sub: 'District & community strategy' },
       ],
     ],
@@ -453,7 +453,7 @@ export default function UAEHeader() {
               </a>
 
               <a
-                href="/cre-underwriting"
+                href="/underwriting"
                 className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#1B4332] text-[#FAF9F6] text-[9px] uppercase tracking-[0.16em] font-medium hover:bg-[#2D5A45] transition-colors"
               >
                 <TrendingUp size={10} strokeWidth={1.5} />
@@ -516,7 +516,7 @@ export default function UAEHeader() {
               {/* Mobile CTA */}
               <div className="p-5 border-t border-[#2D5A45]/10 space-y-2.5">
                 <a
-                  href="/cre-underwriting"
+                  href="/underwriting"
                   onClick={closeAll}
                   className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#1B4332] text-[#FAF9F6] text-[10px] tracking-[0.18em] uppercase font-semibold hover:bg-[#2D5A45] transition-colors"
                 >
