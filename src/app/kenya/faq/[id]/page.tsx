@@ -141,6 +141,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${faq.question} | Murivest Group Ltd FAQ`,
     description: faq.answer.substring(0, 160) + '...',
+    alternates: { canonical: `https://murivest.com/faq/${resolvedParams.id}` }, // audit 2026-10-09: 3 byte-identical FAQ trees; global /faq is canonical
     keywords: `commercial real estate FAQ, ${faq.question.toLowerCase()}`,
     openGraph: {
       title: `${faq.question} | Murivest Group Ltd FAQ`,

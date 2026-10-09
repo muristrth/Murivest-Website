@@ -61,7 +61,7 @@ export const metadata: Metadata = {
 export default function researchPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "researchPosting",
+    "@type": "Article",
     "headline": researchPost.title,
     "description": researchPost.description,
     "author": {

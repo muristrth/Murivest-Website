@@ -29,7 +29,7 @@ function articleSchema(post: researchPostData, id: string) {
   const description = buildDescription(post);
   return {
     '@context': 'https://schema.org',
-    '@type': 'researchPosting',
+    '@type': 'Article',
     headline: post.title,
     description,
     image,

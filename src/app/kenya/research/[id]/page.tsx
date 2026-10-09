@@ -29,7 +29,7 @@ function articleSchema(post: researchPostData, id: string) {
   const description = buildDescription(post);
   return {
     '@context': 'https://schema.org',
-    '@type': 'researchPosting',
+    '@type': 'Article',
     headline: post.title,
     description,
     image,
@@ -37,11 +37,11 @@ function articleSchema(post: researchPostData, id: string) {
     publisher: { '@type': 'Organization', name: 'Murivest Group Ltd', url: 'https://murivest.com', logo: { '@type': 'ImageObject', url: 'https://murivest.com/logo.webp' } },
     datePublished: post.date,
     dateModified: post.dateModified || post.date,
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://murivest.com/research/${id}` },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://murivest.com/kenya/research/${id}` },
     articleSection: post.category,
     keywords: post.tags?.join(', ') || post.category,
     inLanguage: 'en-KE',
-    url: `https://murivest.com/research/${id}`,
+    url: `https://murivest.com/kenya/research/${id}`,
   };
 }
 
@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!post) return { title: 'Article Not Found | Murivest Group Ltd' };
   const description = buildDescription(post);
   const image = post.image || 'https://murivest.com/default-research-image.webp';
-  const url = `https://murivest.com/research/${id}`;
+  const url = `https://murivest.com/kenya/research/${id}`;
   return {
     title: `${post.title} | Murivest Group Ltd`,
     description,

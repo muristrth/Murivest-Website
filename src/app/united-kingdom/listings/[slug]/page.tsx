@@ -63,6 +63,7 @@ export async function generateMetadata({
 
   return {
     title: `${property.title} | UK Property | Murivest Group`,
+    alternates: { canonical: `https://murivest.com/united-kingdom/listings/${slug}` }, // audit 2026-10-09: /uk-properties duplicates /united-kingdom/listings
     description: property.subtitle || property.description || '',
     openGraph: {
       title: property.title,
