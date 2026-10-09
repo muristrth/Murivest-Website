@@ -49,7 +49,7 @@ const results=[]; const tally={};
 for(const f of files){
   const src=fs.readFileSync(f,'utf8'); const seen=new Map();
   for(const line of src.split(/\r?\n/)){ const lab=(line.match(/label:\s*['"]([^'"]+)['"]/)||[])[1];
-    for(const m of line.matchAll(/href\s*[=:]\s*["'{`]*\s*["']?(\/[^"'`$ }#]*)/g)){ const h=m[1].replace(/(.)\/$/,'$1'); if(!seen.has(h)) seen.set(h,lab||''); } }
+    for(const m of line.matchAll(/\b(?:href|to)\s*[=:]\s*["'{`]*\s*["']?(\/[^"'`$ }#]*)/g)){ const h=m[1].replace(/(.)\/$/,'$1'); if(!seen.has(h)) seen.set(h,lab||''); } }
   console.log(`\n${path.basename(f)}: ${seen.size} unique internal links`);
   for(const [h,label] of seen){ const c=classify(h); results.push({file:path.basename(f),href:h,label,...c}); tally[c.status]=(tally[c.status]||0)+1;
     if(c.status!=='OK') console.log(`   ${c.status.padEnd(18)} ${h}${label?`  [${label}]`:''}${c.to?` -> ${c.to}`:''}${c.note?`  (${c.note})`:''}${c.via?`  via ${c.via}${c.source?` (${c.source})`:''}`:''}${c.reason?`  reason: ${c.reason}`:''}`); }

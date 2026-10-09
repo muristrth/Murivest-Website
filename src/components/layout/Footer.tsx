@@ -131,16 +131,16 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
               </h4>
               <ul className="space-y-3">
                 {[{
-                    to: "/commercial-real-estate", 
+                    to: "/kenya/commercial-real-estate", 
                     label: "Commercial Advisory"
                   }, {
-                    to: "/process", 
+                    to: "/kenya/process", 
                     label: "Our Process"
                   }, {
                     to: "/legal-compliance", 
                     label: "Compliance Framework"
                   }, {
-                    to: "/representative-transactions", 
+                    to: "/kenya/representative-transactions", 
                     label: "Track Record"
                   }, {
                     to: "/about", 
@@ -166,19 +166,19 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
               </h4>
               <ul className="space-y-3">
                 {[{
-                    to: "/case-study-legacy", 
+                    to: "/kenya/case-study-legacy", 
                     label: "Case Study"
                   }, {
-                    to: "/kenya-economic-outlook", 
+                    to: "/kenya/kenya-economic-outlook", 
                     label: "Kenya Economic Outlook"
                   }, {
-                    to: "/regulatory-updates", 
+                    to: "/kenya/regulatory-updates", 
                     label: "Regulatory Updates"
                   }, {
-                    to: "/reit-opportunities", 
+                    to: "/kenya/reit-opportunities", 
                     label: "REIT Opportunities"
                   }, {
-                    to: "/sector-performance", 
+                    to: "/kenya/sector-performance", 
                     label: "Sector Analysis"
                   }, {
                     to: "/research", 
@@ -210,7 +210,7 @@ const Footer: React.FC<FooterProps> = ({ copyrightYear }) => {
                     to: "/privacy", 
                     label: "Privacy Policy"
                   }, {
-                    to: "/governance-compliance", 
+                    to: "/kenya/governance-compliance", 
                     label: "Governance & Compliance"
                   }].map((link) => (
                   <li key={link.label}>

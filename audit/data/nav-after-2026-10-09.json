@@ -1,10 +1,83 @@
 [
  {
   "file": "Footer.tsx",
+  "href": "/kenya/commercial-real-estate",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "Footer.tsx",
+  "href": "/kenya/process",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "Footer.tsx",
   "href": "/legal-compliance",
   "label": "",
   "status": "EXCEPTION",
   "reason": "Global footer legal link: no global page (only /kenya/legal-compliance, Kenya-specific; global /compliance is a different page). Awaiting legal decision. TEMPORARY EXCEPTION."
+ },
+ {
+  "file": "Footer.tsx",
+  "href": "/kenya/representative-transactions",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "Footer.tsx",
+  "href": "/about",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "Footer.tsx",
+  "href": "/contact",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "Footer.tsx",
+  "href": "/kenya/case-study-legacy",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "Footer.tsx",
+  "href": "/kenya/kenya-economic-outlook",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "Footer.tsx",
+  "href": "/kenya/regulatory-updates",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "Footer.tsx",
+  "href": "/kenya/reit-opportunities",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "Footer.tsx",
+  "href": "/kenya/sector-performance",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "Footer.tsx",
+  "href": "/research",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "Footer.tsx",
+  "href": "/terms",
+  "label": "",
+  "status": "EXCEPTION",
+  "reason": "Global footer legal link: no global terms page exists (only /kenya/terms). Awaiting legal decision. TEMPORARY EXCEPTION."
  },
  {
   "file": "Footer.tsx",
@@ -15,10 +88,9 @@
  },
  {
   "file": "Footer.tsx",
-  "href": "/terms",
+  "href": "/kenya/governance-compliance",
   "label": "",
-  "status": "EXCEPTION",
-  "reason": "Global footer legal link: no global terms page exists (only /kenya/terms). Awaiting legal decision. TEMPORARY EXCEPTION."
+  "status": "OK"
  },
  {
   "file": "Header.tsx",
