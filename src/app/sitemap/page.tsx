@@ -27,8 +27,8 @@ const sitemapSections = [
     title: "Investment Services",
     icon: TrendingUp,
     pages: [
-      { href: "/process", label: "Investment Process", description: "How we identify and manage investments" },
-      { href: "/market", label: "Market Intelligence", description: "Kenya real estate market analysis" },
+      { href: "/kenya/process", label: "Investment Process", description: "How we identify and manage investments" },
+      { href: "/kenya/market", label: "Market Intelligence", description: "Kenya real estate market analysis" },
       { href: "/leadership", label: "Executive Leadership", description: "Meet our investment team" },
       { href: "/calculator", label: "Investment Calculator", description: "Calculate potential returns" }
     ]

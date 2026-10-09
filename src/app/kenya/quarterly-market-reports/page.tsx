@@ -217,7 +217,7 @@ export default function QuarterlyMarketReportsPage() {
               <Link href="/contact" className="px-12 py-5 bg-amber-600 text-white text-[10px] tracking-[0.3em] uppercase font-bold hover:bg-white hover:text-slate-950 transition-all duration-500 shadow-xl">
                 Subscribe Now
               </Link>
-              <Link href="/market-insights" className="px-12 py-5 border border-white/20 text-white text-[10px] tracking-[0.3em] uppercase font-bold hover:bg-white hover:text-slate-950 transition-all duration-500 flex items-center justify-center gap-4">
+              <Link href="/kenya/market-insights" className="px-12 py-5 border border-white/20 text-white text-[10px] tracking-[0.3em] uppercase font-bold hover:bg-white hover:text-slate-950 transition-all duration-500 flex items-center justify-center gap-4">
                 <TrendingUp className="w-4 h-4" />
                 View Latest Insights
               </Link>

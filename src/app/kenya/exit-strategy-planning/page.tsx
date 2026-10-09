@@ -696,7 +696,7 @@ export default function ExitStrategyPage() {
 
               {/* Secondary CTA */}
               <Link
-                href="/institutional-investors"
+                href="/kenya/institutional-investors"
                 className="group flex items-center justify-between gap-4 border border-[#333] hover:border-[#8B7355] text-[#888] hover:text-white px-8 py-6 transition-all duration-500"
               >
                 <div>

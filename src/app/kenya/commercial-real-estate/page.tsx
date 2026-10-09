@@ -354,7 +354,7 @@ export default function CommercialRealEstatePage() {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
-                  href="/our-portfolio"
+                  href="/kenya/our-portfolio"
                   className="group inline-flex items-center justify-center gap-3 px-10 py-4 border border-[#B8956B]/40 text-[#B8956B] text-[11px] tracking-[0.25em] uppercase font-semibold hover:bg-[#B8956B]/10 hover:border-[#B8956B] transition-all duration-300"
                 >
                   View Portfolio

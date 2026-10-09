@@ -167,7 +167,7 @@ export default function ESGPolicyPage() {
           </p>
 
           <Link
-            href="/institutional-investors"
+            href="/kenya/institutional-investors"
             className="group flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase text-[#2C2C2C] hover:text-[#8B7355] transition-colors duration-500"
           >
             <span>Institutional Advisory Mandate</span>

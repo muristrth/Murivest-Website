@@ -600,7 +600,7 @@ export default function NDAPage() {
       <footer className="nda-footer">
         <span>© {new Date().getFullYear()} Murivest Realty Ltd · Nairobi, Kenya</span>
         <span>Governed by the Laws of Kenya</span>
-        <Link href="/confidentiality" className="nda-footer-link">
+        <Link href="/kenya/confidentiality" className="nda-footer-link">
           Confidentiality Policy
         </Link>
       </footer>

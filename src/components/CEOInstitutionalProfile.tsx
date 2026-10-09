@@ -94,7 +94,7 @@ const CEOInstitutionalProfile = () => {
             {/* ── CTA (subtle institutional action) ───── */}
             <div className="mt-12">
               <Link
-                href="/institutional-investors"
+                href="/kenya/institutional-investors"
                 className="group inline-flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase text-[#2C2C2C] hover:text-[#8B7355] transition-colors duration-500"
               >
                 <span>Request Institutional Briefing</span>

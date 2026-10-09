@@ -422,9 +422,9 @@ export default function SectorPerformancePage() {
                 <p className="text-[11px] font-medium tracking-[0.4em] uppercase mb-5" style={{ color: '#8B7355' }}>Related Research</p>
                 <ul className="space-y-4">
                   {[
-                    { title: 'Kenya Economic Outlook 2026', href: '/kenya-economic-outlook' },
-                    { title: 'Regulatory Updates Q2 2026', href: '/regulatory-updates' },
-                    { title: 'Our Active Transaction Portfolio', href: '/our-portfolio' },
+                    { title: 'Kenya Economic Outlook 2026', href: '/kenya/kenya-economic-outlook' },
+                    { title: 'Regulatory Updates Q2 2026', href: '/kenya/regulatory-updates' },
+                    { title: 'Our Active Transaction Portfolio', href: '/kenya/our-portfolio' },
                   ].map(({ title, href }) => (
                     <li key={title} className="pb-4" style={{ borderBottom: '1px solid #E5E2DC' }}>
                       <Link href={href} className="text-[13px] font-light leading-[1.6] transition-opacity hover:opacity-70" style={{ color: '#2C2C2C' }}>
@@ -464,7 +464,7 @@ export default function SectorPerformancePage() {
               Murivest's proprietary transaction pipeline covers Grade-A office, industrial, and mixed-use assets across Nairobi's primary submarkets. Institutional access only.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/our-portfolio" className="inline-block px-8 py-3 text-[12px] font-medium tracking-[0.2em] uppercase text-white transition-opacity hover:opacity-80" style={{ backgroundColor: '#8B7355' }}>
+              <Link href="/kenya/our-portfolio" className="inline-block px-8 py-3 text-[12px] font-medium tracking-[0.2em] uppercase text-white transition-opacity hover:opacity-80" style={{ backgroundColor: '#8B7355' }}>
                 View Portfolio
               </Link>
               <Link href="/contact" className="inline-block px-8 py-3 text-[12px] font-medium tracking-[0.2em] uppercase transition-opacity hover:opacity-80" style={{ border: '1px solid #8B7355', color: '#8B7355' }}>

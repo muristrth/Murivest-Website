@@ -1313,7 +1313,7 @@ export function CountryPageClient({
             </a>
             <ChevronRight className="w-3 h-3" />
             <a
-              href="/global-markets"
+              href="/kenya/global-markets"
               style={{ color: "rgba(255,255,255,0.4)" }}
               className="hover:text-white transition-colors"
             >

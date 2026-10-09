@@ -274,10 +274,10 @@ export default function PropertyManagementPage() {
                 who refuse to accept vacancy as a cost of doing business.
               </p>
               <div className="flex flex-wrap gap-5">
-                <InteractiveButton href="/property-management/mandate" variant="primary">
+                <InteractiveButton href="/kenya/property-management/mandate" variant="primary">
                   Submit a Management Mandate
                 </InteractiveButton>
-                <InteractiveButton href="/property-management/performance" variant="secondary">
+                <InteractiveButton href="/kenya/property-management/performance" variant="secondary">
                   View Asset Performance
                 </InteractiveButton>
               </div>
@@ -340,7 +340,7 @@ export default function PropertyManagementPage() {
                   And our reputation depends on your NOI.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <InteractiveButton href="/property-management/approach" variant="dark">
+                  <InteractiveButton href="/kenya/property-management/approach" variant="dark">
                     Explore Our Approach
                   </InteractiveButton>
                 </div>
@@ -570,7 +570,7 @@ export default function PropertyManagementPage() {
                   protect the maximum value, and report with institutional precision—submit your mandate.
                 </p>
                 <div className="flex flex-wrap gap-5">
-                  <InteractiveButton href="/property-management/mandate" variant="primary">
+                  <InteractiveButton href="/kenya/property-management/mandate" variant="primary">
                     Submit a Management Mandate
                   </InteractiveButton>
                   <InteractiveButton href="/contact" variant="secondary">

@@ -41,7 +41,7 @@ export default function TaxOptimizationLandPage() {
                 <ArrowRight className="h-5 w-5 ml-3 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
-            <Link href="/trust-structures">
+            <Link href="/kenya/trust-structures">
               <button className="border-2 border-amber-400 hover:bg-amber-400 hover:text-slate-900 text-amber-400 px-10 py-5 font-semibold text-lg rounded-lg transition-all duration-300 flex items-center">
                 <FileText className="h-5 w-5 mr-3" />
                 View Trust Structures

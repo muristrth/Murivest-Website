@@ -194,7 +194,7 @@ const CaseStudies = ({ studies = [] }: CaseStudiesProps) => {
           className="mt-16 md:mt-24 text-center"
         >
           <a 
-            href="/institutional-investors"
+            href="/kenya/institutional-investors"
             className="inline-flex items-center gap-3 px-8 py-4 border border-[#C4B59D] text-[12px] tracking-[0.2em] uppercase text-[#F8F7F4] font-medium hover:bg-[#C4B59D] hover:text-[#2C2C2C] transition-all duration-500"
           >
             <span>View Full Portfolio</span>

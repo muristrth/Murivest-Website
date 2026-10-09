@@ -492,7 +492,7 @@ export default function LegalCompliancePage() {
                 <Link href="/contact" className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-[#8B7355] text-white text-[12px] tracking-[0.2em] uppercase font-medium hover:bg-amber-600 transition-colors duration-500">
                   Request Legal Review <ArrowRight className="w-4 h-4" />
                 </Link>
-                <Link href="/regulatory-updates" className="inline-flex items-center justify-center gap-3 px-10 py-4 border border-white/20 text-white text-[12px] tracking-[0.2em] uppercase font-medium hover:bg-white/5 transition-colors duration-500">
+                <Link href="/kenya/regulatory-updates" className="inline-flex items-center justify-center gap-3 px-10 py-4 border border-white/20 text-white text-[12px] tracking-[0.2em] uppercase font-medium hover:bg-white/5 transition-colors duration-500">
                   Regulatory Updates
                 </Link>
               </div>

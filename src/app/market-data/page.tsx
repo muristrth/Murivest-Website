@@ -37,7 +37,7 @@ export default function MarketDataPage() {
         title: 'Need pricing context for an active mandate?',
         body: 'Verified investors on the private portal can request relevant transaction context for a live opportunity.',
         primary: { label: 'Access the Portal', href: '/portal' },
-        secondary: { label: 'Underwriting', href: '/cre-underwriting' },
+        secondary: { label: 'Underwriting', href: '/kenya/cre-underwriting' },
       }}
     />
   )

@@ -7,14 +7,19 @@
 //   DYNAMIC-UNVERIFIED  matches a dynamic route whose data lives in a CMS/DB: needs runtime validation; NOT counted as pass or fail
 //   EXCEPTION           listed in scripts/nav-exceptions.json with a documented reason (reported, not a failure)
 //   BROKEN              no route / redirect, or a dynamic route whose data key does not exist (page calls notFound()) -> FAIL
-// Usage: node scripts/check-nav-links.mjs [--json out.json] [--strict]   (--strict also fails on DYNAMIC-UNVERIFIED and OK-QUERY-IGNORED)
+// Usage: node scripts/check-nav-links.mjs [--json out.json] [--strict] [--all]   (--strict also fails on DYNAMIC-UNVERIFIED and OK-QUERY-IGNORED)
 // Exit 1 if any BROKEN. Nothing is suppressed: exceptions must be written in scripts/nav-exceptions.json ({href,reason,owner}).
 import fs from 'fs'; import path from 'path';
 const args=process.argv.slice(2); const strict=args.includes('--strict'); const jsonOut=args.includes('--json')?args[args.indexOf('--json')+1]:null;
 const app='src/app'; const compDir='src/components/layout';
 const files=fs.readdirSync(compDir).filter(f=>/(header|footer|menu)\.tsx$/i.test(f)).map(f=>path.join(compDir,f));
 const sgHeader='src/app/singapore/(components)/shared/SingaporeHeader.tsx'; if(fs.existsSync(sgHeader)) files.push(sgHeader);
+// --all: scan every .tsx under src (body links, CTAs, components) instead of only header/footer/menu components
+if(args.includes('--all')){ files.length=0; (function w(d){for(const e of fs.readdirSync(d,{withFileTypes:true})){const p=path.join(d,e.name); if(e.isDirectory()) w(p); else if(/\.tsx$/.test(e.name)) files.push(p);}})('src'); }
 const routes=[]; (function walk(d){for(const e of fs.readdirSync(d,{withFileTypes:true})){const p=path.join(d,e.name); if(e.isDirectory())walk(p); else if(e.name==='page.tsx'){const r='/'+path.relative(app,d).split(path.sep).join('/'); routes.push({route:(r==='/.'||r==='/')?'/':r.replace(/\/\([^/]+\)/g,''),file:p});}}})(app);
+const handlers=[]; (function w(d){for(const e of fs.readdirSync(d,{withFileTypes:true})){const p=path.join(d,e.name); if(e.isDirectory()) w(p); else if(/^route\.(ts|js)$/.test(e.name)) handlers.push('/'+path.relative(app,d).split(path.sep).join('/').replace(/\/\([^/]+\)/g,''));}})(app);
+const esc=x=>x.replace(/[\\^$.*+?()[\]{}|]/g,'\\$&');
+const hrx=handlers.map(h=>new RegExp('^'+h.split('/').filter(Boolean).map(x=>/^\[/.test(x)?'/[^/]+':'/'+esc(x)).join('')+'$'));
 const toRx=r=>new RegExp('^'+(r==='/'?'/':r.split('/').filter(Boolean).map(s=>/^\[\[\.\.\./.test(s)?'(?:/.*)?':/^\[\.\.\./.test(s)?'/.+':/^\[/.test(s)?'/[^/]+':'/'+s.replace(/[.*+?^${}()|\\]/g,'\\$&')).join(''))+'$');
 routes.forEach(r=>{r.dynamic=/\[/.test(r.route); r.rx=toRx(r.route);});
 const cfg=fs.readFileSync('next.config.js','utf8'); const redirects=[];
@@ -28,6 +33,8 @@ const dynamicSource=r=>{const s=fs.readFileSync(r.file,'utf8'); if(/researchData
 function classifyPath(h){
   const ex=exceptions.find(e=>e.href===h);
   if(routes.some(r=>!r.dynamic&&r.route===h)) return {status:'OK'};
+  if(fs.existsSync(path.join('public',h))&&fs.statSync(path.join('public',h)).isFile()) return {status:'OK',note:'public asset'};
+  if(hrx.some(x=>x.test(h))) return {status:'OK',note:'route handler'};
   const red=redirects.find(r=>r.source===h||(r.wild&&h.startsWith(r.source+'/')));
   if(red){ const okd=routes.some(r=>r.rx.test(red.destination)); return okd?{status:'REDIRECT',to:red.destination}:{status:'BROKEN',note:`redirect to ${red.destination} does not resolve`}; }
   const dyn=routes.filter(r=>r.dynamic&&r.rx.test(h));
@@ -38,7 +45,8 @@ function classifyPath(h){
     return {status:'DYNAMIC-UNVERIFIED',via:r.route,source:src};
   }
   if(ex) return {status:'EXCEPTION',reason:ex.reason};
-  return {status:'BROKEN',note:'no matching route'};
+  const sug=['/kenya','/united-kingdom','/united-arab-emirates','/singapore','/usa'].map(p=>p+h).find(c=>routes.some(r=>!r.dynamic&&r.route===c));
+  return {status:'BROKEN',note:'no matching route'+(sug?' (same slug exists at '+sug+')':'')};
 }
 function classify(h0){
   const h=h0.split('?')[0]; const base=classifyPath(h);
@@ -50,8 +58,9 @@ for(const f of files){
   const src=fs.readFileSync(f,'utf8'); const seen=new Map();
   for(const line of src.split(/\r?\n/)){ const lab=(line.match(/label:\s*['"]([^'"]+)['"]/)||[])[1];
     for(const m of line.matchAll(/\b(?:href|to)\s*[=:]\s*["'{`]*\s*["']?(\/[^"'`$ }#]*)/g)){ const h=m[1].replace(/(.)\/$/,'$1'); if(!seen.has(h)) seen.set(h,lab||''); } }
-  console.log(`\n${path.basename(f)}: ${seen.size} unique internal links`);
-  for(const [h,label] of seen){ const c=classify(h); results.push({file:path.basename(f),href:h,label,...c}); tally[c.status]=(tally[c.status]||0)+1;
+  if(args.includes('--all')&&![...seen.keys()].some(h=>classify(h).status!=='OK')) continue;
+  console.log(`\n${f.split(path.sep).join('/')}: ${seen.size} unique internal links`);
+  for(const [h,label] of seen){ const c=classify(h); results.push({file:f.split(path.sep).join('/'),href:h,label,...c}); tally[c.status]=(tally[c.status]||0)+1;
     if(c.status!=='OK') console.log(`   ${c.status.padEnd(18)} ${h}${label?`  [${label}]`:''}${c.to?` -> ${c.to}`:''}${c.note?`  (${c.note})`:''}${c.via?`  via ${c.via}${c.source?` (${c.source})`:''}`:''}${c.reason?`  reason: ${c.reason}`:''}`); }
 }
 console.log('\nSummary:',JSON.stringify(tally));

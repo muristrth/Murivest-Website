@@ -38,7 +38,7 @@ export default function ValuationPage() {
         title: 'Need an independent valuation opinion?',
         body: 'Our valuation desk works alongside underwriting and due diligence to deliver a defensible basis of value.',
         primary: { label: 'Request an Engagement', href: '/contact' },
-        secondary: { label: 'View Underwriting', href: '/cre-underwriting' },
+        secondary: { label: 'View Underwriting', href: '/kenya/cre-underwriting' },
       }}
     />
   )

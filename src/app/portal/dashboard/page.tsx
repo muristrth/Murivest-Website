@@ -402,7 +402,7 @@ export default async function InvestorDashboardPage() {
               Nairobi's +8.3% growth ranks 12th globally, outperforming London (-1%), New York (-0.3%), and Hong Kong (-2.2%)
             </p>
             <Link 
-              href="/country-focus" 
+              href="/kenya/country-focus" 
               className="text-[11px] uppercase tracking-[0.15em] text-[#B8956B] hover:text-[#1B4332] transition-colors flex items-center gap-1"
             >
               Full Analysis <ChevronRight className="h-3 w-3" />

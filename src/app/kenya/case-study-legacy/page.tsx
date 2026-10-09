@@ -41,7 +41,7 @@ export default function CaseStudyLegacyPage() {
                 <ArrowRight className="h-5 w-5 ml-3 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
-            <Link href="/legacy-guide">
+            <Link href="/kenya/legacy-guide">
               <button className="border-2 border-amber-400 hover:bg-amber-400 hover:text-slate-900 text-amber-400 px-10 py-5 font-semibold text-lg rounded-lg transition-all duration-300 flex items-center">
                 <Shield className="h-5 w-5 mr-3" />
                 Read Full Guide

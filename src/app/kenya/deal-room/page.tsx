@@ -467,7 +467,7 @@ export default function DealRoomPage() {
                     Request Confidential CIM
                   </Link>
                   <Link
-                    href="/investment-pipeline"
+                    href="/kenya/investment-pipeline"
                     className="px-7 py-3.5 border border-[#B8956B]/50 text-[11px] uppercase tracking-[0.18em] hover:border-[#B8956B] transition-colors"
                   >
                     View Pipeline

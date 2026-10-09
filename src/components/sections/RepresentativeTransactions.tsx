@@ -91,7 +91,7 @@ const RepresentativeTransactions = () => {
             </p>
 
             <Link
-              href="/representative-transactions"
+              href="/kenya/representative-transactions"
               className="group self-start flex items-center gap-4 text-[10px] tracking-[0.3em] uppercase text-[#2C2C2C] hover:text-[#8B7355] transition-colors duration-500"
             >
               <span>Full Case Studies</span>

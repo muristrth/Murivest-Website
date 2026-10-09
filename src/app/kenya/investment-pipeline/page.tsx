@@ -254,7 +254,7 @@ export default function InvestmentPipelinePage() {
                 className="mt-10 flex gap-4"
               >
                 <Link
-                  href="/deal-room"
+                  href="/kenya/deal-room"
                   className="px-7 py-3.5 bg-[#B8956B] text-[#0B1F14] text-[11px] uppercase tracking-[0.18em] font-semibold hover:bg-[#CDA97C] transition-colors"
                 >
                   Enter Deal Room
@@ -514,7 +514,7 @@ export default function InvestmentPipelinePage() {
                   NDA execution and capital qualification.
                 </p>
                 <Link
-                  href="/deal-room"
+                  href="/kenya/deal-room"
                   className="mt-8 inline-block px-7 py-3.5 bg-[#B8956B] text-[#0B1F14] text-[11px] uppercase tracking-[0.18em] font-semibold hover:bg-[#CDA97C] transition-colors"
                 >
                   Enter Deal Room

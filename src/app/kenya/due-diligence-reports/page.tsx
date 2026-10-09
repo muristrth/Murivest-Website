@@ -295,7 +295,7 @@ export default function DueDiligenceReportsPage() {
               Request Due Diligence
             </Link>
             <Link
-              href="/investment-analysis"
+              href="/kenya/investment-analysis"
               className="border border-amber-600 text-amber-400 hover:bg-amber-600 hover:text-white px-8 py-3 rounded-lg font-medium transition-all"
             >
               View Investment Analysis

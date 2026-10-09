@@ -50,17 +50,17 @@ const SERVICES = [
   {
     title: 'Commercial Advisory',
     desc: 'End-to-end advisory for office, industrial, and mixed-use assets. Site selection, lease structuring, and transaction execution aligned with institutional underwriting standards.',
-    href: '/commercial-real-estate',
+    href: '/kenya/commercial-real-estate',
   },
   {
     title: 'Investment Advisory',
     desc: 'Acquisition and disposition counsel for commercial property portfolios. Discreet mandate-based engagements with confidentiality and pricing discipline on every transaction.',
-    href: '/process',
+    href: '/kenya/process',
   },
   {
     title: 'Exit Strategy & Risk Engineering',
     desc: 'Structured exit planning, lease reversion analysis, and counterparty risk mitigation. We engineer de-risking pathways before capital is deployed, not after.',
-    href: '/exit-strategy-planning',
+    href: '/kenya/exit-strategy-planning',
   },
   {
     title: 'Market Intelligence',

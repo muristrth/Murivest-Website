@@ -485,8 +485,8 @@ export default function KenyaEconomicOutlookPage() {
                 <ul className="space-y-4">
                   {[
                     { title: 'Nairobi Office: The Supply-Demand Disconnect', href: '/research/nairobi-office-market' },
-                    { title: 'Kenya Regulatory Updates Q2 2026', href: '/regulatory-updates' },
-                    { title: 'Sector Performance: Industrial vs. Office', href: '/sector-performance' },
+                    { title: 'Kenya Regulatory Updates Q2 2026', href: '/kenya/regulatory-updates' },
+                    { title: 'Sector Performance: Industrial vs. Office', href: '/kenya/sector-performance' },
                   ].map(({ title, href }) => (
                     <li key={title} style={{ borderBottom: '1px solid #E5E2DC', paddingBottom: '1rem' }}>
                       <Link
@@ -553,7 +553,7 @@ export default function KenyaEconomicOutlookPage() {
                 Open a Mandate
               </Link>
               <Link
-                href="/our-portfolio"
+                href="/kenya/our-portfolio"
                 className="inline-block px-8 py-3 text-[12px] font-medium tracking-[0.2em] uppercase transition-opacity hover:opacity-80"
                 style={{ border: '1px solid #8B7355', color: '#8B7355' }}
               >

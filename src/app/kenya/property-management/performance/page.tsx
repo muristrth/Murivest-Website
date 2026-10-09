@@ -77,7 +77,7 @@ export default function AssetPerformancePage() {
                 <a href="/client-portal" className="inline-block bg-[#2C2C2C] text-[#F8F7F4] font-sans text-xs font-semibold tracking-[0.15em] uppercase px-8 py-4 hover:bg-[#8B7355] transition-colors">
                   Access Client Portal
                 </a>
-                <p className="font-sans text-[0.75rem] text-[#5A5A5A] font-light mt-4">New client? <a href="/property-management/mandate" className="underline hover:text-[#8B7355]">Submit a mandate first</a>.</p>
+                <p className="font-sans text-[0.75rem] text-[#5A5A5A] font-light mt-4">New client? <a href="/kenya/property-management/mandate" className="underline hover:text-[#8B7355]">Submit a mandate first</a>.</p>
               </div>
             </div>
           </div>

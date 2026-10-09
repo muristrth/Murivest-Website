@@ -362,7 +362,7 @@ export default function WealthManagementPage() {
               Schedule Wealth Review
             </Link>
             <Link
-              href="/market"
+              href="/kenya/market"
               className="border border-amber-600 text-amber-400 hover:bg-amber-600 hover:text-white px-8 py-3 rounded-lg font-medium transition-all"
             >
               View Market Intelligence

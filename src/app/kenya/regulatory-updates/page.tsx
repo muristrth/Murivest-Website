@@ -448,8 +448,8 @@ export default function RegulatoryUpdatesPage() {
                 </p>
                 <ul className="space-y-4">
                   {[
-                    { title: 'Kenya Economic Outlook 2026', href: '/kenya-economic-outlook' },
-                    { title: 'Nairobi Sector Performance Analysis', href: '/sector-performance' },
+                    { title: 'Kenya Economic Outlook 2026', href: '/kenya/kenya-economic-outlook' },
+                    { title: 'Nairobi Sector Performance Analysis', href: '/kenya/sector-performance' },
                     { title: 'Foreign Ownership Structures — Kenya', href: '/research/kenya-foreign-ownership' },
                   ].map(({ title, href }) => (
                     <li key={title} className="pb-4" style={{ borderBottom: '1px solid #E5E2DC' }}>
@@ -502,7 +502,7 @@ export default function RegulatoryUpdatesPage() {
               <Link href="/sell" className="inline-block px-8 py-3 text-[12px] font-medium tracking-[0.2em] uppercase text-white transition-opacity hover:opacity-80" style={{ backgroundColor: '#8B7355' }}>
                 Submit a Property
               </Link>
-              <Link href="/kenya-economic-outlook" className="inline-block px-8 py-3 text-[12px] font-medium tracking-[0.2em] uppercase transition-opacity hover:opacity-80" style={{ border: '1px solid #8B7355', color: '#8B7355' }}>
+              <Link href="/kenya/kenya-economic-outlook" className="inline-block px-8 py-3 text-[12px] font-medium tracking-[0.2em] uppercase transition-opacity hover:opacity-80" style={{ border: '1px solid #8B7355', color: '#8B7355' }}>
                 Read Macro Outlook
               </Link>
             </div>

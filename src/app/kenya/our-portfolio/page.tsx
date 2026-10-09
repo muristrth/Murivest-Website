@@ -202,7 +202,7 @@ export default function OurPortfolioPage() {
                 <Link href="/contact" className="inline-block px-8 py-3 text-[12px] font-medium tracking-[0.2em] uppercase text-white transition-opacity hover:opacity-80" style={{ backgroundColor: '#8B7355' }}>
                   Request Deal Access
                 </Link>
-                <Link href="/pricing" className="inline-block px-8 py-3 text-[12px] font-medium tracking-[0.2em] uppercase transition-opacity hover:opacity-80" style={{ border: '1px solid #475569', color: '#94A3B8' }}>
+                <Link href="/kenya/pricing" className="inline-block px-8 py-3 text-[12px] font-medium tracking-[0.2em] uppercase transition-opacity hover:opacity-80" style={{ border: '1px solid #475569', color: '#94A3B8' }}>
                   View Advisory Fees
                 </Link>
               </div>
@@ -361,10 +361,10 @@ export default function OurPortfolioPage() {
               <Link href="/sell" className="inline-block px-8 py-3 text-[12px] font-medium tracking-[0.2em] uppercase text-white transition-opacity hover:opacity-80" style={{ backgroundColor: '#8B7355' }}>
                 Submit Mandate
               </Link>
-              <Link href="/broker" className="inline-block px-8 py-3 text-[12px] font-medium tracking-[0.2em] uppercase text-white transition-opacity hover:opacity-80" style={{ backgroundColor: '#8B7355' }}>
+              <Link href="/kenya/broker" className="inline-block px-8 py-3 text-[12px] font-medium tracking-[0.2em] uppercase text-white transition-opacity hover:opacity-80" style={{ backgroundColor: '#8B7355' }}>
                 Submit Mandate As A Broker
               </Link>
-              <Link href="/pricing" className="inline-block px-8 py-3 text-[12px] font-medium tracking-[0.2em] uppercase transition-opacity hover:opacity-80" style={{ border: '1px solid #8B7355', color: '#8B7355' }}>
+              <Link href="/kenya/pricing" className="inline-block px-8 py-3 text-[12px] font-medium tracking-[0.2em] uppercase transition-opacity hover:opacity-80" style={{ border: '1px solid #8B7355', color: '#8B7355' }}>
                 Advisory Fees
               </Link>
             </div>
