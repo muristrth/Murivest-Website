@@ -1,1 +1,8 @@
-[]
+[
+ {"href":"/privacy","reason":"Global footer legal link: no global privacy page exists (only /kenya/privacy, /singapore/privacy). Visible 404 on every page until Mark/legal decide (see audit/2026-10-09-legal-pages-spec.md). TEMPORARY EXCEPTION.","owner":"Mark Muriithi","added":"2026-10-09"},
+ {"href":"/terms","reason":"Global footer legal link: no global terms page exists (only /kenya/terms). Awaiting legal decision. TEMPORARY EXCEPTION.","owner":"Mark Muriithi","added":"2026-10-09"},
+ {"href":"/legal-compliance","reason":"Global footer legal link: no global page (only /kenya/legal-compliance, Kenya-specific; global /compliance is a different page). Awaiting legal decision. TEMPORARY EXCEPTION.","owner":"Mark Muriithi","added":"2026-10-09"},
+ {"href":"/properties","reason":"MobileMenu.tsx is not imported anywhere (dead component, not rendered). Recommend deleting the file; not deleted in this audit.","owner":"Mark Muriithi","added":"2026-10-09"},
+ {"href":"/land","reason":"MobileMenu.tsx is not imported anywhere (dead component, not rendered). Recommend deleting the file; not deleted in this audit.","owner":"Mark Muriithi","added":"2026-10-09"},
+ {"href":"/usa/more","reason":"USheader.tsx 'More' group parent href has no page. Parent anchors are clickable and 404. Fix needs USheader change (parent should be a button/#); deferred because USA area has Mark's uncommitted WIP in progress.","owner":"Mark Muriithi","added":"2026-10-09"}
+]

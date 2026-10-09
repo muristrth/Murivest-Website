@@ -1,4 +1,4 @@
-﻿// Nav integrity check v2.1 (audit 2026-10-09).
+// Nav integrity check v2.1 (audit 2026-10-09).
 // Classifies every internal href found in header/footer/menu components:
 //   OK                  exact static page.tsx route
 //   OK-QUERY-IGNORED    route exists but the page never reads the query string (e.g. ?assetType=) -> filter is non-functional (warning)

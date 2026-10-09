@@ -1,4 +1,4 @@
-﻿// Static SEO scan of src/app page.tsx files (read-only). Usage: node scripts/audit-seo-static.mjs [out.csv]
+// Static SEO scan of src/app page.tsx files (read-only). Usage: node scripts/audit-seo-static.mjs [out.csv]
 // Heuristic (regex) - verifies metadata presence, canonical inheritance from layouts, h1 count, JSON-LD, noindex.
 import fs from 'fs'; import path from 'path';
 const app='src/app'; const rows=[];

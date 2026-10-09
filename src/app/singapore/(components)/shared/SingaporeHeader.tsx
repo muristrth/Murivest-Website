@@ -64,10 +64,7 @@ const SINGAPORE_NAV: NavSection[] = [
     description: 'Institutional advisory services',
     columns: [
       [
-        { label: 'Acquisition Advisory', href: '/singapore/services/acquisition-advisory', sub: 'Buy-side representation' },
-        { label: 'Disposition Advisory', href: '/singapore/services/disposition-advisory', sub: 'Sell-side representation' },
-        { label: 'Asset Management', href: '/singapore/services/asset-management', sub: 'Portfolio optimization' },
-        { label: 'Portfolio Advisory', href: '/singapore/services/portfolio-advisory', sub: 'Strategic allocation' },
+        { label: 'Advisory Services', href: '/singapore/services', sub: 'Acquisition, disposition, asset & portfolio advisory' },
       ],
     ],
   },
@@ -447,7 +444,7 @@ export default function SingaporeHeader() {
               </a>
 
               <a
-                href="/cre-underwriting"
+                href="/underwriting"
                 className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#1B4332] text-[#FAF9F6] text-[9px] uppercase tracking-[0.16em] font-medium hover:bg-[#2D5A45] transition-colors"
               >
                 <TrendingUp size={10} strokeWidth={1.5} />
@@ -510,7 +507,7 @@ export default function SingaporeHeader() {
               {/* Mobile CTA */}
               <div className="p-5 border-t border-[#2D5A45]/10 space-y-2.5">
                 <a
-                  href="/cre-underwriting"
+                  href="/underwriting"
                   onClick={closeAll}
                   className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#1B4332] text-[#FAF9F6] text-[10px] tracking-[0.18em] uppercase font-semibold hover:bg-[#2D5A45] transition-colors"
                 >
