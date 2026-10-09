@@ -72,9 +72,8 @@ const UAE_NAV: NavSection[] = [
       [
         { label: 'Capital Markets', href: '/united-arab-emirates/capital-markets', sub: 'Debt & equity placement' },
         { label: 'Acquisition Advisory', href: '/united-arab-emirates/capital-markets/institutional-acquisitions', sub: 'Buy-side representation' },
-        { label: 'Disposition Advisory', href: '/united-arab-emirates/disposition', sub: 'Sell-side representation' },
-        { label: 'Valuation & Underwriting', href: '/united-arab-emirates/valuation', sub: 'Institutional-grade analysis' },
-        { label: 'Asset Management', href: '/united-arab-emirates/asset-management', sub: 'Portfolio optimization' },
+        { label: 'Portfolio Sales', href: '/united-arab-emirates/capital-markets/portfolio-sales', sub: 'Multi-asset capital deployment' },
+        { label: 'Development Sites', href: '/united-arab-emirates/capital-markets/development-sites', sub: 'Site acquisition' },
       ],
     ],
   },
@@ -98,11 +97,11 @@ const UAE_NAV: NavSection[] = [
     columns: [
       [
         { label: 'UAE Research', href: '/united-arab-emirates/research', sub: 'Macro overview & outlook' },
-        { label: 'Dubai Market', href: '/united-arab-emirates/research/dubai-market', sub: 'Transaction & vacancy trends' },
-        { label: 'Abu Dhabi Market', href: '/united-arab-emirates/research/abu-dhabi-market', sub: 'Supply & absorption analysis' },
+        { label: 'Dubai Office Rents', href: '/united-arab-emirates/research/dubai-office-rents', sub: 'Rental analysis' },
+        { label: 'UAE Office Market Report', href: '/united-arab-emirates/research/uae-office-market-report', sub: 'Dubai & Abu Dhabi' },
         { label: 'Investment Yields', href: '/united-arab-emirates/research/uae-cap-rates', sub: 'Return benchmarks by sector' },
         { label: 'Market Reports', href: '/united-arab-emirates/research', sub: 'Quarterly publications' },
-        { label: 'Insights', href: '/united-arab-emirates/insights', sub: 'Executive commentary' },
+        { label: 'GCC Real Estate Outlook', href: '/united-arab-emirates/research/gcc-real-estate-outlook', sub: 'Macro trends & capital flows' },
       ],
     ],
   },
@@ -111,10 +110,8 @@ const UAE_NAV: NavSection[] = [
     description: 'Developer network and new developments',
     columns: [
       [
-        { label: 'Developer Network', href: '/united-arab-emirates/developers', sub: 'Strategic partnerships' },
-        { label: 'New Developments', href: '/united-arab-emirates/developers/new-developments', sub: 'Off-plan & pipeline stock' },
+        { label: 'Developer Network', href: '/united-arab-emirates/developers', sub: 'Developer due-diligence profiles' },
         { label: 'Joint Ventures', href: '/united-arab-emirates/capital-markets/joint-ventures', sub: 'Co-investment structures' },
-        { label: 'Master Plans', href: '/united-arab-emirates/developers/master-plans', sub: 'District & community strategy' },
       ],
     ],
   },
@@ -123,10 +120,10 @@ const UAE_NAV: NavSection[] = [
     description: 'Firm profile and private office access',
     columns: [
       [
-        { label: 'About Murivest UAE', href: '/united-arab-emirates/about', sub: 'Heritage & philosophy' },
-        { label: 'Leadership', href: '/united-arab-emirates/leadership', sub: 'Advisory team' },
+        { label: 'About Murivest', href: '/about', sub: 'Firm profile' },
+        { label: 'Leadership', href: '/leadership', sub: 'Executive leadership' },
         { label: 'Contact', href: '/united-arab-emirates/contact', sub: 'Private office inquiry' },
-        { label: 'Compliance', href: '/united-arab-emirates/compliance', sub: 'Licences & regulation' },
+        { label: 'Compliance', href: '/compliance', sub: 'Regulatory information' },
       ],
     ],
   },
