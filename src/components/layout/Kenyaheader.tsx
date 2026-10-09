@@ -58,8 +58,6 @@ const KENYA_NAV: NavSection[] = [
       [
         { label: 'Investment Opportunities', href: '/kenya/investment-pipeline', sub: 'All active mandates' },
         { label: 'Off-Market Opportunities', href: '/kenya/properties/off-market', sub: 'Private treaty access' },
-        { label: 'Income-Producing Assets', href: '/kenya/income-assets', sub: 'Yield-focused acquisitions' },
-        { label: 'Development Opportunities', href: '/kenya/development', sub: 'Ground-up & repositioning' },
         { label: 'Land Banking', href: '/kenya/land-portfolio', sub: 'Strategic land acquisition' },
         { label: 'Sale & Leaseback', href: '/kenya/kenya-sale-leaseback-transactions', sub: 'Corporate real estate' },
       ],
@@ -70,12 +68,11 @@ const KENYA_NAV: NavSection[] = [
     description: 'Institutional advisory and capital markets',
     columns: [
       [
-        { label: 'Capital Markets', href: '/kenya/capital-markets', sub: 'Debt & equity placement' },
-        { label: 'Acquisition Advisory', href: '/kenya/acquisition', sub: 'Buy-side representation' },
-        { label: 'Disposition Advisory', href: '/kenya/sell', sub: 'Sell-side representation' },
-        { label: 'Valuation & Underwriting', href: '/kenya/valuation', sub: 'Institutional-grade analysis' },
-        { label: 'Asset Management', href: '/kenya/asset-management', sub: 'Portfolio optimization' },
+        { label: 'Institutional Advisory', href: '/kenya/institutional-investors', sub: 'Capital deployment engagement models' },
+        { label: 'Disposition Advisory', href: '/kenya/sell', sub: 'Owner & seller enquiries' },
+        { label: 'Underwriting & LOI Tool', href: '/kenya/cre-underwriting', sub: 'Instant underwriting analysis' },
         { label: 'Property Management', href: '/kenya/property-management', sub: 'Operational excellence' },
+        { label: 'Owner Mandate', href: '/kenya/authority-to-sell', sub: 'Authority to sell' },
       ],
     ],
   },
@@ -84,11 +81,10 @@ const KENYA_NAV: NavSection[] = [
     description: 'Commercial real estate by sector',
     columns: [
       [
-        { label: 'Office', href: '/kenya/properties/office', sub: 'Grade A & B stock', icon: Building2 },
-        { label: 'Industrial', href: '/kenya/properties/industrial', sub: 'Warehousing & logistics', icon: Warehouse },
-        { label: 'Retail', href: '/kenya/properties/retail', sub: 'Malls & high street', icon: Store },
-        { label: 'Hospitality', href: '/kenya/properties/hospitality', sub: 'Hotels & resorts', icon: Hotel },
-        { label: 'Residential', href: '/kenya/properties/residential', sub: 'Multifamily & estates', icon: Home },
+        { label: 'Office', href: '/kenya/office-developments', sub: 'Grade A office investment', icon: Building2 },
+        { label: 'Industrial', href: '/kenya/industrial-properties', sub: 'Warehousing & logistics', icon: Warehouse },
+        { label: 'Retail & Mixed-Use', href: '/kenya/retail-mixed-use', sub: 'Retail & mixed-use investment', icon: Store },
+        { label: 'Properties to Let', href: '/kenya/properties/to-let', sub: 'Available leasing space', icon: Home },
         { label: 'Development Land', href: '/kenya/land-portfolio', sub: 'Strategic parcels', icon: LandPlot },
       ],
     ],
@@ -99,10 +95,9 @@ const KENYA_NAV: NavSection[] = [
     columns: [
       [
         { label: 'Kenya Research', href: '/kenya/research', sub: 'Macro overview & outlook' },
-        { label: 'Nairobi Office Market', href: '/kenya/research/nairobi-office', sub: 'Vacancy & rent trends' },
-        { label: 'Industrial Market', href: '/kenya/research/industrial', sub: 'Supply chain & yields' },
-        { label: 'Investment Yields', href: '/kenya/research/yields', sub: 'Return benchmarks' },
-        { label: 'Market Reports', href: '/kenya/research/reports', sub: 'Quarterly publications' },
+        { label: 'Quarterly Market Reports', href: '/kenya/quarterly-market-reports', sub: 'Quarterly publications' },
+        { label: 'Regulatory Updates', href: '/kenya/regulatory-updates', sub: 'Land, tax & zoning changes' },
+        { label: 'Economic Outlook', href: '/kenya/kenya-economic-outlook', sub: 'Macro overview & outlook' },
         { label: 'Insights', href: '/kenya/insights-cre', sub: 'Executive commentary' },
       ],
     ],
@@ -113,10 +108,6 @@ const KENYA_NAV: NavSection[] = [
     href: '/kenya/market',
     columns: [
       [
-        { label: 'Nairobi', href: '/kenya/nairobi', sub: 'Capital region' },
-        { label: 'Mombasa', href: '/kenya/mombasa', sub: 'Coastal corridor' },
-        { label: 'Kisumu', href: '/kenya/kisumu', sub: 'Western gateway' },
-        { label: 'Nakuru', href: '/kenya/nakuru', sub: 'Rift valley hub' },
       ],
     ],
   },
@@ -128,7 +119,7 @@ const KENYA_NAV: NavSection[] = [
         { label: 'About Murivest Kenya', href: '/kenya/about', sub: 'Heritage & philosophy' },
         { label: 'Leadership', href: '/kenya/leadership', sub: 'Advisory team' },
         { label: 'Contact', href: '/kenya/contact', sub: 'Private office inquiry' },
-        { label: 'Compliance', href: '/kenya/governance-compliance', sub: 'Licences & regulation' },
+        { label: 'Compliance', href: '/kenya/governance-compliance', sub: 'Governance & regulatory information' },
       ],
     ],
   },
