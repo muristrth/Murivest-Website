@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { UaeContentPage } from '@/app/united-arab-emirates/_components/UaeContentPage';
 import type { UaePageConfig } from '@/app/united-arab-emirates/_components/uae-pages-types';
 
@@ -72,3 +73,10 @@ const pageConfig: UaePageConfig = {
 export default function Page() {
   return <UaeContentPage config={pageConfig} heroBgImage="https://images.unsplash.com/photo-1569949381669-ecf31ae8f613?w=1920&q=85" />;
 }
+
+// audit 2026-10-09: this page previously exported no metadata (inherited the generic layout title/description).
+export const metadata: Metadata = {
+  title: { absolute: pageConfig.title },
+  description: pageConfig.description,
+  alternates: { canonical: `https://murivest.com/${pageConfig.slug}` },
+};

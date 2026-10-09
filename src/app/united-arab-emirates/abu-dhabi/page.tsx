@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { UaeContentPage } from '@/app/united-arab-emirates/_components/UaeContentPage';
 import { UaeDistrictCards } from '@/app/united-arab-emirates/_components/UaeDistrictCards';
 import { UaeVideoSection } from '@/app/united-arab-emirates/_components/UaeVideoSection';
@@ -128,3 +129,10 @@ export default function Page() {
     />
   );
 }
+
+// audit 2026-10-09: this page previously exported no metadata (inherited the generic layout title/description).
+export const metadata: Metadata = {
+  title: { absolute: pageConfig.title },
+  description: pageConfig.description,
+  alternates: { canonical: `https://murivest.com/${pageConfig.slug}` },
+};
