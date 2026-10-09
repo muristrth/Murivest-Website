@@ -4,6 +4,7 @@ import Link from 'next/link';
 import './team-layout.css';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false }, // audit 2026-10-09: internal team portal, noindex (not access control)
   title: 'Team Portal — Murivest Group Ltd',
   description: 'Associate performance tracking and KPI dashboard — Murivest Group Ltd',
 };
