@@ -6,3 +6,7 @@ Run: npm install; npm run dev; `npx tsc --noEmit`; `node scripts/check-nav-links
 Git: branch audit/2026-10-09-safe from main cbea5e1; Mark's uncommitted usa/page.tsx + usa/contact/page.tsx untouched (syntax errors in usa/page.tsx break tsc/build).
 Known failures: tsc (usa/page.tsx WIP), nav check (remaining unresolved links).
 Continue: see report section 5 for remaining items.
+
+
+## Update 2026-10-09 (continuation)
+See audit/2026-10-09-continuation-report.md for commits, decisions needed, rollback and next task. Earlier history above is unchanged.
