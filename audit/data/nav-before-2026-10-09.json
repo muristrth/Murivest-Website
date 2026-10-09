@@ -1,0 +1,1725 @@
+[
+ {
+  "file": "Footer.tsx",
+  "href": "/legal-compliance",
+  "label": "",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "Footer.tsx",
+  "href": "/privacy",
+  "label": "",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "Footer.tsx",
+  "href": "/terms",
+  "label": "",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/services/investment-sales",
+  "label": "Investment Sales",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/underwriting",
+  "label": "Underwriting",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/due-diligence",
+  "label": "Due Diligence",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/services/valuation",
+  "label": "Valuation",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/tools",
+  "label": "Calculators",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/services/asset-management",
+  "label": "Asset Management",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/services/property-management",
+  "label": "Property Management",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/services/development",
+  "label": "Development",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/services/leasing",
+  "label": "Leasing",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/land-portfolio",
+  "label": "Land Banking",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/off-market",
+  "label": "Off-Market",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/services/sustainability",
+  "label": "Sustainability",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/research/reports",
+  "label": "Market Reports",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/insights-cre",
+  "label": "CRE Insights",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/market-data",
+  "label": "Transaction Data",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/research/perspectives",
+  "label": "Perspectives",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/videos",
+  "label": "Video Commentary",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/research/outlook",
+  "label": "Global Outlook",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/kenya",
+  "label": "East Africa",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/united-arab-emirates",
+  "label": "Gulf & Middle East",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/united-kingdom",
+  "label": "Western Europe",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/singapore",
+  "label": "Southeast Asia",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/portfolio/commercial",
+  "label": "Commercial",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/portfolio/residential",
+  "label": "Residential",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/portfolio/hospitality",
+  "label": "Hospitality",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/about",
+  "label": "Our Story",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/leadership",
+  "label": "Leadership",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/compliance",
+  "label": "Compliance",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/about/esg",
+  "label": "ESG Commitment",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/investor-relations",
+  "label": "Investor Relations",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/press",
+  "label": "Press",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/people",
+  "label": "Advisors",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/people/partners",
+  "label": "Partners",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/office/nairobi",
+  "label": "Nairobi",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/office/dubai",
+  "label": "Dubai",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/office/london",
+  "label": "London",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/office/singapore",
+  "label": "Singapore",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/careers",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/contact",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "Header.tsx",
+  "href": "/investor-portal",
+  "label": "",
+  "status": "REDIRECT",
+  "to": "/portal"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/investment-pipeline",
+  "label": "Investment Opportunities",
+  "status": "OK"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/properties/off-market",
+  "label": "Off-Market Opportunities",
+  "status": "OK"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/income-assets",
+  "label": "Income-Producing Assets",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/development",
+  "label": "Development Opportunities",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/land-portfolio",
+  "label": "Land Banking",
+  "status": "OK"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/kenya-sale-leaseback-transactions",
+  "label": "Sale & Leaseback",
+  "status": "OK"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/capital-markets",
+  "label": "Capital Markets",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/acquisition",
+  "label": "Acquisition Advisory",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/sell",
+  "label": "Disposition Advisory",
+  "status": "OK"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/valuation",
+  "label": "Valuation & Underwriting",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/asset-management",
+  "label": "Asset Management",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/property-management",
+  "label": "Property Management",
+  "status": "OK"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/properties/office",
+  "label": "Office",
+  "status": "DYNAMIC-UNVERIFIED",
+  "via": "/kenya/properties/[slug]",
+  "source": "cms"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/properties/industrial",
+  "label": "Industrial",
+  "status": "DYNAMIC-UNVERIFIED",
+  "via": "/kenya/properties/[slug]",
+  "source": "cms"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/properties/retail",
+  "label": "Retail",
+  "status": "DYNAMIC-UNVERIFIED",
+  "via": "/kenya/properties/[slug]",
+  "source": "cms"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/properties/hospitality",
+  "label": "Hospitality",
+  "status": "DYNAMIC-UNVERIFIED",
+  "via": "/kenya/properties/[slug]",
+  "source": "cms"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/properties/residential",
+  "label": "Residential",
+  "status": "DYNAMIC-UNVERIFIED",
+  "via": "/kenya/properties/[slug]",
+  "source": "cms"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/research",
+  "label": "Kenya Research",
+  "status": "OK"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/research/nairobi-office",
+  "label": "Nairobi Office Market",
+  "status": "BROKEN",
+  "note": "/kenya/research/[id]: no researchData key \"nairobi-office\" (page calls notFound())"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/research/industrial",
+  "label": "Industrial Market",
+  "status": "BROKEN",
+  "note": "/kenya/research/[id]: no researchData key \"industrial\" (page calls notFound())"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/research/yields",
+  "label": "Investment Yields",
+  "status": "BROKEN",
+  "note": "/kenya/research/[id]: no researchData key \"yields\" (page calls notFound())"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/research/reports",
+  "label": "Market Reports",
+  "status": "BROKEN",
+  "note": "/kenya/research/[id]: no researchData key \"reports\" (page calls notFound())"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/insights-cre",
+  "label": "Insights",
+  "status": "OK"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/market",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/nairobi",
+  "label": "Nairobi",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/mombasa",
+  "label": "Mombasa",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/kisumu",
+  "label": "Kisumu",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/nakuru",
+  "label": "Nakuru",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/about",
+  "label": "About Murivest Kenya",
+  "status": "OK"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/leadership",
+  "label": "Leadership",
+  "status": "OK"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/contact",
+  "label": "Contact",
+  "status": "OK"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/governance-compliance",
+  "label": "Compliance",
+  "status": "OK"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "Kenyaheader.tsx",
+  "href": "/kenya/cre-underwriting",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "MobileMenu.tsx",
+  "href": "/properties",
+  "label": "Properties",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "MobileMenu.tsx",
+  "href": "/land",
+  "label": "Land",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "MobileMenu.tsx",
+  "href": "/research",
+  "label": "Research",
+  "status": "OK"
+ },
+ {
+  "file": "MobileMenu.tsx",
+  "href": "/about",
+  "label": "About",
+  "status": "OK"
+ },
+ {
+  "file": "MobileMenu.tsx",
+  "href": "/contact",
+  "label": "Contact",
+  "status": "OK"
+ },
+ {
+  "file": "MobileMenu.tsx",
+  "href": "/portal",
+  "label": "Investor Portal",
+  "status": "OK"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/listings",
+  "label": "Listings",
+  "status": "OK"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/off-market",
+  "label": "Off-Market",
+  "status": "OK"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/investment-guides",
+  "label": "Investment Guides",
+  "status": "OK"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/asset-classes",
+  "label": "Asset Classes",
+  "status": "OK"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/capital-markets/sale-leaseback",
+  "label": "Sale & Leaseback",
+  "status": "OK"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/capital-markets",
+  "label": "Capital Markets",
+  "status": "OK"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/capital-markets/institutional-acquisitions",
+  "label": "Acquisition Advisory",
+  "status": "OK"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/disposition",
+  "label": "Disposition Advisory",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/valuation",
+  "label": "Valuation & Underwriting",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/asset-management",
+  "label": "Asset Management",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/dubai",
+  "label": "Dubai",
+  "status": "OK"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/abu-dhabi",
+  "label": "Abu Dhabi",
+  "status": "OK"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/sharjah",
+  "label": "Sharjah",
+  "status": "OK"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/ajman",
+  "label": "Ajman",
+  "status": "OK"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/ras-al-khaimah",
+  "label": "Ras Al Khaimah",
+  "status": "OK"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/fujairah",
+  "label": "Fujairah",
+  "status": "OK"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/research",
+  "label": "UAE Research",
+  "status": "OK"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/research/dubai-market",
+  "label": "Dubai Market",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/research/abu-dhabi-market",
+  "label": "Abu Dhabi Market",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/research/uae-cap-rates",
+  "label": "Investment Yields",
+  "status": "OK"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/insights",
+  "label": "Insights",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/developers",
+  "label": "Developer Network",
+  "status": "OK"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/developers/new-developments",
+  "label": "New Developments",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/capital-markets/joint-ventures",
+  "label": "Joint Ventures",
+  "status": "OK"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/developers/master-plans",
+  "label": "Master Plans",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/about",
+  "label": "About Murivest UAE",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/leadership",
+  "label": "Leadership",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/contact",
+  "label": "Contact",
+  "status": "OK"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates/compliance",
+  "label": "Compliance",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/united-arab-emirates",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "UAEheader.tsx",
+  "href": "/underwriting",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/investments",
+  "label": "Investment Opportunities",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/off-market",
+  "label": "Off-Market Opportunities",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/income-assets",
+  "label": "Income-Producing Assets",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/development",
+  "label": "Development Opportunities",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/land-portfolio",
+  "label": "Land Banking",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/sale-leaseback",
+  "label": "Sale & Leaseback",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/capital-markets",
+  "label": "Capital Markets",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/acquisition",
+  "label": "Acquisition Advisory",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/disposition",
+  "label": "Disposition Advisory",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/valuation",
+  "label": "Valuation & Underwriting",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/asset-management",
+  "label": "Asset Management",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/property-management",
+  "label": "Property Management",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/properties/office",
+  "label": "Office",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/properties/industrial",
+  "label": "Industrial",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/properties/retail",
+  "label": "Retail",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/properties/hospitality",
+  "label": "Hospitality",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/properties/residential",
+  "label": "Residential",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/research",
+  "label": "UK Research",
+  "status": "OK"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/research/london-office",
+  "label": "London Office Market",
+  "status": "BROKEN",
+  "note": "/united-kingdom/research/[id]: no researchData key \"london-office\" (page calls notFound())"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/research/regional",
+  "label": "Regional Markets",
+  "status": "BROKEN",
+  "note": "/united-kingdom/research/[id]: no researchData key \"regional\" (page calls notFound())"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/research/yields",
+  "label": "Investment Yields",
+  "status": "BROKEN",
+  "note": "/united-kingdom/research/[id]: no researchData key \"yields\" (page calls notFound())"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/research/reports",
+  "label": "Market Reports",
+  "status": "BROKEN",
+  "note": "/united-kingdom/research/[id]: no researchData key \"reports\" (page calls notFound())"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/insights",
+  "label": "Insights",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/markets",
+  "label": "",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/london",
+  "label": "London",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/manchester",
+  "label": "Manchester",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/birmingham",
+  "label": "Birmingham",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/edinburgh",
+  "label": "Edinburgh",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/glasgow",
+  "label": "Glasgow",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/bristol",
+  "label": "Bristol",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/about",
+  "label": "About Murivest UK",
+  "status": "OK"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/leadership",
+  "label": "Leadership",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/contact",
+  "label": "Contact",
+  "status": "OK"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom/compliance",
+  "label": "Compliance",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/united-kingdom",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "UKheader.tsx",
+  "href": "/underwriting",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/invest",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/invest/strategies",
+  "label": "Investment Strategies",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/invest/criteria",
+  "label": "Investment Criteria",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/invest/mandates",
+  "label": "Mandates",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/invest/opportunities",
+  "label": "Opportunities",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/acquire",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/acquire/off-market",
+  "label": "Off-Market",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/acquire/stabilized",
+  "label": "Stabilized",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/acquire/value-add",
+  "label": "Value-Add",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/acquire/opportunistic",
+  "label": "Opportunistic",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/acquire/distressed",
+  "label": "Distressed",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/sell",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/sell/investment-sales",
+  "label": "Investment Sales",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/sell/portfolio-sales",
+  "label": "Portfolio Sales",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/sell/disposition",
+  "label": "Disposition Advisory",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/capital",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/capital/capital-advisory",
+  "label": "Capital Advisory",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/capital/capital-introduction",
+  "label": "Capital Introductions",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/capital/equity",
+  "label": "Equity",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/capital/debt",
+  "label": "Debt",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/capital/recapitalization",
+  "label": "Recapitalization",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/properties",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/properties/office",
+  "label": "Office",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/properties/industrial",
+  "label": "Industrial",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/properties/logistics",
+  "label": "Logistics",
+  "status": "DYNAMIC-UNVERIFIED",
+  "via": "/usa/properties/[slug]",
+  "source": "cms"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/properties/multifamily",
+  "label": "Multifamily",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/properties/retail",
+  "label": "Retail",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/properties/hospitality",
+  "label": "Hospitality",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/properties/healthcare",
+  "label": "Healthcare",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/properties/self-storage",
+  "label": "Self-Storage",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/properties/data-centers",
+  "label": "Data Centers",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/properties/net-lease",
+  "label": "Net Lease",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/markets",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/markets/texas",
+  "label": "Texas",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/markets/florida",
+  "label": "Florida",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/markets/california",
+  "label": "California",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/markets/new-york",
+  "label": "New York",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/markets/georgia",
+  "label": "Georgia",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/markets/arizona",
+  "label": "Arizona",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/markets/north-carolina",
+  "label": "North Carolina",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/markets/south-carolina",
+  "label": "South Carolina",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/markets/tennessee",
+  "label": "Tennessee",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/markets/nevada",
+  "label": "Nevada",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/markets/colorado",
+  "label": "Colorado",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/research",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/research/market-reports",
+  "label": "Market Reports",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/research/investment-theses",
+  "label": "Investment Theses",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/research/sector-research",
+  "label": "Sector Research",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/research/market-outlook",
+  "label": "Market Outlook",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/research/intelligence",
+  "label": "Intelligence",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/investors",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/investors/family-offices",
+  "label": "Family Offices",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/investors/private-equity",
+  "label": "Private Equity",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/investors/institutional",
+  "label": "Institutional",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/investors/high-net-worth",
+  "label": "High Net Worth",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/investors/ultra-high-net-worth",
+  "label": "UHNW Investors",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/investors/international",
+  "label": "International",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/investors/developers",
+  "label": "Developers",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/deals",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/deals/featured",
+  "label": "Featured",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/deals/off-market",
+  "label": "Off-Market",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/deals/institutional",
+  "label": "Institutional",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/deals/private",
+  "label": "Private",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/advisory",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/advisory/acquisition",
+  "label": "Acquisition Advisory",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/advisory/disposition",
+  "label": "Disposition Advisory",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/advisory/portfolio",
+  "label": "Portfolio Advisory",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/advisory/strategy",
+  "label": "Strategy",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/advisory/valuation",
+  "label": "Valuation",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/brokerage",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/brokerage/acquisition",
+  "label": "Acquisition",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/brokerage/disposition",
+  "label": "Disposition",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/brokerage/investment-sales",
+  "label": "Investment Sales",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/developers",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/developers/development-sites",
+  "label": "Development Sites",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/developers/land",
+  "label": "Land",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/developers/joint-ventures",
+  "label": "Joint Ventures",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/owners",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/owners/asset-sales",
+  "label": "Asset Sales",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/owners/portfolio-sales",
+  "label": "Portfolio Sales",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/owners/recapitalization",
+  "label": "Recapitalization",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/insights",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/insights/articles",
+  "label": "Articles",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/insights/analysis",
+  "label": "Analysis",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/insights/commentary",
+  "label": "Commentary",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/resources",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/resources/guides",
+  "label": "Guides",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/resources/glossary",
+  "label": "Glossary",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/resources/calculators",
+  "label": "Calculators",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/resources/checklists",
+  "label": "Checklists",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/1031-exchange",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/sale-leaseback",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/portfolio",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/submit-a-deal",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/about",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/contact",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa/more",
+  "label": "",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "USheader.tsx",
+  "href": "/usa",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/singapore/properties",
+  "label": "Property Listings",
+  "status": "OK"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/singapore/investor-portal",
+  "label": "Off-Market Opportunities",
+  "status": "OK"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/singapore/properties?assetType=strata-office",
+  "label": "Strata Office",
+  "status": "OK-QUERY-IGNORED",
+  "note": "page does not read the query string"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/singapore/properties?assetType=shophouse",
+  "label": "Shophouse",
+  "status": "OK-QUERY-IGNORED",
+  "note": "page does not read the query string"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/singapore/services/acquisition-advisory",
+  "label": "Acquisition Advisory",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/singapore/services/disposition-advisory",
+  "label": "Disposition Advisory",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/singapore/services/asset-management",
+  "label": "Asset Management",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/singapore/services/portfolio-advisory",
+  "label": "Portfolio Advisory",
+  "status": "BROKEN",
+  "note": "no matching route"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/singapore/properties?assetType=grade-a-office",
+  "label": "Office",
+  "status": "OK-QUERY-IGNORED",
+  "note": "page does not read the query string"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/singapore/properties?assetType=retail",
+  "label": "Retail",
+  "status": "OK-QUERY-IGNORED",
+  "note": "page does not read the query string"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/singapore/properties?assetType=industrial",
+  "label": "Industrial",
+  "status": "OK-QUERY-IGNORED",
+  "note": "page does not read the query string"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/singapore/properties?assetType=mixed-use",
+  "label": "Mixed-Use",
+  "status": "OK-QUERY-IGNORED",
+  "note": "page does not read the query string"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/singapore/properties?assetType=hospitality",
+  "label": "Hospitality",
+  "status": "OK-QUERY-IGNORED",
+  "note": "page does not read the query string"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/singapore/insights",
+  "label": "Insights",
+  "status": "OK"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/singapore/singapore-market",
+  "label": "Cap Rate Analysis",
+  "status": "OK"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/singapore/singapore-market/marina-bay",
+  "label": "Marina Bay",
+  "status": "DYNAMIC-OK",
+  "via": "/singapore/singapore-market/[district]"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/singapore/singapore-market/raffles-place",
+  "label": "Raffles Place",
+  "status": "DYNAMIC-OK",
+  "via": "/singapore/singapore-market/[district]"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/singapore/singapore-market/tanjong-pagar",
+  "label": "Tanjong Pagar",
+  "status": "DYNAMIC-OK",
+  "via": "/singapore/singapore-market/[district]"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/singapore/singapore-market/jurong-lake-district",
+  "label": "Jurong Lake",
+  "status": "DYNAMIC-OK",
+  "via": "/singapore/singapore-market/[district]"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/singapore/about",
+  "label": "About Murivest Singapore",
+  "status": "OK"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/singapore/contact",
+  "label": "Contact",
+  "status": "OK"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/singapore",
+  "label": "",
+  "status": "OK"
+ },
+ {
+  "file": "SingaporeHeader.tsx",
+  "href": "/cre-underwriting",
+  "label": "",
+  "status": "BROKEN",
+  "note": "no matching route"
+ }
+]
