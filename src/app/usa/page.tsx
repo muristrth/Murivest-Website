@@ -62,52 +62,27 @@ const SERVICES = [
     icon: Search,
     title: "Investment Sales Advisory",
     description:
-      "Disposition and acquisition advisory for institutional-grade commercial assets, executed on a confidential, mandate-driven basis.",
+      "Disposition and acquisition advisory for commercial assets, scoped to a confidential, mandate-defined engagement.",
   },
   {
     icon: Handshake,
     title: "Leasing Advisory",
     description:
-      "Tenant and landlord representation across office, industrial, and retail assets, with market-driven pricing and term negotiation.",
+      "Tenant and landlord representation across office, industrial, and retail assets, with support for pricing and term negotiations.",
   },
   {
     icon: TrendingUp,
     title: "Capital Markets Advisory",
     description:
-      "Debt and equity capital sourcing for acquisitions, refinancings, and development projects, connecting sponsors with qualified capital providers.",
+      "Debt and equity capital advisory for acquisitions, refinancings, and development projects, subject to mandate scope and counterparties.",
   },
   {
+    icon: LineChart,
+    title: "Market Intelligence",
     description:
-      "Pension funds, endowments, insurance companies, and registered investment advisors seeking acquisition, disposition, and portfolio rebalancing support.",
+      "Market and sector analysis to inform assignment-specific underwriting; published research is linked when available.",
   },
-  {
-    icon: Building2,
-    const SERVICES = [
-      {
-        icon: Search,
-        title: "Investment Sales Advisory",
-        description:
-          "Disposition and acquisition advisory for commercial assets, scoped to a confidential, mandate-defined engagement.",
-      },
-      {
-        icon: Handshake,
-        title: "Leasing Advisory",
-        description:
-          "Tenant and landlord representation across office, industrial, and retail assets, with support for pricing and term negotiations.",
-      },
-      {
-        icon: TrendingUp,
-        title: "Capital Markets Advisory",
-        description:
-          "Debt and equity capital advisory for acquisitions, refinancings, and development projects, subject to mandate scope and counterparties.",
-      },
-      {
-        icon: LineChart,
-        title: "Market Intelligence",
-        description:
-          "Market and sector analysis to inform assignment-specific underwriting; published research is linked when available.",
-      },
-    ];
+];
 
     const PROCESS_STEPS = [
       {
@@ -194,6 +169,23 @@ const SERVICES = [
         href: "/usa/research",
       },
     ];
+export default async function USAPage() {
+  const [{ data: propertyData }, { data: insightData }] = await Promise.all([
+    supabase.from("property_listings").select("*").limit(3),
+    supabase
+      .from("insight_articles")
+      .select("*")
+      .order("published_at", { ascending: false })
+      .limit(3),
+  ]);
+  const featuredProperties = (propertyData ?? []) as PropertyListing[];
+  const recentInsights = (insightData ?? []) as InsightArticle[];
+
+  const jsonLd = {
+      "@context": "https://schema.org",
+      "@graph": [
+      {
+        "@type": "Organization",
         "@id": `https://${SITE.domain}/#organization`,
         name: SITE.name,
         url: `https://${SITE.domain}/`,

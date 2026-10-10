@@ -1,5 +1,11 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 import KenyaHeader from '@/components/layout/Kenyaheader';
 
