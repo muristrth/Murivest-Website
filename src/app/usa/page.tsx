@@ -23,21 +23,30 @@ import { supabase } from "./lib/supabase";
 import type { PropertyListing, InsightArticle } from "./lib/types";
 import PropertyCard from "./components/PropertyCard";
 
-export const metadata: Metadata = {
-  title: "USA Commercial Real Estate Advisory — Murivest Group",
-  description:
-    "Murivest Group is an independent commercial real estate advisory firm representing institutional investors and private capital across U.S. office, industrial, logistics, multifamily, retail, and data center markets. Investment sales, leasing, and capital markets advisory.",
-  alternates: { canonical: `https://${SITE.domain}/usa` },
-  openGraph: {
-    title: "USA Commercial Real Estate Advisory — Murivest Group",
-    description:
-      "Independent commercial real estate advisory for institutional investors across U.S. office, industrial, logistics, multifamily, retail, and data center markets.",
-    url: `https://${SITE.domain}/usa`,
-  },
-};
-
 const HERO_IMAGE =
   "https://images.pexels.com/photos/12589487/pexels-photo-12589487.jpeg?auto=compress&cs=tinysrgb&w=1920";
+
+export const metadata: Metadata = {
+  title: "U.S. Commercial Real Estate Advisory | Murivest Group",
+  description:
+    "Independent, mandate-led commercial real estate advisory across selected U.S. markets. Acquisition, disposition, leasing, capital markets and market intelligence for principals, family offices and institutional investors.",
+  alternates: { canonical: `https://${SITE.domain}/usa` },
+  openGraph: {
+    type: "website",
+    title: "U.S. Commercial Real Estate Advisory | Murivest Group",
+    description:
+      "Independent, mandate-led advisory for U.S. commercial real estate acquisitions, dispositions, leasing, capital requirements and market intelligence.",
+    url: `https://${SITE.domain}/usa`,
+    images: [{ url: HERO_IMAGE, alt: "Commercial real estate in a U.S. city" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "U.S. Commercial Real Estate Advisory | Murivest Group",
+    description:
+      "Independent, mandate-led advisory for U.S. commercial real estate acquisitions, dispositions, leasing, capital requirements and market intelligence.",
+    images: [HERO_IMAGE],
+  },
+};
 
 const SECTOR_ICONS: Record<string, typeof Building2> = {
   office: Building2,
@@ -68,88 +77,145 @@ const SERVICES = [
       "Debt and equity capital sourcing for acquisitions, refinancings, and development projects, connecting sponsors with qualified capital providers.",
   },
   {
-    icon: LineChart,
-    title: "Market Intelligence",
-    description:
-      "Proprietary research on U.S. CRE market conditions, cap rate trends, and sector dynamics, published for our clients and the broader market.",
-  },
-];
-
-const PROCESS_STEPS = [
-  {
-    number: "01",
-    title: "Mandate Engagement",
-    description:
-      "We begin with a confidential consultation to understand your investment objectives, portfolio strategy, and the specific outcome you seek — whether acquiring, disposing, financing, or leasing.",
-  },
-  {
-    number: "02",
-    title: "Strategy & Underwriting",
-    description:
-      "Our team conducts detailed market analysis, asset-level underwriting, and positioning strategy to align with current capital markets conditions and buyer/tenant pools.",
-  },
-  {
-    number: "03",
-    title: "Targeted Marketing",
-    description:
-      "We execute a disciplined outreach to pre-qualified investors, tenants, or capital sources — maintaining confidentiality and competitive tension throughout the process.",
-  },
-  {
-    number: "04",
-    title: "Execution & Closing",
-    description:
-      "From letter of intent through due diligence and closing, Murivest manages the transaction process to protect your interests and maximize outcomes.",
-  },
-];
-
-const WHO_WE_SERVE = [
-  {
-    icon: Users,
-    title: "Institutional Investors",
     description:
       "Pension funds, endowments, insurance companies, and registered investment advisors seeking acquisition, disposition, and portfolio rebalancing support.",
   },
   {
     icon: Building2,
-    title: "Private Capital & Family Offices",
-    description:
-      "High-net-worth investors and family offices pursuing direct commercial real estate investments with institutional-quality underwriting.",
-  },
-  {
-    icon: Factory,
-    title: "Operating Partners & Sponsors",
-    description:
-      "Developers and operating partners seeking capital partners, disposition advisory, or leasing strategy for their projects.",
-  },
-];
+    const SERVICES = [
+      {
+        icon: Search,
+        title: "Investment Sales Advisory",
+        description:
+          "Disposition and acquisition advisory for commercial assets, scoped to a confidential, mandate-defined engagement.",
+      },
+      {
+        icon: Handshake,
+        title: "Leasing Advisory",
+        description:
+          "Tenant and landlord representation across office, industrial, and retail assets, with support for pricing and term negotiations.",
+      },
+      {
+        icon: TrendingUp,
+        title: "Capital Markets Advisory",
+        description:
+          "Debt and equity capital advisory for acquisitions, refinancings, and development projects, subject to mandate scope and counterparties.",
+      },
+      {
+        icon: LineChart,
+        title: "Market Intelligence",
+        description:
+          "Market and sector analysis to inform assignment-specific underwriting; published research is linked when available.",
+      },
+    ];
 
-export default async function USAHomePage() {
-  const [{ data: properties }, { data: insights }] = await Promise.all([
-    supabase
-      .from("usa_properties")
-      .select("*")
-      .eq("is_listed", true)
-      .order("published_at", { ascending: false })
-      .limit(3),
-    supabase
-      .from("usa_insights")
-      .select("*")
-      .eq("is_published", true)
-      .order("published_at", { ascending: false })
-      .limit(3),
-  ]);
+    const PROCESS_STEPS = [
+      {
+        number: "01",
+        title: "Mandate Engagement",
+        description:
+          "We begin with a consultation to understand your investment objectives, portfolio strategy, and the outcome you seek — whether acquiring, disposing, financing, or leasing.",
+      },
+      {
+        number: "02",
+        title: "Strategy & Underwriting",
+        description:
+          "Market analysis, asset-level underwriting, and positioning are scoped to the assignment and available evidence.",
+      },
+      {
+        number: "03",
+        title: "Targeted Marketing",
+        description:
+          "Where included in the mandate, outreach is directed to relevant investors, tenants, or capital sources, with confidentiality requirements agreed in advance.",
+      },
+      {
+        number: "04",
+        title: "Execution & Closing",
+        description:
+          "For transaction mandates, Murivest can coordinate the agreed process from letter of intent through due diligence and closing.",
+      },
+    ];
 
-  const featuredProperties = (properties || []) as PropertyListing[];
-  const recentInsights = (insights || []) as InsightArticle[];
+    const WHO_WE_SERVE = [
+      {
+        icon: Users,
+        title: "Institutional Investors",
+        description:
+          "Pension funds, endowments, insurance companies, and registered investment advisors evaluating acquisition, disposition, or portfolio strategy support.",
+      },
+      {
+        icon: Building2,
+        title: "Private Capital & Family Offices",
+        description:
+          "Private investors and family offices evaluating direct commercial real estate investments and advisory support.",
+      },
+      {
+        icon: Factory,
+        title: "Operating Partners & Sponsors",
+        description:
+          "Developers and operating partners evaluating capital, disposition, or leasing requirements for their projects.",
+      },
+    ];
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: SITE.name,
-    url: `https://${SITE.domain}/usa`,
-    description: SITE.description,
-    areaServed: "US",
-    knowsAbout: PROPERTY_TYPES.map((p) => p.label),
+    const BUYER_JOURNEYS = [
+      {
+        icon: Search,
+        title: "Acquire",
+        description: "Evaluate an acquisition mandate and define the investment brief.",
+        label: "Explore acquisition advisory",
+        href: "/usa/advisory/acquisition",
+      },
+      {
+        icon: Building2,
+        title: "Sell",
+        description: "Discuss asset positioning, buyer strategy, and a disposition mandate.",
+        label: "Discuss a disposition mandate",
+        href: "/usa/advisory/disposition",
+      },
+      {
+        icon: Handshake,
+        title: "Lease",
+        description: "Share tenant or landlord requirements for a leasing discussion.",
+        label: "Discuss leasing requirements",
+        href: "/usa/contact?inquiry=leasing",
+      },
+      {
+        icon: TrendingUp,
+        title: "Capital",
+        description: "Consider debt, equity, capital introduction, or recapitalization needs.",
+        label: "Discuss capital requirements",
+        href: "/usa/capital",
+      },
+      {
+        icon: LineChart,
+        title: "Research",
+        description: "Review available U.S. market research and the analytical approach.",
+        label: "Explore U.S. market intelligence",
+        href: "/usa/research",
+      },
+    ];
+        "@id": `https://${SITE.domain}/#organization`,
+        name: SITE.name,
+        url: `https://${SITE.domain}/`,
+        description: SITE.description,
+        areaServed: "United States",
+        knowsAbout: PROPERTY_TYPES.map((p) => p.label),
+      },
+      {
+        "@type": "WebSite",
+        "@id": `https://${SITE.domain}/#website`,
+        name: SITE.name,
+        url: `https://${SITE.domain}/`,
+        publisher: { "@id": `https://${SITE.domain}/#organization` },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `https://${SITE.domain}/` },
+          { "@type": "ListItem", position: 2, name: "United States", item: `https://${SITE.domain}/usa` },
+        ],
+      },
+    ],
   };
 
   return (
@@ -173,15 +239,15 @@ export default async function USAHomePage() {
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 pb-24 md:pb-32 pt-40">
           <div className="max-w-3xl">
             <Eyebrow>USA Commercial Real Estate Platform</Eyebrow>
-            <h1 className="mt-8 font-serif text-[2.8rem] md:text-[4rem] lg:text-[5.5rem] text-[#F8F7F4] leading-[1.02]">
-              Institutional advisory for U.S. <span className="italic font-light text-[#8B7355]">commercial real estate</span>
+            <h1 className="mt-8 font-serif text-[2.6rem] md:text-[3.6rem] lg:text-[4.4rem] text-[#F8F7F4] leading-[1.02]">
+              Institutional Commercial Real Estate Advisory in the United States
             </h1>
             <div className="w-16 h-[1px] bg-[#F8F7F4]/20 mt-8 mb-8" />
             <p className="max-w-xl text-[15px] md:text-[17px] leading-[1.7] text-[#F8F7F4]/65 font-light">
-              Murivest Group is an independent advisory firm representing
-              institutional investors, private capital, and principals across
-              U.S. office, industrial, logistics, multifamily, retail, and data
-              center markets — from acquisition through disposition.
+              Independent, mandate-led advisory for principals, family offices,
+              institutional investors, and operating partners evaluating U.S.
+              commercial real estate acquisitions, dispositions, leasing, and
+              capital requirements.
             </p>
             <div className="mt-12 flex flex-wrap gap-4">
               <Link
@@ -210,7 +276,7 @@ export default async function USAHomePage() {
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-10 lg:py-12">
           <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 text-center">
             <span className="text-[13px] font-medium text-[#5A5A5A]">
-              Serving clients across U.S. commercial real estate markets
+              Advisory across selected U.S. commercial real estate assignments
             </span>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[10px] font-medium uppercase tracking-[0.2em] text-[#8B7355]">
               <span>Office</span>
@@ -239,40 +305,39 @@ export default async function USAHomePage() {
             </h2>
             <div className="mt-8 space-y-5 text-[14px] leading-[1.9] text-[#5A5A5A] font-light">
               <p>
-                Murivest Group was founded to address a gap in the U.S.
-                commercial real estate market: institutional-quality advisory
-                delivered with the focus and alignment that only an independent
-                firm can provide.
+                Murivest Group provides commercial real estate advisory for
+                principals, private capital, and institutional investors
+                evaluating U.S. property opportunities and transactions.
               </p>
               <p>
                 We act as an intermediary — advising on the acquisition,
                 disposition, financing, and leasing of commercial properties on
-                behalf of investors and principals. Every engagement begins
-                with a clearly defined mandate and is executed with the
-                underwriting discipline and market intelligence that
-                institutional capital expects.
+                behalf of investors and principals. Engagement scope,
+                representation, and compensation are set out for each mandate.
+                Work can include acquisition, disposition, financing, leasing,
+                underwriting, and market analysis, as agreed with the client.
               </p>
               <p>
-                We do not manage proprietary funds or carry inventory. Our
-                role is to represent your interests — whether you are acquiring,
-                selling, financing, or leasing — with transparency and without
-                conflict.
+                The engagement documents define Murivest's role and identify
+                relevant compensation and conflicts for the specific
+                engagement. We do not describe an engagement as fiduciary
+                unless the applicable agreement and law establish that duty.
               </p>
             </div>
             <div className="mt-8 flex items-center gap-3 text-[11px] tracking-[0.2em] uppercase font-medium text-[#8B7355]">
               <ShieldCheck size={16} />
-              <span>Independent. Conflict-free. Mandate-driven.</span>
+              <span>Mandate-defined. Transparent. Client-specific.</span>
             </div>
           </div>
           <div className="lg:col-span-5 grid gap-px border border-[#E5E2DC] bg-[#E5E2DC] sm:grid-cols-2">
             {[
-              { stat: "6", label: "Property type specializations" },
-              { stat: "40+", label: "U.S. metro markets covered" },
-              { stat: "100%", label: "Mandate-based engagements" },
-              { stat: "0", label: "Proprietary fund conflicts" },
+              { stat: "Mandate", label: "Engagement scope defined in writing" },
+              { stat: "Underwriting", label: "Asset and market analysis by assignment" },
+              { stat: "Research", label: "Published when verified material is available" },
+              { stat: "Disclosure", label: "Role and relevant conflicts addressed per engagement" },
             ].map((item) => (
               <div key={item.label} className="bg-white p-8">
-                <div className="font-serif text-3xl md:text-4xl text-[#2C2C2C]">
+                <div className="font-serif text-2xl md:text-3xl text-[#2C2C2C]">
                   {item.stat}
                 </div>
                 <div className="mt-2 text-[11px] tracking-[0.15em] uppercase text-[#5A5A5A]">{item.label}</div>
@@ -287,7 +352,7 @@ export default async function USAHomePage() {
         <SectionHeading
           eyebrow="What We Do"
           title="Advisory services across the commercial real estate lifecycle"
-          description="From acquisition through disposition, financing, and leasing, Murivest provides the advisory, execution, and intelligence that institutional capital requires."
+          description="Acquisition, disposition, financing, and leasing support is scoped to each client's objectives and agreed mandate."
         />
         <div className="mt-16 grid gap-px border border-[#E5E2DC] bg-[#E5E2DC] sm:grid-cols-2 lg:grid-cols-4">
           {SERVICES.map((service, i) => (

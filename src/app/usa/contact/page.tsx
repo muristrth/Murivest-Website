@@ -11,7 +11,14 @@ export const metadata: Metadata = {
   alternates: { canonical: `https://${SITE.domain}/usa/contact` },
 };
 
-export default function ContactPage() {
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ inquiry?: string }>;
+}) {
+  const { inquiry } = await searchParams;
+  const defaultType = inquiry === "leasing" ? "leasing" : "mandate";
+
   return (
     <>
       <section className="bg-[#0F2E22] py-20">
@@ -38,7 +45,7 @@ export default function ContactPage() {
               description="Tell us about your investment objectives or the property you'd like to discuss. All inquiries are treated with strict confidentiality."
             />
             <div className="mt-8">
-              <InquiryForm defaultType="mandate" />
+              <InquiryForm defaultType={defaultType} />
             </div>
           </div>
 
