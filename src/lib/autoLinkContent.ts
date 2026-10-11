@@ -90,14 +90,14 @@ export function generateLinksFromPosts(
     if (post.title && post.title.length > 5 && !isBlacklisted(post.title)) {
       links.push({
         keyword: post.title,
-        href: `/research/${post.slug}`,
+        href: `/kenya/research/${post.slug}`,
       });
     }
 
     if (post.category && !isBlacklisted(post.category)) {
       links.push({
         keyword: post.category,
-        href: `/research/${post.slug}`,
+        href: `/kenya/research/${post.slug}`,
       });
     }
 
@@ -105,7 +105,7 @@ export function generateLinksFromPosts(
       if (!isBlacklisted(tag)) {
         links.push({
           keyword: tag,
-          href: `/research/${post.slug}`,
+          href: `/kenya/research/${post.slug}`,
         });
       }
     });

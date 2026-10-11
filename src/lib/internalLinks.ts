@@ -6,18 +6,18 @@ export interface InternalLink {
 export const internalLinks: InternalLink[] = [
   {
     keyword: 'commercial property',
-    href: '/research/commercial-property-guide',
+    href: '/kenya/research/commercial-property-guide',
   },
   {
     keyword: 'Westlands office space',
-    href: '/research/westlands-office-space-investment',
+    href: '/kenya/research/westlands-office-space-investment',
   },
   {
     keyword: 'Nairobi rental yields',
-    href: '/research/nairobi-rental-yields-2026',
+    href: '/kenya/research/nairobi-rental-yields-2026',
   },
   {
     keyword: 'Ruaka apartments',
-    href: '/research/ruaka-apartment-investment-guide',
+    href: '/kenya/research/ruaka-apartment-investment-guide',
   },
 ];

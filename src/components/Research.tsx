@@ -35,8 +35,44 @@ const research: ResearchEntry[] = [
     readTime: '52 min read',
     featured: true
     },
+
     {
-      id: 'standard-chartered-chiromo-headquarters-sale-westlands-nairobi-2026',
+    id: 'uk-flexible-office-serviced-office-rental-income-durability',
+    title: 'UK Office Rental Income and Flexible Workspace: Assessing Income Durability Beyond Headline Yield',
+    excerpt: 'Serviced offices, co-working and virtual offices are reshaping how UK office income is earned and who carries the risk. This research note introduces the Murivest Net Income Durability Model, with formulas and a stated-assumption worked example that turns an 8.33% gross yield into a 4.99% cash yield.',
+    author: getAuthor('investment'),
+    category: 'Investment',
+    image: '/research-images/uk-flexible-office-serviced-office-rental-income-durability.png',
+    date: '2026-10-11',
+    readTime: '18 min read',
+    featured: true
+  },
+
+  {
+    id: 'buy-commercial-property-uk-overseas-investors-guide',
+    title: 'How to Buy Commercial Property in the UK: A Seven-Gate Due-Diligence Framework for Overseas Investors',
+    excerpt: 'Overseas buyers rarely lose money on the headline price. They lose it on tax friction, title, lease terms, capital expenditure and exit. This guide sets out the Murivest Seven-Gate Acquisition Test, verified GOV.UK tax and compliance points, and a practical 30-day due-diligence roadmap.',
+    author: getAuthor('investment'),
+    category: 'Investment',
+    image: '/research-images/buy-commercial-property-uk-overseas-investors-guide.png',
+    date: '2026-10-11',
+    readTime: '18 min read',
+    featured: true,
+  },
+  {
+    id: 'uk-flexible-office-serviced-office-rental-income-durability',
+    title: 'UK Office Rental Income and Flexible Workspace: Assessing Income Durability Beyond Headline Yield',
+    excerpt: 'Serviced offices, co-working and virtual offices are reshaping how UK office income is earned and who carries the risk. This research note introduces the Murivest Net Income Durability Model, with formulas and a stated-assumption worked example that turns an 8.33% gross yield into a 4.99% cash yield.',
+    author: getAuthor('investment'),
+    category: 'Investment',
+    image: '/research-images/uk-flexible-office-serviced-office-rental-income-durability.png',
+    date: '2026-10-11',
+    readTime: '18 min read',
+    featured: true,
+  },
+
+  {
+    id: 'standard-chartered-chiromo-headquarters-sale-westlands-nairobi-2026',
       title: "The Chiromo Disposition: Standard Chartered's Exit from Physical Banking and the Institutional Investment Imperative in Nairobi's Prime Commercial Real Estate",
       excerpt: 'Comprehensive analysis of Standard Chartered Bank Kenya\'s Ksh 1.41 billion Chiromo headquarters sale, examining the structural retreat from physical banking, Westlands land value dynamics and Grade A commercial property.',
       author: getAuthor('investment'),
@@ -1310,7 +1346,7 @@ export default function Research() {
                   {/* IMAGE */}
 
                   <Link
-                    href={`/research/${post.id}`}
+                    href={`/kenya/research/${post.id}`}
                     className="bp-card-image-link"
                   >
                     <Image
@@ -1346,7 +1382,7 @@ export default function Research() {
                     </div>
 
                     <Link
-                      href={`/research/${post.id}`}
+                      href={`/kenya/research/${post.id}`}
                       className="bp-card-title"
                     >
                       {post.title}
@@ -1374,7 +1410,7 @@ export default function Research() {
                     </div>
 
                     <Link
-                      href={`/research/${post.id}`}
+                      href={`/kenya/research/${post.id}`}
                       className="bp-read-link"
                     >
                       Read article <ArrowRight />
