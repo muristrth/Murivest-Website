@@ -1,6 +1,8 @@
 'use client';
 
-import { useState, useMemo, useCallback, ChangeEvent } from 'react';
+import { useState, useMemo, useCallback, useId, ChangeEvent } from 'react';
+import { motion } from 'framer-motion';
+import { ArrowLeft, ArrowRight, Check, Circle, CheckCircle, Printer, Copy, RefreshCw } from 'lucide-react';
 
 /* ─── Types ───────────────────────────────────────────────────────────── */
 type Currency = 'KES' | 'USD' | 'EUR' | 'GBP';
@@ -274,116 +276,45 @@ For and on behalf of ${loi.vendor || '[Vendor]'}
 Date: ____________________________`;
 }
 
-/* ─── Styles ──────────────────────────────────────────────────────────── */
-const Styles = (): React.ReactElement => (
-  <style>{`
-    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
-    *{box-sizing:border-box;margin:0;padding:0;}
-    html,body{height:100%}
-    .mw{font-family:'DM Sans',system-ui,sans-serif;background:#f8f7f4;color:#1a1916;min-height:100vh;font-size:14px;-webkit-font-smoothing:antialiased;}
-    .serif{font-family:'DM Serif Display',Georgia,serif!important;}
-    input,textarea,select{font-family:'DM Sans',system-ui,sans-serif;font-size:14px;outline:none;}
-    input:focus,textarea:focus,select:focus{border-color:#c8a96e!important;box-shadow:0 0 0 3px rgba(200,169,110,0.15)!important;}
-    button{cursor:pointer;font-family:'DM Sans',system-ui,sans-serif;}
-    ::-webkit-scrollbar{width:4px;height:4px;}
-    ::-webkit-scrollbar-track{background:transparent;}
-    ::-webkit-scrollbar-thumb{background:#d4c9b0;border-radius:2px;}
+/* ─── Design tokens (shared with Contact component) ───────────────────── */
+/*  ivory #F8F7F4 · ink #2C2C2C · stone #5A5A5A · hairline #E5E2DC
+    brass #8B7355 · forest #0B3D2E                                        */
+const INPUT_CLS =
+  'w-full px-0 py-3 bg-transparent border-0 border-b border-[#E5E2DC] text-[#2C2C2C] font-light ' +
+  'placeholder:text-[#B9B4A8] focus:border-[#8B7355] focus:outline-none transition-colors duration-300 rounded-none';
+const LABEL_CLS = 'block text-[11px] tracking-[0.2em] uppercase text-[#5A5A5A] mb-2';
+const BTN_PRIMARY =
+  'inline-flex items-center justify-center gap-3 px-10 py-4 bg-[#0B3D2E] text-[#F8F7F4] text-[12px] ' +
+  'tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] transition-colors duration-500 ' +
+  'disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8B7355]';
+const BTN_GHOST =
+  'inline-flex items-center justify-center gap-2 px-5 py-3 border border-[#E5E2DC] text-[#2C2C2C] text-[11px] ' +
+  'tracking-[0.2em] uppercase font-medium hover:border-[#8B7355] hover:text-[#8B7355] transition-colors duration-300 ' +
+  'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8B7355]';
 
-    .hdr{position:sticky;top:0;z-index:200;background:#1a1916;border-bottom:1px solid #2e2c28;}
-    .hdr-in{max-width:1280px;margin:0 auto;padding:0 20px;height:56px;display:flex;align-items:center;gap:16px;}
-    .logo{color:#f8f7f4;font-family:'DM Serif Display',Georgia,serif;font-size:20px;letter-spacing:-0.01em;text-decoration:none;}
-    .logo span{color:#c8a96e;}
-    .nav{display:flex;gap:4px;margin-left:auto;align-items:center;}
-    .nav-btn{padding:7px 14px;border-radius:6px;border:1px solid transparent;font-size:13px;font-weight:500;transition:all 0.15s;background:transparent;color:#9a9589;border-color:#2e2c28;}
-    .nav-btn:hover{background:#2e2c28;color:#f8f7f4;}
-    .nav-btn.act{background:#c8a96e;color:#1a1916;border-color:#c8a96e;}
-    .nav-btn.gold{border-color:#c8a96e!important;color:#c8a96e!important;}
-    .nav-btn.gold:hover{background:#c8a96e!important;color:#1a1916!important;}
-    .cur-sel{padding:7px 10px;border-radius:6px;background:#2e2c28;color:#c8a96e;border:1px solid #3a3832;font-size:13px;font-weight:600;}
+/* ─── Shared components ───────────────────────────────────────────────── */
+function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
+  return (
+    <div className="flex items-center gap-3">
+      <div className="w-8 h-[1px] bg-[#8B7355]" />
+      <p className={`text-[11px] tracking-[0.4em] uppercase font-medium ${light ? 'text-[#F8F7F4]/70' : 'text-[#8B7355]'}`}>
+        {children}
+      </p>
+    </div>
+  );
+}
 
-    .layout{max-width:1280px;margin:0 auto;padding:28px 20px;}
-    .two-col{display:grid;grid-template-columns:340px 1fr;gap:28px;align-items:start;}
-    .loi-grid{display:grid;grid-template-columns:360px 1fr;gap:28px;align-items:start;}
+function Panel({ title, children, className = '' }: { title?: string; children: React.ReactNode; className?: string }) {
+  return (
+    <section className={`border border-[#E5E2DC] bg-white p-6 md:p-8 mb-6 ${className}`}>
+      {title && (
+        <h2 className="text-[11px] tracking-[0.3em] uppercase text-[#8B7355] font-medium mb-6">{title}</h2>
+      )}
+      {children}
+    </section>
+  );
+}
 
-    .panel{background:#fff;border:1px solid #e8e2d6;border-radius:12px;padding:24px;margin-bottom:16px;}
-    .panel:last-child{margin-bottom:0;}
-    .panel-h{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.09em;color:#9a9589;margin-bottom:16px;}
-
-    .fg{display:flex;flex-direction:column;gap:5px;margin-bottom:13px;}
-    .fg:last-child{margin-bottom:0;}
-    label.lbl{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#9a9589;}
-    .fi{width:100%;padding:10px 12px;background:#faf9f7;border:1px solid #e8e2d6;border-radius:8px;color:#1a1916;transition:border-color 0.15s,box-shadow 0.15s;}
-    .fi::placeholder{color:#c4bdb0;}
-
-    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-    .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
-
-    .mcard{background:#fff;border:1px solid #e8e2d6;border-radius:10px;padding:16px 14px;}
-    .mcard.gold{border-color:#c8a96e;background:#fefcf7;}
-    .mcard-l{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#9a9589;margin-bottom:5px;}
-    .mcard-v{font-size:22px;font-weight:400;color:#1a1916;letter-spacing:-0.02em;line-height:1.15;font-family:'DM Serif Display',Georgia,serif;}
-    .mcard-s{font-size:11px;color:#9a9589;margin-top:3px;}
-    .mgrid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;}
-    .mgrid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
-
-    .tbl{width:100%;border-collapse:collapse;font-size:13px;}
-    .tbl tr{border-bottom:1px solid #f0ece4;}
-    .tbl tr:last-child{border-bottom:none;}
-    .tbl td{padding:9px 10px;}
-    .tbl td:last-child{text-align:right;font-variant-numeric:tabular-nums;font-family:'DM Serif Display',Georgia,serif;}
-    .tbl tr.bld td{font-weight:600;background:#faf9f7;}
-    .tbl tr.dim td{color:#9a9589;font-size:12px;}
-    .neg{color:#c0392b;}
-    .pos{color:#1e7e5a;}
-
-    .btn-primary{padding:12px 20px;background:#c8a96e;color:#1a1916;border:none;border-radius:8px;font-weight:600;font-size:14px;transition:all 0.15s;}
-    .btn-primary:hover{background:#b8994e;}
-    .btn-primary:disabled{opacity:0.6;cursor:not-allowed;}
-    .btn-ghost{padding:12px 20px;background:transparent;color:#1a1916;border:1px solid #e8e2d6;border-radius:8px;font-weight:500;font-size:14px;transition:all 0.15s;}
-    .btn-ghost:hover{background:#f0ece4;}
-    .btn-dark{padding:12px 20px;background:#1a1916;color:#f8f7f4;border:none;border-radius:8px;font-weight:600;font-size:14px;transition:all 0.15s;}
-    .btn-dark:hover{background:#2e2c28;}
-    .btn-dark:disabled{opacity:0.6;cursor:not-allowed;}
-    .btn-sm{padding:7px 13px!important;font-size:12px!important;border-radius:6px!important;}
-
-    .chk{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #f0ece4;font-size:13px;}
-    .chk:last-child{border:none;}
-    .ok-icon{color:#1e7e5a;}
-    .warn-icon{color:#e67e22;}
-
-    .banner{background:#1a1916;color:#f8f7f4;border-radius:12px;padding:20px 24px;display:flex;align-items:center;gap:16px;margin-bottom:24px;flex-wrap:wrap;}
-    .info-box{background:#faf9f7;border:1px solid #e8e2d6;border-radius:8px;padding:12px 14px;font-size:13px;margin-bottom:13px;}
-    .info-box-gold{background:#fefcf7;border:1px solid #e8dfc0;border-radius:8px;padding:12px 14px;font-size:13px;margin-bottom:13px;}
-
-    .loi-pre{font-family:'DM Serif Display',Georgia,serif;font-size:12px;line-height:1.9;white-space:pre-wrap;word-break:break-word;color:#1a1916;}
-    .loi-scroll{background:#fff;border:1px solid #e8e2d6;border-radius:0 0 12px 12px;border-top:none;padding:28px;max-height:66vh;overflow-y:auto;}
-
-    @media(max-width:1024px){
-      .two-col,.loi-grid{grid-template-columns:1fr;}
-      .mgrid4{grid-template-columns:repeat(2,1fr);}
-    }
-    @media(max-width:640px){
-      .hdr-in{padding:0 14px;gap:8px;}
-      .logo{font-size:17px;}
-      .layout{padding:16px 14px;}
-      .grid3{grid-template-columns:1fr 1fr;}
-      .panel{padding:16px;}
-      .mcard-v{font-size:18px;}
-      .nav-btn{padding:6px 10px;font-size:12px;}
-      .banner{flex-direction:column;gap:12px;align-items:flex-start;}
-    }
-    @media(max-width:400px){
-      .grid3,.grid2{grid-template-columns:1fr;}
-    }
-    @media print{
-      .no-print{display:none!important;}
-      .loi-scroll{max-height:none;border:none;padding:0;}
-      .loi-pre{font-size:10pt;line-height:1.8;}
-    }
-  `}</style>
-);
-
-/* ─── Shared field components ─────────────────────────────────────────── */
 interface FIProps {
   label: string;
   type?: string;
@@ -398,12 +329,14 @@ interface FIProps {
 }
 
 function FI({ label, type = 'text', value, onChange, placeholder, note, step, min, max, suffix }: FIProps) {
+  const id = useId();
   return (
-    <div className="fg">
-      <label className="lbl">{label}</label>
-      <div style={{ position: 'relative' }}>
+    <div className="mb-6 last:mb-0">
+      <label htmlFor={id} className={LABEL_CLS}>{label}</label>
+      <div className="relative">
         <input
-          className="fi"
+          id={id}
+          className={`${INPUT_CLS} ${suffix ? 'pr-14' : ''}`}
           type={type}
           value={value}
           onChange={onChange}
@@ -411,19 +344,14 @@ function FI({ label, type = 'text', value, onChange, placeholder, note, step, mi
           step={step}
           min={min}
           max={max}
-          style={suffix ? { paddingRight: 40 } : undefined}
         />
         {suffix && (
-          <span style={{
-            position: 'absolute', right: 12, top: '50%',
-            transform: 'translateY(-50%)', fontSize: 12,
-            color: '#9a9589', pointerEvents: 'none',
-          }}>
+          <span className="absolute right-0 top-1/2 -translate-y-1/2 text-[12px] text-[#5A5A5A] pointer-events-none">
             {suffix}
           </span>
         )}
       </div>
-      {note && <span style={{ fontSize: 10, color: '#b0a898' }}>{note}</span>}
+      {note && <span className="block mt-2 text-[11px] text-[#5A5A5A] italic">{note}</span>}
     </div>
   );
 }
@@ -437,34 +365,41 @@ interface FTAProps {
 }
 
 function FTA({ label, value, onChange, rows = 3, placeholder }: FTAProps) {
+  const id = useId();
   return (
-    <div className="fg">
-      <label className="lbl">{label}</label>
+    <div className="mb-6 last:mb-0">
+      <label htmlFor={id} className={LABEL_CLS}>{label}</label>
       <textarea
-        className="fi"
+        id={id}
+        className={`${INPUT_CLS} resize-y leading-relaxed`}
         value={value}
         onChange={onChange}
         rows={rows}
         placeholder={placeholder}
-        style={{ resize: 'vertical', lineHeight: 1.6 }}
       />
     </div>
   );
 }
 
-interface MCardProps {
-  label: string;
-  value: string;
-  sub?: string;
-  highlight?: boolean;
+/** Dark primary metric: label, large serif figure, hairline, qualifier. */
+function Metric({ label, value, sub }: { label: string; value: string; sub?: string }) {
+  return (
+    <div className="px-6 py-8 md:px-8">
+      <p className="text-[11px] tracking-[0.25em] uppercase text-[#F8F7F4]/60 mb-4">{label}</p>
+      <p className="font-serif text-3xl md:text-4xl text-[#F8F7F4] leading-none mb-4 break-words">{value}</p>
+      <div className="w-8 h-[1px] bg-[#8B7355] mb-3" />
+      {sub && <p className="text-[12px] text-[#F8F7F4]/60 font-light">{sub}</p>}
+    </div>
+  );
 }
 
-function MCard({ label, value, sub, highlight }: MCardProps) {
+/** Light secondary metric. */
+function MCard({ label, value, sub }: { label: string; value: string; sub?: string }) {
   return (
-    <div className={`mcard${highlight ? ' gold' : ''}`}>
-      <div className="mcard-l">{label}</div>
-      <div className="mcard-v">{value}</div>
-      {sub && <div className="mcard-s">{sub}</div>}
+    <div className="border border-[#E5E2DC] bg-white p-6">
+      <p className="text-[11px] tracking-[0.2em] uppercase text-[#5A5A5A] mb-3">{label}</p>
+      <p className="font-serif text-2xl text-[#2C2C2C] leading-tight break-words">{value}</p>
+      {sub && <p className="text-[12px] text-[#5A5A5A] font-light mt-2">{sub}</p>}
     </div>
   );
 }
@@ -594,33 +529,60 @@ export default function MurivestatUW(): React.ReactElement {
   ];
   const checksOk = checks.filter((ch) => ch.ok).length;
 
+  /* Structured data (SEO) */
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'Murivest Underwriting and Letter of Intent Tool',
+    applicationCategory: 'FinanceApplication',
+    description:
+      'Underwrite a commercial property acquisition and generate a non-binding Letter of Intent under Kenyan conditions of sale.',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Murivest Realty Group',
+      url: 'https://murivest.com',
+    },
+  };
+
+  const navBtn = (active: boolean) =>
+    `px-2 sm:px-3 py-2 text-[10px] sm:text-[11px] tracking-[0.15em] sm:tracking-[0.2em] uppercase font-medium border-b transition-colors duration-300 ` +
+    `focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8B7355] ` +
+    (active
+      ? 'border-[#8B7355] text-[#8B7355]'
+      : 'border-transparent text-[#5A5A5A] hover:text-[#8B7355]');
+
+  const fade = {
+    initial: { opacity: 0, y: 16 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+  };
+
   /* ── Render ─────────────────────────────────────────────────────────── */
   return (
-    <div className="mw">
-      <Styles />
+    <div className="min-h-screen bg-[#F8F7F4] text-[#2C2C2C] font-light antialiased text-[14px]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
 
       {/* Header */}
-      <header className="hdr">
-        <div className="hdr-in">
-          <span className="logo serif">Muri<span>vest</span></span>
-          <nav className="nav">
-            <button
-              className={`nav-btn${tab === 'uw' ? ' act' : ''}`}
-              onClick={() => setTab('uw')}
-            >
+      <header className="sticky top-0 z-50 bg-[#F8F7F4]/95 backdrop-blur border-b border-[#E5E2DC] print:hidden">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 h-16 flex items-center gap-2 sm:gap-4">
+          <span className="font-serif text-lg sm:text-xl text-[#2C2C2C] tracking-tight">
+            Muri<span className="italic text-[#8B7355] font-light">vest</span>
+          </span>
+          <nav className="ml-auto flex items-center gap-1 sm:gap-2" aria-label="Underwriting sections">
+            <button className={navBtn(tab === 'uw')} onClick={() => setTab('uw')} aria-current={tab === 'uw' ? 'page' : undefined}>
               Underwriting
             </button>
-            <button
-              className={`nav-btn${tab === 'loi' ? ' act' : ''}`}
-              onClick={() => setTab('loi')}
-            >
+            <button className={navBtn(tab === 'loi')} onClick={() => setTab('loi')} aria-current={tab === 'loi' ? 'page' : undefined}>
               LOI
             </button>
-            <button className="nav-btn gold" onClick={goLOI}>
-              Skip → LOI
+            <button className={`${navBtn(false)} inline-flex items-center gap-1 text-[#8B7355]`} onClick={goLOI}>
+              Skip <ArrowRight className="w-3 h-3" strokeWidth={1.25} /> LOI
             </button>
             <select
-              className="cur-sel"
+              className="ml-1 sm:ml-2 bg-transparent border-0 border-b border-[#E5E2DC] text-[11px] tracking-[0.15em] uppercase text-[#8B7355] py-2 focus:border-[#8B7355] focus:outline-none"
               value={cur}
               onChange={(e) => setCur(e.target.value as Currency)}
               aria-label="Display currency"
@@ -635,402 +597,409 @@ export default function MurivestatUW(): React.ReactElement {
 
       {/* ═══════════ UNDERWRITING TAB ═══════════════════════════════════ */}
       {tab === 'uw' && (
-        <div className="layout">
-          {/* Quick LOI banner */}
-          <div className="banner no-print">
-            <div style={{ flex: 1 }}>
-              <div className="serif" style={{ fontSize: 20, marginBottom: 4 }}>
-                Ready to make an offer?
-              </div>
-              <div style={{ fontSize: 13, color: '#9a9589' }}>
-                Skip underwriting and go straight to the LOI — fill deal terms and submit instantly.
-              </div>
-            </div>
-            <button className="btn-primary" onClick={goLOI}>
-              Generate LOI →
-            </button>
-          </div>
-
-          <div className="two-col">
-            {/* Left — inputs */}
-            <div>
-              <div className="panel">
-                <div className="panel-h">Property Details</div>
-                <FI label="Property Name" value={d.propName} onChange={setDf('propName')} placeholder="e.g. Riverside Plaza" />
-                <FI label="Submarket / Location" value={d.submarket} onChange={setDf('submarket')} placeholder="e.g. Westlands, Nairobi" />
-                <div className="grid2">
-                  <FI label="Asset Type" value={d.assetType} onChange={setDf('assetType')} placeholder="Office / Retail / Mixed" />
-                  <FI label="Tenure" value={d.tenure} onChange={setDf('tenure')} placeholder="Freehold / Leasehold" />
-                </div>
-                <FI label="Vendor" value={d.seller} onChange={setDf('seller')} placeholder="Vendor name" />
-                <FI label="Buyer / Purchaser" value={d.buyer} onChange={setDf('buyer')} placeholder="Your entity name" />
-              </div>
-
-              <div className="panel">
-                <div className="panel-h">Acquisition &amp; Financing</div>
-                <FI
-                  label={`Purchase Price (${cur})`}
-                  type="number"
-                  value={d.price}
-                  onChange={setDf('price')}
-                  placeholder="0"
-                />
-                <div className="grid2">
-                  <FI label="Equity %" type="number" value={d.equityPct} onChange={setDf('equityPct')} placeholder="100" suffix="%" step="5" min="0" max="100" />
-                  <FI label="Interest Rate" type="number" value={d.ratePct} onChange={setDf('ratePct')} placeholder="0.00" suffix="% p.a." step="0.25" />
-                </div>
-                <FI label="Loan Term" type="number" value={d.amortYrs} onChange={setDf('amortYrs')} placeholder="15" suffix="yrs" />
-                {hasDebt && (
-                  <div className="info-box">
-                    {[
-                      ['Equity', fc(c.equity)],
-                      ['Loan Amount', fc(c.debt)],
-                      ...(c.ds > 0 ? [['Monthly Debt Service', fc(c.ds)]] : []),
-                    ].map(([label, val]) => (
-                      <div key={label} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6, fontSize: 13 }}>
-                        <span style={{ color: '#9a9589' }}>{label}</span>
-                        <span style={{ fontWeight: 600 }}>{val}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              <div className="panel">
-                <div className="panel-h">Gross Income</div>
-                <FI label={`Monthly Rent (${cur})`} type="number" value={d.monthlyRent} onChange={setDf('monthlyRent')} placeholder="0" />
-                <FI
-                  label={`Other Income (${cur}/mo)`}
-                  type="number"
-                  value={d.otherIncome}
-                  onChange={setDf('otherIncome')}
-                  placeholder="0"
-                  note="Parking, service charge recoveries, etc."
-                />
-                <FI label="Vacancy Rate" type="number" value={d.vacancyPct} onChange={setDf('vacancyPct')} placeholder="0" suffix="%" step="0.5" />
-              </div>
-
-              <div className="panel">
-                <div className="panel-h">Operating Expenses</div>
-                <div className="grid3">
-                  <FI label="Management" type="number" value={d.mgmtPct} onChange={setDf('mgmtPct')} placeholder="0" suffix="%" step="0.5" />
-                  <FI label="Maintenance" type="number" value={d.maintPct} onChange={setDf('maintPct')} placeholder="0" suffix="%" step="0.5" />
-                  <FI label="CapEx Reserve" type="number" value={d.capexPct} onChange={setDf('capexPct')} placeholder="0" suffix="%" step="0.25" />
-                </div>
-                <div className="grid3">
-                  <FI label={`Tax (${cur}/mo)`} type="number" value={d.taxMonthly} onChange={setDf('taxMonthly')} placeholder="0" />
-                  <FI label={`Insurance (${cur}/mo)`} type="number" value={d.insuranceMonthly} onChange={setDf('insuranceMonthly')} placeholder="0" />
-                  <FI label={`Misc (${cur}/mo)`} type="number" value={d.miscMonthly} onChange={setDf('miscMonthly')} placeholder="0" />
-                </div>
-              </div>
-            </div>
-
-            {/* Right — results */}
-            <div>
-              <div className="mgrid4">
-                <MCard
-                  label="Cap Rate"
-                  value={fPct(c.capRate)}
-                  sub={hasIncome ? `NOI ${fc(c.noiA)}/yr` : 'Enter income'}
-                  highlight={c.capRate > 5}
-                />
-                <MCard label="Cash-on-Cash" value={fPct(c.coc)} sub="After debt service" />
-                <MCard
-                  label="DSCR"
-                  value={isFinite(c.dscr) ? fX(c.dscr) : 'Unlevered'}
-                  sub={!isFinite(c.dscr) || c.dscr >= 1.25 ? '✓ Acceptable' : '⚠ Below 1.25×'}
-                  highlight={!isFinite(c.dscr) || c.dscr >= 1.25}
-                />
-                <MCard label="GRM" value={fX(c.grm)} sub="Price ÷ Annual rent" />
-              </div>
-
-              <div className="mgrid2">
-                <MCard label="NOI (Annual)" value={fc(c.noiA)} sub="Net operating income" />
-                <MCard
-                  label="OpEx Ratio"
-                  value={fPct(c.opexRatio)}
-                  sub={
-                    !hasIncome ? 'Enter income'
-                    : c.opexRatio < 40 ? '✓ Efficient'
-                    : c.opexRatio < 55 ? 'Moderate'
-                    : '⚠ High'
-                  }
-                />
-                {hasDebt && (
-                  <MCard label="Debt Yield" value={fPct(c.debtYield)} sub="NOI ÷ Loan" />
-                )}
-                <MCard label="Pre-Tax CF" value={fc(c.cfA)} sub="Annual cash flow" />
-              </div>
-
-              {/* Operating statement */}
-              {hasIncome && (
-                <div className="panel" style={{ marginBottom: 20 }}>
-                  <div className="panel-h">Monthly Operating Statement</div>
-                  <table className="tbl">
-                    <tbody>
-                      <tr><td>Gross Scheduled Income</td><td>{fc(c.gsi)}</td></tr>
-                      {c.vacLoss > 0 && (
-                        <tr className="dim"><td>— Vacancy &amp; Credit Loss</td><td className="neg">({fc(c.vacLoss)})</td></tr>
-                      )}
-                      <tr className="bld"><td>Effective Gross Income</td><td>{fc(c.egi)}</td></tr>
-                      {c.mgmt > 0 && <tr className="dim"><td>— Management Fee</td><td className="neg">({fc(c.mgmt)})</td></tr>}
-                      {c.maint > 0 && <tr className="dim"><td>— Maintenance Reserve</td><td className="neg">({fc(c.maint)})</td></tr>}
-                      {c.capex > 0 && <tr className="dim"><td>— CapEx Reserve</td><td className="neg">({fc(c.capex)})</td></tr>}
-                      {c.taxes > 0 && <tr className="dim"><td>— Property Tax / KRA</td><td className="neg">({fc(c.taxes)})</td></tr>}
-                      {c.ins > 0 && <tr className="dim"><td>— Insurance</td><td className="neg">({fc(c.ins)})</td></tr>}
-                      {c.misc > 0 && <tr className="dim"><td>— Miscellaneous</td><td className="neg">({fc(c.misc)})</td></tr>}
-                      <tr className="bld"><td>Net Operating Income</td><td className="pos">{fc(c.noi)}</td></tr>
-                      {c.ds > 0 && (
-                        <tr className="dim"><td>— Debt Service</td><td className="neg">({fc(c.ds)})</td></tr>
-                      )}
-                      {c.ds > 0 && (
-                        <tr className="bld">
-                          <td>Pre-Tax Cash Flow</td>
-                          <td className={c.cfM >= 0 ? 'pos' : 'neg'}>{fc(c.cfM)}</td>
-                        </tr>
-                      )}
-                    </tbody>
-                  </table>
-                  <p style={{ fontSize: 11, color: '#b0a898', marginTop: 12, lineHeight: 1.7 }}>
-                    Annual NOI {fc(c.noiA)} · Annual GSI {fc(c.gsiA)} · OpEx {fc(c.opexA)}
-                  </p>
-                </div>
-              )}
-
-              {/* Checklist */}
-              <div className="panel" style={{ marginBottom: 20 }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
-                  <div className="panel-h" style={{ marginBottom: 0 }}>Deal Checklist</div>
-                  <span style={{ fontSize: 12, fontWeight: 600, color: checksOk === checks.length ? '#1e7e5a' : '#e67e22' }}>
-                    {checksOk}/{checks.length}
-                  </span>
-                </div>
-                {checks.map((item, i) => (
-                  <div key={i} className="chk">
-                    <span className={item.ok ? 'ok-icon' : 'warn-icon'}>
-                      {item.ok ? '✓' : '○'}
-                    </span>
-                    <span style={{ color: item.ok ? '#1a1916' : '#9a9589' }}>{item.label}</span>
-                  </div>
-                ))}
-              </div>
-
-              <button
-                className="btn-primary"
-                style={{ width: '100%', fontSize: 15 }}
-                onClick={goLOI}
-              >
-                Proceed to Letter of Intent →
-              </button>
-              <p style={{ fontSize: 11, color: '#b0a898', textAlign: 'center', marginTop: 10 }}>
-                UW figures auto-populate the LOI. Not investment advice.
+        <main className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 py-12 md:py-20">
+          <motion.div {...fade}>
+            <div className="mb-12 md:mb-16 max-w-3xl">
+              <Eyebrow>Acquisition Underwriting</Eyebrow>
+              <h1 className="mt-8 text-3xl md:text-4xl lg:text-5xl font-serif leading-[1.1] text-[#2C2C2C]">
+                Underwrite the<br />
+                <span className="italic text-[#8B7355] font-light">Acquisition</span>
+              </h1>
+              <div className="w-16 h-[1px] bg-[#E5E2DC] my-8" />
+              <p className="text-[15px] leading-[1.8] text-[#5A5A5A] font-light">
+                Enter the property, financing and income assumptions. Cap rate, debt service
+                coverage and net operating income are calculated as you type.
               </p>
             </div>
-          </div>
-        </div>
+
+            {/* Quick LOI banner */}
+            <div className="bg-[#0B3D2E] text-[#F8F7F4] p-8 md:p-10 flex flex-col md:flex-row md:items-center gap-6 mb-12 print:hidden">
+              <div className="flex-1">
+                <h2 className="font-serif text-2xl mb-2">Ready to make an offer?</h2>
+                <p className="text-[14px] leading-[1.8] text-[#F8F7F4]/70 font-light">
+                  Skip underwriting and go straight to the LOI — fill deal terms and submit instantly.
+                </p>
+              </div>
+              <button
+                className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-[#F8F7F4] text-[#0B3D2E] text-[12px] tracking-[0.2em] uppercase font-medium hover:bg-[#8B7355] hover:text-[#F8F7F4] transition-colors duration-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F8F7F4]"
+                onClick={goLOI}
+              >
+                Generate LOI <ArrowRight className="w-4 h-4" strokeWidth={1.25} />
+              </button>
+            </div>
+
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+              {/* Left — inputs */}
+              <div className="lg:col-span-5">
+                <Panel title="Property Details">
+                  <FI label="Property Name" value={d.propName} onChange={setDf('propName')} placeholder="e.g. Riverside Plaza" />
+                  <FI label="Submarket / Location" value={d.submarket} onChange={setDf('submarket')} placeholder="e.g. Westlands, Nairobi" />
+                  <div className="grid grid-cols-1 min-[400px]:grid-cols-2 gap-x-6">
+                    <FI label="Asset Type" value={d.assetType} onChange={setDf('assetType')} placeholder="Office / Retail / Mixed" />
+                    <FI label="Tenure" value={d.tenure} onChange={setDf('tenure')} placeholder="Freehold / Leasehold" />
+                  </div>
+                  <FI label="Vendor" value={d.seller} onChange={setDf('seller')} placeholder="Vendor name" />
+                  <FI label="Buyer / Purchaser" value={d.buyer} onChange={setDf('buyer')} placeholder="Your entity name" />
+                </Panel>
+
+                <Panel title="Acquisition & Financing">
+                  <FI
+                    label={`Purchase Price (${cur})`}
+                    type="number"
+                    value={d.price}
+                    onChange={setDf('price')}
+                    placeholder="0"
+                  />
+                  <div className="grid grid-cols-1 min-[400px]:grid-cols-2 gap-x-6">
+                    <FI label="Equity %" type="number" value={d.equityPct} onChange={setDf('equityPct')} placeholder="100" suffix="%" step="5" min="0" max="100" />
+                    <FI label="Interest Rate" type="number" value={d.ratePct} onChange={setDf('ratePct')} placeholder="0.00" suffix="% p.a." step="0.25" />
+                  </div>
+                  <FI label="Loan Term" type="number" value={d.amortYrs} onChange={setDf('amortYrs')} placeholder="15" suffix="yrs" />
+                  {hasDebt && (
+                    <div className="border-t border-[#E5E2DC] pt-5 mt-2">
+                      {[
+                        ['Equity', fc(c.equity)],
+                        ['Loan Amount', fc(c.debt)],
+                        ...(c.ds > 0 ? [['Monthly Debt Service', fc(c.ds)]] : []),
+                      ].map(([label, val]) => (
+                        <div key={label} className="flex justify-between mb-2 last:mb-0 text-[13px]">
+                          <span className="text-[#5A5A5A]">{label}</span>
+                          <span className="font-serif text-[15px]">{val}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </Panel>
+
+                <Panel title="Gross Income">
+                  <FI label={`Monthly Rent (${cur})`} type="number" value={d.monthlyRent} onChange={setDf('monthlyRent')} placeholder="0" />
+                  <FI
+                    label={`Other Income (${cur}/mo)`}
+                    type="number"
+                    value={d.otherIncome}
+                    onChange={setDf('otherIncome')}
+                    placeholder="0"
+                    note="Parking, service charge recoveries, etc."
+                  />
+                  <FI label="Vacancy Rate" type="number" value={d.vacancyPct} onChange={setDf('vacancyPct')} placeholder="0" suffix="%" step="0.5" />
+                </Panel>
+
+                <Panel title="Operating Expenses">
+                  <div className="grid grid-cols-1 min-[400px]:grid-cols-2 sm:grid-cols-3 gap-x-6">
+                    <FI label="Management" type="number" value={d.mgmtPct} onChange={setDf('mgmtPct')} placeholder="0" suffix="%" step="0.5" />
+                    <FI label="Maintenance" type="number" value={d.maintPct} onChange={setDf('maintPct')} placeholder="0" suffix="%" step="0.5" />
+                    <FI label="CapEx Reserve" type="number" value={d.capexPct} onChange={setDf('capexPct')} placeholder="0" suffix="%" step="0.25" />
+                  </div>
+                  <div className="grid grid-cols-1 min-[400px]:grid-cols-2 sm:grid-cols-3 gap-x-6 mt-6">
+                    <FI label={`Tax (${cur}/mo)`} type="number" value={d.taxMonthly} onChange={setDf('taxMonthly')} placeholder="0" />
+                    <FI label={`Insurance (${cur}/mo)`} type="number" value={d.insuranceMonthly} onChange={setDf('insuranceMonthly')} placeholder="0" />
+                    <FI label={`Misc (${cur}/mo)`} type="number" value={d.miscMonthly} onChange={setDf('miscMonthly')} placeholder="0" />
+                  </div>
+                </Panel>
+              </div>
+
+              {/* Right — results */}
+              <div className="lg:col-span-7 lg:sticky lg:top-24">
+                <section aria-label="Key return metrics" className="bg-[#0B3D2E] grid grid-cols-2 divide-x divide-y divide-[#F8F7F4]/10 mb-6">
+                  <Metric
+                    label="Cap Rate"
+                    value={fPct(c.capRate)}
+                    sub={hasIncome ? `NOI ${fc(c.noiA)}/yr` : 'Enter income'}
+                  />
+                  <Metric label="Cash-on-Cash" value={fPct(c.coc)} sub="After debt service" />
+                  <Metric
+                    label="DSCR"
+                    value={isFinite(c.dscr) ? fX(c.dscr) : 'Unlevered'}
+                    sub={!isFinite(c.dscr) || c.dscr >= 1.25 ? 'Acceptable' : 'Below 1.25×'}
+                  />
+                  <Metric label="GRM" value={fX(c.grm)} sub="Price ÷ Annual rent" />
+                </section>
+
+                <div className="grid grid-cols-1 min-[400px]:grid-cols-2 gap-6 mb-6">
+                  <MCard label="NOI (Annual)" value={fc(c.noiA)} sub="Net operating income" />
+                  <MCard
+                    label="OpEx Ratio"
+                    value={fPct(c.opexRatio)}
+                    sub={
+                      !hasIncome ? 'Enter income'
+                      : c.opexRatio < 40 ? 'Efficient'
+                      : c.opexRatio < 55 ? 'Moderate'
+                      : 'High'
+                    }
+                  />
+                  {hasDebt && <MCard label="Debt Yield" value={fPct(c.debtYield)} sub="NOI ÷ Loan" />}
+                  <MCard label="Pre-Tax CF" value={fc(c.cfA)} sub="Annual cash flow" />
+                </div>
+
+                {/* Operating statement */}
+                {hasIncome && (
+                  <Panel title="Monthly Operating Statement">
+                    <table className="w-full text-[13px]">
+                      <tbody>
+                        <StatRow label="Gross Scheduled Income" value={fc(c.gsi)} />
+                        {c.vacLoss > 0 && <StatRow dim neg label="Vacancy & Credit Loss" value={`(${fc(c.vacLoss)})`} />}
+                        <StatRow bold label="Effective Gross Income" value={fc(c.egi)} />
+                        {c.mgmt > 0 && <StatRow dim neg label="Management Fee" value={`(${fc(c.mgmt)})`} />}
+                        {c.maint > 0 && <StatRow dim neg label="Maintenance Reserve" value={`(${fc(c.maint)})`} />}
+                        {c.capex > 0 && <StatRow dim neg label="CapEx Reserve" value={`(${fc(c.capex)})`} />}
+                        {c.taxes > 0 && <StatRow dim neg label="Property Tax / KRA" value={`(${fc(c.taxes)})`} />}
+                        {c.ins > 0 && <StatRow dim neg label="Insurance" value={`(${fc(c.ins)})`} />}
+                        {c.misc > 0 && <StatRow dim neg label="Miscellaneous" value={`(${fc(c.misc)})`} />}
+                        <StatRow bold pos label="Net Operating Income" value={fc(c.noi)} />
+                        {c.ds > 0 && <StatRow dim neg label="Debt Service" value={`(${fc(c.ds)})`} />}
+                        {c.ds > 0 && (
+                          <StatRow bold pos={c.cfM >= 0} neg={c.cfM < 0} label="Pre-Tax Cash Flow" value={fc(c.cfM)} />
+                        )}
+                      </tbody>
+                    </table>
+                    <p className="text-[11px] text-[#5A5A5A] italic mt-5 leading-relaxed">
+                      Annual NOI {fc(c.noiA)} · Annual GSI {fc(c.gsiA)} · OpEx {fc(c.opexA)}
+                    </p>
+                  </Panel>
+                )}
+
+                {/* Checklist */}
+                <Panel>
+                  <div className="flex items-center justify-between mb-5">
+                    <h2 className="text-[11px] tracking-[0.3em] uppercase text-[#8B7355] font-medium">Deal Checklist</h2>
+                    <span className="font-serif text-[15px] text-[#2C2C2C]">
+                      {checksOk}/{checks.length}
+                    </span>
+                  </div>
+                  <ul>
+                    {checks.map((item, i) => (
+                      <li key={i} className="flex items-center gap-4 py-3 border-b border-[#E5E2DC] last:border-0 text-[13px]">
+                        {item.ok ? (
+                          <Check className="w-4 h-4 text-[#0B3D2E]" strokeWidth={1.25} aria-label="Complete" />
+                        ) : (
+                          <Circle className="w-4 h-4 text-[#B9B4A8]" strokeWidth={1.25} aria-label="Outstanding" />
+                        )}
+                        <span className={item.ok ? 'text-[#2C2C2C]' : 'text-[#5A5A5A]'}>{item.label}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </Panel>
+
+                <button className={`${BTN_PRIMARY} w-full`} onClick={goLOI}>
+                  Proceed to Letter of Intent <ArrowRight className="w-4 h-4" strokeWidth={1.25} />
+                </button>
+                <p className="text-[11px] text-[#5A5A5A] italic text-center mt-4">
+                  UW figures auto-populate the LOI. Not investment advice.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </main>
       )}
 
       {/* ═══════════ LOI TAB ════════════════════════════════════════════ */}
       {tab === 'loi' && (
-        <div className="layout" id="loi-section">
-          <div style={{
-            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-            marginBottom: 24, flexWrap: 'wrap', gap: 12,
-          }}>
-            <div>
-              <h1 className="serif" style={{ fontSize: 30, fontWeight: 400, marginBottom: 4 }}>
-                Letter of Intent
-              </h1>
-              <p style={{ color: '#9a9589', fontSize: 13 }}>
-                Non-binding indicative offer · LSK Conditions of Sale · Republic of Kenya
-              </p>
-            </div>
-            <div className="no-print" style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-              <button className="btn-ghost btn-sm" onClick={() => setTab('uw')}>
-                ← Back to UW
-              </button>
-              <button className="btn-ghost btn-sm" onClick={goLOI}>
-                ⟳ Re-sync from UW
-              </button>
-            </div>
-          </div>
-
-          <div className="loi-grid">
-            {/* Form */}
-            <div className="no-print">
-              <div className="panel">
-                <div className="panel-h">Transaction Parties</div>
-                <FI label="Date" type="date" value={loi.date} onChange={(e) => setLoi((p) => ({ ...p, date: e.target.value }))} />
-                <FI label="Addressee (To:)" value={loi.addressee} onChange={setLf('addressee')} placeholder="Name of agent or vendor rep" />
-                <FI label="Agency / Broker Firm" value={loi.agentFirm} onChange={setLf('agentFirm')} placeholder="Optional" />
-                <FI label="Purchaser (Your Legal Entity)" value={loi.purchaser} onChange={setLf('purchaser')} placeholder="Full registered name" />
-                <FI label="Vendor (Seller)" value={loi.vendor} onChange={setLf('vendor')} placeholder="Full registered name" />
+        <main className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 py-12 md:py-20" id="loi-section">
+          <motion.div {...fade}>
+            <div className="flex flex-wrap items-end justify-between gap-6 mb-12 md:mb-16">
+              <div className="max-w-3xl">
+                <Eyebrow>Indicative Offer</Eyebrow>
+                <h1 className="mt-8 text-3xl md:text-4xl lg:text-5xl font-serif leading-[1.1] text-[#2C2C2C]">
+                  Letter of <span className="italic text-[#8B7355] font-light">Intent</span>
+                </h1>
+                <div className="w-16 h-[1px] bg-[#E5E2DC] my-6" />
+                <p className="text-[15px] leading-[1.8] text-[#5A5A5A] font-light">
+                  Non-binding indicative offer · LSK Conditions of Sale · Republic of Kenya
+                </p>
               </div>
-
-              <div className="panel">
-                <div className="panel-h">Property</div>
-                <FTA
-                  label="Property Description"
-                  value={loi.propertyDesc}
-                  onChange={setLf('propertyDesc')}
-                  rows={3}
-                  placeholder="e.g. All that property known as [Name], L.R. No. [X], situate at [Address], together with all fixtures, fittings and appurtenances"
-                />
-              </div>
-
-              <div className="panel">
-                <div className="panel-h">Commercial Terms</div>
-                {n(d.price) > 0 && (
-                  <div className="info-box-gold">
-                    <span style={{ color: '#9a9589' }}>Purchase Price from UW: </span>
-                    <strong>{fc(c.price)}</strong>
-                    {cur !== 'KES' && (
-                      <span style={{ color: '#9a9589', fontSize: 11 }}>
-                        {' '}· KES {c.price.toLocaleString('en-KE')}
-                      </span>
-                    )}
-                  </div>
-                )}
-                <div className="grid2">
-                  <FI label="Deposit %" type="number" value={loi.depositPct} onChange={setLf('depositPct')} placeholder="10" suffix="%" />
-                  <FI label="Due Diligence" type="number" value={loi.ddDays} onChange={setLf('ddDays')} placeholder="21" suffix="days" />
-                </div>
-                <div className="grid2">
-                  <FI label="Closing Period" type="number" value={loi.closingDays} onChange={setLf('closingDays')} placeholder="45" suffix="days" />
-                  <FI label="Exclusivity" type="number" value={loi.exclusivityDays} onChange={setLf('exclusivityDays')} placeholder="14" suffix="days" />
-                </div>
-                <FI label="LOI Validity" type="number" value={loi.expiryDays} onChange={setLf('expiryDays')} placeholder="7" suffix="days" />
-              </div>
-
-              <div className="panel">
-                <div className="panel-h">Conditions Precedent</div>
-                <FTA
-                  label="One condition per line"
-                  value={loi.conditions}
-                  onChange={setLf('conditions')}
-                  rows={5}
-                  placeholder="Satisfactory completion of due diligence"
-                />
-              </div>
-
-              <div className="panel">
-                <div className="panel-h">Advocates &amp; Signatory</div>
-                <FI label="Purchaser's Advocates" value={loi.purchaserAdvocate} onChange={setLf('purchaserAdvocate')} placeholder="Law firm name" />
-                <FI label="Vendor's Advocates" value={loi.vendorAdvocate} onChange={setLf('vendorAdvocate')} placeholder="Law firm name" />
-                <FI label="Signatory Name" value={loi.signatoryName} onChange={setLf('signatoryName')} placeholder="Full name" />
-                <FI label="Signatory Title" value={loi.signatoryTitle} onChange={setLf('signatoryTitle')} placeholder="e.g. Investment Director" />
+              <div className="flex flex-wrap gap-3 print:hidden">
+                <button className={BTN_GHOST} onClick={() => setTab('uw')}>
+                  <ArrowLeft className="w-3.5 h-3.5" strokeWidth={1.25} /> Back to UW
+                </button>
+                <button className={BTN_GHOST} onClick={goLOI}>
+                  <RefreshCw className="w-3.5 h-3.5" strokeWidth={1.25} /> Re-sync from UW
+                </button>
               </div>
             </div>
 
-            {/* Preview + submit */}
-            <div>
-              {/* Preview bar */}
-              <div
-                className="no-print"
-                style={{
-                  background: '#1a1916',
-                  borderRadius: '12px 12px 0 0',
-                  padding: '14px 20px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                }}
-              >
-                <div>
-                  <div className="serif" style={{ color: '#f8f7f4', fontSize: 16 }}>Letter of Intent</div>
-                  <div style={{ color: '#9a9589', fontSize: 11 }}>Indicative · Non-Binding · Republic of Kenya</div>
-                </div>
-                <div style={{ display: 'flex', gap: 8 }}>
-                  <button
-                    className="btn-ghost btn-sm"
-                    onClick={printLOI}
-                    style={{ color: '#c8a96e', borderColor: '#c8a96e' }}
-                  >
-                    ⊕ Print / PDF
-                  </button>
-                  <button
-                    className="btn-ghost btn-sm"
-                    onClick={() => navigator.clipboard?.writeText(loiText)}
-                    style={{ color: '#9a9589', borderColor: '#3a3832' }}
-                  >
-                    Copy
-                  </button>
-                </div>
-              </div>
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+              {/* Form */}
+              <div className="lg:col-span-5 print:hidden">
+                <Panel title="Transaction Parties">
+                  <FI label="Date" type="date" value={loi.date} onChange={(e) => setLoi((p) => ({ ...p, date: e.target.value }))} />
+                  <FI label="Addressee (To:)" value={loi.addressee} onChange={setLf('addressee')} placeholder="Name of agent or vendor rep" />
+                  <FI label="Agency / Broker Firm" value={loi.agentFirm} onChange={setLf('agentFirm')} placeholder="Optional" />
+                  <FI label="Purchaser (Your Legal Entity)" value={loi.purchaser} onChange={setLf('purchaser')} placeholder="Full registered name" />
+                  <FI label="Vendor (Seller)" value={loi.vendor} onChange={setLf('vendor')} placeholder="Full registered name" />
+                </Panel>
 
-              {/* LOI text */}
-              <div className="loi-scroll">
-                <pre className="loi-pre">{loiText}</pre>
-              </div>
-
-              {/* Submit panel */}
-              {!sent ? (
-                <div className="panel no-print" style={{ marginTop: 16 }}>
-                  <div className="panel-h" style={{ marginBottom: 10 }}>Submit LOI to Murivest</div>
-                  <p style={{ fontSize: 13, color: '#9a9589', marginBottom: 14, lineHeight: 1.6 }}>
-                    Enter your email — the LOI is sent to{' '}
-                    <strong style={{ color: '#1a1916' }}>capital@murivest.co.ke</strong> and a copy
-                    to you simultaneously.
-                  </p>
-                  <FI
-                    label="Your Email Address"
-                    type="email"
-                    value={investorEmail}
-                    onChange={(e) => setInvestorEmail(e.target.value)}
-                    placeholder="you@example.com"
+                <Panel title="Property">
+                  <FTA
+                    label="Property Description"
+                    value={loi.propertyDesc}
+                    onChange={setLf('propertyDesc')}
+                    rows={3}
+                    placeholder="e.g. All that property known as [Name], L.R. No. [X], situate at [Address], together with all fixtures, fittings and appurtenances"
                   />
-                  {sendErr && (
-                    <div style={{
-                      color: '#c0392b', fontSize: 13, marginBottom: 12,
-                      padding: '10px 14px', background: '#fdf0ee',
-                      borderRadius: 8, border: '1px solid #f5c6c6',
-                    }}>
-                      {sendErr}
+                </Panel>
+
+                <Panel title="Commercial Terms">
+                  {n(d.price) > 0 && (
+                    <div className="border-l border-[#8B7355] pl-4 mb-6 text-[13px]">
+                      <span className="text-[#5A5A5A]">Purchase Price from UW: </span>
+                      <strong className="font-serif text-[15px] font-normal">{fc(c.price)}</strong>
+                      {cur !== 'KES' && (
+                        <span className="text-[#5A5A5A] text-[11px]">
+                          {' '}· KES {c.price.toLocaleString('en-KE')}
+                        </span>
+                      )}
                     </div>
                   )}
-                  <button
-                    className="btn-dark"
-                    style={{ width: '100%', fontSize: 15, marginTop: 4 }}
-                    onClick={sendLOI}
-                    disabled={sending}
-                  >
-                    {sending ? 'Sending…' : 'Submit LOI to Murivest →'}
-                  </button>
-                  <p style={{ fontSize: 11, color: '#b0a898', textAlign: 'center', marginTop: 10 }}>
-                    You will be redirected to your investor dashboard after submission.
-                  </p>
-                </div>
-              ) : (
-                <div
-                  className="panel no-print"
-                  style={{
-                    marginTop: 16, background: '#f0faf5',
-                    borderColor: '#a8dcc3', textAlign: 'center', padding: '32px 24px',
-                  }}
-                >
-                  <div style={{ fontSize: 36, marginBottom: 12 }}>✓</div>
-                  <div className="serif" style={{ fontSize: 24, marginBottom: 8 }}>LOI Submitted</div>
-                  <p style={{ fontSize: 14, color: '#9a9589', lineHeight: 1.7 }}>
-                    Your Letter of Intent has been sent to the Murivest Investment Desk and a
-                    copy to{' '}
-                    <strong style={{ color: '#1a1916' }}>{investorEmail}</strong>.
-                    <br />Redirecting to your investor dashboard…
-                  </p>
-                </div>
-              )}
+                  <div className="grid grid-cols-1 min-[400px]:grid-cols-2 gap-x-6">
+                    <FI label="Deposit %" type="number" value={loi.depositPct} onChange={setLf('depositPct')} placeholder="10" suffix="%" />
+                    <FI label="Due Diligence" type="number" value={loi.ddDays} onChange={setLf('ddDays')} placeholder="21" suffix="days" />
+                  </div>
+                  <div className="grid grid-cols-1 min-[400px]:grid-cols-2 gap-x-6 mt-6">
+                    <FI label="Closing Period" type="number" value={loi.closingDays} onChange={setLf('closingDays')} placeholder="45" suffix="days" />
+                    <FI label="Exclusivity" type="number" value={loi.exclusivityDays} onChange={setLf('exclusivityDays')} placeholder="14" suffix="days" />
+                  </div>
+                  <div className="mt-6">
+                    <FI label="LOI Validity" type="number" value={loi.expiryDays} onChange={setLf('expiryDays')} placeholder="7" suffix="days" />
+                  </div>
+                </Panel>
 
-              <p
-                className="no-print"
-                style={{ fontSize: 11, color: '#b0a898', marginTop: 14, lineHeight: 1.8 }}
-              >
-                This LOI is non-binding and indicative only. Prepared in accordance with LSK
-                Conditions of Sale (Kenya). Binding obligations arise only upon execution of a
-                formal Sale Agreement by both parties. Governing law: Republic of Kenya.
-              </p>
+                <Panel title="Conditions Precedent">
+                  <FTA
+                    label="One condition per line"
+                    value={loi.conditions}
+                    onChange={setLf('conditions')}
+                    rows={5}
+                    placeholder="Satisfactory completion of due diligence"
+                  />
+                </Panel>
+
+                <Panel title="Advocates & Signatory">
+                  <FI label="Purchaser's Advocates" value={loi.purchaserAdvocate} onChange={setLf('purchaserAdvocate')} placeholder="Law firm name" />
+                  <FI label="Vendor's Advocates" value={loi.vendorAdvocate} onChange={setLf('vendorAdvocate')} placeholder="Law firm name" />
+                  <FI label="Signatory Name" value={loi.signatoryName} onChange={setLf('signatoryName')} placeholder="Full name" />
+                  <FI label="Signatory Title" value={loi.signatoryTitle} onChange={setLf('signatoryTitle')} placeholder="e.g. Investment Director" />
+                </Panel>
+              </div>
+
+              {/* Preview + submit */}
+              <div className="lg:col-span-7">
+                {/* Preview bar */}
+                <div className="bg-[#0B3D2E] px-6 md:px-8 py-5 flex flex-wrap items-center justify-between gap-4 print:hidden">
+                  <div>
+                    <p className="font-serif text-lg text-[#F8F7F4]">Letter of Intent</p>
+                    <p className="text-[11px] tracking-[0.2em] uppercase text-[#F8F7F4]/60 mt-1">
+                      Indicative · Non-Binding · Republic of Kenya
+                    </p>
+                  </div>
+                  <div className="flex gap-3">
+                    <button
+                      className="inline-flex items-center gap-2 px-4 py-2.5 border border-[#F8F7F4]/30 text-[#F8F7F4] text-[11px] tracking-[0.2em] uppercase hover:border-[#F8F7F4] transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F8F7F4]"
+                      onClick={printLOI}
+                    >
+                      <Printer className="w-3.5 h-3.5" strokeWidth={1.25} /> Print / PDF
+                    </button>
+                    <button
+                      className="inline-flex items-center gap-2 px-4 py-2.5 border border-[#F8F7F4]/30 text-[#F8F7F4] text-[11px] tracking-[0.2em] uppercase hover:border-[#F8F7F4] transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F8F7F4]"
+                      onClick={() => navigator.clipboard?.writeText(loiText)}
+                    >
+                      <Copy className="w-3.5 h-3.5" strokeWidth={1.25} /> Copy
+                    </button>
+                  </div>
+                </div>
+
+                {/* LOI text */}
+                <article
+                  className="bg-white border border-[#E5E2DC] border-t-0 p-6 md:p-10 max-h-[66vh] overflow-y-auto print:max-h-none print:border-0 print:p-0"
+                  aria-label="Letter of Intent preview"
+                >
+                  <pre className="font-serif text-[12px] leading-[1.9] whitespace-pre-wrap break-words text-[#2C2C2C]">
+                    {loiText}
+                  </pre>
+                </article>
+
+                {/* Submit panel */}
+                {!sent ? (
+                  <Panel className="mt-6 print:hidden" title="Submit LOI to Murivest">
+                    <p className="text-[14px] leading-[1.8] text-[#5A5A5A] mb-6">
+                      Enter your email — the LOI is sent to{' '}
+                      <strong className="font-medium text-[#2C2C2C]">capital@murivest.co.ke</strong> and a copy
+                      to you simultaneously.
+                    </p>
+                    <FI
+                      label="Your Email Address"
+                      type="email"
+                      value={investorEmail}
+                      onChange={(e) => setInvestorEmail(e.target.value)}
+                      placeholder="you@example.com"
+                    />
+                    {sendErr && (
+                      <div role="alert" className="mb-4 p-3 bg-red-50 border border-red-200 text-red-700 text-sm">
+                        {sendErr}
+                      </div>
+                    )}
+                    <button className={`${BTN_PRIMARY} w-full mt-2`} onClick={sendLOI} disabled={sending}>
+                      <span>{sending ? 'Sending…' : 'Submit LOI to Murivest'}</span>
+                      {!sending && <ArrowRight className="w-4 h-4" strokeWidth={1.25} />}
+                    </button>
+                    <p className="text-[11px] text-[#5A5A5A] italic text-center mt-4">
+                      You will be redirected to your investor dashboard after submission.
+                    </p>
+                  </Panel>
+                ) : (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="mt-6 border border-[#E5E2DC] bg-white text-center py-16 px-6 print:hidden"
+                    role="status"
+                  >
+                    <CheckCircle className="w-16 h-16 text-[#8B7355] mx-auto mb-6" strokeWidth={1} />
+                    <h2 className="text-2xl font-serif mb-4 text-[#2C2C2C]">LOI Submitted</h2>
+                    <p className="text-[15px] leading-[1.8] text-[#5A5A5A] font-light">
+                      Your Letter of Intent has been sent to the Murivest Investment Desk and a
+                      copy to{' '}
+                      <strong className="font-medium text-[#2C2C2C]">{investorEmail}</strong>.
+                      <br />Redirecting to your investor dashboard…
+                    </p>
+                  </motion.div>
+                )}
+
+                <p className="print:hidden text-[11px] text-[#5A5A5A] italic mt-6 leading-[1.8]">
+                  This LOI is non-binding and indicative only. Prepared in accordance with LSK
+                  Conditions of Sale (Kenya). Binding obligations arise only upon execution of a
+                  formal Sale Agreement by both parties. Governing law: Republic of Kenya.
+                </p>
+              </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </main>
       )}
     </div>
+  );
+}
+
+/* ─── Operating statement row ─────────────────────────────────────────── */
+function StatRow({
+  label, value, bold, dim, neg, pos,
+}: {
+  label: string;
+  value: string;
+  bold?: boolean;
+  dim?: boolean;
+  neg?: boolean;
+  pos?: boolean;
+}) {
+  return (
+    <tr className={`border-b border-[#E5E2DC] last:border-0 ${bold ? 'bg-[#F8F7F4]' : ''}`}>
+      <td className={`py-3 px-2 ${bold ? 'font-medium text-[#2C2C2C]' : dim ? 'text-[#5A5A5A] text-[12px]' : ''}`}>
+        {dim ? `— ${label}` : label}
+      </td>
+      <td
+        className={`py-3 px-2 text-right font-serif tabular-nums ${
+          neg ? 'text-[#9B2C2C]' : pos ? 'text-[#0B3D2E]' : ''
+        }`}
+      >
+        {value}
+      </td>
+    </tr>
   );
 }
