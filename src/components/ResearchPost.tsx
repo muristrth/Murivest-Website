@@ -474,13 +474,13 @@ export default function researchPost({ post: postProp, analystSummary: analystSu
         {/* Top Nav */}
         <div style={{ borderBottom: '1px solid #E2DDD6', background: '#FAFAF8' }}>
           <div style={{ maxWidth: '860px', margin: '0 auto', padding: '18px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
-            <Link href="/research" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '11px', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#7B6C55', textDecoration: 'none', fontFamily: 'Georgia, serif' }}>
+            <Link href="/kenya/research" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '11px', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#7B6C55', textDecoration: 'none', fontFamily: 'Georgia, serif' }}>
               <ArrowLeft style={{ width: '14px', height: '14px' }} strokeWidth={1.5} /> Back to Journal
             </Link>
             <nav aria-label="Breadcrumb" style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '11px', color: '#9B8F7E', fontFamily: 'Georgia, serif', flexWrap: 'wrap' }}>
               <Link href="/" style={{ color: '#9B8F7E', textDecoration: 'none' }}>Home</Link>
               <ChevronRight style={{ width: '10px', height: '10px' }} />
-              <Link href="/research" style={{ color: '#9B8F7E', textDecoration: 'none' }}>Research</Link>
+              <Link href="/kenya/research" style={{ color: '#9B8F7E', textDecoration: 'none' }}>Research</Link>
               <ChevronRight style={{ width: '10px', height: '10px' }} />
               <span style={{ color: '#6B6259', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '180px' }}>{post.title}</span>
             </nav>
@@ -585,7 +585,7 @@ export default function researchPost({ post: postProp, analystSummary: analystSu
           <RelatedInsights variant="article" />
 
           <div style={{ textAlign: 'center', paddingTop: '8px', marginTop: '48px', borderTop: '1px solid #E2DDD6' }}>
-            <Link href="/research" style={{ fontFamily: 'Georgia, serif', fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#7B6C55', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+            <Link href="/kenya/research" style={{ fontFamily: 'Georgia, serif', fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#7B6C55', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
               <ArrowLeft style={{ width: '13px', height: '13px' }} strokeWidth={1.5} /> Back to Journal
             </Link>
           </div>

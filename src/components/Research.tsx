@@ -49,6 +49,18 @@ const research: ResearchEntry[] = [
   },
 
   {
+    id: 'kenyan-investors-uk-real-estate-ksh-3-5-million-cross-border',
+        title: 'Kenyan Investors Gain Access to UK Real Estate from KSh 3.5M Through Murivest Group Ltd as Cross-Border Investment Opportunities Expand',
+        excerpt: 'Kenyan investors are exploring new ways to diversify their wealth internationally. Through its stated partnership with a lead agency, Murivest Group Ltd is providing a Nairobi-based point of contact for eligible investors seeking to explore selected United Kingdom property investment opportunities from approximately KSh 3.5 million.',
+        author: getAuthor('investment'),
+        category: 'Investment',
+        image: '/research-images/kenya-uk-real-estate-ksh-3-5-million.webp',
+        date: '2026-10-12',
+        readTime: '16 min read',
+        featured: true,
+  },
+
+  {
     id: 'buy-commercial-property-uk-overseas-investors-guide',
     title: 'How to Buy Commercial Property in the UK: A Seven-Gate Due-Diligence Framework for Overseas Investors',
     excerpt: 'Overseas buyers rarely lose money on the headline price. They lose it on tax friction, title, lease terms, capital expenditure and exit. This guide sets out the Murivest Seven-Gate Acquisition Test, verified GOV.UK tax and compliance points, and a practical 30-day due-diligence roadmap.',

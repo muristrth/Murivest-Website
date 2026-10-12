@@ -873,6 +873,290 @@ export const researchData: Record<string, researchPostData> = {
 </script>
 `
 },
+
+'kenyan-investors-uk-real-estate-ksh-3-5-million-cross-border': {
+    title: 'Kenyan Investors Gain Access to UK Real Estate from KSh 3.5M Through Murivest Group Ltd as Cross-Border Investment Opportunities Expand',
+    excerpt: 'Kenyan investors are exploring new ways to diversify their wealth internationally. Through its stated partnership with a lead agency, Murivest Group Ltd is providing a Nairobi-based point of contact for eligible investors seeking to explore selected United Kingdom property investment opportunities from approximately KSh 3.5 million.',
+    author: getAuthor('investment'),
+    category: 'Investment',
+    image: '/research-images/kenya-uk-real-estate-ksh-3-5-million.webp',
+    date: '2026-10-12',
+    readTime: '16 min read',
+    featured: true,
+    content: `
+<article>
+  <h1>Kenyan Investors and UK Real Estate from KSh 3.5 Million: Cross-Border Opportunities, Structures and Risks</h1>
+  <p class="author-date">By ${getAuthor('investment')} | 2026-10-12 | 16 min read</p>
+  <figure class="featured-image">
+    <img src="/research-images/kenya-uk-real-estate-ksh-3-5-million.webp" alt="Nairobi skyline and Birmingham apartment buildings representing cross-border UK property investment for Kenyan investors"  >
+  </figure>
+
+  <p><em>A research note for Nairobi-based professional and high-net-worth investors on how cross-border UK property exposure works, what an entry point of roughly KSh 3.5 million really represents, and the questions to settle before committing capital. To request information on UK opportunities, use the <a href="/united-kingdom/investor-enquiry?ref=kenya-uk-real-estate">Murivest UK investor enquiry form</a>.</em></p>
+
+  <h2>Executive Summary</h2>
+
+  <p>On 7 October 2026, African Sustainability Matters reported that eligible Kenyan professional and high-net-worth investors were being offered access to a UK residential investment from about US$25,000. The reported asset is Great Hampton Street Works in Birmingham, valued at £8.55 million and comprising 29 fully tenanted apartments. Investors would acquire contractual economic rights linked to rental income and any future sale proceeds, rather than registered ownership of individual flats. The companies involved cite an estimated net rental yield of about 4% a year and a forecast of roughly 4.5% annual price growth for Birmingham residential property between 2026 and 2030. Both are projections, not guaranteed returns.</p>
+
+  <p>For investors in Nairobi, the story raises a practical question: does a lower entry point make UK real estate a sensible addition to a portfolio? This note argues that the entry price is the least important variable. What matters is the legal right being bought, the costs between the property and the investor, sterling exposure and the route to exit. It introduces the Murivest Cross-Border Rights Check, a five-question tool, and a worked currency example. Murivest's Nairobi contact point can provide information on selected UK opportunities; you can <a href="/united-kingdom/investor-enquiry?ref=kenya-uk-real-estate">submit an enquiry here</a>. This is general research, not advice or an offer.</p>
+
+  <h2>The Argument: A Low Entry Price Changes Access, Not Risk</h2>
+
+  <p>International property used to require large cheques, overseas lawyers and the ability to manage a building from a distance. Structures that sell shares, fractional interests or contractual economic rights have lowered the first of those barriers. That is a genuine development for Kenyan investors, who have traditionally concentrated on land, rental housing, commercial buildings, equities and government securities.</p>
+
+  <p>But a smaller cheque does not make an investment safer, more liquid or more profitable. It changes who stands between the investor and the property. In a direct purchase the investor holds a registered legal interest in the building. In a company or contractual structure the investor holds a claim against an issuer, and the value of that claim depends on the issuer's documents, governance and solvency as well as on the building. The source report itself makes this point, noting that the structure places greater importance on understanding the contractual rights attached to the investment.</p>
+
+  <blockquote>
+    <p><strong>Reading the evidence:</strong> Access is not suitability. The question to ask of any cross-border opportunity is not "can I afford the minimum?" but "what exactly will I own, and what can go wrong between the rent and my bank account?"</p>
+  </blockquote>
+
+  <p>If you want a specific opportunity explained in these terms, you can <a href="/united-kingdom/investor-enquiry?ref=kenya-uk-real-estate#form">request the documentation through our enquiry form</a>.</p>
+
+  <h2>What the Reported Opportunity Says, and What It Does Not</h2>
+
+  <p>The reported facts, all attributed to the African Sustainability Matters article of 7 October 2026 (<a href="https://africasustainabilitymatters.com/kenyan-investors-gain-access-to-uk-real-estate-from-25000-as-cross-border-investment-opportunities-expand/" target="_blank" rel="noopener noreferrer">source</a>), are as follows. The opportunity was introduced by Dubai-based Tokinvest. The property is Great Hampton Street Works in Birmingham, valued at £8.55 million, with 29 fully tenanted apartments. Eligible investors can acquire contractual economic rights linked to rental income and potential proceeds from a future sale. The offering is presented to professional and high-net-worth investors, subject to regulation, compliance and suitability assessments. The article quotes the chief executive of API Global on the historical difficulty of international property investment, and says an investor briefing was scheduled in Nairobi on 13 October 2026.</p>
+
+  <p>Several things are not in the report, and an investor should not assume them. It does not describe the fee schedule, the precise legal instrument, the term, the distribution policy or the exit mechanism. It does not say whether the "net yield of about 4%" is net at the property level or net to the investor after fees. It does not give a currency in which distributions will be paid. And the forecast of 4.5% annual growth is for Birmingham residential property generally; it is not a forecast for this building.</p>
+
+  <p>The reported minimum is quoted in US dollars. Murivest's indicated entry point of approximately KSh 3.5 million is a shilling approximation, and the shilling equivalent will move with the exchange rate. The figure is the stated entry point for the relevant opportunity, not a universal minimum for UK property and not a statement that every property on Murivest's platform is available at that amount. Terms must be confirmed in writing for each opportunity, which you can begin by <a href="/united-kingdom/investor-enquiry?ref=kenya-uk-real-estate#form">submitting an enquiry</a>.</p>
+
+  <!-- VERIFY BEFORE PUBLICATION: (1) Murivest's relationship to the offering. The source report does not mention Murivest; it names Tokinvest as introducer and quotes API Global's chief executive. Confirm in writing the legal identity of the lead agency, Murivest's role (introducer, referrer, agent), and whether Murivest may market this offering to Kenyan residents. (2) Confirm the KSh 3.5 million figure against the offering's actual minimum. (3) Confirm whether the Nairobi briefing of 13 October has taken place and update the sentence above. -->
+
+  <h2>The Murivest Cross-Border Rights Check</h2>
+
+  <p>The Cross-Border Rights Check is a Murivest-developed analytical tool: five questions an investor should be able to answer in writing, from the offering documents, before transferring any money. It is not a regulatory test, has not been independently validated and does not rate any investment. Its purpose is to expose the gaps between a headline and a contract.</p>
+
+  <figure>
+    <img src="/p3/murivest-cross-border-rights-check.webp" alt="Diagram of the Murivest Cross-Border Rights Check showing five questions for overseas property investors"  >
+    <figcaption>The Murivest Cross-Border Rights Check: five written answers before you invest</figcaption>
+  </figure>
+
+  <ol>
+    <li><strong>What do I actually hold?</strong> Registered ownership, shares, a fractional interest, units in a pooled vehicle, or a contractual right? Each gives different protection if the issuer fails. Request the instrument itself, not a summary.</li>
+    <li><strong>Who holds the property, and who holds my money?</strong> Name the property-owning entity, the issuer, the administrator and the entity that receives your funds, along with the governing law and any segregation of investor money.</li>
+    <li><strong>What do I receive, in what currency, and when?</strong> Establish whether the quoted yield is gross or net, historical or projected, property-level or investor-level, and how distributions are calculated after fees, reserves and costs.</li>
+    <li><strong>What can reduce or stop payments?</strong> Vacancy, arrears, repairs, refinancing, fees, reserves, tax, a decision by the issuer, or a restriction in the documents. Ask for the stress case.</li>
+    <li><strong>How do I get out, and at what price?</strong> Minimum holding period, transfer restrictions, redemption terms, who buys your interest, and what happens if the property is sold. Property is not inherently liquid, and a valuation increase is not a realised gain.</li>
+  </ol>
+
+  <p>If any answer is missing, treat it as a risk until it is evidenced. You can <a href="/united-kingdom/investor-enquiry?ref=kenya-uk-real-estate#form">ask Murivest for the documents that answer these five questions</a>.</p>
+
+  <h2>Sterling Exposure: A Worked Example of Currency Risk</h2>
+
+  <p>For a Kenyan investor, a sterling-denominated investment adds a second source of return and risk. The following is a hypothetical illustration with stated assumptions. The exchange rate used is illustrative, not a market quote, and the example ignores fees, taxes, transfer charges and any change in the property's value beyond the stated growth rate.</p>
+
+  <p><strong>Assumptions.</strong> An investor commits KSh 3,500,000 when the illustrative rate is KSh 170 to the pound, buying £20,588 of exposure. Net income is assumed at 4% a year of that sterling amount (the companies' estimate, not a guarantee). Capital grows at 4.5% a year for four years, giving about £24,552 (the Birmingham forecast cited in the report, not a forecast for this asset). The table shows the shilling value under three illustrative exchange rates.</p>
+
+  <table>
+    <thead>
+      <tr><th>Scenario (illustrative)</th><th>KSh per £</th><th>Annual income in KSh</th><th>Capital value after four years in KSh</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Sterling unchanged</td><td>170</td><td>140,000</td><td>4,173,815</td></tr>
+      <tr><td>Sterling 10% weaker</td><td>153</td><td>126,000</td><td>3,756,434</td></tr>
+      <tr><td>Sterling 10% stronger</td><td>187</td><td>154,000</td><td>4,591,197</td></tr>
+    </tbody>
+  </table>
+
+  <p>The same sterling performance produces a shilling capital outcome ranging from about KSh 3.76 million to KSh 4.59 million depending on the rate. In the weaker-sterling case the investor has gained in pounds and ended up barely above the original KSh 3.5 million after four years, before any fees or tax. That is the point of the example: currency can add or remove as much as the property itself. Ask whether hedging exists, what it costs, and what transfer charges apply on the way in and out. If you want the fee and currency terms for a specific offering, <a href="/united-kingdom/investor-enquiry?ref=kenya-uk-real-estate#form">request them through the enquiry form</a>.</p>
+
+  <h2>Rental Income: Gross, Net and What Reaches the Investor</h2>
+
+  <p>Three measures are often confused. <strong>Gross rental yield</strong> is annual rent divided by the property's value or price. <strong>Net operating income</strong> is rent after operating costs such as management, repairs, insurance, service charges and vacancy, before financing and tax. <strong>Investor distributions</strong> are what the investment documents actually pay to the investor after deductions, reserves and contractual obligations. A quoted yield of about 4% might be any of these, and the difference between them can be large.</p>
+
+  <p>A sound income review also looks at lease terms, arrears, tenant turnover and the building's maintenance needs. A fully tenanted building is a good starting point, but occupancy today is not a promise of occupancy next year. Our companion research, <a href="/research/uk-flexible-office-serviced-office-rental-income-durability">UK Office Rental Income and Flexible Workspace</a>, shows how a gross yield can bridge down to a cash yield, and the same method applies to residential income.</p>
+
+  <h2>Capital Appreciation: Forecast, Valuation and Realised Gain</h2>
+
+  <p>Property values respond to employment, population, supply, infrastructure and borrowing costs. They can fall as well as rise. The Bank of England has held Bank Rate at 3.75% at each Monetary Policy Committee decision from March to July 2026, with a growing minority voting to raise it, and CBRE reported UK commercial capital values falling in the latest quarter as yields moved outward (see our <a href="/research/uk-office-space-investment-outlook-2026">UK office investment outlook</a>). That evidence concerns commercial property and does not apply directly to Birmingham residential, but it shows that borrowing costs and pricing can move against investors.</p>
+
+  <p>Two distinctions matter. A valuation increase is not a gain until the interest is sold, and in a contractual structure the investor's share of any sale depends on the distribution waterfall and any restrictions on exit. And a four-year forecast is a scenario, not a plan. Test the investment at flat prices and at modest falls, not only at the forecast. For Birmingham as a market, see Murivest's <a href="https://murivest.com/markets/birmingham">Birmingham market page</a>.</p>
+
+  <h2>Eligibility, Regulation and Taxation</h2>
+
+  <p>The source report says participation is restricted to investors meeting stated professional or high-net-worth criteria and other regulatory conditions. Murivest's enquiry process therefore asks you to state your investor category, and any participation would be subject to eligibility, identity and source-of-funds checks. Murivest is an advisory firm that does not pool investor capital or operate regulated funds, and it does not provide regulated investment advice.</p>
+
+  <p>Investors should verify the legal basis on which any offering is marketed to Kenyan residents, and should not assume that company registration alone amounts to regulatory approval. The Capital Markets Authority publishes <a href="https://www.cma.or.ke/investor-information/" target="_blank" rel="noopener noreferrer">investor information</a> encouraging investors to deal with licensed institutions, and a <a href="https://licensees.cma.or.ke/" target="_blank" rel="noopener noreferrer">directory of licensees</a>.</p>
+
+  <p>On tax, UK property income can have UK consequences even for non-resident investors. HMRC's <a href="https://www.gov.uk/government/publications/non-resident-landord-guidance-notes-for-letting-agents-and-tenants-non-resident-landlords-scheme-guidance-notes/what-the-non-resident-landlords-scheme-is" target="_blank" rel="noopener noreferrer">Non-resident Landlords Scheme</a> addresses UK rental income received by landlords whose usual place of abode is outside the UK. Whether and how it applies depends on the structure, and the investor's Kenyan tax and reporting obligations must be assessed separately with a qualified adviser. For direct purchases of UK property, see our guide, <a href="/research/buy-commercial-property-uk-overseas-investors-guide">How to Buy Commercial Property in the UK</a>, which sets out verified stamp duty, overseas-entity registration and non-resident gains points.</p>
+
+  <h2>Direct Property Versus Structured Exposure</h2>
+
+  <table>
+    <thead>
+      <tr><th>Question</th><th>Direct or registered interest</th><th>Shares or pooled vehicle</th><th>Contractual economic rights</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Legal position</td><td>Interest in the property itself</td><td>Claim on a company or fund</td><td>Claim on the issuer under a contract</td></tr>
+      <tr><td>Typical minimum</td><td>Highest</td><td>Lower</td><td>Lowest</td></tr>
+      <tr><td>Key document</td><td>Title and conveyance</td><td>Articles, shareholder terms</td><td>Investment agreement</td></tr>
+      <tr><td>Main extra risk</td><td>Management and acquisition costs</td><td>Governance and liabilities of the entity</td><td>Issuer solvency and enforceability</td></tr>
+      <tr><td>Exit</td><td>Sale of the property</td><td>Transfer restrictions may apply</td><td>As the contract provides</td></tr>
+    </tbody>
+  </table>
+
+  <p>None of these is automatically better. The right choice depends on objectives, risk tolerance, time horizon and understanding. For investors weighing direct UK commercial acquisitions alongside smaller structured exposure, Murivest's <a href="https://murivest.com/united-kingdom">UK platform</a> covers the commercial side.</p>
+
+  <h2>The Reported Opportunity at a Glance</h2>
+
+  <p>The block below summarises what has been reported. It is not a Murivest listing or an offer, and availability through Murivest must be confirmed in writing.</p>
+
+  <h3>REPORTED OFFERING: Great Hampton Street Works</h3>
+  <p><strong>Location: Birmingham, United Kingdom</strong></p>
+  <p><strong>Reported value: £8.55 million, 29 tenanted apartments</strong></p>
+  <p><strong>Structure reported: Contractual economic rights, for eligible investors</strong></p>
+  <p><strong>Estimates cited: about 4% net rental yield; about 4.5% annual Birmingham price growth forecast, 2026 to 2030 (projections, not guarantees)</strong></p>
+
+  <figure>
+    <img src="/p3/birmingham-residential-reported-offering.webp" alt="Residential apartment building in Birmingham representing a reported UK investment opportunity for Kenyan investors"  >
+    <figcaption>Reported Birmingham residential opportunity, as described by African Sustainability Matters</figcaption>
+  </figure>
+
+  <p>To receive the offering documents, confirm eligibility and discuss your own objectives, <a href="/united-kingdom/investor-enquiry?ref=kenya-uk-real-estate#form">use the Murivest UK investor enquiry form</a>.</p>
+
+  <h2>How to Begin: Six Steps From Enquiry to Decision</h2>
+
+  <ol>
+    <li><strong>Submit an enquiry.</strong> Tell us the approximate capital you are considering and your objective, using the <a href="/united-kingdom/investor-enquiry?ref=kenya-uk-real-estate#form">enquiry form</a>.</li>
+    <li><strong>Request the documents.</strong> Ask for the investment memorandum, property details, legal structure, fee schedule, eligibility criteria and risk disclosures.</li>
+    <li><strong>Apply the Rights Check.</strong> Answer the five questions in writing from the documents.</li>
+    <li><strong>Review suitability.</strong> Consider liquidity needs, horizon, currency exposure and capacity for loss, and take independent legal, tax and financial advice.</li>
+    <li><strong>Complete the checks.</strong> Expect identity, source-of-funds and eligibility procedures, and independently verify the entities and payment instructions before sending funds.</li>
+    <li><strong>Decide.</strong> Sign or transfer funds only when you have reviewed the complete documentation and understand who receives your money.</li>
+  </ol>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Can Kenyan investors invest in UK property from KSh 3.5 million?</h3>
+  <p>Some structured offerings reportedly allow eligible investors to participate from about US$25,000, a figure Murivest indicates as approximately KSh 3.5 million, though the shilling equivalent moves with the exchange rate. The exact minimum, eligibility and structure depend on the specific offering and must be confirmed in writing. You can <a href="/united-kingdom/investor-enquiry?ref=kenya-uk-real-estate#form">send an enquiry</a>.</p>
+
+  <h3>Do I own the UK property if I invest through a contractual structure?</h3>
+  <p>Not necessarily. Contractual economic rights give a claim linked to rental income and sale proceeds, not registered ownership of the underlying property. Always request the legal instrument.</p>
+
+  <h3>How does the exchange rate affect my UK property return?</h3>
+  <p>If income and sale proceeds are in pounds, their shilling value depends on the exchange rate when converted. A weaker pound reduces shilling returns and a stronger pound increases them, as the worked example above shows.</p>
+
+  <h3>Is the 4% yield guaranteed?</h3>
+  <p>No. The figure is an estimate attributed to the companies involved. Rental income can fall, costs can rise and distributions can be reduced or suspended. Ask whether the yield is net to the investor.</p>
+
+  <h3>Who can participate?</h3>
+  <p>According to the source report, participation is restricted to investors meeting professional or high-net-worth criteria and other regulatory conditions. Eligibility is assessed for each offering.</p>
+
+  <h2>Methodology and Limitations</h2>
+
+  <p>This note was prepared on 12 October 2026. Facts about the Great Hampton Street Works opportunity are taken from African Sustainability Matters, published 7 October 2026, and attributed to the companies involved; Murivest has not independently verified the offering's terms. Market context draws on the Bank of England and CBRE, as described in our companion research. Tax and regulatory references are links to official sources and do not describe an individual's position. The currency example uses a stated hypothetical exchange rate and ignores fees, taxes and transfer costs.</p>
+
+  <p>The Murivest Cross-Border Rights Check is an internally developed framework. It is not a regulatory standard, has not been independently validated and does not rate or endorse any investment. Murivest was established in 2025 and describes its role only to the extent it can evidence it.</p>
+
+  <h2>Sources and Further Reading</h2>
+
+  <ul>
+    <li><a href="https://africasustainabilitymatters.com/kenyan-investors-gain-access-to-uk-real-estate-from-25000-as-cross-border-investment-opportunities-expand/" target="_blank" rel="noopener noreferrer">African Sustainability Matters, Kenyan investors gain access to UK real estate from $25,000 (7 October 2026)</a></li>
+    <li><a href="https://www.cma.or.ke/investor-information/" target="_blank" rel="noopener noreferrer">Capital Markets Authority of Kenya, Investor Information</a></li>
+    <li><a href="https://licensees.cma.or.ke/" target="_blank" rel="noopener noreferrer">Capital Markets Authority of Kenya, Licensees directory</a></li>
+    <li><a href="https://www.gov.uk/government/publications/non-resident-landord-guidance-notes-for-letting-agents-and-tenants-non-resident-landlords-scheme-guidance-notes/what-the-non-resident-landlords-scheme-is" target="_blank" rel="noopener noreferrer">HMRC, What the Non-resident Landlords Scheme is</a></li>
+    <li><a href="https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/july-2026" target="_blank" rel="noopener noreferrer">Bank of England, Monetary Policy Summary and Minutes, July 2026</a></li>
+  </ul>
+
+  <h2>Request UK Investment Information in Nairobi</h2>
+
+  <p>If you are a Kenyan investor exploring UK property exposure, the first step is an informed conversation. <a href="/united-kingdom/investor-enquiry?ref=kenya-uk-real-estate#form"><strong>Complete the Murivest UK investor enquiry form</strong></a> to request documentation and arrange a discussion. You can also explore the <a href="https://murivest.com/united-kingdom">UK commercial real estate hub</a>, or write via the <a href="https://murivest.com/united-kingdom/contact">private office contact page</a>. Engagements are subject to KYC and AML verification. There is no obligation to proceed.</p>
+
+  <p>Regards,</p>
+
+  <p><strong>Murivest Research Desk</strong><br>
+  Murivest Group Ltd<br>
+  October 2026</p>
+
+  <p><strong>P.S.</strong> Whatever you decide, do not send funds to anyone until you have verified the receiving entity and its payment instructions through an independent channel. <a href="/united-kingdom/investor-enquiry?ref=kenya-uk-real-estate#form">Ask us for the documents first.</a></p>
+
+  <h2>Related Articles</h2>
+  <ul>
+    <li><a href="/research/buy-commercial-property-uk-overseas-investors-guide">How to Buy Commercial Property in the UK: A Seven-Gate Due-Diligence Framework for Overseas Investors</a></li>
+    <li><a href="/research/uk-office-space-investment-outlook-2026">UK Office Space Investment Outlook 2026</a></li>
+    <li><a href="/research/uk-flexible-office-serviced-office-rental-income-durability">UK Office Rental Income and Flexible Workspace</a></li>
+    <li><a href="https://murivest.com/united-kingdom">Murivest UK: Commercial Real Estate Investment and Capital Markets</a></li>
+  </ul>
+
+  <div class="disclaimer">
+    <p><em>Important investment disclosure: This article is for general research and educational purposes. It does not constitute personalised investment advice, an offer to sell securities or interests, or a guarantee of performance. The availability of opportunities, minimum investment, eligibility requirements and regulatory treatment depend on the specific offering and applicable law. Rental income, capital appreciation and currency gains are not guaranteed. Capital is at risk, and investors may lose some or all of their investment. Murivest Group Ltd is an independent real estate advisory firm. We do not act as a licensed investment advisor and do not offer regulated financial products or collective investment schemes. We do not pool capital from multiple investors. All advisory engagements are mandate-based, subject to formal documentation, comprehensive KYC/AML verification, and explicit scope definition. Opportunities described as reported are attributed to third-party sources and are not Murivest offers. Prospective investors should review the complete offering documents and seek independent legal, tax and financial advice. Past advisory outcomes do not guarantee future results.</em></p>
+  </div>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Kenyan Investors and UK Real Estate from KSh 3.5 Million: Cross-Border Opportunities, Structures and Risks",
+  "description": "A research note for Nairobi investors on cross-border UK property exposure, what a KSh 3.5 million entry point does and does not buy, sterling risk and the Murivest Cross-Border Rights Check.",
+  "author": {
+    "@type": "Person",
+    "name": "${getAuthor('investment')}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Murivest Group Ltd",
+    "url": "https://murivest.com"
+  },
+  "datePublished": "2026-10-12",
+  "dateModified": "2026-10-12",
+  "image": "/p3/kenya-uk-real-estate-ksh-3-5-million.webp",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://murivest.com/research/kenyan-investors-uk-real-estate-ksh-3-5-million-cross-border"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can Kenyan investors invest in UK property from KSh 3.5 million?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some structured offerings reportedly allow eligible investors to participate from about US$25,000, a figure Murivest indicates as approximately KSh 3.5 million, though the shilling equivalent moves with the exchange rate. The exact minimum, eligibility and structure depend on the specific offering and must be confirmed in writing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I own the UK property if I invest through a contractual structure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not necessarily. Contractual economic rights give a claim linked to rental income and sale proceeds, not registered ownership of the underlying property. Always request the legal instrument."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the exchange rate affect my UK property return?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If income and sale proceeds are in pounds, their shilling value depends on the exchange rate when converted. A weaker pound reduces shilling returns and a stronger pound increases them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the 4% yield guaranteed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The figure is an estimate attributed to the companies involved. Rental income can fall, costs can rise and distributions can be reduced or suspended."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who can participate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "According to the source report, participation is restricted to investors meeting professional or high-net-worth criteria and other regulatory conditions. Eligibility is assessed for each offering."
+      }
+    }
+  ]
+}
+</script>
+`
+},
 'uk-flexible-office-serviced-office-rental-income-durability': {
     title: 'UK Office Rental Income and Flexible Workspace: Assessing Income Durability Beyond Headline Yield',
     excerpt: 'Serviced offices, co-working and virtual offices are reshaping how UK office income is earned and who carries the risk. This research note introduces the Murivest Net Income Durability Model, with formulas and a stated-assumption worked example that turns an 8.33% gross yield into a 4.99% cash yield.',
