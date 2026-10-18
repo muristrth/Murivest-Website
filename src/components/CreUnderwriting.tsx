@@ -922,7 +922,7 @@ export default function MurivestatUW(): React.ReactElement {
                   <Panel className="mt-6 print:hidden" title="Submit LOI to Murivest">
                     <p className="text-[14px] leading-[1.8] text-[#5A5A5A] mb-6">
                       Enter your email — the LOI is sent to{' '}
-                      <strong className="font-medium text-[#2C2C2C]">capital@murivest.co.ke</strong> and a copy
+                      <strong className="font-medium text-[#2C2C2C]">capital@murivest.com</strong> and a copy
                       to you simultaneously.
                     </p>
                     <FI

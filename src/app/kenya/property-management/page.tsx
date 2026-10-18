@@ -143,7 +143,7 @@ function SchemaOrg() {
       addressCountry: "KE",
     },
     telephone: "+254-712-345-678",
-    email: "management@murivest.co.ke",
+    email: "capital@murivest.com",
     areaServed: [
       { "@type": "Country", name: "Kenya" },
       { "@type": "Country", name: "United Kingdom" },

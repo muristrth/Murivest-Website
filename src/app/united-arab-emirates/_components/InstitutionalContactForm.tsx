@@ -166,7 +166,7 @@ export default function InstitutionalContactForm() {
       setErrorMessage(
         err instanceof Error
           ? err.message
-          : 'Something interrupted the request. Please try again, or write to advisory@murivest.com.'
+          : 'Something interrupted the request. Please try again, or write to capital@murivest.com.'
       );
     }
   }

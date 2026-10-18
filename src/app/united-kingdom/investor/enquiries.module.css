@@ -1,0 +1,28 @@
+.wrap { background: #faf9f6; color: #1f2a24; min-height: 100vh; padding: 64px 20px 96px; }
+.inner { max-width: 760px; margin: 0 auto; }
+.eyebrow { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #b8956b; margin: 0 0 12px; }
+.h1 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(30px, 5vw, 44px); line-height: 1.15; margin: 0 0 16px; color: #1b4332; font-weight: 600; }
+.lede { font-size: 17px; line-height: 1.65; margin: 0 0 24px; color: #3b4a42; }
+.notice { border-left: 3px solid #b8956b; background: #fff; padding: 14px 18px; font-size: 14px; line-height: 1.6; margin: 0 0 36px; color: #3b4a42; }
+.form { background: #fff; border: 1px solid #e6e1d6; padding: 32px 28px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.full { grid-column: 1 / -1; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.label { font-size: 13px; font-weight: 600; color: #1b4332; }
+.req { color: #9a3b2e; }
+.input, .select, .textarea { font: inherit; font-size: 15px; padding: 11px 12px; border: 1px solid #cfc8b8; background: #fff; color: #1f2a24; border-radius: 2px; width: 100%; box-sizing: border-box; }
+.input:focus, .select:focus, .textarea:focus { outline: 2px solid #b8956b; outline-offset: 1px; border-color: #b8956b; }
+.textarea { min-height: 120px; resize: vertical; }
+.err { color: #9a3b2e; font-size: 12.5px; }
+.consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; line-height: 1.55; color: #3b4a42; }
+.consent input { margin-top: 3px; }
+.btn { background: #1b4332; color: #faf9f6; border: 0; padding: 14px 28px; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; border-radius: 2px; }
+.btn:hover:not(:disabled) { background: #14332a; }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.status { font-size: 14px; margin-top: 14px; }
+.statusErr { color: #9a3b2e; }
+.fine { font-size: 12.5px; line-height: 1.6; color: #6b7a72; margin-top: 18px; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.links { margin-top: 28px; font-size: 14px; }
+.links a { color: #1b4332; text-decoration: underline; text-decoration-color: #b8956b; text-underline-offset: 3px; }
+@media (max-width: 640px) { .grid { grid-template-columns: 1fr; } .form { padding: 24px 18px; } }

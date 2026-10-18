@@ -1,7 +1,7 @@
 
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import Research from '@/components/Research';
+import Research from './Research';
 
 interface researchPost {
   title: string;
@@ -78,8 +78,8 @@ export default function researchPage() {
     },
     "datePublished": researchPost.datePublished,
     "image": researchPost.image || "/image.webp",
-    "mainEntityOfPage": `https://murivest.com/research/${researchPost.slug}`,
-    "url": `https://murivest.com/research/${researchPost.slug}`
+    "mainEntityOfPage": `https://murivest.com/united-kingdom/research/${researchPost.slug}`,
+    "url": `https://murivest.com/united-kingdom/research/${researchPost.slug}`
   };
 
   return (

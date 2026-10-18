@@ -85,7 +85,7 @@ const teamMembers: TeamMemberData[] = [
     bio: 'Over two decades of experience in East African commercial real estate. Former Managing Director at a leading property consultancy, with $500M+ in executed transactions.',
     image: 'https://murivest.com/CEO.Founder.webp',
     linkedin: 'https://www.linkedin.com/in/mark-muriithi-343365215/',
-    email: 'mark.muriithi@murivest.com',
+    email: 'md@murivest.com',
   },
   {
     id: '2',

@@ -50,14 +50,26 @@ const research: ResearchEntry[] = [
 
   {
     id: 'kenyan-investors-uk-real-estate-ksh-3-5-million-cross-border',
-        title: 'Kenyan Investors Gain Access to UK Real Estate from KSh 3.5M Through Murivest Group Ltd as Cross-Border Investment Opportunities Expand',
-        excerpt: 'Kenyan investors are exploring new ways to diversify their wealth internationally. Through its stated partnership with a lead agency, Murivest Group Ltd is providing a Nairobi-based point of contact for eligible investors seeking to explore selected United Kingdom property investment opportunities from approximately KSh 3.5 million.',
-        author: getAuthor('investment'),
-        category: 'Investment',
-        image: '/research-images/kenya-uk-real-estate-ksh-3-5-million.webp',
-        date: '2026-10-12',
-        readTime: '16 min read',
-        featured: true,
+    title: 'Kenyan Investors Gain Access to UK Real Estate from KSh 3.5M Through Murivest Group Ltd as Cross-Border Investment Opportunities Expand',
+    excerpt: 'Kenyan investors are exploring new ways to diversify their wealth internationally. Through its stated partnership with a lead agency, Murivest Group Ltd is providing a Nairobi-based point of contact for eligible investors seeking to explore selected United Kingdom property investment opportunities from approximately KSh 3.5 million.',
+    author: getAuthor('investment'),
+    category: 'Investment',
+    image: '/research-images/kenya-uk-real-estate-ksh-3-5-million.webp',
+    date: '2026-10-12',
+    readTime: '16 min read',
+    featured: true,
+  },
+
+  {
+    id: 'top-20-commercial-property-agencies-kenya-investors-guide',
+    title: 'The Top 20 Commercial Property Agencies in Kenya: An Investor\'s Guide to the Firms Behind the Capital',
+    excerpt: 'How Kenya\'s UHNWI are separating genuine institutional advisory from retail brokerage while sitting on their Runda estate. Twenty firms examined. One mandate-based standard emerging. An editorial guide for generational capital deployment.',
+    author: getAuthor('investment'),
+    category: 'Investment',
+    image: '/commercial-property-investment-kenya.webp',
+    date: '2026-10-13',
+    readTime: '18 min read',
+    featured: true
   },
 
   {
@@ -843,6 +855,42 @@ const research: ResearchEntry[] = [
       category: 'Global Property & Capital Markets',
       featured: false
     },
+
+  {
+    id: 'nairobi-grade-a-office-vacancy-yield-analysis-2026',
+    title: 'Nairobi Grade A Office Market: Vacancy and Yield Analysis for Q3 2026',
+    excerpt: 'Research on Nairobi\'s Grade A office market vacancy and yield dynamics in Q3 2026, examining tenant retention, new supply impacts, and implications for institutional investors.',
+    author: getAuthor('investment'),
+    image: '/research-images/standard-chartered-nakumatt-auction-distressed-real-estate-kenya-2026.webp',
+    category: 'Investment',
+    date: '2026-10-15',
+    readTime: '18 min read',
+    featured: true,
+  },
+
+  {
+    id: 'kisumu-lake-victoria-commercial-retail-outlook-2026',
+    title: 'Kisumu Commercial Real Estate: Lake Victoria Retail and Office Outlook for 2026',
+    excerpt: 'An analysis of Kisumu\'s emerging commercial real estate market along Lake Victoria, covering retail anchor dynamics, office demand drivers, infrastructure developments, and investment opportunities.',
+    author: getAuthor('investment'),
+    image: '/research-images/uk-affordable-housing-regions-2026.webp',
+    category: 'Investment',
+    date: '2026-10-15',
+    readTime: '15 min read',
+    featured: true,
+  },
+
+  {
+    id: 'machakos-industrial-park-real-estate-investment-2026',
+    title: 'Machakos Industrial Park: Real Estate Investment Analysis for Kenya\'s Emerging Manufacturing Hub',
+    excerpt: 'Analysis of real estate investment opportunities in Machakos Industrial Park, covering lease rates, infrastructure development, tenant demand, and risk-return profile for institutional investors.',
+    author: getAuthor('investment'),
+    image: '/p3/67a9ea6ba330cdd1780d6536_BMCInnovation-p-1600.png',
+    category: 'Investment',
+    date: '2026-10-15',
+    readTime: '16 min read',
+    featured: true,
+  },
 
 
 ];

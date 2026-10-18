@@ -1,13 +1,12 @@
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
-import { Playfair_Display, Montserrat, Inter } from 'next/font/google';
 import { Suspense } from 'react';
 
 import './globals.css';
 
 /* ================================
    GLOBAL STYLE IMPORTS
-================================ */
+==================== */
 import '../styles/forms.css';
 import '../styles/components.css';
 import '../styles/animations.css';
@@ -16,25 +15,6 @@ import AnalyticsTracker from '../components/AnalyticsTracker';
 import CookieBanner from '@/components/CookieBanner';
 import MetaPixel from '@/components/MetaPixel';
 import AppShell from '../components/layout/AppShell';
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-});
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  display: 'swap',
-});
-
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
-  variable: '--font-montserrat',
-  display: 'swap',
-});
 
 /* ====================================================
    GLOBAL METADATA – matches top‑tier firms like CBRE / JLL
@@ -186,11 +166,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      data-scroll-behavior="smooth"
-      lang="en"
-      className={`${inter.variable} ${playfair.variable} ${montserrat.variable} font-sans`}
-    >
+      <html
+        data-scroll-behavior="smooth"
+        lang="en"
+        className="font-sans"
+      >
       <head>
         <link rel="icon" type="image/png" href="/logo.webp" sizes="192x192" />
         <link rel="apple-touch-icon" href="/logo.webp" sizes="180x180" />
@@ -279,7 +259,7 @@ export default function RootLayout({
       </head>
 
       <body
-        className={`${montserrat.variable} font-sans text-forest bg-cream`}
+        className="font-sans text-forest bg-cream"
         suppressHydrationWarning={true}
         style={{
           backgroundColor: '#FAF9F6',

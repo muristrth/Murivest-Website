@@ -10,6 +10,7 @@ export const client = createClient({
   apiVersion,
   useCdn: true, // Set to false for SSR with fresh data
   perspective: 'published',
+  timeout: 60000,
 })
 
 // For server mutations (if needed)

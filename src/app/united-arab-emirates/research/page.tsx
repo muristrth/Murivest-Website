@@ -1,7 +1,7 @@
 
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import Research from '@/components/Research';
+import Research from './Research';
 
 interface researchPost {
   title: string;

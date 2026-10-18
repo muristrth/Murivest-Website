@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
       replyTo: email,
       subject: `New Advisory Inquiry — ${organization || 'Individual'} (${mandateType || 'Unspecified'})`,
       text: `
-New institutional inquiry received via murivest.co.ke
+New institutional inquiry received via murivest.com
 
 ──────────────────────────────
 CONTACT DETAILS
@@ -105,7 +105,7 @@ Received: ${new Date().toLocaleString('en-KE', { timeZone: 'Africa/Nairobi' })}
       </div>
     </div>
     <div class="footer">
-      Received via murivest.co.ke &middot; ${new Date().toLocaleString('en-KE', { timeZone: 'Africa/Nairobi' })}
+      Received via murivest.co &middot; ${new Date().toLocaleString('en-KE', { timeZone: 'Africa/Nairobi' })}
     </div>
   </div>
 </body>
