@@ -13,14 +13,17 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// Verify connection on startup
-transporter.verify((error) => {
-  if (error) {
-    console.error('SMTP Connection Error:', error);
-  } else {
-    console.log('SMTP Server is ready to take messages(ignore)');
-  }
-});
+// Verify connection on startup (skipped during production builds so an
+// unreachable SMTP host does not surface as build noise)
+if (process.env.NEXT_PHASE !== 'phase-production-build') {
+  transporter.verify((error) => {
+    if (error) {
+      console.error('SMTP Connection Error:', error);
+    } else {
+      console.log('SMTP Server is ready to take messages(ignore)');
+    }
+  });
+}
 
 interface EmailOptions {
   to: string;

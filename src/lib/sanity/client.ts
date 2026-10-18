@@ -112,24 +112,41 @@ export const UAE_ALL_SLUGS_QUERY = `
 
 // ─── Fetch Helpers ────────────────────────────────────────────────────────────
 
+/**
+ * Run a Sanity fetch, returning `fallback` when the API cannot be reached.
+ * Keeps static generation from failing entirely when Sanity is unreachable
+ * from the build/runtime environment (e.g. ConnectTimeoutError).
+ */
+async function sanityFetch<T>(
+  query: string,
+  params: Record<string, unknown> = {},
+  fallback: T,
+): Promise<T> {
+  try {
+    return await sanityClient.fetch(query, params);
+  } catch {
+    return fallback;
+  }
+}
+
 export async function getUaeProperties(): Promise<UaePropertyCard[]> {
-  return sanityClient.fetch(UAE_PROPERTIES_QUERY);
+  return sanityFetch(UAE_PROPERTIES_QUERY, {}, []);
 }
 
 export async function getUaePropertyBySlug(slug: string): Promise<UaePropertyFull | null> {
-  return sanityClient.fetch(UAE_PROPERTY_BY_SLUG_QUERY, { slug });
+  return sanityFetch(UAE_PROPERTY_BY_SLUG_QUERY, { slug }, null);
 }
 
 export async function getUaeRelated(slug: string, category: string, emirate: string): Promise<UaePropertyCard[]> {
-  return sanityClient.fetch(UAE_RELATED_QUERY, { slug, category, emirate });
+  return sanityFetch(UAE_RELATED_QUERY, { slug, category, emirate }, []);
 }
 
 export async function getUaePopular(): Promise<UaePropertyCard[]> {
-  return sanityClient.fetch(UAE_POPULAR_QUERY);
+  return sanityFetch(UAE_POPULAR_QUERY, {}, []);
 }
 
 export async function getUaeAllSlugs(): Promise<{ slug: string }[]> {
-  return sanityClient.fetch(UAE_ALL_SLUGS_QUERY);
+  return sanityFetch(UAE_ALL_SLUGS_QUERY, {}, []);
 }
 
 // ─── Types ────────────────────────────────────────────────────────────────────
