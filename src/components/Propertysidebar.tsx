@@ -100,9 +100,9 @@ export default function PropertySidebar({
                 transition={{ delay: i * 0.05 }}
               >
                 <Link
-                  href={`/properties/${prop.slug}`}
+                  href={`/kenya/properties/${prop.slug}`}
                   className="group flex gap-3 px-5 py-4 hover:bg-[#FAF9F6] transition-colors duration-200"
-                >
+                >  
                   {/* Thumbnail or colour block */}
                   <div
                     className="relative flex-shrink-0 overflow-hidden"
@@ -203,7 +203,7 @@ export default function PropertySidebar({
             {popularProperties.slice(0, 8).map((prop, i) => (
               <Link
                 key={prop.slug}
-                href={`/properties/${prop.slug}`}
+                href={`/kenya/properties/${prop.slug}`}
                 className="group flex items-start gap-4 px-5 py-4 hover:bg-[#FAF9F6] transition-colors duration-200"
               >
                 {/* Roman numeral */}
