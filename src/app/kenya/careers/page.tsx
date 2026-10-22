@@ -130,7 +130,7 @@ export default function CareersPage() {
                 <p className="text-[12px] tracking-[0.15em] uppercase text-[#5A5A5A] mb-2">
                   Position
                 </p>
-                <p className="text-[16px] text-[#2C2C2C] font-light">Sales Associate</p>
+                <p className="text-[16px] text-[#2C2C2C] font-light">Junior Capital Advisor</p>
               </div>
 
               <div>

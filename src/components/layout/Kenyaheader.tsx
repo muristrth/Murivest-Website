@@ -52,40 +52,27 @@ type NavSection = {
 
 const KENYA_NAV: NavSection[] = [
   {
-    label: 'Investments',
-    description: 'Direct investment opportunities across Kenya',
-    columns: [
-      [
-        { label: 'Investment Opportunities', href: '/kenya/investment-pipeline', sub: 'All active mandates' },
-        { label: 'Off-Market Opportunities', href: '/kenya/properties/off-market', sub: 'Private treaty access' },
-        { label: 'Land Banking', href: '/kenya/land-portfolio', sub: 'Strategic land acquisition' },
-        { label: 'Sale & Leaseback', href: '/kenya/kenya-sale-leaseback-transactions', sub: 'Corporate real estate' },
-      ],
-    ],
-  },
-  {
     label: 'Advisory',
     description: 'Institutional advisory and capital markets',
     columns: [
       [
         { label: 'Institutional Advisory', href: '/kenya/institutional-investors', sub: 'Capital deployment engagement models' },
-        { label: 'Disposition Advisory', href: '/kenya/sell', sub: 'Owner & seller enquiries' },
-        { label: 'Underwriting & LOI Tool', href: '/kenya/cre-underwriting', sub: 'Instant underwriting analysis' },
-        { label: 'Property Management', href: '/kenya/property-management', sub: 'Operational excellence' },
-        { label: 'Owner Mandate', href: '/kenya/authority-to-sell', sub: 'Authority to sell' },
+        { label: 'Sell Your Property', href: '/kenya/sell', sub: 'Owner & seller enquiries' },
+        { label: 'Underwriting', href: '/kenya/cre-underwriting', sub: 'Instant underwriting analysis' },
+        { label: 'Owner Instructions', href: '/kenya/authority-to-sell', sub: 'Authority to sell' },
       ],
     ],
   },
   {
-    label: 'Property',
+    label: 'Portfolio',
     description: 'Commercial real estate by sector',
     columns: [
       [
-        { label: 'Office', href: '/kenya/office-developments', sub: 'Grade A office investment', icon: Building2 },
-        { label: 'Industrial', href: '/kenya/industrial-properties', sub: 'Warehousing & logistics', icon: Warehouse },
-        { label: 'Retail & Mixed-Use', href: '/kenya/retail-mixed-use', sub: 'Retail & mixed-use investment', icon: Store },
+        { label: 'Commercial Listings', href: '/kenya/properties', sub: 'Grade A office investment', icon: Building2 },
+        { label: 'Office', href: '/kenya/office-developments', sub: 'Warehousing & logistics', icon: Warehouse },
+        { label: 'Property Management', href: '/kenya/property-management', sub: 'Retail & mixed-use investment', icon: Store },
         { label: 'Properties to Let', href: '/kenya/properties/to-let', sub: 'Available leasing space', icon: Home },
-        { label: 'Development Land', href: '/kenya/land-portfolio', sub: 'Strategic parcels', icon: LandPlot },
+        { label: 'Land For Sale', href: '/kenya/land-portfolio', sub: 'Strategic parcels', icon: LandPlot },
       ],
     ],
   },
@@ -94,10 +81,7 @@ const KENYA_NAV: NavSection[] = [
     description: 'Market intelligence and sector analysis',
     columns: [
       [
-        { label: 'Kenya Research', href: '/kenya/research', sub: 'Macro overview & outlook' },
-        { label: 'Quarterly Market Reports', href: '/kenya/quarterly-market-reports', sub: 'Quarterly publications' },
-        { label: 'Regulatory Updates', href: '/kenya/regulatory-updates', sub: 'Land, tax & zoning changes' },
-        { label: 'Economic Outlook', href: '/kenya/kenya-economic-outlook', sub: 'Macro overview & outlook' },
+        { label: 'Research', href: '/kenya/research', sub: 'Macro overview & outlook' },
         { label: 'Insights', href: '/kenya/insights-cre', sub: 'Executive commentary' },
       ],
     ],

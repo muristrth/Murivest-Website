@@ -84,14 +84,6 @@ const GLOBAL_NAV: NavItem[] = [
           { label: 'Leasing', href: '/services/leasing', sub: 'Tenant representation' },
         ],
       },
-      {
-        title: 'Specialist',
-        links: [
-          { label: 'Land Banking', href: '/land-portfolio', sub: 'Strategic acquisition' },
-          { label: 'Off-Market', href: '/off-market', sub: 'Private treaty' },
-          { label: 'Sustainability', href: '/services/sustainability', sub: 'ESG advisory' },
-        ],
-      },
     ],
   },
   {
@@ -102,42 +94,31 @@ const GLOBAL_NAV: NavItem[] = [
       {
         title: 'Intelligence',
         links: [
-          { label: 'Market Reports', href: '/research/reports', sub: 'Quarterly outlooks' },
+          { label: 'Market Reports', href: '/research/', sub: 'Quarterly outlooks' },
           { label: 'CRE Insights', href: '/insights-cre', sub: 'Sector commentary' },
-          { label: 'Transaction Data', href: '/market-data', sub: 'Pricing analytics' },
         ],
       },
       {
         title: 'Leadership',
         links: [
-          { label: 'Perspectives', href: '/research/perspectives', sub: 'Executive briefings' },
           { label: 'Video Commentary', href: '/videos', sub: 'Market briefings' },
-          { label: 'Global Outlook', href: '/research/outlook', sub: 'Cross-border' },
+          { label: 'Murivest Team', href: '/team', sub: 'Cross-border' },
         ],
       },
     ],
   },
   {
-    label: 'Portfolio',
+    label: 'Markets',
     description: 'Global real estate mandates and opportunities',
     icon: Building2,
     columns: [
       {
-        title: 'By Region',
+        title: 'Markets',
         links: [
-          { label: 'East Africa', href: '/kenya', sub: 'Kenya · 12 mandates' },
-          { label: 'Gulf & Middle East', href: '/united-arab-emirates', sub: 'UAE · 8 mandates' },
-          { label: 'Western Europe', href: '/united-kingdom', sub: 'UK · 6 mandates' },
-          { label: 'Southeast Asia', href: '/singapore', sub: 'Singapore · 4 mandates' },
-        ],
-      },
-      {
-        title: 'By Asset Class',
-        links: [
-          { label: 'Commercial', href: '/portfolio/commercial', sub: 'Office · Retail · Industrial' },
-          { label: 'Residential', href: '/portfolio/residential', sub: 'Multifamily' },
-          { label: 'Land', href: '/land-portfolio', sub: 'Development & banking' },
-          { label: 'Hospitality', href: '/portfolio/hospitality', sub: 'Hotels & resorts' },
+          { label: 'Kenya', href: '/kenya', sub: 'Kenya · 12 mandates' },
+          { label: 'UAE', href: '/united-arab-emirates', sub: 'UAE · 8 mandates' },
+          { label: 'UK', href: '/united-kingdom', sub: 'UK · 6 mandates' },
+          { label: 'Singapore', href: '/singapore', sub: 'Singapore · 4 mandates' },
         ],
       },
     ],
@@ -158,9 +139,8 @@ const GLOBAL_NAV: NavItem[] = [
       {
         title: 'Governance',
         links: [
-          { label: 'ESG Commitment', href: '/about/esg', sub: 'Sustainability' },
-          { label: 'Investor Relations', href: '/investor-relations', sub: 'Partners' },
-          { label: 'Press', href: '/press', sub: 'Announcements' },
+          { label: 'ESG Commitment', href: '/esg-policy', sub: 'Sustainability' },
+          { label: 'Investor Brief', href: '/investor-brief', sub: 'Partners' },
         ],
       },
     ],
@@ -175,15 +155,6 @@ const GLOBAL_NAV: NavItem[] = [
         links: [
           { label: 'Advisors', href: '/people', sub: 'Senior team' },
           { label: 'Partners', href: '/people/partners', sub: 'Strategic alliances' },
-        ],
-      },
-      {
-        title: 'Offices',
-        links: [
-          { label: 'Nairobi', href: '/office/nairobi', sub: 'Headquarters' },
-          { label: 'Dubai', href: '/office/dubai', sub: 'Middle East hub' },
-          { label: 'London', href: '/office/london', sub: 'European coverage' },
-          { label: 'Singapore', href: '/office/singapore', sub: 'Asia Pacific' },
         ],
       },
     ],
