@@ -25,6 +25,7 @@ export default function CareersPage() {
     location: '',
     currentRole: '',
     experience: '',
+    tech: '',
     linkedin: '',
     message: '',
   });
@@ -67,6 +68,7 @@ export default function CareersPage() {
           location: '',
           currentRole: '',
           experience: '',
+          tech: '',
           linkedin: '',
           message: '',
         });
@@ -300,6 +302,24 @@ export default function CareersPage() {
                       placeholder="https://linkedin.com/in/..."
                     />
                   </div>
+
+                  <div>
+                      <label className="block text-[11px] tracking-[0.2em] uppercase text-[#5A5A5A] mb-2">
+                        Do you have a Laptop? *
+                      </label>
+                      <select
+                        name="tech"
+                        required
+                        value={formData.tech}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-transparent border-b border-[#E5E2DC] text-[#2C2C2C] font-light focus:border-[#8B7355] focus:outline-none transition-colors duration-300"
+                      >
+                        <option value="">Select</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                      </select>
+                    </div>
+                  
 
                   <div>
                     <label className="block text-[11px] tracking-[0.2em] uppercase text-[#5A5A5A] mb-2">

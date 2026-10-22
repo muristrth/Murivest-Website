@@ -27,12 +27,13 @@ export async function POST(request: NextRequest) {
     const location = formData.get('location') as string;
     const currentRole = formData.get('currentRole') as string;
     const experience = formData.get('experience') as string;
+    const tech = formData.get('tech') as string;
     const linkedin = formData.get('linkedin') as string;
     const message = formData.get('message') as string;
     const cvFile = formData.get('cv') as File;
 
     // Validation
-    if (!name || !email || !phone || !location || !experience || !message || !cvFile) {
+    if (!name || !email || !phone || !location || !experience || !tech || !message || !cvFile) {
       return NextResponse.json(
         { error: 'All required fields must be filled, including CV.' },
         { status: 400 }
@@ -75,6 +76,7 @@ export async function POST(request: NextRequest) {
       <p><strong>Current Role:</strong> ${currentRole || 'Not provided'}</p>
       <p><strong>Experience:</strong> ${experience}</p>
       <p><strong>LinkedIn:</strong> ${linkedin || 'Not provided'}</p>
+      <p><strong>Tech:</strong> ${tech}</p>
       <p><strong>Why Murivest?</strong><br/>${message.replace(/\n/g, '<br/>')}</p>
     `;
 
